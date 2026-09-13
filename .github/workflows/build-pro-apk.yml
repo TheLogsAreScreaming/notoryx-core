@@ -116,8 +116,7 @@ jobs:
           ms = main.read_text()
           import_anchor = "import 'screens/scanner_screen.dart';"
           pro_import = "import 'screens/bastion_pro_screen.dart';"
-          if pro_import not in ms:
-              ms = ms.replace(import_anchor, import_anchor + "\n" + pro_import)
+          ms = ms.replace(import_anchor, pro_import)
           ms = ms.replace("title: 'MeshCore Open'", "title: 'BASTION PRO'")
           ms = ms.replace("title: 'Bastion Enhanced'", "title: 'BASTION PRO'")
           ms = ms.replace(': const ScannerScreen(),', ': const BastionProScreen(),')
@@ -131,7 +130,7 @@ jobs:
           </resources>
           EOF
 
-          curl -L --fail --retry 3 https://github.com/BastionMeshAppassets/bastion-club-logo.jpg -o /tmp/bastion-club-logo.jpg
+          cp branding/app-icon.jpg /tmp/bastion-club-logo.jpg
 
           mkdir -p android/app/src/main/res/mipmap-mdpi \
                    android/app/src/main/res/mipmap-hdpi \
