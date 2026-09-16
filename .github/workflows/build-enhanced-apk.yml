@@ -84,8 +84,11 @@ jobs:
 
           manifest = Path('android/app/src/main/AndroidManifest.xml')
           m = manifest.read_text()
+          # Keep the full product name inside the app, but use a concise Android
+          # launcher label so Samsung/other launchers do not truncate the edition name.
           m = m.replace('android:label="MeshCore Open"', 'android:label="Bastion Enhanced"')
           m = m.replace('android:label="Bastion"', 'android:label="Bastion Enhanced"')
+          m = m.replace('android:label="Bastion Enhanced"', 'android:label="Bastion Enhanced"')
           m = m.replace('android:icon="@drawable/bastion_launcher"', 'android:icon="@mipmap/ic_launcher"')
           manifest.write_text(m)
 
