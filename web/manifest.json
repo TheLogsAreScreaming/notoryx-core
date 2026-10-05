@@ -1,11 +1,11 @@
 {
-    "name": "meshcore_open",
-    "short_name": "meshcore_open",
+    "name": "BCS Connect",
+    "short_name": "BCS Connect",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "BackCountrySignal companion app for MeshCore off-grid mesh communications.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
