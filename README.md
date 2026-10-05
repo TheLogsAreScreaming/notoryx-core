@@ -1,16 +1,13 @@
-# MeshCore Open
+# BCS Connect
 
-Open-source Flutter client for MeshCore LoRa mesh networking devices.
+BCS Connect is BackCountrySignal's open-source Flutter companion app for MeshCore LoRa mesh networking devices.
 
 ## Overview
 
 MeshCore Open is a cross-platform mobile application for communicating with MeshCore LoRa mesh network devices via Bluetooth Low Energy (BLE). The app enables long-range, off-grid communication through peer-to-peer messaging, public channels, and mesh networking capabilities.
 
-**Website:** [meshcoreopen.org](https://meshcoreopen.org/)
+**Website:** [backcountrysignal.org](https://backcountrysignal.org/)
 
-<a href="http://apps.obtainium.imranr.dev/redirect.html?r=obtainium://add/https://github.com/zjs81/meshcore-open">
-        <img src="assets/badges/badge_obtainium.png" height="80" align="center" alt="Get it on Obtainium"/>
-</a>
 
 ## Screenshots
 
@@ -115,8 +112,8 @@ MeshCore Open is a cross-platform mobile application for communicating with Mesh
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/zjs81/meshcore-open.git
-   cd meshcore-open
+   git clone https://github.com/backcountrysignal/BCS-Connect-MeshCore.git
+   cd BCS-Connect-MeshCore
    ```
 
 2. **Install dependencies**
@@ -246,20 +243,8 @@ This is an open-source project. Contributions are welcome!
 ## Support
 
 For issues, questions, or feature requests, please open an issue on GitHub:
-<https://github.com/zjs81/meshcore-open/issues>
+<https://github.com/backcountrysignal/BCS-Connect-MeshCore/issues>
 
-## Donate
-
-If you find MeshCore Open useful and would like to support development, you can donate Solana or other Solana tokens:
-
-**Solana Address:** `F15YanjZj96YTBtKJYgNa8RLQLCZkx5CEwogPWkqXeoQ`
-
-
-**Monero Address:** `453TxnpUqjkJtXxzdjMsrgERNkBRXEGamPbpC45ENrvKAk9tH7kZbxWF82Hz66etgDZyXFPEBU2JUEqhLeJyWt9kBvTVy5m`
-
-**Bitcoin Address:** `bc1qh45x28v8dslcg4v4upmqd9g0mvc3lnyffmyzr5`
-
-Your support helps maintain and improve this open-source project!
 
 ## Acknowledgments
 
