@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+
 import 'l10n/app_localizations.dart';
+
 import 'package:provider/provider.dart';
 
 import 'screens/chrome_required_screen.dart';
@@ -22,6 +24,7 @@ import 'services/storage_service.dart';
 import 'services/message_retry_service.dart';
 import 'services/path_history_service.dart';
 import 'services/app_settings_service.dart';
+import 'services/bot_service.dart';
 import 'services/notification_service.dart';
 import 'services/ble_debug_log_service.dart';
 import 'services/app_debug_log_service.dart';
@@ -347,10 +350,13 @@ const Duration _kImageSweepInterval = Duration(seconds: 5);
 
 class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   Timer? _imageSweepTimer;
+  late final BotService _botService;
 
   @override
   void initState() {
     super.initState();
+    _botService = BotService(widget.connector);
+    unawaited(_botService.load());
     WidgetsBinding.instance.addObserver(this);
     _imageSweepTimer = Timer.periodic(
       _kImageSweepInterval,
@@ -361,6 +367,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   @override
   void dispose() {
     _imageSweepTimer?.cancel();
+    _botService.dispose();
     WidgetsBinding.instance.removeObserver(this);
     super.dispose();
   }
@@ -393,6 +400,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider.value(value: connector),
+        ChangeNotifierProvider.value(value: _botService),
         ChangeNotifierProvider.value(value: widget.retryService),
         ChangeNotifierProvider.value(value: widget.pathHistoryService),
         ChangeNotifierProvider.value(value: widget.appSettingsService),
