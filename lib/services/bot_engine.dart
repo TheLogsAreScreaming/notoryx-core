@@ -19,10 +19,14 @@ class BotEngine {
     _seen.removeWhere((_, time) => now.difference(time).inMinutes > 10);
     _lastReply.removeWhere((_, time) => now.difference(time).inHours > 1);
     _recentReplies.removeWhere((time) => now.difference(time).inSeconds >= 60);
-    if (_seen.containsKey(messageId)) return null;
+    if (_seen.containsKey(messageId)) {
+      return null;
+    }
     _seen[messageId] = now;
     // Bound memory even if a peer continuously sends unique ignored messages.
-    if (_seen.length > 1000) _seen.remove(_seen.keys.first);
+    if (_seen.length > 1000) {
+      _seen.remove(_seen.keys.first);
+    }
     final age = now.difference(timestamp);
     if (!eligible ||
         !settings.enabled ||
@@ -36,9 +40,12 @@ class BotEngine {
     }
     final previous = _lastReply[sender];
     if (previous != null &&
-        now.difference(previous).inSeconds < settings.cooldownSeconds)
+        now.difference(previous).inSeconds < settings.cooldownSeconds) {
       return null;
-    if (_recentReplies.length >= settings.repliesPerMinute) return null;
+    }
+    if (_recentReplies.length >= settings.repliesPerMinute) {
+      return null;
+    }
 
     final command = text.trim().toLowerCase();
     String? response;
@@ -58,7 +65,9 @@ class BotEngine {
     if (response == null && !command.startsWith('!') && settings.awayEnabled) {
       response = settings.awayMessage;
     }
-    if (response == null || !isValidBotResponse(response)) return null;
+    if (response == null || !isValidBotResponse(response)) {
+      return null;
+    }
     // Reserve before any asynchronous send; concurrent arrivals share limits.
     _lastReply[sender] = now;
     _recentReplies.add(now);
@@ -76,11 +85,15 @@ class BotEngine {
     final senders = Map<String, dynamic>.from(json['senders'] as Map? ?? {});
     for (final entry in senders.entries) {
       final time = DateTime.tryParse(entry.value.toString());
-      if (time != null) _lastReply[entry.key] = time;
+      if (time != null) {
+        _lastReply[entry.key] = time;
+      }
     }
     for (final value in json['recent'] as List? ?? []) {
       final time = DateTime.tryParse(value.toString());
-      if (time != null) _recentReplies.add(time);
+      if (time != null) {
+        _recentReplies.add(time);
+      }
     }
   }
 }

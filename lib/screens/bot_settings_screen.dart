@@ -66,7 +66,9 @@ class BotSettingsScreen extends StatelessWidget {
     // The route's closing animation may still reference the controller.
     await Future<void>.delayed(const Duration(milliseconds: 300));
     controller.dispose();
-    if (result != null && context.mounted) await _save(context, update(result));
+    if (result != null && context.mounted) {
+      await _save(context, update(result));
+    }
   }
 
   Future<void> _editRule(BuildContext context, {int? index}) async {
@@ -127,6 +129,12 @@ class BotSettingsScreen extends StatelessWidget {
                       value: null,
                       child: Text('Any allowed contact'),
                     ),
+                    if (senderKey != null &&
+                        !contacts.any((c) => c.publicKeyHex == senderKey))
+                      DropdownMenuItem(
+                        value: senderKey,
+                        child: const Text('Previously selected contact'),
+                      ),
                     for (final contact in contacts)
                       DropdownMenuItem(
                         value: contact.publicKeyHex,
@@ -350,8 +358,9 @@ class BotSettingsScreen extends StatelessWidget {
                   )
                   .toList(),
               onChanged: (value) {
-                if (value != null)
+                if (value != null) {
                   _save(context, settings.copyWith(cooldownSeconds: value));
+                }
               },
             ),
             DropdownButtonFormField<int>(
@@ -364,8 +373,9 @@ class BotSettingsScreen extends StatelessWidget {
                 (i) => DropdownMenuItem(value: i + 1, child: Text('${i + 1}')),
               ),
               onChanged: (value) {
-                if (value != null)
+                if (value != null) {
                   _save(context, settings.copyWith(repliesPerMinute: value));
+                }
               },
             ),
             ExpansionTile(

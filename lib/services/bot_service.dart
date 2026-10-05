@@ -56,7 +56,9 @@ class BotService extends ChangeNotifier {
   }
 
   Future<void> save(BotSettings settings) async {
-    if (!_ready || _disposed) return;
+    if (!_ready || _disposed) {
+      return;
+    }
     if (!isValidBotResponse(settings.awayMessage) ||
         !isValidBotResponse(settings.info) ||
         !isValidBotResponse(settings.checkIn) ||
@@ -136,7 +138,9 @@ class BotService extends ChangeNotifier {
   }
 
   Future<void> _receive(Message message) async {
-    if (_disposed || !_ready || !connector.isConnected) return;
+    if (_disposed || !_ready || !connector.isConnected) {
+      return;
+    }
     final contact = connector.getContactByPubKeyHex(message.senderKeyHex);
     final radioKey = connector.selfPublicKeyHex;
     final revision = _revision;
@@ -155,7 +159,9 @@ class BotService extends ChangeNotifier {
           contact?.type == advTypeChat &&
           Message.parseReaction(message.text) == null,
     );
-    if (response == null || contact == null) return;
+    if (response == null || contact == null) {
+      return;
+    }
     try {
       await _write('bcs_bot_budget_v1', jsonEncode(_engine.budget));
       if (_disposed ||
@@ -174,12 +180,16 @@ class BotService extends ChangeNotifier {
 
   void _record(String message) {
     _activity.insert(0, '${DateTime.now().toLocal()}: $message');
-    if (_activity.length > 20) _activity.removeLast();
+    if (_activity.length > 20) {
+      _activity.removeLast();
+    }
     _notify();
   }
 
   void _notify() {
-    if (!_disposed) notifyListeners();
+    if (!_disposed) {
+      notifyListeners();
+    }
   }
 
   @override
