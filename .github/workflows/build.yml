@@ -30,6 +30,13 @@ jobs:
             ${{ runner.os }}-gradle-
       - run: flutter pub get
       - run: flutter build apk --release --no-pub
+      - name: Upload BCS Connect Android APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: BCS-Connect-Android-APK
+          path: build/app/outputs/flutter-apk/app-release.apk
+          if-no-files-found: error
+          retention-days: 14
 
   ios:
     runs-on: macos-latest
