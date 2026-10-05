@@ -124,9 +124,12 @@ class BotSettings {
     enabled: json['enabled'] as bool? ?? false,
     awayEnabled: json['awayEnabled'] as bool? ?? true,
     shareLocation: json['shareLocation'] as bool? ?? false,
-    awayMessage: json['awayMessage'] as String? ?? '',
-    info: json['info'] as String? ?? '',
-    checkIn: json['checkIn'] as String? ?? '',
+    awayMessage:
+        json['awayMessage'] as String? ??
+        "I'm away. Your message was received by BCS Connect.",
+    info:
+        json['info'] as String? ?? 'BackCountrySignal — backcountrysignal.org',
+    checkIn: json['checkIn'] as String? ?? 'No check-in status configured.',
     cooldownSeconds: (json['cooldownSeconds'] as int? ?? 300).clamp(60, 3600),
     repliesPerMinute: (json['repliesPerMinute'] as int? ?? 3).clamp(1, 6),
     commands: (json['commands'] as List?)?.cast<String>().toSet(),

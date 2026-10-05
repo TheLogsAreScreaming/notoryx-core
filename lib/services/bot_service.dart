@@ -42,15 +42,15 @@ class BotService extends ChangeNotifier {
       if (budget != null) {
         _engine.restoreBudget(jsonDecode(budget) as Map<String, dynamic>);
       }
-      _ready = true;
-      if (!_disposed) {
-        _subscription = connector.receivedDirectMessages.listen(
-          (message) => unawaited(_receive(message)),
-        );
-      }
     } catch (_) {
       _settings = BotSettings();
       _error = 'Bot settings could not be loaded. Bot Mode is off.';
+    }
+    _ready = true;
+    if (!_disposed) {
+      _subscription = connector.receivedDirectMessages.listen(
+        (message) => unawaited(_receive(message)),
+      );
     }
     _notify();
   }
@@ -59,12 +59,14 @@ class BotService extends ChangeNotifier {
     if (!_ready || _disposed) {
       return;
     }
-    if (!isValidBotResponse(settings.awayMessage) ||
-        !isValidBotResponse(settings.info) ||
-        !isValidBotResponse(settings.checkIn) ||
-        settings.rules.any(
-          (r) => r.trigger.trim().isEmpty || !isValidBotResponse(r.response),
-        )) {
+    if (settings.enabled &&
+        (!isValidBotResponse(settings.awayMessage) ||
+            !isValidBotResponse(settings.info) ||
+            !isValidBotResponse(settings.checkIn) ||
+            settings.rules.any(
+              (r) =>
+                  r.trigger.trim().isEmpty || !isValidBotResponse(r.response),
+            ))) {
       throw ArgumentError(
         'Responses must fit within 140 UTF-8 bytes including the bot marker.',
       );
