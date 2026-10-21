@@ -37,3 +37,11 @@ Date: 2026-10-20. Integration branch: `dev`.
 - Keep upstream MeshCore Open attribution and third-party notices intact.
 
 This audit is an initial baseline based on repository documentation and manifest. It is **not** a complete file-by-file code audit or a claim that CI was executed.
+
+## Reproduced onboarding connection-state defect (2026-10-20)
+- While Bluetooth is already connected to `DirtyDanFullSend`, **Get started with Bastion** displays `Connected to DirtyDanFullSend using BLUETOOTH` but still presents the primary **Connect radio** action.
+- Tapping **Connect radio** opens the radio connection screen, followed by an unexpected sideways transition to chat/messages.
+- Expected: completed connection step, clear active-radio status and **View connection details**; no unnecessary radio picker or navigation to chat.
+- Test connected/disconnected entry, live disconnect/reconnect, radio switch, and guide navigation. Opening the guide must not reset the active radio session or drafts.
+- The screen already knows the connected radio name, suggesting a guide-state/action/navigation mismatch; root cause **not yet confirmed**.
+- GitHub Issues are disabled in this repository (HTTP 410), so the reproduction is tracked here until a dedicated code-fix PR is opened.
