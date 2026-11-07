@@ -34,6 +34,7 @@ class TacticalGlassPanel extends StatelessWidget {
     final top = isDark ? 0.14 : 0.70;
     final upper = isDark ? 0.08 : 0.55;
     final bottom = isDark ? 0.035 : 0.40;
+    final frost = isDark ? Colors.white : MeshPalette.bg2;
     final panel = DecoratedBox(
       decoration: BoxDecoration(
         borderRadius: radius,
@@ -42,10 +43,12 @@ class TacticalGlassPanel extends StatelessWidget {
           end: Alignment.bottomCenter,
           // The first stop is the lit top edge.
           stops: const [0, 0.06, 1],
+          // Light themes frost with their own card color, not white, so
+          // pink stays pink and peach stays peach. The top edge stays lit.
           colors: [
             Colors.white.withValues(alpha: top),
-            Colors.white.withValues(alpha: upper),
-            Colors.white.withValues(alpha: bottom),
+            frost.withValues(alpha: upper),
+            frost.withValues(alpha: bottom),
           ],
         ),
         // The edge catches the theme's accent, so cards carry its color.

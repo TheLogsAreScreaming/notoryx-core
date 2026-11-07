@@ -318,6 +318,15 @@ class AppSettingsService extends ChangeNotifier {
     await updateSettings(_settings.copyWith(appTheme: id));
   }
 
+  /// Picks the Seasonal theme's palette; 'auto' follows the date.
+  Future<void> setSeasonalSeason(String id) async {
+    await updateSettings(_settings.copyWith(seasonalSeason: id));
+  }
+
+  Future<void> setSeasonalHolidays(bool value) async {
+    await updateSettings(_settings.copyWith(seasonalHolidays: value));
+  }
+
   Future<void> setAutoConnectRadio(bool value) async {
     await updateSettings(_settings.copyWith(autoConnectRadio: value));
   }

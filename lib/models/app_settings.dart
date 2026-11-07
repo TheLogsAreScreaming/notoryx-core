@@ -161,6 +161,14 @@ class AppSettings {
   /// The chosen color theme's id (see BastionTheme); Blaze by default.
   final String appTheme;
 
+  /// Which palette the Seasonal theme shows: 'auto' follows the date,
+  /// otherwise a BastionSeason id such as 'winter'.
+  final String seasonalSeason;
+
+  /// Whether Seasonal switches to a holiday palette near Halloween,
+  /// Christmas and Valentine's Day when following the date.
+  final bool seasonalHolidays;
+
   /// Channel messages older than this many days are deleted; 0 keeps them.
   final int channelMessageRetentionDays;
   final bool imageMessagesEnabled;
@@ -277,6 +285,8 @@ class AppSettings {
     this.mapTelemetryMetric = 'battery',
     this.signChannelPosts = false,
     this.appTheme = 'blaze',
+    this.seasonalSeason = 'auto',
+    this.seasonalHolidays = true,
     this.channelMessageRetentionDays = 0,
     this.imageMessagesEnabled = false,
     this.imageProcessAutomatically = false,
@@ -366,6 +376,8 @@ class AppSettings {
       'map_telemetry_metric': mapTelemetryMetric,
       'sign_channel_posts': signChannelPosts,
       'app_theme': appTheme,
+      'seasonal_season': seasonalSeason,
+      'seasonal_holidays': seasonalHolidays,
       'channel_message_retention_days': channelMessageRetentionDays,
       'image_messages_enabled': imageMessagesEnabled,
       'image_process_automatically': imageProcessAutomatically,
@@ -484,6 +496,8 @@ class AppSettings {
       mapTelemetryMetric: json['map_telemetry_metric'] as String? ?? 'battery',
       signChannelPosts: json['sign_channel_posts'] as bool? ?? false,
       appTheme: json['app_theme'] as String? ?? 'blaze',
+      seasonalSeason: json['seasonal_season'] as String? ?? 'auto',
+      seasonalHolidays: json['seasonal_holidays'] as bool? ?? true,
       channelMessageRetentionDays:
           channelRetentionChoices.contains(
             json['channel_message_retention_days'],
@@ -615,6 +629,8 @@ class AppSettings {
     String? mapTelemetryMetric,
     bool? signChannelPosts,
     String? appTheme,
+    String? seasonalSeason,
+    bool? seasonalHolidays,
     int? channelMessageRetentionDays,
     bool? imageMessagesEnabled,
     bool? imageProcessAutomatically,
@@ -702,6 +718,8 @@ class AppSettings {
       mapTelemetryMetric: mapTelemetryMetric ?? this.mapTelemetryMetric,
       signChannelPosts: signChannelPosts ?? this.signChannelPosts,
       appTheme: appTheme ?? this.appTheme,
+      seasonalSeason: seasonalSeason ?? this.seasonalSeason,
+      seasonalHolidays: seasonalHolidays ?? this.seasonalHolidays,
       channelMessageRetentionDays:
           channelMessageRetentionDays ?? this.channelMessageRetentionDays,
       imageMessagesEnabled: imageMessagesEnabled ?? this.imageMessagesEnabled,

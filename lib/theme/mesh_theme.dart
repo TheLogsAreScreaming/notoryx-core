@@ -180,11 +180,11 @@ class MeshTheme {
         : BastionTheme.blaze.palette,
   );
 
-  /// The current theme if it's light, otherwise Bubble Gum (the light one).
+  /// The current theme if it's light, otherwise Pink Overload.
   static ThemeData light() => forPalette(
     MeshPalette.current.brightness == Brightness.light
         ? MeshPalette.current
-        : BastionTheme.bubbleGum.palette,
+        : BastionTheme.pinkOverload.palette,
   );
 
   /// Material theme for one of the Bastion palettes.
