@@ -10207,4 +10207,84 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'Geschiedenis gewist';
+
+  @override
+  String get privacy_title => 'Privacy';
+
+  @override
+  String get privacy_toolSubtitle =>
+      'Wat het mesh, deze telefoon en internet kunnen zien';
+
+  @override
+  String get privacy_meshHeading => 'Op het mesh';
+
+  @override
+  String get privacy_dmTitle => 'Directe berichten';
+
+  @override
+  String get privacy_dmBody =>
+      'Versleuteld tussen jouw radio en die van de ander. Repeaters sturen ze door maar kunnen ze niet lezen. Korte afzender- en ontvanger-ID\'s en de route gaan onversleuteld.';
+
+  @override
+  String get privacy_channelTitle => 'Kanalen';
+
+  @override
+  String get privacy_channelBody =>
+      'Versleuteld met de sleutel van het kanaal: wie de sleutel heeft, leest elk bericht. Sleutels van openbare en hashtagkanalen kent iedereen, behandel die kanalen dus als openbaar.';
+
+  @override
+  String get privacy_advertTitle => 'Adverts en posities';
+
+  @override
+  String get privacy_advertBody =>
+      'De naam en publieke sleutel van je radio, en zijn positie als je die deelt, worden onversleuteld uitgezonden naar iedereen binnen bereik.';
+
+  @override
+  String get privacy_phoneHeading => 'Op deze telefoon';
+
+  @override
+  String get privacy_phoneBody =>
+      'Berichten, contacten, routes, tracks, waypoints, batterijgeschiedenis en instellingen blijven in de privéopslag van de app, alleen beschermd door de beveiliging van de telefoon. Wat je exporteert, kan iedereen met het bestand lezen.';
+
+  @override
+  String get privacy_netHeading => 'Via internet';
+
+  @override
+  String get privacy_netIntro =>
+      'Alleen als je de functie gebruikt die het nodig heeft. Elk verzoek toont de dienst je IP-adres en wat er gevraagd werd.';
+
+  @override
+  String get privacy_netMaps =>
+      'Kaarten: tegels van OpenStreetMap, of Stadia Maps als je dat kiest, voor het gebied dat je bekijkt.';
+
+  @override
+  String get privacy_netTerrain =>
+      'Terrein: hoogtes van Open-Meteo voor dekking en zichtlijn.';
+
+  @override
+  String get privacy_netModels =>
+      'Downloads: vertaal- en beeldmodellen van Hugging Face.';
+
+  @override
+  String get privacy_netImages =>
+      'Afbeeldingen: GIF-zoeken bij Giphy en afbeeldingen uit pyx.li-links in berichten.';
+
+  @override
+  String get privacy_netLists =>
+      'Lijsten: regionale presets en de kanaalgids uit de GitHub-releaserepository van deze app.';
+
+  @override
+  String get privacy_netMqtt =>
+      'MQTT: alleen de brokers die je toevoegt. Als je uploaden aanzet, worden pakketten die je radio hoort daar gepubliceerd. Wachtwoorden staan in de beveiligde opslag van de telefoon.';
+
+  @override
+  String get privacy_netAnalyzer =>
+      'Analyzer: CoreScope-opvragingen (wie een pakket hoorde, repeaternamen) als je ze gebruikt.';
+
+  @override
+  String get privacy_notHeading => 'Wat NOTORYX niet doet';
+
+  @override
+  String get privacy_notBody =>
+      'Geen account, geen analytics, geen advertenties en geen crashrapporten. De ontwikkelaars ontvangen niets, tenzij je het zelf stuurt.';
 }

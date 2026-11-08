@@ -9772,4 +9772,80 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => '기록을 지웠습니다';
+
+  @override
+  String get privacy_title => '개인정보';
+
+  @override
+  String get privacy_toolSubtitle => '메시, 이 휴대폰, 인터넷이 볼 수 있는 것';
+
+  @override
+  String get privacy_meshHeading => '메시에서';
+
+  @override
+  String get privacy_dmTitle => '다이렉트 메시지';
+
+  @override
+  String get privacy_dmBody =>
+      '내 무전기와 상대 무전기 사이에서 암호화됩니다. 리피터는 전달하지만 읽을 수 없습니다. 짧은 송신자·수신자 ID와 경로는 암호화되지 않습니다.';
+
+  @override
+  String get privacy_channelTitle => '채널';
+
+  @override
+  String get privacy_channelBody =>
+      '채널 키로 암호화됩니다. 키가 있는 사람은 모든 메시지를 읽습니다. 공개 채널과 해시태그 채널의 키는 누구나 알기 때문에 공개된 것으로 취급하세요.';
+
+  @override
+  String get privacy_advertTitle => '광고와 위치';
+
+  @override
+  String get privacy_advertBody =>
+      '무전기의 이름과 공개 키, 그리고 공유한다면 위치가 범위 안의 모두에게 암호화 없이 방송됩니다.';
+
+  @override
+  String get privacy_phoneHeading => '이 휴대폰에서';
+
+  @override
+  String get privacy_phoneBody =>
+      '메시지, 연락처, 경로, 트랙, 웨이포인트, 배터리 기록, 설정은 앱 전용 저장소에 남으며 휴대폰 자체 보안으로만 보호됩니다. 내보낸 것은 파일을 가진 누구나 읽을 수 있습니다.';
+
+  @override
+  String get privacy_netHeading => '인터넷을 통해';
+
+  @override
+  String get privacy_netIntro =>
+      '필요한 기능을 쓸 때만. 각 요청은 서비스에 내 IP 주소와 요청 내용을 보여 줍니다.';
+
+  @override
+  String get privacy_netMaps =>
+      '지도: 보고 있는 지역의 타일을 OpenStreetMap(선택 시 Stadia Maps)에서 가져옵니다.';
+
+  @override
+  String get privacy_netTerrain => '지형: 커버리지와 가시선을 위한 고도를 Open-Meteo에서 가져옵니다.';
+
+  @override
+  String get privacy_netModels => '다운로드: 번역 및 사진 모델을 Hugging Face에서 받습니다.';
+
+  @override
+  String get privacy_netImages => '사진: Giphy GIF 검색과 메시지 속 pyx.li 링크의 이미지.';
+
+  @override
+  String get privacy_netLists =>
+      '목록: 지역 프리셋과 채널 목록을 이 앱의 GitHub 릴리스 저장소에서 가져옵니다.';
+
+  @override
+  String get privacy_netMqtt =>
+      'MQTT: 직접 추가한 브로커만. 업로드를 켜면 무전기가 들은 패킷이 그곳에 게시됩니다. 브로커 비밀번호는 휴대폰 보안 저장소에 보관됩니다.';
+
+  @override
+  String get privacy_netAnalyzer =>
+      '분석기: 사용할 때의 CoreScope 조회(패킷을 들은 곳, 리피터 이름).';
+
+  @override
+  String get privacy_notHeading => 'NOTORYX가 하지 않는 것';
+
+  @override
+  String get privacy_notBody =>
+      '계정, 분석, 광고, 충돌 보고가 없습니다. 직접 보내지 않는 한 개발자는 아무것도 받지 않습니다.';
 }

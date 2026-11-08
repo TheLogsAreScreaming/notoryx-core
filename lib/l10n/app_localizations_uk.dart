@@ -10289,4 +10289,84 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'Історію очищено';
+
+  @override
+  String get privacy_title => 'Конфіденційність';
+
+  @override
+  String get privacy_toolSubtitle =>
+      'Що бачать мережа, цей телефон та інтернет';
+
+  @override
+  String get privacy_meshHeading => 'У мережі';
+
+  @override
+  String get privacy_dmTitle => 'Особисті повідомлення';
+
+  @override
+  String get privacy_dmBody =>
+      'Шифруються між вашим радіо й радіо співрозмовника. Ретранслятори їх передають, але прочитати не можуть. Короткі ID відправника й одержувача та маршрут передаються відкрито.';
+
+  @override
+  String get privacy_channelTitle => 'Канали';
+
+  @override
+  String get privacy_channelBody =>
+      'Шифруються ключем каналу: хто має ключ, той читає всі повідомлення. Ключі публічних і хештег-каналів відомі всім, тож вважайте такі канали публічними.';
+
+  @override
+  String get privacy_advertTitle => 'Оголошення й позиції';
+
+  @override
+  String get privacy_advertBody =>
+      'Назва та відкритий ключ радіо, а також його позиція, якщо ви її поширюєте, передаються без шифрування всім у зоні прийому.';
+
+  @override
+  String get privacy_phoneHeading => 'На цьому телефоні';
+
+  @override
+  String get privacy_phoneBody =>
+      'Повідомлення, контакти, маршрути, треки, точки, історія батарей і налаштування зберігаються в закритому сховищі застосунку й захищені лише засобами телефона. Усе експортоване може прочитати будь-хто з файлом.';
+
+  @override
+  String get privacy_netHeading => 'Через інтернет';
+
+  @override
+  String get privacy_netIntro =>
+      'Лише коли ви користуєтеся функцією, якій це потрібно. Кожен запит показує сервісу вашу IP-адресу й сам запит.';
+
+  @override
+  String get privacy_netMaps =>
+      'Мапи: плитки OpenStreetMap або, якщо обрано, Stadia Maps для області, яку ви переглядаєте.';
+
+  @override
+  String get privacy_netTerrain =>
+      'Рельєф: висоти Open-Meteo для покриття та прямої видимості.';
+
+  @override
+  String get privacy_netModels =>
+      'Завантаження: моделі перекладу й зображень з Hugging Face.';
+
+  @override
+  String get privacy_netImages =>
+      'Зображення: пошук GIF у Giphy та зображення з посилань pyx.li у повідомленнях.';
+
+  @override
+  String get privacy_netLists =>
+      'Списки: регіональні налаштування й каталог каналів з GitHub-репозиторію релізів застосунку.';
+
+  @override
+  String get privacy_netMqtt =>
+      'MQTT: лише брокери, яких ви додали. Якщо ввімкнути вивантаження, почуті радіо пакети публікуються там. Паролі зберігаються в захищеному сховищі телефона.';
+
+  @override
+  String get privacy_netAnalyzer =>
+      'Аналізатор: запити до CoreScope (хто чув пакет, назви ретрансляторів), коли ви ними користуєтеся.';
+
+  @override
+  String get privacy_notHeading => 'Чого NOTORYX не робить';
+
+  @override
+  String get privacy_notBody =>
+      'Немає облікового запису, аналітики, реклами та звітів про збої. Розробники нічого не отримують, якщо ви самі не надішлете.';
 }

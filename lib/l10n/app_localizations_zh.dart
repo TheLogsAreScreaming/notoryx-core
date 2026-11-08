@@ -9558,4 +9558,75 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => '历史已清除';
+
+  @override
+  String get privacy_title => '隐私';
+
+  @override
+  String get privacy_toolSubtitle => '网络、这部手机和互联网能看到什么';
+
+  @override
+  String get privacy_meshHeading => '在网状网络上';
+
+  @override
+  String get privacy_dmTitle => '私信';
+
+  @override
+  String get privacy_dmBody =>
+      '在你和对方的电台之间加密。中继会转发但无法读取。发送方和接收方的短 ID 以及路由以明文传输。';
+
+  @override
+  String get privacy_channelTitle => '频道';
+
+  @override
+  String get privacy_channelBody =>
+      '用频道密钥加密：有密钥的人能读到所有消息。公共频道和话题频道的密钥人人皆知，请把它们当作公开的。';
+
+  @override
+  String get privacy_advertTitle => '广播与位置';
+
+  @override
+  String get privacy_advertBody => '电台的名称、公钥，以及你选择分享的位置，会以明文广播给范围内的所有人。';
+
+  @override
+  String get privacy_phoneHeading => '在这部手机上';
+
+  @override
+  String get privacy_phoneBody =>
+      '消息、联系人、路由、轨迹、航点、电池历史和设置保存在应用的私有存储中，只受手机自身安全保护。你导出的内容，任何拿到文件的人都能读取。';
+
+  @override
+  String get privacy_netHeading => '通过互联网';
+
+  @override
+  String get privacy_netIntro => '只在你使用需要它的功能时。每次请求都会让服务看到你的 IP 地址和请求内容。';
+
+  @override
+  String get privacy_netMaps =>
+      '地图：从 OpenStreetMap（或你选择的 Stadia Maps）获取你查看区域的图块。';
+
+  @override
+  String get privacy_netTerrain => '地形：从 Open-Meteo 获取海拔，用于覆盖和视线分析。';
+
+  @override
+  String get privacy_netModels => '下载：从 Hugging Face 下载翻译和图片模型。';
+
+  @override
+  String get privacy_netImages => '图片：在 Giphy 搜索 GIF，以及消息中 pyx.li 链接的图片。';
+
+  @override
+  String get privacy_netLists => '列表：从本应用的 GitHub 发布仓库获取地区预设和频道目录。';
+
+  @override
+  String get privacy_netMqtt =>
+      'MQTT：只连接你添加的代理。开启上传后，电台收到的数据包会发布到那里。代理密码保存在手机的安全存储中。';
+
+  @override
+  String get privacy_netAnalyzer => '分析器：使用时向 CoreScope 查询（谁收到了数据包、中继名称）。';
+
+  @override
+  String get privacy_notHeading => 'NOTORYX 不做的事';
+
+  @override
+  String get privacy_notBody => '没有账号、没有分析、没有广告、没有崩溃报告。除非你自己发送，开发者不会收到任何东西。';
 }

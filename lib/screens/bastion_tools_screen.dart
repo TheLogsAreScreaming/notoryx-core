@@ -7,6 +7,7 @@ import '../widgets/glass_action_row.dart';
 
 import 'antenna_coverage_screen.dart';
 import 'antenna_hunt_screen.dart';
+import 'privacy_screen.dart';
 import 'battery_watch_screen.dart';
 import 'bastion_about_screen.dart';
 import 'bot_settings_screen.dart';
@@ -201,6 +202,12 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
       (
         title: null as String?,
         actions: <_ToolAction>[
+          _ToolAction(
+            icon: Icons.privacy_tip_outlined,
+            title: l10n.privacy_title,
+            subtitle: l10n.privacy_toolSubtitle,
+            builder: (_) => const PrivacyScreen(),
+          ),
           _ToolAction(
             icon: Icons.info_outline_rounded,
             title: l10n.bastionTools_about,

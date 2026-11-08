@@ -10235,4 +10235,84 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'Előzmények törölve';
+
+  @override
+  String get privacy_title => 'Adatvédelem';
+
+  @override
+  String get privacy_toolSubtitle =>
+      'Mit lát a háló, ez a telefon és az internet';
+
+  @override
+  String get privacy_meshHeading => 'A hálón';
+
+  @override
+  String get privacy_dmTitle => 'Közvetlen üzenetek';
+
+  @override
+  String get privacy_dmBody =>
+      'A te rádiód és az övék között titkosítva. Az átjátszók továbbítják, de nem olvashatják. A rövid feladó- és címzettazonosítók és az útvonal titkosítatlan.';
+
+  @override
+  String get privacy_channelTitle => 'Csatornák';
+
+  @override
+  String get privacy_channelBody =>
+      'A csatorna kulcsával titkosítva: akinél a kulcs van, minden üzenetet olvas. A nyilvános és hashtag csatornák kulcsát mindenki ismeri, ezeket kezeld nyilvánosként.';
+
+  @override
+  String get privacy_advertTitle => 'Hirdetések és helyzetek';
+
+  @override
+  String get privacy_advertBody =>
+      'A rádiód neve és nyilvános kulcsa, valamint ha megosztod, a helyzete titkosítatlanul sugárzódik mindenkinek a hatótávon belül.';
+
+  @override
+  String get privacy_phoneHeading => 'Ezen a telefonon';
+
+  @override
+  String get privacy_phoneBody =>
+      'Az üzenetek, névjegyek, útvonalak, nyomvonalak, útpontok, akku előzmények és beállítások az alkalmazás privát tárhelyén maradnak, csak a telefon saját védelmével. Amit exportálsz, azt bárki olvashatja, akinél a fájl van.';
+
+  @override
+  String get privacy_netHeading => 'Az interneten át';
+
+  @override
+  String get privacy_netIntro =>
+      'Csak ha az azt igénylő funkciót használod. Minden kérés megmutatja a szolgáltatásnak az IP-címedet és a kérést.';
+
+  @override
+  String get privacy_netMaps =>
+      'Térképek: csempék az OpenStreetMaptől, vagy ha választod, a Stadia Mapstől, a nézett területre.';
+
+  @override
+  String get privacy_netTerrain =>
+      'Domborzat: magasság az Open-Meteótól lefedettséghez és rálátáshoz.';
+
+  @override
+  String get privacy_netModels =>
+      'Letöltések: fordító- és képmodellek a Hugging Face-ről.';
+
+  @override
+  String get privacy_netImages =>
+      'Képek: GIF-keresés a Giphyn, és képek az üzenetekben lévő pyx.li hivatkozásokból.';
+
+  @override
+  String get privacy_netLists =>
+      'Listák: regionális beállítások és csatornajegyzék az alkalmazás GitHub kiadási tárolójából.';
+
+  @override
+  String get privacy_netMqtt =>
+      'MQTT: csak az általad hozzáadott brókerek. Ha bekapcsolod a feltöltést, a rádiód által hallott csomagok ott jelennek meg. A jelszavak a telefon biztonságos tárhelyén vannak.';
+
+  @override
+  String get privacy_netAnalyzer =>
+      'Elemző: CoreScope lekérdezések (ki hallott egy csomagot, átjátszónevek), ha használod őket.';
+
+  @override
+  String get privacy_notHeading => 'Amit a NOTORYX nem csinál';
+
+  @override
+  String get privacy_notBody =>
+      'Nincs fiók, analitika, reklám és összeomlás-jelentés. A fejlesztők semmit sem kapnak, hacsak te magad el nem küldöd.';
 }
