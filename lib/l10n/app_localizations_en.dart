@@ -10004,16 +10004,6 @@ class AppLocalizationsEn extends AppLocalizations {
       'Halloween, Christmas and Valentine\'s Day on their dates';
 
   @override
-  String get theme_darkMode => 'Different theme in dark mode';
-
-  @override
-  String get theme_darkModeHint =>
-      'Use another theme while your device is set to dark mode';
-
-  @override
-  String get theme_darkModeTheme => 'Dark mode theme';
-
-  @override
   String get coords_setting => 'Coordinate format';
 
   @override
@@ -10045,6 +10035,23 @@ class AppLocalizationsEn extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'Your radio uses $width-byte';
   }
+
+  @override
+  String get lite_qrPasteHint =>
+      'This build has no camera scanner. Paste the text from the QR code instead.';
+
+  @override
+  String get lite_qrPasteLabel => 'QR code text';
+
+  @override
+  String get theme_darkMode => 'Different theme in dark mode';
+
+  @override
+  String get theme_darkModeHint =>
+      'Use another theme while your device is set to dark mode';
+
+  @override
+  String get theme_darkModeTheme => 'Dark mode theme';
 
   @override
   String get batteryWatch_title => 'Battery watch';

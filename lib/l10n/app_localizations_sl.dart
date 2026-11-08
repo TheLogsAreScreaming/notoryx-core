@@ -10134,16 +10134,6 @@ class AppLocalizationsSl extends AppLocalizations {
       'Noč čarovnic, božič in valentinovo na njihove datume';
 
   @override
-  String get theme_darkMode => 'Druga tema v temnem načinu';
-
-  @override
-  String get theme_darkModeHint =>
-      'Uporabi drugo temo, ko je naprava v temnem načinu';
-
-  @override
-  String get theme_darkModeTheme => 'Tema temnega načina';
-
-  @override
   String get coords_setting => 'Oblika koordinat';
 
   @override
@@ -10175,6 +10165,23 @@ class AppLocalizationsSl extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'Vaš radio uporablja $width bajte';
   }
+
+  @override
+  String get lite_qrPasteHint =>
+      'Ta različica nima optičnega bralnika s kamero. Namesto tega prilepite besedilo iz kode QR.';
+
+  @override
+  String get lite_qrPasteLabel => 'Besedilo kode QR';
+
+  @override
+  String get theme_darkMode => 'Druga tema v temnem načinu';
+
+  @override
+  String get theme_darkModeHint =>
+      'Uporabi drugo temo, ko je naprava v temnem načinu';
+
+  @override
+  String get theme_darkModeTheme => 'Tema temnega načina';
 
   @override
   String get batteryWatch_title => 'Nadzor baterij';

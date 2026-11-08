@@ -10177,16 +10177,6 @@ class AppLocalizationsRu extends AppLocalizations {
       'Хэллоуин, Рождество и День святого Валентина в свои даты';
 
   @override
-  String get theme_darkMode => 'Другая тема в тёмном режиме';
-
-  @override
-  String get theme_darkModeHint =>
-      'Использовать другую тему, пока устройство в тёмном режиме';
-
-  @override
-  String get theme_darkModeTheme => 'Тема тёмного режима';
-
-  @override
   String get coords_setting => 'Формат координат';
 
   @override
@@ -10218,6 +10208,23 @@ class AppLocalizationsRu extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'Ваше радио использует $width байт';
   }
+
+  @override
+  String get lite_qrPasteHint =>
+      'В этой версии нет сканера с камерой. Вставьте текст из QR-кода.';
+
+  @override
+  String get lite_qrPasteLabel => 'Текст QR-кода';
+
+  @override
+  String get theme_darkMode => 'Другая тема в тёмном режиме';
+
+  @override
+  String get theme_darkModeHint =>
+      'Использовать другую тему, пока устройство в тёмном режиме';
+
+  @override
+  String get theme_darkModeTheme => 'Тема тёмного режима';
 
   @override
   String get batteryWatch_title => 'Контроль батарей';

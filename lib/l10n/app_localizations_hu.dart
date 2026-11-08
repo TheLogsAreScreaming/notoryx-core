@@ -10121,16 +10121,6 @@ class AppLocalizationsHu extends AppLocalizations {
       'Halloween, karácsony és Valentin-nap a saját napjukon';
 
   @override
-  String get theme_darkMode => 'Másik téma sötét módban';
-
-  @override
-  String get theme_darkModeHint =>
-      'Másik téma használata, amíg az eszköz sötét módban van';
-
-  @override
-  String get theme_darkModeTheme => 'Sötét mód témája';
-
-  @override
   String get coords_setting => 'Koordinátaformátum';
 
   @override
@@ -10162,6 +10152,23 @@ class AppLocalizationsHu extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'A rádiód $width bájtosat használ';
   }
+
+  @override
+  String get lite_qrPasteHint =>
+      'Ebben a változatban nincs kamerás olvasó. Illeszd be a QR-kód szövegét.';
+
+  @override
+  String get lite_qrPasteLabel => 'QR-kód szövege';
+
+  @override
+  String get theme_darkMode => 'Másik téma sötét módban';
+
+  @override
+  String get theme_darkModeHint =>
+      'Másik téma használata, amíg az eszköz sötét módban van';
+
+  @override
+  String get theme_darkModeTheme => 'Sötét mód témája';
 
   @override
   String get batteryWatch_title => 'Akkufigyelés';

@@ -9659,15 +9659,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get seasonal_holidaysHint => '핼러윈, 크리스마스, 밸런타인데이 기간에 적용';
 
   @override
-  String get theme_darkMode => '다크 모드에서 다른 테마';
-
-  @override
-  String get theme_darkModeHint => '기기가 다크 모드일 때 다른 테마를 사용합니다';
-
-  @override
-  String get theme_darkModeTheme => '다크 모드 테마';
-
-  @override
   String get coords_setting => '좌표 형식';
 
   @override
@@ -9699,6 +9690,22 @@ class AppLocalizationsKo extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return '내 무전기는 $width바이트 사용';
   }
+
+  @override
+  String get lite_qrPasteHint =>
+      '이 빌드에는 카메라 스캐너가 없습니다. 대신 QR 코드의 텍스트를 붙여 넣으세요.';
+
+  @override
+  String get lite_qrPasteLabel => 'QR 코드 텍스트';
+
+  @override
+  String get theme_darkMode => '다크 모드에서 다른 테마';
+
+  @override
+  String get theme_darkModeHint => '기기가 다크 모드일 때 다른 테마를 사용합니다';
+
+  @override
+  String get theme_darkModeTheme => '다크 모드 테마';
 
   @override
   String get batteryWatch_title => '배터리 감시';
