@@ -10231,23 +10231,626 @@ class AppLocalizationsSk extends AppLocalizations {
   String get batteryWatch_cleared => 'História vymazaná';
 
   @override
-  String get a11y_clear => 'Vymazať';
+  String get privacy_title => 'Súkromie';
 
   @override
-  String get a11y_showOnMap => 'Zobraziť na mape';
+  String get privacy_toolSubtitle => 'Čo vidí sieť, tento telefón a internet';
 
   @override
-  String get a11y_showHide => 'Zobraziť alebo skryť';
+  String get privacy_meshHeading => 'V sieti';
 
   @override
-  String get a11y_flash => 'Blesk';
+  String get privacy_dmTitle => 'Priame správy';
 
   @override
-  String get a11y_switchCamera => 'Prepnúť kameru';
+  String get privacy_dmBody =>
+      'Šifrované medzi vaším rádiom a rádiom príjemcu. Opakovače ich posúvajú ďalej, ale prečítať ich nevedia. Krátke ID odosielateľa a príjemcu a trasa sú nešifrované.';
 
   @override
-  String get a11y_pauseGif => 'Prehrať alebo pozastaviť GIF';
+  String get privacy_channelTitle => 'Kanály';
 
   @override
-  String get a11y_chooseGif => 'Vybrať tento GIF';
+  String get privacy_channelBody =>
+      'Šifrované kľúčom kanála: kto má kľúč, prečíta každú správu. Kľúče verejných a hashtagových kanálov pozná každý, preto ich berte ako verejné.';
+
+  @override
+  String get privacy_advertTitle => 'Ohlásenia a polohy';
+
+  @override
+  String get privacy_advertBody =>
+      'Názov a verejný kľúč rádia a jeho poloha, ak ju zdieľate, sa vysielajú nešifrovane všetkým v dosahu.';
+
+  @override
+  String get privacy_phoneHeading => 'Na tomto telefóne';
+
+  @override
+  String get privacy_phoneBody =>
+      'Správy, kontakty, trasy, záznamy, body, história batérií a nastavenia zostávajú v súkromnom úložisku aplikácie, chránené len zabezpečením telefónu. Čo exportujete, prečíta každý, kto má súbor.';
+
+  @override
+  String get privacy_netHeading => 'Cez internet';
+
+  @override
+  String get privacy_netIntro =>
+      'Len keď použijete funkciu, ktorá to potrebuje. Každá požiadavka ukáže službe vašu IP adresu a čo sa žiadalo.';
+
+  @override
+  String get privacy_netMaps =>
+      'Mapy: dlaždice z OpenStreetMap alebo, ak ho zvolíte, Stadia Maps pre zobrazenú oblasť.';
+
+  @override
+  String get privacy_netTerrain =>
+      'Terén: nadmorské výšky z Open-Meteo pre pokrytie a priamu viditeľnosť.';
+
+  @override
+  String get privacy_netModels =>
+      'Sťahovanie: modely na preklad a obrázky z Hugging Face.';
+
+  @override
+  String get privacy_netImages =>
+      'Obrázky: hľadanie GIF v Giphy a obrázky z odkazov pyx.li v správach.';
+
+  @override
+  String get privacy_netLists =>
+      'Zoznamy: regionálne predvoľby a adresár kanálov z GitHub repozitára vydaní aplikácie.';
+
+  @override
+  String get privacy_netMqtt =>
+      'MQTT: len brokery, ktoré pridáte. Ak zapnete nahrávanie, pakety, ktoré rádio počuje, sa tam zverejnia. Heslá sú v zabezpečenom úložisku telefónu.';
+
+  @override
+  String get privacy_netAnalyzer =>
+      'Analyzátor: dotazy CoreScope (kto počul paket, názvy opakovačov), keď ich použijete.';
+
+  @override
+  String get privacy_notHeading => 'Čo NOTORYX nerobí';
+
+  @override
+  String get privacy_notBody =>
+      'Žiadny účet, analytika, reklamy ani hlásenia o pádoch. Vývojári nedostanú nič, pokiaľ to sami nepošlete.';
+
+  @override
+  String get team_title => 'Sledovanie tímu';
+
+  @override
+  String get team_hint =>
+      'Kým je výlet aktívny, zdieľa vašu polohu v súkromnom kanáli, aby vás tím videl na mape. Vypne sa na konci výletu alebo po 12 hodinách.';
+
+  @override
+  String get team_channel => 'Kanál';
+
+  @override
+  String get team_noChannel =>
+      'Najprv pridajte súkromný kanál. Sledovanie nikdy neposiela do verejných ani hashtagových kanálov.';
+
+  @override
+  String get team_every => 'Každých';
+
+  @override
+  String team_minutes(int minutes) {
+    return '$minutes min';
+  }
+
+  @override
+  String get team_needTrip => 'Začnite výlet, aby ste zdieľali polohu.';
+
+  @override
+  String team_lastShared(String age) {
+    return 'Naposledy zdieľané $age';
+  }
+
+  @override
+  String get team_waitingGps => 'Čaká sa na polohu z rádia';
+
+  @override
+  String get waypoints_title => 'Body trasy';
+
+  @override
+  String get waypoints_toolSubtitle =>
+      'Uložené miesta a trasy; import a export GPX';
+
+  @override
+  String get waypoints_importFile => 'Importovať súbor GPX';
+
+  @override
+  String get waypoints_importPaste => 'Vložiť GPX';
+
+  @override
+  String get waypoints_export => 'Exportovať GPX';
+
+  @override
+  String get waypoints_empty =>
+      'Zatiaľ žiadne body. Importujte súbor GPX alebo uložte miesto zdieľané v chate.';
+
+  @override
+  String waypoints_waypoints(int count) {
+    return 'Body ($count)';
+  }
+
+  @override
+  String waypoints_routes(int count) {
+    return 'Trasy ($count)';
+  }
+
+  @override
+  String waypoints_routeSummary(int points, String km) {
+    return '$points bodov · $km km';
+  }
+
+  @override
+  String get waypoints_delete => 'Odstrániť';
+
+  @override
+  String get waypoints_copy => 'Kopírovať súradnice';
+
+  @override
+  String get waypoints_sendToChannel => 'Poslať do kanála';
+
+  @override
+  String get waypoints_pickChannel => 'Do ktorého kanála poslať?';
+
+  @override
+  String waypoints_sent(String channel) {
+    return 'Odoslané do $channel';
+  }
+
+  @override
+  String get waypoints_importFailed =>
+      'Toto nie je súbor GPX, ktorý aplikácia vie prečítať.';
+
+  @override
+  String get waypoints_pasteHint => 'Sem vložte text GPX';
+
+  @override
+  String get waypoints_import => 'Importovať';
+
+  @override
+  String waypoints_imported(int waypoints, int routes) {
+    return 'Pridané body: $waypoints, trasy: $routes';
+  }
+
+  @override
+  String get waypoints_save => 'Uložiť ako bod';
+
+  @override
+  String get waypoints_unnamed => 'Zdieľané miesto';
+
+  @override
+  String get waypoints_saved => 'Uložené v Bodoch trasy';
+
+  @override
+  String get waypoints_alreadySaved => 'Už je v Bodoch trasy';
+
+  @override
+  String get netChange_title => 'Zmeny v sieti';
+
+  @override
+  String get netChange_toolSubtitle =>
+      'Opakovače, ktoré sa objavili nablízku alebo stíchli';
+
+  @override
+  String netChange_newDirect(String name) {
+    return 'Nový opakovač počutý priamo: $name';
+  }
+
+  @override
+  String netChange_newHops(String name, int hops) {
+    return 'Nový opakovač $hops skok ďaleko: $name';
+  }
+
+  @override
+  String netChange_wentQuiet(String name, int hours) {
+    return '$name stíchol: nepočuť $hours h';
+  }
+
+  @override
+  String get netChange_empty =>
+      'Zatiaľ žiadne zmeny. Tu sa zobrazia obľúbené opakovače, ktoré stíchnu, a nové opakovače nablízku.';
+
+  @override
+  String get netChange_quietSetting => 'Obľúbený opakovač stíchne';
+
+  @override
+  String get netChange_quietHint =>
+      'Upozorniť, keď obľúbený opakovač nepočuť tak dlho';
+
+  @override
+  String get netChange_newSetting => 'Nový opakovač nablízku';
+
+  @override
+  String get netChange_newHint =>
+      'Upozorniť, keď je neznámy opakovač počuť do jedného skoku';
+
+  @override
+  String get netChange_clear => 'Vymazať';
+
+  @override
+  String get netChange_notifTitle => 'Zmena v sieti';
+
+  @override
+  String get trouble_title => 'Riešenie problémov';
+
+  @override
+  String get trouble_toolSubtitle =>
+      'Pomoc krok za krokom, keď niečo nefunguje';
+
+  @override
+  String get trouble_pick => 'Čo je zle?';
+
+  @override
+  String get trouble_noDelivery => 'Správy sa nedoručujú';
+
+  @override
+  String get trouble_noConnect => 'Neviem sa pripojiť k rádiu';
+
+  @override
+  String get trouble_hearNobody => 'Nikoho nepočujem';
+
+  @override
+  String get trouble_startHere => 'Začnite tu';
+
+  @override
+  String get trouble_resultOk => 'OK';
+
+  @override
+  String get trouble_resultProblem => 'Problém';
+
+  @override
+  String get trouble_resultUnchecked => 'Nedá sa overiť';
+
+  @override
+  String get trouble_connectedNow =>
+      'Teraz ste pripojení. Ak spojenie stále padá, kroky nižšie aj tak pomôžu.';
+
+  @override
+  String get trouble_allOk =>
+      'Všetky kontroly prešli. Ak to stále nefunguje, pozrite si kroky nižšie.';
+
+  @override
+  String get trouble_connected => 'Vaše rádio je pripojené';
+
+  @override
+  String get trouble_connectedAdvice =>
+      'Najprv pripojte rádio: Nastavenia → Pripojiť rádio.';
+
+  @override
+  String get trouble_routes => 'K ľuďom, ktorým píšete, sú známe trasy';
+
+  @override
+  String get trouble_routesAdvice =>
+      'Správy niekomu bez známej trasy zaplavia celú sieť a často nedorazia. Počkajte, kým sa ohlási, alebo ho o to požiadajte, a napíšte znova.';
+
+  @override
+  String get trouble_heardRecently =>
+      'Ľudí, ktorým píšete, bolo počuť za posledný deň';
+
+  @override
+  String get trouble_heardRecentlyAdvice =>
+      'Kto nebol dlho počuť, môže byť mimo dosahu alebo vypnutý. Jeho správy sa nepotvrdia, kým sa nevráti.';
+
+  @override
+  String get trouble_neighbours => 'Vaše rádio počuje iné uzly';
+
+  @override
+  String get trouble_neighboursAdvice =>
+      'Ak nič nepočuť priamo, rádio odtiaľto nedosiahne sieť. Zdvihnite anténu, choďte vyššie alebo bližšie k opakovaču.';
+
+  @override
+  String get trouble_bluetooth =>
+      'Bluetooth je zapnutý a aplikácia ho smie používať';
+
+  @override
+  String get trouble_bluetoothAdvice =>
+      'Skontrolujte, či je Bluetooth zapnutý a či má NOTORYX Core v nastaveniach telefónu povolenie Bluetooth (a v Androide Zariadenia v okolí).';
+
+  @override
+  String get trouble_otherApp =>
+      'Žiadny iný telefón ani aplikácia nie je pripojená k rádiu';
+
+  @override
+  String get trouble_otherAppAdvice =>
+      'Rádio komunikuje naraz len s jednou aplikáciou. Zatvorte iné aplikácie MeshCore alebo vypnite Bluetooth na iných spárovaných telefónoch.';
+
+  @override
+  String get trouble_inRange => 'Rádio je zapnuté a nablízku';
+
+  @override
+  String get trouble_inRangeAdvice =>
+      'Skontrolujte, či je rádio nabité, zapnuté a pár metrov od vás. Reštart rádia často vyrieši zaseknuté spojenie.';
+
+  @override
+  String get trouble_otherTransport => 'Skúste iný spôsob pripojenia';
+
+  @override
+  String get trouble_otherTransportAdvice =>
+      'Ak Bluetooth stále zlyháva, pripojte sa USB káblom alebo cez Wi-Fi (TCP), ak to rádio podporuje.';
+
+  @override
+  String get trouble_noise => 'Rádio sa neutápa v šume';
+
+  @override
+  String get trouble_noiseAdvice =>
+      'Vysoká úroveň šumu skrýva slabé signály. Dajte anténu ďalej od elektroniky, nabíjačiek a solárnych regulátorov.';
+
+  @override
+  String get trouble_region => 'Rádio používa nastavenia vašej oblasti';
+
+  @override
+  String get trouble_regionAdvice =>
+      'S inou frekvenciou, šírkou pásma alebo rozprestieracím faktorom než miestna sieť nikoho nepočujete. Porovnajte Nastavenia → Rádio s tým, čo používa vaša oblasť.';
+
+  @override
+  String get trouble_antenna => 'Anténa je nasadená';
+
+  @override
+  String get trouble_antennaAdvice =>
+      'Uistite sa, že anténa je pevne priskrutkovaná. Nikdy nevysielajte bez nej; môže to poškodiť rádio.';
+
+  @override
+  String get mesh_title => 'Stav siete';
+
+  @override
+  String get mesh_overallGood => 'Sieť vyzerá v poriadku';
+
+  @override
+  String get mesh_overallFair => 'Sieť funguje, ale s problémami';
+
+  @override
+  String get mesh_overallPoor => 'Sieť má problémy';
+
+  @override
+  String get mesh_overallUnknown => 'Zatiaľ málo údajov';
+
+  @override
+  String get mesh_gradeGood => 'Dobrý';
+
+  @override
+  String get mesh_gradeFair => 'Priemerný';
+
+  @override
+  String get mesh_gradePoor => 'Slabý';
+
+  @override
+  String get mesh_gradeUnknown => 'Bez údajov';
+
+  @override
+  String get mesh_noise => 'Šum';
+
+  @override
+  String mesh_noiseValue(String dbm) {
+    return 'Úroveň šumu $dbm dBm';
+  }
+
+  @override
+  String get mesh_signal => 'Posledný signál';
+
+  @override
+  String mesh_signalValue(String db) {
+    return 'SNR $db dB';
+  }
+
+  @override
+  String get mesh_busy => 'Využitie kanála';
+
+  @override
+  String mesh_busyValue(int percent) {
+    return 'vo vysielaní $percent % z posledných 15 minút';
+  }
+
+  @override
+  String get mesh_neighbours => 'Počuté priamo';
+
+  @override
+  String mesh_neighboursValue(int count) {
+    return '$count uzlov za poslednú hodinu';
+  }
+
+  @override
+  String get mesh_delivery => 'Priame správy';
+
+  @override
+  String mesh_deliveryValue(int delivered, int total) {
+    return 'doručené $delivered z $total za posledný deň';
+  }
+
+  @override
+  String get mesh_tipNoise =>
+      'Niečo v blízkosti šumí na tejto frekvencii. Dajte anténu ďalej od elektroniky a nabíjačiek.';
+
+  @override
+  String get mesh_tipSignal =>
+      'Posledný paket bol slabý. Zdvihnite anténu alebo choďte vyššie.';
+
+  @override
+  String get mesh_tipBusy =>
+      'Kanál je vyťažený. Píšte stručne a vyhnite sa zaplavovaniu.';
+
+  @override
+  String get mesh_tipNeighbours =>
+      'Priamo počuť málo uzlov. Zdvihnite anténu alebo sa priblížte k opakovaču.';
+
+  @override
+  String get mesh_tipDelivery =>
+      'Mnoho správ nie je potvrdených. Otvorte neúspešnú správu a pozrite, kde sa zastavila.';
+
+  @override
+  String routeHealth_staleTitle(String name) {
+    return 'Trasa k $name môže byť zastaraná';
+  }
+
+  @override
+  String routeHealth_weakTitle(String name) {
+    return 'Trasa k $name je nespoľahlivá';
+  }
+
+  @override
+  String routeHealth_lastWorkedHours(int hours) {
+    return 'naposledy fungovala pred $hours h';
+  }
+
+  @override
+  String routeHealth_lastWorkedDays(int days) {
+    return 'naposledy fungovala pred $days dňami';
+  }
+
+  @override
+  String routeHealth_notHeard(int days) {
+    return 'nepočuť $days dní';
+  }
+
+  @override
+  String routeHealth_failures(int failures, int attempts) {
+    return '$failures z $attempts pokusov zlyhalo';
+  }
+
+  @override
+  String routeHealth_longPath(int hops) {
+    return '$hops skokov';
+  }
+
+  @override
+  String get routeHealth_useFlood => 'Nájsť novú trasu';
+
+  @override
+  String get routeHealth_keep => 'Ponechať trasu';
+
+  @override
+  String get readiness_sos => 'Príjemcovia SOS';
+
+  @override
+  String get readiness_sosOk => 'SOS má príjemcov.';
+
+  @override
+  String get readiness_sosBlocked =>
+      'SOS nemá komu poslať. Pridajte účastníkov výletu zo svojich kontaktov alebo nastavte SOS kanál.';
+
+  @override
+  String get readiness_routes => 'Trasy k účastníkom';
+
+  @override
+  String get readiness_routesOk => 'Ku každému účastníkovi je známa trasa.';
+
+  @override
+  String readiness_routesMissing(String names) {
+    return 'K $names nie je známa trasa. Správy sa budú šíriť zaplavením, kým sa trasa nenaučí. Pošlite im správu pred odchodom.';
+  }
+
+  @override
+  String get readiness_notifications => 'Upozornenia';
+
+  @override
+  String get readiness_notificationsOk => 'Povolené.';
+
+  @override
+  String get readiness_notificationsOff =>
+      'Upozornenia sú vypnuté, takže nebudete počuť odpovede, hlásenia ani výstrahy.';
+
+  @override
+  String get readiness_batteryOpt => 'Optimalizácia batérie';
+
+  @override
+  String get readiness_batteryOptOk => 'NOTORYX Core je vyňatý.';
+
+  @override
+  String get readiness_batteryOptOn =>
+      'Android môže aplikáciu na pozadí zastaviť. Vypnite to v Nastavenia → Nastavenia aplikácie → Upozornenia.';
+
+  @override
+  String get readiness_blockedTitle => 'Výlet sa ešte nedá začať';
+
+  @override
+  String readiness_warnTitle(int count) {
+    return '$count vecí na kontrolu';
+  }
+
+  @override
+  String get readiness_startAnyway => 'Začať aj tak';
+
+  @override
+  String get readiness_review => 'Skontrolovať';
+
+  @override
+  String get readiness_summaryReady => 'Pripravené na cestu';
+
+  @override
+  String readiness_summaryWarn(int count) {
+    return '$count na kontrolu';
+  }
+
+  @override
+  String get readiness_summaryBlocked => 'SOS sa k nikomu nedostane';
+
+  @override
+  String get coords_maidenhead => 'Lokátor Maidenhead';
+
+  @override
+  String get reactions_radioTitle => 'Posielať reakcie rádiom';
+
+  @override
+  String get reactions_radioHint =>
+      'Každá reakcia je paket vo vzduchu. Automaticky ich v pásme EÚ 868 MHz, kde je vysielací čas obmedzený, necháva len na tomto zariadení.';
+
+  @override
+  String get reactions_radioAuto => 'Automaticky';
+
+  @override
+  String get reactions_radioOn => 'Zap.';
+
+  @override
+  String get reactions_radioOff => 'Vyp. (toto zariadenie)';
+
+  @override
+  String get batteryWatch_auto => 'Kontrolovať automaticky';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Kým je pripojené rádio, aplikácia sa pravidelne pýta opakovača na batériu. Odpovie len vtedy, ak ste prihlásení.';
+
+  @override
+  String get batteryWatch_interval => 'Kontrolovať každých';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Najviac 6 kontrol za hodinu pre všetky opakovače, aspoň 2 minúty od seba.';
+
+  @override
+  String get batteryWatch_add => 'Pridať opakovač';
+
+  @override
+  String get batteryWatch_pick => 'Vyberte opakovač na sledovanie';
+
+  @override
+  String get batteryWatch_noRepeaters =>
+      'V kontaktoch zatiaľ nie sú opakovače.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Žiadna odpoveď na posledných $count kontrol. Otvorte opakovač a prihláste sa znova.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Kontroluje sa…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Batéria opakovača';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name je na $percent % ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Batéria $name rýchlo klesá: pri tomto tempe vybitá asi o $days dní.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name neodpovedal na $count kontrol batérie.';
+  }
 }

@@ -10237,23 +10237,627 @@ class AppLocalizationsHu extends AppLocalizations {
   String get batteryWatch_cleared => 'Előzmények törölve';
 
   @override
-  String get a11y_clear => 'Törlés';
+  String get privacy_title => 'Adatvédelem';
 
   @override
-  String get a11y_showOnMap => 'Megjelenítés a térképen';
+  String get privacy_toolSubtitle =>
+      'Mit lát a háló, ez a telefon és az internet';
 
   @override
-  String get a11y_showHide => 'Megjelenítés vagy elrejtés';
+  String get privacy_meshHeading => 'A hálón';
 
   @override
-  String get a11y_flash => 'Vaku';
+  String get privacy_dmTitle => 'Közvetlen üzenetek';
 
   @override
-  String get a11y_switchCamera => 'Kameraváltás';
+  String get privacy_dmBody =>
+      'A te rádiód és az övék között titkosítva. Az átjátszók továbbítják, de nem olvashatják. A rövid feladó- és címzettazonosítók és az útvonal titkosítatlan.';
 
   @override
-  String get a11y_pauseGif => 'GIF lejátszása vagy szüneteltetése';
+  String get privacy_channelTitle => 'Csatornák';
 
   @override
-  String get a11y_chooseGif => 'Ez a GIF';
+  String get privacy_channelBody =>
+      'A csatorna kulcsával titkosítva: akinél a kulcs van, minden üzenetet olvas. A nyilvános és hashtag csatornák kulcsát mindenki ismeri, ezeket kezeld nyilvánosként.';
+
+  @override
+  String get privacy_advertTitle => 'Hirdetések és helyzetek';
+
+  @override
+  String get privacy_advertBody =>
+      'A rádiód neve és nyilvános kulcsa, valamint ha megosztod, a helyzete titkosítatlanul sugárzódik mindenkinek a hatótávon belül.';
+
+  @override
+  String get privacy_phoneHeading => 'Ezen a telefonon';
+
+  @override
+  String get privacy_phoneBody =>
+      'Az üzenetek, névjegyek, útvonalak, nyomvonalak, útpontok, akku előzmények és beállítások az alkalmazás privát tárhelyén maradnak, csak a telefon saját védelmével. Amit exportálsz, azt bárki olvashatja, akinél a fájl van.';
+
+  @override
+  String get privacy_netHeading => 'Az interneten át';
+
+  @override
+  String get privacy_netIntro =>
+      'Csak ha az azt igénylő funkciót használod. Minden kérés megmutatja a szolgáltatásnak az IP-címedet és a kérést.';
+
+  @override
+  String get privacy_netMaps =>
+      'Térképek: csempék az OpenStreetMaptől, vagy ha választod, a Stadia Mapstől, a nézett területre.';
+
+  @override
+  String get privacy_netTerrain =>
+      'Domborzat: magasság az Open-Meteótól lefedettséghez és rálátáshoz.';
+
+  @override
+  String get privacy_netModels =>
+      'Letöltések: fordító- és képmodellek a Hugging Face-ről.';
+
+  @override
+  String get privacy_netImages =>
+      'Képek: GIF-keresés a Giphyn, és képek az üzenetekben lévő pyx.li hivatkozásokból.';
+
+  @override
+  String get privacy_netLists =>
+      'Listák: regionális beállítások és csatornajegyzék az alkalmazás GitHub kiadási tárolójából.';
+
+  @override
+  String get privacy_netMqtt =>
+      'MQTT: csak az általad hozzáadott brókerek. Ha bekapcsolod a feltöltést, a rádiód által hallott csomagok ott jelennek meg. A jelszavak a telefon biztonságos tárhelyén vannak.';
+
+  @override
+  String get privacy_netAnalyzer =>
+      'Elemző: CoreScope lekérdezések (ki hallott egy csomagot, átjátszónevek), ha használod őket.';
+
+  @override
+  String get privacy_notHeading => 'Amit a NOTORYX nem csinál';
+
+  @override
+  String get privacy_notBody =>
+      'Nincs fiók, analitika, reklám és összeomlás-jelentés. A fejlesztők semmit sem kapnak, hacsak te magad el nem küldöd.';
+
+  @override
+  String get team_title => 'Csapatkövetés';
+
+  @override
+  String get team_hint =>
+      'Amíg a túra aktív, egy privát csatornán megosztja a helyzetedet, így a társaid látják a térképen. A túra végén vagy 12 óra után kikapcsol.';
+
+  @override
+  String get team_channel => 'Csatorna';
+
+  @override
+  String get team_noChannel =>
+      'Előbb adj hozzá egy privát csatornát. A követés soha nem posztol nyilvános vagy hashtag csatornára.';
+
+  @override
+  String get team_every => 'Gyakoriság';
+
+  @override
+  String team_minutes(int minutes) {
+    return '$minutes perc';
+  }
+
+  @override
+  String get team_needTrip => 'Indítsd el a túrát a helyzeted megosztásához.';
+
+  @override
+  String team_lastShared(String age) {
+    return 'Utoljára megosztva $age';
+  }
+
+  @override
+  String get team_waitingGps => 'Várakozás a rádió helyzetére';
+
+  @override
+  String get waypoints_title => 'Útpontok';
+
+  @override
+  String get waypoints_toolSubtitle =>
+      'Mentett helyek és útvonalak; GPX be- és kivitel';
+
+  @override
+  String get waypoints_importFile => 'GPX fájl importálása';
+
+  @override
+  String get waypoints_importPaste => 'GPX beillesztése';
+
+  @override
+  String get waypoints_export => 'GPX exportálása';
+
+  @override
+  String get waypoints_empty =>
+      'Még nincsenek útpontok. Importálj egy GPX fájlt, vagy ments el egy csevegésben megosztott helyet.';
+
+  @override
+  String waypoints_waypoints(int count) {
+    return 'Útpontok ($count)';
+  }
+
+  @override
+  String waypoints_routes(int count) {
+    return 'Útvonalak ($count)';
+  }
+
+  @override
+  String waypoints_routeSummary(int points, String km) {
+    return '$points pont · $km km';
+  }
+
+  @override
+  String get waypoints_delete => 'Törlés';
+
+  @override
+  String get waypoints_copy => 'Koordináták másolása';
+
+  @override
+  String get waypoints_sendToChannel => 'Küldés csatornára';
+
+  @override
+  String get waypoints_pickChannel => 'Melyik csatornára küldjem?';
+
+  @override
+  String waypoints_sent(String channel) {
+    return 'Elküldve ide: $channel';
+  }
+
+  @override
+  String get waypoints_importFailed =>
+      'Ez nem olyan GPX fájl, amit az alkalmazás be tud olvasni.';
+
+  @override
+  String get waypoints_pasteHint => 'Illeszd be ide a GPX szöveget';
+
+  @override
+  String get waypoints_import => 'Importálás';
+
+  @override
+  String waypoints_imported(int waypoints, int routes) {
+    return '$waypoints útpont és $routes útvonal hozzáadva';
+  }
+
+  @override
+  String get waypoints_save => 'Mentés útpontként';
+
+  @override
+  String get waypoints_unnamed => 'Megosztott hely';
+
+  @override
+  String get waypoints_saved => 'Mentve az Útpontokhoz';
+
+  @override
+  String get waypoints_alreadySaved => 'Már az Útpontok között van';
+
+  @override
+  String get netChange_title => 'Hálózati változások';
+
+  @override
+  String get netChange_toolSubtitle =>
+      'Közelben megjelent vagy elnémult átjátszók';
+
+  @override
+  String netChange_newDirect(String name) {
+    return 'Új átjátszó közvetlenül hallva: $name';
+  }
+
+  @override
+  String netChange_newHops(String name, int hops) {
+    return 'Új átjátszó $hops ugrásra: $name';
+  }
+
+  @override
+  String netChange_wentQuiet(String name, int hours) {
+    return '$name elnémult: $hours órája nem hallható';
+  }
+
+  @override
+  String get netChange_empty =>
+      'Még nincs változás. Itt jelennek meg az elnémuló kedvenc átjátszók és a közeli új átjátszók.';
+
+  @override
+  String get netChange_quietSetting => 'Kedvenc átjátszó elnémul';
+
+  @override
+  String get netChange_quietHint =>
+      'Értesítés, ha egy kedvenc átjátszó ennyi ideje nem hallható';
+
+  @override
+  String get netChange_newSetting => 'Új átjátszó a közelben';
+
+  @override
+  String get netChange_newHint =>
+      'Értesítés, ha egy eddig nem látott átjátszó egy ugráson belül hallható';
+
+  @override
+  String get netChange_clear => 'Törlés';
+
+  @override
+  String get netChange_notifTitle => 'Hálózati változás';
+
+  @override
+  String get trouble_title => 'Hibaelhárítás';
+
+  @override
+  String get trouble_toolSubtitle =>
+      'Lépésenkénti segítség, ha valami nem működik';
+
+  @override
+  String get trouble_pick => 'Mi a baj?';
+
+  @override
+  String get trouble_noDelivery => 'Az üzenetek nem érkeznek meg';
+
+  @override
+  String get trouble_noConnect => 'Nem tudok csatlakozni a rádióhoz';
+
+  @override
+  String get trouble_hearNobody => 'Senkit sem hallok';
+
+  @override
+  String get trouble_startHere => 'Kezdd itt';
+
+  @override
+  String get trouble_resultOk => 'OK';
+
+  @override
+  String get trouble_resultProblem => 'Probléma';
+
+  @override
+  String get trouble_resultUnchecked => 'Nem ellenőrizhető';
+
+  @override
+  String get trouble_connectedNow =>
+      'Most csatlakozva vagy. Ha a kapcsolat folyton megszakad, az alábbi lépések akkor is segítenek.';
+
+  @override
+  String get trouble_allOk =>
+      'Minden ellenőrzés rendben. Ha mégsem működik, nézd át az alábbi lépéseket.';
+
+  @override
+  String get trouble_connected => 'A rádiód csatlakoztatva van';
+
+  @override
+  String get trouble_connectedAdvice =>
+      'Először csatlakoztasd a rádiót: Beállítások → Rádió csatlakoztatása.';
+
+  @override
+  String get trouble_routes => 'Ismert útvonal van azokhoz, akiknek írsz';
+
+  @override
+  String get trouble_routesAdvice =>
+      'Az ismert útvonal nélküli címzettnek küldött üzenetek elárasztják az egész hálót, és gyakran nem érnek célba. Várd meg, amíg hirdeti magát, vagy kérd meg rá, aztán írj újra.';
+
+  @override
+  String get trouble_heardRecently =>
+      'Akiknek írsz, azokat az elmúlt napban hallottad';
+
+  @override
+  String get trouble_heardRecentlyAdvice =>
+      'Akit régóta nem hallottál, lehet hatótávon kívül vagy kikapcsolva. Az üzeneteit nem lehet nyugtázni, amíg vissza nem tér.';
+
+  @override
+  String get trouble_neighbours => 'A rádiód hall más csomópontokat';
+
+  @override
+  String get trouble_neighboursAdvice =>
+      'Ha semmi sem hallható közvetlenül, a rádiód innen nem éri el a hálót. Emeld az antennát, menj magasabbra vagy közelebb egy átjátszóhoz.';
+
+  @override
+  String get trouble_bluetooth =>
+      'A Bluetooth be van kapcsolva, és az alkalmazás használhatja';
+
+  @override
+  String get trouble_bluetoothAdvice =>
+      'Ellenőrizd, hogy a Bluetooth be van kapcsolva, és a NOTORYX Core kapott Bluetooth (Androidon Közeli eszközök) engedélyt a telefon beállításaiban.';
+
+  @override
+  String get trouble_otherApp =>
+      'Más telefon vagy alkalmazás nem csatlakozik a rádióhoz';
+
+  @override
+  String get trouble_otherAppAdvice =>
+      'A rádió egyszerre csak egy alkalmazással beszél. Zárd be a többi MeshCore alkalmazást, vagy kapcsold ki a Bluetooth-t a többi párosított telefonon.';
+
+  @override
+  String get trouble_inRange => 'A rádió be van kapcsolva és közel van';
+
+  @override
+  String get trouble_inRangeAdvice =>
+      'Ellenőrizd, hogy a rádió fel van töltve, be van kapcsolva és pár méterre van. A rádió újraindítása gyakran megoldja a beragadt kapcsolatot.';
+
+  @override
+  String get trouble_otherTransport => 'Próbálj másképp csatlakozni';
+
+  @override
+  String get trouble_otherTransportAdvice =>
+      'Ha a Bluetooth folyton hibázik, csatlakozz USB-kábellel vagy Wi-Fin (TCP), ha a rádió támogatja.';
+
+  @override
+  String get trouble_noise => 'A rádiót nem nyomja el a zaj';
+
+  @override
+  String get trouble_noiseAdvice =>
+      'A magas zajszint elfedi a gyenge jeleket. Vidd távolabb az antennát elektronikától, töltőktől és napelemes vezérlőktől.';
+
+  @override
+  String get trouble_region => 'A rádió a környéked beállításait használja';
+
+  @override
+  String get trouble_regionAdvice =>
+      'Ha a frekvencia, sávszélesség vagy szórási tényező eltér a helyi hálóétól, senkit sem hallasz. Hasonlítsd össze a Beállítások → Rádió értékeit a környéked beállításaival.';
+
+  @override
+  String get trouble_antenna => 'Az antenna fel van szerelve';
+
+  @override
+  String get trouble_antennaAdvice =>
+      'Győződj meg róla, hogy az antenna szorosan fel van csavarva. Soha ne adj antenna nélkül; ez károsíthatja a rádiót.';
+
+  @override
+  String get mesh_title => 'Háló állapota';
+
+  @override
+  String get mesh_overallGood => 'A háló rendben van';
+
+  @override
+  String get mesh_overallFair => 'A háló működik, de vannak gondok';
+
+  @override
+  String get mesh_overallPoor => 'A háló nehezen boldogul';
+
+  @override
+  String get mesh_overallUnknown => 'Még kevés az adat';
+
+  @override
+  String get mesh_gradeGood => 'Jó';
+
+  @override
+  String get mesh_gradeFair => 'Közepes';
+
+  @override
+  String get mesh_gradePoor => 'Gyenge';
+
+  @override
+  String get mesh_gradeUnknown => 'Nincs adat';
+
+  @override
+  String get mesh_noise => 'Zaj';
+
+  @override
+  String mesh_noiseValue(String dbm) {
+    return '$dbm dBm zajszint';
+  }
+
+  @override
+  String get mesh_signal => 'Utolsó jel';
+
+  @override
+  String mesh_signalValue(String db) {
+    return 'SNR $db dB';
+  }
+
+  @override
+  String get mesh_busy => 'Csatornahasználat';
+
+  @override
+  String mesh_busyValue(int percent) {
+    return 'adásban az utolsó 15 perc $percent%-ában';
+  }
+
+  @override
+  String get mesh_neighbours => 'Közvetlenül hallott';
+
+  @override
+  String mesh_neighboursValue(int count) {
+    return '$count csomópont az elmúlt órában';
+  }
+
+  @override
+  String get mesh_delivery => 'Közvetlen üzenetek';
+
+  @override
+  String mesh_deliveryValue(int delivered, int total) {
+    return '$total-ból $delivered kézbesítve az elmúlt napban';
+  }
+
+  @override
+  String get mesh_tipNoise =>
+      'Valami a közelben zajos ezen a frekvencián. Vidd távolabb az antennát elektronikától és töltőktől.';
+
+  @override
+  String get mesh_tipSignal =>
+      'Az utolsó csomag gyenge volt. Emeld az antennát vagy menj magasabbra.';
+
+  @override
+  String get mesh_tipBusy =>
+      'A csatorna foglalt. Írj röviden és kerüld az elárasztást.';
+
+  @override
+  String get mesh_tipNeighbours =>
+      'Kevés csomópont hallható közvetlenül. Emeld az antennát vagy menj közelebb egy átjátszóhoz.';
+
+  @override
+  String get mesh_tipDelivery =>
+      'Sok üzenetet nem nyugtáznak. Nyiss meg egy sikertelen üzenetet, hogy lásd, hol akadt el.';
+
+  @override
+  String routeHealth_staleTitle(String name) {
+    return 'A(z) $name felé vezető útvonal elavult lehet';
+  }
+
+  @override
+  String routeHealth_weakTitle(String name) {
+    return 'A(z) $name felé vezető útvonal megbízhatatlan';
+  }
+
+  @override
+  String routeHealth_lastWorkedHours(int hours) {
+    return 'utoljára $hours órája működött';
+  }
+
+  @override
+  String routeHealth_lastWorkedDays(int days) {
+    return 'utoljára $days napja működött';
+  }
+
+  @override
+  String routeHealth_notHeard(int days) {
+    return '$days napja nem hallható';
+  }
+
+  @override
+  String routeHealth_failures(int failures, int attempts) {
+    return '$attempts próbából $failures sikertelen';
+  }
+
+  @override
+  String routeHealth_longPath(int hops) {
+    return '$hops ugrás';
+  }
+
+  @override
+  String get routeHealth_useFlood => 'Új útvonal keresése';
+
+  @override
+  String get routeHealth_keep => 'Útvonal megtartása';
+
+  @override
+  String get readiness_sos => 'SOS címzettek';
+
+  @override
+  String get readiness_sosOk => 'Az SOS-nak van címzettje.';
+
+  @override
+  String get readiness_sosBlocked =>
+      'Az SOS senkit sem ér el. Adj hozzá túratársakat a névjegyeid közül, vagy állíts be SOS csatornát.';
+
+  @override
+  String get readiness_routes => 'Útvonalak a túratársakhoz';
+
+  @override
+  String get readiness_routesOk => 'Minden túratárshoz ismert útvonal.';
+
+  @override
+  String readiness_routesMissing(String names) {
+    return 'Nincs ismert útvonal ide: $names. Az üzenetek elárasztással mennek, amíg nem tanul útvonalat. Küldj nekik üzenetet indulás előtt.';
+  }
+
+  @override
+  String get readiness_notifications => 'Értesítések';
+
+  @override
+  String get readiness_notificationsOk => 'Engedélyezve.';
+
+  @override
+  String get readiness_notificationsOff =>
+      'Az értesítések ki vannak kapcsolva, így nem hallod a válaszokat, bejelentkezéseket és riasztásokat.';
+
+  @override
+  String get readiness_batteryOpt => 'Akkuoptimalizálás';
+
+  @override
+  String get readiness_batteryOptOk => 'A NOTORYX Core kivétel.';
+
+  @override
+  String get readiness_batteryOptOn =>
+      'Az Android leállíthatja az alkalmazást a háttérben. Kapcsold ki: Beállítások → Alkalmazásbeállítások → Értesítések.';
+
+  @override
+  String get readiness_blockedTitle => 'A túra még nem indítható';
+
+  @override
+  String readiness_warnTitle(int count) {
+    return '$count ellenőrizendő dolog';
+  }
+
+  @override
+  String get readiness_startAnyway => 'Indítás mégis';
+
+  @override
+  String get readiness_review => 'Áttekintés';
+
+  @override
+  String get readiness_summaryReady => 'Indulásra kész';
+
+  @override
+  String readiness_summaryWarn(int count) {
+    return '$count ellenőrizendő';
+  }
+
+  @override
+  String get readiness_summaryBlocked => 'Az SOS senkit sem ér el';
+
+  @override
+  String get coords_maidenhead => 'Maidenhead lokátor';
+
+  @override
+  String get reactions_radioTitle => 'Reakciók küldése rádión';
+
+  @override
+  String get reactions_radioHint =>
+      'Minden reakció egy adott csomag. Az Automatikus az EU 868 MHz-es sávon, ahol korlátozott az adásidő, ezen az eszközön tartja őket.';
+
+  @override
+  String get reactions_radioAuto => 'Automatikus';
+
+  @override
+  String get reactions_radioOn => 'Be';
+
+  @override
+  String get reactions_radioOff => 'Ki (ez az eszköz)';
+
+  @override
+  String get batteryWatch_auto => 'Automatikus ellenőrzés';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Amíg rádió csatlakozik, az alkalmazás időnként lekérdezi az átjátszó akkuját. Csak akkor válaszol, ha be vagy jelentkezve.';
+
+  @override
+  String get batteryWatch_interval => 'Ellenőrzés gyakorisága';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours óra';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Óránként legfeljebb 6 lekérdezés az összes átjátszóra, legalább 2 perc különbséggel.';
+
+  @override
+  String get batteryWatch_add => 'Átjátszó hozzáadása';
+
+  @override
+  String get batteryWatch_pick => 'Válassz figyelendő átjátszót';
+
+  @override
+  String get batteryWatch_noRepeaters =>
+      'Még nincs átjátszó a névjegyeid között.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Nincs válasz az utolsó $count lekérdezésre. Nyisd meg az átjátszót és jelentkezz be újra.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Ellenőrzés…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Átjátszó akku';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name: $percent% ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return '$name akkuja gyorsan merül: ilyen ütemben kb. $days nap múlva lemerül.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name nem válaszolt $count akku-lekérdezésre.';
+  }
 }

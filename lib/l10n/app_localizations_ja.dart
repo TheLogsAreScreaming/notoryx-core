@@ -9760,23 +9760,605 @@ class AppLocalizationsJa extends AppLocalizations {
   String get batteryWatch_cleared => '履歴を消去しました';
 
   @override
-  String get a11y_clear => 'クリア';
+  String get privacy_title => 'プライバシー';
 
   @override
-  String get a11y_showOnMap => '地図に表示';
+  String get privacy_toolSubtitle => 'メッシュ・この端末・インターネットから見えるもの';
 
   @override
-  String get a11y_showHide => '表示または非表示';
+  String get privacy_meshHeading => 'メッシュ上';
 
   @override
-  String get a11y_flash => 'フラッシュ';
+  String get privacy_dmTitle => 'ダイレクトメッセージ';
 
   @override
-  String get a11y_switchCamera => 'カメラを切り替え';
+  String get privacy_dmBody =>
+      'あなたと相手の無線機の間で暗号化されます。リピーターは中継しますが読めません。送信者と受信者の短いIDとルートは暗号化されません。';
 
   @override
-  String get a11y_pauseGif => 'GIFを再生または一時停止';
+  String get privacy_channelTitle => 'チャンネル';
 
   @override
-  String get a11y_chooseGif => 'このGIFを選択';
+  String get privacy_channelBody =>
+      'チャンネルの鍵で暗号化されます。鍵を持つ人は全メッセージを読めます。公開チャンネルとハッシュタグチャンネルの鍵は誰でも知っているので、公開として扱ってください。';
+
+  @override
+  String get privacy_advertTitle => 'アドバートと位置';
+
+  @override
+  String get privacy_advertBody =>
+      '無線機の名前と公開鍵、共有している場合は位置が、範囲内の全員に暗号化なしで送信されます。';
+
+  @override
+  String get privacy_phoneHeading => 'この端末';
+
+  @override
+  String get privacy_phoneBody =>
+      'メッセージ、連絡先、ルート、トラック、ウェイポイント、バッテリー履歴、設定はアプリの専用ストレージに保存され、端末自体のセキュリティだけで守られます。書き出したものはファイルを持つ人が読めます。';
+
+  @override
+  String get privacy_netHeading => 'インターネット経由';
+
+  @override
+  String get privacy_netIntro =>
+      '必要な機能を使うときだけです。各リクエストでは、サービスにIPアドレスと要求内容が伝わります。';
+
+  @override
+  String get privacy_netMaps =>
+      '地図: 表示している範囲のタイルをOpenStreetMap（選択時はStadia Maps）から取得。';
+
+  @override
+  String get privacy_netTerrain => '地形: カバレッジと見通しのための標高をOpen-Meteoから取得。';
+
+  @override
+  String get privacy_netModels => 'ダウンロード: 翻訳と画像のモデルをHugging Faceから取得。';
+
+  @override
+  String get privacy_netImages => '画像: GiphyでのGIF検索と、メッセージ内のpyx.liリンクの画像。';
+
+  @override
+  String get privacy_netLists =>
+      'リスト: 地域プリセットとチャンネル一覧をこのアプリのGitHubリリースリポジトリから取得。';
+
+  @override
+  String get privacy_netMqtt =>
+      'MQTT: 追加したブローカーのみ。アップロードをオンにすると、無線機が受信したパケットがそこに公開されます。パスワードは端末の安全なストレージに保存されます。';
+
+  @override
+  String get privacy_netAnalyzer =>
+      'アナライザー: 使用時のCoreScope照会（パケットを受信した局、リピーター名）。';
+
+  @override
+  String get privacy_notHeading => 'NOTORYXがしないこと';
+
+  @override
+  String get privacy_notBody =>
+      'アカウント、分析、広告、クラッシュレポートはありません。あなたが送らない限り、開発者には何も届きません。';
+
+  @override
+  String get team_title => 'チーム追跡';
+
+  @override
+  String get team_hint =>
+      '行程中、非公開チャンネルに現在地を共有し、仲間の地図にあなたの動きを表示します。行程の終了時、または12時間後にオフになります。';
+
+  @override
+  String get team_channel => 'チャンネル';
+
+  @override
+  String get team_noChannel =>
+      '先に非公開チャンネルを追加してください。公開チャンネルやハッシュタグチャンネルには投稿しません。';
+
+  @override
+  String get team_every => '間隔';
+
+  @override
+  String team_minutes(int minutes) {
+    return '$minutes分';
+  }
+
+  @override
+  String get team_needTrip => '現在地を共有するには行程を開始してください。';
+
+  @override
+  String team_lastShared(String age) {
+    return '最終共有 $age';
+  }
+
+  @override
+  String get team_waitingGps => '無線機からの位置を待っています';
+
+  @override
+  String get waypoints_title => 'ウェイポイント';
+
+  @override
+  String get waypoints_toolSubtitle => '保存した場所とルート。GPXの読み込み・書き出し';
+
+  @override
+  String get waypoints_importFile => 'GPXファイルを読み込む';
+
+  @override
+  String get waypoints_importPaste => 'GPXを貼り付け';
+
+  @override
+  String get waypoints_export => 'GPXを書き出す';
+
+  @override
+  String get waypoints_empty =>
+      'ウェイポイントはまだありません。GPXファイルを読み込むか、チャットで共有された場所を保存してください。';
+
+  @override
+  String waypoints_waypoints(int count) {
+    return 'ウェイポイント ($count)';
+  }
+
+  @override
+  String waypoints_routes(int count) {
+    return 'ルート ($count)';
+  }
+
+  @override
+  String waypoints_routeSummary(int points, String km) {
+    return '$points地点 · $km km';
+  }
+
+  @override
+  String get waypoints_delete => '削除';
+
+  @override
+  String get waypoints_copy => '座標をコピー';
+
+  @override
+  String get waypoints_sendToChannel => 'チャンネルに送信';
+
+  @override
+  String get waypoints_pickChannel => 'どのチャンネルに送りますか？';
+
+  @override
+  String waypoints_sent(String channel) {
+    return '$channelに送信しました';
+  }
+
+  @override
+  String get waypoints_importFailed => 'アプリで読めるGPXファイルではありません。';
+
+  @override
+  String get waypoints_pasteHint => 'GPXのテキストをここに貼り付け';
+
+  @override
+  String get waypoints_import => '読み込む';
+
+  @override
+  String waypoints_imported(int waypoints, int routes) {
+    return 'ウェイポイント$waypoints件とルート$routes件を追加しました';
+  }
+
+  @override
+  String get waypoints_save => 'ウェイポイントとして保存';
+
+  @override
+  String get waypoints_unnamed => '共有された場所';
+
+  @override
+  String get waypoints_saved => 'ウェイポイントに保存しました';
+
+  @override
+  String get waypoints_alreadySaved => 'すでにウェイポイントにあります';
+
+  @override
+  String get netChange_title => 'ネットワークの変化';
+
+  @override
+  String get netChange_toolSubtitle => '近くに現れた、または沈黙したリピーター';
+
+  @override
+  String netChange_newDirect(String name) {
+    return '直接受信した新しいリピーター: $name';
+  }
+
+  @override
+  String netChange_newHops(String name, int hops) {
+    return '$hopsホップ先の新しいリピーター: $name';
+  }
+
+  @override
+  String netChange_wentQuiet(String name, int hours) {
+    return '$nameが沈黙: $hours時間受信なし';
+  }
+
+  @override
+  String get netChange_empty =>
+      'まだ変化はありません。沈黙したお気に入りリピーターや近くの新しいリピーターがここに表示されます。';
+
+  @override
+  String get netChange_quietSetting => 'お気に入りリピーターの沈黙';
+
+  @override
+  String get netChange_quietHint => 'お気に入りリピーターがこの時間受信されないときに通知';
+
+  @override
+  String get netChange_newSetting => '近くの新しいリピーター';
+
+  @override
+  String get netChange_newHint => '未知のリピーターが1ホップ以内で受信されたら通知';
+
+  @override
+  String get netChange_clear => 'クリア';
+
+  @override
+  String get netChange_notifTitle => 'ネットワークの変化';
+
+  @override
+  String get trouble_title => 'トラブルシューティング';
+
+  @override
+  String get trouble_toolSubtitle => 'うまくいかないときの手順ごとのヘルプ';
+
+  @override
+  String get trouble_pick => '何が問題ですか？';
+
+  @override
+  String get trouble_noDelivery => 'メッセージが届かない';
+
+  @override
+  String get trouble_noConnect => '無線機に接続できない';
+
+  @override
+  String get trouble_hearNobody => '誰も受信できない';
+
+  @override
+  String get trouble_startHere => 'ここから';
+
+  @override
+  String get trouble_resultOk => 'OK';
+
+  @override
+  String get trouble_resultProblem => '問題あり';
+
+  @override
+  String get trouble_resultUnchecked => '確認できません';
+
+  @override
+  String get trouble_connectedNow => '現在は接続されています。接続が何度も切れる場合は、以下の手順も役立ちます。';
+
+  @override
+  String get trouble_allOk => 'すべてのチェックに合格しました。それでも動かない場合は、以下の手順を確認してください。';
+
+  @override
+  String get trouble_connected => '無線機が接続されている';
+
+  @override
+  String get trouble_connectedAdvice => 'まず無線機を接続してください: 設定 → 無線機を接続。';
+
+  @override
+  String get trouble_routes => 'メッセージ相手へのルートがわかっている';
+
+  @override
+  String get trouble_routesAdvice =>
+      'ルートが不明な相手へのメッセージはメッシュ全体にフラッドされ、届かないことがよくあります。相手がアドバートするのを待つか依頼してから、もう一度送ってください。';
+
+  @override
+  String get trouble_heardRecently => 'メッセージ相手を直近1日で受信している';
+
+  @override
+  String get trouble_heardRecentlyAdvice =>
+      'しばらく受信がない相手は圏外か電源オフかもしれません。戻るまでメッセージは確認応答されません。';
+
+  @override
+  String get trouble_neighbours => '無線機がほかのノードを受信している';
+
+  @override
+  String get trouble_neighboursAdvice =>
+      '直接何も受信できない場合、ここからはメッシュに届きません。アンテナを高くする、高い場所へ行く、またはリピーターに近づいてください。';
+
+  @override
+  String get trouble_bluetooth => 'Bluetoothがオンで、アプリが使える';
+
+  @override
+  String get trouble_bluetoothAdvice =>
+      'Bluetoothがオンで、端末の設定でNOTORYX CoreにBluetooth（Androidでは付近のデバイス）の権限があるか確認してください。';
+
+  @override
+  String get trouble_otherApp => 'ほかの端末やアプリが無線機に接続していない';
+
+  @override
+  String get trouble_otherAppAdvice =>
+      '無線機は一度に1つのアプリとだけ通信します。ほかのMeshCoreアプリを閉じるか、ペアリング済みのほかの端末でBluetoothをオフにしてください。';
+
+  @override
+  String get trouble_inRange => '無線機の電源が入っていて近くにある';
+
+  @override
+  String get trouble_inRangeAdvice =>
+      '無線機が充電され、電源が入り、数メートル以内にあるか確認してください。無線機の再起動で固まった接続が直ることがよくあります。';
+
+  @override
+  String get trouble_otherTransport => '別の接続方法を試す';
+
+  @override
+  String get trouble_otherTransportAdvice =>
+      'Bluetoothで失敗が続く場合は、USBケーブル、または対応していればWi-Fi（TCP）で接続してください。';
+
+  @override
+  String get trouble_noise => '無線機がノイズに埋もれていない';
+
+  @override
+  String get trouble_noiseAdvice =>
+      'ノイズフロアが高いと弱い信号が隠れます。アンテナを電子機器、充電器、ソーラーコントローラーから離してください。';
+
+  @override
+  String get trouble_region => '無線機が地域の設定を使っている';
+
+  @override
+  String get trouble_regionAdvice =>
+      '周波数、帯域幅、拡散率が地元のメッシュと違うと誰も受信できません。設定 → 無線機を地域の設定と比べてください。';
+
+  @override
+  String get trouble_antenna => 'アンテナが取り付けられている';
+
+  @override
+  String get trouble_antennaAdvice =>
+      'アンテナがしっかり締まっているか確認してください。アンテナなしで送信しないでください。無線機が壊れることがあります。';
+
+  @override
+  String get mesh_title => 'メッシュの状態';
+
+  @override
+  String get mesh_overallGood => 'メッシュは良好です';
+
+  @override
+  String get mesh_overallFair => 'メッシュは動いていますが問題があります';
+
+  @override
+  String get mesh_overallPoor => 'メッシュは不調です';
+
+  @override
+  String get mesh_overallUnknown => 'まだ判断できるデータがありません';
+
+  @override
+  String get mesh_gradeGood => '良好';
+
+  @override
+  String get mesh_gradeFair => '普通';
+
+  @override
+  String get mesh_gradePoor => '不良';
+
+  @override
+  String get mesh_gradeUnknown => 'データなし';
+
+  @override
+  String get mesh_noise => 'ノイズ';
+
+  @override
+  String mesh_noiseValue(String dbm) {
+    return 'ノイズフロア $dbm dBm';
+  }
+
+  @override
+  String get mesh_signal => '直近の信号';
+
+  @override
+  String mesh_signalValue(String db) {
+    return 'SNR $db dB';
+  }
+
+  @override
+  String get mesh_busy => 'チャンネル使用率';
+
+  @override
+  String mesh_busyValue(int percent) {
+    return '直近15分のうち$percent%が送受信中';
+  }
+
+  @override
+  String get mesh_neighbours => '直接受信';
+
+  @override
+  String mesh_neighboursValue(int count) {
+    return '直近1時間で$countノード';
+  }
+
+  @override
+  String get mesh_delivery => 'ダイレクトメッセージ';
+
+  @override
+  String mesh_deliveryValue(int delivered, int total) {
+    return '直近1日で$total件中$delivered件配信';
+  }
+
+  @override
+  String get mesh_tipNoise => '近くの何かがこの周波数でノイズを出しています。アンテナを電子機器や充電器から離してください。';
+
+  @override
+  String get mesh_tipSignal => '直近のパケットは弱い信号でした。アンテナを高くするか、高い場所へ移動してください。';
+
+  @override
+  String get mesh_tipBusy => 'チャンネルが混雑しています。メッセージは短くし、フラッド送信は避けてください。';
+
+  @override
+  String get mesh_tipNeighbours =>
+      '直接受信できるノードが少ないです。アンテナを高くするか、リピーターに近づいてください。';
+
+  @override
+  String get mesh_tipDelivery =>
+      '多くのメッセージが確認応答されていません。失敗したメッセージを開いて、どこで止まったか確認してください。';
+
+  @override
+  String routeHealth_staleTitle(String name) {
+    return '$nameへのルートは古いかもしれません';
+  }
+
+  @override
+  String routeHealth_weakTitle(String name) {
+    return '$nameへのルートは不安定です';
+  }
+
+  @override
+  String routeHealth_lastWorkedHours(int hours) {
+    return '最後に成功したのは$hours時間前';
+  }
+
+  @override
+  String routeHealth_lastWorkedDays(int days) {
+    return '最後に成功したのは$days日前';
+  }
+
+  @override
+  String routeHealth_notHeard(int days) {
+    return '$days日間受信なし';
+  }
+
+  @override
+  String routeHealth_failures(int failures, int attempts) {
+    return '$attempts回中$failures回失敗';
+  }
+
+  @override
+  String routeHealth_longPath(int hops) {
+    return '$hopsホップ';
+  }
+
+  @override
+  String get routeHealth_useFlood => '新しいルートを探す';
+
+  @override
+  String get routeHealth_keep => 'このルートを使う';
+
+  @override
+  String get readiness_sos => 'SOSの送信先';
+
+  @override
+  String get readiness_sosOk => 'SOSの送信先があります。';
+
+  @override
+  String get readiness_sosBlocked =>
+      'SOSの送信先がありません。連絡先にいる同行者を追加するか、SOSチャンネルを設定してください。';
+
+  @override
+  String get readiness_routes => '同行者へのルート';
+
+  @override
+  String get readiness_routesOk => 'すべての同行者へのルートがわかっています。';
+
+  @override
+  String readiness_routesMissing(String names) {
+    return '$namesへのルートが不明です。ルートを学習するまでメッセージはフラッドで送られます。出発前にメッセージを送ってください。';
+  }
+
+  @override
+  String get readiness_notifications => '通知';
+
+  @override
+  String get readiness_notificationsOk => '許可されています。';
+
+  @override
+  String get readiness_notificationsOff => '通知がオフのため、返信・チェックイン・アラートが届きません。';
+
+  @override
+  String get readiness_batteryOpt => 'バッテリー最適化';
+
+  @override
+  String get readiness_batteryOptOk => 'NOTORYX Coreは対象外です。';
+
+  @override
+  String get readiness_batteryOptOn =>
+      'Androidがバックグラウンドでアプリを停止する可能性があります。設定 → アプリ設定 → 通知でオフにしてください。';
+
+  @override
+  String get readiness_blockedTitle => 'まだ出発できません';
+
+  @override
+  String readiness_warnTitle(int count) {
+    return '確認事項 $count 件';
+  }
+
+  @override
+  String get readiness_startAnyway => 'このまま開始';
+
+  @override
+  String get readiness_review => '確認する';
+
+  @override
+  String get readiness_summaryReady => '準備完了';
+
+  @override
+  String readiness_summaryWarn(int count) {
+    return '確認 $count 件';
+  }
+
+  @override
+  String get readiness_summaryBlocked => 'SOSの送信先がありません';
+
+  @override
+  String get coords_maidenhead => 'メイデンヘッド・ロケーター';
+
+  @override
+  String get reactions_radioTitle => 'リアクションを無線で送信';
+
+  @override
+  String get reactions_radioHint =>
+      'リアクションは1件ごとに電波で送られます。自動では、送信時間が制限されるEUの868 MHz帯ではこの端末内だけに表示します。';
+
+  @override
+  String get reactions_radioAuto => '自動';
+
+  @override
+  String get reactions_radioOn => 'オン';
+
+  @override
+  String get reactions_radioOff => 'オフ（この端末）';
+
+  @override
+  String get batteryWatch_auto => '自動でチェック';
+
+  @override
+  String get batteryWatch_autoHint =>
+      '無線機が接続されている間、アプリが定期的にこのリピーターのバッテリーを問い合わせます。ログインしている場合のみ応答します。';
+
+  @override
+  String get batteryWatch_interval => 'チェック間隔';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours時間';
+  }
+
+  @override
+  String get batteryWatch_budget => '全リピーター合計で1時間に最大6回、2分以上の間隔。';
+
+  @override
+  String get batteryWatch_add => 'リピーターを追加';
+
+  @override
+  String get batteryWatch_pick => '監視するリピーターを選択';
+
+  @override
+  String get batteryWatch_noRepeaters => '連絡先にリピーターがまだありません。';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return '直近$count回のチェックに応答がありません。リピーターを開いて再度ログインしてください。';
+  }
+
+  @override
+  String get batteryWatch_checking => 'チェック中…';
+
+  @override
+  String get batteryWatch_alertTitle => 'リピーターのバッテリー';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$nameは$percent%（$volts V）です。';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return '$nameのバッテリーが急速に低下しています。このペースだと約$days日で空になります。';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$nameは$count回のバッテリーチェックに応答していません。';
+  }
 }

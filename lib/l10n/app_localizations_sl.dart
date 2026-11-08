@@ -10251,23 +10251,624 @@ class AppLocalizationsSl extends AppLocalizations {
   String get batteryWatch_cleared => 'Zgodovina počiščena';
 
   @override
-  String get a11y_clear => 'Počisti';
+  String get privacy_title => 'Zasebnost';
 
   @override
-  String get a11y_showOnMap => 'Pokaži na zemljevidu';
+  String get privacy_toolSubtitle => 'Kaj vidijo mreža, ta telefon in internet';
 
   @override
-  String get a11y_showHide => 'Pokaži ali skrij';
+  String get privacy_meshHeading => 'V mreži';
 
   @override
-  String get a11y_flash => 'Bliskavica';
+  String get privacy_dmTitle => 'Neposredna sporočila';
 
   @override
-  String get a11y_switchCamera => 'Zamenjaj kamero';
+  String get privacy_dmBody =>
+      'Šifrirana med vašim in njihovim radiem. Repetitorji jih posredujejo, a jih ne morejo prebrati. Kratki ID-ji pošiljatelja in prejemnika ter pot niso šifrirani.';
 
   @override
-  String get a11y_pauseGif => 'Predvajaj ali ustavi GIF';
+  String get privacy_channelTitle => 'Kanali';
 
   @override
-  String get a11y_chooseGif => 'Izberi ta GIF';
+  String get privacy_channelBody =>
+      'Šifrirani s ključem kanala: kdor ima ključ, prebere vsako sporočilo. Ključe javnih kanalov in kanalov s ključnikom pozna vsak, zato jih štejte za javne.';
+
+  @override
+  String get privacy_advertTitle => 'Oglasi in položaji';
+
+  @override
+  String get privacy_advertBody =>
+      'Ime in javni ključ radia ter njegov položaj, če ga delite, se oddajajo nešifrirano vsem v dosegu.';
+
+  @override
+  String get privacy_phoneHeading => 'Na tem telefonu';
+
+  @override
+  String get privacy_phoneBody =>
+      'Sporočila, stiki, poti, sledi, točke, zgodovina baterij in nastavitve ostanejo v zasebni shrambi aplikacije, zaščiteni le z varnostjo telefona. Kar izvozite, lahko prebere vsak, ki ima datoteko.';
+
+  @override
+  String get privacy_netHeading => 'Prek interneta';
+
+  @override
+  String get privacy_netIntro =>
+      'Le ko uporabite funkcijo, ki to potrebuje. Vsaka zahteva storitvi pokaže vaš naslov IP in kaj je bilo zahtevano.';
+
+  @override
+  String get privacy_netMaps =>
+      'Zemljevidi: ploščice iz OpenStreetMap ali, če ga izberete, Stadia Maps za prikazano območje.';
+
+  @override
+  String get privacy_netTerrain =>
+      'Teren: višine iz Open-Meteo za pokritost in vidno linijo.';
+
+  @override
+  String get privacy_netModels =>
+      'Prenosi: modeli za prevajanje in slike iz Hugging Face.';
+
+  @override
+  String get privacy_netImages =>
+      'Slike: iskanje GIF v Giphy in slike iz povezav pyx.li v sporočilih.';
+
+  @override
+  String get privacy_netLists =>
+      'Seznami: regionalne nastavitve in imenik kanalov iz repozitorija izdaj aplikacije na GitHubu.';
+
+  @override
+  String get privacy_netMqtt =>
+      'MQTT: le posredniki, ki jih dodate. Če vklopite nalaganje, se tam objavijo paketi, ki jih radio sliši. Gesla so v varni shrambi telefona.';
+
+  @override
+  String get privacy_netAnalyzer =>
+      'Analizator: poizvedbe CoreScope (kdo je slišal paket, imena repetitorjev), ko jih uporabite.';
+
+  @override
+  String get privacy_notHeading => 'Česa NOTORYX ne počne';
+
+  @override
+  String get privacy_notBody =>
+      'Brez računa, analitike, oglasov in poročil o zrušitvah. Razvijalci ne prejmejo ničesar, razen če to pošljete sami.';
+
+  @override
+  String get team_title => 'Sledenje ekipe';
+
+  @override
+  String get team_hint =>
+      'Med izletom deli vaš položaj v zasebnem kanalu, da vas ekipa vidi na zemljevidu. Izklopi se ob koncu izleta ali po 12 urah.';
+
+  @override
+  String get team_channel => 'Kanal';
+
+  @override
+  String get team_noChannel =>
+      'Najprej dodajte zasebni kanal. Sledenje nikoli ne objavlja v javnih ali ključnikovih kanalih.';
+
+  @override
+  String get team_every => 'Vsakih';
+
+  @override
+  String team_minutes(int minutes) {
+    return '$minutes min';
+  }
+
+  @override
+  String get team_needTrip => 'Začnite izlet, da delite svoj položaj.';
+
+  @override
+  String team_lastShared(String age) {
+    return 'Nazadnje deljeno $age';
+  }
+
+  @override
+  String get team_waitingGps => 'Čakanje na položaj iz radia';
+
+  @override
+  String get waypoints_title => 'Točke';
+
+  @override
+  String get waypoints_toolSubtitle =>
+      'Shranjena mesta in poti; uvoz in izvoz GPX';
+
+  @override
+  String get waypoints_importFile => 'Uvozi datoteko GPX';
+
+  @override
+  String get waypoints_importPaste => 'Prilepi GPX';
+
+  @override
+  String get waypoints_export => 'Izvozi GPX';
+
+  @override
+  String get waypoints_empty =>
+      'Še ni točk. Uvozite datoteko GPX ali shranite mesto, ki ga je nekdo delil v klepetu.';
+
+  @override
+  String waypoints_waypoints(int count) {
+    return 'Točke ($count)';
+  }
+
+  @override
+  String waypoints_routes(int count) {
+    return 'Poti ($count)';
+  }
+
+  @override
+  String waypoints_routeSummary(int points, String km) {
+    return '$points točk · $km km';
+  }
+
+  @override
+  String get waypoints_delete => 'Izbriši';
+
+  @override
+  String get waypoints_copy => 'Kopiraj koordinate';
+
+  @override
+  String get waypoints_sendToChannel => 'Pošlji v kanal';
+
+  @override
+  String get waypoints_pickChannel => 'V kateri kanal poslati?';
+
+  @override
+  String waypoints_sent(String channel) {
+    return 'Poslano v $channel';
+  }
+
+  @override
+  String get waypoints_importFailed =>
+      'To ni datoteka GPX, ki jo aplikacija zna prebrati.';
+
+  @override
+  String get waypoints_pasteHint => 'Sem prilepite besedilo GPX';
+
+  @override
+  String get waypoints_import => 'Uvozi';
+
+  @override
+  String waypoints_imported(int waypoints, int routes) {
+    return 'Dodanih točk: $waypoints, poti: $routes';
+  }
+
+  @override
+  String get waypoints_save => 'Shrani kot točko';
+
+  @override
+  String get waypoints_unnamed => 'Deljeno mesto';
+
+  @override
+  String get waypoints_saved => 'Shranjeno v Točke';
+
+  @override
+  String get waypoints_alreadySaved => 'Že v Točkah';
+
+  @override
+  String get netChange_title => 'Spremembe v mreži';
+
+  @override
+  String get netChange_toolSubtitle =>
+      'Repetitorji, ki so se pojavili v bližini ali utihnili';
+
+  @override
+  String netChange_newDirect(String name) {
+    return 'Nov repetitor slišan neposredno: $name';
+  }
+
+  @override
+  String netChange_newHops(String name, int hops) {
+    return 'Nov repetitor $hops skok stran: $name';
+  }
+
+  @override
+  String netChange_wentQuiet(String name, int hours) {
+    return '$name je utihnil: neslišan $hours h';
+  }
+
+  @override
+  String get netChange_empty =>
+      'Še ni sprememb. Tu se pokažejo priljubljeni repetitorji, ki utihnejo, in novi repetitorji v bližini.';
+
+  @override
+  String get netChange_quietSetting => 'Priljubljeni repetitor utihne';
+
+  @override
+  String get netChange_quietHint =>
+      'Obvesti, ko priljubljenega repetitorja toliko časa ni slišati';
+
+  @override
+  String get netChange_newSetting => 'Nov repetitor v bližini';
+
+  @override
+  String get netChange_newHint =>
+      'Obvesti, ko je neznan repetitor slišan znotraj enega skoka';
+
+  @override
+  String get netChange_clear => 'Počisti';
+
+  @override
+  String get netChange_notifTitle => 'Sprememba v mreži';
+
+  @override
+  String get trouble_title => 'Odpravljanje težav';
+
+  @override
+  String get trouble_toolSubtitle => 'Pomoč po korakih, ko nekaj ne deluje';
+
+  @override
+  String get trouble_pick => 'Kaj je narobe?';
+
+  @override
+  String get trouble_noDelivery => 'Sporočila niso dostavljena';
+
+  @override
+  String get trouble_noConnect => 'Ne morem se povezati z radiem';
+
+  @override
+  String get trouble_hearNobody => 'Nikogar ne slišim';
+
+  @override
+  String get trouble_startHere => 'Začnite tukaj';
+
+  @override
+  String get trouble_resultOk => 'V redu';
+
+  @override
+  String get trouble_resultProblem => 'Težava';
+
+  @override
+  String get trouble_resultUnchecked => 'Ni mogoče preveriti';
+
+  @override
+  String get trouble_connectedNow =>
+      'Zdaj ste povezani. Če povezava kar naprej pada, vam koraki spodaj še vedno pomagajo.';
+
+  @override
+  String get trouble_allOk =>
+      'Vsa preverjanja so uspela. Če še vedno ne deluje, si oglejte korake spodaj.';
+
+  @override
+  String get trouble_connected => 'Radio je povezan';
+
+  @override
+  String get trouble_connectedAdvice =>
+      'Najprej povežite radio: Nastavitve → Poveži radio.';
+
+  @override
+  String get trouble_routes => 'Do ljudi, ki jim pišete, so znane poti';
+
+  @override
+  String get trouble_routesAdvice =>
+      'Sporočila nekomu brez znane poti poplavijo vso mrežo in pogosto ne pridejo. Počakajte, da se oglasi, ali ga prosite za to, in pišite znova.';
+
+  @override
+  String get trouble_heardRecently =>
+      'Ljudi, ki jim pišete, ste slišali v zadnjem dnevu';
+
+  @override
+  String get trouble_heardRecentlyAdvice =>
+      'Kogar dolgo niste slišali, je morda zunaj dosega ali izklopljen. Njegova sporočila ne bodo potrjena, dokler se ne vrne.';
+
+  @override
+  String get trouble_neighbours => 'Radio sliši druga vozlišča';
+
+  @override
+  String get trouble_neighboursAdvice =>
+      'Če neposredno ni slišati ničesar, radio od tu ne doseže mreže. Dvignite anteno, pojdite višje ali bližje repetitorju.';
+
+  @override
+  String get trouble_bluetooth =>
+      'Bluetooth je vklopljen in ga aplikacija sme uporabljati';
+
+  @override
+  String get trouble_bluetoothAdvice =>
+      'Preverite, da je Bluetooth vklopljen in da ima NOTORYX Core v nastavitvah telefona dovoljenje za Bluetooth (v Androidu tudi Naprave v bližini).';
+
+  @override
+  String get trouble_otherApp =>
+      'Noben drug telefon ali aplikacija ni povezana z radiem';
+
+  @override
+  String get trouble_otherAppAdvice =>
+      'Radio se pogovarja le z eno aplikacijo naenkrat. Zaprite druge aplikacije MeshCore ali izklopite Bluetooth na drugih seznanjenih telefonih.';
+
+  @override
+  String get trouble_inRange => 'Radio je vklopljen in blizu';
+
+  @override
+  String get trouble_inRangeAdvice =>
+      'Preverite, da je radio napolnjen, vklopljen in nekaj metrov stran. Ponovni zagon radia pogosto odpravi zataknjeno povezavo.';
+
+  @override
+  String get trouble_otherTransport => 'Poskusite drug način povezave';
+
+  @override
+  String get trouble_otherTransportAdvice =>
+      'Če Bluetooth kar naprej odpove, se povežite s kablom USB ali prek Wi-Fi (TCP), če radio to podpira.';
+
+  @override
+  String get trouble_noise => 'Radio ne utone v šumu';
+
+  @override
+  String get trouble_noiseAdvice =>
+      'Visoka raven šuma skrije šibke signale. Anteno odmaknite od elektronike, polnilnikov in sončnih regulatorjev.';
+
+  @override
+  String get trouble_region => 'Radio uporablja nastavitve vašega območja';
+
+  @override
+  String get trouble_regionAdvice =>
+      'Z drugo frekvenco, pasovno širino ali faktorjem razširjanja kot lokalna mreža ne slišite nikogar. Primerjajte Nastavitve → Radio s tistimi na vašem območju.';
+
+  @override
+  String get trouble_antenna => 'Antena je nameščena';
+
+  @override
+  String get trouble_antennaAdvice =>
+      'Prepričajte se, da je antena trdno privita. Nikoli ne oddajajte brez nje; to lahko poškoduje radio.';
+
+  @override
+  String get mesh_title => 'Stanje mreže';
+
+  @override
+  String get mesh_overallGood => 'Mreža je videti zdrava';
+
+  @override
+  String get mesh_overallFair => 'Mreža deluje, a s težavami';
+
+  @override
+  String get mesh_overallPoor => 'Mreža se muči';
+
+  @override
+  String get mesh_overallUnknown => 'Še premalo podatkov';
+
+  @override
+  String get mesh_gradeGood => 'Dobro';
+
+  @override
+  String get mesh_gradeFair => 'Srednje';
+
+  @override
+  String get mesh_gradePoor => 'Slabo';
+
+  @override
+  String get mesh_gradeUnknown => 'Ni podatkov';
+
+  @override
+  String get mesh_noise => 'Šum';
+
+  @override
+  String mesh_noiseValue(String dbm) {
+    return 'Raven šuma $dbm dBm';
+  }
+
+  @override
+  String get mesh_signal => 'Zadnji signal';
+
+  @override
+  String mesh_signalValue(String db) {
+    return 'SNR $db dB';
+  }
+
+  @override
+  String get mesh_busy => 'Zasedenost kanala';
+
+  @override
+  String mesh_busyValue(int percent) {
+    return 'v etru $percent % zadnjih 15 minut';
+  }
+
+  @override
+  String get mesh_neighbours => 'Slišani neposredno';
+
+  @override
+  String mesh_neighboursValue(int count) {
+    return '$count vozlišč v zadnji uri';
+  }
+
+  @override
+  String get mesh_delivery => 'Neposredna sporočila';
+
+  @override
+  String mesh_deliveryValue(int delivered, int total) {
+    return 'dostavljenih $delivered od $total v zadnjem dnevu';
+  }
+
+  @override
+  String get mesh_tipNoise =>
+      'Nekaj v bližini šumi na tej frekvenci. Anteno odmaknite od elektronike in polnilnikov.';
+
+  @override
+  String get mesh_tipSignal =>
+      'Zadnji paket je bil šibek. Dvignite anteno ali pojdite višje.';
+
+  @override
+  String get mesh_tipBusy =>
+      'Kanal je zaseden. Pišite kratko in se izogibajte poplavljanju.';
+
+  @override
+  String get mesh_tipNeighbours =>
+      'Neposredno je slišati malo vozlišč. Dvignite anteno ali se približajte repetitorju.';
+
+  @override
+  String get mesh_tipDelivery =>
+      'Veliko sporočil ni potrjenih. Odprite neuspelo sporočilo in poglejte, kje se je ustavilo.';
+
+  @override
+  String routeHealth_staleTitle(String name) {
+    return 'Pot do $name je morda zastarela';
+  }
+
+  @override
+  String routeHealth_weakTitle(String name) {
+    return 'Pot do $name je nezanesljiva';
+  }
+
+  @override
+  String routeHealth_lastWorkedHours(int hours) {
+    return 'nazadnje delovala pred $hours h';
+  }
+
+  @override
+  String routeHealth_lastWorkedDays(int days) {
+    return 'nazadnje delovala pred $days dnevi';
+  }
+
+  @override
+  String routeHealth_notHeard(int days) {
+    return 'neslišan $days dni';
+  }
+
+  @override
+  String routeHealth_failures(int failures, int attempts) {
+    return '$failures od $attempts poskusov neuspešnih';
+  }
+
+  @override
+  String routeHealth_longPath(int hops) {
+    return '$hops skokov';
+  }
+
+  @override
+  String get routeHealth_useFlood => 'Poišči novo pot';
+
+  @override
+  String get routeHealth_keep => 'Obdrži pot';
+
+  @override
+  String get readiness_sos => 'Prejemniki SOS';
+
+  @override
+  String get readiness_sosOk => 'SOS ima prejemnike.';
+
+  @override
+  String get readiness_sosBlocked =>
+      'SOS nima koga doseči. Dodajte udeležence izleta iz svojih stikov ali nastavite kanal SOS.';
+
+  @override
+  String get readiness_routes => 'Poti do udeležencev';
+
+  @override
+  String get readiness_routesOk => 'Do vsakega udeleženca je znana pot.';
+
+  @override
+  String readiness_routesMissing(String names) {
+    return 'Do $names ni znane poti. Sporočila bodo poplavljala, dokler se pot ne nauči. Pred odhodom jim pošljite sporočilo.';
+  }
+
+  @override
+  String get readiness_notifications => 'Obvestila';
+
+  @override
+  String get readiness_notificationsOk => 'Dovoljena.';
+
+  @override
+  String get readiness_notificationsOff =>
+      'Obvestila so izklopljena, zato ne boste slišali odgovorov, javljanj ali opozoril.';
+
+  @override
+  String get readiness_batteryOpt => 'Optimizacija baterije';
+
+  @override
+  String get readiness_batteryOptOk => 'NOTORYX Core je izvzet.';
+
+  @override
+  String get readiness_batteryOptOn =>
+      'Android lahko aplikacijo ustavi v ozadju. Izklopite v Nastavitve → Nastavitve aplikacije → Obvestila.';
+
+  @override
+  String get readiness_blockedTitle => 'Izleta še ni mogoče začeti';
+
+  @override
+  String readiness_warnTitle(int count) {
+    return '$count stvari za preverjanje';
+  }
+
+  @override
+  String get readiness_startAnyway => 'Vseeno začni';
+
+  @override
+  String get readiness_review => 'Preglej';
+
+  @override
+  String get readiness_summaryReady => 'Pripravljeni';
+
+  @override
+  String readiness_summaryWarn(int count) {
+    return '$count za preverjanje';
+  }
+
+  @override
+  String get readiness_summaryBlocked => 'SOS ne doseže nikogar';
+
+  @override
+  String get coords_maidenhead => 'Lokator Maidenhead';
+
+  @override
+  String get reactions_radioTitle => 'Pošiljaj odzive po radiu';
+
+  @override
+  String get reactions_radioHint =>
+      'Vsak odziv je paket v etru. Samodejno jih v pasu EU 868 MHz, kjer je čas oddajanja omejen, ohrani na tej napravi.';
+
+  @override
+  String get reactions_radioAuto => 'Samodejno';
+
+  @override
+  String get reactions_radioOn => 'Vklop';
+
+  @override
+  String get reactions_radioOff => 'Izklop (ta naprava)';
+
+  @override
+  String get batteryWatch_auto => 'Samodejno preverjaj';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Dokler je radio povezan, aplikacija občasno vpraša repetitor za baterijo. Odgovori le, če ste prijavljeni.';
+
+  @override
+  String get batteryWatch_interval => 'Preverjaj vsakih';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Največ 6 preverjanj na uro za vse repetitorje, vsaj 2 minuti narazen.';
+
+  @override
+  String get batteryWatch_add => 'Dodaj repetitor';
+
+  @override
+  String get batteryWatch_pick => 'Izberite repetitor za nadzor';
+
+  @override
+  String get batteryWatch_noRepeaters => 'V stikih še ni repetitorjev.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Ni odgovora na zadnjih $count preverjanj. Odprite repetitor in se znova prijavite.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Preverjanje…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Baterija repetitorja';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name je na $percent % ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Baterija $name hitro pada: pri tem tempu prazna čez približno $days dni.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name ni odgovoril na $count preverjanj baterije.';
+  }
 }

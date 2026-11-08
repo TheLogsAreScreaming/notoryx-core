@@ -13,6 +13,7 @@ import '../l10n/l10n.dart';
 import '../theme/mesh_theme.dart';
 import '../widgets/ember_backdrop.dart';
 import '../widgets/instrument.dart';
+import '../widgets/mesh_health_card.dart';
 import '../widgets/mesh_ui.dart';
 import '../widgets/node_sheet.dart';
 import 'app_debug_log_screen.dart';
@@ -20,6 +21,7 @@ import 'ble_debug_log_screen.dart';
 import 'channel_chat_screen.dart';
 import 'companion_radio_stats_screen.dart';
 import 'map_screen.dart';
+import 'troubleshooting_screen.dart';
 
 class BastionDiagnosticsScreen extends StatelessWidget {
   const BastionDiagnosticsScreen({super.key});
@@ -245,6 +247,15 @@ class BastionDiagnosticsScreen extends StatelessWidget {
           title: Text(l10n.bastionDiag_title),
           actions: [
             IconButton(
+              tooltip: l10n.trouble_title,
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (_) => const TroubleshootingScreen(),
+                ),
+              ),
+              icon: const Icon(Icons.healing_outlined),
+            ),
+            IconButton(
               tooltip: l10n.bastionDiag_export,
               onPressed: () => _export(context, c),
               icon: const Icon(Icons.ios_share_rounded),
@@ -258,6 +269,11 @@ class BastionDiagnosticsScreen extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: MeshSpace.xxl),
             children: [
               _statusCard(context, c),
+              if (c.isConnected)
+                const Padding(
+                  padding: EdgeInsets.fromLTRB(16, 8, 16, 0),
+                  child: MeshHealthCard(),
+                ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
                 child: Row(
