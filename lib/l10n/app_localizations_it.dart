@@ -10908,5 +10908,51 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
+  String get security_title => 'Sicurezza';
+
+  @override
+  String get security_toolSubtitle => 'Blocco app e cronologia cifrata';
+
+  @override
+  String get appLock_title => 'Blocco app';
+
+  @override
+  String get appLock_subtitle =>
+      'Chiede impronta, volto o blocco schermo all\'apertura. Gli avvisi continuano, ma devi sbloccare prima di inviare un SOS.';
+
+  @override
+  String get appLock_reason => 'Sblocca NOTORYX Core';
+
+  @override
+  String get appLock_unlock => 'Sblocca';
+
+  @override
+  String get appLock_locked => 'NOTORYX Core è bloccato';
+
+  @override
+  String get appLock_unavailable =>
+      'Questo dispositivo non ha un blocco schermo, o non è stato possibile confermarlo.';
+
+  @override
+  String get dbEncrypt_title => 'Cifra la cronologia messaggi';
+
+  @override
+  String get dbEncrypt_subtitle =>
+      'Cifra il database dei messaggi su questo dispositivo con una chiave nella memoria sicura del telefono. Se la chiave va persa la cronologia non è recuperabile, quindi conserva un backup.';
+
+  @override
+  String get dbEncrypt_on => 'Stato: cifrato';
+
+  @override
+  String get dbEncrypt_off => 'Stato: non cifrato';
+
+  @override
+  String get dbEncrypt_failed =>
+      'Stato: non applicato. La cronologia è invariata.';
+
+  @override
+  String get dbEncrypt_restart => 'Avrà effetto al prossimo avvio dell\'app.';
+
+  @override
   String get map_showWaypoints => 'Mostra waypoint e percorsi salvati';
 }

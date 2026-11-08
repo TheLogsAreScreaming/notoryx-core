@@ -10934,6 +10934,54 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
+  String get security_title => 'Sécurité';
+
+  @override
+  String get security_toolSubtitle =>
+      'Verrouillage de l\'app et historique chiffré';
+
+  @override
+  String get appLock_title => 'Verrouillage de l\'app';
+
+  @override
+  String get appLock_subtitle =>
+      'Demande l\'empreinte, le visage ou le verrouillage de l\'écran à l\'ouverture. Les alertes continuent, mais il faut déverrouiller avant d\'envoyer un SOS.';
+
+  @override
+  String get appLock_reason => 'Déverrouiller NOTORYX Core';
+
+  @override
+  String get appLock_unlock => 'Déverrouiller';
+
+  @override
+  String get appLock_locked => 'NOTORYX Core est verrouillé';
+
+  @override
+  String get appLock_unavailable =>
+      'Cet appareil n\'a pas de verrouillage d\'écran, ou il n\'a pas pu être confirmé.';
+
+  @override
+  String get dbEncrypt_title => 'Chiffrer l\'historique des messages';
+
+  @override
+  String get dbEncrypt_subtitle =>
+      'Chiffre la base de messages sur cet appareil avec une clé conservée dans le stockage sécurisé du téléphone. Si la clé est perdue, l\'historique est irrécupérable : gardez une sauvegarde.';
+
+  @override
+  String get dbEncrypt_on => 'État : chiffré';
+
+  @override
+  String get dbEncrypt_off => 'État : non chiffré';
+
+  @override
+  String get dbEncrypt_failed =>
+      'État : échec. Votre historique n\'a pas changé.';
+
+  @override
+  String get dbEncrypt_restart =>
+      'Prend effet au prochain démarrage de l\'app.';
+
+  @override
   String get map_showWaypoints =>
       'Afficher les points et itinéraires enregistrés';
 }

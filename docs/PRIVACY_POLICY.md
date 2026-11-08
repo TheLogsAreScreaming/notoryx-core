@@ -21,6 +21,8 @@ Depending on the features you use, NOTORYX Core can store messages, contact iden
 
 The app uses device storage and operating-system protections; do not assume that all stored messages, logs or exports have additional app-level encryption. Anyone with access to an exported file may be able to read its contents.
 
+You can turn on **App lock** and **Encrypt message history** under Tools → Security. Encryption covers the message database only (contacts, routes, waypoints and settings are not encrypted), and its key stays in the phone's secure storage. If that key is lost, the history can't be recovered.
+
 ## Radio communication and sharing
 
 Messages and other information sent over a MeshCore network are transmitted to compatible radio devices. Their reach and visibility depend on the protocol, radio configuration, recipients and network participants. NOTORYX Core can let you export coverage data or diagnostics; sharing those files with other people or services is your choice.
@@ -53,6 +55,7 @@ Debug logs and exported diagnostics can include device, network and radio metada
 ## Children and policy updates
 
 NOTORYX Core is not designed to collect information from children. This policy will be updated if data handling or integrations change.
+
 
 ## Contact
 

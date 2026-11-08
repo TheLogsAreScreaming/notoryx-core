@@ -65,3 +65,8 @@ Bastion also uses third-party Flutter and Dart packages. Their notices are avail
 ## KiekR
 
 No KiekR source code, assets or proprietary UI are included in Bastion. Any similar behavior is independently implemented from public product behavior and MeshCore protocol capabilities.
+
+## SQLite3 Multiple Ciphers
+
+Used for the optional encrypted message history, through `package:sqlite3`.
+MIT License. Copyright (c) Ulrich Telle. <https://github.com/utelle/SQLite3MultipleCiphers>
