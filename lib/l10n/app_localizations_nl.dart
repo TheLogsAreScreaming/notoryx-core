@@ -10133,4 +10133,71 @@ class AppLocalizationsNl extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'Je radio gebruikt $width byte';
   }
+
+  @override
+  String get batteryWatch_title => 'Batterijbewaking';
+
+  @override
+  String get batteryWatch_toolSubtitle =>
+      'Repeaterbatterijen van de afgelopen 30 dagen';
+
+  @override
+  String get batteryWatch_empty =>
+      'Nog geen batterijmetingen van repeaters. Open Status of Telemetrie van een repeater en de metingen worden hier 30 dagen bewaard.';
+
+  @override
+  String get batteryWatch_note =>
+      'Metingen komen uit de Status- en Telemetrie-antwoorden die je opvraagt. Er wordt niets extra uitgezonden.';
+
+  @override
+  String get batteryWatch_statusLow => 'Batterij bijna leeg';
+
+  @override
+  String get batteryWatch_statusFalling => 'Daalt snel';
+
+  @override
+  String get batteryWatch_statusQuiet => 'Geen recente meting';
+
+  @override
+  String get batteryWatch_statusOk => 'Ziet er goed uit';
+
+  @override
+  String get batteryWatch_statusUnknown => 'Nog niet genoeg metingen';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'Bij dit tempo leeg over ongeveer $days dagen';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '$volts V per dag in de afgelopen week';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return 'Laatste meting: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return 'Metingen in 30 dagen: $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'Batterijgeschiedenis';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'Batterijgrafiek: $count metingen, tussen $low V en $high V';
+  }
+
+  @override
+  String get batteryWatch_clear => 'Geschiedenis wissen';
+
+  @override
+  String get batteryWatch_unknownRepeater => 'Onbekende repeater';
+
+  @override
+  String get batteryWatch_cleared => 'Geschiedenis gewist';
 }

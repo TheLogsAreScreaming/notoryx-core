@@ -10093,4 +10093,71 @@ class AppLocalizationsSv extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'Din radio använder $width byte';
   }
+
+  @override
+  String get batteryWatch_title => 'Batteribevakning';
+
+  @override
+  String get batteryWatch_toolSubtitle =>
+      'Repeaterbatterier de senaste 30 dagarna';
+
+  @override
+  String get batteryWatch_empty =>
+      'Inga batterivärden från repeatrar än. Öppna Status eller Telemetri för en repeater så sparas dess värden här i 30 dagar.';
+
+  @override
+  String get batteryWatch_note =>
+      'Värdena kommer från Status- och Telemetrisvar som du begär. Inget extra sänds ut.';
+
+  @override
+  String get batteryWatch_statusLow => 'Lågt batteri';
+
+  @override
+  String get batteryWatch_statusFalling => 'Sjunker snabbt';
+
+  @override
+  String get batteryWatch_statusQuiet => 'Inget nytt värde';
+
+  @override
+  String get batteryWatch_statusOk => 'Ser bra ut';
+
+  @override
+  String get batteryWatch_statusUnknown => 'Inte tillräckligt med värden än';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'Tomt om ungefär $days dagar i den här takten';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '$volts V per dag den senaste veckan';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return 'Senaste värde: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return 'Värden på 30 dagar: $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'Batterihistorik';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'Batteridiagram: $count värden, mellan $low V och $high V';
+  }
+
+  @override
+  String get batteryWatch_clear => 'Rensa historik';
+
+  @override
+  String get batteryWatch_unknownRepeater => 'Okänd repeater';
+
+  @override
+  String get batteryWatch_cleared => 'Historiken rensad';
 }

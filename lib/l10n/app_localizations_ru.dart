@@ -10218,4 +10218,71 @@ class AppLocalizationsRu extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'Ваше радио использует $width байт';
   }
+
+  @override
+  String get batteryWatch_title => 'Контроль батарей';
+
+  @override
+  String get batteryWatch_toolSubtitle =>
+      'Батареи ретрансляторов за последние 30 дней';
+
+  @override
+  String get batteryWatch_empty =>
+      'Пока нет показаний батарей ретрансляторов. Откройте Состояние или Телеметрию ретранслятора, и его показания будут храниться здесь 30 дней.';
+
+  @override
+  String get batteryWatch_note =>
+      'Показания берутся из ответов Состояния и Телеметрии, которые вы запрашиваете. Ничего лишнего в эфир не передаётся.';
+
+  @override
+  String get batteryWatch_statusLow => 'Низкий заряд';
+
+  @override
+  String get batteryWatch_statusFalling => 'Быстро падает';
+
+  @override
+  String get batteryWatch_statusQuiet => 'Нет свежих показаний';
+
+  @override
+  String get batteryWatch_statusOk => 'Всё в порядке';
+
+  @override
+  String get batteryWatch_statusUnknown => 'Пока мало показаний';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'При таком темпе разрядится примерно через $days дн.';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '$volts В в день за последнюю неделю';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return 'Последнее показание: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return 'Показаний за 30 дней: $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'История батареи';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'График батареи: $count показаний, от $low В до $high В';
+  }
+
+  @override
+  String get batteryWatch_clear => 'Очистить историю';
+
+  @override
+  String get batteryWatch_unknownRepeater => 'Неизвестный ретранслятор';
+
+  @override
+  String get batteryWatch_cleared => 'История очищена';
 }

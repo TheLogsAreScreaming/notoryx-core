@@ -10220,4 +10220,71 @@ class AppLocalizationsPl extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'Twoje radio używa $width bajtów';
   }
+
+  @override
+  String get batteryWatch_title => 'Nadzór baterii';
+
+  @override
+  String get batteryWatch_toolSubtitle =>
+      'Baterie przekaźników z ostatnich 30 dni';
+
+  @override
+  String get batteryWatch_empty =>
+      'Brak jeszcze odczytów baterii przekaźników. Otwórz Status lub Telemetrię przekaźnika, a jego odczyty będą tu przechowywane przez 30 dni.';
+
+  @override
+  String get batteryWatch_note =>
+      'Odczyty pochodzą z odpowiedzi Status i Telemetria, o które prosisz. Nic dodatkowego nie jest nadawane.';
+
+  @override
+  String get batteryWatch_statusLow => 'Słaba bateria';
+
+  @override
+  String get batteryWatch_statusFalling => 'Szybko spada';
+
+  @override
+  String get batteryWatch_statusQuiet => 'Brak świeżego odczytu';
+
+  @override
+  String get batteryWatch_statusOk => 'W porządku';
+
+  @override
+  String get batteryWatch_statusUnknown => 'Jeszcze za mało odczytów';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'Przy tym tempie rozładuje się za około $days dni';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '$volts V dziennie w ostatnim tygodniu';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return 'Ostatni odczyt: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return 'Odczyty z 30 dni: $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'Historia baterii';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'Wykres baterii: $count odczytów, między $low V a $high V';
+  }
+
+  @override
+  String get batteryWatch_clear => 'Wyczyść historię';
+
+  @override
+  String get batteryWatch_unknownRepeater => 'Nieznany przekaźnik';
+
+  @override
+  String get batteryWatch_cleared => 'Historia wyczyszczona';
 }

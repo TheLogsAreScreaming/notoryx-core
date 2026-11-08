@@ -10177,4 +10177,71 @@ class AppLocalizationsEs extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'Tu radio usa $width bytes';
   }
+
+  @override
+  String get batteryWatch_title => 'Vigilancia de baterías';
+
+  @override
+  String get batteryWatch_toolSubtitle =>
+      'Baterías de repetidores en los últimos 30 días';
+
+  @override
+  String get batteryWatch_empty =>
+      'Aún no hay lecturas de batería de repetidores. Abre Estado o Telemetría de un repetidor y sus lecturas se guardarán aquí 30 días.';
+
+  @override
+  String get batteryWatch_note =>
+      'Las lecturas vienen de las respuestas de Estado y Telemetría que pides. No se envía nada extra por el aire.';
+
+  @override
+  String get batteryWatch_statusLow => 'Batería baja';
+
+  @override
+  String get batteryWatch_statusFalling => 'Bajando rápido';
+
+  @override
+  String get batteryWatch_statusQuiet => 'Sin lectura reciente';
+
+  @override
+  String get batteryWatch_statusOk => 'Todo bien';
+
+  @override
+  String get batteryWatch_statusUnknown => 'Aún no hay suficientes lecturas';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'Vacía en unos $days días a este ritmo';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '$volts V al día en la última semana';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return 'Última lectura: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return 'Lecturas en 30 días: $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'Historial de batería';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'Gráfico de batería: $count lecturas, entre $low V y $high V';
+  }
+
+  @override
+  String get batteryWatch_clear => 'Borrar historial';
+
+  @override
+  String get batteryWatch_unknownRepeater => 'Repetidor desconocido';
+
+  @override
+  String get batteryWatch_cleared => 'Historial borrado';
 }
