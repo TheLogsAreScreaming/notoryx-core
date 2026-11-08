@@ -16825,6 +16825,24 @@ abstract class AppLocalizations {
   /// **'Halloween, Christmas and Valentine\'s Day on their dates'**
   String get seasonal_holidaysHint;
 
+  /// No description provided for @theme_darkMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Different theme in dark mode'**
+  String get theme_darkMode;
+
+  /// No description provided for @theme_darkModeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Use another theme while your device is set to dark mode'**
+  String get theme_darkModeHint;
+
+  /// No description provided for @theme_darkModeTheme.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark mode theme'**
+  String get theme_darkModeTheme;
+
   /// No description provided for @coords_setting.
   ///
   /// In en, this message translates to:

@@ -10121,6 +10121,16 @@ class AppLocalizationsHu extends AppLocalizations {
       'Halloween, karácsony és Valentin-nap a saját napjukon';
 
   @override
+  String get theme_darkMode => 'Másik téma sötét módban';
+
+  @override
+  String get theme_darkModeHint =>
+      'Másik téma használata, amíg az eszköz sötét módban van';
+
+  @override
+  String get theme_darkModeTheme => 'Sötét mód témája';
+
+  @override
   String get coords_setting => 'Koordinátaformátum';
 
   @override

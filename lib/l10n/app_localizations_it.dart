@@ -10145,6 +10145,16 @@ class AppLocalizationsIt extends AppLocalizations {
       'Halloween, Natale e San Valentino nelle loro date';
 
   @override
+  String get theme_darkMode => 'Tema diverso in modalità scura';
+
+  @override
+  String get theme_darkModeHint =>
+      'Usa un altro tema quando il dispositivo è in modalità scura';
+
+  @override
+  String get theme_darkModeTheme => 'Tema della modalità scura';
+
+  @override
   String get coords_setting => 'Formato coordinate';
 
   @override

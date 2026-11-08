@@ -10115,6 +10115,16 @@ class AppLocalizationsBg extends AppLocalizations {
       'Хелоуин, Коледа и Свети Валентин на техните дати';
 
   @override
+  String get theme_darkMode => 'Друга тема в тъмен режим';
+
+  @override
+  String get theme_darkModeHint =>
+      'Използвай друга тема, докато устройството е в тъмен режим';
+
+  @override
+  String get theme_darkModeTheme => 'Тема за тъмен режим';
+
+  @override
   String get coords_setting => 'Формат на координатите';
 
   @override

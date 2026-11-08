@@ -10174,6 +10174,16 @@ class AppLocalizationsUk extends AppLocalizations {
       'Гелловін, Різдво і День святого Валентина у свої дати';
 
   @override
+  String get theme_darkMode => 'Інша тема в темному режимі';
+
+  @override
+  String get theme_darkModeHint =>
+      'Використовувати іншу тему, поки пристрій у темному режимі';
+
+  @override
+  String get theme_darkModeTheme => 'Тема темного режиму';
+
+  @override
   String get coords_setting => 'Формат координат';
 
   @override

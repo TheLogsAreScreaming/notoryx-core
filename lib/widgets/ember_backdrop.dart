@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 import '../theme/mesh_theme.dart';
@@ -45,6 +47,14 @@ class EmberBackdrop extends StatelessWidget {
               second: second,
               contour: MeshPalette.ink,
               dark: dark,
+              // Pink Overload's glossy glints; no other theme has them.
+              sparkle:
+                  identical(
+                    MeshPalette.current,
+                    BastionTheme.pinkOverload.palette,
+                  )
+                  ? [MeshPalette.magenta, Colors.white, MeshPalette.tertiary]
+                  : null,
             ),
           ),
         ),
@@ -64,6 +74,7 @@ class EmberPainter extends CustomPainter {
     required this.second,
     required this.contour,
     required this.dark,
+    this.sparkle,
   });
 
   final EmberScene scene;
@@ -72,6 +83,10 @@ class EmberPainter extends CustomPainter {
   final Color second;
   final Color contour;
   final bool dark;
+
+  /// Colors for small four-point glints scattered over the ground, or null
+  /// for none. They are fixed per scene and never move.
+  final List<Color>? sparkle;
 
   static const _w = 390.0;
   static const _h = 844.0;
@@ -149,6 +164,78 @@ class EmberPainter extends CustomPainter {
         canvas.drawPath(path, line);
       }
     }
+
+    final glints = sparkle;
+    if (glints != null && glints.isNotEmpty) {
+      _paintSparkle(canvas, size, glints);
+    }
+  }
+
+  /// A fixed scatter of glints: the same seed per scene gives the same
+  /// picture every time, so nothing flickers between frames or screens.
+  void _paintSparkle(Canvas canvas, Size size, List<Color> colors) {
+    final rnd = math.Random(17 + scene.index * 101);
+    final count = (size.width * size.height / 9000).clamp(18, 60).round();
+    // Big glints stay in the side margins so none sits under text; the
+    // rest of the ground only gets tiny, faint dots.
+    const gutter = 22.0;
+    for (var i = 0; i < count; i++) {
+      final big = rnd.nextDouble() < 0.35;
+      final x = big
+          ? (rnd.nextBool()
+                ? rnd.nextDouble() * gutter
+                : size.width - rnd.nextDouble() * gutter)
+          : rnd.nextDouble() * size.width;
+      final centre = Offset(x, rnd.nextDouble() * size.height);
+      final r = big ? 5 + rnd.nextDouble() * 5 : 1.2 + rnd.nextDouble() * 1.2;
+      final colour = colors[i % colors.length];
+      final alpha = big ? 0.6 : 0.25 + rnd.nextDouble() * 0.2;
+      final paint = Paint()..color = colour.withValues(alpha: alpha);
+      if (r < 3) {
+        canvas.drawCircle(centre, r * 0.6, paint);
+        continue;
+      }
+      // Four-point star with pinched sides.
+      final w = r * 0.18;
+      final path = Path()
+        ..moveTo(centre.dx, centre.dy - r)
+        ..quadraticBezierTo(
+          centre.dx + w,
+          centre.dy - w,
+          centre.dx + r,
+          centre.dy,
+        )
+        ..quadraticBezierTo(
+          centre.dx + w,
+          centre.dy + w,
+          centre.dx,
+          centre.dy + r,
+        )
+        ..quadraticBezierTo(
+          centre.dx - w,
+          centre.dy + w,
+          centre.dx - r,
+          centre.dy,
+        )
+        ..quadraticBezierTo(
+          centre.dx - w,
+          centre.dy - w,
+          centre.dx,
+          centre.dy - r,
+        )
+        ..close();
+      if (big) {
+        // A soft halo so the larger glints read as shine, not confetti.
+        canvas.drawCircle(
+          centre,
+          r * 0.9,
+          Paint()
+            ..color = colour.withValues(alpha: 0.16)
+            ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 3),
+        );
+      }
+      canvas.drawPath(path, paint);
+    }
   }
 
   @override
@@ -158,5 +245,15 @@ class EmberPainter extends CustomPainter {
       old.glow != glow ||
       old.second != second ||
       old.contour != contour ||
-      old.dark != dark;
+      old.dark != dark ||
+      !_sameColors(old.sparkle, sparkle);
+
+  static bool _sameColors(List<Color>? a, List<Color>? b) {
+    if (a == null || b == null) return a == b;
+    if (a.length != b.length) return false;
+    for (var i = 0; i < a.length; i++) {
+      if (a[i] != b[i]) return false;
+    }
+    return true;
+  }
 }
