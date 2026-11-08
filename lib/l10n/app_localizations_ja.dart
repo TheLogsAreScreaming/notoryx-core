@@ -9679,6 +9679,22 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
+  String get lite_qrPasteHint =>
+      'このビルドにはカメラスキャナーがありません。代わりにQRコードのテキストを貼り付けてください。';
+
+  @override
+  String get lite_qrPasteLabel => 'QRコードのテキスト';
+
+  @override
+  String get theme_darkMode => 'ダークモードで別のテーマ';
+
+  @override
+  String get theme_darkModeHint => '端末がダークモードのときは別のテーマを使います';
+
+  @override
+  String get theme_darkModeTheme => 'ダークモードのテーマ';
+
+  @override
   String get batteryWatch_title => 'バッテリー監視';
 
   @override

@@ -10207,6 +10207,23 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
+  String get lite_qrPasteHint =>
+      'У цій версії немає сканера з камерою. Вставте текст із QR-коду.';
+
+  @override
+  String get lite_qrPasteLabel => 'Текст QR-коду';
+
+  @override
+  String get theme_darkMode => 'Інша тема в темному режимі';
+
+  @override
+  String get theme_darkModeHint =>
+      'Використовувати іншу тему, поки пристрій у темному режимі';
+
+  @override
+  String get theme_darkModeTheme => 'Тема темного режиму';
+
+  @override
   String get batteryWatch_title => 'Контроль батарей';
 
   @override

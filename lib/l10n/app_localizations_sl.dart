@@ -10167,6 +10167,23 @@ class AppLocalizationsSl extends AppLocalizations {
   }
 
   @override
+  String get lite_qrPasteHint =>
+      'Ta različica nima optičnega bralnika s kamero. Namesto tega prilepite besedilo iz kode QR.';
+
+  @override
+  String get lite_qrPasteLabel => 'Besedilo kode QR';
+
+  @override
+  String get theme_darkMode => 'Druga tema v temnem načinu';
+
+  @override
+  String get theme_darkModeHint =>
+      'Uporabi drugo temo, ko je naprava v temnem načinu';
+
+  @override
+  String get theme_darkModeTheme => 'Tema temnega načina';
+
+  @override
   String get batteryWatch_title => 'Nadzor baterij';
 
   @override

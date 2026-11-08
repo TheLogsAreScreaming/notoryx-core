@@ -9481,6 +9481,21 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
+  String get lite_qrPasteHint => '此版本没有相机扫描功能。请改为粘贴二维码中的文本。';
+
+  @override
+  String get lite_qrPasteLabel => '二维码文本';
+
+  @override
+  String get theme_darkMode => '深色模式使用其他主题';
+
+  @override
+  String get theme_darkModeHint => '设备处于深色模式时使用另一个主题';
+
+  @override
+  String get theme_darkModeTheme => '深色模式主题';
+
+  @override
   String get batteryWatch_title => '电池监控';
 
   @override

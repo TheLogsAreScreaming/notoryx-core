@@ -16879,6 +16879,36 @@ abstract class AppLocalizations {
   /// **'Your radio uses {width}-byte'**
   String pathHash_mismatch(int width);
 
+  /// No description provided for @lite_qrPasteHint.
+  ///
+  /// In en, this message translates to:
+  /// **'This build has no camera scanner. Paste the text from the QR code instead.'**
+  String get lite_qrPasteHint;
+
+  /// No description provided for @lite_qrPasteLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'QR code text'**
+  String get lite_qrPasteLabel;
+
+  /// No description provided for @theme_darkMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Different theme in dark mode'**
+  String get theme_darkMode;
+
+  /// No description provided for @theme_darkModeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Use another theme while your device is set to dark mode'**
+  String get theme_darkModeHint;
+
+  /// No description provided for @theme_darkModeTheme.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark mode theme'**
+  String get theme_darkModeTheme;
+
   /// No description provided for @batteryWatch_title.
   ///
   /// In en, this message translates to:

@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
-import 'package:llamadart/llamadart.dart';
 import 'package:flutter_langdetect/flutter_langdetect.dart';
 
 import '../models/app_settings.dart';
@@ -11,6 +10,7 @@ import '../helpers/gif_helper.dart';
 import '../utils/app_logger.dart';
 import 'app_settings_service.dart';
 import 'translation_file_store.dart';
+import 'translation_llm.dart';
 
 class TranslationResult {
   final String translatedText;
@@ -53,7 +53,7 @@ class TranslationService extends ChangeNotifier {
   bool _cancelDownloadRequested = false;
   String? _lastError;
   Future<void> _queue = Future<void>.value();
-  LlamaEngine? _engine;
+  TranslationLlm? _engine;
   String? _loadedModelPath;
   String? _failedModelPath;
   Future<void>? _langDetectInit;
@@ -505,31 +505,13 @@ class TranslationService extends ChangeNotifier {
         if (engine == null) {
           return null;
         }
-        final messages = [
-          LlamaChatMessage.fromText(
-            role: LlamaChatRole.user,
-            text: instruction,
-          ),
-        ];
         final output = StringBuffer();
-        await for (final chunk in engine.create(
-          messages,
-          params: const GenerationParams(
-            maxTokens: 256,
-            temp: 0.7,
-            topK: 20,
-            topP: 0.6,
-            penalty: 1.05,
-            reusePromptPrefix: false,
-          ),
-          enableThinking: false,
-          sourceLangCode: sourceLanguageCode,
-          targetLangCode: targetLanguageCode,
+        await for (final content in engine.generate(
+          instruction,
+          sourceLanguageCode: sourceLanguageCode,
+          targetLanguageCode: targetLanguageCode,
         )) {
-          final content = chunk.choices.firstOrNull?.delta.content;
-          if (content != null) {
-            output.write(content);
-          }
+          output.write(content);
           if (output.length >= text.length * 4 + 100) {
             break;
           }
@@ -546,7 +528,10 @@ class TranslationService extends ChangeNotifier {
 
   bool get _hasUsableModel {
     final model = selectedModel;
-    return !kIsWeb && model != null && model.localPath.isNotEmpty;
+    return kTranslationLlmAvailable &&
+        !kIsWeb &&
+        model != null &&
+        model.localPath.isNotEmpty;
   }
 
   bool _isPlainTextEligible(String text) {
@@ -583,7 +568,7 @@ class TranslationService extends ChangeNotifier {
     return cleaned.isEmpty ? 'translation-model.gguf' : cleaned;
   }
 
-  Future<LlamaEngine?> _ensureContext(String modelPath) async {
+  Future<TranslationLlm?> _ensureContext(String modelPath) async {
     if (_engine != null && _loadedModelPath == modelPath) {
       return _engine;
     }
@@ -595,21 +580,14 @@ class TranslationService extends ChangeNotifier {
       _engine = null;
       _loadedModelPath = null;
     }
-    final engine = LlamaEngine(LlamaBackend());
+    final engine = TranslationLlm();
     try {
-      await engine.loadModel(
-        modelPath,
-        modelParams: const ModelParams(
-          gpuLayers: 0,
-          preferredBackend: GpuBackend.cpu,
-        ),
-      );
+      await engine.load(modelPath);
       _engine = engine;
       _loadedModelPath = modelPath;
       _failedModelPath = null;
       return _engine;
     } catch (_) {
-      await engine.dispose();
       _failedModelPath = modelPath;
       rethrow;
     }

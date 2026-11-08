@@ -10169,6 +10169,23 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
+  String get lite_qrPasteHint =>
+      'Esta versión no tiene escáner con cámara. Pega el texto del código QR.';
+
+  @override
+  String get lite_qrPasteLabel => 'Texto del código QR';
+
+  @override
+  String get theme_darkMode => 'Otro tema en modo oscuro';
+
+  @override
+  String get theme_darkModeHint =>
+      'Usar otro tema mientras el dispositivo esté en modo oscuro';
+
+  @override
+  String get theme_darkModeTheme => 'Tema del modo oscuro';
+
+  @override
   String get batteryWatch_title => 'Vigilancia de baterías';
 
   @override

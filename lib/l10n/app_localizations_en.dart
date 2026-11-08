@@ -10037,6 +10037,23 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get lite_qrPasteHint =>
+      'This build has no camera scanner. Paste the text from the QR code instead.';
+
+  @override
+  String get lite_qrPasteLabel => 'QR code text';
+
+  @override
+  String get theme_darkMode => 'Different theme in dark mode';
+
+  @override
+  String get theme_darkModeHint =>
+      'Use another theme while your device is set to dark mode';
+
+  @override
+  String get theme_darkModeTheme => 'Dark mode theme';
+
+  @override
   String get batteryWatch_title => 'Battery watch';
 
   @override

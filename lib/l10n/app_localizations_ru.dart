@@ -10210,6 +10210,23 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
+  String get lite_qrPasteHint =>
+      'В этой версии нет сканера с камерой. Вставьте текст из QR-кода.';
+
+  @override
+  String get lite_qrPasteLabel => 'Текст QR-кода';
+
+  @override
+  String get theme_darkMode => 'Другая тема в тёмном режиме';
+
+  @override
+  String get theme_darkModeHint =>
+      'Использовать другую тему, пока устройство в тёмном режиме';
+
+  @override
+  String get theme_darkModeTheme => 'Тема тёмного режима';
+
+  @override
   String get batteryWatch_title => 'Контроль батарей';
 
   @override

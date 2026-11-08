@@ -10176,6 +10176,23 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
+  String get lite_qrPasteHint =>
+      'Diese Version hat keinen Kamera-Scanner. Füge stattdessen den Text des QR-Codes ein.';
+
+  @override
+  String get lite_qrPasteLabel => 'Text des QR-Codes';
+
+  @override
+  String get theme_darkMode => 'Anderes Design im Dunkelmodus';
+
+  @override
+  String get theme_darkModeHint =>
+      'Ein anderes Design verwenden, solange das Gerät im Dunkelmodus ist';
+
+  @override
+  String get theme_darkModeTheme => 'Design im Dunkelmodus';
+
+  @override
   String get batteryWatch_title => 'Akku-Überwachung';
 
   @override

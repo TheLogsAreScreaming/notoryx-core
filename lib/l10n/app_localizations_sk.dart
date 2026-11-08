@@ -10147,6 +10147,23 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
+  String get lite_qrPasteHint =>
+      'Táto verzia nemá skener s kamerou. Vložte namiesto toho text z QR kódu.';
+
+  @override
+  String get lite_qrPasteLabel => 'Text QR kódu';
+
+  @override
+  String get theme_darkMode => 'Iná téma v tmavom režime';
+
+  @override
+  String get theme_darkModeHint =>
+      'Používať inú tému, kým je zariadenie v tmavom režime';
+
+  @override
+  String get theme_darkModeTheme => 'Téma tmavého režimu';
+
+  @override
   String get batteryWatch_title => 'Sledovanie batérií';
 
   @override
