@@ -1,0 +1,4 @@
+• Repeater battery watch, trip readiness check, mesh and route health, network change alerts, guided troubleshooting
+• Waypoints and GPX routes, shown on the map; team tracking to a private channel
+• Optional app lock and encrypted message history (Tools > Security)
+• Every icon button now has a screen-reader label
