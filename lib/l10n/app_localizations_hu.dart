@@ -10860,4 +10860,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String batteryWatch_alertSilent(String name, int count) {
     return '$name nem válaszolt $count akku-lekérdezésre.';
   }
+
+  @override
+  String get map_showWaypoints => 'Mentett útpontok és útvonalak megjelenítése';
 }

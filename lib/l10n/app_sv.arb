@@ -4399,5 +4399,6 @@
   "batteryWatch_alertTitle": "Repeaterbatteri",
   "batteryWatch_alertLow": "{name} ligger på {percent} % ({volts} V).",
   "batteryWatch_alertFalling": "Batteriet i {name} sjunker snabbt: tomt om ungefär {days} dagar i den här takten.",
-  "batteryWatch_alertSilent": "{name} har inte svarat på {count} batterikontroller."
+  "batteryWatch_alertSilent": "{name} har inte svarat på {count} batterikontroller.",
+  "map_showWaypoints": "Visa sparade vägpunkter och rutter"
 }

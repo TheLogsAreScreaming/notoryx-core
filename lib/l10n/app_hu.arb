@@ -4437,5 +4437,6 @@
   "batteryWatch_alertTitle": "Átjátszó akku",
   "batteryWatch_alertLow": "{name}: {percent}% ({volts} V).",
   "batteryWatch_alertFalling": "{name} akkuja gyorsan merül: ilyen ütemben kb. {days} nap múlva lemerül.",
-  "batteryWatch_alertSilent": "{name} nem válaszolt {count} akku-lekérdezésre."
+  "batteryWatch_alertSilent": "{name} nem válaszolt {count} akku-lekérdezésre.",
+  "map_showWaypoints": "Mentett útpontok és útvonalak megjelenítése"
 }

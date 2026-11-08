@@ -10376,4 +10376,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String batteryWatch_alertSilent(String name, int count) {
     return '$name이(가) 배터리 확인 $count회에 응답하지 않았습니다.';
   }
+
+  @override
+  String get map_showWaypoints => '저장된 웨이포인트와 경로 표시';
 }

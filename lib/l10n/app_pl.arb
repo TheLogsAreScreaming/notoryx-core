@@ -4437,5 +4437,6 @@
   "batteryWatch_alertTitle": "Bateria przekaźnika",
   "batteryWatch_alertLow": "{name}: {percent}% ({volts} V).",
   "batteryWatch_alertFalling": "Bateria {name} szybko spada: przy tym tempie rozładuje się za około {days} dni.",
-  "batteryWatch_alertSilent": "{name} nie odpowiedział na {count} zapytań o baterię."
+  "batteryWatch_alertSilent": "{name} nie odpowiedział na {count} zapytań o baterię.",
+  "map_showWaypoints": "Pokaż zapisane punkty i trasy"
 }

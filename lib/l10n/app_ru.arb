@@ -3702,5 +3702,6 @@
   "batteryWatch_alertTitle": "Батарея ретранслятора",
   "batteryWatch_alertLow": "{name}: {percent}% ({volts} В).",
   "batteryWatch_alertFalling": "Батарея {name} быстро садится: при таком темпе разрядится примерно через {days} дн.",
-  "batteryWatch_alertSilent": "{name} не ответил на {count} проверок батареи."
+  "batteryWatch_alertSilent": "{name} не ответил на {count} проверок батареи.",
+  "map_showWaypoints": "Показывать сохранённые точки и маршруты"
 }

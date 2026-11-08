@@ -4533,5 +4533,6 @@
   "batteryWatch_alertTitle": "Batería del repetidor",
   "batteryWatch_alertLow": "{name} está al {percent} % ({volts} V).",
   "batteryWatch_alertFalling": "La batería de {name} baja rápido: vacía en unos {days} días a este ritmo.",
-  "batteryWatch_alertSilent": "{name} no ha respondido a {count} comprobaciones de batería."
+  "batteryWatch_alertSilent": "{name} no ha respondido a {count} comprobaciones de batería.",
+  "map_showWaypoints": "Mostrar puntos y rutas guardados"
 }

@@ -4399,5 +4399,6 @@
   "batteryWatch_alertTitle": "Батерия на ретранслатор",
   "batteryWatch_alertLow": "{name} е на {percent}% ({volts} V).",
   "batteryWatch_alertFalling": "Батерията на {name} пада бързо: изтощена след около {days} дни при това темпо.",
-  "batteryWatch_alertSilent": "{name} не е отговорил на {count} проверки на батерията."
+  "batteryWatch_alertSilent": "{name} не е отговорил на {count} проверки на батерията.",
+  "map_showWaypoints": "Показвай запазените точки и маршрути"
 }

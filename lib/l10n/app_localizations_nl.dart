@@ -10832,4 +10832,7 @@ class AppLocalizationsNl extends AppLocalizations {
   String batteryWatch_alertSilent(String name, int count) {
     return '$name heeft $count batterijcontroles niet beantwoord.';
   }
+
+  @override
+  String get map_showWaypoints => 'Opgeslagen waypoints en routes tonen';
 }

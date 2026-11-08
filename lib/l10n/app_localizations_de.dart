@@ -10885,4 +10885,7 @@ class AppLocalizationsDe extends AppLocalizations {
   String batteryWatch_alertSilent(String name, int count) {
     return '$name hat auf $count Akku-Abfragen nicht geantwortet.';
   }
+
+  @override
+  String get map_showWaypoints => 'Gespeicherte Wegpunkte und Routen anzeigen';
 }

@@ -4533,5 +4533,6 @@
   "batteryWatch_alertTitle": "リピーターのバッテリー",
   "batteryWatch_alertLow": "{name}は{percent}%（{volts} V）です。",
   "batteryWatch_alertFalling": "{name}のバッテリーが急速に低下しています。このペースだと約{days}日で空になります。",
-  "batteryWatch_alertSilent": "{name}は{count}回のバッテリーチェックに応答していません。"
+  "batteryWatch_alertSilent": "{name}は{count}回のバッテリーチェックに応答していません。",
+  "map_showWaypoints": "保存したウェイポイントとルートを表示"
 }

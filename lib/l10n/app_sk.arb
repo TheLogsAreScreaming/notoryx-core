@@ -4399,5 +4399,6 @@
   "batteryWatch_alertTitle": "Batéria opakovača",
   "batteryWatch_alertLow": "{name} je na {percent} % ({volts} V).",
   "batteryWatch_alertFalling": "Batéria {name} rýchlo klesá: pri tomto tempe vybitá asi o {days} dní.",
-  "batteryWatch_alertSilent": "{name} neodpovedal na {count} kontrol batérie."
+  "batteryWatch_alertSilent": "{name} neodpovedal na {count} kontrol batérie.",
+  "map_showWaypoints": "Zobraziť uložené body a trasy"
 }

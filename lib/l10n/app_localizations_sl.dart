@@ -10871,4 +10871,7 @@ class AppLocalizationsSl extends AppLocalizations {
   String batteryWatch_alertSilent(String name, int count) {
     return '$name ni odgovoril na $count preverjanj baterije.';
   }
+
+  @override
+  String get map_showWaypoints => 'Prikaži shranjene točke in poti';
 }

@@ -4533,5 +4533,6 @@
   "batteryWatch_alertTitle": "Repeater-Akku",
   "batteryWatch_alertLow": "{name} ist bei {percent} % ({volts} V).",
   "batteryWatch_alertFalling": "Der Akku von {name} fällt schnell: bei diesem Tempo in etwa {days} Tagen leer.",
-  "batteryWatch_alertSilent": "{name} hat auf {count} Akku-Abfragen nicht geantwortet."
+  "batteryWatch_alertSilent": "{name} hat auf {count} Akku-Abfragen nicht geantwortet.",
+  "map_showWaypoints": "Gespeicherte Wegpunkte und Routen anzeigen"
 }

@@ -4404,5 +4404,6 @@
   "batteryWatch_alertTitle": "中继电池",
   "batteryWatch_alertLow": "{name} 电量 {percent}%（{volts} V）。",
   "batteryWatch_alertFalling": "{name} 的电池下降很快：按此速度约 {days} 天后耗尽。",
-  "batteryWatch_alertSilent": "{name} 已有 {count} 次电池检查未回复。"
+  "batteryWatch_alertSilent": "{name} 已有 {count} 次电池检查未回复。",
+  "map_showWaypoints": "显示已保存的航点和路线"
 }
