@@ -159,6 +159,10 @@ class AppSettings {
   /// packet on air.
   final bool signChannelPosts;
 
+  /// Whether reactions go out over the radio: 'auto' (not on the EU
+  /// 863–870 MHz duty-cycle band), 'on' or 'off' (this device only).
+  final String reactionsOverRadio;
+
   /// The chosen color theme's id (see BastionTheme); Blaze by default.
   final String appTheme;
 
@@ -290,6 +294,7 @@ class AppSettings {
     this.mapShowTelemetry = false,
     this.mapTelemetryMetric = 'battery',
     this.signChannelPosts = false,
+    this.reactionsOverRadio = 'auto',
     this.appTheme = 'blaze',
     this.seasonalOverride = 'auto',
     this.seasonalHolidays = true,
@@ -383,6 +388,7 @@ class AppSettings {
       'map_show_telemetry': mapShowTelemetry,
       'map_telemetry_metric': mapTelemetryMetric,
       'sign_channel_posts': signChannelPosts,
+      'reactions_over_radio': reactionsOverRadio,
       'app_theme': appTheme,
       'seasonal_override': seasonalOverride,
       'seasonal_holidays': seasonalHolidays,
@@ -505,6 +511,10 @@ class AppSettings {
       mapShowTelemetry: json['map_show_telemetry'] as bool? ?? false,
       mapTelemetryMetric: json['map_telemetry_metric'] as String? ?? 'battery',
       signChannelPosts: json['sign_channel_posts'] as bool? ?? false,
+      reactionsOverRadio: switch (json['reactions_over_radio']) {
+        final String v when const {'auto', 'on', 'off'}.contains(v) => v,
+        _ => 'auto',
+      },
       appTheme: _migrateThemeId(json['app_theme'] as String?),
       seasonalOverride:
           json['seasonal_override'] as String? ??
@@ -646,6 +656,7 @@ class AppSettings {
     bool? mapShowTelemetry,
     String? mapTelemetryMetric,
     bool? signChannelPosts,
+    String? reactionsOverRadio,
     String? appTheme,
     String? seasonalOverride,
     bool? seasonalHolidays,
@@ -737,6 +748,7 @@ class AppSettings {
       mapShowTelemetry: mapShowTelemetry ?? this.mapShowTelemetry,
       mapTelemetryMetric: mapTelemetryMetric ?? this.mapTelemetryMetric,
       signChannelPosts: signChannelPosts ?? this.signChannelPosts,
+      reactionsOverRadio: reactionsOverRadio ?? this.reactionsOverRadio,
       appTheme: appTheme ?? this.appTheme,
       seasonalOverride: seasonalOverride ?? this.seasonalOverride,
       seasonalHolidays: seasonalHolidays ?? this.seasonalHolidays,

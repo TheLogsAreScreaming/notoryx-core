@@ -10092,6 +10092,16 @@ class AppLocalizationsNl extends AppLocalizations {
       'Halloween, kerst en Valentijnsdag op hun data';
 
   @override
+  String get theme_darkMode => 'Ander thema in donkere modus';
+
+  @override
+  String get theme_darkModeHint =>
+      'Een ander thema gebruiken zolang het apparaat in donkere modus staat';
+
+  @override
+  String get theme_darkModeTheme => 'Thema voor donkere modus';
+
+  @override
   String get coords_setting => 'Coördinaatnotatie';
 
   @override
@@ -10125,21 +10135,30 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
+  String get coords_maidenhead => 'Maidenhead-locator';
+
+  @override
+  String get reactions_radioTitle => 'Reacties via de radio sturen';
+
+  @override
+  String get reactions_radioHint =>
+      'Elke reactie is een pakket in de lucht. Automatisch houdt ze op dit apparaat op de EU 868 MHz-band, waar zendtijd beperkt is.';
+
+  @override
+  String get reactions_radioAuto => 'Automatisch';
+
+  @override
+  String get reactions_radioOn => 'Aan';
+
+  @override
+  String get reactions_radioOff => 'Uit (dit apparaat)';
+
+  @override
   String get lite_qrPasteHint =>
       'Deze versie heeft geen camerascanner. Plak in plaats daarvan de tekst van de QR-code.';
 
   @override
   String get lite_qrPasteLabel => 'Tekst van de QR-code';
-
-  @override
-  String get theme_darkMode => 'Ander thema in donkere modus';
-
-  @override
-  String get theme_darkModeHint =>
-      'Een ander thema gebruiken zolang het apparaat in donkere modus staat';
-
-  @override
-  String get theme_darkModeTheme => 'Thema voor donkere modus';
 
   @override
   String get batteryWatch_title => 'Batterijbewaking';

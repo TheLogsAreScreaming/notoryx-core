@@ -10052,6 +10052,16 @@ class AppLocalizationsSv extends AppLocalizations {
       'Halloween, jul och alla hjärtans dag på sina datum';
 
   @override
+  String get theme_darkMode => 'Annat tema i mörkt läge';
+
+  @override
+  String get theme_darkModeHint =>
+      'Använd ett annat tema när enheten är i mörkt läge';
+
+  @override
+  String get theme_darkModeTheme => 'Tema i mörkt läge';
+
+  @override
   String get coords_setting => 'Koordinatformat';
 
   @override
@@ -10085,21 +10095,30 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
+  String get coords_maidenhead => 'Maidenhead-lokator';
+
+  @override
+  String get reactions_radioTitle => 'Skicka reaktioner via radio';
+
+  @override
+  String get reactions_radioHint =>
+      'Varje reaktion är ett paket i luften. Automatiskt behåller dem på den här enheten på EU:s 868 MHz-band, där sändningstiden är begränsad.';
+
+  @override
+  String get reactions_radioAuto => 'Automatiskt';
+
+  @override
+  String get reactions_radioOn => 'På';
+
+  @override
+  String get reactions_radioOff => 'Av (den här enheten)';
+
+  @override
   String get lite_qrPasteHint =>
       'Den här versionen har ingen kameraskanner. Klistra in texten från QR-koden i stället.';
 
   @override
   String get lite_qrPasteLabel => 'QR-kodens text';
-
-  @override
-  String get theme_darkMode => 'Annat tema i mörkt läge';
-
-  @override
-  String get theme_darkModeHint =>
-      'Använd ett annat tema när enheten är i mörkt läge';
-
-  @override
-  String get theme_darkModeTheme => 'Tema i mörkt läge';
 
   @override
   String get batteryWatch_title => 'Batteribevakning';

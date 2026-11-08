@@ -9448,6 +9448,15 @@ class AppLocalizationsZh extends AppLocalizations {
   String get seasonal_holidaysHint => '在万圣节、圣诞节和情人节期间使用';
 
   @override
+  String get theme_darkMode => '深色模式使用其他主题';
+
+  @override
+  String get theme_darkModeHint => '设备处于深色模式时使用另一个主题';
+
+  @override
+  String get theme_darkModeTheme => '深色模式主题';
+
+  @override
   String get coords_setting => '坐标格式';
 
   @override
@@ -9481,19 +9490,29 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
+  String get coords_maidenhead => '梅登黑德定位符';
+
+  @override
+  String get reactions_radioTitle => '通过电台发送回应';
+
+  @override
+  String get reactions_radioHint =>
+      '每个回应都是一个空中数据包。自动模式在发射时间受限的欧盟 868 MHz 频段只在本设备上显示。';
+
+  @override
+  String get reactions_radioAuto => '自动';
+
+  @override
+  String get reactions_radioOn => '开';
+
+  @override
+  String get reactions_radioOff => '关（仅本设备）';
+
+  @override
   String get lite_qrPasteHint => '此版本没有相机扫描功能。请改为粘贴二维码中的文本。';
 
   @override
   String get lite_qrPasteLabel => '二维码文本';
-
-  @override
-  String get theme_darkMode => '深色模式使用其他主题';
-
-  @override
-  String get theme_darkModeHint => '设备处于深色模式时使用另一个主题';
-
-  @override
-  String get theme_darkModeTheme => '深色模式主题';
 
   @override
   String get batteryWatch_title => '电池监控';

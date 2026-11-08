@@ -10114,6 +10114,16 @@ class AppLocalizationsSk extends AppLocalizations {
       'Halloween, Vianoce a Valentín v ich termínoch';
 
   @override
+  String get theme_darkMode => 'Iná téma v tmavom režime';
+
+  @override
+  String get theme_darkModeHint =>
+      'Používať inú tému, kým je zariadenie v tmavom režime';
+
+  @override
+  String get theme_darkModeTheme => 'Téma tmavého režimu';
+
+  @override
   String get coords_setting => 'Formát súradníc';
 
   @override
@@ -10147,21 +10157,30 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
+  String get coords_maidenhead => 'Lokátor Maidenhead';
+
+  @override
+  String get reactions_radioTitle => 'Posielať reakcie rádiom';
+
+  @override
+  String get reactions_radioHint =>
+      'Každá reakcia je paket vo vzduchu. Automaticky ich v pásme EÚ 868 MHz, kde je vysielací čas obmedzený, necháva len na tomto zariadení.';
+
+  @override
+  String get reactions_radioAuto => 'Automaticky';
+
+  @override
+  String get reactions_radioOn => 'Zap.';
+
+  @override
+  String get reactions_radioOff => 'Vyp. (toto zariadenie)';
+
+  @override
   String get lite_qrPasteHint =>
       'Táto verzia nemá skener s kamerou. Vložte namiesto toho text z QR kódu.';
 
   @override
   String get lite_qrPasteLabel => 'Text QR kódu';
-
-  @override
-  String get theme_darkMode => 'Iná téma v tmavom režime';
-
-  @override
-  String get theme_darkModeHint =>
-      'Používať inú tému, kým je zariadenie v tmavom režime';
-
-  @override
-  String get theme_darkModeTheme => 'Téma tmavého režimu';
 
   @override
   String get batteryWatch_title => 'Sledovanie batérií';

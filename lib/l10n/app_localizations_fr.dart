@@ -10167,6 +10167,16 @@ class AppLocalizationsFr extends AppLocalizations {
       'Halloween, Noël et la Saint-Valentin à leurs dates';
 
   @override
+  String get theme_darkMode => 'Autre thème en mode sombre';
+
+  @override
+  String get theme_darkModeHint =>
+      'Utiliser un autre thème lorsque l\'appareil est en mode sombre';
+
+  @override
+  String get theme_darkModeTheme => 'Thème du mode sombre';
+
+  @override
   String get coords_setting => 'Format des coordonnées';
 
   @override
@@ -10200,21 +10210,30 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
+  String get coords_maidenhead => 'Locator Maidenhead';
+
+  @override
+  String get reactions_radioTitle => 'Envoyer les réactions par radio';
+
+  @override
+  String get reactions_radioHint =>
+      'Chaque réaction est un paquet émis. Automatique les garde sur cet appareil sur la bande européenne 868 MHz, où le temps d\'émission est limité.';
+
+  @override
+  String get reactions_radioAuto => 'Automatique';
+
+  @override
+  String get reactions_radioOn => 'Oui';
+
+  @override
+  String get reactions_radioOff => 'Non (cet appareil)';
+
+  @override
   String get lite_qrPasteHint =>
       'Cette version n\'a pas de scanner photo. Collez plutôt le texte du code QR.';
 
   @override
   String get lite_qrPasteLabel => 'Texte du code QR';
-
-  @override
-  String get theme_darkMode => 'Autre thème en mode sombre';
-
-  @override
-  String get theme_darkModeHint =>
-      'Utiliser un autre thème lorsque l\'appareil est en mode sombre';
-
-  @override
-  String get theme_darkModeTheme => 'Thème du mode sombre';
 
   @override
   String get batteryWatch_title => 'Surveillance des batteries';

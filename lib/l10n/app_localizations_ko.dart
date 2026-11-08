@@ -9659,6 +9659,15 @@ class AppLocalizationsKo extends AppLocalizations {
   String get seasonal_holidaysHint => '핼러윈, 크리스마스, 밸런타인데이 기간에 적용';
 
   @override
+  String get theme_darkMode => '다크 모드에서 다른 테마';
+
+  @override
+  String get theme_darkModeHint => '기기가 다크 모드일 때 다른 테마를 사용합니다';
+
+  @override
+  String get theme_darkModeTheme => '다크 모드 테마';
+
+  @override
   String get coords_setting => '좌표 형식';
 
   @override
@@ -9692,20 +9701,30 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String get coords_maidenhead => '메이든헤드 로케이터';
+
+  @override
+  String get reactions_radioTitle => '반응을 무선으로 보내기';
+
+  @override
+  String get reactions_radioHint =>
+      '반응 하나하나가 전파로 나가는 패킷입니다. 자동은 송신 시간이 제한된 EU 868 MHz 대역에서 이 기기에만 표시합니다.';
+
+  @override
+  String get reactions_radioAuto => '자동';
+
+  @override
+  String get reactions_radioOn => '켜기';
+
+  @override
+  String get reactions_radioOff => '끄기(이 기기)';
+
+  @override
   String get lite_qrPasteHint =>
       '이 빌드에는 카메라 스캐너가 없습니다. 대신 QR 코드의 텍스트를 붙여 넣으세요.';
 
   @override
   String get lite_qrPasteLabel => 'QR 코드 텍스트';
-
-  @override
-  String get theme_darkMode => '다크 모드에서 다른 테마';
-
-  @override
-  String get theme_darkModeHint => '기기가 다크 모드일 때 다른 테마를 사용합니다';
-
-  @override
-  String get theme_darkModeTheme => '다크 모드 테마';
 
   @override
   String get batteryWatch_title => '배터리 감시';

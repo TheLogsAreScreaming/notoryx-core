@@ -10145,6 +10145,16 @@ class AppLocalizationsIt extends AppLocalizations {
       'Halloween, Natale e San Valentino nelle loro date';
 
   @override
+  String get theme_darkMode => 'Tema diverso in modalità scura';
+
+  @override
+  String get theme_darkModeHint =>
+      'Usa un altro tema quando il dispositivo è in modalità scura';
+
+  @override
+  String get theme_darkModeTheme => 'Tema della modalità scura';
+
+  @override
   String get coords_setting => 'Formato coordinate';
 
   @override
@@ -10178,21 +10188,30 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
+  String get coords_maidenhead => 'Locatore Maidenhead';
+
+  @override
+  String get reactions_radioTitle => 'Invia le reazioni via radio';
+
+  @override
+  String get reactions_radioHint =>
+      'Ogni reazione è un pacchetto trasmesso. Automatico le tiene su questo dispositivo nella banda UE 868 MHz, dove il tempo di trasmissione è limitato.';
+
+  @override
+  String get reactions_radioAuto => 'Automatico';
+
+  @override
+  String get reactions_radioOn => 'Sì';
+
+  @override
+  String get reactions_radioOff => 'No (questo dispositivo)';
+
+  @override
   String get lite_qrPasteHint =>
       'Questa versione non ha lo scanner con fotocamera. Incolla il testo del codice QR.';
 
   @override
   String get lite_qrPasteLabel => 'Testo del codice QR';
-
-  @override
-  String get theme_darkMode => 'Tema diverso in modalità scura';
-
-  @override
-  String get theme_darkModeHint =>
-      'Usa un altro tema quando il dispositivo è in modalità scura';
-
-  @override
-  String get theme_darkModeTheme => 'Tema della modalità scura';
 
   @override
   String get batteryWatch_title => 'Controllo batterie';
