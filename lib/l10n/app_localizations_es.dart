@@ -10911,7 +10911,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get appLock_subtitle =>
-      'Pide huella, rostro o bloqueo de pantalla al abrir la app. Las alertas siguen funcionando, pero debes desbloquear antes de enviar un SOS.';
+      'Pide huella, rostro o bloqueo de pantalla al abrir la app. Las alertas siguen funcionando y el SOS sigue en la pantalla de bloqueo.';
 
   @override
   String get appLock_reason => 'Desbloquear NOTORYX Core';
@@ -10949,4 +10949,8 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get map_showWaypoints => 'Mostrar puntos y rutas guardados';
+
+  @override
+  String get appLock_sosNoTarget =>
+      'Desbloquea y elige primero quién recibe tu SOS.';
 }

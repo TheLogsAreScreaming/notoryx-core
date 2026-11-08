@@ -10945,7 +10945,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get appLock_subtitle =>
-      'Demande l\'empreinte, le visage ou le verrouillage de l\'écran à l\'ouverture. Les alertes continuent, mais il faut déverrouiller avant d\'envoyer un SOS.';
+      'Demande l\'empreinte, le visage ou le verrouillage de l\'écran à l\'ouverture. Les alertes continuent et le SOS reste sur l\'écran verrouillé.';
 
   @override
   String get appLock_reason => 'Déverrouiller NOTORYX Core';
@@ -10984,4 +10984,8 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get map_showWaypoints =>
       'Afficher les points et itinéraires enregistrés';
+
+  @override
+  String get appLock_sosNoTarget =>
+      'Déverrouillez d\'abord et choisissez qui reçoit votre SOS.';
 }

@@ -10177,7 +10177,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get appLock_title => '应用锁';
 
   @override
-  String get appLock_subtitle => '打开应用时要求指纹、面容或屏幕锁。提醒仍会工作，但发送 SOS 前必须先解锁。';
+  String get appLock_subtitle => '打开应用时要求指纹、面容或屏幕锁。提醒仍会工作，锁屏上也可发送 SOS。';
 
   @override
   String get appLock_reason => '解锁 NOTORYX Core';
@@ -10212,4 +10212,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get map_showWaypoints => '显示已保存的航点和路线';
+
+  @override
+  String get appLock_sosNoTarget => '请先解锁并选择 SOS 的接收人。';
 }

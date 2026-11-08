@@ -10887,7 +10887,7 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get appLock_subtitle =>
-      'Pri otvorení vyžaduje odtlačok, tvár alebo zámok obrazovky. Upozornenia fungujú ďalej, ale pred odoslaním SOS musíte odomknúť.';
+      'Pri otvorení vyžaduje odtlačok, tvár alebo zámok obrazovky. Upozornenia fungujú ďalej a SOS zostáva na uzamknutej obrazovke.';
 
   @override
   String get appLock_reason => 'Odomknúť NOTORYX Core';
@@ -10923,4 +10923,8 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get map_showWaypoints => 'Zobraziť uložené body a trasy';
+
+  @override
+  String get appLock_sosNoTarget =>
+      'Najprv odomknite a vyberte, kto dostane vaše SOS.';
 }

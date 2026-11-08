@@ -18106,7 +18106,7 @@ abstract class AppLocalizations {
   /// No description provided for @appLock_subtitle.
   ///
   /// In en, this message translates to:
-  /// **'Ask for your fingerprint, face or screen lock when opening the app. Alerts keep working, but you must unlock before you can send an SOS.'**
+  /// **'Ask for your fingerprint, face or screen lock when opening the app. Alerts keep working, and SOS stays on the lock screen.'**
   String get appLock_subtitle;
 
   /// No description provided for @appLock_reason.
@@ -18174,6 +18174,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Show saved waypoints and routes'**
   String get map_showWaypoints;
+
+  /// No description provided for @appLock_sosNoTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock and choose who gets your SOS first.'**
+  String get appLock_sosNoTarget;
 }
 
 class _AppLocalizationsDelegate

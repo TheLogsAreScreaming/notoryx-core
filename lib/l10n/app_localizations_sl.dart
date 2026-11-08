@@ -10905,7 +10905,7 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get appLock_subtitle =>
-      'Ob odpiranju zahteva prstni odtis, obraz ali zaklep zaslona. Opozorila delujejo naprej, vendar morate pred pošiljanjem SOS odkleniti.';
+      'Ob odpiranju zahteva prstni odtis, obraz ali zaklep zaslona. Opozorila delujejo naprej, SOS pa ostane na zaklenjenem zaslonu.';
 
   @override
   String get appLock_reason => 'Odkleni NOTORYX Core';
@@ -10943,4 +10943,8 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get map_showWaypoints => 'Prikaži shranjene točke in poti';
+
+  @override
+  String get appLock_sosNoTarget =>
+      'Najprej odklenite in izberite, kdo prejme vaš SOS.';
 }

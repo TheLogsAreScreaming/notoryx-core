@@ -10951,7 +10951,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get appLock_subtitle =>
-      'Prosi o odcisk palca, twarz lub blokadę ekranu przy otwieraniu. Alerty działają dalej, ale przed wysłaniem SOS trzeba odblokować aplikację.';
+      'Prosi o odcisk palca, twarz lub blokadę ekranu przy otwieraniu. Alerty działają dalej, a SOS pozostaje na ekranie blokady.';
 
   @override
   String get appLock_reason => 'Odblokuj NOTORYX Core';
@@ -10988,4 +10988,8 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get map_showWaypoints => 'Pokaż zapisane punkty i trasy';
+
+  @override
+  String get appLock_sosNoTarget =>
+      'Najpierw odblokuj i wybierz, kto otrzyma SOS.';
 }

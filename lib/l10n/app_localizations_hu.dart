@@ -10894,7 +10894,7 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get appLock_subtitle =>
-      'Megnyitáskor ujjlenyomatot, arcot vagy képernyőzárat kér. A riasztások működnek, de SOS küldése előtt fel kell oldanod.';
+      'Megnyitáskor ujjlenyomatot, arcot vagy képernyőzárat kér. A riasztások működnek, az SOS pedig a zárolási képernyőn is elérhető.';
 
   @override
   String get appLock_reason => 'NOTORYX Core feloldása';
@@ -10932,4 +10932,8 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get map_showWaypoints => 'Mentett útpontok és útvonalak megjelenítése';
+
+  @override
+  String get appLock_sosNoTarget =>
+      'Előbb oldd fel, és válaszd ki, ki kapja az SOS-t.';
 }

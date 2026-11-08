@@ -4544,7 +4544,7 @@
   "security_title": "Sicurezza",
   "security_toolSubtitle": "Blocco app e cronologia cifrata",
   "appLock_title": "Blocco app",
-  "appLock_subtitle": "Chiede impronta, volto o blocco schermo all'apertura. Gli avvisi continuano, ma devi sbloccare prima di inviare un SOS.",
+  "appLock_subtitle": "Chiede impronta, volto o blocco schermo all'apertura. Gli avvisi continuano e l'SOS resta nella schermata di blocco.",
   "appLock_reason": "Sblocca NOTORYX Core",
   "appLock_unlock": "Sblocca",
   "appLock_locked": "NOTORYX Core è bloccato",
@@ -4555,5 +4555,6 @@
   "dbEncrypt_off": "Stato: non cifrato",
   "dbEncrypt_failed": "Stato: non applicato. La cronologia è invariata.",
   "dbEncrypt_restart": "Avrà effetto al prossimo avvio dell'app.",
-  "map_showWaypoints": "Mostra waypoint e percorsi salvati"
+  "map_showWaypoints": "Mostra waypoint e percorsi salvati",
+  "appLock_sosNoTarget": "Prima sblocca e scegli chi riceve il tuo SOS."
 }

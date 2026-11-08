@@ -10866,7 +10866,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get appLock_subtitle =>
-      'Vraagt bij het openen om vingerafdruk, gezicht of schermvergrendeling. Meldingen blijven werken, maar je moet ontgrendelen voordat je een SOS kunt sturen.';
+      'Vraagt bij het openen om vingerafdruk, gezicht of schermvergrendeling. Meldingen blijven werken en SOS blijft op het vergrendelscherm.';
 
   @override
   String get appLock_reason => 'NOTORYX Core ontgrendelen';
@@ -10903,4 +10903,8 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get map_showWaypoints => 'Opgeslagen waypoints en routes tonen';
+
+  @override
+  String get appLock_sosNoTarget =>
+      'Ontgrendel eerst en kies wie je SOS ontvangt.';
 }

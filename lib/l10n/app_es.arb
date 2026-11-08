@@ -4544,7 +4544,7 @@
   "security_title": "Seguridad",
   "security_toolSubtitle": "Bloqueo de la app e historial cifrado",
   "appLock_title": "Bloqueo de la app",
-  "appLock_subtitle": "Pide huella, rostro o bloqueo de pantalla al abrir la app. Las alertas siguen funcionando, pero debes desbloquear antes de enviar un SOS.",
+  "appLock_subtitle": "Pide huella, rostro o bloqueo de pantalla al abrir la app. Las alertas siguen funcionando y el SOS sigue en la pantalla de bloqueo.",
   "appLock_reason": "Desbloquear NOTORYX Core",
   "appLock_unlock": "Desbloquear",
   "appLock_locked": "NOTORYX Core está bloqueado",
@@ -4555,5 +4555,6 @@
   "dbEncrypt_off": "Estado: sin cifrar",
   "dbEncrypt_failed": "Estado: no se pudo aplicar. Tu historial no ha cambiado.",
   "dbEncrypt_restart": "Se aplicará la próxima vez que se inicie la app.",
-  "map_showWaypoints": "Mostrar puntos y rutas guardados"
+  "map_showWaypoints": "Mostrar puntos y rutas guardados",
+  "appLock_sosNoTarget": "Desbloquea y elige primero quién recibe tu SOS."
 }

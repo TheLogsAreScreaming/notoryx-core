@@ -10919,7 +10919,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get appLock_subtitle =>
-      'Fragt beim Öffnen nach Fingerabdruck, Gesicht oder Bildschirmsperre. Warnungen laufen weiter, aber vor einem SOS musst du entsperren.';
+      'Fragt beim Öffnen nach Fingerabdruck, Gesicht oder Bildschirmsperre. Warnungen laufen weiter, und SOS bleibt auf dem Sperrbildschirm.';
 
   @override
   String get appLock_reason => 'NOTORYX Core entsperren';
@@ -10956,4 +10956,8 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get map_showWaypoints => 'Gespeicherte Wegpunkte und Routen anzeigen';
+
+  @override
+  String get appLock_sosNoTarget =>
+      'Entsperre zuerst und wähle, wer dein SOS erhält.';
 }

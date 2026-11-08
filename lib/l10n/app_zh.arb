@@ -4415,7 +4415,7 @@
   "security_title": "安全",
   "security_toolSubtitle": "应用锁和加密消息记录",
   "appLock_title": "应用锁",
-  "appLock_subtitle": "打开应用时要求指纹、面容或屏幕锁。提醒仍会工作，但发送 SOS 前必须先解锁。",
+  "appLock_subtitle": "打开应用时要求指纹、面容或屏幕锁。提醒仍会工作，锁屏上也可发送 SOS。",
   "appLock_reason": "解锁 NOTORYX Core",
   "appLock_unlock": "解锁",
   "appLock_locked": "NOTORYX Core 已锁定",
@@ -4426,5 +4426,6 @@
   "dbEncrypt_off": "状态：未加密",
   "dbEncrypt_failed": "状态：无法应用。记录未更改。",
   "dbEncrypt_restart": "下次启动应用时生效。",
-  "map_showWaypoints": "显示已保存的航点和路线"
+  "map_showWaypoints": "显示已保存的航点和路线",
+  "appLock_sosNoTarget": "请先解锁并选择 SOS 的接收人。"
 }

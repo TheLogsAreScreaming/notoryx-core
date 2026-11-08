@@ -4448,7 +4448,7 @@
   "security_title": "Biztonság",
   "security_toolSubtitle": "Alkalmazászár és titkosított üzenetelőzmények",
   "appLock_title": "Alkalmazászár",
-  "appLock_subtitle": "Megnyitáskor ujjlenyomatot, arcot vagy képernyőzárat kér. A riasztások működnek, de SOS küldése előtt fel kell oldanod.",
+  "appLock_subtitle": "Megnyitáskor ujjlenyomatot, arcot vagy képernyőzárat kér. A riasztások működnek, az SOS pedig a zárolási képernyőn is elérhető.",
   "appLock_reason": "NOTORYX Core feloldása",
   "appLock_unlock": "Feloldás",
   "appLock_locked": "A NOTORYX Core zárolva van",
@@ -4459,5 +4459,6 @@
   "dbEncrypt_off": "Állapot: nincs titkosítva",
   "dbEncrypt_failed": "Állapot: nem sikerült. Az előzmények nem változtak.",
   "dbEncrypt_restart": "Az alkalmazás következő indításakor lép életbe.",
-  "map_showWaypoints": "Mentett útpontok és útvonalak megjelenítése"
+  "map_showWaypoints": "Mentett útpontok és útvonalak megjelenítése",
+  "appLock_sosNoTarget": "Előbb oldd fel, és válaszd ki, ki kapja az SOS-t."
 }
