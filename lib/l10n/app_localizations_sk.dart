@@ -10157,6 +10157,32 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
+  String get coords_maidenhead => 'Lokátor Maidenhead';
+
+  @override
+  String get reactions_radioTitle => 'Posielať reakcie rádiom';
+
+  @override
+  String get reactions_radioHint =>
+      'Každá reakcia je paket vo vzduchu. Automaticky ich v pásme EÚ 868 MHz, kde je vysielací čas obmedzený, necháva len na tomto zariadení.';
+
+  @override
+  String get reactions_radioAuto => 'Automaticky';
+
+  @override
+  String get reactions_radioOn => 'Zap.';
+
+  @override
+  String get reactions_radioOff => 'Vyp. (toto zariadenie)';
+
+  @override
+  String get lite_qrPasteHint =>
+      'Táto verzia nemá skener s kamerou. Vložte namiesto toho text z QR kódu.';
+
+  @override
+  String get lite_qrPasteLabel => 'Text QR kódu';
+
+  @override
   String get batteryWatch_title => 'Sledovanie batérií';
 
   @override
@@ -10224,68 +10250,57 @@ class AppLocalizationsSk extends AppLocalizations {
   String get batteryWatch_cleared => 'História vymazaná';
 
   @override
-  String get readiness_sos => 'Príjemcovia SOS';
+  String get batteryWatch_auto => 'Kontrolovať automaticky';
 
   @override
-  String get readiness_sosOk => 'SOS má príjemcov.';
+  String get batteryWatch_autoHint =>
+      'Kým je pripojené rádio, aplikácia sa pravidelne pýta opakovača na batériu. Odpovie len vtedy, ak ste prihlásení.';
 
   @override
-  String get readiness_sosBlocked =>
-      'SOS nemá komu poslať. Pridajte účastníkov výletu zo svojich kontaktov alebo nastavte SOS kanál.';
+  String get batteryWatch_interval => 'Kontrolovať každých';
 
   @override
-  String get readiness_routes => 'Trasy k účastníkom';
-
-  @override
-  String get readiness_routesOk => 'Ku každému účastníkovi je známa trasa.';
-
-  @override
-  String readiness_routesMissing(String names) {
-    return 'K $names nie je známa trasa. Správy sa budú šíriť zaplavením, kým sa trasa nenaučí. Pošlite im správu pred odchodom.';
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
   }
 
   @override
-  String get readiness_notifications => 'Upozornenia';
+  String get batteryWatch_budget =>
+      'Najviac 6 kontrol za hodinu pre všetky opakovače, aspoň 2 minúty od seba.';
 
   @override
-  String get readiness_notificationsOk => 'Povolené.';
+  String get batteryWatch_add => 'Pridať opakovač';
 
   @override
-  String get readiness_notificationsOff =>
-      'Upozornenia sú vypnuté, takže nebudete počuť odpovede, hlásenia ani výstrahy.';
+  String get batteryWatch_pick => 'Vyberte opakovač na sledovanie';
 
   @override
-  String get readiness_batteryOpt => 'Optimalizácia batérie';
+  String get batteryWatch_noRepeaters =>
+      'V kontaktoch zatiaľ nie sú opakovače.';
 
   @override
-  String get readiness_batteryOptOk => 'NOTORYX Core je vyňatý.';
-
-  @override
-  String get readiness_batteryOptOn =>
-      'Android môže aplikáciu na pozadí zastaviť. Vypnite to v Nastavenia → Nastavenia aplikácie → Upozornenia.';
-
-  @override
-  String get readiness_blockedTitle => 'Výlet sa ešte nedá začať';
-
-  @override
-  String readiness_warnTitle(int count) {
-    return '$count vecí na kontrolu';
+  String batteryWatch_noReply(int count) {
+    return 'Žiadna odpoveď na posledných $count kontrol. Otvorte opakovač a prihláste sa znova.';
   }
 
   @override
-  String get readiness_startAnyway => 'Začať aj tak';
+  String get batteryWatch_checking => 'Kontroluje sa…';
 
   @override
-  String get readiness_review => 'Skontrolovať';
+  String get batteryWatch_alertTitle => 'Batéria opakovača';
 
   @override
-  String get readiness_summaryReady => 'Pripravené na cestu';
-
-  @override
-  String readiness_summaryWarn(int count) {
-    return '$count na kontrolu';
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name je na $percent % ($volts V).';
   }
 
   @override
-  String get readiness_summaryBlocked => 'SOS sa k nikomu nedostane';
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Batéria $name rýchlo klesá: pri tomto tempe vybitá asi o $days dní.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name neodpovedal na $count kontrol batérie.';
+  }
 }

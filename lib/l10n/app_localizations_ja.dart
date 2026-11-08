@@ -9688,6 +9688,32 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
+  String get coords_maidenhead => 'メイデンヘッド・ロケーター';
+
+  @override
+  String get reactions_radioTitle => 'リアクションを無線で送信';
+
+  @override
+  String get reactions_radioHint =>
+      'リアクションは1件ごとに電波で送られます。自動では、送信時間が制限されるEUの868 MHz帯ではこの端末内だけに表示します。';
+
+  @override
+  String get reactions_radioAuto => '自動';
+
+  @override
+  String get reactions_radioOn => 'オン';
+
+  @override
+  String get reactions_radioOff => 'オフ（この端末）';
+
+  @override
+  String get lite_qrPasteHint =>
+      'このビルドにはカメラスキャナーがありません。代わりにQRコードのテキストを貼り付けてください。';
+
+  @override
+  String get lite_qrPasteLabel => 'QRコードのテキスト';
+
+  @override
   String get batteryWatch_title => 'バッテリー監視';
 
   @override
@@ -9753,67 +9779,55 @@ class AppLocalizationsJa extends AppLocalizations {
   String get batteryWatch_cleared => '履歴を消去しました';
 
   @override
-  String get readiness_sos => 'SOSの送信先';
+  String get batteryWatch_auto => '自動でチェック';
 
   @override
-  String get readiness_sosOk => 'SOSの送信先があります。';
+  String get batteryWatch_autoHint =>
+      '無線機が接続されている間、アプリが定期的にこのリピーターのバッテリーを問い合わせます。ログインしている場合のみ応答します。';
 
   @override
-  String get readiness_sosBlocked =>
-      'SOSの送信先がありません。連絡先にいる同行者を追加するか、SOSチャンネルを設定してください。';
+  String get batteryWatch_interval => 'チェック間隔';
 
   @override
-  String get readiness_routes => '同行者へのルート';
-
-  @override
-  String get readiness_routesOk => 'すべての同行者へのルートがわかっています。';
-
-  @override
-  String readiness_routesMissing(String names) {
-    return '$namesへのルートが不明です。ルートを学習するまでメッセージはフラッドで送られます。出発前にメッセージを送ってください。';
+  String batteryWatch_hours(int hours) {
+    return '$hours時間';
   }
 
   @override
-  String get readiness_notifications => '通知';
+  String get batteryWatch_budget => '全リピーター合計で1時間に最大6回、2分以上の間隔。';
 
   @override
-  String get readiness_notificationsOk => '許可されています。';
+  String get batteryWatch_add => 'リピーターを追加';
 
   @override
-  String get readiness_notificationsOff => '通知がオフのため、返信・チェックイン・アラートが届きません。';
+  String get batteryWatch_pick => '監視するリピーターを選択';
 
   @override
-  String get readiness_batteryOpt => 'バッテリー最適化';
+  String get batteryWatch_noRepeaters => '連絡先にリピーターがまだありません。';
 
   @override
-  String get readiness_batteryOptOk => 'NOTORYX Coreは対象外です。';
-
-  @override
-  String get readiness_batteryOptOn =>
-      'Androidがバックグラウンドでアプリを停止する可能性があります。設定 → アプリ設定 → 通知でオフにしてください。';
-
-  @override
-  String get readiness_blockedTitle => 'まだ出発できません';
-
-  @override
-  String readiness_warnTitle(int count) {
-    return '確認事項 $count 件';
+  String batteryWatch_noReply(int count) {
+    return '直近$count回のチェックに応答がありません。リピーターを開いて再度ログインしてください。';
   }
 
   @override
-  String get readiness_startAnyway => 'このまま開始';
+  String get batteryWatch_checking => 'チェック中…';
 
   @override
-  String get readiness_review => '確認する';
+  String get batteryWatch_alertTitle => 'リピーターのバッテリー';
 
   @override
-  String get readiness_summaryReady => '準備完了';
-
-  @override
-  String readiness_summaryWarn(int count) {
-    return '確認 $count 件';
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$nameは$percent%（$volts V）です。';
   }
 
   @override
-  String get readiness_summaryBlocked => 'SOSの送信先がありません';
+  String batteryWatch_alertFalling(String name, String days) {
+    return '$nameのバッテリーが急速に低下しています。このペースだと約$days日で空になります。';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$nameは$count回のバッテリーチェックに応答していません。';
+  }
 }

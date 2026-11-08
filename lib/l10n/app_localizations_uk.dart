@@ -10217,6 +10217,32 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
+  String get coords_maidenhead => 'Локатор Maidenhead';
+
+  @override
+  String get reactions_radioTitle => 'Надсилати реакції радіо';
+
+  @override
+  String get reactions_radioHint =>
+      'Кожна реакція — це пакет в ефірі. «Автоматично» залишає їх на цьому пристрої в європейському діапазоні 868 МГц, де ефірний час обмежений.';
+
+  @override
+  String get reactions_radioAuto => 'Автоматично';
+
+  @override
+  String get reactions_radioOn => 'Увімк.';
+
+  @override
+  String get reactions_radioOff => 'Вимк. (цей пристрій)';
+
+  @override
+  String get lite_qrPasteHint =>
+      'У цій версії немає сканера з камерою. Вставте текст із QR-коду.';
+
+  @override
+  String get lite_qrPasteLabel => 'Текст QR-коду';
+
+  @override
   String get batteryWatch_title => 'Контроль батарей';
 
   @override
@@ -10284,68 +10310,56 @@ class AppLocalizationsUk extends AppLocalizations {
   String get batteryWatch_cleared => 'Історію очищено';
 
   @override
-  String get readiness_sos => 'Одержувачі SOS';
+  String get batteryWatch_auto => 'Перевіряти автоматично';
 
   @override
-  String get readiness_sosOk => 'У SOS є одержувачі.';
+  String get batteryWatch_autoHint =>
+      'Поки радіо підключене, застосунок періодично запитує в ретранслятора заряд батареї. Він відповідає, лише якщо ви увійшли в нього.';
 
   @override
-  String get readiness_sosBlocked =>
-      'SOS нікому надіслати. Додайте учасників походу з контактів або задайте SOS-канал.';
+  String get batteryWatch_interval => 'Перевіряти кожні';
 
   @override
-  String get readiness_routes => 'Маршрути до учасників';
-
-  @override
-  String get readiness_routesOk => 'Маршрут відомий до кожного учасника.';
-
-  @override
-  String readiness_routesMissing(String names) {
-    return 'Немає відомого маршруту до $names. Повідомлення йтимуть розсилкою, доки маршрут не вивчено. Надішліть їм повідомлення перед виходом.';
+  String batteryWatch_hours(int hours) {
+    return '$hours год';
   }
 
   @override
-  String get readiness_notifications => 'Сповіщення';
+  String get batteryWatch_budget =>
+      'Не більше 6 перевірок на годину для всіх ретрансляторів, щонайменше 2 хвилини між ними.';
 
   @override
-  String get readiness_notificationsOk => 'Дозволено.';
+  String get batteryWatch_add => 'Додати ретранслятор';
 
   @override
-  String get readiness_notificationsOff =>
-      'Сповіщення вимкнені — ви не почуєте відповіді, відмітки й тривоги.';
+  String get batteryWatch_pick => 'Виберіть ретранслятор для контролю';
 
   @override
-  String get readiness_batteryOpt => 'Оптимізація батареї';
+  String get batteryWatch_noRepeaters => 'У контактах ще немає ретрансляторів.';
 
   @override
-  String get readiness_batteryOptOk => 'NOTORYX Core у винятках.';
-
-  @override
-  String get readiness_batteryOptOn =>
-      'Android може зупинити застосунок у фоні. Вимкніть це в Налаштування → Налаштування застосунку → Сповіщення.';
-
-  @override
-  String get readiness_blockedTitle => 'Похід поки не можна почати';
-
-  @override
-  String readiness_warnTitle(int count) {
-    return 'Перевірити: $count';
+  String batteryWatch_noReply(int count) {
+    return 'Немає відповіді на останні $count перевірок. Відкрийте ретранслятор і увійдіть знову.';
   }
 
   @override
-  String get readiness_startAnyway => 'Почати все одно';
+  String get batteryWatch_checking => 'Перевірка…';
 
   @override
-  String get readiness_review => 'Переглянути';
+  String get batteryWatch_alertTitle => 'Батарея ретранслятора';
 
   @override
-  String get readiness_summaryReady => 'Можна виходити';
-
-  @override
-  String readiness_summaryWarn(int count) {
-    return 'Перевірити: $count';
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name: $percent% ($volts В).';
   }
 
   @override
-  String get readiness_summaryBlocked => 'SOS нікому не дійде';
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Батарея $name швидко сідає: за такого темпу розрядиться приблизно за $days дн.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name не відповів на $count перевірок батареї.';
+  }
 }

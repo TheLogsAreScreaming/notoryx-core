@@ -9490,6 +9490,31 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
+  String get coords_maidenhead => '梅登黑德定位符';
+
+  @override
+  String get reactions_radioTitle => '通过电台发送回应';
+
+  @override
+  String get reactions_radioHint =>
+      '每个回应都是一个空中数据包。自动模式在发射时间受限的欧盟 868 MHz 频段只在本设备上显示。';
+
+  @override
+  String get reactions_radioAuto => '自动';
+
+  @override
+  String get reactions_radioOn => '开';
+
+  @override
+  String get reactions_radioOff => '关（仅本设备）';
+
+  @override
+  String get lite_qrPasteHint => '此版本没有相机扫描功能。请改为粘贴二维码中的文本。';
+
+  @override
+  String get lite_qrPasteLabel => '二维码文本';
+
+  @override
   String get batteryWatch_title => '电池监控';
 
   @override
@@ -9554,66 +9579,54 @@ class AppLocalizationsZh extends AppLocalizations {
   String get batteryWatch_cleared => '历史已清除';
 
   @override
-  String get readiness_sos => 'SOS 接收者';
+  String get batteryWatch_auto => '自动检查';
 
   @override
-  String get readiness_sosOk => 'SOS 有接收者。';
+  String get batteryWatch_autoHint => '连接电台时，应用会定时向此中继查询电池。只有登录到中继后它才会回复。';
 
   @override
-  String get readiness_sosBlocked => 'SOS 没有可送达的人。请添加联系人中的行程成员，或设置 SOS 频道。';
+  String get batteryWatch_interval => '检查间隔';
 
   @override
-  String get readiness_routes => '到行程成员的路由';
-
-  @override
-  String get readiness_routesOk => '已知到每位行程成员的路由。';
-
-  @override
-  String readiness_routesMissing(String names) {
-    return '尚无到 $names 的已知路由。在学到路由前消息将以泛洪发送。出发前先给他们发一条消息。';
+  String batteryWatch_hours(int hours) {
+    return '$hours 小时';
   }
 
   @override
-  String get readiness_notifications => '通知';
+  String get batteryWatch_budget => '所有中继合计每小时最多 6 次，间隔至少 2 分钟。';
 
   @override
-  String get readiness_notificationsOk => '已允许。';
+  String get batteryWatch_add => '添加中继';
 
   @override
-  String get readiness_notificationsOff => '通知已关闭，你将收不到回复、报平安和警报。';
+  String get batteryWatch_pick => '选择要监控的中继';
 
   @override
-  String get readiness_batteryOpt => '电池优化';
+  String get batteryWatch_noRepeaters => '联系人中还没有中继。';
 
   @override
-  String get readiness_batteryOptOk => 'NOTORYX Core 已豁免。';
-
-  @override
-  String get readiness_batteryOptOn =>
-      'Android 可能会在后台停止应用。请在 设置 → 应用设置 → 通知 中关闭。';
-
-  @override
-  String get readiness_blockedTitle => '暂时无法开始行程';
-
-  @override
-  String readiness_warnTitle(int count) {
-    return '$count 项需检查';
+  String batteryWatch_noReply(int count) {
+    return '最近 $count 次检查无回复。请打开中继并重新登录。';
   }
 
   @override
-  String get readiness_startAnyway => '仍然开始';
+  String get batteryWatch_checking => '正在检查…';
 
   @override
-  String get readiness_review => '查看';
+  String get batteryWatch_alertTitle => '中继电池';
 
   @override
-  String get readiness_summaryReady => '准备就绪';
-
-  @override
-  String readiness_summaryWarn(int count) {
-    return '$count 项需检查';
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name 电量 $percent%（$volts V）。';
   }
 
   @override
-  String get readiness_summaryBlocked => 'SOS 无法送达任何人';
+  String batteryWatch_alertFalling(String name, String days) {
+    return '$name 的电池下降很快：按此速度约 $days 天后耗尽。';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name 已有 $count 次电池检查未回复。';
+  }
 }

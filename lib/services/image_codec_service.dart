@@ -4,6 +4,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
+import '../build_flavor.dart';
 import '../models/image_codec_support.dart';
 import '../utils/app_logger.dart';
 import '../widgets/image_send_codec_binding.dart';
@@ -186,6 +187,10 @@ class ImageCodecService extends ChangeNotifier implements ImageSendCodec {
   /// can never send a picture, which is false.
   @override
   String? get unavailableReason {
+    if (kLiteBuild) {
+      return 'The lite build leaves out picture messages. Install the full '
+          'build to send and receive pictures.';
+    }
     if (kIsWeb) {
       return 'The image codec needs a native inference runtime, which the web '
           'build does not have.';
@@ -384,7 +389,7 @@ class ImageCodecService extends ChangeNotifier implements ImageSendCodec {
   Future<void> refreshDownloadedModels() async {
     if (_isDownloading) return;
     await _settingsStore.load();
-    if (kIsWeb) {
+    if (kIsWeb || kLiteBuild) {
       _notify();
       return;
     }
@@ -491,6 +496,7 @@ class ImageCodecService extends ChangeNotifier implements ImageSendCodec {
   bool get canRunInference {
     final model = selectedModel;
     return !kIsWeb &&
+        !kLiteBuild &&
         !_backendMissing &&
         model != null &&
         model.localPath.isNotEmpty;

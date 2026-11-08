@@ -10047,6 +10047,32 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get coords_maidenhead => 'Maidenhead locator';
+
+  @override
+  String get reactions_radioTitle => 'Send reactions over the radio';
+
+  @override
+  String get reactions_radioHint =>
+      'Each reaction is a packet on air. Automatic keeps them on this device on the EU 868 MHz band, where airtime is limited.';
+
+  @override
+  String get reactions_radioAuto => 'Automatic';
+
+  @override
+  String get reactions_radioOn => 'On';
+
+  @override
+  String get reactions_radioOff => 'Off (this device)';
+
+  @override
+  String get lite_qrPasteHint =>
+      'This build has no camera scanner. Paste the text from the QR code instead.';
+
+  @override
+  String get lite_qrPasteLabel => 'QR code text';
+
+  @override
   String get batteryWatch_title => 'Battery watch';
 
   @override
@@ -10114,68 +10140,56 @@ class AppLocalizationsEn extends AppLocalizations {
   String get batteryWatch_cleared => 'History cleared';
 
   @override
-  String get readiness_sos => 'SOS recipients';
+  String get batteryWatch_auto => 'Check automatically';
 
   @override
-  String get readiness_sosOk => 'SOS has someone to send to.';
+  String get batteryWatch_autoHint =>
+      'While a radio is connected, the app asks this repeater for its battery on a timer. The repeater only answers if you\'re logged in to it.';
 
   @override
-  String get readiness_sosBlocked =>
-      'SOS has no one to reach. Add trip contacts who are in your contacts, or set an SOS channel.';
+  String get batteryWatch_interval => 'Check every';
 
   @override
-  String get readiness_routes => 'Routes to trip contacts';
-
-  @override
-  String get readiness_routesOk => 'A route is known to every trip contact.';
-
-  @override
-  String readiness_routesMissing(String names) {
-    return 'No known route to $names. Messages will flood until one is learned. Send them a message before you go.';
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
   }
 
   @override
-  String get readiness_notifications => 'Notifications';
+  String get batteryWatch_budget =>
+      'At most 6 checks an hour across all repeaters, at least 2 minutes apart.';
 
   @override
-  String get readiness_notificationsOk => 'Allowed.';
+  String get batteryWatch_add => 'Add a repeater';
 
   @override
-  String get readiness_notificationsOff =>
-      'Notifications are off, so you won\'t hear replies, check-ins or alerts.';
+  String get batteryWatch_pick => 'Choose a repeater to watch';
 
   @override
-  String get readiness_batteryOpt => 'Battery optimisation';
+  String get batteryWatch_noRepeaters => 'No repeaters in your contacts yet.';
 
   @override
-  String get readiness_batteryOptOk => 'NOTORYX Core is exempt.';
-
-  @override
-  String get readiness_batteryOptOn =>
-      'Android may stop the app in the background. Turn it off in Settings → App Settings → Notifications.';
-
-  @override
-  String get readiness_blockedTitle => 'Can\'t start the trip yet';
-
-  @override
-  String readiness_warnTitle(int count) {
-    return '$count things to check';
+  String batteryWatch_noReply(int count) {
+    return 'No reply to the last $count checks. Open the repeater and log in again.';
   }
 
   @override
-  String get readiness_startAnyway => 'Start anyway';
+  String get batteryWatch_checking => 'Checking…';
 
   @override
-  String get readiness_review => 'Review';
+  String get batteryWatch_alertTitle => 'Repeater battery';
 
   @override
-  String get readiness_summaryReady => 'Ready to go';
-
-  @override
-  String readiness_summaryWarn(int count) {
-    return '$count to check';
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name is at $percent% ($volts V).';
   }
 
   @override
-  String get readiness_summaryBlocked => 'SOS can\'t reach anyone';
+  String batteryWatch_alertFalling(String name, String days) {
+    return '$name\'s battery is falling fast: empty in about $days days at this rate.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name hasn\'t answered $count battery checks.';
+  }
 }

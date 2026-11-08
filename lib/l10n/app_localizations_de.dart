@@ -10186,6 +10186,32 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
+  String get coords_maidenhead => 'Maidenhead-Locator';
+
+  @override
+  String get reactions_radioTitle => 'Reaktionen per Funk senden';
+
+  @override
+  String get reactions_radioHint =>
+      'Jede Reaktion ist ein Paket in der Luft. Automatisch behält sie im EU-868-MHz-Band, wo die Sendezeit begrenzt ist, auf diesem Gerät.';
+
+  @override
+  String get reactions_radioAuto => 'Automatisch';
+
+  @override
+  String get reactions_radioOn => 'An';
+
+  @override
+  String get reactions_radioOff => 'Aus (dieses Gerät)';
+
+  @override
+  String get lite_qrPasteHint =>
+      'Diese Version hat keinen Kamera-Scanner. Füge stattdessen den Text des QR-Codes ein.';
+
+  @override
+  String get lite_qrPasteLabel => 'Text des QR-Codes';
+
+  @override
   String get batteryWatch_title => 'Akku-Überwachung';
 
   @override
@@ -10252,69 +10278,57 @@ class AppLocalizationsDe extends AppLocalizations {
   String get batteryWatch_cleared => 'Verlauf gelöscht';
 
   @override
-  String get readiness_sos => 'SOS-Empfänger';
+  String get batteryWatch_auto => 'Automatisch prüfen';
 
   @override
-  String get readiness_sosOk => 'SOS hat Empfänger.';
+  String get batteryWatch_autoHint =>
+      'Solange ein Funkgerät verbunden ist, fragt die App diesen Repeater regelmäßig nach seinem Akku. Er antwortet nur, wenn du bei ihm angemeldet bist.';
 
   @override
-  String get readiness_sosBlocked =>
-      'SOS hat niemanden zu erreichen. Füge Tourkontakte aus deinen Kontakten hinzu oder lege einen SOS-Kanal fest.';
+  String get batteryWatch_interval => 'Prüfen alle';
 
   @override
-  String get readiness_routes => 'Routen zu Tourkontakten';
-
-  @override
-  String get readiness_routesOk =>
-      'Zu jedem Tourkontakt ist eine Route bekannt.';
-
-  @override
-  String readiness_routesMissing(String names) {
-    return 'Keine bekannte Route zu $names. Nachrichten werden geflutet, bis eine gelernt ist. Schick ihnen vor dem Aufbruch eine Nachricht.';
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
   }
 
   @override
-  String get readiness_notifications => 'Benachrichtigungen';
+  String get batteryWatch_budget =>
+      'Höchstens 6 Abfragen pro Stunde für alle Repeater, mindestens 2 Minuten auseinander.';
 
   @override
-  String get readiness_notificationsOk => 'Erlaubt.';
+  String get batteryWatch_add => 'Repeater hinzufügen';
 
   @override
-  String get readiness_notificationsOff =>
-      'Benachrichtigungen sind aus, du hörst also keine Antworten, Check-ins oder Warnungen.';
+  String get batteryWatch_pick => 'Repeater zum Überwachen wählen';
 
   @override
-  String get readiness_batteryOpt => 'Akkuoptimierung';
+  String get batteryWatch_noRepeaters =>
+      'Noch keine Repeater in deinen Kontakten.';
 
   @override
-  String get readiness_batteryOptOk => 'NOTORYX Core ist ausgenommen.';
-
-  @override
-  String get readiness_batteryOptOn =>
-      'Android kann die App im Hintergrund beenden. Schalte sie unter Einstellungen → App-Einstellungen → Benachrichtigungen aus.';
-
-  @override
-  String get readiness_blockedTitle => 'Tour kann noch nicht starten';
-
-  @override
-  String readiness_warnTitle(int count) {
-    return '$count Punkte zu prüfen';
+  String batteryWatch_noReply(int count) {
+    return 'Keine Antwort auf die letzten $count Abfragen. Öffne den Repeater und melde dich erneut an.';
   }
 
   @override
-  String get readiness_startAnyway => 'Trotzdem starten';
+  String get batteryWatch_checking => 'Wird geprüft…';
 
   @override
-  String get readiness_review => 'Ansehen';
+  String get batteryWatch_alertTitle => 'Repeater-Akku';
 
   @override
-  String get readiness_summaryReady => 'Startklar';
-
-  @override
-  String readiness_summaryWarn(int count) {
-    return '$count zu prüfen';
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name ist bei $percent % ($volts V).';
   }
 
   @override
-  String get readiness_summaryBlocked => 'SOS erreicht niemanden';
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Der Akku von $name fällt schnell: bei diesem Tempo in etwa $days Tagen leer.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name hat auf $count Akku-Abfragen nicht geantwortet.';
+  }
 }

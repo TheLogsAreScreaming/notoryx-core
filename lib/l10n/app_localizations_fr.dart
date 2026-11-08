@@ -10210,6 +10210,32 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
+  String get coords_maidenhead => 'Locator Maidenhead';
+
+  @override
+  String get reactions_radioTitle => 'Envoyer les réactions par radio';
+
+  @override
+  String get reactions_radioHint =>
+      'Chaque réaction est un paquet émis. Automatique les garde sur cet appareil sur la bande européenne 868 MHz, où le temps d\'émission est limité.';
+
+  @override
+  String get reactions_radioAuto => 'Automatique';
+
+  @override
+  String get reactions_radioOn => 'Oui';
+
+  @override
+  String get reactions_radioOff => 'Non (cet appareil)';
+
+  @override
+  String get lite_qrPasteHint =>
+      'Cette version n\'a pas de scanner photo. Collez plutôt le texte du code QR.';
+
+  @override
+  String get lite_qrPasteLabel => 'Texte du code QR';
+
+  @override
   String get batteryWatch_title => 'Surveillance des batteries';
 
   @override
@@ -10277,69 +10303,57 @@ class AppLocalizationsFr extends AppLocalizations {
   String get batteryWatch_cleared => 'Historique effacé';
 
   @override
-  String get readiness_sos => 'Destinataires du SOS';
+  String get batteryWatch_auto => 'Vérifier automatiquement';
 
   @override
-  String get readiness_sosOk => 'Le SOS a des destinataires.';
+  String get batteryWatch_autoHint =>
+      'Tant qu\'une radio est connectée, l\'app demande régulièrement sa batterie à ce répéteur. Il ne répond que si vous y êtes connecté.';
 
   @override
-  String get readiness_sosBlocked =>
-      'Le SOS n\'a personne à joindre. Ajoutez des contacts de sortie présents dans vos contacts, ou définissez un canal SOS.';
+  String get batteryWatch_interval => 'Vérifier toutes les';
 
   @override
-  String get readiness_routes => 'Routes vers les contacts de sortie';
-
-  @override
-  String get readiness_routesOk =>
-      'Une route est connue vers chaque contact de sortie.';
-
-  @override
-  String readiness_routesMissing(String names) {
-    return 'Aucune route connue vers $names. Les messages seront diffusés en inondation jusqu\'à ce qu\'une route soit apprise. Envoyez-leur un message avant de partir.';
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
   }
 
   @override
-  String get readiness_notifications => 'Notifications';
+  String get batteryWatch_budget =>
+      'Au plus 6 vérifications par heure pour tous les répéteurs, espacées d\'au moins 2 minutes.';
 
   @override
-  String get readiness_notificationsOk => 'Autorisées.';
+  String get batteryWatch_add => 'Ajouter un répéteur';
 
   @override
-  String get readiness_notificationsOff =>
-      'Les notifications sont désactivées : vous n\'entendrez ni réponses, ni pointages, ni alertes.';
+  String get batteryWatch_pick => 'Choisissez un répéteur à surveiller';
 
   @override
-  String get readiness_batteryOpt => 'Optimisation de la batterie';
+  String get batteryWatch_noRepeaters =>
+      'Aucun répéteur dans vos contacts pour l\'instant.';
 
   @override
-  String get readiness_batteryOptOk => 'NOTORYX Core est exempté.';
-
-  @override
-  String get readiness_batteryOptOn =>
-      'Android peut arrêter l\'app en arrière-plan. Désactivez-la dans Réglages → Réglages de l\'app → Notifications.';
-
-  @override
-  String get readiness_blockedTitle => 'Impossible de démarrer la sortie';
-
-  @override
-  String readiness_warnTitle(int count) {
-    return '$count points à vérifier';
+  String batteryWatch_noReply(int count) {
+    return 'Pas de réponse aux $count dernières vérifications. Ouvrez le répéteur et reconnectez-vous.';
   }
 
   @override
-  String get readiness_startAnyway => 'Démarrer quand même';
+  String get batteryWatch_checking => 'Vérification…';
 
   @override
-  String get readiness_review => 'Vérifier';
+  String get batteryWatch_alertTitle => 'Batterie du répéteur';
 
   @override
-  String get readiness_summaryReady => 'Prêt à partir';
-
-  @override
-  String readiness_summaryWarn(int count) {
-    return '$count à vérifier';
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name est à $percent % ($volts V).';
   }
 
   @override
-  String get readiness_summaryBlocked => 'Le SOS ne joint personne';
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'La batterie de $name baisse vite : vide dans environ $days jours à ce rythme.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name n\'a pas répondu à $count vérifications de batterie.';
+  }
 }
