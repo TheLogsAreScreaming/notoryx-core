@@ -10949,7 +10949,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get appLock_subtitle =>
-      'Запрашивает отпечаток, лицо или блокировку экрана при открытии. Оповещения работают, но перед отправкой SOS нужно разблокировать приложение.';
+      'Запрашивает отпечаток, лицо или блокировку экрана при открытии. Оповещения работают, а SOS доступен на экране блокировки.';
 
   @override
   String get appLock_reason => 'Разблокировать NOTORYX Core';
@@ -10987,4 +10987,8 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get map_showWaypoints => 'Показывать сохранённые точки и маршруты';
+
+  @override
+  String get appLock_sosNoTarget =>
+      'Сначала разблокируйте и выберите, кто получит SOS.';
 }

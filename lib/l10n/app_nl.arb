@@ -4410,7 +4410,7 @@
   "security_title": "Beveiliging",
   "security_toolSubtitle": "App-vergrendeling en versleutelde berichtgeschiedenis",
   "appLock_title": "App-vergrendeling",
-  "appLock_subtitle": "Vraagt bij het openen om vingerafdruk, gezicht of schermvergrendeling. Meldingen blijven werken, maar je moet ontgrendelen voordat je een SOS kunt sturen.",
+  "appLock_subtitle": "Vraagt bij het openen om vingerafdruk, gezicht of schermvergrendeling. Meldingen blijven werken en SOS blijft op het vergrendelscherm.",
   "appLock_reason": "NOTORYX Core ontgrendelen",
   "appLock_unlock": "Ontgrendelen",
   "appLock_locked": "NOTORYX Core is vergrendeld",
@@ -4421,5 +4421,6 @@
   "dbEncrypt_off": "Status: niet versleuteld",
   "dbEncrypt_failed": "Status: niet gelukt. Je geschiedenis is ongewijzigd.",
   "dbEncrypt_restart": "Gaat in bij de volgende start van de app.",
-  "map_showWaypoints": "Opgeslagen waypoints en routes tonen"
+  "map_showWaypoints": "Opgeslagen waypoints en routes tonen",
+  "appLock_sosNoTarget": "Ontgrendel eerst en kies wie je SOS ontvangt."
 }

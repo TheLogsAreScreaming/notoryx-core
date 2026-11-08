@@ -10775,7 +10775,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get appLock_subtitle =>
-      'Ask for your fingerprint, face or screen lock when opening the app. Alerts keep working, but you must unlock before you can send an SOS.';
+      'Ask for your fingerprint, face or screen lock when opening the app. Alerts keep working, and SOS stays on the lock screen.';
 
   @override
   String get appLock_reason => 'Unlock NOTORYX Core';
@@ -10812,4 +10812,8 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get map_showWaypoints => 'Show saved waypoints and routes';
+
+  @override
+  String get appLock_sosNoTarget =>
+      'Unlock and choose who gets your SOS first.';
 }

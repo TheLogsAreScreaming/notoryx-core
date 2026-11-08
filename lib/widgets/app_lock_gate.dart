@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../l10n/l10n.dart';
 import '../services/app_lock_service.dart';
 import '../theme/mesh_theme.dart';
+import 'sos_panel.dart';
 
 /// Hides [child] behind an unlock screen while the app lock is closed.
 class AppLockGate extends StatefulWidget {
@@ -89,6 +90,7 @@ class _UnlockScreenState extends State<_UnlockScreen> {
           padding: const EdgeInsets.all(MeshSpace.lg),
           child: Column(
             mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const Icon(Icons.lock_outline, size: 56),
               const SizedBox(height: MeshSpace.lg),
@@ -103,6 +105,8 @@ class _UnlockScreenState extends State<_UnlockScreen> {
                 icon: const Icon(Icons.fingerprint),
                 label: Text(context.l10n.appLock_unlock),
               ),
+              const SizedBox(height: MeshSpace.lg * 2),
+              const LockScreenSos(),
             ],
           ),
         ),

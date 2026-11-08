@@ -4410,7 +4410,7 @@
   "security_title": "Varnost",
   "security_toolSubtitle": "Zaklep aplikacije in šifrirana zgodovina sporočil",
   "appLock_title": "Zaklep aplikacije",
-  "appLock_subtitle": "Ob odpiranju zahteva prstni odtis, obraz ali zaklep zaslona. Opozorila delujejo naprej, vendar morate pred pošiljanjem SOS odkleniti.",
+  "appLock_subtitle": "Ob odpiranju zahteva prstni odtis, obraz ali zaklep zaslona. Opozorila delujejo naprej, SOS pa ostane na zaklenjenem zaslonu.",
   "appLock_reason": "Odkleni NOTORYX Core",
   "appLock_unlock": "Odkleni",
   "appLock_locked": "NOTORYX Core je zaklenjen",
@@ -4421,5 +4421,6 @@
   "dbEncrypt_off": "Stanje: ni šifrirano",
   "dbEncrypt_failed": "Stanje: ni uspelo. Zgodovina je nespremenjena.",
   "dbEncrypt_restart": "Začne veljati ob naslednjem zagonu aplikacije.",
-  "map_showWaypoints": "Prikaži shranjene točke in poti"
+  "map_showWaypoints": "Prikaži shranjene točke in poti",
+  "appLock_sosNoTarget": "Najprej odklenite in izberite, kdo prejme vaš SOS."
 }

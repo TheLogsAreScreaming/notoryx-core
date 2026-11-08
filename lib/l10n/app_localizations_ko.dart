@@ -10409,7 +10409,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get appLock_subtitle =>
-      '앱을 열 때 지문, 얼굴 또는 화면 잠금을 요구합니다. 알림은 계속 작동하지만 SOS를 보내려면 먼저 잠금을 해제해야 합니다.';
+      '앱을 열 때 지문, 얼굴 또는 화면 잠금을 요구합니다. 알림은 계속 작동하며 SOS는 잠금 화면에서도 사용할 수 있습니다.';
 
   @override
   String get appLock_reason => 'NOTORYX Core 잠금 해제';
@@ -10444,4 +10444,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get map_showWaypoints => '저장된 웨이포인트와 경로 표시';
+
+  @override
+  String get appLock_sosNoTarget => '먼저 잠금을 해제하고 SOS를 받을 사람을 선택하세요.';
 }

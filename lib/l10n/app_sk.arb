@@ -4410,7 +4410,7 @@
   "security_title": "Zabezpečenie",
   "security_toolSubtitle": "Zámok aplikácie a šifrovaná história správ",
   "appLock_title": "Zámok aplikácie",
-  "appLock_subtitle": "Pri otvorení vyžaduje odtlačok, tvár alebo zámok obrazovky. Upozornenia fungujú ďalej, ale pred odoslaním SOS musíte odomknúť.",
+  "appLock_subtitle": "Pri otvorení vyžaduje odtlačok, tvár alebo zámok obrazovky. Upozornenia fungujú ďalej a SOS zostáva na uzamknutej obrazovke.",
   "appLock_reason": "Odomknúť NOTORYX Core",
   "appLock_unlock": "Odomknúť",
   "appLock_locked": "NOTORYX Core je zamknutý",
@@ -4421,5 +4421,6 @@
   "dbEncrypt_off": "Stav: nešifrované",
   "dbEncrypt_failed": "Stav: nepodarilo sa. História je nezmenená.",
   "dbEncrypt_restart": "Prejaví sa pri ďalšom spustení aplikácie.",
-  "map_showWaypoints": "Zobraziť uložené body a trasy"
+  "map_showWaypoints": "Zobraziť uložené body a trasy",
+  "appLock_sosNoTarget": "Najprv odomknite a vyberte, kto dostane vaše SOS."
 }

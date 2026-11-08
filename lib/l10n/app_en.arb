@@ -5871,7 +5871,7 @@
   "security_title": "Security",
   "security_toolSubtitle": "App lock and encrypted message history",
   "appLock_title": "App lock",
-  "appLock_subtitle": "Ask for your fingerprint, face or screen lock when opening the app. Alerts keep working, but you must unlock before you can send an SOS.",
+  "appLock_subtitle": "Ask for your fingerprint, face or screen lock when opening the app. Alerts keep working, and SOS stays on the lock screen.",
   "appLock_reason": "Unlock NOTORYX Core",
   "appLock_unlock": "Unlock",
   "appLock_locked": "NOTORYX Core is locked",
@@ -5882,5 +5882,6 @@
   "dbEncrypt_off": "Status: not encrypted",
   "dbEncrypt_failed": "Status: couldn't apply. Your history is unchanged.",
   "dbEncrypt_restart": "Takes effect the next time the app starts.",
-  "map_showWaypoints": "Show saved waypoints and routes"
+  "map_showWaypoints": "Show saved waypoints and routes",
+  "appLock_sosNoTarget": "Unlock and choose who gets your SOS first."
 }

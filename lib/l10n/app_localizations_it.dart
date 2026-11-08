@@ -10918,7 +10918,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get appLock_subtitle =>
-      'Chiede impronta, volto o blocco schermo all\'apertura. Gli avvisi continuano, ma devi sbloccare prima di inviare un SOS.';
+      'Chiede impronta, volto o blocco schermo all\'apertura. Gli avvisi continuano e l\'SOS resta nella schermata di blocco.';
 
   @override
   String get appLock_reason => 'Sblocca NOTORYX Core';
@@ -10955,4 +10955,8 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get map_showWaypoints => 'Mostra waypoint e percorsi salvati';
+
+  @override
+  String get appLock_sosNoTarget =>
+      'Prima sblocca e scegli chi riceve il tuo SOS.';
 }
