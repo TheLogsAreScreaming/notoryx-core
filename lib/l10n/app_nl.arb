@@ -4406,5 +4406,19 @@
   "batteryWatch_alertTitle": "Repeaterbatterij",
   "batteryWatch_alertLow": "{name} staat op {percent}% ({volts} V).",
   "batteryWatch_alertFalling": "De batterij van {name} daalt snel: bij dit tempo leeg over ongeveer {days} dagen.",
-  "batteryWatch_alertSilent": "{name} heeft {count} batterijcontroles niet beantwoord."
+  "batteryWatch_alertSilent": "{name} heeft {count} batterijcontroles niet beantwoord.",
+  "security_title": "Beveiliging",
+  "security_toolSubtitle": "App-vergrendeling en versleutelde berichtgeschiedenis",
+  "appLock_title": "App-vergrendeling",
+  "appLock_subtitle": "Vraagt bij het openen om vingerafdruk, gezicht of schermvergrendeling. Meldingen blijven werken, maar je moet ontgrendelen voordat je een SOS kunt sturen.",
+  "appLock_reason": "NOTORYX Core ontgrendelen",
+  "appLock_unlock": "Ontgrendelen",
+  "appLock_locked": "NOTORYX Core is vergrendeld",
+  "appLock_unavailable": "Dit apparaat heeft geen schermvergrendeling, of die kon niet worden bevestigd.",
+  "dbEncrypt_title": "Berichtgeschiedenis versleutelen",
+  "dbEncrypt_subtitle": "Versleutelt de berichtendatabase op dit apparaat met een sleutel in de beveiligde opslag van de telefoon. Gaat de sleutel verloren, dan is de geschiedenis niet te herstellen, dus bewaar een back-up.",
+  "dbEncrypt_on": "Status: versleuteld",
+  "dbEncrypt_off": "Status: niet versleuteld",
+  "dbEncrypt_failed": "Status: niet gelukt. Je geschiedenis is ongewijzigd.",
+  "dbEncrypt_restart": "Gaat in bij de volgende start van de app."
 }

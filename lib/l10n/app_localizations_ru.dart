@@ -10936,4 +10936,52 @@ class AppLocalizationsRu extends AppLocalizations {
   String batteryWatch_alertSilent(String name, int count) {
     return '$name не ответил на $count проверок батареи.';
   }
+
+  @override
+  String get security_title => 'Безопасность';
+
+  @override
+  String get security_toolSubtitle =>
+      'Блокировка приложения и шифрование истории';
+
+  @override
+  String get appLock_title => 'Блокировка приложения';
+
+  @override
+  String get appLock_subtitle =>
+      'Запрашивает отпечаток, лицо или блокировку экрана при открытии. Оповещения работают, но перед отправкой SOS нужно разблокировать приложение.';
+
+  @override
+  String get appLock_reason => 'Разблокировать NOTORYX Core';
+
+  @override
+  String get appLock_unlock => 'Разблокировать';
+
+  @override
+  String get appLock_locked => 'NOTORYX Core заблокирован';
+
+  @override
+  String get appLock_unavailable =>
+      'На этом устройстве нет блокировки экрана, или её не удалось подтвердить.';
+
+  @override
+  String get dbEncrypt_title => 'Шифровать историю сообщений';
+
+  @override
+  String get dbEncrypt_subtitle =>
+      'Шифрует базу сообщений на устройстве ключом из защищённого хранилища телефона. Если ключ потерян, историю не восстановить, поэтому сохраните резервную копию.';
+
+  @override
+  String get dbEncrypt_on => 'Состояние: зашифровано';
+
+  @override
+  String get dbEncrypt_off => 'Состояние: не зашифровано';
+
+  @override
+  String get dbEncrypt_failed =>
+      'Состояние: не удалось применить. История не изменена.';
+
+  @override
+  String get dbEncrypt_restart =>
+      'Вступит в силу при следующем запуске приложения.';
 }

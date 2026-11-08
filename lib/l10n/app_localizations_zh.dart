@@ -10166,4 +10166,47 @@ class AppLocalizationsZh extends AppLocalizations {
   String batteryWatch_alertSilent(String name, int count) {
     return '$name 已有 $count 次电池检查未回复。';
   }
+
+  @override
+  String get security_title => '安全';
+
+  @override
+  String get security_toolSubtitle => '应用锁和加密消息记录';
+
+  @override
+  String get appLock_title => '应用锁';
+
+  @override
+  String get appLock_subtitle => '打开应用时要求指纹、面容或屏幕锁。提醒仍会工作，但发送 SOS 前必须先解锁。';
+
+  @override
+  String get appLock_reason => '解锁 NOTORYX Core';
+
+  @override
+  String get appLock_unlock => '解锁';
+
+  @override
+  String get appLock_locked => 'NOTORYX Core 已锁定';
+
+  @override
+  String get appLock_unavailable => '此设备没有屏幕锁，或无法确认。';
+
+  @override
+  String get dbEncrypt_title => '加密消息记录';
+
+  @override
+  String get dbEncrypt_subtitle =>
+      '使用手机安全存储中的密钥加密此设备上的消息数据库。密钥丢失后记录无法恢复，请保留备份。';
+
+  @override
+  String get dbEncrypt_on => '状态：已加密';
+
+  @override
+  String get dbEncrypt_off => '状态：未加密';
+
+  @override
+  String get dbEncrypt_failed => '状态：无法应用。记录未更改。';
+
+  @override
+  String get dbEncrypt_restart => '下次启动应用时生效。';
 }

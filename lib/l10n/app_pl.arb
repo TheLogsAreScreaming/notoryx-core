@@ -4444,5 +4444,19 @@
   "batteryWatch_alertTitle": "Bateria przekaźnika",
   "batteryWatch_alertLow": "{name}: {percent}% ({volts} V).",
   "batteryWatch_alertFalling": "Bateria {name} szybko spada: przy tym tempie rozładuje się za około {days} dni.",
-  "batteryWatch_alertSilent": "{name} nie odpowiedział na {count} zapytań o baterię."
+  "batteryWatch_alertSilent": "{name} nie odpowiedział na {count} zapytań o baterię.",
+  "security_title": "Bezpieczeństwo",
+  "security_toolSubtitle": "Blokada aplikacji i szyfrowana historia wiadomości",
+  "appLock_title": "Blokada aplikacji",
+  "appLock_subtitle": "Prosi o odcisk palca, twarz lub blokadę ekranu przy otwieraniu. Alerty działają dalej, ale przed wysłaniem SOS trzeba odblokować aplikację.",
+  "appLock_reason": "Odblokuj NOTORYX Core",
+  "appLock_unlock": "Odblokuj",
+  "appLock_locked": "NOTORYX Core jest zablokowany",
+  "appLock_unavailable": "To urządzenie nie ma blokady ekranu lub nie udało się jej potwierdzić.",
+  "dbEncrypt_title": "Szyfruj historię wiadomości",
+  "dbEncrypt_subtitle": "Szyfruje bazę wiadomości na tym urządzeniu kluczem z bezpiecznego magazynu telefonu. Utrata klucza oznacza utratę historii, więc zachowaj kopię zapasową.",
+  "dbEncrypt_on": "Stan: zaszyfrowano",
+  "dbEncrypt_off": "Stan: bez szyfrowania",
+  "dbEncrypt_failed": "Stan: nie udało się. Historia bez zmian.",
+  "dbEncrypt_restart": "Zacznie działać przy następnym uruchomieniu aplikacji."
 }

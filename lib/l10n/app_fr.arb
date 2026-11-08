@@ -4540,5 +4540,19 @@
   "batteryWatch_alertTitle": "Batterie du répéteur",
   "batteryWatch_alertLow": "{name} est à {percent} % ({volts} V).",
   "batteryWatch_alertFalling": "La batterie de {name} baisse vite : vide dans environ {days} jours à ce rythme.",
-  "batteryWatch_alertSilent": "{name} n'a pas répondu à {count} vérifications de batterie."
+  "batteryWatch_alertSilent": "{name} n'a pas répondu à {count} vérifications de batterie.",
+  "security_title": "Sécurité",
+  "security_toolSubtitle": "Verrouillage de l'app et historique chiffré",
+  "appLock_title": "Verrouillage de l'app",
+  "appLock_subtitle": "Demande l'empreinte, le visage ou le verrouillage de l'écran à l'ouverture. Les alertes continuent, mais il faut déverrouiller avant d'envoyer un SOS.",
+  "appLock_reason": "Déverrouiller NOTORYX Core",
+  "appLock_unlock": "Déverrouiller",
+  "appLock_locked": "NOTORYX Core est verrouillé",
+  "appLock_unavailable": "Cet appareil n'a pas de verrouillage d'écran, ou il n'a pas pu être confirmé.",
+  "dbEncrypt_title": "Chiffrer l'historique des messages",
+  "dbEncrypt_subtitle": "Chiffre la base de messages sur cet appareil avec une clé conservée dans le stockage sécurisé du téléphone. Si la clé est perdue, l'historique est irrécupérable : gardez une sauvegarde.",
+  "dbEncrypt_on": "État : chiffré",
+  "dbEncrypt_off": "État : non chiffré",
+  "dbEncrypt_failed": "État : échec. Votre historique n'a pas changé.",
+  "dbEncrypt_restart": "Prend effet au prochain démarrage de l'app."
 }

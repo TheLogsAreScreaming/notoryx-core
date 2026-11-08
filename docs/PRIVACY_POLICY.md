@@ -54,6 +54,8 @@ Debug logs and exported diagnostics can include device, network and radio metada
 
 NOTORYX Core is not designed to collect information from children. This policy will be updated if data handling or integrations change.
 
+You can turn on **App lock** and **Encrypt message history** under Tools → Security. Encryption covers the message database only (contacts, routes, waypoints and settings are not encrypted), and its key stays in the phone's secure storage. If that key is lost, the history can't be recovered.
+
 ## Contact
 
 For questions, bug reports or privacy concerns, open an issue in this app's GitHub repository. Confirm a permanent support address and public policy URL before publishing a store listing.

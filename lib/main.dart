@@ -1,3 +1,5 @@
+import 'services/app_lock_service.dart';
+import 'widgets/app_lock_gate.dart';
 import 'services/node_telemetry_store.dart';
 import 'dart:async';
 
@@ -289,6 +291,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   late final RegionalPresetService _regionalPresets;
   late final DirectRepeaterService _directRepeaters;
   late final WaypointStore _waypoints;
+  late final AppLockService _appLock;
   late final TrackLogService _trackLog;
   late final ChannelDiscoveryService _channelDiscovery;
   late final AnalyzerService _analyzer;
@@ -331,6 +334,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     unawaited(_regionalPresets.start());
     _directRepeaters = DirectRepeaterService(widget.connector);
     _waypoints = WaypointStore(PrefsManager.instance);
+    _appLock = AppLockService(PrefsManager.instance);
     _trackLog = TrackLogService(widget.connector);
     _channelDiscovery = ChannelDiscoveryService(widget.connector);
     unawaited(_channelDiscovery.load());
@@ -662,6 +666,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         ChangeNotifierProvider<WeatherService?>.value(value: _weather),
         ChangeNotifierProvider.value(value: _fieldOps),
         ChangeNotifierProvider<WaypointStore>.value(value: _waypoints),
+        ChangeNotifierProvider<AppLockService>.value(value: _appLock),
         ChangeNotifierProvider<NetworkChangeService?>.value(
           value: _networkChanges,
         ),
@@ -737,7 +742,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
               _relabelShortcuts(locale);
               return AnnotatedRegion<SystemUiOverlayStyle>(
                 value: _systemUiOverlayStyle(context),
-                child: child ?? const SizedBox.shrink(),
+                child: AppLockGate(child: child ?? const SizedBox.shrink()),
               );
             },
             home: (PlatformInfo.isWeb && !PlatformInfo.isChrome)

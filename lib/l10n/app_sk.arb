@@ -4406,5 +4406,19 @@
   "batteryWatch_alertTitle": "Batéria opakovača",
   "batteryWatch_alertLow": "{name} je na {percent} % ({volts} V).",
   "batteryWatch_alertFalling": "Batéria {name} rýchlo klesá: pri tomto tempe vybitá asi o {days} dní.",
-  "batteryWatch_alertSilent": "{name} neodpovedal na {count} kontrol batérie."
+  "batteryWatch_alertSilent": "{name} neodpovedal na {count} kontrol batérie.",
+  "security_title": "Zabezpečenie",
+  "security_toolSubtitle": "Zámok aplikácie a šifrovaná história správ",
+  "appLock_title": "Zámok aplikácie",
+  "appLock_subtitle": "Pri otvorení vyžaduje odtlačok, tvár alebo zámok obrazovky. Upozornenia fungujú ďalej, ale pred odoslaním SOS musíte odomknúť.",
+  "appLock_reason": "Odomknúť NOTORYX Core",
+  "appLock_unlock": "Odomknúť",
+  "appLock_locked": "NOTORYX Core je zamknutý",
+  "appLock_unavailable": "Toto zariadenie nemá zámok obrazovky alebo sa ho nepodarilo overiť.",
+  "dbEncrypt_title": "Šifrovať históriu správ",
+  "dbEncrypt_subtitle": "Šifruje databázu správ v tomto zariadení kľúčom v zabezpečenom úložisku telefónu. Pri strate kľúča históriu nemožno obnoviť, preto si uchovajte zálohu.",
+  "dbEncrypt_on": "Stav: šifrované",
+  "dbEncrypt_off": "Stav: nešifrované",
+  "dbEncrypt_failed": "Stav: nepodarilo sa. História je nezmenená.",
+  "dbEncrypt_restart": "Prejaví sa pri ďalšom spustení aplikácie."
 }

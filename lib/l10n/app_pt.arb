@@ -4406,5 +4406,19 @@
   "batteryWatch_alertTitle": "Bateria do repetidor",
   "batteryWatch_alertLow": "{name} está a {percent}% ({volts} V).",
   "batteryWatch_alertFalling": "A bateria de {name} está a cair depressa: vazia em cerca de {days} dias a este ritmo.",
-  "batteryWatch_alertSilent": "{name} não respondeu a {count} verificações de bateria."
+  "batteryWatch_alertSilent": "{name} não respondeu a {count} verificações de bateria.",
+  "security_title": "Segurança",
+  "security_toolSubtitle": "Bloqueio da app e histórico cifrado",
+  "appLock_title": "Bloqueio da app",
+  "appLock_subtitle": "Pede impressão digital, rosto ou bloqueio de ecrã ao abrir a app. Os alertas continuam, mas tem de desbloquear antes de enviar um SOS.",
+  "appLock_reason": "Desbloquear o NOTORYX Core",
+  "appLock_unlock": "Desbloquear",
+  "appLock_locked": "O NOTORYX Core está bloqueado",
+  "appLock_unavailable": "Este dispositivo não tem bloqueio de ecrã, ou não foi possível confirmá-lo.",
+  "dbEncrypt_title": "Cifrar o histórico de mensagens",
+  "dbEncrypt_subtitle": "Cifra a base de dados de mensagens neste dispositivo com uma chave guardada no armazenamento seguro do telefone. Se a chave se perder, o histórico não pode ser recuperado; guarde uma cópia de segurança.",
+  "dbEncrypt_on": "Estado: cifrado",
+  "dbEncrypt_off": "Estado: não cifrado",
+  "dbEncrypt_failed": "Estado: não aplicado. O histórico não foi alterado.",
+  "dbEncrypt_restart": "Tem efeito no próximo arranque da app."
 }

@@ -4444,5 +4444,19 @@
   "batteryWatch_alertTitle": "Átjátszó akku",
   "batteryWatch_alertLow": "{name}: {percent}% ({volts} V).",
   "batteryWatch_alertFalling": "{name} akkuja gyorsan merül: ilyen ütemben kb. {days} nap múlva lemerül.",
-  "batteryWatch_alertSilent": "{name} nem válaszolt {count} akku-lekérdezésre."
+  "batteryWatch_alertSilent": "{name} nem válaszolt {count} akku-lekérdezésre.",
+  "security_title": "Biztonság",
+  "security_toolSubtitle": "Alkalmazászár és titkosított üzenetelőzmények",
+  "appLock_title": "Alkalmazászár",
+  "appLock_subtitle": "Megnyitáskor ujjlenyomatot, arcot vagy képernyőzárat kér. A riasztások működnek, de SOS küldése előtt fel kell oldanod.",
+  "appLock_reason": "NOTORYX Core feloldása",
+  "appLock_unlock": "Feloldás",
+  "appLock_locked": "A NOTORYX Core zárolva van",
+  "appLock_unavailable": "Ezen az eszközön nincs képernyőzár, vagy nem sikerült megerősíteni.",
+  "dbEncrypt_title": "Üzenetelőzmények titkosítása",
+  "dbEncrypt_subtitle": "Titkosítja az eszközön az üzenetadatbázist a telefon biztonságos tárolójában lévő kulccsal. Ha a kulcs elvész, az előzmények nem állíthatók vissza, ezért készíts biztonsági mentést.",
+  "dbEncrypt_on": "Állapot: titkosítva",
+  "dbEncrypt_off": "Állapot: nincs titkosítva",
+  "dbEncrypt_failed": "Állapot: nem sikerült. Az előzmények nem változtak.",
+  "dbEncrypt_restart": "Az alkalmazás következő indításakor lép életbe."
 }

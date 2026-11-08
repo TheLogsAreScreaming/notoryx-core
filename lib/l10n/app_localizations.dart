@@ -18084,6 +18084,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{name} hasn\'t answered {count} battery checks.'**
   String batteryWatch_alertSilent(String name, int count);
+
+  /// No description provided for @security_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Security'**
+  String get security_title;
+
+  /// No description provided for @security_toolSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'App lock and encrypted message history'**
+  String get security_toolSubtitle;
+
+  /// No description provided for @appLock_title.
+  ///
+  /// In en, this message translates to:
+  /// **'App lock'**
+  String get appLock_title;
+
+  /// No description provided for @appLock_subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Ask for your fingerprint, face or screen lock when opening the app. Alerts keep working, but you must unlock before you can send an SOS.'**
+  String get appLock_subtitle;
+
+  /// No description provided for @appLock_reason.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock NOTORYX Core'**
+  String get appLock_reason;
+
+  /// No description provided for @appLock_unlock.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlock'**
+  String get appLock_unlock;
+
+  /// No description provided for @appLock_locked.
+  ///
+  /// In en, this message translates to:
+  /// **'NOTORYX Core is locked'**
+  String get appLock_locked;
+
+  /// No description provided for @appLock_unavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'This device has no screen lock, or it couldn\'t be confirmed.'**
+  String get appLock_unavailable;
+
+  /// No description provided for @dbEncrypt_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Encrypt message history'**
+  String get dbEncrypt_title;
+
+  /// No description provided for @dbEncrypt_subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Scrambles the message database on this device, with a key held in the phone\'s secure storage. If that key is lost, the history can\'t be recovered, so keep a backup.'**
+  String get dbEncrypt_subtitle;
+
+  /// No description provided for @dbEncrypt_on.
+  ///
+  /// In en, this message translates to:
+  /// **'Status: encrypted'**
+  String get dbEncrypt_on;
+
+  /// No description provided for @dbEncrypt_off.
+  ///
+  /// In en, this message translates to:
+  /// **'Status: not encrypted'**
+  String get dbEncrypt_off;
+
+  /// No description provided for @dbEncrypt_failed.
+  ///
+  /// In en, this message translates to:
+  /// **'Status: couldn\'t apply. Your history is unchanged.'**
+  String get dbEncrypt_failed;
+
+  /// No description provided for @dbEncrypt_restart.
+  ///
+  /// In en, this message translates to:
+  /// **'Takes effect the next time the app starts.'**
+  String get dbEncrypt_restart;
 }
 
 class _AppLocalizationsDelegate

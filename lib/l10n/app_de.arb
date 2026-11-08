@@ -4540,5 +4540,19 @@
   "batteryWatch_alertTitle": "Repeater-Akku",
   "batteryWatch_alertLow": "{name} ist bei {percent} % ({volts} V).",
   "batteryWatch_alertFalling": "Der Akku von {name} fällt schnell: bei diesem Tempo in etwa {days} Tagen leer.",
-  "batteryWatch_alertSilent": "{name} hat auf {count} Akku-Abfragen nicht geantwortet."
+  "batteryWatch_alertSilent": "{name} hat auf {count} Akku-Abfragen nicht geantwortet.",
+  "security_title": "Sicherheit",
+  "security_toolSubtitle": "App-Sperre und verschlüsselter Nachrichtenverlauf",
+  "appLock_title": "App-Sperre",
+  "appLock_subtitle": "Fragt beim Öffnen nach Fingerabdruck, Gesicht oder Bildschirmsperre. Warnungen laufen weiter, aber vor einem SOS musst du entsperren.",
+  "appLock_reason": "NOTORYX Core entsperren",
+  "appLock_unlock": "Entsperren",
+  "appLock_locked": "NOTORYX Core ist gesperrt",
+  "appLock_unavailable": "Dieses Gerät hat keine Bildschirmsperre, oder sie konnte nicht bestätigt werden.",
+  "dbEncrypt_title": "Nachrichtenverlauf verschlüsseln",
+  "dbEncrypt_subtitle": "Verschlüsselt die Nachrichtendatenbank auf diesem Gerät mit einem Schlüssel im sicheren Speicher des Telefons. Geht der Schlüssel verloren, ist der Verlauf nicht wiederherstellbar; lege also eine Sicherung an.",
+  "dbEncrypt_on": "Status: verschlüsselt",
+  "dbEncrypt_off": "Status: nicht verschlüsselt",
+  "dbEncrypt_failed": "Status: nicht möglich. Dein Verlauf ist unverändert.",
+  "dbEncrypt_restart": "Wird beim nächsten App-Start wirksam."
 }
