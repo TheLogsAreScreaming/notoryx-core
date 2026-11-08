@@ -10174,6 +10174,16 @@ class AppLocalizationsUk extends AppLocalizations {
       'Гелловін, Різдво і День святого Валентина у свої дати';
 
   @override
+  String get theme_darkMode => 'Інша тема в темному режимі';
+
+  @override
+  String get theme_darkModeHint =>
+      'Використовувати іншу тему, поки пристрій у темному режимі';
+
+  @override
+  String get theme_darkModeTheme => 'Тема темного режиму';
+
+  @override
   String get coords_setting => 'Формат координат';
 
   @override
@@ -10207,21 +10217,30 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
+  String get coords_maidenhead => 'Локатор Maidenhead';
+
+  @override
+  String get reactions_radioTitle => 'Надсилати реакції радіо';
+
+  @override
+  String get reactions_radioHint =>
+      'Кожна реакція — це пакет в ефірі. «Автоматично» залишає їх на цьому пристрої в європейському діапазоні 868 МГц, де ефірний час обмежений.';
+
+  @override
+  String get reactions_radioAuto => 'Автоматично';
+
+  @override
+  String get reactions_radioOn => 'Увімк.';
+
+  @override
+  String get reactions_radioOff => 'Вимк. (цей пристрій)';
+
+  @override
   String get lite_qrPasteHint =>
       'У цій версії немає сканера з камерою. Вставте текст із QR-коду.';
 
   @override
   String get lite_qrPasteLabel => 'Текст QR-коду';
-
-  @override
-  String get theme_darkMode => 'Інша тема в темному режимі';
-
-  @override
-  String get theme_darkModeHint =>
-      'Використовувати іншу тему, поки пристрій у темному режимі';
-
-  @override
-  String get theme_darkModeTheme => 'Тема темного режиму';
 
   @override
   String get batteryWatch_title => 'Контроль батарей';

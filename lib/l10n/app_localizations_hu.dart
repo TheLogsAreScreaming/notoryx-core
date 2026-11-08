@@ -10121,6 +10121,16 @@ class AppLocalizationsHu extends AppLocalizations {
       'Halloween, karácsony és Valentin-nap a saját napjukon';
 
   @override
+  String get theme_darkMode => 'Másik téma sötét módban';
+
+  @override
+  String get theme_darkModeHint =>
+      'Másik téma használata, amíg az eszköz sötét módban van';
+
+  @override
+  String get theme_darkModeTheme => 'Sötét mód témája';
+
+  @override
   String get coords_setting => 'Koordinátaformátum';
 
   @override
@@ -10154,21 +10164,30 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
+  String get coords_maidenhead => 'Maidenhead lokátor';
+
+  @override
+  String get reactions_radioTitle => 'Reakciók küldése rádión';
+
+  @override
+  String get reactions_radioHint =>
+      'Minden reakció egy adott csomag. Az Automatikus az EU 868 MHz-es sávon, ahol korlátozott az adásidő, ezen az eszközön tartja őket.';
+
+  @override
+  String get reactions_radioAuto => 'Automatikus';
+
+  @override
+  String get reactions_radioOn => 'Be';
+
+  @override
+  String get reactions_radioOff => 'Ki (ez az eszköz)';
+
+  @override
   String get lite_qrPasteHint =>
       'Ebben a változatban nincs kamerás olvasó. Illeszd be a QR-kód szövegét.';
 
   @override
   String get lite_qrPasteLabel => 'QR-kód szövege';
-
-  @override
-  String get theme_darkMode => 'Másik téma sötét módban';
-
-  @override
-  String get theme_darkModeHint =>
-      'Másik téma használata, amíg az eszköz sötét módban van';
-
-  @override
-  String get theme_darkModeTheme => 'Sötét mód témája';
 
   @override
   String get batteryWatch_title => 'Akkufigyelés';

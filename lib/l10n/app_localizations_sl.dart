@@ -10134,6 +10134,16 @@ class AppLocalizationsSl extends AppLocalizations {
       'Noč čarovnic, božič in valentinovo na njihove datume';
 
   @override
+  String get theme_darkMode => 'Druga tema v temnem načinu';
+
+  @override
+  String get theme_darkModeHint =>
+      'Uporabi drugo temo, ko je naprava v temnem načinu';
+
+  @override
+  String get theme_darkModeTheme => 'Tema temnega načina';
+
+  @override
   String get coords_setting => 'Oblika koordinat';
 
   @override
@@ -10167,21 +10177,30 @@ class AppLocalizationsSl extends AppLocalizations {
   }
 
   @override
+  String get coords_maidenhead => 'Lokator Maidenhead';
+
+  @override
+  String get reactions_radioTitle => 'Pošiljaj odzive po radiu';
+
+  @override
+  String get reactions_radioHint =>
+      'Vsak odziv je paket v etru. Samodejno jih v pasu EU 868 MHz, kjer je čas oddajanja omejen, ohrani na tej napravi.';
+
+  @override
+  String get reactions_radioAuto => 'Samodejno';
+
+  @override
+  String get reactions_radioOn => 'Vklop';
+
+  @override
+  String get reactions_radioOff => 'Izklop (ta naprava)';
+
+  @override
   String get lite_qrPasteHint =>
       'Ta različica nima optičnega bralnika s kamero. Namesto tega prilepite besedilo iz kode QR.';
 
   @override
   String get lite_qrPasteLabel => 'Besedilo kode QR';
-
-  @override
-  String get theme_darkMode => 'Druga tema v temnem načinu';
-
-  @override
-  String get theme_darkModeHint =>
-      'Uporabi drugo temo, ko je naprava v temnem načinu';
-
-  @override
-  String get theme_darkModeTheme => 'Tema temnega načina';
 
   @override
   String get batteryWatch_title => 'Nadzor baterij';

@@ -9646,6 +9646,15 @@ class AppLocalizationsJa extends AppLocalizations {
   String get seasonal_holidaysHint => 'ハロウィン、クリスマス、バレンタインデーの期間に適用';
 
   @override
+  String get theme_darkMode => 'ダークモードで別のテーマ';
+
+  @override
+  String get theme_darkModeHint => '端末がダークモードのときは別のテーマを使います';
+
+  @override
+  String get theme_darkModeTheme => 'ダークモードのテーマ';
+
+  @override
   String get coords_setting => '座標の形式';
 
   @override
@@ -9679,20 +9688,30 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
+  String get coords_maidenhead => 'メイデンヘッド・ロケーター';
+
+  @override
+  String get reactions_radioTitle => 'リアクションを無線で送信';
+
+  @override
+  String get reactions_radioHint =>
+      'リアクションは1件ごとに電波で送られます。自動では、送信時間が制限されるEUの868 MHz帯ではこの端末内だけに表示します。';
+
+  @override
+  String get reactions_radioAuto => '自動';
+
+  @override
+  String get reactions_radioOn => 'オン';
+
+  @override
+  String get reactions_radioOff => 'オフ（この端末）';
+
+  @override
   String get lite_qrPasteHint =>
       'このビルドにはカメラスキャナーがありません。代わりにQRコードのテキストを貼り付けてください。';
 
   @override
   String get lite_qrPasteLabel => 'QRコードのテキスト';
-
-  @override
-  String get theme_darkMode => 'ダークモードで別のテーマ';
-
-  @override
-  String get theme_darkModeHint => '端末がダークモードのときは別のテーマを使います';
-
-  @override
-  String get theme_darkModeTheme => 'ダークモードのテーマ';
 
   @override
   String get batteryWatch_title => 'バッテリー監視';
