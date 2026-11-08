@@ -16825,6 +16825,24 @@ abstract class AppLocalizations {
   /// **'Halloween, Christmas and Valentine\'s Day on their dates'**
   String get seasonal_holidaysHint;
 
+  /// No description provided for @theme_darkMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Different theme in dark mode'**
+  String get theme_darkMode;
+
+  /// No description provided for @theme_darkModeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Use another theme while your device is set to dark mode'**
+  String get theme_darkModeHint;
+
+  /// No description provided for @theme_darkModeTheme.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark mode theme'**
+  String get theme_darkModeTheme;
+
   /// No description provided for @coords_setting.
   ///
   /// In en, this message translates to:
@@ -16879,17 +16897,113 @@ abstract class AppLocalizations {
   /// **'Your radio uses {width}-byte'**
   String pathHash_mismatch(int width);
 
-  /// No description provided for @lite_qrPasteHint.
+  /// No description provided for @batteryWatch_title.
   ///
   /// In en, this message translates to:
-  /// **'This build has no camera scanner. Paste the text from the QR code instead.'**
-  String get lite_qrPasteHint;
+  /// **'Battery watch'**
+  String get batteryWatch_title;
 
-  /// No description provided for @lite_qrPasteLabel.
+  /// No description provided for @batteryWatch_toolSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'QR code text'**
-  String get lite_qrPasteLabel;
+  /// **'Repeater batteries over the last 30 days'**
+  String get batteryWatch_toolSubtitle;
+
+  /// No description provided for @batteryWatch_empty.
+  ///
+  /// In en, this message translates to:
+  /// **'No repeater battery readings yet. Open a repeater\'s Status or Telemetry, and its readings are kept here for 30 days.'**
+  String get batteryWatch_empty;
+
+  /// No description provided for @batteryWatch_note.
+  ///
+  /// In en, this message translates to:
+  /// **'Readings come from the Status and Telemetry replies you ask for. Nothing extra is sent over the air.'**
+  String get batteryWatch_note;
+
+  /// No description provided for @batteryWatch_statusLow.
+  ///
+  /// In en, this message translates to:
+  /// **'Low battery'**
+  String get batteryWatch_statusLow;
+
+  /// No description provided for @batteryWatch_statusFalling.
+  ///
+  /// In en, this message translates to:
+  /// **'Falling fast'**
+  String get batteryWatch_statusFalling;
+
+  /// No description provided for @batteryWatch_statusQuiet.
+  ///
+  /// In en, this message translates to:
+  /// **'No recent reading'**
+  String get batteryWatch_statusQuiet;
+
+  /// No description provided for @batteryWatch_statusOk.
+  ///
+  /// In en, this message translates to:
+  /// **'Looks fine'**
+  String get batteryWatch_statusOk;
+
+  /// No description provided for @batteryWatch_statusUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Not enough readings yet'**
+  String get batteryWatch_statusUnknown;
+
+  /// No description provided for @batteryWatch_emptyIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Empty in about {days} days at this rate'**
+  String batteryWatch_emptyIn(String days);
+
+  /// No description provided for @batteryWatch_trend.
+  ///
+  /// In en, this message translates to:
+  /// **'{volts} V a day over the last week'**
+  String batteryWatch_trend(String volts);
+
+  /// No description provided for @batteryWatch_lastReading.
+  ///
+  /// In en, this message translates to:
+  /// **'Last reading: {age}'**
+  String batteryWatch_lastReading(String age);
+
+  /// No description provided for @batteryWatch_readings.
+  ///
+  /// In en, this message translates to:
+  /// **'Readings in 30 days: {count}'**
+  String batteryWatch_readings(int count);
+
+  /// No description provided for @batteryWatch_history.
+  ///
+  /// In en, this message translates to:
+  /// **'Battery history'**
+  String get batteryWatch_history;
+
+  /// No description provided for @batteryWatch_chartLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Battery chart: {count} readings, between {low} V and {high} V'**
+  String batteryWatch_chartLabel(int count, String low, String high);
+
+  /// No description provided for @batteryWatch_clear.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear history'**
+  String get batteryWatch_clear;
+
+  /// No description provided for @batteryWatch_unknownRepeater.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown repeater'**
+  String get batteryWatch_unknownRepeater;
+
+  /// No description provided for @batteryWatch_cleared.
+  ///
+  /// In en, this message translates to:
+  /// **'History cleared'**
+  String get batteryWatch_cleared;
 }
 
 class _AppLocalizationsDelegate

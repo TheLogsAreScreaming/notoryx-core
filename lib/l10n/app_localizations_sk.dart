@@ -10114,6 +10114,16 @@ class AppLocalizationsSk extends AppLocalizations {
       'Halloween, Vianoce a Valentín v ich termínoch';
 
   @override
+  String get theme_darkMode => 'Iná téma v tmavom režime';
+
+  @override
+  String get theme_darkModeHint =>
+      'Používať inú tému, kým je zariadenie v tmavom režime';
+
+  @override
+  String get theme_darkModeTheme => 'Téma tmavého režimu';
+
+  @override
   String get coords_setting => 'Formát súradníc';
 
   @override
@@ -10147,9 +10157,69 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
-  String get lite_qrPasteHint =>
-      'Táto verzia nemá skener s kamerou. Vložte namiesto toho text z QR kódu.';
+  String get batteryWatch_title => 'Sledovanie batérií';
 
   @override
-  String get lite_qrPasteLabel => 'Text QR kódu';
+  String get batteryWatch_toolSubtitle =>
+      'Batérie opakovačov za posledných 30 dní';
+
+  @override
+  String get batteryWatch_empty =>
+      'Zatiaľ žiadne hodnoty batérií opakovačov. Otvorte Stav alebo Telemetriu opakovača a jeho hodnoty sa tu uchovajú 30 dní.';
+
+  @override
+  String get batteryWatch_note =>
+      'Hodnoty pochádzajú z odpovedí Stav a Telemetria, o ktoré požiadate. Nič navyše sa nevysiela.';
+
+  @override
+  String get batteryWatch_statusLow => 'Slabá batéria';
+
+  @override
+  String get batteryWatch_statusFalling => 'Rýchlo klesá';
+
+  @override
+  String get batteryWatch_statusQuiet => 'Žiadna nedávna hodnota';
+
+  @override
+  String get batteryWatch_statusOk => 'V poriadku';
+
+  @override
+  String get batteryWatch_statusUnknown => 'Zatiaľ málo hodnôt';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'Pri tomto tempe vybitá asi o $days dní';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '$volts V za deň za posledný týždeň';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return 'Posledná hodnota: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return 'Hodnoty za 30 dní: $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'História batérie';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'Graf batérie: $count hodnôt, medzi $low V a $high V';
+  }
+
+  @override
+  String get batteryWatch_clear => 'Vymazať históriu';
+
+  @override
+  String get batteryWatch_unknownRepeater => 'Neznámy opakovač';
+
+  @override
+  String get batteryWatch_cleared => 'História vymazaná';
 }

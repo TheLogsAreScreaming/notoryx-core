@@ -168,6 +168,10 @@ class AppSettings {
   /// Whether the Seasonal theme switches to holiday colors on their dates.
   final bool seasonalHolidays;
 
+  /// The theme to use while the device is in dark mode, or '' to always use
+  /// [appTheme]. Off by default.
+  final String darkModeTheme;
+
   /// How positions are shown: 'decimal', 'dms', 'utm' or 'mgrs'.
   final String coordinateFormat;
 
@@ -289,6 +293,7 @@ class AppSettings {
     this.appTheme = 'blaze',
     this.seasonalOverride = 'auto',
     this.seasonalHolidays = true,
+    this.darkModeTheme = '',
     this.coordinateFormat = 'decimal',
     this.channelMessageRetentionDays = 0,
     this.imageMessagesEnabled = false,
@@ -381,6 +386,7 @@ class AppSettings {
       'app_theme': appTheme,
       'seasonal_override': seasonalOverride,
       'seasonal_holidays': seasonalHolidays,
+      'dark_mode_theme': darkModeTheme,
       'coordinate_format': coordinateFormat,
       'channel_message_retention_days': channelMessageRetentionDays,
       'image_messages_enabled': imageMessagesEnabled,
@@ -505,6 +511,10 @@ class AppSettings {
           // Autumn Frost people keep autumn colors inside Seasonal.
           (json['app_theme'] == 'autumn_frost' ? 'autumn' : 'auto'),
       seasonalHolidays: json['seasonal_holidays'] as bool? ?? true,
+      darkModeTheme: switch (json['dark_mode_theme']) {
+        final String id when id.isNotEmpty => _migrateThemeId(id),
+        _ => '',
+      },
       coordinateFormat: json['coordinate_format'] as String? ?? 'decimal',
       channelMessageRetentionDays:
           channelRetentionChoices.contains(
@@ -639,6 +649,7 @@ class AppSettings {
     String? appTheme,
     String? seasonalOverride,
     bool? seasonalHolidays,
+    String? darkModeTheme,
     String? coordinateFormat,
     int? channelMessageRetentionDays,
     bool? imageMessagesEnabled,
@@ -729,6 +740,7 @@ class AppSettings {
       appTheme: appTheme ?? this.appTheme,
       seasonalOverride: seasonalOverride ?? this.seasonalOverride,
       seasonalHolidays: seasonalHolidays ?? this.seasonalHolidays,
+      darkModeTheme: darkModeTheme ?? this.darkModeTheme,
       coordinateFormat: coordinateFormat ?? this.coordinateFormat,
       channelMessageRetentionDays:
           channelMessageRetentionDays ?? this.channelMessageRetentionDays,

@@ -10004,6 +10004,16 @@ class AppLocalizationsEn extends AppLocalizations {
       'Halloween, Christmas and Valentine\'s Day on their dates';
 
   @override
+  String get theme_darkMode => 'Different theme in dark mode';
+
+  @override
+  String get theme_darkModeHint =>
+      'Use another theme while your device is set to dark mode';
+
+  @override
+  String get theme_darkModeTheme => 'Dark mode theme';
+
+  @override
   String get coords_setting => 'Coordinate format';
 
   @override
@@ -10037,9 +10047,69 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get lite_qrPasteHint =>
-      'This build has no camera scanner. Paste the text from the QR code instead.';
+  String get batteryWatch_title => 'Battery watch';
 
   @override
-  String get lite_qrPasteLabel => 'QR code text';
+  String get batteryWatch_toolSubtitle =>
+      'Repeater batteries over the last 30 days';
+
+  @override
+  String get batteryWatch_empty =>
+      'No repeater battery readings yet. Open a repeater\'s Status or Telemetry, and its readings are kept here for 30 days.';
+
+  @override
+  String get batteryWatch_note =>
+      'Readings come from the Status and Telemetry replies you ask for. Nothing extra is sent over the air.';
+
+  @override
+  String get batteryWatch_statusLow => 'Low battery';
+
+  @override
+  String get batteryWatch_statusFalling => 'Falling fast';
+
+  @override
+  String get batteryWatch_statusQuiet => 'No recent reading';
+
+  @override
+  String get batteryWatch_statusOk => 'Looks fine';
+
+  @override
+  String get batteryWatch_statusUnknown => 'Not enough readings yet';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'Empty in about $days days at this rate';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '$volts V a day over the last week';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return 'Last reading: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return 'Readings in 30 days: $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'Battery history';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'Battery chart: $count readings, between $low V and $high V';
+  }
+
+  @override
+  String get batteryWatch_clear => 'Clear history';
+
+  @override
+  String get batteryWatch_unknownRepeater => 'Unknown repeater';
+
+  @override
+  String get batteryWatch_cleared => 'History cleared';
 }

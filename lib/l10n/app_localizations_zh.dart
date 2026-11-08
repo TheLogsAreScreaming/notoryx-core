@@ -9448,6 +9448,15 @@ class AppLocalizationsZh extends AppLocalizations {
   String get seasonal_holidaysHint => '在万圣节、圣诞节和情人节期间使用';
 
   @override
+  String get theme_darkMode => '深色模式使用其他主题';
+
+  @override
+  String get theme_darkModeHint => '设备处于深色模式时使用另一个主题';
+
+  @override
+  String get theme_darkModeTheme => '深色模式主题';
+
+  @override
   String get coords_setting => '坐标格式';
 
   @override
@@ -9481,8 +9490,66 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get lite_qrPasteHint => '此版本没有相机扫描功能。请改为粘贴二维码中的文本。';
+  String get batteryWatch_title => '电池监控';
 
   @override
-  String get lite_qrPasteLabel => '二维码文本';
+  String get batteryWatch_toolSubtitle => '过去 30 天的中继电池';
+
+  @override
+  String get batteryWatch_empty => '还没有中继电池读数。打开中继的状态或遥测，其读数会在这里保存 30 天。';
+
+  @override
+  String get batteryWatch_note => '读数来自你请求的状态和遥测回复。不会额外发送任何内容。';
+
+  @override
+  String get batteryWatch_statusLow => '电量低';
+
+  @override
+  String get batteryWatch_statusFalling => '下降很快';
+
+  @override
+  String get batteryWatch_statusQuiet => '最近没有读数';
+
+  @override
+  String get batteryWatch_statusOk => '正常';
+
+  @override
+  String get batteryWatch_statusUnknown => '读数还不够';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return '按此速度约 $days 天后耗尽';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '过去一周每天 $volts V';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return '最后读数：$age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return '30 天内读数：$count';
+  }
+
+  @override
+  String get batteryWatch_history => '电池历史';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return '电池图表：$count 个读数，介于 $low V 和 $high V 之间';
+  }
+
+  @override
+  String get batteryWatch_clear => '清除历史';
+
+  @override
+  String get batteryWatch_unknownRepeater => '未知中继';
+
+  @override
+  String get batteryWatch_cleared => '历史已清除';
 }

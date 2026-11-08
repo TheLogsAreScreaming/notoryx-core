@@ -10121,6 +10121,16 @@ class AppLocalizationsHu extends AppLocalizations {
       'Halloween, karácsony és Valentin-nap a saját napjukon';
 
   @override
+  String get theme_darkMode => 'Másik téma sötét módban';
+
+  @override
+  String get theme_darkModeHint =>
+      'Másik téma használata, amíg az eszköz sötét módban van';
+
+  @override
+  String get theme_darkModeTheme => 'Sötét mód témája';
+
+  @override
   String get coords_setting => 'Koordinátaformátum';
 
   @override
@@ -10154,9 +10164,68 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get lite_qrPasteHint =>
-      'Ebben a változatban nincs kamerás olvasó. Illeszd be a QR-kód szövegét.';
+  String get batteryWatch_title => 'Akkufigyelés';
 
   @override
-  String get lite_qrPasteLabel => 'QR-kód szövege';
+  String get batteryWatch_toolSubtitle => 'Átjátszó akkuk az elmúlt 30 napban';
+
+  @override
+  String get batteryWatch_empty =>
+      'Még nincs akkumulátor-adat átjátszóktól. Nyisd meg egy átjátszó Állapot vagy Telemetria nézetét, és az adatai 30 napig itt maradnak.';
+
+  @override
+  String get batteryWatch_note =>
+      'Az adatok a kért Állapot és Telemetria válaszokból származnak. Semmi többlet nem megy ki rádión.';
+
+  @override
+  String get batteryWatch_statusLow => 'Gyenge akku';
+
+  @override
+  String get batteryWatch_statusFalling => 'Gyorsan csökken';
+
+  @override
+  String get batteryWatch_statusQuiet => 'Nincs friss adat';
+
+  @override
+  String get batteryWatch_statusOk => 'Rendben van';
+
+  @override
+  String get batteryWatch_statusUnknown => 'Még nincs elég adat';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'Ilyen ütemben kb. $days nap múlva lemerül';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '$volts V naponta az elmúlt héten';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return 'Utolsó adat: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return 'Adatok 30 napban: $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'Akku előzmények';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'Akku grafikon: $count adat, $low V és $high V között';
+  }
+
+  @override
+  String get batteryWatch_clear => 'Előzmények törlése';
+
+  @override
+  String get batteryWatch_unknownRepeater => 'Ismeretlen átjátszó';
+
+  @override
+  String get batteryWatch_cleared => 'Előzmények törölve';
 }

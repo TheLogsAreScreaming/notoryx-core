@@ -10143,6 +10143,16 @@ class AppLocalizationsDe extends AppLocalizations {
       'Halloween, Weihnachten und Valentinstag an ihren Daten';
 
   @override
+  String get theme_darkMode => 'Anderes Design im Dunkelmodus';
+
+  @override
+  String get theme_darkModeHint =>
+      'Ein anderes Design verwenden, solange das Gerät im Dunkelmodus ist';
+
+  @override
+  String get theme_darkModeTheme => 'Design im Dunkelmodus';
+
+  @override
   String get coords_setting => 'Koordinatenformat';
 
   @override
@@ -10176,9 +10186,68 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get lite_qrPasteHint =>
-      'Diese Version hat keinen Kamera-Scanner. Füge stattdessen den Text des QR-Codes ein.';
+  String get batteryWatch_title => 'Akku-Überwachung';
 
   @override
-  String get lite_qrPasteLabel => 'Text des QR-Codes';
+  String get batteryWatch_toolSubtitle => 'Repeater-Akkus der letzten 30 Tage';
+
+  @override
+  String get batteryWatch_empty =>
+      'Noch keine Akkuwerte von Repeatern. Öffne Status oder Telemetrie eines Repeaters, dann werden seine Werte hier 30 Tage lang aufbewahrt.';
+
+  @override
+  String get batteryWatch_note =>
+      'Die Werte stammen aus Status- und Telemetrie-Antworten, die du anforderst. Es wird nichts zusätzlich gesendet.';
+
+  @override
+  String get batteryWatch_statusLow => 'Akku schwach';
+
+  @override
+  String get batteryWatch_statusFalling => 'Fällt schnell';
+
+  @override
+  String get batteryWatch_statusQuiet => 'Kein aktueller Wert';
+
+  @override
+  String get batteryWatch_statusOk => 'Sieht gut aus';
+
+  @override
+  String get batteryWatch_statusUnknown => 'Noch nicht genug Werte';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'Bei diesem Tempo in etwa $days Tagen leer';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '$volts V pro Tag in der letzten Woche';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return 'Letzter Wert: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return 'Werte in 30 Tagen: $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'Akkuverlauf';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'Akkudiagramm: $count Werte, zwischen $low V und $high V';
+  }
+
+  @override
+  String get batteryWatch_clear => 'Verlauf löschen';
+
+  @override
+  String get batteryWatch_unknownRepeater => 'Unbekannter Repeater';
+
+  @override
+  String get batteryWatch_cleared => 'Verlauf gelöscht';
 }

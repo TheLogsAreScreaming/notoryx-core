@@ -10115,6 +10115,16 @@ class AppLocalizationsBg extends AppLocalizations {
       'Хелоуин, Коледа и Свети Валентин на техните дати';
 
   @override
+  String get theme_darkMode => 'Друга тема в тъмен режим';
+
+  @override
+  String get theme_darkModeHint =>
+      'Използвай друга тема, докато устройството е в тъмен режим';
+
+  @override
+  String get theme_darkModeTheme => 'Тема за тъмен режим';
+
+  @override
   String get coords_setting => 'Формат на координатите';
 
   @override
@@ -10148,9 +10158,69 @@ class AppLocalizationsBg extends AppLocalizations {
   }
 
   @override
-  String get lite_qrPasteHint =>
-      'Тази версия няма скенер с камера. Вместо това поставете текста от QR кода.';
+  String get batteryWatch_title => 'Наблюдение на батерии';
 
   @override
-  String get lite_qrPasteLabel => 'Текст от QR кода';
+  String get batteryWatch_toolSubtitle =>
+      'Батерии на ретранслаторите за последните 30 дни';
+
+  @override
+  String get batteryWatch_empty =>
+      'Все още няма показания за батерии. Отворете Състояние или Телеметрия на ретранслатор и показанията му се пазят тук 30 дни.';
+
+  @override
+  String get batteryWatch_note =>
+      'Показанията идват от отговорите на Състояние и Телеметрия, които поискате. Нищо допълнително не се изпраща по ефира.';
+
+  @override
+  String get batteryWatch_statusLow => 'Слаба батерия';
+
+  @override
+  String get batteryWatch_statusFalling => 'Бързо пада';
+
+  @override
+  String get batteryWatch_statusQuiet => 'Няма скорошно показание';
+
+  @override
+  String get batteryWatch_statusOk => 'Изглежда наред';
+
+  @override
+  String get batteryWatch_statusUnknown => 'Още няма достатъчно показания';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'Изтощена след около $days дни при това темпо';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '$volts V на ден за последната седмица';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return 'Последно показание: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return 'Показания за 30 дни: $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'История на батерията';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'Графика на батерията: $count показания, между $low V и $high V';
+  }
+
+  @override
+  String get batteryWatch_clear => 'Изчисти историята';
+
+  @override
+  String get batteryWatch_unknownRepeater => 'Неизвестен ретранслатор';
+
+  @override
+  String get batteryWatch_cleared => 'Историята е изчистена';
 }
