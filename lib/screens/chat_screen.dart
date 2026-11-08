@@ -43,6 +43,7 @@ import '../widgets/byte_count_input.dart';
 import 'channel_message_path_screen.dart';
 import 'repeater_cli_screen.dart';
 import 'map_screen.dart';
+import 'waypoints_screen.dart' show SaveWaypointButton;
 import '../widgets/emoji_picker.dart';
 import '../widgets/gif_message.dart';
 import '../widgets/jump_to_bottom_button.dart';
@@ -2030,6 +2031,12 @@ class _MessageBubble extends StatelessWidget {
                 ),
             ],
           ),
+        ),
+        SaveWaypointButton(
+          label: poi.label,
+          lat: poi.position.latitude,
+          lon: poi.position.longitude,
+          color: textColor,
         ),
         if (trailing != null) ...[const SizedBox(width: 4), trailing],
       ],

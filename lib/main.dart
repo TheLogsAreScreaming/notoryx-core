@@ -45,6 +45,7 @@ import 'services/favorite_return_service.dart';
 import 'services/field_ops_service.dart';
 import 'services/path_history_service.dart';
 import 'services/app_settings_service.dart';
+import 'services/waypoint_store.dart';
 import 'services/repeater_battery_history.dart';
 import 'services/notification_service.dart';
 import 'services/ble_debug_log_service.dart';
@@ -283,6 +284,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   late final FieldOpsService _fieldOps;
   late final RegionalPresetService _regionalPresets;
   late final DirectRepeaterService _directRepeaters;
+  late final WaypointStore _waypoints;
   late final TrackLogService _trackLog;
   late final ChannelDiscoveryService _channelDiscovery;
   late final AnalyzerService _analyzer;
@@ -321,6 +323,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _regionalPresets = RegionalPresetService(widget.connector);
     unawaited(_regionalPresets.start());
     _directRepeaters = DirectRepeaterService(widget.connector);
+    _waypoints = WaypointStore(PrefsManager.instance);
     _trackLog = TrackLogService(widget.connector);
     _channelDiscovery = ChannelDiscoveryService(widget.connector);
     unawaited(_channelDiscovery.load());
@@ -450,6 +453,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _fieldOps.dispose();
     _regionalPresets.dispose();
     _directRepeaters.dispose();
+    _waypoints.dispose();
     _trackLog.dispose();
     _channelDiscovery.dispose();
     _analyzer.dispose();
@@ -585,6 +589,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         ChangeNotifierProvider.value(value: _botService),
         ChangeNotifierProvider<WeatherService?>.value(value: _weather),
         ChangeNotifierProvider.value(value: _fieldOps),
+        ChangeNotifierProvider<WaypointStore>.value(value: _waypoints),
         ChangeNotifierProvider<DirectRepeaterService?>.value(
           value: _directRepeaters,
         ),
