@@ -530,6 +530,7 @@ class _KeyField extends StatelessWidget {
           ),
           if (onReveal != null)
             IconButton(
+              tooltip: context.l10n.a11y_showHide,
               onPressed: onReveal,
               icon: Icon(obscured ? Icons.visibility : Icons.visibility_off),
             ),

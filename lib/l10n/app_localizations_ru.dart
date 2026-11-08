@@ -10294,6 +10294,27 @@ class AppLocalizationsRu extends AppLocalizations {
   String get batteryWatch_cleared => 'История очищена';
 
   @override
+  String get a11y_clear => 'Очистить';
+
+  @override
+  String get a11y_showOnMap => 'Показать на карте';
+
+  @override
+  String get a11y_showHide => 'Показать или скрыть';
+
+  @override
+  String get a11y_flash => 'Вспышка';
+
+  @override
+  String get a11y_switchCamera => 'Сменить камеру';
+
+  @override
+  String get a11y_pauseGif => 'Запустить или остановить GIF';
+
+  @override
+  String get a11y_chooseGif => 'Выбрать этот GIF';
+
+  @override
   String get privacy_title => 'Конфиденциальность';
 
   @override

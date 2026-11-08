@@ -17017,6 +17017,48 @@ abstract class AppLocalizations {
   /// **'History cleared'**
   String get batteryWatch_cleared;
 
+  /// No description provided for @a11y_clear.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear'**
+  String get a11y_clear;
+
+  /// No description provided for @a11y_showOnMap.
+  ///
+  /// In en, this message translates to:
+  /// **'Show on map'**
+  String get a11y_showOnMap;
+
+  /// No description provided for @a11y_showHide.
+  ///
+  /// In en, this message translates to:
+  /// **'Show or hide'**
+  String get a11y_showHide;
+
+  /// No description provided for @a11y_flash.
+  ///
+  /// In en, this message translates to:
+  /// **'Flash'**
+  String get a11y_flash;
+
+  /// No description provided for @a11y_switchCamera.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch camera'**
+  String get a11y_switchCamera;
+
+  /// No description provided for @a11y_pauseGif.
+  ///
+  /// In en, this message translates to:
+  /// **'Play or pause GIF'**
+  String get a11y_pauseGif;
+
+  /// No description provided for @a11y_chooseGif.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose this GIF'**
+  String get a11y_chooseGif;
+
   /// No description provided for @privacy_title.
   ///
   /// In en, this message translates to:

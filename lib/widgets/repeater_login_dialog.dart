@@ -352,6 +352,7 @@ class _RepeaterLoginDialogState extends State<RepeaterLoginDialog> {
                       hintText: l10n.login_enterPassword,
                       prefixIcon: const Icon(Icons.lock),
                       suffixIcon: IconButton(
+                        tooltip: context.l10n.a11y_showHide,
                         icon: Icon(
                           _obscurePassword
                               ? Icons.visibility

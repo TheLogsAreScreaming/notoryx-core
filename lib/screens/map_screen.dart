@@ -1902,6 +1902,7 @@ class _MapScreenState extends State<MapScreen> {
                       ),
                       suffixIcon: hasQuery
                           ? IconButton(
+                              tooltip: context.l10n.common_close,
                               color: _overlayPrimaryTextColor,
                               icon: const Icon(Icons.close, size: 18),
                               onPressed: () {
@@ -2506,6 +2507,7 @@ class _MapScreenState extends State<MapScreen> {
                               _mapController.move(pos, max(_zoom, 15)),
                         ),
                       IconButton(
+                        tooltip: context.l10n.common_close,
                         color: _overlayPrimaryTextColor,
                         icon: const Icon(Icons.close, size: 20),
                         onPressed: _clearSelection,

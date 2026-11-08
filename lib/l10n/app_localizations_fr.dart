@@ -10284,6 +10284,27 @@ class AppLocalizationsFr extends AppLocalizations {
   String get batteryWatch_cleared => 'Historique effacé';
 
   @override
+  String get a11y_clear => 'Effacer';
+
+  @override
+  String get a11y_showOnMap => 'Afficher sur la carte';
+
+  @override
+  String get a11y_showHide => 'Afficher ou masquer';
+
+  @override
+  String get a11y_flash => 'Flash';
+
+  @override
+  String get a11y_switchCamera => 'Changer de caméra';
+
+  @override
+  String get a11y_pauseGif => 'Lire ou mettre en pause le GIF';
+
+  @override
+  String get a11y_chooseGif => 'Choisir ce GIF';
+
+  @override
   String get privacy_title => 'Confidentialité';
 
   @override

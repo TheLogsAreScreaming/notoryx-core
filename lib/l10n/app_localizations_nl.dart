@@ -10209,6 +10209,27 @@ class AppLocalizationsNl extends AppLocalizations {
   String get batteryWatch_cleared => 'Geschiedenis gewist';
 
   @override
+  String get a11y_clear => 'Wissen';
+
+  @override
+  String get a11y_showOnMap => 'Op kaart tonen';
+
+  @override
+  String get a11y_showHide => 'Tonen of verbergen';
+
+  @override
+  String get a11y_flash => 'Flits';
+
+  @override
+  String get a11y_switchCamera => 'Camera wisselen';
+
+  @override
+  String get a11y_pauseGif => 'GIF afspelen of pauzeren';
+
+  @override
+  String get a11y_chooseGif => 'Deze GIF kiezen';
+
+  @override
   String get privacy_title => 'Privacy';
 
   @override
