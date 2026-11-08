@@ -4273,6 +4273,5 @@
   "a11y_flash": "Lampa",
   "a11y_switchCamera": "Przełącz aparat",
   "a11y_pauseGif": "Odtwórz lub wstrzymaj GIF",
-  "a11y_chooseGif": "Wybierz ten GIF",
-  "a11y_openImage": "Otwórz obraz"
+  "a11y_chooseGif": "Wybierz ten GIF"
 }

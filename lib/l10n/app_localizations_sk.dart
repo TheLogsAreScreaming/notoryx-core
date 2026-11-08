@@ -10250,7 +10250,4 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get a11y_chooseGif => 'Vybrať tento GIF';
-
-  @override
-  String get a11y_openImage => 'Otvoriť obrázok';
 }

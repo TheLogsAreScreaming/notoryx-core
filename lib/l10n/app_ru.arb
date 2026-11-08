@@ -3538,6 +3538,5 @@
   "a11y_flash": "Вспышка",
   "a11y_switchCamera": "Сменить камеру",
   "a11y_pauseGif": "Запустить или остановить GIF",
-  "a11y_chooseGif": "Выбрать этот GIF",
-  "a11y_openImage": "Открыть изображение"
+  "a11y_chooseGif": "Выбрать этот GIF"
 }

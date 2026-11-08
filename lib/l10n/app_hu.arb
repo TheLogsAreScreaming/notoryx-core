@@ -4273,6 +4273,5 @@
   "a11y_flash": "Vaku",
   "a11y_switchCamera": "Kameraváltás",
   "a11y_pauseGif": "GIF lejátszása vagy szüneteltetése",
-  "a11y_chooseGif": "Ez a GIF",
-  "a11y_openImage": "Kép megnyitása"
+  "a11y_chooseGif": "Ez a GIF"
 }

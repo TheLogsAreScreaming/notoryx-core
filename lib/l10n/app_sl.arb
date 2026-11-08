@@ -4235,6 +4235,5 @@
   "a11y_flash": "Bliskavica",
   "a11y_switchCamera": "Zamenjaj kamero",
   "a11y_pauseGif": "Predvajaj ali ustavi GIF",
-  "a11y_chooseGif": "Izberi ta GIF",
-  "a11y_openImage": "Odpri sliko"
+  "a11y_chooseGif": "Izberi ta GIF"
 }

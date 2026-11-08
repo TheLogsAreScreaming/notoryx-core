@@ -10310,7 +10310,4 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get a11y_chooseGif => 'Вибрати цей GIF';
-
-  @override
-  String get a11y_openImage => 'Відкрити зображення';
 }

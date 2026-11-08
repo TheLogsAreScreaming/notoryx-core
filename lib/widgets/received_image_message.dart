@@ -29,7 +29,6 @@
 /// with whoever implements export, not here.
 library;
 
-import '../l10n/l10n.dart';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
@@ -382,11 +381,7 @@ class _ReceivedImageMessageState extends State<ReceivedImageMessage> {
       child: Center(child: child),
     );
     if (onTap == null) return box;
-    return Semantics(
-      button: true,
-      label: context.l10n.a11y_openImage,
-      child: GestureDetector(onTap: onTap, child: box),
-    );
+    return GestureDetector(onTap: onTap, child: box);
   }
 
   Widget _progressBody(

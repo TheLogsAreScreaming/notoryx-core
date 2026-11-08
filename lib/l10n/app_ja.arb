@@ -4369,6 +4369,5 @@
   "a11y_flash": "フラッシュ",
   "a11y_switchCamera": "カメラを切り替え",
   "a11y_pauseGif": "GIFを再生または一時停止",
-  "a11y_chooseGif": "このGIFを選択",
-  "a11y_openImage": "画像を開く"
+  "a11y_chooseGif": "このGIFを選択"
 }

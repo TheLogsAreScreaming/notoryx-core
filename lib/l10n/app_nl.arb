@@ -4235,6 +4235,5 @@
   "a11y_flash": "Flits",
   "a11y_switchCamera": "Camera wisselen",
   "a11y_pauseGif": "GIF afspelen of pauzeren",
-  "a11y_chooseGif": "Deze GIF kiezen",
-  "a11y_openImage": "Afbeelding openen"
+  "a11y_chooseGif": "Deze GIF kiezen"
 }

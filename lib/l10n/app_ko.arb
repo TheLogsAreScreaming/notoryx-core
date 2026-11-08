@@ -4369,6 +4369,5 @@
   "a11y_flash": "플래시",
   "a11y_switchCamera": "카메라 전환",
   "a11y_pauseGif": "GIF 재생 또는 일시정지",
-  "a11y_chooseGif": "이 GIF 선택",
-  "a11y_openImage": "사진 열기"
+  "a11y_chooseGif": "이 GIF 선택"
 }

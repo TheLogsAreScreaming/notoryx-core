@@ -4235,6 +4235,5 @@
   "a11y_flash": "Blesk",
   "a11y_switchCamera": "Prepnúť kameru",
   "a11y_pauseGif": "Prehrať alebo pozastaviť GIF",
-  "a11y_chooseGif": "Vybrať tento GIF",
-  "a11y_openImage": "Otvoriť obrázok"
+  "a11y_chooseGif": "Vybrať tento GIF"
 }

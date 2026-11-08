@@ -9793,7 +9793,4 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get a11y_chooseGif => '이 GIF 선택';
-
-  @override
-  String get a11y_openImage => '사진 열기';
 }

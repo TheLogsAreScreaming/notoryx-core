@@ -10256,7 +10256,4 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get a11y_chooseGif => 'Ez a GIF';
-
-  @override
-  String get a11y_openImage => 'Kép megnyitása';
 }

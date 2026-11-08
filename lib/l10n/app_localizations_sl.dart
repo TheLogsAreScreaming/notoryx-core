@@ -10270,7 +10270,4 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get a11y_chooseGif => 'Izberi ta GIF';
-
-  @override
-  String get a11y_openImage => 'Odpri sliko';
 }

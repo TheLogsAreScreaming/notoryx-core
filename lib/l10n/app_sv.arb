@@ -4235,6 +4235,5 @@
   "a11y_flash": "Blixt",
   "a11y_switchCamera": "Byt kamera",
   "a11y_pauseGif": "Spela upp eller pausa GIF",
-  "a11y_chooseGif": "Välj denna GIF",
-  "a11y_openImage": "Öppna bild"
+  "a11y_chooseGif": "Välj denna GIF"
 }

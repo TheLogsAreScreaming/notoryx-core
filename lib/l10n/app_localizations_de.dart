@@ -10278,7 +10278,4 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get a11y_chooseGif => 'Dieses GIF wählen';
-
-  @override
-  String get a11y_openImage => 'Bild öffnen';
 }

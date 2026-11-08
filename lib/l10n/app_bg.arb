@@ -4235,6 +4235,5 @@
   "a11y_flash": "Светкавица",
   "a11y_switchCamera": "Смени камерата",
   "a11y_pauseGif": "Пусни или спри GIF",
-  "a11y_chooseGif": "Избери този GIF",
-  "a11y_openImage": "Отвори снимката"
+  "a11y_chooseGif": "Избери този GIF"
 }

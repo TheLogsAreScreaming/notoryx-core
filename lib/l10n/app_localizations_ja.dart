@@ -9779,7 +9779,4 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get a11y_chooseGif => 'このGIFを選択';
-
-  @override
-  String get a11y_openImage => '画像を開く';
 }

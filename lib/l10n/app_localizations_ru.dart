@@ -10313,7 +10313,4 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get a11y_chooseGif => 'Выбрать этот GIF';
-
-  @override
-  String get a11y_openImage => 'Открыть изображение';
 }

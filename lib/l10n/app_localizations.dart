@@ -17058,12 +17058,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Choose this GIF'**
   String get a11y_chooseGif;
-
-  /// No description provided for @a11y_openImage.
-  ///
-  /// In en, this message translates to:
-  /// **'Open picture'**
-  String get a11y_openImage;
 }
 
 class _AppLocalizationsDelegate

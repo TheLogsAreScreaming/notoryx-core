@@ -4369,6 +4369,5 @@
   "a11y_flash": "Blitz",
   "a11y_switchCamera": "Kamera wechseln",
   "a11y_pauseGif": "GIF abspielen oder anhalten",
-  "a11y_chooseGif": "Dieses GIF wählen",
-  "a11y_openImage": "Bild öffnen"
+  "a11y_chooseGif": "Dieses GIF wählen"
 }

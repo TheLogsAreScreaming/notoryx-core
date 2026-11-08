@@ -5666,6 +5666,5 @@
   "a11y_flash": "Flash",
   "a11y_switchCamera": "Switch camera",
   "a11y_pauseGif": "Play or pause GIF",
-  "a11y_chooseGif": "Choose this GIF",
-  "a11y_openImage": "Open picture"
+  "a11y_chooseGif": "Choose this GIF"
 }

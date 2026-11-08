@@ -9579,7 +9579,4 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get a11y_chooseGif => '选择此 GIF';
-
-  @override
-  String get a11y_openImage => '打开图片';
 }
