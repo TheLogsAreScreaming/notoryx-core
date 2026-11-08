@@ -10169,6 +10169,39 @@ class AppLocalizationsSv extends AppLocalizations {
   String get batteryWatch_cleared => 'Historiken rensad';
 
   @override
+  String get team_title => 'Lagspårning';
+
+  @override
+  String get team_hint =>
+      'Delar din position i en privat kanal medan turen pågår, så att laget ser dig på kartan. Stängs av när turen slutar eller efter 12 timmar.';
+
+  @override
+  String get team_channel => 'Kanal';
+
+  @override
+  String get team_noChannel =>
+      'Lägg först till en privat kanal. Spårning postar aldrig i offentliga eller hashtagkanaler.';
+
+  @override
+  String get team_every => 'Var';
+
+  @override
+  String team_minutes(int minutes) {
+    return '$minutes min';
+  }
+
+  @override
+  String get team_needTrip => 'Starta turen för att dela din position.';
+
+  @override
+  String team_lastShared(String age) {
+    return 'Senast delad $age';
+  }
+
+  @override
+  String get team_waitingGps => 'Väntar på en position från radion';
+
+  @override
   String get waypoints_title => 'Vägpunkter';
 
   @override

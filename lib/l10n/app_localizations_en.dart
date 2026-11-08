@@ -10121,6 +10121,39 @@ class AppLocalizationsEn extends AppLocalizations {
   String get batteryWatch_cleared => 'History cleared';
 
   @override
+  String get team_title => 'Team tracking';
+
+  @override
+  String get team_hint =>
+      'Shares your position to a private channel while this trip is active, so teammates see you move on their map. Turns off when the trip ends, or after 12 hours.';
+
+  @override
+  String get team_channel => 'Channel';
+
+  @override
+  String get team_noChannel =>
+      'Add a private channel first. Tracking never posts to public or hashtag channels.';
+
+  @override
+  String get team_every => 'Every';
+
+  @override
+  String team_minutes(int minutes) {
+    return '$minutes min';
+  }
+
+  @override
+  String get team_needTrip => 'Start the trip to share your position.';
+
+  @override
+  String team_lastShared(String age) {
+    return 'Last shared $age';
+  }
+
+  @override
+  String get team_waitingGps => 'Waiting for a position from the radio';
+
+  @override
   String get waypoints_title => 'Waypoints';
 
   @override

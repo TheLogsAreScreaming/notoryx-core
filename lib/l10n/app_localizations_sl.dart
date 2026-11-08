@@ -10251,6 +10251,39 @@ class AppLocalizationsSl extends AppLocalizations {
   String get batteryWatch_cleared => 'Zgodovina počiščena';
 
   @override
+  String get team_title => 'Sledenje ekipe';
+
+  @override
+  String get team_hint =>
+      'Med izletom deli vaš položaj v zasebnem kanalu, da vas ekipa vidi na zemljevidu. Izklopi se ob koncu izleta ali po 12 urah.';
+
+  @override
+  String get team_channel => 'Kanal';
+
+  @override
+  String get team_noChannel =>
+      'Najprej dodajte zasebni kanal. Sledenje nikoli ne objavlja v javnih ali ključnikovih kanalih.';
+
+  @override
+  String get team_every => 'Vsakih';
+
+  @override
+  String team_minutes(int minutes) {
+    return '$minutes min';
+  }
+
+  @override
+  String get team_needTrip => 'Začnite izlet, da delite svoj položaj.';
+
+  @override
+  String team_lastShared(String age) {
+    return 'Nazadnje deljeno $age';
+  }
+
+  @override
+  String get team_waitingGps => 'Čakanje na položaj iz radia';
+
+  @override
   String get waypoints_title => 'Točke';
 
   @override
