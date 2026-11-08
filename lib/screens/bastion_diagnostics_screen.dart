@@ -21,6 +21,7 @@ import 'ble_debug_log_screen.dart';
 import 'channel_chat_screen.dart';
 import 'companion_radio_stats_screen.dart';
 import 'map_screen.dart';
+import 'troubleshooting_screen.dart';
 
 class BastionDiagnosticsScreen extends StatelessWidget {
   const BastionDiagnosticsScreen({super.key});
@@ -245,6 +246,15 @@ class BastionDiagnosticsScreen extends StatelessWidget {
           scrolledUnderElevation: 0,
           title: Text(l10n.bastionDiag_title),
           actions: [
+            IconButton(
+              tooltip: l10n.trouble_title,
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (_) => const TroubleshootingScreen(),
+                ),
+              ),
+              icon: const Icon(Icons.healing_outlined),
+            ),
             IconButton(
               tooltip: l10n.bastionDiag_export,
               onPressed: () => _export(context, c),

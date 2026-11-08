@@ -10117,16 +10117,6 @@ class AppLocalizationsPt extends AppLocalizations {
       'Halloween, Natal e Dia dos Namorados nas suas datas';
 
   @override
-  String get theme_darkMode => 'Outro tema no modo escuro';
-
-  @override
-  String get theme_darkModeHint =>
-      'Usar outro tema enquanto o dispositivo estiver no modo escuro';
-
-  @override
-  String get theme_darkModeTheme => 'Tema do modo escuro';
-
-  @override
   String get coords_setting => 'Formato de coordenadas';
 
   @override
@@ -10158,6 +10148,23 @@ class AppLocalizationsPt extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'Seu rádio usa $width bytes';
   }
+
+  @override
+  String get lite_qrPasteHint =>
+      'Esta versão não tem leitor com câmara. Cole o texto do código QR.';
+
+  @override
+  String get lite_qrPasteLabel => 'Texto do código QR';
+
+  @override
+  String get theme_darkMode => 'Outro tema no modo escuro';
+
+  @override
+  String get theme_darkModeHint =>
+      'Usar outro tema enquanto o dispositivo estiver no modo escuro';
+
+  @override
+  String get theme_darkModeTheme => 'Tema do modo escuro';
 
   @override
   String get batteryWatch_title => 'Vigilância de baterias';
@@ -10225,6 +10232,171 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'Histórico limpo';
+
+  @override
+  String get netChange_title => 'Mudanças na rede';
+
+  @override
+  String get netChange_toolSubtitle =>
+      'Repetidores que surgiram perto ou ficaram em silêncio';
+
+  @override
+  String netChange_newDirect(String name) {
+    return 'Novo repetidor ouvido diretamente: $name';
+  }
+
+  @override
+  String netChange_newHops(String name, int hops) {
+    return 'Novo repetidor a $hops salto: $name';
+  }
+
+  @override
+  String netChange_wentQuiet(String name, int hours) {
+    return '$name ficou em silêncio: sem sinal há $hours h';
+  }
+
+  @override
+  String get netChange_empty =>
+      'Ainda sem mudanças. Aqui aparecem repetidores favoritos que ficam em silêncio e repetidores novos por perto.';
+
+  @override
+  String get netChange_quietSetting => 'Repetidor favorito fica em silêncio';
+
+  @override
+  String get netChange_quietHint =>
+      'Avisar quando um repetidor favorito não é ouvido há este tempo';
+
+  @override
+  String get netChange_newSetting => 'Repetidor novo por perto';
+
+  @override
+  String get netChange_newHint =>
+      'Avisar quando um repetidor nunca visto é ouvido a um salto';
+
+  @override
+  String get netChange_clear => 'Limpar';
+
+  @override
+  String get netChange_notifTitle => 'Mudança na rede';
+
+  @override
+  String get trouble_title => 'Resolução de problemas';
+
+  @override
+  String get trouble_toolSubtitle =>
+      'Ajuda passo a passo quando algo não funciona';
+
+  @override
+  String get trouble_pick => 'O que se passa?';
+
+  @override
+  String get trouble_noDelivery => 'As mensagens não são entregues';
+
+  @override
+  String get trouble_noConnect => 'Não consigo ligar ao meu rádio';
+
+  @override
+  String get trouble_hearNobody => 'Não ouço ninguém';
+
+  @override
+  String get trouble_startHere => 'Comece aqui';
+
+  @override
+  String get trouble_resultOk => 'OK';
+
+  @override
+  String get trouble_resultProblem => 'Problema';
+
+  @override
+  String get trouble_resultUnchecked => 'Não verificável';
+
+  @override
+  String get trouble_connectedNow =>
+      'Está ligado agora. Se a ligação cair muitas vezes, os passos abaixo continuam a ajudar.';
+
+  @override
+  String get trouble_allOk =>
+      'Todas as verificações passaram. Se ainda não funcionar, veja os passos abaixo.';
+
+  @override
+  String get trouble_connected => 'O seu rádio está ligado';
+
+  @override
+  String get trouble_connectedAdvice =>
+      'Ligue primeiro o rádio: Definições → Ligar um rádio.';
+
+  @override
+  String get trouble_routes =>
+      'Há rotas conhecidas para as pessoas a quem escreve';
+
+  @override
+  String get trouble_routesAdvice =>
+      'Mensagens para alguém sem rota conhecida inundam toda a rede e muitas vezes não chegam. Espere que se anuncie, ou peça-lhe, e volte a escrever.';
+
+  @override
+  String get trouble_heardRecently =>
+      'As pessoas a quem escreve foram ouvidas no último dia';
+
+  @override
+  String get trouble_heardRecentlyAdvice =>
+      'Quem não é ouvido há algum tempo pode estar fora de alcance ou desligado. As mensagens não são confirmadas até voltar.';
+
+  @override
+  String get trouble_neighbours => 'O seu rádio ouve outros nós';
+
+  @override
+  String get trouble_neighboursAdvice =>
+      'Se nada é ouvido diretamente, o rádio não chega à rede daqui. Suba a antena, vá para um local mais alto ou aproxime-se de um repetidor.';
+
+  @override
+  String get trouble_bluetooth => 'O Bluetooth está ligado e a app pode usá-lo';
+
+  @override
+  String get trouble_bluetoothAdvice =>
+      'Confirme que o Bluetooth está ligado e que o NOTORYX Core tem permissão de Bluetooth (e no Android, Dispositivos próximos) nas definições do telefone.';
+
+  @override
+  String get trouble_otherApp =>
+      'Nenhum outro telefone ou app está ligado ao rádio';
+
+  @override
+  String get trouble_otherAppAdvice =>
+      'Um rádio fala com uma app de cada vez. Feche outras apps MeshCore ou desligue o Bluetooth noutros telefones emparelhados.';
+
+  @override
+  String get trouble_inRange => 'O rádio está ligado e perto';
+
+  @override
+  String get trouble_inRangeAdvice =>
+      'Confirme que o rádio está carregado, ligado e a poucos metros. Reiniciar o rádio resolve muitas vezes uma ligação presa.';
+
+  @override
+  String get trouble_otherTransport => 'Experimente outra forma de ligar';
+
+  @override
+  String get trouble_otherTransportAdvice =>
+      'Se o Bluetooth continuar a falhar, ligue por cabo USB, ou por Wi-Fi (TCP) se o rádio o suportar.';
+
+  @override
+  String get trouble_noise => 'O rádio não está afogado em ruído';
+
+  @override
+  String get trouble_noiseAdvice =>
+      'Um ruído de fundo alto esconde sinais fracos. Afaste a antena de eletrónica, carregadores e controladores solares.';
+
+  @override
+  String get trouble_region => 'O seu rádio usa as definições da sua zona';
+
+  @override
+  String get trouble_regionAdvice =>
+      'Com frequência, largura de banda ou fator de espalhamento diferentes da rede local não ouve ninguém. Compare Definições → Rádio com o que a sua zona usa.';
+
+  @override
+  String get trouble_antenna => 'A antena está colocada';
+
+  @override
+  String get trouble_antennaAdvice =>
+      'Confirme que a antena está bem enroscada. Nunca transmita sem ela; pode danificar o rádio.';
 
   @override
   String get mesh_title => 'Saúde da rede';
@@ -10439,13 +10611,6 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get reactions_radioOff => 'Desligado (este dispositivo)';
-
-  @override
-  String get lite_qrPasteHint =>
-      'Esta versão não tem leitor com câmara. Cole o texto do código QR.';
-
-  @override
-  String get lite_qrPasteLabel => 'Texto do código QR';
 
   @override
   String get batteryWatch_auto => 'Verificar automaticamente';
