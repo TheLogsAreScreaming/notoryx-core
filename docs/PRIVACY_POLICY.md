@@ -1,15 +1,23 @@
 # NOTORYX Core privacy policy (release review draft)
 
-**Last reviewed:** October 1, 2026  
+**Last reviewed:** November 8, 2026  
 **Status:** Draft for code and distribution review before public release.
 
 ## About NOTORYX Core
 
 NOTORYX Core is an independent MeshCore companion app. It communicates with compatible mesh radios and provides messaging, maps, route intelligence, diagnostics and coverage capture. No NOTORYX Core account is required for the current companion workflows.
 
+## What the mesh can see
+
+- **Direct messages** are encrypted between the two radios. Repeaters forward them but can't read them. Short sender and recipient IDs and the route travel in the clear.
+- **Channel messages** are encrypted with the channel's key; anyone with the key can read them. Public and hashtag channel keys are known to everyone, so treat those channels as public.
+- **Adverts** carry the radio's name, public key and, if you share it, its position, unencrypted, to everyone in range.
+
+The app shows the same summary under **More → Privacy**.
+
 ## Information stored on the device
 
-Depending on the features you use, NOTORYX Core can store messages, contact identifiers, channel settings, routing/path history, coverage sessions and observations, mesh node positions, app preferences, cached map tiles and optional diagnostic logs. Coverage observations can contain the connected radio's GPS coordinates and nearby signal measurements. A radio's GPS position is not necessarily the phone's position.
+Depending on the features you use, NOTORYX Core can store messages, contact identifiers, channel settings, routing/path history, coverage sessions and observations, mesh node positions, track logs, waypoints and routes, repeater battery history, network change history, app preferences, cached map tiles and optional diagnostic logs. Coverage observations can contain the connected radio's GPS coordinates and nearby signal measurements. A radio's GPS position is not necessarily the phone's position.
 
 The app uses device storage and operating-system protections; do not assume that all stored messages, logs or exports have additional app-level encryption. Anyone with access to an exported file may be able to read its contents.
 
@@ -30,7 +38,13 @@ Permissions can be managed through Android settings, although denying a permissi
 
 ## Third-party network services
 
-Depending on the features and settings used, the app may request map tiles from OpenStreetMap or Stadia Maps, terrain elevation from Open-Meteo, optional models from Hugging Face, and GIF results from Giphy. Those requests can reveal your IP address and relevant request data (for example, map tile coordinates, selected path coordinates or a GIF search query) to the provider. Review each provider's privacy policy before using the feature.
+Depending on the features and settings used, the app may request map tiles from OpenStreetMap or Stadia Maps, terrain elevation from Open-Meteo, optional models from Hugging Face, GIF results from Giphy, images linked from pyx.li in messages, regional presets and the channel directory from this app's GitHub releases repository (raw.githubusercontent.com), and CoreScope analyzer lookups.
+
+**MQTT** connects only to brokers you add. If you turn uploading on, packets your radio hears are published to them. Broker passwords are kept in the phone's secure storage (Keychain on Apple platforms, the Android Keystore on Android). Those requests can reveal your IP address and relevant request data (for example, map tile coordinates, selected path coordinates or a GIF search query) to the provider. Review each provider's privacy policy before using the feature.
+
+## What NOTORYX Core doesn't do
+
+No account, no analytics, no advertising and no crash reporting. The developers receive nothing unless you send it yourself, for example by attaching an exported log to an issue.
 
 ## Diagnostics and data removal
 

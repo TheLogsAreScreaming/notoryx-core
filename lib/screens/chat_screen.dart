@@ -18,6 +18,7 @@ import '../helpers/message_url_image_helper.dart';
 import '../helpers/path_helper.dart';
 import '../helpers/reaction_helper.dart';
 import '../helpers/share_links.dart';
+import '../widgets/route_health_banner.dart';
 import '../widgets/ember_backdrop.dart';
 import '../widgets/add_first_banner.dart';
 import '../widgets/quick_messages.dart';
@@ -43,6 +44,7 @@ import '../widgets/byte_count_input.dart';
 import 'channel_message_path_screen.dart';
 import 'repeater_cli_screen.dart';
 import 'map_screen.dart';
+import 'waypoints_screen.dart' show SaveWaypointButton;
 import '../widgets/emoji_picker.dart';
 import '../widgets/gif_message.dart';
 import '../widgets/jump_to_bottom_button.dart';
@@ -405,6 +407,8 @@ class _ChatScreenState extends State<ChatScreen> {
                     ],
                   ),
                 ),
+                if (contact.type == advTypeChat)
+                  RouteHealthBanner(contact: contact),
                 _buildInputBar(connector),
               ],
             );
@@ -696,6 +700,7 @@ class _ChatScreenState extends State<ChatScreen> {
                             ),
                             const SizedBox(width: 8),
                             IconButton(
+                              tooltip: context.l10n.common_close,
                               icon: const Icon(Icons.close),
                               onPressed: () {
                                 _textController.clear();
@@ -1983,6 +1988,7 @@ class _MessageBubble extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         IconButton(
+          tooltip: context.l10n.a11y_showOnMap,
           icon: Icon(Icons.location_on_outlined, color: textColor),
           padding: EdgeInsets.zero,
           constraints: const BoxConstraints(minWidth: 40, minHeight: 40),
@@ -2030,6 +2036,12 @@ class _MessageBubble extends StatelessWidget {
                 ),
             ],
           ),
+        ),
+        SaveWaypointButton(
+          label: poi.label,
+          lat: poi.position.latitude,
+          lon: poi.position.longitude,
+          color: textColor,
         ),
         if (trailing != null) ...[const SizedBox(width: 4), trailing],
       ],

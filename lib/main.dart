@@ -45,6 +45,11 @@ import 'services/favorite_return_service.dart';
 import 'services/field_ops_service.dart';
 import 'services/path_history_service.dart';
 import 'services/app_settings_service.dart';
+import 'services/team_tracking_service.dart';
+import 'services/waypoint_store.dart';
+import 'services/network_change_service.dart';
+import 'screens/network_changes_screen.dart' show networkChangeText;
+import 'services/battery_check_service.dart';
 import 'services/repeater_battery_history.dart';
 import 'services/notification_service.dart';
 import 'services/ble_debug_log_service.dart';
@@ -283,17 +288,21 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   late final FieldOpsService _fieldOps;
   late final RegionalPresetService _regionalPresets;
   late final DirectRepeaterService _directRepeaters;
+  late final WaypointStore _waypoints;
   late final TrackLogService _trackLog;
   late final ChannelDiscoveryService _channelDiscovery;
   late final AnalyzerService _analyzer;
   late final NodeTelemetryStore _telemetry;
   late final RepeaterBatteryHistory _batteryHistory;
+  late final BatteryCheckService _batteryChecks;
   late final MySensorsService _mySensors;
   late final WardriveService _wardrive;
   late final NetworkScanService _networkScan;
   late final RxLogService _rxLog;
   late final FavoriteReturnService _favoriteReturn;
+  late final NetworkChangeService _networkChanges;
   late final SosRelayService _sosRelay;
+  late final TeamTrackingService _teamTracking;
   late final CoverageHexService _coverageHex;
   late final ReadAloudService _readAloud;
   final _navigatorKey = GlobalKey<NavigatorState>();
@@ -321,6 +330,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _regionalPresets = RegionalPresetService(widget.connector);
     unawaited(_regionalPresets.start());
     _directRepeaters = DirectRepeaterService(widget.connector);
+    _waypoints = WaypointStore(PrefsManager.instance);
     _trackLog = TrackLogService(widget.connector);
     _channelDiscovery = ChannelDiscoveryService(widget.connector);
     unawaited(_channelDiscovery.load());
@@ -329,6 +339,13 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     widget.connector.telemetryStore = _telemetry;
     _batteryHistory = RepeaterBatteryHistory(PrefsManager.instance);
     widget.connector.batteryHistory = _batteryHistory;
+    _batteryChecks = BatteryCheckService(
+      connector: widget.connector,
+      history: _batteryHistory,
+      prefs: PrefsManager.instance,
+      chemistryFor: widget.appSettingsService.batteryChemistryForRepeater,
+      alert: _showBatteryAlert,
+    )..start();
     _syncTelemetryScope();
     widget.connector.addListener(_syncTelemetryScope);
     _mySensors = MySensorsService(widget.connector);
@@ -339,6 +356,12 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
       tripActive: () => _fieldOps.trip.active,
     )..load();
     _sosRelay = SosRelayService.forConnector(widget.connector)..load();
+    _teamTracking = TeamTrackingService(
+      connector: widget.connector,
+      trip: _fieldOps,
+      tripActive: () => _fieldOps.trip.active,
+      prefs: PrefsManager.instance,
+    );
     _rxLog = RxLogService(widget.connector.rxPackets);
     _favoriteReturn = FavoriteReturnService(
       widget.connector,
@@ -349,6 +372,21 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
           contactId: back.key,
           name: back.name,
           quietHours: back.quiet.inHours,
+        );
+      },
+    );
+    _networkChanges = NetworkChangeService(
+      widget.connector,
+      prefs: PrefsManager.instance,
+      quietHours: () => widget.appSettingsService.settings.repeaterQuietHours,
+      newNearby: () => widget.appSettingsService.settings.newRepeaterAlerts,
+      notify: (change) async {
+        if (!widget.appSettingsService.settings.notificationsEnabled) return;
+        final notifications = NotificationService();
+        final l10n = notifications.l10n;
+        await notifications.showNetworkChange(
+          repeaterKey: change.key,
+          body: networkChangeText(l10n, change),
         );
       },
     );
@@ -444,12 +482,14 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   void dispose() {
     _rxLog.dispose();
     _favoriteReturn.dispose();
+    _networkChanges.dispose();
     _botService.dispose();
     _weather.dispose();
     widget.appSettingsService.removeListener(_applyBatterySaver);
     _fieldOps.dispose();
     _regionalPresets.dispose();
     _directRepeaters.dispose();
+    _waypoints.dispose();
     _trackLog.dispose();
     _channelDiscovery.dispose();
     _analyzer.dispose();
@@ -457,12 +497,14 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     widget.connector.removeListener(_syncTelemetryScope);
     widget.connector.telemetryStore = null;
     _telemetry.dispose();
+    _batteryChecks.dispose();
     widget.connector.batteryHistory = null;
     _batteryHistory.dispose();
     _wardrive.dispose();
     _linkRouter.dispose();
     _networkScan.dispose();
     _sosRelay.dispose();
+    _teamTracking.dispose();
     _coverageHex.dispose();
     _readAloud.dispose();
     _sensorSubscriptions.dispose();
@@ -483,6 +525,40 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   void _syncTelemetryScope() {
     _telemetry.setScope(widget.connector.selfPublicKeyHex);
     _batteryHistory.setScope(widget.connector.selfPublicKeyHex);
+    _batteryChecks.setScope(widget.connector.selfPublicKeyHex);
+  }
+
+  Future<void> _showBatteryAlert(BatteryAlert alert) async {
+    if (!widget.appSettingsService.settings.notificationsEnabled) return;
+    final notifications = NotificationService();
+    final l10n = notifications.l10n;
+    final name =
+        widget.connector.allContactsUnfiltered
+            .where((c) => c.publicKeyHex == alert.repeaterKey)
+            .firstOrNull
+            ?.name ??
+        l10n.batteryWatch_unknownRepeater;
+    final latest = alert.trend.latest;
+    final days = alert.trend.daysToEmpty;
+    final body = switch (alert.kind) {
+      BatteryAlertKind.low => l10n.batteryWatch_alertLow(
+        name,
+        alert.trend.percent ?? 0,
+        ((latest?.millivolts ?? 0) / 1000).toStringAsFixed(2),
+      ),
+      BatteryAlertKind.falling => l10n.batteryWatch_alertFalling(
+        name,
+        days == null || days < 1 ? '<1' : days.round().toString(),
+      ),
+      BatteryAlertKind.silent => l10n.batteryWatch_alertSilent(
+        name,
+        alert.failures,
+      ),
+    };
+    await notifications.showBatteryAlert(
+      repeaterKey: alert.repeaterKey,
+      body: body,
+    );
   }
 
   void _syncMqttObserverIdentity() {
@@ -585,6 +661,10 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         ChangeNotifierProvider.value(value: _botService),
         ChangeNotifierProvider<WeatherService?>.value(value: _weather),
         ChangeNotifierProvider.value(value: _fieldOps),
+        ChangeNotifierProvider<WaypointStore>.value(value: _waypoints),
+        ChangeNotifierProvider<NetworkChangeService?>.value(
+          value: _networkChanges,
+        ),
         ChangeNotifierProvider<DirectRepeaterService?>.value(
           value: _directRepeaters,
         ),
@@ -598,10 +678,14 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         ChangeNotifierProvider<RepeaterBatteryHistory?>.value(
           value: _batteryHistory,
         ),
+        ChangeNotifierProvider<BatteryCheckService?>.value(
+          value: _batteryChecks,
+        ),
         ChangeNotifierProvider.value(value: _wardrive),
         ChangeNotifierProvider.value(value: _networkScan),
         ChangeNotifierProvider.value(value: _rxLog),
         ChangeNotifierProvider.value(value: _sosRelay),
+        ChangeNotifierProvider.value(value: _teamTracking),
         ChangeNotifierProvider.value(value: _coverageHex),
         ChangeNotifierProvider<RegionalPresetService?>.value(
           value: _regionalPresets,

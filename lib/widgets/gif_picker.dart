@@ -135,6 +135,7 @@ class _GifPickerState extends State<GifPicker> {
               ),
               const Spacer(),
               IconButton(
+                tooltip: context.l10n.common_close,
                 icon: const Icon(Icons.close),
                 onPressed: () => Navigator.pop(context),
               ),
@@ -150,6 +151,7 @@ class _GifPickerState extends State<GifPicker> {
               prefixIcon: const Icon(Icons.search),
               suffixIcon: _searchController.text.isNotEmpty
                   ? IconButton(
+                      tooltip: context.l10n.a11y_clear,
                       icon: const Icon(Icons.clear),
                       onPressed: () {
                         _searchController.clear();
@@ -261,35 +263,39 @@ class _GifPickerState extends State<GifPicker> {
         final previewUrl =
             gif['images']?['fixed_height_small']?['url'] as String?;
 
-        return GestureDetector(
-          onTap: () {
-            widget.onGifSelected(gifId);
-            Navigator.pop(context);
-          },
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Container(
-              color: Theme.of(context).colorScheme.surfaceContainerHighest,
-              child: previewUrl != null
-                  ? Image.network(
-                      previewUrl,
-                      fit: BoxFit.cover,
-                      loadingBuilder: (context, child, loadingProgress) {
-                        if (loadingProgress == null) return child;
-                        return Center(
-                          child: CircularProgressIndicator(
-                            value: loadingProgress.expectedTotalBytes != null
-                                ? loadingProgress.cumulativeBytesLoaded /
-                                      loadingProgress.expectedTotalBytes!
-                                : null,
-                          ),
-                        );
-                      },
-                      errorBuilder: (context, error, stackTrace) {
-                        return const Center(child: Icon(Icons.error_outline));
-                      },
-                    )
-                  : const Center(child: Icon(Icons.gif_box)),
+        return Semantics(
+          button: true,
+          label: context.l10n.a11y_chooseGif,
+          child: GestureDetector(
+            onTap: () {
+              widget.onGifSelected(gifId);
+              Navigator.pop(context);
+            },
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Container(
+                color: Theme.of(context).colorScheme.surfaceContainerHighest,
+                child: previewUrl != null
+                    ? Image.network(
+                        previewUrl,
+                        fit: BoxFit.cover,
+                        loadingBuilder: (context, child, loadingProgress) {
+                          if (loadingProgress == null) return child;
+                          return Center(
+                            child: CircularProgressIndicator(
+                              value: loadingProgress.expectedTotalBytes != null
+                                  ? loadingProgress.cumulativeBytesLoaded /
+                                        loadingProgress.expectedTotalBytes!
+                                  : null,
+                            ),
+                          );
+                        },
+                        errorBuilder: (context, error, stackTrace) {
+                          return const Center(child: Icon(Icons.error_outline));
+                        },
+                      )
+                    : const Center(child: Icon(Icons.gif_box)),
+              ),
             ),
           ),
         );

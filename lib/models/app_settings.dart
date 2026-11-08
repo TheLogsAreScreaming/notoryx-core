@@ -121,6 +121,12 @@ class AppSettings {
   /// Hours a favorite must be quiet before hearing them again notifies
   /// "back in range". 0 turns it off.
   final int favoriteReturnHours;
+
+  /// Hours a favourite repeater may go unheard before a notification; 0 off.
+  final int repeaterQuietHours;
+
+  /// Whether to notify when a repeater not seen before is heard within one hop.
+  final bool newRepeaterAlerts;
   final String themeMode;
   final String? languageOverride; // null = system default
   final bool appDebugLogEnabled;
@@ -158,6 +164,10 @@ class AppSettings {
   /// Signs every channel post, not only SOS. Each signature is one extra
   /// packet on air.
   final bool signChannelPosts;
+
+  /// Whether reactions go out over the radio: 'auto' (not on the EU
+  /// 863–870 MHz duty-cycle band), 'on' or 'off' (this device only).
+  final String reactionsOverRadio;
 
   /// The chosen color theme's id (see BastionTheme); Blaze by default.
   final String appTheme;
@@ -271,6 +281,8 @@ class AppSettings {
     this.maxMessageRetries = 5,
     this.messageFloodAttempts = 2,
     this.favoriteReturnHours = 6,
+    this.repeaterQuietHours = 24,
+    this.newRepeaterAlerts = false,
     this.themeMode = 'system',
     this.languageOverride,
     this.appDebugLogEnabled = false,
@@ -290,6 +302,7 @@ class AppSettings {
     this.mapShowTelemetry = false,
     this.mapTelemetryMetric = 'battery',
     this.signChannelPosts = false,
+    this.reactionsOverRadio = 'auto',
     this.appTheme = 'blaze',
     this.seasonalOverride = 'auto',
     this.seasonalHolidays = true,
@@ -364,6 +377,8 @@ class AppSettings {
       'max_message_retries': maxMessageRetries,
       'message_flood_attempts': messageFloodAttempts,
       'favorite_return_hours': favoriteReturnHours,
+      'repeater_quiet_hours': repeaterQuietHours,
+      'new_repeater_alerts': newRepeaterAlerts,
       'theme_mode': themeMode,
       'language_override': languageOverride,
       'app_debug_log_enabled': appDebugLogEnabled,
@@ -383,6 +398,7 @@ class AppSettings {
       'map_show_telemetry': mapShowTelemetry,
       'map_telemetry_metric': mapTelemetryMetric,
       'sign_channel_posts': signChannelPosts,
+      'reactions_over_radio': reactionsOverRadio,
       'app_theme': appTheme,
       'seasonal_override': seasonalOverride,
       'seasonal_holidays': seasonalHolidays,
@@ -469,6 +485,8 @@ class AppSettings {
       maxMessageRetries: json['max_message_retries'] as int? ?? 5,
       messageFloodAttempts: json['message_flood_attempts'] as int? ?? 2,
       favoriteReturnHours: json['favorite_return_hours'] as int? ?? 6,
+      repeaterQuietHours: json['repeater_quiet_hours'] as int? ?? 24,
+      newRepeaterAlerts: json['new_repeater_alerts'] as bool? ?? false,
       themeMode: json['theme_mode'] as String? ?? 'system',
       languageOverride: json['language_override'] as String?,
       appDebugLogEnabled: json['app_debug_log_enabled'] as bool? ?? false,
@@ -505,6 +523,10 @@ class AppSettings {
       mapShowTelemetry: json['map_show_telemetry'] as bool? ?? false,
       mapTelemetryMetric: json['map_telemetry_metric'] as String? ?? 'battery',
       signChannelPosts: json['sign_channel_posts'] as bool? ?? false,
+      reactionsOverRadio: switch (json['reactions_over_radio']) {
+        final String v when const {'auto', 'on', 'off'}.contains(v) => v,
+        _ => 'auto',
+      },
       appTheme: _migrateThemeId(json['app_theme'] as String?),
       seasonalOverride:
           json['seasonal_override'] as String? ??
@@ -627,6 +649,8 @@ class AppSettings {
     int? maxMessageRetries,
     int? messageFloodAttempts,
     int? favoriteReturnHours,
+    int? repeaterQuietHours,
+    bool? newRepeaterAlerts,
     String? themeMode,
     Object? languageOverride = _unset,
     bool? appDebugLogEnabled,
@@ -646,6 +670,7 @@ class AppSettings {
     bool? mapShowTelemetry,
     String? mapTelemetryMetric,
     bool? signChannelPosts,
+    String? reactionsOverRadio,
     String? appTheme,
     String? seasonalOverride,
     bool? seasonalHolidays,
@@ -713,6 +738,8 @@ class AppSettings {
       maxMessageRetries: maxMessageRetries ?? this.maxMessageRetries,
       messageFloodAttempts: messageFloodAttempts ?? this.messageFloodAttempts,
       favoriteReturnHours: favoriteReturnHours ?? this.favoriteReturnHours,
+      repeaterQuietHours: repeaterQuietHours ?? this.repeaterQuietHours,
+      newRepeaterAlerts: newRepeaterAlerts ?? this.newRepeaterAlerts,
       themeMode: themeMode ?? this.themeMode,
       languageOverride: languageOverride == _unset
           ? this.languageOverride
@@ -737,6 +764,7 @@ class AppSettings {
       mapShowTelemetry: mapShowTelemetry ?? this.mapShowTelemetry,
       mapTelemetryMetric: mapTelemetryMetric ?? this.mapTelemetryMetric,
       signChannelPosts: signChannelPosts ?? this.signChannelPosts,
+      reactionsOverRadio: reactionsOverRadio ?? this.reactionsOverRadio,
       appTheme: appTheme ?? this.appTheme,
       seasonalOverride: seasonalOverride ?? this.seasonalOverride,
       seasonalHolidays: seasonalHolidays ?? this.seasonalHolidays,

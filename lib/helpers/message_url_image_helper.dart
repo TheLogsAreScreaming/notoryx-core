@@ -1,3 +1,4 @@
+import '../l10n/l10n.dart';
 import 'dart:async';
 import 'dart:collection';
 
@@ -307,6 +308,7 @@ class MessageUrlImagePreview extends StatelessWidget {
                     top: 12,
                     right: 12,
                     child: IconButton(
+                      tooltip: context.l10n.common_close,
                       onPressed: () => Navigator.of(context).pop(),
                       icon: const Icon(Icons.close, color: Colors.white),
                       style: IconButton.styleFrom(
