@@ -204,6 +204,7 @@ class NotificationService {
       return false;
     }
   }
+
   /// Whether the app may post notifications on this device.
   Future<bool> canNotify() => _ensureCanNotify();
 
