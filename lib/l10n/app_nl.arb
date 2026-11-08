@@ -4228,5 +4228,13 @@
   "batteryWatch_chartLabel": "Batterijgrafiek: {count} metingen, tussen {low} V en {high} V",
   "batteryWatch_clear": "Geschiedenis wissen",
   "batteryWatch_unknownRepeater": "Onbekende repeater",
-  "batteryWatch_cleared": "Geschiedenis gewist"
+  "batteryWatch_cleared": "Geschiedenis gewist",
+  "a11y_clear": "Wissen",
+  "a11y_showOnMap": "Op kaart tonen",
+  "a11y_showHide": "Tonen of verbergen",
+  "a11y_flash": "Flits",
+  "a11y_switchCamera": "Camera wisselen",
+  "a11y_pauseGif": "GIF afspelen of pauzeren",
+  "a11y_chooseGif": "Deze GIF kiezen",
+  "a11y_openImage": "Afbeelding openen"
 }

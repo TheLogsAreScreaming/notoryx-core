@@ -1263,6 +1263,7 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         IconButton(
+          tooltip: context.l10n.a11y_showOnMap,
           icon: Icon(Icons.location_on_outlined, color: scheme.primary),
           padding: EdgeInsets.zero,
           constraints: const BoxConstraints(minWidth: 40, minHeight: 40),
@@ -1809,6 +1810,7 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
             ),
           ),
           IconButton(
+            tooltip: context.l10n.common_close,
             icon: const Icon(Icons.close, size: 18),
             onPressed: _cancelReply,
             color: scheme.onSurfaceVariant,
@@ -2076,6 +2078,7 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
                                 ),
                                 const SizedBox(width: 8),
                                 IconButton(
+                                  tooltip: context.l10n.common_close,
                                   icon: const Icon(Icons.close),
                                   onPressed: () {
                                     _textController.clear();

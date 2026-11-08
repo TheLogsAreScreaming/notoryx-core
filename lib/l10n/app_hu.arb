@@ -4266,5 +4266,13 @@
   "batteryWatch_chartLabel": "Akku grafikon: {count} adat, {low} V és {high} V között",
   "batteryWatch_clear": "Előzmények törlése",
   "batteryWatch_unknownRepeater": "Ismeretlen átjátszó",
-  "batteryWatch_cleared": "Előzmények törölve"
+  "batteryWatch_cleared": "Előzmények törölve",
+  "a11y_clear": "Törlés",
+  "a11y_showOnMap": "Megjelenítés a térképen",
+  "a11y_showHide": "Megjelenítés vagy elrejtés",
+  "a11y_flash": "Vaku",
+  "a11y_switchCamera": "Kameraváltás",
+  "a11y_pauseGif": "GIF lejátszása vagy szüneteltetése",
+  "a11y_chooseGif": "Ez a GIF",
+  "a11y_openImage": "Kép megnyitása"
 }

@@ -9558,4 +9558,28 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => '历史已清除';
+
+  @override
+  String get a11y_clear => '清除';
+
+  @override
+  String get a11y_showOnMap => '在地图上显示';
+
+  @override
+  String get a11y_showHide => '显示或隐藏';
+
+  @override
+  String get a11y_flash => '闪光灯';
+
+  @override
+  String get a11y_switchCamera => '切换摄像头';
+
+  @override
+  String get a11y_pauseGif => '播放或暂停 GIF';
+
+  @override
+  String get a11y_chooseGif => '选择此 GIF';
+
+  @override
+  String get a11y_openImage => '打开图片';
 }

@@ -4228,5 +4228,13 @@
   "batteryWatch_chartLabel": "Graf baterije: {count} meritev, med {low} V in {high} V",
   "batteryWatch_clear": "Počisti zgodovino",
   "batteryWatch_unknownRepeater": "Neznan repetitor",
-  "batteryWatch_cleared": "Zgodovina počiščena"
+  "batteryWatch_cleared": "Zgodovina počiščena",
+  "a11y_clear": "Počisti",
+  "a11y_showOnMap": "Pokaži na zemljevidu",
+  "a11y_showHide": "Pokaži ali skrij",
+  "a11y_flash": "Bliskavica",
+  "a11y_switchCamera": "Zamenjaj kamero",
+  "a11y_pauseGif": "Predvajaj ali ustavi GIF",
+  "a11y_chooseGif": "Izberi ta GIF",
+  "a11y_openImage": "Odpri sliko"
 }

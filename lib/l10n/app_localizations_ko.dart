@@ -9772,4 +9772,28 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => '기록을 지웠습니다';
+
+  @override
+  String get a11y_clear => '지우기';
+
+  @override
+  String get a11y_showOnMap => '지도에 표시';
+
+  @override
+  String get a11y_showHide => '표시 또는 숨기기';
+
+  @override
+  String get a11y_flash => '플래시';
+
+  @override
+  String get a11y_switchCamera => '카메라 전환';
+
+  @override
+  String get a11y_pauseGif => 'GIF 재생 또는 일시정지';
+
+  @override
+  String get a11y_chooseGif => '이 GIF 선택';
+
+  @override
+  String get a11y_openImage => '사진 열기';
 }

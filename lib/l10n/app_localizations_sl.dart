@@ -10249,4 +10249,28 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'Zgodovina počiščena';
+
+  @override
+  String get a11y_clear => 'Počisti';
+
+  @override
+  String get a11y_showOnMap => 'Pokaži na zemljevidu';
+
+  @override
+  String get a11y_showHide => 'Pokaži ali skrij';
+
+  @override
+  String get a11y_flash => 'Bliskavica';
+
+  @override
+  String get a11y_switchCamera => 'Zamenjaj kamero';
+
+  @override
+  String get a11y_pauseGif => 'Predvajaj ali ustavi GIF';
+
+  @override
+  String get a11y_chooseGif => 'Izberi ta GIF';
+
+  @override
+  String get a11y_openImage => 'Odpri sliko';
 }

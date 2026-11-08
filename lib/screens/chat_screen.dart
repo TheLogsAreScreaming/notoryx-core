@@ -696,6 +696,7 @@ class _ChatScreenState extends State<ChatScreen> {
                             ),
                             const SizedBox(width: 8),
                             IconButton(
+                              tooltip: context.l10n.common_close,
                               icon: const Icon(Icons.close),
                               onPressed: () {
                                 _textController.clear();
@@ -1983,6 +1984,7 @@ class _MessageBubble extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         IconButton(
+          tooltip: context.l10n.a11y_showOnMap,
           icon: Icon(Icons.location_on_outlined, color: textColor),
           padding: EdgeInsets.zero,
           constraints: const BoxConstraints(minWidth: 40, minHeight: 40),

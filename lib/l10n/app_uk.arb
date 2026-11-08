@@ -4208,5 +4208,13 @@
   "batteryWatch_chartLabel": "Графік батареї: {count} показників, від {low} В до {high} В",
   "batteryWatch_clear": "Очистити історію",
   "batteryWatch_unknownRepeater": "Невідомий ретранслятор",
-  "batteryWatch_cleared": "Історію очищено"
+  "batteryWatch_cleared": "Історію очищено",
+  "a11y_clear": "Очистити",
+  "a11y_showOnMap": "Показати на мапі",
+  "a11y_showHide": "Показати або сховати",
+  "a11y_flash": "Спалах",
+  "a11y_switchCamera": "Змінити камеру",
+  "a11y_pauseGif": "Запустити або зупинити GIF",
+  "a11y_chooseGif": "Вибрати цей GIF",
+  "a11y_openImage": "Відкрити зображення"
 }

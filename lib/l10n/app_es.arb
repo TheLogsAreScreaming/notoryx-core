@@ -4362,5 +4362,13 @@
   "batteryWatch_chartLabel": "Gráfico de batería: {count} lecturas, entre {low} V y {high} V",
   "batteryWatch_clear": "Borrar historial",
   "batteryWatch_unknownRepeater": "Repetidor desconocido",
-  "batteryWatch_cleared": "Historial borrado"
+  "batteryWatch_cleared": "Historial borrado",
+  "a11y_clear": "Borrar",
+  "a11y_showOnMap": "Mostrar en el mapa",
+  "a11y_showHide": "Mostrar u ocultar",
+  "a11y_flash": "Flash",
+  "a11y_switchCamera": "Cambiar de cámara",
+  "a11y_pauseGif": "Reproducir o pausar GIF",
+  "a11y_chooseGif": "Elegir este GIF",
+  "a11y_openImage": "Abrir imagen"
 }

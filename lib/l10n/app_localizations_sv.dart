@@ -10167,4 +10167,28 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'Historiken rensad';
+
+  @override
+  String get a11y_clear => 'Rensa';
+
+  @override
+  String get a11y_showOnMap => 'Visa på kartan';
+
+  @override
+  String get a11y_showHide => 'Visa eller dölj';
+
+  @override
+  String get a11y_flash => 'Blixt';
+
+  @override
+  String get a11y_switchCamera => 'Byt kamera';
+
+  @override
+  String get a11y_pauseGif => 'Spela upp eller pausa GIF';
+
+  @override
+  String get a11y_chooseGif => 'Välj denna GIF';
+
+  @override
+  String get a11y_openImage => 'Öppna bild';
 }

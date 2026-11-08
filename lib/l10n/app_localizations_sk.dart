@@ -10229,4 +10229,28 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'História vymazaná';
+
+  @override
+  String get a11y_clear => 'Vymazať';
+
+  @override
+  String get a11y_showOnMap => 'Zobraziť na mape';
+
+  @override
+  String get a11y_showHide => 'Zobraziť alebo skryť';
+
+  @override
+  String get a11y_flash => 'Blesk';
+
+  @override
+  String get a11y_switchCamera => 'Prepnúť kameru';
+
+  @override
+  String get a11y_pauseGif => 'Prehrať alebo pozastaviť GIF';
+
+  @override
+  String get a11y_chooseGif => 'Vybrať tento GIF';
+
+  @override
+  String get a11y_openImage => 'Otvoriť obrázok';
 }

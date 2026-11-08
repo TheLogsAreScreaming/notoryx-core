@@ -4362,5 +4362,13 @@
   "batteryWatch_chartLabel": "Akkudiagramm: {count} Werte, zwischen {low} V und {high} V",
   "batteryWatch_clear": "Verlauf löschen",
   "batteryWatch_unknownRepeater": "Unbekannter Repeater",
-  "batteryWatch_cleared": "Verlauf gelöscht"
+  "batteryWatch_cleared": "Verlauf gelöscht",
+  "a11y_clear": "Leeren",
+  "a11y_showOnMap": "Auf Karte zeigen",
+  "a11y_showHide": "Ein- oder ausblenden",
+  "a11y_flash": "Blitz",
+  "a11y_switchCamera": "Kamera wechseln",
+  "a11y_pauseGif": "GIF abspielen oder anhalten",
+  "a11y_chooseGif": "Dieses GIF wählen",
+  "a11y_openImage": "Bild öffnen"
 }

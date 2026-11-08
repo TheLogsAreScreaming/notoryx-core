@@ -4228,5 +4228,13 @@
   "batteryWatch_chartLabel": "Graf batérie: {count} hodnôt, medzi {low} V a {high} V",
   "batteryWatch_clear": "Vymazať históriu",
   "batteryWatch_unknownRepeater": "Neznámy opakovač",
-  "batteryWatch_cleared": "História vymazaná"
+  "batteryWatch_cleared": "História vymazaná",
+  "a11y_clear": "Vymazať",
+  "a11y_showOnMap": "Zobraziť na mape",
+  "a11y_showHide": "Zobraziť alebo skryť",
+  "a11y_flash": "Blesk",
+  "a11y_switchCamera": "Prepnúť kameru",
+  "a11y_pauseGif": "Prehrať alebo pozastaviť GIF",
+  "a11y_chooseGif": "Vybrať tento GIF",
+  "a11y_openImage": "Otvoriť obrázok"
 }

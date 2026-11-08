@@ -9758,4 +9758,28 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => '履歴を消去しました';
+
+  @override
+  String get a11y_clear => 'クリア';
+
+  @override
+  String get a11y_showOnMap => '地図に表示';
+
+  @override
+  String get a11y_showHide => '表示または非表示';
+
+  @override
+  String get a11y_flash => 'フラッシュ';
+
+  @override
+  String get a11y_switchCamera => 'カメラを切り替え';
+
+  @override
+  String get a11y_pauseGif => 'GIFを再生または一時停止';
+
+  @override
+  String get a11y_chooseGif => 'このGIFを選択';
+
+  @override
+  String get a11y_openImage => '画像を開く';
 }

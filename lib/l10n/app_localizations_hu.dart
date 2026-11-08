@@ -10235,4 +10235,28 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'Előzmények törölve';
+
+  @override
+  String get a11y_clear => 'Törlés';
+
+  @override
+  String get a11y_showOnMap => 'Megjelenítés a térképen';
+
+  @override
+  String get a11y_showHide => 'Megjelenítés vagy elrejtés';
+
+  @override
+  String get a11y_flash => 'Vaku';
+
+  @override
+  String get a11y_switchCamera => 'Kameraváltás';
+
+  @override
+  String get a11y_pauseGif => 'GIF lejátszása vagy szüneteltetése';
+
+  @override
+  String get a11y_chooseGif => 'Ez a GIF';
+
+  @override
+  String get a11y_openImage => 'Kép megnyitása';
 }
