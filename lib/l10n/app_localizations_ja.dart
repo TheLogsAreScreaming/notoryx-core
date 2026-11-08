@@ -9760,6 +9760,39 @@ class AppLocalizationsJa extends AppLocalizations {
   String get batteryWatch_cleared => '履歴を消去しました';
 
   @override
+  String get team_title => 'チーム追跡';
+
+  @override
+  String get team_hint =>
+      '行程中、非公開チャンネルに現在地を共有し、仲間の地図にあなたの動きを表示します。行程の終了時、または12時間後にオフになります。';
+
+  @override
+  String get team_channel => 'チャンネル';
+
+  @override
+  String get team_noChannel =>
+      '先に非公開チャンネルを追加してください。公開チャンネルやハッシュタグチャンネルには投稿しません。';
+
+  @override
+  String get team_every => '間隔';
+
+  @override
+  String team_minutes(int minutes) {
+    return '$minutes分';
+  }
+
+  @override
+  String get team_needTrip => '現在地を共有するには行程を開始してください。';
+
+  @override
+  String team_lastShared(String age) {
+    return '最終共有 $age';
+  }
+
+  @override
+  String get team_waitingGps => '無線機からの位置を待っています';
+
+  @override
   String get waypoints_title => 'ウェイポイント';
 
   @override

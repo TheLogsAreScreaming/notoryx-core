@@ -10232,6 +10232,40 @@ class AppLocalizationsBg extends AppLocalizations {
   String get batteryWatch_cleared => 'Историята е изчистена';
 
   @override
+  String get team_title => 'Проследяване на екипа';
+
+  @override
+  String get team_hint =>
+      'Споделя позицията ви в частен канал, докато пътуването е активно, така че съотборниците ви виждат на картата. Изключва се при край на пътуването или след 12 часа.';
+
+  @override
+  String get team_channel => 'Канал';
+
+  @override
+  String get team_noChannel =>
+      'Първо добавете частен канал. Проследяването никога не публикува в публични или хаштаг канали.';
+
+  @override
+  String get team_every => 'На всеки';
+
+  @override
+  String team_minutes(int minutes) {
+    return '$minutes мин';
+  }
+
+  @override
+  String get team_needTrip =>
+      'Започнете пътуването, за да споделяте позицията си.';
+
+  @override
+  String team_lastShared(String age) {
+    return 'Последно споделено $age';
+  }
+
+  @override
+  String get team_waitingGps => 'Изчакване на позиция от радиото';
+
+  @override
   String get waypoints_title => 'Точки';
 
   @override

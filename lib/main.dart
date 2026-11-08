@@ -45,6 +45,7 @@ import 'services/favorite_return_service.dart';
 import 'services/field_ops_service.dart';
 import 'services/path_history_service.dart';
 import 'services/app_settings_service.dart';
+import 'services/team_tracking_service.dart';
 import 'services/waypoint_store.dart';
 import 'services/network_change_service.dart';
 import 'screens/network_changes_screen.dart' show networkChangeText;
@@ -301,6 +302,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   late final FavoriteReturnService _favoriteReturn;
   late final NetworkChangeService _networkChanges;
   late final SosRelayService _sosRelay;
+  late final TeamTrackingService _teamTracking;
   late final CoverageHexService _coverageHex;
   late final ReadAloudService _readAloud;
   final _navigatorKey = GlobalKey<NavigatorState>();
@@ -354,6 +356,12 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
       tripActive: () => _fieldOps.trip.active,
     )..load();
     _sosRelay = SosRelayService.forConnector(widget.connector)..load();
+    _teamTracking = TeamTrackingService(
+      connector: widget.connector,
+      trip: _fieldOps,
+      tripActive: () => _fieldOps.trip.active,
+      prefs: PrefsManager.instance,
+    );
     _rxLog = RxLogService(widget.connector.rxPackets);
     _favoriteReturn = FavoriteReturnService(
       widget.connector,
@@ -496,6 +504,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _linkRouter.dispose();
     _networkScan.dispose();
     _sosRelay.dispose();
+    _teamTracking.dispose();
     _coverageHex.dispose();
     _readAloud.dispose();
     _sensorSubscriptions.dispose();
@@ -676,6 +685,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         ChangeNotifierProvider.value(value: _networkScan),
         ChangeNotifierProvider.value(value: _rxLog),
         ChangeNotifierProvider.value(value: _sosRelay),
+        ChangeNotifierProvider.value(value: _teamTracking),
         ChangeNotifierProvider.value(value: _coverageHex),
         ChangeNotifierProvider<RegionalPresetService?>.value(
           value: _regionalPresets,

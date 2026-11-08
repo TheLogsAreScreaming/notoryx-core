@@ -10209,6 +10209,39 @@ class AppLocalizationsNl extends AppLocalizations {
   String get batteryWatch_cleared => 'Geschiedenis gewist';
 
   @override
+  String get team_title => 'Teamvolgen';
+
+  @override
+  String get team_hint =>
+      'Deelt je positie in een privékanaal zolang de tocht loopt, zodat je team je op de kaart ziet. Stopt aan het eind van de tocht of na 12 uur.';
+
+  @override
+  String get team_channel => 'Kanaal';
+
+  @override
+  String get team_noChannel =>
+      'Voeg eerst een privékanaal toe. Volgen post nooit in openbare of hashtagkanalen.';
+
+  @override
+  String get team_every => 'Elke';
+
+  @override
+  String team_minutes(int minutes) {
+    return '$minutes min';
+  }
+
+  @override
+  String get team_needTrip => 'Start de tocht om je positie te delen.';
+
+  @override
+  String team_lastShared(String age) {
+    return 'Laatst gedeeld $age';
+  }
+
+  @override
+  String get team_waitingGps => 'Wachten op een positie van de radio';
+
+  @override
   String get waypoints_title => 'Waypoints';
 
   @override

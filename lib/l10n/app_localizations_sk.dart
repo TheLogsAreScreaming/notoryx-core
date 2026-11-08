@@ -10231,6 +10231,39 @@ class AppLocalizationsSk extends AppLocalizations {
   String get batteryWatch_cleared => 'História vymazaná';
 
   @override
+  String get team_title => 'Sledovanie tímu';
+
+  @override
+  String get team_hint =>
+      'Kým je výlet aktívny, zdieľa vašu polohu v súkromnom kanáli, aby vás tím videl na mape. Vypne sa na konci výletu alebo po 12 hodinách.';
+
+  @override
+  String get team_channel => 'Kanál';
+
+  @override
+  String get team_noChannel =>
+      'Najprv pridajte súkromný kanál. Sledovanie nikdy neposiela do verejných ani hashtagových kanálov.';
+
+  @override
+  String get team_every => 'Každých';
+
+  @override
+  String team_minutes(int minutes) {
+    return '$minutes min';
+  }
+
+  @override
+  String get team_needTrip => 'Začnite výlet, aby ste zdieľali polohu.';
+
+  @override
+  String team_lastShared(String age) {
+    return 'Naposledy zdieľané $age';
+  }
+
+  @override
+  String get team_waitingGps => 'Čaká sa na polohu z rádia';
+
+  @override
   String get waypoints_title => 'Body trasy';
 
   @override

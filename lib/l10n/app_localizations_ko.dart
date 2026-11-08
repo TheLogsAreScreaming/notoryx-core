@@ -9774,6 +9774,39 @@ class AppLocalizationsKo extends AppLocalizations {
   String get batteryWatch_cleared => '기록을 지웠습니다';
 
   @override
+  String get team_title => '팀 추적';
+
+  @override
+  String get team_hint =>
+      '여정이 진행되는 동안 비공개 채널에 위치를 공유해 팀원 지도에 내가 표시됩니다. 여정이 끝나거나 12시간이 지나면 꺼집니다.';
+
+  @override
+  String get team_channel => '채널';
+
+  @override
+  String get team_noChannel =>
+      '먼저 비공개 채널을 추가하세요. 추적은 공개 채널이나 해시태그 채널에 절대 게시하지 않습니다.';
+
+  @override
+  String get team_every => '간격';
+
+  @override
+  String team_minutes(int minutes) {
+    return '$minutes분';
+  }
+
+  @override
+  String get team_needTrip => '위치를 공유하려면 여정을 시작하세요.';
+
+  @override
+  String team_lastShared(String age) {
+    return '마지막 공유 $age';
+  }
+
+  @override
+  String get team_waitingGps => '무전기의 위치를 기다리는 중';
+
+  @override
   String get waypoints_title => '웨이포인트';
 
   @override
