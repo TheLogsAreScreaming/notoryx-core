@@ -10253,82 +10253,549 @@ class AppLocalizationsEs extends AppLocalizations {
   String get batteryWatch_cleared => 'Historial borrado';
 
   @override
-  String get privacy_title => 'Privacidad';
+  String get team_title => 'Seguimiento del equipo';
 
   @override
-  String get privacy_toolSubtitle =>
-      'Lo que ven la malla, este teléfono e internet';
+  String get team_hint =>
+      'Comparte tu posición en un canal privado mientras la salida está activa, para que tu equipo te vea en su mapa. Se apaga al terminar la salida o tras 12 horas.';
 
   @override
-  String get privacy_meshHeading => 'En la malla';
+  String get team_channel => 'Canal';
 
   @override
-  String get privacy_dmTitle => 'Mensajes directos';
+  String get team_noChannel =>
+      'Primero añade un canal privado. El seguimiento nunca publica en canales públicos ni de hashtag.';
 
   @override
-  String get privacy_dmBody =>
-      'Cifrados entre tu radio y la suya. Los repetidores los reenvían pero no pueden leerlos. Los ID cortos de remitente y destinatario y la ruta viajan sin cifrar.';
+  String get team_every => 'Cada';
 
   @override
-  String get privacy_channelTitle => 'Canales';
+  String team_minutes(int minutes) {
+    return '$minutes min';
+  }
 
   @override
-  String get privacy_channelBody =>
-      'Cifrados con la clave del canal: quien tenga la clave lee todos los mensajes. Las claves de los canales públicos y de hashtag las conoce todo el mundo, así que trátalos como públicos.';
+  String get team_needTrip => 'Inicia la salida para compartir tu posición.';
 
   @override
-  String get privacy_advertTitle => 'Anuncios y posiciones';
+  String team_lastShared(String age) {
+    return 'Compartida por última vez $age';
+  }
 
   @override
-  String get privacy_advertBody =>
-      'El nombre y la clave pública de tu radio, y su posición si la compartes, se emiten sin cifrar a todos los que estén en alcance.';
+  String get team_waitingGps => 'Esperando una posición de la radio';
 
   @override
-  String get privacy_phoneHeading => 'En este teléfono';
+  String get waypoints_title => 'Puntos de ruta';
 
   @override
-  String get privacy_phoneBody =>
-      'Mensajes, contactos, rutas, tracks, puntos de ruta, historial de baterías y ajustes quedan en el almacenamiento privado de la app, protegidos solo por la seguridad del teléfono. Lo que exportes lo puede leer quien tenga el archivo.';
+  String get waypoints_toolSubtitle =>
+      'Lugares y rutas guardados; importar o exportar GPX';
 
   @override
-  String get privacy_netHeading => 'Por internet';
+  String get waypoints_importFile => 'Importar archivo GPX';
 
   @override
-  String get privacy_netIntro =>
-      'Solo cuando usas la función que lo necesita. Cada petición muestra al servicio tu dirección IP y lo que se pidió.';
+  String get waypoints_importPaste => 'Pegar GPX';
 
   @override
-  String get privacy_netMaps =>
-      'Mapas: teselas de OpenStreetMap, o de Stadia Maps si la eliges, para la zona que ves.';
+  String get waypoints_export => 'Exportar GPX';
 
   @override
-  String get privacy_netTerrain =>
-      'Terreno: elevación de Open-Meteo para cobertura y línea de vista.';
+  String get waypoints_empty =>
+      'Aún no hay puntos. Importa un archivo GPX o guarda un lugar que alguien compartió en un chat.';
 
   @override
-  String get privacy_netModels =>
-      'Descargas: modelos de traducción e imágenes de Hugging Face.';
+  String waypoints_waypoints(int count) {
+    return 'Puntos ($count)';
+  }
 
   @override
-  String get privacy_netImages =>
-      'Imágenes: búsqueda de GIF en Giphy e imágenes de enlaces de pyx.li en mensajes.';
+  String waypoints_routes(int count) {
+    return 'Rutas ($count)';
+  }
 
   @override
-  String get privacy_netLists =>
-      'Listas: ajustes regionales y el directorio de canales del repositorio de versiones de esta app en GitHub.';
+  String waypoints_routeSummary(int points, String km) {
+    return '$points puntos · $km km';
+  }
 
   @override
-  String get privacy_netMqtt =>
-      'MQTT: solo los brokers que añadas. Si activas la subida, los paquetes que oye tu radio se publican allí. Las contraseñas se guardan en el almacenamiento seguro del teléfono.';
+  String get waypoints_delete => 'Eliminar';
 
   @override
-  String get privacy_netAnalyzer =>
-      'Analizador: consultas a CoreScope (quién oyó un paquete, nombres de repetidores) cuando las usas.';
+  String get waypoints_copy => 'Copiar coordenadas';
 
   @override
-  String get privacy_notHeading => 'Lo que NOTORYX no hace';
+  String get waypoints_sendToChannel => 'Enviar a un canal';
 
   @override
-  String get privacy_notBody =>
-      'Sin cuenta, sin analíticas, sin anuncios y sin informes de fallos. Los desarrolladores no reciben nada salvo que tú lo envíes.';
+  String get waypoints_pickChannel => '¿A qué canal enviar?';
+
+  @override
+  String waypoints_sent(String channel) {
+    return 'Enviado a $channel';
+  }
+
+  @override
+  String get waypoints_importFailed =>
+      'No es un archivo GPX que la app pueda leer.';
+
+  @override
+  String get waypoints_pasteHint => 'Pega aquí el texto GPX';
+
+  @override
+  String get waypoints_import => 'Importar';
+
+  @override
+  String waypoints_imported(int waypoints, int routes) {
+    return 'Añadidos $waypoints puntos y $routes rutas';
+  }
+
+  @override
+  String get waypoints_save => 'Guardar como punto';
+
+  @override
+  String get waypoints_unnamed => 'Lugar compartido';
+
+  @override
+  String get waypoints_saved => 'Guardado en Puntos de ruta';
+
+  @override
+  String get waypoints_alreadySaved => 'Ya está en Puntos de ruta';
+
+  @override
+  String get netChange_title => 'Cambios en la red';
+
+  @override
+  String get netChange_toolSubtitle =>
+      'Repetidores que aparecieron cerca o dejaron de oírse';
+
+  @override
+  String netChange_newDirect(String name) {
+    return 'Nuevo repetidor oído directamente: $name';
+  }
+
+  @override
+  String netChange_newHops(String name, int hops) {
+    return 'Nuevo repetidor a $hops salto: $name';
+  }
+
+  @override
+  String netChange_wentQuiet(String name, int hours) {
+    return '$name dejó de oírse: sin noticias desde hace $hours h';
+  }
+
+  @override
+  String get netChange_empty =>
+      'Aún no hay cambios. Aquí aparecen los repetidores favoritos que dejan de oírse y los repetidores nuevos cercanos.';
+
+  @override
+  String get netChange_quietSetting => 'Un repetidor favorito deja de oírse';
+
+  @override
+  String get netChange_quietHint =>
+      'Avisar cuando un repetidor favorito lleve este tiempo sin oírse';
+
+  @override
+  String get netChange_newSetting => 'Repetidor nuevo cerca';
+
+  @override
+  String get netChange_newHint =>
+      'Avisar cuando se oiga a un salto un repetidor no visto antes';
+
+  @override
+  String get netChange_clear => 'Borrar';
+
+  @override
+  String get netChange_notifTitle => 'Cambio en la red';
+
+  @override
+  String get trouble_title => 'Solución de problemas';
+
+  @override
+  String get trouble_toolSubtitle =>
+      'Ayuda paso a paso cuando algo no funciona';
+
+  @override
+  String get trouble_pick => '¿Qué pasa?';
+
+  @override
+  String get trouble_noDelivery => 'Los mensajes no se entregan';
+
+  @override
+  String get trouble_noConnect => 'No puedo conectar con mi radio';
+
+  @override
+  String get trouble_hearNobody => 'No oigo a nadie';
+
+  @override
+  String get trouble_startHere => 'Empieza aquí';
+
+  @override
+  String get trouble_resultOk => 'OK';
+
+  @override
+  String get trouble_resultProblem => 'Problema';
+
+  @override
+  String get trouble_resultUnchecked => 'No se puede comprobar';
+
+  @override
+  String get trouble_connectedNow =>
+      'Ya estás conectado. Si la conexión se corta a menudo, los pasos de abajo siguen sirviendo.';
+
+  @override
+  String get trouble_allOk =>
+      'Todas las comprobaciones pasaron. Si sigue sin funcionar, revisa los pasos de abajo.';
+
+  @override
+  String get trouble_connected => 'Tu radio está conectada';
+
+  @override
+  String get trouble_connectedAdvice =>
+      'Primero conecta tu radio: Ajustes → Conectar una radio.';
+
+  @override
+  String get trouble_routes =>
+      'Hay rutas conocidas a las personas a las que escribes';
+
+  @override
+  String get trouble_routesAdvice =>
+      'Los mensajes a alguien sin ruta conocida inundan toda la malla y a menudo no llegan. Espera a que anuncie su presencia, o pídeselo, y vuelve a escribir.';
+
+  @override
+  String get trouble_heardRecently =>
+      'Las personas a las que escribes se oyeron en el último día';
+
+  @override
+  String get trouble_heardRecentlyAdvice =>
+      'Quien no se oye desde hace tiempo puede estar fuera de alcance o apagado. Sus mensajes no se confirman hasta que vuelva.';
+
+  @override
+  String get trouble_neighbours => 'Tu radio oye otros nodos';
+
+  @override
+  String get trouble_neighboursAdvice =>
+      'Si no se oye nada directamente, tu radio no alcanza la malla desde aquí. Sube la antena, ve más alto o acércate a un repetidor.';
+
+  @override
+  String get trouble_bluetooth =>
+      'El Bluetooth está activado y la app puede usarlo';
+
+  @override
+  String get trouble_bluetoothAdvice =>
+      'Comprueba que el Bluetooth está activado y que NOTORYX Core tiene permiso de Bluetooth (y en Android, Dispositivos cercanos) en los ajustes del teléfono.';
+
+  @override
+  String get trouble_otherApp =>
+      'Ningún otro teléfono ni app está conectado a la radio';
+
+  @override
+  String get trouble_otherAppAdvice =>
+      'Una radio habla con una sola app a la vez. Cierra otras apps de MeshCore o desactiva el Bluetooth en otros teléfonos emparejados.';
+
+  @override
+  String get trouble_inRange => 'La radio está encendida y cerca';
+
+  @override
+  String get trouble_inRangeAdvice =>
+      'Comprueba que la radio tiene carga, está encendida y a pocos metros. Reiniciar la radio suele arreglar una conexión atascada.';
+
+  @override
+  String get trouble_otherTransport => 'Prueba otra forma de conectar';
+
+  @override
+  String get trouble_otherTransportAdvice =>
+      'Si el Bluetooth sigue fallando, conecta con un cable USB o por Wi-Fi (TCP) si tu radio lo admite.';
+
+  @override
+  String get trouble_noise => 'La radio no está ahogada en ruido';
+
+  @override
+  String get trouble_noiseAdvice =>
+      'Un ruido de fondo alto oculta las señales débiles. Aleja la antena de aparatos electrónicos, cargadores y controladores solares.';
+
+  @override
+  String get trouble_region => 'Tu radio usa los ajustes de tu zona';
+
+  @override
+  String get trouble_regionAdvice =>
+      'Con otra frecuencia, ancho de banda o factor de dispersión que la malla local no oirás a nadie. Compara Ajustes → Radio con lo que usa tu zona.';
+
+  @override
+  String get trouble_antenna => 'La antena está puesta';
+
+  @override
+  String get trouble_antennaAdvice =>
+      'Asegúrate de que la antena está bien enroscada. Nunca transmitas sin ella; puede dañar la radio.';
+
+  @override
+  String get mesh_title => 'Salud de la malla';
+
+  @override
+  String get mesh_overallGood => 'La malla se ve bien';
+
+  @override
+  String get mesh_overallFair => 'La malla funciona, con problemas';
+
+  @override
+  String get mesh_overallPoor => 'La malla tiene dificultades';
+
+  @override
+  String get mesh_overallUnknown => 'Aún no hay datos suficientes';
+
+  @override
+  String get mesh_gradeGood => 'Buena';
+
+  @override
+  String get mesh_gradeFair => 'Regular';
+
+  @override
+  String get mesh_gradePoor => 'Mala';
+
+  @override
+  String get mesh_gradeUnknown => 'Sin datos';
+
+  @override
+  String get mesh_noise => 'Ruido';
+
+  @override
+  String mesh_noiseValue(String dbm) {
+    return 'Ruido de fondo $dbm dBm';
+  }
+
+  @override
+  String get mesh_signal => 'Última señal';
+
+  @override
+  String mesh_signalValue(String db) {
+    return 'SNR $db dB';
+  }
+
+  @override
+  String get mesh_busy => 'Uso del canal';
+
+  @override
+  String mesh_busyValue(int percent) {
+    return 'en el aire el $percent % de los últimos 15 minutos';
+  }
+
+  @override
+  String get mesh_neighbours => 'Oídos directamente';
+
+  @override
+  String mesh_neighboursValue(int count) {
+    return '$count nodos en la última hora';
+  }
+
+  @override
+  String get mesh_delivery => 'Mensajes directos';
+
+  @override
+  String mesh_deliveryValue(int delivered, int total) {
+    return '$delivered de $total entregados en el último día';
+  }
+
+  @override
+  String get mesh_tipNoise =>
+      'Algo cercano genera ruido en esta frecuencia. Aleja la antena de aparatos electrónicos y cargadores.';
+
+  @override
+  String get mesh_tipSignal =>
+      'El último paquete llegó débil. Sube la antena o ve a un sitio más alto.';
+
+  @override
+  String get mesh_tipBusy =>
+      'El canal está ocupado. Envía mensajes cortos y evita las inundaciones.';
+
+  @override
+  String get mesh_tipNeighbours =>
+      'Se oyen pocos nodos directamente. Sube la antena o acércate a un repetidor.';
+
+  @override
+  String get mesh_tipDelivery =>
+      'Muchos mensajes no se confirman. Abre un mensaje fallido para ver dónde se detuvo.';
+
+  @override
+  String routeHealth_staleTitle(String name) {
+    return 'La ruta a $name puede estar desactualizada';
+  }
+
+  @override
+  String routeHealth_weakTitle(String name) {
+    return 'La ruta a $name no es fiable';
+  }
+
+  @override
+  String routeHealth_lastWorkedHours(int hours) {
+    return 'funcionó por última vez hace $hours h';
+  }
+
+  @override
+  String routeHealth_lastWorkedDays(int days) {
+    return 'funcionó por última vez hace $days días';
+  }
+
+  @override
+  String routeHealth_notHeard(int days) {
+    return 'sin noticias desde hace $days días';
+  }
+
+  @override
+  String routeHealth_failures(int failures, int attempts) {
+    return '$failures de $attempts intentos fallaron';
+  }
+
+  @override
+  String routeHealth_longPath(int hops) {
+    return '$hops saltos';
+  }
+
+  @override
+  String get routeHealth_useFlood => 'Buscar una ruta nueva';
+
+  @override
+  String get routeHealth_keep => 'Mantener esta ruta';
+
+  @override
+  String get readiness_sos => 'Destinatarios del SOS';
+
+  @override
+  String get readiness_sosOk => 'El SOS tiene a quién enviar.';
+
+  @override
+  String get readiness_sosBlocked =>
+      'El SOS no tiene a quién llegar. Añade contactos de la salida que estén en tus contactos o define un canal SOS.';
+
+  @override
+  String get readiness_routes => 'Rutas a los contactos de la salida';
+
+  @override
+  String get readiness_routesOk =>
+      'Se conoce una ruta a cada contacto de la salida.';
+
+  @override
+  String readiness_routesMissing(String names) {
+    return 'No hay ruta conocida a $names. Los mensajes irán por inundación hasta aprender una. Envíales un mensaje antes de salir.';
+  }
+
+  @override
+  String get readiness_notifications => 'Notificaciones';
+
+  @override
+  String get readiness_notificationsOk => 'Permitidas.';
+
+  @override
+  String get readiness_notificationsOff =>
+      'Las notificaciones están desactivadas, así que no oirás respuestas, avisos de llegada ni alertas.';
+
+  @override
+  String get readiness_batteryOpt => 'Optimización de batería';
+
+  @override
+  String get readiness_batteryOptOk => 'NOTORYX Core está exento.';
+
+  @override
+  String get readiness_batteryOptOn =>
+      'Android puede detener la app en segundo plano. Desactívala en Ajustes → Ajustes de la app → Notificaciones.';
+
+  @override
+  String get readiness_blockedTitle => 'Aún no se puede iniciar la salida';
+
+  @override
+  String readiness_warnTitle(int count) {
+    return '$count cosas por revisar';
+  }
+
+  @override
+  String get readiness_startAnyway => 'Iniciar de todos modos';
+
+  @override
+  String get readiness_review => 'Revisar';
+
+  @override
+  String get readiness_summaryReady => 'Todo listo';
+
+  @override
+  String readiness_summaryWarn(int count) {
+    return '$count por revisar';
+  }
+
+  @override
+  String get readiness_summaryBlocked => 'El SOS no llega a nadie';
+
+  @override
+  String get coords_maidenhead => 'Localizador Maidenhead';
+
+  @override
+  String get reactions_radioTitle => 'Enviar reacciones por radio';
+
+  @override
+  String get reactions_radioHint =>
+      'Cada reacción es un paquete en el aire. Automático las deja en este dispositivo en la banda europea de 868 MHz, donde el tiempo de emisión es limitado.';
+
+  @override
+  String get reactions_radioAuto => 'Automático';
+
+  @override
+  String get reactions_radioOn => 'Sí';
+
+  @override
+  String get reactions_radioOff => 'No (este dispositivo)';
+
+  @override
+  String get batteryWatch_auto => 'Comprobar automáticamente';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Mientras haya una radio conectada, la app pregunta periódicamente a este repetidor por su batería. Solo responde si has iniciado sesión en él.';
+
+  @override
+  String get batteryWatch_interval => 'Comprobar cada';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Como máximo 6 comprobaciones por hora entre todos los repetidores, con al menos 2 minutos de separación.';
+
+  @override
+  String get batteryWatch_add => 'Añadir un repetidor';
+
+  @override
+  String get batteryWatch_pick => 'Elige un repetidor para vigilar';
+
+  @override
+  String get batteryWatch_noRepeaters =>
+      'Aún no hay repetidores en tus contactos.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Sin respuesta a las últimas $count comprobaciones. Abre el repetidor e inicia sesión de nuevo.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Comprobando…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Batería del repetidor';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name está al $percent % ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'La batería de $name baja rápido: vacía en unos $days días a este ritmo.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name no ha respondido a $count comprobaciones de batería.';
+  }
 }
