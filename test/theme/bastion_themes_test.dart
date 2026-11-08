@@ -460,4 +460,75 @@ void main() {
     expect(MeshTheme.light().brightness, Brightness.light);
     expect(MeshTheme.dark().brightness, Brightness.dark);
   });
+
+  group('dark mode theme', () {
+    test('used only when set and the device is dark', () {
+      expect(
+        activeThemeId(
+          appTheme: 'pink_overload',
+          darkModeTheme: '',
+          platformBrightness: Brightness.dark,
+        ),
+        'pink_overload',
+      );
+      expect(
+        activeThemeId(
+          appTheme: 'pink_overload',
+          darkModeTheme: 'night_ops',
+          platformBrightness: Brightness.light,
+        ),
+        'pink_overload',
+      );
+      expect(
+        activeThemeId(
+          appTheme: 'pink_overload',
+          darkModeTheme: 'night_ops',
+          platformBrightness: Brightness.dark,
+        ),
+        'night_ops',
+      );
+    });
+
+    test('off by default, saved, and old ids migrate', () {
+      expect(AppSettings().darkModeTheme, '');
+      expect(AppSettings.fromJson({}).darkModeTheme, '');
+      final back = AppSettings.fromJson(
+        AppSettings(darkModeTheme: 'tactical').toJson(),
+      );
+      expect(back.darkModeTheme, 'tactical');
+      expect(
+        AppSettings.fromJson({'dark_mode_theme': 'red_light'}).darkModeTheme,
+        BastionTheme.nightOps.id,
+      );
+    });
+
+    testWidgets('the switch turns it on and the choice is saved', (
+      tester,
+    ) async {
+      final settings = await freshSettings();
+      await tester.binding.setSurfaceSize(const Size(400, 2400));
+      addTearDown(() => tester.binding.setSurfaceSize(null));
+      await tester.pumpWidget(pickerApp(settings));
+      expect(find.byKey(const ValueKey('dark-mode-theme')), findsNothing);
+
+      await tester.tap(find.byKey(const ValueKey('dark-mode-switch')));
+      await tester.pumpAndSettle();
+      expect(settings.settings.darkModeTheme, BastionTheme.nightOps.id);
+      expect(settings.settings.appTheme, BastionTheme.blaze.id);
+
+      await tester.tap(find.byKey(const ValueKey('dark-mode-theme')));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('Tactical').last);
+      await tester.pumpAndSettle();
+      expect(settings.settings.darkModeTheme, BastionTheme.tactical.id);
+
+      final restored = AppSettingsService();
+      await restored.loadSettings();
+      expect(restored.settings.darkModeTheme, BastionTheme.tactical.id);
+
+      await tester.tap(find.byKey(const ValueKey('dark-mode-switch')));
+      await tester.pumpAndSettle();
+      expect(settings.settings.darkModeTheme, '');
+    });
+  });
 }

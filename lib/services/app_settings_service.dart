@@ -323,6 +323,11 @@ class AppSettingsService extends ChangeNotifier {
     await updateSettings(_settings.copyWith(seasonalHolidays: value));
   }
 
+  /// Sets the theme used in dark mode; '' turns the switch off.
+  Future<void> setDarkModeTheme(String id) async {
+    await updateSettings(_settings.copyWith(darkModeTheme: id));
+  }
+
   /// The chosen way to show positions.
   CoordinateFormat get coordinateFormat =>
       CoordinateFormat.parse(_settings.coordinateFormat);

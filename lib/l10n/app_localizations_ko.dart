@@ -9659,6 +9659,15 @@ class AppLocalizationsKo extends AppLocalizations {
   String get seasonal_holidaysHint => '핼러윈, 크리스마스, 밸런타인데이 기간에 적용';
 
   @override
+  String get theme_darkMode => '다크 모드에서 다른 테마';
+
+  @override
+  String get theme_darkModeHint => '기기가 다크 모드일 때 다른 테마를 사용합니다';
+
+  @override
+  String get theme_darkModeTheme => '다크 모드 테마';
+
+  @override
   String get coords_setting => '좌표 형식';
 
   @override

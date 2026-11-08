@@ -267,6 +267,16 @@ Season activeSeason({
 
 /// The palette for the saved theme [themeId]. Only the Seasonal theme looks
 /// at the date or the season override; every other theme ignores them.
+/// The theme id to show: [darkModeTheme] while the device is in dark mode
+/// and one is set, otherwise [appTheme].
+String activeThemeId({
+  required String appTheme,
+  required String darkModeTheme,
+  required Brightness platformBrightness,
+}) => darkModeTheme.isNotEmpty && platformBrightness == Brightness.dark
+    ? darkModeTheme
+    : appTheme;
+
 BastionPalette resolveThemePalette(
   String? themeId, {
   String seasonalOverride = 'auto',

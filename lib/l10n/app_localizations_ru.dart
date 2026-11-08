@@ -10177,6 +10177,16 @@ class AppLocalizationsRu extends AppLocalizations {
       'Хэллоуин, Рождество и День святого Валентина в свои даты';
 
   @override
+  String get theme_darkMode => 'Другая тема в тёмном режиме';
+
+  @override
+  String get theme_darkModeHint =>
+      'Использовать другую тему, пока устройство в тёмном режиме';
+
+  @override
+  String get theme_darkModeTheme => 'Тема тёмного режима';
+
+  @override
   String get coords_setting => 'Формат координат';
 
   @override
