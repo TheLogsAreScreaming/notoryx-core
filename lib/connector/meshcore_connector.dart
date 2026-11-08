@@ -702,6 +702,8 @@ class MeshCoreConnector extends ChangeNotifier {
       for (final c in _contacts)
         if (keys.contains(c.publicKeyHex)) c,
     ];
+  }
+
   final List<AirtimeSample> _airtimeSamples = [];
 
   /// Recent airtime counter readings (about the last half hour), for how
