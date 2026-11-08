@@ -1,0 +1,16 @@
+/// The lite build's copy of lib/services/translation_llm.dart: no model
+/// runtime, so translation is off and its settings are hidden.
+const bool kTranslationLlmAvailable = false;
+
+class TranslationLlm {
+  Future<void> load(String modelPath) async =>
+      throw UnsupportedError('The lite build cannot run translation models.');
+
+  Stream<String> generate(
+    String instruction, {
+    String? sourceLanguageCode,
+    required String targetLanguageCode,
+  }) => const Stream.empty();
+
+  Future<void> dispose() async {}
+}

@@ -10246,130 +10246,150 @@ class AppLocalizationsEs extends AppLocalizations {
   String get batteryWatch_cleared => 'Historial borrado';
 
   @override
-  String get mesh_title => 'Salud de la malla';
+  String get readiness_sos => 'Destinatarios del SOS';
 
   @override
-  String get mesh_overallGood => 'La malla se ve bien';
+  String get readiness_sosOk => 'El SOS tiene a quién enviar.';
 
   @override
-  String get mesh_overallFair => 'La malla funciona, con problemas';
+  String get readiness_sosBlocked =>
+      'El SOS no tiene a quién llegar. Añade contactos de la salida que estén en tus contactos o define un canal SOS.';
 
   @override
-  String get mesh_overallPoor => 'La malla tiene dificultades';
+  String get readiness_routes => 'Rutas a los contactos de la salida';
 
   @override
-  String get mesh_overallUnknown => 'Aún no hay datos suficientes';
+  String get readiness_routesOk =>
+      'Se conoce una ruta a cada contacto de la salida.';
 
   @override
-  String get mesh_gradeGood => 'Buena';
-
-  @override
-  String get mesh_gradeFair => 'Regular';
-
-  @override
-  String get mesh_gradePoor => 'Mala';
-
-  @override
-  String get mesh_gradeUnknown => 'Sin datos';
-
-  @override
-  String get mesh_noise => 'Ruido';
-
-  @override
-  String mesh_noiseValue(String dbm) {
-    return 'Ruido de fondo $dbm dBm';
+  String readiness_routesMissing(String names) {
+    return 'No hay ruta conocida a $names. Los mensajes irán por inundación hasta aprender una. Envíales un mensaje antes de salir.';
   }
 
   @override
-  String get mesh_signal => 'Última señal';
+  String get readiness_notifications => 'Notificaciones';
 
   @override
-  String mesh_signalValue(String db) {
-    return 'SNR $db dB';
+  String get readiness_notificationsOk => 'Permitidas.';
+
+  @override
+  String get readiness_notificationsOff =>
+      'Las notificaciones están desactivadas, así que no oirás respuestas, avisos de llegada ni alertas.';
+
+  @override
+  String get readiness_batteryOpt => 'Optimización de batería';
+
+  @override
+  String get readiness_batteryOptOk => 'NOTORYX Core está exento.';
+
+  @override
+  String get readiness_batteryOptOn =>
+      'Android puede detener la app en segundo plano. Desactívala en Ajustes → Ajustes de la app → Notificaciones.';
+
+  @override
+  String get readiness_blockedTitle => 'Aún no se puede iniciar la salida';
+
+  @override
+  String readiness_warnTitle(int count) {
+    return '$count cosas por revisar';
   }
 
   @override
-  String get mesh_busy => 'Uso del canal';
+  String get readiness_startAnyway => 'Iniciar de todos modos';
 
   @override
-  String mesh_busyValue(int percent) {
-    return 'en el aire el $percent % de los últimos 15 minutos';
+  String get readiness_review => 'Revisar';
+
+  @override
+  String get readiness_summaryReady => 'Todo listo';
+
+  @override
+  String readiness_summaryWarn(int count) {
+    return '$count por revisar';
   }
 
   @override
-  String get mesh_neighbours => 'Oídos directamente';
+  String get readiness_summaryBlocked => 'El SOS no llega a nadie';
 
   @override
-  String mesh_neighboursValue(int count) {
-    return '$count nodos en la última hora';
+  String get coords_maidenhead => 'Localizador Maidenhead';
+
+  @override
+  String get reactions_radioTitle => 'Enviar reacciones por radio';
+
+  @override
+  String get reactions_radioHint =>
+      'Cada reacción es un paquete en el aire. Automático las deja en este dispositivo en la banda europea de 868 MHz, donde el tiempo de emisión es limitado.';
+
+  @override
+  String get reactions_radioAuto => 'Automático';
+
+  @override
+  String get reactions_radioOn => 'Sí';
+
+  @override
+  String get reactions_radioOff => 'No (este dispositivo)';
+
+  @override
+  String get lite_qrPasteHint =>
+      'Esta versión no tiene escáner con cámara. Pega el texto del código QR.';
+
+  @override
+  String get lite_qrPasteLabel => 'Texto del código QR';
+
+  @override
+  String get batteryWatch_auto => 'Comprobar automáticamente';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Mientras haya una radio conectada, la app pregunta periódicamente a este repetidor por su batería. Solo responde si has iniciado sesión en él.';
+
+  @override
+  String get batteryWatch_interval => 'Comprobar cada';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
   }
 
   @override
-  String get mesh_delivery => 'Mensajes directos';
+  String get batteryWatch_budget =>
+      'Como máximo 6 comprobaciones por hora entre todos los repetidores, con al menos 2 minutos de separación.';
 
   @override
-  String mesh_deliveryValue(int delivered, int total) {
-    return '$delivered de $total entregados en el último día';
+  String get batteryWatch_add => 'Añadir un repetidor';
+
+  @override
+  String get batteryWatch_pick => 'Elige un repetidor para vigilar';
+
+  @override
+  String get batteryWatch_noRepeaters =>
+      'Aún no hay repetidores en tus contactos.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Sin respuesta a las últimas $count comprobaciones. Abre el repetidor e inicia sesión de nuevo.';
   }
 
   @override
-  String get mesh_tipNoise =>
-      'Algo cercano genera ruido en esta frecuencia. Aleja la antena de aparatos electrónicos y cargadores.';
+  String get batteryWatch_checking => 'Comprobando…';
 
   @override
-  String get mesh_tipSignal =>
-      'El último paquete llegó débil. Sube la antena o ve a un sitio más alto.';
+  String get batteryWatch_alertTitle => 'Batería del repetidor';
 
   @override
-  String get mesh_tipBusy =>
-      'El canal está ocupado. Envía mensajes cortos y evita las inundaciones.';
-
-  @override
-  String get mesh_tipNeighbours =>
-      'Se oyen pocos nodos directamente. Sube la antena o acércate a un repetidor.';
-
-  @override
-  String get mesh_tipDelivery =>
-      'Muchos mensajes no se confirman. Abre un mensaje fallido para ver dónde se detuvo.';
-
-  @override
-  String routeHealth_staleTitle(String name) {
-    return 'La ruta a $name puede estar desactualizada';
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name está al $percent % ($volts V).';
   }
 
   @override
-  String routeHealth_weakTitle(String name) {
-    return 'La ruta a $name no es fiable';
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'La batería de $name baja rápido: vacía en unos $days días a este ritmo.';
   }
 
   @override
-  String routeHealth_lastWorkedHours(int hours) {
-    return 'funcionó por última vez hace $hours h';
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name no ha respondido a $count comprobaciones de batería.';
   }
-
-  @override
-  String routeHealth_lastWorkedDays(int days) {
-    return 'funcionó por última vez hace $days días';
-  }
-
-  @override
-  String routeHealth_notHeard(int days) {
-    return 'sin noticias desde hace $days días';
-  }
-
-  @override
-  String routeHealth_failures(int failures, int attempts) {
-    return '$failures de $attempts intentos fallaron';
-  }
-
-  @override
-  String routeHealth_longPath(int hops) {
-    return '$hops saltos';
-  }
-
-  @override
-  String get routeHealth_useFlood => 'Buscar una ruta nueva';
-
-  @override
-  String get routeHealth_keep => 'Mantener esta ruta';
 }

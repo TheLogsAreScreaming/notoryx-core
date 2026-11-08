@@ -10225,130 +10225,150 @@ class AppLocalizationsBg extends AppLocalizations {
   String get batteryWatch_cleared => 'Историята е изчистена';
 
   @override
-  String get mesh_title => 'Състояние на мрежата';
+  String get readiness_sos => 'Получатели на SOS';
 
   @override
-  String get mesh_overallGood => 'Мрежата изглежда наред';
+  String get readiness_sosOk => 'SOS има към кого да изпрати.';
 
   @override
-  String get mesh_overallFair => 'Мрежата работи, но с проблеми';
+  String get readiness_sosBlocked =>
+      'SOS няма към кого да изпрати. Добавете участници от контактите си или задайте SOS канал.';
 
   @override
-  String get mesh_overallPoor => 'Мрежата се затруднява';
+  String get readiness_routes => 'Маршрути до участниците';
 
   @override
-  String get mesh_overallUnknown => 'Още няма достатъчно данни';
+  String get readiness_routesOk => 'Известен е маршрут до всеки участник.';
 
   @override
-  String get mesh_gradeGood => 'Добро';
-
-  @override
-  String get mesh_gradeFair => 'Средно';
-
-  @override
-  String get mesh_gradePoor => 'Слабо';
-
-  @override
-  String get mesh_gradeUnknown => 'Няма данни';
-
-  @override
-  String get mesh_noise => 'Шум';
-
-  @override
-  String mesh_noiseValue(String dbm) {
-    return 'Шумов праг $dbm dBm';
+  String readiness_routesMissing(String names) {
+    return 'Няма известен маршрут до $names. Съобщенията ще се разпространяват наводнително, докато се научи маршрут. Изпратете им съобщение, преди да тръгнете.';
   }
 
   @override
-  String get mesh_signal => 'Последен сигнал';
+  String get readiness_notifications => 'Известия';
 
   @override
-  String mesh_signalValue(String db) {
-    return 'SNR $db dB';
+  String get readiness_notificationsOk => 'Разрешени.';
+
+  @override
+  String get readiness_notificationsOff =>
+      'Известията са изключени, така че няма да чуете отговори, отметки или сигнали.';
+
+  @override
+  String get readiness_batteryOpt => 'Оптимизация на батерията';
+
+  @override
+  String get readiness_batteryOptOk =>
+      'NOTORYX Core е изключено от оптимизацията.';
+
+  @override
+  String get readiness_batteryOptOn =>
+      'Android може да спре приложението във фонов режим. Изключете я в Настройки → Настройки на приложението → Известия.';
+
+  @override
+  String get readiness_blockedTitle => 'Пътуването още не може да започне';
+
+  @override
+  String readiness_warnTitle(int count) {
+    return '$count неща за проверка';
   }
 
   @override
-  String get mesh_busy => 'Заетост на канала';
+  String get readiness_startAnyway => 'Започни въпреки това';
 
   @override
-  String mesh_busyValue(int percent) {
-    return 'в ефир $percent% от последните 15 минути';
+  String get readiness_review => 'Прегледай';
+
+  @override
+  String get readiness_summaryReady => 'Готови за тръгване';
+
+  @override
+  String readiness_summaryWarn(int count) {
+    return '$count за проверка';
   }
 
   @override
-  String get mesh_neighbours => 'Чути директно';
+  String get readiness_summaryBlocked => 'SOS не може да достигне никого';
 
   @override
-  String mesh_neighboursValue(int count) {
-    return '$count възела за последния час';
+  String get coords_maidenhead => 'Локатор Maidenhead';
+
+  @override
+  String get reactions_radioTitle => 'Изпращай реакциите по радиото';
+
+  @override
+  String get reactions_radioHint =>
+      'Всяка реакция е пакет в ефира. Автоматично ги пази на това устройство в европейската лента 868 MHz, където ефирното време е ограничено.';
+
+  @override
+  String get reactions_radioAuto => 'Автоматично';
+
+  @override
+  String get reactions_radioOn => 'Вкл.';
+
+  @override
+  String get reactions_radioOff => 'Изкл. (това устройство)';
+
+  @override
+  String get lite_qrPasteHint =>
+      'Тази версия няма скенер с камера. Вместо това поставете текста от QR кода.';
+
+  @override
+  String get lite_qrPasteLabel => 'Текст от QR кода';
+
+  @override
+  String get batteryWatch_auto => 'Проверявай автоматично';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Докато има свързано радио, приложението периодично пита ретранслатора за батерията му. Той отговаря само ако сте влезли в него.';
+
+  @override
+  String get batteryWatch_interval => 'Проверка на всеки';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours ч';
   }
 
   @override
-  String get mesh_delivery => 'Лични съобщения';
+  String get batteryWatch_budget =>
+      'Най-много 6 проверки на час за всички ретранслатори, през поне 2 минути.';
 
   @override
-  String mesh_deliveryValue(int delivered, int total) {
-    return '$delivered от $total доставени за последния ден';
+  String get batteryWatch_add => 'Добави ретранслатор';
+
+  @override
+  String get batteryWatch_pick => 'Изберете ретранслатор за наблюдение';
+
+  @override
+  String get batteryWatch_noRepeaters =>
+      'Все още няма ретранслатори в контактите.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Няма отговор на последните $count проверки. Отворете ретранслатора и влезте отново.';
   }
 
   @override
-  String get mesh_tipNoise =>
-      'Нещо наблизо шуми на тази честота. Отдалечете антената от електроника и зарядни.';
+  String get batteryWatch_checking => 'Проверява се…';
 
   @override
-  String get mesh_tipSignal =>
-      'Последният пакет беше слаб. Повдигнете антената или се преместете по-високо.';
+  String get batteryWatch_alertTitle => 'Батерия на ретранслатор';
 
   @override
-  String get mesh_tipBusy =>
-      'Каналът е зает. Пишете кратко и избягвайте наводнителни изпращания.';
-
-  @override
-  String get mesh_tipNeighbours =>
-      'Малко възли се чуват директно. Повдигнете антената или се приближете до ретранслатор.';
-
-  @override
-  String get mesh_tipDelivery =>
-      'Много съобщения не са потвърдени. Отворете неуспешно съобщение, за да видите къде е спряло.';
-
-  @override
-  String routeHealth_staleTitle(String name) {
-    return 'Маршрутът до $name може да е остарял';
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name е на $percent% ($volts V).';
   }
 
   @override
-  String routeHealth_weakTitle(String name) {
-    return 'Маршрутът до $name е ненадежден';
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Батерията на $name пада бързо: изтощена след около $days дни при това темпо.';
   }
 
   @override
-  String routeHealth_lastWorkedHours(int hours) {
-    return 'последно работи преди $hours ч';
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name не е отговорил на $count проверки на батерията.';
   }
-
-  @override
-  String routeHealth_lastWorkedDays(int days) {
-    return 'последно работи преди $days дни';
-  }
-
-  @override
-  String routeHealth_notHeard(int days) {
-    return 'не е чуван от $days дни';
-  }
-
-  @override
-  String routeHealth_failures(int failures, int attempts) {
-    return '$failures от $attempts опита неуспешни';
-  }
-
-  @override
-  String routeHealth_longPath(int hops) {
-    return '$hops скока';
-  }
-
-  @override
-  String get routeHealth_useFlood => 'Намери нов маршрут';
-
-  @override
-  String get routeHealth_keep => 'Запази маршрута';
 }

@@ -10202,130 +10202,149 @@ class AppLocalizationsNl extends AppLocalizations {
   String get batteryWatch_cleared => 'Geschiedenis gewist';
 
   @override
-  String get mesh_title => 'Meshgezondheid';
+  String get readiness_sos => 'SOS-ontvangers';
 
   @override
-  String get mesh_overallGood => 'Het mesh ziet er gezond uit';
+  String get readiness_sosOk => 'SOS heeft ontvangers.';
 
   @override
-  String get mesh_overallFair => 'Het mesh werkt, met wat problemen';
+  String get readiness_sosBlocked =>
+      'SOS heeft niemand om te bereiken. Voeg tochtcontacten uit je contacten toe of stel een SOS-kanaal in.';
 
   @override
-  String get mesh_overallPoor => 'Het mesh heeft het moeilijk';
+  String get readiness_routes => 'Routes naar tochtcontacten';
 
   @override
-  String get mesh_overallUnknown => 'Nog te weinig gegevens';
+  String get readiness_routesOk =>
+      'Er is een route bekend naar elk tochtcontact.';
 
   @override
-  String get mesh_gradeGood => 'Goed';
-
-  @override
-  String get mesh_gradeFair => 'Matig';
-
-  @override
-  String get mesh_gradePoor => 'Slecht';
-
-  @override
-  String get mesh_gradeUnknown => 'Geen gegevens';
-
-  @override
-  String get mesh_noise => 'Ruis';
-
-  @override
-  String mesh_noiseValue(String dbm) {
-    return 'Ruisvloer $dbm dBm';
+  String readiness_routesMissing(String names) {
+    return 'Geen bekende route naar $names. Berichten worden geflood tot er een route geleerd is. Stuur ze een bericht voor vertrek.';
   }
 
   @override
-  String get mesh_signal => 'Laatste signaal';
+  String get readiness_notifications => 'Meldingen';
 
   @override
-  String mesh_signalValue(String db) {
-    return 'SNR $db dB';
+  String get readiness_notificationsOk => 'Toegestaan.';
+
+  @override
+  String get readiness_notificationsOff =>
+      'Meldingen staan uit, dus je hoort geen antwoorden, check-ins of waarschuwingen.';
+
+  @override
+  String get readiness_batteryOpt => 'Batterijoptimalisatie';
+
+  @override
+  String get readiness_batteryOptOk => 'NOTORYX Core is uitgezonderd.';
+
+  @override
+  String get readiness_batteryOptOn =>
+      'Android kan de app op de achtergrond stoppen. Zet het uit via Instellingen → App-instellingen → Meldingen.';
+
+  @override
+  String get readiness_blockedTitle => 'Tocht kan nog niet starten';
+
+  @override
+  String readiness_warnTitle(int count) {
+    return '$count punten om na te kijken';
   }
 
   @override
-  String get mesh_busy => 'Kanaalgebruik';
+  String get readiness_startAnyway => 'Toch starten';
 
   @override
-  String mesh_busyValue(int percent) {
-    return '$percent% van de laatste 15 minuten in de lucht';
+  String get readiness_review => 'Bekijken';
+
+  @override
+  String get readiness_summaryReady => 'Klaar om te gaan';
+
+  @override
+  String readiness_summaryWarn(int count) {
+    return '$count na te kijken';
   }
 
   @override
-  String get mesh_neighbours => 'Direct gehoord';
+  String get readiness_summaryBlocked => 'SOS bereikt niemand';
 
   @override
-  String mesh_neighboursValue(int count) {
-    return '$count nodes in het laatste uur';
+  String get coords_maidenhead => 'Maidenhead-locator';
+
+  @override
+  String get reactions_radioTitle => 'Reacties via de radio sturen';
+
+  @override
+  String get reactions_radioHint =>
+      'Elke reactie is een pakket in de lucht. Automatisch houdt ze op dit apparaat op de EU 868 MHz-band, waar zendtijd beperkt is.';
+
+  @override
+  String get reactions_radioAuto => 'Automatisch';
+
+  @override
+  String get reactions_radioOn => 'Aan';
+
+  @override
+  String get reactions_radioOff => 'Uit (dit apparaat)';
+
+  @override
+  String get lite_qrPasteHint =>
+      'Deze versie heeft geen camerascanner. Plak in plaats daarvan de tekst van de QR-code.';
+
+  @override
+  String get lite_qrPasteLabel => 'Tekst van de QR-code';
+
+  @override
+  String get batteryWatch_auto => 'Automatisch controleren';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Zolang er een radio verbonden is, vraagt de app deze repeater regelmatig naar zijn batterij. Hij antwoordt alleen als je bent ingelogd.';
+
+  @override
+  String get batteryWatch_interval => 'Controleer elke';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours u';
   }
 
   @override
-  String get mesh_delivery => 'Directe berichten';
+  String get batteryWatch_budget =>
+      'Hoogstens 6 controles per uur voor alle repeaters, minstens 2 minuten uit elkaar.';
 
   @override
-  String mesh_deliveryValue(int delivered, int total) {
-    return '$delivered van $total afgeleverd in het laatste etmaal';
+  String get batteryWatch_add => 'Repeater toevoegen';
+
+  @override
+  String get batteryWatch_pick => 'Kies een repeater om te bewaken';
+
+  @override
+  String get batteryWatch_noRepeaters => 'Nog geen repeaters in je contacten.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Geen antwoord op de laatste $count controles. Open de repeater en log opnieuw in.';
   }
 
   @override
-  String get mesh_tipNoise =>
-      'Iets in de buurt maakt ruis op deze frequentie. Houd de antenne weg van elektronica en laders.';
+  String get batteryWatch_checking => 'Controleren…';
 
   @override
-  String get mesh_tipSignal =>
-      'Het laatste pakket was zwak. Zet de antenne hoger of ga hoger staan.';
+  String get batteryWatch_alertTitle => 'Repeaterbatterij';
 
   @override
-  String get mesh_tipBusy =>
-      'Het kanaal is druk. Houd berichten kort en vermijd floods.';
-
-  @override
-  String get mesh_tipNeighbours =>
-      'Weinig nodes worden direct gehoord. Zet de antenne hoger of ga dichter bij een repeater.';
-
-  @override
-  String get mesh_tipDelivery =>
-      'Veel berichten worden niet bevestigd. Open een mislukt bericht om te zien waar het stopte.';
-
-  @override
-  String routeHealth_staleTitle(String name) {
-    return 'De route naar $name is mogelijk verouderd';
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name staat op $percent% ($volts V).';
   }
 
   @override
-  String routeHealth_weakTitle(String name) {
-    return 'De route naar $name is onbetrouwbaar';
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'De batterij van $name daalt snel: bij dit tempo leeg over ongeveer $days dagen.';
   }
 
   @override
-  String routeHealth_lastWorkedHours(int hours) {
-    return 'werkte $hours u geleden voor het laatst';
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name heeft $count batterijcontroles niet beantwoord.';
   }
-
-  @override
-  String routeHealth_lastWorkedDays(int days) {
-    return 'werkte $days dagen geleden voor het laatst';
-  }
-
-  @override
-  String routeHealth_notHeard(int days) {
-    return 'al $days dagen niet gehoord';
-  }
-
-  @override
-  String routeHealth_failures(int failures, int attempts) {
-    return '$failures van $attempts pogingen mislukt';
-  }
-
-  @override
-  String routeHealth_longPath(int hops) {
-    return '$hops hops';
-  }
-
-  @override
-  String get routeHealth_useFlood => 'Nieuwe route zoeken';
-
-  @override
-  String get routeHealth_keep => 'Route houden';
 }

@@ -10230,130 +10230,149 @@ class AppLocalizationsHu extends AppLocalizations {
   String get batteryWatch_cleared => 'Előzmények törölve';
 
   @override
-  String get mesh_title => 'Háló állapota';
+  String get readiness_sos => 'SOS címzettek';
 
   @override
-  String get mesh_overallGood => 'A háló rendben van';
+  String get readiness_sosOk => 'Az SOS-nak van címzettje.';
 
   @override
-  String get mesh_overallFair => 'A háló működik, de vannak gondok';
+  String get readiness_sosBlocked =>
+      'Az SOS senkit sem ér el. Adj hozzá túratársakat a névjegyeid közül, vagy állíts be SOS csatornát.';
 
   @override
-  String get mesh_overallPoor => 'A háló nehezen boldogul';
+  String get readiness_routes => 'Útvonalak a túratársakhoz';
 
   @override
-  String get mesh_overallUnknown => 'Még kevés az adat';
+  String get readiness_routesOk => 'Minden túratárshoz ismert útvonal.';
 
   @override
-  String get mesh_gradeGood => 'Jó';
-
-  @override
-  String get mesh_gradeFair => 'Közepes';
-
-  @override
-  String get mesh_gradePoor => 'Gyenge';
-
-  @override
-  String get mesh_gradeUnknown => 'Nincs adat';
-
-  @override
-  String get mesh_noise => 'Zaj';
-
-  @override
-  String mesh_noiseValue(String dbm) {
-    return '$dbm dBm zajszint';
+  String readiness_routesMissing(String names) {
+    return 'Nincs ismert útvonal ide: $names. Az üzenetek elárasztással mennek, amíg nem tanul útvonalat. Küldj nekik üzenetet indulás előtt.';
   }
 
   @override
-  String get mesh_signal => 'Utolsó jel';
+  String get readiness_notifications => 'Értesítések';
 
   @override
-  String mesh_signalValue(String db) {
-    return 'SNR $db dB';
+  String get readiness_notificationsOk => 'Engedélyezve.';
+
+  @override
+  String get readiness_notificationsOff =>
+      'Az értesítések ki vannak kapcsolva, így nem hallod a válaszokat, bejelentkezéseket és riasztásokat.';
+
+  @override
+  String get readiness_batteryOpt => 'Akkuoptimalizálás';
+
+  @override
+  String get readiness_batteryOptOk => 'A NOTORYX Core kivétel.';
+
+  @override
+  String get readiness_batteryOptOn =>
+      'Az Android leállíthatja az alkalmazást a háttérben. Kapcsold ki: Beállítások → Alkalmazásbeállítások → Értesítések.';
+
+  @override
+  String get readiness_blockedTitle => 'A túra még nem indítható';
+
+  @override
+  String readiness_warnTitle(int count) {
+    return '$count ellenőrizendő dolog';
   }
 
   @override
-  String get mesh_busy => 'Csatornahasználat';
+  String get readiness_startAnyway => 'Indítás mégis';
 
   @override
-  String mesh_busyValue(int percent) {
-    return 'adásban az utolsó 15 perc $percent%-ában';
+  String get readiness_review => 'Áttekintés';
+
+  @override
+  String get readiness_summaryReady => 'Indulásra kész';
+
+  @override
+  String readiness_summaryWarn(int count) {
+    return '$count ellenőrizendő';
   }
 
   @override
-  String get mesh_neighbours => 'Közvetlenül hallott';
+  String get readiness_summaryBlocked => 'Az SOS senkit sem ér el';
 
   @override
-  String mesh_neighboursValue(int count) {
-    return '$count csomópont az elmúlt órában';
+  String get coords_maidenhead => 'Maidenhead lokátor';
+
+  @override
+  String get reactions_radioTitle => 'Reakciók küldése rádión';
+
+  @override
+  String get reactions_radioHint =>
+      'Minden reakció egy adott csomag. Az Automatikus az EU 868 MHz-es sávon, ahol korlátozott az adásidő, ezen az eszközön tartja őket.';
+
+  @override
+  String get reactions_radioAuto => 'Automatikus';
+
+  @override
+  String get reactions_radioOn => 'Be';
+
+  @override
+  String get reactions_radioOff => 'Ki (ez az eszköz)';
+
+  @override
+  String get lite_qrPasteHint =>
+      'Ebben a változatban nincs kamerás olvasó. Illeszd be a QR-kód szövegét.';
+
+  @override
+  String get lite_qrPasteLabel => 'QR-kód szövege';
+
+  @override
+  String get batteryWatch_auto => 'Automatikus ellenőrzés';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Amíg rádió csatlakozik, az alkalmazás időnként lekérdezi az átjátszó akkuját. Csak akkor válaszol, ha be vagy jelentkezve.';
+
+  @override
+  String get batteryWatch_interval => 'Ellenőrzés gyakorisága';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours óra';
   }
 
   @override
-  String get mesh_delivery => 'Közvetlen üzenetek';
+  String get batteryWatch_budget =>
+      'Óránként legfeljebb 6 lekérdezés az összes átjátszóra, legalább 2 perc különbséggel.';
 
   @override
-  String mesh_deliveryValue(int delivered, int total) {
-    return '$total-ból $delivered kézbesítve az elmúlt napban';
+  String get batteryWatch_add => 'Átjátszó hozzáadása';
+
+  @override
+  String get batteryWatch_pick => 'Válassz figyelendő átjátszót';
+
+  @override
+  String get batteryWatch_noRepeaters =>
+      'Még nincs átjátszó a névjegyeid között.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Nincs válasz az utolsó $count lekérdezésre. Nyisd meg az átjátszót és jelentkezz be újra.';
   }
 
   @override
-  String get mesh_tipNoise =>
-      'Valami a közelben zajos ezen a frekvencián. Vidd távolabb az antennát elektronikától és töltőktől.';
+  String get batteryWatch_checking => 'Ellenőrzés…';
 
   @override
-  String get mesh_tipSignal =>
-      'Az utolsó csomag gyenge volt. Emeld az antennát vagy menj magasabbra.';
+  String get batteryWatch_alertTitle => 'Átjátszó akku';
 
   @override
-  String get mesh_tipBusy =>
-      'A csatorna foglalt. Írj röviden és kerüld az elárasztást.';
-
-  @override
-  String get mesh_tipNeighbours =>
-      'Kevés csomópont hallható közvetlenül. Emeld az antennát vagy menj közelebb egy átjátszóhoz.';
-
-  @override
-  String get mesh_tipDelivery =>
-      'Sok üzenetet nem nyugtáznak. Nyiss meg egy sikertelen üzenetet, hogy lásd, hol akadt el.';
-
-  @override
-  String routeHealth_staleTitle(String name) {
-    return 'A(z) $name felé vezető útvonal elavult lehet';
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name: $percent% ($volts V).';
   }
 
   @override
-  String routeHealth_weakTitle(String name) {
-    return 'A(z) $name felé vezető útvonal megbízhatatlan';
+  String batteryWatch_alertFalling(String name, String days) {
+    return '$name akkuja gyorsan merül: ilyen ütemben kb. $days nap múlva lemerül.';
   }
 
   @override
-  String routeHealth_lastWorkedHours(int hours) {
-    return 'utoljára $hours órája működött';
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name nem válaszolt $count akku-lekérdezésre.';
   }
-
-  @override
-  String routeHealth_lastWorkedDays(int days) {
-    return 'utoljára $days napja működött';
-  }
-
-  @override
-  String routeHealth_notHeard(int days) {
-    return '$days napja nem hallható';
-  }
-
-  @override
-  String routeHealth_failures(int failures, int attempts) {
-    return '$attempts próbából $failures sikertelen';
-  }
-
-  @override
-  String routeHealth_longPath(int hops) {
-    return '$hops ugrás';
-  }
-
-  @override
-  String get routeHealth_useFlood => 'Új útvonal keresése';
-
-  @override
-  String get routeHealth_keep => 'Útvonal megtartása';
 }

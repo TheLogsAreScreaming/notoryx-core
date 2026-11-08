@@ -1,0 +1,2 @@
+// The lite build's copy: always the stand-in, never the native session.
+export 'image_codec_session_stub.dart';

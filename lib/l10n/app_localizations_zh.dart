@@ -9554,125 +9554,143 @@ class AppLocalizationsZh extends AppLocalizations {
   String get batteryWatch_cleared => '历史已清除';
 
   @override
-  String get mesh_title => '网状网络状态';
+  String get readiness_sos => 'SOS 接收者';
 
   @override
-  String get mesh_overallGood => '网络状态良好';
+  String get readiness_sosOk => 'SOS 有接收者。';
 
   @override
-  String get mesh_overallFair => '网络可用，但有些问题';
+  String get readiness_sosBlocked => 'SOS 没有可送达的人。请添加联系人中的行程成员，或设置 SOS 频道。';
 
   @override
-  String get mesh_overallPoor => '网络状况不佳';
+  String get readiness_routes => '到行程成员的路由';
 
   @override
-  String get mesh_overallUnknown => '数据还不够';
+  String get readiness_routesOk => '已知到每位行程成员的路由。';
 
   @override
-  String get mesh_gradeGood => '良好';
-
-  @override
-  String get mesh_gradeFair => '一般';
-
-  @override
-  String get mesh_gradePoor => '较差';
-
-  @override
-  String get mesh_gradeUnknown => '无数据';
-
-  @override
-  String get mesh_noise => '噪声';
-
-  @override
-  String mesh_noiseValue(String dbm) {
-    return '噪声底 $dbm dBm';
+  String readiness_routesMissing(String names) {
+    return '尚无到 $names 的已知路由。在学到路由前消息将以泛洪发送。出发前先给他们发一条消息。';
   }
 
   @override
-  String get mesh_signal => '最近信号';
+  String get readiness_notifications => '通知';
 
   @override
-  String mesh_signalValue(String db) {
-    return 'SNR $db dB';
+  String get readiness_notificationsOk => '已允许。';
+
+  @override
+  String get readiness_notificationsOff => '通知已关闭，你将收不到回复、报平安和警报。';
+
+  @override
+  String get readiness_batteryOpt => '电池优化';
+
+  @override
+  String get readiness_batteryOptOk => 'NOTORYX Core 已豁免。';
+
+  @override
+  String get readiness_batteryOptOn =>
+      'Android 可能会在后台停止应用。请在 设置 → 应用设置 → 通知 中关闭。';
+
+  @override
+  String get readiness_blockedTitle => '暂时无法开始行程';
+
+  @override
+  String readiness_warnTitle(int count) {
+    return '$count 项需检查';
   }
 
   @override
-  String get mesh_busy => '信道占用';
+  String get readiness_startAnyway => '仍然开始';
 
   @override
-  String mesh_busyValue(int percent) {
-    return '最近 15 分钟内 $percent% 在收发';
+  String get readiness_review => '查看';
+
+  @override
+  String get readiness_summaryReady => '准备就绪';
+
+  @override
+  String readiness_summaryWarn(int count) {
+    return '$count 项需检查';
   }
 
   @override
-  String get mesh_neighbours => '直接收到';
+  String get readiness_summaryBlocked => 'SOS 无法送达任何人';
 
   @override
-  String mesh_neighboursValue(int count) {
-    return '最近一小时 $count 个节点';
+  String get coords_maidenhead => '梅登黑德定位符';
+
+  @override
+  String get reactions_radioTitle => '通过电台发送回应';
+
+  @override
+  String get reactions_radioHint =>
+      '每个回应都是一个空中数据包。自动模式在发射时间受限的欧盟 868 MHz 频段只在本设备上显示。';
+
+  @override
+  String get reactions_radioAuto => '自动';
+
+  @override
+  String get reactions_radioOn => '开';
+
+  @override
+  String get reactions_radioOff => '关（仅本设备）';
+
+  @override
+  String get lite_qrPasteHint => '此版本没有相机扫描功能。请改为粘贴二维码中的文本。';
+
+  @override
+  String get lite_qrPasteLabel => '二维码文本';
+
+  @override
+  String get batteryWatch_auto => '自动检查';
+
+  @override
+  String get batteryWatch_autoHint => '连接电台时，应用会定时向此中继查询电池。只有登录到中继后它才会回复。';
+
+  @override
+  String get batteryWatch_interval => '检查间隔';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours 小时';
   }
 
   @override
-  String get mesh_delivery => '私信';
+  String get batteryWatch_budget => '所有中继合计每小时最多 6 次，间隔至少 2 分钟。';
 
   @override
-  String mesh_deliveryValue(int delivered, int total) {
-    return '最近一天 $total 条中送达 $delivered 条';
+  String get batteryWatch_add => '添加中继';
+
+  @override
+  String get batteryWatch_pick => '选择要监控的中继';
+
+  @override
+  String get batteryWatch_noRepeaters => '联系人中还没有中继。';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return '最近 $count 次检查无回复。请打开中继并重新登录。';
   }
 
   @override
-  String get mesh_tipNoise => '附近有东西在此频率上产生噪声。请让天线远离电子设备和充电器。';
+  String get batteryWatch_checking => '正在检查…';
 
   @override
-  String get mesh_tipSignal => '最近的数据包信号较弱。请升高天线或移到更高处。';
+  String get batteryWatch_alertTitle => '中继电池';
 
   @override
-  String get mesh_tipBusy => '信道繁忙。请保持消息简短，避免泛洪。';
-
-  @override
-  String get mesh_tipNeighbours => '直接收到的节点很少。请升高天线或靠近中继。';
-
-  @override
-  String get mesh_tipDelivery => '许多消息未被确认。打开一条失败的消息查看它停在哪里。';
-
-  @override
-  String routeHealth_staleTitle(String name) {
-    return '到 $name 的路由可能已过时';
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name 电量 $percent%（$volts V）。';
   }
 
   @override
-  String routeHealth_weakTitle(String name) {
-    return '到 $name 的路由不可靠';
+  String batteryWatch_alertFalling(String name, String days) {
+    return '$name 的电池下降很快：按此速度约 $days 天后耗尽。';
   }
 
   @override
-  String routeHealth_lastWorkedHours(int hours) {
-    return '上次可用于 $hours 小时前';
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name 已有 $count 次电池检查未回复。';
   }
-
-  @override
-  String routeHealth_lastWorkedDays(int days) {
-    return '上次可用于 $days 天前';
-  }
-
-  @override
-  String routeHealth_notHeard(int days) {
-    return '$days 天未收到';
-  }
-
-  @override
-  String routeHealth_failures(int failures, int attempts) {
-    return '$attempts 次尝试中 $failures 次失败';
-  }
-
-  @override
-  String routeHealth_longPath(int hops) {
-    return '$hops 跳';
-  }
-
-  @override
-  String get routeHealth_useFlood => '寻找新路由';
-
-  @override
-  String get routeHealth_keep => '保留此路由';
 }

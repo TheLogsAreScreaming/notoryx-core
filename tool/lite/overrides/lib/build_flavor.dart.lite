@@ -1,0 +1,3 @@
+/// Whether this is the lite build. This is the lite build's copy of
+/// lib/build_flavor.dart (see tool/lite/README.md).
+const bool kLiteBuild = true;

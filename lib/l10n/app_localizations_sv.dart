@@ -10162,130 +10162,149 @@ class AppLocalizationsSv extends AppLocalizations {
   String get batteryWatch_cleared => 'Historiken rensad';
 
   @override
-  String get mesh_title => 'Meshhälsa';
+  String get readiness_sos => 'SOS-mottagare';
 
   @override
-  String get mesh_overallGood => 'Meshen ser frisk ut';
+  String get readiness_sosOk => 'SOS har mottagare.';
 
   @override
-  String get mesh_overallFair => 'Meshen fungerar, med vissa problem';
+  String get readiness_sosBlocked =>
+      'SOS har ingen att nå. Lägg till turkontakter som finns bland dina kontakter, eller välj en SOS-kanal.';
 
   @override
-  String get mesh_overallPoor => 'Meshen har det svårt';
+  String get readiness_routes => 'Vägar till turkontakter';
 
   @override
-  String get mesh_overallUnknown => 'För lite data än';
+  String get readiness_routesOk => 'En väg är känd till varje turkontakt.';
 
   @override
-  String get mesh_gradeGood => 'Bra';
-
-  @override
-  String get mesh_gradeFair => 'Medel';
-
-  @override
-  String get mesh_gradePoor => 'Dålig';
-
-  @override
-  String get mesh_gradeUnknown => 'Ingen data';
-
-  @override
-  String get mesh_noise => 'Brus';
-
-  @override
-  String mesh_noiseValue(String dbm) {
-    return 'Brusgolv $dbm dBm';
+  String readiness_routesMissing(String names) {
+    return 'Ingen känd väg till $names. Meddelanden floodas tills en väg lärs in. Skicka ett meddelande till dem innan du går.';
   }
 
   @override
-  String get mesh_signal => 'Senaste signal';
+  String get readiness_notifications => 'Aviseringar';
 
   @override
-  String mesh_signalValue(String db) {
-    return 'SNR $db dB';
+  String get readiness_notificationsOk => 'Tillåtna.';
+
+  @override
+  String get readiness_notificationsOff =>
+      'Aviseringar är avstängda, så du hör inga svar, incheckningar eller larm.';
+
+  @override
+  String get readiness_batteryOpt => 'Batterioptimering';
+
+  @override
+  String get readiness_batteryOptOk => 'NOTORYX Core är undantaget.';
+
+  @override
+  String get readiness_batteryOptOn =>
+      'Android kan stoppa appen i bakgrunden. Stäng av det under Inställningar → Appinställningar → Aviseringar.';
+
+  @override
+  String get readiness_blockedTitle => 'Turen kan inte starta än';
+
+  @override
+  String readiness_warnTitle(int count) {
+    return '$count saker att kolla';
   }
 
   @override
-  String get mesh_busy => 'Kanalanvändning';
+  String get readiness_startAnyway => 'Starta ändå';
 
   @override
-  String mesh_busyValue(int percent) {
-    return 'i luften $percent % av de senaste 15 minuterna';
+  String get readiness_review => 'Granska';
+
+  @override
+  String get readiness_summaryReady => 'Redo att gå';
+
+  @override
+  String readiness_summaryWarn(int count) {
+    return '$count att kolla';
   }
 
   @override
-  String get mesh_neighbours => 'Hörda direkt';
+  String get readiness_summaryBlocked => 'SOS når ingen';
 
   @override
-  String mesh_neighboursValue(int count) {
-    return '$count noder senaste timmen';
+  String get coords_maidenhead => 'Maidenhead-lokator';
+
+  @override
+  String get reactions_radioTitle => 'Skicka reaktioner via radio';
+
+  @override
+  String get reactions_radioHint =>
+      'Varje reaktion är ett paket i luften. Automatiskt behåller dem på den här enheten på EU:s 868 MHz-band, där sändningstiden är begränsad.';
+
+  @override
+  String get reactions_radioAuto => 'Automatiskt';
+
+  @override
+  String get reactions_radioOn => 'På';
+
+  @override
+  String get reactions_radioOff => 'Av (den här enheten)';
+
+  @override
+  String get lite_qrPasteHint =>
+      'Den här versionen har ingen kameraskanner. Klistra in texten från QR-koden i stället.';
+
+  @override
+  String get lite_qrPasteLabel => 'QR-kodens text';
+
+  @override
+  String get batteryWatch_auto => 'Kontrollera automatiskt';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Medan en radio är ansluten frågar appen regelbundet den här repeatern om batteriet. Den svarar bara om du är inloggad.';
+
+  @override
+  String get batteryWatch_interval => 'Kontrollera var';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
   }
 
   @override
-  String get mesh_delivery => 'Direktmeddelanden';
+  String get batteryWatch_budget =>
+      'Högst 6 kontroller i timmen för alla repeatrar, minst 2 minuter isär.';
 
   @override
-  String mesh_deliveryValue(int delivered, int total) {
-    return '$delivered av $total levererade senaste dygnet';
+  String get batteryWatch_add => 'Lägg till repeater';
+
+  @override
+  String get batteryWatch_pick => 'Välj en repeater att bevaka';
+
+  @override
+  String get batteryWatch_noRepeaters =>
+      'Inga repeatrar bland dina kontakter än.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Inget svar på de senaste $count kontrollerna. Öppna repeatern och logga in igen.';
   }
 
   @override
-  String get mesh_tipNoise =>
-      'Något i närheten brusar på den här frekvensen. Flytta antennen från elektronik och laddare.';
+  String get batteryWatch_checking => 'Kontrollerar…';
 
   @override
-  String get mesh_tipSignal =>
-      'Senaste paketet var svagt. Höj antennen eller gå högre upp.';
+  String get batteryWatch_alertTitle => 'Repeaterbatteri';
 
   @override
-  String get mesh_tipBusy =>
-      'Kanalen är upptagen. Håll meddelanden korta och undvik floods.';
-
-  @override
-  String get mesh_tipNeighbours =>
-      'Få noder hörs direkt. Höj antennen eller gå närmare en repeater.';
-
-  @override
-  String get mesh_tipDelivery =>
-      'Många meddelanden kvitteras inte. Öppna ett misslyckat meddelande för att se var det stannade.';
-
-  @override
-  String routeHealth_staleTitle(String name) {
-    return 'Vägen till $name kan vara inaktuell';
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name ligger på $percent % ($volts V).';
   }
 
   @override
-  String routeHealth_weakTitle(String name) {
-    return 'Vägen till $name är opålitlig';
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Batteriet i $name sjunker snabbt: tomt om ungefär $days dagar i den här takten.';
   }
 
   @override
-  String routeHealth_lastWorkedHours(int hours) {
-    return 'fungerade senast för $hours h sedan';
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name har inte svarat på $count batterikontroller.';
   }
-
-  @override
-  String routeHealth_lastWorkedDays(int days) {
-    return 'fungerade senast för $days dagar sedan';
-  }
-
-  @override
-  String routeHealth_notHeard(int days) {
-    return 'inte hörd på $days dagar';
-  }
-
-  @override
-  String routeHealth_failures(int failures, int attempts) {
-    return '$failures av $attempts försök misslyckades';
-  }
-
-  @override
-  String routeHealth_longPath(int hops) {
-    return '$hops hopp';
-  }
-
-  @override
-  String get routeHealth_useFlood => 'Hitta en ny väg';
-
-  @override
-  String get routeHealth_keep => 'Behåll vägen';
 }

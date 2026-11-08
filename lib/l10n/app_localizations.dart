@@ -17005,203 +17005,251 @@ abstract class AppLocalizations {
   /// **'History cleared'**
   String get batteryWatch_cleared;
 
-  /// No description provided for @mesh_title.
+  /// No description provided for @readiness_sos.
   ///
   /// In en, this message translates to:
-  /// **'Mesh health'**
-  String get mesh_title;
+  /// **'SOS recipients'**
+  String get readiness_sos;
 
-  /// No description provided for @mesh_overallGood.
+  /// No description provided for @readiness_sosOk.
   ///
   /// In en, this message translates to:
-  /// **'The mesh looks healthy'**
-  String get mesh_overallGood;
+  /// **'SOS has someone to send to.'**
+  String get readiness_sosOk;
 
-  /// No description provided for @mesh_overallFair.
+  /// No description provided for @readiness_sosBlocked.
   ///
   /// In en, this message translates to:
-  /// **'The mesh works, with some trouble'**
-  String get mesh_overallFair;
+  /// **'SOS has no one to reach. Add trip contacts who are in your contacts, or set an SOS channel.'**
+  String get readiness_sosBlocked;
 
-  /// No description provided for @mesh_overallPoor.
+  /// No description provided for @readiness_routes.
   ///
   /// In en, this message translates to:
-  /// **'The mesh is struggling'**
-  String get mesh_overallPoor;
+  /// **'Routes to trip contacts'**
+  String get readiness_routes;
 
-  /// No description provided for @mesh_overallUnknown.
+  /// No description provided for @readiness_routesOk.
   ///
   /// In en, this message translates to:
-  /// **'Not enough to go on yet'**
-  String get mesh_overallUnknown;
+  /// **'A route is known to every trip contact.'**
+  String get readiness_routesOk;
 
-  /// No description provided for @mesh_gradeGood.
+  /// No description provided for @readiness_routesMissing.
   ///
   /// In en, this message translates to:
-  /// **'Good'**
-  String get mesh_gradeGood;
+  /// **'No known route to {names}. Messages will flood until one is learned. Send them a message before you go.'**
+  String readiness_routesMissing(String names);
 
-  /// No description provided for @mesh_gradeFair.
+  /// No description provided for @readiness_notifications.
   ///
   /// In en, this message translates to:
-  /// **'Fair'**
-  String get mesh_gradeFair;
+  /// **'Notifications'**
+  String get readiness_notifications;
 
-  /// No description provided for @mesh_gradePoor.
+  /// No description provided for @readiness_notificationsOk.
   ///
   /// In en, this message translates to:
-  /// **'Poor'**
-  String get mesh_gradePoor;
+  /// **'Allowed.'**
+  String get readiness_notificationsOk;
 
-  /// No description provided for @mesh_gradeUnknown.
+  /// No description provided for @readiness_notificationsOff.
   ///
   /// In en, this message translates to:
-  /// **'No data'**
-  String get mesh_gradeUnknown;
+  /// **'Notifications are off, so you won\'t hear replies, check-ins or alerts.'**
+  String get readiness_notificationsOff;
 
-  /// No description provided for @mesh_noise.
+  /// No description provided for @readiness_batteryOpt.
   ///
   /// In en, this message translates to:
-  /// **'Noise'**
-  String get mesh_noise;
+  /// **'Battery optimisation'**
+  String get readiness_batteryOpt;
 
-  /// No description provided for @mesh_noiseValue.
+  /// No description provided for @readiness_batteryOptOk.
   ///
   /// In en, this message translates to:
-  /// **'{dbm} dBm noise floor'**
-  String mesh_noiseValue(String dbm);
+  /// **'NOTORYX Core is exempt.'**
+  String get readiness_batteryOptOk;
 
-  /// No description provided for @mesh_signal.
+  /// No description provided for @readiness_batteryOptOn.
   ///
   /// In en, this message translates to:
-  /// **'Last signal'**
-  String get mesh_signal;
+  /// **'Android may stop the app in the background. Turn it off in Settings → App Settings → Notifications.'**
+  String get readiness_batteryOptOn;
 
-  /// No description provided for @mesh_signalValue.
+  /// No description provided for @readiness_blockedTitle.
   ///
   /// In en, this message translates to:
-  /// **'SNR {db} dB'**
-  String mesh_signalValue(String db);
+  /// **'Can\'t start the trip yet'**
+  String get readiness_blockedTitle;
 
-  /// No description provided for @mesh_busy.
+  /// No description provided for @readiness_warnTitle.
   ///
   /// In en, this message translates to:
-  /// **'Channel use'**
-  String get mesh_busy;
+  /// **'{count} things to check'**
+  String readiness_warnTitle(int count);
 
-  /// No description provided for @mesh_busyValue.
+  /// No description provided for @readiness_startAnyway.
   ///
   /// In en, this message translates to:
-  /// **'on air {percent}% of the last 15 minutes'**
-  String mesh_busyValue(int percent);
+  /// **'Start anyway'**
+  String get readiness_startAnyway;
 
-  /// No description provided for @mesh_neighbours.
+  /// No description provided for @readiness_review.
   ///
   /// In en, this message translates to:
-  /// **'Heard directly'**
-  String get mesh_neighbours;
+  /// **'Review'**
+  String get readiness_review;
 
-  /// No description provided for @mesh_neighboursValue.
+  /// No description provided for @readiness_summaryReady.
   ///
   /// In en, this message translates to:
-  /// **'{count} nodes in the last hour'**
-  String mesh_neighboursValue(int count);
+  /// **'Ready to go'**
+  String get readiness_summaryReady;
 
-  /// No description provided for @mesh_delivery.
+  /// No description provided for @readiness_summaryWarn.
   ///
   /// In en, this message translates to:
-  /// **'Direct messages'**
-  String get mesh_delivery;
+  /// **'{count} to check'**
+  String readiness_summaryWarn(int count);
 
-  /// No description provided for @mesh_deliveryValue.
+  /// No description provided for @readiness_summaryBlocked.
   ///
   /// In en, this message translates to:
-  /// **'{delivered} of {total} delivered in the last day'**
-  String mesh_deliveryValue(int delivered, int total);
+  /// **'SOS can\'t reach anyone'**
+  String get readiness_summaryBlocked;
 
-  /// No description provided for @mesh_tipNoise.
+  /// No description provided for @coords_maidenhead.
   ///
   /// In en, this message translates to:
-  /// **'Something nearby is noisy on this frequency. Move the antenna away from electronics and chargers.'**
-  String get mesh_tipNoise;
+  /// **'Maidenhead locator'**
+  String get coords_maidenhead;
 
-  /// No description provided for @mesh_tipSignal.
+  /// No description provided for @reactions_radioTitle.
   ///
   /// In en, this message translates to:
-  /// **'The last packet was weak. Raise the antenna or move to higher ground.'**
-  String get mesh_tipSignal;
+  /// **'Send reactions over the radio'**
+  String get reactions_radioTitle;
 
-  /// No description provided for @mesh_tipBusy.
+  /// No description provided for @reactions_radioHint.
   ///
   /// In en, this message translates to:
-  /// **'The channel is busy. Keep messages short and avoid sending floods.'**
-  String get mesh_tipBusy;
+  /// **'Each reaction is a packet on air. Automatic keeps them on this device on the EU 868 MHz band, where airtime is limited.'**
+  String get reactions_radioHint;
 
-  /// No description provided for @mesh_tipNeighbours.
+  /// No description provided for @reactions_radioAuto.
   ///
   /// In en, this message translates to:
-  /// **'Few nodes are heard directly. Raise the antenna or move closer to a repeater.'**
-  String get mesh_tipNeighbours;
+  /// **'Automatic'**
+  String get reactions_radioAuto;
 
-  /// No description provided for @mesh_tipDelivery.
+  /// No description provided for @reactions_radioOn.
   ///
   /// In en, this message translates to:
-  /// **'Many messages aren\'t acknowledged. Open a failed message to see where it stopped.'**
-  String get mesh_tipDelivery;
+  /// **'On'**
+  String get reactions_radioOn;
 
-  /// No description provided for @routeHealth_staleTitle.
+  /// No description provided for @reactions_radioOff.
   ///
   /// In en, this message translates to:
-  /// **'The route to {name} may be out of date'**
-  String routeHealth_staleTitle(String name);
+  /// **'Off (this device)'**
+  String get reactions_radioOff;
 
-  /// No description provided for @routeHealth_weakTitle.
+  /// No description provided for @lite_qrPasteHint.
   ///
   /// In en, this message translates to:
-  /// **'The route to {name} is unreliable'**
-  String routeHealth_weakTitle(String name);
+  /// **'This build has no camera scanner. Paste the text from the QR code instead.'**
+  String get lite_qrPasteHint;
 
-  /// No description provided for @routeHealth_lastWorkedHours.
+  /// No description provided for @lite_qrPasteLabel.
   ///
   /// In en, this message translates to:
-  /// **'last worked {hours} h ago'**
-  String routeHealth_lastWorkedHours(int hours);
+  /// **'QR code text'**
+  String get lite_qrPasteLabel;
 
-  /// No description provided for @routeHealth_lastWorkedDays.
+  /// No description provided for @batteryWatch_auto.
   ///
   /// In en, this message translates to:
-  /// **'last worked {days} days ago'**
-  String routeHealth_lastWorkedDays(int days);
+  /// **'Check automatically'**
+  String get batteryWatch_auto;
 
-  /// No description provided for @routeHealth_notHeard.
+  /// No description provided for @batteryWatch_autoHint.
   ///
   /// In en, this message translates to:
-  /// **'not heard from in {days} days'**
-  String routeHealth_notHeard(int days);
+  /// **'While a radio is connected, the app asks this repeater for its battery on a timer. The repeater only answers if you\'re logged in to it.'**
+  String get batteryWatch_autoHint;
 
-  /// No description provided for @routeHealth_failures.
+  /// No description provided for @batteryWatch_interval.
   ///
   /// In en, this message translates to:
-  /// **'{failures} of {attempts} tries failed'**
-  String routeHealth_failures(int failures, int attempts);
+  /// **'Check every'**
+  String get batteryWatch_interval;
 
-  /// No description provided for @routeHealth_longPath.
+  /// No description provided for @batteryWatch_hours.
   ///
   /// In en, this message translates to:
-  /// **'{hops} hops'**
-  String routeHealth_longPath(int hops);
+  /// **'{hours} h'**
+  String batteryWatch_hours(int hours);
 
-  /// No description provided for @routeHealth_useFlood.
+  /// No description provided for @batteryWatch_budget.
   ///
   /// In en, this message translates to:
-  /// **'Find a new route'**
-  String get routeHealth_useFlood;
+  /// **'At most 6 checks an hour across all repeaters, at least 2 minutes apart.'**
+  String get batteryWatch_budget;
 
-  /// No description provided for @routeHealth_keep.
+  /// No description provided for @batteryWatch_add.
   ///
   /// In en, this message translates to:
-  /// **'Keep this route'**
-  String get routeHealth_keep;
+  /// **'Add a repeater'**
+  String get batteryWatch_add;
+
+  /// No description provided for @batteryWatch_pick.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a repeater to watch'**
+  String get batteryWatch_pick;
+
+  /// No description provided for @batteryWatch_noRepeaters.
+  ///
+  /// In en, this message translates to:
+  /// **'No repeaters in your contacts yet.'**
+  String get batteryWatch_noRepeaters;
+
+  /// No description provided for @batteryWatch_noReply.
+  ///
+  /// In en, this message translates to:
+  /// **'No reply to the last {count} checks. Open the repeater and log in again.'**
+  String batteryWatch_noReply(int count);
+
+  /// No description provided for @batteryWatch_checking.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking…'**
+  String get batteryWatch_checking;
+
+  /// No description provided for @batteryWatch_alertTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeater battery'**
+  String get batteryWatch_alertTitle;
+
+  /// No description provided for @batteryWatch_alertLow.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} is at {percent}% ({volts} V).'**
+  String batteryWatch_alertLow(String name, int percent, String volts);
+
+  /// No description provided for @batteryWatch_alertFalling.
+  ///
+  /// In en, this message translates to:
+  /// **'{name}\'s battery is falling fast: empty in about {days} days at this rate.'**
+  String batteryWatch_alertFalling(String name, String days);
+
+  /// No description provided for @batteryWatch_alertSilent.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} hasn\'t answered {count} battery checks.'**
+  String batteryWatch_alertSilent(String name, int count);
 }
 
 class _AppLocalizationsDelegate

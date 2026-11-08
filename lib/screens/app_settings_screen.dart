@@ -13,6 +13,7 @@ import '../services/app_settings_service.dart';
 import '../services/image_codec_service.dart';
 import '../services/map_tile_cache_service.dart';
 import '../services/notification_service.dart';
+import '../services/translation_llm.dart';
 import '../services/translation_service.dart';
 import '../theme/mesh_theme.dart';
 import '../widgets/battery_optimization_tile.dart';
@@ -130,8 +131,8 @@ class AppSettingsScreen extends StatelessWidget {
                           child: _buildMapContent(context, settingsService),
                         ),
 
-                        // TRANSLATION (non-web only)
-                        if (!kIsWeb) ...[
+                        // TRANSLATION (not on web or in the lite build)
+                        if (!kIsWeb && kTranslationLlmAvailable) ...[
                           SectionHeader(context.l10n.translation_title),
                           MeshCard(
                             padding: EdgeInsets.zero,

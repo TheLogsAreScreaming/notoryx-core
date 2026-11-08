@@ -10244,130 +10244,148 @@ class AppLocalizationsSl extends AppLocalizations {
   String get batteryWatch_cleared => 'Zgodovina počiščena';
 
   @override
-  String get mesh_title => 'Stanje mreže';
+  String get readiness_sos => 'Prejemniki SOS';
 
   @override
-  String get mesh_overallGood => 'Mreža je videti zdrava';
+  String get readiness_sosOk => 'SOS ima prejemnike.';
 
   @override
-  String get mesh_overallFair => 'Mreža deluje, a s težavami';
+  String get readiness_sosBlocked =>
+      'SOS nima koga doseči. Dodajte udeležence izleta iz svojih stikov ali nastavite kanal SOS.';
 
   @override
-  String get mesh_overallPoor => 'Mreža se muči';
+  String get readiness_routes => 'Poti do udeležencev';
 
   @override
-  String get mesh_overallUnknown => 'Še premalo podatkov';
+  String get readiness_routesOk => 'Do vsakega udeleženca je znana pot.';
 
   @override
-  String get mesh_gradeGood => 'Dobro';
-
-  @override
-  String get mesh_gradeFair => 'Srednje';
-
-  @override
-  String get mesh_gradePoor => 'Slabo';
-
-  @override
-  String get mesh_gradeUnknown => 'Ni podatkov';
-
-  @override
-  String get mesh_noise => 'Šum';
-
-  @override
-  String mesh_noiseValue(String dbm) {
-    return 'Raven šuma $dbm dBm';
+  String readiness_routesMissing(String names) {
+    return 'Do $names ni znane poti. Sporočila bodo poplavljala, dokler se pot ne nauči. Pred odhodom jim pošljite sporočilo.';
   }
 
   @override
-  String get mesh_signal => 'Zadnji signal';
+  String get readiness_notifications => 'Obvestila';
 
   @override
-  String mesh_signalValue(String db) {
-    return 'SNR $db dB';
+  String get readiness_notificationsOk => 'Dovoljena.';
+
+  @override
+  String get readiness_notificationsOff =>
+      'Obvestila so izklopljena, zato ne boste slišali odgovorov, javljanj ali opozoril.';
+
+  @override
+  String get readiness_batteryOpt => 'Optimizacija baterije';
+
+  @override
+  String get readiness_batteryOptOk => 'NOTORYX Core je izvzet.';
+
+  @override
+  String get readiness_batteryOptOn =>
+      'Android lahko aplikacijo ustavi v ozadju. Izklopite v Nastavitve → Nastavitve aplikacije → Obvestila.';
+
+  @override
+  String get readiness_blockedTitle => 'Izleta še ni mogoče začeti';
+
+  @override
+  String readiness_warnTitle(int count) {
+    return '$count stvari za preverjanje';
   }
 
   @override
-  String get mesh_busy => 'Zasedenost kanala';
+  String get readiness_startAnyway => 'Vseeno začni';
 
   @override
-  String mesh_busyValue(int percent) {
-    return 'v etru $percent % zadnjih 15 minut';
+  String get readiness_review => 'Preglej';
+
+  @override
+  String get readiness_summaryReady => 'Pripravljeni';
+
+  @override
+  String readiness_summaryWarn(int count) {
+    return '$count za preverjanje';
   }
 
   @override
-  String get mesh_neighbours => 'Slišani neposredno';
+  String get readiness_summaryBlocked => 'SOS ne doseže nikogar';
 
   @override
-  String mesh_neighboursValue(int count) {
-    return '$count vozlišč v zadnji uri';
+  String get coords_maidenhead => 'Lokator Maidenhead';
+
+  @override
+  String get reactions_radioTitle => 'Pošiljaj odzive po radiu';
+
+  @override
+  String get reactions_radioHint =>
+      'Vsak odziv je paket v etru. Samodejno jih v pasu EU 868 MHz, kjer je čas oddajanja omejen, ohrani na tej napravi.';
+
+  @override
+  String get reactions_radioAuto => 'Samodejno';
+
+  @override
+  String get reactions_radioOn => 'Vklop';
+
+  @override
+  String get reactions_radioOff => 'Izklop (ta naprava)';
+
+  @override
+  String get lite_qrPasteHint =>
+      'Ta različica nima optičnega bralnika s kamero. Namesto tega prilepite besedilo iz kode QR.';
+
+  @override
+  String get lite_qrPasteLabel => 'Besedilo kode QR';
+
+  @override
+  String get batteryWatch_auto => 'Samodejno preverjaj';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Dokler je radio povezan, aplikacija občasno vpraša repetitor za baterijo. Odgovori le, če ste prijavljeni.';
+
+  @override
+  String get batteryWatch_interval => 'Preverjaj vsakih';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
   }
 
   @override
-  String get mesh_delivery => 'Neposredna sporočila';
+  String get batteryWatch_budget =>
+      'Največ 6 preverjanj na uro za vse repetitorje, vsaj 2 minuti narazen.';
 
   @override
-  String mesh_deliveryValue(int delivered, int total) {
-    return 'dostavljenih $delivered od $total v zadnjem dnevu';
+  String get batteryWatch_add => 'Dodaj repetitor';
+
+  @override
+  String get batteryWatch_pick => 'Izberite repetitor za nadzor';
+
+  @override
+  String get batteryWatch_noRepeaters => 'V stikih še ni repetitorjev.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Ni odgovora na zadnjih $count preverjanj. Odprite repetitor in se znova prijavite.';
   }
 
   @override
-  String get mesh_tipNoise =>
-      'Nekaj v bližini šumi na tej frekvenci. Anteno odmaknite od elektronike in polnilnikov.';
+  String get batteryWatch_checking => 'Preverjanje…';
 
   @override
-  String get mesh_tipSignal =>
-      'Zadnji paket je bil šibek. Dvignite anteno ali pojdite višje.';
+  String get batteryWatch_alertTitle => 'Baterija repetitorja';
 
   @override
-  String get mesh_tipBusy =>
-      'Kanal je zaseden. Pišite kratko in se izogibajte poplavljanju.';
-
-  @override
-  String get mesh_tipNeighbours =>
-      'Neposredno je slišati malo vozlišč. Dvignite anteno ali se približajte repetitorju.';
-
-  @override
-  String get mesh_tipDelivery =>
-      'Veliko sporočil ni potrjenih. Odprite neuspelo sporočilo in poglejte, kje se je ustavilo.';
-
-  @override
-  String routeHealth_staleTitle(String name) {
-    return 'Pot do $name je morda zastarela';
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name je na $percent % ($volts V).';
   }
 
   @override
-  String routeHealth_weakTitle(String name) {
-    return 'Pot do $name je nezanesljiva';
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Baterija $name hitro pada: pri tem tempu prazna čez približno $days dni.';
   }
 
   @override
-  String routeHealth_lastWorkedHours(int hours) {
-    return 'nazadnje delovala pred $hours h';
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name ni odgovoril na $count preverjanj baterije.';
   }
-
-  @override
-  String routeHealth_lastWorkedDays(int days) {
-    return 'nazadnje delovala pred $days dnevi';
-  }
-
-  @override
-  String routeHealth_notHeard(int days) {
-    return 'neslišan $days dni';
-  }
-
-  @override
-  String routeHealth_failures(int failures, int attempts) {
-    return '$failures od $attempts poskusov neuspešnih';
-  }
-
-  @override
-  String routeHealth_longPath(int hops) {
-    return '$hops skokov';
-  }
-
-  @override
-  String get routeHealth_useFlood => 'Poišči novo pot';
-
-  @override
-  String get routeHealth_keep => 'Obdrži pot';
 }
