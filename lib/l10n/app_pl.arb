@@ -4266,5 +4266,14 @@
   "batteryWatch_chartLabel": "Wykres baterii: {count} odczytów, między {low} V a {high} V",
   "batteryWatch_clear": "Wyczyść historię",
   "batteryWatch_unknownRepeater": "Nieznany przekaźnik",
-  "batteryWatch_cleared": "Historia wyczyszczona"
+  "batteryWatch_cleared": "Historia wyczyszczona",
+  "team_title": "Śledzenie zespołu",
+  "team_hint": "Udostępnia twoją pozycję na prywatnym kanale podczas wyprawy, więc zespół widzi cię na mapie. Wyłącza się po zakończeniu wyprawy lub po 12 godzinach.",
+  "team_channel": "Kanał",
+  "team_noChannel": "Najpierw dodaj kanał prywatny. Śledzenie nigdy nie publikuje na kanałach publicznych ani hashtagowych.",
+  "team_every": "Co",
+  "team_minutes": "{minutes} min",
+  "team_needTrip": "Rozpocznij wyprawę, aby udostępniać pozycję.",
+  "team_lastShared": "Ostatnio udostępniono {age}",
+  "team_waitingGps": "Oczekiwanie na pozycję z radia"
 }

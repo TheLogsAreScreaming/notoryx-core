@@ -10235,4 +10235,37 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'Előzmények törölve';
+
+  @override
+  String get team_title => 'Csapatkövetés';
+
+  @override
+  String get team_hint =>
+      'Amíg a túra aktív, egy privát csatornán megosztja a helyzetedet, így a társaid látják a térképen. A túra végén vagy 12 óra után kikapcsol.';
+
+  @override
+  String get team_channel => 'Csatorna';
+
+  @override
+  String get team_noChannel =>
+      'Előbb adj hozzá egy privát csatornát. A követés soha nem posztol nyilvános vagy hashtag csatornára.';
+
+  @override
+  String get team_every => 'Gyakoriság';
+
+  @override
+  String team_minutes(int minutes) {
+    return '$minutes perc';
+  }
+
+  @override
+  String get team_needTrip => 'Indítsd el a túrát a helyzeted megosztásához.';
+
+  @override
+  String team_lastShared(String age) {
+    return 'Utoljára megosztva $age';
+  }
+
+  @override
+  String get team_waitingGps => 'Várakozás a rádió helyzetére';
 }

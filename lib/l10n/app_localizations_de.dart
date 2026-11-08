@@ -10257,4 +10257,37 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'Verlauf gelöscht';
+
+  @override
+  String get team_title => 'Team-Tracking';
+
+  @override
+  String get team_hint =>
+      'Teilt deine Position in einem privaten Kanal, solange die Tour aktiv ist, damit dein Team dich auf der Karte sieht. Schaltet sich am Tourende oder nach 12 Stunden ab.';
+
+  @override
+  String get team_channel => 'Kanal';
+
+  @override
+  String get team_noChannel =>
+      'Lege zuerst einen privaten Kanal an. Tracking postet nie in öffentliche oder Hashtag-Kanäle.';
+
+  @override
+  String get team_every => 'Alle';
+
+  @override
+  String team_minutes(int minutes) {
+    return '$minutes min';
+  }
+
+  @override
+  String get team_needTrip => 'Starte die Tour, um deine Position zu teilen.';
+
+  @override
+  String team_lastShared(String age) {
+    return 'Zuletzt geteilt $age';
+  }
+
+  @override
+  String get team_waitingGps => 'Warte auf eine Position vom Funkgerät';
 }

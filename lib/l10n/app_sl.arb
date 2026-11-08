@@ -4228,5 +4228,14 @@
   "batteryWatch_chartLabel": "Graf baterije: {count} meritev, med {low} V in {high} V",
   "batteryWatch_clear": "Počisti zgodovino",
   "batteryWatch_unknownRepeater": "Neznan repetitor",
-  "batteryWatch_cleared": "Zgodovina počiščena"
+  "batteryWatch_cleared": "Zgodovina počiščena",
+  "team_title": "Sledenje ekipe",
+  "team_hint": "Med izletom deli vaš položaj v zasebnem kanalu, da vas ekipa vidi na zemljevidu. Izklopi se ob koncu izleta ali po 12 urah.",
+  "team_channel": "Kanal",
+  "team_noChannel": "Najprej dodajte zasebni kanal. Sledenje nikoli ne objavlja v javnih ali ključnikovih kanalih.",
+  "team_every": "Vsakih",
+  "team_minutes": "{minutes} min",
+  "team_needTrip": "Začnite izlet, da delite svoj položaj.",
+  "team_lastShared": "Nazadnje deljeno {age}",
+  "team_waitingGps": "Čakanje na položaj iz radia"
 }

@@ -9558,4 +9558,35 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => '历史已清除';
+
+  @override
+  String get team_title => '队伍追踪';
+
+  @override
+  String get team_hint => '行程进行时，将你的位置分享到私有频道，队友可在地图上看到你的移动。行程结束或 12 小时后自动关闭。';
+
+  @override
+  String get team_channel => '频道';
+
+  @override
+  String get team_noChannel => '请先添加私有频道。追踪绝不会发到公共或话题频道。';
+
+  @override
+  String get team_every => '间隔';
+
+  @override
+  String team_minutes(int minutes) {
+    return '$minutes 分钟';
+  }
+
+  @override
+  String get team_needTrip => '开始行程后才能分享位置。';
+
+  @override
+  String team_lastShared(String age) {
+    return '上次分享 $age';
+  }
+
+  @override
+  String get team_waitingGps => '正在等待电台提供位置';
 }

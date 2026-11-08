@@ -4233,5 +4233,14 @@
   "batteryWatch_chartLabel": "电池图表：{count} 个读数，介于 {low} V 和 {high} V 之间",
   "batteryWatch_clear": "清除历史",
   "batteryWatch_unknownRepeater": "未知中继",
-  "batteryWatch_cleared": "历史已清除"
+  "batteryWatch_cleared": "历史已清除",
+  "team_title": "队伍追踪",
+  "team_hint": "行程进行时，将你的位置分享到私有频道，队友可在地图上看到你的移动。行程结束或 12 小时后自动关闭。",
+  "team_channel": "频道",
+  "team_noChannel": "请先添加私有频道。追踪绝不会发到公共或话题频道。",
+  "team_every": "间隔",
+  "team_minutes": "{minutes} 分钟",
+  "team_needTrip": "开始行程后才能分享位置。",
+  "team_lastShared": "上次分享 {age}",
+  "team_waitingGps": "正在等待电台提供位置"
 }

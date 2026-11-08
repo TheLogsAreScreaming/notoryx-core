@@ -10282,4 +10282,38 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'Historique effacé';
+
+  @override
+  String get team_title => 'Suivi d\'équipe';
+
+  @override
+  String get team_hint =>
+      'Partage votre position sur un canal privé pendant la sortie, pour que l\'équipe vous voie sur sa carte. S\'arrête à la fin de la sortie ou après 12 heures.';
+
+  @override
+  String get team_channel => 'Canal';
+
+  @override
+  String get team_noChannel =>
+      'Ajoutez d\'abord un canal privé. Le suivi ne publie jamais sur un canal public ou hashtag.';
+
+  @override
+  String get team_every => 'Toutes les';
+
+  @override
+  String team_minutes(int minutes) {
+    return '$minutes min';
+  }
+
+  @override
+  String get team_needTrip =>
+      'Démarrez la sortie pour partager votre position.';
+
+  @override
+  String team_lastShared(String age) {
+    return 'Dernier partage $age';
+  }
+
+  @override
+  String get team_waitingGps => 'En attente d\'une position de la radio';
 }

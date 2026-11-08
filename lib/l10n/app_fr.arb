@@ -4362,5 +4362,14 @@
   "batteryWatch_chartLabel": "Graphique de batterie : {count} mesures, entre {low} V et {high} V",
   "batteryWatch_clear": "Effacer l'historique",
   "batteryWatch_unknownRepeater": "Répéteur inconnu",
-  "batteryWatch_cleared": "Historique effacé"
+  "batteryWatch_cleared": "Historique effacé",
+  "team_title": "Suivi d'équipe",
+  "team_hint": "Partage votre position sur un canal privé pendant la sortie, pour que l'équipe vous voie sur sa carte. S'arrête à la fin de la sortie ou après 12 heures.",
+  "team_channel": "Canal",
+  "team_noChannel": "Ajoutez d'abord un canal privé. Le suivi ne publie jamais sur un canal public ou hashtag.",
+  "team_every": "Toutes les",
+  "team_minutes": "{minutes} min",
+  "team_needTrip": "Démarrez la sortie pour partager votre position.",
+  "team_lastShared": "Dernier partage {age}",
+  "team_waitingGps": "En attente d'une position de la radio"
 }

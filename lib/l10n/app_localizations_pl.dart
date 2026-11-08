@@ -10294,4 +10294,37 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'Historia wyczyszczona';
+
+  @override
+  String get team_title => 'Śledzenie zespołu';
+
+  @override
+  String get team_hint =>
+      'Udostępnia twoją pozycję na prywatnym kanale podczas wyprawy, więc zespół widzi cię na mapie. Wyłącza się po zakończeniu wyprawy lub po 12 godzinach.';
+
+  @override
+  String get team_channel => 'Kanał';
+
+  @override
+  String get team_noChannel =>
+      'Najpierw dodaj kanał prywatny. Śledzenie nigdy nie publikuje na kanałach publicznych ani hashtagowych.';
+
+  @override
+  String get team_every => 'Co';
+
+  @override
+  String team_minutes(int minutes) {
+    return '$minutes min';
+  }
+
+  @override
+  String get team_needTrip => 'Rozpocznij wyprawę, aby udostępniać pozycję.';
+
+  @override
+  String team_lastShared(String age) {
+    return 'Ostatnio udostępniono $age';
+  }
+
+  @override
+  String get team_waitingGps => 'Oczekiwanie na pozycję z radia';
 }

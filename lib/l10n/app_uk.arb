@@ -4208,5 +4208,14 @@
   "batteryWatch_chartLabel": "Графік батареї: {count} показників, від {low} В до {high} В",
   "batteryWatch_clear": "Очистити історію",
   "batteryWatch_unknownRepeater": "Невідомий ретранслятор",
-  "batteryWatch_cleared": "Історію очищено"
+  "batteryWatch_cleared": "Історію очищено",
+  "team_title": "Відстеження групи",
+  "team_hint": "Поки похід активний, публікує вашу позицію в закритому каналі, щоб група бачила вас на мапі. Вимикається наприкінці походу або через 12 годин.",
+  "team_channel": "Канал",
+  "team_noChannel": "Спершу додайте закритий канал. Відстеження ніколи не публікує в публічні чи хештег-канали.",
+  "team_every": "Кожні",
+  "team_minutes": "{minutes} хв",
+  "team_needTrip": "Почніть похід, щоб ділитися позицією.",
+  "team_lastShared": "Востаннє {age}",
+  "team_waitingGps": "Очікування позиції від радіо"
 }

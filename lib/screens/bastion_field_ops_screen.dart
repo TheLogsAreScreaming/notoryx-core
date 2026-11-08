@@ -16,6 +16,7 @@ import '../services/app_settings_service.dart';
 import '../services/field_ops_service.dart';
 import '../services/map_tile_cache_service.dart';
 import '../services/sos_relay_service.dart';
+import '../services/team_tracking_service.dart';
 import '../services/notification_service.dart';
 import '../widgets/ember_backdrop.dart';
 import 'bastion_coverage_capture_screen.dart';
@@ -320,6 +321,7 @@ class _FieldOpsState extends State<BastionFieldOpsScreen> {
       for (final key in ops.trip.members) _memberTile(ops, key),
       Text(_l10n.fieldOps_rosterCaveat),
     ]),
+    _teamTrackingCard(ops),
     _tripMap(ops),
     _card(_l10n.fieldOps_offlineMaps, [
       Text(
@@ -820,6 +822,90 @@ class _FieldOpsState extends State<BastionFieldOpsScreen> {
     ]),
     _sosRelayCard(radio),
   ]);
+
+  Widget _teamTrackingCard(FieldOpsService ops) {
+    TeamTrackingService? tracking;
+    try {
+      tracking = context.watch<TeamTrackingService>();
+    } on ProviderNotFoundException {
+      return const SizedBox.shrink();
+    }
+    final t = tracking;
+    final channels = t.eligibleChannels;
+    final channel = t.channelIndex ?? channels.firstOrNull?.index;
+    final radio = context.watch<MeshCoreConnector>();
+    final hasGps = usablePosition(radio.selfLatitude, radio.selfLongitude);
+    return _card(_l10n.team_title, [
+      Text(_l10n.team_hint),
+      if (channels.isEmpty)
+        Padding(
+          padding: const EdgeInsets.only(top: 8),
+          child: Text(
+            _l10n.team_noChannel,
+            style: TextStyle(color: MeshPalette.warn),
+          ),
+        )
+      else ...[
+        SwitchListTile(
+          key: const ValueKey('team-tracking-switch'),
+          contentPadding: EdgeInsets.zero,
+          title: Text(_l10n.team_title),
+          subtitle: Text(
+            !ops.trip.active
+                ? _l10n.team_needTrip
+                : t.enabled && !hasGps
+                ? _l10n.team_waitingGps
+                : t.lastPostAt != null
+                ? _l10n.team_lastShared(
+                    TimeOfDay.fromDateTime(t.lastPostAt!).format(context),
+                  )
+                : '',
+          ),
+          value: t.enabled,
+          onChanged: !ops.trip.active || channel == null
+              ? null
+              : (on) => on ? _perform(() => t.start(channel)) : t.stop(),
+        ),
+        Row(
+          children: [
+            Expanded(child: Text(_l10n.team_channel)),
+            DropdownButton<int>(
+              value: channel,
+              underline: const SizedBox.shrink(),
+              onChanged: t.enabled
+                  ? null
+                  : (v) {
+                      if (v != null) t.selectChannel(v);
+                    },
+              items: [
+                for (final c in channels)
+                  DropdownMenuItem(value: c.index, child: Text(c.name)),
+              ],
+            ),
+          ],
+        ),
+        Row(
+          children: [
+            Expanded(child: Text(_l10n.team_every)),
+            DropdownButton<int>(
+              value: t.minutes,
+              underline: const SizedBox.shrink(),
+              onChanged: (v) {
+                if (v != null) _perform(() => t.setMinutes(v));
+              },
+              items: [
+                for (final m in TeamTrackingPolicy.intervals)
+                  DropdownMenuItem(
+                    value: m,
+                    child: Text(_l10n.team_minutes(m)),
+                  ),
+              ],
+            ),
+          ],
+        ),
+      ],
+    ]);
+  }
 
   Widget _sosRelayCard(MeshCoreConnector radio) {
     final relay = context.watch<SosRelayService>();

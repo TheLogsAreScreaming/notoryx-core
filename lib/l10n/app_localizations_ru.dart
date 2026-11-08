@@ -10292,4 +10292,37 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'История очищена';
+
+  @override
+  String get team_title => 'Отслеживание группы';
+
+  @override
+  String get team_hint =>
+      'Пока поход активен, публикует вашу позицию в закрытом канале, чтобы группа видела вас на карте. Выключается по окончании похода или через 12 часов.';
+
+  @override
+  String get team_channel => 'Канал';
+
+  @override
+  String get team_noChannel =>
+      'Сначала добавьте закрытый канал. Отслеживание никогда не публикует в публичные или хештег-каналы.';
+
+  @override
+  String get team_every => 'Каждые';
+
+  @override
+  String team_minutes(int minutes) {
+    return '$minutes мин';
+  }
+
+  @override
+  String get team_needTrip => 'Начните поход, чтобы делиться позицией.';
+
+  @override
+  String team_lastShared(String age) {
+    return 'Последний раз $age';
+  }
+
+  @override
+  String get team_waitingGps => 'Ожидание позиции от радио';
 }

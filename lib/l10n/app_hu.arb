@@ -4266,5 +4266,14 @@
   "batteryWatch_chartLabel": "Akku grafikon: {count} adat, {low} V és {high} V között",
   "batteryWatch_clear": "Előzmények törlése",
   "batteryWatch_unknownRepeater": "Ismeretlen átjátszó",
-  "batteryWatch_cleared": "Előzmények törölve"
+  "batteryWatch_cleared": "Előzmények törölve",
+  "team_title": "Csapatkövetés",
+  "team_hint": "Amíg a túra aktív, egy privát csatornán megosztja a helyzetedet, így a társaid látják a térképen. A túra végén vagy 12 óra után kikapcsol.",
+  "team_channel": "Csatorna",
+  "team_noChannel": "Előbb adj hozzá egy privát csatornát. A követés soha nem posztol nyilvános vagy hashtag csatornára.",
+  "team_every": "Gyakoriság",
+  "team_minutes": "{minutes} perc",
+  "team_needTrip": "Indítsd el a túrát a helyzeted megosztásához.",
+  "team_lastShared": "Utoljára megosztva {age}",
+  "team_waitingGps": "Várakozás a rádió helyzetére"
 }

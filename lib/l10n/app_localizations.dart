@@ -17016,6 +17016,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'History cleared'**
   String get batteryWatch_cleared;
+
+  /// No description provided for @team_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Team tracking'**
+  String get team_title;
+
+  /// No description provided for @team_hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Shares your position to a private channel while this trip is active, so teammates see you move on their map. Turns off when the trip ends, or after 12 hours.'**
+  String get team_hint;
+
+  /// No description provided for @team_channel.
+  ///
+  /// In en, this message translates to:
+  /// **'Channel'**
+  String get team_channel;
+
+  /// No description provided for @team_noChannel.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a private channel first. Tracking never posts to public or hashtag channels.'**
+  String get team_noChannel;
+
+  /// No description provided for @team_every.
+  ///
+  /// In en, this message translates to:
+  /// **'Every'**
+  String get team_every;
+
+  /// No description provided for @team_minutes.
+  ///
+  /// In en, this message translates to:
+  /// **'{minutes} min'**
+  String team_minutes(int minutes);
+
+  /// No description provided for @team_needTrip.
+  ///
+  /// In en, this message translates to:
+  /// **'Start the trip to share your position.'**
+  String get team_needTrip;
+
+  /// No description provided for @team_lastShared.
+  ///
+  /// In en, this message translates to:
+  /// **'Last shared {age}'**
+  String team_lastShared(String age);
+
+  /// No description provided for @team_waitingGps.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for a position from the radio'**
+  String get team_waitingGps;
 }
 
 class _AppLocalizationsDelegate
