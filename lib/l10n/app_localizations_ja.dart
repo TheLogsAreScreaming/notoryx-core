@@ -9646,6 +9646,15 @@ class AppLocalizationsJa extends AppLocalizations {
   String get seasonal_holidaysHint => 'ハロウィン、クリスマス、バレンタインデーの期間に適用';
 
   @override
+  String get theme_darkMode => 'ダークモードで別のテーマ';
+
+  @override
+  String get theme_darkModeHint => '端末がダークモードのときは別のテーマを使います';
+
+  @override
+  String get theme_darkModeTheme => 'ダークモードのテーマ';
+
+  @override
   String get coords_setting => '座標の形式';
 
   @override

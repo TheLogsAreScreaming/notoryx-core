@@ -10134,6 +10134,16 @@ class AppLocalizationsSl extends AppLocalizations {
       'Noč čarovnic, božič in valentinovo na njihove datume';
 
   @override
+  String get theme_darkMode => 'Druga tema v temnem načinu';
+
+  @override
+  String get theme_darkModeHint =>
+      'Uporabi drugo temo, ko je naprava v temnem načinu';
+
+  @override
+  String get theme_darkModeTheme => 'Tema temnega načina';
+
+  @override
   String get coords_setting => 'Oblika koordinat';
 
   @override

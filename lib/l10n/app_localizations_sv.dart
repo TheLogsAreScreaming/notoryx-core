@@ -10052,6 +10052,16 @@ class AppLocalizationsSv extends AppLocalizations {
       'Halloween, jul och alla hjärtans dag på sina datum';
 
   @override
+  String get theme_darkMode => 'Annat tema i mörkt läge';
+
+  @override
+  String get theme_darkModeHint =>
+      'Använd ett annat tema när enheten är i mörkt läge';
+
+  @override
+  String get theme_darkModeTheme => 'Tema i mörkt läge';
+
+  @override
   String get coords_setting => 'Koordinatformat';
 
   @override

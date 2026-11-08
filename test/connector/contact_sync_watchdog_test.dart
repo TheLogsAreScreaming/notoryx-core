@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'package:fake_async/fake_async.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:meshcore_open/connector/meshcore_connector.dart';
@@ -64,61 +65,82 @@ void main() {
   });
   tearDown(() => radio.dispose());
 
-  Future<void> wait(int ms) => Future<void>.delayed(Duration(milliseconds: ms));
+  // The watchdog runs on timers, so these tests use a fake clock. Real
+  // delays raced the 60 ms silence window when the machine was busy.
+  void sync(FakeAsync async, {bool preserveExisting = false}) {
+    radio.getContacts(preserveExisting: preserveExisting);
+    async.flushMicrotasks();
+  }
 
-  test('saved contacts stay visible while the radio sends its list', () async {
-    await radio.getContacts();
-    expect(radio.isLoadingContacts, isTrue);
-    expect(radio.contacts.map((c) => c.name), ['Sam', 'Alex']);
+  void wait(FakeAsync async, int ms) =>
+      async.elapse(Duration(milliseconds: ms));
+
+  int requests() => radio.sent.where((f) => f[0] == cmdGetContacts).length;
+
+  test('saved contacts stay visible while the radio sends its list', () {
+    fakeAsync((async) {
+      sync(async);
+      expect(radio.isLoadingContacts, isTrue);
+      expect(radio.contacts.map((c) => c.name), ['Sam', 'Alex']);
+    });
   });
 
-  test('a silent radio is asked once more, then the sync gives up', () async {
-    await radio.getContacts();
-    expect(radio.sent.where((f) => f[0] == cmdGetContacts), hasLength(1));
-    await wait(90);
-    expect(radio.sent.where((f) => f[0] == cmdGetContacts), hasLength(2));
-    expect(radio.isLoadingContacts, isTrue);
-    await wait(90);
-    expect(radio.isLoadingContacts, isFalse);
-    expect(radio.contactSyncStalled, isTrue);
-    expect(radio.hasLoadedContacts, isTrue);
-    expect(radio.contacts, hasLength(2), reason: 'nothing is dropped');
+  test('a silent radio is asked once more, then the sync gives up', () {
+    fakeAsync((async) {
+      sync(async);
+      expect(requests(), 1);
+      wait(async, 90);
+      expect(requests(), 2);
+      expect(radio.isLoadingContacts, isTrue);
+      wait(async, 90);
+      expect(radio.isLoadingContacts, isFalse);
+      expect(radio.contactSyncStalled, isTrue);
+      expect(radio.hasLoadedContacts, isTrue);
+      expect(radio.contacts, hasLength(2), reason: 'nothing is dropped');
 
-    await radio.retryContactSync();
-    expect(radio.contactSyncStalled, isFalse);
-    expect(radio.isLoadingContacts, isTrue);
+      radio.retryContactSync();
+      async.flushMicrotasks();
+      expect(radio.contactSyncStalled, isFalse);
+      expect(radio.isLoadingContacts, isTrue);
+    });
   });
 
-  test('contacts arriving keep the sync alive', () async {
-    await radio.getContacts();
-    for (var i = 0; i < 4; i++) {
-      await wait(40);
+  test('contacts arriving keep the sync alive', () {
+    fakeAsync((async) {
+      sync(async);
+      for (var i = 0; i < 4; i++) {
+        wait(async, 40);
+        radio.handleFrameForTest(_contactFrame(1, 'Sam'));
+      }
+      expect(radio.isLoadingContacts, isTrue);
+      expect(requests(), 1);
+    });
+  });
+
+  test('a complete sync drops contacts the radio no longer has', () {
+    fakeAsync((async) {
+      sync(async);
+      radio.handleFrameForTest([respCodeContactsStart, 1, 0, 0, 0]);
       radio.handleFrameForTest(_contactFrame(1, 'Sam'));
-    }
-    expect(radio.isLoadingContacts, isTrue);
-    expect(radio.sent.where((f) => f[0] == cmdGetContacts), hasLength(1));
+      radio.handleFrameForTest([respCodeEndOfContacts]);
+      expect(radio.isLoadingContacts, isFalse);
+      expect(radio.contactSyncStalled, isFalse);
+      expect(radio.contacts.map((c) => c.name), ['Sam']);
+      wait(async, 90);
+      expect(
+        requests(),
+        1,
+        reason: 'the watchdog stops after the sync completes',
+      );
+    });
   });
 
-  test('a complete sync drops contacts the radio no longer has', () async {
-    await radio.getContacts();
-    radio.handleFrameForTest([respCodeContactsStart, 1, 0, 0, 0]);
-    radio.handleFrameForTest(_contactFrame(1, 'Sam'));
-    radio.handleFrameForTest([respCodeEndOfContacts]);
-    expect(radio.isLoadingContacts, isFalse);
-    expect(radio.contactSyncStalled, isFalse);
-    expect(radio.contacts.map((c) => c.name), ['Sam']);
-    await wait(90);
-    expect(
-      radio.sent.where((f) => f[0] == cmdGetContacts),
-      hasLength(1),
-      reason: 'the watchdog stops after the sync completes',
-    );
-  });
-
-  test('a partial (refresh) sync keeps contacts it did not mention', () async {
-    await radio.getContacts(preserveExisting: true);
-    radio.handleFrameForTest(_contactFrame(1, 'Sam'));
-    radio.handleFrameForTest([respCodeEndOfContacts]);
-    expect(radio.contacts, hasLength(2));
+  test('a partial (refresh) sync keeps contacts it did not mention', () {
+    fakeAsync((async) {
+      sync(async, preserveExisting: true);
+      radio.handleFrameForTest(_contactFrame(1, 'Sam'));
+      radio.handleFrameForTest([respCodeEndOfContacts]);
+      expect(radio.contacts, hasLength(2));
+    });
   });
 }

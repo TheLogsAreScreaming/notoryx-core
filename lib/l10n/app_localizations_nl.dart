@@ -10092,6 +10092,16 @@ class AppLocalizationsNl extends AppLocalizations {
       'Halloween, kerst en Valentijnsdag op hun data';
 
   @override
+  String get theme_darkMode => 'Ander thema in donkere modus';
+
+  @override
+  String get theme_darkModeHint =>
+      'Een ander thema gebruiken zolang het apparaat in donkere modus staat';
+
+  @override
+  String get theme_darkModeTheme => 'Thema voor donkere modus';
+
+  @override
   String get coords_setting => 'Coördinaatnotatie';
 
   @override

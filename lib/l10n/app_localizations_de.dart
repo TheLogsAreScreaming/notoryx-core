@@ -10143,6 +10143,16 @@ class AppLocalizationsDe extends AppLocalizations {
       'Halloween, Weihnachten und Valentinstag an ihren Daten';
 
   @override
+  String get theme_darkMode => 'Anderes Design im Dunkelmodus';
+
+  @override
+  String get theme_darkModeHint =>
+      'Ein anderes Design verwenden, solange das Gerät im Dunkelmodus ist';
+
+  @override
+  String get theme_darkModeTheme => 'Design im Dunkelmodus';
+
+  @override
   String get coords_setting => 'Koordinatenformat';
 
   @override

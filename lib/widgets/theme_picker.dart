@@ -50,10 +50,15 @@ class ThemePicker extends StatelessWidget {
             );
           },
         ),
-        if (selected == BastionTheme.seasonal) ...[
+        if (selected == BastionTheme.seasonal ||
+            BastionTheme.fromId(settings.darkModeTheme) ==
+                    BastionTheme.seasonal &&
+                settings.darkModeTheme.isNotEmpty) ...[
           const SizedBox(height: 12),
           _SeasonalControls(service: service, active: season),
         ],
+        const SizedBox(height: 12),
+        _DarkModeControls(service: service),
       ],
     );
   }
@@ -395,6 +400,65 @@ class _SeasonalControls extends StatelessWidget {
             value: settings.seasonalHolidays,
             onChanged: service.setSeasonalHolidays,
           ),
+        ],
+      ),
+    );
+  }
+}
+
+/// An optional second theme for when the device is in dark mode.
+class _DarkModeControls extends StatelessWidget {
+  const _DarkModeControls({required this.service});
+
+  final AppSettingsService service;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final settings = service.settings;
+    final on = settings.darkModeTheme.isNotEmpty;
+    final current = BastionTheme.fromId(settings.darkModeTheme);
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(MeshRadii.md),
+        border: Border.all(color: Theme.of(context).colorScheme.outlineVariant),
+      ),
+      child: Column(
+        children: [
+          SwitchListTile(
+            key: const ValueKey('dark-mode-switch'),
+            secondary: const Icon(Icons.dark_mode_outlined),
+            title: Text(l10n.theme_darkMode),
+            subtitle: Text(l10n.theme_darkModeHint),
+            value: on,
+            onChanged: (value) => service.setDarkModeTheme(
+              !value
+                  ? ''
+                  // Start with a dark theme other than the day one.
+                  : settings.appTheme == BastionTheme.nightOps.id
+                  ? BastionTheme.blaze.id
+                  : BastionTheme.nightOps.id,
+            ),
+          ),
+          if (on) ...[
+            const Divider(height: 1),
+            ListTile(
+              key: const ValueKey('dark-mode-theme'),
+              leading: const Icon(Icons.nights_stay_outlined),
+              title: Text(l10n.theme_darkModeTheme),
+              trailing: DropdownButton<String>(
+                value: current.id,
+                underline: const SizedBox.shrink(),
+                onChanged: (v) {
+                  if (v != null) service.setDarkModeTheme(v);
+                },
+                items: [
+                  for (final t in BastionTheme.values)
+                    DropdownMenuItem(value: t.id, child: Text(t.label)),
+                ],
+              ),
+            ),
+          ],
         ],
       ),
     );

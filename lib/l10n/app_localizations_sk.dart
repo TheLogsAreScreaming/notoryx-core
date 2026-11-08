@@ -10114,6 +10114,16 @@ class AppLocalizationsSk extends AppLocalizations {
       'Halloween, Vianoce a Valentín v ich termínoch';
 
   @override
+  String get theme_darkMode => 'Iná téma v tmavom režime';
+
+  @override
+  String get theme_darkModeHint =>
+      'Používať inú tému, kým je zariadenie v tmavom režime';
+
+  @override
+  String get theme_darkModeTheme => 'Téma tmavého režimu';
+
+  @override
   String get coords_setting => 'Formát súradníc';
 
   @override

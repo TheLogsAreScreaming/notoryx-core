@@ -9448,6 +9448,15 @@ class AppLocalizationsZh extends AppLocalizations {
   String get seasonal_holidaysHint => '在万圣节、圣诞节和情人节期间使用';
 
   @override
+  String get theme_darkMode => '深色模式使用其他主题';
+
+  @override
+  String get theme_darkModeHint => '设备处于深色模式时使用另一个主题';
+
+  @override
+  String get theme_darkModeTheme => '深色模式主题';
+
+  @override
   String get coords_setting => '坐标格式';
 
   @override
