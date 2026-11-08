@@ -206,6 +206,37 @@ class NotificationService {
     }
   }
 
+  /// A watched repeater's battery is low, falling fast, or not answering.
+  Future<bool> showBatteryAlert({
+    required String repeaterKey,
+    required String body,
+  }) async {
+    if (_suppressNotifications || !await _ensureCanNotify()) return false;
+    try {
+      await _notifications.show(
+        id: 'battery_watch:$repeaterKey'.hashCode,
+        title: _l10n.batteryWatch_alertTitle,
+        body: body,
+        notificationDetails: const NotificationDetails(
+          android: AndroidNotificationDetails(
+            'bastion_battery_watch',
+            'Repeater battery watch',
+            channelDescription:
+                'A watched repeater battery is low, falling fast or silent',
+            importance: Importance.defaultImportance,
+            priority: Priority.defaultPriority,
+            icon: '@mipmap/ic_launcher',
+          ),
+          iOS: DarwinNotificationDetails(),
+          macOS: DarwinNotificationDetails(),
+        ),
+      );
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
   Future<bool> showFieldAlert(String message) async {
     if (!await _ensureCanNotify()) return false;
     try {

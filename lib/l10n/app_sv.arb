@@ -4228,5 +4228,19 @@
   "batteryWatch_chartLabel": "Batteridiagram: {count} värden, mellan {low} V och {high} V",
   "batteryWatch_clear": "Rensa historik",
   "batteryWatch_unknownRepeater": "Okänd repeater",
-  "batteryWatch_cleared": "Historiken rensad"
+  "batteryWatch_cleared": "Historiken rensad",
+  "batteryWatch_auto": "Kontrollera automatiskt",
+  "batteryWatch_autoHint": "Medan en radio är ansluten frågar appen regelbundet den här repeatern om batteriet. Den svarar bara om du är inloggad.",
+  "batteryWatch_interval": "Kontrollera var",
+  "batteryWatch_hours": "{hours} h",
+  "batteryWatch_budget": "Högst 6 kontroller i timmen för alla repeatrar, minst 2 minuter isär.",
+  "batteryWatch_add": "Lägg till repeater",
+  "batteryWatch_pick": "Välj en repeater att bevaka",
+  "batteryWatch_noRepeaters": "Inga repeatrar bland dina kontakter än.",
+  "batteryWatch_noReply": "Inget svar på de senaste {count} kontrollerna. Öppna repeatern och logga in igen.",
+  "batteryWatch_checking": "Kontrollerar…",
+  "batteryWatch_alertTitle": "Repeaterbatteri",
+  "batteryWatch_alertLow": "{name} ligger på {percent} % ({volts} V).",
+  "batteryWatch_alertFalling": "Batteriet i {name} sjunker snabbt: tomt om ungefär {days} dagar i den här takten.",
+  "batteryWatch_alertSilent": "{name} har inte svarat på {count} batterikontroller."
 }

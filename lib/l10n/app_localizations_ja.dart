@@ -9758,4 +9758,57 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => '履歴を消去しました';
+
+  @override
+  String get batteryWatch_auto => '自動でチェック';
+
+  @override
+  String get batteryWatch_autoHint =>
+      '無線機が接続されている間、アプリが定期的にこのリピーターのバッテリーを問い合わせます。ログインしている場合のみ応答します。';
+
+  @override
+  String get batteryWatch_interval => 'チェック間隔';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours時間';
+  }
+
+  @override
+  String get batteryWatch_budget => '全リピーター合計で1時間に最大6回、2分以上の間隔。';
+
+  @override
+  String get batteryWatch_add => 'リピーターを追加';
+
+  @override
+  String get batteryWatch_pick => '監視するリピーターを選択';
+
+  @override
+  String get batteryWatch_noRepeaters => '連絡先にリピーターがまだありません。';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return '直近$count回のチェックに応答がありません。リピーターを開いて再度ログインしてください。';
+  }
+
+  @override
+  String get batteryWatch_checking => 'チェック中…';
+
+  @override
+  String get batteryWatch_alertTitle => 'リピーターのバッテリー';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$nameは$percent%（$volts V）です。';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return '$nameのバッテリーが急速に低下しています。このペースだと約$days日で空になります。';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$nameは$count回のバッテリーチェックに応答していません。';
+  }
 }

@@ -10119,4 +10119,58 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'History cleared';
+
+  @override
+  String get batteryWatch_auto => 'Check automatically';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'While a radio is connected, the app asks this repeater for its battery on a timer. The repeater only answers if you\'re logged in to it.';
+
+  @override
+  String get batteryWatch_interval => 'Check every';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'At most 6 checks an hour across all repeaters, at least 2 minutes apart.';
+
+  @override
+  String get batteryWatch_add => 'Add a repeater';
+
+  @override
+  String get batteryWatch_pick => 'Choose a repeater to watch';
+
+  @override
+  String get batteryWatch_noRepeaters => 'No repeaters in your contacts yet.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'No reply to the last $count checks. Open the repeater and log in again.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Checking…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Repeater battery';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name is at $percent% ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return '$name\'s battery is falling fast: empty in about $days days at this rate.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name hasn\'t answered $count battery checks.';
+  }
 }

@@ -10257,4 +10257,59 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'Verlauf gelöscht';
+
+  @override
+  String get batteryWatch_auto => 'Automatisch prüfen';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Solange ein Funkgerät verbunden ist, fragt die App diesen Repeater regelmäßig nach seinem Akku. Er antwortet nur, wenn du bei ihm angemeldet bist.';
+
+  @override
+  String get batteryWatch_interval => 'Prüfen alle';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Höchstens 6 Abfragen pro Stunde für alle Repeater, mindestens 2 Minuten auseinander.';
+
+  @override
+  String get batteryWatch_add => 'Repeater hinzufügen';
+
+  @override
+  String get batteryWatch_pick => 'Repeater zum Überwachen wählen';
+
+  @override
+  String get batteryWatch_noRepeaters =>
+      'Noch keine Repeater in deinen Kontakten.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Keine Antwort auf die letzten $count Abfragen. Öffne den Repeater und melde dich erneut an.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Wird geprüft…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Repeater-Akku';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name ist bei $percent % ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Der Akku von $name fällt schnell: bei diesem Tempo in etwa $days Tagen leer.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name hat auf $count Akku-Abfragen nicht geantwortet.';
+  }
 }

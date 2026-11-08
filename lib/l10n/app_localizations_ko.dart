@@ -9772,4 +9772,57 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => '기록을 지웠습니다';
+
+  @override
+  String get batteryWatch_auto => '자동 확인';
+
+  @override
+  String get batteryWatch_autoHint =>
+      '무전기가 연결된 동안 앱이 주기적으로 이 리피터의 배터리를 묻습니다. 로그인한 경우에만 응답합니다.';
+
+  @override
+  String get batteryWatch_interval => '확인 간격';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours시간';
+  }
+
+  @override
+  String get batteryWatch_budget => '모든 리피터를 합쳐 시간당 최대 6회, 최소 2분 간격.';
+
+  @override
+  String get batteryWatch_add => '리피터 추가';
+
+  @override
+  String get batteryWatch_pick => '감시할 리피터 선택';
+
+  @override
+  String get batteryWatch_noRepeaters => '아직 연락처에 리피터가 없습니다.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return '최근 $count번의 확인에 응답이 없습니다. 리피터를 열고 다시 로그인하세요.';
+  }
+
+  @override
+  String get batteryWatch_checking => '확인 중…';
+
+  @override
+  String get batteryWatch_alertTitle => '리피터 배터리';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name: $percent% ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return '$name의 배터리가 빠르게 줄고 있습니다. 이 속도라면 약 $days일 후 방전됩니다.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name이(가) 배터리 확인 $count회에 응답하지 않았습니다.';
+  }
 }

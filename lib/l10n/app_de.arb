@@ -4362,5 +4362,19 @@
   "batteryWatch_chartLabel": "Akkudiagramm: {count} Werte, zwischen {low} V und {high} V",
   "batteryWatch_clear": "Verlauf löschen",
   "batteryWatch_unknownRepeater": "Unbekannter Repeater",
-  "batteryWatch_cleared": "Verlauf gelöscht"
+  "batteryWatch_cleared": "Verlauf gelöscht",
+  "batteryWatch_auto": "Automatisch prüfen",
+  "batteryWatch_autoHint": "Solange ein Funkgerät verbunden ist, fragt die App diesen Repeater regelmäßig nach seinem Akku. Er antwortet nur, wenn du bei ihm angemeldet bist.",
+  "batteryWatch_interval": "Prüfen alle",
+  "batteryWatch_hours": "{hours} h",
+  "batteryWatch_budget": "Höchstens 6 Abfragen pro Stunde für alle Repeater, mindestens 2 Minuten auseinander.",
+  "batteryWatch_add": "Repeater hinzufügen",
+  "batteryWatch_pick": "Repeater zum Überwachen wählen",
+  "batteryWatch_noRepeaters": "Noch keine Repeater in deinen Kontakten.",
+  "batteryWatch_noReply": "Keine Antwort auf die letzten {count} Abfragen. Öffne den Repeater und melde dich erneut an.",
+  "batteryWatch_checking": "Wird geprüft…",
+  "batteryWatch_alertTitle": "Repeater-Akku",
+  "batteryWatch_alertLow": "{name} ist bei {percent} % ({volts} V).",
+  "batteryWatch_alertFalling": "Der Akku von {name} fällt schnell: bei diesem Tempo in etwa {days} Tagen leer.",
+  "batteryWatch_alertSilent": "{name} hat auf {count} Akku-Abfragen nicht geantwortet."
 }

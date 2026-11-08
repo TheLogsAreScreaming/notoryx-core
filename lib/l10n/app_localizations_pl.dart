@@ -10294,4 +10294,58 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'Historia wyczyszczona';
+
+  @override
+  String get batteryWatch_auto => 'Sprawdzaj automatycznie';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Gdy radio jest połączone, aplikacja co jakiś czas pyta ten przekaźnik o baterię. Odpowiada tylko, jeśli jesteś zalogowany.';
+
+  @override
+  String get batteryWatch_interval => 'Sprawdzaj co';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Najwyżej 6 zapytań na godzinę dla wszystkich przekaźników, co najmniej 2 minuty odstępu.';
+
+  @override
+  String get batteryWatch_add => 'Dodaj przekaźnik';
+
+  @override
+  String get batteryWatch_pick => 'Wybierz przekaźnik do nadzoru';
+
+  @override
+  String get batteryWatch_noRepeaters => 'Brak przekaźników w kontaktach.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Brak odpowiedzi na ostatnie $count zapytań. Otwórz przekaźnik i zaloguj się ponownie.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Sprawdzanie…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Bateria przekaźnika';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name: $percent% ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Bateria $name szybko spada: przy tym tempie rozładuje się za około $days dni.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name nie odpowiedział na $count zapytań o baterię.';
+  }
 }

@@ -10167,4 +10167,59 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'Historiken rensad';
+
+  @override
+  String get batteryWatch_auto => 'Kontrollera automatiskt';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Medan en radio är ansluten frågar appen regelbundet den här repeatern om batteriet. Den svarar bara om du är inloggad.';
+
+  @override
+  String get batteryWatch_interval => 'Kontrollera var';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Högst 6 kontroller i timmen för alla repeatrar, minst 2 minuter isär.';
+
+  @override
+  String get batteryWatch_add => 'Lägg till repeater';
+
+  @override
+  String get batteryWatch_pick => 'Välj en repeater att bevaka';
+
+  @override
+  String get batteryWatch_noRepeaters =>
+      'Inga repeatrar bland dina kontakter än.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Inget svar på de senaste $count kontrollerna. Öppna repeatern och logga in igen.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Kontrollerar…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Repeaterbatteri';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name ligger på $percent % ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Batteriet i $name sjunker snabbt: tomt om ungefär $days dagar i den här takten.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name har inte svarat på $count batterikontroller.';
+  }
 }

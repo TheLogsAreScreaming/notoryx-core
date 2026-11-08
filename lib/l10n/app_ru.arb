@@ -3531,5 +3531,19 @@
   "batteryWatch_chartLabel": "График батареи: {count} показаний, от {low} В до {high} В",
   "batteryWatch_clear": "Очистить историю",
   "batteryWatch_unknownRepeater": "Неизвестный ретранслятор",
-  "batteryWatch_cleared": "История очищена"
+  "batteryWatch_cleared": "История очищена",
+  "batteryWatch_auto": "Проверять автоматически",
+  "batteryWatch_autoHint": "Пока радио подключено, приложение периодически запрашивает у ретранслятора заряд батареи. Он отвечает, только если вы вошли в него.",
+  "batteryWatch_interval": "Проверять каждые",
+  "batteryWatch_hours": "{hours} ч",
+  "batteryWatch_budget": "Не более 6 проверок в час на все ретрансляторы, не чаще раза в 2 минуты.",
+  "batteryWatch_add": "Добавить ретранслятор",
+  "batteryWatch_pick": "Выберите ретранслятор для контроля",
+  "batteryWatch_noRepeaters": "В контактах пока нет ретрансляторов.",
+  "batteryWatch_noReply": "Нет ответа на последние {count} проверок. Откройте ретранслятор и войдите снова.",
+  "batteryWatch_checking": "Проверка…",
+  "batteryWatch_alertTitle": "Батарея ретранслятора",
+  "batteryWatch_alertLow": "{name}: {percent}% ({volts} В).",
+  "batteryWatch_alertFalling": "Батарея {name} быстро садится: при таком темпе разрядится примерно через {days} дн.",
+  "batteryWatch_alertSilent": "{name} не ответил на {count} проверок батареи."
 }

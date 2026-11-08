@@ -4266,5 +4266,19 @@
   "batteryWatch_chartLabel": "Wykres baterii: {count} odczytów, między {low} V a {high} V",
   "batteryWatch_clear": "Wyczyść historię",
   "batteryWatch_unknownRepeater": "Nieznany przekaźnik",
-  "batteryWatch_cleared": "Historia wyczyszczona"
+  "batteryWatch_cleared": "Historia wyczyszczona",
+  "batteryWatch_auto": "Sprawdzaj automatycznie",
+  "batteryWatch_autoHint": "Gdy radio jest połączone, aplikacja co jakiś czas pyta ten przekaźnik o baterię. Odpowiada tylko, jeśli jesteś zalogowany.",
+  "batteryWatch_interval": "Sprawdzaj co",
+  "batteryWatch_hours": "{hours} h",
+  "batteryWatch_budget": "Najwyżej 6 zapytań na godzinę dla wszystkich przekaźników, co najmniej 2 minuty odstępu.",
+  "batteryWatch_add": "Dodaj przekaźnik",
+  "batteryWatch_pick": "Wybierz przekaźnik do nadzoru",
+  "batteryWatch_noRepeaters": "Brak przekaźników w kontaktach.",
+  "batteryWatch_noReply": "Brak odpowiedzi na ostatnie {count} zapytań. Otwórz przekaźnik i zaloguj się ponownie.",
+  "batteryWatch_checking": "Sprawdzanie…",
+  "batteryWatch_alertTitle": "Bateria przekaźnika",
+  "batteryWatch_alertLow": "{name}: {percent}% ({volts} V).",
+  "batteryWatch_alertFalling": "Bateria {name} szybko spada: przy tym tempie rozładuje się za około {days} dni.",
+  "batteryWatch_alertSilent": "{name} nie odpowiedział na {count} zapytań o baterię."
 }

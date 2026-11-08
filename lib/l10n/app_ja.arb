@@ -4362,5 +4362,19 @@
   "batteryWatch_chartLabel": "バッテリーグラフ: {count}件、{low} V〜{high} V",
   "batteryWatch_clear": "履歴を消去",
   "batteryWatch_unknownRepeater": "不明なリピーター",
-  "batteryWatch_cleared": "履歴を消去しました"
+  "batteryWatch_cleared": "履歴を消去しました",
+  "batteryWatch_auto": "自動でチェック",
+  "batteryWatch_autoHint": "無線機が接続されている間、アプリが定期的にこのリピーターのバッテリーを問い合わせます。ログインしている場合のみ応答します。",
+  "batteryWatch_interval": "チェック間隔",
+  "batteryWatch_hours": "{hours}時間",
+  "batteryWatch_budget": "全リピーター合計で1時間に最大6回、2分以上の間隔。",
+  "batteryWatch_add": "リピーターを追加",
+  "batteryWatch_pick": "監視するリピーターを選択",
+  "batteryWatch_noRepeaters": "連絡先にリピーターがまだありません。",
+  "batteryWatch_noReply": "直近{count}回のチェックに応答がありません。リピーターを開いて再度ログインしてください。",
+  "batteryWatch_checking": "チェック中…",
+  "batteryWatch_alertTitle": "リピーターのバッテリー",
+  "batteryWatch_alertLow": "{name}は{percent}%（{volts} V）です。",
+  "batteryWatch_alertFalling": "{name}のバッテリーが急速に低下しています。このペースだと約{days}日で空になります。",
+  "batteryWatch_alertSilent": "{name}は{count}回のバッテリーチェックに応答していません。"
 }
