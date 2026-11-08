@@ -10899,4 +10899,54 @@ class AppLocalizationsEs extends AppLocalizations {
   String batteryWatch_alertSilent(String name, int count) {
     return '$name no ha respondido a $count comprobaciones de batería.';
   }
+
+  @override
+  String get security_title => 'Seguridad';
+
+  @override
+  String get security_toolSubtitle => 'Bloqueo de la app e historial cifrado';
+
+  @override
+  String get appLock_title => 'Bloqueo de la app';
+
+  @override
+  String get appLock_subtitle =>
+      'Pide huella, rostro o bloqueo de pantalla al abrir la app. Las alertas siguen funcionando, pero debes desbloquear antes de enviar un SOS.';
+
+  @override
+  String get appLock_reason => 'Desbloquear NOTORYX Core';
+
+  @override
+  String get appLock_unlock => 'Desbloquear';
+
+  @override
+  String get appLock_locked => 'NOTORYX Core está bloqueado';
+
+  @override
+  String get appLock_unavailable =>
+      'Este dispositivo no tiene bloqueo de pantalla o no se pudo confirmar.';
+
+  @override
+  String get dbEncrypt_title => 'Cifrar el historial de mensajes';
+
+  @override
+  String get dbEncrypt_subtitle =>
+      'Cifra la base de datos de mensajes en este dispositivo con una clave guardada en el almacenamiento seguro del teléfono. Si se pierde la clave, el historial no se puede recuperar; guarda una copia de seguridad.';
+
+  @override
+  String get dbEncrypt_on => 'Estado: cifrado';
+
+  @override
+  String get dbEncrypt_off => 'Estado: sin cifrar';
+
+  @override
+  String get dbEncrypt_failed =>
+      'Estado: no se pudo aplicar. Tu historial no ha cambiado.';
+
+  @override
+  String get dbEncrypt_restart =>
+      'Se aplicará la próxima vez que se inicie la app.';
+
+  @override
+  String get map_showWaypoints => 'Mostrar puntos y rutas guardados';
 }

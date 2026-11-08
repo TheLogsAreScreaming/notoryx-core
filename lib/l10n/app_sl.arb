@@ -4406,5 +4406,20 @@
   "batteryWatch_alertTitle": "Baterija repetitorja",
   "batteryWatch_alertLow": "{name} je na {percent} % ({volts} V).",
   "batteryWatch_alertFalling": "Baterija {name} hitro pada: pri tem tempu prazna čez približno {days} dni.",
-  "batteryWatch_alertSilent": "{name} ni odgovoril na {count} preverjanj baterije."
+  "batteryWatch_alertSilent": "{name} ni odgovoril na {count} preverjanj baterije.",
+  "security_title": "Varnost",
+  "security_toolSubtitle": "Zaklep aplikacije in šifrirana zgodovina sporočil",
+  "appLock_title": "Zaklep aplikacije",
+  "appLock_subtitle": "Ob odpiranju zahteva prstni odtis, obraz ali zaklep zaslona. Opozorila delujejo naprej, vendar morate pred pošiljanjem SOS odkleniti.",
+  "appLock_reason": "Odkleni NOTORYX Core",
+  "appLock_unlock": "Odkleni",
+  "appLock_locked": "NOTORYX Core je zaklenjen",
+  "appLock_unavailable": "Ta naprava nima zaklepa zaslona ali ga ni bilo mogoče potrditi.",
+  "dbEncrypt_title": "Šifriraj zgodovino sporočil",
+  "dbEncrypt_subtitle": "Šifrira zbirko sporočil v tej napravi s ključem v varni shrambi telefona. Če ključ izgubite, zgodovine ni mogoče obnoviti, zato hranite varnostno kopijo.",
+  "dbEncrypt_on": "Stanje: šifrirano",
+  "dbEncrypt_off": "Stanje: ni šifrirano",
+  "dbEncrypt_failed": "Stanje: ni uspelo. Zgodovina je nespremenjena.",
+  "dbEncrypt_restart": "Začne veljati ob naslednjem zagonu aplikacije.",
+  "map_showWaypoints": "Prikaži shranjene točke in poti"
 }

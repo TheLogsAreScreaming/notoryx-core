@@ -10938,4 +10938,54 @@ class AppLocalizationsPl extends AppLocalizations {
   String batteryWatch_alertSilent(String name, int count) {
     return '$name nie odpowiedział na $count zapytań o baterię.';
   }
+
+  @override
+  String get security_title => 'Bezpieczeństwo';
+
+  @override
+  String get security_toolSubtitle =>
+      'Blokada aplikacji i szyfrowana historia wiadomości';
+
+  @override
+  String get appLock_title => 'Blokada aplikacji';
+
+  @override
+  String get appLock_subtitle =>
+      'Prosi o odcisk palca, twarz lub blokadę ekranu przy otwieraniu. Alerty działają dalej, ale przed wysłaniem SOS trzeba odblokować aplikację.';
+
+  @override
+  String get appLock_reason => 'Odblokuj NOTORYX Core';
+
+  @override
+  String get appLock_unlock => 'Odblokuj';
+
+  @override
+  String get appLock_locked => 'NOTORYX Core jest zablokowany';
+
+  @override
+  String get appLock_unavailable =>
+      'To urządzenie nie ma blokady ekranu lub nie udało się jej potwierdzić.';
+
+  @override
+  String get dbEncrypt_title => 'Szyfruj historię wiadomości';
+
+  @override
+  String get dbEncrypt_subtitle =>
+      'Szyfruje bazę wiadomości na tym urządzeniu kluczem z bezpiecznego magazynu telefonu. Utrata klucza oznacza utratę historii, więc zachowaj kopię zapasową.';
+
+  @override
+  String get dbEncrypt_on => 'Stan: zaszyfrowano';
+
+  @override
+  String get dbEncrypt_off => 'Stan: bez szyfrowania';
+
+  @override
+  String get dbEncrypt_failed => 'Stan: nie udało się. Historia bez zmian.';
+
+  @override
+  String get dbEncrypt_restart =>
+      'Zacznie działać przy następnym uruchomieniu aplikacji.';
+
+  @override
+  String get map_showWaypoints => 'Pokaż zapisane punkty i trasy';
 }

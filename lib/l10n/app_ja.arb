@@ -4540,5 +4540,20 @@
   "batteryWatch_alertTitle": "リピーターのバッテリー",
   "batteryWatch_alertLow": "{name}は{percent}%（{volts} V）です。",
   "batteryWatch_alertFalling": "{name}のバッテリーが急速に低下しています。このペースだと約{days}日で空になります。",
-  "batteryWatch_alertSilent": "{name}は{count}回のバッテリーチェックに応答していません。"
+  "batteryWatch_alertSilent": "{name}は{count}回のバッテリーチェックに応答していません。",
+  "security_title": "セキュリティ",
+  "security_toolSubtitle": "アプリのロックとメッセージ履歴の暗号化",
+  "appLock_title": "アプリのロック",
+  "appLock_subtitle": "アプリを開くときに指紋、顔、または画面ロックを求めます。通知は届きますが、SOSを送信する前にロック解除が必要です。",
+  "appLock_reason": "NOTORYX Coreのロックを解除",
+  "appLock_unlock": "ロック解除",
+  "appLock_locked": "NOTORYX Coreはロックされています",
+  "appLock_unavailable": "この端末には画面ロックがないか、確認できませんでした。",
+  "dbEncrypt_title": "メッセージ履歴を暗号化",
+  "dbEncrypt_subtitle": "この端末のメッセージデータベースを、スマートフォンの安全な保管領域にある鍵で暗号化します。鍵を失うと履歴は復元できないため、バックアップを保管してください。",
+  "dbEncrypt_on": "状態: 暗号化済み",
+  "dbEncrypt_off": "状態: 暗号化なし",
+  "dbEncrypt_failed": "状態: 適用できませんでした。履歴は変更されていません。",
+  "dbEncrypt_restart": "次回アプリを起動したときに有効になります。",
+  "map_showWaypoints": "保存したウェイポイントとルートを表示"
 }

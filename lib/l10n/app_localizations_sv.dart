@@ -10812,4 +10812,52 @@ class AppLocalizationsSv extends AppLocalizations {
   String batteryWatch_alertSilent(String name, int count) {
     return '$name har inte svarat på $count batterikontroller.';
   }
+
+  @override
+  String get security_title => 'Säkerhet';
+
+  @override
+  String get security_toolSubtitle => 'Applås och krypterad meddelandehistorik';
+
+  @override
+  String get appLock_title => 'Applås';
+
+  @override
+  String get appLock_subtitle =>
+      'Frågar efter fingeravtryck, ansikte eller skärmlås när appen öppnas. Varningar fungerar, men du måste låsa upp innan du kan skicka SOS.';
+
+  @override
+  String get appLock_reason => 'Lås upp NOTORYX Core';
+
+  @override
+  String get appLock_unlock => 'Lås upp';
+
+  @override
+  String get appLock_locked => 'NOTORYX Core är låst';
+
+  @override
+  String get appLock_unavailable =>
+      'Enheten har inget skärmlås, eller så kunde det inte bekräftas.';
+
+  @override
+  String get dbEncrypt_title => 'Kryptera meddelandehistoriken';
+
+  @override
+  String get dbEncrypt_subtitle =>
+      'Krypterar meddelandedatabasen på enheten med en nyckel i telefonens säkra lagring. Om nyckeln försvinner går historiken inte att återställa, så behåll en säkerhetskopia.';
+
+  @override
+  String get dbEncrypt_on => 'Status: krypterad';
+
+  @override
+  String get dbEncrypt_off => 'Status: inte krypterad';
+
+  @override
+  String get dbEncrypt_failed => 'Status: gick inte. Historiken är oförändrad.';
+
+  @override
+  String get dbEncrypt_restart => 'Börjar gälla nästa gång appen startas.';
+
+  @override
+  String get map_showWaypoints => 'Visa sparade vägpunkter och rutter';
 }

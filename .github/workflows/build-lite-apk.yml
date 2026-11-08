@@ -3,7 +3,7 @@ name: Build NOTORYX Core Lite APK
 # The lite build for IzzyOnDroid and anyone who wants a small APK with no
 # closed-source parts. tool/lite/apply.sh turns the checkout into the lite
 # build: no on-device translation (llamadart), no picture messages
-# (onnxruntime) and no camera QR scanner (Google ML Kit). See
+# (onnxruntime) and no camera QR scanner (Google ML Kit), no phone GPS (Play Services). See
 # tool/lite/README.md. Debug-signed here, like build-apk.yml; re-sign with
 # the release key on the maintainer's Mac.
 on:
@@ -21,6 +21,7 @@ on:
       - 'lib/services/image_codec_backend.dart'
       - 'lib/services/image_codec_session.dart'
       - 'lib/widgets/qr_scanner_widget.dart'
+      - 'lib/services/phone_location.dart'
       - '.github/workflows/build-lite-apk.yml'
   workflow_dispatch:
 
@@ -105,6 +106,10 @@ jobs:
           unzip -p "$apk" 'classes*.dex' > classes.bin
           strings classes.bin | grep -oE 'Lcom/google/(android/gms|mlkit|firebase)/[a-z]+' | sort -u > google.txt || true
           cat google.txt
+          if [ -s google.txt ]; then
+            echo "::error::The lite APK still contains closed-source Google classes"
+            exit 1
+          fi
 
       - name: Prepare artifact
         shell: bash

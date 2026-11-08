@@ -10933,4 +10933,55 @@ class AppLocalizationsUk extends AppLocalizations {
   String batteryWatch_alertSilent(String name, int count) {
     return '$name не відповів на $count перевірок батареї.';
   }
+
+  @override
+  String get security_title => 'Безпека';
+
+  @override
+  String get security_toolSubtitle =>
+      'Блокування застосунку та шифрування історії';
+
+  @override
+  String get appLock_title => 'Блокування застосунку';
+
+  @override
+  String get appLock_subtitle =>
+      'Запитує відбиток, обличчя або блокування екрана під час відкриття. Сповіщення працюють, але перед надсиланням SOS потрібно розблокувати застосунок.';
+
+  @override
+  String get appLock_reason => 'Розблокувати NOTORYX Core';
+
+  @override
+  String get appLock_unlock => 'Розблокувати';
+
+  @override
+  String get appLock_locked => 'NOTORYX Core заблоковано';
+
+  @override
+  String get appLock_unavailable =>
+      'На цьому пристрої немає блокування екрана, або його не вдалося підтвердити.';
+
+  @override
+  String get dbEncrypt_title => 'Шифрувати історію повідомлень';
+
+  @override
+  String get dbEncrypt_subtitle =>
+      'Шифрує базу повідомлень на пристрої ключем із захищеного сховища телефона. Якщо ключ втрачено, історію не відновити, тому збережіть резервну копію.';
+
+  @override
+  String get dbEncrypt_on => 'Стан: зашифровано';
+
+  @override
+  String get dbEncrypt_off => 'Стан: не зашифровано';
+
+  @override
+  String get dbEncrypt_failed =>
+      'Стан: не вдалося застосувати. Історію не змінено.';
+
+  @override
+  String get dbEncrypt_restart =>
+      'Набуде чинності під час наступного запуску застосунку.';
+
+  @override
+  String get map_showWaypoints => 'Показувати збережені точки та маршрути';
 }

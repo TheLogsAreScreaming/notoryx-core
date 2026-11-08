@@ -10881,4 +10881,55 @@ class AppLocalizationsHu extends AppLocalizations {
   String batteryWatch_alertSilent(String name, int count) {
     return '$name nem válaszolt $count akku-lekérdezésre.';
   }
+
+  @override
+  String get security_title => 'Biztonság';
+
+  @override
+  String get security_toolSubtitle =>
+      'Alkalmazászár és titkosított üzenetelőzmények';
+
+  @override
+  String get appLock_title => 'Alkalmazászár';
+
+  @override
+  String get appLock_subtitle =>
+      'Megnyitáskor ujjlenyomatot, arcot vagy képernyőzárat kér. A riasztások működnek, de SOS küldése előtt fel kell oldanod.';
+
+  @override
+  String get appLock_reason => 'NOTORYX Core feloldása';
+
+  @override
+  String get appLock_unlock => 'Feloldás';
+
+  @override
+  String get appLock_locked => 'A NOTORYX Core zárolva van';
+
+  @override
+  String get appLock_unavailable =>
+      'Ezen az eszközön nincs képernyőzár, vagy nem sikerült megerősíteni.';
+
+  @override
+  String get dbEncrypt_title => 'Üzenetelőzmények titkosítása';
+
+  @override
+  String get dbEncrypt_subtitle =>
+      'Titkosítja az eszközön az üzenetadatbázist a telefon biztonságos tárolójában lévő kulccsal. Ha a kulcs elvész, az előzmények nem állíthatók vissza, ezért készíts biztonsági mentést.';
+
+  @override
+  String get dbEncrypt_on => 'Állapot: titkosítva';
+
+  @override
+  String get dbEncrypt_off => 'Állapot: nincs titkosítva';
+
+  @override
+  String get dbEncrypt_failed =>
+      'Állapot: nem sikerült. Az előzmények nem változtak.';
+
+  @override
+  String get dbEncrypt_restart =>
+      'Az alkalmazás következő indításakor lép életbe.';
+
+  @override
+  String get map_showWaypoints => 'Mentett útpontok és útvonalak megjelenítése';
 }

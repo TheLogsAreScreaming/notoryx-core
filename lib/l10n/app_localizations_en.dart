@@ -10763,4 +10763,53 @@ class AppLocalizationsEn extends AppLocalizations {
   String batteryWatch_alertSilent(String name, int count) {
     return '$name hasn\'t answered $count battery checks.';
   }
+
+  @override
+  String get security_title => 'Security';
+
+  @override
+  String get security_toolSubtitle => 'App lock and encrypted message history';
+
+  @override
+  String get appLock_title => 'App lock';
+
+  @override
+  String get appLock_subtitle =>
+      'Ask for your fingerprint, face or screen lock when opening the app. Alerts keep working, but you must unlock before you can send an SOS.';
+
+  @override
+  String get appLock_reason => 'Unlock NOTORYX Core';
+
+  @override
+  String get appLock_unlock => 'Unlock';
+
+  @override
+  String get appLock_locked => 'NOTORYX Core is locked';
+
+  @override
+  String get appLock_unavailable =>
+      'This device has no screen lock, or it couldn\'t be confirmed.';
+
+  @override
+  String get dbEncrypt_title => 'Encrypt message history';
+
+  @override
+  String get dbEncrypt_subtitle =>
+      'Scrambles the message database on this device, with a key held in the phone\'s secure storage. If that key is lost, the history can\'t be recovered, so keep a backup.';
+
+  @override
+  String get dbEncrypt_on => 'Status: encrypted';
+
+  @override
+  String get dbEncrypt_off => 'Status: not encrypted';
+
+  @override
+  String get dbEncrypt_failed =>
+      'Status: couldn\'t apply. Your history is unchanged.';
+
+  @override
+  String get dbEncrypt_restart => 'Takes effect the next time the app starts.';
+
+  @override
+  String get map_showWaypoints => 'Show saved waypoints and routes';
 }

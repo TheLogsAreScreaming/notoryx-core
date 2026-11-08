@@ -5867,5 +5867,20 @@
   "batteryWatch_alertFalling": "{name}'s battery is falling fast: empty in about {days} days at this rate.",
   "@batteryWatch_alertFalling": {"placeholders": {"name": {"type": "String"}, "days": {"type": "String"}}},
   "batteryWatch_alertSilent": "{name} hasn't answered {count} battery checks.",
-  "@batteryWatch_alertSilent": {"placeholders": {"name": {"type": "String"}, "count": {"type": "int"}}}
+  "@batteryWatch_alertSilent": {"placeholders": {"name": {"type": "String"}, "count": {"type": "int"}}},
+  "security_title": "Security",
+  "security_toolSubtitle": "App lock and encrypted message history",
+  "appLock_title": "App lock",
+  "appLock_subtitle": "Ask for your fingerprint, face or screen lock when opening the app. Alerts keep working, but you must unlock before you can send an SOS.",
+  "appLock_reason": "Unlock NOTORYX Core",
+  "appLock_unlock": "Unlock",
+  "appLock_locked": "NOTORYX Core is locked",
+  "appLock_unavailable": "This device has no screen lock, or it couldn't be confirmed.",
+  "dbEncrypt_title": "Encrypt message history",
+  "dbEncrypt_subtitle": "Scrambles the message database on this device, with a key held in the phone's secure storage. If that key is lost, the history can't be recovered, so keep a backup.",
+  "dbEncrypt_on": "Status: encrypted",
+  "dbEncrypt_off": "Status: not encrypted",
+  "dbEncrypt_failed": "Status: couldn't apply. Your history is unchanged.",
+  "dbEncrypt_restart": "Takes effect the next time the app starts.",
+  "map_showWaypoints": "Show saved waypoints and routes"
 }

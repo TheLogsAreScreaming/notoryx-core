@@ -89,6 +89,7 @@ class AppSettings {
   final bool mapKeyPrefixEnabled;
   final String mapKeyPrefix;
   final bool mapShowMarkers;
+  final bool mapShowWaypoints;
   final bool mapShowGuessedLocations;
   final bool enableMessageTracing;
 
@@ -258,6 +259,7 @@ class AppSettings {
     this.mapKeyPrefixEnabled = false,
     this.mapKeyPrefix = '',
     this.mapShowMarkers = true,
+    this.mapShowWaypoints = true,
     this.mapShowGuessedLocations = true,
     this.enableMessageTracing = true,
     this.readAloudIncoming = 'off',
@@ -353,6 +355,7 @@ class AppSettings {
       'map_key_prefix_enabled': mapKeyPrefixEnabled,
       'map_key_prefix': mapKeyPrefix,
       'map_show_markers': mapShowMarkers,
+      'map_show_waypoints': mapShowWaypoints,
       'map_show_guessed_locations': mapShowGuessedLocations,
       'enable_message_tracing': enableMessageTracing,
       'read_aloud_incoming': readAloudIncoming,
@@ -449,6 +452,7 @@ class AppSettings {
       mapKeyPrefixEnabled: json['map_key_prefix_enabled'] as bool? ?? false,
       mapKeyPrefix: json['map_key_prefix'] as String? ?? '',
       mapShowMarkers: json['map_show_markers'] as bool? ?? true,
+      mapShowWaypoints: json['map_show_waypoints'] as bool? ?? true,
       mapShowGuessedLocations:
           json['map_show_guessed_locations'] as bool? ?? true,
       enableMessageTracing: json['enable_message_tracing'] as bool? ?? true,
@@ -626,6 +630,7 @@ class AppSettings {
     bool? mapKeyPrefixEnabled,
     String? mapKeyPrefix,
     bool? mapShowMarkers,
+    bool? mapShowWaypoints,
     bool? mapShowGuessedLocations,
     bool? enableMessageTracing,
     String? readAloudIncoming,
@@ -704,6 +709,7 @@ class AppSettings {
       mapKeyPrefixEnabled: mapKeyPrefixEnabled ?? this.mapKeyPrefixEnabled,
       mapKeyPrefix: mapKeyPrefix ?? this.mapKeyPrefix,
       mapShowMarkers: mapShowMarkers ?? this.mapShowMarkers,
+      mapShowWaypoints: mapShowWaypoints ?? this.mapShowWaypoints,
       mapShowGuessedLocations:
           mapShowGuessedLocations ?? this.mapShowGuessedLocations,
       enableMessageTracing: enableMessageTracing ?? this.enableMessageTracing,
