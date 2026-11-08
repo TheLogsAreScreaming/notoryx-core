@@ -10177,6 +10177,16 @@ class AppLocalizationsRu extends AppLocalizations {
       'Хэллоуин, Рождество и День святого Валентина в свои даты';
 
   @override
+  String get theme_darkMode => 'Другая тема в тёмном режиме';
+
+  @override
+  String get theme_darkModeHint =>
+      'Использовать другую тему, пока устройство в тёмном режиме';
+
+  @override
+  String get theme_darkModeTheme => 'Тема тёмного режима';
+
+  @override
   String get coords_setting => 'Формат координат';
 
   @override
@@ -10208,23 +10218,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'Ваше радио использует $width байт';
   }
-
-  @override
-  String get lite_qrPasteHint =>
-      'В этой версии нет сканера с камерой. Вставьте текст из QR-кода.';
-
-  @override
-  String get lite_qrPasteLabel => 'Текст QR-кода';
-
-  @override
-  String get theme_darkMode => 'Другая тема в тёмном режиме';
-
-  @override
-  String get theme_darkModeHint =>
-      'Использовать другую тему, пока устройство в тёмном режиме';
-
-  @override
-  String get theme_darkModeTheme => 'Тема тёмного режима';
 
   @override
   String get batteryWatch_title => 'Контроль батарей';
@@ -10294,167 +10287,276 @@ class AppLocalizationsRu extends AppLocalizations {
   String get batteryWatch_cleared => 'История очищена';
 
   @override
-  String get netChange_title => 'Изменения в сети';
+  String get mesh_title => 'Состояние сети';
 
   @override
-  String get netChange_toolSubtitle =>
-      'Ретрансляторы, появившиеся рядом или замолчавшие';
+  String get mesh_overallGood => 'Сеть в порядке';
 
   @override
-  String netChange_newDirect(String name) {
-    return 'Новый ретранслятор слышен напрямую: $name';
+  String get mesh_overallFair => 'Сеть работает, но с проблемами';
+
+  @override
+  String get mesh_overallPoor => 'Сети тяжело';
+
+  @override
+  String get mesh_overallUnknown => 'Пока мало данных';
+
+  @override
+  String get mesh_gradeGood => 'Хорошо';
+
+  @override
+  String get mesh_gradeFair => 'Средне';
+
+  @override
+  String get mesh_gradePoor => 'Плохо';
+
+  @override
+  String get mesh_gradeUnknown => 'Нет данных';
+
+  @override
+  String get mesh_noise => 'Шум';
+
+  @override
+  String mesh_noiseValue(String dbm) {
+    return 'Уровень шума $dbm дБм';
   }
 
   @override
-  String netChange_newHops(String name, int hops) {
-    return 'Новый ретранслятор в $hops хопе: $name';
+  String get mesh_signal => 'Последний сигнал';
+
+  @override
+  String mesh_signalValue(String db) {
+    return 'SNR $db дБ';
   }
 
   @override
-  String netChange_wentQuiet(String name, int hours) {
-    return '$name замолчал: не слышно $hours ч';
+  String get mesh_busy => 'Загрузка канала';
+
+  @override
+  String mesh_busyValue(int percent) {
+    return 'в эфире $percent% последних 15 минут';
   }
 
   @override
-  String get netChange_empty =>
-      'Изменений пока нет. Здесь появятся замолчавшие избранные ретрансляторы и новые ретрансляторы рядом.';
+  String get mesh_neighbours => 'Слышно напрямую';
 
   @override
-  String get netChange_quietSetting => 'Избранный ретранслятор замолчал';
+  String mesh_neighboursValue(int count) {
+    return '$count узлов за последний час';
+  }
 
   @override
-  String get netChange_quietHint =>
-      'Уведомлять, если избранного ретранслятора не слышно столько времени';
+  String get mesh_delivery => 'Личные сообщения';
 
   @override
-  String get netChange_newSetting => 'Новый ретранслятор рядом';
+  String mesh_deliveryValue(int delivered, int total) {
+    return 'доставлено $delivered из $total за сутки';
+  }
 
   @override
-  String get netChange_newHint =>
-      'Уведомлять, если незнакомый ретранслятор слышен в пределах одного хопа';
+  String get mesh_tipNoise =>
+      'Что-то рядом шумит на этой частоте. Уберите антенну подальше от электроники и зарядок.';
 
   @override
-  String get netChange_clear => 'Очистить';
+  String get mesh_tipSignal =>
+      'Последний пакет был слабым. Поднимите антенну или поднимитесь выше.';
 
   @override
-  String get netChange_notifTitle => 'Изменение в сети';
+  String get mesh_tipBusy =>
+      'Канал загружен. Пишите коротко и избегайте рассылок.';
 
   @override
-  String get trouble_title => 'Устранение неполадок';
+  String get mesh_tipNeighbours =>
+      'Напрямую слышно мало узлов. Поднимите антенну или подойдите ближе к ретранслятору.';
 
   @override
-  String get trouble_toolSubtitle =>
-      'Пошаговая помощь, когда что-то не работает';
+  String get mesh_tipDelivery =>
+      'Многие сообщения не подтверждаются. Откройте неудачное сообщение, чтобы увидеть, где оно остановилось.';
 
   @override
-  String get trouble_pick => 'Что не так?';
+  String routeHealth_staleTitle(String name) {
+    return 'Маршрут до $name может быть устаревшим';
+  }
 
   @override
-  String get trouble_noDelivery => 'Сообщения не доставляются';
+  String routeHealth_weakTitle(String name) {
+    return 'Маршрут до $name ненадёжен';
+  }
 
   @override
-  String get trouble_noConnect => 'Не могу подключиться к радио';
+  String routeHealth_lastWorkedHours(int hours) {
+    return 'последний раз работал $hours ч назад';
+  }
 
   @override
-  String get trouble_hearNobody => 'Никого не слышу';
+  String routeHealth_lastWorkedDays(int days) {
+    return 'последний раз работал $days дн. назад';
+  }
 
   @override
-  String get trouble_startHere => 'Начните здесь';
+  String routeHealth_notHeard(int days) {
+    return 'не слышно $days дн.';
+  }
 
   @override
-  String get trouble_resultOk => 'OK';
+  String routeHealth_failures(int failures, int attempts) {
+    return '$failures из $attempts попыток неудачны';
+  }
 
   @override
-  String get trouble_resultProblem => 'Проблема';
+  String routeHealth_longPath(int hops) {
+    return '$hops хопов';
+  }
 
   @override
-  String get trouble_resultUnchecked => 'Нельзя проверить';
+  String get routeHealth_useFlood => 'Найти новый маршрут';
 
   @override
-  String get trouble_connectedNow =>
-      'Сейчас вы подключены. Если связь постоянно рвётся, шаги ниже всё равно помогут.';
+  String get routeHealth_keep => 'Оставить маршрут';
 
   @override
-  String get trouble_allOk =>
-      'Все проверки пройдены. Если всё ещё не работает, посмотрите шаги ниже.';
+  String get readiness_sos => 'Получатели SOS';
 
   @override
-  String get trouble_connected => 'Радио подключено';
+  String get readiness_sosOk => 'У SOS есть получатели.';
 
   @override
-  String get trouble_connectedAdvice =>
-      'Сначала подключите радио: Настройки → Подключить радио.';
+  String get readiness_sosBlocked =>
+      'SOS некому отправить. Добавьте участников похода из контактов или задайте SOS-канал.';
 
   @override
-  String get trouble_routes => 'Маршруты к собеседникам известны';
+  String get readiness_routes => 'Маршруты до участников';
 
   @override
-  String get trouble_routesAdvice =>
-      'Сообщения тому, к кому нет известного маршрута, рассылаются по всей сети и часто не доходят. Дождитесь его объявления или попросите о нём и напишите снова.';
+  String get readiness_routesOk => 'Маршрут известен до каждого участника.';
 
   @override
-  String get trouble_heardRecently =>
-      'Собеседников было слышно за последние сутки';
+  String readiness_routesMissing(String names) {
+    return 'Нет известного маршрута до $names. Сообщения будут идти рассылкой, пока маршрут не изучен. Отправьте им сообщение перед выходом.';
+  }
 
   @override
-  String get trouble_heardRecentlyAdvice =>
-      'Того, кого давно не слышно, может не быть в зоне связи или он выключен. Его сообщения не подтвердятся, пока он не вернётся.';
+  String get readiness_notifications => 'Уведомления';
 
   @override
-  String get trouble_neighbours => 'Ваше радио слышит другие узлы';
+  String get readiness_notificationsOk => 'Разрешены.';
 
   @override
-  String get trouble_neighboursAdvice =>
-      'Если напрямую ничего не слышно, отсюда радио не достаёт до сети. Поднимите антенну, поднимитесь выше или подойдите ближе к ретранслятору.';
+  String get readiness_notificationsOff =>
+      'Уведомления выключены — вы не услышите ответы, отметки и тревоги.';
 
   @override
-  String get trouble_bluetooth =>
-      'Bluetooth включён, и приложение может им пользоваться';
+  String get readiness_batteryOpt => 'Оптимизация батареи';
 
   @override
-  String get trouble_bluetoothAdvice =>
-      'Проверьте, что Bluetooth включён и у NOTORYX Core есть разрешение на Bluetooth (а на Android — на Устройства поблизости) в настройках телефона.';
+  String get readiness_batteryOptOk => 'NOTORYX Core в исключениях.';
 
   @override
-  String get trouble_otherApp =>
-      'Никакой другой телефон или приложение не подключено к радио';
+  String get readiness_batteryOptOn =>
+      'Android может остановить приложение в фоне. Отключите это в Настройки → Настройки приложения → Уведомления.';
 
   @override
-  String get trouble_otherAppAdvice =>
-      'Радио общается только с одним приложением за раз. Закройте другие приложения MeshCore или выключите Bluetooth на других сопряжённых телефонах.';
+  String get readiness_blockedTitle => 'Поход пока нельзя начать';
 
   @override
-  String get trouble_inRange => 'Радио включено и рядом';
+  String readiness_warnTitle(int count) {
+    return 'Проверить: $count';
+  }
 
   @override
-  String get trouble_inRangeAdvice =>
-      'Проверьте, что радио заряжено, включено и в нескольких метрах. Перезапуск радио часто исправляет зависшее соединение.';
+  String get readiness_startAnyway => 'Начать всё равно';
 
   @override
-  String get trouble_otherTransport => 'Попробуйте другой способ подключения';
+  String get readiness_review => 'Просмотреть';
 
   @override
-  String get trouble_otherTransportAdvice =>
-      'Если Bluetooth постоянно сбоит, подключитесь кабелем USB или по Wi-Fi (TCP), если радио это умеет.';
+  String get readiness_summaryReady => 'Можно выходить';
 
   @override
-  String get trouble_noise => 'Радио не тонет в шуме';
+  String readiness_summaryWarn(int count) {
+    return 'Проверить: $count';
+  }
 
   @override
-  String get trouble_noiseAdvice =>
-      'Высокий уровень шума скрывает слабые сигналы. Уберите антенну от электроники, зарядок и солнечных контроллеров.';
+  String get readiness_summaryBlocked => 'SOS никому не дойдёт';
 
   @override
-  String get trouble_region => 'Радио настроено как сеть в вашем районе';
+  String get coords_maidenhead => 'Локатор Maidenhead';
 
   @override
-  String get trouble_regionAdvice =>
-      'С другой частотой, полосой или коэффициентом расширения, чем у местной сети, вы никого не услышите. Сравните Настройки → Радио с настройками вашего района.';
+  String get reactions_radioTitle => 'Отправлять реакции по радио';
 
   @override
-  String get trouble_antenna => 'Антенна установлена';
+  String get reactions_radioHint =>
+      'Каждая реакция — это пакет в эфире. «Автоматически» оставляет их на этом устройстве в европейском диапазоне 868 МГц, где эфирное время ограничено.';
 
   @override
-  String get trouble_antennaAdvice =>
-      'Убедитесь, что антенна плотно прикручена. Никогда не передавайте без антенны — это может повредить радио.';
+  String get reactions_radioAuto => 'Автоматически';
+
+  @override
+  String get reactions_radioOn => 'Вкл.';
+
+  @override
+  String get reactions_radioOff => 'Выкл. (это устройство)';
+
+  @override
+  String get lite_qrPasteHint =>
+      'В этой версии нет сканера с камерой. Вставьте текст из QR-кода.';
+
+  @override
+  String get lite_qrPasteLabel => 'Текст QR-кода';
+
+  @override
+  String get batteryWatch_auto => 'Проверять автоматически';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Пока радио подключено, приложение периодически запрашивает у ретранслятора заряд батареи. Он отвечает, только если вы вошли в него.';
+
+  @override
+  String get batteryWatch_interval => 'Проверять каждые';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours ч';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Не более 6 проверок в час на все ретрансляторы, не чаще раза в 2 минуты.';
+
+  @override
+  String get batteryWatch_add => 'Добавить ретранслятор';
+
+  @override
+  String get batteryWatch_pick => 'Выберите ретранслятор для контроля';
+
+  @override
+  String get batteryWatch_noRepeaters => 'В контактах пока нет ретрансляторов.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Нет ответа на последние $count проверок. Откройте ретранслятор и войдите снова.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Проверка…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Батарея ретранслятора';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name: $percent% ($volts В).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Батарея $name быстро садится: при таком темпе разрядится примерно через $days дн.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name не ответил на $count проверок батареи.';
+  }
 }

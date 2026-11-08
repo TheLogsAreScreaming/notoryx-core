@@ -204,6 +204,8 @@ class NotificationService {
       return false;
     }
   }
+  /// Whether the app may post notifications on this device.
+  Future<bool> canNotify() => _ensureCanNotify();
 
   /// "Back in range" for a favorite heard again after [quietHours] hours.
   /// One notification per contact, replaced by the next.
@@ -223,6 +225,37 @@ class NotificationService {
             'bastion_favorites',
             'Favorites back in range',
             channelDescription: 'A favorite is heard again after a quiet spell',
+            importance: Importance.defaultImportance,
+            priority: Priority.defaultPriority,
+            icon: '@mipmap/ic_launcher',
+          ),
+          iOS: DarwinNotificationDetails(),
+          macOS: DarwinNotificationDetails(),
+        ),
+      );
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  /// A watched repeater's battery is low, falling fast, or not answering.
+  Future<bool> showBatteryAlert({
+    required String repeaterKey,
+    required String body,
+  }) async {
+    if (_suppressNotifications || !await _ensureCanNotify()) return false;
+    try {
+      await _notifications.show(
+        id: 'battery_watch:$repeaterKey'.hashCode,
+        title: _l10n.batteryWatch_alertTitle,
+        body: body,
+        notificationDetails: const NotificationDetails(
+          android: AndroidNotificationDetails(
+            'bastion_battery_watch',
+            'Repeater battery watch',
+            channelDescription:
+                'A watched repeater battery is low, falling fast or silent',
             importance: Importance.defaultImportance,
             priority: Priority.defaultPriority,
             icon: '@mipmap/ic_launcher',

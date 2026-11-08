@@ -9659,6 +9659,15 @@ class AppLocalizationsKo extends AppLocalizations {
   String get seasonal_holidaysHint => '핼러윈, 크리스마스, 밸런타인데이 기간에 적용';
 
   @override
+  String get theme_darkMode => '다크 모드에서 다른 테마';
+
+  @override
+  String get theme_darkModeHint => '기기가 다크 모드일 때 다른 테마를 사용합니다';
+
+  @override
+  String get theme_darkModeTheme => '다크 모드 테마';
+
+  @override
   String get coords_setting => '좌표 형식';
 
   @override
@@ -9690,22 +9699,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return '내 무전기는 $width바이트 사용';
   }
-
-  @override
-  String get lite_qrPasteHint =>
-      '이 빌드에는 카메라 스캐너가 없습니다. 대신 QR 코드의 텍스트를 붙여 넣으세요.';
-
-  @override
-  String get lite_qrPasteLabel => 'QR 코드 텍스트';
-
-  @override
-  String get theme_darkMode => '다크 모드에서 다른 테마';
-
-  @override
-  String get theme_darkModeHint => '기기가 다크 모드일 때 다른 테마를 사용합니다';
-
-  @override
-  String get theme_darkModeTheme => '다크 모드 테마';
 
   @override
   String get batteryWatch_title => '배터리 감시';
@@ -9774,158 +9767,271 @@ class AppLocalizationsKo extends AppLocalizations {
   String get batteryWatch_cleared => '기록을 지웠습니다';
 
   @override
-  String get netChange_title => '네트워크 변화';
+  String get mesh_title => '메시 상태';
 
   @override
-  String get netChange_toolSubtitle => '근처에 나타났거나 조용해진 리피터';
+  String get mesh_overallGood => '메시가 양호합니다';
 
   @override
-  String netChange_newDirect(String name) {
-    return '직접 수신된 새 리피터: $name';
+  String get mesh_overallFair => '메시가 작동하지만 문제가 있습니다';
+
+  @override
+  String get mesh_overallPoor => '메시가 불안정합니다';
+
+  @override
+  String get mesh_overallUnknown => '아직 판단할 데이터가 부족합니다';
+
+  @override
+  String get mesh_gradeGood => '좋음';
+
+  @override
+  String get mesh_gradeFair => '보통';
+
+  @override
+  String get mesh_gradePoor => '나쁨';
+
+  @override
+  String get mesh_gradeUnknown => '데이터 없음';
+
+  @override
+  String get mesh_noise => '노이즈';
+
+  @override
+  String mesh_noiseValue(String dbm) {
+    return '노이즈 플로어 $dbm dBm';
   }
 
   @override
-  String netChange_newHops(String name, int hops) {
-    return '$hops홉 거리의 새 리피터: $name';
+  String get mesh_signal => '마지막 신호';
+
+  @override
+  String mesh_signalValue(String db) {
+    return 'SNR $db dB';
   }
 
   @override
-  String netChange_wentQuiet(String name, int hours) {
-    return '$name 조용해짐: $hours시간 동안 수신 없음';
+  String get mesh_busy => '채널 사용률';
+
+  @override
+  String mesh_busyValue(int percent) {
+    return '최근 15분 중 $percent% 송수신';
   }
 
   @override
-  String get netChange_empty =>
-      '아직 변화가 없습니다. 조용해진 즐겨찾기 리피터와 근처의 새 리피터가 여기에 표시됩니다.';
+  String get mesh_neighbours => '직접 수신';
 
   @override
-  String get netChange_quietSetting => '즐겨찾기 리피터가 조용해짐';
+  String mesh_neighboursValue(int count) {
+    return '최근 1시간 동안 $count개 노드';
+  }
 
   @override
-  String get netChange_quietHint => '즐겨찾기 리피터가 이만큼 수신되지 않으면 알림';
+  String get mesh_delivery => '다이렉트 메시지';
 
   @override
-  String get netChange_newSetting => '근처의 새 리피터';
+  String mesh_deliveryValue(int delivered, int total) {
+    return '최근 하루 $total개 중 $delivered개 전달';
+  }
 
   @override
-  String get netChange_newHint => '처음 보는 리피터가 1홉 이내에서 수신되면 알림';
+  String get mesh_tipNoise =>
+      '근처의 무언가가 이 주파수에서 노이즈를 냅니다. 안테나를 전자기기와 충전기에서 멀리 두세요.';
 
   @override
-  String get netChange_clear => '지우기';
+  String get mesh_tipSignal => '마지막 패킷이 약했습니다. 안테나를 높이거나 높은 곳으로 이동하세요.';
 
   @override
-  String get netChange_notifTitle => '네트워크 변화';
+  String get mesh_tipBusy => '채널이 혼잡합니다. 메시지를 짧게 하고 플러드 전송을 피하세요.';
 
   @override
-  String get trouble_title => '문제 해결';
+  String get mesh_tipNeighbours => '직접 수신되는 노드가 적습니다. 안테나를 높이거나 리피터에 가까이 가세요.';
 
   @override
-  String get trouble_toolSubtitle => '무언가 안 될 때 단계별 도움말';
+  String get mesh_tipDelivery =>
+      '많은 메시지가 확인되지 않았습니다. 실패한 메시지를 열어 어디서 멈췄는지 확인하세요.';
 
   @override
-  String get trouble_pick => '무엇이 문제인가요?';
+  String routeHealth_staleTitle(String name) {
+    return '$name까지의 경로가 오래되었을 수 있습니다';
+  }
 
   @override
-  String get trouble_noDelivery => '메시지가 전달되지 않음';
+  String routeHealth_weakTitle(String name) {
+    return '$name까지의 경로가 불안정합니다';
+  }
 
   @override
-  String get trouble_noConnect => '무전기에 연결할 수 없음';
+  String routeHealth_lastWorkedHours(int hours) {
+    return '$hours시간 전에 마지막으로 작동';
+  }
 
   @override
-  String get trouble_hearNobody => '아무도 들리지 않음';
+  String routeHealth_lastWorkedDays(int days) {
+    return '$days일 전에 마지막으로 작동';
+  }
 
   @override
-  String get trouble_startHere => '여기서 시작';
+  String routeHealth_notHeard(int days) {
+    return '$days일 동안 수신 없음';
+  }
 
   @override
-  String get trouble_resultOk => '정상';
+  String routeHealth_failures(int failures, int attempts) {
+    return '$attempts번 중 $failures번 실패';
+  }
 
   @override
-  String get trouble_resultProblem => '문제';
+  String routeHealth_longPath(int hops) {
+    return '$hops홉';
+  }
 
   @override
-  String get trouble_resultUnchecked => '확인할 수 없음';
+  String get routeHealth_useFlood => '새 경로 찾기';
 
   @override
-  String get trouble_connectedNow =>
-      '지금은 연결되어 있습니다. 연결이 자꾸 끊기면 아래 단계가 여전히 도움이 됩니다.';
+  String get routeHealth_keep => '이 경로 유지';
 
   @override
-  String get trouble_allOk => '모든 확인을 통과했습니다. 그래도 안 되면 아래 단계를 살펴보세요.';
+  String get readiness_sos => 'SOS 수신자';
 
   @override
-  String get trouble_connected => '무전기가 연결됨';
+  String get readiness_sosOk => 'SOS를 보낼 대상이 있습니다.';
 
   @override
-  String get trouble_connectedAdvice => '먼저 무전기를 연결하세요: 설정 → 무전기 연결.';
+  String get readiness_sosBlocked =>
+      'SOS를 보낼 대상이 없습니다. 연락처에 있는 동행자를 추가하거나 SOS 채널을 설정하세요.';
 
   @override
-  String get trouble_routes => '메시지를 보내는 사람까지 경로를 알고 있음';
+  String get readiness_routes => '동행자까지의 경로';
 
   @override
-  String get trouble_routesAdvice =>
-      '경로를 모르는 사람에게 보낸 메시지는 메시 전체에 플러드되고 자주 도착하지 못합니다. 상대가 광고할 때까지 기다리거나 요청한 뒤 다시 보내세요.';
+  String get readiness_routesOk => '모든 동행자까지 경로를 알고 있습니다.';
 
   @override
-  String get trouble_heardRecently => '메시지를 보내는 사람이 최근 하루 안에 수신됨';
+  String readiness_routesMissing(String names) {
+    return '$names까지 알려진 경로가 없습니다. 경로를 알 때까지 메시지는 플러드로 전송됩니다. 출발 전에 메시지를 보내 보세요.';
+  }
 
   @override
-  String get trouble_heardRecentlyAdvice =>
-      '한동안 수신되지 않은 사람은 범위 밖이거나 꺼져 있을 수 있습니다. 돌아올 때까지 메시지가 확인되지 않습니다.';
+  String get readiness_notifications => '알림';
 
   @override
-  String get trouble_neighbours => '무전기가 다른 노드를 수신함';
+  String get readiness_notificationsOk => '허용됨.';
 
   @override
-  String get trouble_neighboursAdvice =>
-      '직접 수신되는 것이 없으면 여기서는 메시에 닿지 않습니다. 안테나를 높이거나, 높은 곳으로 가거나, 리피터에 가까이 가세요.';
+  String get readiness_notificationsOff => '알림이 꺼져 있어 답장, 체크인, 경보를 받지 못합니다.';
 
   @override
-  String get trouble_bluetooth => '블루투스가 켜져 있고 앱이 사용할 수 있음';
+  String get readiness_batteryOpt => '배터리 최적화';
 
   @override
-  String get trouble_bluetoothAdvice =>
-      '블루투스가 켜져 있고 휴대폰 설정에서 NOTORYX Core에 블루투스(Android는 근처 기기) 권한이 있는지 확인하세요.';
+  String get readiness_batteryOptOk => 'NOTORYX Core는 예외입니다.';
 
   @override
-  String get trouble_otherApp => '다른 휴대폰이나 앱이 무전기에 연결되어 있지 않음';
+  String get readiness_batteryOptOn =>
+      'Android가 백그라운드에서 앱을 중지할 수 있습니다. 설정 → 앱 설정 → 알림에서 끄세요.';
 
   @override
-  String get trouble_otherAppAdvice =>
-      '무전기는 한 번에 한 앱과만 통신합니다. 다른 MeshCore 앱을 닫거나 페어링된 다른 휴대폰의 블루투스를 끄세요.';
+  String get readiness_blockedTitle => '아직 출발할 수 없습니다';
 
   @override
-  String get trouble_inRange => '무전기가 켜져 있고 가까이 있음';
+  String readiness_warnTitle(int count) {
+    return '확인할 항목 $count개';
+  }
 
   @override
-  String get trouble_inRangeAdvice =>
-      '무전기가 충전되어 켜져 있고 몇 미터 안에 있는지 확인하세요. 무전기를 재시작하면 멈춘 연결이 풀리는 경우가 많습니다.';
+  String get readiness_startAnyway => '그래도 시작';
 
   @override
-  String get trouble_otherTransport => '다른 연결 방법 시도';
+  String get readiness_review => '검토';
 
   @override
-  String get trouble_otherTransportAdvice =>
-      '블루투스가 계속 실패하면 USB 케이블로, 또는 지원한다면 Wi-Fi(TCP)로 연결하세요.';
+  String get readiness_summaryReady => '출발 준비 완료';
 
   @override
-  String get trouble_noise => '무전기가 노이즈에 묻히지 않음';
+  String readiness_summaryWarn(int count) {
+    return '확인 $count개';
+  }
 
   @override
-  String get trouble_noiseAdvice =>
-      '노이즈 플로어가 높으면 약한 신호가 가려집니다. 안테나를 전자기기, 충전기, 태양광 컨트롤러에서 멀리 두세요.';
+  String get readiness_summaryBlocked => 'SOS가 아무에게도 닿지 않음';
 
   @override
-  String get trouble_region => '무전기가 지역 설정을 사용함';
+  String get coords_maidenhead => '메이든헤드 로케이터';
 
   @override
-  String get trouble_regionAdvice =>
-      '주파수, 대역폭, 확산 계수가 지역 메시와 다르면 아무도 들리지 않습니다. 설정 → 무전기를 지역 설정과 비교하세요.';
+  String get reactions_radioTitle => '반응을 무선으로 보내기';
 
   @override
-  String get trouble_antenna => '안테나가 장착됨';
+  String get reactions_radioHint =>
+      '반응 하나하나가 전파로 나가는 패킷입니다. 자동은 송신 시간이 제한된 EU 868 MHz 대역에서 이 기기에만 표시합니다.';
 
   @override
-  String get trouble_antennaAdvice =>
-      '안테나가 단단히 조여져 있는지 확인하세요. 안테나 없이 송신하지 마세요. 무전기가 손상될 수 있습니다.';
+  String get reactions_radioAuto => '자동';
+
+  @override
+  String get reactions_radioOn => '켜기';
+
+  @override
+  String get reactions_radioOff => '끄기(이 기기)';
+
+  @override
+  String get lite_qrPasteHint =>
+      '이 빌드에는 카메라 스캐너가 없습니다. 대신 QR 코드의 텍스트를 붙여 넣으세요.';
+
+  @override
+  String get lite_qrPasteLabel => 'QR 코드 텍스트';
+
+  @override
+  String get batteryWatch_auto => '자동 확인';
+
+  @override
+  String get batteryWatch_autoHint =>
+      '무전기가 연결된 동안 앱이 주기적으로 이 리피터의 배터리를 묻습니다. 로그인한 경우에만 응답합니다.';
+
+  @override
+  String get batteryWatch_interval => '확인 간격';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours시간';
+  }
+
+  @override
+  String get batteryWatch_budget => '모든 리피터를 합쳐 시간당 최대 6회, 최소 2분 간격.';
+
+  @override
+  String get batteryWatch_add => '리피터 추가';
+
+  @override
+  String get batteryWatch_pick => '감시할 리피터 선택';
+
+  @override
+  String get batteryWatch_noRepeaters => '아직 연락처에 리피터가 없습니다.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return '최근 $count번의 확인에 응답이 없습니다. 리피터를 열고 다시 로그인하세요.';
+  }
+
+  @override
+  String get batteryWatch_checking => '확인 중…';
+
+  @override
+  String get batteryWatch_alertTitle => '리피터 배터리';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name: $percent% ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return '$name의 배터리가 빠르게 줄고 있습니다. 이 속도라면 약 $days일 후 방전됩니다.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name이(가) 배터리 확인 $count회에 응답하지 않았습니다.';
+  }
 }

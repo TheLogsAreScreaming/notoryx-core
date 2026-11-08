@@ -10167,6 +10167,16 @@ class AppLocalizationsFr extends AppLocalizations {
       'Halloween, Noël et la Saint-Valentin à leurs dates';
 
   @override
+  String get theme_darkMode => 'Autre thème en mode sombre';
+
+  @override
+  String get theme_darkModeHint =>
+      'Utiliser un autre thème lorsque l\'appareil est en mode sombre';
+
+  @override
+  String get theme_darkModeTheme => 'Thème du mode sombre';
+
+  @override
   String get coords_setting => 'Format des coordonnées';
 
   @override
@@ -10198,23 +10208,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'Votre radio utilise $width octets';
   }
-
-  @override
-  String get lite_qrPasteHint =>
-      'Cette version n\'a pas de scanner photo. Collez plutôt le texte du code QR.';
-
-  @override
-  String get lite_qrPasteLabel => 'Texte du code QR';
-
-  @override
-  String get theme_darkMode => 'Autre thème en mode sombre';
-
-  @override
-  String get theme_darkModeHint =>
-      'Utiliser un autre thème lorsque l\'appareil est en mode sombre';
-
-  @override
-  String get theme_darkModeTheme => 'Thème du mode sombre';
 
   @override
   String get batteryWatch_title => 'Surveillance des batteries';
@@ -10284,169 +10277,278 @@ class AppLocalizationsFr extends AppLocalizations {
   String get batteryWatch_cleared => 'Historique effacé';
 
   @override
-  String get netChange_title => 'Changements du réseau';
+  String get mesh_title => 'Santé du maillage';
 
   @override
-  String get netChange_toolSubtitle =>
-      'Répéteurs apparus à proximité ou devenus silencieux';
+  String get mesh_overallGood => 'Le maillage semble en bonne santé';
 
   @override
-  String netChange_newDirect(String name) {
-    return 'Nouveau répéteur entendu directement : $name';
+  String get mesh_overallFair => 'Le maillage fonctionne, avec des soucis';
+
+  @override
+  String get mesh_overallPoor => 'Le maillage a du mal';
+
+  @override
+  String get mesh_overallUnknown => 'Pas encore assez de données';
+
+  @override
+  String get mesh_gradeGood => 'Bon';
+
+  @override
+  String get mesh_gradeFair => 'Moyen';
+
+  @override
+  String get mesh_gradePoor => 'Faible';
+
+  @override
+  String get mesh_gradeUnknown => 'Pas de données';
+
+  @override
+  String get mesh_noise => 'Bruit';
+
+  @override
+  String mesh_noiseValue(String dbm) {
+    return 'Plancher de bruit $dbm dBm';
   }
 
   @override
-  String netChange_newHops(String name, int hops) {
-    return 'Nouveau répéteur à $hops saut : $name';
+  String get mesh_signal => 'Dernier signal';
+
+  @override
+  String mesh_signalValue(String db) {
+    return 'SNR $db dB';
   }
 
   @override
-  String netChange_wentQuiet(String name, int hours) {
-    return '$name est silencieux : pas entendu depuis $hours h';
+  String get mesh_busy => 'Occupation du canal';
+
+  @override
+  String mesh_busyValue(int percent) {
+    return 'en émission $percent % des 15 dernières minutes';
   }
 
   @override
-  String get netChange_empty =>
-      'Aucun changement pour l\'instant. Les répéteurs favoris devenus silencieux et les nouveaux répéteurs proches apparaissent ici.';
+  String get mesh_neighbours => 'Entendus directement';
 
   @override
-  String get netChange_quietSetting => 'Un répéteur favori devient silencieux';
+  String mesh_neighboursValue(int count) {
+    return '$count nœuds dans la dernière heure';
+  }
 
   @override
-  String get netChange_quietHint =>
-      'Prévenir quand un répéteur favori n\'a pas été entendu depuis ce délai';
+  String get mesh_delivery => 'Messages directs';
 
   @override
-  String get netChange_newSetting => 'Nouveau répéteur à proximité';
+  String mesh_deliveryValue(int delivered, int total) {
+    return '$delivered sur $total remis dans la dernière journée';
+  }
 
   @override
-  String get netChange_newHint =>
-      'Prévenir quand un répéteur jamais vu est entendu à un saut au plus';
+  String get mesh_tipNoise =>
+      'Quelque chose à proximité fait du bruit sur cette fréquence. Éloignez l\'antenne de l\'électronique et des chargeurs.';
 
   @override
-  String get netChange_clear => 'Effacer';
+  String get mesh_tipSignal =>
+      'Le dernier paquet était faible. Montez l\'antenne ou allez plus haut.';
 
   @override
-  String get netChange_notifTitle => 'Changement du réseau';
+  String get mesh_tipBusy =>
+      'Le canal est chargé. Gardez les messages courts et évitez les inondations.';
 
   @override
-  String get trouble_title => 'Dépannage';
+  String get mesh_tipNeighbours =>
+      'Peu de nœuds sont entendus directement. Montez l\'antenne ou rapprochez-vous d\'un répéteur.';
 
   @override
-  String get trouble_toolSubtitle =>
-      'Aide pas à pas quand quelque chose ne marche pas';
+  String get mesh_tipDelivery =>
+      'Beaucoup de messages ne sont pas confirmés. Ouvrez un message en échec pour voir où il s\'est arrêté.';
 
   @override
-  String get trouble_pick => 'Quel est le problème ?';
+  String routeHealth_staleTitle(String name) {
+    return 'La route vers $name est peut-être périmée';
+  }
 
   @override
-  String get trouble_noDelivery => 'Les messages ne sont pas remis';
+  String routeHealth_weakTitle(String name) {
+    return 'La route vers $name n\'est pas fiable';
+  }
 
   @override
-  String get trouble_noConnect => 'Impossible de me connecter à ma radio';
+  String routeHealth_lastWorkedHours(int hours) {
+    return 'a fonctionné il y a $hours h';
+  }
 
   @override
-  String get trouble_hearNobody => 'Je n\'entends personne';
+  String routeHealth_lastWorkedDays(int days) {
+    return 'a fonctionné il y a $days jours';
+  }
 
   @override
-  String get trouble_startHere => 'Commencez ici';
+  String routeHealth_notHeard(int days) {
+    return 'pas entendu depuis $days jours';
+  }
 
   @override
-  String get trouble_resultOk => 'OK';
+  String routeHealth_failures(int failures, int attempts) {
+    return '$failures essais sur $attempts ont échoué';
+  }
 
   @override
-  String get trouble_resultProblem => 'Problème';
+  String routeHealth_longPath(int hops) {
+    return '$hops sauts';
+  }
 
   @override
-  String get trouble_resultUnchecked => 'Vérification impossible';
+  String get routeHealth_useFlood => 'Chercher une nouvelle route';
 
   @override
-  String get trouble_connectedNow =>
-      'Vous êtes connecté. Si la connexion tombe souvent, les étapes ci-dessous restent utiles.';
+  String get routeHealth_keep => 'Garder cette route';
 
   @override
-  String get trouble_allOk =>
-      'Toutes les vérifications sont bonnes. Si ça ne marche toujours pas, voyez les étapes ci-dessous.';
+  String get readiness_sos => 'Destinataires du SOS';
 
   @override
-  String get trouble_connected => 'Votre radio est connectée';
+  String get readiness_sosOk => 'Le SOS a des destinataires.';
 
   @override
-  String get trouble_connectedAdvice =>
-      'Connectez d\'abord votre radio : Réglages → Connecter une radio.';
+  String get readiness_sosBlocked =>
+      'Le SOS n\'a personne à joindre. Ajoutez des contacts de sortie présents dans vos contacts, ou définissez un canal SOS.';
 
   @override
-  String get trouble_routes =>
-      'Des routes sont connues vers vos correspondants';
+  String get readiness_routes => 'Routes vers les contacts de sortie';
 
   @override
-  String get trouble_routesAdvice =>
-      'Les messages vers quelqu\'un sans route connue inondent tout le maillage et arrivent souvent mal. Attendez qu\'il s\'annonce, ou demandez-le-lui, puis réécrivez.';
+  String get readiness_routesOk =>
+      'Une route est connue vers chaque contact de sortie.';
 
   @override
-  String get trouble_heardRecently =>
-      'Vos correspondants ont été entendus dans la dernière journée';
+  String readiness_routesMissing(String names) {
+    return 'Aucune route connue vers $names. Les messages seront diffusés en inondation jusqu\'à ce qu\'une route soit apprise. Envoyez-leur un message avant de partir.';
+  }
 
   @override
-  String get trouble_heardRecentlyAdvice =>
-      'Quelqu\'un qu\'on n\'a pas entendu depuis longtemps est peut-être hors de portée ou éteint. Ses messages ne peuvent pas être confirmés avant son retour.';
+  String get readiness_notifications => 'Notifications';
 
   @override
-  String get trouble_neighbours => 'Votre radio entend d\'autres nœuds';
+  String get readiness_notificationsOk => 'Autorisées.';
 
   @override
-  String get trouble_neighboursAdvice =>
-      'Si rien n\'est entendu directement, votre radio n\'atteint pas le maillage d\'ici. Montez l\'antenne, allez plus haut ou rapprochez-vous d\'un répéteur.';
+  String get readiness_notificationsOff =>
+      'Les notifications sont désactivées : vous n\'entendrez ni réponses, ni pointages, ni alertes.';
 
   @override
-  String get trouble_bluetooth =>
-      'Le Bluetooth est activé et l\'app peut l\'utiliser';
+  String get readiness_batteryOpt => 'Optimisation de la batterie';
 
   @override
-  String get trouble_bluetoothAdvice =>
-      'Vérifiez que le Bluetooth est activé et que NOTORYX Core a l\'autorisation Bluetooth (et sur Android, Appareils à proximité) dans les réglages du téléphone.';
+  String get readiness_batteryOptOk => 'NOTORYX Core est exempté.';
 
   @override
-  String get trouble_otherApp =>
-      'Aucun autre téléphone ni app n\'est connecté à la radio';
+  String get readiness_batteryOptOn =>
+      'Android peut arrêter l\'app en arrière-plan. Désactivez-la dans Réglages → Réglages de l\'app → Notifications.';
 
   @override
-  String get trouble_otherAppAdvice =>
-      'Une radio ne parle qu\'à une app à la fois. Fermez les autres apps MeshCore ou coupez le Bluetooth des autres téléphones appairés.';
+  String get readiness_blockedTitle => 'Impossible de démarrer la sortie';
 
   @override
-  String get trouble_inRange => 'La radio est allumée et à proximité';
+  String readiness_warnTitle(int count) {
+    return '$count points à vérifier';
+  }
 
   @override
-  String get trouble_inRangeAdvice =>
-      'Vérifiez que la radio est chargée, allumée et à quelques mètres. Redémarrer la radio débloque souvent une connexion figée.';
+  String get readiness_startAnyway => 'Démarrer quand même';
 
   @override
-  String get trouble_otherTransport => 'Essayer un autre mode de connexion';
+  String get readiness_review => 'Vérifier';
 
   @override
-  String get trouble_otherTransportAdvice =>
-      'Si le Bluetooth échoue sans cesse, connectez-vous par câble USB, ou en Wi-Fi (TCP) si votre radio le permet.';
+  String get readiness_summaryReady => 'Prêt à partir';
 
   @override
-  String get trouble_noise => 'La radio n\'est pas noyée dans le bruit';
+  String readiness_summaryWarn(int count) {
+    return '$count à vérifier';
+  }
 
   @override
-  String get trouble_noiseAdvice =>
-      'Un plancher de bruit élevé masque les signaux faibles. Éloignez l\'antenne de l\'électronique, des chargeurs et des régulateurs solaires.';
+  String get readiness_summaryBlocked => 'Le SOS ne joint personne';
 
   @override
-  String get trouble_region =>
-      'Votre radio utilise les réglages de votre région';
+  String get coords_maidenhead => 'Locator Maidenhead';
 
   @override
-  String get trouble_regionAdvice =>
-      'Avec une fréquence, une largeur de bande ou un facteur d\'étalement différents du maillage local, on n\'entend personne. Comparez Réglages → Radio avec ce qu\'utilise votre région.';
+  String get reactions_radioTitle => 'Envoyer les réactions par radio';
 
   @override
-  String get trouble_antenna => 'L\'antenne est montée';
+  String get reactions_radioHint =>
+      'Chaque réaction est un paquet émis. Automatique les garde sur cet appareil sur la bande européenne 868 MHz, où le temps d\'émission est limité.';
 
   @override
-  String get trouble_antennaAdvice =>
-      'Vérifiez que l\'antenne est bien vissée. N\'émettez jamais sans antenne ; cela peut endommager la radio.';
+  String get reactions_radioAuto => 'Automatique';
+
+  @override
+  String get reactions_radioOn => 'Oui';
+
+  @override
+  String get reactions_radioOff => 'Non (cet appareil)';
+
+  @override
+  String get lite_qrPasteHint =>
+      'Cette version n\'a pas de scanner photo. Collez plutôt le texte du code QR.';
+
+  @override
+  String get lite_qrPasteLabel => 'Texte du code QR';
+
+  @override
+  String get batteryWatch_auto => 'Vérifier automatiquement';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Tant qu\'une radio est connectée, l\'app demande régulièrement sa batterie à ce répéteur. Il ne répond que si vous y êtes connecté.';
+
+  @override
+  String get batteryWatch_interval => 'Vérifier toutes les';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Au plus 6 vérifications par heure pour tous les répéteurs, espacées d\'au moins 2 minutes.';
+
+  @override
+  String get batteryWatch_add => 'Ajouter un répéteur';
+
+  @override
+  String get batteryWatch_pick => 'Choisissez un répéteur à surveiller';
+
+  @override
+  String get batteryWatch_noRepeaters =>
+      'Aucun répéteur dans vos contacts pour l\'instant.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Pas de réponse aux $count dernières vérifications. Ouvrez le répéteur et reconnectez-vous.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Vérification…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Batterie du répéteur';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name est à $percent % ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'La batterie de $name baisse vite : vide dans environ $days jours à ce rythme.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name n\'a pas répondu à $count vérifications de batterie.';
+  }
 }

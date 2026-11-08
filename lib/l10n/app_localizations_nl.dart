@@ -10092,6 +10092,16 @@ class AppLocalizationsNl extends AppLocalizations {
       'Halloween, kerst en Valentijnsdag op hun data';
 
   @override
+  String get theme_darkMode => 'Ander thema in donkere modus';
+
+  @override
+  String get theme_darkModeHint =>
+      'Een ander thema gebruiken zolang het apparaat in donkere modus staat';
+
+  @override
+  String get theme_darkModeTheme => 'Thema voor donkere modus';
+
+  @override
   String get coords_setting => 'Coördinaatnotatie';
 
   @override
@@ -10123,23 +10133,6 @@ class AppLocalizationsNl extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'Je radio gebruikt $width byte';
   }
-
-  @override
-  String get lite_qrPasteHint =>
-      'Deze versie heeft geen camerascanner. Plak in plaats daarvan de tekst van de QR-code.';
-
-  @override
-  String get lite_qrPasteLabel => 'Tekst van de QR-code';
-
-  @override
-  String get theme_darkMode => 'Ander thema in donkere modus';
-
-  @override
-  String get theme_darkModeHint =>
-      'Een ander thema gebruiken zolang het apparaat in donkere modus staat';
-
-  @override
-  String get theme_darkModeTheme => 'Thema voor donkere modus';
 
   @override
   String get batteryWatch_title => 'Batterijbewaking';
@@ -10209,167 +10202,277 @@ class AppLocalizationsNl extends AppLocalizations {
   String get batteryWatch_cleared => 'Geschiedenis gewist';
 
   @override
-  String get netChange_title => 'Netwerkwijzigingen';
+  String get mesh_title => 'Meshgezondheid';
 
   @override
-  String get netChange_toolSubtitle =>
-      'Repeaters die in de buurt verschenen of stil werden';
+  String get mesh_overallGood => 'Het mesh ziet er gezond uit';
 
   @override
-  String netChange_newDirect(String name) {
-    return 'Nieuwe repeater direct gehoord: $name';
+  String get mesh_overallFair => 'Het mesh werkt, met wat problemen';
+
+  @override
+  String get mesh_overallPoor => 'Het mesh heeft het moeilijk';
+
+  @override
+  String get mesh_overallUnknown => 'Nog te weinig gegevens';
+
+  @override
+  String get mesh_gradeGood => 'Goed';
+
+  @override
+  String get mesh_gradeFair => 'Matig';
+
+  @override
+  String get mesh_gradePoor => 'Slecht';
+
+  @override
+  String get mesh_gradeUnknown => 'Geen gegevens';
+
+  @override
+  String get mesh_noise => 'Ruis';
+
+  @override
+  String mesh_noiseValue(String dbm) {
+    return 'Ruisvloer $dbm dBm';
   }
 
   @override
-  String netChange_newHops(String name, int hops) {
-    return 'Nieuwe repeater op $hops hop: $name';
+  String get mesh_signal => 'Laatste signaal';
+
+  @override
+  String mesh_signalValue(String db) {
+    return 'SNR $db dB';
   }
 
   @override
-  String netChange_wentQuiet(String name, int hours) {
-    return '$name is stil: al $hours u niet gehoord';
+  String get mesh_busy => 'Kanaalgebruik';
+
+  @override
+  String mesh_busyValue(int percent) {
+    return '$percent% van de laatste 15 minuten in de lucht';
   }
 
   @override
-  String get netChange_empty =>
-      'Nog geen wijzigingen. Favoriete repeaters die stil worden en nieuwe repeaters in de buurt verschijnen hier.';
+  String get mesh_neighbours => 'Direct gehoord';
 
   @override
-  String get netChange_quietSetting => 'Favoriete repeater wordt stil';
+  String mesh_neighboursValue(int count) {
+    return '$count nodes in het laatste uur';
+  }
 
   @override
-  String get netChange_quietHint =>
-      'Melden als een favoriete repeater zo lang niet gehoord is';
+  String get mesh_delivery => 'Directe berichten';
 
   @override
-  String get netChange_newSetting => 'Nieuwe repeater in de buurt';
+  String mesh_deliveryValue(int delivered, int total) {
+    return '$delivered van $total afgeleverd in het laatste etmaal';
+  }
 
   @override
-  String get netChange_newHint =>
-      'Melden als een onbekende repeater binnen één hop gehoord wordt';
+  String get mesh_tipNoise =>
+      'Iets in de buurt maakt ruis op deze frequentie. Houd de antenne weg van elektronica en laders.';
 
   @override
-  String get netChange_clear => 'Wissen';
+  String get mesh_tipSignal =>
+      'Het laatste pakket was zwak. Zet de antenne hoger of ga hoger staan.';
 
   @override
-  String get netChange_notifTitle => 'Netwerkwijziging';
+  String get mesh_tipBusy =>
+      'Het kanaal is druk. Houd berichten kort en vermijd floods.';
 
   @override
-  String get trouble_title => 'Probleemoplossing';
+  String get mesh_tipNeighbours =>
+      'Weinig nodes worden direct gehoord. Zet de antenne hoger of ga dichter bij een repeater.';
 
   @override
-  String get trouble_toolSubtitle => 'Stap-voor-stap hulp als iets niet werkt';
+  String get mesh_tipDelivery =>
+      'Veel berichten worden niet bevestigd. Open een mislukt bericht om te zien waar het stopte.';
 
   @override
-  String get trouble_pick => 'Wat is er mis?';
+  String routeHealth_staleTitle(String name) {
+    return 'De route naar $name is mogelijk verouderd';
+  }
 
   @override
-  String get trouble_noDelivery => 'Berichten komen niet aan';
+  String routeHealth_weakTitle(String name) {
+    return 'De route naar $name is onbetrouwbaar';
+  }
 
   @override
-  String get trouble_noConnect => 'Ik kan geen verbinding maken met mijn radio';
+  String routeHealth_lastWorkedHours(int hours) {
+    return 'werkte $hours u geleden voor het laatst';
+  }
 
   @override
-  String get trouble_hearNobody => 'Ik hoor niemand';
+  String routeHealth_lastWorkedDays(int days) {
+    return 'werkte $days dagen geleden voor het laatst';
+  }
 
   @override
-  String get trouble_startHere => 'Begin hier';
+  String routeHealth_notHeard(int days) {
+    return 'al $days dagen niet gehoord';
+  }
 
   @override
-  String get trouble_resultOk => 'OK';
+  String routeHealth_failures(int failures, int attempts) {
+    return '$failures van $attempts pogingen mislukt';
+  }
 
   @override
-  String get trouble_resultProblem => 'Probleem';
+  String routeHealth_longPath(int hops) {
+    return '$hops hops';
+  }
 
   @override
-  String get trouble_resultUnchecked => 'Niet te controleren';
+  String get routeHealth_useFlood => 'Nieuwe route zoeken';
 
   @override
-  String get trouble_connectedNow =>
-      'Je bent nu verbonden. Als de verbinding steeds wegvalt, helpen de stappen hieronder nog steeds.';
+  String get routeHealth_keep => 'Route houden';
 
   @override
-  String get trouble_allOk =>
-      'Alle controles zijn goed. Werkt het nog steeds niet, kijk dan naar de stappen hieronder.';
+  String get readiness_sos => 'SOS-ontvangers';
 
   @override
-  String get trouble_connected => 'Je radio is verbonden';
+  String get readiness_sosOk => 'SOS heeft ontvangers.';
 
   @override
-  String get trouble_connectedAdvice =>
-      'Verbind eerst je radio: Instellingen → Radio verbinden.';
+  String get readiness_sosBlocked =>
+      'SOS heeft niemand om te bereiken. Voeg tochtcontacten uit je contacten toe of stel een SOS-kanaal in.';
 
   @override
-  String get trouble_routes =>
-      'Er zijn routes bekend naar wie je berichten stuurt';
+  String get readiness_routes => 'Routes naar tochtcontacten';
 
   @override
-  String get trouble_routesAdvice =>
-      'Berichten naar iemand zonder bekende route floodden het hele mesh en komen vaak niet aan. Wacht tot diegene adverteert, of vraag erom, en stuur het opnieuw.';
+  String get readiness_routesOk =>
+      'Er is een route bekend naar elk tochtcontact.';
 
   @override
-  String get trouble_heardRecently =>
-      'Wie je berichten stuurt is het afgelopen etmaal gehoord';
+  String readiness_routesMissing(String names) {
+    return 'Geen bekende route naar $names. Berichten worden geflood tot er een route geleerd is. Stuur ze een bericht voor vertrek.';
+  }
 
   @override
-  String get trouble_heardRecentlyAdvice =>
-      'Wie al een tijd niet gehoord is, is misschien buiten bereik of uit. Berichten kunnen pas bevestigd worden als diegene terug is.';
+  String get readiness_notifications => 'Meldingen';
 
   @override
-  String get trouble_neighbours => 'Je radio hoort andere nodes';
+  String get readiness_notificationsOk => 'Toegestaan.';
 
   @override
-  String get trouble_neighboursAdvice =>
-      'Als niets direct gehoord wordt, bereikt je radio het mesh hier niet. Zet de antenne hoger, ga hoger staan of ga dichter bij een repeater.';
+  String get readiness_notificationsOff =>
+      'Meldingen staan uit, dus je hoort geen antwoorden, check-ins of waarschuwingen.';
 
   @override
-  String get trouble_bluetooth =>
-      'Bluetooth staat aan en de app mag het gebruiken';
+  String get readiness_batteryOpt => 'Batterijoptimalisatie';
 
   @override
-  String get trouble_bluetoothAdvice =>
-      'Controleer of Bluetooth aan staat en of NOTORYX Core toestemming heeft voor Bluetooth (en op Android Apparaten in de buurt) in de telefooninstellingen.';
+  String get readiness_batteryOptOk => 'NOTORYX Core is uitgezonderd.';
 
   @override
-  String get trouble_otherApp =>
-      'Geen andere telefoon of app is met de radio verbonden';
+  String get readiness_batteryOptOn =>
+      'Android kan de app op de achtergrond stoppen. Zet het uit via Instellingen → App-instellingen → Meldingen.';
 
   @override
-  String get trouble_otherAppAdvice =>
-      'Een radio praat met één app tegelijk. Sluit andere MeshCore-apps of zet Bluetooth uit op andere gekoppelde telefoons.';
+  String get readiness_blockedTitle => 'Tocht kan nog niet starten';
 
   @override
-  String get trouble_inRange => 'De radio staat aan en is dichtbij';
+  String readiness_warnTitle(int count) {
+    return '$count punten om na te kijken';
+  }
 
   @override
-  String get trouble_inRangeAdvice =>
-      'Controleer of de radio geladen is, aan staat en binnen een paar meter is. De radio herstarten verhelpt vaak een vastgelopen verbinding.';
+  String get readiness_startAnyway => 'Toch starten';
 
   @override
-  String get trouble_otherTransport => 'Probeer een andere verbinding';
+  String get readiness_review => 'Bekijken';
 
   @override
-  String get trouble_otherTransportAdvice =>
-      'Als Bluetooth steeds faalt, verbind dan met een USB-kabel of via wifi (TCP) als je radio dat kan.';
+  String get readiness_summaryReady => 'Klaar om te gaan';
 
   @override
-  String get trouble_noise => 'De radio verdrinkt niet in ruis';
+  String readiness_summaryWarn(int count) {
+    return '$count na te kijken';
+  }
 
   @override
-  String get trouble_noiseAdvice =>
-      'Een hoge ruisvloer verbergt zwakke signalen. Houd de antenne weg van elektronica, laders en zonneregelaars.';
+  String get readiness_summaryBlocked => 'SOS bereikt niemand';
 
   @override
-  String get trouble_region => 'Je radio gebruikt de instellingen van je regio';
+  String get coords_maidenhead => 'Maidenhead-locator';
 
   @override
-  String get trouble_regionAdvice =>
-      'Met een andere frequentie, bandbreedte of spreidingsfactor dan het lokale mesh hoor je niemand. Vergelijk Instellingen → Radio met wat je regio gebruikt.';
+  String get reactions_radioTitle => 'Reacties via de radio sturen';
 
   @override
-  String get trouble_antenna => 'De antenne zit erop';
+  String get reactions_radioHint =>
+      'Elke reactie is een pakket in de lucht. Automatisch houdt ze op dit apparaat op de EU 868 MHz-band, waar zendtijd beperkt is.';
 
   @override
-  String get trouble_antennaAdvice =>
-      'Zorg dat de antenne stevig vastgeschroefd is. Zend nooit zonder antenne; dat kan de radio beschadigen.';
+  String get reactions_radioAuto => 'Automatisch';
+
+  @override
+  String get reactions_radioOn => 'Aan';
+
+  @override
+  String get reactions_radioOff => 'Uit (dit apparaat)';
+
+  @override
+  String get lite_qrPasteHint =>
+      'Deze versie heeft geen camerascanner. Plak in plaats daarvan de tekst van de QR-code.';
+
+  @override
+  String get lite_qrPasteLabel => 'Tekst van de QR-code';
+
+  @override
+  String get batteryWatch_auto => 'Automatisch controleren';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Zolang er een radio verbonden is, vraagt de app deze repeater regelmatig naar zijn batterij. Hij antwoordt alleen als je bent ingelogd.';
+
+  @override
+  String get batteryWatch_interval => 'Controleer elke';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours u';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Hoogstens 6 controles per uur voor alle repeaters, minstens 2 minuten uit elkaar.';
+
+  @override
+  String get batteryWatch_add => 'Repeater toevoegen';
+
+  @override
+  String get batteryWatch_pick => 'Kies een repeater om te bewaken';
+
+  @override
+  String get batteryWatch_noRepeaters => 'Nog geen repeaters in je contacten.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Geen antwoord op de laatste $count controles. Open de repeater en log opnieuw in.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Controleren…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Repeaterbatterij';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name staat op $percent% ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'De batterij van $name daalt snel: bij dit tempo leeg over ongeveer $days dagen.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name heeft $count batterijcontroles niet beantwoord.';
+  }
 }
