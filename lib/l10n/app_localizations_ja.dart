@@ -9686,4 +9686,23 @@ class AppLocalizationsJa extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'この無線機は $width バイトを使用';
   }
+
+  @override
+  String get coords_maidenhead => 'メイデンヘッド・ロケーター';
+
+  @override
+  String get reactions_radioTitle => 'リアクションを無線で送信';
+
+  @override
+  String get reactions_radioHint =>
+      'リアクションは1件ごとに電波で送られます。自動では、送信時間が制限されるEUの868 MHz帯ではこの端末内だけに表示します。';
+
+  @override
+  String get reactions_radioAuto => '自動';
+
+  @override
+  String get reactions_radioOn => 'オン';
+
+  @override
+  String get reactions_radioOff => 'オフ（この端末）';
 }

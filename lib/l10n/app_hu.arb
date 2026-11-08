@@ -4246,5 +4246,11 @@
   "coords_copyTitle": "Pozíció másolása",
   "coords_copied": "Másolva: {format}",
   "pathHash_badge": "Az útvonal {width} bájtos útvonal-hasheket használ",
-  "pathHash_mismatch": "A rádiód {width} bájtosat használ"
+  "pathHash_mismatch": "A rádiód {width} bájtosat használ",
+  "coords_maidenhead": "Maidenhead lokátor",
+  "reactions_radioTitle": "Reakciók küldése rádión",
+  "reactions_radioHint": "Minden reakció egy adott csomag. Az Automatikus az EU 868 MHz-es sávon, ahol korlátozott az adásidő, ezen az eszközön tartja őket.",
+  "reactions_radioAuto": "Automatikus",
+  "reactions_radioOn": "Be",
+  "reactions_radioOff": "Ki (ez az eszköz)"
 }

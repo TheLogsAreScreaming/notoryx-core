@@ -4208,5 +4208,11 @@
   "coords_copyTitle": "Positie kopiëren",
   "coords_copied": "Gekopieerd als {format}",
   "pathHash_badge": "Route gebruikt pad-hashes van {width} byte",
-  "pathHash_mismatch": "Je radio gebruikt {width} byte"
+  "pathHash_mismatch": "Je radio gebruikt {width} byte",
+  "coords_maidenhead": "Maidenhead-locator",
+  "reactions_radioTitle": "Reacties via de radio sturen",
+  "reactions_radioHint": "Elke reactie is een pakket in de lucht. Automatisch houdt ze op dit apparaat op de EU 868 MHz-band, waar zendtijd beperkt is.",
+  "reactions_radioAuto": "Automatisch",
+  "reactions_radioOn": "Aan",
+  "reactions_radioOff": "Uit (dit apparaat)"
 }

@@ -3511,5 +3511,11 @@
   "coords_copyTitle": "Копировать позицию",
   "coords_copied": "Скопировано как {format}",
   "pathHash_badge": "Маршрут использует {width}-байтовые хеши пути",
-  "pathHash_mismatch": "Ваше радио использует {width} байт"
+  "pathHash_mismatch": "Ваше радио использует {width} байт",
+  "coords_maidenhead": "Локатор Maidenhead",
+  "reactions_radioTitle": "Отправлять реакции по радио",
+  "reactions_radioHint": "Каждая реакция — это пакет в эфире. «Автоматически» оставляет их на этом устройстве в европейском диапазоне 868 МГц, где эфирное время ограничено.",
+  "reactions_radioAuto": "Автоматически",
+  "reactions_radioOn": "Вкл.",
+  "reactions_radioOff": "Выкл. (это устройство)"
 }

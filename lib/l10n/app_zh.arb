@@ -4213,5 +4213,11 @@
   "coords_copyTitle": "复制位置",
   "coords_copied": "已按 {format} 复制",
   "pathHash_badge": "该路由使用 {width} 字节路径哈希",
-  "pathHash_mismatch": "你的电台使用 {width} 字节"
+  "pathHash_mismatch": "你的电台使用 {width} 字节",
+  "coords_maidenhead": "梅登黑德定位符",
+  "reactions_radioTitle": "通过电台发送回应",
+  "reactions_radioHint": "每个回应都是一个空中数据包。自动模式在发射时间受限的欧盟 868 MHz 频段只在本设备上显示。",
+  "reactions_radioAuto": "自动",
+  "reactions_radioOn": "开",
+  "reactions_radioOff": "关（仅本设备）"
 }

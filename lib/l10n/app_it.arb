@@ -4342,5 +4342,11 @@
   "coords_copyTitle": "Copia posizione",
   "coords_copied": "Copiato come {format}",
   "pathHash_badge": "Il percorso usa hash di percorso da {width} byte",
-  "pathHash_mismatch": "La tua radio usa {width} byte"
+  "pathHash_mismatch": "La tua radio usa {width} byte",
+  "coords_maidenhead": "Locatore Maidenhead",
+  "reactions_radioTitle": "Invia le reazioni via radio",
+  "reactions_radioHint": "Ogni reazione è un pacchetto trasmesso. Automatico le tiene su questo dispositivo nella banda UE 868 MHz, dove il tempo di trasmissione è limitato.",
+  "reactions_radioAuto": "Automatico",
+  "reactions_radioOn": "Sì",
+  "reactions_radioOff": "No (questo dispositivo)"
 }

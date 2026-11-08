@@ -4342,5 +4342,11 @@
   "coords_copyTitle": "Position kopieren",
   "coords_copied": "Als {format} kopiert",
   "pathHash_badge": "Route nutzt {width}-Byte-Pfad-Hashes",
-  "pathHash_mismatch": "Dein Funkgerät nutzt {width} Byte"
+  "pathHash_mismatch": "Dein Funkgerät nutzt {width} Byte",
+  "coords_maidenhead": "Maidenhead-Locator",
+  "reactions_radioTitle": "Reaktionen per Funk senden",
+  "reactions_radioHint": "Jede Reaktion ist ein Paket in der Luft. Automatisch behält sie im EU-868-MHz-Band, wo die Sendezeit begrenzt ist, auf diesem Gerät.",
+  "reactions_radioAuto": "Automatisch",
+  "reactions_radioOn": "An",
+  "reactions_radioOff": "Aus (dieses Gerät)"
 }

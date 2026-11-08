@@ -10184,4 +10184,23 @@ class AppLocalizationsDe extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'Dein Funkgerät nutzt $width Byte';
   }
+
+  @override
+  String get coords_maidenhead => 'Maidenhead-Locator';
+
+  @override
+  String get reactions_radioTitle => 'Reaktionen per Funk senden';
+
+  @override
+  String get reactions_radioHint =>
+      'Jede Reaktion ist ein Paket in der Luft. Automatisch behält sie im EU-868-MHz-Band, wo die Sendezeit begrenzt ist, auf diesem Gerät.';
+
+  @override
+  String get reactions_radioAuto => 'Automatisch';
+
+  @override
+  String get reactions_radioOn => 'An';
+
+  @override
+  String get reactions_radioOff => 'Aus (dieses Gerät)';
 }

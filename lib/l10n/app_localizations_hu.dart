@@ -10162,4 +10162,23 @@ class AppLocalizationsHu extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'A rádiód $width bájtosat használ';
   }
+
+  @override
+  String get coords_maidenhead => 'Maidenhead lokátor';
+
+  @override
+  String get reactions_radioTitle => 'Reakciók küldése rádión';
+
+  @override
+  String get reactions_radioHint =>
+      'Minden reakció egy adott csomag. Az Automatikus az EU 868 MHz-es sávon, ahol korlátozott az adásidő, ezen az eszközön tartja őket.';
+
+  @override
+  String get reactions_radioAuto => 'Automatikus';
+
+  @override
+  String get reactions_radioOn => 'Be';
+
+  @override
+  String get reactions_radioOff => 'Ki (ez az eszköz)';
 }

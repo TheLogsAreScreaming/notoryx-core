@@ -4342,5 +4342,11 @@
   "coords_copyTitle": "Copier la position",
   "coords_copied": "Copié en {format}",
   "pathHash_badge": "La route utilise des hachages de chemin de {width} octets",
-  "pathHash_mismatch": "Votre radio utilise {width} octets"
+  "pathHash_mismatch": "Votre radio utilise {width} octets",
+  "coords_maidenhead": "Locator Maidenhead",
+  "reactions_radioTitle": "Envoyer les réactions par radio",
+  "reactions_radioHint": "Chaque réaction est un paquet émis. Automatique les garde sur cet appareil sur la bande européenne 868 MHz, où le temps d'émission est limité.",
+  "reactions_radioAuto": "Automatique",
+  "reactions_radioOn": "Oui",
+  "reactions_radioOff": "Non (cet appareil)"
 }
