@@ -402,6 +402,15 @@ class MapTileCacheService extends ChangeNotifier {
     }
   }
 
+  /// Keeps only a dimmed red channel (from the tile's luminance), so a map
+  /// in Night Ops shows no green or blue light.
+  static const ColorFilter redLightMapFilter = ColorFilter.matrix([
+    0.18, 0.36, 0.06, 0, 0, //
+    0, 0, 0, 0, 0, //
+    0, 0, 0, 0, 0, //
+    0, 0, 0, 1, 0,
+  ]);
+
   static const ColorFilter _darkMapFilter = ColorFilter.matrix([
     -0.0850,
     -0.2861,
@@ -475,6 +484,11 @@ class MapTileCacheService extends ChangeNotifier {
           ? _darkHCMapFilter
           : _darkMapFilter;
       layer = ColorFiltered(colorFilter: filter, child: layer);
+    }
+
+    // Night Ops: tiles in dim reds only, like the rest of the theme.
+    if (appSettingsService.settings.appTheme == 'night_ops') {
+      layer = ColorFiltered(colorFilter: redLightMapFilter, child: layer);
     }
 
     if (opacity < 1) {

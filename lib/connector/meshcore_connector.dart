@@ -20,6 +20,7 @@ import '../models/advert_signature.dart';
 import '../models/channel.dart';
 import '../models/channel_message.dart';
 import '../models/companion_radio_stats.dart';
+import '../models/mesh_health.dart';
 import '../models/radio_rx_packet.dart';
 import '../models/saved_radio.dart';
 import '../models/contact.dart';
@@ -75,153 +76,12 @@ import '../utils/app_logger.dart';
 import '../utils/battery_utils.dart';
 import '../utils/platform_info.dart';
 import 'meshcore_uuids.dart';
+import 'connector_types.dart';
 import 'meshcore_protocol.dart';
+import 'reconnect_policy.dart';
+import 'tx_backoff.dart';
 
-class DirectRepeater {
-  static const int maxAgeMinutes = 30; // Max age for direct repeater info
-  List<int> pubkeyPrefix;
-  int pathHashWidth;
-  String? contactKeyHex;
-  double snr;
-  DateTime lastUpdated;
-
-  DirectRepeater({
-    required List<int> pubkeyPrefix,
-    required this.pathHashWidth,
-    this.contactKeyHex,
-    required this.snr,
-    DateTime? lastUpdated,
-  }) : pubkeyPrefix = List.unmodifiable(pubkeyPrefix),
-       lastUpdated = lastUpdated ?? DateTime.now();
-
-  String get pubkeyPrefixHex => pubkeyPrefix
-      .map((b) => b.toRadixString(16).padLeft(2, '0').toUpperCase())
-      .join();
-
-  bool matchesPrefix(List<int> prefix) {
-    return pubkeyPrefix.length == prefix.length &&
-        listEquals(pubkeyPrefix, prefix);
-  }
-
-  bool matchesPathStart(List<int> pathBytes, int pathHashByteWidth) {
-    final width = pathHashByteWidth.clamp(1, 4).toInt();
-    if (pathBytes.length < width || pubkeyPrefix.length != width) {
-      return false;
-    }
-    return listEquals(pubkeyPrefix, pathBytes.sublist(0, width));
-  }
-
-  void update(
-    double newSNR, {
-    List<int>? pubkeyPrefix,
-    int? pathHashWidth,
-    String? contactKeyHex,
-  }) {
-    snr = newSNR;
-    if (pubkeyPrefix != null &&
-        pubkeyPrefix.length >= this.pubkeyPrefix.length) {
-      this.pubkeyPrefix = List.unmodifiable(pubkeyPrefix);
-    }
-    if (pathHashWidth != null && pathHashWidth >= this.pathHashWidth) {
-      this.pathHashWidth = pathHashWidth;
-    }
-    this.contactKeyHex ??= contactKeyHex;
-    lastUpdated = DateTime.now();
-  }
-
-  int get ranking {
-    if (isStale()) {
-      return -1; // Stale repeaters get lowest rank
-    }
-    // Higher SNR gets higher rank and recency within maxAgeMinutes breaks ties.
-    final ageMs =
-        DateTime.now().millisecondsSinceEpoch -
-        lastUpdated.millisecondsSinceEpoch;
-    final maxAgeMs = maxAgeMinutes * 60 * 1000;
-    final recencyScore = (maxAgeMs - ageMs).clamp(0, maxAgeMs);
-    return ((snr - 31.75) * 1000).round() + recencyScore;
-  }
-
-  bool isStale() {
-    return DateTime.now().difference(lastUpdated) >
-        const Duration(minutes: maxAgeMinutes);
-  }
-}
-
-enum MeshCoreConnectionState {
-  disconnected,
-  scanning,
-  connecting,
-  connected,
-  disconnecting,
-}
-
-enum MeshCoreTransportType { bluetooth, usb, tcp }
-
-/// A wired or network link to reconnect to after it drops: the TCP endpoint
-/// or USB port of the last connect that succeeded. Bluetooth reconnects use
-/// the remembered device instead.
-@immutable
-sealed class LinkTarget {
-  const LinkTarget();
-  MeshCoreTransportType get transport;
-}
-
-final class TcpLinkTarget extends LinkTarget {
-  const TcpLinkTarget(this.host, this.port);
-  final String host;
-  final int port;
-  @override
-  MeshCoreTransportType get transport => MeshCoreTransportType.tcp;
-  @override
-  bool operator ==(Object other) =>
-      other is TcpLinkTarget && other.host == host && other.port == port;
-  @override
-  int get hashCode => Object.hash(host, port);
-}
-
-final class UsbLinkTarget extends LinkTarget {
-  const UsbLinkTarget(this.portName, this.baudRate);
-  final String portName;
-  final int baudRate;
-  @override
-  MeshCoreTransportType get transport => MeshCoreTransportType.usb;
-  @override
-  bool operator ==(Object other) =>
-      other is UsbLinkTarget &&
-      other.portName == portName &&
-      other.baudRate == baudRate;
-  @override
-  int get hashCode => Object.hash(portName, baudRate);
-}
-
-class RepeaterBatterySnapshot {
-  final int millivolts;
-  final DateTime updatedAt;
-  final String source;
-
-  const RepeaterBatterySnapshot({
-    required this.millivolts,
-    required this.updatedAt,
-    required this.source,
-  });
-}
-
-class MeshCoreRadioStateSnapshot {
-  final int freqHz;
-  final int bwHz;
-  final int sf;
-  final int cr;
-  final int txPowerDbm;
-
-  const MeshCoreRadioStateSnapshot({
-    required this.freqHz,
-    required this.bwHz,
-    required this.sf,
-    required this.cr,
-    required this.txPowerDbm,
-  });
-}
+export 'connector_types.dart';
 
 class MeshCoreConnector extends ChangeNotifier {
   // Message windowing to limit memory usage
@@ -687,6 +547,45 @@ class MeshCoreConnector extends ChangeNotifier {
 
   CompanionRadioStats? get latestRadioStats => _latestRadioStats;
 
+  /// Contacts you sent a direct message to in the last [within].
+  List<Contact> recentlyMessagedContacts({
+    Duration within = const Duration(days: 7),
+  }) {
+    final since = DateTime.now().subtract(within);
+    final keys = <String>{
+      for (final e in _conversations.entries)
+        if (e.value.any((m) => m.isOutgoing && m.timestamp.isAfter(since)))
+          e.key,
+    };
+    return [
+      for (final c in _contacts)
+        if (keys.contains(c.publicKeyHex)) c,
+    ];
+  }
+
+  final List<AirtimeSample> _airtimeSamples = [];
+
+  /// Recent airtime counter readings (about the last half hour), for how
+  /// busy the channel has been.
+  List<AirtimeSample> get airtimeSamples => List.unmodifiable(_airtimeSamples);
+
+  /// Direct messages sent in the last [within] that were acknowledged, and
+  /// those that gave up.
+  ({int delivered, int failed}) recentDirectDeliveries({
+    Duration within = const Duration(hours: 24),
+  }) {
+    final since = DateTime.now().subtract(within);
+    var delivered = 0, failed = 0;
+    for (final list in _conversations.values) {
+      for (final m in list) {
+        if (!m.isOutgoing || m.timestamp.isBefore(since)) continue;
+        if (m.status == MessageStatus.delivered) delivered++;
+        if (m.status == MessageStatus.failed) failed++;
+      }
+    }
+    return (delivered: delivered, failed: failed);
+  }
+
   bool get supportsCompanionRadioStats => (_firmwareVerCode ?? 0) >= 8;
 
   /// True when the connected companion has a text CLI (firmware v14+).
@@ -701,6 +600,22 @@ class MeshCoreConnector extends ChangeNotifier {
   }
 
   int? get currentFreqHz => _currentFreqHz;
+
+  /// Whether the radio is on the EU 863–870 MHz band, where duty-cycle
+  /// limits make every extra packet count.
+  bool get isOnEuDutyCycleBand {
+    final hz = _currentFreqHz;
+    return hz != null && hz >= 863000000 && hz <= 870000000;
+  }
+
+  /// Whether a reaction is sent over the radio, or only shown on this
+  /// device. 'auto' keeps reactions local on the EU duty-cycle band.
+  bool get sendsReactionsOverRadio =>
+      switch (_appSettingsService?.settings.reactionsOverRadio) {
+        'on' => true,
+        'off' => false,
+        _ => !isOnEuDutyCycleBand,
+      };
   int? get currentBwHz => _currentBwHz;
   int? get currentSf => _currentSf;
   int? get currentCr => _currentCr;
@@ -1350,6 +1265,14 @@ class MeshCoreConnector extends ChangeNotifier {
 
   /// Points the channel message store at [selfKeyHex]'s data and uses
   /// [settings], as connecting to that radio would.
+  /// Feeds a companion stats frame, as the radio would.
+  @visibleForTesting
+  void debugHandleStatsFrame(Uint8List frame) => _handleStatsFrame(frame);
+
+  /// Sets the radio frequency as a self-info reply would.
+  @visibleForTesting
+  void debugSetFrequencyHz(int? hz) => _currentFreqHz = hz;
+
   @visibleForTesting
   void debugUseChannelStore(String selfKeyHex, AppSettingsService settings) {
     _channelMessageStore.setPublicKeyHex = selfKeyHex;
@@ -1589,27 +1512,13 @@ class MeshCoreConnector extends ChangeNotifier {
       return _contactMsgBackoffFallbackMs;
     }
     final stats = _latestRadioStats!;
-    final nf = stats.noiseFloorDbm.toDouble();
-    // Quieter (more negative) → lower score; noisier → higher.
-    const noiseQuietDbm = -118.0;
-    const noiseNoisyDbm = -88.0;
-    final noiseT = ((nf - noiseQuietDbm) / (noiseNoisyDbm - noiseQuietDbm))
-        .clamp(0.0, 1.0);
-
-    final snr = stats.lastSnrDb;
-    const snrGood = 12.0;
-    const snrBad = -2.0;
-    final snrT = (1.0 - ((snr - snrBad) / (snrGood - snrBad))).clamp(0.0, 1.0);
-
-    final airBusy = _recentAirtimeBusyFraction();
-    final severity = (math.max(noiseT, snrT) * 0.82 + airBusy * 0.18).clamp(
-      0.0,
-      1.0,
+    return txBackoffTargetMs(
+      noiseFloorDbm: stats.noiseFloorDbm.toDouble(),
+      lastSnrDb: stats.lastSnrDb,
+      airBusy: _recentAirtimeBusyFraction(),
+      minMs: _contactMsgBackoffMinMs,
+      maxMs: _contactMsgBackoffMaxMs,
     );
-
-    return (_contactMsgBackoffMinMs +
-            severity * (_contactMsgBackoffMaxMs - _contactMsgBackoffMinMs))
-        .round();
   }
 
   /// 1.0 shortly after TX/RX airtime counters increase, decaying to 0 over ~8s.
@@ -3427,10 +3336,9 @@ class MeshCoreConnector extends ChangeNotifier {
   }
 
   int _nextReconnectDelayMs() {
-    final attempt = _reconnectAttempts < 6 ? _reconnectAttempts : 6;
+    final delayMs = reconnectDelayMs(_reconnectAttempts);
     _reconnectAttempts += 1;
-    final delayMs = 1000 * (1 << attempt);
-    return delayMs > 30000 ? 30000 : delayMs;
+    return delayMs;
   }
 
   void _scheduleReconnect() {
@@ -4095,6 +4003,12 @@ class MeshCoreConnector extends ChangeNotifier {
 
       // Apply reaction locally with pending status
       _processOutgoingContactReaction(messages, reactionInfo, contact);
+      if (!sendsReactionsOverRadio) {
+        // Local only: shown here, never sent, so there's nothing pending.
+        _messageStore.saveMessages(contact.publicKeyHex, messages);
+        notifyListeners();
+        return;
+      }
       _setReactionStatus(
         contact.publicKeyHex,
         reactionInfo,
@@ -4506,6 +4420,7 @@ class MeshCoreConnector extends ChangeNotifier {
       _processedChannelReactions[channel.index]!.add(reactionIdentifier);
 
       notifyListeners();
+      if (!sendsReactionsOverRadio) return;
 
       // Send the reaction to the device (don't add as a visible message)
       final reactionQueueId = _nextReactionSendQueueId();
@@ -6070,6 +5985,11 @@ class MeshCoreConnector extends ChangeNotifier {
       _airtimeBumpStopwatch!.start();
     }
     _prevTotalAirSecs = total;
+    _airtimeSamples.add(AirtimeSample(stats.receivedAt, total));
+    _airtimeSamples.removeWhere(
+      (s) => stats.receivedAt.difference(s.at) > const Duration(minutes: 30),
+    );
+    if (_airtimeSamples.length > 240) _airtimeSamples.removeAt(0);
     _latestRadioStats = stats;
     radioStatsNotifier.value = stats;
   }
@@ -8475,6 +8395,7 @@ class MeshCoreConnector extends ChangeNotifier {
     _stopGpsLocationPolling();
     _stopRadioStatsPolling();
     _latestRadioStats = null;
+    _airtimeSamples.clear();
     radioStatsNotifier.value = null;
     _prevTotalAirSecs = 0;
     _airtimeBumpStopwatch?.stop();
@@ -9348,19 +9269,6 @@ class _PendingCommandAck {
 }
 
 /// A command another radio sent us that our radio refused to run.
-class BlockedRemoteCommand {
-  final String? contactKey;
-  final String name;
-  final String command;
-  final DateTime at;
-  const BlockedRemoteCommand({
-    required this.contactKey,
-    required this.name,
-    required this.command,
-    required this.at,
-  });
-}
-
 /// [messages] without those sent before [cutoff], in their original order.
 List<ChannelMessage> keepChannelMessagesSince(
   List<ChannelMessage> messages,

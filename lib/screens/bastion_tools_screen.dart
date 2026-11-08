@@ -7,6 +7,10 @@ import '../widgets/glass_action_row.dart';
 
 import 'antenna_coverage_screen.dart';
 import 'antenna_hunt_screen.dart';
+import 'privacy_screen.dart';
+import 'waypoints_screen.dart';
+import 'network_changes_screen.dart';
+import 'troubleshooting_screen.dart';
 import 'battery_watch_screen.dart';
 import 'bastion_about_screen.dart';
 import 'bot_settings_screen.dart';
@@ -136,6 +140,12 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
             builder: (_) => const BastionMapHubScreen(),
           ),
           _ToolAction(
+            icon: Icons.place_outlined,
+            title: l10n.waypoints_title,
+            subtitle: l10n.waypoints_toolSubtitle,
+            builder: (_) => const WaypointsScreen(),
+          ),
+          _ToolAction(
             icon: Icons.cell_tower,
             title: l10n.tools_antenna,
             subtitle: l10n.tools_antennaHint,
@@ -172,10 +182,22 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
             builder: (_) => const BastionRepeaterToolsScreen(),
           ),
           _ToolAction(
+            icon: Icons.notifications_active_outlined,
+            title: l10n.netChange_title,
+            subtitle: l10n.netChange_toolSubtitle,
+            builder: (_) => const NetworkChangesScreen(),
+          ),
+          _ToolAction(
             icon: Icons.battery_charging_full,
             title: l10n.batteryWatch_title,
             subtitle: l10n.batteryWatch_toolSubtitle,
             builder: (_) => const BatteryWatchScreen(),
+          ),
+          _ToolAction(
+            icon: Icons.healing_outlined,
+            title: l10n.trouble_title,
+            subtitle: l10n.trouble_toolSubtitle,
+            builder: (_) => const TroubleshootingScreen(),
           ),
           _ToolAction(
             icon: Icons.network_ping,
@@ -201,6 +223,12 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
       (
         title: null as String?,
         actions: <_ToolAction>[
+          _ToolAction(
+            icon: Icons.privacy_tip_outlined,
+            title: l10n.privacy_title,
+            subtitle: l10n.privacy_toolSubtitle,
+            builder: (_) => const PrivacyScreen(),
+          ),
           _ToolAction(
             icon: Icons.info_outline_rounded,
             title: l10n.bastionTools_about,
