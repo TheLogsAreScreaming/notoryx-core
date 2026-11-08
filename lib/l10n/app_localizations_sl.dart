@@ -10251,6 +10251,85 @@ class AppLocalizationsSl extends AppLocalizations {
   String get batteryWatch_cleared => 'Zgodovina počiščena';
 
   @override
+  String get privacy_title => 'Zasebnost';
+
+  @override
+  String get privacy_toolSubtitle => 'Kaj vidijo mreža, ta telefon in internet';
+
+  @override
+  String get privacy_meshHeading => 'V mreži';
+
+  @override
+  String get privacy_dmTitle => 'Neposredna sporočila';
+
+  @override
+  String get privacy_dmBody =>
+      'Šifrirana med vašim in njihovim radiem. Repetitorji jih posredujejo, a jih ne morejo prebrati. Kratki ID-ji pošiljatelja in prejemnika ter pot niso šifrirani.';
+
+  @override
+  String get privacy_channelTitle => 'Kanali';
+
+  @override
+  String get privacy_channelBody =>
+      'Šifrirani s ključem kanala: kdor ima ključ, prebere vsako sporočilo. Ključe javnih kanalov in kanalov s ključnikom pozna vsak, zato jih štejte za javne.';
+
+  @override
+  String get privacy_advertTitle => 'Oglasi in položaji';
+
+  @override
+  String get privacy_advertBody =>
+      'Ime in javni ključ radia ter njegov položaj, če ga delite, se oddajajo nešifrirano vsem v dosegu.';
+
+  @override
+  String get privacy_phoneHeading => 'Na tem telefonu';
+
+  @override
+  String get privacy_phoneBody =>
+      'Sporočila, stiki, poti, sledi, točke, zgodovina baterij in nastavitve ostanejo v zasebni shrambi aplikacije, zaščiteni le z varnostjo telefona. Kar izvozite, lahko prebere vsak, ki ima datoteko.';
+
+  @override
+  String get privacy_netHeading => 'Prek interneta';
+
+  @override
+  String get privacy_netIntro =>
+      'Le ko uporabite funkcijo, ki to potrebuje. Vsaka zahteva storitvi pokaže vaš naslov IP in kaj je bilo zahtevano.';
+
+  @override
+  String get privacy_netMaps =>
+      'Zemljevidi: ploščice iz OpenStreetMap ali, če ga izberete, Stadia Maps za prikazano območje.';
+
+  @override
+  String get privacy_netTerrain =>
+      'Teren: višine iz Open-Meteo za pokritost in vidno linijo.';
+
+  @override
+  String get privacy_netModels =>
+      'Prenosi: modeli za prevajanje in slike iz Hugging Face.';
+
+  @override
+  String get privacy_netImages =>
+      'Slike: iskanje GIF v Giphy in slike iz povezav pyx.li v sporočilih.';
+
+  @override
+  String get privacy_netLists =>
+      'Seznami: regionalne nastavitve in imenik kanalov iz repozitorija izdaj aplikacije na GitHubu.';
+
+  @override
+  String get privacy_netMqtt =>
+      'MQTT: le posredniki, ki jih dodate. Če vklopite nalaganje, se tam objavijo paketi, ki jih radio sliši. Gesla so v varni shrambi telefona.';
+
+  @override
+  String get privacy_netAnalyzer =>
+      'Analizator: poizvedbe CoreScope (kdo je slišal paket, imena repetitorjev), ko jih uporabite.';
+
+  @override
+  String get privacy_notHeading => 'Česa NOTORYX ne počne';
+
+  @override
+  String get privacy_notBody =>
+      'Brez računa, analitike, oglasov in poročil o zrušitvah. Razvijalci ne prejmejo ničesar, razen če to pošljete sami.';
+
+  @override
   String get team_title => 'Sledenje ekipe';
 
   @override
