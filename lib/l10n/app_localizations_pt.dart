@@ -10932,4 +10932,10 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get appLock_sosNoTarget =>
       'Desbloqueie primeiro e escolha quem recebe o seu SOS.';
+
+  @override
+  String get notification_replyAction => 'Responder';
+
+  @override
+  String get notification_replyHint => 'Escreve uma resposta';
 }

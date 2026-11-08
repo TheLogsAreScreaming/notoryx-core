@@ -10988,4 +10988,10 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get appLock_sosNoTarget =>
       'Спочатку розблокуйте та виберіть, хто отримає SOS.';
+
+  @override
+  String get notification_replyAction => 'Відповісти';
+
+  @override
+  String get notification_replyHint => 'Напишіть відповідь';
 }

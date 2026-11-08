@@ -10215,4 +10215,10 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get appLock_sosNoTarget => '请先解锁并选择 SOS 的接收人。';
+
+  @override
+  String get notification_replyAction => '回复';
+
+  @override
+  String get notification_replyHint => '输入回复';
 }

@@ -4422,5 +4422,7 @@
   "dbEncrypt_failed": "Stav: nepodarilo sa. História je nezmenená.",
   "dbEncrypt_restart": "Prejaví sa pri ďalšom spustení aplikácie.",
   "map_showWaypoints": "Zobraziť uložené body a trasy",
-  "appLock_sosNoTarget": "Najprv odomknite a vyberte, kto dostane vaše SOS."
+  "appLock_sosNoTarget": "Najprv odomknite a vyberte, kto dostane vaše SOS.",
+  "notification_replyAction": "Odpovedať",
+  "notification_replyHint": "Napíšte odpoveď"
 }

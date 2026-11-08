@@ -10864,4 +10864,10 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get appLock_sosNoTarget =>
       'Lås upp först och välj vem som får din SOS.';
+
+  @override
+  String get notification_replyAction => 'Svara';
+
+  @override
+  String get notification_replyHint => 'Skriv ett svar';
 }

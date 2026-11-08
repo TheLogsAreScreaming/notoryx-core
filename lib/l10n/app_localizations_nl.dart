@@ -10907,4 +10907,10 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get appLock_sosNoTarget =>
       'Ontgrendel eerst en kies wie je SOS ontvangt.';
+
+  @override
+  String get notification_replyAction => 'Beantwoorden';
+
+  @override
+  String get notification_replyHint => 'Schrijf een antwoord';
 }

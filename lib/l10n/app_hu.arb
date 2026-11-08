@@ -4460,5 +4460,7 @@
   "dbEncrypt_failed": "Állapot: nem sikerült. Az előzmények nem változtak.",
   "dbEncrypt_restart": "Az alkalmazás következő indításakor lép életbe.",
   "map_showWaypoints": "Mentett útpontok és útvonalak megjelenítése",
-  "appLock_sosNoTarget": "Előbb oldd fel, és válaszd ki, ki kapja az SOS-t."
+  "appLock_sosNoTarget": "Előbb oldd fel, és válaszd ki, ki kapja az SOS-t.",
+  "notification_replyAction": "Válasz",
+  "notification_replyHint": "Írj választ"
 }

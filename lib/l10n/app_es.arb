@@ -4556,5 +4556,7 @@
   "dbEncrypt_failed": "Estado: no se pudo aplicar. Tu historial no ha cambiado.",
   "dbEncrypt_restart": "Se aplicará la próxima vez que se inicie la app.",
   "map_showWaypoints": "Mostrar puntos y rutas guardados",
-  "appLock_sosNoTarget": "Desbloquea y elige primero quién recibe tu SOS."
+  "appLock_sosNoTarget": "Desbloquea y elige primero quién recibe tu SOS.",
+  "notification_replyAction": "Responder",
+  "notification_replyHint": "Escribe una respuesta"
 }

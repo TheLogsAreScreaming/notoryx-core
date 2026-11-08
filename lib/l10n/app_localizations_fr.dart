@@ -10988,4 +10988,10 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get appLock_sosNoTarget =>
       'Déverrouillez d\'abord et choisissez qui reçoit votre SOS.';
+
+  @override
+  String get notification_replyAction => 'Répondre';
+
+  @override
+  String get notification_replyHint => 'Écrire une réponse';
 }

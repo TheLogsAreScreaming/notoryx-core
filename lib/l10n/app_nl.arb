@@ -4422,5 +4422,7 @@
   "dbEncrypt_failed": "Status: niet gelukt. Je geschiedenis is ongewijzigd.",
   "dbEncrypt_restart": "Gaat in bij de volgende start van de app.",
   "map_showWaypoints": "Opgeslagen waypoints en routes tonen",
-  "appLock_sosNoTarget": "Ontgrendel eerst en kies wie je SOS ontvangt."
+  "appLock_sosNoTarget": "Ontgrendel eerst en kies wie je SOS ontvangt.",
+  "notification_replyAction": "Beantwoorden",
+  "notification_replyHint": "Schrijf een antwoord"
 }

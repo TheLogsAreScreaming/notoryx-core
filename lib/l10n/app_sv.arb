@@ -4422,5 +4422,7 @@
   "dbEncrypt_failed": "Status: gick inte. Historiken är oförändrad.",
   "dbEncrypt_restart": "Börjar gälla nästa gång appen startas.",
   "map_showWaypoints": "Visa sparade vägpunkter och rutter",
-  "appLock_sosNoTarget": "Lås upp först och välj vem som får din SOS."
+  "appLock_sosNoTarget": "Lås upp först och välj vem som får din SOS.",
+  "notification_replyAction": "Svara",
+  "notification_replyHint": "Skriv ett svar"
 }

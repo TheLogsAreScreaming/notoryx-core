@@ -4556,5 +4556,7 @@
   "dbEncrypt_failed": "Stato: non applicato. La cronologia è invariata.",
   "dbEncrypt_restart": "Avrà effetto al prossimo avvio dell'app.",
   "map_showWaypoints": "Mostra waypoint e percorsi salvati",
-  "appLock_sosNoTarget": "Prima sblocca e scegli chi riceve il tuo SOS."
+  "appLock_sosNoTarget": "Prima sblocca e scegli chi riceve il tuo SOS.",
+  "notification_replyAction": "Rispondi",
+  "notification_replyHint": "Scrivi una risposta"
 }

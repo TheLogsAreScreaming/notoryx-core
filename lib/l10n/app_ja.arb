@@ -4556,5 +4556,7 @@
   "dbEncrypt_failed": "状態: 適用できませんでした。履歴は変更されていません。",
   "dbEncrypt_restart": "次回アプリを起動したときに有効になります。",
   "map_showWaypoints": "保存したウェイポイントとルートを表示",
-  "appLock_sosNoTarget": "先にロックを解除し、SOSの送信先を選んでください。"
+  "appLock_sosNoTarget": "先にロックを解除し、SOSの送信先を選んでください。",
+  "notification_replyAction": "返信",
+  "notification_replyHint": "返信を入力"
 }

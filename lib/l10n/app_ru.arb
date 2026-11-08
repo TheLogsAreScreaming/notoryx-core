@@ -3725,5 +3725,7 @@
   "dbEncrypt_failed": "Состояние: не удалось применить. История не изменена.",
   "dbEncrypt_restart": "Вступит в силу при следующем запуске приложения.",
   "map_showWaypoints": "Показывать сохранённые точки и маршруты",
-  "appLock_sosNoTarget": "Сначала разблокируйте и выберите, кто получит SOS."
+  "appLock_sosNoTarget": "Сначала разблокируйте и выберите, кто получит SOS.",
+  "notification_replyAction": "Ответить",
+  "notification_replyHint": "Напишите ответ"
 }

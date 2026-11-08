@@ -10991,4 +10991,10 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get appLock_sosNoTarget =>
       'Сначала разблокируйте и выберите, кто получит SOS.';
+
+  @override
+  String get notification_replyAction => 'Ответить';
+
+  @override
+  String get notification_replyHint => 'Напишите ответ';
 }

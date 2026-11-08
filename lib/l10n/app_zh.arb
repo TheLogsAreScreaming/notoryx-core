@@ -4427,5 +4427,7 @@
   "dbEncrypt_failed": "状态：无法应用。记录未更改。",
   "dbEncrypt_restart": "下次启动应用时生效。",
   "map_showWaypoints": "显示已保存的航点和路线",
-  "appLock_sosNoTarget": "请先解锁并选择 SOS 的接收人。"
+  "appLock_sosNoTarget": "请先解锁并选择 SOS 的接收人。",
+  "notification_replyAction": "回复",
+  "notification_replyHint": "输入回复"
 }

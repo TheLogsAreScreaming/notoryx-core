@@ -10447,4 +10447,10 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get appLock_sosNoTarget => '먼저 잠금을 해제하고 SOS를 받을 사람을 선택하세요.';
+
+  @override
+  String get notification_replyAction => '답장';
+
+  @override
+  String get notification_replyHint => '답장 입력';
 }
