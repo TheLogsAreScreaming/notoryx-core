@@ -4554,5 +4554,6 @@
   "dbEncrypt_on": "Status: verschlüsselt",
   "dbEncrypt_off": "Status: nicht verschlüsselt",
   "dbEncrypt_failed": "Status: nicht möglich. Dein Verlauf ist unverändert.",
-  "dbEncrypt_restart": "Wird beim nächsten App-Start wirksam."
+  "dbEncrypt_restart": "Wird beim nächsten App-Start wirksam.",
+  "map_showWaypoints": "Gespeicherte Wegpunkte und Routen anzeigen"
 }

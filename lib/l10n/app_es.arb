@@ -4554,5 +4554,6 @@
   "dbEncrypt_on": "Estado: cifrado",
   "dbEncrypt_off": "Estado: sin cifrar",
   "dbEncrypt_failed": "Estado: no se pudo aplicar. Tu historial no ha cambiado.",
-  "dbEncrypt_restart": "Se aplicará la próxima vez que se inicie la app."
+  "dbEncrypt_restart": "Se aplicará la próxima vez que se inicie la app.",
+  "map_showWaypoints": "Mostrar puntos y rutas guardados"
 }

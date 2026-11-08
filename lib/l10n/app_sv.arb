@@ -4420,5 +4420,6 @@
   "dbEncrypt_on": "Status: krypterad",
   "dbEncrypt_off": "Status: inte krypterad",
   "dbEncrypt_failed": "Status: gick inte. Historiken är oförändrad.",
-  "dbEncrypt_restart": "Börjar gälla nästa gång appen startas."
+  "dbEncrypt_restart": "Börjar gälla nästa gång appen startas.",
+  "map_showWaypoints": "Visa sparade vägpunkter och rutter"
 }

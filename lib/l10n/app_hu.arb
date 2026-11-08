@@ -4458,5 +4458,6 @@
   "dbEncrypt_on": "Állapot: titkosítva",
   "dbEncrypt_off": "Állapot: nincs titkosítva",
   "dbEncrypt_failed": "Állapot: nem sikerült. Az előzmények nem változtak.",
-  "dbEncrypt_restart": "Az alkalmazás következő indításakor lép életbe."
+  "dbEncrypt_restart": "Az alkalmazás következő indításakor lép életbe.",
+  "map_showWaypoints": "Mentett útpontok és útvonalak megjelenítése"
 }

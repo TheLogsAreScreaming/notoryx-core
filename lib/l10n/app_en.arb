@@ -5881,5 +5881,6 @@
   "dbEncrypt_on": "Status: encrypted",
   "dbEncrypt_off": "Status: not encrypted",
   "dbEncrypt_failed": "Status: couldn't apply. Your history is unchanged.",
-  "dbEncrypt_restart": "Takes effect the next time the app starts."
+  "dbEncrypt_restart": "Takes effect the next time the app starts.",
+  "map_showWaypoints": "Show saved waypoints and routes"
 }

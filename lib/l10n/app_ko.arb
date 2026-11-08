@@ -4554,5 +4554,6 @@
   "dbEncrypt_on": "상태: 암호화됨",
   "dbEncrypt_off": "상태: 암호화되지 않음",
   "dbEncrypt_failed": "상태: 적용하지 못했습니다. 기록은 변경되지 않았습니다.",
-  "dbEncrypt_restart": "다음에 앱을 시작할 때 적용됩니다."
+  "dbEncrypt_restart": "다음에 앱을 시작할 때 적용됩니다.",
+  "map_showWaypoints": "저장된 웨이포인트와 경로 표시"
 }

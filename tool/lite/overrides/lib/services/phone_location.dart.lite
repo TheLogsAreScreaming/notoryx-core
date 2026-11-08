@@ -1,0 +1,18 @@
+/// The lite build's copy of lib/services/phone_location.dart: no phone GPS,
+/// so no Google Play Services. Callers fall back to the radio's position.
+typedef PhoneFix = ({
+  double lat,
+  double lon,
+  double accuracyMeters,
+  DateTime time,
+});
+
+Future<PhoneFix?> askForPhoneFix() async => null;
+
+Future<PhoneFix> freshPhoneFix(DateTime now, Duration maxAge) async =>
+    throw UnsupportedError('The lite build has no phone GPS.');
+
+Stream<PhoneFix> phoneFixStream() =>
+    Stream.error(StateError('The lite build has no phone GPS.'));
+
+Future<PhoneFix?> lastKnownPhoneFix() async => null;

@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'dart:math' as math;
 
 import 'package:flutter/foundation.dart';
-import 'package:geolocator/geolocator.dart';
+import 'phone_location.dart';
 
 import '../connector/meshcore_connector.dart';
 import '../connector/meshcore_protocol.dart';
@@ -481,18 +481,8 @@ class NetworkScanService extends ChangeNotifier {
     try {
       final custom = _locate;
       if (custom != null) return await custom();
-      final last = await Geolocator.getLastKnownPosition();
-      if (last != null &&
-          _now().difference(last.timestamp) < const Duration(minutes: 5)) {
-        return (lat: last.latitude, lon: last.longitude);
-      }
-      final p = await Geolocator.getCurrentPosition(
-        locationSettings: const LocationSettings(
-          accuracy: LocationAccuracy.high,
-          timeLimit: Duration(seconds: 8),
-        ),
-      );
-      return (lat: p.latitude, lon: p.longitude);
+      final p = await freshPhoneFix(_now(), const Duration(minutes: 5));
+      return (lat: p.lat, lon: p.lon);
     } catch (_) {
       final lat = connector.selfLatitude, lon = connector.selfLongitude;
       if (lat == null || lon == null || (lat == 0 && lon == 0)) return null;

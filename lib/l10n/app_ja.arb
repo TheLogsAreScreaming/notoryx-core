@@ -4554,5 +4554,6 @@
   "dbEncrypt_on": "状態: 暗号化済み",
   "dbEncrypt_off": "状態: 暗号化なし",
   "dbEncrypt_failed": "状態: 適用できませんでした。履歴は変更されていません。",
-  "dbEncrypt_restart": "次回アプリを起動したときに有効になります。"
+  "dbEncrypt_restart": "次回アプリを起動したときに有効になります。",
+  "map_showWaypoints": "保存したウェイポイントとルートを表示"
 }

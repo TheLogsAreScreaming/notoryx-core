@@ -4458,5 +4458,6 @@
   "dbEncrypt_on": "Stan: zaszyfrowano",
   "dbEncrypt_off": "Stan: bez szyfrowania",
   "dbEncrypt_failed": "Stan: nie udało się. Historia bez zmian.",
-  "dbEncrypt_restart": "Zacznie działać przy następnym uruchomieniu aplikacji."
+  "dbEncrypt_restart": "Zacznie działać przy następnym uruchomieniu aplikacji.",
+  "map_showWaypoints": "Pokaż zapisane punkty i trasy"
 }

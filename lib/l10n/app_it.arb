@@ -4554,5 +4554,6 @@
   "dbEncrypt_on": "Stato: cifrato",
   "dbEncrypt_off": "Stato: non cifrato",
   "dbEncrypt_failed": "Stato: non applicato. La cronologia è invariata.",
-  "dbEncrypt_restart": "Avrà effetto al prossimo avvio dell'app."
+  "dbEncrypt_restart": "Avrà effetto al prossimo avvio dell'app.",
+  "map_showWaypoints": "Mostra waypoint e percorsi salvati"
 }

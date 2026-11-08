@@ -4,7 +4,7 @@ import 'dart:io';
 
 import 'package:cryptography/cryptography.dart';
 import 'package:flutter/foundation.dart';
-import 'package:geolocator/geolocator.dart';
+import 'phone_location.dart';
 import 'package:h3_flutter/h3_flutter.dart';
 import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
@@ -112,22 +112,9 @@ class FileCoverageStore implements CoverageStore {
 }
 
 /// Phone GPS while mapping is on: high accuracy, a reading every 20 m.
-Stream<PositionFix> geolocatorFixes() async* {
-  var permission = await Geolocator.checkPermission();
-  if (permission == LocationPermission.denied) {
-    permission = await Geolocator.requestPermission();
-  }
-  if (permission == LocationPermission.denied ||
-      permission == LocationPermission.deniedForever) {
-    throw StateError('Location permission was not granted.');
-  }
-  yield* Geolocator.getPositionStream(
-    locationSettings: const LocationSettings(
-      accuracy: LocationAccuracy.high,
-      distanceFilter: 20,
-    ),
-  ).map((p) => PositionFix(p.latitude, p.longitude, p.accuracy, p.timestamp));
-}
+Stream<PositionFix> geolocatorFixes() => phoneFixStream().map(
+  (p) => PositionFix(p.lat, p.lon, p.accuracyMeters, p.time),
+);
 
 /// Coverage mapping: while on, every packet the radio hears is credited to
 /// the hexagon the phone is in, and finished samples are uploaded to the

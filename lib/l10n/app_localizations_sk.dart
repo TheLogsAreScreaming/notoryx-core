@@ -10876,48 +10876,5 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
-  String get security_title => 'Zabezpečenie';
-
-  @override
-  String get security_toolSubtitle =>
-      'Zámok aplikácie a šifrovaná história správ';
-
-  @override
-  String get appLock_title => 'Zámok aplikácie';
-
-  @override
-  String get appLock_subtitle =>
-      'Pri otvorení vyžaduje odtlačok, tvár alebo zámok obrazovky. Upozornenia fungujú ďalej, ale pred odoslaním SOS musíte odomknúť.';
-
-  @override
-  String get appLock_reason => 'Odomknúť NOTORYX Core';
-
-  @override
-  String get appLock_unlock => 'Odomknúť';
-
-  @override
-  String get appLock_locked => 'NOTORYX Core je zamknutý';
-
-  @override
-  String get appLock_unavailable =>
-      'Toto zariadenie nemá zámok obrazovky alebo sa ho nepodarilo overiť.';
-
-  @override
-  String get dbEncrypt_title => 'Šifrovať históriu správ';
-
-  @override
-  String get dbEncrypt_subtitle =>
-      'Šifruje databázu správ v tomto zariadení kľúčom v zabezpečenom úložisku telefónu. Pri strate kľúča históriu nemožno obnoviť, preto si uchovajte zálohu.';
-
-  @override
-  String get dbEncrypt_on => 'Stav: šifrované';
-
-  @override
-  String get dbEncrypt_off => 'Stav: nešifrované';
-
-  @override
-  String get dbEncrypt_failed => 'Stav: nepodarilo sa. História je nezmenená.';
-
-  @override
-  String get dbEncrypt_restart => 'Prejaví sa pri ďalšom spustení aplikácie.';
+  String get map_showWaypoints => 'Zobraziť uložené body a trasy';
 }

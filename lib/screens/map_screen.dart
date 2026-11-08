@@ -1,4 +1,6 @@
 import 'dart:async';
+import '../services/waypoint_store.dart';
+import '../widgets/waypoint_map_layer.dart';
 import '../widgets/coordinate_copy_sheet.dart';
 import '../widgets/map_telemetry.dart';
 import '../services/node_telemetry_store.dart';
@@ -7,7 +9,7 @@ import 'dart:math';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
+import '../services/phone_location.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
@@ -257,21 +259,8 @@ class _MapScreenState extends State<MapScreen> {
   Future<void> _goToMyPosition(MeshCoreConnector connector) async {
     LatLng? here;
     try {
-      var permission = await Geolocator.checkPermission();
-      if (permission == LocationPermission.denied) {
-        permission = await Geolocator.requestPermission();
-      }
-      if (permission != LocationPermission.denied &&
-          permission != LocationPermission.deniedForever) {
-        final p =
-            await Geolocator.getLastKnownPosition() ??
-            await Geolocator.getCurrentPosition(
-              locationSettings: const LocationSettings(
-                timeLimit: Duration(seconds: 10),
-              ),
-            );
-        here = LatLng(p.latitude, p.longitude);
-      }
+      final p = await askForPhoneFix();
+      if (p != null) here = LatLng(p.lat, p.lon);
     } catch (_) {
       // No phone GPS here; the radio's position is next.
     }
@@ -409,6 +398,9 @@ class _MapScreenState extends State<MapScreen> {
             ? allContacts
             : allContacts.where((c) => c.isActive).toList();
 
+        final waypointStore = settings.mapShowWaypoints
+            ? context.watch<WaypointStore>()
+            : null;
         final highlightPosition = widget.highlightPosition;
         final sharedMarkers = settings.mapShowMarkers
             ? _collectSharedMarkers(
@@ -834,6 +826,14 @@ class _MapScreenState extends State<MapScreen> {
                     tileCache.buildTileLayer(context),
                     if (_polylines.isNotEmpty && _isBuildingPathTrace)
                       PolylineLayer(polylines: _polylines),
+                    if (waypointStore != null &&
+                        waypointStore.routes.isNotEmpty)
+                      PolylineLayer(
+                        polylines: [
+                          for (final route in waypointStore.routes)
+                            waypointRoutePolyline(route),
+                        ],
+                      ),
                     if (sharedMarkerPolylines.isNotEmpty)
                       PolylineLayer(polylines: sharedMarkerPolylines),
                     MarkerLayer(
@@ -892,6 +892,13 @@ class _MapScreenState extends State<MapScreen> {
                           ),
                           showLabels: _showNodeLabels,
                           selectedContact: selectedContact,
+                        ),
+                        ...?waypointStore?.waypoints.map(
+                          (w) => waypointMapMarker(
+                            w,
+                            showLabel: _showNodeLabels,
+                            onTap: () => showWaypointMapSheet(context, w),
+                          ),
                         ),
                         ...sharedMarkers.map(_buildSharedMarker),
                         if (connector.selfLatitude != null &&
@@ -3596,6 +3603,13 @@ class _MapScreenState extends State<MapScreen> {
                           dense: true,
                           onChanged: (value) =>
                               service.setMapShowMarkers(value),
+                        ),
+                        SwitchListTile(
+                          title: Text(sheetContext.l10n.map_showWaypoints),
+                          value: settings.mapShowWaypoints,
+                          dense: true,
+                          onChanged: (value) =>
+                              service.setMapShowWaypoints(value),
                         ),
                         SwitchListTile(
                           title: Text(

@@ -4420,5 +4420,6 @@
   "dbEncrypt_on": "Stav: šifrované",
   "dbEncrypt_off": "Stav: nešifrované",
   "dbEncrypt_failed": "Stav: nepodarilo sa. História je nezmenená.",
-  "dbEncrypt_restart": "Prejaví sa pri ďalšom spustení aplikácie."
+  "dbEncrypt_restart": "Prejaví sa pri ďalšom spustení aplikácie.",
+  "map_showWaypoints": "Zobraziť uložené body a trasy"
 }

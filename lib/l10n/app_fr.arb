@@ -4554,5 +4554,6 @@
   "dbEncrypt_on": "État : chiffré",
   "dbEncrypt_off": "État : non chiffré",
   "dbEncrypt_failed": "État : échec. Votre historique n'a pas changé.",
-  "dbEncrypt_restart": "Prend effet au prochain démarrage de l'app."
+  "dbEncrypt_restart": "Prend effet au prochain démarrage de l'app.",
+  "map_showWaypoints": "Afficher les points et itinéraires enregistrés"
 }

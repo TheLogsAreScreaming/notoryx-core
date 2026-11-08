@@ -10881,49 +10881,5 @@ class AppLocalizationsBg extends AppLocalizations {
   }
 
   @override
-  String get security_title => 'Сигурност';
-
-  @override
-  String get security_toolSubtitle =>
-      'Заключване и шифрована история на съобщенията';
-
-  @override
-  String get appLock_title => 'Заключване на приложението';
-
-  @override
-  String get appLock_subtitle =>
-      'Изисква пръстов отпечатък, лице или заключване на екрана при отваряне. Известията продължават, но трябва да отключите, преди да изпратите SOS.';
-
-  @override
-  String get appLock_reason => 'Отключете NOTORYX Core';
-
-  @override
-  String get appLock_unlock => 'Отключи';
-
-  @override
-  String get appLock_locked => 'NOTORYX Core е заключено';
-
-  @override
-  String get appLock_unavailable =>
-      'Устройството няма заключване на екрана или то не беше потвърдено.';
-
-  @override
-  String get dbEncrypt_title => 'Шифроване на историята';
-
-  @override
-  String get dbEncrypt_subtitle =>
-      'Шифрова базата със съобщения на устройството с ключ в защитеното хранилище на телефона. Ако ключът се загуби, историята не може да се възстанови, затова пазете резервно копие.';
-
-  @override
-  String get dbEncrypt_on => 'Състояние: шифровано';
-
-  @override
-  String get dbEncrypt_off => 'Състояние: нешифровано';
-
-  @override
-  String get dbEncrypt_failed =>
-      'Състояние: неуспешно. Историята е непроменена.';
-
-  @override
-  String get dbEncrypt_restart => 'Влиза в сила при следващото стартиране.';
+  String get map_showWaypoints => 'Показвай запазените точки и маршрути';
 }

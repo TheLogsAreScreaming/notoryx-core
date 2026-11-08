@@ -10908,49 +10908,5 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get security_title => 'Sicherheit';
-
-  @override
-  String get security_toolSubtitle =>
-      'App-Sperre und verschlüsselter Nachrichtenverlauf';
-
-  @override
-  String get appLock_title => 'App-Sperre';
-
-  @override
-  String get appLock_subtitle =>
-      'Fragt beim Öffnen nach Fingerabdruck, Gesicht oder Bildschirmsperre. Warnungen laufen weiter, aber vor einem SOS musst du entsperren.';
-
-  @override
-  String get appLock_reason => 'NOTORYX Core entsperren';
-
-  @override
-  String get appLock_unlock => 'Entsperren';
-
-  @override
-  String get appLock_locked => 'NOTORYX Core ist gesperrt';
-
-  @override
-  String get appLock_unavailable =>
-      'Dieses Gerät hat keine Bildschirmsperre, oder sie konnte nicht bestätigt werden.';
-
-  @override
-  String get dbEncrypt_title => 'Nachrichtenverlauf verschlüsseln';
-
-  @override
-  String get dbEncrypt_subtitle =>
-      'Verschlüsselt die Nachrichtendatenbank auf diesem Gerät mit einem Schlüssel im sicheren Speicher des Telefons. Geht der Schlüssel verloren, ist der Verlauf nicht wiederherstellbar; lege also eine Sicherung an.';
-
-  @override
-  String get dbEncrypt_on => 'Status: verschlüsselt';
-
-  @override
-  String get dbEncrypt_off => 'Status: nicht verschlüsselt';
-
-  @override
-  String get dbEncrypt_failed =>
-      'Status: nicht möglich. Dein Verlauf ist unverändert.';
-
-  @override
-  String get dbEncrypt_restart => 'Wird beim nächsten App-Start wirksam.';
+  String get map_showWaypoints => 'Gespeicherte Wegpunkte und Routen anzeigen';
 }

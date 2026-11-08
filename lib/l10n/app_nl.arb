@@ -4420,5 +4420,6 @@
   "dbEncrypt_on": "Status: versleuteld",
   "dbEncrypt_off": "Status: niet versleuteld",
   "dbEncrypt_failed": "Status: niet gelukt. Je geschiedenis is ongewijzigd.",
-  "dbEncrypt_restart": "Gaat in bij de volgende start van de app."
+  "dbEncrypt_restart": "Gaat in bij de volgende start van de app.",
+  "map_showWaypoints": "Opgeslagen waypoints en routes tonen"
 }

@@ -4420,5 +4420,6 @@
   "dbEncrypt_on": "Stanje: šifrirano",
   "dbEncrypt_off": "Stanje: ni šifrirano",
   "dbEncrypt_failed": "Stanje: ni uspelo. Zgodovina je nespremenjena.",
-  "dbEncrypt_restart": "Začne veljati ob naslednjem zagonu aplikacije."
+  "dbEncrypt_restart": "Začne veljati ob naslednjem zagonu aplikacije.",
+  "map_showWaypoints": "Prikaži shranjene točke in poti"
 }

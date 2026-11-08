@@ -10399,46 +10399,5 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get security_title => '보안';
-
-  @override
-  String get security_toolSubtitle => '앱 잠금 및 메시지 기록 암호화';
-
-  @override
-  String get appLock_title => '앱 잠금';
-
-  @override
-  String get appLock_subtitle =>
-      '앱을 열 때 지문, 얼굴 또는 화면 잠금을 요구합니다. 알림은 계속 작동하지만 SOS를 보내려면 먼저 잠금을 해제해야 합니다.';
-
-  @override
-  String get appLock_reason => 'NOTORYX Core 잠금 해제';
-
-  @override
-  String get appLock_unlock => '잠금 해제';
-
-  @override
-  String get appLock_locked => 'NOTORYX Core가 잠겨 있습니다';
-
-  @override
-  String get appLock_unavailable => '이 기기에 화면 잠금이 없거나 확인할 수 없습니다.';
-
-  @override
-  String get dbEncrypt_title => '메시지 기록 암호화';
-
-  @override
-  String get dbEncrypt_subtitle =>
-      '휴대폰의 보안 저장소에 있는 키로 이 기기의 메시지 데이터베이스를 암호화합니다. 키를 잃으면 기록을 복구할 수 없으니 백업을 보관하세요.';
-
-  @override
-  String get dbEncrypt_on => '상태: 암호화됨';
-
-  @override
-  String get dbEncrypt_off => '상태: 암호화되지 않음';
-
-  @override
-  String get dbEncrypt_failed => '상태: 적용하지 못했습니다. 기록은 변경되지 않았습니다.';
-
-  @override
-  String get dbEncrypt_restart => '다음에 앱을 시작할 때 적용됩니다.';
+  String get map_showWaypoints => '저장된 웨이포인트와 경로 표시';
 }
