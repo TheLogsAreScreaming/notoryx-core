@@ -10874,4 +10874,7 @@ class AppLocalizationsSk extends AppLocalizations {
   String batteryWatch_alertSilent(String name, int count) {
     return '$name neodpovedal na $count kontrol batérie.';
   }
+
+  @override
+  String get map_showWaypoints => 'Zobraziť uložené body a trasy';
 }

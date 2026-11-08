@@ -4540,5 +4540,6 @@
   "batteryWatch_alertTitle": "리피터 배터리",
   "batteryWatch_alertLow": "{name}: {percent}% ({volts} V).",
   "batteryWatch_alertFalling": "{name}의 배터리가 빠르게 줄고 있습니다. 이 속도라면 약 {days}일 후 방전됩니다.",
-  "batteryWatch_alertSilent": "{name}이(가) 배터리 확인 {count}회에 응답하지 않았습니다."
+  "batteryWatch_alertSilent": "{name}이(가) 배터리 확인 {count}회에 응답하지 않았습니다.",
+  "map_showWaypoints": "저장된 웨이포인트와 경로 표시"
 }

@@ -18084,6 +18084,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{name} hasn\'t answered {count} battery checks.'**
   String batteryWatch_alertSilent(String name, int count);
+
+  /// No description provided for @map_showWaypoints.
+  ///
+  /// In en, this message translates to:
+  /// **'Show saved waypoints and routes'**
+  String get map_showWaypoints;
 }
 
 class _AppLocalizationsDelegate

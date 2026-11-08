@@ -10382,4 +10382,7 @@ class AppLocalizationsJa extends AppLocalizations {
   String batteryWatch_alertSilent(String name, int count) {
     return '$nameは$count回のバッテリーチェックに応答していません。';
   }
+
+  @override
+  String get map_showWaypoints => '保存したウェイポイントとルートを表示';
 }

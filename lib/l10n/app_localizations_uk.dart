@@ -10933,4 +10933,7 @@ class AppLocalizationsUk extends AppLocalizations {
   String batteryWatch_alertSilent(String name, int count) {
     return '$name не відповів на $count перевірок батареї.';
   }
+
+  @override
+  String get map_showWaypoints => 'Показувати збережені точки та маршрути';
 }

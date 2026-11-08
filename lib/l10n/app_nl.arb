@@ -4406,5 +4406,6 @@
   "batteryWatch_alertTitle": "Repeaterbatterij",
   "batteryWatch_alertLow": "{name} staat op {percent}% ({volts} V).",
   "batteryWatch_alertFalling": "De batterij van {name} daalt snel: bij dit tempo leeg over ongeveer {days} dagen.",
-  "batteryWatch_alertSilent": "{name} heeft {count} batterijcontroles niet beantwoord."
+  "batteryWatch_alertSilent": "{name} heeft {count} batterijcontroles niet beantwoord.",
+  "map_showWaypoints": "Opgeslagen waypoints en routes tonen"
 }

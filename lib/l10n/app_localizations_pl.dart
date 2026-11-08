@@ -10938,4 +10938,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String batteryWatch_alertSilent(String name, int count) {
     return '$name nie odpowiedział na $count zapytań o baterię.';
   }
+
+  @override
+  String get map_showWaypoints => 'Pokaż zapisane punkty i trasy';
 }

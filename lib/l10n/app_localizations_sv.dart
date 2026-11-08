@@ -10812,4 +10812,7 @@ class AppLocalizationsSv extends AppLocalizations {
   String batteryWatch_alertSilent(String name, int count) {
     return '$name har inte svarat på $count batterikontroller.';
   }
+
+  @override
+  String get map_showWaypoints => 'Visa sparade vägpunkter och rutter';
 }

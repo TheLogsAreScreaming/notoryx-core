@@ -10166,4 +10166,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String batteryWatch_alertSilent(String name, int count) {
     return '$name 已有 $count 次电池检查未回复。';
   }
+
+  @override
+  String get map_showWaypoints => '显示已保存的航点和路线';
 }

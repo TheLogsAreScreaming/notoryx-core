@@ -4406,5 +4406,6 @@
   "batteryWatch_alertTitle": "Baterija repetitorja",
   "batteryWatch_alertLow": "{name} je na {percent} % ({volts} V).",
   "batteryWatch_alertFalling": "Baterija {name} hitro pada: pri tem tempu prazna čez približno {days} dni.",
-  "batteryWatch_alertSilent": "{name} ni odgovoril na {count} preverjanj baterije."
+  "batteryWatch_alertSilent": "{name} ni odgovoril na {count} preverjanj baterije.",
+  "map_showWaypoints": "Prikaži shranjene točke in poti"
 }

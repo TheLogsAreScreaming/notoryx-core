@@ -5867,5 +5867,6 @@
   "batteryWatch_alertFalling": "{name}'s battery is falling fast: empty in about {days} days at this rate.",
   "@batteryWatch_alertFalling": {"placeholders": {"name": {"type": "String"}, "days": {"type": "String"}}},
   "batteryWatch_alertSilent": "{name} hasn't answered {count} battery checks.",
-  "@batteryWatch_alertSilent": {"placeholders": {"name": {"type": "String"}, "count": {"type": "int"}}}
+  "@batteryWatch_alertSilent": {"placeholders": {"name": {"type": "String"}, "count": {"type": "int"}}},
+  "map_showWaypoints": "Show saved waypoints and routes"
 }
