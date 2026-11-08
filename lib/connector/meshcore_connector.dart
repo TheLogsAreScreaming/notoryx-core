@@ -1393,6 +1393,7 @@ class MeshCoreConnector extends ChangeNotifier {
   /// Feeds a companion stats frame, as the radio would.
   @visibleForTesting
   void debugHandleStatsFrame(Uint8List frame) => _handleStatsFrame(frame);
+
   /// Sets the radio frequency as a self-info reply would.
   @visibleForTesting
   void debugSetFrequencyHz(int? hz) => _currentFreqHz = hz;
