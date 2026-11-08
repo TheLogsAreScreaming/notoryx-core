@@ -10253,6 +10253,27 @@ class AppLocalizationsEs extends AppLocalizations {
   String get batteryWatch_cleared => 'Historial borrado';
 
   @override
+  String get a11y_clear => 'Borrar';
+
+  @override
+  String get a11y_showOnMap => 'Mostrar en el mapa';
+
+  @override
+  String get a11y_showHide => 'Mostrar u ocultar';
+
+  @override
+  String get a11y_flash => 'Flash';
+
+  @override
+  String get a11y_switchCamera => 'Cambiar de cámara';
+
+  @override
+  String get a11y_pauseGif => 'Reproducir o pausar GIF';
+
+  @override
+  String get a11y_chooseGif => 'Elegir este GIF';
+
+  @override
   String get privacy_title => 'Privacidad';
 
   @override
