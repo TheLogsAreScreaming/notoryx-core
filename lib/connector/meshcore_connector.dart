@@ -75,153 +75,12 @@ import '../utils/app_logger.dart';
 import '../utils/battery_utils.dart';
 import '../utils/platform_info.dart';
 import 'meshcore_uuids.dart';
+import 'connector_types.dart';
 import 'meshcore_protocol.dart';
+import 'reconnect_policy.dart';
+import 'tx_backoff.dart';
 
-class DirectRepeater {
-  static const int maxAgeMinutes = 30; // Max age for direct repeater info
-  List<int> pubkeyPrefix;
-  int pathHashWidth;
-  String? contactKeyHex;
-  double snr;
-  DateTime lastUpdated;
-
-  DirectRepeater({
-    required List<int> pubkeyPrefix,
-    required this.pathHashWidth,
-    this.contactKeyHex,
-    required this.snr,
-    DateTime? lastUpdated,
-  }) : pubkeyPrefix = List.unmodifiable(pubkeyPrefix),
-       lastUpdated = lastUpdated ?? DateTime.now();
-
-  String get pubkeyPrefixHex => pubkeyPrefix
-      .map((b) => b.toRadixString(16).padLeft(2, '0').toUpperCase())
-      .join();
-
-  bool matchesPrefix(List<int> prefix) {
-    return pubkeyPrefix.length == prefix.length &&
-        listEquals(pubkeyPrefix, prefix);
-  }
-
-  bool matchesPathStart(List<int> pathBytes, int pathHashByteWidth) {
-    final width = pathHashByteWidth.clamp(1, 4).toInt();
-    if (pathBytes.length < width || pubkeyPrefix.length != width) {
-      return false;
-    }
-    return listEquals(pubkeyPrefix, pathBytes.sublist(0, width));
-  }
-
-  void update(
-    double newSNR, {
-    List<int>? pubkeyPrefix,
-    int? pathHashWidth,
-    String? contactKeyHex,
-  }) {
-    snr = newSNR;
-    if (pubkeyPrefix != null &&
-        pubkeyPrefix.length >= this.pubkeyPrefix.length) {
-      this.pubkeyPrefix = List.unmodifiable(pubkeyPrefix);
-    }
-    if (pathHashWidth != null && pathHashWidth >= this.pathHashWidth) {
-      this.pathHashWidth = pathHashWidth;
-    }
-    this.contactKeyHex ??= contactKeyHex;
-    lastUpdated = DateTime.now();
-  }
-
-  int get ranking {
-    if (isStale()) {
-      return -1; // Stale repeaters get lowest rank
-    }
-    // Higher SNR gets higher rank and recency within maxAgeMinutes breaks ties.
-    final ageMs =
-        DateTime.now().millisecondsSinceEpoch -
-        lastUpdated.millisecondsSinceEpoch;
-    final maxAgeMs = maxAgeMinutes * 60 * 1000;
-    final recencyScore = (maxAgeMs - ageMs).clamp(0, maxAgeMs);
-    return ((snr - 31.75) * 1000).round() + recencyScore;
-  }
-
-  bool isStale() {
-    return DateTime.now().difference(lastUpdated) >
-        const Duration(minutes: maxAgeMinutes);
-  }
-}
-
-enum MeshCoreConnectionState {
-  disconnected,
-  scanning,
-  connecting,
-  connected,
-  disconnecting,
-}
-
-enum MeshCoreTransportType { bluetooth, usb, tcp }
-
-/// A wired or network link to reconnect to after it drops: the TCP endpoint
-/// or USB port of the last connect that succeeded. Bluetooth reconnects use
-/// the remembered device instead.
-@immutable
-sealed class LinkTarget {
-  const LinkTarget();
-  MeshCoreTransportType get transport;
-}
-
-final class TcpLinkTarget extends LinkTarget {
-  const TcpLinkTarget(this.host, this.port);
-  final String host;
-  final int port;
-  @override
-  MeshCoreTransportType get transport => MeshCoreTransportType.tcp;
-  @override
-  bool operator ==(Object other) =>
-      other is TcpLinkTarget && other.host == host && other.port == port;
-  @override
-  int get hashCode => Object.hash(host, port);
-}
-
-final class UsbLinkTarget extends LinkTarget {
-  const UsbLinkTarget(this.portName, this.baudRate);
-  final String portName;
-  final int baudRate;
-  @override
-  MeshCoreTransportType get transport => MeshCoreTransportType.usb;
-  @override
-  bool operator ==(Object other) =>
-      other is UsbLinkTarget &&
-      other.portName == portName &&
-      other.baudRate == baudRate;
-  @override
-  int get hashCode => Object.hash(portName, baudRate);
-}
-
-class RepeaterBatterySnapshot {
-  final int millivolts;
-  final DateTime updatedAt;
-  final String source;
-
-  const RepeaterBatterySnapshot({
-    required this.millivolts,
-    required this.updatedAt,
-    required this.source,
-  });
-}
-
-class MeshCoreRadioStateSnapshot {
-  final int freqHz;
-  final int bwHz;
-  final int sf;
-  final int cr;
-  final int txPowerDbm;
-
-  const MeshCoreRadioStateSnapshot({
-    required this.freqHz,
-    required this.bwHz,
-    required this.sf,
-    required this.cr,
-    required this.txPowerDbm,
-  });
-}
+export 'connector_types.dart';
 
 class MeshCoreConnector extends ChangeNotifier {
   // Message windowing to limit memory usage
@@ -1589,27 +1448,13 @@ class MeshCoreConnector extends ChangeNotifier {
       return _contactMsgBackoffFallbackMs;
     }
     final stats = _latestRadioStats!;
-    final nf = stats.noiseFloorDbm.toDouble();
-    // Quieter (more negative) → lower score; noisier → higher.
-    const noiseQuietDbm = -118.0;
-    const noiseNoisyDbm = -88.0;
-    final noiseT = ((nf - noiseQuietDbm) / (noiseNoisyDbm - noiseQuietDbm))
-        .clamp(0.0, 1.0);
-
-    final snr = stats.lastSnrDb;
-    const snrGood = 12.0;
-    const snrBad = -2.0;
-    final snrT = (1.0 - ((snr - snrBad) / (snrGood - snrBad))).clamp(0.0, 1.0);
-
-    final airBusy = _recentAirtimeBusyFraction();
-    final severity = (math.max(noiseT, snrT) * 0.82 + airBusy * 0.18).clamp(
-      0.0,
-      1.0,
+    return txBackoffTargetMs(
+      noiseFloorDbm: stats.noiseFloorDbm.toDouble(),
+      lastSnrDb: stats.lastSnrDb,
+      airBusy: _recentAirtimeBusyFraction(),
+      minMs: _contactMsgBackoffMinMs,
+      maxMs: _contactMsgBackoffMaxMs,
     );
-
-    return (_contactMsgBackoffMinMs +
-            severity * (_contactMsgBackoffMaxMs - _contactMsgBackoffMinMs))
-        .round();
   }
 
   /// 1.0 shortly after TX/RX airtime counters increase, decaying to 0 over ~8s.
@@ -3427,10 +3272,9 @@ class MeshCoreConnector extends ChangeNotifier {
   }
 
   int _nextReconnectDelayMs() {
-    final attempt = _reconnectAttempts < 6 ? _reconnectAttempts : 6;
+    final delayMs = reconnectDelayMs(_reconnectAttempts);
     _reconnectAttempts += 1;
-    final delayMs = 1000 * (1 << attempt);
-    return delayMs > 30000 ? 30000 : delayMs;
+    return delayMs;
   }
 
   void _scheduleReconnect() {
@@ -9348,19 +9192,6 @@ class _PendingCommandAck {
 }
 
 /// A command another radio sent us that our radio refused to run.
-class BlockedRemoteCommand {
-  final String? contactKey;
-  final String name;
-  final String command;
-  final DateTime at;
-  const BlockedRemoteCommand({
-    required this.contactKey,
-    required this.name,
-    required this.command,
-    required this.at,
-  });
-}
-
 /// [messages] without those sent before [cutoff], in their original order.
 List<ChannelMessage> keepChannelMessagesSince(
   List<ChannelMessage> messages,
