@@ -10291,81 +10291,433 @@ class AppLocalizationsUk extends AppLocalizations {
   String get batteryWatch_cleared => 'Історію очищено';
 
   @override
-  String get waypoints_title => 'Точки маршруту';
+  String get netChange_title => 'Зміни в мережі';
 
   @override
-  String get waypoints_toolSubtitle =>
-      'Збережені місця й маршрути; імпорт та експорт GPX';
+  String get netChange_toolSubtitle =>
+      'Ретранслятори, що з’явилися поруч або замовкли';
 
   @override
-  String get waypoints_importFile => 'Імпорт файлу GPX';
-
-  @override
-  String get waypoints_importPaste => 'Вставити GPX';
-
-  @override
-  String get waypoints_export => 'Експорт GPX';
-
-  @override
-  String get waypoints_empty =>
-      'Точок поки немає. Імпортуйте файл GPX або збережіть місце, яким поділилися в чаті.';
-
-  @override
-  String waypoints_waypoints(int count) {
-    return 'Точки ($count)';
+  String netChange_newDirect(String name) {
+    return 'Новий ретранслятор чути напряму: $name';
   }
 
   @override
-  String waypoints_routes(int count) {
-    return 'Маршрути ($count)';
+  String netChange_newHops(String name, int hops) {
+    return 'Новий ретранслятор за $hops хоп: $name';
   }
 
   @override
-  String waypoints_routeSummary(int points, String km) {
-    return 'Точок: $points · $km км';
+  String netChange_wentQuiet(String name, int hours) {
+    return '$name замовк: не чути $hours год';
   }
 
   @override
-  String get waypoints_delete => 'Видалити';
+  String get netChange_empty =>
+      'Змін поки немає. Тут з’являться обрані ретранслятори, що замовкли, і нові ретранслятори поруч.';
 
   @override
-  String get waypoints_copy => 'Копіювати координати';
+  String get netChange_quietSetting => 'Обраний ретранслятор замовк';
 
   @override
-  String get waypoints_sendToChannel => 'Надіслати в канал';
+  String get netChange_quietHint =>
+      'Сповіщати, якщо обраного ретранслятора не чути стільки часу';
 
   @override
-  String get waypoints_pickChannel => 'У який канал надіслати?';
+  String get netChange_newSetting => 'Новий ретранслятор поруч';
 
   @override
-  String waypoints_sent(String channel) {
-    return 'Надіслано в $channel';
+  String get netChange_newHint =>
+      'Сповіщати, якщо незнайомий ретранслятор чути в межах одного хопу';
+
+  @override
+  String get netChange_clear => 'Очистити';
+
+  @override
+  String get netChange_notifTitle => 'Зміна в мережі';
+
+  @override
+  String get trouble_title => 'Усунення несправностей';
+
+  @override
+  String get trouble_toolSubtitle => 'Покрокова допомога, коли щось не працює';
+
+  @override
+  String get trouble_pick => 'Що не так?';
+
+  @override
+  String get trouble_noDelivery => 'Повідомлення не доставляються';
+
+  @override
+  String get trouble_noConnect => 'Не можу підключитися до радіо';
+
+  @override
+  String get trouble_hearNobody => 'Нікого не чую';
+
+  @override
+  String get trouble_startHere => 'Почніть тут';
+
+  @override
+  String get trouble_resultOk => 'OK';
+
+  @override
+  String get trouble_resultProblem => 'Проблема';
+
+  @override
+  String get trouble_resultUnchecked => 'Неможливо перевірити';
+
+  @override
+  String get trouble_connectedNow =>
+      'Зараз ви підключені. Якщо зв’язок постійно рветься, кроки нижче все одно допоможуть.';
+
+  @override
+  String get trouble_allOk =>
+      'Усі перевірки пройдено. Якщо все ще не працює, перегляньте кроки нижче.';
+
+  @override
+  String get trouble_connected => 'Ваше радіо підключене';
+
+  @override
+  String get trouble_connectedAdvice =>
+      'Спочатку підключіть радіо: Налаштування → Підключити радіо.';
+
+  @override
+  String get trouble_routes => 'Маршрути до співрозмовників відомі';
+
+  @override
+  String get trouble_routesAdvice =>
+      'Повідомлення тому, до кого немає відомого маршруту, розсилаються по всій мережі й часто не доходять. Дочекайтеся його оголошення або попросіть про нього й напишіть знову.';
+
+  @override
+  String get trouble_heardRecently =>
+      'Співрозмовників було чути за останню добу';
+
+  @override
+  String get trouble_heardRecentlyAdvice =>
+      'Того, кого давно не чути, може не бути в зоні зв’язку або він вимкнений. Його повідомлення не підтвердяться, доки він не повернеться.';
+
+  @override
+  String get trouble_neighbours => 'Ваше радіо чує інші вузли';
+
+  @override
+  String get trouble_neighboursAdvice =>
+      'Якщо напряму нічого не чути, звідси радіо не дістає до мережі. Підніміть антену, підніміться вище або підійдіть ближче до ретранслятора.';
+
+  @override
+  String get trouble_bluetooth =>
+      'Bluetooth увімкнений, і застосунок може ним користуватися';
+
+  @override
+  String get trouble_bluetoothAdvice =>
+      'Перевірте, що Bluetooth увімкнений і NOTORYX Core має дозвіл на Bluetooth (а на Android — на Пристрої поблизу) в налаштуваннях телефона.';
+
+  @override
+  String get trouble_otherApp =>
+      'Жоден інший телефон чи застосунок не підключений до радіо';
+
+  @override
+  String get trouble_otherAppAdvice =>
+      'Радіо спілкується лише з одним застосунком одночасно. Закрийте інші застосунки MeshCore або вимкніть Bluetooth на інших спарених телефонах.';
+
+  @override
+  String get trouble_inRange => 'Радіо увімкнене й поруч';
+
+  @override
+  String get trouble_inRangeAdvice =>
+      'Перевірте, що радіо заряджене, увімкнене й за кілька метрів. Перезапуск радіо часто виправляє завислий зв’язок.';
+
+  @override
+  String get trouble_otherTransport => 'Спробуйте інший спосіб підключення';
+
+  @override
+  String get trouble_otherTransportAdvice =>
+      'Якщо Bluetooth постійно збоїть, підключіться кабелем USB або через Wi-Fi (TCP), якщо радіо це підтримує.';
+
+  @override
+  String get trouble_noise => 'Радіо не тоне в шумі';
+
+  @override
+  String get trouble_noiseAdvice =>
+      'Високий рівень шуму приховує слабкі сигнали. Відсуньте антену від електроніки, зарядок і сонячних контролерів.';
+
+  @override
+  String get trouble_region => 'Радіо налаштоване як мережа у вашому районі';
+
+  @override
+  String get trouble_regionAdvice =>
+      'З іншою частотою, смугою чи коефіцієнтом розширення, ніж у місцевій мережі, ви нікого не почуєте. Порівняйте Налаштування → Радіо з налаштуваннями вашого району.';
+
+  @override
+  String get trouble_antenna => 'Антена встановлена';
+
+  @override
+  String get trouble_antennaAdvice =>
+      'Переконайтеся, що антена щільно прикручена. Ніколи не передавайте без антени — це може пошкодити радіо.';
+
+  @override
+  String get mesh_title => 'Стан мережі';
+
+  @override
+  String get mesh_overallGood => 'Мережа в порядку';
+
+  @override
+  String get mesh_overallFair => 'Мережа працює, але з проблемами';
+
+  @override
+  String get mesh_overallPoor => 'Мережі важко';
+
+  @override
+  String get mesh_overallUnknown => 'Поки мало даних';
+
+  @override
+  String get mesh_gradeGood => 'Добре';
+
+  @override
+  String get mesh_gradeFair => 'Середньо';
+
+  @override
+  String get mesh_gradePoor => 'Погано';
+
+  @override
+  String get mesh_gradeUnknown => 'Немає даних';
+
+  @override
+  String get mesh_noise => 'Шум';
+
+  @override
+  String mesh_noiseValue(String dbm) {
+    return 'Рівень шуму $dbm дБм';
   }
 
   @override
-  String get waypoints_importFailed =>
-      'Це не файл GPX, який застосунок може прочитати.';
+  String get mesh_signal => 'Останній сигнал';
 
   @override
-  String get waypoints_pasteHint => 'Вставте сюди текст GPX';
-
-  @override
-  String get waypoints_import => 'Імпорт';
-
-  @override
-  String waypoints_imported(int waypoints, int routes) {
-    return 'Додано точок: $waypoints, маршрутів: $routes';
+  String mesh_signalValue(String db) {
+    return 'SNR $db дБ';
   }
 
   @override
-  String get waypoints_save => 'Зберегти як точку';
+  String get mesh_busy => 'Завантаженість каналу';
 
   @override
-  String get waypoints_unnamed => 'Місце з чату';
+  String mesh_busyValue(int percent) {
+    return 'в ефірі $percent% останніх 15 хвилин';
+  }
 
   @override
-  String get waypoints_saved => 'Збережено в точках маршруту';
+  String get mesh_neighbours => 'Чути напряму';
 
   @override
-  String get waypoints_alreadySaved => 'Уже є в точках маршруту';
+  String mesh_neighboursValue(int count) {
+    return '$count вузлів за останню годину';
+  }
+
+  @override
+  String get mesh_delivery => 'Особисті повідомлення';
+
+  @override
+  String mesh_deliveryValue(int delivered, int total) {
+    return 'доставлено $delivered з $total за добу';
+  }
+
+  @override
+  String get mesh_tipNoise =>
+      'Щось поруч шумить на цій частоті. Відсуньте антену від електроніки та зарядок.';
+
+  @override
+  String get mesh_tipSignal =>
+      'Останній пакет був слабким. Підніміть антену або підніміться вище.';
+
+  @override
+  String get mesh_tipBusy =>
+      'Канал завантажений. Пишіть коротко й уникайте розсилок.';
+
+  @override
+  String get mesh_tipNeighbours =>
+      'Напряму чути мало вузлів. Підніміть антену або підійдіть ближче до ретранслятора.';
+
+  @override
+  String get mesh_tipDelivery =>
+      'Багато повідомлень не підтверджено. Відкрийте невдале повідомлення, щоб побачити, де воно зупинилося.';
+
+  @override
+  String routeHealth_staleTitle(String name) {
+    return 'Маршрут до $name може бути застарілим';
+  }
+
+  @override
+  String routeHealth_weakTitle(String name) {
+    return 'Маршрут до $name ненадійний';
+  }
+
+  @override
+  String routeHealth_lastWorkedHours(int hours) {
+    return 'востаннє працював $hours год тому';
+  }
+
+  @override
+  String routeHealth_lastWorkedDays(int days) {
+    return 'востаннє працював $days дн. тому';
+  }
+
+  @override
+  String routeHealth_notHeard(int days) {
+    return 'не чути $days дн.';
+  }
+
+  @override
+  String routeHealth_failures(int failures, int attempts) {
+    return '$failures з $attempts спроб невдалі';
+  }
+
+  @override
+  String routeHealth_longPath(int hops) {
+    return '$hops хопів';
+  }
+
+  @override
+  String get routeHealth_useFlood => 'Знайти новий маршрут';
+
+  @override
+  String get routeHealth_keep => 'Залишити маршрут';
+
+  @override
+  String get readiness_sos => 'Одержувачі SOS';
+
+  @override
+  String get readiness_sosOk => 'У SOS є одержувачі.';
+
+  @override
+  String get readiness_sosBlocked =>
+      'SOS нікому надіслати. Додайте учасників походу з контактів або задайте SOS-канал.';
+
+  @override
+  String get readiness_routes => 'Маршрути до учасників';
+
+  @override
+  String get readiness_routesOk => 'Маршрут відомий до кожного учасника.';
+
+  @override
+  String readiness_routesMissing(String names) {
+    return 'Немає відомого маршруту до $names. Повідомлення йтимуть розсилкою, доки маршрут не вивчено. Надішліть їм повідомлення перед виходом.';
+  }
+
+  @override
+  String get readiness_notifications => 'Сповіщення';
+
+  @override
+  String get readiness_notificationsOk => 'Дозволено.';
+
+  @override
+  String get readiness_notificationsOff =>
+      'Сповіщення вимкнені — ви не почуєте відповіді, відмітки й тривоги.';
+
+  @override
+  String get readiness_batteryOpt => 'Оптимізація батареї';
+
+  @override
+  String get readiness_batteryOptOk => 'NOTORYX Core у винятках.';
+
+  @override
+  String get readiness_batteryOptOn =>
+      'Android може зупинити застосунок у фоні. Вимкніть це в Налаштування → Налаштування застосунку → Сповіщення.';
+
+  @override
+  String get readiness_blockedTitle => 'Похід поки не можна почати';
+
+  @override
+  String readiness_warnTitle(int count) {
+    return 'Перевірити: $count';
+  }
+
+  @override
+  String get readiness_startAnyway => 'Почати все одно';
+
+  @override
+  String get readiness_review => 'Переглянути';
+
+  @override
+  String get readiness_summaryReady => 'Можна виходити';
+
+  @override
+  String readiness_summaryWarn(int count) {
+    return 'Перевірити: $count';
+  }
+
+  @override
+  String get readiness_summaryBlocked => 'SOS нікому не дійде';
+
+  @override
+  String get coords_maidenhead => 'Локатор Maidenhead';
+
+  @override
+  String get reactions_radioTitle => 'Надсилати реакції радіо';
+
+  @override
+  String get reactions_radioHint =>
+      'Кожна реакція — це пакет в ефірі. «Автоматично» залишає їх на цьому пристрої в європейському діапазоні 868 МГц, де ефірний час обмежений.';
+
+  @override
+  String get reactions_radioAuto => 'Автоматично';
+
+  @override
+  String get reactions_radioOn => 'Увімк.';
+
+  @override
+  String get reactions_radioOff => 'Вимк. (цей пристрій)';
+
+  @override
+  String get batteryWatch_auto => 'Перевіряти автоматично';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Поки радіо підключене, застосунок періодично запитує в ретранслятора заряд батареї. Він відповідає, лише якщо ви увійшли в нього.';
+
+  @override
+  String get batteryWatch_interval => 'Перевіряти кожні';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours год';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Не більше 6 перевірок на годину для всіх ретрансляторів, щонайменше 2 хвилини між ними.';
+
+  @override
+  String get batteryWatch_add => 'Додати ретранслятор';
+
+  @override
+  String get batteryWatch_pick => 'Виберіть ретранслятор для контролю';
+
+  @override
+  String get batteryWatch_noRepeaters => 'У контактах ще немає ретрансляторів.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Немає відповіді на останні $count перевірок. Відкрийте ретранслятор і увійдіть знову.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Перевірка…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Батарея ретранслятора';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name: $percent% ($volts В).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Батарея $name швидко сідає: за такого темпу розрядиться приблизно за $days дн.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name не відповів на $count перевірок батареї.';
+  }
 }

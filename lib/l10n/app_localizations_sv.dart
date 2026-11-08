@@ -10169,81 +10169,434 @@ class AppLocalizationsSv extends AppLocalizations {
   String get batteryWatch_cleared => 'Historiken rensad';
 
   @override
-  String get waypoints_title => 'Vägpunkter';
+  String get netChange_title => 'Nätverksändringar';
 
   @override
-  String get waypoints_toolSubtitle =>
-      'Sparade platser och rutter; importera eller exportera GPX';
+  String get netChange_toolSubtitle =>
+      'Repeatrar som dök upp nära eller tystnade';
 
   @override
-  String get waypoints_importFile => 'Importera GPX-fil';
-
-  @override
-  String get waypoints_importPaste => 'Klistra in GPX';
-
-  @override
-  String get waypoints_export => 'Exportera GPX';
-
-  @override
-  String get waypoints_empty =>
-      'Inga vägpunkter än. Importera en GPX-fil eller spara en plats som någon delat i en chatt.';
-
-  @override
-  String waypoints_waypoints(int count) {
-    return 'Vägpunkter ($count)';
+  String netChange_newDirect(String name) {
+    return 'Ny repeater hörd direkt: $name';
   }
 
   @override
-  String waypoints_routes(int count) {
-    return 'Rutter ($count)';
+  String netChange_newHops(String name, int hops) {
+    return 'Ny repeater $hops hopp bort: $name';
   }
 
   @override
-  String waypoints_routeSummary(int points, String km) {
-    return '$points punkter · $km km';
+  String netChange_wentQuiet(String name, int hours) {
+    return '$name har tystnat: inte hörd på $hours h';
   }
 
   @override
-  String get waypoints_delete => 'Ta bort';
+  String get netChange_empty =>
+      'Inga ändringar än. Favoritrepeatrar som tystnar och nya repeatrar i närheten visas här.';
 
   @override
-  String get waypoints_copy => 'Kopiera koordinater';
+  String get netChange_quietSetting => 'Favoritrepeater tystnar';
 
   @override
-  String get waypoints_sendToChannel => 'Skicka till en kanal';
+  String get netChange_quietHint =>
+      'Avisera när en favoritrepeater inte hörts så här länge';
 
   @override
-  String get waypoints_pickChannel => 'Skicka till vilken kanal?';
+  String get netChange_newSetting => 'Ny repeater i närheten';
 
   @override
-  String waypoints_sent(String channel) {
-    return 'Skickat till $channel';
+  String get netChange_newHint =>
+      'Avisera när en okänd repeater hörs inom ett hopp';
+
+  @override
+  String get netChange_clear => 'Rensa';
+
+  @override
+  String get netChange_notifTitle => 'Nätverksändring';
+
+  @override
+  String get trouble_title => 'Felsökning';
+
+  @override
+  String get trouble_toolSubtitle =>
+      'Steg-för-steg-hjälp när något inte fungerar';
+
+  @override
+  String get trouble_pick => 'Vad är fel?';
+
+  @override
+  String get trouble_noDelivery => 'Meddelanden levereras inte';
+
+  @override
+  String get trouble_noConnect => 'Jag kan inte ansluta till radion';
+
+  @override
+  String get trouble_hearNobody => 'Jag hör ingen';
+
+  @override
+  String get trouble_startHere => 'Börja här';
+
+  @override
+  String get trouble_resultOk => 'OK';
+
+  @override
+  String get trouble_resultProblem => 'Problem';
+
+  @override
+  String get trouble_resultUnchecked => 'Kan inte kontrolleras';
+
+  @override
+  String get trouble_connectedNow =>
+      'Du är ansluten nu. Om anslutningen fortsätter att tappas hjälper stegen nedan ändå.';
+
+  @override
+  String get trouble_allOk =>
+      'Alla kontroller gick bra. Om det ändå inte fungerar är stegen nedan värda en titt.';
+
+  @override
+  String get trouble_connected => 'Din radio är ansluten';
+
+  @override
+  String get trouble_connectedAdvice =>
+      'Anslut din radio först: Inställningar → Anslut en radio.';
+
+  @override
+  String get trouble_routes => 'Vägar är kända till dem du skriver till';
+
+  @override
+  String get trouble_routesAdvice =>
+      'Meddelanden till någon utan känd väg floodas över hela meshen och kommer ofta inte fram. Vänta tills de annonserar sig, eller be dem, och skriv igen.';
+
+  @override
+  String get trouble_heardRecently =>
+      'De du skriver till har hörts det senaste dygnet';
+
+  @override
+  String get trouble_heardRecentlyAdvice =>
+      'Den som inte hörts på ett tag kan vara utom räckhåll eller avstängd. Meddelanden kan inte kvitteras förrän de är tillbaka.';
+
+  @override
+  String get trouble_neighbours => 'Din radio hör andra noder';
+
+  @override
+  String get trouble_neighboursAdvice =>
+      'Hörs inget direkt når din radio inte meshen härifrån. Höj antennen, gå högre eller närmare en repeater.';
+
+  @override
+  String get trouble_bluetooth => 'Bluetooth är på och appen får använda det';
+
+  @override
+  String get trouble_bluetoothAdvice =>
+      'Kontrollera att Bluetooth är på och att NOTORYX Core har behörighet för Bluetooth (och på Android Enheter i närheten) i telefonens inställningar.';
+
+  @override
+  String get trouble_otherApp =>
+      'Ingen annan telefon eller app är ansluten till radion';
+
+  @override
+  String get trouble_otherAppAdvice =>
+      'En radio pratar med en app i taget. Stäng andra MeshCore-appar eller stäng av Bluetooth på andra parkopplade telefoner.';
+
+  @override
+  String get trouble_inRange => 'Radion är på och i närheten';
+
+  @override
+  String get trouble_inRangeAdvice =>
+      'Kontrollera att radion är laddad, påslagen och inom några meter. En omstart av radion löser ofta en låst anslutning.';
+
+  @override
+  String get trouble_otherTransport => 'Prova ett annat sätt att ansluta';
+
+  @override
+  String get trouble_otherTransportAdvice =>
+      'Om Bluetooth fortsätter att misslyckas, anslut med USB-kabel eller via Wi-Fi (TCP) om radion stöder det.';
+
+  @override
+  String get trouble_noise => 'Radion dränks inte i brus';
+
+  @override
+  String get trouble_noiseAdvice =>
+      'Ett högt brusgolv döljer svaga signaler. Flytta antennen från elektronik, laddare och solcellsregulatorer.';
+
+  @override
+  String get trouble_region => 'Din radio använder ditt områdes inställningar';
+
+  @override
+  String get trouble_regionAdvice =>
+      'Med annan frekvens, bandbredd eller spridningsfaktor än det lokala meshen hör du ingen. Jämför Inställningar → Radio med vad ditt område använder.';
+
+  @override
+  String get trouble_antenna => 'Antennen sitter på';
+
+  @override
+  String get trouble_antennaAdvice =>
+      'Se till att antennen är ordentligt fastskruvad. Sänd aldrig utan antenn; det kan skada radion.';
+
+  @override
+  String get mesh_title => 'Meshhälsa';
+
+  @override
+  String get mesh_overallGood => 'Meshen ser frisk ut';
+
+  @override
+  String get mesh_overallFair => 'Meshen fungerar, med vissa problem';
+
+  @override
+  String get mesh_overallPoor => 'Meshen har det svårt';
+
+  @override
+  String get mesh_overallUnknown => 'För lite data än';
+
+  @override
+  String get mesh_gradeGood => 'Bra';
+
+  @override
+  String get mesh_gradeFair => 'Medel';
+
+  @override
+  String get mesh_gradePoor => 'Dålig';
+
+  @override
+  String get mesh_gradeUnknown => 'Ingen data';
+
+  @override
+  String get mesh_noise => 'Brus';
+
+  @override
+  String mesh_noiseValue(String dbm) {
+    return 'Brusgolv $dbm dBm';
   }
 
   @override
-  String get waypoints_importFailed =>
-      'Det är ingen GPX-fil som appen kan läsa.';
+  String get mesh_signal => 'Senaste signal';
 
   @override
-  String get waypoints_pasteHint => 'Klistra in GPX-texten här';
-
-  @override
-  String get waypoints_import => 'Importera';
-
-  @override
-  String waypoints_imported(int waypoints, int routes) {
-    return 'La till $waypoints vägpunkter och $routes rutter';
+  String mesh_signalValue(String db) {
+    return 'SNR $db dB';
   }
 
   @override
-  String get waypoints_save => 'Spara som vägpunkt';
+  String get mesh_busy => 'Kanalanvändning';
 
   @override
-  String get waypoints_unnamed => 'Delad plats';
+  String mesh_busyValue(int percent) {
+    return 'i luften $percent % av de senaste 15 minuterna';
+  }
 
   @override
-  String get waypoints_saved => 'Sparad i Vägpunkter';
+  String get mesh_neighbours => 'Hörda direkt';
 
   @override
-  String get waypoints_alreadySaved => 'Redan i Vägpunkter';
+  String mesh_neighboursValue(int count) {
+    return '$count noder senaste timmen';
+  }
+
+  @override
+  String get mesh_delivery => 'Direktmeddelanden';
+
+  @override
+  String mesh_deliveryValue(int delivered, int total) {
+    return '$delivered av $total levererade senaste dygnet';
+  }
+
+  @override
+  String get mesh_tipNoise =>
+      'Något i närheten brusar på den här frekvensen. Flytta antennen från elektronik och laddare.';
+
+  @override
+  String get mesh_tipSignal =>
+      'Senaste paketet var svagt. Höj antennen eller gå högre upp.';
+
+  @override
+  String get mesh_tipBusy =>
+      'Kanalen är upptagen. Håll meddelanden korta och undvik floods.';
+
+  @override
+  String get mesh_tipNeighbours =>
+      'Få noder hörs direkt. Höj antennen eller gå närmare en repeater.';
+
+  @override
+  String get mesh_tipDelivery =>
+      'Många meddelanden kvitteras inte. Öppna ett misslyckat meddelande för att se var det stannade.';
+
+  @override
+  String routeHealth_staleTitle(String name) {
+    return 'Vägen till $name kan vara inaktuell';
+  }
+
+  @override
+  String routeHealth_weakTitle(String name) {
+    return 'Vägen till $name är opålitlig';
+  }
+
+  @override
+  String routeHealth_lastWorkedHours(int hours) {
+    return 'fungerade senast för $hours h sedan';
+  }
+
+  @override
+  String routeHealth_lastWorkedDays(int days) {
+    return 'fungerade senast för $days dagar sedan';
+  }
+
+  @override
+  String routeHealth_notHeard(int days) {
+    return 'inte hörd på $days dagar';
+  }
+
+  @override
+  String routeHealth_failures(int failures, int attempts) {
+    return '$failures av $attempts försök misslyckades';
+  }
+
+  @override
+  String routeHealth_longPath(int hops) {
+    return '$hops hopp';
+  }
+
+  @override
+  String get routeHealth_useFlood => 'Hitta en ny väg';
+
+  @override
+  String get routeHealth_keep => 'Behåll vägen';
+
+  @override
+  String get readiness_sos => 'SOS-mottagare';
+
+  @override
+  String get readiness_sosOk => 'SOS har mottagare.';
+
+  @override
+  String get readiness_sosBlocked =>
+      'SOS har ingen att nå. Lägg till turkontakter som finns bland dina kontakter, eller välj en SOS-kanal.';
+
+  @override
+  String get readiness_routes => 'Vägar till turkontakter';
+
+  @override
+  String get readiness_routesOk => 'En väg är känd till varje turkontakt.';
+
+  @override
+  String readiness_routesMissing(String names) {
+    return 'Ingen känd väg till $names. Meddelanden floodas tills en väg lärs in. Skicka ett meddelande till dem innan du går.';
+  }
+
+  @override
+  String get readiness_notifications => 'Aviseringar';
+
+  @override
+  String get readiness_notificationsOk => 'Tillåtna.';
+
+  @override
+  String get readiness_notificationsOff =>
+      'Aviseringar är avstängda, så du hör inga svar, incheckningar eller larm.';
+
+  @override
+  String get readiness_batteryOpt => 'Batterioptimering';
+
+  @override
+  String get readiness_batteryOptOk => 'NOTORYX Core är undantaget.';
+
+  @override
+  String get readiness_batteryOptOn =>
+      'Android kan stoppa appen i bakgrunden. Stäng av det under Inställningar → Appinställningar → Aviseringar.';
+
+  @override
+  String get readiness_blockedTitle => 'Turen kan inte starta än';
+
+  @override
+  String readiness_warnTitle(int count) {
+    return '$count saker att kolla';
+  }
+
+  @override
+  String get readiness_startAnyway => 'Starta ändå';
+
+  @override
+  String get readiness_review => 'Granska';
+
+  @override
+  String get readiness_summaryReady => 'Redo att gå';
+
+  @override
+  String readiness_summaryWarn(int count) {
+    return '$count att kolla';
+  }
+
+  @override
+  String get readiness_summaryBlocked => 'SOS når ingen';
+
+  @override
+  String get coords_maidenhead => 'Maidenhead-lokator';
+
+  @override
+  String get reactions_radioTitle => 'Skicka reaktioner via radio';
+
+  @override
+  String get reactions_radioHint =>
+      'Varje reaktion är ett paket i luften. Automatiskt behåller dem på den här enheten på EU:s 868 MHz-band, där sändningstiden är begränsad.';
+
+  @override
+  String get reactions_radioAuto => 'Automatiskt';
+
+  @override
+  String get reactions_radioOn => 'På';
+
+  @override
+  String get reactions_radioOff => 'Av (den här enheten)';
+
+  @override
+  String get batteryWatch_auto => 'Kontrollera automatiskt';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Medan en radio är ansluten frågar appen regelbundet den här repeatern om batteriet. Den svarar bara om du är inloggad.';
+
+  @override
+  String get batteryWatch_interval => 'Kontrollera var';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Högst 6 kontroller i timmen för alla repeatrar, minst 2 minuter isär.';
+
+  @override
+  String get batteryWatch_add => 'Lägg till repeater';
+
+  @override
+  String get batteryWatch_pick => 'Välj en repeater att bevaka';
+
+  @override
+  String get batteryWatch_noRepeaters =>
+      'Inga repeatrar bland dina kontakter än.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Inget svar på de senaste $count kontrollerna. Öppna repeatern och logga in igen.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Kontrollerar…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Repeaterbatteri';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name ligger på $percent % ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Batteriet i $name sjunker snabbt: tomt om ungefär $days dagar i den här takten.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name har inte svarat på $count batterikontroller.';
+  }
 }

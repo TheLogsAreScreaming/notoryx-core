@@ -20,6 +20,7 @@ import '../models/advert_signature.dart';
 import '../models/channel.dart';
 import '../models/channel_message.dart';
 import '../models/companion_radio_stats.dart';
+import '../models/mesh_health.dart';
 import '../models/radio_rx_packet.dart';
 import '../models/saved_radio.dart';
 import '../models/contact.dart';
@@ -687,6 +688,45 @@ class MeshCoreConnector extends ChangeNotifier {
 
   CompanionRadioStats? get latestRadioStats => _latestRadioStats;
 
+  /// Contacts you sent a direct message to in the last [within].
+  List<Contact> recentlyMessagedContacts({
+    Duration within = const Duration(days: 7),
+  }) {
+    final since = DateTime.now().subtract(within);
+    final keys = <String>{
+      for (final e in _conversations.entries)
+        if (e.value.any((m) => m.isOutgoing && m.timestamp.isAfter(since)))
+          e.key,
+    };
+    return [
+      for (final c in _contacts)
+        if (keys.contains(c.publicKeyHex)) c,
+    ];
+  }
+
+  final List<AirtimeSample> _airtimeSamples = [];
+
+  /// Recent airtime counter readings (about the last half hour), for how
+  /// busy the channel has been.
+  List<AirtimeSample> get airtimeSamples => List.unmodifiable(_airtimeSamples);
+
+  /// Direct messages sent in the last [within] that were acknowledged, and
+  /// those that gave up.
+  ({int delivered, int failed}) recentDirectDeliveries({
+    Duration within = const Duration(hours: 24),
+  }) {
+    final since = DateTime.now().subtract(within);
+    var delivered = 0, failed = 0;
+    for (final list in _conversations.values) {
+      for (final m in list) {
+        if (!m.isOutgoing || m.timestamp.isBefore(since)) continue;
+        if (m.status == MessageStatus.delivered) delivered++;
+        if (m.status == MessageStatus.failed) failed++;
+      }
+    }
+    return (delivered: delivered, failed: failed);
+  }
+
   bool get supportsCompanionRadioStats => (_firmwareVerCode ?? 0) >= 8;
 
   /// True when the connected companion has a text CLI (firmware v14+).
@@ -701,6 +741,22 @@ class MeshCoreConnector extends ChangeNotifier {
   }
 
   int? get currentFreqHz => _currentFreqHz;
+
+  /// Whether the radio is on the EU 863–870 MHz band, where duty-cycle
+  /// limits make every extra packet count.
+  bool get isOnEuDutyCycleBand {
+    final hz = _currentFreqHz;
+    return hz != null && hz >= 863000000 && hz <= 870000000;
+  }
+
+  /// Whether a reaction is sent over the radio, or only shown on this
+  /// device. 'auto' keeps reactions local on the EU duty-cycle band.
+  bool get sendsReactionsOverRadio =>
+      switch (_appSettingsService?.settings.reactionsOverRadio) {
+        'on' => true,
+        'off' => false,
+        _ => !isOnEuDutyCycleBand,
+      };
   int? get currentBwHz => _currentBwHz;
   int? get currentSf => _currentSf;
   int? get currentCr => _currentCr;
@@ -1350,6 +1406,14 @@ class MeshCoreConnector extends ChangeNotifier {
 
   /// Points the channel message store at [selfKeyHex]'s data and uses
   /// [settings], as connecting to that radio would.
+  /// Feeds a companion stats frame, as the radio would.
+  @visibleForTesting
+  void debugHandleStatsFrame(Uint8List frame) => _handleStatsFrame(frame);
+
+  /// Sets the radio frequency as a self-info reply would.
+  @visibleForTesting
+  void debugSetFrequencyHz(int? hz) => _currentFreqHz = hz;
+
   @visibleForTesting
   void debugUseChannelStore(String selfKeyHex, AppSettingsService settings) {
     _channelMessageStore.setPublicKeyHex = selfKeyHex;
@@ -4095,6 +4159,12 @@ class MeshCoreConnector extends ChangeNotifier {
 
       // Apply reaction locally with pending status
       _processOutgoingContactReaction(messages, reactionInfo, contact);
+      if (!sendsReactionsOverRadio) {
+        // Local only: shown here, never sent, so there's nothing pending.
+        _messageStore.saveMessages(contact.publicKeyHex, messages);
+        notifyListeners();
+        return;
+      }
       _setReactionStatus(
         contact.publicKeyHex,
         reactionInfo,
@@ -4506,6 +4576,7 @@ class MeshCoreConnector extends ChangeNotifier {
       _processedChannelReactions[channel.index]!.add(reactionIdentifier);
 
       notifyListeners();
+      if (!sendsReactionsOverRadio) return;
 
       // Send the reaction to the device (don't add as a visible message)
       final reactionQueueId = _nextReactionSendQueueId();
@@ -6070,6 +6141,11 @@ class MeshCoreConnector extends ChangeNotifier {
       _airtimeBumpStopwatch!.start();
     }
     _prevTotalAirSecs = total;
+    _airtimeSamples.add(AirtimeSample(stats.receivedAt, total));
+    _airtimeSamples.removeWhere(
+      (s) => stats.receivedAt.difference(s.at) > const Duration(minutes: 30),
+    );
+    if (_airtimeSamples.length > 240) _airtimeSamples.removeAt(0);
     _latestRadioStats = stats;
     radioStatsNotifier.value = stats;
   }
@@ -8475,6 +8551,7 @@ class MeshCoreConnector extends ChangeNotifier {
     _stopGpsLocationPolling();
     _stopRadioStatsPolling();
     _latestRadioStats = null;
+    _airtimeSamples.clear();
     radioStatsNotifier.value = null;
     _prevTotalAirSecs = 0;
     _airtimeBumpStopwatch?.stop();
