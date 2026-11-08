@@ -10891,7 +10891,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get appLock_subtitle =>
-      'Pede impressão digital, rosto ou bloqueio de ecrã ao abrir a app. Os alertas continuam, mas tem de desbloquear antes de enviar um SOS.';
+      'Pede impressão digital, rosto ou bloqueio de ecrã ao abrir a app. Os alertas continuam e o SOS fica disponível no ecrã de bloqueio.';
 
   @override
   String get appLock_reason => 'Desbloquear o NOTORYX Core';
@@ -10928,4 +10928,8 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get map_showWaypoints => 'Mostrar pontos e rotas guardados';
+
+  @override
+  String get appLock_sosNoTarget =>
+      'Desbloqueie primeiro e escolha quem recebe o seu SOS.';
 }

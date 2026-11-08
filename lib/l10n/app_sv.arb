@@ -4410,7 +4410,7 @@
   "security_title": "Säkerhet",
   "security_toolSubtitle": "Applås och krypterad meddelandehistorik",
   "appLock_title": "Applås",
-  "appLock_subtitle": "Frågar efter fingeravtryck, ansikte eller skärmlås när appen öppnas. Varningar fungerar, men du måste låsa upp innan du kan skicka SOS.",
+  "appLock_subtitle": "Frågar efter fingeravtryck, ansikte eller skärmlås när appen öppnas. Varningar fungerar, och SOS finns kvar på låsskärmen.",
   "appLock_reason": "Lås upp NOTORYX Core",
   "appLock_unlock": "Lås upp",
   "appLock_locked": "NOTORYX Core är låst",
@@ -4421,5 +4421,6 @@
   "dbEncrypt_off": "Status: inte krypterad",
   "dbEncrypt_failed": "Status: gick inte. Historiken är oförändrad.",
   "dbEncrypt_restart": "Börjar gälla nästa gång appen startas.",
-  "map_showWaypoints": "Visa sparade vägpunkter och rutter"
+  "map_showWaypoints": "Visa sparade vägpunkter och rutter",
+  "appLock_sosNoTarget": "Lås upp först och välj vem som får din SOS."
 }

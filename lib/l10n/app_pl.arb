@@ -4448,7 +4448,7 @@
   "security_title": "Bezpieczeństwo",
   "security_toolSubtitle": "Blokada aplikacji i szyfrowana historia wiadomości",
   "appLock_title": "Blokada aplikacji",
-  "appLock_subtitle": "Prosi o odcisk palca, twarz lub blokadę ekranu przy otwieraniu. Alerty działają dalej, ale przed wysłaniem SOS trzeba odblokować aplikację.",
+  "appLock_subtitle": "Prosi o odcisk palca, twarz lub blokadę ekranu przy otwieraniu. Alerty działają dalej, a SOS pozostaje na ekranie blokady.",
   "appLock_reason": "Odblokuj NOTORYX Core",
   "appLock_unlock": "Odblokuj",
   "appLock_locked": "NOTORYX Core jest zablokowany",
@@ -4459,5 +4459,6 @@
   "dbEncrypt_off": "Stan: bez szyfrowania",
   "dbEncrypt_failed": "Stan: nie udało się. Historia bez zmian.",
   "dbEncrypt_restart": "Zacznie działać przy następnym uruchomieniu aplikacji.",
-  "map_showWaypoints": "Pokaż zapisane punkty i trasy"
+  "map_showWaypoints": "Pokaż zapisane punkty i trasy",
+  "appLock_sosNoTarget": "Najpierw odblokuj i wybierz, kto otrzyma SOS."
 }

@@ -4544,7 +4544,7 @@
   "security_title": "Sécurité",
   "security_toolSubtitle": "Verrouillage de l'app et historique chiffré",
   "appLock_title": "Verrouillage de l'app",
-  "appLock_subtitle": "Demande l'empreinte, le visage ou le verrouillage de l'écran à l'ouverture. Les alertes continuent, mais il faut déverrouiller avant d'envoyer un SOS.",
+  "appLock_subtitle": "Demande l'empreinte, le visage ou le verrouillage de l'écran à l'ouverture. Les alertes continuent et le SOS reste sur l'écran verrouillé.",
   "appLock_reason": "Déverrouiller NOTORYX Core",
   "appLock_unlock": "Déverrouiller",
   "appLock_locked": "NOTORYX Core est verrouillé",
@@ -4555,5 +4555,6 @@
   "dbEncrypt_off": "État : non chiffré",
   "dbEncrypt_failed": "État : échec. Votre historique n'a pas changé.",
   "dbEncrypt_restart": "Prend effet au prochain démarrage de l'app.",
-  "map_showWaypoints": "Afficher les points et itinéraires enregistrés"
+  "map_showWaypoints": "Afficher les points et itinéraires enregistrés",
+  "appLock_sosNoTarget": "Déverrouillez d'abord et choisissez qui reçoit votre SOS."
 }

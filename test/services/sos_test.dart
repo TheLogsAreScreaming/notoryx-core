@@ -252,6 +252,41 @@ void main() {
       ),
     );
 
+    testWidgets('the lock screen sends without opening a navigator', (
+      tester,
+    ) async {
+      await tester.pumpWidget(
+        MultiProvider(
+          providers: [
+            ChangeNotifierProvider<MeshCoreConnector>.value(value: radio),
+            ChangeNotifierProvider<FieldOpsService>.value(value: ops),
+          ],
+          child: Localizations(
+            locale: const Locale('en'),
+            delegates: AppLocalizations.localizationsDelegates,
+            child: const Directionality(
+              textDirection: TextDirection.ltr,
+              child: Material(child: LockScreenSos()),
+            ),
+          ),
+        ),
+      );
+      await tester.pump();
+      final gesture = await tester.startGesture(
+        tester.getCenter(find.byKey(const ValueKey('sos-hold'))),
+      );
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 2100));
+      await gesture.up();
+      await settle(tester);
+      expect(radio.sent, hasLength(1));
+      await ops.stopSos(allClear: true);
+      await settle(tester);
+      ops.dispose();
+      ops = FieldOpsService(radio);
+      radio.sent.clear();
+    });
+
     testWidgets('a tap does not send; a 2 second hold does', (tester) async {
       await tester.pumpWidget(app());
       await tester.tap(find.byKey(const ValueKey('sos-hold')));

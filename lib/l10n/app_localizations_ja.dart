@@ -10394,7 +10394,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get appLock_subtitle =>
-      'アプリを開くときに指紋、顔、または画面ロックを求めます。通知は届きますが、SOSを送信する前にロック解除が必要です。';
+      'アプリを開くときに指紋、顔、または画面ロックを求めます。通知は届き、SOSはロック画面からも送信できます。';
 
   @override
   String get appLock_reason => 'NOTORYX Coreのロックを解除';
@@ -10429,4 +10429,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get map_showWaypoints => '保存したウェイポイントとルートを表示';
+
+  @override
+  String get appLock_sosNoTarget => '先にロックを解除し、SOSの送信先を選んでください。';
 }

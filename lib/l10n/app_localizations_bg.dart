@@ -10892,7 +10892,7 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get appLock_subtitle =>
-      'Изисква пръстов отпечатък, лице или заключване на екрана при отваряне. Известията продължават, но трябва да отключите, преди да изпратите SOS.';
+      'Изисква пръстов отпечатък, лице или заключване на екрана при отваряне. Известията продължават, а SOS остава на заключения екран.';
 
   @override
   String get appLock_reason => 'Отключете NOTORYX Core';
@@ -10929,4 +10929,8 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get map_showWaypoints => 'Показвай запазените точки и маршрути';
+
+  @override
+  String get appLock_sosNoTarget =>
+      'Първо отключете и изберете кой да получи вашия SOS.';
 }

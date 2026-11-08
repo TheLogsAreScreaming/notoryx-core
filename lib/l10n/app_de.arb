@@ -4544,7 +4544,7 @@
   "security_title": "Sicherheit",
   "security_toolSubtitle": "App-Sperre und verschlüsselter Nachrichtenverlauf",
   "appLock_title": "App-Sperre",
-  "appLock_subtitle": "Fragt beim Öffnen nach Fingerabdruck, Gesicht oder Bildschirmsperre. Warnungen laufen weiter, aber vor einem SOS musst du entsperren.",
+  "appLock_subtitle": "Fragt beim Öffnen nach Fingerabdruck, Gesicht oder Bildschirmsperre. Warnungen laufen weiter, und SOS bleibt auf dem Sperrbildschirm.",
   "appLock_reason": "NOTORYX Core entsperren",
   "appLock_unlock": "Entsperren",
   "appLock_locked": "NOTORYX Core ist gesperrt",
@@ -4555,5 +4555,6 @@
   "dbEncrypt_off": "Status: nicht verschlüsselt",
   "dbEncrypt_failed": "Status: nicht möglich. Dein Verlauf ist unverändert.",
   "dbEncrypt_restart": "Wird beim nächsten App-Start wirksam.",
-  "map_showWaypoints": "Gespeicherte Wegpunkte und Routen anzeigen"
+  "map_showWaypoints": "Gespeicherte Wegpunkte und Routen anzeigen",
+  "appLock_sosNoTarget": "Entsperre zuerst und wähle, wer dein SOS erhält."
 }

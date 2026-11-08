@@ -10824,7 +10824,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get appLock_subtitle =>
-      'Frågar efter fingeravtryck, ansikte eller skärmlås när appen öppnas. Varningar fungerar, men du måste låsa upp innan du kan skicka SOS.';
+      'Frågar efter fingeravtryck, ansikte eller skärmlås när appen öppnas. Varningar fungerar, och SOS finns kvar på låsskärmen.';
 
   @override
   String get appLock_reason => 'Lås upp NOTORYX Core';
@@ -10860,4 +10860,8 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get map_showWaypoints => 'Visa sparade vägpunkter och rutter';
+
+  @override
+  String get appLock_sosNoTarget =>
+      'Lås upp först och välj vem som får din SOS.';
 }
