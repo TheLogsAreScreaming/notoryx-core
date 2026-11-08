@@ -98,9 +98,13 @@ jobs:
           size=$(stat -c %s "$apk")
           echo "Lite APK: $((size / 1024 / 1024)) MB"
           echo "Largest files:"
-          sort -k1 -n -r contents.txt | head -12
+          sort -k1 -n -r contents.txt > sorted.txt
+          head -12 sorted.txt
           # Closed-source Google libraries left (for the IzzyOnDroid listing).
-          unzip -p "$apk" 'classes*.dex' | strings | grep -oE 'Lcom/google/(android/gms|mlkit|firebase)/[a-z]+' | sort -u || true
+          echo "Closed-source Google classes left:"
+          unzip -p "$apk" 'classes*.dex' > classes.bin
+          strings classes.bin | grep -oE 'Lcom/google/(android/gms|mlkit|firebase)/[a-z]+' | sort -u > google.txt || true
+          cat google.txt
 
       - name: Prepare artifact
         shell: bash
