@@ -137,7 +137,10 @@ void main() {
       expect(DraftStore.load(draftFor()), isNull);
       radio.selfKey = self;
       radio.announce();
-      await pumpEventQueue();
+      // The connector batches its change notifications on a timer.
+      for (var i = 0; i < 40 && DraftStore.load(draftFor()) == null; i++) {
+        await Future<void>.delayed(const Duration(milliseconds: 50));
+      }
       expect(DraftStore.load(draftFor()), 'cold');
     });
 
