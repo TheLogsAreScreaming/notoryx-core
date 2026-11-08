@@ -10894,5 +10894,53 @@ class AppLocalizationsSl extends AppLocalizations {
   }
 
   @override
+  String get security_title => 'Varnost';
+
+  @override
+  String get security_toolSubtitle =>
+      'Zaklep aplikacije in šifrirana zgodovina sporočil';
+
+  @override
+  String get appLock_title => 'Zaklep aplikacije';
+
+  @override
+  String get appLock_subtitle =>
+      'Ob odpiranju zahteva prstni odtis, obraz ali zaklep zaslona. Opozorila delujejo naprej, vendar morate pred pošiljanjem SOS odkleniti.';
+
+  @override
+  String get appLock_reason => 'Odkleni NOTORYX Core';
+
+  @override
+  String get appLock_unlock => 'Odkleni';
+
+  @override
+  String get appLock_locked => 'NOTORYX Core je zaklenjen';
+
+  @override
+  String get appLock_unavailable =>
+      'Ta naprava nima zaklepa zaslona ali ga ni bilo mogoče potrditi.';
+
+  @override
+  String get dbEncrypt_title => 'Šifriraj zgodovino sporočil';
+
+  @override
+  String get dbEncrypt_subtitle =>
+      'Šifrira zbirko sporočil v tej napravi s ključem v varni shrambi telefona. Če ključ izgubite, zgodovine ni mogoče obnoviti, zato hranite varnostno kopijo.';
+
+  @override
+  String get dbEncrypt_on => 'Stanje: šifrirano';
+
+  @override
+  String get dbEncrypt_off => 'Stanje: ni šifrirano';
+
+  @override
+  String get dbEncrypt_failed =>
+      'Stanje: ni uspelo. Zgodovina je nespremenjena.';
+
+  @override
+  String get dbEncrypt_restart =>
+      'Začne veljati ob naslednjem zagonu aplikacije.';
+
+  @override
   String get map_showWaypoints => 'Prikaži shranjene točke in poti';
 }
