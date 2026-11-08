@@ -10259,35 +10259,517 @@ class AppLocalizationsDe extends AppLocalizations {
   String get batteryWatch_cleared => 'Verlauf gelöscht';
 
   @override
-  String get team_title => 'Team-Tracking';
+  String get waypoints_title => 'Wegpunkte';
 
   @override
-  String get team_hint =>
-      'Teilt deine Position in einem privaten Kanal, solange die Tour aktiv ist, damit dein Team dich auf der Karte sieht. Schaltet sich am Tourende oder nach 12 Stunden ab.';
+  String get waypoints_toolSubtitle =>
+      'Gespeicherte Orte und Routen; GPX importieren oder exportieren';
 
   @override
-  String get team_channel => 'Kanal';
+  String get waypoints_importFile => 'GPX-Datei importieren';
 
   @override
-  String get team_noChannel =>
-      'Lege zuerst einen privaten Kanal an. Tracking postet nie in öffentliche oder Hashtag-Kanäle.';
+  String get waypoints_importPaste => 'GPX einfügen';
 
   @override
-  String get team_every => 'Alle';
+  String get waypoints_export => 'GPX exportieren';
 
   @override
-  String team_minutes(int minutes) {
-    return '$minutes min';
+  String get waypoints_empty =>
+      'Noch keine Wegpunkte. Importiere eine GPX-Datei oder speichere einen Ort, den jemand im Chat geteilt hat.';
+
+  @override
+  String waypoints_waypoints(int count) {
+    return 'Wegpunkte ($count)';
   }
 
   @override
-  String get team_needTrip => 'Starte die Tour, um deine Position zu teilen.';
-
-  @override
-  String team_lastShared(String age) {
-    return 'Zuletzt geteilt $age';
+  String waypoints_routes(int count) {
+    return 'Routen ($count)';
   }
 
   @override
-  String get team_waitingGps => 'Warte auf eine Position vom Funkgerät';
+  String waypoints_routeSummary(int points, String km) {
+    return '$points Punkte · $km km';
+  }
+
+  @override
+  String get waypoints_delete => 'Löschen';
+
+  @override
+  String get waypoints_copy => 'Koordinaten kopieren';
+
+  @override
+  String get waypoints_sendToChannel => 'An einen Kanal senden';
+
+  @override
+  String get waypoints_pickChannel => 'An welchen Kanal senden?';
+
+  @override
+  String waypoints_sent(String channel) {
+    return 'An $channel gesendet';
+  }
+
+  @override
+  String get waypoints_importFailed =>
+      'Das ist keine GPX-Datei, die die App lesen kann.';
+
+  @override
+  String get waypoints_pasteHint => 'GPX-Text hier einfügen';
+
+  @override
+  String get waypoints_import => 'Importieren';
+
+  @override
+  String waypoints_imported(int waypoints, int routes) {
+    return '$waypoints Wegpunkte und $routes Routen hinzugefügt';
+  }
+
+  @override
+  String get waypoints_save => 'Als Wegpunkt speichern';
+
+  @override
+  String get waypoints_unnamed => 'Geteilter Ort';
+
+  @override
+  String get waypoints_saved => 'In Wegpunkten gespeichert';
+
+  @override
+  String get waypoints_alreadySaved => 'Schon in Wegpunkten';
+
+  @override
+  String get netChange_title => 'Netzänderungen';
+
+  @override
+  String get netChange_toolSubtitle =>
+      'Repeater, die in der Nähe auftauchten oder verstummten';
+
+  @override
+  String netChange_newDirect(String name) {
+    return 'Neuer Repeater direkt gehört: $name';
+  }
+
+  @override
+  String netChange_newHops(String name, int hops) {
+    return 'Neuer Repeater $hops Hop entfernt: $name';
+  }
+
+  @override
+  String netChange_wentQuiet(String name, int hours) {
+    return '$name ist verstummt: seit $hours h nicht gehört';
+  }
+
+  @override
+  String get netChange_empty =>
+      'Noch keine Änderungen. Hier erscheinen Favoriten-Repeater, die verstummen, und neue Repeater in der Nähe.';
+
+  @override
+  String get netChange_quietSetting => 'Favoriten-Repeater verstummt';
+
+  @override
+  String get netChange_quietHint =>
+      'Benachrichtigen, wenn ein Favoriten-Repeater so lange nicht gehört wurde';
+
+  @override
+  String get netChange_newSetting => 'Neuer Repeater in der Nähe';
+
+  @override
+  String get netChange_newHint =>
+      'Benachrichtigen, wenn ein unbekannter Repeater innerhalb eines Hops gehört wird';
+
+  @override
+  String get netChange_clear => 'Leeren';
+
+  @override
+  String get netChange_notifTitle => 'Netzänderung';
+
+  @override
+  String get trouble_title => 'Fehlersuche';
+
+  @override
+  String get trouble_toolSubtitle =>
+      'Schritt-für-Schritt-Hilfe, wenn etwas nicht klappt';
+
+  @override
+  String get trouble_pick => 'Was stimmt nicht?';
+
+  @override
+  String get trouble_noDelivery => 'Nachrichten kommen nicht an';
+
+  @override
+  String get trouble_noConnect =>
+      'Ich kann mich nicht mit dem Funkgerät verbinden';
+
+  @override
+  String get trouble_hearNobody => 'Ich höre niemanden';
+
+  @override
+  String get trouble_startHere => 'Hier anfangen';
+
+  @override
+  String get trouble_resultOk => 'OK';
+
+  @override
+  String get trouble_resultProblem => 'Problem';
+
+  @override
+  String get trouble_resultUnchecked => 'Nicht prüfbar';
+
+  @override
+  String get trouble_connectedNow =>
+      'Du bist jetzt verbunden. Wenn die Verbindung immer wieder abbricht, helfen die Schritte unten trotzdem.';
+
+  @override
+  String get trouble_allOk =>
+      'Alle Prüfungen bestanden. Wenn es trotzdem nicht klappt, lohnt sich ein Blick auf die Schritte unten.';
+
+  @override
+  String get trouble_connected => 'Dein Funkgerät ist verbunden';
+
+  @override
+  String get trouble_connectedAdvice =>
+      'Verbinde zuerst dein Funkgerät: Einstellungen → Funkgerät verbinden.';
+
+  @override
+  String get trouble_routes =>
+      'Zu deinen Gesprächspartnern sind Routen bekannt';
+
+  @override
+  String get trouble_routesAdvice =>
+      'Nachrichten an jemanden ohne bekannte Route fluten das ganze Mesh und kommen oft nicht an. Warte auf ein Advert oder bitte darum und schreib dann noch einmal.';
+
+  @override
+  String get trouble_heardRecently =>
+      'Deine Gesprächspartner wurden am letzten Tag gehört';
+
+  @override
+  String get trouble_heardRecentlyAdvice =>
+      'Wer länger nicht gehört wurde, ist vielleicht außer Reichweite oder ausgeschaltet. Nachrichten können erst bestätigt werden, wenn er zurück ist.';
+
+  @override
+  String get trouble_neighbours => 'Dein Funkgerät hört andere Knoten';
+
+  @override
+  String get trouble_neighboursAdvice =>
+      'Wird nichts direkt gehört, erreicht dein Funkgerät das Mesh von hier nicht. Antenne höher, höher stehen oder näher an einen Repeater.';
+
+  @override
+  String get trouble_bluetooth => 'Bluetooth ist an und die App darf es nutzen';
+
+  @override
+  String get trouble_bluetoothAdvice =>
+      'Prüfe, ob Bluetooth an ist und NOTORYX Core in den Telefoneinstellungen Bluetooth (und unter Android Geräte in der Nähe) darf.';
+
+  @override
+  String get trouble_otherApp =>
+      'Kein anderes Telefon und keine andere App ist verbunden';
+
+  @override
+  String get trouble_otherAppAdvice =>
+      'Ein Funkgerät spricht immer nur mit einer App. Schließe andere MeshCore-Apps oder schalte Bluetooth auf anderen gekoppelten Telefonen aus.';
+
+  @override
+  String get trouble_inRange => 'Das Funkgerät ist an und in der Nähe';
+
+  @override
+  String get trouble_inRangeAdvice =>
+      'Prüfe, ob das Funkgerät geladen, eingeschaltet und wenige Meter entfernt ist. Ein Neustart des Funkgeräts löst oft eine hängende Verbindung.';
+
+  @override
+  String get trouble_otherTransport => 'Andere Verbindungsart versuchen';
+
+  @override
+  String get trouble_otherTransportAdvice =>
+      'Wenn Bluetooth immer wieder scheitert, verbinde per USB-Kabel oder per WLAN (TCP), falls dein Funkgerät das kann.';
+
+  @override
+  String get trouble_noise => 'Das Funkgerät geht nicht im Rauschen unter';
+
+  @override
+  String get trouble_noiseAdvice =>
+      'Ein hoher Rauschpegel verdeckt schwache Signale. Halte die Antenne von Elektronik, Ladegeräten und Solarreglern fern.';
+
+  @override
+  String get trouble_region =>
+      'Dein Funkgerät nutzt die Einstellungen deiner Gegend';
+
+  @override
+  String get trouble_regionAdvice =>
+      'Mit anderer Frequenz, Bandbreite oder anderem Spreizfaktor als das lokale Mesh hörst du niemanden. Vergleiche Einstellungen → Funk mit dem, was in deiner Gegend genutzt wird.';
+
+  @override
+  String get trouble_antenna => 'Die Antenne ist angeschlossen';
+
+  @override
+  String get trouble_antennaAdvice =>
+      'Schraub die Antenne fest an. Sende nie ohne Antenne; das kann das Funkgerät beschädigen.';
+
+  @override
+  String get mesh_title => 'Mesh-Zustand';
+
+  @override
+  String get mesh_overallGood => 'Das Mesh sieht gut aus';
+
+  @override
+  String get mesh_overallFair => 'Das Mesh funktioniert, mit Problemen';
+
+  @override
+  String get mesh_overallPoor => 'Das Mesh hat zu kämpfen';
+
+  @override
+  String get mesh_overallUnknown => 'Noch zu wenig Daten';
+
+  @override
+  String get mesh_gradeGood => 'Gut';
+
+  @override
+  String get mesh_gradeFair => 'Mittel';
+
+  @override
+  String get mesh_gradePoor => 'Schwach';
+
+  @override
+  String get mesh_gradeUnknown => 'Keine Daten';
+
+  @override
+  String get mesh_noise => 'Rauschen';
+
+  @override
+  String mesh_noiseValue(String dbm) {
+    return 'Rauschpegel $dbm dBm';
+  }
+
+  @override
+  String get mesh_signal => 'Letztes Signal';
+
+  @override
+  String mesh_signalValue(String db) {
+    return 'SNR $db dB';
+  }
+
+  @override
+  String get mesh_busy => 'Kanalauslastung';
+
+  @override
+  String mesh_busyValue(int percent) {
+    return '$percent % der letzten 15 Minuten auf Sendung';
+  }
+
+  @override
+  String get mesh_neighbours => 'Direkt gehört';
+
+  @override
+  String mesh_neighboursValue(int count) {
+    return '$count Knoten in der letzten Stunde';
+  }
+
+  @override
+  String get mesh_delivery => 'Direktnachrichten';
+
+  @override
+  String mesh_deliveryValue(int delivered, int total) {
+    return '$delivered von $total am letzten Tag zugestellt';
+  }
+
+  @override
+  String get mesh_tipNoise =>
+      'Etwas in der Nähe stört auf dieser Frequenz. Halte die Antenne von Elektronik und Ladegeräten fern.';
+
+  @override
+  String get mesh_tipSignal =>
+      'Das letzte Paket war schwach. Antenne höher oder einen höheren Standort wählen.';
+
+  @override
+  String get mesh_tipBusy =>
+      'Der Kanal ist ausgelastet. Halte Nachrichten kurz und vermeide Fluten.';
+
+  @override
+  String get mesh_tipNeighbours =>
+      'Nur wenige Knoten werden direkt gehört. Antenne höher oder näher an einen Repeater.';
+
+  @override
+  String get mesh_tipDelivery =>
+      'Viele Nachrichten werden nicht bestätigt. Öffne eine fehlgeschlagene Nachricht, um zu sehen, wo sie hängen blieb.';
+
+  @override
+  String routeHealth_staleTitle(String name) {
+    return 'Die Route zu $name ist vielleicht veraltet';
+  }
+
+  @override
+  String routeHealth_weakTitle(String name) {
+    return 'Die Route zu $name ist unzuverlässig';
+  }
+
+  @override
+  String routeHealth_lastWorkedHours(int hours) {
+    return 'zuletzt vor $hours h funktioniert';
+  }
+
+  @override
+  String routeHealth_lastWorkedDays(int days) {
+    return 'zuletzt vor $days Tagen funktioniert';
+  }
+
+  @override
+  String routeHealth_notHeard(int days) {
+    return 'seit $days Tagen nicht gehört';
+  }
+
+  @override
+  String routeHealth_failures(int failures, int attempts) {
+    return '$failures von $attempts Versuchen fehlgeschlagen';
+  }
+
+  @override
+  String routeHealth_longPath(int hops) {
+    return '$hops Hops';
+  }
+
+  @override
+  String get routeHealth_useFlood => 'Neue Route suchen';
+
+  @override
+  String get routeHealth_keep => 'Route behalten';
+
+  @override
+  String get readiness_sos => 'SOS-Empfänger';
+
+  @override
+  String get readiness_sosOk => 'SOS hat Empfänger.';
+
+  @override
+  String get readiness_sosBlocked =>
+      'SOS hat niemanden zu erreichen. Füge Tourkontakte aus deinen Kontakten hinzu oder lege einen SOS-Kanal fest.';
+
+  @override
+  String get readiness_routes => 'Routen zu Tourkontakten';
+
+  @override
+  String get readiness_routesOk =>
+      'Zu jedem Tourkontakt ist eine Route bekannt.';
+
+  @override
+  String readiness_routesMissing(String names) {
+    return 'Keine bekannte Route zu $names. Nachrichten werden geflutet, bis eine gelernt ist. Schick ihnen vor dem Aufbruch eine Nachricht.';
+  }
+
+  @override
+  String get readiness_notifications => 'Benachrichtigungen';
+
+  @override
+  String get readiness_notificationsOk => 'Erlaubt.';
+
+  @override
+  String get readiness_notificationsOff =>
+      'Benachrichtigungen sind aus, du hörst also keine Antworten, Check-ins oder Warnungen.';
+
+  @override
+  String get readiness_batteryOpt => 'Akkuoptimierung';
+
+  @override
+  String get readiness_batteryOptOk => 'NOTORYX Core ist ausgenommen.';
+
+  @override
+  String get readiness_batteryOptOn =>
+      'Android kann die App im Hintergrund beenden. Schalte sie unter Einstellungen → App-Einstellungen → Benachrichtigungen aus.';
+
+  @override
+  String get readiness_blockedTitle => 'Tour kann noch nicht starten';
+
+  @override
+  String readiness_warnTitle(int count) {
+    return '$count Punkte zu prüfen';
+  }
+
+  @override
+  String get readiness_startAnyway => 'Trotzdem starten';
+
+  @override
+  String get readiness_review => 'Ansehen';
+
+  @override
+  String get readiness_summaryReady => 'Startklar';
+
+  @override
+  String readiness_summaryWarn(int count) {
+    return '$count zu prüfen';
+  }
+
+  @override
+  String get readiness_summaryBlocked => 'SOS erreicht niemanden';
+
+  @override
+  String get coords_maidenhead => 'Maidenhead-Locator';
+
+  @override
+  String get reactions_radioTitle => 'Reaktionen per Funk senden';
+
+  @override
+  String get reactions_radioHint =>
+      'Jede Reaktion ist ein Paket in der Luft. Automatisch behält sie im EU-868-MHz-Band, wo die Sendezeit begrenzt ist, auf diesem Gerät.';
+
+  @override
+  String get reactions_radioAuto => 'Automatisch';
+
+  @override
+  String get reactions_radioOn => 'An';
+
+  @override
+  String get reactions_radioOff => 'Aus (dieses Gerät)';
+
+  @override
+  String get batteryWatch_auto => 'Automatisch prüfen';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Solange ein Funkgerät verbunden ist, fragt die App diesen Repeater regelmäßig nach seinem Akku. Er antwortet nur, wenn du bei ihm angemeldet bist.';
+
+  @override
+  String get batteryWatch_interval => 'Prüfen alle';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Höchstens 6 Abfragen pro Stunde für alle Repeater, mindestens 2 Minuten auseinander.';
+
+  @override
+  String get batteryWatch_add => 'Repeater hinzufügen';
+
+  @override
+  String get batteryWatch_pick => 'Repeater zum Überwachen wählen';
+
+  @override
+  String get batteryWatch_noRepeaters =>
+      'Noch keine Repeater in deinen Kontakten.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Keine Antwort auf die letzten $count Abfragen. Öffne den Repeater und melde dich erneut an.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Wird geprüft…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Repeater-Akku';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name ist bei $percent % ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Der Akku von $name fällt schnell: bei diesem Tempo in etwa $days Tagen leer.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name hat auf $count Akku-Abfragen nicht geantwortet.';
+  }
 }

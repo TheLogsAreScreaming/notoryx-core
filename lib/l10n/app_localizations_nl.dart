@@ -10209,35 +10209,514 @@ class AppLocalizationsNl extends AppLocalizations {
   String get batteryWatch_cleared => 'Geschiedenis gewist';
 
   @override
-  String get team_title => 'Teamvolgen';
+  String get waypoints_title => 'Waypoints';
 
   @override
-  String get team_hint =>
-      'Deelt je positie in een privékanaal zolang de tocht loopt, zodat je team je op de kaart ziet. Stopt aan het eind van de tocht of na 12 uur.';
+  String get waypoints_toolSubtitle =>
+      'Opgeslagen plaatsen en routes; GPX importeren of exporteren';
 
   @override
-  String get team_channel => 'Kanaal';
+  String get waypoints_importFile => 'GPX-bestand importeren';
 
   @override
-  String get team_noChannel =>
-      'Voeg eerst een privékanaal toe. Volgen post nooit in openbare of hashtagkanalen.';
+  String get waypoints_importPaste => 'GPX plakken';
 
   @override
-  String get team_every => 'Elke';
+  String get waypoints_export => 'GPX exporteren';
 
   @override
-  String team_minutes(int minutes) {
-    return '$minutes min';
+  String get waypoints_empty =>
+      'Nog geen waypoints. Importeer een GPX-bestand of bewaar een plek die iemand in een chat deelde.';
+
+  @override
+  String waypoints_waypoints(int count) {
+    return 'Waypoints ($count)';
   }
 
   @override
-  String get team_needTrip => 'Start de tocht om je positie te delen.';
-
-  @override
-  String team_lastShared(String age) {
-    return 'Laatst gedeeld $age';
+  String waypoints_routes(int count) {
+    return 'Routes ($count)';
   }
 
   @override
-  String get team_waitingGps => 'Wachten op een positie van de radio';
+  String waypoints_routeSummary(int points, String km) {
+    return '$points punten · $km km';
+  }
+
+  @override
+  String get waypoints_delete => 'Verwijderen';
+
+  @override
+  String get waypoints_copy => 'Coördinaten kopiëren';
+
+  @override
+  String get waypoints_sendToChannel => 'Naar een kanaal sturen';
+
+  @override
+  String get waypoints_pickChannel => 'Naar welk kanaal sturen?';
+
+  @override
+  String waypoints_sent(String channel) {
+    return 'Verstuurd naar $channel';
+  }
+
+  @override
+  String get waypoints_importFailed =>
+      'Dit is geen GPX-bestand dat de app kan lezen.';
+
+  @override
+  String get waypoints_pasteHint => 'Plak hier de GPX-tekst';
+
+  @override
+  String get waypoints_import => 'Importeren';
+
+  @override
+  String waypoints_imported(int waypoints, int routes) {
+    return '$waypoints waypoints en $routes routes toegevoegd';
+  }
+
+  @override
+  String get waypoints_save => 'Bewaren als waypoint';
+
+  @override
+  String get waypoints_unnamed => 'Gedeelde plek';
+
+  @override
+  String get waypoints_saved => 'Bewaard in Waypoints';
+
+  @override
+  String get waypoints_alreadySaved => 'Staat al in Waypoints';
+
+  @override
+  String get netChange_title => 'Netwerkwijzigingen';
+
+  @override
+  String get netChange_toolSubtitle =>
+      'Repeaters die in de buurt verschenen of stil werden';
+
+  @override
+  String netChange_newDirect(String name) {
+    return 'Nieuwe repeater direct gehoord: $name';
+  }
+
+  @override
+  String netChange_newHops(String name, int hops) {
+    return 'Nieuwe repeater op $hops hop: $name';
+  }
+
+  @override
+  String netChange_wentQuiet(String name, int hours) {
+    return '$name is stil: al $hours u niet gehoord';
+  }
+
+  @override
+  String get netChange_empty =>
+      'Nog geen wijzigingen. Favoriete repeaters die stil worden en nieuwe repeaters in de buurt verschijnen hier.';
+
+  @override
+  String get netChange_quietSetting => 'Favoriete repeater wordt stil';
+
+  @override
+  String get netChange_quietHint =>
+      'Melden als een favoriete repeater zo lang niet gehoord is';
+
+  @override
+  String get netChange_newSetting => 'Nieuwe repeater in de buurt';
+
+  @override
+  String get netChange_newHint =>
+      'Melden als een onbekende repeater binnen één hop gehoord wordt';
+
+  @override
+  String get netChange_clear => 'Wissen';
+
+  @override
+  String get netChange_notifTitle => 'Netwerkwijziging';
+
+  @override
+  String get trouble_title => 'Probleemoplossing';
+
+  @override
+  String get trouble_toolSubtitle => 'Stap-voor-stap hulp als iets niet werkt';
+
+  @override
+  String get trouble_pick => 'Wat is er mis?';
+
+  @override
+  String get trouble_noDelivery => 'Berichten komen niet aan';
+
+  @override
+  String get trouble_noConnect => 'Ik kan geen verbinding maken met mijn radio';
+
+  @override
+  String get trouble_hearNobody => 'Ik hoor niemand';
+
+  @override
+  String get trouble_startHere => 'Begin hier';
+
+  @override
+  String get trouble_resultOk => 'OK';
+
+  @override
+  String get trouble_resultProblem => 'Probleem';
+
+  @override
+  String get trouble_resultUnchecked => 'Niet te controleren';
+
+  @override
+  String get trouble_connectedNow =>
+      'Je bent nu verbonden. Als de verbinding steeds wegvalt, helpen de stappen hieronder nog steeds.';
+
+  @override
+  String get trouble_allOk =>
+      'Alle controles zijn goed. Werkt het nog steeds niet, kijk dan naar de stappen hieronder.';
+
+  @override
+  String get trouble_connected => 'Je radio is verbonden';
+
+  @override
+  String get trouble_connectedAdvice =>
+      'Verbind eerst je radio: Instellingen → Radio verbinden.';
+
+  @override
+  String get trouble_routes =>
+      'Er zijn routes bekend naar wie je berichten stuurt';
+
+  @override
+  String get trouble_routesAdvice =>
+      'Berichten naar iemand zonder bekende route floodden het hele mesh en komen vaak niet aan. Wacht tot diegene adverteert, of vraag erom, en stuur het opnieuw.';
+
+  @override
+  String get trouble_heardRecently =>
+      'Wie je berichten stuurt is het afgelopen etmaal gehoord';
+
+  @override
+  String get trouble_heardRecentlyAdvice =>
+      'Wie al een tijd niet gehoord is, is misschien buiten bereik of uit. Berichten kunnen pas bevestigd worden als diegene terug is.';
+
+  @override
+  String get trouble_neighbours => 'Je radio hoort andere nodes';
+
+  @override
+  String get trouble_neighboursAdvice =>
+      'Als niets direct gehoord wordt, bereikt je radio het mesh hier niet. Zet de antenne hoger, ga hoger staan of ga dichter bij een repeater.';
+
+  @override
+  String get trouble_bluetooth =>
+      'Bluetooth staat aan en de app mag het gebruiken';
+
+  @override
+  String get trouble_bluetoothAdvice =>
+      'Controleer of Bluetooth aan staat en of NOTORYX Core toestemming heeft voor Bluetooth (en op Android Apparaten in de buurt) in de telefooninstellingen.';
+
+  @override
+  String get trouble_otherApp =>
+      'Geen andere telefoon of app is met de radio verbonden';
+
+  @override
+  String get trouble_otherAppAdvice =>
+      'Een radio praat met één app tegelijk. Sluit andere MeshCore-apps of zet Bluetooth uit op andere gekoppelde telefoons.';
+
+  @override
+  String get trouble_inRange => 'De radio staat aan en is dichtbij';
+
+  @override
+  String get trouble_inRangeAdvice =>
+      'Controleer of de radio geladen is, aan staat en binnen een paar meter is. De radio herstarten verhelpt vaak een vastgelopen verbinding.';
+
+  @override
+  String get trouble_otherTransport => 'Probeer een andere verbinding';
+
+  @override
+  String get trouble_otherTransportAdvice =>
+      'Als Bluetooth steeds faalt, verbind dan met een USB-kabel of via wifi (TCP) als je radio dat kan.';
+
+  @override
+  String get trouble_noise => 'De radio verdrinkt niet in ruis';
+
+  @override
+  String get trouble_noiseAdvice =>
+      'Een hoge ruisvloer verbergt zwakke signalen. Houd de antenne weg van elektronica, laders en zonneregelaars.';
+
+  @override
+  String get trouble_region => 'Je radio gebruikt de instellingen van je regio';
+
+  @override
+  String get trouble_regionAdvice =>
+      'Met een andere frequentie, bandbreedte of spreidingsfactor dan het lokale mesh hoor je niemand. Vergelijk Instellingen → Radio met wat je regio gebruikt.';
+
+  @override
+  String get trouble_antenna => 'De antenne zit erop';
+
+  @override
+  String get trouble_antennaAdvice =>
+      'Zorg dat de antenne stevig vastgeschroefd is. Zend nooit zonder antenne; dat kan de radio beschadigen.';
+
+  @override
+  String get mesh_title => 'Meshgezondheid';
+
+  @override
+  String get mesh_overallGood => 'Het mesh ziet er gezond uit';
+
+  @override
+  String get mesh_overallFair => 'Het mesh werkt, met wat problemen';
+
+  @override
+  String get mesh_overallPoor => 'Het mesh heeft het moeilijk';
+
+  @override
+  String get mesh_overallUnknown => 'Nog te weinig gegevens';
+
+  @override
+  String get mesh_gradeGood => 'Goed';
+
+  @override
+  String get mesh_gradeFair => 'Matig';
+
+  @override
+  String get mesh_gradePoor => 'Slecht';
+
+  @override
+  String get mesh_gradeUnknown => 'Geen gegevens';
+
+  @override
+  String get mesh_noise => 'Ruis';
+
+  @override
+  String mesh_noiseValue(String dbm) {
+    return 'Ruisvloer $dbm dBm';
+  }
+
+  @override
+  String get mesh_signal => 'Laatste signaal';
+
+  @override
+  String mesh_signalValue(String db) {
+    return 'SNR $db dB';
+  }
+
+  @override
+  String get mesh_busy => 'Kanaalgebruik';
+
+  @override
+  String mesh_busyValue(int percent) {
+    return '$percent% van de laatste 15 minuten in de lucht';
+  }
+
+  @override
+  String get mesh_neighbours => 'Direct gehoord';
+
+  @override
+  String mesh_neighboursValue(int count) {
+    return '$count nodes in het laatste uur';
+  }
+
+  @override
+  String get mesh_delivery => 'Directe berichten';
+
+  @override
+  String mesh_deliveryValue(int delivered, int total) {
+    return '$delivered van $total afgeleverd in het laatste etmaal';
+  }
+
+  @override
+  String get mesh_tipNoise =>
+      'Iets in de buurt maakt ruis op deze frequentie. Houd de antenne weg van elektronica en laders.';
+
+  @override
+  String get mesh_tipSignal =>
+      'Het laatste pakket was zwak. Zet de antenne hoger of ga hoger staan.';
+
+  @override
+  String get mesh_tipBusy =>
+      'Het kanaal is druk. Houd berichten kort en vermijd floods.';
+
+  @override
+  String get mesh_tipNeighbours =>
+      'Weinig nodes worden direct gehoord. Zet de antenne hoger of ga dichter bij een repeater.';
+
+  @override
+  String get mesh_tipDelivery =>
+      'Veel berichten worden niet bevestigd. Open een mislukt bericht om te zien waar het stopte.';
+
+  @override
+  String routeHealth_staleTitle(String name) {
+    return 'De route naar $name is mogelijk verouderd';
+  }
+
+  @override
+  String routeHealth_weakTitle(String name) {
+    return 'De route naar $name is onbetrouwbaar';
+  }
+
+  @override
+  String routeHealth_lastWorkedHours(int hours) {
+    return 'werkte $hours u geleden voor het laatst';
+  }
+
+  @override
+  String routeHealth_lastWorkedDays(int days) {
+    return 'werkte $days dagen geleden voor het laatst';
+  }
+
+  @override
+  String routeHealth_notHeard(int days) {
+    return 'al $days dagen niet gehoord';
+  }
+
+  @override
+  String routeHealth_failures(int failures, int attempts) {
+    return '$failures van $attempts pogingen mislukt';
+  }
+
+  @override
+  String routeHealth_longPath(int hops) {
+    return '$hops hops';
+  }
+
+  @override
+  String get routeHealth_useFlood => 'Nieuwe route zoeken';
+
+  @override
+  String get routeHealth_keep => 'Route houden';
+
+  @override
+  String get readiness_sos => 'SOS-ontvangers';
+
+  @override
+  String get readiness_sosOk => 'SOS heeft ontvangers.';
+
+  @override
+  String get readiness_sosBlocked =>
+      'SOS heeft niemand om te bereiken. Voeg tochtcontacten uit je contacten toe of stel een SOS-kanaal in.';
+
+  @override
+  String get readiness_routes => 'Routes naar tochtcontacten';
+
+  @override
+  String get readiness_routesOk =>
+      'Er is een route bekend naar elk tochtcontact.';
+
+  @override
+  String readiness_routesMissing(String names) {
+    return 'Geen bekende route naar $names. Berichten worden geflood tot er een route geleerd is. Stuur ze een bericht voor vertrek.';
+  }
+
+  @override
+  String get readiness_notifications => 'Meldingen';
+
+  @override
+  String get readiness_notificationsOk => 'Toegestaan.';
+
+  @override
+  String get readiness_notificationsOff =>
+      'Meldingen staan uit, dus je hoort geen antwoorden, check-ins of waarschuwingen.';
+
+  @override
+  String get readiness_batteryOpt => 'Batterijoptimalisatie';
+
+  @override
+  String get readiness_batteryOptOk => 'NOTORYX Core is uitgezonderd.';
+
+  @override
+  String get readiness_batteryOptOn =>
+      'Android kan de app op de achtergrond stoppen. Zet het uit via Instellingen → App-instellingen → Meldingen.';
+
+  @override
+  String get readiness_blockedTitle => 'Tocht kan nog niet starten';
+
+  @override
+  String readiness_warnTitle(int count) {
+    return '$count punten om na te kijken';
+  }
+
+  @override
+  String get readiness_startAnyway => 'Toch starten';
+
+  @override
+  String get readiness_review => 'Bekijken';
+
+  @override
+  String get readiness_summaryReady => 'Klaar om te gaan';
+
+  @override
+  String readiness_summaryWarn(int count) {
+    return '$count na te kijken';
+  }
+
+  @override
+  String get readiness_summaryBlocked => 'SOS bereikt niemand';
+
+  @override
+  String get coords_maidenhead => 'Maidenhead-locator';
+
+  @override
+  String get reactions_radioTitle => 'Reacties via de radio sturen';
+
+  @override
+  String get reactions_radioHint =>
+      'Elke reactie is een pakket in de lucht. Automatisch houdt ze op dit apparaat op de EU 868 MHz-band, waar zendtijd beperkt is.';
+
+  @override
+  String get reactions_radioAuto => 'Automatisch';
+
+  @override
+  String get reactions_radioOn => 'Aan';
+
+  @override
+  String get reactions_radioOff => 'Uit (dit apparaat)';
+
+  @override
+  String get batteryWatch_auto => 'Automatisch controleren';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Zolang er een radio verbonden is, vraagt de app deze repeater regelmatig naar zijn batterij. Hij antwoordt alleen als je bent ingelogd.';
+
+  @override
+  String get batteryWatch_interval => 'Controleer elke';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours u';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Hoogstens 6 controles per uur voor alle repeaters, minstens 2 minuten uit elkaar.';
+
+  @override
+  String get batteryWatch_add => 'Repeater toevoegen';
+
+  @override
+  String get batteryWatch_pick => 'Kies een repeater om te bewaken';
+
+  @override
+  String get batteryWatch_noRepeaters => 'Nog geen repeaters in je contacten.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Geen antwoord op de laatste $count controles. Open de repeater en log opnieuw in.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Controleren…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Repeaterbatterij';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name staat op $percent% ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'De batterij van $name daalt snel: bij dit tempo leeg over ongeveer $days dagen.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name heeft $count batterijcontroles niet beantwoord.';
+  }
 }

@@ -21,6 +21,7 @@ import 'package:meshcore_open/models/channel_message.dart';
 import 'package:meshcore_open/models/contact.dart';
 import 'package:meshcore_open/models/access_control.dart';
 import 'package:meshcore_open/models/message.dart';
+import 'package:meshcore_open/services/sos_relay_service.dart';
 import 'package:meshcore_open/screens/battery_watch_screen.dart';
 import 'package:meshcore_open/services/repeater_battery_history.dart';
 import 'package:meshcore_open/screens/path_graph_screen.dart';
@@ -391,6 +392,9 @@ Widget _app(Widget home, ThemeMode mode) {
     providers: [
       ChangeNotifierProvider<MeshCoreConnector>.value(value: connector),
       ChangeNotifierProvider(create: (_) => FieldOpsService(connector)..load()),
+      ChangeNotifierProvider(
+        create: (_) => SosRelayService.forConnector(connector),
+      ),
       ChangeNotifierProvider(
         create: (_) => SensorSubscriptionService(connector),
       ),
