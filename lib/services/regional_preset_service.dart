@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
-import 'package:geolocator/geolocator.dart';
+import 'phone_location.dart';
 import 'package:http/http.dart' as http;
 import 'package:latlong2/latlong.dart';
 
@@ -148,13 +148,8 @@ class RegionalPresetService extends ChangeNotifier {
   /// The phone's last known fix, only if location permission was already
   /// granted elsewhere in the app; this never asks for it.
   static Future<LatLng?> _lastKnownPhonePosition() async {
-    final permission = await Geolocator.checkPermission();
-    if (permission != LocationPermission.whileInUse &&
-        permission != LocationPermission.always) {
-      return null;
-    }
-    final p = await Geolocator.getLastKnownPosition();
-    return p == null ? null : LatLng(p.latitude, p.longitude);
+    final p = await lastKnownPhoneFix();
+    return p == null ? null : LatLng(p.lat, p.lon);
   }
 
   RadioSettingsState get radio {
