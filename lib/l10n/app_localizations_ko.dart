@@ -9690,4 +9690,70 @@ class AppLocalizationsKo extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return '내 무전기는 $width바이트 사용';
   }
+
+  @override
+  String get batteryWatch_title => '배터리 감시';
+
+  @override
+  String get batteryWatch_toolSubtitle => '지난 30일간 리피터 배터리';
+
+  @override
+  String get batteryWatch_empty =>
+      '아직 리피터 배터리 기록이 없습니다. 리피터의 상태 또는 텔레메트리를 열면 기록이 여기에 30일간 보관됩니다.';
+
+  @override
+  String get batteryWatch_note =>
+      '기록은 요청한 상태 및 텔레메트리 응답에서 가져옵니다. 추가로 전송되는 것은 없습니다.';
+
+  @override
+  String get batteryWatch_statusLow => '배터리 부족';
+
+  @override
+  String get batteryWatch_statusFalling => '빠르게 감소 중';
+
+  @override
+  String get batteryWatch_statusQuiet => '최근 기록 없음';
+
+  @override
+  String get batteryWatch_statusOk => '정상';
+
+  @override
+  String get batteryWatch_statusUnknown => '아직 기록이 부족합니다';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return '이 속도라면 약 $days일 후 방전';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '지난 1주일간 하루 $volts V';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return '마지막 기록: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return '30일간 기록: $count';
+  }
+
+  @override
+  String get batteryWatch_history => '배터리 기록';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return '배터리 그래프: $count개 기록, $low V~$high V';
+  }
+
+  @override
+  String get batteryWatch_clear => '기록 지우기';
+
+  @override
+  String get batteryWatch_unknownRepeater => '알 수 없는 리피터';
+
+  @override
+  String get batteryWatch_cleared => '기록을 지웠습니다';
 }

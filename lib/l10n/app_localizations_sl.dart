@@ -10165,4 +10165,71 @@ class AppLocalizationsSl extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'Vaš radio uporablja $width bajte';
   }
+
+  @override
+  String get batteryWatch_title => 'Nadzor baterij';
+
+  @override
+  String get batteryWatch_toolSubtitle =>
+      'Baterije repetitorjev v zadnjih 30 dneh';
+
+  @override
+  String get batteryWatch_empty =>
+      'Še ni meritev baterij repetitorjev. Odprite Stanje ali Telemetrijo repetitorja in njegove meritve bodo tu shranjene 30 dni.';
+
+  @override
+  String get batteryWatch_note =>
+      'Meritve izvirajo iz odgovorov Stanje in Telemetrija, ki jih zahtevate. Nič dodatnega se ne oddaja.';
+
+  @override
+  String get batteryWatch_statusLow => 'Šibka baterija';
+
+  @override
+  String get batteryWatch_statusFalling => 'Hitro pada';
+
+  @override
+  String get batteryWatch_statusQuiet => 'Ni nedavne meritve';
+
+  @override
+  String get batteryWatch_statusOk => 'V redu';
+
+  @override
+  String get batteryWatch_statusUnknown => 'Še premalo meritev';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'Pri tem tempu prazna čez približno $days dni';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '$volts V na dan v zadnjem tednu';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return 'Zadnja meritev: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return 'Meritve v 30 dneh: $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'Zgodovina baterije';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'Graf baterije: $count meritev, med $low V in $high V';
+  }
+
+  @override
+  String get batteryWatch_clear => 'Počisti zgodovino';
+
+  @override
+  String get batteryWatch_unknownRepeater => 'Neznan repetitor';
+
+  @override
+  String get batteryWatch_cleared => 'Zgodovina počiščena';
 }

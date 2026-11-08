@@ -45,6 +45,7 @@ import 'services/favorite_return_service.dart';
 import 'services/field_ops_service.dart';
 import 'services/path_history_service.dart';
 import 'services/app_settings_service.dart';
+import 'services/repeater_battery_history.dart';
 import 'services/notification_service.dart';
 import 'services/ble_debug_log_service.dart';
 import 'services/app_debug_log_service.dart';
@@ -286,6 +287,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   late final ChannelDiscoveryService _channelDiscovery;
   late final AnalyzerService _analyzer;
   late final NodeTelemetryStore _telemetry;
+  late final RepeaterBatteryHistory _batteryHistory;
   late final MySensorsService _mySensors;
   late final WardriveService _wardrive;
   late final NetworkScanService _networkScan;
@@ -325,6 +327,8 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _analyzer = AnalyzerService()..load();
     _telemetry = NodeTelemetryStore(PrefsManager.instance);
     widget.connector.telemetryStore = _telemetry;
+    _batteryHistory = RepeaterBatteryHistory(PrefsManager.instance);
+    widget.connector.batteryHistory = _batteryHistory;
     _syncTelemetryScope();
     widget.connector.addListener(_syncTelemetryScope);
     _mySensors = MySensorsService(widget.connector);
@@ -453,6 +457,8 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     widget.connector.removeListener(_syncTelemetryScope);
     widget.connector.telemetryStore = null;
     _telemetry.dispose();
+    widget.connector.batteryHistory = null;
+    _batteryHistory.dispose();
     _wardrive.dispose();
     _linkRouter.dispose();
     _networkScan.dispose();
@@ -476,6 +482,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
 
   void _syncTelemetryScope() {
     _telemetry.setScope(widget.connector.selfPublicKeyHex);
+    _batteryHistory.setScope(widget.connector.selfPublicKeyHex);
   }
 
   void _syncMqttObserverIdentity() {
@@ -537,6 +544,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     if (state == AppLifecycleState.paused ||
         state == AppLifecycleState.hidden) {
       unawaited(_telemetry.flush());
+      unawaited(_batteryHistory.flush());
       unawaited(widget.imageCodecService.handleMemoryPressure());
       unawaited(widget.receivedImageStore.handleMemoryPressure());
     }
@@ -568,6 +576,9 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         ChangeNotifierProvider<AnalyzerService?>.value(value: _analyzer),
         ChangeNotifierProvider<MySensorsService?>.value(value: _mySensors),
         ChangeNotifierProvider<NodeTelemetryStore?>.value(value: _telemetry),
+        ChangeNotifierProvider<RepeaterBatteryHistory?>.value(
+          value: _batteryHistory,
+        ),
         ChangeNotifierProvider.value(value: _wardrive),
         ChangeNotifierProvider.value(value: _networkScan),
         ChangeNotifierProvider.value(value: _rxLog),

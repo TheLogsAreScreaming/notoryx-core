@@ -10198,4 +10198,71 @@ class AppLocalizationsFr extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'Votre radio utilise $width octets';
   }
+
+  @override
+  String get batteryWatch_title => 'Surveillance des batteries';
+
+  @override
+  String get batteryWatch_toolSubtitle =>
+      'Batteries des répéteurs sur les 30 derniers jours';
+
+  @override
+  String get batteryWatch_empty =>
+      'Aucune mesure de batterie de répéteur pour l\'instant. Ouvrez l\'État ou la Télémétrie d\'un répéteur, et ses mesures sont gardées ici 30 jours.';
+
+  @override
+  String get batteryWatch_note =>
+      'Les mesures viennent des réponses État et Télémétrie que vous demandez. Rien de plus n\'est émis.';
+
+  @override
+  String get batteryWatch_statusLow => 'Batterie faible';
+
+  @override
+  String get batteryWatch_statusFalling => 'Baisse rapide';
+
+  @override
+  String get batteryWatch_statusQuiet => 'Pas de mesure récente';
+
+  @override
+  String get batteryWatch_statusOk => 'Tout va bien';
+
+  @override
+  String get batteryWatch_statusUnknown => 'Pas encore assez de mesures';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'Vide dans environ $days jours à ce rythme';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '$volts V par jour sur la dernière semaine';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return 'Dernière mesure : $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return 'Mesures sur 30 jours : $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'Historique de la batterie';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'Graphique de batterie : $count mesures, entre $low V et $high V';
+  }
+
+  @override
+  String get batteryWatch_clear => 'Effacer l\'historique';
+
+  @override
+  String get batteryWatch_unknownRepeater => 'Répéteur inconnu';
+
+  @override
+  String get batteryWatch_cleared => 'Historique effacé';
 }
