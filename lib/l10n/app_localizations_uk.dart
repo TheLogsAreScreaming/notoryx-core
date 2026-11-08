@@ -10291,6 +10291,27 @@ class AppLocalizationsUk extends AppLocalizations {
   String get batteryWatch_cleared => 'Історію очищено';
 
   @override
+  String get a11y_clear => 'Очистити';
+
+  @override
+  String get a11y_showOnMap => 'Показати на мапі';
+
+  @override
+  String get a11y_showHide => 'Показати або сховати';
+
+  @override
+  String get a11y_flash => 'Спалах';
+
+  @override
+  String get a11y_switchCamera => 'Змінити камеру';
+
+  @override
+  String get a11y_pauseGif => 'Запустити або зупинити GIF';
+
+  @override
+  String get a11y_chooseGif => 'Вибрати цей GIF';
+
+  @override
   String get privacy_title => 'Конфіденційність';
 
   @override

@@ -9,7 +9,7 @@ import 'dart:math';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
+import '../services/phone_location.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
@@ -259,21 +259,8 @@ class _MapScreenState extends State<MapScreen> {
   Future<void> _goToMyPosition(MeshCoreConnector connector) async {
     LatLng? here;
     try {
-      var permission = await Geolocator.checkPermission();
-      if (permission == LocationPermission.denied) {
-        permission = await Geolocator.requestPermission();
-      }
-      if (permission != LocationPermission.denied &&
-          permission != LocationPermission.deniedForever) {
-        final p =
-            await Geolocator.getLastKnownPosition() ??
-            await Geolocator.getCurrentPosition(
-              locationSettings: const LocationSettings(
-                timeLimit: Duration(seconds: 10),
-              ),
-            );
-        here = LatLng(p.latitude, p.longitude);
-      }
+      final p = await askForPhoneFix();
+      if (p != null) here = LatLng(p.lat, p.lon);
     } catch (_) {
       // No phone GPS here; the radio's position is next.
     }
@@ -1922,6 +1909,7 @@ class _MapScreenState extends State<MapScreen> {
                       ),
                       suffixIcon: hasQuery
                           ? IconButton(
+                              tooltip: context.l10n.common_close,
                               color: _overlayPrimaryTextColor,
                               icon: const Icon(Icons.close, size: 18),
                               onPressed: () {
@@ -2526,6 +2514,7 @@ class _MapScreenState extends State<MapScreen> {
                               _mapController.move(pos, max(_zoom, 15)),
                         ),
                       IconButton(
+                        tooltip: context.l10n.common_close,
                         color: _overlayPrimaryTextColor,
                         icon: const Icon(Icons.close, size: 20),
                         onPressed: _clearSelection,

@@ -1,3 +1,4 @@
+import '../l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -584,6 +585,7 @@ class BottomSheetHeader extends StatelessWidget {
               ),
               ?trailing,
               IconButton(
+                tooltip: context.l10n.common_close,
                 icon: const Icon(Icons.close, size: 20),
                 onPressed: () => Navigator.of(context).maybePop(),
               ),

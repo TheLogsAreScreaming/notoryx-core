@@ -16,10 +16,10 @@ rm -f lib/services/image_codec_session_io.dart
 echo "lite: removed lib/services/image_codec_session_io.dart"
 
 # 3. The packages themselves.
-python3 tool/lite/strip_pubspec.py pubspec.yaml llamadart flutter_onnxruntime mobile_scanner
+python3 tool/lite/strip_pubspec.py pubspec.yaml llamadart flutter_onnxruntime mobile_scanner geolocator
 
 # 4. Nothing left may import them.
-if grep -rnE "package:(llamadart|flutter_onnxruntime|mobile_scanner)/" lib; then
+if grep -rnE "package:(llamadart|flutter_onnxruntime|mobile_scanner|geolocator)/" lib; then
   echo "::error::lib still imports a package the lite build removes" >&2
   exit 1
 fi

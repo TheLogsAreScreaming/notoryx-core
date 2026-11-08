@@ -10232,6 +10232,27 @@ class AppLocalizationsBg extends AppLocalizations {
   String get batteryWatch_cleared => 'Историята е изчистена';
 
   @override
+  String get a11y_clear => 'Изчисти';
+
+  @override
+  String get a11y_showOnMap => 'Покажи на картата';
+
+  @override
+  String get a11y_showHide => 'Покажи или скрий';
+
+  @override
+  String get a11y_flash => 'Светкавица';
+
+  @override
+  String get a11y_switchCamera => 'Смени камерата';
+
+  @override
+  String get a11y_pauseGif => 'Пусни или спри GIF';
+
+  @override
+  String get a11y_chooseGif => 'Избери този GIF';
+
+  @override
   String get privacy_title => 'Поверителност';
 
   @override
