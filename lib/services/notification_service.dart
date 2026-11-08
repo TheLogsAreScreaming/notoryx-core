@@ -174,6 +174,9 @@ class NotificationService {
     return _canNotify = true;
   }
 
+  /// Whether the app may post notifications on this device.
+  Future<bool> canNotify() => _ensureCanNotify();
+
   /// "Back in range" for a favorite heard again after [quietHours] hours.
   /// One notification per contact, replaced by the next.
   Future<bool> showFavoriteReturn({
