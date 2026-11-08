@@ -10160,32 +10160,6 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get coords_maidenhead => 'Localizador Maidenhead';
-
-  @override
-  String get reactions_radioTitle => 'Enviar reações pelo rádio';
-
-  @override
-  String get reactions_radioHint =>
-      'Cada reação é um pacote no ar. Automático mantém-nas neste dispositivo na banda europeia de 868 MHz, onde o tempo de emissão é limitado.';
-
-  @override
-  String get reactions_radioAuto => 'Automático';
-
-  @override
-  String get reactions_radioOn => 'Ligado';
-
-  @override
-  String get reactions_radioOff => 'Desligado (este dispositivo)';
-
-  @override
-  String get lite_qrPasteHint =>
-      'Esta versão não tem leitor com câmara. Cole o texto do código QR.';
-
-  @override
-  String get lite_qrPasteLabel => 'Texto do código QR';
-
-  @override
   String get batteryWatch_title => 'Vigilância de baterias';
 
   @override
@@ -10251,6 +10225,99 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'Histórico limpo';
+
+  @override
+  String get readiness_sos => 'Destinatários do SOS';
+
+  @override
+  String get readiness_sosOk => 'O SOS tem destinatários.';
+
+  @override
+  String get readiness_sosBlocked =>
+      'O SOS não tem a quem chegar. Adicione contactos da saída que estejam nos seus contactos ou defina um canal SOS.';
+
+  @override
+  String get readiness_routes => 'Rotas para os contactos da saída';
+
+  @override
+  String get readiness_routesOk =>
+      'Há rota conhecida para cada contacto da saída.';
+
+  @override
+  String readiness_routesMissing(String names) {
+    return 'Sem rota conhecida para $names. As mensagens vão por inundação até se aprender uma rota. Envie-lhes uma mensagem antes de partir.';
+  }
+
+  @override
+  String get readiness_notifications => 'Notificações';
+
+  @override
+  String get readiness_notificationsOk => 'Permitidas.';
+
+  @override
+  String get readiness_notificationsOff =>
+      'As notificações estão desligadas, por isso não ouvirá respostas, check-ins nem alertas.';
+
+  @override
+  String get readiness_batteryOpt => 'Otimização da bateria';
+
+  @override
+  String get readiness_batteryOptOk => 'O NOTORYX Core está isento.';
+
+  @override
+  String get readiness_batteryOptOn =>
+      'O Android pode parar a app em segundo plano. Desligue em Definições → Definições da app → Notificações.';
+
+  @override
+  String get readiness_blockedTitle => 'Ainda não pode iniciar a saída';
+
+  @override
+  String readiness_warnTitle(int count) {
+    return '$count coisas a verificar';
+  }
+
+  @override
+  String get readiness_startAnyway => 'Iniciar mesmo assim';
+
+  @override
+  String get readiness_review => 'Rever';
+
+  @override
+  String get readiness_summaryReady => 'Pronto para partir';
+
+  @override
+  String readiness_summaryWarn(int count) {
+    return '$count a verificar';
+  }
+
+  @override
+  String get readiness_summaryBlocked => 'O SOS não chega a ninguém';
+
+  @override
+  String get coords_maidenhead => 'Localizador Maidenhead';
+
+  @override
+  String get reactions_radioTitle => 'Enviar reações pelo rádio';
+
+  @override
+  String get reactions_radioHint =>
+      'Cada reação é um pacote no ar. Automático mantém-nas neste dispositivo na banda europeia de 868 MHz, onde o tempo de emissão é limitado.';
+
+  @override
+  String get reactions_radioAuto => 'Automático';
+
+  @override
+  String get reactions_radioOn => 'Ligado';
+
+  @override
+  String get reactions_radioOff => 'Desligado (este dispositivo)';
+
+  @override
+  String get lite_qrPasteHint =>
+      'Esta versão não tem leitor com câmara. Cole o texto do código QR.';
+
+  @override
+  String get lite_qrPasteLabel => 'Texto do código QR';
 
   @override
   String get batteryWatch_auto => 'Verificar automaticamente';

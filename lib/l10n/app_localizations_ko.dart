@@ -9701,32 +9701,6 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get coords_maidenhead => '메이든헤드 로케이터';
-
-  @override
-  String get reactions_radioTitle => '반응을 무선으로 보내기';
-
-  @override
-  String get reactions_radioHint =>
-      '반응 하나하나가 전파로 나가는 패킷입니다. 자동은 송신 시간이 제한된 EU 868 MHz 대역에서 이 기기에만 표시합니다.';
-
-  @override
-  String get reactions_radioAuto => '자동';
-
-  @override
-  String get reactions_radioOn => '켜기';
-
-  @override
-  String get reactions_radioOff => '끄기(이 기기)';
-
-  @override
-  String get lite_qrPasteHint =>
-      '이 빌드에는 카메라 스캐너가 없습니다. 대신 QR 코드의 텍스트를 붙여 넣으세요.';
-
-  @override
-  String get lite_qrPasteLabel => 'QR 코드 텍스트';
-
-  @override
   String get batteryWatch_title => '배터리 감시';
 
   @override
@@ -9791,6 +9765,97 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => '기록을 지웠습니다';
+
+  @override
+  String get readiness_sos => 'SOS 수신자';
+
+  @override
+  String get readiness_sosOk => 'SOS를 보낼 대상이 있습니다.';
+
+  @override
+  String get readiness_sosBlocked =>
+      'SOS를 보낼 대상이 없습니다. 연락처에 있는 동행자를 추가하거나 SOS 채널을 설정하세요.';
+
+  @override
+  String get readiness_routes => '동행자까지의 경로';
+
+  @override
+  String get readiness_routesOk => '모든 동행자까지 경로를 알고 있습니다.';
+
+  @override
+  String readiness_routesMissing(String names) {
+    return '$names까지 알려진 경로가 없습니다. 경로를 알 때까지 메시지는 플러드로 전송됩니다. 출발 전에 메시지를 보내 보세요.';
+  }
+
+  @override
+  String get readiness_notifications => '알림';
+
+  @override
+  String get readiness_notificationsOk => '허용됨.';
+
+  @override
+  String get readiness_notificationsOff => '알림이 꺼져 있어 답장, 체크인, 경보를 받지 못합니다.';
+
+  @override
+  String get readiness_batteryOpt => '배터리 최적화';
+
+  @override
+  String get readiness_batteryOptOk => 'NOTORYX Core는 예외입니다.';
+
+  @override
+  String get readiness_batteryOptOn =>
+      'Android가 백그라운드에서 앱을 중지할 수 있습니다. 설정 → 앱 설정 → 알림에서 끄세요.';
+
+  @override
+  String get readiness_blockedTitle => '아직 출발할 수 없습니다';
+
+  @override
+  String readiness_warnTitle(int count) {
+    return '확인할 항목 $count개';
+  }
+
+  @override
+  String get readiness_startAnyway => '그래도 시작';
+
+  @override
+  String get readiness_review => '검토';
+
+  @override
+  String get readiness_summaryReady => '출발 준비 완료';
+
+  @override
+  String readiness_summaryWarn(int count) {
+    return '확인 $count개';
+  }
+
+  @override
+  String get readiness_summaryBlocked => 'SOS가 아무에게도 닿지 않음';
+
+  @override
+  String get coords_maidenhead => '메이든헤드 로케이터';
+
+  @override
+  String get reactions_radioTitle => '반응을 무선으로 보내기';
+
+  @override
+  String get reactions_radioHint =>
+      '반응 하나하나가 전파로 나가는 패킷입니다. 자동은 송신 시간이 제한된 EU 868 MHz 대역에서 이 기기에만 표시합니다.';
+
+  @override
+  String get reactions_radioAuto => '자동';
+
+  @override
+  String get reactions_radioOn => '켜기';
+
+  @override
+  String get reactions_radioOff => '끄기(이 기기)';
+
+  @override
+  String get lite_qrPasteHint =>
+      '이 빌드에는 카메라 스캐너가 없습니다. 대신 QR 코드의 텍스트를 붙여 넣으세요.';
+
+  @override
+  String get lite_qrPasteLabel => 'QR 코드 텍스트';
 
   @override
   String get batteryWatch_auto => '자동 확인';

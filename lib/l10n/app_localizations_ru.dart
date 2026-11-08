@@ -10220,32 +10220,6 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get coords_maidenhead => 'Локатор Maidenhead';
-
-  @override
-  String get reactions_radioTitle => 'Отправлять реакции по радио';
-
-  @override
-  String get reactions_radioHint =>
-      'Каждая реакция — это пакет в эфире. «Автоматически» оставляет их на этом устройстве в европейском диапазоне 868 МГц, где эфирное время ограничено.';
-
-  @override
-  String get reactions_radioAuto => 'Автоматически';
-
-  @override
-  String get reactions_radioOn => 'Вкл.';
-
-  @override
-  String get reactions_radioOff => 'Выкл. (это устройство)';
-
-  @override
-  String get lite_qrPasteHint =>
-      'В этой версии нет сканера с камерой. Вставьте текст из QR-кода.';
-
-  @override
-  String get lite_qrPasteLabel => 'Текст QR-кода';
-
-  @override
   String get batteryWatch_title => 'Контроль батарей';
 
   @override
@@ -10311,6 +10285,98 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'История очищена';
+
+  @override
+  String get readiness_sos => 'Получатели SOS';
+
+  @override
+  String get readiness_sosOk => 'У SOS есть получатели.';
+
+  @override
+  String get readiness_sosBlocked =>
+      'SOS некому отправить. Добавьте участников похода из контактов или задайте SOS-канал.';
+
+  @override
+  String get readiness_routes => 'Маршруты до участников';
+
+  @override
+  String get readiness_routesOk => 'Маршрут известен до каждого участника.';
+
+  @override
+  String readiness_routesMissing(String names) {
+    return 'Нет известного маршрута до $names. Сообщения будут идти рассылкой, пока маршрут не изучен. Отправьте им сообщение перед выходом.';
+  }
+
+  @override
+  String get readiness_notifications => 'Уведомления';
+
+  @override
+  String get readiness_notificationsOk => 'Разрешены.';
+
+  @override
+  String get readiness_notificationsOff =>
+      'Уведомления выключены — вы не услышите ответы, отметки и тревоги.';
+
+  @override
+  String get readiness_batteryOpt => 'Оптимизация батареи';
+
+  @override
+  String get readiness_batteryOptOk => 'NOTORYX Core в исключениях.';
+
+  @override
+  String get readiness_batteryOptOn =>
+      'Android может остановить приложение в фоне. Отключите это в Настройки → Настройки приложения → Уведомления.';
+
+  @override
+  String get readiness_blockedTitle => 'Поход пока нельзя начать';
+
+  @override
+  String readiness_warnTitle(int count) {
+    return 'Проверить: $count';
+  }
+
+  @override
+  String get readiness_startAnyway => 'Начать всё равно';
+
+  @override
+  String get readiness_review => 'Просмотреть';
+
+  @override
+  String get readiness_summaryReady => 'Можно выходить';
+
+  @override
+  String readiness_summaryWarn(int count) {
+    return 'Проверить: $count';
+  }
+
+  @override
+  String get readiness_summaryBlocked => 'SOS никому не дойдёт';
+
+  @override
+  String get coords_maidenhead => 'Локатор Maidenhead';
+
+  @override
+  String get reactions_radioTitle => 'Отправлять реакции по радио';
+
+  @override
+  String get reactions_radioHint =>
+      'Каждая реакция — это пакет в эфире. «Автоматически» оставляет их на этом устройстве в европейском диапазоне 868 МГц, где эфирное время ограничено.';
+
+  @override
+  String get reactions_radioAuto => 'Автоматически';
+
+  @override
+  String get reactions_radioOn => 'Вкл.';
+
+  @override
+  String get reactions_radioOff => 'Выкл. (это устройство)';
+
+  @override
+  String get lite_qrPasteHint =>
+      'В этой версии нет сканера с камерой. Вставьте текст из QR-кода.';
+
+  @override
+  String get lite_qrPasteLabel => 'Текст QR-кода';
 
   @override
   String get batteryWatch_auto => 'Проверять автоматически';

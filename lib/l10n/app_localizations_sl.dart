@@ -10177,32 +10177,6 @@ class AppLocalizationsSl extends AppLocalizations {
   }
 
   @override
-  String get coords_maidenhead => 'Lokator Maidenhead';
-
-  @override
-  String get reactions_radioTitle => 'Pošiljaj odzive po radiu';
-
-  @override
-  String get reactions_radioHint =>
-      'Vsak odziv je paket v etru. Samodejno jih v pasu EU 868 MHz, kjer je čas oddajanja omejen, ohrani na tej napravi.';
-
-  @override
-  String get reactions_radioAuto => 'Samodejno';
-
-  @override
-  String get reactions_radioOn => 'Vklop';
-
-  @override
-  String get reactions_radioOff => 'Izklop (ta naprava)';
-
-  @override
-  String get lite_qrPasteHint =>
-      'Ta različica nima optičnega bralnika s kamero. Namesto tega prilepite besedilo iz kode QR.';
-
-  @override
-  String get lite_qrPasteLabel => 'Besedilo kode QR';
-
-  @override
   String get batteryWatch_title => 'Nadzor baterij';
 
   @override
@@ -10268,6 +10242,98 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'Zgodovina počiščena';
+
+  @override
+  String get readiness_sos => 'Prejemniki SOS';
+
+  @override
+  String get readiness_sosOk => 'SOS ima prejemnike.';
+
+  @override
+  String get readiness_sosBlocked =>
+      'SOS nima koga doseči. Dodajte udeležence izleta iz svojih stikov ali nastavite kanal SOS.';
+
+  @override
+  String get readiness_routes => 'Poti do udeležencev';
+
+  @override
+  String get readiness_routesOk => 'Do vsakega udeleženca je znana pot.';
+
+  @override
+  String readiness_routesMissing(String names) {
+    return 'Do $names ni znane poti. Sporočila bodo poplavljala, dokler se pot ne nauči. Pred odhodom jim pošljite sporočilo.';
+  }
+
+  @override
+  String get readiness_notifications => 'Obvestila';
+
+  @override
+  String get readiness_notificationsOk => 'Dovoljena.';
+
+  @override
+  String get readiness_notificationsOff =>
+      'Obvestila so izklopljena, zato ne boste slišali odgovorov, javljanj ali opozoril.';
+
+  @override
+  String get readiness_batteryOpt => 'Optimizacija baterije';
+
+  @override
+  String get readiness_batteryOptOk => 'NOTORYX Core je izvzet.';
+
+  @override
+  String get readiness_batteryOptOn =>
+      'Android lahko aplikacijo ustavi v ozadju. Izklopite v Nastavitve → Nastavitve aplikacije → Obvestila.';
+
+  @override
+  String get readiness_blockedTitle => 'Izleta še ni mogoče začeti';
+
+  @override
+  String readiness_warnTitle(int count) {
+    return '$count stvari za preverjanje';
+  }
+
+  @override
+  String get readiness_startAnyway => 'Vseeno začni';
+
+  @override
+  String get readiness_review => 'Preglej';
+
+  @override
+  String get readiness_summaryReady => 'Pripravljeni';
+
+  @override
+  String readiness_summaryWarn(int count) {
+    return '$count za preverjanje';
+  }
+
+  @override
+  String get readiness_summaryBlocked => 'SOS ne doseže nikogar';
+
+  @override
+  String get coords_maidenhead => 'Lokator Maidenhead';
+
+  @override
+  String get reactions_radioTitle => 'Pošiljaj odzive po radiu';
+
+  @override
+  String get reactions_radioHint =>
+      'Vsak odziv je paket v etru. Samodejno jih v pasu EU 868 MHz, kjer je čas oddajanja omejen, ohrani na tej napravi.';
+
+  @override
+  String get reactions_radioAuto => 'Samodejno';
+
+  @override
+  String get reactions_radioOn => 'Vklop';
+
+  @override
+  String get reactions_radioOff => 'Izklop (ta naprava)';
+
+  @override
+  String get lite_qrPasteHint =>
+      'Ta različica nima optičnega bralnika s kamero. Namesto tega prilepite besedilo iz kode QR.';
+
+  @override
+  String get lite_qrPasteLabel => 'Besedilo kode QR';
 
   @override
   String get batteryWatch_auto => 'Samodejno preverjaj';
