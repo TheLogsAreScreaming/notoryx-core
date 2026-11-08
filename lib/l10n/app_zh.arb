@@ -4210,5 +4210,7 @@
   "coords_copyTitle": "复制位置",
   "coords_copied": "已按 {format} 复制",
   "pathHash_badge": "该路由使用 {width} 字节路径哈希",
-  "pathHash_mismatch": "你的电台使用 {width} 字节"
+  "pathHash_mismatch": "你的电台使用 {width} 字节",
+  "lite_qrPasteHint": "此版本没有相机扫描功能。请改为粘贴二维码中的文本。",
+  "lite_qrPasteLabel": "二维码文本"
 }

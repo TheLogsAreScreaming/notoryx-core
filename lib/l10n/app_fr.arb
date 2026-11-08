@@ -4339,5 +4339,7 @@
   "coords_copyTitle": "Copier la position",
   "coords_copied": "Copié en {format}",
   "pathHash_badge": "La route utilise des hachages de chemin de {width} octets",
-  "pathHash_mismatch": "Votre radio utilise {width} octets"
+  "pathHash_mismatch": "Votre radio utilise {width} octets",
+  "lite_qrPasteHint": "Cette version n'a pas de scanner photo. Collez plutôt le texte du code QR.",
+  "lite_qrPasteLabel": "Texte du code QR"
 }

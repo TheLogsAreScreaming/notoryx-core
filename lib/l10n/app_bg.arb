@@ -4205,5 +4205,7 @@
   "coords_copyTitle": "Копирай позицията",
   "coords_copied": "Копирано като {format}",
   "pathHash_badge": "Маршрутът използва {width}-байтови хешове на пътя",
-  "pathHash_mismatch": "Вашето радио използва {width}-байтови"
+  "pathHash_mismatch": "Вашето радио използва {width}-байтови",
+  "lite_qrPasteHint": "Тази версия няма скенер с камера. Вместо това поставете текста от QR кода.",
+  "lite_qrPasteLabel": "Текст от QR кода"
 }

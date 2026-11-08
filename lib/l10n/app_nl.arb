@@ -4205,5 +4205,7 @@
   "coords_copyTitle": "Positie kopiëren",
   "coords_copied": "Gekopieerd als {format}",
   "pathHash_badge": "Route gebruikt pad-hashes van {width} byte",
-  "pathHash_mismatch": "Je radio gebruikt {width} byte"
+  "pathHash_mismatch": "Je radio gebruikt {width} byte",
+  "lite_qrPasteHint": "Deze versie heeft geen camerascanner. Plak in plaats daarvan de tekst van de QR-code.",
+  "lite_qrPasteLabel": "Tekst van de QR-code"
 }

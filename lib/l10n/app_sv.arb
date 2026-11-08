@@ -4205,5 +4205,7 @@
   "coords_copyTitle": "Kopiera position",
   "coords_copied": "Kopierad som {format}",
   "pathHash_badge": "Rutten använder {width}-byte sökvägshashar",
-  "pathHash_mismatch": "Din radio använder {width} byte"
+  "pathHash_mismatch": "Din radio använder {width} byte",
+  "lite_qrPasteHint": "Den här versionen har ingen kameraskanner. Klistra in texten från QR-koden i stället.",
+  "lite_qrPasteLabel": "QR-kodens text"
 }

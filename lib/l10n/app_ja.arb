@@ -4339,5 +4339,7 @@
   "coords_copyTitle": "位置をコピー",
   "coords_copied": "{format} でコピーしました",
   "pathHash_badge": "経路は {width} バイトのパスハッシュを使用",
-  "pathHash_mismatch": "この無線機は {width} バイトを使用"
+  "pathHash_mismatch": "この無線機は {width} バイトを使用",
+  "lite_qrPasteHint": "このビルドにはカメラスキャナーがありません。代わりにQRコードのテキストを貼り付けてください。",
+  "lite_qrPasteLabel": "QRコードのテキスト"
 }

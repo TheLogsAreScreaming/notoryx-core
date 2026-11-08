@@ -4243,5 +4243,7 @@
   "coords_copyTitle": "Pozíció másolása",
   "coords_copied": "Másolva: {format}",
   "pathHash_badge": "Az útvonal {width} bájtos útvonal-hasheket használ",
-  "pathHash_mismatch": "A rádiód {width} bájtosat használ"
+  "pathHash_mismatch": "A rádiód {width} bájtosat használ",
+  "lite_qrPasteHint": "Ebben a változatban nincs kamerás olvasó. Illeszd be a QR-kód szövegét.",
+  "lite_qrPasteLabel": "QR-kód szövege"
 }

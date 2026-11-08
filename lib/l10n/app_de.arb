@@ -4339,5 +4339,7 @@
   "coords_copyTitle": "Position kopieren",
   "coords_copied": "Als {format} kopiert",
   "pathHash_badge": "Route nutzt {width}-Byte-Pfad-Hashes",
-  "pathHash_mismatch": "Dein Funkgerät nutzt {width} Byte"
+  "pathHash_mismatch": "Dein Funkgerät nutzt {width} Byte",
+  "lite_qrPasteHint": "Diese Version hat keinen Kamera-Scanner. Füge stattdessen den Text des QR-Codes ein.",
+  "lite_qrPasteLabel": "Text des QR-Codes"
 }

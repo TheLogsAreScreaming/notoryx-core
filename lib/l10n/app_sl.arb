@@ -4205,5 +4205,7 @@
   "coords_copyTitle": "Kopiraj položaj",
   "coords_copied": "Kopirano kot {format}",
   "pathHash_badge": "Pot uporablja {width}-bajtne zgoščene vrednosti poti",
-  "pathHash_mismatch": "Vaš radio uporablja {width} bajte"
+  "pathHash_mismatch": "Vaš radio uporablja {width} bajte",
+  "lite_qrPasteHint": "Ta različica nima optičnega bralnika s kamero. Namesto tega prilepite besedilo iz kode QR.",
+  "lite_qrPasteLabel": "Besedilo kode QR"
 }

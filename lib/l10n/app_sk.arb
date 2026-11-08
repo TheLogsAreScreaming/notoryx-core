@@ -4205,5 +4205,7 @@
   "coords_copyTitle": "Kopírovať polohu",
   "coords_copied": "Skopírované ako {format}",
   "pathHash_badge": "Trasa používa {width}-bajtové hashe cesty",
-  "pathHash_mismatch": "Vaše rádio používa {width} bajty"
+  "pathHash_mismatch": "Vaše rádio používa {width} bajty",
+  "lite_qrPasteHint": "Táto verzia nemá skener s kamerou. Vložte namiesto toho text z QR kódu.",
+  "lite_qrPasteLabel": "Text QR kódu"
 }

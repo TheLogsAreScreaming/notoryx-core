@@ -4185,5 +4185,7 @@
   "coords_copyTitle": "Копіювати позицію",
   "coords_copied": "Скопійовано як {format}",
   "pathHash_badge": "Маршрут використовує {width}-байтові хеші шляху",
-  "pathHash_mismatch": "Ваше радіо використовує {width} байт"
+  "pathHash_mismatch": "Ваше радіо використовує {width} байт",
+  "lite_qrPasteHint": "У цій версії немає сканера з камерою. Вставте текст із QR-коду.",
+  "lite_qrPasteLabel": "Текст QR-коду"
 }

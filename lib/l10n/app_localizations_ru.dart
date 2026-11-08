@@ -10208,4 +10208,11 @@ class AppLocalizationsRu extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'Ваше радио использует $width байт';
   }
+
+  @override
+  String get lite_qrPasteHint =>
+      'В этой версии нет сканера с камерой. Вставьте текст из QR-кода.';
+
+  @override
+  String get lite_qrPasteLabel => 'Текст QR-кода';
 }

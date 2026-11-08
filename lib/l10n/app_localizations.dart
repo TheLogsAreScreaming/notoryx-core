@@ -16878,6 +16878,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Your radio uses {width}-byte'**
   String pathHash_mismatch(int width);
+
+  /// No description provided for @lite_qrPasteHint.
+  ///
+  /// In en, this message translates to:
+  /// **'This build has no camera scanner. Paste the text from the QR code instead.'**
+  String get lite_qrPasteHint;
+
+  /// No description provided for @lite_qrPasteLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'QR code text'**
+  String get lite_qrPasteLabel;
 }
 
 class _AppLocalizationsDelegate

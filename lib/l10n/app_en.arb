@@ -5631,5 +5631,7 @@
   "pathHash_badge": "Route uses {width}-byte path hashes",
   "@pathHash_badge": {"placeholders": {"width": {"type": "int"}}},
   "pathHash_mismatch": "Your radio uses {width}-byte",
-  "@pathHash_mismatch": {"placeholders": {"width": {"type": "int"}}}
+  "@pathHash_mismatch": {"placeholders": {"width": {"type": "int"}}},
+  "lite_qrPasteHint": "This build has no camera scanner. Paste the text from the QR code instead.",
+  "lite_qrPasteLabel": "QR code text"
 }

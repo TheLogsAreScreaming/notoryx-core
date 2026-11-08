@@ -3508,5 +3508,7 @@
   "coords_copyTitle": "Копировать позицию",
   "coords_copied": "Скопировано как {format}",
   "pathHash_badge": "Маршрут использует {width}-байтовые хеши пути",
-  "pathHash_mismatch": "Ваше радио использует {width} байт"
+  "pathHash_mismatch": "Ваше радио использует {width} байт",
+  "lite_qrPasteHint": "В этой версии нет сканера с камерой. Вставьте текст из QR-кода.",
+  "lite_qrPasteLabel": "Текст QR-кода"
 }

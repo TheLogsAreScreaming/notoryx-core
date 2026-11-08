@@ -9479,4 +9479,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return '你的电台使用 $width 字节';
   }
+
+  @override
+  String get lite_qrPasteHint => '此版本没有相机扫描功能。请改为粘贴二维码中的文本。';
+
+  @override
+  String get lite_qrPasteLabel => '二维码文本';
 }

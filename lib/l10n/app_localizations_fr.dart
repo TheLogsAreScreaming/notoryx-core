@@ -10198,4 +10198,11 @@ class AppLocalizationsFr extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'Votre radio utilise $width octets';
   }
+
+  @override
+  String get lite_qrPasteHint =>
+      'Cette version n\'a pas de scanner photo. Collez plutôt le texte du code QR.';
+
+  @override
+  String get lite_qrPasteLabel => 'Texte du code QR';
 }

@@ -10145,4 +10145,11 @@ class AppLocalizationsSk extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'Vaše rádio používa $width bajty';
   }
+
+  @override
+  String get lite_qrPasteHint =>
+      'Táto verzia nemá skener s kamerou. Vložte namiesto toho text z QR kódu.';
+
+  @override
+  String get lite_qrPasteLabel => 'Text QR kódu';
 }

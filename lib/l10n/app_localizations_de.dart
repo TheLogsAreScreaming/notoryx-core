@@ -10174,4 +10174,11 @@ class AppLocalizationsDe extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'Dein Funkgerät nutzt $width Byte';
   }
+
+  @override
+  String get lite_qrPasteHint =>
+      'Diese Version hat keinen Kamera-Scanner. Füge stattdessen den Text des QR-Codes ein.';
+
+  @override
+  String get lite_qrPasteLabel => 'Text des QR-Codes';
 }

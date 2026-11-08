@@ -9677,4 +9677,11 @@ class AppLocalizationsJa extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'この無線機は $width バイトを使用';
   }
+
+  @override
+  String get lite_qrPasteHint =>
+      'このビルドにはカメラスキャナーがありません。代わりにQRコードのテキストを貼り付けてください。';
+
+  @override
+  String get lite_qrPasteLabel => 'QRコードのテキスト';
 }

@@ -10167,4 +10167,11 @@ class AppLocalizationsEs extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'Tu radio usa $width bytes';
   }
+
+  @override
+  String get lite_qrPasteHint =>
+      'Esta versión no tiene escáner con cámara. Pega el texto del código QR.';
+
+  @override
+  String get lite_qrPasteLabel => 'Texto del código QR';
 }

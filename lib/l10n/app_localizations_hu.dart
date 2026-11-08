@@ -10152,4 +10152,11 @@ class AppLocalizationsHu extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'A rádiód $width bájtosat használ';
   }
+
+  @override
+  String get lite_qrPasteHint =>
+      'Ebben a változatban nincs kamerás olvasó. Illeszd be a QR-kód szövegét.';
+
+  @override
+  String get lite_qrPasteLabel => 'QR-kód szövege';
 }

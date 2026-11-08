@@ -9690,4 +9690,11 @@ class AppLocalizationsKo extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return '내 무전기는 $width바이트 사용';
   }
+
+  @override
+  String get lite_qrPasteHint =>
+      '이 빌드에는 카메라 스캐너가 없습니다. 대신 QR 코드의 텍스트를 붙여 넣으세요.';
+
+  @override
+  String get lite_qrPasteLabel => 'QR 코드 텍스트';
 }
