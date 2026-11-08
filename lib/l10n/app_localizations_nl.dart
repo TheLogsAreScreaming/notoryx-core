@@ -10092,16 +10092,6 @@ class AppLocalizationsNl extends AppLocalizations {
       'Halloween, kerst en Valentijnsdag op hun data';
 
   @override
-  String get theme_darkMode => 'Ander thema in donkere modus';
-
-  @override
-  String get theme_darkModeHint =>
-      'Een ander thema gebruiken zolang het apparaat in donkere modus staat';
-
-  @override
-  String get theme_darkModeTheme => 'Thema voor donkere modus';
-
-  @override
   String get coords_setting => 'Coördinaatnotatie';
 
   @override
@@ -10133,6 +10123,23 @@ class AppLocalizationsNl extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'Je radio gebruikt $width byte';
   }
+
+  @override
+  String get lite_qrPasteHint =>
+      'Deze versie heeft geen camerascanner. Plak in plaats daarvan de tekst van de QR-code.';
+
+  @override
+  String get lite_qrPasteLabel => 'Tekst van de QR-code';
+
+  @override
+  String get theme_darkMode => 'Ander thema in donkere modus';
+
+  @override
+  String get theme_darkModeHint =>
+      'Een ander thema gebruiken zolang het apparaat in donkere modus staat';
+
+  @override
+  String get theme_darkModeTheme => 'Thema voor donkere modus';
 
   @override
   String get batteryWatch_title => 'Batterijbewaking';

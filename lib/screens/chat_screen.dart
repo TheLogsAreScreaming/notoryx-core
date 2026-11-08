@@ -36,6 +36,7 @@ import '../services/read_aloud_service.dart';
 import '../services/app_settings_service.dart';
 import '../services/chat_text_scale_service.dart';
 import '../services/path_history_service.dart';
+import '../services/translation_llm.dart';
 import '../services/translation_service.dart';
 import '../widgets/chat_zoom_wrapper.dart';
 import '../widgets/byte_count_input.dart';
@@ -650,7 +651,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   ),
                 ],
               ),
-              if (settings.translationEnabled)
+              if ((settings.translationEnabled && kTranslationLlmAvailable))
                 MessageTranslationButton(
                   enabled: settings.composerTranslationEnabled,
                   languageCode: settings.translationTargetLanguageCode,
@@ -836,7 +837,7 @@ class _ChatScreenState extends State<ChatScreen> {
     String? originalText;
     String? translatedLanguageCode;
     String? translationModelId;
-    if (settings.translationEnabled) {
+    if ((settings.translationEnabled && kTranslationLlmAvailable)) {
       final targetLanguageCode = translationService.resolvedTargetLanguageCode(
         Localizations.localeOf(context).languageCode,
       );

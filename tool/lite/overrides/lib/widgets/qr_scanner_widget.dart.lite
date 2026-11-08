@@ -1,0 +1,159 @@
+import 'package:flutter/material.dart';
+
+import '../l10n/l10n.dart';
+
+/// The lite build's copy of lib/widgets/qr_scanner_widget.dart. The full
+/// scanner uses Google ML Kit, which is closed source, so the lite build asks
+/// for the code's text instead and checks it the same way.
+class QrScannerWidget extends StatefulWidget {
+  final void Function(String data) onScanned;
+  final bool Function(String data)? validator;
+  final void Function(String data)? onValidationFailed;
+  final bool showFlashButton;
+  final bool showCameraSwitchButton;
+  final Widget? overlay;
+  final String? instructions;
+  final bool continuousScanning;
+  final Duration debounceDuration;
+
+  const QrScannerWidget({
+    super.key,
+    required this.onScanned,
+    this.validator,
+    this.onValidationFailed,
+    this.showFlashButton = true,
+    this.showCameraSwitchButton = true,
+    this.overlay,
+    this.instructions,
+    this.continuousScanning = false,
+    this.debounceDuration = const Duration(milliseconds: 500),
+  });
+
+  @override
+  State<QrScannerWidget> createState() => _QrScannerWidgetState();
+}
+
+class _QrScannerWidgetState extends State<QrScannerWidget> {
+  final _controller = TextEditingController();
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  void _submit() {
+    final data = _controller.text.trim();
+    if (data.isEmpty) return;
+    if (widget.validator != null && !widget.validator!(data)) {
+      widget.onValidationFailed?.call(data);
+      return;
+    }
+    widget.onScanned(data);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    return ListView(
+      padding: const EdgeInsets.all(16),
+      children: [
+        Text(l10n.lite_qrPasteHint),
+        const SizedBox(height: 16),
+        TextField(
+          key: const ValueKey('lite-qr-text'),
+          controller: _controller,
+          minLines: 2,
+          maxLines: 6,
+          decoration: InputDecoration(
+            labelText: l10n.lite_qrPasteLabel,
+            border: const OutlineInputBorder(),
+          ),
+          onSubmitted: (_) => _submit(),
+        ),
+        const SizedBox(height: 12),
+        FilledButton(onPressed: _submit, child: Text(l10n.common_continue)),
+      ],
+    );
+  }
+}
+
+class ScannerCornerOverlay extends StatelessWidget {
+  final double scanWindowSize;
+  final Color borderColor;
+  final double borderWidth;
+  final double cornerLength;
+
+  const ScannerCornerOverlay({
+    super.key,
+    this.scanWindowSize = 250,
+    this.borderColor = Colors.white,
+    this.borderWidth = 3,
+    this.cornerLength = 30,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: SizedBox(
+        width: scanWindowSize,
+        height: scanWindowSize,
+        child: CustomPaint(
+          painter: _CornerPainter(
+            color: borderColor,
+            strokeWidth: borderWidth,
+            cornerLength: cornerLength,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _CornerPainter extends CustomPainter {
+  final Color color;
+  final double strokeWidth;
+  final double cornerLength;
+
+  _CornerPainter({
+    required this.color,
+    required this.strokeWidth,
+    required this.cornerLength,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = color
+      ..strokeWidth = strokeWidth
+      ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round;
+
+    final path = Path();
+
+    // Top-left corner
+    path.moveTo(0, cornerLength);
+    path.lineTo(0, 0);
+    path.lineTo(cornerLength, 0);
+
+    // Top-right corner
+    path.moveTo(size.width - cornerLength, 0);
+    path.lineTo(size.width, 0);
+    path.lineTo(size.width, cornerLength);
+
+    // Bottom-right corner
+    path.moveTo(size.width, size.height - cornerLength);
+    path.lineTo(size.width, size.height);
+    path.lineTo(size.width - cornerLength, size.height);
+
+    // Bottom-left corner
+    path.moveTo(cornerLength, size.height);
+    path.lineTo(0, size.height);
+    path.lineTo(0, size.height - cornerLength);
+
+    canvas.drawPath(path, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}

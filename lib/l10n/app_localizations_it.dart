@@ -10145,16 +10145,6 @@ class AppLocalizationsIt extends AppLocalizations {
       'Halloween, Natale e San Valentino nelle loro date';
 
   @override
-  String get theme_darkMode => 'Tema diverso in modalità scura';
-
-  @override
-  String get theme_darkModeHint =>
-      'Usa un altro tema quando il dispositivo è in modalità scura';
-
-  @override
-  String get theme_darkModeTheme => 'Tema della modalità scura';
-
-  @override
   String get coords_setting => 'Formato coordinate';
 
   @override
@@ -10186,6 +10176,23 @@ class AppLocalizationsIt extends AppLocalizations {
   String pathHash_mismatch(int width) {
     return 'La tua radio usa $width byte';
   }
+
+  @override
+  String get lite_qrPasteHint =>
+      'Questa versione non ha lo scanner con fotocamera. Incolla il testo del codice QR.';
+
+  @override
+  String get lite_qrPasteLabel => 'Testo del codice QR';
+
+  @override
+  String get theme_darkMode => 'Tema diverso in modalità scura';
+
+  @override
+  String get theme_darkModeHint =>
+      'Usa un altro tema quando il dispositivo è in modalità scura';
+
+  @override
+  String get theme_darkModeTheme => 'Tema della modalità scura';
 
   @override
   String get batteryWatch_title => 'Controllo batterie';
