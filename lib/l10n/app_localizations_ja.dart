@@ -9760,6 +9760,82 @@ class AppLocalizationsJa extends AppLocalizations {
   String get batteryWatch_cleared => '履歴を消去しました';
 
   @override
+  String get privacy_title => 'プライバシー';
+
+  @override
+  String get privacy_toolSubtitle => 'メッシュ・この端末・インターネットから見えるもの';
+
+  @override
+  String get privacy_meshHeading => 'メッシュ上';
+
+  @override
+  String get privacy_dmTitle => 'ダイレクトメッセージ';
+
+  @override
+  String get privacy_dmBody =>
+      'あなたと相手の無線機の間で暗号化されます。リピーターは中継しますが読めません。送信者と受信者の短いIDとルートは暗号化されません。';
+
+  @override
+  String get privacy_channelTitle => 'チャンネル';
+
+  @override
+  String get privacy_channelBody =>
+      'チャンネルの鍵で暗号化されます。鍵を持つ人は全メッセージを読めます。公開チャンネルとハッシュタグチャンネルの鍵は誰でも知っているので、公開として扱ってください。';
+
+  @override
+  String get privacy_advertTitle => 'アドバートと位置';
+
+  @override
+  String get privacy_advertBody =>
+      '無線機の名前と公開鍵、共有している場合は位置が、範囲内の全員に暗号化なしで送信されます。';
+
+  @override
+  String get privacy_phoneHeading => 'この端末';
+
+  @override
+  String get privacy_phoneBody =>
+      'メッセージ、連絡先、ルート、トラック、ウェイポイント、バッテリー履歴、設定はアプリの専用ストレージに保存され、端末自体のセキュリティだけで守られます。書き出したものはファイルを持つ人が読めます。';
+
+  @override
+  String get privacy_netHeading => 'インターネット経由';
+
+  @override
+  String get privacy_netIntro =>
+      '必要な機能を使うときだけです。各リクエストでは、サービスにIPアドレスと要求内容が伝わります。';
+
+  @override
+  String get privacy_netMaps =>
+      '地図: 表示している範囲のタイルをOpenStreetMap（選択時はStadia Maps）から取得。';
+
+  @override
+  String get privacy_netTerrain => '地形: カバレッジと見通しのための標高をOpen-Meteoから取得。';
+
+  @override
+  String get privacy_netModels => 'ダウンロード: 翻訳と画像のモデルをHugging Faceから取得。';
+
+  @override
+  String get privacy_netImages => '画像: GiphyでのGIF検索と、メッセージ内のpyx.liリンクの画像。';
+
+  @override
+  String get privacy_netLists =>
+      'リスト: 地域プリセットとチャンネル一覧をこのアプリのGitHubリリースリポジトリから取得。';
+
+  @override
+  String get privacy_netMqtt =>
+      'MQTT: 追加したブローカーのみ。アップロードをオンにすると、無線機が受信したパケットがそこに公開されます。パスワードは端末の安全なストレージに保存されます。';
+
+  @override
+  String get privacy_netAnalyzer =>
+      'アナライザー: 使用時のCoreScope照会（パケットを受信した局、リピーター名）。';
+
+  @override
+  String get privacy_notHeading => 'NOTORYXがしないこと';
+
+  @override
+  String get privacy_notBody =>
+      'アカウント、分析、広告、クラッシュレポートはありません。あなたが送らない限り、開発者には何も届きません。';
+
+  @override
   String get team_title => 'チーム追跡';
 
   @override

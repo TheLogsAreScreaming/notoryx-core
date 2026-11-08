@@ -10234,6 +10234,86 @@ class AppLocalizationsPt extends AppLocalizations {
   String get batteryWatch_cleared => 'Histórico limpo';
 
   @override
+  String get privacy_title => 'Privacidade';
+
+  @override
+  String get privacy_toolSubtitle =>
+      'O que a rede, este telefone e a internet podem ver';
+
+  @override
+  String get privacy_meshHeading => 'Na rede';
+
+  @override
+  String get privacy_dmTitle => 'Mensagens diretas';
+
+  @override
+  String get privacy_dmBody =>
+      'Cifradas entre o seu rádio e o da outra pessoa. Os repetidores reencaminham-nas mas não as conseguem ler. Os ID curtos de remetente e destinatário e a rota vão sem cifra.';
+
+  @override
+  String get privacy_channelTitle => 'Canais';
+
+  @override
+  String get privacy_channelBody =>
+      'Cifrados com a chave do canal: quem tem a chave lê todas as mensagens. As chaves dos canais públicos e de hashtag são conhecidas por todos, por isso trate-os como públicos.';
+
+  @override
+  String get privacy_advertTitle => 'Anúncios e posições';
+
+  @override
+  String get privacy_advertBody =>
+      'O nome e a chave pública do rádio, e a posição se a partilhar, são emitidos sem cifra para todos ao alcance.';
+
+  @override
+  String get privacy_phoneHeading => 'Neste telefone';
+
+  @override
+  String get privacy_phoneBody =>
+      'Mensagens, contactos, rotas, trilhos, pontos, histórico de baterias e definições ficam no armazenamento privado da app, protegidos só pela segurança do telefone. O que exportar pode ser lido por quem tiver o ficheiro.';
+
+  @override
+  String get privacy_netHeading => 'Pela internet';
+
+  @override
+  String get privacy_netIntro =>
+      'Só quando usa a funcionalidade que precisa. Cada pedido mostra ao serviço o seu endereço IP e o que foi pedido.';
+
+  @override
+  String get privacy_netMaps =>
+      'Mapas: mosaicos do OpenStreetMap, ou do Stadia Maps se o escolher, para a zona que vê.';
+
+  @override
+  String get privacy_netTerrain =>
+      'Terreno: altitudes do Open-Meteo para cobertura e linha de vista.';
+
+  @override
+  String get privacy_netModels =>
+      'Transferências: modelos de tradução e imagem do Hugging Face.';
+
+  @override
+  String get privacy_netImages =>
+      'Imagens: pesquisa de GIF no Giphy e imagens de ligações pyx.li nas mensagens.';
+
+  @override
+  String get privacy_netLists =>
+      'Listas: predefinições regionais e o diretório de canais do repositório de versões desta app no GitHub.';
+
+  @override
+  String get privacy_netMqtt =>
+      'MQTT: só os brokers que adicionar. Se ligar o envio, os pacotes que o rádio ouve são publicados lá. As palavras-passe ficam no armazenamento seguro do telefone.';
+
+  @override
+  String get privacy_netAnalyzer =>
+      'Analisador: consultas ao CoreScope (quem ouviu um pacote, nomes de repetidores) quando as usa.';
+
+  @override
+  String get privacy_notHeading => 'O que o NOTORYX não faz';
+
+  @override
+  String get privacy_notBody =>
+      'Sem conta, sem análises, sem anúncios e sem relatórios de falhas. Os programadores não recebem nada, a menos que o envie.';
+
+  @override
   String get team_title => 'Seguimento da equipa';
 
   @override

@@ -17017,6 +17017,138 @@ abstract class AppLocalizations {
   /// **'History cleared'**
   String get batteryWatch_cleared;
 
+  /// No description provided for @privacy_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy'**
+  String get privacy_title;
+
+  /// No description provided for @privacy_toolSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What the mesh, this phone and the internet can see'**
+  String get privacy_toolSubtitle;
+
+  /// No description provided for @privacy_meshHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'On the mesh'**
+  String get privacy_meshHeading;
+
+  /// No description provided for @privacy_dmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Direct messages'**
+  String get privacy_dmTitle;
+
+  /// No description provided for @privacy_dmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Encrypted between your radio and theirs. Repeaters pass them on but can\'t read them. Short sender and recipient IDs and the route travel in the clear.'**
+  String get privacy_dmBody;
+
+  /// No description provided for @privacy_channelTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Channels'**
+  String get privacy_channelTitle;
+
+  /// No description provided for @privacy_channelBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Encrypted with the channel\'s key: anyone who has the key can read every message. Public and hashtag channel keys are known to everyone, so treat those channels as public.'**
+  String get privacy_channelBody;
+
+  /// No description provided for @privacy_advertTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Adverts and positions'**
+  String get privacy_advertTitle;
+
+  /// No description provided for @privacy_advertBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Your radio\'s name and public key, and its position if you share it, are broadcast unencrypted to everyone in range.'**
+  String get privacy_advertBody;
+
+  /// No description provided for @privacy_phoneHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'On this phone'**
+  String get privacy_phoneHeading;
+
+  /// No description provided for @privacy_phoneBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Messages, contacts, routes, track logs, waypoints, battery history and settings stay in the app\'s private storage, protected only by the phone\'s own security. Anything you export can be read by whoever has the file.'**
+  String get privacy_phoneBody;
+
+  /// No description provided for @privacy_netHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'Over the internet'**
+  String get privacy_netHeading;
+
+  /// No description provided for @privacy_netIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Only when you use the feature that needs it. Each request shows the service your IP address and what was asked for.'**
+  String get privacy_netIntro;
+
+  /// No description provided for @privacy_netMaps.
+  ///
+  /// In en, this message translates to:
+  /// **'Maps: tiles from OpenStreetMap, or Stadia Maps if you choose it, for the area you view.'**
+  String get privacy_netMaps;
+
+  /// No description provided for @privacy_netTerrain.
+  ///
+  /// In en, this message translates to:
+  /// **'Terrain: elevation from Open-Meteo for coverage and line of sight.'**
+  String get privacy_netTerrain;
+
+  /// No description provided for @privacy_netModels.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloads: translation and picture models from Hugging Face.'**
+  String get privacy_netModels;
+
+  /// No description provided for @privacy_netImages.
+  ///
+  /// In en, this message translates to:
+  /// **'Pictures: GIF search from Giphy, and images from pyx.li links in messages.'**
+  String get privacy_netImages;
+
+  /// No description provided for @privacy_netLists.
+  ///
+  /// In en, this message translates to:
+  /// **'Lists: regional presets and the channel directory from this app\'s GitHub releases repository.'**
+  String get privacy_netLists;
+
+  /// No description provided for @privacy_netMqtt.
+  ///
+  /// In en, this message translates to:
+  /// **'MQTT: only the brokers you add. If you turn uploading on, packets your radio hears are published there. Broker passwords are kept in the phone\'s secure storage.'**
+  String get privacy_netMqtt;
+
+  /// No description provided for @privacy_netAnalyzer.
+  ///
+  /// In en, this message translates to:
+  /// **'Analyzer: CoreScope lookups (who heard a packet, repeater names) when you use them.'**
+  String get privacy_netAnalyzer;
+
+  /// No description provided for @privacy_notHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'What NOTORYX doesn\'t do'**
+  String get privacy_notHeading;
+
+  /// No description provided for @privacy_notBody.
+  ///
+  /// In en, this message translates to:
+  /// **'No account, no analytics, no ads and no crash reports. The developers receive nothing unless you send it yourself.'**
+  String get privacy_notBody;
+
   /// No description provided for @team_title.
   ///
   /// In en, this message translates to:

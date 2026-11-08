@@ -10169,6 +10169,86 @@ class AppLocalizationsSv extends AppLocalizations {
   String get batteryWatch_cleared => 'Historiken rensad';
 
   @override
+  String get privacy_title => 'Integritet';
+
+  @override
+  String get privacy_toolSubtitle =>
+      'Vad meshen, den här telefonen och internet kan se';
+
+  @override
+  String get privacy_meshHeading => 'På meshen';
+
+  @override
+  String get privacy_dmTitle => 'Direktmeddelanden';
+
+  @override
+  String get privacy_dmBody =>
+      'Krypterade mellan din radio och mottagarens. Repeatrar skickar dem vidare men kan inte läsa dem. Korta avsändar- och mottagar-ID:n och vägen går okrypterat.';
+
+  @override
+  String get privacy_channelTitle => 'Kanaler';
+
+  @override
+  String get privacy_channelBody =>
+      'Krypterade med kanalens nyckel: den som har nyckeln läser alla meddelanden. Nycklar till offentliga kanaler och hashtagkanaler känner alla till, så behandla dem som offentliga.';
+
+  @override
+  String get privacy_advertTitle => 'Annonser och positioner';
+
+  @override
+  String get privacy_advertBody =>
+      'Radions namn och publika nyckel, och dess position om du delar den, sänds okrypterat till alla inom räckhåll.';
+
+  @override
+  String get privacy_phoneHeading => 'På den här telefonen';
+
+  @override
+  String get privacy_phoneBody =>
+      'Meddelanden, kontakter, vägar, spårloggar, vägpunkter, batterihistorik och inställningar stannar i appens privata lagring, skyddade bara av telefonens egen säkerhet. Allt du exporterar kan läsas av den som har filen.';
+
+  @override
+  String get privacy_netHeading => 'Över internet';
+
+  @override
+  String get privacy_netIntro =>
+      'Bara när du använder funktionen som behöver det. Varje förfrågan visar tjänsten din IP-adress och vad som begärdes.';
+
+  @override
+  String get privacy_netMaps =>
+      'Kartor: rutor från OpenStreetMap, eller Stadia Maps om du väljer det, för området du tittar på.';
+
+  @override
+  String get privacy_netTerrain =>
+      'Terräng: höjddata från Open-Meteo för täckning och siktlinje.';
+
+  @override
+  String get privacy_netModels =>
+      'Nedladdningar: översättnings- och bildmodeller från Hugging Face.';
+
+  @override
+  String get privacy_netImages =>
+      'Bilder: GIF-sökning hos Giphy och bilder från pyx.li-länkar i meddelanden.';
+
+  @override
+  String get privacy_netLists =>
+      'Listor: regionala förval och kanalkatalogen från appens release-arkiv på GitHub.';
+
+  @override
+  String get privacy_netMqtt =>
+      'MQTT: bara de mäklare du lägger till. Om du slår på uppladdning publiceras paket som radion hör där. Lösenord sparas i telefonens säkra lagring.';
+
+  @override
+  String get privacy_netAnalyzer =>
+      'Analysator: CoreScope-uppslag (vem som hörde ett paket, repeaternamn) när du använder dem.';
+
+  @override
+  String get privacy_notHeading => 'Vad NOTORYX inte gör';
+
+  @override
+  String get privacy_notBody =>
+      'Inget konto, ingen analys, inga annonser och inga kraschrapporter. Utvecklarna får ingenting om du inte själv skickar det.';
+
+  @override
   String get team_title => 'Lagspårning';
 
   @override

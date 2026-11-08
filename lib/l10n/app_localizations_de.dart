@@ -10259,6 +10259,86 @@ class AppLocalizationsDe extends AppLocalizations {
   String get batteryWatch_cleared => 'Verlauf gelöscht';
 
   @override
+  String get privacy_title => 'Datenschutz';
+
+  @override
+  String get privacy_toolSubtitle =>
+      'Was das Mesh, dieses Telefon und das Internet sehen';
+
+  @override
+  String get privacy_meshHeading => 'Im Mesh';
+
+  @override
+  String get privacy_dmTitle => 'Direktnachrichten';
+
+  @override
+  String get privacy_dmBody =>
+      'Zwischen deinem und dem anderen Funkgerät verschlüsselt. Repeater leiten sie weiter, können sie aber nicht lesen. Kurze Absender- und Empfänger-IDs und die Route sind unverschlüsselt.';
+
+  @override
+  String get privacy_channelTitle => 'Kanäle';
+
+  @override
+  String get privacy_channelBody =>
+      'Mit dem Kanalschlüssel verschlüsselt: Wer den Schlüssel hat, liest jede Nachricht. Schlüssel öffentlicher und Hashtag-Kanäle kennt jeder, behandle diese Kanäle also als öffentlich.';
+
+  @override
+  String get privacy_advertTitle => 'Adverts und Positionen';
+
+  @override
+  String get privacy_advertBody =>
+      'Name und öffentlicher Schlüssel deines Funkgeräts und, wenn du sie teilst, seine Position werden unverschlüsselt an alle in Reichweite gesendet.';
+
+  @override
+  String get privacy_phoneHeading => 'Auf diesem Telefon';
+
+  @override
+  String get privacy_phoneBody =>
+      'Nachrichten, Kontakte, Routen, Tracks, Wegpunkte, Akkuverlauf und Einstellungen bleiben im privaten Speicher der App, nur durch die Sicherheit des Telefons geschützt. Alles Exportierte kann lesen, wer die Datei hat.';
+
+  @override
+  String get privacy_netHeading => 'Über das Internet';
+
+  @override
+  String get privacy_netIntro =>
+      'Nur wenn du die Funktion nutzt, die es braucht. Jede Anfrage zeigt dem Dienst deine IP-Adresse und was angefragt wurde.';
+
+  @override
+  String get privacy_netMaps =>
+      'Karten: Kacheln von OpenStreetMap oder, wenn gewählt, Stadia Maps für den angezeigten Bereich.';
+
+  @override
+  String get privacy_netTerrain =>
+      'Gelände: Höhendaten von Open-Meteo für Abdeckung und Sichtlinie.';
+
+  @override
+  String get privacy_netModels =>
+      'Downloads: Übersetzungs- und Bildmodelle von Hugging Face.';
+
+  @override
+  String get privacy_netImages =>
+      'Bilder: GIF-Suche bei Giphy und Bilder aus pyx.li-Links in Nachrichten.';
+
+  @override
+  String get privacy_netLists =>
+      'Listen: regionale Voreinstellungen und das Kanalverzeichnis aus dem GitHub-Release-Repository dieser App.';
+
+  @override
+  String get privacy_netMqtt =>
+      'MQTT: nur die Broker, die du hinzufügst. Wenn du das Hochladen einschaltest, werden Pakete, die dein Funkgerät hört, dort veröffentlicht. Broker-Passwörter liegen im sicheren Speicher des Telefons.';
+
+  @override
+  String get privacy_netAnalyzer =>
+      'Analyzer: CoreScope-Abfragen (wer ein Paket gehört hat, Repeater-Namen), wenn du sie nutzt.';
+
+  @override
+  String get privacy_notHeading => 'Was NOTORYX nicht tut';
+
+  @override
+  String get privacy_notBody =>
+      'Kein Konto, keine Analysen, keine Werbung und keine Absturzberichte. Die Entwickler erhalten nichts, außer du schickst es selbst.';
+
+  @override
   String get team_title => 'Team-Tracking';
 
   @override
