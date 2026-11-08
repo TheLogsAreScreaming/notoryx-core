@@ -10121,6 +10121,85 @@ class AppLocalizationsEn extends AppLocalizations {
   String get batteryWatch_cleared => 'History cleared';
 
   @override
+  String get waypoints_title => 'Waypoints';
+
+  @override
+  String get waypoints_toolSubtitle =>
+      'Saved places and routes; import or export GPX';
+
+  @override
+  String get waypoints_importFile => 'Import GPX file';
+
+  @override
+  String get waypoints_importPaste => 'Paste GPX';
+
+  @override
+  String get waypoints_export => 'Export GPX';
+
+  @override
+  String get waypoints_empty =>
+      'No waypoints yet. Import a GPX file, or save a place someone shared in a chat.';
+
+  @override
+  String waypoints_waypoints(int count) {
+    return 'Waypoints ($count)';
+  }
+
+  @override
+  String waypoints_routes(int count) {
+    return 'Routes ($count)';
+  }
+
+  @override
+  String waypoints_routeSummary(int points, String km) {
+    return '$points points · $km km';
+  }
+
+  @override
+  String get waypoints_delete => 'Delete';
+
+  @override
+  String get waypoints_copy => 'Copy coordinates';
+
+  @override
+  String get waypoints_sendToChannel => 'Send to a channel';
+
+  @override
+  String get waypoints_pickChannel => 'Send to which channel?';
+
+  @override
+  String waypoints_sent(String channel) {
+    return 'Sent to $channel';
+  }
+
+  @override
+  String get waypoints_importFailed =>
+      'That isn\'t a GPX file the app can read.';
+
+  @override
+  String get waypoints_pasteHint => 'Paste the GPX text here';
+
+  @override
+  String get waypoints_import => 'Import';
+
+  @override
+  String waypoints_imported(int waypoints, int routes) {
+    return 'Added $waypoints waypoints and $routes routes';
+  }
+
+  @override
+  String get waypoints_save => 'Save as waypoint';
+
+  @override
+  String get waypoints_unnamed => 'Shared place';
+
+  @override
+  String get waypoints_saved => 'Saved to Waypoints';
+
+  @override
+  String get waypoints_alreadySaved => 'Already in Waypoints';
+
+  @override
   String get netChange_title => 'Network changes';
 
   @override
