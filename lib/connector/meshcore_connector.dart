@@ -20,6 +20,7 @@ import '../models/advert_signature.dart';
 import '../models/channel.dart';
 import '../models/channel_message.dart';
 import '../models/companion_radio_stats.dart';
+import '../models/mesh_health.dart';
 import '../models/radio_rx_packet.dart';
 import '../models/saved_radio.dart';
 import '../models/contact.dart';
@@ -687,6 +688,29 @@ class MeshCoreConnector extends ChangeNotifier {
 
   CompanionRadioStats? get latestRadioStats => _latestRadioStats;
 
+  final List<AirtimeSample> _airtimeSamples = [];
+
+  /// Recent airtime counter readings (about the last half hour), for how
+  /// busy the channel has been.
+  List<AirtimeSample> get airtimeSamples => List.unmodifiable(_airtimeSamples);
+
+  /// Direct messages sent in the last [within] that were acknowledged, and
+  /// those that gave up.
+  ({int delivered, int failed}) recentDirectDeliveries({
+    Duration within = const Duration(hours: 24),
+  }) {
+    final since = DateTime.now().subtract(within);
+    var delivered = 0, failed = 0;
+    for (final list in _conversations.values) {
+      for (final m in list) {
+        if (!m.isOutgoing || m.timestamp.isBefore(since)) continue;
+        if (m.status == MessageStatus.delivered) delivered++;
+        if (m.status == MessageStatus.failed) failed++;
+      }
+    }
+    return (delivered: delivered, failed: failed);
+  }
+
   bool get supportsCompanionRadioStats => (_firmwareVerCode ?? 0) >= 8;
 
   /// True when the connected companion has a text CLI (firmware v14+).
@@ -1350,6 +1374,10 @@ class MeshCoreConnector extends ChangeNotifier {
 
   /// Points the channel message store at [selfKeyHex]'s data and uses
   /// [settings], as connecting to that radio would.
+  /// Feeds a companion stats frame, as the radio would.
+  @visibleForTesting
+  void debugHandleStatsFrame(Uint8List frame) => _handleStatsFrame(frame);
+
   @visibleForTesting
   void debugUseChannelStore(String selfKeyHex, AppSettingsService settings) {
     _channelMessageStore.setPublicKeyHex = selfKeyHex;
@@ -6070,6 +6098,11 @@ class MeshCoreConnector extends ChangeNotifier {
       _airtimeBumpStopwatch!.start();
     }
     _prevTotalAirSecs = total;
+    _airtimeSamples.add(AirtimeSample(stats.receivedAt, total));
+    _airtimeSamples.removeWhere(
+      (s) => stats.receivedAt.difference(s.at) > const Duration(minutes: 30),
+    );
+    if (_airtimeSamples.length > 240) _airtimeSamples.removeAt(0);
     _latestRadioStats = stats;
     radioStatsNotifier.value = stats;
   }
@@ -8475,6 +8508,7 @@ class MeshCoreConnector extends ChangeNotifier {
     _stopGpsLocationPolling();
     _stopRadioStatsPolling();
     _latestRadioStats = null;
+    _airtimeSamples.clear();
     radioStatsNotifier.value = null;
     _prevTotalAirSecs = 0;
     _airtimeBumpStopwatch?.stop();
