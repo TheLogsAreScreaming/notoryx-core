@@ -10004,6 +10004,16 @@ class AppLocalizationsEn extends AppLocalizations {
       'Halloween, Christmas and Valentine\'s Day on their dates';
 
   @override
+  String get theme_darkMode => 'Different theme in dark mode';
+
+  @override
+  String get theme_darkModeHint =>
+      'Use another theme while your device is set to dark mode';
+
+  @override
+  String get theme_darkModeTheme => 'Dark mode theme';
+
+  @override
   String get coords_setting => 'Coordinate format';
 
   @override

@@ -522,11 +522,30 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   }
 
   @override
+  void didChangePlatformBrightness() {
+    super.didChangePlatformBrightness();
+    // A dark-mode theme follows the device's light/dark setting.
+    if (widget.appSettingsService.settings.darkModeTheme.isNotEmpty &&
+        mounted) {
+      setState(() {});
+    }
+  }
+
+  String _activeThemeId(AppSettings settings) => activeThemeId(
+    appTheme: settings.appTheme,
+    darkModeTheme: settings.darkModeTheme,
+    platformBrightness:
+        WidgetsBinding.instance.platformDispatcher.platformBrightness,
+  );
+
+  @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     super.didChangeAppLifecycleState(state);
     // Seasonal follows the date, so check it again when the app comes back.
     if (state == AppLifecycleState.resumed &&
-        BastionTheme.fromId(widget.appSettingsService.settings.appTheme) ==
+        BastionTheme.fromId(
+              _activeThemeId(widget.appSettingsService.settings),
+            ) ==
             BastionTheme.seasonal &&
         mounted) {
       setState(() {});
@@ -666,7 +685,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   /// nothing (open screens, scroll position) is lost.
   BastionPalette _applyTheme(AppSettings settings) {
     final palette = resolveThemePalette(
-      settings.appTheme,
+      _activeThemeId(settings),
       seasonalOverride: settings.seasonalOverride,
       seasonalHolidays: settings.seasonalHolidays,
     );
