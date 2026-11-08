@@ -9543,4 +9543,56 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => '历史已清除';
+
+  @override
+  String get batteryWatch_auto => '自动检查';
+
+  @override
+  String get batteryWatch_autoHint => '连接电台时，应用会定时向此中继查询电池。只有登录到中继后它才会回复。';
+
+  @override
+  String get batteryWatch_interval => '检查间隔';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours 小时';
+  }
+
+  @override
+  String get batteryWatch_budget => '所有中继合计每小时最多 6 次，间隔至少 2 分钟。';
+
+  @override
+  String get batteryWatch_add => '添加中继';
+
+  @override
+  String get batteryWatch_pick => '选择要监控的中继';
+
+  @override
+  String get batteryWatch_noRepeaters => '联系人中还没有中继。';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return '最近 $count 次检查无回复。请打开中继并重新登录。';
+  }
+
+  @override
+  String get batteryWatch_checking => '正在检查…';
+
+  @override
+  String get batteryWatch_alertTitle => '中继电池';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name 电量 $percent%（$volts V）。';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return '$name 的电池下降很快：按此速度约 $days 天后耗尽。';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name 已有 $count 次电池检查未回复。';
+  }
 }

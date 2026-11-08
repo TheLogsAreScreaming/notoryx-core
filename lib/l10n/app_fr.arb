@@ -4357,5 +4357,19 @@
   "batteryWatch_chartLabel": "Graphique de batterie : {count} mesures, entre {low} V et {high} V",
   "batteryWatch_clear": "Effacer l'historique",
   "batteryWatch_unknownRepeater": "Répéteur inconnu",
-  "batteryWatch_cleared": "Historique effacé"
+  "batteryWatch_cleared": "Historique effacé",
+  "batteryWatch_auto": "Vérifier automatiquement",
+  "batteryWatch_autoHint": "Tant qu'une radio est connectée, l'app demande régulièrement sa batterie à ce répéteur. Il ne répond que si vous y êtes connecté.",
+  "batteryWatch_interval": "Vérifier toutes les",
+  "batteryWatch_hours": "{hours} h",
+  "batteryWatch_budget": "Au plus 6 vérifications par heure pour tous les répéteurs, espacées d'au moins 2 minutes.",
+  "batteryWatch_add": "Ajouter un répéteur",
+  "batteryWatch_pick": "Choisissez un répéteur à surveiller",
+  "batteryWatch_noRepeaters": "Aucun répéteur dans vos contacts pour l'instant.",
+  "batteryWatch_noReply": "Pas de réponse aux {count} dernières vérifications. Ouvrez le répéteur et reconnectez-vous.",
+  "batteryWatch_checking": "Vérification…",
+  "batteryWatch_alertTitle": "Batterie du répéteur",
+  "batteryWatch_alertLow": "{name} est à {percent} % ({volts} V).",
+  "batteryWatch_alertFalling": "La batterie de {name} baisse vite : vide dans environ {days} jours à ce rythme.",
+  "batteryWatch_alertSilent": "{name} n'a pas répondu à {count} vérifications de batterie."
 }

@@ -4223,5 +4223,19 @@
   "batteryWatch_chartLabel": "Graf batérie: {count} hodnôt, medzi {low} V a {high} V",
   "batteryWatch_clear": "Vymazať históriu",
   "batteryWatch_unknownRepeater": "Neznámy opakovač",
-  "batteryWatch_cleared": "História vymazaná"
+  "batteryWatch_cleared": "História vymazaná",
+  "batteryWatch_auto": "Kontrolovať automaticky",
+  "batteryWatch_autoHint": "Kým je pripojené rádio, aplikácia sa pravidelne pýta opakovača na batériu. Odpovie len vtedy, ak ste prihlásení.",
+  "batteryWatch_interval": "Kontrolovať každých",
+  "batteryWatch_hours": "{hours} h",
+  "batteryWatch_budget": "Najviac 6 kontrol za hodinu pre všetky opakovače, aspoň 2 minúty od seba.",
+  "batteryWatch_add": "Pridať opakovač",
+  "batteryWatch_pick": "Vyberte opakovač na sledovanie",
+  "batteryWatch_noRepeaters": "V kontaktoch zatiaľ nie sú opakovače.",
+  "batteryWatch_noReply": "Žiadna odpoveď na posledných {count} kontrol. Otvorte opakovač a prihláste sa znova.",
+  "batteryWatch_checking": "Kontroluje sa…",
+  "batteryWatch_alertTitle": "Batéria opakovača",
+  "batteryWatch_alertLow": "{name} je na {percent} % ({volts} V).",
+  "batteryWatch_alertFalling": "Batéria {name} rýchlo klesá: pri tomto tempe vybitá asi o {days} dní.",
+  "batteryWatch_alertSilent": "{name} neodpovedal na {count} kontrol batérie."
 }

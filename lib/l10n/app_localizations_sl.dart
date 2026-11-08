@@ -10232,4 +10232,58 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'Zgodovina počiščena';
+
+  @override
+  String get batteryWatch_auto => 'Samodejno preverjaj';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Dokler je radio povezan, aplikacija občasno vpraša repetitor za baterijo. Odgovori le, če ste prijavljeni.';
+
+  @override
+  String get batteryWatch_interval => 'Preverjaj vsakih';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Največ 6 preverjanj na uro za vse repetitorje, vsaj 2 minuti narazen.';
+
+  @override
+  String get batteryWatch_add => 'Dodaj repetitor';
+
+  @override
+  String get batteryWatch_pick => 'Izberite repetitor za nadzor';
+
+  @override
+  String get batteryWatch_noRepeaters => 'V stikih še ni repetitorjev.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Ni odgovora na zadnjih $count preverjanj. Odprite repetitor in se znova prijavite.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Preverjanje…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Baterija repetitorja';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name je na $percent % ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Baterija $name hitro pada: pri tem tempu prazna čez približno $days dni.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name ni odgovoril na $count preverjanj baterije.';
+  }
 }

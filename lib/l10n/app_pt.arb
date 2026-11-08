@@ -4223,5 +4223,19 @@
   "batteryWatch_chartLabel": "Gráfico da bateria: {count} leituras, entre {low} V e {high} V",
   "batteryWatch_clear": "Limpar histórico",
   "batteryWatch_unknownRepeater": "Repetidor desconhecido",
-  "batteryWatch_cleared": "Histórico limpo"
+  "batteryWatch_cleared": "Histórico limpo",
+  "batteryWatch_auto": "Verificar automaticamente",
+  "batteryWatch_autoHint": "Enquanto um rádio estiver ligado, a app pergunta periodicamente a este repetidor pela bateria. Só responde se tiver sessão iniciada.",
+  "batteryWatch_interval": "Verificar a cada",
+  "batteryWatch_hours": "{hours} h",
+  "batteryWatch_budget": "No máximo 6 verificações por hora em todos os repetidores, com pelo menos 2 minutos de intervalo.",
+  "batteryWatch_add": "Adicionar um repetidor",
+  "batteryWatch_pick": "Escolha um repetidor para vigiar",
+  "batteryWatch_noRepeaters": "Ainda não há repetidores nos contactos.",
+  "batteryWatch_noReply": "Sem resposta às últimas {count} verificações. Abra o repetidor e inicie sessão novamente.",
+  "batteryWatch_checking": "A verificar…",
+  "batteryWatch_alertTitle": "Bateria do repetidor",
+  "batteryWatch_alertLow": "{name} está a {percent}% ({volts} V).",
+  "batteryWatch_alertFalling": "A bateria de {name} está a cair depressa: vazia em cerca de {days} dias a este ritmo.",
+  "batteryWatch_alertSilent": "{name} não respondeu a {count} verificações de bateria."
 }

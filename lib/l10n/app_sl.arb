@@ -4223,5 +4223,19 @@
   "batteryWatch_chartLabel": "Graf baterije: {count} meritev, med {low} V in {high} V",
   "batteryWatch_clear": "Počisti zgodovino",
   "batteryWatch_unknownRepeater": "Neznan repetitor",
-  "batteryWatch_cleared": "Zgodovina počiščena"
+  "batteryWatch_cleared": "Zgodovina počiščena",
+  "batteryWatch_auto": "Samodejno preverjaj",
+  "batteryWatch_autoHint": "Dokler je radio povezan, aplikacija občasno vpraša repetitor za baterijo. Odgovori le, če ste prijavljeni.",
+  "batteryWatch_interval": "Preverjaj vsakih",
+  "batteryWatch_hours": "{hours} h",
+  "batteryWatch_budget": "Največ 6 preverjanj na uro za vse repetitorje, vsaj 2 minuti narazen.",
+  "batteryWatch_add": "Dodaj repetitor",
+  "batteryWatch_pick": "Izberite repetitor za nadzor",
+  "batteryWatch_noRepeaters": "V stikih še ni repetitorjev.",
+  "batteryWatch_noReply": "Ni odgovora na zadnjih {count} preverjanj. Odprite repetitor in se znova prijavite.",
+  "batteryWatch_checking": "Preverjanje…",
+  "batteryWatch_alertTitle": "Baterija repetitorja",
+  "batteryWatch_alertLow": "{name} je na {percent} % ({volts} V).",
+  "batteryWatch_alertFalling": "Baterija {name} hitro pada: pri tem tempu prazna čez približno {days} dni.",
+  "batteryWatch_alertSilent": "{name} ni odgovoril na {count} preverjanj baterije."
 }

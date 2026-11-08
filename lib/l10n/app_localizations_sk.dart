@@ -10212,4 +10212,59 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'História vymazaná';
+
+  @override
+  String get batteryWatch_auto => 'Kontrolovať automaticky';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Kým je pripojené rádio, aplikácia sa pravidelne pýta opakovača na batériu. Odpovie len vtedy, ak ste prihlásení.';
+
+  @override
+  String get batteryWatch_interval => 'Kontrolovať každých';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Najviac 6 kontrol za hodinu pre všetky opakovače, aspoň 2 minúty od seba.';
+
+  @override
+  String get batteryWatch_add => 'Pridať opakovač';
+
+  @override
+  String get batteryWatch_pick => 'Vyberte opakovač na sledovanie';
+
+  @override
+  String get batteryWatch_noRepeaters =>
+      'V kontaktoch zatiaľ nie sú opakovače.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Žiadna odpoveď na posledných $count kontrol. Otvorte opakovač a prihláste sa znova.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Kontroluje sa…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Batéria opakovača';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name je na $percent % ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Batéria $name rýchlo klesá: pri tomto tempe vybitá asi o $days dní.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name neodpovedal na $count kontrol batérie.';
+  }
 }

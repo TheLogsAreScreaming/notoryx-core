@@ -4223,5 +4223,19 @@
   "batteryWatch_chartLabel": "Batterijgrafiek: {count} metingen, tussen {low} V en {high} V",
   "batteryWatch_clear": "Geschiedenis wissen",
   "batteryWatch_unknownRepeater": "Onbekende repeater",
-  "batteryWatch_cleared": "Geschiedenis gewist"
+  "batteryWatch_cleared": "Geschiedenis gewist",
+  "batteryWatch_auto": "Automatisch controleren",
+  "batteryWatch_autoHint": "Zolang er een radio verbonden is, vraagt de app deze repeater regelmatig naar zijn batterij. Hij antwoordt alleen als je bent ingelogd.",
+  "batteryWatch_interval": "Controleer elke",
+  "batteryWatch_hours": "{hours} u",
+  "batteryWatch_budget": "Hoogstens 6 controles per uur voor alle repeaters, minstens 2 minuten uit elkaar.",
+  "batteryWatch_add": "Repeater toevoegen",
+  "batteryWatch_pick": "Kies een repeater om te bewaken",
+  "batteryWatch_noRepeaters": "Nog geen repeaters in je contacten.",
+  "batteryWatch_noReply": "Geen antwoord op de laatste {count} controles. Open de repeater en log opnieuw in.",
+  "batteryWatch_checking": "Controleren…",
+  "batteryWatch_alertTitle": "Repeaterbatterij",
+  "batteryWatch_alertLow": "{name} staat op {percent}% ({volts} V).",
+  "batteryWatch_alertFalling": "De batterij van {name} daalt snel: bij dit tempo leeg over ongeveer {days} dagen.",
+  "batteryWatch_alertSilent": "{name} heeft {count} batterijcontroles niet beantwoord."
 }

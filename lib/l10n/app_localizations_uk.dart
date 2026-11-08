@@ -10272,4 +10272,58 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'Історію очищено';
+
+  @override
+  String get batteryWatch_auto => 'Перевіряти автоматично';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Поки радіо підключене, застосунок періодично запитує в ретранслятора заряд батареї. Він відповідає, лише якщо ви увійшли в нього.';
+
+  @override
+  String get batteryWatch_interval => 'Перевіряти кожні';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours год';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Не більше 6 перевірок на годину для всіх ретрансляторів, щонайменше 2 хвилини між ними.';
+
+  @override
+  String get batteryWatch_add => 'Додати ретранслятор';
+
+  @override
+  String get batteryWatch_pick => 'Виберіть ретранслятор для контролю';
+
+  @override
+  String get batteryWatch_noRepeaters => 'У контактах ще немає ретрансляторів.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Немає відповіді на останні $count перевірок. Відкрийте ретранслятор і увійдіть знову.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Перевірка…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Батарея ретранслятора';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name: $percent% ($volts В).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Батарея $name швидко сідає: за такого темпу розрядиться приблизно за $days дн.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name не відповів на $count перевірок батареї.';
+  }
 }

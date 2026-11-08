@@ -16986,6 +16986,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'History cleared'**
   String get batteryWatch_cleared;
+
+  /// No description provided for @batteryWatch_auto.
+  ///
+  /// In en, this message translates to:
+  /// **'Check automatically'**
+  String get batteryWatch_auto;
+
+  /// No description provided for @batteryWatch_autoHint.
+  ///
+  /// In en, this message translates to:
+  /// **'While a radio is connected, the app asks this repeater for its battery on a timer. The repeater only answers if you\'re logged in to it.'**
+  String get batteryWatch_autoHint;
+
+  /// No description provided for @batteryWatch_interval.
+  ///
+  /// In en, this message translates to:
+  /// **'Check every'**
+  String get batteryWatch_interval;
+
+  /// No description provided for @batteryWatch_hours.
+  ///
+  /// In en, this message translates to:
+  /// **'{hours} h'**
+  String batteryWatch_hours(int hours);
+
+  /// No description provided for @batteryWatch_budget.
+  ///
+  /// In en, this message translates to:
+  /// **'At most 6 checks an hour across all repeaters, at least 2 minutes apart.'**
+  String get batteryWatch_budget;
+
+  /// No description provided for @batteryWatch_add.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a repeater'**
+  String get batteryWatch_add;
+
+  /// No description provided for @batteryWatch_pick.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a repeater to watch'**
+  String get batteryWatch_pick;
+
+  /// No description provided for @batteryWatch_noRepeaters.
+  ///
+  /// In en, this message translates to:
+  /// **'No repeaters in your contacts yet.'**
+  String get batteryWatch_noRepeaters;
+
+  /// No description provided for @batteryWatch_noReply.
+  ///
+  /// In en, this message translates to:
+  /// **'No reply to the last {count} checks. Open the repeater and log in again.'**
+  String batteryWatch_noReply(int count);
+
+  /// No description provided for @batteryWatch_checking.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking…'**
+  String get batteryWatch_checking;
+
+  /// No description provided for @batteryWatch_alertTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeater battery'**
+  String get batteryWatch_alertTitle;
+
+  /// No description provided for @batteryWatch_alertLow.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} is at {percent}% ({volts} V).'**
+  String batteryWatch_alertLow(String name, int percent, String volts);
+
+  /// No description provided for @batteryWatch_alertFalling.
+  ///
+  /// In en, this message translates to:
+  /// **'{name}\'s battery is falling fast: empty in about {days} days at this rate.'**
+  String batteryWatch_alertFalling(String name, String days);
+
+  /// No description provided for @batteryWatch_alertSilent.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} hasn\'t answered {count} battery checks.'**
+  String batteryWatch_alertSilent(String name, int count);
 }
 
 class _AppLocalizationsDelegate

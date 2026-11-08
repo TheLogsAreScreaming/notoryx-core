@@ -10215,4 +10215,59 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'Histórico limpo';
+
+  @override
+  String get batteryWatch_auto => 'Verificar automaticamente';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Enquanto um rádio estiver ligado, a app pergunta periodicamente a este repetidor pela bateria. Só responde se tiver sessão iniciada.';
+
+  @override
+  String get batteryWatch_interval => 'Verificar a cada';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'No máximo 6 verificações por hora em todos os repetidores, com pelo menos 2 minutos de intervalo.';
+
+  @override
+  String get batteryWatch_add => 'Adicionar um repetidor';
+
+  @override
+  String get batteryWatch_pick => 'Escolha um repetidor para vigiar';
+
+  @override
+  String get batteryWatch_noRepeaters =>
+      'Ainda não há repetidores nos contactos.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Sem resposta às últimas $count verificações. Abra o repetidor e inicie sessão novamente.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'A verificar…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Bateria do repetidor';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name está a $percent% ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'A bateria de $name está a cair depressa: vazia em cerca de $days dias a este ritmo.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name não respondeu a $count verificações de bateria.';
+  }
 }

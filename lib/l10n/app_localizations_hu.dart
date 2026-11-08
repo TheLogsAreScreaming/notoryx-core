@@ -10218,4 +10218,59 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get batteryWatch_cleared => 'Előzmények törölve';
+
+  @override
+  String get batteryWatch_auto => 'Automatikus ellenőrzés';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Amíg rádió csatlakozik, az alkalmazás időnként lekérdezi az átjátszó akkuját. Csak akkor válaszol, ha be vagy jelentkezve.';
+
+  @override
+  String get batteryWatch_interval => 'Ellenőrzés gyakorisága';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours óra';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Óránként legfeljebb 6 lekérdezés az összes átjátszóra, legalább 2 perc különbséggel.';
+
+  @override
+  String get batteryWatch_add => 'Átjátszó hozzáadása';
+
+  @override
+  String get batteryWatch_pick => 'Válassz figyelendő átjátszót';
+
+  @override
+  String get batteryWatch_noRepeaters =>
+      'Még nincs átjátszó a névjegyeid között.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Nincs válasz az utolsó $count lekérdezésre. Nyisd meg az átjátszót és jelentkezz be újra.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Ellenőrzés…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Átjátszó akku';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name: $percent% ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return '$name akkuja gyorsan merül: ilyen ütemben kb. $days nap múlva lemerül.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name nem válaszolt $count akku-lekérdezésre.';
+  }
 }

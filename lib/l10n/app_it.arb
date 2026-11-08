@@ -4357,5 +4357,19 @@
   "batteryWatch_chartLabel": "Grafico batteria: {count} letture, tra {low} V e {high} V",
   "batteryWatch_clear": "Cancella storico",
   "batteryWatch_unknownRepeater": "Ripetitore sconosciuto",
-  "batteryWatch_cleared": "Storico cancellato"
+  "batteryWatch_cleared": "Storico cancellato",
+  "batteryWatch_auto": "Controlla automaticamente",
+  "batteryWatch_autoHint": "Mentre una radio è connessa, l'app chiede periodicamente a questo ripetitore la sua batteria. Risponde solo se hai effettuato l'accesso.",
+  "batteryWatch_interval": "Controlla ogni",
+  "batteryWatch_hours": "{hours} h",
+  "batteryWatch_budget": "Al massimo 6 controlli all'ora per tutti i ripetitori, ad almeno 2 minuti di distanza.",
+  "batteryWatch_add": "Aggiungi un ripetitore",
+  "batteryWatch_pick": "Scegli un ripetitore da controllare",
+  "batteryWatch_noRepeaters": "Ancora nessun ripetitore nei contatti.",
+  "batteryWatch_noReply": "Nessuna risposta agli ultimi {count} controlli. Apri il ripetitore ed effettua di nuovo l'accesso.",
+  "batteryWatch_checking": "Controllo…",
+  "batteryWatch_alertTitle": "Batteria del ripetitore",
+  "batteryWatch_alertLow": "{name} è al {percent}% ({volts} V).",
+  "batteryWatch_alertFalling": "La batteria di {name} cala in fretta: scarica tra circa {days} giorni a questo ritmo.",
+  "batteryWatch_alertSilent": "{name} non ha risposto a {count} controlli della batteria."
 }

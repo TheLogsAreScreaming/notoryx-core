@@ -4223,5 +4223,19 @@
   "batteryWatch_chartLabel": "Графика на батерията: {count} показания, между {low} V и {high} V",
   "batteryWatch_clear": "Изчисти историята",
   "batteryWatch_unknownRepeater": "Неизвестен ретранслатор",
-  "batteryWatch_cleared": "Историята е изчистена"
+  "batteryWatch_cleared": "Историята е изчистена",
+  "batteryWatch_auto": "Проверявай автоматично",
+  "batteryWatch_autoHint": "Докато има свързано радио, приложението периодично пита ретранслатора за батерията му. Той отговаря само ако сте влезли в него.",
+  "batteryWatch_interval": "Проверка на всеки",
+  "batteryWatch_hours": "{hours} ч",
+  "batteryWatch_budget": "Най-много 6 проверки на час за всички ретранслатори, през поне 2 минути.",
+  "batteryWatch_add": "Добави ретранслатор",
+  "batteryWatch_pick": "Изберете ретранслатор за наблюдение",
+  "batteryWatch_noRepeaters": "Все още няма ретранслатори в контактите.",
+  "batteryWatch_noReply": "Няма отговор на последните {count} проверки. Отворете ретранслатора и влезте отново.",
+  "batteryWatch_checking": "Проверява се…",
+  "batteryWatch_alertTitle": "Батерия на ретранслатор",
+  "batteryWatch_alertLow": "{name} е на {percent}% ({volts} V).",
+  "batteryWatch_alertFalling": "Батерията на {name} пада бързо: изтощена след около {days} дни при това темпо.",
+  "batteryWatch_alertSilent": "{name} не е отговорил на {count} проверки на батерията."
 }
