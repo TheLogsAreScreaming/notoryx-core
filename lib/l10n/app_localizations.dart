@@ -16825,24 +16825,6 @@ abstract class AppLocalizations {
   /// **'Halloween, Christmas and Valentine\'s Day on their dates'**
   String get seasonal_holidaysHint;
 
-  /// No description provided for @theme_darkMode.
-  ///
-  /// In en, this message translates to:
-  /// **'Different theme in dark mode'**
-  String get theme_darkMode;
-
-  /// No description provided for @theme_darkModeHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Use another theme while your device is set to dark mode'**
-  String get theme_darkModeHint;
-
-  /// No description provided for @theme_darkModeTheme.
-  ///
-  /// In en, this message translates to:
-  /// **'Dark mode theme'**
-  String get theme_darkModeTheme;
-
   /// No description provided for @coords_setting.
   ///
   /// In en, this message translates to:
@@ -16897,41 +16879,227 @@ abstract class AppLocalizations {
   /// **'Your radio uses {width}-byte'**
   String pathHash_mismatch(int width);
 
-  /// No description provided for @coords_maidenhead.
+  /// No description provided for @lite_qrPasteHint.
   ///
   /// In en, this message translates to:
-  /// **'Maidenhead locator'**
-  String get coords_maidenhead;
+  /// **'This build has no camera scanner. Paste the text from the QR code instead.'**
+  String get lite_qrPasteHint;
 
-  /// No description provided for @reactions_radioTitle.
+  /// No description provided for @lite_qrPasteLabel.
   ///
   /// In en, this message translates to:
-  /// **'Send reactions over the radio'**
-  String get reactions_radioTitle;
+  /// **'QR code text'**
+  String get lite_qrPasteLabel;
 
-  /// No description provided for @reactions_radioHint.
+  /// No description provided for @theme_darkMode.
   ///
   /// In en, this message translates to:
-  /// **'Each reaction is a packet on air. Automatic keeps them on this device on the EU 868 MHz band, where airtime is limited.'**
-  String get reactions_radioHint;
+  /// **'Different theme in dark mode'**
+  String get theme_darkMode;
 
-  /// No description provided for @reactions_radioAuto.
+  /// No description provided for @theme_darkModeHint.
   ///
   /// In en, this message translates to:
-  /// **'Automatic'**
-  String get reactions_radioAuto;
+  /// **'Use another theme while your device is set to dark mode'**
+  String get theme_darkModeHint;
 
-  /// No description provided for @reactions_radioOn.
+  /// No description provided for @theme_darkModeTheme.
   ///
   /// In en, this message translates to:
-  /// **'On'**
-  String get reactions_radioOn;
+  /// **'Dark mode theme'**
+  String get theme_darkModeTheme;
 
-  /// No description provided for @reactions_radioOff.
+  /// No description provided for @batteryWatch_title.
   ///
   /// In en, this message translates to:
-  /// **'Off (this device)'**
-  String get reactions_radioOff;
+  /// **'Battery watch'**
+  String get batteryWatch_title;
+
+  /// No description provided for @batteryWatch_toolSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeater batteries over the last 30 days'**
+  String get batteryWatch_toolSubtitle;
+
+  /// No description provided for @batteryWatch_empty.
+  ///
+  /// In en, this message translates to:
+  /// **'No repeater battery readings yet. Open a repeater\'s Status or Telemetry, and its readings are kept here for 30 days.'**
+  String get batteryWatch_empty;
+
+  /// No description provided for @batteryWatch_note.
+  ///
+  /// In en, this message translates to:
+  /// **'Readings come from the Status and Telemetry replies you ask for. Nothing extra is sent over the air.'**
+  String get batteryWatch_note;
+
+  /// No description provided for @batteryWatch_statusLow.
+  ///
+  /// In en, this message translates to:
+  /// **'Low battery'**
+  String get batteryWatch_statusLow;
+
+  /// No description provided for @batteryWatch_statusFalling.
+  ///
+  /// In en, this message translates to:
+  /// **'Falling fast'**
+  String get batteryWatch_statusFalling;
+
+  /// No description provided for @batteryWatch_statusQuiet.
+  ///
+  /// In en, this message translates to:
+  /// **'No recent reading'**
+  String get batteryWatch_statusQuiet;
+
+  /// No description provided for @batteryWatch_statusOk.
+  ///
+  /// In en, this message translates to:
+  /// **'Looks fine'**
+  String get batteryWatch_statusOk;
+
+  /// No description provided for @batteryWatch_statusUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Not enough readings yet'**
+  String get batteryWatch_statusUnknown;
+
+  /// No description provided for @batteryWatch_emptyIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Empty in about {days} days at this rate'**
+  String batteryWatch_emptyIn(String days);
+
+  /// No description provided for @batteryWatch_trend.
+  ///
+  /// In en, this message translates to:
+  /// **'{volts} V a day over the last week'**
+  String batteryWatch_trend(String volts);
+
+  /// No description provided for @batteryWatch_lastReading.
+  ///
+  /// In en, this message translates to:
+  /// **'Last reading: {age}'**
+  String batteryWatch_lastReading(String age);
+
+  /// No description provided for @batteryWatch_readings.
+  ///
+  /// In en, this message translates to:
+  /// **'Readings in 30 days: {count}'**
+  String batteryWatch_readings(int count);
+
+  /// No description provided for @batteryWatch_history.
+  ///
+  /// In en, this message translates to:
+  /// **'Battery history'**
+  String get batteryWatch_history;
+
+  /// No description provided for @batteryWatch_chartLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Battery chart: {count} readings, between {low} V and {high} V'**
+  String batteryWatch_chartLabel(int count, String low, String high);
+
+  /// No description provided for @batteryWatch_clear.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear history'**
+  String get batteryWatch_clear;
+
+  /// No description provided for @batteryWatch_unknownRepeater.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown repeater'**
+  String get batteryWatch_unknownRepeater;
+
+  /// No description provided for @batteryWatch_cleared.
+  ///
+  /// In en, this message translates to:
+  /// **'History cleared'**
+  String get batteryWatch_cleared;
+
+  /// No description provided for @batteryWatch_auto.
+  ///
+  /// In en, this message translates to:
+  /// **'Check automatically'**
+  String get batteryWatch_auto;
+
+  /// No description provided for @batteryWatch_autoHint.
+  ///
+  /// In en, this message translates to:
+  /// **'While a radio is connected, the app asks this repeater for its battery on a timer. The repeater only answers if you\'re logged in to it.'**
+  String get batteryWatch_autoHint;
+
+  /// No description provided for @batteryWatch_interval.
+  ///
+  /// In en, this message translates to:
+  /// **'Check every'**
+  String get batteryWatch_interval;
+
+  /// No description provided for @batteryWatch_hours.
+  ///
+  /// In en, this message translates to:
+  /// **'{hours} h'**
+  String batteryWatch_hours(int hours);
+
+  /// No description provided for @batteryWatch_budget.
+  ///
+  /// In en, this message translates to:
+  /// **'At most 6 checks an hour across all repeaters, at least 2 minutes apart.'**
+  String get batteryWatch_budget;
+
+  /// No description provided for @batteryWatch_add.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a repeater'**
+  String get batteryWatch_add;
+
+  /// No description provided for @batteryWatch_pick.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a repeater to watch'**
+  String get batteryWatch_pick;
+
+  /// No description provided for @batteryWatch_noRepeaters.
+  ///
+  /// In en, this message translates to:
+  /// **'No repeaters in your contacts yet.'**
+  String get batteryWatch_noRepeaters;
+
+  /// No description provided for @batteryWatch_noReply.
+  ///
+  /// In en, this message translates to:
+  /// **'No reply to the last {count} checks. Open the repeater and log in again.'**
+  String batteryWatch_noReply(int count);
+
+  /// No description provided for @batteryWatch_checking.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking…'**
+  String get batteryWatch_checking;
+
+  /// No description provided for @batteryWatch_alertTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeater battery'**
+  String get batteryWatch_alertTitle;
+
+  /// No description provided for @batteryWatch_alertLow.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} is at {percent}% ({volts} V).'**
+  String batteryWatch_alertLow(String name, int percent, String volts);
+
+  /// No description provided for @batteryWatch_alertFalling.
+  ///
+  /// In en, this message translates to:
+  /// **'{name}\'s battery is falling fast: empty in about {days} days at this rate.'**
+  String batteryWatch_alertFalling(String name, String days);
+
+  /// No description provided for @batteryWatch_alertSilent.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} hasn\'t answered {count} battery checks.'**
+  String batteryWatch_alertSilent(String name, int count);
 }
 
 class _AppLocalizationsDelegate

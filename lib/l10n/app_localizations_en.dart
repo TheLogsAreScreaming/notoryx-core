@@ -10004,16 +10004,6 @@ class AppLocalizationsEn extends AppLocalizations {
       'Halloween, Christmas and Valentine\'s Day on their dates';
 
   @override
-  String get theme_darkMode => 'Different theme in dark mode';
-
-  @override
-  String get theme_darkModeHint =>
-      'Use another theme while your device is set to dark mode';
-
-  @override
-  String get theme_darkModeTheme => 'Dark mode theme';
-
-  @override
   String get coords_setting => 'Coordinate format';
 
   @override
@@ -10047,21 +10037,140 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get coords_maidenhead => 'Maidenhead locator';
+  String get lite_qrPasteHint =>
+      'This build has no camera scanner. Paste the text from the QR code instead.';
 
   @override
-  String get reactions_radioTitle => 'Send reactions over the radio';
+  String get lite_qrPasteLabel => 'QR code text';
 
   @override
-  String get reactions_radioHint =>
-      'Each reaction is a packet on air. Automatic keeps them on this device on the EU 868 MHz band, where airtime is limited.';
+  String get theme_darkMode => 'Different theme in dark mode';
 
   @override
-  String get reactions_radioAuto => 'Automatic';
+  String get theme_darkModeHint =>
+      'Use another theme while your device is set to dark mode';
 
   @override
-  String get reactions_radioOn => 'On';
+  String get theme_darkModeTheme => 'Dark mode theme';
 
   @override
-  String get reactions_radioOff => 'Off (this device)';
+  String get batteryWatch_title => 'Battery watch';
+
+  @override
+  String get batteryWatch_toolSubtitle =>
+      'Repeater batteries over the last 30 days';
+
+  @override
+  String get batteryWatch_empty =>
+      'No repeater battery readings yet. Open a repeater\'s Status or Telemetry, and its readings are kept here for 30 days.';
+
+  @override
+  String get batteryWatch_note =>
+      'Readings come from the Status and Telemetry replies you ask for. Nothing extra is sent over the air.';
+
+  @override
+  String get batteryWatch_statusLow => 'Low battery';
+
+  @override
+  String get batteryWatch_statusFalling => 'Falling fast';
+
+  @override
+  String get batteryWatch_statusQuiet => 'No recent reading';
+
+  @override
+  String get batteryWatch_statusOk => 'Looks fine';
+
+  @override
+  String get batteryWatch_statusUnknown => 'Not enough readings yet';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'Empty in about $days days at this rate';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '$volts V a day over the last week';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return 'Last reading: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return 'Readings in 30 days: $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'Battery history';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'Battery chart: $count readings, between $low V and $high V';
+  }
+
+  @override
+  String get batteryWatch_clear => 'Clear history';
+
+  @override
+  String get batteryWatch_unknownRepeater => 'Unknown repeater';
+
+  @override
+  String get batteryWatch_cleared => 'History cleared';
+
+  @override
+  String get batteryWatch_auto => 'Check automatically';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'While a radio is connected, the app asks this repeater for its battery on a timer. The repeater only answers if you\'re logged in to it.';
+
+  @override
+  String get batteryWatch_interval => 'Check every';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'At most 6 checks an hour across all repeaters, at least 2 minutes apart.';
+
+  @override
+  String get batteryWatch_add => 'Add a repeater';
+
+  @override
+  String get batteryWatch_pick => 'Choose a repeater to watch';
+
+  @override
+  String get batteryWatch_noRepeaters => 'No repeaters in your contacts yet.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'No reply to the last $count checks. Open the repeater and log in again.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Checking…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Repeater battery';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name is at $percent% ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return '$name\'s battery is falling fast: empty in about $days days at this rate.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name hasn\'t answered $count battery checks.';
+  }
 }

@@ -10143,16 +10143,6 @@ class AppLocalizationsDe extends AppLocalizations {
       'Halloween, Weihnachten und Valentinstag an ihren Daten';
 
   @override
-  String get theme_darkMode => 'Anderes Design im Dunkelmodus';
-
-  @override
-  String get theme_darkModeHint =>
-      'Ein anderes Design verwenden, solange das Gerät im Dunkelmodus ist';
-
-  @override
-  String get theme_darkModeTheme => 'Design im Dunkelmodus';
-
-  @override
   String get coords_setting => 'Koordinatenformat';
 
   @override
@@ -10186,21 +10176,140 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
-  String get coords_maidenhead => 'Maidenhead-Locator';
+  String get lite_qrPasteHint =>
+      'Diese Version hat keinen Kamera-Scanner. Füge stattdessen den Text des QR-Codes ein.';
 
   @override
-  String get reactions_radioTitle => 'Reaktionen per Funk senden';
+  String get lite_qrPasteLabel => 'Text des QR-Codes';
 
   @override
-  String get reactions_radioHint =>
-      'Jede Reaktion ist ein Paket in der Luft. Automatisch behält sie im EU-868-MHz-Band, wo die Sendezeit begrenzt ist, auf diesem Gerät.';
+  String get theme_darkMode => 'Anderes Design im Dunkelmodus';
 
   @override
-  String get reactions_radioAuto => 'Automatisch';
+  String get theme_darkModeHint =>
+      'Ein anderes Design verwenden, solange das Gerät im Dunkelmodus ist';
 
   @override
-  String get reactions_radioOn => 'An';
+  String get theme_darkModeTheme => 'Design im Dunkelmodus';
 
   @override
-  String get reactions_radioOff => 'Aus (dieses Gerät)';
+  String get batteryWatch_title => 'Akku-Überwachung';
+
+  @override
+  String get batteryWatch_toolSubtitle => 'Repeater-Akkus der letzten 30 Tage';
+
+  @override
+  String get batteryWatch_empty =>
+      'Noch keine Akkuwerte von Repeatern. Öffne Status oder Telemetrie eines Repeaters, dann werden seine Werte hier 30 Tage lang aufbewahrt.';
+
+  @override
+  String get batteryWatch_note =>
+      'Die Werte stammen aus Status- und Telemetrie-Antworten, die du anforderst. Es wird nichts zusätzlich gesendet.';
+
+  @override
+  String get batteryWatch_statusLow => 'Akku schwach';
+
+  @override
+  String get batteryWatch_statusFalling => 'Fällt schnell';
+
+  @override
+  String get batteryWatch_statusQuiet => 'Kein aktueller Wert';
+
+  @override
+  String get batteryWatch_statusOk => 'Sieht gut aus';
+
+  @override
+  String get batteryWatch_statusUnknown => 'Noch nicht genug Werte';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'Bei diesem Tempo in etwa $days Tagen leer';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '$volts V pro Tag in der letzten Woche';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return 'Letzter Wert: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return 'Werte in 30 Tagen: $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'Akkuverlauf';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'Akkudiagramm: $count Werte, zwischen $low V und $high V';
+  }
+
+  @override
+  String get batteryWatch_clear => 'Verlauf löschen';
+
+  @override
+  String get batteryWatch_unknownRepeater => 'Unbekannter Repeater';
+
+  @override
+  String get batteryWatch_cleared => 'Verlauf gelöscht';
+
+  @override
+  String get batteryWatch_auto => 'Automatisch prüfen';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Solange ein Funkgerät verbunden ist, fragt die App diesen Repeater regelmäßig nach seinem Akku. Er antwortet nur, wenn du bei ihm angemeldet bist.';
+
+  @override
+  String get batteryWatch_interval => 'Prüfen alle';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Höchstens 6 Abfragen pro Stunde für alle Repeater, mindestens 2 Minuten auseinander.';
+
+  @override
+  String get batteryWatch_add => 'Repeater hinzufügen';
+
+  @override
+  String get batteryWatch_pick => 'Repeater zum Überwachen wählen';
+
+  @override
+  String get batteryWatch_noRepeaters =>
+      'Noch keine Repeater in deinen Kontakten.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Keine Antwort auf die letzten $count Abfragen. Öffne den Repeater und melde dich erneut an.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Wird geprüft…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Repeater-Akku';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name ist bei $percent % ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Der Akku von $name fällt schnell: bei diesem Tempo in etwa $days Tagen leer.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name hat auf $count Akku-Abfragen nicht geantwortet.';
+  }
 }

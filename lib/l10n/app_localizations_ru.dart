@@ -10177,16 +10177,6 @@ class AppLocalizationsRu extends AppLocalizations {
       'Хэллоуин, Рождество и День святого Валентина в свои даты';
 
   @override
-  String get theme_darkMode => 'Другая тема в тёмном режиме';
-
-  @override
-  String get theme_darkModeHint =>
-      'Использовать другую тему, пока устройство в тёмном режиме';
-
-  @override
-  String get theme_darkModeTheme => 'Тема тёмного режима';
-
-  @override
   String get coords_setting => 'Формат координат';
 
   @override
@@ -10220,21 +10210,140 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
-  String get coords_maidenhead => 'Локатор Maidenhead';
+  String get lite_qrPasteHint =>
+      'В этой версии нет сканера с камерой. Вставьте текст из QR-кода.';
 
   @override
-  String get reactions_radioTitle => 'Отправлять реакции по радио';
+  String get lite_qrPasteLabel => 'Текст QR-кода';
 
   @override
-  String get reactions_radioHint =>
-      'Каждая реакция — это пакет в эфире. «Автоматически» оставляет их на этом устройстве в европейском диапазоне 868 МГц, где эфирное время ограничено.';
+  String get theme_darkMode => 'Другая тема в тёмном режиме';
 
   @override
-  String get reactions_radioAuto => 'Автоматически';
+  String get theme_darkModeHint =>
+      'Использовать другую тему, пока устройство в тёмном режиме';
 
   @override
-  String get reactions_radioOn => 'Вкл.';
+  String get theme_darkModeTheme => 'Тема тёмного режима';
 
   @override
-  String get reactions_radioOff => 'Выкл. (это устройство)';
+  String get batteryWatch_title => 'Контроль батарей';
+
+  @override
+  String get batteryWatch_toolSubtitle =>
+      'Батареи ретрансляторов за последние 30 дней';
+
+  @override
+  String get batteryWatch_empty =>
+      'Пока нет показаний батарей ретрансляторов. Откройте Состояние или Телеметрию ретранслятора, и его показания будут храниться здесь 30 дней.';
+
+  @override
+  String get batteryWatch_note =>
+      'Показания берутся из ответов Состояния и Телеметрии, которые вы запрашиваете. Ничего лишнего в эфир не передаётся.';
+
+  @override
+  String get batteryWatch_statusLow => 'Низкий заряд';
+
+  @override
+  String get batteryWatch_statusFalling => 'Быстро падает';
+
+  @override
+  String get batteryWatch_statusQuiet => 'Нет свежих показаний';
+
+  @override
+  String get batteryWatch_statusOk => 'Всё в порядке';
+
+  @override
+  String get batteryWatch_statusUnknown => 'Пока мало показаний';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'При таком темпе разрядится примерно через $days дн.';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '$volts В в день за последнюю неделю';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return 'Последнее показание: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return 'Показаний за 30 дней: $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'История батареи';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'График батареи: $count показаний, от $low В до $high В';
+  }
+
+  @override
+  String get batteryWatch_clear => 'Очистить историю';
+
+  @override
+  String get batteryWatch_unknownRepeater => 'Неизвестный ретранслятор';
+
+  @override
+  String get batteryWatch_cleared => 'История очищена';
+
+  @override
+  String get batteryWatch_auto => 'Проверять автоматически';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Пока радио подключено, приложение периодически запрашивает у ретранслятора заряд батареи. Он отвечает, только если вы вошли в него.';
+
+  @override
+  String get batteryWatch_interval => 'Проверять каждые';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours ч';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Не более 6 проверок в час на все ретрансляторы, не чаще раза в 2 минуты.';
+
+  @override
+  String get batteryWatch_add => 'Добавить ретранслятор';
+
+  @override
+  String get batteryWatch_pick => 'Выберите ретранслятор для контроля';
+
+  @override
+  String get batteryWatch_noRepeaters => 'В контактах пока нет ретрансляторов.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Нет ответа на последние $count проверок. Откройте ретранслятор и войдите снова.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Проверка…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Батарея ретранслятора';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name: $percent% ($volts В).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Батарея $name быстро садится: при таком темпе разрядится примерно через $days дн.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name не ответил на $count проверок батареи.';
+  }
 }

@@ -10134,16 +10134,6 @@ class AppLocalizationsSl extends AppLocalizations {
       'Noč čarovnic, božič in valentinovo na njihove datume';
 
   @override
-  String get theme_darkMode => 'Druga tema v temnem načinu';
-
-  @override
-  String get theme_darkModeHint =>
-      'Uporabi drugo temo, ko je naprava v temnem načinu';
-
-  @override
-  String get theme_darkModeTheme => 'Tema temnega načina';
-
-  @override
   String get coords_setting => 'Oblika koordinat';
 
   @override
@@ -10177,21 +10167,140 @@ class AppLocalizationsSl extends AppLocalizations {
   }
 
   @override
-  String get coords_maidenhead => 'Lokator Maidenhead';
+  String get lite_qrPasteHint =>
+      'Ta različica nima optičnega bralnika s kamero. Namesto tega prilepite besedilo iz kode QR.';
 
   @override
-  String get reactions_radioTitle => 'Pošiljaj odzive po radiu';
+  String get lite_qrPasteLabel => 'Besedilo kode QR';
 
   @override
-  String get reactions_radioHint =>
-      'Vsak odziv je paket v etru. Samodejno jih v pasu EU 868 MHz, kjer je čas oddajanja omejen, ohrani na tej napravi.';
+  String get theme_darkMode => 'Druga tema v temnem načinu';
 
   @override
-  String get reactions_radioAuto => 'Samodejno';
+  String get theme_darkModeHint =>
+      'Uporabi drugo temo, ko je naprava v temnem načinu';
 
   @override
-  String get reactions_radioOn => 'Vklop';
+  String get theme_darkModeTheme => 'Tema temnega načina';
 
   @override
-  String get reactions_radioOff => 'Izklop (ta naprava)';
+  String get batteryWatch_title => 'Nadzor baterij';
+
+  @override
+  String get batteryWatch_toolSubtitle =>
+      'Baterije repetitorjev v zadnjih 30 dneh';
+
+  @override
+  String get batteryWatch_empty =>
+      'Še ni meritev baterij repetitorjev. Odprite Stanje ali Telemetrijo repetitorja in njegove meritve bodo tu shranjene 30 dni.';
+
+  @override
+  String get batteryWatch_note =>
+      'Meritve izvirajo iz odgovorov Stanje in Telemetrija, ki jih zahtevate. Nič dodatnega se ne oddaja.';
+
+  @override
+  String get batteryWatch_statusLow => 'Šibka baterija';
+
+  @override
+  String get batteryWatch_statusFalling => 'Hitro pada';
+
+  @override
+  String get batteryWatch_statusQuiet => 'Ni nedavne meritve';
+
+  @override
+  String get batteryWatch_statusOk => 'V redu';
+
+  @override
+  String get batteryWatch_statusUnknown => 'Še premalo meritev';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'Pri tem tempu prazna čez približno $days dni';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '$volts V na dan v zadnjem tednu';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return 'Zadnja meritev: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return 'Meritve v 30 dneh: $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'Zgodovina baterije';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'Graf baterije: $count meritev, med $low V in $high V';
+  }
+
+  @override
+  String get batteryWatch_clear => 'Počisti zgodovino';
+
+  @override
+  String get batteryWatch_unknownRepeater => 'Neznan repetitor';
+
+  @override
+  String get batteryWatch_cleared => 'Zgodovina počiščena';
+
+  @override
+  String get batteryWatch_auto => 'Samodejno preverjaj';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Dokler je radio povezan, aplikacija občasno vpraša repetitor za baterijo. Odgovori le, če ste prijavljeni.';
+
+  @override
+  String get batteryWatch_interval => 'Preverjaj vsakih';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Največ 6 preverjanj na uro za vse repetitorje, vsaj 2 minuti narazen.';
+
+  @override
+  String get batteryWatch_add => 'Dodaj repetitor';
+
+  @override
+  String get batteryWatch_pick => 'Izberite repetitor za nadzor';
+
+  @override
+  String get batteryWatch_noRepeaters => 'V stikih še ni repetitorjev.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Ni odgovora na zadnjih $count preverjanj. Odprite repetitor in se znova prijavite.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Preverjanje…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Baterija repetitorja';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name je na $percent % ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Baterija $name hitro pada: pri tem tempu prazna čez približno $days dni.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name ni odgovoril na $count preverjanj baterije.';
+  }
 }

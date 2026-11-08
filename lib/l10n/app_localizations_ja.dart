@@ -9646,15 +9646,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get seasonal_holidaysHint => 'ハロウィン、クリスマス、バレンタインデーの期間に適用';
 
   @override
-  String get theme_darkMode => 'ダークモードで別のテーマ';
-
-  @override
-  String get theme_darkModeHint => '端末がダークモードのときは別のテーマを使います';
-
-  @override
-  String get theme_darkModeTheme => 'ダークモードのテーマ';
-
-  @override
   String get coords_setting => '座標の形式';
 
   @override
@@ -9688,21 +9679,136 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get coords_maidenhead => 'メイデンヘッド・ロケーター';
+  String get lite_qrPasteHint =>
+      'このビルドにはカメラスキャナーがありません。代わりにQRコードのテキストを貼り付けてください。';
 
   @override
-  String get reactions_radioTitle => 'リアクションを無線で送信';
+  String get lite_qrPasteLabel => 'QRコードのテキスト';
 
   @override
-  String get reactions_radioHint =>
-      'リアクションは1件ごとに電波で送られます。自動では、送信時間が制限されるEUの868 MHz帯ではこの端末内だけに表示します。';
+  String get theme_darkMode => 'ダークモードで別のテーマ';
 
   @override
-  String get reactions_radioAuto => '自動';
+  String get theme_darkModeHint => '端末がダークモードのときは別のテーマを使います';
 
   @override
-  String get reactions_radioOn => 'オン';
+  String get theme_darkModeTheme => 'ダークモードのテーマ';
 
   @override
-  String get reactions_radioOff => 'オフ（この端末）';
+  String get batteryWatch_title => 'バッテリー監視';
+
+  @override
+  String get batteryWatch_toolSubtitle => '過去30日間のリピーターのバッテリー';
+
+  @override
+  String get batteryWatch_empty =>
+      'リピーターのバッテリー記録はまだありません。リピーターのステータスまたはテレメトリーを開くと、記録がここに30日間保存されます。';
+
+  @override
+  String get batteryWatch_note => '記録は、要求したステータスとテレメトリーの応答から取得します。追加の送信はありません。';
+
+  @override
+  String get batteryWatch_statusLow => 'バッテリー残量低下';
+
+  @override
+  String get batteryWatch_statusFalling => '急速に低下中';
+
+  @override
+  String get batteryWatch_statusQuiet => '最近の記録なし';
+
+  @override
+  String get batteryWatch_statusOk => '問題なし';
+
+  @override
+  String get batteryWatch_statusUnknown => '記録がまだ不足しています';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'このペースだと約$days日で空になります';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '過去1週間で1日あたり$volts V';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return '最終記録: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return '30日間の記録: $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'バッテリー履歴';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'バッテリーグラフ: $count件、$low V〜$high V';
+  }
+
+  @override
+  String get batteryWatch_clear => '履歴を消去';
+
+  @override
+  String get batteryWatch_unknownRepeater => '不明なリピーター';
+
+  @override
+  String get batteryWatch_cleared => '履歴を消去しました';
+
+  @override
+  String get batteryWatch_auto => '自動でチェック';
+
+  @override
+  String get batteryWatch_autoHint =>
+      '無線機が接続されている間、アプリが定期的にこのリピーターのバッテリーを問い合わせます。ログインしている場合のみ応答します。';
+
+  @override
+  String get batteryWatch_interval => 'チェック間隔';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours時間';
+  }
+
+  @override
+  String get batteryWatch_budget => '全リピーター合計で1時間に最大6回、2分以上の間隔。';
+
+  @override
+  String get batteryWatch_add => 'リピーターを追加';
+
+  @override
+  String get batteryWatch_pick => '監視するリピーターを選択';
+
+  @override
+  String get batteryWatch_noRepeaters => '連絡先にリピーターがまだありません。';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return '直近$count回のチェックに応答がありません。リピーターを開いて再度ログインしてください。';
+  }
+
+  @override
+  String get batteryWatch_checking => 'チェック中…';
+
+  @override
+  String get batteryWatch_alertTitle => 'リピーターのバッテリー';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$nameは$percent%（$volts V）です。';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return '$nameのバッテリーが急速に低下しています。このペースだと約$days日で空になります。';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$nameは$count回のバッテリーチェックに応答していません。';
+  }
 }

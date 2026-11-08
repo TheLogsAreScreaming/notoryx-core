@@ -1,0 +1,124 @@
+name: Build NOTORYX Core Lite APK
+
+# The lite build for IzzyOnDroid and anyone who wants a small APK with no
+# closed-source parts. tool/lite/apply.sh turns the checkout into the lite
+# build: no on-device translation (llamadart), no picture messages
+# (onnxruntime) and no camera QR scanner (Google ML Kit). See
+# tool/lite/README.md. Debug-signed here, like build-apk.yml; re-sign with
+# the release key on the maintainer's Mac.
+on:
+  push:
+    branches:
+      - dev
+    paths-ignore:
+      - '**/*.md'
+  pull_request:
+    paths:
+      - 'tool/lite/**'
+      - 'pubspec.yaml'
+      - 'lib/build_flavor.dart'
+      - 'lib/services/translation_llm.dart'
+      - 'lib/services/image_codec_backend.dart'
+      - 'lib/services/image_codec_session.dart'
+      - 'lib/widgets/qr_scanner_widget.dart'
+      - '.github/workflows/build-lite-apk.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lite-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Free Android build disk
+        run: bash ci/free-android-disk.sh
+
+      - name: Set up Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.47.6'
+          channel: stable
+          cache: true
+
+      - name: Install and verify Android CMake
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            if "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --install "cmake;3.22.1" &&
+               "$ANDROID_HOME/cmake/3.22.1/bin/cmake" --version; then
+              break
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              echo "::error::Android CMake 3.22.1 could not be installed and verified"
+              exit 1
+            fi
+            rm -rf "$ANDROID_HOME/.temp" "$ANDROID_HOME/cmake/3.22.1"
+            sleep 10
+          done
+
+      - name: Make the lite build
+        run: bash tool/lite/apply.sh
+
+      - name: Get dependencies
+        run: flutter pub get
+
+      - name: Analyze lib
+        run: flutter analyze --fatal-infos lib
+
+      - name: Build ARM64 release APK
+        shell: bash
+        run: |
+          set -euo pipefail
+          version=$(sed -n 's/^version: *\([^+]*\).*/\1/p' pubspec.yaml)
+          flutter build apk --release --target-platform android-arm64 --no-pub \
+            --build-name "${version}-lite"
+
+      - name: Check what's inside
+        shell: bash
+        run: |
+          set -euo pipefail
+          apk=build/app/outputs/flutter-apk/app-release.apk
+          unzip -l "$apk" > contents.txt
+          # The parts the lite build exists to leave out.
+          if grep -E 'libonnxruntime|libllama|libggml|libLiteRt|libbarhopper|libGemma' contents.txt; then
+            echo "::error::The lite APK still contains a library it should leave out"
+            exit 1
+          fi
+          size=$(stat -c %s "$apk")
+          echo "Lite APK: $((size / 1024 / 1024)) MB"
+          echo "Largest files:"
+          sort -k1 -n -r contents.txt > sorted.txt
+          head -12 sorted.txt
+          # Closed-source Google libraries left (for the IzzyOnDroid listing).
+          echo "Closed-source Google classes left:"
+          unzip -p "$apk" 'classes*.dex' > classes.bin
+          strings classes.bin | grep -oE 'Lcom/google/(android/gms|mlkit|firebase)/[a-z]+' | sort -u > google.txt || true
+          cat google.txt
+
+      - name: Prepare artifact
+        shell: bash
+        run: |
+          mkdir -p dist
+          cp build/app/outputs/flutter-apk/app-release.apk dist/NOTORYX-Core-Lite-arm64-v8a.apk
+          cd dist
+          sha256sum NOTORYX-Core-Lite-arm64-v8a.apk > SHA256SUMS.txt
+          ls -lh
+
+      - name: Upload lite artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: NOTORYX-Core-Lite-Android-ARM64
+          path: dist/
+          if-no-files-found: error
+          retention-days: 30

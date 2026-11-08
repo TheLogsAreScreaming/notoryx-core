@@ -10121,16 +10121,6 @@ class AppLocalizationsHu extends AppLocalizations {
       'Halloween, karácsony és Valentin-nap a saját napjukon';
 
   @override
-  String get theme_darkMode => 'Másik téma sötét módban';
-
-  @override
-  String get theme_darkModeHint =>
-      'Másik téma használata, amíg az eszköz sötét módban van';
-
-  @override
-  String get theme_darkModeTheme => 'Sötét mód témája';
-
-  @override
   String get coords_setting => 'Koordinátaformátum';
 
   @override
@@ -10164,21 +10154,140 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get coords_maidenhead => 'Maidenhead lokátor';
+  String get lite_qrPasteHint =>
+      'Ebben a változatban nincs kamerás olvasó. Illeszd be a QR-kód szövegét.';
 
   @override
-  String get reactions_radioTitle => 'Reakciók küldése rádión';
+  String get lite_qrPasteLabel => 'QR-kód szövege';
 
   @override
-  String get reactions_radioHint =>
-      'Minden reakció egy adott csomag. Az Automatikus az EU 868 MHz-es sávon, ahol korlátozott az adásidő, ezen az eszközön tartja őket.';
+  String get theme_darkMode => 'Másik téma sötét módban';
 
   @override
-  String get reactions_radioAuto => 'Automatikus';
+  String get theme_darkModeHint =>
+      'Másik téma használata, amíg az eszköz sötét módban van';
 
   @override
-  String get reactions_radioOn => 'Be';
+  String get theme_darkModeTheme => 'Sötét mód témája';
 
   @override
-  String get reactions_radioOff => 'Ki (ez az eszköz)';
+  String get batteryWatch_title => 'Akkufigyelés';
+
+  @override
+  String get batteryWatch_toolSubtitle => 'Átjátszó akkuk az elmúlt 30 napban';
+
+  @override
+  String get batteryWatch_empty =>
+      'Még nincs akkumulátor-adat átjátszóktól. Nyisd meg egy átjátszó Állapot vagy Telemetria nézetét, és az adatai 30 napig itt maradnak.';
+
+  @override
+  String get batteryWatch_note =>
+      'Az adatok a kért Állapot és Telemetria válaszokból származnak. Semmi többlet nem megy ki rádión.';
+
+  @override
+  String get batteryWatch_statusLow => 'Gyenge akku';
+
+  @override
+  String get batteryWatch_statusFalling => 'Gyorsan csökken';
+
+  @override
+  String get batteryWatch_statusQuiet => 'Nincs friss adat';
+
+  @override
+  String get batteryWatch_statusOk => 'Rendben van';
+
+  @override
+  String get batteryWatch_statusUnknown => 'Még nincs elég adat';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'Ilyen ütemben kb. $days nap múlva lemerül';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '$volts V naponta az elmúlt héten';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return 'Utolsó adat: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return 'Adatok 30 napban: $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'Akku előzmények';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'Akku grafikon: $count adat, $low V és $high V között';
+  }
+
+  @override
+  String get batteryWatch_clear => 'Előzmények törlése';
+
+  @override
+  String get batteryWatch_unknownRepeater => 'Ismeretlen átjátszó';
+
+  @override
+  String get batteryWatch_cleared => 'Előzmények törölve';
+
+  @override
+  String get batteryWatch_auto => 'Automatikus ellenőrzés';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Amíg rádió csatlakozik, az alkalmazás időnként lekérdezi az átjátszó akkuját. Csak akkor válaszol, ha be vagy jelentkezve.';
+
+  @override
+  String get batteryWatch_interval => 'Ellenőrzés gyakorisága';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours óra';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Óránként legfeljebb 6 lekérdezés az összes átjátszóra, legalább 2 perc különbséggel.';
+
+  @override
+  String get batteryWatch_add => 'Átjátszó hozzáadása';
+
+  @override
+  String get batteryWatch_pick => 'Válassz figyelendő átjátszót';
+
+  @override
+  String get batteryWatch_noRepeaters =>
+      'Még nincs átjátszó a névjegyeid között.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Nincs válasz az utolsó $count lekérdezésre. Nyisd meg az átjátszót és jelentkezz be újra.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Ellenőrzés…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Átjátszó akku';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name: $percent% ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return '$name akkuja gyorsan merül: ilyen ütemben kb. $days nap múlva lemerül.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name nem válaszolt $count akku-lekérdezésre.';
+  }
 }

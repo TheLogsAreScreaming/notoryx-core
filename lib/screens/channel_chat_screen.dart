@@ -36,6 +36,7 @@ import '../services/chat_text_scale_service.dart';
 import '../services/image_chunk_transport.dart';
 import '../services/image_codec_service.dart';
 import '../services/received_image_store.dart';
+import '../services/translation_llm.dart';
 import '../services/translation_service.dart';
 import '../utils/lora_airtime.dart';
 import '../helpers/share_links.dart';
@@ -2032,7 +2033,7 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
                         ),
                     ],
                   ),
-                  if (settings.translationEnabled)
+                  if ((settings.translationEnabled && kTranslationLlmAvailable))
                     MessageTranslationButton(
                       enabled: settings.composerTranslationEnabled,
                       languageCode: settings.translationTargetLanguageCode,
@@ -2210,7 +2211,7 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
     String? originalText;
     String? translatedLanguageCode;
     String? translationModelId;
-    if (settings.translationEnabled) {
+    if ((settings.translationEnabled && kTranslationLlmAvailable)) {
       final targetLanguageCode = translationService.resolvedTargetLanguageCode(
         Localizations.localeOf(context).languageCode,
       );

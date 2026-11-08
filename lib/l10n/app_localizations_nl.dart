@@ -10092,16 +10092,6 @@ class AppLocalizationsNl extends AppLocalizations {
       'Halloween, kerst en Valentijnsdag op hun data';
 
   @override
-  String get theme_darkMode => 'Ander thema in donkere modus';
-
-  @override
-  String get theme_darkModeHint =>
-      'Een ander thema gebruiken zolang het apparaat in donkere modus staat';
-
-  @override
-  String get theme_darkModeTheme => 'Thema voor donkere modus';
-
-  @override
   String get coords_setting => 'Coördinaatnotatie';
 
   @override
@@ -10135,21 +10125,140 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
-  String get coords_maidenhead => 'Maidenhead-locator';
+  String get lite_qrPasteHint =>
+      'Deze versie heeft geen camerascanner. Plak in plaats daarvan de tekst van de QR-code.';
 
   @override
-  String get reactions_radioTitle => 'Reacties via de radio sturen';
+  String get lite_qrPasteLabel => 'Tekst van de QR-code';
 
   @override
-  String get reactions_radioHint =>
-      'Elke reactie is een pakket in de lucht. Automatisch houdt ze op dit apparaat op de EU 868 MHz-band, waar zendtijd beperkt is.';
+  String get theme_darkMode => 'Ander thema in donkere modus';
 
   @override
-  String get reactions_radioAuto => 'Automatisch';
+  String get theme_darkModeHint =>
+      'Een ander thema gebruiken zolang het apparaat in donkere modus staat';
 
   @override
-  String get reactions_radioOn => 'Aan';
+  String get theme_darkModeTheme => 'Thema voor donkere modus';
 
   @override
-  String get reactions_radioOff => 'Uit (dit apparaat)';
+  String get batteryWatch_title => 'Batterijbewaking';
+
+  @override
+  String get batteryWatch_toolSubtitle =>
+      'Repeaterbatterijen van de afgelopen 30 dagen';
+
+  @override
+  String get batteryWatch_empty =>
+      'Nog geen batterijmetingen van repeaters. Open Status of Telemetrie van een repeater en de metingen worden hier 30 dagen bewaard.';
+
+  @override
+  String get batteryWatch_note =>
+      'Metingen komen uit de Status- en Telemetrie-antwoorden die je opvraagt. Er wordt niets extra uitgezonden.';
+
+  @override
+  String get batteryWatch_statusLow => 'Batterij bijna leeg';
+
+  @override
+  String get batteryWatch_statusFalling => 'Daalt snel';
+
+  @override
+  String get batteryWatch_statusQuiet => 'Geen recente meting';
+
+  @override
+  String get batteryWatch_statusOk => 'Ziet er goed uit';
+
+  @override
+  String get batteryWatch_statusUnknown => 'Nog niet genoeg metingen';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'Bij dit tempo leeg over ongeveer $days dagen';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '$volts V per dag in de afgelopen week';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return 'Laatste meting: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return 'Metingen in 30 dagen: $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'Batterijgeschiedenis';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'Batterijgrafiek: $count metingen, tussen $low V en $high V';
+  }
+
+  @override
+  String get batteryWatch_clear => 'Geschiedenis wissen';
+
+  @override
+  String get batteryWatch_unknownRepeater => 'Onbekende repeater';
+
+  @override
+  String get batteryWatch_cleared => 'Geschiedenis gewist';
+
+  @override
+  String get batteryWatch_auto => 'Automatisch controleren';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Zolang er een radio verbonden is, vraagt de app deze repeater regelmatig naar zijn batterij. Hij antwoordt alleen als je bent ingelogd.';
+
+  @override
+  String get batteryWatch_interval => 'Controleer elke';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours u';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Hoogstens 6 controles per uur voor alle repeaters, minstens 2 minuten uit elkaar.';
+
+  @override
+  String get batteryWatch_add => 'Repeater toevoegen';
+
+  @override
+  String get batteryWatch_pick => 'Kies een repeater om te bewaken';
+
+  @override
+  String get batteryWatch_noRepeaters => 'Nog geen repeaters in je contacten.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Geen antwoord op de laatste $count controles. Open de repeater en log opnieuw in.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Controleren…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Repeaterbatterij';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name staat op $percent% ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'De batterij van $name daalt snel: bij dit tempo leeg over ongeveer $days dagen.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name heeft $count batterijcontroles niet beantwoord.';
+  }
 }

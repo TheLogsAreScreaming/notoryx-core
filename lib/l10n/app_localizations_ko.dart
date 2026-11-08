@@ -9659,15 +9659,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get seasonal_holidaysHint => '핼러윈, 크리스마스, 밸런타인데이 기간에 적용';
 
   @override
-  String get theme_darkMode => '다크 모드에서 다른 테마';
-
-  @override
-  String get theme_darkModeHint => '기기가 다크 모드일 때 다른 테마를 사용합니다';
-
-  @override
-  String get theme_darkModeTheme => '다크 모드 테마';
-
-  @override
   String get coords_setting => '좌표 형식';
 
   @override
@@ -9701,21 +9692,137 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get coords_maidenhead => '메이든헤드 로케이터';
+  String get lite_qrPasteHint =>
+      '이 빌드에는 카메라 스캐너가 없습니다. 대신 QR 코드의 텍스트를 붙여 넣으세요.';
 
   @override
-  String get reactions_radioTitle => '반응을 무선으로 보내기';
+  String get lite_qrPasteLabel => 'QR 코드 텍스트';
 
   @override
-  String get reactions_radioHint =>
-      '반응 하나하나가 전파로 나가는 패킷입니다. 자동은 송신 시간이 제한된 EU 868 MHz 대역에서 이 기기에만 표시합니다.';
+  String get theme_darkMode => '다크 모드에서 다른 테마';
 
   @override
-  String get reactions_radioAuto => '자동';
+  String get theme_darkModeHint => '기기가 다크 모드일 때 다른 테마를 사용합니다';
 
   @override
-  String get reactions_radioOn => '켜기';
+  String get theme_darkModeTheme => '다크 모드 테마';
 
   @override
-  String get reactions_radioOff => '끄기(이 기기)';
+  String get batteryWatch_title => '배터리 감시';
+
+  @override
+  String get batteryWatch_toolSubtitle => '지난 30일간 리피터 배터리';
+
+  @override
+  String get batteryWatch_empty =>
+      '아직 리피터 배터리 기록이 없습니다. 리피터의 상태 또는 텔레메트리를 열면 기록이 여기에 30일간 보관됩니다.';
+
+  @override
+  String get batteryWatch_note =>
+      '기록은 요청한 상태 및 텔레메트리 응답에서 가져옵니다. 추가로 전송되는 것은 없습니다.';
+
+  @override
+  String get batteryWatch_statusLow => '배터리 부족';
+
+  @override
+  String get batteryWatch_statusFalling => '빠르게 감소 중';
+
+  @override
+  String get batteryWatch_statusQuiet => '최근 기록 없음';
+
+  @override
+  String get batteryWatch_statusOk => '정상';
+
+  @override
+  String get batteryWatch_statusUnknown => '아직 기록이 부족합니다';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return '이 속도라면 약 $days일 후 방전';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '지난 1주일간 하루 $volts V';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return '마지막 기록: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return '30일간 기록: $count';
+  }
+
+  @override
+  String get batteryWatch_history => '배터리 기록';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return '배터리 그래프: $count개 기록, $low V~$high V';
+  }
+
+  @override
+  String get batteryWatch_clear => '기록 지우기';
+
+  @override
+  String get batteryWatch_unknownRepeater => '알 수 없는 리피터';
+
+  @override
+  String get batteryWatch_cleared => '기록을 지웠습니다';
+
+  @override
+  String get batteryWatch_auto => '자동 확인';
+
+  @override
+  String get batteryWatch_autoHint =>
+      '무전기가 연결된 동안 앱이 주기적으로 이 리피터의 배터리를 묻습니다. 로그인한 경우에만 응답합니다.';
+
+  @override
+  String get batteryWatch_interval => '확인 간격';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours시간';
+  }
+
+  @override
+  String get batteryWatch_budget => '모든 리피터를 합쳐 시간당 최대 6회, 최소 2분 간격.';
+
+  @override
+  String get batteryWatch_add => '리피터 추가';
+
+  @override
+  String get batteryWatch_pick => '감시할 리피터 선택';
+
+  @override
+  String get batteryWatch_noRepeaters => '아직 연락처에 리피터가 없습니다.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return '최근 $count번의 확인에 응답이 없습니다. 리피터를 열고 다시 로그인하세요.';
+  }
+
+  @override
+  String get batteryWatch_checking => '확인 중…';
+
+  @override
+  String get batteryWatch_alertTitle => '리피터 배터리';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name: $percent% ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return '$name의 배터리가 빠르게 줄고 있습니다. 이 속도라면 약 $days일 후 방전됩니다.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name이(가) 배터리 확인 $count회에 응답하지 않았습니다.';
+  }
 }

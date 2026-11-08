@@ -1,0 +1,4 @@
+/// The lite build's copy of lib/services/image_codec_backend.dart. The lite
+/// build has no inference runtime, so ImageCodecService reports the codec as
+/// unavailable (it checks kLiteBuild first).
+const bool kImageCodecBitstreamPathAvailable = false;

@@ -7,6 +7,7 @@ import '../widgets/glass_action_row.dart';
 
 import 'antenna_coverage_screen.dart';
 import 'antenna_hunt_screen.dart';
+import 'battery_watch_screen.dart';
 import 'bastion_about_screen.dart';
 import 'bot_settings_screen.dart';
 import 'networks_screen.dart';
@@ -169,6 +170,12 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
             title: l10n.bastion_repeaterTools,
             subtitle: l10n.bastionTools_repeaterHint,
             builder: (_) => const BastionRepeaterToolsScreen(),
+          ),
+          _ToolAction(
+            icon: Icons.battery_charging_full,
+            title: l10n.batteryWatch_title,
+            subtitle: l10n.batteryWatch_toolSubtitle,
+            builder: (_) => const BatteryWatchScreen(),
           ),
           _ToolAction(
             icon: Icons.network_ping,

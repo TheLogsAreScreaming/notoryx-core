@@ -21,6 +21,8 @@ import 'package:meshcore_open/models/channel_message.dart';
 import 'package:meshcore_open/models/contact.dart';
 import 'package:meshcore_open/models/access_control.dart';
 import 'package:meshcore_open/models/message.dart';
+import 'package:meshcore_open/screens/battery_watch_screen.dart';
+import 'package:meshcore_open/services/repeater_battery_history.dart';
 import 'package:meshcore_open/screens/path_graph_screen.dart';
 import 'package:meshcore_open/screens/access_control_screen.dart';
 import 'package:meshcore_open/screens/channel_chat_screen.dart';
@@ -447,6 +449,24 @@ void main() {
   final screens = <String, Widget Function()>{
     'home': () => const BastionHomeScreen(),
     'tools': () => const BastionToolsScreen(),
+    'battery_watch': () {
+      final history = RepeaterBatteryHistory(PrefsManager.instance)
+        ..setScope('a' * 64);
+      final now = DateTime.now();
+      for (var h = 0; h <= 24 * 12; h += 3) {
+        final at = now.subtract(Duration(hours: 24 * 12 - h));
+        final day = (h % 24) / 24;
+        // A solar repeater: up in the day, down at night, steady overall.
+        final sun = (day > 0.3 && day < 0.7) ? 60 : -40;
+        history.record(_contacts[2].publicKeyHex, 3950 + sun, at: at);
+        // A repeater whose battery is failing.
+        history.record(_contacts[3].publicKeyHex, 3980 - h * 3, at: at);
+      }
+      return ChangeNotifierProvider<RepeaterBatteryHistory?>.value(
+        value: history,
+        child: const BatteryWatchScreen(),
+      );
+    },
     'path_graph': () => const PathGraphScreen(),
     'contacts': () => const ContactsScreen(hideBackButton: true),
     'channels': () => const ChannelsScreen(),

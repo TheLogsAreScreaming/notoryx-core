@@ -10145,16 +10145,6 @@ class AppLocalizationsIt extends AppLocalizations {
       'Halloween, Natale e San Valentino nelle loro date';
 
   @override
-  String get theme_darkMode => 'Tema diverso in modalità scura';
-
-  @override
-  String get theme_darkModeHint =>
-      'Usa un altro tema quando il dispositivo è in modalità scura';
-
-  @override
-  String get theme_darkModeTheme => 'Tema della modalità scura';
-
-  @override
   String get coords_setting => 'Formato coordinate';
 
   @override
@@ -10188,21 +10178,141 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
-  String get coords_maidenhead => 'Locatore Maidenhead';
+  String get lite_qrPasteHint =>
+      'Questa versione non ha lo scanner con fotocamera. Incolla il testo del codice QR.';
 
   @override
-  String get reactions_radioTitle => 'Invia le reazioni via radio';
+  String get lite_qrPasteLabel => 'Testo del codice QR';
 
   @override
-  String get reactions_radioHint =>
-      'Ogni reazione è un pacchetto trasmesso. Automatico le tiene su questo dispositivo nella banda UE 868 MHz, dove il tempo di trasmissione è limitato.';
+  String get theme_darkMode => 'Tema diverso in modalità scura';
 
   @override
-  String get reactions_radioAuto => 'Automatico';
+  String get theme_darkModeHint =>
+      'Usa un altro tema quando il dispositivo è in modalità scura';
 
   @override
-  String get reactions_radioOn => 'Sì';
+  String get theme_darkModeTheme => 'Tema della modalità scura';
 
   @override
-  String get reactions_radioOff => 'No (questo dispositivo)';
+  String get batteryWatch_title => 'Controllo batterie';
+
+  @override
+  String get batteryWatch_toolSubtitle =>
+      'Batterie dei ripetitori negli ultimi 30 giorni';
+
+  @override
+  String get batteryWatch_empty =>
+      'Ancora nessuna lettura di batteria dai ripetitori. Apri Stato o Telemetria di un ripetitore e le sue letture restano qui per 30 giorni.';
+
+  @override
+  String get batteryWatch_note =>
+      'Le letture arrivano dalle risposte di Stato e Telemetria che richiedi. Non viene trasmesso nulla in più.';
+
+  @override
+  String get batteryWatch_statusLow => 'Batteria scarica';
+
+  @override
+  String get batteryWatch_statusFalling => 'In calo rapido';
+
+  @override
+  String get batteryWatch_statusQuiet => 'Nessuna lettura recente';
+
+  @override
+  String get batteryWatch_statusOk => 'Tutto bene';
+
+  @override
+  String get batteryWatch_statusUnknown => 'Letture non ancora sufficienti';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'Scarica tra circa $days giorni a questo ritmo';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '$volts V al giorno nell\'ultima settimana';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return 'Ultima lettura: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return 'Letture in 30 giorni: $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'Storico batteria';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'Grafico batteria: $count letture, tra $low V e $high V';
+  }
+
+  @override
+  String get batteryWatch_clear => 'Cancella storico';
+
+  @override
+  String get batteryWatch_unknownRepeater => 'Ripetitore sconosciuto';
+
+  @override
+  String get batteryWatch_cleared => 'Storico cancellato';
+
+  @override
+  String get batteryWatch_auto => 'Controlla automaticamente';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Mentre una radio è connessa, l\'app chiede periodicamente a questo ripetitore la sua batteria. Risponde solo se hai effettuato l\'accesso.';
+
+  @override
+  String get batteryWatch_interval => 'Controlla ogni';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Al massimo 6 controlli all\'ora per tutti i ripetitori, ad almeno 2 minuti di distanza.';
+
+  @override
+  String get batteryWatch_add => 'Aggiungi un ripetitore';
+
+  @override
+  String get batteryWatch_pick => 'Scegli un ripetitore da controllare';
+
+  @override
+  String get batteryWatch_noRepeaters =>
+      'Ancora nessun ripetitore nei contatti.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Nessuna risposta agli ultimi $count controlli. Apri il ripetitore ed effettua di nuovo l\'accesso.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Controllo…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Batteria del ripetitore';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name è al $percent% ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'La batteria di $name cala in fretta: scarica tra circa $days giorni a questo ritmo.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name non ha risposto a $count controlli della batteria.';
+  }
 }

@@ -15,6 +15,7 @@ import '../services/repeater_command_service.dart';
 import '../theme/mesh_theme.dart';
 import '../utils/battery_utils.dart';
 import '../widgets/admin_wait_banner.dart';
+import '../widgets/battery_watch_widgets.dart';
 import '../widgets/mesh_ui.dart';
 import '../widgets/routing_sheet.dart';
 import '../helpers/snack_bar_builder.dart';
@@ -561,6 +562,10 @@ class _RepeaterStatusScreenState extends State<RepeaterStatusScreen> {
                   : scheme.onSurfaceVariant,
             ),
           ]),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(16, 12, 16, 0),
+          child: BatteryTrendCard(repeaterKey: widget.repeater.publicKeyHex),
         ),
 
         // ── Radio ──────────────────────────────────────────────────────────

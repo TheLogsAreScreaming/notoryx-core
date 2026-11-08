@@ -10117,16 +10117,6 @@ class AppLocalizationsPt extends AppLocalizations {
       'Halloween, Natal e Dia dos Namorados nas suas datas';
 
   @override
-  String get theme_darkMode => 'Outro tema no modo escuro';
-
-  @override
-  String get theme_darkModeHint =>
-      'Usar outro tema enquanto o dispositivo estiver no modo escuro';
-
-  @override
-  String get theme_darkModeTheme => 'Tema do modo escuro';
-
-  @override
   String get coords_setting => 'Formato de coordenadas';
 
   @override
@@ -10160,21 +10150,141 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get coords_maidenhead => 'Localizador Maidenhead';
+  String get lite_qrPasteHint =>
+      'Esta versão não tem leitor com câmara. Cole o texto do código QR.';
 
   @override
-  String get reactions_radioTitle => 'Enviar reações pelo rádio';
+  String get lite_qrPasteLabel => 'Texto do código QR';
 
   @override
-  String get reactions_radioHint =>
-      'Cada reação é um pacote no ar. Automático mantém-nas neste dispositivo na banda europeia de 868 MHz, onde o tempo de emissão é limitado.';
+  String get theme_darkMode => 'Outro tema no modo escuro';
 
   @override
-  String get reactions_radioAuto => 'Automático';
+  String get theme_darkModeHint =>
+      'Usar outro tema enquanto o dispositivo estiver no modo escuro';
 
   @override
-  String get reactions_radioOn => 'Ligado';
+  String get theme_darkModeTheme => 'Tema do modo escuro';
 
   @override
-  String get reactions_radioOff => 'Desligado (este dispositivo)';
+  String get batteryWatch_title => 'Vigilância de baterias';
+
+  @override
+  String get batteryWatch_toolSubtitle =>
+      'Baterias dos repetidores nos últimos 30 dias';
+
+  @override
+  String get batteryWatch_empty =>
+      'Ainda não há leituras de bateria de repetidores. Abra o Estado ou a Telemetria de um repetidor e as leituras ficam guardadas aqui por 30 dias.';
+
+  @override
+  String get batteryWatch_note =>
+      'As leituras vêm das respostas de Estado e Telemetria que você pede. Nada extra é transmitido.';
+
+  @override
+  String get batteryWatch_statusLow => 'Bateria fraca';
+
+  @override
+  String get batteryWatch_statusFalling => 'Caindo rápido';
+
+  @override
+  String get batteryWatch_statusQuiet => 'Sem leitura recente';
+
+  @override
+  String get batteryWatch_statusOk => 'Tudo bem';
+
+  @override
+  String get batteryWatch_statusUnknown => 'Ainda não há leituras suficientes';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'Vazia em cerca de $days dias neste ritmo';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '$volts V por dia na última semana';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return 'Última leitura: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return 'Leituras em 30 dias: $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'Histórico da bateria';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'Gráfico da bateria: $count leituras, entre $low V e $high V';
+  }
+
+  @override
+  String get batteryWatch_clear => 'Limpar histórico';
+
+  @override
+  String get batteryWatch_unknownRepeater => 'Repetidor desconhecido';
+
+  @override
+  String get batteryWatch_cleared => 'Histórico limpo';
+
+  @override
+  String get batteryWatch_auto => 'Verificar automaticamente';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Enquanto um rádio estiver ligado, a app pergunta periodicamente a este repetidor pela bateria. Só responde se tiver sessão iniciada.';
+
+  @override
+  String get batteryWatch_interval => 'Verificar a cada';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'No máximo 6 verificações por hora em todos os repetidores, com pelo menos 2 minutos de intervalo.';
+
+  @override
+  String get batteryWatch_add => 'Adicionar um repetidor';
+
+  @override
+  String get batteryWatch_pick => 'Escolha um repetidor para vigiar';
+
+  @override
+  String get batteryWatch_noRepeaters =>
+      'Ainda não há repetidores nos contactos.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Sem resposta às últimas $count verificações. Abra o repetidor e inicie sessão novamente.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'A verificar…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Bateria do repetidor';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name está a $percent% ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'A bateria de $name está a cair depressa: vazia em cerca de $days dias a este ritmo.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name não respondeu a $count verificações de bateria.';
+  }
 }

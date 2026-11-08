@@ -10052,16 +10052,6 @@ class AppLocalizationsSv extends AppLocalizations {
       'Halloween, jul och alla hjärtans dag på sina datum';
 
   @override
-  String get theme_darkMode => 'Annat tema i mörkt läge';
-
-  @override
-  String get theme_darkModeHint =>
-      'Använd ett annat tema när enheten är i mörkt läge';
-
-  @override
-  String get theme_darkModeTheme => 'Tema i mörkt läge';
-
-  @override
   String get coords_setting => 'Koordinatformat';
 
   @override
@@ -10095,21 +10085,141 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get coords_maidenhead => 'Maidenhead-lokator';
+  String get lite_qrPasteHint =>
+      'Den här versionen har ingen kameraskanner. Klistra in texten från QR-koden i stället.';
 
   @override
-  String get reactions_radioTitle => 'Skicka reaktioner via radio';
+  String get lite_qrPasteLabel => 'QR-kodens text';
 
   @override
-  String get reactions_radioHint =>
-      'Varje reaktion är ett paket i luften. Automatiskt behåller dem på den här enheten på EU:s 868 MHz-band, där sändningstiden är begränsad.';
+  String get theme_darkMode => 'Annat tema i mörkt läge';
 
   @override
-  String get reactions_radioAuto => 'Automatiskt';
+  String get theme_darkModeHint =>
+      'Använd ett annat tema när enheten är i mörkt läge';
 
   @override
-  String get reactions_radioOn => 'På';
+  String get theme_darkModeTheme => 'Tema i mörkt läge';
 
   @override
-  String get reactions_radioOff => 'Av (den här enheten)';
+  String get batteryWatch_title => 'Batteribevakning';
+
+  @override
+  String get batteryWatch_toolSubtitle =>
+      'Repeaterbatterier de senaste 30 dagarna';
+
+  @override
+  String get batteryWatch_empty =>
+      'Inga batterivärden från repeatrar än. Öppna Status eller Telemetri för en repeater så sparas dess värden här i 30 dagar.';
+
+  @override
+  String get batteryWatch_note =>
+      'Värdena kommer från Status- och Telemetrisvar som du begär. Inget extra sänds ut.';
+
+  @override
+  String get batteryWatch_statusLow => 'Lågt batteri';
+
+  @override
+  String get batteryWatch_statusFalling => 'Sjunker snabbt';
+
+  @override
+  String get batteryWatch_statusQuiet => 'Inget nytt värde';
+
+  @override
+  String get batteryWatch_statusOk => 'Ser bra ut';
+
+  @override
+  String get batteryWatch_statusUnknown => 'Inte tillräckligt med värden än';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'Tomt om ungefär $days dagar i den här takten';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '$volts V per dag den senaste veckan';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return 'Senaste värde: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return 'Värden på 30 dagar: $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'Batterihistorik';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'Batteridiagram: $count värden, mellan $low V och $high V';
+  }
+
+  @override
+  String get batteryWatch_clear => 'Rensa historik';
+
+  @override
+  String get batteryWatch_unknownRepeater => 'Okänd repeater';
+
+  @override
+  String get batteryWatch_cleared => 'Historiken rensad';
+
+  @override
+  String get batteryWatch_auto => 'Kontrollera automatiskt';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Medan en radio är ansluten frågar appen regelbundet den här repeatern om batteriet. Den svarar bara om du är inloggad.';
+
+  @override
+  String get batteryWatch_interval => 'Kontrollera var';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Högst 6 kontroller i timmen för alla repeatrar, minst 2 minuter isär.';
+
+  @override
+  String get batteryWatch_add => 'Lägg till repeater';
+
+  @override
+  String get batteryWatch_pick => 'Välj en repeater att bevaka';
+
+  @override
+  String get batteryWatch_noRepeaters =>
+      'Inga repeatrar bland dina kontakter än.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Inget svar på de senaste $count kontrollerna. Öppna repeatern och logga in igen.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Kontrollerar…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Repeaterbatteri';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name ligger på $percent % ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Batteriet i $name sjunker snabbt: tomt om ungefär $days dagar i den här takten.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name har inte svarat på $count batterikontroller.';
+  }
 }

@@ -10179,16 +10179,6 @@ class AppLocalizationsPl extends AppLocalizations {
       'Halloween, Boże Narodzenie i Walentynki w swoich terminach';
 
   @override
-  String get theme_darkMode => 'Inny motyw w trybie ciemnym';
-
-  @override
-  String get theme_darkModeHint =>
-      'Używaj innego motywu, gdy urządzenie jest w trybie ciemnym';
-
-  @override
-  String get theme_darkModeTheme => 'Motyw trybu ciemnego';
-
-  @override
   String get coords_setting => 'Format współrzędnych';
 
   @override
@@ -10222,21 +10212,140 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
-  String get coords_maidenhead => 'Lokator Maidenhead';
+  String get lite_qrPasteHint =>
+      'Ta wersja nie ma skanera z aparatem. Wklej zamiast tego tekst z kodu QR.';
 
   @override
-  String get reactions_radioTitle => 'Wysyłaj reakcje przez radio';
+  String get lite_qrPasteLabel => 'Tekst kodu QR';
 
   @override
-  String get reactions_radioHint =>
-      'Każda reakcja to pakiet w eterze. Automatycznie zostawia je na tym urządzeniu w paśmie UE 868 MHz, gdzie czas nadawania jest ograniczony.';
+  String get theme_darkMode => 'Inny motyw w trybie ciemnym';
 
   @override
-  String get reactions_radioAuto => 'Automatycznie';
+  String get theme_darkModeHint =>
+      'Używaj innego motywu, gdy urządzenie jest w trybie ciemnym';
 
   @override
-  String get reactions_radioOn => 'Wł.';
+  String get theme_darkModeTheme => 'Motyw trybu ciemnego';
 
   @override
-  String get reactions_radioOff => 'Wył. (to urządzenie)';
+  String get batteryWatch_title => 'Nadzór baterii';
+
+  @override
+  String get batteryWatch_toolSubtitle =>
+      'Baterie przekaźników z ostatnich 30 dni';
+
+  @override
+  String get batteryWatch_empty =>
+      'Brak jeszcze odczytów baterii przekaźników. Otwórz Status lub Telemetrię przekaźnika, a jego odczyty będą tu przechowywane przez 30 dni.';
+
+  @override
+  String get batteryWatch_note =>
+      'Odczyty pochodzą z odpowiedzi Status i Telemetria, o które prosisz. Nic dodatkowego nie jest nadawane.';
+
+  @override
+  String get batteryWatch_statusLow => 'Słaba bateria';
+
+  @override
+  String get batteryWatch_statusFalling => 'Szybko spada';
+
+  @override
+  String get batteryWatch_statusQuiet => 'Brak świeżego odczytu';
+
+  @override
+  String get batteryWatch_statusOk => 'W porządku';
+
+  @override
+  String get batteryWatch_statusUnknown => 'Jeszcze za mało odczytów';
+
+  @override
+  String batteryWatch_emptyIn(String days) {
+    return 'Przy tym tempie rozładuje się za około $days dni';
+  }
+
+  @override
+  String batteryWatch_trend(String volts) {
+    return '$volts V dziennie w ostatnim tygodniu';
+  }
+
+  @override
+  String batteryWatch_lastReading(String age) {
+    return 'Ostatni odczyt: $age';
+  }
+
+  @override
+  String batteryWatch_readings(int count) {
+    return 'Odczyty z 30 dni: $count';
+  }
+
+  @override
+  String get batteryWatch_history => 'Historia baterii';
+
+  @override
+  String batteryWatch_chartLabel(int count, String low, String high) {
+    return 'Wykres baterii: $count odczytów, między $low V a $high V';
+  }
+
+  @override
+  String get batteryWatch_clear => 'Wyczyść historię';
+
+  @override
+  String get batteryWatch_unknownRepeater => 'Nieznany przekaźnik';
+
+  @override
+  String get batteryWatch_cleared => 'Historia wyczyszczona';
+
+  @override
+  String get batteryWatch_auto => 'Sprawdzaj automatycznie';
+
+  @override
+  String get batteryWatch_autoHint =>
+      'Gdy radio jest połączone, aplikacja co jakiś czas pyta ten przekaźnik o baterię. Odpowiada tylko, jeśli jesteś zalogowany.';
+
+  @override
+  String get batteryWatch_interval => 'Sprawdzaj co';
+
+  @override
+  String batteryWatch_hours(int hours) {
+    return '$hours h';
+  }
+
+  @override
+  String get batteryWatch_budget =>
+      'Najwyżej 6 zapytań na godzinę dla wszystkich przekaźników, co najmniej 2 minuty odstępu.';
+
+  @override
+  String get batteryWatch_add => 'Dodaj przekaźnik';
+
+  @override
+  String get batteryWatch_pick => 'Wybierz przekaźnik do nadzoru';
+
+  @override
+  String get batteryWatch_noRepeaters => 'Brak przekaźników w kontaktach.';
+
+  @override
+  String batteryWatch_noReply(int count) {
+    return 'Brak odpowiedzi na ostatnie $count zapytań. Otwórz przekaźnik i zaloguj się ponownie.';
+  }
+
+  @override
+  String get batteryWatch_checking => 'Sprawdzanie…';
+
+  @override
+  String get batteryWatch_alertTitle => 'Bateria przekaźnika';
+
+  @override
+  String batteryWatch_alertLow(String name, int percent, String volts) {
+    return '$name: $percent% ($volts V).';
+  }
+
+  @override
+  String batteryWatch_alertFalling(String name, String days) {
+    return 'Bateria $name szybko spada: przy tym tempie rozładuje się za około $days dni.';
+  }
+
+  @override
+  String batteryWatch_alertSilent(String name, int count) {
+    return '$name nie odpowiedział na $count zapytań o baterię.';
+  }
 }

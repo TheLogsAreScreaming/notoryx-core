@@ -1,4 +1,5 @@
 import '../services/node_telemetry_store.dart';
+import '../services/repeater_battery_history.dart';
 import '../helpers/cayenne_lpp.dart';
 import 'dart:async';
 import 'dart:convert';
@@ -495,6 +496,9 @@ class MeshCoreConnector extends ChangeNotifier {
 
   /// App-owned cache; optional for headless connectors and tests.
   NodeTelemetryStore? telemetryStore;
+
+  /// Where repeater battery readings are kept over time; set by the app.
+  RepeaterBatteryHistory? batteryHistory;
   final Map<String, RepeaterBatterySnapshot> _repeaterBatterySnapshots = {};
   bool _unreadStateLoaded = false;
   int _cachedContactsUnreadTotal = 0;
@@ -875,6 +879,7 @@ class MeshCoreConnector extends ChangeNotifier {
       source: source,
     );
     _repeaterBatterySnapshots[contactKeyHex] = snapshot;
+    batteryHistory?.record(contactKeyHex, millivolts);
     telemetryStore?.record(
       contactKeyHex,
       [
