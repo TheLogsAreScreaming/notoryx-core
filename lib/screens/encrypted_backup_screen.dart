@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
 
+import '../l10n/l10n.dart';
 import '../services/encrypted_backup_service.dart';
 import '../widgets/ember_backdrop.dart';
 
@@ -32,9 +33,7 @@ class _EncryptedBackupScreenState extends State<EncryptedBackupScreen> {
   Future<void> _export() async {
     if (_passphrase.text.length < 12 ||
         _passphrase.text != _confirmation.text) {
-      setState(
-        () => _status = 'Use at least 12 characters and matching passphrases.',
-      );
+      setState(() => _status = context.l10n.bk_mismatch);
       return;
     }
     setState(() {
@@ -66,17 +65,11 @@ class _EncryptedBackupScreenState extends State<EncryptedBackupScreen> {
       _passphrase.clear();
       _confirmation.clear();
       if (mounted) {
-        setState(
-          () => _status =
-              'Backup prepared. Keep your saved file and passphrase somewhere safe.',
-        );
+        setState(() => _status = context.l10n.bk_done);
       }
     } catch (_) {
       if (mounted) {
-        setState(
-          () => _status =
-              'Could not export the backup. Your existing data was unchanged.',
-        );
+        setState(() => _status = context.l10n.bk_failed);
       }
     } finally {
       if (file != null && await file.exists()) await file.delete();
@@ -89,7 +82,7 @@ class _EncryptedBackupScreenState extends State<EncryptedBackupScreen> {
     try {
       file = await openFile();
     } catch (_) {
-      setState(() => _status = 'Could not open that file.');
+      setState(() => _status = context.l10n.bk_cantOpen);
       return;
     }
     if (file == null || !mounted) return;
@@ -107,10 +100,7 @@ class _EncryptedBackupScreenState extends State<EncryptedBackupScreen> {
         );
       } catch (_) {
         if (mounted) {
-          setState(
-            () => _status =
-                'Wrong passphrase, or this isn\'t a valid backup. Nothing was changed.',
-          );
+          setState(() => _status = context.l10n.bk_wrongPass);
         }
         return;
       }
@@ -121,18 +111,16 @@ class _EncryptedBackupScreenState extends State<EncryptedBackupScreen> {
       final go = await showDialog<bool>(
         context: context,
         builder: (dialog) => AlertDialog(
-          title: const Text('Restore this backup?'),
-          content: Text(
-            'This replaces $count saved settings on this device, including contacts, channel keys and waypoints, with the ones in the backup. Message history is not affected. This cannot be undone.',
-          ),
+          title: Text(context.l10n.bk_confirmTitle),
+          content: Text(context.l10n.bk_confirmBody(count)),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(dialog, false),
-              child: const Text('Cancel'),
+              child: Text(context.l10n.common_cancel),
             ),
             FilledButton(
               onPressed: () => Navigator.pop(dialog, true),
-              child: const Text('Restore'),
+              child: Text(context.l10n.bk_restore),
             ),
           ],
         ),
@@ -141,17 +129,11 @@ class _EncryptedBackupScreenState extends State<EncryptedBackupScreen> {
       final restored = await service.restore(values);
       _restorePassphrase.clear();
       if (mounted) {
-        setState(
-          () => _status =
-              'Restored $restored settings. Close the app fully and open it again to use them.',
-        );
+        setState(() => _status = context.l10n.bk_restored(restored));
       }
     } catch (_) {
       if (mounted) {
-        setState(
-          () => _status =
-              'Restore stopped part way, so some settings may have changed. Try again.',
-        );
+        setState(() => _status = context.l10n.bk_partial);
       }
     } finally {
       if (mounted) setState(() => _busy = false);
@@ -167,18 +149,14 @@ class _EncryptedBackupScreenState extends State<EncryptedBackupScreen> {
         backgroundColor: Colors.transparent,
         surfaceTintColor: Colors.transparent,
         scrolledUnderElevation: 0,
-        title: const Text('Encrypted backup'),
+        title: Text(context.l10n.bk_title),
       ),
       body: ListView(
         padding: const EdgeInsets.all(20),
         children: [
-          const Text(
-            'Save an encrypted copy of app settings, contacts, channel keys, waypoints and drafts. Message history, offline maps, photos and radio firmware are not included.',
-          ),
+          Text(context.l10n.bk_intro),
           const SizedBox(height: 16),
-          const Text(
-            'Keep the passphrase separately. A lost passphrase cannot be recovered.',
-          ),
+          Text(context.l10n.bk_keep),
           const SizedBox(height: 16),
           TextField(
             controller: _passphrase,
@@ -186,9 +164,7 @@ class _EncryptedBackupScreenState extends State<EncryptedBackupScreen> {
             enabled: !_busy,
             autocorrect: false,
             enableSuggestions: false,
-            decoration: const InputDecoration(
-              labelText: 'Passphrase (12+ characters)',
-            ),
+            decoration: InputDecoration(labelText: context.l10n.bk_pass),
           ),
           TextField(
             controller: _confirmation,
@@ -196,15 +172,15 @@ class _EncryptedBackupScreenState extends State<EncryptedBackupScreen> {
             enabled: !_busy,
             autocorrect: false,
             enableSuggestions: false,
-            decoration: const InputDecoration(labelText: 'Confirm passphrase'),
+            decoration: InputDecoration(labelText: context.l10n.bk_confirm),
           ),
           FilledButton(
             onPressed: _busy ? null : _export,
-            child: Text(_busy ? 'Working…' : 'Save encrypted backup'),
+            child: Text(_busy ? context.l10n.bk_working : context.l10n.bk_save),
           ),
           const Divider(height: 40),
-          const Text(
-            'Restore a backup',
+          Text(
+            context.l10n.bk_restoreTitle,
             style: TextStyle(fontWeight: FontWeight.w700),
           ),
           TextField(
@@ -214,13 +190,13 @@ class _EncryptedBackupScreenState extends State<EncryptedBackupScreen> {
             enabled: !_busy,
             autocorrect: false,
             enableSuggestions: false,
-            decoration: const InputDecoration(labelText: 'Backup passphrase'),
+            decoration: InputDecoration(labelText: context.l10n.bk_restorePass),
           ),
           const SizedBox(height: 8),
           OutlinedButton(
             key: const ValueKey('restore-backup'),
             onPressed: _busy ? null : _restore,
-            child: const Text('Choose backup file'),
+            child: Text(context.l10n.bk_choose),
           ),
           if (_status != null)
             Padding(

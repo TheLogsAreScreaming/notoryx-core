@@ -11353,4 +11353,122 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get a11y_imagePreview => 'Náhľad obrázka';
+
+  @override
+  String get rcli_title => 'Povoliť vzdialený príkazový riadok?';
+
+  @override
+  String rcli_warning(String name) {
+    return '$name bude môcť cez sieť spúšťať akýkoľvek príkaz na tvojom rádiu: meniť jeho názov, nastavenia rádia a heslá alebo ho reštartovať. Povoľ to len ľuďom, ktorým dôveruješ.';
+  }
+
+  @override
+  String get rcli_allow => 'Povoliť';
+
+  @override
+  String get rcli_toggle => 'Povoliť vzdialený príkazový riadok';
+
+  @override
+  String get rcli_toggleHint =>
+      'Umožní tomuto kontaktu spúšťať akýkoľvek príkaz na tvojom rádiu vrátane zmeny nastavení. MeshCore v1.18+.';
+
+  @override
+  String rcli_toggleBlocked(String command) {
+    return 'Umožní tomuto kontaktu spúšťať akýkoľvek príkaz na tvojom rádiu. Naposledy zablokované: \"$command\".';
+  }
+
+  @override
+  String get rcli_menu => 'Príkazový riadok na jeho rádiu';
+
+  @override
+  String rcli_runsOn(String name) {
+    return 'Funguje na rádiu $name len vtedy, ak ti povolil vzdialený príkazový riadok (MeshCore v1.18+). Bez odpovede to bolo zablokované alebo to nedošlo.';
+  }
+
+  @override
+  String get bk_title => 'Šifrovaná záloha';
+
+  @override
+  String get bk_intro =>
+      'Uloží šifrovanú kópiu nastavení, kontaktov, kľúčov kanálov, bodov trasy a konceptov. História správ, offline mapy, fotky a firmvér rádia nie sú zahrnuté.';
+
+  @override
+  String get bk_keep =>
+      'Heslo uchovávaj oddelene. Stratené heslo sa nedá obnoviť.';
+
+  @override
+  String get bk_pass => 'Heslo (12+ znakov)';
+
+  @override
+  String get bk_confirm => 'Potvrdiť heslo';
+
+  @override
+  String get bk_working => 'Prebieha…';
+
+  @override
+  String get bk_save => 'Uložiť šifrovanú zálohu';
+
+  @override
+  String get bk_mismatch => 'Použi aspoň 12 znakov a zhodné heslá.';
+
+  @override
+  String get bk_done =>
+      'Záloha je pripravená. Súbor a heslo uchovávaj na bezpečnom mieste.';
+
+  @override
+  String get bk_failed =>
+      'Zálohu sa nepodarilo exportovať. Tvoje údaje sa nezmenili.';
+
+  @override
+  String get bk_restoreTitle => 'Obnoviť zálohu';
+
+  @override
+  String get bk_restorePass => 'Heslo zálohy';
+
+  @override
+  String get bk_choose => 'Vybrať súbor zálohy';
+
+  @override
+  String get bk_cantOpen => 'Súbor sa nepodarilo otvoriť.';
+
+  @override
+  String get bk_wrongPass =>
+      'Nesprávne heslo alebo neplatná záloha. Nič sa nezmenilo.';
+
+  @override
+  String get bk_confirmTitle => 'Obnoviť túto zálohu?';
+
+  @override
+  String bk_confirmBody(int count) {
+    return 'Nahradí $count uložených nastavení v tomto zariadení vrátane kontaktov, kľúčov kanálov a bodov trasy tými zo zálohy. História správ sa nezmení. Nedá sa to vrátiť.';
+  }
+
+  @override
+  String get bk_restore => 'Obnoviť';
+
+  @override
+  String bk_restored(int count) {
+    return 'Obnovené nastavenia: $count. Úplne zatvor aplikáciu a znova ju otvor.';
+  }
+
+  @override
+  String get bk_partial =>
+      'Obnova sa zastavila v polovici; niektoré nastavenia sa mohli zmeniť. Skús to znova.';
+
+  @override
+  String get sosSetup_noPeople =>
+      'V kontaktoch zatiaľ nikto nie je. Zobrazia sa, keď niekto zdieľa kontakt alebo začuješ jeho ohlásenie.';
+
+  @override
+  String get sosSetup_channel => 'SOS ide aj do kanála';
+
+  @override
+  String get sosSetup_channelHint => 'Všetci v tom kanáli uvidia tvoje SOS.';
+
+  @override
+  String get sosSetup_none => 'Žiadny';
+
+  @override
+  String get trail_safety =>
+      'Údaje o chodníkoch © prispievatelia OpenStreetMap. Môžu byť neúplné alebo zastarané. Trasy sa nekontrolujú z hľadiska bezpečnosti ani priechodnosti, preto ich nepoužívaj ako jedinú navigáciu.';
 }

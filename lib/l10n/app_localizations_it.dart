@@ -11392,4 +11392,123 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get a11y_imagePreview => 'Anteprima immagine';
+
+  @override
+  String get rcli_title => 'Consentire la riga di comando remota?';
+
+  @override
+  String rcli_warning(String name) {
+    return '$name potrà eseguire qualsiasi comando sulla tua radio tramite la rete: cambiarne nome, impostazioni radio e password, o riavviarla. Consentilo solo a persone fidate.';
+  }
+
+  @override
+  String get rcli_allow => 'Consenti';
+
+  @override
+  String get rcli_toggle => 'Consenti riga di comando remota';
+
+  @override
+  String get rcli_toggleHint =>
+      'Permette a questo contatto di eseguire qualsiasi comando sulla tua radio, anche cambiarne le impostazioni. MeshCore v1.18+.';
+
+  @override
+  String rcli_toggleBlocked(String command) {
+    return 'Permette a questo contatto di eseguire qualsiasi comando sulla tua radio. Ultimo bloccato: \"$command\".';
+  }
+
+  @override
+  String get rcli_menu => 'Riga di comando sulla sua radio';
+
+  @override
+  String rcli_runsOn(String name) {
+    return 'Funziona sulla radio di $name solo se ti ha consentito la riga di comando remota (MeshCore v1.18+). Nessuna risposta significa bloccato o non arrivato.';
+  }
+
+  @override
+  String get bk_title => 'Backup cifrato';
+
+  @override
+  String get bk_intro =>
+      'Salva una copia cifrata di impostazioni, contatti, chiavi dei canali, waypoint e bozze. Cronologia messaggi, mappe offline, foto e firmware della radio non sono inclusi.';
+
+  @override
+  String get bk_keep =>
+      'Conserva la passphrase separatamente. Una passphrase persa non si può recuperare.';
+
+  @override
+  String get bk_pass => 'Passphrase (12+ caratteri)';
+
+  @override
+  String get bk_confirm => 'Conferma passphrase';
+
+  @override
+  String get bk_working => 'In corso…';
+
+  @override
+  String get bk_save => 'Salva backup cifrato';
+
+  @override
+  String get bk_mismatch => 'Usa almeno 12 caratteri e passphrase uguali.';
+
+  @override
+  String get bk_done =>
+      'Backup pronto. Conserva il file e la passphrase in un luogo sicuro.';
+
+  @override
+  String get bk_failed =>
+      'Impossibile esportare il backup. I tuoi dati non sono stati modificati.';
+
+  @override
+  String get bk_restoreTitle => 'Ripristina un backup';
+
+  @override
+  String get bk_restorePass => 'Passphrase del backup';
+
+  @override
+  String get bk_choose => 'Scegli file di backup';
+
+  @override
+  String get bk_cantOpen => 'Impossibile aprire il file.';
+
+  @override
+  String get bk_wrongPass =>
+      'Passphrase errata o backup non valido. Non è cambiato nulla.';
+
+  @override
+  String get bk_confirmTitle => 'Ripristinare questo backup?';
+
+  @override
+  String bk_confirmBody(int count) {
+    return 'Sostituisce $count impostazioni salvate su questo dispositivo, inclusi contatti, chiavi dei canali e waypoint, con quelle del backup. La cronologia dei messaggi non cambia. Non si può annullare.';
+  }
+
+  @override
+  String get bk_restore => 'Ripristina';
+
+  @override
+  String bk_restored(int count) {
+    return '$count impostazioni ripristinate. Chiudi del tutto l\'app e riaprila per usarle.';
+  }
+
+  @override
+  String get bk_partial =>
+      'Ripristino interrotto: alcune impostazioni potrebbero essere cambiate. Riprova.';
+
+  @override
+  String get sosSetup_noPeople =>
+      'Nessuna persona nei contatti per ora. Compariranno quando qualcuno condivide il contatto o senti il suo annuncio.';
+
+  @override
+  String get sosSetup_channel => 'L\'SOS va anche al canale';
+
+  @override
+  String get sosSetup_channelHint =>
+      'Tutti su quel canale vedranno il tuo SOS.';
+
+  @override
+  String get sosSetup_none => 'Nessuno';
+
+  @override
+  String get trail_safety =>
+      'Dati sentieri © collaboratori di OpenStreetMap. Possono essere incompleti o non aggiornati. I percorsi non sono verificati per sicurezza o percorribilità: non usarli come unica navigazione.';
 }

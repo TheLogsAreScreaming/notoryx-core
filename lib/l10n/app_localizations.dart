@@ -18942,6 +18942,204 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Picture preview'**
   String get a11y_imagePreview;
+
+  /// No description provided for @rcli_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow remote command line?'**
+  String get rcli_title;
+
+  /// No description provided for @rcli_warning.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} will be able to run any command on your radio over the mesh: change its name, radio settings and passwords, or reboot it. Only allow people you trust.'**
+  String rcli_warning(String name);
+
+  /// No description provided for @rcli_allow.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow'**
+  String get rcli_allow;
+
+  /// No description provided for @rcli_toggle.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow remote command line'**
+  String get rcli_toggle;
+
+  /// No description provided for @rcli_toggleHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Lets this contact run any command on your radio, including changing its settings. MeshCore v1.18+.'**
+  String get rcli_toggleHint;
+
+  /// No description provided for @rcli_toggleBlocked.
+  ///
+  /// In en, this message translates to:
+  /// **'Lets this contact run any command on your radio. Last blocked: \"{command}\".'**
+  String rcli_toggleBlocked(String command);
+
+  /// No description provided for @rcli_menu.
+  ///
+  /// In en, this message translates to:
+  /// **'Command line on their radio'**
+  String get rcli_menu;
+
+  /// No description provided for @rcli_runsOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Runs on {name}\'s radio only if they allowed you remote command line (MeshCore v1.18+). No reply means it was blocked or didn\'t arrive.'**
+  String rcli_runsOn(String name);
+
+  /// No description provided for @bk_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Encrypted backup'**
+  String get bk_title;
+
+  /// No description provided for @bk_intro.
+  ///
+  /// In en, this message translates to:
+  /// **'Save an encrypted copy of app settings, contacts, channel keys, waypoints and drafts. Message history, offline maps, photos and radio firmware are not included.'**
+  String get bk_intro;
+
+  /// No description provided for @bk_keep.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep the passphrase separately. A lost passphrase cannot be recovered.'**
+  String get bk_keep;
+
+  /// No description provided for @bk_pass.
+  ///
+  /// In en, this message translates to:
+  /// **'Passphrase (12+ characters)'**
+  String get bk_pass;
+
+  /// No description provided for @bk_confirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm passphrase'**
+  String get bk_confirm;
+
+  /// No description provided for @bk_working.
+  ///
+  /// In en, this message translates to:
+  /// **'Working…'**
+  String get bk_working;
+
+  /// No description provided for @bk_save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save encrypted backup'**
+  String get bk_save;
+
+  /// No description provided for @bk_mismatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Use at least 12 characters and matching passphrases.'**
+  String get bk_mismatch;
+
+  /// No description provided for @bk_done.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup prepared. Keep your saved file and passphrase somewhere safe.'**
+  String get bk_done;
+
+  /// No description provided for @bk_failed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not export the backup. Your existing data was unchanged.'**
+  String get bk_failed;
+
+  /// No description provided for @bk_restoreTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore a backup'**
+  String get bk_restoreTitle;
+
+  /// No description provided for @bk_restorePass.
+  ///
+  /// In en, this message translates to:
+  /// **'Backup passphrase'**
+  String get bk_restorePass;
+
+  /// No description provided for @bk_choose.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose backup file'**
+  String get bk_choose;
+
+  /// No description provided for @bk_cantOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not open that file.'**
+  String get bk_cantOpen;
+
+  /// No description provided for @bk_wrongPass.
+  ///
+  /// In en, this message translates to:
+  /// **'Wrong passphrase, or this isn\'t a valid backup. Nothing was changed.'**
+  String get bk_wrongPass;
+
+  /// No description provided for @bk_confirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore this backup?'**
+  String get bk_confirmTitle;
+
+  /// No description provided for @bk_confirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This replaces {count} saved settings on this device, including contacts, channel keys and waypoints, with the ones in the backup. Message history is not affected. This cannot be undone.'**
+  String bk_confirmBody(int count);
+
+  /// No description provided for @bk_restore.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore'**
+  String get bk_restore;
+
+  /// No description provided for @bk_restored.
+  ///
+  /// In en, this message translates to:
+  /// **'Restored {count} settings. Close the app fully and open it again to use them.'**
+  String bk_restored(int count);
+
+  /// No description provided for @bk_partial.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore stopped part way, so some settings may have changed. Try again.'**
+  String get bk_partial;
+
+  /// No description provided for @sosSetup_noPeople.
+  ///
+  /// In en, this message translates to:
+  /// **'No people in your contacts yet. Once someone shares their contact or you hear their advert, they appear here.'**
+  String get sosSetup_noPeople;
+
+  /// No description provided for @sosSetup_channel.
+  ///
+  /// In en, this message translates to:
+  /// **'SOS also goes to channel'**
+  String get sosSetup_channel;
+
+  /// No description provided for @sosSetup_channelHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Everyone on that channel will see your SOS.'**
+  String get sosSetup_channelHint;
+
+  /// No description provided for @sosSetup_none.
+  ///
+  /// In en, this message translates to:
+  /// **'None'**
+  String get sosSetup_none;
+
+  /// No description provided for @trail_safety.
+  ///
+  /// In en, this message translates to:
+  /// **'Trail data © OpenStreetMap contributors. It can be incomplete or out of date. Routes aren\'t checked for safety or whether they\'re passable, so don\'t use this as your only navigation.'**
+  String get trail_safety;
 }
 
 class _AppLocalizationsDelegate

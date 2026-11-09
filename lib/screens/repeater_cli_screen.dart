@@ -361,7 +361,7 @@ class _RepeaterCliScreenState extends State<RepeaterCliScreen> {
               color: MeshPalette.bg1,
               padding: const EdgeInsets.fromLTRB(12, 8, 12, 4),
               child: Text(
-                'Runs on ${repeater.name}\'s radio only if they allowed you remote command line (MeshCore v1.18+). No reply means it was blocked or didn\'t arrive.',
+                context.l10n.rcli_runsOn(repeater.name),
                 style: TextStyle(color: MeshPalette.ink3, fontSize: 12),
               ),
             ),

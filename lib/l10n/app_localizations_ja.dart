@@ -10853,4 +10853,117 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get a11y_imagePreview => '画像のプレビュー';
+
+  @override
+  String get rcli_title => 'リモートコマンドラインを許可しますか？';
+
+  @override
+  String rcli_warning(String name) {
+    return '$nameはメッシュ経由であなたの無線機で任意のコマンドを実行できるようになります。名前、無線設定、パスワードの変更や再起動も可能です。信頼できる相手にだけ許可してください。';
+  }
+
+  @override
+  String get rcli_allow => '許可';
+
+  @override
+  String get rcli_toggle => 'リモートコマンドラインを許可';
+
+  @override
+  String get rcli_toggleHint =>
+      'この連絡先があなたの無線機で任意のコマンド（設定変更を含む）を実行できるようにします。MeshCore v1.18以降。';
+
+  @override
+  String rcli_toggleBlocked(String command) {
+    return 'この連絡先があなたの無線機で任意のコマンドを実行できるようにします。最後にブロック: 「$command」。';
+  }
+
+  @override
+  String get rcli_menu => '相手の無線機のコマンドライン';
+
+  @override
+  String rcli_runsOn(String name) {
+    return '$nameがあなたにリモートコマンドラインを許可している場合のみ相手の無線機で実行されます（MeshCore v1.18以降）。応答がなければブロックされたか届いていません。';
+  }
+
+  @override
+  String get bk_title => '暗号化バックアップ';
+
+  @override
+  String get bk_intro =>
+      'アプリ設定、連絡先、チャンネルキー、ウェイポイント、下書きの暗号化コピーを保存します。メッセージ履歴、オフライン地図、写真、無線機のファームウェアは含まれません。';
+
+  @override
+  String get bk_keep => 'パスフレーズは別に保管してください。失ったパスフレーズは復元できません。';
+
+  @override
+  String get bk_pass => 'パスフレーズ（12文字以上）';
+
+  @override
+  String get bk_confirm => 'パスフレーズの確認';
+
+  @override
+  String get bk_working => '処理中…';
+
+  @override
+  String get bk_save => '暗号化バックアップを保存';
+
+  @override
+  String get bk_mismatch => '12文字以上で、同じパスフレーズを入力してください。';
+
+  @override
+  String get bk_done => 'バックアップを作成しました。ファイルとパスフレーズを安全な場所に保管してください。';
+
+  @override
+  String get bk_failed => 'バックアップを書き出せませんでした。既存のデータは変更されていません。';
+
+  @override
+  String get bk_restoreTitle => 'バックアップを復元';
+
+  @override
+  String get bk_restorePass => 'バックアップのパスフレーズ';
+
+  @override
+  String get bk_choose => 'バックアップファイルを選択';
+
+  @override
+  String get bk_cantOpen => 'そのファイルを開けませんでした。';
+
+  @override
+  String get bk_wrongPass => 'パスフレーズが違うか、有効なバックアップではありません。何も変更されていません。';
+
+  @override
+  String get bk_confirmTitle => 'このバックアップを復元しますか？';
+
+  @override
+  String bk_confirmBody(int count) {
+    return 'この端末に保存された$count件の設定（連絡先、チャンネルキー、ウェイポイントを含む）をバックアップの内容に置き換えます。メッセージ履歴には影響しません。元に戻せません。';
+  }
+
+  @override
+  String get bk_restore => '復元';
+
+  @override
+  String bk_restored(int count) {
+    return '$count件の設定を復元しました。アプリを完全に終了して開き直してください。';
+  }
+
+  @override
+  String get bk_partial => '復元が途中で止まりました。一部の設定が変わった可能性があります。もう一度お試しください。';
+
+  @override
+  String get sosSetup_noPeople =>
+      '連絡先にまだ誰もいません。誰かが連絡先を共有するか、アドバートを受信すると表示されます。';
+
+  @override
+  String get sosSetup_channel => 'SOSをチャンネルにも送信';
+
+  @override
+  String get sosSetup_channelHint => 'このチャンネルの全員にあなたのSOSが見えます。';
+
+  @override
+  String get sosSetup_none => 'なし';
+
+  @override
+  String get trail_safety =>
+      'トレイルデータ © OpenStreetMap 寄稿者。不完全または古い場合があります。ルートの安全性や通行可否は確認していないため、唯一のナビゲーション手段として使わないでください。';
 }

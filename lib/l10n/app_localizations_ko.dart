@@ -10868,4 +10868,117 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get a11y_imagePreview => '사진 미리보기';
+
+  @override
+  String get rcli_title => '원격 명령줄을 허용할까요?';
+
+  @override
+  String rcli_warning(String name) {
+    return '$name님이 메시를 통해 내 무전기에서 어떤 명령이든 실행할 수 있게 됩니다. 이름, 무전기 설정, 비밀번호를 바꾸거나 재시작할 수도 있습니다. 신뢰하는 사람에게만 허용하세요.';
+  }
+
+  @override
+  String get rcli_allow => '허용';
+
+  @override
+  String get rcli_toggle => '원격 명령줄 허용';
+
+  @override
+  String get rcli_toggleHint =>
+      '이 연락처가 내 무전기에서 설정 변경을 포함한 어떤 명령이든 실행하도록 허용합니다. MeshCore v1.18 이상.';
+
+  @override
+  String rcli_toggleBlocked(String command) {
+    return '이 연락처가 내 무전기에서 어떤 명령이든 실행하도록 허용합니다. 마지막으로 차단됨: \"$command\".';
+  }
+
+  @override
+  String get rcli_menu => '상대 무전기의 명령줄';
+
+  @override
+  String rcli_runsOn(String name) {
+    return '$name님이 원격 명령줄을 허용한 경우에만 상대 무전기에서 실행됩니다(MeshCore v1.18 이상). 응답이 없으면 차단되었거나 도착하지 않은 것입니다.';
+  }
+
+  @override
+  String get bk_title => '암호화된 백업';
+
+  @override
+  String get bk_intro =>
+      '앱 설정, 연락처, 채널 키, 웨이포인트, 임시 저장 글의 암호화된 사본을 저장합니다. 메시지 기록, 오프라인 지도, 사진, 무전기 펌웨어는 포함되지 않습니다.';
+
+  @override
+  String get bk_keep => '암호문은 따로 보관하세요. 잃어버린 암호문은 복구할 수 없습니다.';
+
+  @override
+  String get bk_pass => '암호문(12자 이상)';
+
+  @override
+  String get bk_confirm => '암호문 확인';
+
+  @override
+  String get bk_working => '처리 중…';
+
+  @override
+  String get bk_save => '암호화된 백업 저장';
+
+  @override
+  String get bk_mismatch => '12자 이상이고 서로 일치하는 암호문을 입력하세요.';
+
+  @override
+  String get bk_done => '백업이 준비되었습니다. 파일과 암호문을 안전한 곳에 보관하세요.';
+
+  @override
+  String get bk_failed => '백업을 내보내지 못했습니다. 기존 데이터는 그대로입니다.';
+
+  @override
+  String get bk_restoreTitle => '백업 복원';
+
+  @override
+  String get bk_restorePass => '백업 암호문';
+
+  @override
+  String get bk_choose => '백업 파일 선택';
+
+  @override
+  String get bk_cantOpen => '파일을 열 수 없습니다.';
+
+  @override
+  String get bk_wrongPass => '암호문이 틀렸거나 유효한 백업이 아닙니다. 아무것도 바뀌지 않았습니다.';
+
+  @override
+  String get bk_confirmTitle => '이 백업을 복원할까요?';
+
+  @override
+  String bk_confirmBody(int count) {
+    return '이 기기에 저장된 설정 $count개(연락처, 채널 키, 웨이포인트 포함)를 백업의 내용으로 바꿉니다. 메시지 기록은 영향을 받지 않습니다. 되돌릴 수 없습니다.';
+  }
+
+  @override
+  String get bk_restore => '복원';
+
+  @override
+  String bk_restored(int count) {
+    return '설정 $count개를 복원했습니다. 앱을 완전히 닫았다가 다시 여세요.';
+  }
+
+  @override
+  String get bk_partial => '복원이 중간에 멈췄습니다. 일부 설정이 바뀌었을 수 있습니다. 다시 시도하세요.';
+
+  @override
+  String get sosSetup_noPeople =>
+      '아직 연락처에 아무도 없습니다. 누군가 연락처를 공유하거나 광고를 수신하면 여기에 표시됩니다.';
+
+  @override
+  String get sosSetup_channel => 'SOS를 채널에도 보내기';
+
+  @override
+  String get sosSetup_channelHint => '이 채널의 모두가 내 SOS를 보게 됩니다.';
+
+  @override
+  String get sosSetup_none => '없음';
+
+  @override
+  String get trail_safety =>
+      '트레일 데이터 © OpenStreetMap 기여자. 불완전하거나 오래되었을 수 있습니다. 경로의 안전성이나 통행 가능 여부는 확인하지 않으므로 유일한 내비게이션으로 사용하지 마세요.';
 }

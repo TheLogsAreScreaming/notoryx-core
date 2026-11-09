@@ -11374,4 +11374,122 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get a11y_imagePreview => 'Predogled slike';
+
+  @override
+  String get rcli_title => 'Dovolim oddaljeno ukazno vrstico?';
+
+  @override
+  String rcli_warning(String name) {
+    return '$name bo lahko prek omrežja zagnal kateri koli ukaz na tvojem radiu: spremenil ime, nastavitve radia in gesla ali ga znova zagnal. Dovoli le ljudem, ki jim zaupaš.';
+  }
+
+  @override
+  String get rcli_allow => 'Dovoli';
+
+  @override
+  String get rcli_toggle => 'Dovoli oddaljeno ukazno vrstico';
+
+  @override
+  String get rcli_toggleHint =>
+      'Temu stiku dovoli zagon katerega koli ukaza na tvojem radiu, tudi spreminjanje nastavitev. MeshCore v1.18+.';
+
+  @override
+  String rcli_toggleBlocked(String command) {
+    return 'Temu stiku dovoli zagon katerega koli ukaza na tvojem radiu. Nazadnje blokirano: \"$command\".';
+  }
+
+  @override
+  String get rcli_menu => 'Ukazna vrstica na njegovem radiu';
+
+  @override
+  String rcli_runsOn(String name) {
+    return 'Deluje na radiu $name le, če ti je dovolil oddaljeno ukazno vrstico (MeshCore v1.18+). Brez odgovora pomeni, da je bilo blokirano ali ni prispelo.';
+  }
+
+  @override
+  String get bk_title => 'Šifrirana varnostna kopija';
+
+  @override
+  String get bk_intro =>
+      'Shrani šifrirano kopijo nastavitev, stikov, ključev kanalov, točk poti in osnutkov. Zgodovina sporočil, zemljevidi brez povezave, fotografije in strojna programska oprema radia niso vključeni.';
+
+  @override
+  String get bk_keep =>
+      'Geslo hrani ločeno. Izgubljenega gesla ni mogoče obnoviti.';
+
+  @override
+  String get bk_pass => 'Geslo (12+ znakov)';
+
+  @override
+  String get bk_confirm => 'Potrdi geslo';
+
+  @override
+  String get bk_working => 'V teku…';
+
+  @override
+  String get bk_save => 'Shrani šifrirano kopijo';
+
+  @override
+  String get bk_mismatch => 'Uporabi vsaj 12 znakov in enaki gesli.';
+
+  @override
+  String get bk_done =>
+      'Kopija je pripravljena. Datoteko in geslo hrani na varnem.';
+
+  @override
+  String get bk_failed =>
+      'Kopije ni bilo mogoče izvoziti. Tvoji podatki se niso spremenili.';
+
+  @override
+  String get bk_restoreTitle => 'Obnovi varnostno kopijo';
+
+  @override
+  String get bk_restorePass => 'Geslo kopije';
+
+  @override
+  String get bk_choose => 'Izberi datoteko kopije';
+
+  @override
+  String get bk_cantOpen => 'Datoteke ni mogoče odpreti.';
+
+  @override
+  String get bk_wrongPass =>
+      'Napačno geslo ali neveljavna kopija. Nič se ni spremenilo.';
+
+  @override
+  String get bk_confirmTitle => 'Obnovim to kopijo?';
+
+  @override
+  String bk_confirmBody(int count) {
+    return 'To zamenja $count shranjenih nastavitev v tej napravi, vključno s stiki, ključi kanalov in točkami poti, s tistimi iz kopije. Zgodovina sporočil ostane nespremenjena. Tega ni mogoče razveljaviti.';
+  }
+
+  @override
+  String get bk_restore => 'Obnovi';
+
+  @override
+  String bk_restored(int count) {
+    return 'Obnovljene nastavitve: $count. Aplikacijo povsem zapri in jo znova odpri.';
+  }
+
+  @override
+  String get bk_partial =>
+      'Obnova se je ustavila na pol poti; nekatere nastavitve so se morda spremenile. Poskusi znova.';
+
+  @override
+  String get sosSetup_noPeople =>
+      'V stikih še ni nikogar. Pojavijo se, ko kdo deli svoj stik ali slišiš njegovo oznanilo.';
+
+  @override
+  String get sosSetup_channel => 'SOS gre tudi na kanal';
+
+  @override
+  String get sosSetup_channelHint => 'Vsi na tem kanalu bodo videli tvoj SOS.';
+
+  @override
+  String get sosSetup_none => 'Brez';
+
+  @override
+  String get trail_safety =>
+      'Podatki o poteh © sodelavci OpenStreetMap. Lahko so nepopolni ali zastareli. Poti niso preverjene glede varnosti ali prehodnosti, zato jih ne uporabljaj kot edine navigacije.';
 }

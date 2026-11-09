@@ -11384,4 +11384,123 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get a11y_imagePreview => 'Vista previa de la imagen';
+
+  @override
+  String get rcli_title => '¿Permitir la línea de comandos remota?';
+
+  @override
+  String rcli_warning(String name) {
+    return '$name podrá ejecutar cualquier comando en tu radio a través de la malla: cambiar su nombre, ajustes de radio y contraseñas, o reiniciarla. Permítelo solo a personas de confianza.';
+  }
+
+  @override
+  String get rcli_allow => 'Permitir';
+
+  @override
+  String get rcli_toggle => 'Permitir línea de comandos remota';
+
+  @override
+  String get rcli_toggleHint =>
+      'Permite a este contacto ejecutar cualquier comando en tu radio, incluso cambiar sus ajustes. MeshCore v1.18+.';
+
+  @override
+  String rcli_toggleBlocked(String command) {
+    return 'Permite a este contacto ejecutar cualquier comando en tu radio. Último bloqueado: \"$command\".';
+  }
+
+  @override
+  String get rcli_menu => 'Línea de comandos en su radio';
+
+  @override
+  String rcli_runsOn(String name) {
+    return 'Se ejecuta en la radio de $name solo si te permitió la línea de comandos remota (MeshCore v1.18+). Sin respuesta significa que se bloqueó o no llegó.';
+  }
+
+  @override
+  String get bk_title => 'Copia de seguridad cifrada';
+
+  @override
+  String get bk_intro =>
+      'Guarda una copia cifrada de los ajustes, contactos, claves de canal, puntos de ruta y borradores. No incluye el historial de mensajes, mapas sin conexión, fotos ni el firmware de la radio.';
+
+  @override
+  String get bk_keep =>
+      'Guarda la contraseña por separado. Una contraseña perdida no se puede recuperar.';
+
+  @override
+  String get bk_pass => 'Contraseña (12+ caracteres)';
+
+  @override
+  String get bk_confirm => 'Confirmar contraseña';
+
+  @override
+  String get bk_working => 'Procesando…';
+
+  @override
+  String get bk_save => 'Guardar copia cifrada';
+
+  @override
+  String get bk_mismatch =>
+      'Usa al menos 12 caracteres y contraseñas que coincidan.';
+
+  @override
+  String get bk_done =>
+      'Copia preparada. Guarda el archivo y la contraseña en un lugar seguro.';
+
+  @override
+  String get bk_failed =>
+      'No se pudo exportar la copia. Tus datos no se modificaron.';
+
+  @override
+  String get bk_restoreTitle => 'Restaurar una copia';
+
+  @override
+  String get bk_restorePass => 'Contraseña de la copia';
+
+  @override
+  String get bk_choose => 'Elegir archivo de copia';
+
+  @override
+  String get bk_cantOpen => 'No se pudo abrir ese archivo.';
+
+  @override
+  String get bk_wrongPass =>
+      'Contraseña incorrecta o no es una copia válida. No se cambió nada.';
+
+  @override
+  String get bk_confirmTitle => '¿Restaurar esta copia?';
+
+  @override
+  String bk_confirmBody(int count) {
+    return 'Esto sustituye $count ajustes guardados en este dispositivo, incluidos contactos, claves de canal y puntos de ruta, por los de la copia. El historial de mensajes no se ve afectado. No se puede deshacer.';
+  }
+
+  @override
+  String get bk_restore => 'Restaurar';
+
+  @override
+  String bk_restored(int count) {
+    return 'Se restauraron $count ajustes. Cierra la app por completo y vuelve a abrirla para usarlos.';
+  }
+
+  @override
+  String get bk_partial =>
+      'La restauración se detuvo a medias; puede que algunos ajustes hayan cambiado. Inténtalo de nuevo.';
+
+  @override
+  String get sosSetup_noPeople =>
+      'Aún no hay personas en tus contactos. Aparecerán cuando alguien comparta su contacto o oigas su anuncio.';
+
+  @override
+  String get sosSetup_channel => 'El SOS también va al canal';
+
+  @override
+  String get sosSetup_channelHint => 'Todos en ese canal verán tu SOS.';
+
+  @override
+  String get sosSetup_none => 'Ninguno';
+
+  @override
+  String get trail_safety =>
+      'Datos de senderos © colaboradores de OpenStreetMap. Pueden estar incompletos o desactualizados. No se comprueba si las rutas son seguras o transitables, así que no las uses como única forma de orientarte.';
 }

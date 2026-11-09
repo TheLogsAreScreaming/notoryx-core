@@ -11421,4 +11421,122 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get a11y_imagePreview => 'Podgląd obrazu';
+
+  @override
+  String get rcli_title => 'Zezwolić na zdalny wiersz poleceń?';
+
+  @override
+  String rcli_warning(String name) {
+    return '$name będzie mógł uruchamiać dowolne polecenie na Twoim radiu przez sieć: zmieniać nazwę, ustawienia radia i hasła lub je restartować. Zezwalaj tylko zaufanym osobom.';
+  }
+
+  @override
+  String get rcli_allow => 'Zezwól';
+
+  @override
+  String get rcli_toggle => 'Zezwól na zdalny wiersz poleceń';
+
+  @override
+  String get rcli_toggleHint =>
+      'Pozwala temu kontaktowi uruchamiać dowolne polecenie na Twoim radiu, w tym zmieniać ustawienia. MeshCore v1.18+.';
+
+  @override
+  String rcli_toggleBlocked(String command) {
+    return 'Pozwala temu kontaktowi uruchamiać dowolne polecenie na Twoim radiu. Ostatnio zablokowane: \"$command\".';
+  }
+
+  @override
+  String get rcli_menu => 'Wiersz poleceń na jego radiu';
+
+  @override
+  String rcli_runsOn(String name) {
+    return 'Działa na radiu $name tylko wtedy, gdy pozwolono Ci na zdalny wiersz poleceń (MeshCore v1.18+). Brak odpowiedzi oznacza blokadę lub brak dostarczenia.';
+  }
+
+  @override
+  String get bk_title => 'Szyfrowana kopia zapasowa';
+
+  @override
+  String get bk_intro =>
+      'Zapisuje zaszyfrowaną kopię ustawień, kontaktów, kluczy kanałów, punktów i wersji roboczych. Bez historii wiadomości, map offline, zdjęć i oprogramowania radia.';
+
+  @override
+  String get bk_keep =>
+      'Przechowuj hasło osobno. Utraconego hasła nie da się odzyskać.';
+
+  @override
+  String get bk_pass => 'Hasło (12+ znaków)';
+
+  @override
+  String get bk_confirm => 'Potwierdź hasło';
+
+  @override
+  String get bk_working => 'Trwa…';
+
+  @override
+  String get bk_save => 'Zapisz szyfrowaną kopię';
+
+  @override
+  String get bk_mismatch => 'Użyj co najmniej 12 znaków i zgodnych haseł.';
+
+  @override
+  String get bk_done =>
+      'Kopia gotowa. Przechowuj plik i hasło w bezpiecznym miejscu.';
+
+  @override
+  String get bk_failed =>
+      'Nie udało się wyeksportować kopii. Twoje dane nie zostały zmienione.';
+
+  @override
+  String get bk_restoreTitle => 'Przywróć kopię';
+
+  @override
+  String get bk_restorePass => 'Hasło kopii';
+
+  @override
+  String get bk_choose => 'Wybierz plik kopii';
+
+  @override
+  String get bk_cantOpen => 'Nie można otworzyć tego pliku.';
+
+  @override
+  String get bk_wrongPass =>
+      'Błędne hasło lub nieprawidłowa kopia. Nic nie zmieniono.';
+
+  @override
+  String get bk_confirmTitle => 'Przywrócić tę kopię?';
+
+  @override
+  String bk_confirmBody(int count) {
+    return 'Zastąpi to $count zapisanych ustawień na tym urządzeniu, w tym kontakty, klucze kanałów i punkty, tymi z kopii. Historia wiadomości pozostaje bez zmian. Tego nie można cofnąć.';
+  }
+
+  @override
+  String get bk_restore => 'Przywróć';
+
+  @override
+  String bk_restored(int count) {
+    return 'Przywrócono ustawienia: $count. Zamknij całkowicie aplikację i otwórz ją ponownie.';
+  }
+
+  @override
+  String get bk_partial =>
+      'Przywracanie przerwane w połowie; część ustawień mogła się zmienić. Spróbuj ponownie.';
+
+  @override
+  String get sosSetup_noPeople =>
+      'Brak osób w kontaktach. Pojawią się, gdy ktoś udostępni kontakt lub usłyszysz jego ogłoszenie.';
+
+  @override
+  String get sosSetup_channel => 'SOS trafia też na kanał';
+
+  @override
+  String get sosSetup_channelHint => 'Wszyscy na tym kanale zobaczą Twój SOS.';
+
+  @override
+  String get sosSetup_none => 'Brak';
+
+  @override
+  String get trail_safety =>
+      'Dane szlaków © współtwórcy OpenStreetMap. Mogą być niepełne lub nieaktualne. Trasy nie są sprawdzane pod kątem bezpieczeństwa ani przejezdności — nie używaj ich jako jedynej nawigacji.';
 }
