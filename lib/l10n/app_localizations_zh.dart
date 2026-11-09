@@ -10246,4 +10246,27 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get schedule_pastTime => '请选择将来的时间。';
+
+  @override
+  String get report_open => '发送报告';
+
+  @override
+  String get report_title => '现场报告';
+
+  @override
+  String get report_salute => 'SALUTE（所见情况）';
+
+  @override
+  String get report_nineLine => '9-Line（医疗后送）';
+
+  @override
+  String get report_send => '发送报告';
+
+  @override
+  String report_parts(int count) {
+    return '消息数：$count';
+  }
+
+  @override
+  String get report_sent => '报告已发送';
 }

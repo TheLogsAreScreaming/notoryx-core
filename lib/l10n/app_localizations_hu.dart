@@ -10968,4 +10968,27 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get schedule_pastTime => 'Válassz jövőbeli időpontot.';
+
+  @override
+  String get report_open => 'Jelentés küldése';
+
+  @override
+  String get report_title => 'Terepjelentés';
+
+  @override
+  String get report_salute => 'SALUTE (amit láttál)';
+
+  @override
+  String get report_nineLine => '9-Line (orvosi evakuálás)';
+
+  @override
+  String get report_send => 'Jelentés küldése';
+
+  @override
+  String report_parts(int count) {
+    return 'Üzenetek száma: $count';
+  }
+
+  @override
+  String get report_sent => 'Jelentés elküldve';
 }

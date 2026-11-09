@@ -5894,5 +5894,13 @@
   "schedule_tooltip": "Hold to send later",
   "schedule_for": "Sends {time}",
   "@schedule_for": {"placeholders": {"time": {"type": "String"}}},
-  "schedule_pastTime": "Pick a time in the future."
+  "schedule_pastTime": "Pick a time in the future.",
+  "report_open": "Send a report",
+  "report_title": "Field report",
+  "report_salute": "SALUTE (what you saw)",
+  "report_nineLine": "9-Line (medical evacuation)",
+  "report_send": "Send report",
+  "report_parts": "Number of messages: {count}",
+  "@report_parts": {"placeholders": {"count": {"type": "int"}}},
+  "report_sent": "Report sent"
 }

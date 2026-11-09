@@ -4431,5 +4431,12 @@
   "forward_title": "Reencaminhar para",
   "schedule_tooltip": "Mantém premido para enviar mais tarde",
   "schedule_for": "Envio: {time}",
-  "schedule_pastTime": "Escolhe uma hora futura."
+  "schedule_pastTime": "Escolhe uma hora futura.",
+  "report_open": "Enviar relatório",
+  "report_title": "Relatório de campo",
+  "report_salute": "SALUTE (o que viste)",
+  "report_nineLine": "9-Line (evacuação médica)",
+  "report_send": "Enviar relatório",
+  "report_parts": "Número de mensagens: {count}",
+  "report_sent": "Relatório enviado"
 }

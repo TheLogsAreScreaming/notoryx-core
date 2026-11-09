@@ -10478,4 +10478,27 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get schedule_pastTime => '미래 시각을 선택하세요.';
+
+  @override
+  String get report_open => '보고 보내기';
+
+  @override
+  String get report_title => '현장 보고';
+
+  @override
+  String get report_salute => 'SALUTE (목격 내용)';
+
+  @override
+  String get report_nineLine => '9-Line (의료 후송)';
+
+  @override
+  String get report_send => '보고 보내기';
+
+  @override
+  String report_parts(int count) {
+    return '메시지 수: $count';
+  }
+
+  @override
+  String get report_sent => '보고를 보냈습니다';
 }

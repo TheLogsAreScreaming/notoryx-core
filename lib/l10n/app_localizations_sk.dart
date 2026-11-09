@@ -10959,4 +10959,27 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get schedule_pastTime => 'Vyberte čas v budúcnosti.';
+
+  @override
+  String get report_open => 'Odoslať hlásenie';
+
+  @override
+  String get report_title => 'Terénne hlásenie';
+
+  @override
+  String get report_salute => 'SALUTE (čo ste videli)';
+
+  @override
+  String get report_nineLine => '9-Line (lekárska evakuácia)';
+
+  @override
+  String get report_send => 'Odoslať hlásenie';
+
+  @override
+  String report_parts(int count) {
+    return 'Počet správ: $count';
+  }
+
+  @override
+  String get report_sent => 'Hlásenie odoslané';
 }

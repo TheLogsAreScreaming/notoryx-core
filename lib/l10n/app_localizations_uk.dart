@@ -11020,4 +11020,27 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get schedule_pastTime => 'Виберіть час у майбутньому.';
+
+  @override
+  String get report_open => 'Надіслати донесення';
+
+  @override
+  String get report_title => 'Польове донесення';
+
+  @override
+  String get report_salute => 'SALUTE (що ви бачили)';
+
+  @override
+  String get report_nineLine => '9-Line (медична евакуація)';
+
+  @override
+  String get report_send => 'Надіслати донесення';
+
+  @override
+  String report_parts(int count) {
+    return 'Кількість повідомлень: $count';
+  }
+
+  @override
+  String get report_sent => 'Донесення надіслано';
 }

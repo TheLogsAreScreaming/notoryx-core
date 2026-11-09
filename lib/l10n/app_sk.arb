@@ -4431,5 +4431,12 @@
   "forward_title": "Preposlať do",
   "schedule_tooltip": "Podržaním odošlete neskôr",
   "schedule_for": "Odoslanie: {time}",
-  "schedule_pastTime": "Vyberte čas v budúcnosti."
+  "schedule_pastTime": "Vyberte čas v budúcnosti.",
+  "report_open": "Odoslať hlásenie",
+  "report_title": "Terénne hlásenie",
+  "report_salute": "SALUTE (čo ste videli)",
+  "report_nineLine": "9-Line (lekárska evakuácia)",
+  "report_send": "Odoslať hlásenie",
+  "report_parts": "Počet správ: {count}",
+  "report_sent": "Hlásenie odoslané"
 }

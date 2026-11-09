@@ -24,6 +24,8 @@ import '../widgets/ember_backdrop.dart';
 import 'bastion_coverage_capture_screen.dart';
 import 'bastion_diagnostics_screen.dart';
 import 'bastion_path_hub_screen.dart';
+import '../widgets/field_report_sheet.dart';
+import '../widgets/quick_trip_setup.dart';
 import 'bot_settings_screen.dart';
 import 'map_cache_screen.dart';
 import 'scanner_screen.dart';
@@ -349,6 +351,17 @@ class _FieldOpsState extends State<BastionFieldOpsScreen> {
             ),
         ],
       ),
+      if (hasSosTarget(ops))
+        Align(
+          alignment: AlignmentDirectional.centerStart,
+          child: TextButton.icon(
+            onPressed: radio.isConnected
+                ? () => showFieldReportSheet(context)
+                : null,
+            icon: const Icon(Icons.assignment_outlined),
+            label: Text(_l10n.report_open),
+          ),
+        ),
       if (ops.busy) const LinearProgressIndicator(),
       if (ops.latestDelivery case final delivery?) ...[
         const SizedBox(height: 12),

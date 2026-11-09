@@ -10896,4 +10896,27 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get schedule_pastTime => 'Välj en tid i framtiden.';
+
+  @override
+  String get report_open => 'Skicka rapport';
+
+  @override
+  String get report_title => 'Fältrapport';
+
+  @override
+  String get report_salute => 'SALUTE (vad du såg)';
+
+  @override
+  String get report_nineLine => '9-Line (medicinsk evakuering)';
+
+  @override
+  String get report_send => 'Skicka rapport';
+
+  @override
+  String report_parts(int count) {
+    return 'Antal meddelanden: $count';
+  }
+
+  @override
+  String get report_sent => 'Rapporten skickades';
 }

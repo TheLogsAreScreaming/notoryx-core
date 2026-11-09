@@ -4565,5 +4565,12 @@
   "forward_title": "Transférer à",
   "schedule_tooltip": "Maintenir pour envoyer plus tard",
   "schedule_for": "Envoi : {time}",
-  "schedule_pastTime": "Choisissez une heure à venir."
+  "schedule_pastTime": "Choisissez une heure à venir.",
+  "report_open": "Envoyer un rapport",
+  "report_title": "Rapport de terrain",
+  "report_salute": "SALUTE (ce que vous avez vu)",
+  "report_nineLine": "9-Line (évacuation médicale)",
+  "report_send": "Envoyer le rapport",
+  "report_parts": "Nombre de messages : {count}",
+  "report_sent": "Rapport envoyé"
 }

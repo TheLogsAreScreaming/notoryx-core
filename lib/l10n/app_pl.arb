@@ -4469,5 +4469,12 @@
   "forward_title": "Przekaż do",
   "schedule_tooltip": "Przytrzymaj, aby wysłać później",
   "schedule_for": "Wysyłka: {time}",
-  "schedule_pastTime": "Wybierz przyszłą godzinę."
+  "schedule_pastTime": "Wybierz przyszłą godzinę.",
+  "report_open": "Wyślij raport",
+  "report_title": "Raport terenowy",
+  "report_salute": "SALUTE (co widziano)",
+  "report_nineLine": "9-Line (ewakuacja medyczna)",
+  "report_send": "Wyślij raport",
+  "report_parts": "Liczba wiadomości: {count}",
+  "report_sent": "Raport wysłany"
 }

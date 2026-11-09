@@ -4431,5 +4431,12 @@
   "forward_title": "Препрати до",
   "schedule_tooltip": "Задръжте, за да изпратите по-късно",
   "schedule_for": "Изпраща се {time}",
-  "schedule_pastTime": "Изберете бъдещ час."
+  "schedule_pastTime": "Изберете бъдещ час.",
+  "report_open": "Изпрати доклад",
+  "report_title": "Полеви доклад",
+  "report_salute": "SALUTE (какво видяхте)",
+  "report_nineLine": "9-Line (медицинска евакуация)",
+  "report_send": "Изпрати доклада",
+  "report_parts": "Брой съобщения: {count}",
+  "report_sent": "Докладът е изпратен"
 }

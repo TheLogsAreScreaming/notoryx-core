@@ -4431,5 +4431,12 @@
   "forward_title": "Vidarebefordra till",
   "schedule_tooltip": "Håll in för att skicka senare",
   "schedule_for": "Skickas: {time}",
-  "schedule_pastTime": "Välj en tid i framtiden."
+  "schedule_pastTime": "Välj en tid i framtiden.",
+  "report_open": "Skicka rapport",
+  "report_title": "Fältrapport",
+  "report_salute": "SALUTE (vad du såg)",
+  "report_nineLine": "9-Line (medicinsk evakuering)",
+  "report_send": "Skicka rapport",
+  "report_parts": "Antal meddelanden: {count}",
+  "report_sent": "Rapporten skickades"
 }

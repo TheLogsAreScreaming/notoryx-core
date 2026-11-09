@@ -10979,4 +10979,27 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get schedule_pastTime => 'Izberite čas v prihodnosti.';
+
+  @override
+  String get report_open => 'Pošlji poročilo';
+
+  @override
+  String get report_title => 'Terensko poročilo';
+
+  @override
+  String get report_salute => 'SALUTE (kaj ste videli)';
+
+  @override
+  String get report_nineLine => '9-Line (medicinska evakuacija)';
+
+  @override
+  String get report_send => 'Pošlji poročilo';
+
+  @override
+  String report_parts(int count) {
+    return 'Število sporočil: $count';
+  }
+
+  @override
+  String get report_sent => 'Poročilo poslano';
 }

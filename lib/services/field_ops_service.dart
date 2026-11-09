@@ -229,6 +229,13 @@ class FieldOpsService extends ChangeNotifier {
     }
   }
 
+  /// Sends a SALUTE or 9-Line report's [parts] to the SOS recipients.
+  Future<void> sendFieldReport(List<String> parts) async {
+    for (final part in parts) {
+      await _sendSosText(part, 'report');
+    }
+  }
+
   Future<void> load() async {
     try {
       final prefs = await SharedPreferences.getInstance();

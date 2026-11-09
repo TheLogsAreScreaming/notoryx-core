@@ -10939,4 +10939,27 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get schedule_pastTime => 'Kies een tijd in de toekomst.';
+
+  @override
+  String get report_open => 'Rapport versturen';
+
+  @override
+  String get report_title => 'Veldrapport';
+
+  @override
+  String get report_salute => 'SALUTE (wat je zag)';
+
+  @override
+  String get report_nineLine => '9-Line (medische evacuatie)';
+
+  @override
+  String get report_send => 'Rapport versturen';
+
+  @override
+  String report_parts(int count) {
+    return 'Aantal berichten: $count';
+  }
+
+  @override
+  String get report_sent => 'Rapport verstuurd';
 }

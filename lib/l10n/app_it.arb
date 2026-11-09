@@ -4565,5 +4565,12 @@
   "forward_title": "Inoltra a",
   "schedule_tooltip": "Tieni premuto per inviare più tardi",
   "schedule_for": "Invio: {time}",
-  "schedule_pastTime": "Scegli un orario futuro."
+  "schedule_pastTime": "Scegli un orario futuro.",
+  "report_open": "Invia rapporto",
+  "report_title": "Rapporto sul campo",
+  "report_salute": "SALUTE (cosa hai visto)",
+  "report_nineLine": "9-Line (evacuazione medica)",
+  "report_send": "Invia rapporto",
+  "report_parts": "Numero di messaggi: {count}",
+  "report_sent": "Rapporto inviato"
 }

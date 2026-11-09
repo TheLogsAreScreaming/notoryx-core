@@ -10964,4 +10964,27 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get schedule_pastTime => 'Escolhe uma hora futura.';
+
+  @override
+  String get report_open => 'Enviar relatório';
+
+  @override
+  String get report_title => 'Relatório de campo';
+
+  @override
+  String get report_salute => 'SALUTE (o que viste)';
+
+  @override
+  String get report_nineLine => '9-Line (evacuação médica)';
+
+  @override
+  String get report_send => 'Enviar relatório';
+
+  @override
+  String report_parts(int count) {
+    return 'Número de mensagens: $count';
+  }
+
+  @override
+  String get report_sent => 'Relatório enviado';
 }

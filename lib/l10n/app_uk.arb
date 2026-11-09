@@ -4411,5 +4411,12 @@
   "forward_title": "Переслати до",
   "schedule_tooltip": "Утримуйте, щоб надіслати пізніше",
   "schedule_for": "Надсилання: {time}",
-  "schedule_pastTime": "Виберіть час у майбутньому."
+  "schedule_pastTime": "Виберіть час у майбутньому.",
+  "report_open": "Надіслати донесення",
+  "report_title": "Польове донесення",
+  "report_salute": "SALUTE (що ви бачили)",
+  "report_nineLine": "9-Line (медична евакуація)",
+  "report_send": "Надіслати донесення",
+  "report_parts": "Кількість повідомлень: {count}",
+  "report_sent": "Донесення надіслано"
 }

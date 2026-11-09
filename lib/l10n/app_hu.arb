@@ -4469,5 +4469,12 @@
   "forward_title": "Továbbítás ide",
   "schedule_tooltip": "Tartsd nyomva a későbbi küldéshez",
   "schedule_for": "Küldés: {time}",
-  "schedule_pastTime": "Válassz jövőbeli időpontot."
+  "schedule_pastTime": "Válassz jövőbeli időpontot.",
+  "report_open": "Jelentés küldése",
+  "report_title": "Terepjelentés",
+  "report_salute": "SALUTE (amit láttál)",
+  "report_nineLine": "9-Line (orvosi evakuálás)",
+  "report_send": "Jelentés küldése",
+  "report_parts": "Üzenetek száma: {count}",
+  "report_sent": "Jelentés elküldve"
 }

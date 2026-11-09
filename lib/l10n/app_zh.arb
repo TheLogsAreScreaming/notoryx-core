@@ -4436,5 +4436,12 @@
   "forward_title": "转发到",
   "schedule_tooltip": "长按稍后发送",
   "schedule_for": "发送时间：{time}",
-  "schedule_pastTime": "请选择将来的时间。"
+  "schedule_pastTime": "请选择将来的时间。",
+  "report_open": "发送报告",
+  "report_title": "现场报告",
+  "report_salute": "SALUTE（所见情况）",
+  "report_nineLine": "9-Line（医疗后送）",
+  "report_send": "发送报告",
+  "report_parts": "消息数：{count}",
+  "report_sent": "报告已发送"
 }

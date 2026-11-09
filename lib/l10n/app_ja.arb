@@ -4565,5 +4565,12 @@
   "forward_title": "転送先",
   "schedule_tooltip": "長押しで後で送信",
   "schedule_for": "送信予定: {time}",
-  "schedule_pastTime": "未来の時刻を選んでください。"
+  "schedule_pastTime": "未来の時刻を選んでください。",
+  "report_open": "報告を送信",
+  "report_title": "現場報告",
+  "report_salute": "SALUTE（目撃内容）",
+  "report_nineLine": "9-Line（医療搬送）",
+  "report_send": "報告を送信",
+  "report_parts": "メッセージ数: {count}",
+  "report_sent": "報告を送信しました"
 }

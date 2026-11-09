@@ -4565,5 +4565,12 @@
   "forward_title": "Reenviar a",
   "schedule_tooltip": "Mantén pulsado para enviar más tarde",
   "schedule_for": "Se envía: {time}",
-  "schedule_pastTime": "Elige una hora futura."
+  "schedule_pastTime": "Elige una hora futura.",
+  "report_open": "Enviar informe",
+  "report_title": "Informe de campo",
+  "report_salute": "SALUTE (lo que viste)",
+  "report_nineLine": "9-Line (evacuación médica)",
+  "report_send": "Enviar informe",
+  "report_parts": "Número de mensajes: {count}",
+  "report_sent": "Informe enviado"
 }

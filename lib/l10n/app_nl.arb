@@ -4431,5 +4431,12 @@
   "forward_title": "Doorsturen naar",
   "schedule_tooltip": "Ingedrukt houden om later te versturen",
   "schedule_for": "Verzenden: {time}",
-  "schedule_pastTime": "Kies een tijd in de toekomst."
+  "schedule_pastTime": "Kies een tijd in de toekomst.",
+  "report_open": "Rapport versturen",
+  "report_title": "Veldrapport",
+  "report_salute": "SALUTE (wat je zag)",
+  "report_nineLine": "9-Line (medische evacuatie)",
+  "report_send": "Rapport versturen",
+  "report_parts": "Aantal berichten: {count}",
+  "report_sent": "Rapport verstuurd"
 }

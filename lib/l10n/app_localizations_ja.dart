@@ -10463,4 +10463,27 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get schedule_pastTime => '未来の時刻を選んでください。';
+
+  @override
+  String get report_open => '報告を送信';
+
+  @override
+  String get report_title => '現場報告';
+
+  @override
+  String get report_salute => 'SALUTE（目撃内容）';
+
+  @override
+  String get report_nineLine => '9-Line（医療搬送）';
+
+  @override
+  String get report_send => '報告を送信';
+
+  @override
+  String report_parts(int count) {
+    return 'メッセージ数: $count';
+  }
+
+  @override
+  String get report_sent => '報告を送信しました';
 }

@@ -3734,5 +3734,12 @@
   "forward_title": "Переслать в",
   "schedule_tooltip": "Удерживайте, чтобы отправить позже",
   "schedule_for": "Отправка: {time}",
-  "schedule_pastTime": "Выберите время в будущем."
+  "schedule_pastTime": "Выберите время в будущем.",
+  "report_open": "Отправить донесение",
+  "report_title": "Полевое донесение",
+  "report_salute": "SALUTE (что вы видели)",
+  "report_nineLine": "9-Line (медицинская эвакуация)",
+  "report_send": "Отправить донесение",
+  "report_parts": "Количество сообщений: {count}",
+  "report_sent": "Донесение отправлено"
 }

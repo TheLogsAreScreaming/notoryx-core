@@ -4565,5 +4565,12 @@
   "forward_title": "Weiterleiten an",
   "schedule_tooltip": "Halten, um später zu senden",
   "schedule_for": "Wird gesendet: {time}",
-  "schedule_pastTime": "Wähle eine Zeit in der Zukunft."
+  "schedule_pastTime": "Wähle eine Zeit in der Zukunft.",
+  "report_open": "Bericht senden",
+  "report_title": "Feldbericht",
+  "report_salute": "SALUTE (Beobachtung)",
+  "report_nineLine": "9-Line (medizinische Evakuierung)",
+  "report_send": "Bericht senden",
+  "report_parts": "Anzahl Nachrichten: {count}",
+  "report_sent": "Bericht gesendet"
 }
