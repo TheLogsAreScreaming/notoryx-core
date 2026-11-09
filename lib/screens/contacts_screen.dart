@@ -514,6 +514,7 @@ class _ContactsScreenState extends State<ContactsScreen>
             ],
           ),
           floatingActionButton: FloatingActionButton(
+            tooltip: context.l10n.contacts_addTooltip,
             onPressed: () => _showAddContactSheet(context),
             child: const Icon(Icons.person_add),
           ),

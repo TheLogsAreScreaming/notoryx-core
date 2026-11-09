@@ -4418,5 +4418,6 @@
   "report_nineLine": "9-Line (медична евакуація)",
   "report_send": "Надіслати донесення",
   "report_parts": "Кількість повідомлень: {count}",
-  "report_sent": "Донесення надіслано"
+  "report_sent": "Донесення надіслано",
+  "contacts_addTooltip": "Додати контакт"
 }

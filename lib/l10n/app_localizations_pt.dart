@@ -10987,4 +10987,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get report_sent => 'Relatório enviado';
+
+  @override
+  String get contacts_addTooltip => 'Adicionar contacto';
 }

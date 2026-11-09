@@ -4476,5 +4476,6 @@
   "report_nineLine": "9-Line (orvosi evakuálás)",
   "report_send": "Jelentés küldése",
   "report_parts": "Üzenetek száma: {count}",
-  "report_sent": "Jelentés elküldve"
+  "report_sent": "Jelentés elküldve",
+  "contacts_addTooltip": "Névjegy hozzáadása"
 }

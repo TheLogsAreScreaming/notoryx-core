@@ -11046,4 +11046,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get report_sent => 'Донесение отправлено';
+
+  @override
+  String get contacts_addTooltip => 'Добавить контакт';
 }

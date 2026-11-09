@@ -3741,5 +3741,6 @@
   "report_nineLine": "9-Line (медицинская эвакуация)",
   "report_send": "Отправить донесение",
   "report_parts": "Количество сообщений: {count}",
-  "report_sent": "Донесение отправлено"
+  "report_sent": "Донесение отправлено",
+  "contacts_addTooltip": "Добавить контакт"
 }

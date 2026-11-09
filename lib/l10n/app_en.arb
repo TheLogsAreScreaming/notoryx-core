@@ -5902,5 +5902,6 @@
   "report_send": "Send report",
   "report_parts": "Number of messages: {count}",
   "@report_parts": {"placeholders": {"count": {"type": "int"}}},
-  "report_sent": "Report sent"
+  "report_sent": "Report sent",
+  "contacts_addTooltip": "Add a contact"
 }

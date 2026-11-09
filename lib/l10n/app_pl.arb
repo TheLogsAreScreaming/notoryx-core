@@ -4476,5 +4476,6 @@
   "report_nineLine": "9-Line (ewakuacja medyczna)",
   "report_send": "Wyślij raport",
   "report_parts": "Liczba wiadomości: {count}",
-  "report_sent": "Raport wysłany"
+  "report_sent": "Raport wysłany",
+  "contacts_addTooltip": "Dodaj kontakt"
 }

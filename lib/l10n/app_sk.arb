@@ -4438,5 +4438,6 @@
   "report_nineLine": "9-Line (lekárska evakuácia)",
   "report_send": "Odoslať hlásenie",
   "report_parts": "Počet správ: {count}",
-  "report_sent": "Hlásenie odoslané"
+  "report_sent": "Hlásenie odoslané",
+  "contacts_addTooltip": "Pridať kontakt"
 }

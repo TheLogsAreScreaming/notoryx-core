@@ -18276,6 +18276,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Report sent'**
   String get report_sent;
+
+  /// No description provided for @contacts_addTooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a contact'**
+  String get contacts_addTooltip;
 }
 
 class _AppLocalizationsDelegate

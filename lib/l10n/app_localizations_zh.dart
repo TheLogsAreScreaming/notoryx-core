@@ -10269,4 +10269,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get report_sent => '报告已发送';
+
+  @override
+  String get contacts_addTooltip => '添加联系人';
 }

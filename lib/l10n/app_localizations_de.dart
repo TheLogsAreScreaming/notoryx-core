@@ -11015,4 +11015,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get report_sent => 'Bericht gesendet';
+
+  @override
+  String get contacts_addTooltip => 'Kontakt hinzufügen';
 }

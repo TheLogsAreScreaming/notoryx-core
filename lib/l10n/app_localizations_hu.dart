@@ -10991,4 +10991,7 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get report_sent => 'Jelentés elküldve';
+
+  @override
+  String get contacts_addTooltip => 'Névjegy hozzáadása';
 }
