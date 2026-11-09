@@ -60,16 +60,15 @@ class BotSettingsScreen extends StatelessWidget {
         content: TextField(
           controller: controller,
           maxLines: 3,
-          decoration: const InputDecoration(
-            helperText:
-                'Short replies save mesh airtime. Maximum 140 bytes including bot label.',
+          decoration: InputDecoration(
+            helperText: context.l10n.botUi_replyHint,
             helperMaxLines: 3,
           ),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
+            child: Text(context.l10n.common_cancel),
           ),
           FilledButton(
             onPressed: () {
@@ -77,13 +76,11 @@ class BotSettingsScreen extends StatelessWidget {
                 Navigator.pop(context, controller.text.trim());
               } else {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Enter a shorter, non-empty reply.'),
-                  ),
+                  SnackBar(content: Text(context.l10n.botUi_shorterReply)),
                 );
               }
             },
-            child: const Text('Save'),
+            child: Text(context.l10n.common_save),
           ),
         ],
       ),
@@ -120,45 +117,51 @@ class BotSettingsScreen extends StatelessWidget {
       context: context,
       builder: (context) => StatefulBuilder(
         builder: (context, setState) => AlertDialog(
-          title: Text(index == null ? 'Add a reply rule' : 'Edit reply rule'),
+          title: Text(
+            index == null
+                ? context.l10n.botUi_addRule
+                : context.l10n.botUi_editRule,
+          ),
           content: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 TextField(
                   controller: trigger,
-                  decoration: const InputDecoration(
-                    labelText: 'Command or keyword',
+                  decoration: InputDecoration(
+                    labelText: context.l10n.botUi_trigger,
                     hintText: '!club',
                   ),
                 ),
                 TextField(
                   controller: response,
                   maxLines: 3,
-                  decoration: const InputDecoration(labelText: 'Reply'),
+                  decoration: InputDecoration(
+                    labelText: context.l10n.botUi_reply,
+                  ),
                 ),
                 SwitchListTile(
                   contentPadding: EdgeInsets.zero,
-                  title: const Text('Match keyword anywhere'),
-                  subtitle: const Text(
-                    'Off means an exact, case-insensitive match.',
-                  ),
+                  title: Text(context.l10n.botUi_matchAnywhere),
+                  subtitle: Text(context.l10n.botUi_matchHint),
                   value: contains,
                   onChanged: (value) => setState(() => contains = value),
                 ),
                 DropdownButtonFormField<String>(
                   initialValue: senderKey,
-                  decoration: const InputDecoration(labelText: 'From'),
+                  decoration: InputDecoration(
+                    labelText: context.l10n.botUi_from,
+                  ),
                   items: [
-                    const DropdownMenuItem<String>(
+                    DropdownMenuItem<String>(
                       value: null,
-                      child: Text('Any allowed contact'),
+                      child: Text(context.l10n.botUi_anyContact),
                     ),
                     if (senderKey != null &&
                         !contacts.any((c) => c.publicKeyHex == senderKey))
                       DropdownMenuItem(
                         value: senderKey,
-                        child: const Text('Previously selected contact'),
+                        child: Text(context.l10n.botUi_prevContact),
                       ),
                     for (final contact in contacts)
                       DropdownMenuItem(
@@ -168,11 +171,9 @@ class BotSettingsScreen extends StatelessWidget {
                   ],
                   onChanged: (value) => setState(() => senderKey = value),
                 ),
-                const Padding(
+                Padding(
                   padding: EdgeInsets.only(top: 12),
-                  child: Text(
-                    'Enabled built-in commands take priority. Rules run in list order.',
-                  ),
+                  child: Text(context.l10n.botUi_priority),
                 ),
               ],
             ),
@@ -180,18 +181,14 @@ class BotSettingsScreen extends StatelessWidget {
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('Cancel'),
+              child: Text(context.l10n.common_cancel),
             ),
             FilledButton(
               onPressed: () {
                 if (trigger.text.trim().isEmpty ||
                     !isValidBotResponse(response.text)) {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text(
-                        'Enter a trigger and a short, non-empty reply.',
-                      ),
-                    ),
+                    SnackBar(content: Text(context.l10n.botUi_needTrigger)),
                   );
                   return;
                 }
@@ -206,7 +203,7 @@ class BotSettingsScreen extends StatelessWidget {
                   ),
                 );
               },
-              child: const Text('Save'),
+              child: Text(context.l10n.common_save),
             ),
           ],
         ),
@@ -240,25 +237,25 @@ class BotSettingsScreen extends StatelessWidget {
             backgroundColor: Colors.transparent,
             surfaceTintColor: Colors.transparent,
             scrolledUnderElevation: 0,
-            title: const Text('NOTORYX Bot Mode'),
+            title: Text(context.l10n.botUi_title),
           ),
           body: ListView(
             padding: const EdgeInsets.all(16),
             children: [
               SwitchListTile(
-                title: const Text('Bot Mode'),
+                title: Text(context.l10n.botUi_mode),
                 subtitle: Text(
                   !service.ready
-                      ? 'Loading settings…'
+                      ? context.l10n.botUi_loading
                       : !settings.enabled
-                      ? 'Off'
+                      ? context.l10n.botUi_off
                       : connector.isConnected
                       ? settings.channels.isEmpty
-                            ? 'On — listening for direct messages'
-                            : 'On — listening for direct messages and '
-                                  '${settings.channels.length} '
-                                  '${settings.channels.length == 1 ? 'channel' : 'channels'}'
-                      : 'On — waiting for a radio connection',
+                            ? context.l10n.botUi_onDm
+                            : context.l10n.botUi_onDmChannels(
+                                settings.channels.length,
+                              )
+                      : context.l10n.botUi_onWaiting,
                 ),
                 value: settings.enabled,
                 onChanged: service.ready
@@ -266,9 +263,7 @@ class BotSettingsScreen extends StatelessWidget {
                           _save(context, settings.copyWith(enabled: value))
                     : null,
               ),
-              const Text(
-                'Free and local. Runs while NOTORYX Core is running and connected to the radio. Phone sleep or app closure can stop replies. Cached messages and reconnect backlog are ignored. Replies use the normal send queue.',
-              ),
+              Text(context.l10n.botUi_intro),
               if (service.error != null)
                 Padding(
                   padding: const EdgeInsets.only(top: 12),
@@ -281,37 +276,37 @@ class BotSettingsScreen extends StatelessWidget {
                 ),
               const SizedBox(height: 16),
               SwitchListTile(
-                title: const Text('Away auto-responder'),
+                title: Text(context.l10n.botUi_away),
                 value: settings.awayEnabled,
                 onChanged: (value) =>
                     _save(context, settings.copyWith(awayEnabled: value)),
               ),
               ListTile(
-                title: const Text('Away reply'),
+                title: Text(context.l10n.botUi_awayReply),
                 subtitle: Text(settings.awayMessage),
                 onTap: () => _editText(
                   context,
-                  'Away reply',
+                  context.l10n.botUi_awayReply,
                   settings.awayMessage,
                   (v) => service.settings.copyWith(awayMessage: v),
                 ),
               ),
               ListTile(
-                title: const Text('Node / group information'),
+                title: Text(context.l10n.botUi_info),
                 subtitle: Text(settings.info),
                 onTap: () => _editText(
                   context,
-                  'Information reply',
+                  context.l10n.botUi_infoReply,
                   settings.info,
                   (v) => service.settings.copyWith(info: v),
                 ),
               ),
               ListTile(
-                title: const Text('Check-in reply'),
+                title: Text(context.l10n.botUi_checkIn),
                 subtitle: Text(settings.checkIn),
                 onTap: () => _editText(
                   context,
-                  'Check-in reply',
+                  context.l10n.botUi_checkIn,
                   settings.checkIn,
                   (v) => service.settings.copyWith(checkIn: v),
                 ),
@@ -344,8 +339,8 @@ class BotSettingsScreen extends StatelessWidget {
                   },
                 ),
               const Divider(),
-              const Text(
-                'Commands',
+              Text(
+                context.l10n.botUi_commands,
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               for (final command in botCommands)
@@ -366,10 +361,8 @@ class BotSettingsScreen extends StatelessWidget {
                   },
                 ),
               SwitchListTile(
-                title: const Text('Allow !where location replies'),
-                subtitle: const Text(
-                  'Shares the radio’s advertised coordinates with allowed contacts. They may be stale. Off by default.',
-                ),
+                title: Text(context.l10n.botUi_allowWhere),
+                subtitle: Text(context.l10n.botUi_whereHint),
                 value: settings.shareLocation,
                 onChanged: (value) =>
                     _save(context, settings.copyWith(shareLocation: value)),
@@ -378,7 +371,7 @@ class BotSettingsScreen extends StatelessWidget {
               const _WeatherAlertsSection(),
               const Divider(),
               ListTile(
-                title: const Text('Custom commands and keyword rules'),
+                title: Text(context.l10n.botUi_custom),
                 trailing: const Icon(Icons.add),
                 onTap: () => _editRule(context),
               ),
@@ -403,7 +396,7 @@ class BotSettingsScreen extends StatelessWidget {
                     },
                   ),
                   trailing: IconButton(
-                    tooltip: 'Delete rule',
+                    tooltip: context.l10n.auto_delete,
                     icon: const Icon(Icons.delete_outline),
                     onPressed: () {
                       final rules = [...settings.rules]..removeAt(i);
@@ -425,20 +418,20 @@ class BotSettingsScreen extends StatelessWidget {
                 ),
               ),
               const Divider(),
-              const Text(
-                'Airtime controls',
+              Text(
+                context.l10n.botUi_airtime,
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               DropdownButtonFormField<int>(
                 initialValue: settings.cooldownSeconds,
-                decoration: const InputDecoration(
-                  labelText: 'Per-contact cooldown',
+                decoration: InputDecoration(
+                  labelText: context.l10n.botUi_cooldown,
                 ),
                 items: {60, 300, 600, 1800, 3600, settings.cooldownSeconds}
                     .map(
                       (seconds) => DropdownMenuItem(
                         value: seconds,
-                        child: Text('${seconds ~/ 60} minutes'),
+                        child: Text(context.l10n.botUi_minutes(seconds ~/ 60)),
                       ),
                     )
                     .toList(),
@@ -450,8 +443,8 @@ class BotSettingsScreen extends StatelessWidget {
               ),
               DropdownButtonFormField<int>(
                 initialValue: settings.repliesPerMinute,
-                decoration: const InputDecoration(
-                  labelText: 'Maximum replies per minute (all contacts)',
+                decoration: InputDecoration(
+                  labelText: context.l10n.botUi_maxReplies,
                 ),
                 items: List.generate(
                   6,
@@ -465,10 +458,8 @@ class BotSettingsScreen extends StatelessWidget {
                 },
               ),
               ExpansionTile(
-                title: const Text('Allowed contacts'),
-                subtitle: const Text(
-                  'None selected means all known chat contacts.',
-                ),
+                title: Text(context.l10n.botUi_allowed),
+                subtitle: Text(context.l10n.botUi_allowedHint),
                 children: [
                   for (final contact in connector.contacts.where(
                     (c) => c.type == advTypeChat,
@@ -494,12 +485,12 @@ class BotSettingsScreen extends StatelessWidget {
                 ],
               ),
               const Divider(),
-              const Text(
-                'Recent activity (this session)',
+              Text(
+                context.l10n.botUi_recent,
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               if (service.activity.isEmpty)
-                const ListTile(title: Text('No bot replies yet.')),
+                ListTile(title: Text(context.l10n.botUi_noReplies)),
               for (final activity in service.activity)
                 ListTile(title: Text(activity)),
             ],

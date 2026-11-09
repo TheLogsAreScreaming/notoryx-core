@@ -11248,4 +11248,130 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get teamSetup_radioChanged => 'Funkeinstellungen geändert';
+
+  @override
+  String get botUi_replyHint =>
+      'Kurze Antworten sparen Sendezeit. Maximal 140 Bytes einschließlich Bot-Kennzeichnung.';
+
+  @override
+  String get botUi_shorterReply => 'Gib eine kürzere, nicht leere Antwort ein.';
+
+  @override
+  String get botUi_addRule => 'Antwortregel hinzufügen';
+
+  @override
+  String get botUi_editRule => 'Antwortregel bearbeiten';
+
+  @override
+  String get botUi_trigger => 'Befehl oder Stichwort';
+
+  @override
+  String get botUi_reply => 'Antwort';
+
+  @override
+  String get botUi_matchAnywhere => 'Stichwort überall erkennen';
+
+  @override
+  String get botUi_matchHint =>
+      'Aus bedeutet exakte Übereinstimmung ohne Groß-/Kleinschreibung.';
+
+  @override
+  String get botUi_from => 'Von';
+
+  @override
+  String get botUi_anyContact => 'Jeder erlaubte Kontakt';
+
+  @override
+  String get botUi_prevContact => 'Zuvor gewählter Kontakt';
+
+  @override
+  String get botUi_priority =>
+      'Aktivierte eingebaute Befehle haben Vorrang. Regeln laufen in Listenreihenfolge.';
+
+  @override
+  String get botUi_needTrigger =>
+      'Gib einen Auslöser und eine kurze, nicht leere Antwort ein.';
+
+  @override
+  String get botUi_title => 'NOTORYX Bot-Modus';
+
+  @override
+  String get botUi_mode => 'Bot-Modus';
+
+  @override
+  String get botUi_loading => 'Einstellungen werden geladen…';
+
+  @override
+  String get botUi_off => 'Aus';
+
+  @override
+  String get botUi_onDm => 'An — wartet auf Direktnachrichten';
+
+  @override
+  String botUi_onDmChannels(int count) {
+    return 'An — wartet auf Direktnachrichten und Kanäle: $count';
+  }
+
+  @override
+  String get botUi_onWaiting => 'An — wartet auf Funkverbindung';
+
+  @override
+  String get botUi_intro =>
+      'Kostenlos und lokal. Läuft, solange NOTORYX Core geöffnet und mit dem Funkgerät verbunden ist. Standby oder Schließen der App kann Antworten stoppen. Zwischengespeicherte Nachrichten und Rückstand beim Verbinden werden ignoriert. Antworten nutzen die normale Sendewarteschlange.';
+
+  @override
+  String get botUi_away => 'Abwesenheitsantwort automatisch';
+
+  @override
+  String get botUi_awayReply => 'Abwesenheitsantwort';
+
+  @override
+  String get botUi_info => 'Knoten-/Gruppeninformationen';
+
+  @override
+  String get botUi_infoReply => 'Informationsantwort';
+
+  @override
+  String get botUi_checkIn => 'Check-in-Antwort';
+
+  @override
+  String get botUi_commands => 'Befehle';
+
+  @override
+  String get botUi_allowWhere => '!where-Standortantworten erlauben';
+
+  @override
+  String get botUi_whereHint =>
+      'Teilt die vom Funkgerät gesendeten Koordinaten mit erlaubten Kontakten. Sie können veraltet sein. Standardmäßig aus.';
+
+  @override
+  String get botUi_custom => 'Eigene Befehle und Stichwortregeln';
+
+  @override
+  String get botUi_airtime => 'Sendezeit-Steuerung';
+
+  @override
+  String get botUi_cooldown => 'Pause pro Kontakt';
+
+  @override
+  String botUi_minutes(int count) {
+    return '$count Minuten';
+  }
+
+  @override
+  String get botUi_maxReplies =>
+      'Maximale Antworten pro Minute (alle Kontakte)';
+
+  @override
+  String get botUi_allowed => 'Erlaubte Kontakte';
+
+  @override
+  String get botUi_allowedHint =>
+      'Keine Auswahl bedeutet alle bekannten Chat-Kontakte.';
+
+  @override
+  String get botUi_recent => 'Letzte Aktivität (diese Sitzung)';
+
+  @override
+  String get botUi_noReplies => 'Noch keine Bot-Antworten.';
 }

@@ -11213,4 +11213,127 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get teamSetup_radioChanged => 'nastavenia rádia zmenené';
+
+  @override
+  String get botUi_replyHint =>
+      'Krátke odpovede šetria čas vysielania. Najviac 140 bajtov vrátane označenia bota.';
+
+  @override
+  String get botUi_shorterReply => 'Zadajte kratšiu, neprázdnu odpoveď.';
+
+  @override
+  String get botUi_addRule => 'Pridať pravidlo odpovede';
+
+  @override
+  String get botUi_editRule => 'Upraviť pravidlo odpovede';
+
+  @override
+  String get botUi_trigger => 'Príkaz alebo kľúčové slovo';
+
+  @override
+  String get botUi_reply => 'Odpoveď';
+
+  @override
+  String get botUi_matchAnywhere => 'Hľadať slovo kdekoľvek';
+
+  @override
+  String get botUi_matchHint =>
+      'Vypnuté znamená presnú zhodu bez ohľadu na veľkosť písmen.';
+
+  @override
+  String get botUi_from => 'Od';
+
+  @override
+  String get botUi_anyContact => 'Ktorýkoľvek povolený kontakt';
+
+  @override
+  String get botUi_prevContact => 'Predtým vybraný kontakt';
+
+  @override
+  String get botUi_priority =>
+      'Zapnuté vstavané príkazy majú prednosť. Pravidlá idú v poradí zoznamu.';
+
+  @override
+  String get botUi_needTrigger => 'Zadajte spúšťač a krátku neprázdnu odpoveď.';
+
+  @override
+  String get botUi_title => 'Režim bota NOTORYX';
+
+  @override
+  String get botUi_mode => 'Režim bota';
+
+  @override
+  String get botUi_loading => 'Načítavajú sa nastavenia…';
+
+  @override
+  String get botUi_off => 'Vypnutý';
+
+  @override
+  String get botUi_onDm => 'Zapnutý — počúva priame správy';
+
+  @override
+  String botUi_onDmChannels(int count) {
+    return 'Zapnutý — počúva priame správy a kanály: $count';
+  }
+
+  @override
+  String get botUi_onWaiting => 'Zapnutý — čaká na pripojenie rádia';
+
+  @override
+  String get botUi_intro =>
+      'Zadarmo a lokálne. Funguje, kým je NOTORYX Core otvorený a pripojený k rádiu. Spánok telefónu alebo zatvorenie aplikácie môže odpovede zastaviť. Správy z vyrovnávacej pamäte a nahromadené pri pripojení sa ignorujú. Odpovede používajú bežný front odosielania.';
+
+  @override
+  String get botUi_away => 'Automatická odpoveď v neprítomnosti';
+
+  @override
+  String get botUi_awayReply => 'Odpoveď v neprítomnosti';
+
+  @override
+  String get botUi_info => 'Informácie o uzle / skupine';
+
+  @override
+  String get botUi_infoReply => 'Informačná odpoveď';
+
+  @override
+  String get botUi_checkIn => 'Odpoveď na ohlásenie';
+
+  @override
+  String get botUi_commands => 'Príkazy';
+
+  @override
+  String get botUi_allowWhere => 'Povoliť odpovede polohy !where';
+
+  @override
+  String get botUi_whereHint =>
+      'Zdieľa súradnice oznamované rádiom s povolenými kontaktmi. Môžu byť zastarané. Predvolene vypnuté.';
+
+  @override
+  String get botUi_custom => 'Vlastné príkazy a pravidlá kľúčových slov';
+
+  @override
+  String get botUi_airtime => 'Riadenie času vysielania';
+
+  @override
+  String get botUi_cooldown => 'Pauza na kontakt';
+
+  @override
+  String botUi_minutes(int count) {
+    return '$count minút';
+  }
+
+  @override
+  String get botUi_maxReplies => 'Maximum odpovedí za minútu (všetky kontakty)';
+
+  @override
+  String get botUi_allowed => 'Povolené kontakty';
+
+  @override
+  String get botUi_allowedHint => 'Bez výberu znamená všetky známe kontakty.';
+
+  @override
+  String get botUi_recent => 'Nedávna aktivita (táto relácia)';
+
+  @override
+  String get botUi_noReplies => 'Zatiaľ žiadne odpovede bota.';
 }

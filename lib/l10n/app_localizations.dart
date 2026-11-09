@@ -18684,6 +18684,234 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'radio settings changed'**
   String get teamSetup_radioChanged;
+
+  /// No description provided for @botUi_replyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Short replies save mesh airtime. Maximum 140 bytes including bot label.'**
+  String get botUi_replyHint;
+
+  /// No description provided for @botUi_shorterReply.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a shorter, non-empty reply.'**
+  String get botUi_shorterReply;
+
+  /// No description provided for @botUi_addRule.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a reply rule'**
+  String get botUi_addRule;
+
+  /// No description provided for @botUi_editRule.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit reply rule'**
+  String get botUi_editRule;
+
+  /// No description provided for @botUi_trigger.
+  ///
+  /// In en, this message translates to:
+  /// **'Command or keyword'**
+  String get botUi_trigger;
+
+  /// No description provided for @botUi_reply.
+  ///
+  /// In en, this message translates to:
+  /// **'Reply'**
+  String get botUi_reply;
+
+  /// No description provided for @botUi_matchAnywhere.
+  ///
+  /// In en, this message translates to:
+  /// **'Match keyword anywhere'**
+  String get botUi_matchAnywhere;
+
+  /// No description provided for @botUi_matchHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Off means an exact, case-insensitive match.'**
+  String get botUi_matchHint;
+
+  /// No description provided for @botUi_from.
+  ///
+  /// In en, this message translates to:
+  /// **'From'**
+  String get botUi_from;
+
+  /// No description provided for @botUi_anyContact.
+  ///
+  /// In en, this message translates to:
+  /// **'Any allowed contact'**
+  String get botUi_anyContact;
+
+  /// No description provided for @botUi_prevContact.
+  ///
+  /// In en, this message translates to:
+  /// **'Previously selected contact'**
+  String get botUi_prevContact;
+
+  /// No description provided for @botUi_priority.
+  ///
+  /// In en, this message translates to:
+  /// **'Enabled built-in commands take priority. Rules run in list order.'**
+  String get botUi_priority;
+
+  /// No description provided for @botUi_needTrigger.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a trigger and a short, non-empty reply.'**
+  String get botUi_needTrigger;
+
+  /// No description provided for @botUi_title.
+  ///
+  /// In en, this message translates to:
+  /// **'NOTORYX Bot Mode'**
+  String get botUi_title;
+
+  /// No description provided for @botUi_mode.
+  ///
+  /// In en, this message translates to:
+  /// **'Bot Mode'**
+  String get botUi_mode;
+
+  /// No description provided for @botUi_loading.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading settings…'**
+  String get botUi_loading;
+
+  /// No description provided for @botUi_off.
+  ///
+  /// In en, this message translates to:
+  /// **'Off'**
+  String get botUi_off;
+
+  /// No description provided for @botUi_onDm.
+  ///
+  /// In en, this message translates to:
+  /// **'On — listening for direct messages'**
+  String get botUi_onDm;
+
+  /// No description provided for @botUi_onDmChannels.
+  ///
+  /// In en, this message translates to:
+  /// **'On — listening for direct messages and channels: {count}'**
+  String botUi_onDmChannels(int count);
+
+  /// No description provided for @botUi_onWaiting.
+  ///
+  /// In en, this message translates to:
+  /// **'On — waiting for a radio connection'**
+  String get botUi_onWaiting;
+
+  /// No description provided for @botUi_intro.
+  ///
+  /// In en, this message translates to:
+  /// **'Free and local. Runs while NOTORYX Core is running and connected to the radio. Phone sleep or app closure can stop replies. Cached messages and reconnect backlog are ignored. Replies use the normal send queue.'**
+  String get botUi_intro;
+
+  /// No description provided for @botUi_away.
+  ///
+  /// In en, this message translates to:
+  /// **'Away auto-responder'**
+  String get botUi_away;
+
+  /// No description provided for @botUi_awayReply.
+  ///
+  /// In en, this message translates to:
+  /// **'Away reply'**
+  String get botUi_awayReply;
+
+  /// No description provided for @botUi_info.
+  ///
+  /// In en, this message translates to:
+  /// **'Node / group information'**
+  String get botUi_info;
+
+  /// No description provided for @botUi_infoReply.
+  ///
+  /// In en, this message translates to:
+  /// **'Information reply'**
+  String get botUi_infoReply;
+
+  /// No description provided for @botUi_checkIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Check-in reply'**
+  String get botUi_checkIn;
+
+  /// No description provided for @botUi_commands.
+  ///
+  /// In en, this message translates to:
+  /// **'Commands'**
+  String get botUi_commands;
+
+  /// No description provided for @botUi_allowWhere.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow !where location replies'**
+  String get botUi_allowWhere;
+
+  /// No description provided for @botUi_whereHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Shares the radio’s advertised coordinates with allowed contacts. They may be stale. Off by default.'**
+  String get botUi_whereHint;
+
+  /// No description provided for @botUi_custom.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom commands and keyword rules'**
+  String get botUi_custom;
+
+  /// No description provided for @botUi_airtime.
+  ///
+  /// In en, this message translates to:
+  /// **'Airtime controls'**
+  String get botUi_airtime;
+
+  /// No description provided for @botUi_cooldown.
+  ///
+  /// In en, this message translates to:
+  /// **'Per-contact cooldown'**
+  String get botUi_cooldown;
+
+  /// No description provided for @botUi_minutes.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} minutes'**
+  String botUi_minutes(int count);
+
+  /// No description provided for @botUi_maxReplies.
+  ///
+  /// In en, this message translates to:
+  /// **'Maximum replies per minute (all contacts)'**
+  String get botUi_maxReplies;
+
+  /// No description provided for @botUi_allowed.
+  ///
+  /// In en, this message translates to:
+  /// **'Allowed contacts'**
+  String get botUi_allowed;
+
+  /// No description provided for @botUi_allowedHint.
+  ///
+  /// In en, this message translates to:
+  /// **'None selected means all known chat contacts.'**
+  String get botUi_allowedHint;
+
+  /// No description provided for @botUi_recent.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent activity (this session)'**
+  String get botUi_recent;
+
+  /// No description provided for @botUi_noReplies.
+  ///
+  /// In en, this message translates to:
+  /// **'No bot replies yet.'**
+  String get botUi_noReplies;
 }
 
 class _AppLocalizationsDelegate

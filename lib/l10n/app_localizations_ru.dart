@@ -11278,4 +11278,128 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get teamSetup_radioChanged => 'настройки радио изменены';
+
+  @override
+  String get botUi_replyHint =>
+      'Короткие ответы экономят эфирное время. Не более 140 байт с меткой бота.';
+
+  @override
+  String get botUi_shorterReply => 'Введите более короткий непустой ответ.';
+
+  @override
+  String get botUi_addRule => 'Добавить правило ответа';
+
+  @override
+  String get botUi_editRule => 'Изменить правило ответа';
+
+  @override
+  String get botUi_trigger => 'Команда или ключевое слово';
+
+  @override
+  String get botUi_reply => 'Ответ';
+
+  @override
+  String get botUi_matchAnywhere => 'Искать слово в любом месте';
+
+  @override
+  String get botUi_matchHint =>
+      'Выключено — точное совпадение без учёта регистра.';
+
+  @override
+  String get botUi_from => 'От кого';
+
+  @override
+  String get botUi_anyContact => 'Любой разрешённый контакт';
+
+  @override
+  String get botUi_prevContact => 'Ранее выбранный контакт';
+
+  @override
+  String get botUi_priority =>
+      'Включённые встроенные команды имеют приоритет. Правила выполняются по порядку списка.';
+
+  @override
+  String get botUi_needTrigger => 'Введите триггер и короткий непустой ответ.';
+
+  @override
+  String get botUi_title => 'Режим бота NOTORYX';
+
+  @override
+  String get botUi_mode => 'Режим бота';
+
+  @override
+  String get botUi_loading => 'Загрузка настроек…';
+
+  @override
+  String get botUi_off => 'Выключен';
+
+  @override
+  String get botUi_onDm => 'Включён — слушает личные сообщения';
+
+  @override
+  String botUi_onDmChannels(int count) {
+    return 'Включён — слушает личные сообщения и каналы: $count';
+  }
+
+  @override
+  String get botUi_onWaiting => 'Включён — ждёт подключения радио';
+
+  @override
+  String get botUi_intro =>
+      'Бесплатно и локально. Работает, пока NOTORYX Core открыт и подключён к радио. Сон телефона или закрытие приложения могут остановить ответы. Кэшированные и накопленные при подключении сообщения игнорируются. Ответы идут через обычную очередь отправки.';
+
+  @override
+  String get botUi_away => 'Автоответчик об отсутствии';
+
+  @override
+  String get botUi_awayReply => 'Ответ об отсутствии';
+
+  @override
+  String get botUi_info => 'Информация об узле / группе';
+
+  @override
+  String get botUi_infoReply => 'Информационный ответ';
+
+  @override
+  String get botUi_checkIn => 'Ответ на отметку';
+
+  @override
+  String get botUi_commands => 'Команды';
+
+  @override
+  String get botUi_allowWhere => 'Разрешить ответы о местоположении !where';
+
+  @override
+  String get botUi_whereHint =>
+      'Передаёт объявленные радио координаты разрешённым контактам. Они могут быть устаревшими. По умолчанию выключено.';
+
+  @override
+  String get botUi_custom => 'Свои команды и правила ключевых слов';
+
+  @override
+  String get botUi_airtime => 'Контроль эфирного времени';
+
+  @override
+  String get botUi_cooldown => 'Пауза на контакт';
+
+  @override
+  String botUi_minutes(int count) {
+    return '$count мин';
+  }
+
+  @override
+  String get botUi_maxReplies => 'Максимум ответов в минуту (все контакты)';
+
+  @override
+  String get botUi_allowed => 'Разрешённые контакты';
+
+  @override
+  String get botUi_allowedHint =>
+      'Если ничего не выбрано — все известные контакты.';
+
+  @override
+  String get botUi_recent => 'Недавняя активность (этот сеанс)';
+
+  @override
+  String get botUi_noReplies => 'Бот ещё не отвечал.';
 }

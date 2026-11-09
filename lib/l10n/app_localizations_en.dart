@@ -11103,4 +11103,128 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get teamSetup_radioChanged => 'radio settings changed';
+
+  @override
+  String get botUi_replyHint =>
+      'Short replies save mesh airtime. Maximum 140 bytes including bot label.';
+
+  @override
+  String get botUi_shorterReply => 'Enter a shorter, non-empty reply.';
+
+  @override
+  String get botUi_addRule => 'Add a reply rule';
+
+  @override
+  String get botUi_editRule => 'Edit reply rule';
+
+  @override
+  String get botUi_trigger => 'Command or keyword';
+
+  @override
+  String get botUi_reply => 'Reply';
+
+  @override
+  String get botUi_matchAnywhere => 'Match keyword anywhere';
+
+  @override
+  String get botUi_matchHint => 'Off means an exact, case-insensitive match.';
+
+  @override
+  String get botUi_from => 'From';
+
+  @override
+  String get botUi_anyContact => 'Any allowed contact';
+
+  @override
+  String get botUi_prevContact => 'Previously selected contact';
+
+  @override
+  String get botUi_priority =>
+      'Enabled built-in commands take priority. Rules run in list order.';
+
+  @override
+  String get botUi_needTrigger =>
+      'Enter a trigger and a short, non-empty reply.';
+
+  @override
+  String get botUi_title => 'NOTORYX Bot Mode';
+
+  @override
+  String get botUi_mode => 'Bot Mode';
+
+  @override
+  String get botUi_loading => 'Loading settings…';
+
+  @override
+  String get botUi_off => 'Off';
+
+  @override
+  String get botUi_onDm => 'On — listening for direct messages';
+
+  @override
+  String botUi_onDmChannels(int count) {
+    return 'On — listening for direct messages and channels: $count';
+  }
+
+  @override
+  String get botUi_onWaiting => 'On — waiting for a radio connection';
+
+  @override
+  String get botUi_intro =>
+      'Free and local. Runs while NOTORYX Core is running and connected to the radio. Phone sleep or app closure can stop replies. Cached messages and reconnect backlog are ignored. Replies use the normal send queue.';
+
+  @override
+  String get botUi_away => 'Away auto-responder';
+
+  @override
+  String get botUi_awayReply => 'Away reply';
+
+  @override
+  String get botUi_info => 'Node / group information';
+
+  @override
+  String get botUi_infoReply => 'Information reply';
+
+  @override
+  String get botUi_checkIn => 'Check-in reply';
+
+  @override
+  String get botUi_commands => 'Commands';
+
+  @override
+  String get botUi_allowWhere => 'Allow !where location replies';
+
+  @override
+  String get botUi_whereHint =>
+      'Shares the radio’s advertised coordinates with allowed contacts. They may be stale. Off by default.';
+
+  @override
+  String get botUi_custom => 'Custom commands and keyword rules';
+
+  @override
+  String get botUi_airtime => 'Airtime controls';
+
+  @override
+  String get botUi_cooldown => 'Per-contact cooldown';
+
+  @override
+  String botUi_minutes(int count) {
+    return '$count minutes';
+  }
+
+  @override
+  String get botUi_maxReplies => 'Maximum replies per minute (all contacts)';
+
+  @override
+  String get botUi_allowed => 'Allowed contacts';
+
+  @override
+  String get botUi_allowedHint =>
+      'None selected means all known chat contacts.';
+
+  @override
+  String get botUi_recent => 'Recent activity (this session)';
+
+  @override
+  String get botUi_noReplies => 'No bot replies yet.';
 }
