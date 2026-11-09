@@ -65,6 +65,6 @@ The scanner matches text patterns, so a flagged line is a place to look, not a c
 
 ## Next steps
 
-1. Review the 29 flagged tap areas and 6 images.
+1. Review the 28 flagged tap areas and 6 images.
 2. Do the device walk-through with TalkBack and VoiceOver, starting with SOS, sending a message and connecting a radio.
 3. Update this page with the results, and name the device and OS versions used.
