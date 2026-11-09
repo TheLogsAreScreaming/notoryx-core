@@ -1,0 +1,4 @@
+• SALUTE and 9-Line report forms
+• Forward messages and schedule sends
+• Automation rules for battery, time, area and node events
+• Share team setup by encrypted QR code or file
