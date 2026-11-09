@@ -4426,5 +4426,10 @@
   "notification_replyAction": "Svara",
   "notification_replyHint": "Skriv ett svar",
   "outbox_waiting": "Väntar på radion: {count}",
-  "outbox_cantQueue": "Ingen radio har anslutits än, så det här kan inte sparas till senare."
+  "outbox_cantQueue": "Ingen radio har anslutits än, så det här kan inte sparas till senare.",
+  "chat_forward": "Vidarebefordra",
+  "forward_title": "Vidarebefordra till",
+  "schedule_tooltip": "Håll in för att skicka senare",
+  "schedule_for": "Skickas: {time}",
+  "schedule_pastTime": "Välj en tid i framtiden."
 }

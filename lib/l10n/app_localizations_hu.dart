@@ -10951,4 +10951,21 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get outbox_cantQueue =>
       'Még nem csatlakozott rádió, ezért ezt nem lehet későbbre menteni.';
+
+  @override
+  String get chat_forward => 'Továbbítás';
+
+  @override
+  String get forward_title => 'Továbbítás ide';
+
+  @override
+  String get schedule_tooltip => 'Tartsd nyomva a későbbi küldéshez';
+
+  @override
+  String schedule_for(String time) {
+    return 'Küldés: $time';
+  }
+
+  @override
+  String get schedule_pastTime => 'Válassz jövőbeli időpontot.';
 }

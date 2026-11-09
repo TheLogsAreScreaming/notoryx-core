@@ -4560,5 +4560,10 @@
   "notification_replyAction": "Rispondi",
   "notification_replyHint": "Scrivi una risposta",
   "outbox_waiting": "In attesa della radio: {count}",
-  "outbox_cantQueue": "Nessuna radio è stata ancora collegata, quindi non si può salvare per dopo."
+  "outbox_cantQueue": "Nessuna radio è stata ancora collegata, quindi non si può salvare per dopo.",
+  "chat_forward": "Inoltra",
+  "forward_title": "Inoltra a",
+  "schedule_tooltip": "Tieni premuto per inviare più tardi",
+  "schedule_for": "Invio: {time}",
+  "schedule_pastTime": "Scegli un orario futuro."
 }

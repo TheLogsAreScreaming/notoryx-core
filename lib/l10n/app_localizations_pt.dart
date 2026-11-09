@@ -10947,4 +10947,21 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get outbox_cantQueue =>
       'Ainda não foi ligado nenhum rádio, por isso não é possível guardar para enviar depois.';
+
+  @override
+  String get chat_forward => 'Reencaminhar';
+
+  @override
+  String get forward_title => 'Reencaminhar para';
+
+  @override
+  String get schedule_tooltip => 'Mantém premido para enviar mais tarde';
+
+  @override
+  String schedule_for(String time) {
+    return 'Envio: $time';
+  }
+
+  @override
+  String get schedule_pastTime => 'Escolhe uma hora futura.';
 }

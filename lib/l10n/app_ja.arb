@@ -4560,5 +4560,10 @@
   "notification_replyAction": "返信",
   "notification_replyHint": "返信を入力",
   "outbox_waiting": "無線機を待機中: {count}",
-  "outbox_cantQueue": "まだ無線機が接続されていないため、後で送信するよう保存できません。"
+  "outbox_cantQueue": "まだ無線機が接続されていないため、後で送信するよう保存できません。",
+  "chat_forward": "転送",
+  "forward_title": "転送先",
+  "schedule_tooltip": "長押しで後で送信",
+  "schedule_for": "送信予定: {time}",
+  "schedule_pastTime": "未来の時刻を選んでください。"
 }

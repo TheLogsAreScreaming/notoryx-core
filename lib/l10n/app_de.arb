@@ -4560,5 +4560,10 @@
   "notification_replyAction": "Antworten",
   "notification_replyHint": "Antwort schreiben",
   "outbox_waiting": "Warten auf das Funkgerät: {count}",
-  "outbox_cantQueue": "Es war noch kein Funkgerät verbunden, daher kann dies nicht für später gespeichert werden."
+  "outbox_cantQueue": "Es war noch kein Funkgerät verbunden, daher kann dies nicht für später gespeichert werden.",
+  "chat_forward": "Weiterleiten",
+  "forward_title": "Weiterleiten an",
+  "schedule_tooltip": "Halten, um später zu senden",
+  "schedule_for": "Wird gesendet: {time}",
+  "schedule_pastTime": "Wähle eine Zeit in der Zukunft."
 }

@@ -10446,4 +10446,21 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get outbox_cantQueue => 'まだ無線機が接続されていないため、後で送信するよう保存できません。';
+
+  @override
+  String get chat_forward => '転送';
+
+  @override
+  String get forward_title => '転送先';
+
+  @override
+  String get schedule_tooltip => '長押しで後で送信';
+
+  @override
+  String schedule_for(String time) {
+    return '送信予定: $time';
+  }
+
+  @override
+  String get schedule_pastTime => '未来の時刻を選んでください。';
 }

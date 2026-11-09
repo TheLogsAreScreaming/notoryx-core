@@ -3729,5 +3729,10 @@
   "notification_replyAction": "Ответить",
   "notification_replyHint": "Напишите ответ",
   "outbox_waiting": "Ожидают радио: {count}",
-  "outbox_cantQueue": "Радио ещё не подключалось, поэтому сохранить это на потом нельзя."
+  "outbox_cantQueue": "Радио ещё не подключалось, поэтому сохранить это на потом нельзя.",
+  "chat_forward": "Переслать",
+  "forward_title": "Переслать в",
+  "schedule_tooltip": "Удерживайте, чтобы отправить позже",
+  "schedule_for": "Отправка: {time}",
+  "schedule_pastTime": "Выберите время в будущем."
 }

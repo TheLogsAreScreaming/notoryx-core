@@ -4426,5 +4426,10 @@
   "notification_replyAction": "Odpovedať",
   "notification_replyHint": "Napíšte odpoveď",
   "outbox_waiting": "Čaká na rádio: {count}",
-  "outbox_cantQueue": "Zatiaľ nebolo pripojené žiadne rádio, preto to nemožno uložiť na neskôr."
+  "outbox_cantQueue": "Zatiaľ nebolo pripojené žiadne rádio, preto to nemožno uložiť na neskôr.",
+  "chat_forward": "Preposlať",
+  "forward_title": "Preposlať do",
+  "schedule_tooltip": "Podržaním odošlete neskôr",
+  "schedule_for": "Odoslanie: {time}",
+  "schedule_pastTime": "Vyberte čas v budúcnosti."
 }

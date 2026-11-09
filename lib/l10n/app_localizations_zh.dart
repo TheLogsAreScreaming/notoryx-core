@@ -10229,4 +10229,21 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get outbox_cantQueue => '尚未连接过电台，因此无法保存以便稍后发送。';
+
+  @override
+  String get chat_forward => '转发';
+
+  @override
+  String get forward_title => '转发到';
+
+  @override
+  String get schedule_tooltip => '长按稍后发送';
+
+  @override
+  String schedule_for(String time) {
+    return '发送时间：$time';
+  }
+
+  @override
+  String get schedule_pastTime => '请选择将来的时间。';
 }

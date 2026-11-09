@@ -10922,4 +10922,21 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get outbox_cantQueue =>
       'Er is nog geen radio verbonden, dus dit kan niet voor later worden bewaard.';
+
+  @override
+  String get chat_forward => 'Doorsturen';
+
+  @override
+  String get forward_title => 'Doorsturen naar';
+
+  @override
+  String get schedule_tooltip => 'Ingedrukt houden om later te versturen';
+
+  @override
+  String schedule_for(String time) {
+    return 'Verzenden: $time';
+  }
+
+  @override
+  String get schedule_pastTime => 'Kies een tijd in de toekomst.';
 }

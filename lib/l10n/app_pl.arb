@@ -4464,5 +4464,10 @@
   "notification_replyAction": "Odpowiedz",
   "notification_replyHint": "Napisz odpowiedź",
   "outbox_waiting": "Oczekuje na radio: {count}",
-  "outbox_cantQueue": "Nie połączono jeszcze żadnego radia, więc nie można zapisać tego na później."
+  "outbox_cantQueue": "Nie połączono jeszcze żadnego radia, więc nie można zapisać tego na później.",
+  "chat_forward": "Przekaż",
+  "forward_title": "Przekaż do",
+  "schedule_tooltip": "Przytrzymaj, aby wysłać później",
+  "schedule_for": "Wysyłka: {time}",
+  "schedule_pastTime": "Wybierz przyszłą godzinę."
 }

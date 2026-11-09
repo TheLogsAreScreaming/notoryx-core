@@ -158,4 +158,48 @@ void main() {
     radio.self = '';
     expect(await make().add(samTarget, 'x'), isFalse);
   });
+
+  test('a scheduled message waits for its time, even when connected', () async {
+    final outbox = make();
+    radio.connected = true;
+    // Connected, so check() would otherwise send it straight away.
+    await outbox.add(
+      samTarget,
+      'later',
+      sendAt: now.add(const Duration(hours: 2)),
+    );
+    await outbox.flush();
+    expect(radio.sent, isEmpty);
+    now = now.add(const Duration(hours: 3));
+    await outbox.flush();
+    expect(radio.sent, ['Sam:later']);
+    outbox.dispose();
+  });
+
+  test('its 24-hour limit counts from the scheduled time', () async {
+    final outbox = make();
+    await outbox.add(
+      samTarget,
+      'next week',
+      sendAt: now.add(const Duration(days: 7)),
+    );
+    now = now.add(const Duration(days: 7, hours: 1));
+    radio.connected = true;
+    await outbox.flush();
+    expect(radio.sent, ['Sam:next week']);
+  });
+
+  test('missed by over a day it goes back to the draft', () async {
+    final outbox = make();
+    await outbox.add(
+      samTarget,
+      'missed',
+      sendAt: now.add(const Duration(hours: 1)),
+    );
+    now = now.add(const Duration(days: 2));
+    radio.connected = true;
+    await outbox.flush();
+    expect(radio.sent, isEmpty);
+    expect(DraftStore.load(draft), 'missed');
+  });
 }

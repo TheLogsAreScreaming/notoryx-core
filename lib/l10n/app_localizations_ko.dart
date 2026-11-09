@@ -10461,4 +10461,21 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get outbox_cantQueue => '아직 연결된 무전기가 없어 나중에 보내도록 저장할 수 없습니다.';
+
+  @override
+  String get chat_forward => '전달';
+
+  @override
+  String get forward_title => '전달 대상';
+
+  @override
+  String get schedule_tooltip => '길게 눌러 나중에 보내기';
+
+  @override
+  String schedule_for(String time) {
+    return '보낼 시각: $time';
+  }
+
+  @override
+  String get schedule_pastTime => '미래 시각을 선택하세요.';
 }

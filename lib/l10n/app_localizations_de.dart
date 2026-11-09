@@ -10975,4 +10975,21 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get outbox_cantQueue =>
       'Es war noch kein Funkgerät verbunden, daher kann dies nicht für später gespeichert werden.';
+
+  @override
+  String get chat_forward => 'Weiterleiten';
+
+  @override
+  String get forward_title => 'Weiterleiten an';
+
+  @override
+  String get schedule_tooltip => 'Halten, um später zu senden';
+
+  @override
+  String schedule_for(String time) {
+    return 'Wird gesendet: $time';
+  }
+
+  @override
+  String get schedule_pastTime => 'Wähle eine Zeit in der Zukunft.';
 }

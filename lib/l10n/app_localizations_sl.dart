@@ -10962,4 +10962,21 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String get outbox_cantQueue =>
       'Noben radio še ni bil povezan, zato tega ni mogoče shraniti za pozneje.';
+
+  @override
+  String get chat_forward => 'Posreduj';
+
+  @override
+  String get forward_title => 'Posreduj v';
+
+  @override
+  String get schedule_tooltip => 'Pridržite za poznejše pošiljanje';
+
+  @override
+  String schedule_for(String time) {
+    return 'Pošiljanje: $time';
+  }
+
+  @override
+  String get schedule_pastTime => 'Izberite čas v prihodnosti.';
 }

@@ -5888,5 +5888,11 @@
   "notification_replyHint": "Write a reply",
   "outbox_waiting": "Waiting for the radio: {count}",
   "@outbox_waiting": {"placeholders": {"count": {"type": "int"}}},
-  "outbox_cantQueue": "No radio has been connected yet, so this can't be saved to send later."
+  "outbox_cantQueue": "No radio has been connected yet, so this can't be saved to send later.",
+  "chat_forward": "Forward",
+  "forward_title": "Forward to",
+  "schedule_tooltip": "Hold to send later",
+  "schedule_for": "Sends {time}",
+  "@schedule_for": {"placeholders": {"time": {"type": "String"}}},
+  "schedule_pastTime": "Pick a time in the future."
 }

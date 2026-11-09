@@ -4464,5 +4464,10 @@
   "notification_replyAction": "Válasz",
   "notification_replyHint": "Írj választ",
   "outbox_waiting": "Rádióra vár: {count}",
-  "outbox_cantQueue": "Még nem csatlakozott rádió, ezért ezt nem lehet későbbre menteni."
+  "outbox_cantQueue": "Még nem csatlakozott rádió, ezért ezt nem lehet későbbre menteni.",
+  "chat_forward": "Továbbítás",
+  "forward_title": "Továbbítás ide",
+  "schedule_tooltip": "Tartsd nyomva a későbbi küldéshez",
+  "schedule_for": "Küldés: {time}",
+  "schedule_pastTime": "Válassz jövőbeli időpontot."
 }
