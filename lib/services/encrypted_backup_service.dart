@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:cryptography/cryptography.dart';
 
 import '../storage/prefs_manager.dart';
+import '../storage/secure_prefs.dart';
 
 /// Portable authenticated backup. Never sends settings to a server or radio.
 class EncryptedBackupService {
@@ -104,6 +105,7 @@ class EncryptedBackupService {
         if (includeChats ||
             !key.startsWith('messages_') && !key.startsWith('channel_messages'))
           key: prefs.get(key)!,
+      ...SecurePrefs.snapshot(),
     };
   }
 }

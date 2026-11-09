@@ -11046,4 +11046,8 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get contacts_addTooltip => 'Ajouter un contact';
+
+  @override
+  String get dbEncrypt_covers =>
+      'Couvre aussi les contacts, les clés de canal, les points de repère, les itinéraires enregistrés, les brouillons et les messages en attente.';
 }

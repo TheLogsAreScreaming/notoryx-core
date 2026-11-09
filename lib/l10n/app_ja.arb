@@ -4573,5 +4573,6 @@
   "report_send": "報告を送信",
   "report_parts": "メッセージ数: {count}",
   "report_sent": "報告を送信しました",
-  "contacts_addTooltip": "連絡先を追加"
+  "contacts_addTooltip": "連絡先を追加",
+  "dbEncrypt_covers": "連絡先、チャンネルキー、ウェイポイント、保存したルート、下書き、送信待ちメッセージも対象です。"
 }

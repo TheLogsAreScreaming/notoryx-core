@@ -10985,4 +10985,8 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get contacts_addTooltip => 'Pridať kontakt';
+
+  @override
+  String get dbEncrypt_covers =>
+      'Zahŕňa aj kontakty, kľúče kanálov, body trasy, uložené trasy, koncepty a čakajúce správy.';
 }

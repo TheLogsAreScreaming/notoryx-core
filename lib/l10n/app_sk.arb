@@ -4439,5 +4439,6 @@
   "report_send": "Odoslať hlásenie",
   "report_parts": "Počet správ: {count}",
   "report_sent": "Hlásenie odoslané",
-  "contacts_addTooltip": "Pridať kontakt"
+  "contacts_addTooltip": "Pridať kontakt",
+  "dbEncrypt_covers": "Zahŕňa aj kontakty, kľúče kanálov, body trasy, uložené trasy, koncepty a čakajúce správy."
 }

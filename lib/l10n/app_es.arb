@@ -4573,5 +4573,6 @@
   "report_send": "Enviar informe",
   "report_parts": "Número de mensajes: {count}",
   "report_sent": "Informe enviado",
-  "contacts_addTooltip": "Añadir contacto"
+  "contacts_addTooltip": "Añadir contacto",
+  "dbEncrypt_covers": "También cubre contactos, claves de canal, puntos de ruta, rutas guardadas, borradores y mensajes en espera."
 }

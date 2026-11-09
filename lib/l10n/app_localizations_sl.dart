@@ -11005,4 +11005,8 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get contacts_addTooltip => 'Dodaj stik';
+
+  @override
+  String get dbEncrypt_covers =>
+      'Zajema tudi stike, ključe kanalov, točke poti, shranjene poti, osnutke in čakajoča sporočila.';
 }

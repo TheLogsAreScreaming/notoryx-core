@@ -4439,5 +4439,6 @@
   "report_send": "Enviar relatório",
   "report_parts": "Número de mensagens: {count}",
   "report_sent": "Relatório enviado",
-  "contacts_addTooltip": "Adicionar contacto"
+  "contacts_addTooltip": "Adicionar contacto",
+  "dbEncrypt_covers": "Abrange também contactos, chaves de canal, pontos de passagem, rotas guardadas, rascunhos e mensagens em espera."
 }

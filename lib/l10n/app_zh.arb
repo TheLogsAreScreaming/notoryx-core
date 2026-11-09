@@ -4444,5 +4444,6 @@
   "report_send": "发送报告",
   "report_parts": "消息数：{count}",
   "report_sent": "报告已发送",
-  "contacts_addTooltip": "添加联系人"
+  "contacts_addTooltip": "添加联系人",
+  "dbEncrypt_covers": "同时涵盖联系人、频道密钥、航点、已保存的路线、草稿和待发送消息。"
 }

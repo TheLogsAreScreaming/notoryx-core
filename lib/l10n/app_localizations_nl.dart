@@ -10965,4 +10965,8 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get contacts_addTooltip => 'Contact toevoegen';
+
+  @override
+  String get dbEncrypt_covers =>
+      'Omvat ook contacten, kanaalsleutels, waypoints, opgeslagen routes, concepten en wachtende berichten.';
 }

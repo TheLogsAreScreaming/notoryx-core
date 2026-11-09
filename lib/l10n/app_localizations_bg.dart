@@ -10991,4 +10991,8 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get contacts_addTooltip => 'Добавяне на контакт';
+
+  @override
+  String get dbEncrypt_covers =>
+      'Обхваща и контакти, ключове на канали, точки, запазени маршрути, чернови и чакащи съобщения.';
 }

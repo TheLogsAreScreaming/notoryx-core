@@ -11050,4 +11050,8 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get contacts_addTooltip => 'Dodaj kontakt';
+
+  @override
+  String get dbEncrypt_covers =>
+      'Obejmuje też kontakty, klucze kanałów, punkty trasy, zapisane trasy, wersje robocze i oczekujące wiadomości.';
 }

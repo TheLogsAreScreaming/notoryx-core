@@ -11046,4 +11046,8 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get contacts_addTooltip => 'Додати контакт';
+
+  @override
+  String get dbEncrypt_covers =>
+      'Також захищає контакти, ключі каналів, путівні точки, збережені маршрути, чернетки й очікувані повідомлення.';
 }

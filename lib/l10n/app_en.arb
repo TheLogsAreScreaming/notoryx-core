@@ -5903,5 +5903,6 @@
   "report_parts": "Number of messages: {count}",
   "@report_parts": {"placeholders": {"count": {"type": "int"}}},
   "report_sent": "Report sent",
-  "contacts_addTooltip": "Add a contact"
+  "contacts_addTooltip": "Add a contact",
+  "dbEncrypt_covers": "Also covers contacts, channel keys, waypoints, saved routes, drafts and waiting messages."
 }

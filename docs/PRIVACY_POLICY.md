@@ -21,7 +21,7 @@ Depending on the features you use, NOTORYX Core can store messages, contact iden
 
 The app uses device storage and operating-system protections; do not assume that all stored messages, logs or exports have additional app-level encryption. Anyone with access to an exported file may be able to read its contents.
 
-You can turn on **App lock** and **Encrypt message history** under Tools → Security. Encryption covers the message database only (contacts, routes, waypoints and settings are not encrypted), and its key stays in the phone's secure storage. If that key is lost, the history can't be recovered.
+You can turn on **App lock** and **Encrypt message history** under Tools → Security. Encryption covers messages, contacts, channel keys, waypoints, saved routes, drafts and messages waiting to send. Other settings and the app's route history are not encrypted. Its key stays in the phone's secure storage. If that key is lost, the history can't be recovered.
 
 ## Radio communication and sharing
 

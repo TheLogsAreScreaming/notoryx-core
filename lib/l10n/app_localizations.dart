@@ -18282,6 +18282,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Add a contact'**
   String get contacts_addTooltip;
+
+  /// No description provided for @dbEncrypt_covers.
+  ///
+  /// In en, this message translates to:
+  /// **'Also covers contacts, channel keys, waypoints, saved routes, drafts and waiting messages.'**
+  String get dbEncrypt_covers;
 }
 
 class _AppLocalizationsDelegate
