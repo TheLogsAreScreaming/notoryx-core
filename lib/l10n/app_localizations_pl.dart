@@ -10992,4 +10992,10 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get appLock_sosNoTarget =>
       'Najpierw odblokuj i wybierz, kto otrzyma SOS.';
+
+  @override
+  String get notification_replyAction => 'Odpowiedz';
+
+  @override
+  String get notification_replyHint => 'Napisz odpowiedź';
 }

@@ -5883,5 +5883,7 @@
   "dbEncrypt_failed": "Status: couldn't apply. Your history is unchanged.",
   "dbEncrypt_restart": "Takes effect the next time the app starts.",
   "map_showWaypoints": "Show saved waypoints and routes",
-  "appLock_sosNoTarget": "Unlock and choose who gets your SOS first."
+  "appLock_sosNoTarget": "Unlock and choose who gets your SOS first.",
+  "notification_replyAction": "Reply",
+  "notification_replyHint": "Write a reply"
 }

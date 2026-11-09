@@ -10927,4 +10927,10 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get appLock_sosNoTarget =>
       'Najprv odomknite a vyberte, kto dostane vaše SOS.';
+
+  @override
+  String get notification_replyAction => 'Odpovedať';
+
+  @override
+  String get notification_replyHint => 'Napíšte odpoveď';
 }

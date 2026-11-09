@@ -4460,5 +4460,7 @@
   "dbEncrypt_failed": "Stan: nie udało się. Historia bez zmian.",
   "dbEncrypt_restart": "Zacznie działać przy następnym uruchomieniu aplikacji.",
   "map_showWaypoints": "Pokaż zapisane punkty i trasy",
-  "appLock_sosNoTarget": "Najpierw odblokuj i wybierz, kto otrzyma SOS."
+  "appLock_sosNoTarget": "Najpierw odblokuj i wybierz, kto otrzyma SOS.",
+  "notification_replyAction": "Odpowiedz",
+  "notification_replyHint": "Napisz odpowiedź"
 }

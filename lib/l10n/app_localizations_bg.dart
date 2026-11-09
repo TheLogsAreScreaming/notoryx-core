@@ -10933,4 +10933,10 @@ class AppLocalizationsBg extends AppLocalizations {
   @override
   String get appLock_sosNoTarget =>
       'Първо отключете и изберете кой да получи вашия SOS.';
+
+  @override
+  String get notification_replyAction => 'Отговор';
+
+  @override
+  String get notification_replyHint => 'Напишете отговор';
 }

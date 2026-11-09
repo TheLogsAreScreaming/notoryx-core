@@ -10936,4 +10936,10 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get appLock_sosNoTarget =>
       'Előbb oldd fel, és válaszd ki, ki kapja az SOS-t.';
+
+  @override
+  String get notification_replyAction => 'Válasz';
+
+  @override
+  String get notification_replyHint => 'Írj választ';
 }

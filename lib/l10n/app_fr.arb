@@ -4556,5 +4556,7 @@
   "dbEncrypt_failed": "État : échec. Votre historique n'a pas changé.",
   "dbEncrypt_restart": "Prend effet au prochain démarrage de l'app.",
   "map_showWaypoints": "Afficher les points et itinéraires enregistrés",
-  "appLock_sosNoTarget": "Déverrouillez d'abord et choisissez qui reçoit votre SOS."
+  "appLock_sosNoTarget": "Déverrouillez d'abord et choisissez qui reçoit votre SOS.",
+  "notification_replyAction": "Répondre",
+  "notification_replyHint": "Écrire une réponse"
 }

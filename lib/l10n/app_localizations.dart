@@ -18180,6 +18180,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Unlock and choose who gets your SOS first.'**
   String get appLock_sosNoTarget;
+
+  /// No description provided for @notification_replyAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Reply'**
+  String get notification_replyAction;
+
+  /// No description provided for @notification_replyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Write a reply'**
+  String get notification_replyHint;
 }
 
 class _AppLocalizationsDelegate

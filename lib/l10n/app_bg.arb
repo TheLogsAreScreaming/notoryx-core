@@ -4422,5 +4422,7 @@
   "dbEncrypt_failed": "Състояние: неуспешно. Историята е непроменена.",
   "dbEncrypt_restart": "Влиза в сила при следващото стартиране.",
   "map_showWaypoints": "Показвай запазените точки и маршрути",
-  "appLock_sosNoTarget": "Първо отключете и изберете кой да получи вашия SOS."
+  "appLock_sosNoTarget": "Първо отключете и изберете кой да получи вашия SOS.",
+  "notification_replyAction": "Отговор",
+  "notification_replyHint": "Напишете отговор"
 }

@@ -10432,4 +10432,10 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get appLock_sosNoTarget => '先にロックを解除し、SOSの送信先を選んでください。';
+
+  @override
+  String get notification_replyAction => '返信';
+
+  @override
+  String get notification_replyHint => '返信を入力';
 }

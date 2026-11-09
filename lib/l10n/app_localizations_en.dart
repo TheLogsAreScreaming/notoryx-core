@@ -10816,4 +10816,10 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get appLock_sosNoTarget =>
       'Unlock and choose who gets your SOS first.';
+
+  @override
+  String get notification_replyAction => 'Reply';
+
+  @override
+  String get notification_replyHint => 'Write a reply';
 }

@@ -10960,4 +10960,10 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get appLock_sosNoTarget =>
       'Entsperre zuerst und wähle, wer dein SOS erhält.';
+
+  @override
+  String get notification_replyAction => 'Antworten';
+
+  @override
+  String get notification_replyHint => 'Antwort schreiben';
 }
