@@ -1,0 +1,3 @@
+• Encrypted history now also covers contacts, channel keys, waypoints, drafts and queued messages
+• Automation, Team setup and Bot settings translated
+• More screen-reader labels on buttons, map markers and pictures
