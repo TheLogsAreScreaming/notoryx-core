@@ -1,6 +1,6 @@
 # NOTORYX Core accessibility audit
 
-**Status: first pass, code review only.** Audited at commit `eea4dcae` (`dev`, 9 November 2026), after 10.0.0-rc.39.
+**Status: first pass, code review only.** Audited at commit `eea4dcae` (`dev`, 9 November 2026), after 10.0.0-rc.39. The tables below are that first scan; **Fixes since the first scan** lists what has changed.
 
 **No screen reader, switch control or large-text walk-through has been done yet.** This page reports what the code shows. It doesn't claim the app is accessible, and it isn't a conformance statement.
 
@@ -12,7 +12,7 @@ Other NOTORYX apps can reuse this method: run the scanner, review its list by ha
 |---|---|---|
 | 1. Pattern scan | `python3 tool/a11y_scan.py` from the repository root | Yes |
 | 2. Automated tests | Flutter accessibility guideline checks in widget tests | Partly: 5 test files |
-| 3. Review of scan results | Reading each flagged place in context | Not yet |
+| 3. Review of scan results | Reading each flagged place in context | Yes, once |
 | 4. Screen reader | TalkBack on Android, VoiceOver on iOS and macOS | **Not yet** |
 | 5. Large text and display | Largest system text, bold text, reduce motion, each theme | **Not yet** |
 | 6. People who use these tools | Feedback from disabled users | **Not yet** |
@@ -48,6 +48,16 @@ The scanner matches text patterns, so a flagged line is a place to look, not a c
 5. **Long text may be cut off** at the largest text sizes, as the ellipsis count suggests.
 6. **Few live announcements.** New messages, SOS status and connection changes should be checked for whether they're announced.
 
+## Fixes since the first scan
+
+Each flagged place was read in context.
+
+**Labelled:** the add-contact button; the repeater CLI send button; the jump-to-latest button; map markers for nodes, clusters and shared markers; line-of-sight obstructions and endpoints; path-trace hops; wardrive pings; received and preview pictures. The decorative mesh icon in QR codes is now hidden from screen readers.
+
+**Left as they are, pending the device walk-through:** the remaining flagged tap areas wrap visible text, or sit under a tooltip or labelled parent. Those should already be readable, but only testing with a screen reader can confirm it.
+
+**Still open:** received pictures are labelled only as a picture, because nothing describes their contents, and map screens still need a non-visual way to explore.
+
 ## What's in place
 
 - All 147 `IconButton`s have a tooltip, which screen readers use as the label.
@@ -65,6 +75,5 @@ The scanner matches text patterns, so a flagged line is a place to look, not a c
 
 ## Next steps
 
-1. Review the 28 flagged tap areas and 6 images.
-2. Do the device walk-through with TalkBack and VoiceOver, starting with SOS, sending a message and connecting a radio.
-3. Update this page with the results, and name the device and OS versions used.
+1. Do the device walk-through with TalkBack and VoiceOver, starting with SOS, sending a message and connecting a radio.
+2. Update this page with the results, and name the device and OS versions used.

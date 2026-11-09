@@ -4549,5 +4549,10 @@
   "botUi_allowed": "允许的联系人",
   "botUi_allowedHint": "未选择表示所有已知联系人。",
   "botUi_recent": "最近活动（本次会话）",
-  "botUi_noReplies": "机器人尚未回复。"
+  "botUi_noReplies": "机器人尚未回复。",
+  "a11y_jumpToBottom": "跳到最新消息",
+  "a11y_cluster": "此处节点：{count}。放大",
+  "a11y_wardrivePing": "探测 Ping 详情",
+  "a11y_receivedImage": "收到的图片",
+  "a11y_imagePreview": "图片预览"
 }

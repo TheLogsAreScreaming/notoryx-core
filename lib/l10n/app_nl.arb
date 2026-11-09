@@ -4544,5 +4544,10 @@
   "botUi_allowed": "Toegestane contacten",
   "botUi_allowedHint": "Geen selectie betekent alle bekende contacten.",
   "botUi_recent": "Recente activiteit (deze sessie)",
-  "botUi_noReplies": "Nog geen botantwoorden."
+  "botUi_noReplies": "Nog geen botantwoorden.",
+  "a11y_jumpToBottom": "Naar het nieuwste bericht",
+  "a11y_cluster": "Nodes hier: {count}. Inzoomen",
+  "a11y_wardrivePing": "Pingdetails",
+  "a11y_receivedImage": "Ontvangen afbeelding",
+  "a11y_imagePreview": "Afbeeldingsvoorbeeld"
 }

@@ -11348,4 +11348,21 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get botUi_noReplies => 'Все още няма отговори от бота.';
+
+  @override
+  String get a11y_jumpToBottom => 'Към последното съобщение';
+
+  @override
+  String a11y_cluster(int count) {
+    return 'Възли тук: $count. Увеличаване';
+  }
+
+  @override
+  String get a11y_wardrivePing => 'Подробности за пинга';
+
+  @override
+  String get a11y_receivedImage => 'Получена снимка';
+
+  @override
+  String get a11y_imagePreview => 'Преглед на снимката';
 }

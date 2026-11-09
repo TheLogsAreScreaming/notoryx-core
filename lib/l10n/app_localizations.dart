@@ -18912,6 +18912,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No bot replies yet.'**
   String get botUi_noReplies;
+
+  /// No description provided for @a11y_jumpToBottom.
+  ///
+  /// In en, this message translates to:
+  /// **'Jump to the latest message'**
+  String get a11y_jumpToBottom;
+
+  /// No description provided for @a11y_cluster.
+  ///
+  /// In en, this message translates to:
+  /// **'Nodes here: {count}. Zoom in'**
+  String a11y_cluster(int count);
+
+  /// No description provided for @a11y_wardrivePing.
+  ///
+  /// In en, this message translates to:
+  /// **'Survey ping details'**
+  String get a11y_wardrivePing;
+
+  /// No description provided for @a11y_receivedImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Received picture'**
+  String get a11y_receivedImage;
+
+  /// No description provided for @a11y_imagePreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Picture preview'**
+  String get a11y_imagePreview;
 }
 
 class _AppLocalizationsDelegate

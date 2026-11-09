@@ -4678,5 +4678,10 @@
   "botUi_allowed": "許可された連絡先",
   "botUi_allowedHint": "未選択の場合は既知の全連絡先です。",
   "botUi_recent": "最近のアクティビティ（このセッション）",
-  "botUi_noReplies": "ボットの返信はまだありません。"
+  "botUi_noReplies": "ボットの返信はまだありません。",
+  "a11y_jumpToBottom": "最新のメッセージへ移動",
+  "a11y_cluster": "このノード数: {count}。拡大",
+  "a11y_wardrivePing": "Pingの詳細",
+  "a11y_receivedImage": "受信した画像",
+  "a11y_imagePreview": "画像のプレビュー"
 }

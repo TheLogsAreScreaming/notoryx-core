@@ -10836,4 +10836,21 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get botUi_noReplies => 'ボットの返信はまだありません。';
+
+  @override
+  String get a11y_jumpToBottom => '最新のメッセージへ移動';
+
+  @override
+  String a11y_cluster(int count) {
+    return 'このノード数: $count。拡大';
+  }
+
+  @override
+  String get a11y_wardrivePing => 'Pingの詳細';
+
+  @override
+  String get a11y_receivedImage => '受信した画像';
+
+  @override
+  String get a11y_imagePreview => '画像のプレビュー';
 }

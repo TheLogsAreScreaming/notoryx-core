@@ -4544,5 +4544,10 @@
   "botUi_allowed": "Dovoljeni stiki",
   "botUi_allowedHint": "Brez izbire pomeni vse znane stike.",
   "botUi_recent": "Nedavna dejavnost (ta seja)",
-  "botUi_noReplies": "Bot še ni odgovoril."
+  "botUi_noReplies": "Bot še ni odgovoril.",
+  "a11y_jumpToBottom": "Na najnovejše sporočilo",
+  "a11y_cluster": "Vozlišča tukaj: {count}. Približaj",
+  "a11y_wardrivePing": "Podrobnosti pinga",
+  "a11y_receivedImage": "Prejeta slika",
+  "a11y_imagePreview": "Predogled slike"
 }

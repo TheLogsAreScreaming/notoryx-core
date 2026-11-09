@@ -11404,4 +11404,21 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get botUi_noReplies => 'Brak odpowiedzi bota.';
+
+  @override
+  String get a11y_jumpToBottom => 'Przejdź do najnowszej wiadomości';
+
+  @override
+  String a11y_cluster(int count) {
+    return 'Węzły tutaj: $count. Powiększ';
+  }
+
+  @override
+  String get a11y_wardrivePing => 'Szczegóły pingu';
+
+  @override
+  String get a11y_receivedImage => 'Odebrany obraz';
+
+  @override
+  String get a11y_imagePreview => 'Podgląd obrazu';
 }

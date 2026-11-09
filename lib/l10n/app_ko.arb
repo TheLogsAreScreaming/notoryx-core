@@ -4678,5 +4678,10 @@
   "botUi_allowed": "허용된 연락처",
   "botUi_allowedHint": "선택하지 않으면 알려진 모든 연락처입니다.",
   "botUi_recent": "최근 활동(이번 세션)",
-  "botUi_noReplies": "아직 봇 답장이 없습니다."
+  "botUi_noReplies": "아직 봇 답장이 없습니다.",
+  "a11y_jumpToBottom": "최신 메시지로 이동",
+  "a11y_cluster": "이곳의 노드: {count}. 확대",
+  "a11y_wardrivePing": "핑 세부 정보",
+  "a11y_receivedImage": "받은 사진",
+  "a11y_imagePreview": "사진 미리보기"
 }

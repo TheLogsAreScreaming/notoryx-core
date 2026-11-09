@@ -493,18 +493,22 @@ class _RepeaterCliScreenState extends State<RepeaterCliScreen> {
                     shape: CircleBorder(
                       side: BorderSide(color: MeshPalette.accentLine),
                     ),
-                    child: InkWell(
-                      customBorder: const CircleBorder(),
-                      onTap: () {
-                        HapticFeedback.lightImpact();
-                        _sendCommand();
-                      },
-                      child: Padding(
-                        padding: EdgeInsets.all(10),
-                        child: Icon(
-                          Icons.send,
-                          size: 18,
-                          color: MeshPalette.accent,
+                    child: Semantics(
+                      button: true,
+                      label: context.l10n.chat_sendMessage,
+                      child: InkWell(
+                        customBorder: const CircleBorder(),
+                        onTap: () {
+                          HapticFeedback.lightImpact();
+                          _sendCommand();
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.all(10),
+                          child: Icon(
+                            Icons.send,
+                            size: 18,
+                            color: MeshPalette.accent,
+                          ),
                         ),
                       ),
                     ),

@@ -1441,6 +1441,7 @@ class _ChannelsScreenState extends State<ChannelsScreen>
                                         .community_qrInstructions(name),
                                     embeddedImage: Image.asset(
                                       'assets/images/mesh-icon.png',
+                                      excludeFromSemantics: true,
                                       width: 40,
                                       height: 40,
                                     ),
@@ -2030,6 +2031,7 @@ class _ChannelsScreenState extends State<ChannelsScreen>
       instructions: context.l10n.community_qrInstructions(community.name),
       embeddedImage: Image.asset(
         'assets/images/mesh-icon.png',
+        excludeFromSemantics: true,
         width: 40,
         height: 40,
       ),

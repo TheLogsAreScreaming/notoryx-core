@@ -4544,5 +4544,10 @@
   "botUi_allowed": "Povolené kontakty",
   "botUi_allowedHint": "Bez výberu znamená všetky známe kontakty.",
   "botUi_recent": "Nedávna aktivita (táto relácia)",
-  "botUi_noReplies": "Zatiaľ žiadne odpovede bota."
+  "botUi_noReplies": "Zatiaľ žiadne odpovede bota.",
+  "a11y_jumpToBottom": "Prejsť na najnovšiu správu",
+  "a11y_cluster": "Uzly tu: {count}. Priblížiť",
+  "a11y_wardrivePing": "Podrobnosti pingu",
+  "a11y_receivedImage": "Prijatý obrázok",
+  "a11y_imagePreview": "Náhľad obrázka"
 }

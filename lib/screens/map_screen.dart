@@ -1299,40 +1299,46 @@ class _MapScreenState extends State<MapScreen> {
         point: guess.position,
         width: 48,
         height: 48,
-        child: GestureDetector(
-          onLongPress: () {
-            if (_isBuildingPathTrace) _showNodeInfo(context, guess.contact);
-          },
-          onSecondaryTap: () {
-            if (_isBuildingPathTrace) _showNodeInfo(context, guess.contact);
-          },
-          onTap: () => _isBuildingPathTrace
-              ? _addToPath(context, guess.contact, position: guess.position)
-              : _selectNode(guess.contact, guessedPosition: guess.position),
-          child: Center(
-            child: Container(
-              width: 36,
-              height: 36,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: _overlayPanelColor,
-                border: Border.all(
-                  color: guess.highConfidence ? color : _overlayMutedTextColor,
-                  width: guess.highConfidence ? 2.5 : 2,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: _overlayShadowColor,
-                    blurRadius: 7,
-                    offset: Offset(0, 2),
+        child: Semantics(
+          button: true,
+          label: guess.contact.name,
+          child: GestureDetector(
+            onLongPress: () {
+              if (_isBuildingPathTrace) _showNodeInfo(context, guess.contact);
+            },
+            onSecondaryTap: () {
+              if (_isBuildingPathTrace) _showNodeInfo(context, guess.contact);
+            },
+            onTap: () => _isBuildingPathTrace
+                ? _addToPath(context, guess.contact, position: guess.position)
+                : _selectNode(guess.contact, guessedPosition: guess.position),
+            child: Center(
+              child: Container(
+                width: 36,
+                height: 36,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: _overlayPanelColor,
+                  border: Border.all(
+                    color: guess.highConfidence
+                        ? color
+                        : _overlayMutedTextColor,
+                    width: guess.highConfidence ? 2.5 : 2,
                   ),
-                ],
-              ),
-              alignment: Alignment.center,
-              child: Icon(
-                Icons.not_listed_location,
-                color: _overlayPrimaryTextColor,
-                size: 19,
+                  boxShadow: [
+                    BoxShadow(
+                      color: _overlayShadowColor,
+                      blurRadius: 7,
+                      offset: Offset(0, 2),
+                    ),
+                  ],
+                ),
+                alignment: Alignment.center,
+                child: Icon(
+                  Icons.not_listed_location,
+                  color: _overlayPrimaryTextColor,
+                  size: 19,
+                ),
               ),
             ),
           ),
@@ -1521,46 +1527,50 @@ class _MapScreenState extends State<MapScreen> {
       point: LatLng(contact.latitude!, contact.longitude!),
       width: size,
       height: size,
-      child: GestureDetector(
-        behavior: HitTestBehavior.opaque,
-        onLongPress: () {
-          if (_isBuildingPathTrace) _showNodeInfo(context, contact);
-        },
-        onSecondaryTap: () {
-          if (_isBuildingPathTrace) _showNodeInfo(context, contact);
-        },
-        onTap: () => _isBuildingPathTrace
-            ? _addToPath(context, contact)
-            : _selectNode(contact),
-        child: Center(
-          child: dot && !selected
-              ? Container(
-                  width: 15,
-                  height: 15,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: baseColor,
-                    border: Border.all(
-                      color: MapPalette.markerOutline,
-                      width: 2,
-                    ),
-                    boxShadow: const [
-                      BoxShadow(
-                        color: MapPalette.markerShadow,
-                        blurRadius: 6,
-                        offset: Offset(0, 2),
+      child: Semantics(
+        button: true,
+        label: contact.name,
+        child: GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onLongPress: () {
+            if (_isBuildingPathTrace) _showNodeInfo(context, contact);
+          },
+          onSecondaryTap: () {
+            if (_isBuildingPathTrace) _showNodeInfo(context, contact);
+          },
+          onTap: () => _isBuildingPathTrace
+              ? _addToPath(context, contact)
+              : _selectNode(contact),
+          child: Center(
+            child: dot && !selected
+                ? Container(
+                    width: 15,
+                    height: 15,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: baseColor,
+                      border: Border.all(
+                        color: MapPalette.markerOutline,
+                        width: 2,
                       ),
-                    ],
+                      boxShadow: const [
+                        BoxShadow(
+                          color: MapPalette.markerShadow,
+                          blurRadius: 6,
+                          offset: Offset(0, 2),
+                        ),
+                      ],
+                    ),
+                  )
+                : _buildNodeMarkerWidget(
+                    color: baseColor,
+                    icon: _getNodeIcon(contact.type),
+                    selected: selected,
+                    stale: stale,
+                    online: online,
+                    batteryLow: batteryLow,
                   ),
-                )
-              : _buildNodeMarkerWidget(
-                  color: baseColor,
-                  icon: _getNodeIcon(contact.type),
-                  selected: selected,
-                  stale: stale,
-                  online: online,
-                  batteryLow: batteryLow,
-                ),
+          ),
         ),
       ),
     );
@@ -1587,47 +1597,51 @@ class _MapScreenState extends State<MapScreen> {
       point: center,
       width: size,
       height: size,
-      child: GestureDetector(
-        behavior: HitTestBehavior.opaque,
-        onTap: () => _zoomToCluster(members),
-        child: Container(
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: MapPalette.cluster,
-            border: Border.all(color: MapPalette.markerOutline, width: 3),
-            boxShadow: const [
-              BoxShadow(
-                color: MapPalette.markerShadow,
-                blurRadius: 8,
-                offset: Offset(0, 3),
-              ),
-            ],
-          ),
-          alignment: Alignment.center,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                '$count',
-                style: MeshTheme.mono(
-                  fontSize: count >= 100 ? 11.5 : 13.5,
-                  fontWeight: FontWeight.w800,
-                  color: Colors.white,
+      child: Semantics(
+        button: true,
+        label: context.l10n.a11y_cluster(members.length),
+        child: GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: () => _zoomToCluster(members),
+          child: Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: MapPalette.cluster,
+              border: Border.all(color: MapPalette.markerOutline, width: 3),
+              boxShadow: const [
+                BoxShadow(
+                  color: MapPalette.markerShadow,
+                  blurRadius: 8,
+                  offset: Offset(0, 3),
                 ),
-              ),
-              if (online > 0)
-                Container(
-                  width: 7,
-                  height: 7,
-                  margin: const EdgeInsets.only(top: 1),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: MapPalette.online,
-                    border: Border.all(color: Colors.white, width: 1),
+              ],
+            ),
+            alignment: Alignment.center,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  '$count',
+                  style: MeshTheme.mono(
+                    fontSize: count >= 100 ? 11.5 : 13.5,
+                    fontWeight: FontWeight.w800,
+                    color: Colors.white,
                   ),
                 ),
-            ],
+                if (online > 0)
+                  Container(
+                    width: 7,
+                    height: 7,
+                    margin: const EdgeInsets.only(top: 1),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: MapPalette.online,
+                      border: Border.all(color: Colors.white, width: 1),
+                    ),
+                  ),
+              ],
+            ),
           ),
         ),
       ),
@@ -2786,37 +2800,44 @@ class _MapScreenState extends State<MapScreen> {
       point: marker.position,
       width: 60,
       height: 60,
-      child: GestureDetector(
-        onTap: () async {
-          if (_removedMarkerIds.contains(marker.id)) {
-            setState(() {
-              _removedMarkerIds.remove(marker.id);
-            });
-            await _markerService.saveRemovedIds(_removedMarkerIds);
-          }
-          _showMarkerInfo(marker);
-        },
-        child: Column(
-          children: [
-            Container(
-              width: 36,
-              height: 36,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: markerColor,
-                border: Border.all(color: MapPalette.markerOutline, width: 2.5),
-                boxShadow: const [
-                  BoxShadow(
-                    color: MapPalette.markerShadow,
-                    blurRadius: 8,
-                    offset: Offset(0, 3),
+      child: Semantics(
+        button: true,
+        label: marker.label,
+        child: GestureDetector(
+          onTap: () async {
+            if (_removedMarkerIds.contains(marker.id)) {
+              setState(() {
+                _removedMarkerIds.remove(marker.id);
+              });
+              await _markerService.saveRemovedIds(_removedMarkerIds);
+            }
+            _showMarkerInfo(marker);
+          },
+          child: Column(
+            children: [
+              Container(
+                width: 36,
+                height: 36,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: markerColor,
+                  border: Border.all(
+                    color: MapPalette.markerOutline,
+                    width: 2.5,
                   ),
-                ],
+                  boxShadow: const [
+                    BoxShadow(
+                      color: MapPalette.markerShadow,
+                      blurRadius: 8,
+                      offset: Offset(0, 3),
+                    ),
+                  ],
+                ),
+                alignment: Alignment.center,
+                child: const Icon(Icons.flag, color: Colors.white, size: 19),
               ),
-              alignment: Alignment.center,
-              child: const Icon(Icons.flag, color: Colors.white, size: 19),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

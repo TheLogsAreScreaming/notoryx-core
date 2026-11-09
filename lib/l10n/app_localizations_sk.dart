@@ -11336,4 +11336,21 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get botUi_noReplies => 'Zatiaľ žiadne odpovede bota.';
+
+  @override
+  String get a11y_jumpToBottom => 'Prejsť na najnovšiu správu';
+
+  @override
+  String a11y_cluster(int count) {
+    return 'Uzly tu: $count. Priblížiť';
+  }
+
+  @override
+  String get a11y_wardrivePing => 'Podrobnosti pingu';
+
+  @override
+  String get a11y_receivedImage => 'Prijatý obrázok';
+
+  @override
+  String get a11y_imagePreview => 'Náhľad obrázka';
 }

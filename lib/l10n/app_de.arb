@@ -4678,5 +4678,10 @@
   "botUi_allowed": "Erlaubte Kontakte",
   "botUi_allowedHint": "Keine Auswahl bedeutet alle bekannten Chat-Kontakte.",
   "botUi_recent": "Letzte Aktivität (diese Sitzung)",
-  "botUi_noReplies": "Noch keine Bot-Antworten."
+  "botUi_noReplies": "Noch keine Bot-Antworten.",
+  "a11y_jumpToBottom": "Zur neuesten Nachricht",
+  "a11y_cluster": "Knoten hier: {count}. Vergrößern",
+  "a11y_wardrivePing": "Details zum Mess-Ping",
+  "a11y_receivedImage": "Empfangenes Bild",
+  "a11y_imagePreview": "Bildvorschau"
 }

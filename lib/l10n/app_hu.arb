@@ -4582,5 +4582,10 @@
   "botUi_allowed": "Engedélyezett névjegyek",
   "botUi_allowedHint": "Ha nincs kiválasztva, minden ismert névjegy.",
   "botUi_recent": "Legutóbbi tevékenység (ez a munkamenet)",
-  "botUi_noReplies": "Még nincs bot válasz."
+  "botUi_noReplies": "Még nincs bot válasz.",
+  "a11y_jumpToBottom": "Ugrás a legújabb üzenethez",
+  "a11y_cluster": "Csomópontok itt: {count}. Nagyítás",
+  "a11y_wardrivePing": "Ping részletei",
+  "a11y_receivedImage": "Fogadott kép",
+  "a11y_imagePreview": "Kép előnézete"
 }

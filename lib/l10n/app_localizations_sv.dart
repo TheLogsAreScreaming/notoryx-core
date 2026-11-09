@@ -11275,4 +11275,21 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get botUi_noReplies => 'Inga bot-svar ännu.';
+
+  @override
+  String get a11y_jumpToBottom => 'Till det senaste meddelandet';
+
+  @override
+  String a11y_cluster(int count) {
+    return 'Noder här: $count. Zooma in';
+  }
+
+  @override
+  String get a11y_wardrivePing => 'Pingdetaljer';
+
+  @override
+  String get a11y_receivedImage => 'Mottagen bild';
+
+  @override
+  String get a11y_imagePreview => 'Förhandsvisning av bild';
 }

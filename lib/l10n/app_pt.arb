@@ -4544,5 +4544,10 @@
   "botUi_allowed": "Contactos permitidos",
   "botUi_allowedHint": "Sem seleção significa todos os contactos conhecidos.",
   "botUi_recent": "Atividade recente (esta sessão)",
-  "botUi_noReplies": "Ainda sem respostas do bot."
+  "botUi_noReplies": "Ainda sem respostas do bot.",
+  "a11y_jumpToBottom": "Ir para a mensagem mais recente",
+  "a11y_cluster": "Nós aqui: {count}. Aproximar",
+  "a11y_wardrivePing": "Detalhes do ping",
+  "a11y_receivedImage": "Imagem recebida",
+  "a11y_imagePreview": "Pré-visualização da imagem"
 }
