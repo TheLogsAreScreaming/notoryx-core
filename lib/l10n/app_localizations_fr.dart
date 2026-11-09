@@ -11005,6 +11005,23 @@ class AppLocalizationsFr extends AppLocalizations {
       'Aucune radio n\'a encore été connectée, ce message ne peut donc pas être gardé pour plus tard.';
 
   @override
+  String get chat_forward => 'Transférer';
+
+  @override
+  String get forward_title => 'Transférer à';
+
+  @override
+  String get schedule_tooltip => 'Maintenir pour envoyer plus tard';
+
+  @override
+  String schedule_for(String time) {
+    return 'Envoi : $time';
+  }
+
+  @override
+  String get schedule_pastTime => 'Choisissez une heure à venir.';
+
+  @override
   String get report_open => 'Envoyer un rapport';
 
   @override

@@ -11008,6 +11008,23 @@ class AppLocalizationsRu extends AppLocalizations {
       'Радио ещё не подключалось, поэтому сохранить это на потом нельзя.';
 
   @override
+  String get chat_forward => 'Переслать';
+
+  @override
+  String get forward_title => 'Переслать в';
+
+  @override
+  String get schedule_tooltip => 'Удерживайте, чтобы отправить позже';
+
+  @override
+  String schedule_for(String time) {
+    return 'Отправка: $time';
+  }
+
+  @override
+  String get schedule_pastTime => 'Выберите время в будущем.';
+
+  @override
   String get report_open => 'Отправить донесение';
 
   @override

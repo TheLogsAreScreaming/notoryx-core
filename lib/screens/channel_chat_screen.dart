@@ -40,6 +40,7 @@ import '../services/translation_llm.dart';
 import '../services/translation_service.dart';
 import '../utils/lora_airtime.dart';
 import '../services/offline_outbox.dart';
+import '../widgets/forward_sheet.dart';
 import '../widgets/outbox_banner.dart';
 import '../helpers/share_links.dart';
 import '../widgets/ember_backdrop.dart';
@@ -2159,7 +2160,8 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
                         curve: Curves.easeInOut,
                         child: IconButton.filled(
                           icon: const Icon(Icons.send, size: 20),
-                          tooltip: context.l10n.chat_sendMessage,
+                          tooltip:
+                              '${context.l10n.chat_sendMessage}. ${context.l10n.schedule_tooltip}',
                           style: IconButton.styleFrom(
                             backgroundColor: hasText
                                 ? scheme.primary
@@ -2170,6 +2172,14 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
                             minimumSize: const Size(40, 40),
                             shape: const CircleBorder(),
                           ),
+                          onLongPress: hasText
+                              ? () async {
+                                  final at = await pickSendTime(context);
+                                  if (at != null) {
+                                    await _sendMessage(scheduleAt: at);
+                                  }
+                                }
+                              : null,
                           onPressed: hasText
                               ? () {
                                   HapticFeedback.lightImpact();
@@ -2201,7 +2211,7 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
     );
   }
 
-  Future<void> _sendMessage() async {
+  Future<void> _sendMessage({DateTime? scheduleAt}) async {
     final text = _textController.text.trim();
     if (text.isEmpty) return;
 
@@ -2287,7 +2297,7 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
     }
     // end transform
 
-    if (!connector.isConnected) {
+    if (!connector.isConnected || scheduleAt != null) {
       final messenger = ScaffoldMessenger.maybeOf(context);
       final cantQueue = context.l10n.outbox_cantQueue;
       final outbox = context.read<OfflineOutbox?>();
@@ -2519,6 +2529,14 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
                   _showEmojiPicker(message);
                 },
               ),
+            ListTile(
+              leading: const Icon(Icons.forward),
+              title: Text(context.l10n.chat_forward),
+              onTap: () {
+                Navigator.pop(sheetContext);
+                unawaited(showForwardSheet(context, message.text));
+              },
+            ),
             ListTile(
               leading: const Icon(Icons.copy),
               title: Text(context.l10n.common_copy),

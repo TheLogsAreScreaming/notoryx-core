@@ -15,6 +15,7 @@ class OutboxEntry {
     required this.target,
     required this.text,
     required this.at,
+    this.sendAt,
   });
 
   factory OutboxEntry.fromJson(Map<String, dynamic> json) => OutboxEntry(
@@ -23,6 +24,9 @@ class OutboxEntry {
     target: json['target'] as String,
     text: json['text'] as String,
     at: DateTime.fromMillisecondsSinceEpoch(json['at'] as int),
+    sendAt: json['sendAt'] == null
+        ? null
+        : DateTime.fromMillisecondsSinceEpoch(json['sendAt'] as int),
   );
 
   final String id;
@@ -35,12 +39,16 @@ class OutboxEntry {
   final String text;
   final DateTime at;
 
+  /// When the user asked for it to go out; null means as soon as possible.
+  final DateTime? sendAt;
+
   Map<String, dynamic> toJson() => {
     'id': id,
     'radio': radio,
     'target': target,
     'text': text,
     'at': at.millisecondsSinceEpoch,
+    if (sendAt != null) 'sendAt': sendAt!.millisecondsSinceEpoch,
   };
 }
 
@@ -75,6 +83,7 @@ class OfflineOutbox extends ChangeNotifier {
   String _lastRadio = '';
   var _seq = 0;
   var _flushing = false;
+  Timer? _timer;
 
   /// What is waiting for [target], oldest first.
   List<OutboxEntry> entriesFor(String target) =>
@@ -82,7 +91,7 @@ class OfflineOutbox extends ChangeNotifier {
 
   /// Saves [text] to send later. False when no radio has ever been seen,
   /// because there is then no identity to send it from.
-  Future<bool> add(String target, String text) async {
+  Future<bool> add(String target, String text, {DateTime? sendAt}) async {
     if (_lastRadio.isEmpty) return false;
     final now = _clock();
     _entries.add(
@@ -92,10 +101,12 @@ class OfflineOutbox extends ChangeNotifier {
         target: target,
         text: text,
         at: now,
+        sendAt: sendAt,
       ),
     );
     await _save();
     notifyListeners();
+    check();
     return true;
   }
 
@@ -112,13 +123,34 @@ class OfflineOutbox extends ChangeNotifier {
       _lastRadio = self;
       unawaited(_saveRadio());
     }
-    if (_flushing || !_ready || !_entries.any((e) => e.radio == self)) return;
+    _armTimer();
+    if (_flushing || !_ready || !_entries.any((e) => _isDue(e, self))) return;
     _flushing = true;
     unawaited(
       flush()
           .catchError((Object e) => debugPrint('Outbox send failed: $e'))
-          .whenComplete(() => _flushing = false),
+          .whenComplete(() {
+            _flushing = false;
+            _armTimer();
+          }),
     );
+  }
+
+  bool _isDue(OutboxEntry e, String radio) =>
+      e.radio == radio && !(e.sendAt?.isAfter(_clock()) ?? false);
+
+  /// Wakes [check] when the next scheduled message comes due.
+  void _armTimer() {
+    _timer?.cancel();
+    _timer = null;
+    final now = _clock();
+    final times = _entries
+        .map((e) => e.sendAt)
+        .whereType<DateTime>()
+        .where((t) => t.isAfter(now));
+    if (times.isEmpty) return;
+    final next = times.reduce((a, b) => a.isBefore(b) ? a : b);
+    _timer = Timer(next.difference(now), check);
   }
 
   bool get _ready =>
@@ -132,7 +164,7 @@ class OfflineOutbox extends ChangeNotifier {
   @visibleForTesting
   Future<void> flush() async {
     final self = connector.selfPublicKeyHex;
-    final due = _entries.where((e) => e.radio == self).toList();
+    final due = _entries.where((e) => _isDue(e, self)).toList();
     for (var i = 0; i < due.length; i++) {
       if (!_ready || connector.selfPublicKeyHex != self) return;
       final entry = due[i];
@@ -141,7 +173,8 @@ class OfflineOutbox extends ChangeNotifier {
       await _save();
       notifyListeners();
       final sent =
-          _clock().difference(entry.at) <= maxAge && await _send(entry);
+          _clock().difference(entry.sendAt ?? entry.at) <= maxAge &&
+          await _send(entry);
       if (!sent) {
         await _toDraft(entry);
       } else if (i < due.length - 1 && spacing > Duration.zero) {
@@ -224,6 +257,7 @@ class OfflineOutbox extends ChangeNotifier {
 
   @override
   void dispose() {
+    _timer?.cancel();
     connector.removeListener(check);
     super.dispose();
   }

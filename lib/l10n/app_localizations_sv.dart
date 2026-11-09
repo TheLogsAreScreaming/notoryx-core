@@ -10881,6 +10881,23 @@ class AppLocalizationsSv extends AppLocalizations {
       'Ingen radio har anslutits än, så det här kan inte sparas till senare.';
 
   @override
+  String get chat_forward => 'Vidarebefordra';
+
+  @override
+  String get forward_title => 'Vidarebefordra till';
+
+  @override
+  String get schedule_tooltip => 'Håll in för att skicka senare';
+
+  @override
+  String schedule_for(String time) {
+    return 'Skickas: $time';
+  }
+
+  @override
+  String get schedule_pastTime => 'Välj en tid i framtiden.';
+
+  @override
   String get report_open => 'Skicka rapport';
 
   @override

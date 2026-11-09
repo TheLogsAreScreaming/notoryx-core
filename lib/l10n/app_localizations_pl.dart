@@ -11009,6 +11009,23 @@ class AppLocalizationsPl extends AppLocalizations {
       'Nie połączono jeszcze żadnego radia, więc nie można zapisać tego na później.';
 
   @override
+  String get chat_forward => 'Przekaż';
+
+  @override
+  String get forward_title => 'Przekaż do';
+
+  @override
+  String get schedule_tooltip => 'Przytrzymaj, aby wysłać później';
+
+  @override
+  String schedule_for(String time) {
+    return 'Wysyłka: $time';
+  }
+
+  @override
+  String get schedule_pastTime => 'Wybierz przyszłą godzinę.';
+
+  @override
   String get report_open => 'Wyślij raport';
 
   @override

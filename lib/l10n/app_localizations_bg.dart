@@ -10950,6 +10950,23 @@ class AppLocalizationsBg extends AppLocalizations {
       'Все още няма свързано радио, затова това не може да се запази за по-късно.';
 
   @override
+  String get chat_forward => 'Препрати';
+
+  @override
+  String get forward_title => 'Препрати до';
+
+  @override
+  String get schedule_tooltip => 'Задръжте, за да изпратите по-късно';
+
+  @override
+  String schedule_for(String time) {
+    return 'Изпраща се $time';
+  }
+
+  @override
+  String get schedule_pastTime => 'Изберете бъдещ час.';
+
+  @override
   String get report_open => 'Изпрати доклад';
 
   @override

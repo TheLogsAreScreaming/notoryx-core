@@ -4,7 +4,38 @@ import 'package:provider/provider.dart';
 import '../l10n/l10n.dart';
 import '../services/offline_outbox.dart';
 
-/// Messages in [target] waiting for the radio, each removable.
+String _when(BuildContext context, DateTime time) {
+  final localizations = MaterialLocalizations.of(context);
+  return '${localizations.formatShortDate(time)} '
+      '${localizations.formatTimeOfDay(TimeOfDay.fromDateTime(time))}';
+}
+
+/// Asks for a date and time to send at. Null if cancelled or in the past.
+Future<DateTime?> pickSendTime(BuildContext context) async {
+  final now = DateTime.now();
+  final messenger = ScaffoldMessenger.maybeOf(context);
+  final pastTime = context.l10n.schedule_pastTime;
+  final date = await showDatePicker(
+    context: context,
+    initialDate: now,
+    firstDate: now,
+    lastDate: now.add(const Duration(days: 30)),
+  );
+  if (date == null || !context.mounted) return null;
+  final time = await showTimePicker(
+    context: context,
+    initialTime: TimeOfDay.fromDateTime(now.add(const Duration(hours: 1))),
+  );
+  if (time == null) return null;
+  final at = DateTime(date.year, date.month, date.day, time.hour, time.minute);
+  if (!at.isAfter(DateTime.now())) {
+    messenger?.showSnackBar(SnackBar(content: Text(pastTime)));
+    return null;
+  }
+  return at;
+}
+
+/// Messages in [target] waiting for the radio or their time, each removable.
 class OutboxBanner extends StatelessWidget {
   const OutboxBanner({super.key, required this.target});
 
@@ -52,8 +83,10 @@ class OutboxBanner extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Text(
-                          entry.text,
-                          maxLines: 2,
+                          entry.sendAt == null
+                              ? entry.text
+                              : '${context.l10n.schedule_for(_when(context, entry.sendAt!))}\n${entry.text}',
+                          maxLines: 3,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(color: scheme.onSurfaceVariant),
                         ),

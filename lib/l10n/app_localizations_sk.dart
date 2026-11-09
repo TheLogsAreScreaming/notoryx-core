@@ -10944,6 +10944,23 @@ class AppLocalizationsSk extends AppLocalizations {
       'Zatiaľ nebolo pripojené žiadne rádio, preto to nemožno uložiť na neskôr.';
 
   @override
+  String get chat_forward => 'Preposlať';
+
+  @override
+  String get forward_title => 'Preposlať do';
+
+  @override
+  String get schedule_tooltip => 'Podržaním odošlete neskôr';
+
+  @override
+  String schedule_for(String time) {
+    return 'Odoslanie: $time';
+  }
+
+  @override
+  String get schedule_pastTime => 'Vyberte čas v budúcnosti.';
+
+  @override
   String get report_open => 'Odoslať hlásenie';
 
   @override

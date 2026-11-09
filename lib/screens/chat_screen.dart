@@ -30,6 +30,7 @@ import '../helpers/chat_scroll_controller.dart';
 import '../helpers/gif_helper.dart';
 import '../models/direct_quote.dart';
 import '../services/offline_outbox.dart';
+import '../widgets/forward_sheet.dart';
 import '../widgets/outbox_banner.dart';
 import '../models/channel_message.dart';
 import '../models/contact.dart';
@@ -823,9 +824,8 @@ class _ChatScreenState extends State<ChatScreen> {
                     curve: Curves.easeInOut,
                     child: IconButton.filled(
                       icon: const Icon(Icons.send, size: 20),
-                      tooltip: context.l10n.chat_sendMessageTo(
-                        _resolveContact(connector).name,
-                      ),
+                      tooltip:
+                          '${context.l10n.chat_sendMessageTo(_resolveContact(connector).name)}. ${context.l10n.schedule_tooltip}',
                       style: IconButton.styleFrom(
                         backgroundColor: hasText
                             ? scheme.primary
@@ -836,6 +836,14 @@ class _ChatScreenState extends State<ChatScreen> {
                         minimumSize: const Size(40, 40),
                         shape: const CircleBorder(),
                       ),
+                      onLongPress: hasText
+                          ? () async {
+                              final at = await pickSendTime(context);
+                              if (at != null) {
+                                await _sendMessage(connector, scheduleAt: at);
+                              }
+                            }
+                          : null,
                       onPressed: hasText
                           ? () {
                               HapticFeedback.lightImpact();
@@ -877,7 +885,10 @@ class _ChatScreenState extends State<ChatScreen> {
     );
   }
 
-  Future<void> _sendMessage(MeshCoreConnector connector) async {
+  Future<void> _sendMessage(
+    MeshCoreConnector connector, {
+    DateTime? scheduleAt,
+  }) async {
     final text = _textController.text.trim();
     if (text.isEmpty) return;
 
@@ -950,12 +961,13 @@ class _ChatScreenState extends State<ChatScreen> {
     }
     // end transform
 
-    if (!connector.isConnected) {
+    if (!connector.isConnected || scheduleAt != null) {
       final target = 'message:${_resolveContact(connector).publicKeyHex}';
       final messenger = ScaffoldMessenger.maybeOf(context);
       final cantQueue = context.l10n.outbox_cantQueue;
       final outbox = context.read<OfflineOutbox?>();
-      final saved = await outbox?.add(target, outgoingText) ?? false;
+      final saved =
+          await outbox?.add(target, outgoingText, sendAt: scheduleAt) ?? false;
       if (!mounted) return;
       if (!saved) {
         messenger?.showSnackBar(SnackBar(content: Text(cantQueue)));
@@ -1510,6 +1522,15 @@ class _ChatScreenState extends State<ChatScreen> {
                       onRetry: () => unawaited(_retryMessage(message)),
                     ),
                   );
+                },
+              ),
+            if (!message.isCli)
+              ListTile(
+                leading: const Icon(Icons.forward),
+                title: Text(context.l10n.chat_forward),
+                onTap: () {
+                  Navigator.pop(sheetContext);
+                  unawaited(showForwardSheet(context, message.text));
                 },
               ),
             ListTile(

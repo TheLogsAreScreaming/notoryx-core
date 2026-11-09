@@ -18205,6 +18205,36 @@ abstract class AppLocalizations {
   /// **'No radio has been connected yet, so this can\'t be saved to send later.'**
   String get outbox_cantQueue;
 
+  /// No description provided for @chat_forward.
+  ///
+  /// In en, this message translates to:
+  /// **'Forward'**
+  String get chat_forward;
+
+  /// No description provided for @forward_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Forward to'**
+  String get forward_title;
+
+  /// No description provided for @schedule_tooltip.
+  ///
+  /// In en, this message translates to:
+  /// **'Hold to send later'**
+  String get schedule_tooltip;
+
+  /// No description provided for @schedule_for.
+  ///
+  /// In en, this message translates to:
+  /// **'Sends {time}'**
+  String schedule_for(String time);
+
+  /// No description provided for @schedule_pastTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick a time in the future.'**
+  String get schedule_pastTime;
+
   /// No description provided for @report_open.
   ///
   /// In en, this message translates to:
