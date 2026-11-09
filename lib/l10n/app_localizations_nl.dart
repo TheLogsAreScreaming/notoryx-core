@@ -10969,4 +10969,231 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get dbEncrypt_covers =>
       'Omvat ook contacten, kanaalsleutels, waypoints, opgeslagen routes, concepten en wachtende berichten.';
+
+  @override
+  String get auto_title => 'Automatisering';
+
+  @override
+  String get auto_add => 'Regel toevoegen';
+
+  @override
+  String get auto_intro =>
+      'Regels werken alleen als de app open is. Elke regel gaat af zodra de voorwaarde waar wordt, hooguit eens per 15 minuten. Regels die berichten versturen zijn in totaal beperkt tot 3 keer per 10 minuten en worden als geautomatiseerd gemarkeerd.';
+
+  @override
+  String get auto_trigBattery => 'Radiobatterij zakt onder';
+
+  @override
+  String get auto_trigTime => 'Elke dag om';
+
+  @override
+  String get auto_trigEnter => 'Ik kom een gebied in';
+
+  @override
+  String get auto_trigLeave => 'Ik verlaat een gebied';
+
+  @override
+  String get auto_trigHeard => 'Een node wordt weer gehoord';
+
+  @override
+  String get auto_trigQuiet => 'Een node wordt stil';
+
+  @override
+  String auto_edit(String name) {
+    return '$name bewerken';
+  }
+
+  @override
+  String get auto_new => 'Nieuwe regel';
+
+  @override
+  String get auto_editTitle => 'Regel bewerken';
+
+  @override
+  String get auto_delete => 'Regel verwijderen';
+
+  @override
+  String get auto_needName => 'Geef de regel een naam.';
+
+  @override
+  String get auto_needArea =>
+      'Vul de breedte- en lengtegraad van het gebied in.';
+
+  @override
+  String get auto_needNode => 'Kies een node.';
+
+  @override
+  String get auto_needMessage => 'Schrijf het bericht.';
+
+  @override
+  String get auto_needTarget => 'Kies wie het bericht krijgt.';
+
+  @override
+  String get auto_name => 'Regelnaam';
+
+  @override
+  String get auto_when => 'Wanneer';
+
+  @override
+  String auto_below(int percent) {
+    return 'Onder $percent%';
+  }
+
+  @override
+  String get auto_time => 'Tijd';
+
+  @override
+  String get auto_latitude => 'Breedtegraad';
+
+  @override
+  String get auto_longitude => 'Lengtegraad';
+
+  @override
+  String get auto_usePosition => 'Positie van de radio gebruiken';
+
+  @override
+  String auto_radius(int meters) {
+    return 'Straal: $meters m';
+  }
+
+  @override
+  String get auto_node => 'Node';
+
+  @override
+  String auto_heardWithin(int minutes) {
+    return 'Telt als gehoord binnen $minutes minuten';
+  }
+
+  @override
+  String get auto_notify => 'Mij waarschuwen';
+
+  @override
+  String get auto_send => 'Bericht versturen';
+
+  @override
+  String get auto_sendTo => 'Versturen naar';
+
+  @override
+  String get auto_message => 'Bericht';
+
+  @override
+  String get auto_save => 'Opslaan';
+
+  @override
+  String get auto_entry => 'Automatiseringsregels';
+
+  @override
+  String get auto_entrySub => 'Triggers voor batterij, tijd, gebied en node';
+
+  @override
+  String get teamSetup_title => 'Teaminstelling';
+
+  @override
+  String get teamSetup_toolSub => 'Radio-instellingen, kanalen en routes delen';
+
+  @override
+  String get teamSetup_share => 'Delen';
+
+  @override
+  String get teamSetup_receive => 'Ontvangen';
+
+  @override
+  String get teamSetup_warning =>
+      'Dit bevat kanaalsleutels. Iedereen met dit bestand of deze QR-code en het wachtwoord kan die kanalen lezen. Geef het wachtwoord persoonlijk of op een andere manier door, nooit samen met het bestand.';
+
+  @override
+  String get teamSetup_radio => 'Radio-instellingen';
+
+  @override
+  String get teamSetup_channels => 'Kanalen en hun sleutels';
+
+  @override
+  String get teamSetup_notPublic => 'Niet het openbare kanaal';
+
+  @override
+  String get teamSetup_places => 'Waypoints en routes';
+
+  @override
+  String get teamSetup_passHint => 'Wachtwoordzin (minstens 12 tekens)';
+
+  @override
+  String get teamSetup_create => 'Maken';
+
+  @override
+  String get teamSetup_tooBig =>
+      'Te veel voor een QR-code. Deel het als bestand.';
+
+  @override
+  String get teamSetup_shareFile => 'Delen als bestand';
+
+  @override
+  String get teamSetup_scanTitle => 'Teaminstelling scannen';
+
+  @override
+  String get teamSetup_wrongPass =>
+      'Verkeerde wachtwoordzin of beschadigd bestand.';
+
+  @override
+  String get teamSetup_notFile => 'Dit is geen geldig teambestand.';
+
+  @override
+  String get teamSetup_openFile => 'Bestand openen';
+
+  @override
+  String get teamSetup_scanQr => 'QR-code scannen';
+
+  @override
+  String get teamSetup_pass => 'Wachtwoordzin';
+
+  @override
+  String get teamSetup_open => 'Openen';
+
+  @override
+  String teamSetup_channelsList(String names) {
+    return 'Kanalen: $names';
+  }
+
+  @override
+  String teamSetup_placesCount(int waypoints, int routes) {
+    return 'Waypoints: $waypoints, routes: $routes';
+  }
+
+  @override
+  String teamSetup_radioDetail(String details) {
+    return 'Radio-instellingen: $details';
+  }
+
+  @override
+  String get teamSetup_radioWarn =>
+      'Standaard uit. Controleer of deze bij jou zijn toegestaan. Een andere frequentie haalt je van je huidige mesh.';
+
+  @override
+  String get teamSetup_connectFirst =>
+      'Verbind een radio om kanalen toe te voegen of instellingen te wijzigen.';
+
+  @override
+  String get teamSetup_apply => 'Toepassen';
+
+  @override
+  String teamSetup_done(String summary) {
+    return 'Klaar: $summary.';
+  }
+
+  @override
+  String teamSetup_stopped(String summary, String error) {
+    return 'Halverwege gestopt ($summary): $error';
+  }
+
+  @override
+  String teamSetup_added(int count) {
+    return 'Kanalen toegevoegd: $count';
+  }
+
+  @override
+  String teamSetup_addedSkipped(int count, int left) {
+    return 'Kanalen toegevoegd: $count. Al aanwezig of geen ruimte: $left';
+  }
+
+  @override
+  String get teamSetup_radioChanged => 'radio-instellingen gewijzigd';
 }

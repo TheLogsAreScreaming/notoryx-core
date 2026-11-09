@@ -230,8 +230,8 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
           if (!kIsWeb)
             _ToolAction(
               icon: Icons.groups_outlined,
-              title: 'Team setup',
-              subtitle: 'Share radio settings, channels and routes',
+              title: l10n.teamSetup_title,
+              subtitle: l10n.teamSetup_toolSub,
               builder: (_) => const TeamConfigScreen(),
             ),
           _ToolAction(

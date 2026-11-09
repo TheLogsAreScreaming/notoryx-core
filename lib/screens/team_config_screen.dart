@@ -9,6 +9,7 @@ import 'package:share_plus/share_plus.dart';
 import '../build_flavor.dart';
 import '../connector/meshcore_connector.dart';
 import '../connector/meshcore_protocol.dart';
+import '../l10n/l10n.dart';
 import '../models/team_config.dart';
 import '../models/waypoint.dart';
 import '../services/waypoint_store.dart';
@@ -17,11 +18,6 @@ import '../widgets/qr_scanner_widget.dart';
 
 /// The most text a phone camera reliably reads from one QR code.
 const _maxQrLength = 1800;
-
-const _secretWarning =
-    'This includes channel keys. Anyone with this file or QR code and the '
-    'passphrase can read those channels. Tell people the passphrase in '
-    'person or some other way, never alongside the file.';
 
 /// Shares radio settings, channels, waypoints and routes with a team.
 class TeamConfigScreen extends StatelessWidget {
@@ -33,11 +29,11 @@ class TeamConfigScreen extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Team setup'),
-          bottom: const TabBar(
+          title: Text(context.l10n.teamSetup_title),
+          bottom: TabBar(
             tabs: [
-              Tab(text: 'Share'),
-              Tab(text: 'Receive'),
+              Tab(text: context.l10n.teamSetup_share),
+              Tab(text: context.l10n.teamSetup_receive),
             ],
           ),
         ),
@@ -101,11 +97,12 @@ class _ShareTabState extends State<_ShareTab> {
   }
 
   Future<void> _shareFile() async {
+    final subject = context.l10n.teamSetup_title;
     final dir = await getTemporaryDirectory();
     final file = File('${dir.path}/team-setup.notoryx');
     await file.writeAsString(_sealed!);
     await SharePlus.instance.share(
-      ShareParams(subject: 'Team setup', files: [XFile(file.path)]),
+      ShareParams(subject: subject, files: [XFile(file.path)]),
     );
   }
 
@@ -123,20 +120,20 @@ class _ShareTabState extends State<_ShareTab> {
       children: [
         CheckboxListTile(
           contentPadding: EdgeInsets.zero,
-          title: const Text('Radio settings'),
+          title: Text(context.l10n.teamSetup_radio),
           value: _radio,
           onChanged: (v) => setState(() => _radio = v!),
         ),
         CheckboxListTile(
           contentPadding: EdgeInsets.zero,
-          title: const Text('Channels and their keys'),
-          subtitle: const Text('Not the public channel'),
+          title: Text(context.l10n.teamSetup_channels),
+          subtitle: Text(context.l10n.teamSetup_notPublic),
           value: _channels,
           onChanged: (v) => setState(() => _channels = v!),
         ),
         CheckboxListTile(
           contentPadding: EdgeInsets.zero,
-          title: const Text('Waypoints and routes'),
+          title: Text(context.l10n.teamSetup_places),
           value: _places,
           onChanged: (v) => setState(() => _places = v!),
         ),
@@ -144,18 +141,18 @@ class _ShareTabState extends State<_ShareTab> {
           controller: _pass,
           obscureText: true,
           onChanged: (_) => setState(() {}),
-          decoration: const InputDecoration(
-            labelText: 'Passphrase (at least 12 characters)',
+          decoration: InputDecoration(
+            labelText: context.l10n.teamSetup_passHint,
           ),
         ),
         const SizedBox(height: 8),
-        const Text(_secretWarning),
+        Text(context.l10n.teamSetup_warning),
         const SizedBox(height: 8),
         FilledButton(
           onPressed: !_busy && _pass.text.length >= minTeamPassphrase
               ? _create
               : null,
-          child: const Text('Create'),
+          child: Text(context.l10n.teamSetup_create),
         ),
         if (_error case final e?) Text(e),
         if (sealed != null) ...[
@@ -163,12 +160,12 @@ class _ShareTabState extends State<_ShareTab> {
           if (sealed.length <= _maxQrLength)
             Center(child: QrCodeDisplay(data: sealed, size: 280))
           else
-            const Text('Too much for a QR code. Share it as a file instead.'),
+            Text(context.l10n.teamSetup_tooBig),
           const SizedBox(height: 8),
           OutlinedButton.icon(
             onPressed: _shareFile,
             icon: const Icon(Icons.ios_share),
-            label: const Text('Share as a file'),
+            label: Text(context.l10n.teamSetup_shareFile),
           ),
         ],
       ],
@@ -202,7 +199,7 @@ class _ReceiveTabState extends State<_ReceiveTab> {
     final text = await Navigator.of(context).push<String>(
       MaterialPageRoute(
         builder: (route) => Scaffold(
-          appBar: AppBar(title: const Text('Scan team setup')),
+          appBar: AppBar(title: Text(context.l10n.teamSetup_scanTitle)),
           body: QrScannerWidget(
             onScanned: (data) => Navigator.of(route).pop(data),
           ),
@@ -226,11 +223,11 @@ class _ReceiveTabState extends State<_ReceiveTab> {
     try {
       final config = await openTeamConfig(_sealed!, _pass.text);
       if (mounted) setState(() => _config = config);
-    } on FormatException catch (e) {
-      if (mounted) setState(() => _message = e.message);
+    } on FormatException {
+      if (mounted) setState(() => _message = context.l10n.teamSetup_notFile);
     } catch (_) {
       if (mounted) {
-        setState(() => _message = 'Wrong passphrase, or the file is damaged.');
+        setState(() => _message = context.l10n.teamSetup_wrongPass);
       }
     } finally {
       if (mounted) setState(() => _busy = false);
@@ -241,6 +238,7 @@ class _ReceiveTabState extends State<_ReceiveTab> {
     final config = _config!;
     final connector = context.read<MeshCoreConnector>();
     final store = context.read<WaypointStore?>();
+    final l10n = context.l10n;
     setState(() => _busy = true);
     final done = <String>[];
     try {
@@ -248,7 +246,7 @@ class _ReceiveTabState extends State<_ReceiveTab> {
         final added = await store.addImport(
           GpxImport(config.waypoints, config.routes),
         );
-        done.add('${added.waypoints} waypoints, ${added.routes} routes');
+        done.add(l10n.teamSetup_placesCount(added.waypoints, added.routes));
       }
       if (_applyChannels && connector.isConnected) {
         final plan = planChannelSlots(
@@ -265,8 +263,9 @@ class _ReceiveTabState extends State<_ReceiveTab> {
         }
         final left = config.channels.length - plan.length;
         done.add(
-          '${plan.length} channels added'
-          '${left > 0 ? ', $left already there or no room' : ''}',
+          left > 0
+              ? l10n.teamSetup_addedSkipped(plan.length, left)
+              : l10n.teamSetup_added(plan.length),
         );
       }
       // Last: changing the radio's settings can drop the link.
@@ -284,12 +283,16 @@ class _ReceiveTabState extends State<_ReceiveTab> {
           await connector.sendFrame(buildSetRadioTxPowerFrame(power));
         }
         await connector.refreshDeviceInfo();
-        done.add('radio settings changed');
+        done.add(l10n.teamSetup_radioChanged);
       }
-      if (mounted) setState(() => _message = 'Done: ${done.join('; ')}.');
+      if (mounted) {
+        setState(() => _message = l10n.teamSetup_done(done.join('; ')));
+      }
     } catch (e) {
       if (mounted) {
-        setState(() => _message = 'Stopped part way (${done.join('; ')}): $e');
+        setState(
+          () => _message = l10n.teamSetup_stopped(done.join('; '), '$e'),
+        );
       }
     } finally {
       if (mounted) setState(() => _busy = false);
@@ -315,13 +318,13 @@ class _ReceiveTabState extends State<_ReceiveTab> {
             OutlinedButton.icon(
               onPressed: _pickFile,
               icon: const Icon(Icons.file_open_outlined),
-              label: const Text('Open a file'),
+              label: Text(context.l10n.teamSetup_openFile),
             ),
             if (!kLiteBuild)
               OutlinedButton.icon(
                 onPressed: _scan,
                 icon: const Icon(Icons.qr_code_scanner),
-                label: const Text('Scan a QR code'),
+                label: Text(context.l10n.teamSetup_scanQr),
               ),
           ],
         ),
@@ -330,12 +333,12 @@ class _ReceiveTabState extends State<_ReceiveTab> {
           TextField(
             controller: _pass,
             obscureText: true,
-            decoration: const InputDecoration(labelText: 'Passphrase'),
+            decoration: InputDecoration(labelText: context.l10n.teamSetup_pass),
           ),
           const SizedBox(height: 8),
           FilledButton(
             onPressed: _busy ? null : _open,
-            child: const Text('Open'),
+            child: Text(context.l10n.teamSetup_open),
           ),
         ],
         if (config != null) ...[
@@ -344,7 +347,9 @@ class _ReceiveTabState extends State<_ReceiveTab> {
             CheckboxListTile(
               contentPadding: EdgeInsets.zero,
               title: Text(
-                'Channels: ${config.channels.map((c) => c.name).join(', ')}',
+                context.l10n.teamSetup_channelsList(
+                  config.channels.map((c) => c.name).join(', '),
+                ),
               ),
               value: _applyChannels,
               onChanged: (v) => setState(() => _applyChannels = v!),
@@ -353,8 +358,10 @@ class _ReceiveTabState extends State<_ReceiveTab> {
             CheckboxListTile(
               contentPadding: EdgeInsets.zero,
               title: Text(
-                '${config.waypoints.length} waypoints, '
-                '${config.routes.length} routes',
+                context.l10n.teamSetup_placesCount(
+                  config.waypoints.length,
+                  config.routes.length,
+                ),
               ),
               value: _applyPlaces,
               onChanged: (v) => setState(() => _applyPlaces = v!),
@@ -363,22 +370,19 @@ class _ReceiveTabState extends State<_ReceiveTab> {
             CheckboxListTile(
               contentPadding: EdgeInsets.zero,
               title: Text(
-                'Radio settings: ${r.freq}, ${r.bandwidth}, '
-                'SF${r.spreadingFactor}, CR${r.codingRate}',
+                context.l10n.teamSetup_radioDetail(
+                  '${r.freq}, ${r.bandwidth}, SF${r.spreadingFactor}, CR${r.codingRate}',
+                ),
               ),
-              subtitle: const Text(
-                'Off by default. Check these are legal where you are. A '
-                'different frequency takes you off your current mesh.',
-              ),
+              subtitle: Text(context.l10n.teamSetup_radioWarn),
               value: _applyRadio,
               onChanged: (v) => setState(() => _applyRadio = v!),
             ),
-          if (!connected)
-            const Text('Connect a radio to add channels or change settings.'),
+          if (!connected) Text(context.l10n.teamSetup_connectFirst),
           const SizedBox(height: 8),
           FilledButton(
             onPressed: _busy ? null : _apply,
-            child: const Text('Apply'),
+            child: Text(context.l10n.teamSetup_apply),
           ),
         ],
         if (_message case final m?)

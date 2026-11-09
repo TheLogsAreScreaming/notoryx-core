@@ -10878,4 +10878,229 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get dbEncrypt_covers =>
       'Also covers contacts, channel keys, waypoints, saved routes, drafts and waiting messages.';
+
+  @override
+  String get auto_title => 'Automation';
+
+  @override
+  String get auto_add => 'Add rule';
+
+  @override
+  String get auto_intro =>
+      'Rules run only while the app is open. Each fires when its condition starts being true, at most once every 15 minutes. Rules that send messages are limited to 3 sends every 10 minutes in total, and are labelled as automated.';
+
+  @override
+  String get auto_trigBattery => 'Radio battery drops below';
+
+  @override
+  String get auto_trigTime => 'Every day at';
+
+  @override
+  String get auto_trigEnter => 'I enter an area';
+
+  @override
+  String get auto_trigLeave => 'I leave an area';
+
+  @override
+  String get auto_trigHeard => 'A node is heard again';
+
+  @override
+  String get auto_trigQuiet => 'A node goes quiet';
+
+  @override
+  String auto_edit(String name) {
+    return 'Edit $name';
+  }
+
+  @override
+  String get auto_new => 'New rule';
+
+  @override
+  String get auto_editTitle => 'Edit rule';
+
+  @override
+  String get auto_delete => 'Delete rule';
+
+  @override
+  String get auto_needName => 'Give the rule a name.';
+
+  @override
+  String get auto_needArea => 'Enter the area\'s latitude and longitude.';
+
+  @override
+  String get auto_needNode => 'Choose a node.';
+
+  @override
+  String get auto_needMessage => 'Write the message.';
+
+  @override
+  String get auto_needTarget => 'Choose who gets the message.';
+
+  @override
+  String get auto_name => 'Rule name';
+
+  @override
+  String get auto_when => 'When';
+
+  @override
+  String auto_below(int percent) {
+    return 'Below $percent%';
+  }
+
+  @override
+  String get auto_time => 'Time';
+
+  @override
+  String get auto_latitude => 'Latitude';
+
+  @override
+  String get auto_longitude => 'Longitude';
+
+  @override
+  String get auto_usePosition => 'Use the radio\'s position';
+
+  @override
+  String auto_radius(int meters) {
+    return 'Radius: $meters m';
+  }
+
+  @override
+  String get auto_node => 'Node';
+
+  @override
+  String auto_heardWithin(int minutes) {
+    return 'Counts as heard within $minutes minutes';
+  }
+
+  @override
+  String get auto_notify => 'Notify me';
+
+  @override
+  String get auto_send => 'Send a message';
+
+  @override
+  String get auto_sendTo => 'Send to';
+
+  @override
+  String get auto_message => 'Message';
+
+  @override
+  String get auto_save => 'Save';
+
+  @override
+  String get auto_entry => 'Automation rules';
+
+  @override
+  String get auto_entrySub => 'Battery, time, area and node triggers';
+
+  @override
+  String get teamSetup_title => 'Team setup';
+
+  @override
+  String get teamSetup_toolSub => 'Share radio settings, channels and routes';
+
+  @override
+  String get teamSetup_share => 'Share';
+
+  @override
+  String get teamSetup_receive => 'Receive';
+
+  @override
+  String get teamSetup_warning =>
+      'This includes channel keys. Anyone with this file or QR code and the passphrase can read those channels. Tell people the passphrase in person or some other way, never alongside the file.';
+
+  @override
+  String get teamSetup_radio => 'Radio settings';
+
+  @override
+  String get teamSetup_channels => 'Channels and their keys';
+
+  @override
+  String get teamSetup_notPublic => 'Not the public channel';
+
+  @override
+  String get teamSetup_places => 'Waypoints and routes';
+
+  @override
+  String get teamSetup_passHint => 'Passphrase (at least 12 characters)';
+
+  @override
+  String get teamSetup_create => 'Create';
+
+  @override
+  String get teamSetup_tooBig =>
+      'Too much for a QR code. Share it as a file instead.';
+
+  @override
+  String get teamSetup_shareFile => 'Share as a file';
+
+  @override
+  String get teamSetup_scanTitle => 'Scan team setup';
+
+  @override
+  String get teamSetup_wrongPass => 'Wrong passphrase, or the file is damaged.';
+
+  @override
+  String get teamSetup_notFile => 'This isn\'t a valid team file.';
+
+  @override
+  String get teamSetup_openFile => 'Open a file';
+
+  @override
+  String get teamSetup_scanQr => 'Scan a QR code';
+
+  @override
+  String get teamSetup_pass => 'Passphrase';
+
+  @override
+  String get teamSetup_open => 'Open';
+
+  @override
+  String teamSetup_channelsList(String names) {
+    return 'Channels: $names';
+  }
+
+  @override
+  String teamSetup_placesCount(int waypoints, int routes) {
+    return 'Waypoints: $waypoints, routes: $routes';
+  }
+
+  @override
+  String teamSetup_radioDetail(String details) {
+    return 'Radio settings: $details';
+  }
+
+  @override
+  String get teamSetup_radioWarn =>
+      'Off by default. Check these are legal where you are. A different frequency takes you off your current mesh.';
+
+  @override
+  String get teamSetup_connectFirst =>
+      'Connect a radio to add channels or change settings.';
+
+  @override
+  String get teamSetup_apply => 'Apply';
+
+  @override
+  String teamSetup_done(String summary) {
+    return 'Done: $summary.';
+  }
+
+  @override
+  String teamSetup_stopped(String summary, String error) {
+    return 'Stopped part way ($summary): $error';
+  }
+
+  @override
+  String teamSetup_added(int count) {
+    return 'Channels added: $count';
+  }
+
+  @override
+  String teamSetup_addedSkipped(int count, int left) {
+    return 'Channels added: $count. Already there or no room: $left';
+  }
+
+  @override
+  String get teamSetup_radioChanged => 'radio settings changed';
 }

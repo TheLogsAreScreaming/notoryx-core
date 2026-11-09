@@ -10493,4 +10493,227 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get dbEncrypt_covers =>
       '連絡先、チャンネルキー、ウェイポイント、保存したルート、下書き、送信待ちメッセージも対象です。';
+
+  @override
+  String get auto_title => '自動化';
+
+  @override
+  String get auto_add => 'ルールを追加';
+
+  @override
+  String get auto_intro =>
+      'ルールはアプリを開いている間だけ動作します。条件が成立したときに、15分に1回まで実行されます。メッセージを送るルールは合計で10分間に3件までに制限され、自動送信と表示されます。';
+
+  @override
+  String get auto_trigBattery => '無線機のバッテリーが次を下回る';
+
+  @override
+  String get auto_trigTime => '毎日この時刻';
+
+  @override
+  String get auto_trigEnter => 'エリアに入る';
+
+  @override
+  String get auto_trigLeave => 'エリアから出る';
+
+  @override
+  String get auto_trigHeard => 'ノードが再び受信される';
+
+  @override
+  String get auto_trigQuiet => 'ノードが沈黙する';
+
+  @override
+  String auto_edit(String name) {
+    return '$nameを編集';
+  }
+
+  @override
+  String get auto_new => '新しいルール';
+
+  @override
+  String get auto_editTitle => 'ルールを編集';
+
+  @override
+  String get auto_delete => 'ルールを削除';
+
+  @override
+  String get auto_needName => 'ルールに名前を付けてください。';
+
+  @override
+  String get auto_needArea => 'エリアの緯度と経度を入力してください。';
+
+  @override
+  String get auto_needNode => 'ノードを選んでください。';
+
+  @override
+  String get auto_needMessage => 'メッセージを入力してください。';
+
+  @override
+  String get auto_needTarget => '送信先を選んでください。';
+
+  @override
+  String get auto_name => 'ルール名';
+
+  @override
+  String get auto_when => '条件';
+
+  @override
+  String auto_below(int percent) {
+    return '$percent%未満';
+  }
+
+  @override
+  String get auto_time => '時刻';
+
+  @override
+  String get auto_latitude => '緯度';
+
+  @override
+  String get auto_longitude => '経度';
+
+  @override
+  String get auto_usePosition => '無線機の位置を使う';
+
+  @override
+  String auto_radius(int meters) {
+    return '半径: $meters m';
+  }
+
+  @override
+  String get auto_node => 'ノード';
+
+  @override
+  String auto_heardWithin(int minutes) {
+    return '$minutes分以内なら受信ありとみなす';
+  }
+
+  @override
+  String get auto_notify => '通知する';
+
+  @override
+  String get auto_send => 'メッセージを送信';
+
+  @override
+  String get auto_sendTo => '送信先';
+
+  @override
+  String get auto_message => 'メッセージ';
+
+  @override
+  String get auto_save => '保存';
+
+  @override
+  String get auto_entry => '自動化ルール';
+
+  @override
+  String get auto_entrySub => 'バッテリー、時刻、エリア、ノードで実行';
+
+  @override
+  String get teamSetup_title => 'チーム設定';
+
+  @override
+  String get teamSetup_toolSub => '無線設定、チャンネル、ルートを共有';
+
+  @override
+  String get teamSetup_share => '共有';
+
+  @override
+  String get teamSetup_receive => '受信';
+
+  @override
+  String get teamSetup_warning =>
+      'チャンネルキーが含まれます。このファイルまたはQRコードとパスフレーズがあれば、誰でもそのチャンネルを読めます。パスフレーズは直接など別の方法で伝え、ファイルと一緒に送らないでください。';
+
+  @override
+  String get teamSetup_radio => '無線設定';
+
+  @override
+  String get teamSetup_channels => 'チャンネルとキー';
+
+  @override
+  String get teamSetup_notPublic => '公開チャンネルを除く';
+
+  @override
+  String get teamSetup_places => 'ウェイポイントとルート';
+
+  @override
+  String get teamSetup_passHint => 'パスフレーズ（12文字以上）';
+
+  @override
+  String get teamSetup_create => '作成';
+
+  @override
+  String get teamSetup_tooBig => 'QRコードには多すぎます。ファイルで共有してください。';
+
+  @override
+  String get teamSetup_shareFile => 'ファイルで共有';
+
+  @override
+  String get teamSetup_scanTitle => 'チーム設定をスキャン';
+
+  @override
+  String get teamSetup_wrongPass => 'パスフレーズが違うか、ファイルが破損しています。';
+
+  @override
+  String get teamSetup_notFile => '有効なチームファイルではありません。';
+
+  @override
+  String get teamSetup_openFile => 'ファイルを開く';
+
+  @override
+  String get teamSetup_scanQr => 'QRコードをスキャン';
+
+  @override
+  String get teamSetup_pass => 'パスフレーズ';
+
+  @override
+  String get teamSetup_open => '開く';
+
+  @override
+  String teamSetup_channelsList(String names) {
+    return 'チャンネル: $names';
+  }
+
+  @override
+  String teamSetup_placesCount(int waypoints, int routes) {
+    return 'ウェイポイント: $waypoints、ルート: $routes';
+  }
+
+  @override
+  String teamSetup_radioDetail(String details) {
+    return '無線設定: $details';
+  }
+
+  @override
+  String get teamSetup_radioWarn =>
+      '既定ではオフです。使用地域で合法か確認してください。周波数が異なると現在のメッシュから外れます。';
+
+  @override
+  String get teamSetup_connectFirst => 'チャンネルの追加や設定の変更には無線機を接続してください。';
+
+  @override
+  String get teamSetup_apply => '適用';
+
+  @override
+  String teamSetup_done(String summary) {
+    return '完了: $summary。';
+  }
+
+  @override
+  String teamSetup_stopped(String summary, String error) {
+    return '途中で停止 ($summary): $error';
+  }
+
+  @override
+  String teamSetup_added(int count) {
+    return '追加したチャンネル: $count';
+  }
+
+  @override
+  String teamSetup_addedSkipped(int count, int left) {
+    return '追加したチャンネル: $count。既存または空きなし: $left';
+  }
+
+  @override
+  String get teamSetup_radioChanged => '無線設定を変更しました';
 }

@@ -10995,4 +10995,230 @@ class AppLocalizationsBg extends AppLocalizations {
   @override
   String get dbEncrypt_covers =>
       'Обхваща и контакти, ключове на канали, точки, запазени маршрути, чернови и чакащи съобщения.';
+
+  @override
+  String get auto_title => 'Автоматизация';
+
+  @override
+  String get auto_add => 'Добавяне на правило';
+
+  @override
+  String get auto_intro =>
+      'Правилата работят само докато приложението е отворено. Всяко се задейства, когато условието му стане вярно, най-много веднъж на 15 минути. Правилата, които изпращат съобщения, са ограничени общо до 3 изпращания на 10 минути и са означени като автоматични.';
+
+  @override
+  String get auto_trigBattery => 'Батерията на радиото падне под';
+
+  @override
+  String get auto_trigTime => 'Всеки ден в';
+
+  @override
+  String get auto_trigEnter => 'Вляза в зона';
+
+  @override
+  String get auto_trigLeave => 'Изляза от зона';
+
+  @override
+  String get auto_trigHeard => 'Възел се чуе отново';
+
+  @override
+  String get auto_trigQuiet => 'Възел замлъкне';
+
+  @override
+  String auto_edit(String name) {
+    return 'Редактиране на $name';
+  }
+
+  @override
+  String get auto_new => 'Ново правило';
+
+  @override
+  String get auto_editTitle => 'Редактиране на правило';
+
+  @override
+  String get auto_delete => 'Изтриване на правило';
+
+  @override
+  String get auto_needName => 'Дайте име на правилото.';
+
+  @override
+  String get auto_needArea => 'Въведете географска ширина и дължина на зоната.';
+
+  @override
+  String get auto_needNode => 'Изберете възел.';
+
+  @override
+  String get auto_needMessage => 'Напишете съобщението.';
+
+  @override
+  String get auto_needTarget => 'Изберете получател.';
+
+  @override
+  String get auto_name => 'Име на правилото';
+
+  @override
+  String get auto_when => 'Кога';
+
+  @override
+  String auto_below(int percent) {
+    return 'Под $percent%';
+  }
+
+  @override
+  String get auto_time => 'Час';
+
+  @override
+  String get auto_latitude => 'Ширина';
+
+  @override
+  String get auto_longitude => 'Дължина';
+
+  @override
+  String get auto_usePosition => 'Използвай позицията на радиото';
+
+  @override
+  String auto_radius(int meters) {
+    return 'Радиус: $meters м';
+  }
+
+  @override
+  String get auto_node => 'Възел';
+
+  @override
+  String auto_heardWithin(int minutes) {
+    return 'Смята се за чут в рамките на $minutes минути';
+  }
+
+  @override
+  String get auto_notify => 'Уведоми ме';
+
+  @override
+  String get auto_send => 'Изпрати съобщение';
+
+  @override
+  String get auto_sendTo => 'Изпрати до';
+
+  @override
+  String get auto_message => 'Съобщение';
+
+  @override
+  String get auto_save => 'Запазване';
+
+  @override
+  String get auto_entry => 'Правила за автоматизация';
+
+  @override
+  String get auto_entrySub => 'Задействане по батерия, час, зона и възел';
+
+  @override
+  String get teamSetup_title => 'Настройка на екип';
+
+  @override
+  String get teamSetup_toolSub =>
+      'Споделяне на настройки на радиото, канали и маршрути';
+
+  @override
+  String get teamSetup_share => 'Споделяне';
+
+  @override
+  String get teamSetup_receive => 'Получаване';
+
+  @override
+  String get teamSetup_warning =>
+      'Това включва ключове на канали. Всеки с този файл или QR код и паролата може да чете тези канали. Кажете паролата лично или по друг начин, никога заедно с файла.';
+
+  @override
+  String get teamSetup_radio => 'Настройки на радиото';
+
+  @override
+  String get teamSetup_channels => 'Канали и техните ключове';
+
+  @override
+  String get teamSetup_notPublic => 'Без публичния канал';
+
+  @override
+  String get teamSetup_places => 'Точки и маршрути';
+
+  @override
+  String get teamSetup_passHint => 'Парола (поне 12 знака)';
+
+  @override
+  String get teamSetup_create => 'Създаване';
+
+  @override
+  String get teamSetup_tooBig =>
+      'Твърде много за QR код. Споделете го като файл.';
+
+  @override
+  String get teamSetup_shareFile => 'Споделяне като файл';
+
+  @override
+  String get teamSetup_scanTitle => 'Сканиране на настройка на екип';
+
+  @override
+  String get teamSetup_wrongPass => 'Грешна парола или повреден файл.';
+
+  @override
+  String get teamSetup_notFile => 'Това не е валиден екипен файл.';
+
+  @override
+  String get teamSetup_openFile => 'Отваряне на файл';
+
+  @override
+  String get teamSetup_scanQr => 'Сканиране на QR код';
+
+  @override
+  String get teamSetup_pass => 'Парола';
+
+  @override
+  String get teamSetup_open => 'Отваряне';
+
+  @override
+  String teamSetup_channelsList(String names) {
+    return 'Канали: $names';
+  }
+
+  @override
+  String teamSetup_placesCount(int waypoints, int routes) {
+    return 'Точки: $waypoints, маршрути: $routes';
+  }
+
+  @override
+  String teamSetup_radioDetail(String details) {
+    return 'Настройки на радиото: $details';
+  }
+
+  @override
+  String get teamSetup_radioWarn =>
+      'Изключено по подразбиране. Проверете дали са законни при вас. Друга честота ви изважда от текущата мрежа.';
+
+  @override
+  String get teamSetup_connectFirst =>
+      'Свържете радио, за да добавите канали или промените настройки.';
+
+  @override
+  String get teamSetup_apply => 'Прилагане';
+
+  @override
+  String teamSetup_done(String summary) {
+    return 'Готово: $summary.';
+  }
+
+  @override
+  String teamSetup_stopped(String summary, String error) {
+    return 'Спряно по средата ($summary): $error';
+  }
+
+  @override
+  String teamSetup_added(int count) {
+    return 'Добавени канали: $count';
+  }
+
+  @override
+  String teamSetup_addedSkipped(int count, int left) {
+    return 'Добавени канали: $count. Вече налични или без място: $left';
+  }
+
+  @override
+  String get teamSetup_radioChanged => 'настройките на радиото са променени';
 }

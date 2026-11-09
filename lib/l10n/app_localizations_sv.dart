@@ -10926,4 +10926,229 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get dbEncrypt_covers =>
       'Omfattar även kontakter, kanalnycklar, vägpunkter, sparade rutter, utkast och väntande meddelanden.';
+
+  @override
+  String get auto_title => 'Automatisering';
+
+  @override
+  String get auto_add => 'Lägg till regel';
+
+  @override
+  String get auto_intro =>
+      'Regler körs bara när appen är öppen. Varje regel utlöses när villkoret börjar gälla, högst en gång per 15 minuter. Regler som skickar meddelanden är totalt begränsade till 3 sändningar per 10 minuter och märks som automatiska.';
+
+  @override
+  String get auto_trigBattery => 'Radions batteri sjunker under';
+
+  @override
+  String get auto_trigTime => 'Varje dag kl.';
+
+  @override
+  String get auto_trigEnter => 'Jag går in i ett område';
+
+  @override
+  String get auto_trigLeave => 'Jag lämnar ett område';
+
+  @override
+  String get auto_trigHeard => 'En nod hörs igen';
+
+  @override
+  String get auto_trigQuiet => 'En nod tystnar';
+
+  @override
+  String auto_edit(String name) {
+    return 'Redigera $name';
+  }
+
+  @override
+  String get auto_new => 'Ny regel';
+
+  @override
+  String get auto_editTitle => 'Redigera regel';
+
+  @override
+  String get auto_delete => 'Ta bort regel';
+
+  @override
+  String get auto_needName => 'Ge regeln ett namn.';
+
+  @override
+  String get auto_needArea => 'Ange områdets latitud och longitud.';
+
+  @override
+  String get auto_needNode => 'Välj en nod.';
+
+  @override
+  String get auto_needMessage => 'Skriv meddelandet.';
+
+  @override
+  String get auto_needTarget => 'Välj vem som ska få meddelandet.';
+
+  @override
+  String get auto_name => 'Regelnamn';
+
+  @override
+  String get auto_when => 'När';
+
+  @override
+  String auto_below(int percent) {
+    return 'Under $percent %';
+  }
+
+  @override
+  String get auto_time => 'Tid';
+
+  @override
+  String get auto_latitude => 'Latitud';
+
+  @override
+  String get auto_longitude => 'Longitud';
+
+  @override
+  String get auto_usePosition => 'Använd radions position';
+
+  @override
+  String auto_radius(int meters) {
+    return 'Radie: $meters m';
+  }
+
+  @override
+  String get auto_node => 'Nod';
+
+  @override
+  String auto_heardWithin(int minutes) {
+    return 'Räknas som hörd inom $minutes minuter';
+  }
+
+  @override
+  String get auto_notify => 'Meddela mig';
+
+  @override
+  String get auto_send => 'Skicka ett meddelande';
+
+  @override
+  String get auto_sendTo => 'Skicka till';
+
+  @override
+  String get auto_message => 'Meddelande';
+
+  @override
+  String get auto_save => 'Spara';
+
+  @override
+  String get auto_entry => 'Automatiseringsregler';
+
+  @override
+  String get auto_entrySub => 'Utlösare för batteri, tid, område och nod';
+
+  @override
+  String get teamSetup_title => 'Teaminställning';
+
+  @override
+  String get teamSetup_toolSub => 'Dela radioinställningar, kanaler och rutter';
+
+  @override
+  String get teamSetup_share => 'Dela';
+
+  @override
+  String get teamSetup_receive => 'Ta emot';
+
+  @override
+  String get teamSetup_warning =>
+      'Innehåller kanalnycklar. Alla med den här filen eller QR-koden och lösenfrasen kan läsa kanalerna. Berätta lösenfrasen personligen eller på annat sätt, aldrig tillsammans med filen.';
+
+  @override
+  String get teamSetup_radio => 'Radioinställningar';
+
+  @override
+  String get teamSetup_channels => 'Kanaler och deras nycklar';
+
+  @override
+  String get teamSetup_notPublic => 'Inte den offentliga kanalen';
+
+  @override
+  String get teamSetup_places => 'Vägpunkter och rutter';
+
+  @override
+  String get teamSetup_passHint => 'Lösenfras (minst 12 tecken)';
+
+  @override
+  String get teamSetup_create => 'Skapa';
+
+  @override
+  String get teamSetup_tooBig =>
+      'För mycket för en QR-kod. Dela som fil i stället.';
+
+  @override
+  String get teamSetup_shareFile => 'Dela som fil';
+
+  @override
+  String get teamSetup_scanTitle => 'Skanna teaminställning';
+
+  @override
+  String get teamSetup_wrongPass => 'Fel lösenfras eller skadad fil.';
+
+  @override
+  String get teamSetup_notFile => 'Det här är ingen giltig teamfil.';
+
+  @override
+  String get teamSetup_openFile => 'Öppna en fil';
+
+  @override
+  String get teamSetup_scanQr => 'Skanna en QR-kod';
+
+  @override
+  String get teamSetup_pass => 'Lösenfras';
+
+  @override
+  String get teamSetup_open => 'Öppna';
+
+  @override
+  String teamSetup_channelsList(String names) {
+    return 'Kanaler: $names';
+  }
+
+  @override
+  String teamSetup_placesCount(int waypoints, int routes) {
+    return 'Vägpunkter: $waypoints, rutter: $routes';
+  }
+
+  @override
+  String teamSetup_radioDetail(String details) {
+    return 'Radioinställningar: $details';
+  }
+
+  @override
+  String get teamSetup_radioWarn =>
+      'Av som standard. Kontrollera att de är lagliga där du är. En annan frekvens tar dig från ditt nuvarande mesh.';
+
+  @override
+  String get teamSetup_connectFirst =>
+      'Anslut en radio för att lägga till kanaler eller ändra inställningar.';
+
+  @override
+  String get teamSetup_apply => 'Verkställ';
+
+  @override
+  String teamSetup_done(String summary) {
+    return 'Klart: $summary.';
+  }
+
+  @override
+  String teamSetup_stopped(String summary, String error) {
+    return 'Avbröts halvvägs ($summary): $error';
+  }
+
+  @override
+  String teamSetup_added(int count) {
+    return 'Tillagda kanaler: $count';
+  }
+
+  @override
+  String teamSetup_addedSkipped(int count, int left) {
+    return 'Tillagda kanaler: $count. Finns redan eller ingen plats: $left';
+  }
+
+  @override
+  String get teamSetup_radioChanged => 'radioinställningar ändrade';
 }

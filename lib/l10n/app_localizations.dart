@@ -18288,6 +18288,402 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Also covers contacts, channel keys, waypoints, saved routes, drafts and waiting messages.'**
   String get dbEncrypt_covers;
+
+  /// No description provided for @auto_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Automation'**
+  String get auto_title;
+
+  /// No description provided for @auto_add.
+  ///
+  /// In en, this message translates to:
+  /// **'Add rule'**
+  String get auto_add;
+
+  /// No description provided for @auto_intro.
+  ///
+  /// In en, this message translates to:
+  /// **'Rules run only while the app is open. Each fires when its condition starts being true, at most once every 15 minutes. Rules that send messages are limited to 3 sends every 10 minutes in total, and are labelled as automated.'**
+  String get auto_intro;
+
+  /// No description provided for @auto_trigBattery.
+  ///
+  /// In en, this message translates to:
+  /// **'Radio battery drops below'**
+  String get auto_trigBattery;
+
+  /// No description provided for @auto_trigTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Every day at'**
+  String get auto_trigTime;
+
+  /// No description provided for @auto_trigEnter.
+  ///
+  /// In en, this message translates to:
+  /// **'I enter an area'**
+  String get auto_trigEnter;
+
+  /// No description provided for @auto_trigLeave.
+  ///
+  /// In en, this message translates to:
+  /// **'I leave an area'**
+  String get auto_trigLeave;
+
+  /// No description provided for @auto_trigHeard.
+  ///
+  /// In en, this message translates to:
+  /// **'A node is heard again'**
+  String get auto_trigHeard;
+
+  /// No description provided for @auto_trigQuiet.
+  ///
+  /// In en, this message translates to:
+  /// **'A node goes quiet'**
+  String get auto_trigQuiet;
+
+  /// No description provided for @auto_edit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit {name}'**
+  String auto_edit(String name);
+
+  /// No description provided for @auto_new.
+  ///
+  /// In en, this message translates to:
+  /// **'New rule'**
+  String get auto_new;
+
+  /// No description provided for @auto_editTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit rule'**
+  String get auto_editTitle;
+
+  /// No description provided for @auto_delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete rule'**
+  String get auto_delete;
+
+  /// No description provided for @auto_needName.
+  ///
+  /// In en, this message translates to:
+  /// **'Give the rule a name.'**
+  String get auto_needName;
+
+  /// No description provided for @auto_needArea.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the area\'s latitude and longitude.'**
+  String get auto_needArea;
+
+  /// No description provided for @auto_needNode.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a node.'**
+  String get auto_needNode;
+
+  /// No description provided for @auto_needMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Write the message.'**
+  String get auto_needMessage;
+
+  /// No description provided for @auto_needTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose who gets the message.'**
+  String get auto_needTarget;
+
+  /// No description provided for @auto_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Rule name'**
+  String get auto_name;
+
+  /// No description provided for @auto_when.
+  ///
+  /// In en, this message translates to:
+  /// **'When'**
+  String get auto_when;
+
+  /// No description provided for @auto_below.
+  ///
+  /// In en, this message translates to:
+  /// **'Below {percent}%'**
+  String auto_below(int percent);
+
+  /// No description provided for @auto_time.
+  ///
+  /// In en, this message translates to:
+  /// **'Time'**
+  String get auto_time;
+
+  /// No description provided for @auto_latitude.
+  ///
+  /// In en, this message translates to:
+  /// **'Latitude'**
+  String get auto_latitude;
+
+  /// No description provided for @auto_longitude.
+  ///
+  /// In en, this message translates to:
+  /// **'Longitude'**
+  String get auto_longitude;
+
+  /// No description provided for @auto_usePosition.
+  ///
+  /// In en, this message translates to:
+  /// **'Use the radio\'s position'**
+  String get auto_usePosition;
+
+  /// No description provided for @auto_radius.
+  ///
+  /// In en, this message translates to:
+  /// **'Radius: {meters} m'**
+  String auto_radius(int meters);
+
+  /// No description provided for @auto_node.
+  ///
+  /// In en, this message translates to:
+  /// **'Node'**
+  String get auto_node;
+
+  /// No description provided for @auto_heardWithin.
+  ///
+  /// In en, this message translates to:
+  /// **'Counts as heard within {minutes} minutes'**
+  String auto_heardWithin(int minutes);
+
+  /// No description provided for @auto_notify.
+  ///
+  /// In en, this message translates to:
+  /// **'Notify me'**
+  String get auto_notify;
+
+  /// No description provided for @auto_send.
+  ///
+  /// In en, this message translates to:
+  /// **'Send a message'**
+  String get auto_send;
+
+  /// No description provided for @auto_sendTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Send to'**
+  String get auto_sendTo;
+
+  /// No description provided for @auto_message.
+  ///
+  /// In en, this message translates to:
+  /// **'Message'**
+  String get auto_message;
+
+  /// No description provided for @auto_save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get auto_save;
+
+  /// No description provided for @auto_entry.
+  ///
+  /// In en, this message translates to:
+  /// **'Automation rules'**
+  String get auto_entry;
+
+  /// No description provided for @auto_entrySub.
+  ///
+  /// In en, this message translates to:
+  /// **'Battery, time, area and node triggers'**
+  String get auto_entrySub;
+
+  /// No description provided for @teamSetup_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Team setup'**
+  String get teamSetup_title;
+
+  /// No description provided for @teamSetup_toolSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Share radio settings, channels and routes'**
+  String get teamSetup_toolSub;
+
+  /// No description provided for @teamSetup_share.
+  ///
+  /// In en, this message translates to:
+  /// **'Share'**
+  String get teamSetup_share;
+
+  /// No description provided for @teamSetup_receive.
+  ///
+  /// In en, this message translates to:
+  /// **'Receive'**
+  String get teamSetup_receive;
+
+  /// No description provided for @teamSetup_warning.
+  ///
+  /// In en, this message translates to:
+  /// **'This includes channel keys. Anyone with this file or QR code and the passphrase can read those channels. Tell people the passphrase in person or some other way, never alongside the file.'**
+  String get teamSetup_warning;
+
+  /// No description provided for @teamSetup_radio.
+  ///
+  /// In en, this message translates to:
+  /// **'Radio settings'**
+  String get teamSetup_radio;
+
+  /// No description provided for @teamSetup_channels.
+  ///
+  /// In en, this message translates to:
+  /// **'Channels and their keys'**
+  String get teamSetup_channels;
+
+  /// No description provided for @teamSetup_notPublic.
+  ///
+  /// In en, this message translates to:
+  /// **'Not the public channel'**
+  String get teamSetup_notPublic;
+
+  /// No description provided for @teamSetup_places.
+  ///
+  /// In en, this message translates to:
+  /// **'Waypoints and routes'**
+  String get teamSetup_places;
+
+  /// No description provided for @teamSetup_passHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Passphrase (at least 12 characters)'**
+  String get teamSetup_passHint;
+
+  /// No description provided for @teamSetup_create.
+  ///
+  /// In en, this message translates to:
+  /// **'Create'**
+  String get teamSetup_create;
+
+  /// No description provided for @teamSetup_tooBig.
+  ///
+  /// In en, this message translates to:
+  /// **'Too much for a QR code. Share it as a file instead.'**
+  String get teamSetup_tooBig;
+
+  /// No description provided for @teamSetup_shareFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Share as a file'**
+  String get teamSetup_shareFile;
+
+  /// No description provided for @teamSetup_scanTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan team setup'**
+  String get teamSetup_scanTitle;
+
+  /// No description provided for @teamSetup_wrongPass.
+  ///
+  /// In en, this message translates to:
+  /// **'Wrong passphrase, or the file is damaged.'**
+  String get teamSetup_wrongPass;
+
+  /// No description provided for @teamSetup_notFile.
+  ///
+  /// In en, this message translates to:
+  /// **'This isn\'t a valid team file.'**
+  String get teamSetup_notFile;
+
+  /// No description provided for @teamSetup_openFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Open a file'**
+  String get teamSetup_openFile;
+
+  /// No description provided for @teamSetup_scanQr.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan a QR code'**
+  String get teamSetup_scanQr;
+
+  /// No description provided for @teamSetup_pass.
+  ///
+  /// In en, this message translates to:
+  /// **'Passphrase'**
+  String get teamSetup_pass;
+
+  /// No description provided for @teamSetup_open.
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get teamSetup_open;
+
+  /// No description provided for @teamSetup_channelsList.
+  ///
+  /// In en, this message translates to:
+  /// **'Channels: {names}'**
+  String teamSetup_channelsList(String names);
+
+  /// No description provided for @teamSetup_placesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Waypoints: {waypoints}, routes: {routes}'**
+  String teamSetup_placesCount(int waypoints, int routes);
+
+  /// No description provided for @teamSetup_radioDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Radio settings: {details}'**
+  String teamSetup_radioDetail(String details);
+
+  /// No description provided for @teamSetup_radioWarn.
+  ///
+  /// In en, this message translates to:
+  /// **'Off by default. Check these are legal where you are. A different frequency takes you off your current mesh.'**
+  String get teamSetup_radioWarn;
+
+  /// No description provided for @teamSetup_connectFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect a radio to add channels or change settings.'**
+  String get teamSetup_connectFirst;
+
+  /// No description provided for @teamSetup_apply.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply'**
+  String get teamSetup_apply;
+
+  /// No description provided for @teamSetup_done.
+  ///
+  /// In en, this message translates to:
+  /// **'Done: {summary}.'**
+  String teamSetup_done(String summary);
+
+  /// No description provided for @teamSetup_stopped.
+  ///
+  /// In en, this message translates to:
+  /// **'Stopped part way ({summary}): {error}'**
+  String teamSetup_stopped(String summary, String error);
+
+  /// No description provided for @teamSetup_added.
+  ///
+  /// In en, this message translates to:
+  /// **'Channels added: {count}'**
+  String teamSetup_added(int count);
+
+  /// No description provided for @teamSetup_addedSkipped.
+  ///
+  /// In en, this message translates to:
+  /// **'Channels added: {count}. Already there or no room: {left}'**
+  String teamSetup_addedSkipped(int count, int left);
+
+  /// No description provided for @teamSetup_radioChanged.
+  ///
+  /// In en, this message translates to:
+  /// **'radio settings changed'**
+  String get teamSetup_radioChanged;
 }
 
 class _AppLocalizationsDelegate

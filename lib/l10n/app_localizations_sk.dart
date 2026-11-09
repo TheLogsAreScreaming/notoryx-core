@@ -10989,4 +10989,228 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get dbEncrypt_covers =>
       'Zahŕňa aj kontakty, kľúče kanálov, body trasy, uložené trasy, koncepty a čakajúce správy.';
+
+  @override
+  String get auto_title => 'Automatizácia';
+
+  @override
+  String get auto_add => 'Pridať pravidlo';
+
+  @override
+  String get auto_intro =>
+      'Pravidlá fungujú len pri otvorenej aplikácii. Každé sa spustí, keď sa jeho podmienka začne plniť, najviac raz za 15 minút. Pravidlá odosielajúce správy sú spolu obmedzené na 3 odoslania za 10 minút a sú označené ako automatické.';
+
+  @override
+  String get auto_trigBattery => 'Batéria rádia klesne pod';
+
+  @override
+  String get auto_trigTime => 'Každý deň o';
+
+  @override
+  String get auto_trigEnter => 'Vstúpim do oblasti';
+
+  @override
+  String get auto_trigLeave => 'Opustím oblasť';
+
+  @override
+  String get auto_trigHeard => 'Uzol je znova počuť';
+
+  @override
+  String get auto_trigQuiet => 'Uzol stíchne';
+
+  @override
+  String auto_edit(String name) {
+    return 'Upraviť $name';
+  }
+
+  @override
+  String get auto_new => 'Nové pravidlo';
+
+  @override
+  String get auto_editTitle => 'Upraviť pravidlo';
+
+  @override
+  String get auto_delete => 'Odstrániť pravidlo';
+
+  @override
+  String get auto_needName => 'Pomenujte pravidlo.';
+
+  @override
+  String get auto_needArea => 'Zadajte zemepisnú šírku a dĺžku oblasti.';
+
+  @override
+  String get auto_needNode => 'Vyberte uzol.';
+
+  @override
+  String get auto_needMessage => 'Napíšte správu.';
+
+  @override
+  String get auto_needTarget => 'Vyberte príjemcu.';
+
+  @override
+  String get auto_name => 'Názov pravidla';
+
+  @override
+  String get auto_when => 'Kedy';
+
+  @override
+  String auto_below(int percent) {
+    return 'Pod $percent %';
+  }
+
+  @override
+  String get auto_time => 'Čas';
+
+  @override
+  String get auto_latitude => 'Šírka';
+
+  @override
+  String get auto_longitude => 'Dĺžka';
+
+  @override
+  String get auto_usePosition => 'Použiť polohu rádia';
+
+  @override
+  String auto_radius(int meters) {
+    return 'Polomer: $meters m';
+  }
+
+  @override
+  String get auto_node => 'Uzol';
+
+  @override
+  String auto_heardWithin(int minutes) {
+    return 'Považuje sa za počutý do $minutes minút';
+  }
+
+  @override
+  String get auto_notify => 'Upozorniť ma';
+
+  @override
+  String get auto_send => 'Odoslať správu';
+
+  @override
+  String get auto_sendTo => 'Odoslať komu';
+
+  @override
+  String get auto_message => 'Správa';
+
+  @override
+  String get auto_save => 'Uložiť';
+
+  @override
+  String get auto_entry => 'Pravidlá automatizácie';
+
+  @override
+  String get auto_entrySub => 'Spúšťače batérie, času, oblasti a uzla';
+
+  @override
+  String get teamSetup_title => 'Nastavenie tímu';
+
+  @override
+  String get teamSetup_toolSub => 'Zdieľať nastavenia rádia, kanály a trasy';
+
+  @override
+  String get teamSetup_share => 'Zdieľať';
+
+  @override
+  String get teamSetup_receive => 'Prijať';
+
+  @override
+  String get teamSetup_warning =>
+      'Obsahuje kľúče kanálov. Ktokoľvek s týmto súborom alebo QR kódom a heslom môže čítať tieto kanály. Heslo oznámte osobne alebo inak, nikdy spolu so súborom.';
+
+  @override
+  String get teamSetup_radio => 'Nastavenia rádia';
+
+  @override
+  String get teamSetup_channels => 'Kanály a ich kľúče';
+
+  @override
+  String get teamSetup_notPublic => 'Bez verejného kanála';
+
+  @override
+  String get teamSetup_places => 'Body a trasy';
+
+  @override
+  String get teamSetup_passHint => 'Heslo (aspoň 12 znakov)';
+
+  @override
+  String get teamSetup_create => 'Vytvoriť';
+
+  @override
+  String get teamSetup_tooBig => 'Príliš veľa pre QR kód. Zdieľajte ako súbor.';
+
+  @override
+  String get teamSetup_shareFile => 'Zdieľať ako súbor';
+
+  @override
+  String get teamSetup_scanTitle => 'Skenovať nastavenie tímu';
+
+  @override
+  String get teamSetup_wrongPass => 'Nesprávne heslo alebo poškodený súbor.';
+
+  @override
+  String get teamSetup_notFile => 'Toto nie je platný tímový súbor.';
+
+  @override
+  String get teamSetup_openFile => 'Otvoriť súbor';
+
+  @override
+  String get teamSetup_scanQr => 'Skenovať QR kód';
+
+  @override
+  String get teamSetup_pass => 'Heslo';
+
+  @override
+  String get teamSetup_open => 'Otvoriť';
+
+  @override
+  String teamSetup_channelsList(String names) {
+    return 'Kanály: $names';
+  }
+
+  @override
+  String teamSetup_placesCount(int waypoints, int routes) {
+    return 'Body: $waypoints, trasy: $routes';
+  }
+
+  @override
+  String teamSetup_radioDetail(String details) {
+    return 'Nastavenia rádia: $details';
+  }
+
+  @override
+  String get teamSetup_radioWarn =>
+      'Predvolene vypnuté. Overte, či sú u vás legálne. Iná frekvencia vás odpojí od súčasnej siete.';
+
+  @override
+  String get teamSetup_connectFirst =>
+      'Pripojte rádio na pridanie kanálov alebo zmenu nastavení.';
+
+  @override
+  String get teamSetup_apply => 'Použiť';
+
+  @override
+  String teamSetup_done(String summary) {
+    return 'Hotovo: $summary.';
+  }
+
+  @override
+  String teamSetup_stopped(String summary, String error) {
+    return 'Zastavené v polovici ($summary): $error';
+  }
+
+  @override
+  String teamSetup_added(int count) {
+    return 'Pridané kanály: $count';
+  }
+
+  @override
+  String teamSetup_addedSkipped(int count, int left) {
+    return 'Pridané kanály: $count. Už existujú alebo chýba miesto: $left';
+  }
+
+  @override
+  String get teamSetup_radioChanged => 'nastavenia rádia zmenené';
 }

@@ -11054,4 +11054,228 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get dbEncrypt_covers =>
       'Obejmuje też kontakty, klucze kanałów, punkty trasy, zapisane trasy, wersje robocze i oczekujące wiadomości.';
+
+  @override
+  String get auto_title => 'Automatyzacja';
+
+  @override
+  String get auto_add => 'Dodaj regułę';
+
+  @override
+  String get auto_intro =>
+      'Reguły działają tylko przy otwartej aplikacji. Każda uruchamia się, gdy jej warunek zaczyna być spełniony, najwyżej raz na 15 minut. Reguły wysyłające wiadomości są łącznie ograniczone do 3 wysyłek na 10 minut i oznaczone jako automatyczne.';
+
+  @override
+  String get auto_trigBattery => 'Bateria radia spada poniżej';
+
+  @override
+  String get auto_trigTime => 'Codziennie o';
+
+  @override
+  String get auto_trigEnter => 'Wchodzę na obszar';
+
+  @override
+  String get auto_trigLeave => 'Opuszczam obszar';
+
+  @override
+  String get auto_trigHeard => 'Węzeł znów jest słyszany';
+
+  @override
+  String get auto_trigQuiet => 'Węzeł milknie';
+
+  @override
+  String auto_edit(String name) {
+    return 'Edytuj $name';
+  }
+
+  @override
+  String get auto_new => 'Nowa reguła';
+
+  @override
+  String get auto_editTitle => 'Edytuj regułę';
+
+  @override
+  String get auto_delete => 'Usuń regułę';
+
+  @override
+  String get auto_needName => 'Nadaj regule nazwę.';
+
+  @override
+  String get auto_needArea => 'Podaj szerokość i długość geograficzną obszaru.';
+
+  @override
+  String get auto_needNode => 'Wybierz węzeł.';
+
+  @override
+  String get auto_needMessage => 'Napisz wiadomość.';
+
+  @override
+  String get auto_needTarget => 'Wybierz odbiorcę.';
+
+  @override
+  String get auto_name => 'Nazwa reguły';
+
+  @override
+  String get auto_when => 'Kiedy';
+
+  @override
+  String auto_below(int percent) {
+    return 'Poniżej $percent%';
+  }
+
+  @override
+  String get auto_time => 'Godzina';
+
+  @override
+  String get auto_latitude => 'Szerokość';
+
+  @override
+  String get auto_longitude => 'Długość';
+
+  @override
+  String get auto_usePosition => 'Użyj pozycji radia';
+
+  @override
+  String auto_radius(int meters) {
+    return 'Promień: $meters m';
+  }
+
+  @override
+  String get auto_node => 'Węzeł';
+
+  @override
+  String auto_heardWithin(int minutes) {
+    return 'Uznaj za słyszany w ciągu $minutes minut';
+  }
+
+  @override
+  String get auto_notify => 'Powiadom mnie';
+
+  @override
+  String get auto_send => 'Wyślij wiadomość';
+
+  @override
+  String get auto_sendTo => 'Wyślij do';
+
+  @override
+  String get auto_message => 'Wiadomość';
+
+  @override
+  String get auto_save => 'Zapisz';
+
+  @override
+  String get auto_entry => 'Reguły automatyzacji';
+
+  @override
+  String get auto_entrySub => 'Wyzwalacze baterii, czasu, obszaru i węzła';
+
+  @override
+  String get teamSetup_title => 'Ustawienia zespołu';
+
+  @override
+  String get teamSetup_toolSub => 'Udostępnij ustawienia radia, kanały i trasy';
+
+  @override
+  String get teamSetup_share => 'Udostępnij';
+
+  @override
+  String get teamSetup_receive => 'Odbierz';
+
+  @override
+  String get teamSetup_warning =>
+      'Zawiera klucze kanałów. Każdy, kto ma ten plik lub kod QR i hasło, może czytać te kanały. Przekaż hasło osobiście lub w inny sposób, nigdy razem z plikiem.';
+
+  @override
+  String get teamSetup_radio => 'Ustawienia radia';
+
+  @override
+  String get teamSetup_channels => 'Kanały i ich klucze';
+
+  @override
+  String get teamSetup_notPublic => 'Bez kanału publicznego';
+
+  @override
+  String get teamSetup_places => 'Punkty i trasy';
+
+  @override
+  String get teamSetup_passHint => 'Hasło (co najmniej 12 znaków)';
+
+  @override
+  String get teamSetup_create => 'Utwórz';
+
+  @override
+  String get teamSetup_tooBig => 'Za dużo na kod QR. Udostępnij jako plik.';
+
+  @override
+  String get teamSetup_shareFile => 'Udostępnij jako plik';
+
+  @override
+  String get teamSetup_scanTitle => 'Skanuj ustawienia zespołu';
+
+  @override
+  String get teamSetup_wrongPass => 'Błędne hasło lub uszkodzony plik.';
+
+  @override
+  String get teamSetup_notFile => 'To nie jest prawidłowy plik zespołu.';
+
+  @override
+  String get teamSetup_openFile => 'Otwórz plik';
+
+  @override
+  String get teamSetup_scanQr => 'Skanuj kod QR';
+
+  @override
+  String get teamSetup_pass => 'Hasło';
+
+  @override
+  String get teamSetup_open => 'Otwórz';
+
+  @override
+  String teamSetup_channelsList(String names) {
+    return 'Kanały: $names';
+  }
+
+  @override
+  String teamSetup_placesCount(int waypoints, int routes) {
+    return 'Punkty: $waypoints, trasy: $routes';
+  }
+
+  @override
+  String teamSetup_radioDetail(String details) {
+    return 'Ustawienia radia: $details';
+  }
+
+  @override
+  String get teamSetup_radioWarn =>
+      'Domyślnie wyłączone. Sprawdź, czy są legalne w Twoim miejscu. Inna częstotliwość odłączy Cię od obecnej sieci.';
+
+  @override
+  String get teamSetup_connectFirst =>
+      'Połącz radio, aby dodać kanały lub zmienić ustawienia.';
+
+  @override
+  String get teamSetup_apply => 'Zastosuj';
+
+  @override
+  String teamSetup_done(String summary) {
+    return 'Gotowe: $summary.';
+  }
+
+  @override
+  String teamSetup_stopped(String summary, String error) {
+    return 'Przerwano w połowie ($summary): $error';
+  }
+
+  @override
+  String teamSetup_added(int count) {
+    return 'Dodane kanały: $count';
+  }
+
+  @override
+  String teamSetup_addedSkipped(int count, int left) {
+    return 'Dodane kanały: $count. Już istnieją lub brak miejsca: $left';
+  }
+
+  @override
+  String get teamSetup_radioChanged => 'zmieniono ustawienia radia';
 }
