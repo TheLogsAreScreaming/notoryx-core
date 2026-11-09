@@ -10453,4 +10453,12 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get notification_replyHint => '답장 입력';
+
+  @override
+  String outbox_waiting(int count) {
+    return '무전기 대기 중: $count';
+  }
+
+  @override
+  String get outbox_cantQueue => '아직 연결된 무전기가 없어 나중에 보내도록 저장할 수 없습니다.';
 }

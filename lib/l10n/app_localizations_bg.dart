@@ -10939,4 +10939,13 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get notification_replyHint => 'Напишете отговор';
+
+  @override
+  String outbox_waiting(int count) {
+    return 'Чакат радиото: $count';
+  }
+
+  @override
+  String get outbox_cantQueue =>
+      'Все още няма свързано радио, затова това не може да се запази за по-късно.';
 }

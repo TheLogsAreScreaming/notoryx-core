@@ -54,6 +54,7 @@ import 'screens/network_changes_screen.dart' show networkChangeText;
 import 'services/battery_check_service.dart';
 import 'services/repeater_battery_history.dart';
 import 'services/notification_service.dart';
+import 'services/offline_outbox.dart';
 import 'services/ble_debug_log_service.dart';
 import 'services/app_debug_log_service.dart';
 import 'services/background_service.dart';
@@ -312,6 +313,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   AppShortcuts? _shortcuts;
   HomeWidgetSync? _homeWidget;
   late final AutoConnectService _autoConnect;
+  late final OfflineOutbox _outbox;
   late final NotificationRouter _notificationRouter;
   late final LinkRouter _linkRouter;
   StreamSubscription<String>? _notificationTaps;
@@ -336,6 +338,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _directRepeaters = DirectRepeaterService(widget.connector);
     _waypoints = WaypointStore(PrefsManager.instance);
     _appLock = AppLockService(PrefsManager.instance);
+    _outbox = OfflineOutbox(widget.connector);
     _trackLog = TrackLogService(widget.connector);
     _channelDiscovery = ChannelDiscoveryService(widget.connector);
     unawaited(_channelDiscovery.load());
@@ -526,6 +529,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     unawaited(_notificationReplies?.cancel());
     _appLock.removeListener(_syncQuickReply);
     _autoConnect.dispose();
+    _outbox.dispose();
     unawaited(_mqttPackets?.cancel());
     unawaited(_radioRxPackets?.cancel());
     widget.connector.removeListener(_syncMqttObserverIdentity);
@@ -693,6 +697,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         ChangeNotifierProvider.value(value: _fieldOps),
         ChangeNotifierProvider<WaypointStore>.value(value: _waypoints),
         ChangeNotifierProvider<AppLockService>.value(value: _appLock),
+        ChangeNotifierProvider<OfflineOutbox?>.value(value: _outbox),
         ChangeNotifierProvider<NetworkChangeService?>.value(
           value: _networkChanges,
         ),

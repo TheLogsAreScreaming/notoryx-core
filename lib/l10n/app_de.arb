@@ -4558,5 +4558,7 @@
   "map_showWaypoints": "Gespeicherte Wegpunkte und Routen anzeigen",
   "appLock_sosNoTarget": "Entsperre zuerst und wähle, wer dein SOS erhält.",
   "notification_replyAction": "Antworten",
-  "notification_replyHint": "Antwort schreiben"
+  "notification_replyHint": "Antwort schreiben",
+  "outbox_waiting": "Warten auf das Funkgerät: {count}",
+  "outbox_cantQueue": "Es war noch kein Funkgerät verbunden, daher kann dies nicht für später gespeichert werden."
 }

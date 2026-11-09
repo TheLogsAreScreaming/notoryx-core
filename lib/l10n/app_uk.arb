@@ -4404,5 +4404,7 @@
   "map_showWaypoints": "Показувати збережені точки та маршрути",
   "appLock_sosNoTarget": "Спочатку розблокуйте та виберіть, хто отримає SOS.",
   "notification_replyAction": "Відповісти",
-  "notification_replyHint": "Напишіть відповідь"
+  "notification_replyHint": "Напишіть відповідь",
+  "outbox_waiting": "Очікують радіо: {count}",
+  "outbox_cantQueue": "Радіо ще не підключалося, тому зберегти це на потім не можна."
 }

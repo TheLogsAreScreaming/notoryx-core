@@ -5885,5 +5885,8 @@
   "map_showWaypoints": "Show saved waypoints and routes",
   "appLock_sosNoTarget": "Unlock and choose who gets your SOS first.",
   "notification_replyAction": "Reply",
-  "notification_replyHint": "Write a reply"
+  "notification_replyHint": "Write a reply",
+  "outbox_waiting": "Waiting for the radio: {count}",
+  "@outbox_waiting": {"placeholders": {"count": {"type": "int"}}},
+  "outbox_cantQueue": "No radio has been connected yet, so this can't be saved to send later."
 }

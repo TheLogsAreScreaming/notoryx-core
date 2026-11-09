@@ -29,6 +29,8 @@ import '../widgets/empty_state.dart';
 import '../helpers/chat_scroll_controller.dart';
 import '../helpers/gif_helper.dart';
 import '../models/direct_quote.dart';
+import '../services/offline_outbox.dart';
+import '../widgets/outbox_banner.dart';
 import '../models/channel_message.dart';
 import '../models/contact.dart';
 import '../l10n/contact_localization.dart';
@@ -411,6 +413,9 @@ class _ChatScreenState extends State<ChatScreen> {
                 ),
                 if (contact.type == advTypeChat)
                   RouteHealthBanner(contact: contact),
+                OutboxBanner(
+                  target: 'message:${_resolveContact(connector).publicKeyHex}',
+                ),
                 if (_replyingTo != null) _buildReplyBanner(connector),
                 _buildInputBar(connector),
               ],
@@ -944,6 +949,23 @@ class _ChatScreenState extends State<ChatScreen> {
       // TODO maybe log
     }
     // end transform
+
+    if (!connector.isConnected) {
+      final target = 'message:${_resolveContact(connector).publicKeyHex}';
+      final messenger = ScaffoldMessenger.maybeOf(context);
+      final cantQueue = context.l10n.outbox_cantQueue;
+      final outbox = context.read<OfflineOutbox?>();
+      final saved = await outbox?.add(target, outgoingText) ?? false;
+      if (!mounted) return;
+      if (!saved) {
+        messenger?.showSnackBar(SnackBar(content: Text(cantQueue)));
+        return;
+      }
+      _textController.clear();
+      if (replyingTo != null) setState(() => _replyingTo = null);
+      _textFieldFocusNode.requestFocus();
+      return;
+    }
 
     _textController.clear();
     if (replyingTo != null) setState(() => _replyingTo = null);

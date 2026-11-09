@@ -4424,5 +4424,7 @@
   "map_showWaypoints": "Zobraziť uložené body a trasy",
   "appLock_sosNoTarget": "Najprv odomknite a vyberte, kto dostane vaše SOS.",
   "notification_replyAction": "Odpovedať",
-  "notification_replyHint": "Napíšte odpoveď"
+  "notification_replyHint": "Napíšte odpoveď",
+  "outbox_waiting": "Čaká na rádio: {count}",
+  "outbox_cantQueue": "Zatiaľ nebolo pripojené žiadne rádio, preto to nemožno uložiť na neskôr."
 }

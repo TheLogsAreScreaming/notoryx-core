@@ -10438,4 +10438,12 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get notification_replyHint => '返信を入力';
+
+  @override
+  String outbox_waiting(int count) {
+    return '無線機を待機中: $count';
+  }
+
+  @override
+  String get outbox_cantQueue => 'まだ無線機が接続されていないため、後で送信するよう保存できません。';
 }

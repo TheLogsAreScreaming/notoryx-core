@@ -4462,5 +4462,7 @@
   "map_showWaypoints": "Pokaż zapisane punkty i trasy",
   "appLock_sosNoTarget": "Najpierw odblokuj i wybierz, kto otrzyma SOS.",
   "notification_replyAction": "Odpowiedz",
-  "notification_replyHint": "Napisz odpowiedź"
+  "notification_replyHint": "Napisz odpowiedź",
+  "outbox_waiting": "Oczekuje na radio: {count}",
+  "outbox_cantQueue": "Nie połączono jeszcze żadnego radia, więc nie można zapisać tego na później."
 }

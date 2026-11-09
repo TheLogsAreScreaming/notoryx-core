@@ -4558,5 +4558,7 @@
   "map_showWaypoints": "Afficher les points et itinéraires enregistrés",
   "appLock_sosNoTarget": "Déverrouillez d'abord et choisissez qui reçoit votre SOS.",
   "notification_replyAction": "Répondre",
-  "notification_replyHint": "Écrire une réponse"
+  "notification_replyHint": "Écrire une réponse",
+  "outbox_waiting": "En attente de la radio : {count}",
+  "outbox_cantQueue": "Aucune radio n'a encore été connectée, ce message ne peut donc pas être gardé pour plus tard."
 }

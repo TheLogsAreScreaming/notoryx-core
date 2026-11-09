@@ -10942,4 +10942,13 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get notification_replyHint => 'Írj választ';
+
+  @override
+  String outbox_waiting(int count) {
+    return 'Rádióra vár: $count';
+  }
+
+  @override
+  String get outbox_cantQueue =>
+      'Még nem csatlakozott rádió, ezért ezt nem lehet későbbre menteni.';
 }

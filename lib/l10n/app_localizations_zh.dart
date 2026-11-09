@@ -10221,4 +10221,12 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get notification_replyHint => '输入回复';
+
+  @override
+  String outbox_waiting(int count) {
+    return '等待电台：$count';
+  }
+
+  @override
+  String get outbox_cantQueue => '尚未连接过电台，因此无法保存以便稍后发送。';
 }
