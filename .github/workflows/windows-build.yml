@@ -12,8 +12,10 @@ permissions:
   contents: read
 
 jobs:
+  # windows-latest ships Visual Studio 18, which rejects the /await option
+  # local_auth_windows still uses. Visual Studio 2022 accepts it.
   windows:
-    runs-on: windows-latest
+    runs-on: windows-2022
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
