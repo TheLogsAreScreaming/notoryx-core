@@ -7,6 +7,11 @@ import 'package:path_provider/path_provider.dart';
 
 import '../models/trail_graph.dart';
 
+// Big replies are parsed off the UI thread.
+TrailGraph _parseOverpass(List<int> body) => TrailGraph.fromOverpass(
+  jsonDecode(utf8.decode(body)) as Map<String, dynamic>,
+);
+
 /// Why an area couldn't be saved.
 enum TrailDownloadProblem { tooLarge, storageFull, noTrails, failed }
 
@@ -106,7 +111,8 @@ class TrailStore extends ChangeNotifier {
       throw const TrailDownloadException(TrailDownloadProblem.tooLarge);
     }
     final box = '${bounds.south},${bounds.west},${bounds.north},${bounds.east}';
-    final query = '[out:json][timeout:90];way["highway"]($box);out body geom;';
+    final query =
+        '[out:json][timeout:90];way["highway"~"$walkableHighwayPattern"]($box);out body geom;';
     final TrailGraph graph;
     try {
       final response = await _client
@@ -119,9 +125,7 @@ class TrailStore extends ChangeNotifier {
       if (response.statusCode != 200) {
         throw const TrailDownloadException(TrailDownloadProblem.failed);
       }
-      graph = TrailGraph.fromOverpass(
-        jsonDecode(utf8.decode(response.bodyBytes)) as Map<String, dynamic>,
-      );
+      graph = await compute(_parseOverpass, response.bodyBytes);
     } on TrailDownloadException {
       rethrow;
     } catch (e) {

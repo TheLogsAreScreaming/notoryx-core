@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 
 import 'team_config_screen.dart';
+import 'trail_routing_screen.dart';
 import '../l10n/l10n.dart';
 import '../widgets/ember_backdrop.dart';
 import '../widgets/instrument.dart';
@@ -155,6 +156,13 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
             subtitle: l10n.tools_antennaHint,
             builder: (_) => const AntennaCoverageScreen(),
           ),
+          if (!PlatformInfo.isWeb)
+            _ToolAction(
+              icon: Icons.hiking,
+              title: 'Trail routing',
+              subtitle: 'Offline routes along downloaded trails',
+              builder: (_) => const TrailRoutingScreen(),
+            ),
           if (!PlatformInfo.isWeb)
             _ToolAction(
               icon: Icons.hexagon_outlined,

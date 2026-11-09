@@ -19,6 +19,9 @@ const _walkable = {
   'secondary',
 };
 
+/// The Overpass filter for [_walkable].
+final walkableHighwayPattern = '^(${_walkable.join('|')})\$';
+
 /// The largest area one download may cover, to respect the public server.
 const maxTrailAreaKm2 = 2500.0;
 
