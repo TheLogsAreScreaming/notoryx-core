@@ -11151,4 +11151,128 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get teamSetup_radioChanged => 'radioinställningar ändrade';
+
+  @override
+  String get botUi_replyHint =>
+      'Korta svar sparar sändningstid. Högst 140 byte inklusive bot-märkning.';
+
+  @override
+  String get botUi_shorterReply => 'Ange ett kortare svar som inte är tomt.';
+
+  @override
+  String get botUi_addRule => 'Lägg till svarsregel';
+
+  @override
+  String get botUi_editRule => 'Redigera svarsregel';
+
+  @override
+  String get botUi_trigger => 'Kommando eller nyckelord';
+
+  @override
+  String get botUi_reply => 'Svar';
+
+  @override
+  String get botUi_matchAnywhere => 'Matcha nyckelordet var som helst';
+
+  @override
+  String get botUi_matchHint =>
+      'Av betyder exakt matchning utan skiftlägeskänslighet.';
+
+  @override
+  String get botUi_from => 'Från';
+
+  @override
+  String get botUi_anyContact => 'Valfri tillåten kontakt';
+
+  @override
+  String get botUi_prevContact => 'Tidigare vald kontakt';
+
+  @override
+  String get botUi_priority =>
+      'Aktiverade inbyggda kommandon går först. Regler körs i listordning.';
+
+  @override
+  String get botUi_needTrigger =>
+      'Ange en utlösare och ett kort svar som inte är tomt.';
+
+  @override
+  String get botUi_title => 'NOTORYX Bot-läge';
+
+  @override
+  String get botUi_mode => 'Bot-läge';
+
+  @override
+  String get botUi_loading => 'Läser in inställningar…';
+
+  @override
+  String get botUi_off => 'Av';
+
+  @override
+  String get botUi_onDm => 'På — lyssnar på direktmeddelanden';
+
+  @override
+  String botUi_onDmChannels(int count) {
+    return 'På — lyssnar på direktmeddelanden och kanaler: $count';
+  }
+
+  @override
+  String get botUi_onWaiting => 'På — väntar på radioanslutning';
+
+  @override
+  String get botUi_intro =>
+      'Gratis och lokalt. Körs medan NOTORYX Core är öppen och ansluten till radion. Viloläge eller att stänga appen kan stoppa svar. Cachade meddelanden och eftersläpning vid återanslutning ignoreras. Svar använder den vanliga sändningskön.';
+
+  @override
+  String get botUi_away => 'Automatiskt frånvarosvar';
+
+  @override
+  String get botUi_awayReply => 'Frånvarosvar';
+
+  @override
+  String get botUi_info => 'Nod-/gruppinformation';
+
+  @override
+  String get botUi_infoReply => 'Informationssvar';
+
+  @override
+  String get botUi_checkIn => 'Incheckningssvar';
+
+  @override
+  String get botUi_commands => 'Kommandon';
+
+  @override
+  String get botUi_allowWhere => 'Tillåt platssvar med !where';
+
+  @override
+  String get botUi_whereHint =>
+      'Delar radions annonserade koordinater med tillåtna kontakter. De kan vara inaktuella. Av som standard.';
+
+  @override
+  String get botUi_custom => 'Egna kommandon och nyckelordsregler';
+
+  @override
+  String get botUi_airtime => 'Styrning av sändningstid';
+
+  @override
+  String get botUi_cooldown => 'Väntetid per kontakt';
+
+  @override
+  String botUi_minutes(int count) {
+    return '$count minuter';
+  }
+
+  @override
+  String get botUi_maxReplies => 'Högsta antal svar per minut (alla kontakter)';
+
+  @override
+  String get botUi_allowed => 'Tillåtna kontakter';
+
+  @override
+  String get botUi_allowedHint => 'Inget valt betyder alla kända kontakter.';
+
+  @override
+  String get botUi_recent => 'Senaste aktivitet (den här sessionen)';
+
+  @override
+  String get botUi_noReplies => 'Inga bot-svar ännu.';
 }

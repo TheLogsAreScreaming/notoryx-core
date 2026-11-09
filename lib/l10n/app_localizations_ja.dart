@@ -10716,4 +10716,124 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get teamSetup_radioChanged => '無線設定を変更しました';
+
+  @override
+  String get botUi_replyHint => '短い返信は通信時間を節約します。ボットのラベルを含め最大140バイトです。';
+
+  @override
+  String get botUi_shorterReply => '短く、空でない返信を入力してください。';
+
+  @override
+  String get botUi_addRule => '返信ルールを追加';
+
+  @override
+  String get botUi_editRule => '返信ルールを編集';
+
+  @override
+  String get botUi_trigger => 'コマンドまたはキーワード';
+
+  @override
+  String get botUi_reply => '返信';
+
+  @override
+  String get botUi_matchAnywhere => 'キーワードをどこでも一致';
+
+  @override
+  String get botUi_matchHint => 'オフの場合、大文字小文字を区別せず完全一致します。';
+
+  @override
+  String get botUi_from => '送信者';
+
+  @override
+  String get botUi_anyContact => '許可された全連絡先';
+
+  @override
+  String get botUi_prevContact => '以前選択した連絡先';
+
+  @override
+  String get botUi_priority => '有効な組み込みコマンドが優先されます。ルールはリスト順に実行されます。';
+
+  @override
+  String get botUi_needTrigger => 'トリガーと短い返信を入力してください。';
+
+  @override
+  String get botUi_title => 'NOTORYX ボットモード';
+
+  @override
+  String get botUi_mode => 'ボットモード';
+
+  @override
+  String get botUi_loading => '設定を読み込み中…';
+
+  @override
+  String get botUi_off => 'オフ';
+
+  @override
+  String get botUi_onDm => 'オン — ダイレクトメッセージを待機中';
+
+  @override
+  String botUi_onDmChannels(int count) {
+    return 'オン — ダイレクトメッセージとチャンネルを待機中: $count';
+  }
+
+  @override
+  String get botUi_onWaiting => 'オン — 無線機の接続を待機中';
+
+  @override
+  String get botUi_intro =>
+      '無料でローカルに動作します。NOTORYX Coreが起動し無線機に接続している間だけ動きます。端末のスリープやアプリの終了で返信が止まることがあります。キャッシュ済みや再接続時の未処理メッセージは無視します。返信は通常の送信キューを使います。';
+
+  @override
+  String get botUi_away => '不在時の自動応答';
+
+  @override
+  String get botUi_awayReply => '不在時の返信';
+
+  @override
+  String get botUi_info => 'ノード / グループ情報';
+
+  @override
+  String get botUi_infoReply => '情報の返信';
+
+  @override
+  String get botUi_checkIn => 'チェックインの返信';
+
+  @override
+  String get botUi_commands => 'コマンド';
+
+  @override
+  String get botUi_allowWhere => '!where の位置返信を許可';
+
+  @override
+  String get botUi_whereHint =>
+      '無線機が通知している座標を許可された連絡先に共有します。古い場合があります。既定はオフです。';
+
+  @override
+  String get botUi_custom => 'カスタムコマンドとキーワードルール';
+
+  @override
+  String get botUi_airtime => '通信時間の制御';
+
+  @override
+  String get botUi_cooldown => '連絡先ごとの待ち時間';
+
+  @override
+  String botUi_minutes(int count) {
+    return '$count分';
+  }
+
+  @override
+  String get botUi_maxReplies => '1分あたりの最大返信数（全連絡先）';
+
+  @override
+  String get botUi_allowed => '許可された連絡先';
+
+  @override
+  String get botUi_allowedHint => '未選択の場合は既知の全連絡先です。';
+
+  @override
+  String get botUi_recent => '最近のアクティビティ（このセッション）';
+
+  @override
+  String get botUi_noReplies => 'ボットの返信はまだありません。';
 }

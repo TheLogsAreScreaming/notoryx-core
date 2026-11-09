@@ -10497,4 +10497,123 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get teamSetup_radioChanged => '电台设置已更改';
+
+  @override
+  String get botUi_replyHint => '简短回复可节省广播时间。包含机器人标签最多 140 字节。';
+
+  @override
+  String get botUi_shorterReply => '请输入更短且不为空的回复。';
+
+  @override
+  String get botUi_addRule => '添加回复规则';
+
+  @override
+  String get botUi_editRule => '编辑回复规则';
+
+  @override
+  String get botUi_trigger => '命令或关键词';
+
+  @override
+  String get botUi_reply => '回复';
+
+  @override
+  String get botUi_matchAnywhere => '在任意位置匹配关键词';
+
+  @override
+  String get botUi_matchHint => '关闭表示不区分大小写的完全匹配。';
+
+  @override
+  String get botUi_from => '来自';
+
+  @override
+  String get botUi_anyContact => '任何允许的联系人';
+
+  @override
+  String get botUi_prevContact => '之前选择的联系人';
+
+  @override
+  String get botUi_priority => '已启用的内置命令优先。规则按列表顺序执行。';
+
+  @override
+  String get botUi_needTrigger => '请输入触发词和简短且不为空的回复。';
+
+  @override
+  String get botUi_title => 'NOTORYX 机器人模式';
+
+  @override
+  String get botUi_mode => '机器人模式';
+
+  @override
+  String get botUi_loading => '正在加载设置…';
+
+  @override
+  String get botUi_off => '关闭';
+
+  @override
+  String get botUi_onDm => '开启 — 正在监听私信';
+
+  @override
+  String botUi_onDmChannels(int count) {
+    return '开启 — 正在监听私信和频道：$count';
+  }
+
+  @override
+  String get botUi_onWaiting => '开启 — 等待电台连接';
+
+  @override
+  String get botUi_intro =>
+      '免费且在本地运行。仅在 NOTORYX Core 运行并连接电台时工作。手机休眠或关闭应用可能使回复停止。缓存消息和重连时积压的消息会被忽略。回复使用普通发送队列。';
+
+  @override
+  String get botUi_away => '离开时自动回复';
+
+  @override
+  String get botUi_awayReply => '离开回复';
+
+  @override
+  String get botUi_info => '节点/群组信息';
+
+  @override
+  String get botUi_infoReply => '信息回复';
+
+  @override
+  String get botUi_checkIn => '签到回复';
+
+  @override
+  String get botUi_commands => '命令';
+
+  @override
+  String get botUi_allowWhere => '允许 !where 位置回复';
+
+  @override
+  String get botUi_whereHint => '向允许的联系人共享电台广播的坐标。坐标可能已过时。默认关闭。';
+
+  @override
+  String get botUi_custom => '自定义命令和关键词规则';
+
+  @override
+  String get botUi_airtime => '广播时间控制';
+
+  @override
+  String get botUi_cooldown => '每个联系人的冷却时间';
+
+  @override
+  String botUi_minutes(int count) {
+    return '$count 分钟';
+  }
+
+  @override
+  String get botUi_maxReplies => '每分钟最多回复数（所有联系人）';
+
+  @override
+  String get botUi_allowed => '允许的联系人';
+
+  @override
+  String get botUi_allowedHint => '未选择表示所有已知联系人。';
+
+  @override
+  String get botUi_recent => '最近活动（本次会话）';
+
+  @override
+  String get botUi_noReplies => '机器人尚未回复。';
 }

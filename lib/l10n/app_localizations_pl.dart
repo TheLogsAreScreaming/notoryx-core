@@ -11278,4 +11278,130 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get teamSetup_radioChanged => 'zmieniono ustawienia radia';
+
+  @override
+  String get botUi_replyHint =>
+      'Krótkie odpowiedzi oszczędzają czas nadawania. Maksymalnie 140 bajtów z etykietą bota.';
+
+  @override
+  String get botUi_shorterReply => 'Wpisz krótszą, niepustą odpowiedź.';
+
+  @override
+  String get botUi_addRule => 'Dodaj regułę odpowiedzi';
+
+  @override
+  String get botUi_editRule => 'Edytuj regułę odpowiedzi';
+
+  @override
+  String get botUi_trigger => 'Polecenie lub słowo kluczowe';
+
+  @override
+  String get botUi_reply => 'Odpowiedź';
+
+  @override
+  String get botUi_matchAnywhere => 'Szukaj słowa wszędzie';
+
+  @override
+  String get botUi_matchHint =>
+      'Wyłączone oznacza dokładne dopasowanie bez rozróżniania wielkości liter.';
+
+  @override
+  String get botUi_from => 'Od';
+
+  @override
+  String get botUi_anyContact => 'Każdy dozwolony kontakt';
+
+  @override
+  String get botUi_prevContact => 'Wcześniej wybrany kontakt';
+
+  @override
+  String get botUi_priority =>
+      'Włączone polecenia wbudowane mają pierwszeństwo. Reguły działają w kolejności listy.';
+
+  @override
+  String get botUi_needTrigger =>
+      'Wpisz wyzwalacz i krótką, niepustą odpowiedź.';
+
+  @override
+  String get botUi_title => 'Tryb bota NOTORYX';
+
+  @override
+  String get botUi_mode => 'Tryb bota';
+
+  @override
+  String get botUi_loading => 'Wczytywanie ustawień…';
+
+  @override
+  String get botUi_off => 'Wyłączony';
+
+  @override
+  String get botUi_onDm => 'Włączony — nasłuchuje wiadomości bezpośrednich';
+
+  @override
+  String botUi_onDmChannels(int count) {
+    return 'Włączony — nasłuchuje wiadomości bezpośrednich i kanałów: $count';
+  }
+
+  @override
+  String get botUi_onWaiting => 'Włączony — czeka na połączenie z radiem';
+
+  @override
+  String get botUi_intro =>
+      'Bezpłatny i lokalny. Działa, gdy NOTORYX Core jest otwarty i połączony z radiem. Uśpienie telefonu lub zamknięcie aplikacji może zatrzymać odpowiedzi. Wiadomości z pamięci podręcznej i zaległe po połączeniu są pomijane. Odpowiedzi korzystają ze zwykłej kolejki wysyłania.';
+
+  @override
+  String get botUi_away => 'Automatyczna odpowiedź o nieobecności';
+
+  @override
+  String get botUi_awayReply => 'Odpowiedź o nieobecności';
+
+  @override
+  String get botUi_info => 'Informacje o węźle / grupie';
+
+  @override
+  String get botUi_infoReply => 'Odpowiedź informacyjna';
+
+  @override
+  String get botUi_checkIn => 'Odpowiedź meldunku';
+
+  @override
+  String get botUi_commands => 'Polecenia';
+
+  @override
+  String get botUi_allowWhere => 'Zezwól na odpowiedzi lokalizacji !where';
+
+  @override
+  String get botUi_whereHint =>
+      'Udostępnia ogłaszane przez radio współrzędne dozwolonym kontaktom. Mogą być nieaktualne. Domyślnie wyłączone.';
+
+  @override
+  String get botUi_custom => 'Własne polecenia i reguły słów kluczowych';
+
+  @override
+  String get botUi_airtime => 'Kontrola czasu nadawania';
+
+  @override
+  String get botUi_cooldown => 'Przerwa na kontakt';
+
+  @override
+  String botUi_minutes(int count) {
+    return '$count minut';
+  }
+
+  @override
+  String get botUi_maxReplies =>
+      'Maksimum odpowiedzi na minutę (wszystkie kontakty)';
+
+  @override
+  String get botUi_allowed => 'Dozwolone kontakty';
+
+  @override
+  String get botUi_allowedHint =>
+      'Brak wyboru oznacza wszystkie znane kontakty.';
+
+  @override
+  String get botUi_recent => 'Ostatnia aktywność (ta sesja)';
+
+  @override
+  String get botUi_noReplies => 'Brak odpowiedzi bota.';
 }

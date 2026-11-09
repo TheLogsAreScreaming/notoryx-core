@@ -11196,4 +11196,130 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get teamSetup_radioChanged => 'radio-instellingen gewijzigd';
+
+  @override
+  String get botUi_replyHint =>
+      'Korte antwoorden besparen zendtijd. Maximaal 140 bytes inclusief botlabel.';
+
+  @override
+  String get botUi_shorterReply => 'Vul een korter, niet-leeg antwoord in.';
+
+  @override
+  String get botUi_addRule => 'Antwoordregel toevoegen';
+
+  @override
+  String get botUi_editRule => 'Antwoordregel bewerken';
+
+  @override
+  String get botUi_trigger => 'Opdracht of trefwoord';
+
+  @override
+  String get botUi_reply => 'Antwoord';
+
+  @override
+  String get botUi_matchAnywhere => 'Trefwoord overal zoeken';
+
+  @override
+  String get botUi_matchHint =>
+      'Uit betekent exacte overeenkomst, hoofdletterongevoelig.';
+
+  @override
+  String get botUi_from => 'Van';
+
+  @override
+  String get botUi_anyContact => 'Elk toegestaan contact';
+
+  @override
+  String get botUi_prevContact => 'Eerder gekozen contact';
+
+  @override
+  String get botUi_priority =>
+      'Ingeschakelde ingebouwde opdrachten gaan voor. Regels lopen in lijstvolgorde.';
+
+  @override
+  String get botUi_needTrigger =>
+      'Vul een trigger en een kort, niet-leeg antwoord in.';
+
+  @override
+  String get botUi_title => 'NOTORYX Bot-modus';
+
+  @override
+  String get botUi_mode => 'Bot-modus';
+
+  @override
+  String get botUi_loading => 'Instellingen laden…';
+
+  @override
+  String get botUi_off => 'Uit';
+
+  @override
+  String get botUi_onDm => 'Aan — luistert naar directe berichten';
+
+  @override
+  String botUi_onDmChannels(int count) {
+    return 'Aan — luistert naar directe berichten en kanalen: $count';
+  }
+
+  @override
+  String get botUi_onWaiting => 'Aan — wacht op radioverbinding';
+
+  @override
+  String get botUi_intro =>
+      'Gratis en lokaal. Werkt zolang NOTORYX Core open is en met de radio is verbonden. Slaapstand of het sluiten van de app kan antwoorden stoppen. Gecachte berichten en achterstand bij opnieuw verbinden worden genegeerd. Antwoorden gebruiken de normale verzendwachtrij.';
+
+  @override
+  String get botUi_away => 'Automatisch afwezigheidsantwoord';
+
+  @override
+  String get botUi_awayReply => 'Afwezigheidsantwoord';
+
+  @override
+  String get botUi_info => 'Node-/groepsinformatie';
+
+  @override
+  String get botUi_infoReply => 'Informatieantwoord';
+
+  @override
+  String get botUi_checkIn => 'Check-in-antwoord';
+
+  @override
+  String get botUi_commands => 'Opdrachten';
+
+  @override
+  String get botUi_allowWhere => '!where-locatieantwoorden toestaan';
+
+  @override
+  String get botUi_whereHint =>
+      'Deelt de door de radio geadverteerde coördinaten met toegestane contacten. Ze kunnen verouderd zijn. Standaard uit.';
+
+  @override
+  String get botUi_custom => 'Eigen opdrachten en trefwoordregels';
+
+  @override
+  String get botUi_airtime => 'Zendtijdbeheer';
+
+  @override
+  String get botUi_cooldown => 'Wachttijd per contact';
+
+  @override
+  String botUi_minutes(int count) {
+    return '$count minuten';
+  }
+
+  @override
+  String get botUi_maxReplies =>
+      'Maximum antwoorden per minuut (alle contacten)';
+
+  @override
+  String get botUi_allowed => 'Toegestane contacten';
+
+  @override
+  String get botUi_allowedHint =>
+      'Geen selectie betekent alle bekende contacten.';
+
+  @override
+  String get botUi_recent => 'Recente activiteit (deze sessie)';
+
+  @override
+  String get botUi_noReplies => 'Nog geen botantwoorden.';
 }

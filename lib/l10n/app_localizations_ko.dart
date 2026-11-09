@@ -10731,4 +10731,124 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get teamSetup_radioChanged => '무전기 설정 변경됨';
+
+  @override
+  String get botUi_replyHint => '짧은 답장은 송신 시간을 절약합니다. 봇 라벨 포함 최대 140바이트입니다.';
+
+  @override
+  String get botUi_shorterReply => '더 짧고 비어 있지 않은 답장을 입력하세요.';
+
+  @override
+  String get botUi_addRule => '답장 규칙 추가';
+
+  @override
+  String get botUi_editRule => '답장 규칙 편집';
+
+  @override
+  String get botUi_trigger => '명령 또는 키워드';
+
+  @override
+  String get botUi_reply => '답장';
+
+  @override
+  String get botUi_matchAnywhere => '키워드를 어디서나 일치';
+
+  @override
+  String get botUi_matchHint => '끄면 대소문자 구분 없이 정확히 일치합니다.';
+
+  @override
+  String get botUi_from => '보낸 사람';
+
+  @override
+  String get botUi_anyContact => '허용된 모든 연락처';
+
+  @override
+  String get botUi_prevContact => '이전에 선택한 연락처';
+
+  @override
+  String get botUi_priority => '켜진 기본 명령이 우선합니다. 규칙은 목록 순서로 실행됩니다.';
+
+  @override
+  String get botUi_needTrigger => '트리거와 짧은 답장을 입력하세요.';
+
+  @override
+  String get botUi_title => 'NOTORYX 봇 모드';
+
+  @override
+  String get botUi_mode => '봇 모드';
+
+  @override
+  String get botUi_loading => '설정 불러오는 중…';
+
+  @override
+  String get botUi_off => '꺼짐';
+
+  @override
+  String get botUi_onDm => '켜짐 — 다이렉트 메시지 수신 대기';
+
+  @override
+  String botUi_onDmChannels(int count) {
+    return '켜짐 — 다이렉트 메시지와 채널 수신 대기: $count';
+  }
+
+  @override
+  String get botUi_onWaiting => '켜짐 — 무전기 연결 대기';
+
+  @override
+  String get botUi_intro =>
+      '무료이며 로컬에서 동작합니다. NOTORYX Core가 실행되고 무전기에 연결된 동안 작동합니다. 휴대폰 절전이나 앱 종료로 답장이 멈출 수 있습니다. 캐시된 메시지와 재연결 시 밀린 메시지는 무시합니다. 답장은 일반 전송 대기열을 사용합니다.';
+
+  @override
+  String get botUi_away => '부재중 자동 응답';
+
+  @override
+  String get botUi_awayReply => '부재중 답장';
+
+  @override
+  String get botUi_info => '노드 / 그룹 정보';
+
+  @override
+  String get botUi_infoReply => '정보 답장';
+
+  @override
+  String get botUi_checkIn => '체크인 답장';
+
+  @override
+  String get botUi_commands => '명령';
+
+  @override
+  String get botUi_allowWhere => '!where 위치 답장 허용';
+
+  @override
+  String get botUi_whereHint =>
+      '무전기가 알린 좌표를 허용된 연락처와 공유합니다. 오래된 값일 수 있습니다. 기본은 꺼짐입니다.';
+
+  @override
+  String get botUi_custom => '사용자 명령과 키워드 규칙';
+
+  @override
+  String get botUi_airtime => '송신 시간 제어';
+
+  @override
+  String get botUi_cooldown => '연락처별 대기 시간';
+
+  @override
+  String botUi_minutes(int count) {
+    return '$count분';
+  }
+
+  @override
+  String get botUi_maxReplies => '분당 최대 답장 수(모든 연락처)';
+
+  @override
+  String get botUi_allowed => '허용된 연락처';
+
+  @override
+  String get botUi_allowedHint => '선택하지 않으면 알려진 모든 연락처입니다.';
+
+  @override
+  String get botUi_recent => '최근 활동(이번 세션)';
+
+  @override
+  String get botUi_noReplies => '아직 봇 답장이 없습니다.';
 }

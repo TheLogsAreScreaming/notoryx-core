@@ -11278,4 +11278,131 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get teamSetup_radioChanged => 'réglages radio modifiés';
+
+  @override
+  String get botUi_replyHint =>
+      'Les réponses courtes économisent le temps d\'antenne. 140 octets maximum, étiquette du bot comprise.';
+
+  @override
+  String get botUi_shorterReply =>
+      'Saisissez une réponse plus courte et non vide.';
+
+  @override
+  String get botUi_addRule => 'Ajouter une règle de réponse';
+
+  @override
+  String get botUi_editRule => 'Modifier la règle de réponse';
+
+  @override
+  String get botUi_trigger => 'Commande ou mot-clé';
+
+  @override
+  String get botUi_reply => 'Réponse';
+
+  @override
+  String get botUi_matchAnywhere => 'Chercher le mot-clé partout';
+
+  @override
+  String get botUi_matchHint =>
+      'Désactivé signifie une correspondance exacte, sans tenir compte de la casse.';
+
+  @override
+  String get botUi_from => 'De';
+
+  @override
+  String get botUi_anyContact => 'Tout contact autorisé';
+
+  @override
+  String get botUi_prevContact => 'Contact choisi auparavant';
+
+  @override
+  String get botUi_priority =>
+      'Les commandes intégrées activées sont prioritaires. Les règles s\'appliquent dans l\'ordre de la liste.';
+
+  @override
+  String get botUi_needTrigger =>
+      'Saisissez un déclencheur et une réponse courte non vide.';
+
+  @override
+  String get botUi_title => 'Mode bot NOTORYX';
+
+  @override
+  String get botUi_mode => 'Mode bot';
+
+  @override
+  String get botUi_loading => 'Chargement des réglages…';
+
+  @override
+  String get botUi_off => 'Désactivé';
+
+  @override
+  String get botUi_onDm => 'Activé — écoute des messages directs';
+
+  @override
+  String botUi_onDmChannels(int count) {
+    return 'Activé — écoute des messages directs et canaux : $count';
+  }
+
+  @override
+  String get botUi_onWaiting => 'Activé — en attente d\'une connexion radio';
+
+  @override
+  String get botUi_intro =>
+      'Gratuit et local. Fonctionne tant que NOTORYX Core est ouvert et connecté à la radio. La veille du téléphone ou la fermeture de l\'application peut arrêter les réponses. Les messages en cache et l\'arriéré à la reconnexion sont ignorés. Les réponses passent par la file d\'envoi normale.';
+
+  @override
+  String get botUi_away => 'Répondeur d\'absence';
+
+  @override
+  String get botUi_awayReply => 'Réponse d\'absence';
+
+  @override
+  String get botUi_info => 'Informations nœud / groupe';
+
+  @override
+  String get botUi_infoReply => 'Réponse d\'information';
+
+  @override
+  String get botUi_checkIn => 'Réponse de pointage';
+
+  @override
+  String get botUi_commands => 'Commandes';
+
+  @override
+  String get botUi_allowWhere => 'Autoriser les réponses de position !where';
+
+  @override
+  String get botUi_whereHint =>
+      'Partage les coordonnées annoncées par la radio avec les contacts autorisés. Elles peuvent être périmées. Désactivé par défaut.';
+
+  @override
+  String get botUi_custom => 'Commandes personnalisées et règles de mots-clés';
+
+  @override
+  String get botUi_airtime => 'Contrôle du temps d\'antenne';
+
+  @override
+  String get botUi_cooldown => 'Délai par contact';
+
+  @override
+  String botUi_minutes(int count) {
+    return '$count minutes';
+  }
+
+  @override
+  String get botUi_maxReplies =>
+      'Réponses maximum par minute (tous les contacts)';
+
+  @override
+  String get botUi_allowed => 'Contacts autorisés';
+
+  @override
+  String get botUi_allowedHint =>
+      'Aucune sélection signifie tous les contacts connus.';
+
+  @override
+  String get botUi_recent => 'Activité récente (cette session)';
+
+  @override
+  String get botUi_noReplies => 'Aucune réponse du bot pour l\'instant.';
 }

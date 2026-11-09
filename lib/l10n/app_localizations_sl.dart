@@ -11233,4 +11233,128 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get teamSetup_radioChanged => 'nastavitve radia spremenjene';
+
+  @override
+  String get botUi_replyHint =>
+      'Kratki odgovori prihranijo čas oddajanja. Največ 140 bajtov z oznako bota.';
+
+  @override
+  String get botUi_shorterReply => 'Vnesite krajši, neprazen odgovor.';
+
+  @override
+  String get botUi_addRule => 'Dodaj pravilo odgovora';
+
+  @override
+  String get botUi_editRule => 'Uredi pravilo odgovora';
+
+  @override
+  String get botUi_trigger => 'Ukaz ali ključna beseda';
+
+  @override
+  String get botUi_reply => 'Odgovor';
+
+  @override
+  String get botUi_matchAnywhere => 'Išči besedo kjer koli';
+
+  @override
+  String get botUi_matchHint =>
+      'Izklopljeno pomeni natančno ujemanje ne glede na velikost črk.';
+
+  @override
+  String get botUi_from => 'Od';
+
+  @override
+  String get botUi_anyContact => 'Kateri koli dovoljen stik';
+
+  @override
+  String get botUi_prevContact => 'Prej izbran stik';
+
+  @override
+  String get botUi_priority =>
+      'Vklopljeni vgrajeni ukazi imajo prednost. Pravila se izvajajo po vrstnem redu seznama.';
+
+  @override
+  String get botUi_needTrigger =>
+      'Vnesite sprožilec in kratek, neprazen odgovor.';
+
+  @override
+  String get botUi_title => 'Način bota NOTORYX';
+
+  @override
+  String get botUi_mode => 'Način bota';
+
+  @override
+  String get botUi_loading => 'Nalaganje nastavitev…';
+
+  @override
+  String get botUi_off => 'Izklopljeno';
+
+  @override
+  String get botUi_onDm => 'Vklopljeno — posluša neposredna sporočila';
+
+  @override
+  String botUi_onDmChannels(int count) {
+    return 'Vklopljeno — posluša neposredna sporočila in kanale: $count';
+  }
+
+  @override
+  String get botUi_onWaiting => 'Vklopljeno — čaka na povezavo z radiem';
+
+  @override
+  String get botUi_intro =>
+      'Brezplačno in lokalno. Deluje, dokler je NOTORYX Core odprt in povezan z radiem. Spanje telefona ali zapiranje aplikacije lahko ustavi odgovore. Predpomnjena sporočila in zaostanek ob povezavi se prezrejo. Odgovori uporabljajo običajno čakalno vrsto.';
+
+  @override
+  String get botUi_away => 'Samodejni odgovor ob odsotnosti';
+
+  @override
+  String get botUi_awayReply => 'Odgovor ob odsotnosti';
+
+  @override
+  String get botUi_info => 'Podatki o vozlišču / skupini';
+
+  @override
+  String get botUi_infoReply => 'Informativni odgovor';
+
+  @override
+  String get botUi_checkIn => 'Odgovor na prijavo';
+
+  @override
+  String get botUi_commands => 'Ukazi';
+
+  @override
+  String get botUi_allowWhere => 'Dovoli odgovore položaja !where';
+
+  @override
+  String get botUi_whereHint =>
+      'Deli koordinate, ki jih objavlja radio, z dovoljenimi stiki. Lahko so zastarele. Privzeto izklopljeno.';
+
+  @override
+  String get botUi_custom => 'Ukazi po meri in pravila ključnih besed';
+
+  @override
+  String get botUi_airtime => 'Nadzor časa oddajanja';
+
+  @override
+  String get botUi_cooldown => 'Premor na stik';
+
+  @override
+  String botUi_minutes(int count) {
+    return '$count minut';
+  }
+
+  @override
+  String get botUi_maxReplies => 'Največ odgovorov na minuto (vsi stiki)';
+
+  @override
+  String get botUi_allowed => 'Dovoljeni stiki';
+
+  @override
+  String get botUi_allowedHint => 'Brez izbire pomeni vse znane stike.';
+
+  @override
+  String get botUi_recent => 'Nedavna dejavnost (ta seja)';
+
+  @override
+  String get botUi_noReplies => 'Bot še ni odgovoril.';
 }

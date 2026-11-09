@@ -11223,4 +11223,130 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get teamSetup_radioChanged => 'rádióbeállítások módosítva';
+
+  @override
+  String get botUi_replyHint =>
+      'A rövid válaszok adásidőt takarítanak meg. Legfeljebb 140 bájt a bot címkével együtt.';
+
+  @override
+  String get botUi_shorterReply => 'Adj meg rövidebb, nem üres választ.';
+
+  @override
+  String get botUi_addRule => 'Válaszszabály hozzáadása';
+
+  @override
+  String get botUi_editRule => 'Válaszszabály szerkesztése';
+
+  @override
+  String get botUi_trigger => 'Parancs vagy kulcsszó';
+
+  @override
+  String get botUi_reply => 'Válasz';
+
+  @override
+  String get botUi_matchAnywhere => 'Kulcsszó bárhol';
+
+  @override
+  String get botUi_matchHint =>
+      'Kikapcsolva pontos, kisbetű-nagybetű független egyezés.';
+
+  @override
+  String get botUi_from => 'Feladó';
+
+  @override
+  String get botUi_anyContact => 'Bármely engedélyezett névjegy';
+
+  @override
+  String get botUi_prevContact => 'Korábban kiválasztott névjegy';
+
+  @override
+  String get botUi_priority =>
+      'A bekapcsolt beépített parancsok elsőbbséget élveznek. A szabályok listasorrendben futnak.';
+
+  @override
+  String get botUi_needTrigger =>
+      'Adj meg kiváltót és rövid, nem üres választ.';
+
+  @override
+  String get botUi_title => 'NOTORYX bot mód';
+
+  @override
+  String get botUi_mode => 'Bot mód';
+
+  @override
+  String get botUi_loading => 'Beállítások betöltése…';
+
+  @override
+  String get botUi_off => 'Ki';
+
+  @override
+  String get botUi_onDm => 'Be — közvetlen üzeneteket figyel';
+
+  @override
+  String botUi_onDmChannels(int count) {
+    return 'Be — közvetlen üzeneteket és csatornákat figyel: $count';
+  }
+
+  @override
+  String get botUi_onWaiting => 'Be — rádiókapcsolatra vár';
+
+  @override
+  String get botUi_intro =>
+      'Ingyenes és helyi. Addig fut, amíg a NOTORYX Core nyitva van és csatlakozik a rádióhoz. A telefon alvása vagy az alkalmazás bezárása leállíthatja a válaszokat. A gyorsítótárazott és újracsatlakozáskor érkező üzeneteket figyelmen kívül hagyja. A válaszok a normál küldési sort használják.';
+
+  @override
+  String get botUi_away => 'Automatikus távollét-válasz';
+
+  @override
+  String get botUi_awayReply => 'Távollét-válasz';
+
+  @override
+  String get botUi_info => 'Csomópont / csoport információ';
+
+  @override
+  String get botUi_infoReply => 'Információs válasz';
+
+  @override
+  String get botUi_checkIn => 'Bejelentkezési válasz';
+
+  @override
+  String get botUi_commands => 'Parancsok';
+
+  @override
+  String get botUi_allowWhere => '!where helyzetválaszok engedélyezése';
+
+  @override
+  String get botUi_whereHint =>
+      'Megosztja a rádió hirdetett koordinátáit az engedélyezett névjegyekkel. Elavultak lehetnek. Alapból kikapcsolva.';
+
+  @override
+  String get botUi_custom => 'Egyéni parancsok és kulcsszószabályok';
+
+  @override
+  String get botUi_airtime => 'Adásidő-szabályozás';
+
+  @override
+  String get botUi_cooldown => 'Várakozás névjegyenként';
+
+  @override
+  String botUi_minutes(int count) {
+    return '$count perc';
+  }
+
+  @override
+  String get botUi_maxReplies =>
+      'Percenkénti válaszok maximuma (minden névjegy)';
+
+  @override
+  String get botUi_allowed => 'Engedélyezett névjegyek';
+
+  @override
+  String get botUi_allowedHint =>
+      'Ha nincs kiválasztva, minden ismert névjegy.';
+
+  @override
+  String get botUi_recent => 'Legutóbbi tevékenység (ez a munkamenet)';
+
+  @override
+  String get botUi_noReplies => 'Még nincs bot válasz.';
 }
