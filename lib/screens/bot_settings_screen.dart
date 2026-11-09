@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'automation_screen.dart';
 import 'package:provider/provider.dart';
 
 import '../connector/meshcore_connector.dart';
@@ -409,6 +411,19 @@ class BotSettingsScreen extends StatelessWidget {
                     },
                   ),
                 ),
+              const Divider(),
+              ListTile(
+                contentPadding: EdgeInsets.zero,
+                leading: const Icon(Icons.bolt_outlined),
+                title: const Text('Automation rules'),
+                subtitle: const Text('Battery, time, area and node triggers'),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute<void>(
+                    builder: (_) => const AutomationScreen(),
+                  ),
+                ),
+              ),
               const Divider(),
               const Text(
                 'Airtime controls',

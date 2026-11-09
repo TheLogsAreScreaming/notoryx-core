@@ -263,6 +263,29 @@ class NotificationService {
     }
   }
 
+  /// An automation rule's notification; one per rule name, replaced.
+  Future<bool> showAutomation({
+    required String title,
+    required String body,
+  }) async {
+    if (_suppressNotifications || !await _ensureCanNotify()) return false;
+    try {
+      await _notifications.show(
+        id: 'automation:$title'.hashCode,
+        title: title,
+        body: body,
+        notificationDetails: const NotificationDetails(
+          android: AndroidNotificationDetails('automation', 'Automation'),
+          iOS: DarwinNotificationDetails(),
+          macOS: DarwinNotificationDetails(),
+        ),
+      );
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
   /// Whether the app may post notifications on this device.
   Future<bool> canNotify() => _ensureCanNotify();
 
