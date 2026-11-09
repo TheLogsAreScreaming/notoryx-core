@@ -4438,5 +4438,6 @@
   "report_nineLine": "9-Line (медицинска евакуация)",
   "report_send": "Изпрати доклада",
   "report_parts": "Брой съобщения: {count}",
-  "report_sent": "Докладът е изпратен"
+  "report_sent": "Докладът е изпратен",
+  "contacts_addTooltip": "Добавяне на контакт"
 }

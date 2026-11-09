@@ -4443,5 +4443,6 @@
   "report_nineLine": "9-Line（医疗后送）",
   "report_send": "发送报告",
   "report_parts": "消息数：{count}",
-  "report_sent": "报告已发送"
+  "report_sent": "报告已发送",
+  "contacts_addTooltip": "添加联系人"
 }

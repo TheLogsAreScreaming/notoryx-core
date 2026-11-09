@@ -4438,5 +4438,6 @@
   "report_nineLine": "9-Line (medische evacuatie)",
   "report_send": "Rapport versturen",
   "report_parts": "Aantal berichten: {count}",
-  "report_sent": "Rapport verstuurd"
+  "report_sent": "Rapport verstuurd",
+  "contacts_addTooltip": "Contact toevoegen"
 }

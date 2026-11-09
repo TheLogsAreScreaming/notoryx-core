@@ -4572,5 +4572,6 @@
   "report_nineLine": "9-Line（医療搬送）",
   "report_send": "報告を送信",
   "report_parts": "メッセージ数: {count}",
-  "report_sent": "報告を送信しました"
+  "report_sent": "報告を送信しました",
+  "contacts_addTooltip": "連絡先を追加"
 }

@@ -11002,4 +11002,7 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get report_sent => 'Poročilo poslano';
+
+  @override
+  String get contacts_addTooltip => 'Dodaj stik';
 }

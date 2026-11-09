@@ -10982,4 +10982,7 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get report_sent => 'Hlásenie odoslané';
+
+  @override
+  String get contacts_addTooltip => 'Pridať kontakt';
 }

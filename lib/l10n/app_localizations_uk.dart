@@ -11043,4 +11043,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get report_sent => 'Донесення надіслано';
+
+  @override
+  String get contacts_addTooltip => 'Додати контакт';
 }

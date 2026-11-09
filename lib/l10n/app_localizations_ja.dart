@@ -10486,4 +10486,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get report_sent => '報告を送信しました';
+
+  @override
+  String get contacts_addTooltip => '連絡先を追加';
 }

@@ -10919,4 +10919,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get report_sent => 'Rapporten skickades';
+
+  @override
+  String get contacts_addTooltip => 'Lägg till kontakt';
 }

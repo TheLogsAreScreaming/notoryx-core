@@ -10988,4 +10988,7 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get report_sent => 'Докладът е изпратен';
+
+  @override
+  String get contacts_addTooltip => 'Добавяне на контакт';
 }

@@ -10501,4 +10501,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get report_sent => '보고를 보냈습니다';
+
+  @override
+  String get contacts_addTooltip => '연락처 추가';
 }

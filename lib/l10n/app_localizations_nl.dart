@@ -10962,4 +10962,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get report_sent => 'Rapport verstuurd';
+
+  @override
+  String get contacts_addTooltip => 'Contact toevoegen';
 }
