@@ -11112,4 +11112,115 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get auto_entrySub => 'Akku-, idő-, terület- és csomópont-feltételek';
+
+  @override
+  String get teamSetup_title => 'Csapatbeállítás';
+
+  @override
+  String get teamSetup_toolSub =>
+      'Rádióbeállítások, csatornák és útvonalak megosztása';
+
+  @override
+  String get teamSetup_share => 'Megosztás';
+
+  @override
+  String get teamSetup_receive => 'Fogadás';
+
+  @override
+  String get teamSetup_warning =>
+      'Csatornakulcsokat tartalmaz. Akinél megvan ez a fájl vagy QR-kód és a jelmondat, olvashatja ezeket a csatornákat. A jelmondatot személyesen vagy más úton add át, soha ne a fájllal együtt.';
+
+  @override
+  String get teamSetup_radio => 'Rádióbeállítások';
+
+  @override
+  String get teamSetup_channels => 'Csatornák és kulcsaik';
+
+  @override
+  String get teamSetup_notPublic => 'A nyilvános csatorna nélkül';
+
+  @override
+  String get teamSetup_places => 'Útpontok és útvonalak';
+
+  @override
+  String get teamSetup_passHint => 'Jelmondat (legalább 12 karakter)';
+
+  @override
+  String get teamSetup_create => 'Létrehozás';
+
+  @override
+  String get teamSetup_tooBig => 'Túl sok egy QR-kódhoz. Oszd meg fájlként.';
+
+  @override
+  String get teamSetup_shareFile => 'Megosztás fájlként';
+
+  @override
+  String get teamSetup_scanTitle => 'Csapatbeállítás beolvasása';
+
+  @override
+  String get teamSetup_wrongPass => 'Hibás jelmondat vagy sérült fájl.';
+
+  @override
+  String get teamSetup_notFile => 'Ez nem érvényes csapatfájl.';
+
+  @override
+  String get teamSetup_openFile => 'Fájl megnyitása';
+
+  @override
+  String get teamSetup_scanQr => 'QR-kód beolvasása';
+
+  @override
+  String get teamSetup_pass => 'Jelmondat';
+
+  @override
+  String get teamSetup_open => 'Megnyitás';
+
+  @override
+  String teamSetup_channelsList(String names) {
+    return 'Csatornák: $names';
+  }
+
+  @override
+  String teamSetup_placesCount(int waypoints, int routes) {
+    return 'Útpontok: $waypoints, útvonalak: $routes';
+  }
+
+  @override
+  String teamSetup_radioDetail(String details) {
+    return 'Rádióbeállítások: $details';
+  }
+
+  @override
+  String get teamSetup_radioWarn =>
+      'Alapból kikapcsolva. Ellenőrizd, hogy nálad engedélyezettek-e. Más frekvenciával kikerülsz a jelenlegi hálóból.';
+
+  @override
+  String get teamSetup_connectFirst =>
+      'Csatlakoztass rádiót a csatornák hozzáadásához vagy a beállítások módosításához.';
+
+  @override
+  String get teamSetup_apply => 'Alkalmazás';
+
+  @override
+  String teamSetup_done(String summary) {
+    return 'Kész: $summary.';
+  }
+
+  @override
+  String teamSetup_stopped(String summary, String error) {
+    return 'Félúton leállt ($summary): $error';
+  }
+
+  @override
+  String teamSetup_added(int count) {
+    return 'Hozzáadott csatornák: $count';
+  }
+
+  @override
+  String teamSetup_addedSkipped(int count, int left) {
+    return 'Hozzáadott csatornák: $count. Már megvan vagy nincs hely: $left';
+  }
+
+  @override
+  String get teamSetup_radioChanged => 'rádióbeállítások módosítva';
 }

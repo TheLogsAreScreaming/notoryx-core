@@ -10607,4 +10607,113 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get auto_entrySub => 'バッテリー、時刻、エリア、ノードで実行';
+
+  @override
+  String get teamSetup_title => 'チーム設定';
+
+  @override
+  String get teamSetup_toolSub => '無線設定、チャンネル、ルートを共有';
+
+  @override
+  String get teamSetup_share => '共有';
+
+  @override
+  String get teamSetup_receive => '受信';
+
+  @override
+  String get teamSetup_warning =>
+      'チャンネルキーが含まれます。このファイルまたはQRコードとパスフレーズがあれば、誰でもそのチャンネルを読めます。パスフレーズは直接など別の方法で伝え、ファイルと一緒に送らないでください。';
+
+  @override
+  String get teamSetup_radio => '無線設定';
+
+  @override
+  String get teamSetup_channels => 'チャンネルとキー';
+
+  @override
+  String get teamSetup_notPublic => '公開チャンネルを除く';
+
+  @override
+  String get teamSetup_places => 'ウェイポイントとルート';
+
+  @override
+  String get teamSetup_passHint => 'パスフレーズ（12文字以上）';
+
+  @override
+  String get teamSetup_create => '作成';
+
+  @override
+  String get teamSetup_tooBig => 'QRコードには多すぎます。ファイルで共有してください。';
+
+  @override
+  String get teamSetup_shareFile => 'ファイルで共有';
+
+  @override
+  String get teamSetup_scanTitle => 'チーム設定をスキャン';
+
+  @override
+  String get teamSetup_wrongPass => 'パスフレーズが違うか、ファイルが破損しています。';
+
+  @override
+  String get teamSetup_notFile => '有効なチームファイルではありません。';
+
+  @override
+  String get teamSetup_openFile => 'ファイルを開く';
+
+  @override
+  String get teamSetup_scanQr => 'QRコードをスキャン';
+
+  @override
+  String get teamSetup_pass => 'パスフレーズ';
+
+  @override
+  String get teamSetup_open => '開く';
+
+  @override
+  String teamSetup_channelsList(String names) {
+    return 'チャンネル: $names';
+  }
+
+  @override
+  String teamSetup_placesCount(int waypoints, int routes) {
+    return 'ウェイポイント: $waypoints、ルート: $routes';
+  }
+
+  @override
+  String teamSetup_radioDetail(String details) {
+    return '無線設定: $details';
+  }
+
+  @override
+  String get teamSetup_radioWarn =>
+      '既定ではオフです。使用地域で合法か確認してください。周波数が異なると現在のメッシュから外れます。';
+
+  @override
+  String get teamSetup_connectFirst => 'チャンネルの追加や設定の変更には無線機を接続してください。';
+
+  @override
+  String get teamSetup_apply => '適用';
+
+  @override
+  String teamSetup_done(String summary) {
+    return '完了: $summary。';
+  }
+
+  @override
+  String teamSetup_stopped(String summary, String error) {
+    return '途中で停止 ($summary): $error';
+  }
+
+  @override
+  String teamSetup_added(int count) {
+    return '追加したチャンネル: $count';
+  }
+
+  @override
+  String teamSetup_addedSkipped(int count, int left) {
+    return '追加したチャンネル: $count。既存または空きなし: $left';
+  }
+
+  @override
+  String get teamSetup_radioChanged => '無線設定を変更しました';
 }

@@ -10389,4 +10389,112 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get auto_entrySub => '电量、时间、区域和节点触发';
+
+  @override
+  String get teamSetup_title => '团队设置';
+
+  @override
+  String get teamSetup_toolSub => '共享电台设置、频道和路线';
+
+  @override
+  String get teamSetup_share => '共享';
+
+  @override
+  String get teamSetup_receive => '接收';
+
+  @override
+  String get teamSetup_warning =>
+      '其中包含频道密钥。任何拥有此文件或二维码及密码短语的人都能读取这些频道。请当面或用其他方式告知密码短语，切勿与文件一起发送。';
+
+  @override
+  String get teamSetup_radio => '电台设置';
+
+  @override
+  String get teamSetup_channels => '频道及其密钥';
+
+  @override
+  String get teamSetup_notPublic => '不含公共频道';
+
+  @override
+  String get teamSetup_places => '航点和路线';
+
+  @override
+  String get teamSetup_passHint => '密码短语（至少 12 个字符）';
+
+  @override
+  String get teamSetup_create => '创建';
+
+  @override
+  String get teamSetup_tooBig => '内容太多，无法放入二维码。请以文件形式共享。';
+
+  @override
+  String get teamSetup_shareFile => '以文件共享';
+
+  @override
+  String get teamSetup_scanTitle => '扫描团队设置';
+
+  @override
+  String get teamSetup_wrongPass => '密码短语错误或文件已损坏。';
+
+  @override
+  String get teamSetup_notFile => '这不是有效的团队文件。';
+
+  @override
+  String get teamSetup_openFile => '打开文件';
+
+  @override
+  String get teamSetup_scanQr => '扫描二维码';
+
+  @override
+  String get teamSetup_pass => '密码短语';
+
+  @override
+  String get teamSetup_open => '打开';
+
+  @override
+  String teamSetup_channelsList(String names) {
+    return '频道：$names';
+  }
+
+  @override
+  String teamSetup_placesCount(int waypoints, int routes) {
+    return '航点：$waypoints，路线：$routes';
+  }
+
+  @override
+  String teamSetup_radioDetail(String details) {
+    return '电台设置：$details';
+  }
+
+  @override
+  String get teamSetup_radioWarn => '默认关闭。请确认在您所在地区合法。频率不同会使您离开当前网络。';
+
+  @override
+  String get teamSetup_connectFirst => '请连接电台以添加频道或更改设置。';
+
+  @override
+  String get teamSetup_apply => '应用';
+
+  @override
+  String teamSetup_done(String summary) {
+    return '完成：$summary。';
+  }
+
+  @override
+  String teamSetup_stopped(String summary, String error) {
+    return '中途停止（$summary）：$error';
+  }
+
+  @override
+  String teamSetup_added(int count) {
+    return '已添加频道：$count';
+  }
+
+  @override
+  String teamSetup_addedSkipped(int count, int left) {
+    return '已添加频道：$count。已存在或无空位：$left';
+  }
+
+  @override
+  String get teamSetup_radioChanged => '电台设置已更改';
 }

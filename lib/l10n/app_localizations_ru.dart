@@ -11167,4 +11167,115 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get auto_entrySub => 'Батарея, время, зона и узлы';
+
+  @override
+  String get teamSetup_title => 'Настройка команды';
+
+  @override
+  String get teamSetup_toolSub =>
+      'Поделиться настройками радио, каналами и маршрутами';
+
+  @override
+  String get teamSetup_share => 'Поделиться';
+
+  @override
+  String get teamSetup_receive => 'Получить';
+
+  @override
+  String get teamSetup_warning =>
+      'Содержит ключи каналов. Любой, у кого есть этот файл или QR-код и парольная фраза, сможет читать эти каналы. Сообщайте фразу лично или другим способом, никогда вместе с файлом.';
+
+  @override
+  String get teamSetup_radio => 'Настройки радио';
+
+  @override
+  String get teamSetup_channels => 'Каналы и их ключи';
+
+  @override
+  String get teamSetup_notPublic => 'Без публичного канала';
+
+  @override
+  String get teamSetup_places => 'Точки и маршруты';
+
+  @override
+  String get teamSetup_passHint => 'Парольная фраза (не менее 12 символов)';
+
+  @override
+  String get teamSetup_create => 'Создать';
+
+  @override
+  String get teamSetup_tooBig => 'Слишком много для QR-кода. Отправьте файлом.';
+
+  @override
+  String get teamSetup_shareFile => 'Поделиться файлом';
+
+  @override
+  String get teamSetup_scanTitle => 'Сканировать настройку команды';
+
+  @override
+  String get teamSetup_wrongPass => 'Неверная фраза или файл повреждён.';
+
+  @override
+  String get teamSetup_notFile => 'Это не файл настройки команды.';
+
+  @override
+  String get teamSetup_openFile => 'Открыть файл';
+
+  @override
+  String get teamSetup_scanQr => 'Сканировать QR-код';
+
+  @override
+  String get teamSetup_pass => 'Парольная фраза';
+
+  @override
+  String get teamSetup_open => 'Открыть';
+
+  @override
+  String teamSetup_channelsList(String names) {
+    return 'Каналы: $names';
+  }
+
+  @override
+  String teamSetup_placesCount(int waypoints, int routes) {
+    return 'Точки: $waypoints, маршруты: $routes';
+  }
+
+  @override
+  String teamSetup_radioDetail(String details) {
+    return 'Настройки радио: $details';
+  }
+
+  @override
+  String get teamSetup_radioWarn =>
+      'По умолчанию выключено. Проверьте, что они законны в вашем регионе. Другая частота выведет вас из текущей сети.';
+
+  @override
+  String get teamSetup_connectFirst =>
+      'Подключите радио, чтобы добавить каналы или изменить настройки.';
+
+  @override
+  String get teamSetup_apply => 'Применить';
+
+  @override
+  String teamSetup_done(String summary) {
+    return 'Готово: $summary.';
+  }
+
+  @override
+  String teamSetup_stopped(String summary, String error) {
+    return 'Остановлено на полпути ($summary): $error';
+  }
+
+  @override
+  String teamSetup_added(int count) {
+    return 'Добавлено каналов: $count';
+  }
+
+  @override
+  String teamSetup_addedSkipped(int count, int left) {
+    return 'Добавлено каналов: $count. Уже есть или нет места: $left';
+  }
+
+  @override
+  String get teamSetup_radioChanged => 'настройки радио изменены';
 }

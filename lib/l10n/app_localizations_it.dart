@@ -11135,4 +11135,116 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get auto_entrySub => 'Attivazione per batteria, ora, area e nodo';
+
+  @override
+  String get teamSetup_title => 'Configurazione squadra';
+
+  @override
+  String get teamSetup_toolSub =>
+      'Condividi impostazioni radio, canali e percorsi';
+
+  @override
+  String get teamSetup_share => 'Condividi';
+
+  @override
+  String get teamSetup_receive => 'Ricevi';
+
+  @override
+  String get teamSetup_warning =>
+      'Include le chiavi dei canali. Chiunque abbia questo file o codice QR e la passphrase può leggere quei canali. Comunica la passphrase di persona o in altro modo, mai insieme al file.';
+
+  @override
+  String get teamSetup_radio => 'Impostazioni radio';
+
+  @override
+  String get teamSetup_channels => 'Canali e relative chiavi';
+
+  @override
+  String get teamSetup_notPublic => 'Non il canale pubblico';
+
+  @override
+  String get teamSetup_places => 'Waypoint e percorsi';
+
+  @override
+  String get teamSetup_passHint => 'Passphrase (almeno 12 caratteri)';
+
+  @override
+  String get teamSetup_create => 'Crea';
+
+  @override
+  String get teamSetup_tooBig =>
+      'Troppo per un codice QR. Condividilo come file.';
+
+  @override
+  String get teamSetup_shareFile => 'Condividi come file';
+
+  @override
+  String get teamSetup_scanTitle => 'Scansiona configurazione squadra';
+
+  @override
+  String get teamSetup_wrongPass => 'Passphrase errata o file danneggiato.';
+
+  @override
+  String get teamSetup_notFile => 'Questo non è un file squadra valido.';
+
+  @override
+  String get teamSetup_openFile => 'Apri un file';
+
+  @override
+  String get teamSetup_scanQr => 'Scansiona un codice QR';
+
+  @override
+  String get teamSetup_pass => 'Passphrase';
+
+  @override
+  String get teamSetup_open => 'Apri';
+
+  @override
+  String teamSetup_channelsList(String names) {
+    return 'Canali: $names';
+  }
+
+  @override
+  String teamSetup_placesCount(int waypoints, int routes) {
+    return 'Waypoint: $waypoints, percorsi: $routes';
+  }
+
+  @override
+  String teamSetup_radioDetail(String details) {
+    return 'Impostazioni radio: $details';
+  }
+
+  @override
+  String get teamSetup_radioWarn =>
+      'Disattivato per impostazione predefinita. Verifica che siano legali dove ti trovi. Un\'altra frequenza ti porta fuori dalla rete attuale.';
+
+  @override
+  String get teamSetup_connectFirst =>
+      'Collega una radio per aggiungere canali o cambiare impostazioni.';
+
+  @override
+  String get teamSetup_apply => 'Applica';
+
+  @override
+  String teamSetup_done(String summary) {
+    return 'Fatto: $summary.';
+  }
+
+  @override
+  String teamSetup_stopped(String summary, String error) {
+    return 'Interrotto a metà ($summary): $error';
+  }
+
+  @override
+  String teamSetup_added(int count) {
+    return 'Canali aggiunti: $count';
+  }
+
+  @override
+  String teamSetup_addedSkipped(int count, int left) {
+    return 'Canali aggiunti: $count. Già presenti o senza spazio: $left';
+  }
+
+  @override
+  String get teamSetup_radioChanged => 'impostazioni radio modificate';
 }

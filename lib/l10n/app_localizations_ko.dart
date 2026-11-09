@@ -10622,4 +10622,113 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get auto_entrySub => '배터리, 시간, 구역, 노드 조건';
+
+  @override
+  String get teamSetup_title => '팀 설정';
+
+  @override
+  String get teamSetup_toolSub => '무전기 설정, 채널, 경로 공유';
+
+  @override
+  String get teamSetup_share => '공유';
+
+  @override
+  String get teamSetup_receive => '받기';
+
+  @override
+  String get teamSetup_warning =>
+      '채널 키가 포함됩니다. 이 파일이나 QR 코드와 암호문을 가진 사람은 해당 채널을 읽을 수 있습니다. 암호문은 직접 또는 다른 방법으로 전하고 파일과 함께 보내지 마세요.';
+
+  @override
+  String get teamSetup_radio => '무전기 설정';
+
+  @override
+  String get teamSetup_channels => '채널과 키';
+
+  @override
+  String get teamSetup_notPublic => '공개 채널 제외';
+
+  @override
+  String get teamSetup_places => '웨이포인트와 경로';
+
+  @override
+  String get teamSetup_passHint => '암호문(12자 이상)';
+
+  @override
+  String get teamSetup_create => '만들기';
+
+  @override
+  String get teamSetup_tooBig => 'QR 코드에 담기에 너무 많습니다. 파일로 공유하세요.';
+
+  @override
+  String get teamSetup_shareFile => '파일로 공유';
+
+  @override
+  String get teamSetup_scanTitle => '팀 설정 스캔';
+
+  @override
+  String get teamSetup_wrongPass => '암호문이 틀렸거나 파일이 손상되었습니다.';
+
+  @override
+  String get teamSetup_notFile => '유효한 팀 파일이 아닙니다.';
+
+  @override
+  String get teamSetup_openFile => '파일 열기';
+
+  @override
+  String get teamSetup_scanQr => 'QR 코드 스캔';
+
+  @override
+  String get teamSetup_pass => '암호문';
+
+  @override
+  String get teamSetup_open => '열기';
+
+  @override
+  String teamSetup_channelsList(String names) {
+    return '채널: $names';
+  }
+
+  @override
+  String teamSetup_placesCount(int waypoints, int routes) {
+    return '웨이포인트: $waypoints, 경로: $routes';
+  }
+
+  @override
+  String teamSetup_radioDetail(String details) {
+    return '무전기 설정: $details';
+  }
+
+  @override
+  String get teamSetup_radioWarn =>
+      '기본적으로 꺼져 있습니다. 현지에서 합법인지 확인하세요. 주파수가 다르면 현재 메시에서 벗어납니다.';
+
+  @override
+  String get teamSetup_connectFirst => '채널을 추가하거나 설정을 바꾸려면 무전기를 연결하세요.';
+
+  @override
+  String get teamSetup_apply => '적용';
+
+  @override
+  String teamSetup_done(String summary) {
+    return '완료: $summary.';
+  }
+
+  @override
+  String teamSetup_stopped(String summary, String error) {
+    return '도중에 중단됨($summary): $error';
+  }
+
+  @override
+  String teamSetup_added(int count) {
+    return '추가된 채널: $count';
+  }
+
+  @override
+  String teamSetup_addedSkipped(int count, int left) {
+    return '추가된 채널: $count. 이미 있거나 공간 없음: $left';
+  }
+
+  @override
+  String get teamSetup_radioChanged => '무전기 설정 변경됨';
 }

@@ -18498,6 +18498,192 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Battery, time, area and node triggers'**
   String get auto_entrySub;
+
+  /// No description provided for @teamSetup_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Team setup'**
+  String get teamSetup_title;
+
+  /// No description provided for @teamSetup_toolSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Share radio settings, channels and routes'**
+  String get teamSetup_toolSub;
+
+  /// No description provided for @teamSetup_share.
+  ///
+  /// In en, this message translates to:
+  /// **'Share'**
+  String get teamSetup_share;
+
+  /// No description provided for @teamSetup_receive.
+  ///
+  /// In en, this message translates to:
+  /// **'Receive'**
+  String get teamSetup_receive;
+
+  /// No description provided for @teamSetup_warning.
+  ///
+  /// In en, this message translates to:
+  /// **'This includes channel keys. Anyone with this file or QR code and the passphrase can read those channels. Tell people the passphrase in person or some other way, never alongside the file.'**
+  String get teamSetup_warning;
+
+  /// No description provided for @teamSetup_radio.
+  ///
+  /// In en, this message translates to:
+  /// **'Radio settings'**
+  String get teamSetup_radio;
+
+  /// No description provided for @teamSetup_channels.
+  ///
+  /// In en, this message translates to:
+  /// **'Channels and their keys'**
+  String get teamSetup_channels;
+
+  /// No description provided for @teamSetup_notPublic.
+  ///
+  /// In en, this message translates to:
+  /// **'Not the public channel'**
+  String get teamSetup_notPublic;
+
+  /// No description provided for @teamSetup_places.
+  ///
+  /// In en, this message translates to:
+  /// **'Waypoints and routes'**
+  String get teamSetup_places;
+
+  /// No description provided for @teamSetup_passHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Passphrase (at least 12 characters)'**
+  String get teamSetup_passHint;
+
+  /// No description provided for @teamSetup_create.
+  ///
+  /// In en, this message translates to:
+  /// **'Create'**
+  String get teamSetup_create;
+
+  /// No description provided for @teamSetup_tooBig.
+  ///
+  /// In en, this message translates to:
+  /// **'Too much for a QR code. Share it as a file instead.'**
+  String get teamSetup_tooBig;
+
+  /// No description provided for @teamSetup_shareFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Share as a file'**
+  String get teamSetup_shareFile;
+
+  /// No description provided for @teamSetup_scanTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan team setup'**
+  String get teamSetup_scanTitle;
+
+  /// No description provided for @teamSetup_wrongPass.
+  ///
+  /// In en, this message translates to:
+  /// **'Wrong passphrase, or the file is damaged.'**
+  String get teamSetup_wrongPass;
+
+  /// No description provided for @teamSetup_notFile.
+  ///
+  /// In en, this message translates to:
+  /// **'This isn\'t a valid team file.'**
+  String get teamSetup_notFile;
+
+  /// No description provided for @teamSetup_openFile.
+  ///
+  /// In en, this message translates to:
+  /// **'Open a file'**
+  String get teamSetup_openFile;
+
+  /// No description provided for @teamSetup_scanQr.
+  ///
+  /// In en, this message translates to:
+  /// **'Scan a QR code'**
+  String get teamSetup_scanQr;
+
+  /// No description provided for @teamSetup_pass.
+  ///
+  /// In en, this message translates to:
+  /// **'Passphrase'**
+  String get teamSetup_pass;
+
+  /// No description provided for @teamSetup_open.
+  ///
+  /// In en, this message translates to:
+  /// **'Open'**
+  String get teamSetup_open;
+
+  /// No description provided for @teamSetup_channelsList.
+  ///
+  /// In en, this message translates to:
+  /// **'Channels: {names}'**
+  String teamSetup_channelsList(String names);
+
+  /// No description provided for @teamSetup_placesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Waypoints: {waypoints}, routes: {routes}'**
+  String teamSetup_placesCount(int waypoints, int routes);
+
+  /// No description provided for @teamSetup_radioDetail.
+  ///
+  /// In en, this message translates to:
+  /// **'Radio settings: {details}'**
+  String teamSetup_radioDetail(String details);
+
+  /// No description provided for @teamSetup_radioWarn.
+  ///
+  /// In en, this message translates to:
+  /// **'Off by default. Check these are legal where you are. A different frequency takes you off your current mesh.'**
+  String get teamSetup_radioWarn;
+
+  /// No description provided for @teamSetup_connectFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect a radio to add channels or change settings.'**
+  String get teamSetup_connectFirst;
+
+  /// No description provided for @teamSetup_apply.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply'**
+  String get teamSetup_apply;
+
+  /// No description provided for @teamSetup_done.
+  ///
+  /// In en, this message translates to:
+  /// **'Done: {summary}.'**
+  String teamSetup_done(String summary);
+
+  /// No description provided for @teamSetup_stopped.
+  ///
+  /// In en, this message translates to:
+  /// **'Stopped part way ({summary}): {error}'**
+  String teamSetup_stopped(String summary, String error);
+
+  /// No description provided for @teamSetup_added.
+  ///
+  /// In en, this message translates to:
+  /// **'Channels added: {count}'**
+  String teamSetup_added(int count);
+
+  /// No description provided for @teamSetup_addedSkipped.
+  ///
+  /// In en, this message translates to:
+  /// **'Channels added: {count}. Already there or no room: {left}'**
+  String teamSetup_addedSkipped(int count, int left);
+
+  /// No description provided for @teamSetup_radioChanged.
+  ///
+  /// In en, this message translates to:
+  /// **'radio settings changed'**
+  String get teamSetup_radioChanged;
 }
 
 class _AppLocalizationsDelegate

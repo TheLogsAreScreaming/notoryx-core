@@ -11103,4 +11103,114 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get auto_entrySub => 'Spúšťače batérie, času, oblasti a uzla';
+
+  @override
+  String get teamSetup_title => 'Nastavenie tímu';
+
+  @override
+  String get teamSetup_toolSub => 'Zdieľať nastavenia rádia, kanály a trasy';
+
+  @override
+  String get teamSetup_share => 'Zdieľať';
+
+  @override
+  String get teamSetup_receive => 'Prijať';
+
+  @override
+  String get teamSetup_warning =>
+      'Obsahuje kľúče kanálov. Ktokoľvek s týmto súborom alebo QR kódom a heslom môže čítať tieto kanály. Heslo oznámte osobne alebo inak, nikdy spolu so súborom.';
+
+  @override
+  String get teamSetup_radio => 'Nastavenia rádia';
+
+  @override
+  String get teamSetup_channels => 'Kanály a ich kľúče';
+
+  @override
+  String get teamSetup_notPublic => 'Bez verejného kanála';
+
+  @override
+  String get teamSetup_places => 'Body a trasy';
+
+  @override
+  String get teamSetup_passHint => 'Heslo (aspoň 12 znakov)';
+
+  @override
+  String get teamSetup_create => 'Vytvoriť';
+
+  @override
+  String get teamSetup_tooBig => 'Príliš veľa pre QR kód. Zdieľajte ako súbor.';
+
+  @override
+  String get teamSetup_shareFile => 'Zdieľať ako súbor';
+
+  @override
+  String get teamSetup_scanTitle => 'Skenovať nastavenie tímu';
+
+  @override
+  String get teamSetup_wrongPass => 'Nesprávne heslo alebo poškodený súbor.';
+
+  @override
+  String get teamSetup_notFile => 'Toto nie je platný tímový súbor.';
+
+  @override
+  String get teamSetup_openFile => 'Otvoriť súbor';
+
+  @override
+  String get teamSetup_scanQr => 'Skenovať QR kód';
+
+  @override
+  String get teamSetup_pass => 'Heslo';
+
+  @override
+  String get teamSetup_open => 'Otvoriť';
+
+  @override
+  String teamSetup_channelsList(String names) {
+    return 'Kanály: $names';
+  }
+
+  @override
+  String teamSetup_placesCount(int waypoints, int routes) {
+    return 'Body: $waypoints, trasy: $routes';
+  }
+
+  @override
+  String teamSetup_radioDetail(String details) {
+    return 'Nastavenia rádia: $details';
+  }
+
+  @override
+  String get teamSetup_radioWarn =>
+      'Predvolene vypnuté. Overte, či sú u vás legálne. Iná frekvencia vás odpojí od súčasnej siete.';
+
+  @override
+  String get teamSetup_connectFirst =>
+      'Pripojte rádio na pridanie kanálov alebo zmenu nastavení.';
+
+  @override
+  String get teamSetup_apply => 'Použiť';
+
+  @override
+  String teamSetup_done(String summary) {
+    return 'Hotovo: $summary.';
+  }
+
+  @override
+  String teamSetup_stopped(String summary, String error) {
+    return 'Zastavené v polovici ($summary): $error';
+  }
+
+  @override
+  String teamSetup_added(int count) {
+    return 'Pridané kanály: $count';
+  }
+
+  @override
+  String teamSetup_addedSkipped(int count, int left) {
+    return 'Pridané kanály: $count. Už existujú alebo chýba miesto: $left';
+  }
+
+  @override
+  String get teamSetup_radioChanged => 'nastavenia rádia zmenené';
 }

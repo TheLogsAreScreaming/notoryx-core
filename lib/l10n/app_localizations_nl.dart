@@ -11084,4 +11084,116 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get auto_entrySub => 'Triggers voor batterij, tijd, gebied en node';
+
+  @override
+  String get teamSetup_title => 'Teaminstelling';
+
+  @override
+  String get teamSetup_toolSub => 'Radio-instellingen, kanalen en routes delen';
+
+  @override
+  String get teamSetup_share => 'Delen';
+
+  @override
+  String get teamSetup_receive => 'Ontvangen';
+
+  @override
+  String get teamSetup_warning =>
+      'Dit bevat kanaalsleutels. Iedereen met dit bestand of deze QR-code en het wachtwoord kan die kanalen lezen. Geef het wachtwoord persoonlijk of op een andere manier door, nooit samen met het bestand.';
+
+  @override
+  String get teamSetup_radio => 'Radio-instellingen';
+
+  @override
+  String get teamSetup_channels => 'Kanalen en hun sleutels';
+
+  @override
+  String get teamSetup_notPublic => 'Niet het openbare kanaal';
+
+  @override
+  String get teamSetup_places => 'Waypoints en routes';
+
+  @override
+  String get teamSetup_passHint => 'Wachtwoordzin (minstens 12 tekens)';
+
+  @override
+  String get teamSetup_create => 'Maken';
+
+  @override
+  String get teamSetup_tooBig =>
+      'Te veel voor een QR-code. Deel het als bestand.';
+
+  @override
+  String get teamSetup_shareFile => 'Delen als bestand';
+
+  @override
+  String get teamSetup_scanTitle => 'Teaminstelling scannen';
+
+  @override
+  String get teamSetup_wrongPass =>
+      'Verkeerde wachtwoordzin of beschadigd bestand.';
+
+  @override
+  String get teamSetup_notFile => 'Dit is geen geldig teambestand.';
+
+  @override
+  String get teamSetup_openFile => 'Bestand openen';
+
+  @override
+  String get teamSetup_scanQr => 'QR-code scannen';
+
+  @override
+  String get teamSetup_pass => 'Wachtwoordzin';
+
+  @override
+  String get teamSetup_open => 'Openen';
+
+  @override
+  String teamSetup_channelsList(String names) {
+    return 'Kanalen: $names';
+  }
+
+  @override
+  String teamSetup_placesCount(int waypoints, int routes) {
+    return 'Waypoints: $waypoints, routes: $routes';
+  }
+
+  @override
+  String teamSetup_radioDetail(String details) {
+    return 'Radio-instellingen: $details';
+  }
+
+  @override
+  String get teamSetup_radioWarn =>
+      'Standaard uit. Controleer of deze bij jou zijn toegestaan. Een andere frequentie haalt je van je huidige mesh.';
+
+  @override
+  String get teamSetup_connectFirst =>
+      'Verbind een radio om kanalen toe te voegen of instellingen te wijzigen.';
+
+  @override
+  String get teamSetup_apply => 'Toepassen';
+
+  @override
+  String teamSetup_done(String summary) {
+    return 'Klaar: $summary.';
+  }
+
+  @override
+  String teamSetup_stopped(String summary, String error) {
+    return 'Halverwege gestopt ($summary): $error';
+  }
+
+  @override
+  String teamSetup_added(int count) {
+    return 'Kanalen toegevoegd: $count';
+  }
+
+  @override
+  String teamSetup_addedSkipped(int count, int left) {
+    return 'Kanalen toegevoegd: $count. Al aanwezig of geen ruimte: $left';
+  }
+
+  @override
+  String get teamSetup_radioChanged => 'radio-instellingen gewijzigd';
 }

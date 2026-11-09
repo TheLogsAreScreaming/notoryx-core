@@ -11040,4 +11040,115 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get auto_entrySub => 'Utlösare för batteri, tid, område och nod';
+
+  @override
+  String get teamSetup_title => 'Teaminställning';
+
+  @override
+  String get teamSetup_toolSub => 'Dela radioinställningar, kanaler och rutter';
+
+  @override
+  String get teamSetup_share => 'Dela';
+
+  @override
+  String get teamSetup_receive => 'Ta emot';
+
+  @override
+  String get teamSetup_warning =>
+      'Innehåller kanalnycklar. Alla med den här filen eller QR-koden och lösenfrasen kan läsa kanalerna. Berätta lösenfrasen personligen eller på annat sätt, aldrig tillsammans med filen.';
+
+  @override
+  String get teamSetup_radio => 'Radioinställningar';
+
+  @override
+  String get teamSetup_channels => 'Kanaler och deras nycklar';
+
+  @override
+  String get teamSetup_notPublic => 'Inte den offentliga kanalen';
+
+  @override
+  String get teamSetup_places => 'Vägpunkter och rutter';
+
+  @override
+  String get teamSetup_passHint => 'Lösenfras (minst 12 tecken)';
+
+  @override
+  String get teamSetup_create => 'Skapa';
+
+  @override
+  String get teamSetup_tooBig =>
+      'För mycket för en QR-kod. Dela som fil i stället.';
+
+  @override
+  String get teamSetup_shareFile => 'Dela som fil';
+
+  @override
+  String get teamSetup_scanTitle => 'Skanna teaminställning';
+
+  @override
+  String get teamSetup_wrongPass => 'Fel lösenfras eller skadad fil.';
+
+  @override
+  String get teamSetup_notFile => 'Det här är ingen giltig teamfil.';
+
+  @override
+  String get teamSetup_openFile => 'Öppna en fil';
+
+  @override
+  String get teamSetup_scanQr => 'Skanna en QR-kod';
+
+  @override
+  String get teamSetup_pass => 'Lösenfras';
+
+  @override
+  String get teamSetup_open => 'Öppna';
+
+  @override
+  String teamSetup_channelsList(String names) {
+    return 'Kanaler: $names';
+  }
+
+  @override
+  String teamSetup_placesCount(int waypoints, int routes) {
+    return 'Vägpunkter: $waypoints, rutter: $routes';
+  }
+
+  @override
+  String teamSetup_radioDetail(String details) {
+    return 'Radioinställningar: $details';
+  }
+
+  @override
+  String get teamSetup_radioWarn =>
+      'Av som standard. Kontrollera att de är lagliga där du är. En annan frekvens tar dig från ditt nuvarande mesh.';
+
+  @override
+  String get teamSetup_connectFirst =>
+      'Anslut en radio för att lägga till kanaler eller ändra inställningar.';
+
+  @override
+  String get teamSetup_apply => 'Verkställ';
+
+  @override
+  String teamSetup_done(String summary) {
+    return 'Klart: $summary.';
+  }
+
+  @override
+  String teamSetup_stopped(String summary, String error) {
+    return 'Avbröts halvvägs ($summary): $error';
+  }
+
+  @override
+  String teamSetup_added(int count) {
+    return 'Tillagda kanaler: $count';
+  }
+
+  @override
+  String teamSetup_addedSkipped(int count, int left) {
+    return 'Tillagda kanaler: $count. Finns redan eller ingen plats: $left';
+  }
+
+  @override
+  String get teamSetup_radioChanged => 'radioinställningar ändrade';
 }

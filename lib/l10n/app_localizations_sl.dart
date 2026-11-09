@@ -11123,4 +11123,114 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get auto_entrySub => 'Sprožilci baterije, časa, območja in vozlišča';
+
+  @override
+  String get teamSetup_title => 'Nastavitev ekipe';
+
+  @override
+  String get teamSetup_toolSub => 'Deli nastavitve radia, kanale in poti';
+
+  @override
+  String get teamSetup_share => 'Deli';
+
+  @override
+  String get teamSetup_receive => 'Prejmi';
+
+  @override
+  String get teamSetup_warning =>
+      'Vključuje ključe kanalov. Kdorkoli ima to datoteko ali kodo QR in geslo, lahko bere te kanale. Geslo sporočite osebno ali drugače, nikoli skupaj z datoteko.';
+
+  @override
+  String get teamSetup_radio => 'Nastavitve radia';
+
+  @override
+  String get teamSetup_channels => 'Kanali in njihovi ključi';
+
+  @override
+  String get teamSetup_notPublic => 'Brez javnega kanala';
+
+  @override
+  String get teamSetup_places => 'Točke in poti';
+
+  @override
+  String get teamSetup_passHint => 'Geslo (vsaj 12 znakov)';
+
+  @override
+  String get teamSetup_create => 'Ustvari';
+
+  @override
+  String get teamSetup_tooBig => 'Preveč za kodo QR. Delite kot datoteko.';
+
+  @override
+  String get teamSetup_shareFile => 'Deli kot datoteko';
+
+  @override
+  String get teamSetup_scanTitle => 'Skeniraj nastavitev ekipe';
+
+  @override
+  String get teamSetup_wrongPass => 'Napačno geslo ali poškodovana datoteka.';
+
+  @override
+  String get teamSetup_notFile => 'To ni veljavna datoteka ekipe.';
+
+  @override
+  String get teamSetup_openFile => 'Odpri datoteko';
+
+  @override
+  String get teamSetup_scanQr => 'Skeniraj kodo QR';
+
+  @override
+  String get teamSetup_pass => 'Geslo';
+
+  @override
+  String get teamSetup_open => 'Odpri';
+
+  @override
+  String teamSetup_channelsList(String names) {
+    return 'Kanali: $names';
+  }
+
+  @override
+  String teamSetup_placesCount(int waypoints, int routes) {
+    return 'Točke: $waypoints, poti: $routes';
+  }
+
+  @override
+  String teamSetup_radioDetail(String details) {
+    return 'Nastavitve radia: $details';
+  }
+
+  @override
+  String get teamSetup_radioWarn =>
+      'Privzeto izklopljeno. Preverite, ali so pri vas zakonite. Druga frekvenca vas loči od trenutnega omrežja.';
+
+  @override
+  String get teamSetup_connectFirst =>
+      'Povežite radio, da dodate kanale ali spremenite nastavitve.';
+
+  @override
+  String get teamSetup_apply => 'Uporabi';
+
+  @override
+  String teamSetup_done(String summary) {
+    return 'Končano: $summary.';
+  }
+
+  @override
+  String teamSetup_stopped(String summary, String error) {
+    return 'Ustavljeno na pol poti ($summary): $error';
+  }
+
+  @override
+  String teamSetup_added(int count) {
+    return 'Dodani kanali: $count';
+  }
+
+  @override
+  String teamSetup_addedSkipped(int count, int left) {
+    return 'Dodani kanali: $count. Že obstajajo ali ni prostora: $left';
+  }
+
+  @override
+  String get teamSetup_radioChanged => 'nastavitve radia spremenjene';
 }
