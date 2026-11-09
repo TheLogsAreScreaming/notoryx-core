@@ -10948,4 +10948,27 @@ class AppLocalizationsBg extends AppLocalizations {
   @override
   String get outbox_cantQueue =>
       'Все още няма свързано радио, затова това не може да се запази за по-късно.';
+
+  @override
+  String get report_open => 'Изпрати доклад';
+
+  @override
+  String get report_title => 'Полеви доклад';
+
+  @override
+  String get report_salute => 'SALUTE (какво видяхте)';
+
+  @override
+  String get report_nineLine => '9-Line (медицинска евакуация)';
+
+  @override
+  String get report_send => 'Изпрати доклада';
+
+  @override
+  String report_parts(int count) {
+    return 'Брой съобщения: $count';
+  }
+
+  @override
+  String get report_sent => 'Докладът е изпратен';
 }

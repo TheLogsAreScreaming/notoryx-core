@@ -3729,5 +3729,12 @@
   "notification_replyAction": "Ответить",
   "notification_replyHint": "Напишите ответ",
   "outbox_waiting": "Ожидают радио: {count}",
-  "outbox_cantQueue": "Радио ещё не подключалось, поэтому сохранить это на потом нельзя."
+  "outbox_cantQueue": "Радио ещё не подключалось, поэтому сохранить это на потом нельзя.",
+  "report_open": "Отправить донесение",
+  "report_title": "Полевое донесение",
+  "report_salute": "SALUTE (что вы видели)",
+  "report_nineLine": "9-Line (медицинская эвакуация)",
+  "report_send": "Отправить донесение",
+  "report_parts": "Количество сообщений: {count}",
+  "report_sent": "Донесение отправлено"
 }

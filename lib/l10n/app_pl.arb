@@ -4464,5 +4464,12 @@
   "notification_replyAction": "Odpowiedz",
   "notification_replyHint": "Napisz odpowiedź",
   "outbox_waiting": "Oczekuje na radio: {count}",
-  "outbox_cantQueue": "Nie połączono jeszcze żadnego radia, więc nie można zapisać tego na później."
+  "outbox_cantQueue": "Nie połączono jeszcze żadnego radia, więc nie można zapisać tego na później.",
+  "report_open": "Wyślij raport",
+  "report_title": "Raport terenowy",
+  "report_salute": "SALUTE (co widziano)",
+  "report_nineLine": "9-Line (ewakuacja medyczna)",
+  "report_send": "Wyślij raport",
+  "report_parts": "Liczba wiadomości: {count}",
+  "report_sent": "Raport wysłany"
 }

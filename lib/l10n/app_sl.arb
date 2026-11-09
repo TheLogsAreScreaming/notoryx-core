@@ -4426,5 +4426,12 @@
   "notification_replyAction": "Odgovori",
   "notification_replyHint": "Napišite odgovor",
   "outbox_waiting": "Čaka na radio: {count}",
-  "outbox_cantQueue": "Noben radio še ni bil povezan, zato tega ni mogoče shraniti za pozneje."
+  "outbox_cantQueue": "Noben radio še ni bil povezan, zato tega ni mogoče shraniti za pozneje.",
+  "report_open": "Pošlji poročilo",
+  "report_title": "Terensko poročilo",
+  "report_salute": "SALUTE (kaj ste videli)",
+  "report_nineLine": "9-Line (medicinska evakuacija)",
+  "report_send": "Pošlji poročilo",
+  "report_parts": "Število sporočil: {count}",
+  "report_sent": "Poročilo poslano"
 }

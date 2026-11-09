@@ -8,6 +8,7 @@ import '../l10n/app_localizations.dart';
 import '../l10n/l10n.dart';
 import '../models/field_ops.dart';
 import '../services/field_ops_service.dart';
+import 'field_report_sheet.dart';
 import 'quick_trip_setup.dart';
 
 Color get _red => MeshPalette.alert;
@@ -57,6 +58,13 @@ class SosPanel extends StatelessWidget {
           sosHint(context, ops),
           style: TextStyle(color: _muted, fontSize: 12),
         ),
+        if (hasSosTarget(ops) && reason == null)
+          TextButton.icon(
+            key: const ValueKey('report-open'),
+            onPressed: () => showFieldReportSheet(context),
+            icon: const Icon(Icons.assignment_outlined),
+            label: Text(context.l10n.report_open),
+          ),
       ],
     );
   }
@@ -175,6 +183,11 @@ class _ActiveSos extends StatelessWidget {
           ),
           const SizedBox(height: 6),
           Text(status, style: TextStyle(color: MeshPalette.ink)),
+          TextButton.icon(
+            onPressed: () => showFieldReportSheet(context),
+            icon: const Icon(Icons.assignment_outlined),
+            label: Text(l10n.report_open),
+          ),
           const SizedBox(height: 10),
           Row(
             children: [

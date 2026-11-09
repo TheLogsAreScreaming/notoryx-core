@@ -4431,5 +4431,12 @@
   "notification_replyAction": "回复",
   "notification_replyHint": "输入回复",
   "outbox_waiting": "等待电台：{count}",
-  "outbox_cantQueue": "尚未连接过电台，因此无法保存以便稍后发送。"
+  "outbox_cantQueue": "尚未连接过电台，因此无法保存以便稍后发送。",
+  "report_open": "发送报告",
+  "report_title": "现场报告",
+  "report_salute": "SALUTE（所见情况）",
+  "report_nineLine": "9-Line（医疗后送）",
+  "report_send": "发送报告",
+  "report_parts": "消息数：{count}",
+  "report_sent": "报告已发送"
 }
