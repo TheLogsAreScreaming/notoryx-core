@@ -39,6 +39,8 @@ import '../services/received_image_store.dart';
 import '../services/translation_llm.dart';
 import '../services/translation_service.dart';
 import '../utils/lora_airtime.dart';
+import '../services/offline_outbox.dart';
+import '../widgets/outbox_banner.dart';
 import '../helpers/share_links.dart';
 import '../widgets/ember_backdrop.dart';
 import '../widgets/quick_messages.dart';
@@ -1910,6 +1912,7 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            OutboxBanner(target: 'channel:${widget.channel.index}'),
             if (_replyingToMessage != null)
               Builder(
                 builder: (context) {
@@ -2283,6 +2286,26 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
       messageText = Cyr2Lat.encode(messageText);
     }
     // end transform
+
+    if (!connector.isConnected) {
+      final messenger = ScaffoldMessenger.maybeOf(context);
+      final cantQueue = context.l10n.outbox_cantQueue;
+      final outbox = context.read<OfflineOutbox?>();
+      // A limited-area send can't be saved: it would go out as a full flood.
+      final saved =
+          corridor == null &&
+          (await outbox?.add('channel:${widget.channel.index}', messageText) ??
+              false);
+      if (!mounted) return;
+      if (!saved) {
+        messenger?.showSnackBar(SnackBar(content: Text(cantQueue)));
+        return;
+      }
+      _textController.clear();
+      _cancelReply();
+      _textFieldFocusNode.requestFocus();
+      return;
+    }
 
     _textController.clear();
     _cancelReply();

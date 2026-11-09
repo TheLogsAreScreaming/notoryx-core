@@ -18192,6 +18192,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Write a reply'**
   String get notification_replyHint;
+
+  /// No description provided for @outbox_waiting.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for the radio: {count}'**
+  String outbox_waiting(int count);
+
+  /// No description provided for @outbox_cantQueue.
+  ///
+  /// In en, this message translates to:
+  /// **'No radio has been connected yet, so this can\'t be saved to send later.'**
+  String get outbox_cantQueue;
 }
 
 class _AppLocalizationsDelegate

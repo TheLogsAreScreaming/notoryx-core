@@ -10997,4 +10997,13 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get notification_replyHint => 'Напишите ответ';
+
+  @override
+  String outbox_waiting(int count) {
+    return 'Ожидают радио: $count';
+  }
+
+  @override
+  String get outbox_cantQueue =>
+      'Радио ещё не подключалось, поэтому сохранить это на потом нельзя.';
 }

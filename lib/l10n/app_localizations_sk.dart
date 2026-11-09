@@ -10933,4 +10933,13 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get notification_replyHint => 'Napíšte odpoveď';
+
+  @override
+  String outbox_waiting(int count) {
+    return 'Čaká na rádio: $count';
+  }
+
+  @override
+  String get outbox_cantQueue =>
+      'Zatiaľ nebolo pripojené žiadne rádio, preto to nemožno uložiť na neskôr.';
 }

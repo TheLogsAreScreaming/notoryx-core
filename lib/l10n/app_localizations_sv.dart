@@ -10870,4 +10870,13 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get notification_replyHint => 'Skriv ett svar';
+
+  @override
+  String outbox_waiting(int count) {
+    return 'Väntar på radion: $count';
+  }
+
+  @override
+  String get outbox_cantQueue =>
+      'Ingen radio har anslutits än, så det här kan inte sparas till senare.';
 }

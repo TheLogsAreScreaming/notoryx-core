@@ -4424,5 +4424,7 @@
   "map_showWaypoints": "Opgeslagen waypoints en routes tonen",
   "appLock_sosNoTarget": "Ontgrendel eerst en kies wie je SOS ontvangt.",
   "notification_replyAction": "Beantwoorden",
-  "notification_replyHint": "Schrijf een antwoord"
+  "notification_replyHint": "Schrijf een antwoord",
+  "outbox_waiting": "Wacht op de radio: {count}",
+  "outbox_cantQueue": "Er is nog geen radio verbonden, dus dit kan niet voor later worden bewaard."
 }

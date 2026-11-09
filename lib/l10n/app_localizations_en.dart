@@ -10822,4 +10822,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get notification_replyHint => 'Write a reply';
+
+  @override
+  String outbox_waiting(int count) {
+    return 'Waiting for the radio: $count';
+  }
+
+  @override
+  String get outbox_cantQueue =>
+      'No radio has been connected yet, so this can\'t be saved to send later.';
 }

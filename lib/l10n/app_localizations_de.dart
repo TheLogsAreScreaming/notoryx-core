@@ -10966,4 +10966,13 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get notification_replyHint => 'Antwort schreiben';
+
+  @override
+  String outbox_waiting(int count) {
+    return 'Warten auf das Funkgerät: $count';
+  }
+
+  @override
+  String get outbox_cantQueue =>
+      'Es war noch kein Funkgerät verbunden, daher kann dies nicht für später gespeichert werden.';
 }

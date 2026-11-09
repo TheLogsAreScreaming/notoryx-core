@@ -4424,5 +4424,7 @@
   "map_showWaypoints": "Visa sparade vägpunkter och rutter",
   "appLock_sosNoTarget": "Lås upp först och välj vem som får din SOS.",
   "notification_replyAction": "Svara",
-  "notification_replyHint": "Skriv ett svar"
+  "notification_replyHint": "Skriv ett svar",
+  "outbox_waiting": "Väntar på radion: {count}",
+  "outbox_cantQueue": "Ingen radio har anslutits än, så det här kan inte sparas till senare."
 }
