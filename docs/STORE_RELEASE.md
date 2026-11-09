@@ -63,4 +63,4 @@ GitHub builds are ad-hoc signed today, so the first launch needs **Open Anyway**
 
 ## iOS
 
-Not built yet: this needs a Mac with Xcode and the same Apple Developer account.
+See [APP_STORE.md](APP_STORE.md). The `iOS TestFlight` workflow builds, signs and uploads from CI once the Apple secrets are set.

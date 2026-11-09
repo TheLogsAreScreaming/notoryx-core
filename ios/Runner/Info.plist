@@ -34,13 +34,13 @@
 	<key>NSFaceIDUsageDescription</key>
 	<string>NOTORYX Core can use Face ID to unlock the app if you turn on App lock.</string>
 	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>This app uses Bluetooth to communicate with MeshCore devices.</string>
+	<string>NOTORYX Core uses Bluetooth to connect to your MeshCore radio, including in the background so messages keep arriving.</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>This app uses Bluetooth to communicate with MeshCore devices.</string>
+	<string>NOTORYX Core uses Bluetooth to connect to your MeshCore radio, including in the background so messages keep arriving.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>This app uses the camera to scan QR codes for joining communities.</string>
+	<string>NOTORYX Core uses the camera to scan QR codes, for example to join a community, add a contact or receive a team setup.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app lets you pick a photo to compress and send over the mesh.</string>
+	<string>NOTORYX Core lets you pick a photo to compress and send over the mesh.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -85,8 +85,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>NOTORYX Core connects to MeshCore radios on your local network if you choose a network connection.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>NOTORYX Core uses your location only while coverage mapping is on, to credit what your radio hears to a map hexagon.</string>
+	<string>NOTORYX Core uses your location while the app is open to show you on the map, suggest radio settings for your area, and map coverage if you turn that on.</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
