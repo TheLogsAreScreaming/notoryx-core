@@ -11349,4 +11349,21 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get botUi_noReplies => 'Még nincs bot válasz.';
+
+  @override
+  String get a11y_jumpToBottom => 'Ugrás a legújabb üzenethez';
+
+  @override
+  String a11y_cluster(int count) {
+    return 'Csomópontok itt: $count. Nagyítás';
+  }
+
+  @override
+  String get a11y_wardrivePing => 'Ping részletei';
+
+  @override
+  String get a11y_receivedImage => 'Fogadott kép';
+
+  @override
+  String get a11y_imagePreview => 'Kép előnézete';
 }

@@ -4678,5 +4678,10 @@
   "botUi_allowed": "Contactos permitidos",
   "botUi_allowedHint": "Sin selección significa todos los contactos conocidos.",
   "botUi_recent": "Actividad reciente (esta sesión)",
-  "botUi_noReplies": "Aún no hay respuestas del bot."
+  "botUi_noReplies": "Aún no hay respuestas del bot.",
+  "a11y_jumpToBottom": "Ir al último mensaje",
+  "a11y_cluster": "Nodos aquí: {count}. Acercar",
+  "a11y_wardrivePing": "Detalles del ping",
+  "a11y_receivedImage": "Imagen recibida",
+  "a11y_imagePreview": "Vista previa de la imagen"
 }

@@ -10851,4 +10851,21 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get botUi_noReplies => '아직 봇 답장이 없습니다.';
+
+  @override
+  String get a11y_jumpToBottom => '최신 메시지로 이동';
+
+  @override
+  String a11y_cluster(int count) {
+    return '이곳의 노드: $count. 확대';
+  }
+
+  @override
+  String get a11y_wardrivePing => '핑 세부 정보';
+
+  @override
+  String get a11y_receivedImage => '받은 사진';
+
+  @override
+  String get a11y_imagePreview => '사진 미리보기';
 }

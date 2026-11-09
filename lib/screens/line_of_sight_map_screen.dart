@@ -1496,40 +1496,50 @@ class _LineOfSightMapScreenState extends State<LineOfSightMapScreen> {
           point: obstruction.point,
           width: 52,
           height: 52,
-          child: GestureDetector(
-            onTap: () => _centerOnObstruction(obstruction),
-            child: Center(
-              child: Container(
-                width:
-                    _selectedObstruction?.sampleIndex == obstruction.sampleIndex
-                    ? 36
-                    : 24,
-                height:
-                    _selectedObstruction?.sampleIndex == obstruction.sampleIndex
-                    ? 36
-                    : 24,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.transparent,
-                  border: Border.all(
-                    color:
-                        _selectedObstruction?.sampleIndex ==
-                            obstruction.sampleIndex
-                        ? LosPalette.selected
-                        : LosPalette.blocked,
-                    width:
-                        _selectedObstruction?.sampleIndex ==
-                            obstruction.sampleIndex
-                        ? 4
-                        : 3,
-                  ),
-                  boxShadow: [
-                    const BoxShadow(
-                      color: LosPalette.shadow,
-                      blurRadius: 8,
-                      offset: Offset(0, 2),
+          child: Semantics(
+            button: true,
+            label: _obstructionChipLabel(
+              obstruction,
+              context.read<AppSettingsService>().settings.unitSystem ==
+                  UnitSystem.imperial,
+            ),
+            child: GestureDetector(
+              onTap: () => _centerOnObstruction(obstruction),
+              child: Center(
+                child: Container(
+                  width:
+                      _selectedObstruction?.sampleIndex ==
+                          obstruction.sampleIndex
+                      ? 36
+                      : 24,
+                  height:
+                      _selectedObstruction?.sampleIndex ==
+                          obstruction.sampleIndex
+                      ? 36
+                      : 24,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.transparent,
+                    border: Border.all(
+                      color:
+                          _selectedObstruction?.sampleIndex ==
+                              obstruction.sampleIndex
+                          ? LosPalette.selected
+                          : LosPalette.blocked,
+                      width:
+                          _selectedObstruction?.sampleIndex ==
+                              obstruction.sampleIndex
+                          ? 4
+                          : 3,
                     ),
-                  ],
+                    boxShadow: [
+                      const BoxShadow(
+                        color: LosPalette.shadow,
+                        blurRadius: 8,
+                        offset: Offset(0, 2),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -1540,63 +1550,67 @@ class _LineOfSightMapScreenState extends State<LineOfSightMapScreen> {
           point: endpoint.point,
           width: 36,
           height: 36,
-          child: GestureDetector(
-            onTap: () => _selectFromMap(endpoint),
-            child: Container(
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: (endpoint == _start || endpoint == _end)
-                    ? endpoint.color
-                    : LosPalette.panelDark,
-                border: Border.all(
+          child: Semantics(
+            button: true,
+            label: endpoint.label,
+            child: GestureDetector(
+              onTap: () => _selectFromMap(endpoint),
+              child: Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
                   color: (endpoint == _start || endpoint == _end)
-                      ? Colors.white
-                      : endpoint.color.withValues(alpha: 0.75),
-                  width: (endpoint == _start || endpoint == _end) ? 2.5 : 1.5,
-                ),
-                boxShadow: const [
-                  BoxShadow(
-                    color: LosPalette.shadow,
-                    blurRadius: 7,
-                    offset: Offset(0, 2),
+                      ? endpoint.color
+                      : LosPalette.panelDark,
+                  border: Border.all(
+                    color: (endpoint == _start || endpoint == _end)
+                        ? Colors.white
+                        : endpoint.color.withValues(alpha: 0.75),
+                    width: (endpoint == _start || endpoint == _end) ? 2.5 : 1.5,
                   ),
-                ],
-              ),
-              child: Stack(
-                children: [
-                  Center(
-                    child: Icon(
-                      endpoint.icon,
-                      color: endpoint == _start || endpoint == _end
-                          ? Colors.white
-                          : endpoint.color,
-                      size: 17,
+                  boxShadow: const [
+                    BoxShadow(
+                      color: LosPalette.shadow,
+                      blurRadius: 7,
+                      offset: Offset(0, 2),
                     ),
-                  ),
-                  if (endpoint == _start || endpoint == _end)
-                    Positioned(
-                      right: 0,
-                      bottom: 0,
-                      child: Container(
-                        width: 14,
-                        height: 14,
-                        decoration: BoxDecoration(
-                          color: LosPalette.chartBackground,
-                          borderRadius: BorderRadius.circular(7),
-                          border: Border.all(color: endpoint.color, width: 1),
-                        ),
-                        alignment: Alignment.center,
-                        child: Text(
-                          endpoint == _start ? 'A' : 'B',
-                          style: MeshTheme.mono(
-                            fontSize: 9,
-                            fontWeight: FontWeight.w700,
-                            color: endpoint.color,
+                  ],
+                ),
+                child: Stack(
+                  children: [
+                    Center(
+                      child: Icon(
+                        endpoint.icon,
+                        color: endpoint == _start || endpoint == _end
+                            ? Colors.white
+                            : endpoint.color,
+                        size: 17,
+                      ),
+                    ),
+                    if (endpoint == _start || endpoint == _end)
+                      Positioned(
+                        right: 0,
+                        bottom: 0,
+                        child: Container(
+                          width: 14,
+                          height: 14,
+                          decoration: BoxDecoration(
+                            color: LosPalette.chartBackground,
+                            borderRadius: BorderRadius.circular(7),
+                            border: Border.all(color: endpoint.color, width: 1),
+                          ),
+                          alignment: Alignment.center,
+                          child: Text(
+                            endpoint == _start ? 'A' : 'B',
+                            style: MeshTheme.mono(
+                              fontSize: 9,
+                              fontWeight: FontWeight.w700,
+                              color: endpoint.color,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),

@@ -35,6 +35,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../services/received_image_store.dart';
+import '../l10n/app_localizations.dart';
 import 'image_send_codec_binding.dart' show ImageCodecAvailability;
 
 /// User-visible strings for the NON-decoded states.
@@ -493,7 +494,14 @@ class _ReceivedImageMessageState extends State<ReceivedImageMessage> {
                     // fill, not contain: the pixels ARE the stretched square,
                     // so mapping them onto the original aspect box is exactly
                     // the inverse of what the sender did.
-                    child: Image.memory(png, fit: BoxFit.fill),
+                    child: Image.memory(
+                      png,
+                      fit: BoxFit.fill,
+                      semanticLabel: Localizations.of<AppLocalizations>(
+                        context,
+                        AppLocalizations,
+                      )?.a11y_receivedImage,
+                    ),
                   ),
                   if (entry.synthesized)
                     const Positioned(
@@ -631,7 +639,15 @@ class _ReceivedImageViewer extends StatelessWidget {
             Flexible(
               child: Stack(
                 children: [
-                  InteractiveViewer(child: Image.memory(png)),
+                  InteractiveViewer(
+                    child: Image.memory(
+                      png,
+                      semanticLabel: Localizations.of<AppLocalizations>(
+                        context,
+                        AppLocalizations,
+                      )?.a11y_receivedImage,
+                    ),
+                  ),
                   if (synthesized)
                     const Positioned(
                       left: 0,

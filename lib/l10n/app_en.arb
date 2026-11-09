@@ -6021,5 +6021,11 @@
   "botUi_allowed": "Allowed contacts",
   "botUi_allowedHint": "None selected means all known chat contacts.",
   "botUi_recent": "Recent activity (this session)",
-  "botUi_noReplies": "No bot replies yet."
+  "botUi_noReplies": "No bot replies yet.",
+  "a11y_jumpToBottom": "Jump to the latest message",
+  "a11y_cluster": "Nodes here: {count}. Zoom in",
+  "@a11y_cluster": {"placeholders": {"count": {"type": "int"}}},
+  "a11y_wardrivePing": "Survey ping details",
+  "a11y_receivedImage": "Received picture",
+  "a11y_imagePreview": "Picture preview"
 }

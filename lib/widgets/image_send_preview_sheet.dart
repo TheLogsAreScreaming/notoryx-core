@@ -364,6 +364,7 @@ class _ImageSendPreviewSheetState extends State<ImageSendPreviewSheet> {
                 color: colors.surfaceContainerHighest,
                 child: Image.memory(
                   widget.imageBytes,
+                  semanticLabel: context.l10n.a11y_imagePreview,
                   fit: BoxFit.fill,
                   alignment: Alignment.center,
                   gaplessPlayback: true,

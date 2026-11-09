@@ -11322,4 +11322,21 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get botUi_noReplies => 'Nog geen botantwoorden.';
+
+  @override
+  String get a11y_jumpToBottom => 'Naar het nieuwste bericht';
+
+  @override
+  String a11y_cluster(int count) {
+    return 'Nodes hier: $count. Inzoomen';
+  }
+
+  @override
+  String get a11y_wardrivePing => 'Pingdetails';
+
+  @override
+  String get a11y_receivedImage => 'Ontvangen afbeelding';
+
+  @override
+  String get a11y_imagePreview => 'Afbeeldingsvoorbeeld';
 }

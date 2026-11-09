@@ -4544,5 +4544,10 @@
   "botUi_allowed": "Tillåtna kontakter",
   "botUi_allowedHint": "Inget valt betyder alla kända kontakter.",
   "botUi_recent": "Senaste aktivitet (den här sessionen)",
-  "botUi_noReplies": "Inga bot-svar ännu."
+  "botUi_noReplies": "Inga bot-svar ännu.",
+  "a11y_jumpToBottom": "Till det senaste meddelandet",
+  "a11y_cluster": "Noder här: {count}. Zooma in",
+  "a11y_wardrivePing": "Pingdetaljer",
+  "a11y_receivedImage": "Mottagen bild",
+  "a11y_imagePreview": "Förhandsvisning av bild"
 }

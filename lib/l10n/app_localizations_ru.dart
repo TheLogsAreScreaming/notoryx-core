@@ -11402,4 +11402,21 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get botUi_noReplies => 'Бот ещё не отвечал.';
+
+  @override
+  String get a11y_jumpToBottom => 'К последнему сообщению';
+
+  @override
+  String a11y_cluster(int count) {
+    return 'Узлов здесь: $count. Приблизить';
+  }
+
+  @override
+  String get a11y_wardrivePing => 'Сведения о пинге';
+
+  @override
+  String get a11y_receivedImage => 'Полученное изображение';
+
+  @override
+  String get a11y_imagePreview => 'Предпросмотр изображения';
 }

@@ -11401,4 +11401,21 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get botUi_noReplies => 'Бот ще не відповідав.';
+
+  @override
+  String get a11y_jumpToBottom => 'До останнього повідомлення';
+
+  @override
+  String a11y_cluster(int count) {
+    return 'Вузлів тут: $count. Наблизити';
+  }
+
+  @override
+  String get a11y_wardrivePing => 'Відомості про пінг';
+
+  @override
+  String get a11y_receivedImage => 'Отримане зображення';
+
+  @override
+  String get a11y_imagePreview => 'Попередній перегляд зображення';
 }

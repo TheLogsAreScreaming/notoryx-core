@@ -10616,4 +10616,21 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get botUi_noReplies => '机器人尚未回复。';
+
+  @override
+  String get a11y_jumpToBottom => '跳到最新消息';
+
+  @override
+  String a11y_cluster(int count) {
+    return '此处节点：$count。放大';
+  }
+
+  @override
+  String get a11y_wardrivePing => '探测 Ping 详情';
+
+  @override
+  String get a11y_receivedImage => '收到的图片';
+
+  @override
+  String get a11y_imagePreview => '图片预览';
 }

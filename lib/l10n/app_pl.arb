@@ -4582,5 +4582,10 @@
   "botUi_allowed": "Dozwolone kontakty",
   "botUi_allowedHint": "Brak wyboru oznacza wszystkie znane kontakty.",
   "botUi_recent": "Ostatnia aktywność (ta sesja)",
-  "botUi_noReplies": "Brak odpowiedzi bota."
+  "botUi_noReplies": "Brak odpowiedzi bota.",
+  "a11y_jumpToBottom": "Przejdź do najnowszej wiadomości",
+  "a11y_cluster": "Węzły tutaj: {count}. Powiększ",
+  "a11y_wardrivePing": "Szczegóły pingu",
+  "a11y_receivedImage": "Odebrany obraz",
+  "a11y_imagePreview": "Podgląd obrazu"
 }

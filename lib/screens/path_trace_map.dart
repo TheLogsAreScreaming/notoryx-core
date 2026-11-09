@@ -1365,62 +1365,66 @@ class _PathTraceMapScreenState extends State<PathTraceMapScreen>
           point: point,
           width: 48,
           height: 48,
-          child: GestureDetector(
-            onTap: () => _showSharedNodeSheet(hop, contact, paths),
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                Container(
-                  width: 35,
-                  height: 35,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: baseColor.withValues(alpha: 0.18),
-                    border: Border.all(
-                      color: baseColor.withValues(alpha: 0.7),
-                      width: shared ? 2.5 : 1.5,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: baseColor.withValues(alpha: 0.3),
-                        blurRadius: 5,
+          child: Semantics(
+            button: true,
+            label: contact?.name ?? label,
+            child: GestureDetector(
+              onTap: () => _showSharedNodeSheet(hop, contact, paths),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  Container(
+                    width: 35,
+                    height: 35,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: baseColor.withValues(alpha: 0.18),
+                      border: Border.all(
+                        color: baseColor.withValues(alpha: 0.7),
+                        width: shared ? 2.5 : 1.5,
                       ),
-                    ],
-                  ),
-                  alignment: Alignment.center,
-                  child: Text(
-                    hasGps ? label : '~$label',
-                    style: MeshTheme.mono(
-                      fontSize: 10,
-                      fontWeight: FontWeight.w700,
-                      color: baseColor,
+                      boxShadow: [
+                        BoxShadow(
+                          color: baseColor.withValues(alpha: 0.3),
+                          blurRadius: 5,
+                        ),
+                      ],
+                    ),
+                    alignment: Alignment.center,
+                    child: Text(
+                      hasGps ? label : '~$label',
+                      style: MeshTheme.mono(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w700,
+                        color: baseColor,
+                      ),
                     ),
                   ),
-                ),
-                if (shared)
-                  Positioned(
-                    top: 0,
-                    right: 0,
-                    child: Container(
-                      width: 17,
-                      height: 17,
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: MeshPalette.bg1,
-                        border: Border.all(color: MeshPalette.line3),
-                      ),
-                      alignment: Alignment.center,
-                      child: Text(
-                        '${paths.length}',
-                        style: MeshTheme.mono(
-                          fontSize: 9,
-                          fontWeight: FontWeight.w700,
-                          color: MeshPalette.ink,
+                  if (shared)
+                    Positioned(
+                      top: 0,
+                      right: 0,
+                      child: Container(
+                        width: 17,
+                        height: 17,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: MeshPalette.bg1,
+                          border: Border.all(color: MeshPalette.line3),
+                        ),
+                        alignment: Alignment.center,
+                        child: Text(
+                          '${paths.length}',
+                          style: MeshTheme.mono(
+                            fontSize: 9,
+                            fontWeight: FontWeight.w700,
+                            color: MeshPalette.ink,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

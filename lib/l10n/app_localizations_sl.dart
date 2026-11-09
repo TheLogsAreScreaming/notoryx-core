@@ -11357,4 +11357,21 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get botUi_noReplies => 'Bot še ni odgovoril.';
+
+  @override
+  String get a11y_jumpToBottom => 'Na najnovejše sporočilo';
+
+  @override
+  String a11y_cluster(int count) {
+    return 'Vozlišča tukaj: $count. Približaj';
+  }
+
+  @override
+  String get a11y_wardrivePing => 'Podrobnosti pinga';
+
+  @override
+  String get a11y_receivedImage => 'Prejeta slika';
+
+  @override
+  String get a11y_imagePreview => 'Predogled slike';
 }

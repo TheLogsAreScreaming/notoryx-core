@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../helpers/chat_scroll_controller.dart';
 import '../theme/mesh_theme.dart';
+import '../l10n/l10n.dart';
 
 class JumpToBottomButton extends StatelessWidget {
   final ChatScrollController scrollController;
@@ -20,28 +21,32 @@ class JumpToBottomButton extends StatelessWidget {
           bottom: 16,
           child: Material(
             color: Colors.transparent,
-            child: InkWell(
-              onTap: scrollController.jumpToBottom,
-              borderRadius: BorderRadius.circular(MeshRadii.pill),
-              child: Container(
-                width: 40,
-                height: 40,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: scheme.surfaceContainerHigh.withValues(alpha: 0.92),
-                  border: Border.all(color: scheme.outlineVariant, width: 1),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.18),
-                      blurRadius: 8,
-                      offset: const Offset(0, 2),
-                    ),
-                  ],
-                ),
-                child: Icon(
-                  Icons.keyboard_arrow_down,
-                  size: 22,
-                  color: scheme.primary,
+            child: Semantics(
+              button: true,
+              label: context.l10n.a11y_jumpToBottom,
+              child: InkWell(
+                onTap: scrollController.jumpToBottom,
+                borderRadius: BorderRadius.circular(MeshRadii.pill),
+                child: Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: scheme.surfaceContainerHigh.withValues(alpha: 0.92),
+                    border: Border.all(color: scheme.outlineVariant, width: 1),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.18),
+                        blurRadius: 8,
+                        offset: const Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: Icon(
+                    Icons.keyboard_arrow_down,
+                    size: 22,
+                    color: scheme.primary,
+                  ),
                 ),
               ),
             ),
