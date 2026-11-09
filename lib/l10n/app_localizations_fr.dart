@@ -11422,4 +11422,124 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get a11y_imagePreview => 'Aperçu de l\'image';
+
+  @override
+  String get rcli_title => 'Autoriser la ligne de commande à distance ?';
+
+  @override
+  String rcli_warning(String name) {
+    return '$name pourra exécuter n\'importe quelle commande sur votre radio via le maillage : changer son nom, ses réglages radio et ses mots de passe, ou la redémarrer. N\'autorisez que des personnes de confiance.';
+  }
+
+  @override
+  String get rcli_allow => 'Autoriser';
+
+  @override
+  String get rcli_toggle => 'Autoriser la ligne de commande à distance';
+
+  @override
+  String get rcli_toggleHint =>
+      'Permet à ce contact d\'exécuter n\'importe quelle commande sur votre radio, y compris modifier ses réglages. MeshCore v1.18+.';
+
+  @override
+  String rcli_toggleBlocked(String command) {
+    return 'Permet à ce contact d\'exécuter n\'importe quelle commande sur votre radio. Dernier blocage : « $command ».';
+  }
+
+  @override
+  String get rcli_menu => 'Ligne de commande sur sa radio';
+
+  @override
+  String rcli_runsOn(String name) {
+    return 'S\'exécute sur la radio de $name seulement si cette personne vous a autorisé la ligne de commande à distance (MeshCore v1.18+). Sans réponse, elle a été bloquée ou n\'est pas arrivée.';
+  }
+
+  @override
+  String get bk_title => 'Sauvegarde chiffrée';
+
+  @override
+  String get bk_intro =>
+      'Enregistre une copie chiffrée des réglages, contacts, clés de canal, points de repère et brouillons. L\'historique des messages, les cartes hors ligne, les photos et le micrologiciel radio ne sont pas inclus.';
+
+  @override
+  String get bk_keep =>
+      'Conservez la phrase secrète à part. Une phrase secrète perdue est irrécupérable.';
+
+  @override
+  String get bk_pass => 'Phrase secrète (12+ caractères)';
+
+  @override
+  String get bk_confirm => 'Confirmer la phrase secrète';
+
+  @override
+  String get bk_working => 'En cours…';
+
+  @override
+  String get bk_save => 'Enregistrer la sauvegarde chiffrée';
+
+  @override
+  String get bk_mismatch =>
+      'Utilisez au moins 12 caractères et des phrases secrètes identiques.';
+
+  @override
+  String get bk_done =>
+      'Sauvegarde prête. Gardez le fichier et la phrase secrète en lieu sûr.';
+
+  @override
+  String get bk_failed =>
+      'Impossible d\'exporter la sauvegarde. Vos données n\'ont pas été modifiées.';
+
+  @override
+  String get bk_restoreTitle => 'Restaurer une sauvegarde';
+
+  @override
+  String get bk_restorePass => 'Phrase secrète de la sauvegarde';
+
+  @override
+  String get bk_choose => 'Choisir le fichier de sauvegarde';
+
+  @override
+  String get bk_cantOpen => 'Impossible d\'ouvrir ce fichier.';
+
+  @override
+  String get bk_wrongPass =>
+      'Phrase secrète incorrecte ou sauvegarde non valide. Rien n\'a été modifié.';
+
+  @override
+  String get bk_confirmTitle => 'Restaurer cette sauvegarde ?';
+
+  @override
+  String bk_confirmBody(int count) {
+    return 'Cela remplace $count réglages enregistrés sur cet appareil, dont les contacts, clés de canal et points de repère, par ceux de la sauvegarde. L\'historique des messages n\'est pas touché. C\'est irréversible.';
+  }
+
+  @override
+  String get bk_restore => 'Restaurer';
+
+  @override
+  String bk_restored(int count) {
+    return '$count réglages restaurés. Fermez complètement l\'application et rouvrez-la pour les utiliser.';
+  }
+
+  @override
+  String get bk_partial =>
+      'Restauration interrompue ; certains réglages ont pu changer. Réessayez.';
+
+  @override
+  String get sosSetup_noPeople =>
+      'Aucune personne dans vos contacts pour l\'instant. Elles apparaîtront quand quelqu\'un partagera son contact ou que vous entendrez son annonce.';
+
+  @override
+  String get sosSetup_channel => 'Le SOS va aussi au canal';
+
+  @override
+  String get sosSetup_channelHint =>
+      'Tout le monde sur ce canal verra votre SOS.';
+
+  @override
+  String get sosSetup_none => 'Aucun';
+
+  @override
+  String get trail_safety =>
+      'Données de sentiers © contributeurs OpenStreetMap. Elles peuvent être incomplètes ou obsolètes. Les itinéraires ne sont pas vérifiés pour la sécurité ni la praticabilité : ne vous en servez pas comme seule navigation.';
 }

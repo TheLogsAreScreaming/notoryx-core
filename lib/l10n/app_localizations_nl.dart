@@ -11339,4 +11339,123 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get a11y_imagePreview => 'Afbeeldingsvoorbeeld';
+
+  @override
+  String get rcli_title => 'Opdrachtregel op afstand toestaan?';
+
+  @override
+  String rcli_warning(String name) {
+    return '$name kan dan via de mesh elke opdracht op je radio uitvoeren: de naam, radio-instellingen en wachtwoorden wijzigen of hem herstarten. Sta dit alleen toe aan mensen die je vertrouwt.';
+  }
+
+  @override
+  String get rcli_allow => 'Toestaan';
+
+  @override
+  String get rcli_toggle => 'Opdrachtregel op afstand toestaan';
+
+  @override
+  String get rcli_toggleHint =>
+      'Laat dit contact elke opdracht op je radio uitvoeren, ook instellingen wijzigen. MeshCore v1.18+.';
+
+  @override
+  String rcli_toggleBlocked(String command) {
+    return 'Laat dit contact elke opdracht op je radio uitvoeren. Laatst geblokkeerd: \"$command\".';
+  }
+
+  @override
+  String get rcli_menu => 'Opdrachtregel op hun radio';
+
+  @override
+  String rcli_runsOn(String name) {
+    return 'Werkt op de radio van $name alleen als die je opdrachtregel op afstand heeft toegestaan (MeshCore v1.18+). Geen antwoord betekent geblokkeerd of niet aangekomen.';
+  }
+
+  @override
+  String get bk_title => 'Versleutelde back-up';
+
+  @override
+  String get bk_intro =>
+      'Bewaart een versleutelde kopie van instellingen, contacten, kanaalsleutels, waypoints en concepten. Berichtgeschiedenis, offline kaarten, foto\'s en radiofirmware zitten er niet in.';
+
+  @override
+  String get bk_keep =>
+      'Bewaar de wachtwoordzin apart. Een verloren wachtwoordzin is niet te herstellen.';
+
+  @override
+  String get bk_pass => 'Wachtwoordzin (12+ tekens)';
+
+  @override
+  String get bk_confirm => 'Wachtwoordzin bevestigen';
+
+  @override
+  String get bk_working => 'Bezig…';
+
+  @override
+  String get bk_save => 'Versleutelde back-up opslaan';
+
+  @override
+  String get bk_mismatch =>
+      'Gebruik minstens 12 tekens en gelijke wachtwoordzinnen.';
+
+  @override
+  String get bk_done =>
+      'Back-up klaar. Bewaar het bestand en de wachtwoordzin op een veilige plek.';
+
+  @override
+  String get bk_failed =>
+      'Back-up exporteren mislukt. Je gegevens zijn niet gewijzigd.';
+
+  @override
+  String get bk_restoreTitle => 'Back-up terugzetten';
+
+  @override
+  String get bk_restorePass => 'Wachtwoordzin van de back-up';
+
+  @override
+  String get bk_choose => 'Back-upbestand kiezen';
+
+  @override
+  String get bk_cantOpen => 'Kan dat bestand niet openen.';
+
+  @override
+  String get bk_wrongPass =>
+      'Verkeerde wachtwoordzin of geen geldige back-up. Er is niets gewijzigd.';
+
+  @override
+  String get bk_confirmTitle => 'Deze back-up terugzetten?';
+
+  @override
+  String bk_confirmBody(int count) {
+    return 'Hiermee worden $count opgeslagen instellingen op dit apparaat, waaronder contacten, kanaalsleutels en waypoints, vervangen door die uit de back-up. De berichtgeschiedenis blijft ongewijzigd. Dit kan niet ongedaan worden.';
+  }
+
+  @override
+  String get bk_restore => 'Terugzetten';
+
+  @override
+  String bk_restored(int count) {
+    return '$count instellingen teruggezet. Sluit de app volledig en open hem opnieuw.';
+  }
+
+  @override
+  String get bk_partial =>
+      'Terugzetten halverwege gestopt; sommige instellingen kunnen gewijzigd zijn. Probeer het opnieuw.';
+
+  @override
+  String get sosSetup_noPeople =>
+      'Nog geen mensen in je contacten. Ze verschijnen zodra iemand een contact deelt of je hun advert hoort.';
+
+  @override
+  String get sosSetup_channel => 'SOS gaat ook naar kanaal';
+
+  @override
+  String get sosSetup_channelHint => 'Iedereen op dat kanaal ziet je SOS.';
+
+  @override
+  String get sosSetup_none => 'Geen';
+
+  @override
+  String get trail_safety =>
+      'Padgegevens © OpenStreetMap-bijdragers. Ze kunnen onvolledig of verouderd zijn. Routes worden niet gecontroleerd op veiligheid of begaanbaarheid, dus gebruik dit niet als je enige navigatie.';
 }

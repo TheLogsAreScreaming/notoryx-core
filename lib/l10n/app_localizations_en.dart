@@ -11244,4 +11244,124 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get a11y_imagePreview => 'Picture preview';
+
+  @override
+  String get rcli_title => 'Allow remote command line?';
+
+  @override
+  String rcli_warning(String name) {
+    return '$name will be able to run any command on your radio over the mesh: change its name, radio settings and passwords, or reboot it. Only allow people you trust.';
+  }
+
+  @override
+  String get rcli_allow => 'Allow';
+
+  @override
+  String get rcli_toggle => 'Allow remote command line';
+
+  @override
+  String get rcli_toggleHint =>
+      'Lets this contact run any command on your radio, including changing its settings. MeshCore v1.18+.';
+
+  @override
+  String rcli_toggleBlocked(String command) {
+    return 'Lets this contact run any command on your radio. Last blocked: \"$command\".';
+  }
+
+  @override
+  String get rcli_menu => 'Command line on their radio';
+
+  @override
+  String rcli_runsOn(String name) {
+    return 'Runs on $name\'s radio only if they allowed you remote command line (MeshCore v1.18+). No reply means it was blocked or didn\'t arrive.';
+  }
+
+  @override
+  String get bk_title => 'Encrypted backup';
+
+  @override
+  String get bk_intro =>
+      'Save an encrypted copy of app settings, contacts, channel keys, waypoints and drafts. Message history, offline maps, photos and radio firmware are not included.';
+
+  @override
+  String get bk_keep =>
+      'Keep the passphrase separately. A lost passphrase cannot be recovered.';
+
+  @override
+  String get bk_pass => 'Passphrase (12+ characters)';
+
+  @override
+  String get bk_confirm => 'Confirm passphrase';
+
+  @override
+  String get bk_working => 'Working…';
+
+  @override
+  String get bk_save => 'Save encrypted backup';
+
+  @override
+  String get bk_mismatch =>
+      'Use at least 12 characters and matching passphrases.';
+
+  @override
+  String get bk_done =>
+      'Backup prepared. Keep your saved file and passphrase somewhere safe.';
+
+  @override
+  String get bk_failed =>
+      'Could not export the backup. Your existing data was unchanged.';
+
+  @override
+  String get bk_restoreTitle => 'Restore a backup';
+
+  @override
+  String get bk_restorePass => 'Backup passphrase';
+
+  @override
+  String get bk_choose => 'Choose backup file';
+
+  @override
+  String get bk_cantOpen => 'Could not open that file.';
+
+  @override
+  String get bk_wrongPass =>
+      'Wrong passphrase, or this isn\'t a valid backup. Nothing was changed.';
+
+  @override
+  String get bk_confirmTitle => 'Restore this backup?';
+
+  @override
+  String bk_confirmBody(int count) {
+    return 'This replaces $count saved settings on this device, including contacts, channel keys and waypoints, with the ones in the backup. Message history is not affected. This cannot be undone.';
+  }
+
+  @override
+  String get bk_restore => 'Restore';
+
+  @override
+  String bk_restored(int count) {
+    return 'Restored $count settings. Close the app fully and open it again to use them.';
+  }
+
+  @override
+  String get bk_partial =>
+      'Restore stopped part way, so some settings may have changed. Try again.';
+
+  @override
+  String get sosSetup_noPeople =>
+      'No people in your contacts yet. Once someone shares their contact or you hear their advert, they appear here.';
+
+  @override
+  String get sosSetup_channel => 'SOS also goes to channel';
+
+  @override
+  String get sosSetup_channelHint =>
+      'Everyone on that channel will see your SOS.';
+
+  @override
+  String get sosSetup_none => 'None';
+
+  @override
+  String get trail_safety =>
+      'Trail data © OpenStreetMap contributors. It can be incomplete or out of date. Routes aren\'t checked for safety or whether they\'re passable, so don\'t use this as your only navigation.';
 }

@@ -11292,4 +11292,123 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get a11y_imagePreview => 'Förhandsvisning av bild';
+
+  @override
+  String get rcli_title => 'Tillåta fjärrkommandorad?';
+
+  @override
+  String rcli_warning(String name) {
+    return '$name kan då köra alla kommandon på din radio via meshen: ändra namn, radioinställningar och lösenord eller starta om den. Tillåt bara personer du litar på.';
+  }
+
+  @override
+  String get rcli_allow => 'Tillåt';
+
+  @override
+  String get rcli_toggle => 'Tillåt fjärrkommandorad';
+
+  @override
+  String get rcli_toggleHint =>
+      'Låter den här kontakten köra alla kommandon på din radio, även ändra inställningar. MeshCore v1.18+.';
+
+  @override
+  String rcli_toggleBlocked(String command) {
+    return 'Låter den här kontakten köra alla kommandon på din radio. Senast blockerat: \"$command\".';
+  }
+
+  @override
+  String get rcli_menu => 'Kommandorad på deras radio';
+
+  @override
+  String rcli_runsOn(String name) {
+    return 'Körs på ${name}s radio bara om du har fått tillåtelse till fjärrkommandorad (MeshCore v1.18+). Inget svar betyder blockerat eller att det inte kom fram.';
+  }
+
+  @override
+  String get bk_title => 'Krypterad säkerhetskopia';
+
+  @override
+  String get bk_intro =>
+      'Sparar en krypterad kopia av inställningar, kontakter, kanalnycklar, vägpunkter och utkast. Meddelandehistorik, offlinekartor, foton och radiofirmware ingår inte.';
+
+  @override
+  String get bk_keep =>
+      'Förvara lösenfrasen separat. En förlorad lösenfras kan inte återställas.';
+
+  @override
+  String get bk_pass => 'Lösenfras (12+ tecken)';
+
+  @override
+  String get bk_confirm => 'Bekräfta lösenfras';
+
+  @override
+  String get bk_working => 'Arbetar…';
+
+  @override
+  String get bk_save => 'Spara krypterad säkerhetskopia';
+
+  @override
+  String get bk_mismatch =>
+      'Använd minst 12 tecken och samma lösenfras två gånger.';
+
+  @override
+  String get bk_done =>
+      'Säkerhetskopian är klar. Förvara filen och lösenfrasen säkert.';
+
+  @override
+  String get bk_failed =>
+      'Kunde inte exportera säkerhetskopian. Dina data ändrades inte.';
+
+  @override
+  String get bk_restoreTitle => 'Återställ en säkerhetskopia';
+
+  @override
+  String get bk_restorePass => 'Säkerhetskopians lösenfras';
+
+  @override
+  String get bk_choose => 'Välj säkerhetskopia';
+
+  @override
+  String get bk_cantOpen => 'Kunde inte öppna filen.';
+
+  @override
+  String get bk_wrongPass =>
+      'Fel lösenfras eller ingen giltig säkerhetskopia. Inget ändrades.';
+
+  @override
+  String get bk_confirmTitle => 'Återställa den här säkerhetskopian?';
+
+  @override
+  String bk_confirmBody(int count) {
+    return 'Det ersätter $count sparade inställningar på enheten, bland annat kontakter, kanalnycklar och vägpunkter, med dem i säkerhetskopian. Meddelandehistoriken påverkas inte. Det kan inte ångras.';
+  }
+
+  @override
+  String get bk_restore => 'Återställ';
+
+  @override
+  String bk_restored(int count) {
+    return '$count inställningar återställda. Stäng appen helt och öppna den igen.';
+  }
+
+  @override
+  String get bk_partial =>
+      'Återställningen avbröts halvvägs; vissa inställningar kan ha ändrats. Försök igen.';
+
+  @override
+  String get sosSetup_noPeople =>
+      'Inga personer bland dina kontakter än. De dyker upp när någon delar sin kontakt eller du hör deras annons.';
+
+  @override
+  String get sosSetup_channel => 'SOS går även till kanal';
+
+  @override
+  String get sosSetup_channelHint => 'Alla i den kanalen ser ditt SOS.';
+
+  @override
+  String get sosSetup_none => 'Ingen';
+
+  @override
+  String get trail_safety =>
+      'Leddata © OpenStreetMaps bidragsgivare. De kan vara ofullständiga eller inaktuella. Rutter kontrolleras inte för säkerhet eller framkomlighet, så använd inte detta som enda navigering.';
 }

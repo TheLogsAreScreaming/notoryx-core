@@ -10633,4 +10633,114 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get a11y_imagePreview => '图片预览';
+
+  @override
+  String get rcli_title => '允许远程命令行吗？';
+
+  @override
+  String rcli_warning(String name) {
+    return '$name 将能通过网络在你的电台上运行任何命令：更改名称、电台设置和密码，或重启电台。只允许你信任的人。';
+  }
+
+  @override
+  String get rcli_allow => '允许';
+
+  @override
+  String get rcli_toggle => '允许远程命令行';
+
+  @override
+  String get rcli_toggleHint => '允许此联系人在你的电台上运行任何命令，包括更改设置。需要 MeshCore v1.18+。';
+
+  @override
+  String rcli_toggleBlocked(String command) {
+    return '允许此联系人在你的电台上运行任何命令。最近被阻止：“$command”。';
+  }
+
+  @override
+  String get rcli_menu => '对方电台的命令行';
+
+  @override
+  String rcli_runsOn(String name) {
+    return '只有在 $name 允许你使用远程命令行时才会在其电台上运行（MeshCore v1.18+）。没有回复表示被阻止或未送达。';
+  }
+
+  @override
+  String get bk_title => '加密备份';
+
+  @override
+  String get bk_intro => '保存应用设置、联系人、频道密钥、航点和草稿的加密副本。不包括消息记录、离线地图、照片和电台固件。';
+
+  @override
+  String get bk_keep => '请另外保管密码短语。密码短语丢失后无法找回。';
+
+  @override
+  String get bk_pass => '密码短语（至少 12 个字符）';
+
+  @override
+  String get bk_confirm => '确认密码短语';
+
+  @override
+  String get bk_working => '处理中…';
+
+  @override
+  String get bk_save => '保存加密备份';
+
+  @override
+  String get bk_mismatch => '请使用至少 12 个字符，且两次输入一致。';
+
+  @override
+  String get bk_done => '备份已准备好。请把文件和密码短语保存在安全的地方。';
+
+  @override
+  String get bk_failed => '无法导出备份。现有数据未改变。';
+
+  @override
+  String get bk_restoreTitle => '恢复备份';
+
+  @override
+  String get bk_restorePass => '备份密码短语';
+
+  @override
+  String get bk_choose => '选择备份文件';
+
+  @override
+  String get bk_cantOpen => '无法打开该文件。';
+
+  @override
+  String get bk_wrongPass => '密码短语错误或不是有效备份。未做任何更改。';
+
+  @override
+  String get bk_confirmTitle => '恢复此备份吗？';
+
+  @override
+  String bk_confirmBody(int count) {
+    return '这会用备份中的内容替换本设备上 $count 项已保存的设置，包括联系人、频道密钥和航点。消息记录不受影响。此操作无法撤销。';
+  }
+
+  @override
+  String get bk_restore => '恢复';
+
+  @override
+  String bk_restored(int count) {
+    return '已恢复 $count 项设置。请完全关闭应用并重新打开以使用。';
+  }
+
+  @override
+  String get bk_partial => '恢复中途停止，部分设置可能已更改。请重试。';
+
+  @override
+  String get sosSetup_noPeople => '联系人中还没有人。有人分享联系人或收到其广播后就会出现在这里。';
+
+  @override
+  String get sosSetup_channel => 'SOS 同时发到频道';
+
+  @override
+  String get sosSetup_channelHint => '该频道中的所有人都会看到你的 SOS。';
+
+  @override
+  String get sosSetup_none => '无';
+
+  @override
+  String get trail_safety =>
+      '路线数据 © OpenStreetMap 贡献者。可能不完整或已过时。路线未经安全或可通行性检查，请勿将其作为唯一的导航手段。';
 }

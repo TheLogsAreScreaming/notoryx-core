@@ -11418,4 +11418,123 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get a11y_imagePreview => 'Попередній перегляд зображення';
+
+  @override
+  String get rcli_title => 'Дозволити віддалений командний рядок?';
+
+  @override
+  String rcli_warning(String name) {
+    return '$name зможе виконувати будь-які команди на вашому радіо через мережу: змінювати назву, налаштування радіо й паролі або перезавантажувати його. Дозволяйте лише тим, кому довіряєте.';
+  }
+
+  @override
+  String get rcli_allow => 'Дозволити';
+
+  @override
+  String get rcli_toggle => 'Дозволити віддалений командний рядок';
+
+  @override
+  String get rcli_toggleHint =>
+      'Дозволяє цьому контакту виконувати будь-які команди на вашому радіо, зокрема змінювати налаштування. MeshCore v1.18+.';
+
+  @override
+  String rcli_toggleBlocked(String command) {
+    return 'Дозволяє цьому контакту виконувати будь-які команди на вашому радіо. Остання заблокована: «$command».';
+  }
+
+  @override
+  String get rcli_menu => 'Командний рядок на його радіо';
+
+  @override
+  String rcli_runsOn(String name) {
+    return 'Працює на радіо $name, лише якщо вам дозволили віддалений командний рядок (MeshCore v1.18+). Немає відповіді — заблоковано або не дійшло.';
+  }
+
+  @override
+  String get bk_title => 'Зашифрована резервна копія';
+
+  @override
+  String get bk_intro =>
+      'Зберігає зашифровану копію налаштувань, контактів, ключів каналів, точок і чернеток. Історія повідомлень, офлайн-карти, фото та прошивка радіо не входять.';
+
+  @override
+  String get bk_keep =>
+      'Зберігайте парольну фразу окремо. Втрачену фразу відновити неможливо.';
+
+  @override
+  String get bk_pass => 'Парольна фраза (12+ символів)';
+
+  @override
+  String get bk_confirm => 'Підтвердьте фразу';
+
+  @override
+  String get bk_working => 'Виконується…';
+
+  @override
+  String get bk_save => 'Зберегти зашифровану копію';
+
+  @override
+  String get bk_mismatch =>
+      'Використайте щонайменше 12 символів і однакові фрази.';
+
+  @override
+  String get bk_done =>
+      'Копія готова. Зберігайте файл і парольну фразу в надійному місці.';
+
+  @override
+  String get bk_failed =>
+      'Не вдалося експортувати копію. Ваші дані не змінено.';
+
+  @override
+  String get bk_restoreTitle => 'Відновити копію';
+
+  @override
+  String get bk_restorePass => 'Парольна фраза копії';
+
+  @override
+  String get bk_choose => 'Вибрати файл копії';
+
+  @override
+  String get bk_cantOpen => 'Не вдалося відкрити файл.';
+
+  @override
+  String get bk_wrongPass =>
+      'Неправильна фраза або це не резервна копія. Нічого не змінено.';
+
+  @override
+  String get bk_confirmTitle => 'Відновити цю копію?';
+
+  @override
+  String bk_confirmBody(int count) {
+    return 'Буде замінено $count збережених налаштувань на цьому пристрої, зокрема контакти, ключі каналів і точки, налаштуваннями з копії. Історія повідомлень не змінюється. Скасувати неможливо.';
+  }
+
+  @override
+  String get bk_restore => 'Відновити';
+
+  @override
+  String bk_restored(int count) {
+    return 'Відновлено налаштувань: $count. Повністю закрийте застосунок і відкрийте знову.';
+  }
+
+  @override
+  String get bk_partial =>
+      'Відновлення перервано; частина налаштувань могла змінитися. Спробуйте ще раз.';
+
+  @override
+  String get sosSetup_noPeople =>
+      'У контактах поки нікого немає. Люди з\'являться, коли хтось поділиться контактом або ви почуєте їхнє оголошення.';
+
+  @override
+  String get sosSetup_channel => 'SOS також у канал';
+
+  @override
+  String get sosSetup_channelHint => 'Усі в цьому каналі побачать ваш SOS.';
+
+  @override
+  String get sosSetup_none => 'Немає';
+
+  @override
+  String get trail_safety =>
+      'Дані стежок © учасники OpenStreetMap. Вони можуть бути неповними або застарілими. Маршрути не перевіряються на безпеку чи прохідність — не використовуйте їх як єдину навігацію.';
 }

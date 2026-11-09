@@ -11365,4 +11365,123 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get a11y_imagePreview => 'Pré-visualização da imagem';
+
+  @override
+  String get rcli_title => 'Permitir linha de comandos remota?';
+
+  @override
+  String rcli_warning(String name) {
+    return '$name poderá executar qualquer comando no teu rádio através da rede: mudar o nome, definições de rádio e palavras-passe, ou reiniciá-lo. Permite apenas a pessoas de confiança.';
+  }
+
+  @override
+  String get rcli_allow => 'Permitir';
+
+  @override
+  String get rcli_toggle => 'Permitir linha de comandos remota';
+
+  @override
+  String get rcli_toggleHint =>
+      'Permite a este contacto executar qualquer comando no teu rádio, incluindo alterar definições. MeshCore v1.18+.';
+
+  @override
+  String rcli_toggleBlocked(String command) {
+    return 'Permite a este contacto executar qualquer comando no teu rádio. Último bloqueado: \"$command\".';
+  }
+
+  @override
+  String get rcli_menu => 'Linha de comandos no rádio dele';
+
+  @override
+  String rcli_runsOn(String name) {
+    return 'Funciona no rádio de $name só se te tiver permitido a linha de comandos remota (MeshCore v1.18+). Sem resposta, foi bloqueado ou não chegou.';
+  }
+
+  @override
+  String get bk_title => 'Cópia de segurança cifrada';
+
+  @override
+  String get bk_intro =>
+      'Guarda uma cópia cifrada das definições, contactos, chaves de canal, pontos de passagem e rascunhos. Não inclui histórico de mensagens, mapas offline, fotos nem o firmware do rádio.';
+
+  @override
+  String get bk_keep =>
+      'Guarda a frase-passe à parte. Uma frase-passe perdida não pode ser recuperada.';
+
+  @override
+  String get bk_pass => 'Frase-passe (12+ caracteres)';
+
+  @override
+  String get bk_confirm => 'Confirmar frase-passe';
+
+  @override
+  String get bk_working => 'A processar…';
+
+  @override
+  String get bk_save => 'Guardar cópia cifrada';
+
+  @override
+  String get bk_mismatch =>
+      'Usa pelo menos 12 caracteres e frases-passe iguais.';
+
+  @override
+  String get bk_done =>
+      'Cópia preparada. Guarda o ficheiro e a frase-passe num local seguro.';
+
+  @override
+  String get bk_failed =>
+      'Não foi possível exportar a cópia. Os teus dados não foram alterados.';
+
+  @override
+  String get bk_restoreTitle => 'Restaurar uma cópia';
+
+  @override
+  String get bk_restorePass => 'Frase-passe da cópia';
+
+  @override
+  String get bk_choose => 'Escolher ficheiro da cópia';
+
+  @override
+  String get bk_cantOpen => 'Não foi possível abrir o ficheiro.';
+
+  @override
+  String get bk_wrongPass =>
+      'Frase-passe errada ou cópia inválida. Nada foi alterado.';
+
+  @override
+  String get bk_confirmTitle => 'Restaurar esta cópia?';
+
+  @override
+  String bk_confirmBody(int count) {
+    return 'Isto substitui $count definições guardadas neste dispositivo, incluindo contactos, chaves de canal e pontos de passagem, pelas da cópia. O histórico de mensagens não é afetado. Não pode ser anulado.';
+  }
+
+  @override
+  String get bk_restore => 'Restaurar';
+
+  @override
+  String bk_restored(int count) {
+    return '$count definições restauradas. Fecha a app por completo e volta a abri-la para as usar.';
+  }
+
+  @override
+  String get bk_partial =>
+      'O restauro parou a meio; algumas definições podem ter mudado. Tenta novamente.';
+
+  @override
+  String get sosSetup_noPeople =>
+      'Ainda não há pessoas nos teus contactos. Aparecem quando alguém partilha o contacto ou ouves o anúncio.';
+
+  @override
+  String get sosSetup_channel => 'O SOS também vai para o canal';
+
+  @override
+  String get sosSetup_channelHint => 'Todos nesse canal verão o teu SOS.';
+
+  @override
+  String get sosSetup_none => 'Nenhum';
+
+  @override
+  String get trail_safety =>
+      'Dados de trilhos © colaboradores do OpenStreetMap. Podem estar incompletos ou desatualizados. As rotas não são verificadas quanto a segurança ou transitabilidade; não as uses como única navegação.';
 }

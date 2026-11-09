@@ -349,13 +349,13 @@ class _ChatScreenState extends State<ChatScreen> {
                       ),
                     ),
                     if (contact.type == advTypeChat)
-                      const PopupMenuItem(
+                      PopupMenuItem(
                         value: 'remoteCli',
                         child: Row(
                           children: [
                             Icon(Icons.terminal, size: 20),
                             SizedBox(width: 12),
-                            Text('Command line on their radio'),
+                            Text(context.l10n.rcli_menu),
                           ],
                         ),
                       ),
@@ -1321,11 +1321,11 @@ class _ChatScreenState extends State<ChatScreen> {
                   SwitchListTile(
                     key: const ValueKey('remote-cli-switch'),
                     contentPadding: EdgeInsets.zero,
-                    title: const Text('Allow remote command line'),
+                    title: Text(context.l10n.rcli_toggle),
                     subtitle: Text(
                       blocked == null
-                          ? 'Lets this contact run any command on your radio, including changing its settings. MeshCore v1.18+.'
-                          : 'Lets this contact run any command on your radio. Last blocked: "${blocked.command}".',
+                          ? context.l10n.rcli_toggleHint
+                          : context.l10n.rcli_toggleBlocked(blocked.command),
                     ),
                     value: remoteCliAllowed,
                     onChanged: (value) async {
@@ -2326,18 +2326,16 @@ Future<bool> confirmRemoteCliPermission(
   final ok = await showDialog<bool>(
     context: context,
     builder: (context) => AlertDialog(
-      title: const Text('Allow remote command line?'),
-      content: Text(
-        '$name will be able to run any command on your radio over the mesh: change its name, radio settings and passwords, or reboot it. Only allow people you trust.',
-      ),
+      title: Text(context.l10n.rcli_title),
+      content: Text(context.l10n.rcli_warning(name)),
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context, false),
-          child: const Text('Cancel'),
+          child: Text(context.l10n.common_cancel),
         ),
         FilledButton(
           onPressed: () => Navigator.pop(context, true),
-          child: const Text('Allow'),
+          child: Text(context.l10n.rcli_allow),
         ),
       ],
     ),

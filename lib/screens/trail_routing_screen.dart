@@ -12,6 +12,7 @@ import '../services/map_tile_cache_service.dart';
 import '../services/trail_store.dart';
 import '../services/waypoint_store.dart';
 import '../theme/mesh_theme.dart';
+import '../l10n/l10n.dart';
 
 /// Plans walking routes offline over trails downloaded by area.
 class TrailRoutingScreen extends StatefulWidget {
@@ -378,7 +379,7 @@ class _TrailRoutingScreenState extends State<TrailRoutingScreen> {
                   ),
                   const SizedBox(height: 6),
                   Text(
-                    'Trail data © OpenStreetMap contributors. It can be incomplete or out of date. Routes aren\'t checked for safety or whether they\'re passable, so don\'t use this as your only navigation.',
+                    context.l10n.trail_safety,
                     style: Theme.of(context).textTheme.bodySmall,
                   ),
                 ],

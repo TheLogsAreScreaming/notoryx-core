@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../services/field_ops_service.dart';
+import '../l10n/l10n.dart';
 
 /// Whether check-in or SOS can be used once recipients are chosen. Only a
 /// missing radio, loading, a storage problem or a send in progress truly
@@ -100,11 +101,9 @@ class _QuickTripSetupState extends State<_QuickTripSetup> {
                   shrinkWrap: true,
                   children: [
                     if (contacts.isEmpty)
-                      const Padding(
+                      Padding(
                         padding: EdgeInsets.symmetric(vertical: 12),
-                        child: Text(
-                          'No people in your contacts yet. Once someone shares their contact or you hear their advert, they appear here.',
-                        ),
+                        child: Text(context.l10n.sosSetup_noPeople),
                       ),
                     for (final c in contacts)
                       CheckboxListTile(
@@ -125,15 +124,14 @@ class _QuickTripSetupState extends State<_QuickTripSetup> {
                         initialValue: channels.any((c) => c.index == _channel)
                             ? _channel
                             : -1,
-                        decoration: const InputDecoration(
-                          labelText: 'SOS also goes to channel',
-                          helperText:
-                              'Everyone on that channel will see your SOS.',
+                        decoration: InputDecoration(
+                          labelText: context.l10n.sosSetup_channel,
+                          helperText: context.l10n.sosSetup_channelHint,
                         ),
                         items: [
-                          const DropdownMenuItem(
+                          DropdownMenuItem(
                             value: -1,
-                            child: Text('None'),
+                            child: Text(context.l10n.sosSetup_none),
                           ),
                           for (final c in channels)
                             DropdownMenuItem(

@@ -11391,4 +11391,123 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get a11y_imagePreview => 'Bildvorschau';
+
+  @override
+  String get rcli_title => 'Fernzugriff auf die Befehlszeile erlauben?';
+
+  @override
+  String rcli_warning(String name) {
+    return '$name kann dann über das Mesh jeden Befehl auf deinem Funkgerät ausführen: Name, Funkeinstellungen und Passwörter ändern oder es neu starten. Erlaube das nur Personen, denen du vertraust.';
+  }
+
+  @override
+  String get rcli_allow => 'Erlauben';
+
+  @override
+  String get rcli_toggle => 'Fernzugriff auf die Befehlszeile erlauben';
+
+  @override
+  String get rcli_toggleHint =>
+      'Erlaubt diesem Kontakt, jeden Befehl auf deinem Funkgerät auszuführen, auch Einstellungen zu ändern. MeshCore v1.18+.';
+
+  @override
+  String rcli_toggleBlocked(String command) {
+    return 'Erlaubt diesem Kontakt, jeden Befehl auf deinem Funkgerät auszuführen. Zuletzt blockiert: \"$command\".';
+  }
+
+  @override
+  String get rcli_menu => 'Befehlszeile auf deren Funkgerät';
+
+  @override
+  String rcli_runsOn(String name) {
+    return 'Läuft auf dem Funkgerät von $name nur, wenn dir Fernzugriff auf die Befehlszeile erlaubt wurde (MeshCore v1.18+). Keine Antwort heißt: blockiert oder nicht angekommen.';
+  }
+
+  @override
+  String get bk_title => 'Verschlüsselte Sicherung';
+
+  @override
+  String get bk_intro =>
+      'Speichert eine verschlüsselte Kopie von App-Einstellungen, Kontakten, Kanalschlüsseln, Wegpunkten und Entwürfen. Nachrichtenverlauf, Offline-Karten, Fotos und Funk-Firmware sind nicht enthalten.';
+
+  @override
+  String get bk_keep =>
+      'Bewahre die Passphrase getrennt auf. Eine verlorene Passphrase lässt sich nicht wiederherstellen.';
+
+  @override
+  String get bk_pass => 'Passphrase (12+ Zeichen)';
+
+  @override
+  String get bk_confirm => 'Passphrase bestätigen';
+
+  @override
+  String get bk_working => 'Wird bearbeitet…';
+
+  @override
+  String get bk_save => 'Verschlüsselte Sicherung speichern';
+
+  @override
+  String get bk_mismatch =>
+      'Mindestens 12 Zeichen und übereinstimmende Passphrasen verwenden.';
+
+  @override
+  String get bk_done =>
+      'Sicherung erstellt. Bewahre die Datei und die Passphrase sicher auf.';
+
+  @override
+  String get bk_failed =>
+      'Sicherung konnte nicht exportiert werden. Deine Daten wurden nicht verändert.';
+
+  @override
+  String get bk_restoreTitle => 'Sicherung wiederherstellen';
+
+  @override
+  String get bk_restorePass => 'Passphrase der Sicherung';
+
+  @override
+  String get bk_choose => 'Sicherungsdatei wählen';
+
+  @override
+  String get bk_cantOpen => 'Die Datei konnte nicht geöffnet werden.';
+
+  @override
+  String get bk_wrongPass =>
+      'Falsche Passphrase oder keine gültige Sicherung. Es wurde nichts geändert.';
+
+  @override
+  String get bk_confirmTitle => 'Diese Sicherung wiederherstellen?';
+
+  @override
+  String bk_confirmBody(int count) {
+    return 'Damit werden $count gespeicherte Einstellungen auf diesem Gerät, darunter Kontakte, Kanalschlüssel und Wegpunkte, durch die aus der Sicherung ersetzt. Der Nachrichtenverlauf bleibt unberührt. Das lässt sich nicht rückgängig machen.';
+  }
+
+  @override
+  String get bk_restore => 'Wiederherstellen';
+
+  @override
+  String bk_restored(int count) {
+    return '$count Einstellungen wiederhergestellt. Schließe die App vollständig und öffne sie erneut.';
+  }
+
+  @override
+  String get bk_partial =>
+      'Wiederherstellung abgebrochen; einige Einstellungen wurden eventuell schon geändert. Versuche es erneut.';
+
+  @override
+  String get sosSetup_noPeople =>
+      'Noch keine Personen in deinen Kontakten. Sobald jemand seinen Kontakt teilt oder du sein Advert hörst, erscheint er hier.';
+
+  @override
+  String get sosSetup_channel => 'SOS geht auch an Kanal';
+
+  @override
+  String get sosSetup_channelHint => 'Alle in diesem Kanal sehen dein SOS.';
+
+  @override
+  String get sosSetup_none => 'Keiner';
+
+  @override
+  String get trail_safety =>
+      'Wegdaten © OpenStreetMap-Mitwirkende. Sie können unvollständig oder veraltet sein. Routen werden nicht auf Sicherheit oder Begehbarkeit geprüft; nutze dies nicht als einzige Navigation.';
 }

@@ -11366,4 +11366,124 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get a11y_imagePreview => 'Kép előnézete';
+
+  @override
+  String get rcli_title => 'Engedélyezed a távoli parancssort?';
+
+  @override
+  String rcli_warning(String name) {
+    return '$name a hálón keresztül bármilyen parancsot futtathat a rádiódon: megváltoztathatja a nevét, rádióbeállításait és jelszavait, vagy újraindíthatja. Csak megbízható embereknek engedd.';
+  }
+
+  @override
+  String get rcli_allow => 'Engedélyezés';
+
+  @override
+  String get rcli_toggle => 'Távoli parancssor engedélyezése';
+
+  @override
+  String get rcli_toggleHint =>
+      'Engedi, hogy ez a névjegy bármilyen parancsot futtasson a rádiódon, a beállítások módosítását is. MeshCore v1.18+.';
+
+  @override
+  String rcli_toggleBlocked(String command) {
+    return 'Engedi, hogy ez a névjegy bármilyen parancsot futtasson a rádiódon. Utoljára letiltva: \"$command\".';
+  }
+
+  @override
+  String get rcli_menu => 'Parancssor az ő rádióján';
+
+  @override
+  String rcli_runsOn(String name) {
+    return 'Csak akkor fut $name rádióján, ha engedélyezte neked a távoli parancssort (MeshCore v1.18+). Ha nincs válasz, le lett tiltva vagy nem érkezett meg.';
+  }
+
+  @override
+  String get bk_title => 'Titkosított biztonsági mentés';
+
+  @override
+  String get bk_intro =>
+      'Titkosított másolatot ment a beállításokról, névjegyekről, csatornakulcsokról, útpontokról és piszkozatokról. Az üzenetelőzmények, offline térképek, fotók és a rádió firmware nincsenek benne.';
+
+  @override
+  String get bk_keep =>
+      'A jelmondatot külön tárold. Az elveszett jelmondat nem állítható vissza.';
+
+  @override
+  String get bk_pass => 'Jelmondat (12+ karakter)';
+
+  @override
+  String get bk_confirm => 'Jelmondat megerősítése';
+
+  @override
+  String get bk_working => 'Folyamatban…';
+
+  @override
+  String get bk_save => 'Titkosított mentés készítése';
+
+  @override
+  String get bk_mismatch =>
+      'Legalább 12 karakter és egyező jelmondatok kellenek.';
+
+  @override
+  String get bk_done =>
+      'A mentés elkészült. Tárold biztonságos helyen a fájlt és a jelmondatot.';
+
+  @override
+  String get bk_failed =>
+      'A mentés exportálása nem sikerült. Az adataid nem változtak.';
+
+  @override
+  String get bk_restoreTitle => 'Mentés visszaállítása';
+
+  @override
+  String get bk_restorePass => 'A mentés jelmondata';
+
+  @override
+  String get bk_choose => 'Mentésfájl kiválasztása';
+
+  @override
+  String get bk_cantOpen => 'A fájl nem nyitható meg.';
+
+  @override
+  String get bk_wrongPass =>
+      'Hibás jelmondat vagy érvénytelen mentés. Semmi sem változott.';
+
+  @override
+  String get bk_confirmTitle => 'Visszaállítod ezt a mentést?';
+
+  @override
+  String bk_confirmBody(int count) {
+    return 'Ez $count mentett beállítást cserél le ezen az eszközön, köztük a névjegyeket, csatornakulcsokat és útpontokat, a mentésben lévőkre. Az üzenetelőzmények nem változnak. Nem vonható vissza.';
+  }
+
+  @override
+  String get bk_restore => 'Visszaállítás';
+
+  @override
+  String bk_restored(int count) {
+    return '$count beállítás visszaállítva. Zárd be teljesen az alkalmazást, majd nyisd meg újra.';
+  }
+
+  @override
+  String get bk_partial =>
+      'A visszaállítás félúton leállt; egyes beállítások megváltozhattak. Próbáld újra.';
+
+  @override
+  String get sosSetup_noPeople =>
+      'Még nincs senki a névjegyeid között. Akkor jelennek meg, ha valaki megosztja a névjegyét, vagy hallod a hirdetését.';
+
+  @override
+  String get sosSetup_channel => 'Az SOS a csatornára is megy';
+
+  @override
+  String get sosSetup_channelHint =>
+      'A csatornán mindenki látni fogja az SOS-t.';
+
+  @override
+  String get sosSetup_none => 'Nincs';
+
+  @override
+  String get trail_safety =>
+      'Ösvényadatok © OpenStreetMap közreműködők. Hiányosak vagy elavultak lehetnek. Az útvonalak biztonságát és járhatóságát senki nem ellenőrzi, ezért ne ez legyen az egyetlen navigációd.';
 }
