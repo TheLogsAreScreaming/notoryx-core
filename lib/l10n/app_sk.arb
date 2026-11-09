@@ -4426,5 +4426,12 @@
   "notification_replyAction": "Odpovedať",
   "notification_replyHint": "Napíšte odpoveď",
   "outbox_waiting": "Čaká na rádio: {count}",
-  "outbox_cantQueue": "Zatiaľ nebolo pripojené žiadne rádio, preto to nemožno uložiť na neskôr."
+  "outbox_cantQueue": "Zatiaľ nebolo pripojené žiadne rádio, preto to nemožno uložiť na neskôr.",
+  "report_open": "Odoslať hlásenie",
+  "report_title": "Terénne hlásenie",
+  "report_salute": "SALUTE (čo ste videli)",
+  "report_nineLine": "9-Line (lekárska evakuácia)",
+  "report_send": "Odoslať hlásenie",
+  "report_parts": "Počet správ: {count}",
+  "report_sent": "Hlásenie odoslané"
 }

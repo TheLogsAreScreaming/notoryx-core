@@ -4426,5 +4426,12 @@
   "notification_replyAction": "Beantwoorden",
   "notification_replyHint": "Schrijf een antwoord",
   "outbox_waiting": "Wacht op de radio: {count}",
-  "outbox_cantQueue": "Er is nog geen radio verbonden, dus dit kan niet voor later worden bewaard."
+  "outbox_cantQueue": "Er is nog geen radio verbonden, dus dit kan niet voor later worden bewaard.",
+  "report_open": "Rapport versturen",
+  "report_title": "Veldrapport",
+  "report_salute": "SALUTE (wat je zag)",
+  "report_nineLine": "9-Line (medische evacuatie)",
+  "report_send": "Rapport versturen",
+  "report_parts": "Aantal berichten: {count}",
+  "report_sent": "Rapport verstuurd"
 }

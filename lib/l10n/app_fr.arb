@@ -4560,5 +4560,12 @@
   "notification_replyAction": "Répondre",
   "notification_replyHint": "Écrire une réponse",
   "outbox_waiting": "En attente de la radio : {count}",
-  "outbox_cantQueue": "Aucune radio n'a encore été connectée, ce message ne peut donc pas être gardé pour plus tard."
+  "outbox_cantQueue": "Aucune radio n'a encore été connectée, ce message ne peut donc pas être gardé pour plus tard.",
+  "report_open": "Envoyer un rapport",
+  "report_title": "Rapport de terrain",
+  "report_salute": "SALUTE (ce que vous avez vu)",
+  "report_nineLine": "9-Line (évacuation médicale)",
+  "report_send": "Envoyer le rapport",
+  "report_parts": "Nombre de messages : {count}",
+  "report_sent": "Rapport envoyé"
 }

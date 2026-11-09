@@ -10974,4 +10974,27 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get outbox_cantQueue =>
       'Nessuna radio è stata ancora collegata, quindi non si può salvare per dopo.';
+
+  @override
+  String get report_open => 'Invia rapporto';
+
+  @override
+  String get report_title => 'Rapporto sul campo';
+
+  @override
+  String get report_salute => 'SALUTE (cosa hai visto)';
+
+  @override
+  String get report_nineLine => '9-Line (evacuazione medica)';
+
+  @override
+  String get report_send => 'Invia rapporto';
+
+  @override
+  String report_parts(int count) {
+    return 'Numero di messaggi: $count';
+  }
+
+  @override
+  String get report_sent => 'Rapporto inviato';
 }

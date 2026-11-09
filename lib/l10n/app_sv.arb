@@ -4426,5 +4426,12 @@
   "notification_replyAction": "Svara",
   "notification_replyHint": "Skriv ett svar",
   "outbox_waiting": "Väntar på radion: {count}",
-  "outbox_cantQueue": "Ingen radio har anslutits än, så det här kan inte sparas till senare."
+  "outbox_cantQueue": "Ingen radio har anslutits än, så det här kan inte sparas till senare.",
+  "report_open": "Skicka rapport",
+  "report_title": "Fältrapport",
+  "report_salute": "SALUTE (vad du såg)",
+  "report_nineLine": "9-Line (medicinsk evakuering)",
+  "report_send": "Skicka rapport",
+  "report_parts": "Antal meddelanden: {count}",
+  "report_sent": "Rapporten skickades"
 }

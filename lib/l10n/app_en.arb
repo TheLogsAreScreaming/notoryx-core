@@ -5888,5 +5888,13 @@
   "notification_replyHint": "Write a reply",
   "outbox_waiting": "Waiting for the radio: {count}",
   "@outbox_waiting": {"placeholders": {"count": {"type": "int"}}},
-  "outbox_cantQueue": "No radio has been connected yet, so this can't be saved to send later."
+  "outbox_cantQueue": "No radio has been connected yet, so this can't be saved to send later.",
+  "report_open": "Send a report",
+  "report_title": "Field report",
+  "report_salute": "SALUTE (what you saw)",
+  "report_nineLine": "9-Line (medical evacuation)",
+  "report_send": "Send report",
+  "report_parts": "Number of messages: {count}",
+  "@report_parts": {"placeholders": {"count": {"type": "int"}}},
+  "report_sent": "Report sent"
 }

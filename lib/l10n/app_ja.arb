@@ -4560,5 +4560,12 @@
   "notification_replyAction": "返信",
   "notification_replyHint": "返信を入力",
   "outbox_waiting": "無線機を待機中: {count}",
-  "outbox_cantQueue": "まだ無線機が接続されていないため、後で送信するよう保存できません。"
+  "outbox_cantQueue": "まだ無線機が接続されていないため、後で送信するよう保存できません。",
+  "report_open": "報告を送信",
+  "report_title": "現場報告",
+  "report_salute": "SALUTE（目撃内容）",
+  "report_nineLine": "9-Line（医療搬送）",
+  "report_send": "報告を送信",
+  "report_parts": "メッセージ数: {count}",
+  "report_sent": "報告を送信しました"
 }

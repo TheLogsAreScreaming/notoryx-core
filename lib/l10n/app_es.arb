@@ -4560,5 +4560,12 @@
   "notification_replyAction": "Responder",
   "notification_replyHint": "Escribe una respuesta",
   "outbox_waiting": "Esperando la radio: {count}",
-  "outbox_cantQueue": "Aún no se ha conectado ninguna radio, así que no se puede guardar para enviarlo después."
+  "outbox_cantQueue": "Aún no se ha conectado ninguna radio, así que no se puede guardar para enviarlo después.",
+  "report_open": "Enviar informe",
+  "report_title": "Informe de campo",
+  "report_salute": "SALUTE (lo que viste)",
+  "report_nineLine": "9-Line (evacuación médica)",
+  "report_send": "Enviar informe",
+  "report_parts": "Número de mensajes: {count}",
+  "report_sent": "Informe enviado"
 }

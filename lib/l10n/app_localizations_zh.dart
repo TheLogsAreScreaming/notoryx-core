@@ -10229,4 +10229,27 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get outbox_cantQueue => '尚未连接过电台，因此无法保存以便稍后发送。';
+
+  @override
+  String get report_open => '发送报告';
+
+  @override
+  String get report_title => '现场报告';
+
+  @override
+  String get report_salute => 'SALUTE（所见情况）';
+
+  @override
+  String get report_nineLine => '9-Line（医疗后送）';
+
+  @override
+  String get report_send => '发送报告';
+
+  @override
+  String report_parts(int count) {
+    return '消息数：$count';
+  }
+
+  @override
+  String get report_sent => '报告已发送';
 }

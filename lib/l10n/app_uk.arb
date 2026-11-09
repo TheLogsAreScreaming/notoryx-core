@@ -4406,5 +4406,12 @@
   "notification_replyAction": "Відповісти",
   "notification_replyHint": "Напишіть відповідь",
   "outbox_waiting": "Очікують радіо: {count}",
-  "outbox_cantQueue": "Радіо ще не підключалося, тому зберегти це на потім не можна."
+  "outbox_cantQueue": "Радіо ще не підключалося, тому зберегти це на потім не можна.",
+  "report_open": "Надіслати донесення",
+  "report_title": "Польове донесення",
+  "report_salute": "SALUTE (що ви бачили)",
+  "report_nineLine": "9-Line (медична евакуація)",
+  "report_send": "Надіслати донесення",
+  "report_parts": "Кількість повідомлень: {count}",
+  "report_sent": "Донесення надіслано"
 }

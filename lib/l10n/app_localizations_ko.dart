@@ -10461,4 +10461,27 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get outbox_cantQueue => '아직 연결된 무전기가 없어 나중에 보내도록 저장할 수 없습니다.';
+
+  @override
+  String get report_open => '보고 보내기';
+
+  @override
+  String get report_title => '현장 보고';
+
+  @override
+  String get report_salute => 'SALUTE (목격 내용)';
+
+  @override
+  String get report_nineLine => '9-Line (의료 후송)';
+
+  @override
+  String get report_send => '보고 보내기';
+
+  @override
+  String report_parts(int count) {
+    return '메시지 수: $count';
+  }
+
+  @override
+  String get report_sent => '보고를 보냈습니다';
 }

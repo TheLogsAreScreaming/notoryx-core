@@ -11006,4 +11006,27 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get outbox_cantQueue =>
       'Радио ещё не подключалось, поэтому сохранить это на потом нельзя.';
+
+  @override
+  String get report_open => 'Отправить донесение';
+
+  @override
+  String get report_title => 'Полевое донесение';
+
+  @override
+  String get report_salute => 'SALUTE (что вы видели)';
+
+  @override
+  String get report_nineLine => '9-Line (медицинская эвакуация)';
+
+  @override
+  String get report_send => 'Отправить донесение';
+
+  @override
+  String report_parts(int count) {
+    return 'Количество сообщений: $count';
+  }
+
+  @override
+  String get report_sent => 'Донесение отправлено';
 }

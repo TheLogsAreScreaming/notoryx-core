@@ -10975,4 +10975,27 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get outbox_cantQueue =>
       'Es war noch kein Funkgerät verbunden, daher kann dies nicht für später gespeichert werden.';
+
+  @override
+  String get report_open => 'Bericht senden';
+
+  @override
+  String get report_title => 'Feldbericht';
+
+  @override
+  String get report_salute => 'SALUTE (Beobachtung)';
+
+  @override
+  String get report_nineLine => '9-Line (medizinische Evakuierung)';
+
+  @override
+  String get report_send => 'Bericht senden';
+
+  @override
+  String report_parts(int count) {
+    return 'Anzahl Nachrichten: $count';
+  }
+
+  @override
+  String get report_sent => 'Bericht gesendet';
 }

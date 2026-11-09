@@ -18204,6 +18204,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No radio has been connected yet, so this can\'t be saved to send later.'**
   String get outbox_cantQueue;
+
+  /// No description provided for @report_open.
+  ///
+  /// In en, this message translates to:
+  /// **'Send a report'**
+  String get report_open;
+
+  /// No description provided for @report_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Field report'**
+  String get report_title;
+
+  /// No description provided for @report_salute.
+  ///
+  /// In en, this message translates to:
+  /// **'SALUTE (what you saw)'**
+  String get report_salute;
+
+  /// No description provided for @report_nineLine.
+  ///
+  /// In en, this message translates to:
+  /// **'9-Line (medical evacuation)'**
+  String get report_nineLine;
+
+  /// No description provided for @report_send.
+  ///
+  /// In en, this message translates to:
+  /// **'Send report'**
+  String get report_send;
+
+  /// No description provided for @report_parts.
+  ///
+  /// In en, this message translates to:
+  /// **'Number of messages: {count}'**
+  String report_parts(int count);
+
+  /// No description provided for @report_sent.
+  ///
+  /// In en, this message translates to:
+  /// **'Report sent'**
+  String get report_sent;
 }
 
 class _AppLocalizationsDelegate

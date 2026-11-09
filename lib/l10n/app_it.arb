@@ -4560,5 +4560,12 @@
   "notification_replyAction": "Rispondi",
   "notification_replyHint": "Scrivi una risposta",
   "outbox_waiting": "In attesa della radio: {count}",
-  "outbox_cantQueue": "Nessuna radio è stata ancora collegata, quindi non si può salvare per dopo."
+  "outbox_cantQueue": "Nessuna radio è stata ancora collegata, quindi non si può salvare per dopo.",
+  "report_open": "Invia rapporto",
+  "report_title": "Rapporto sul campo",
+  "report_salute": "SALUTE (cosa hai visto)",
+  "report_nineLine": "9-Line (evacuazione medica)",
+  "report_send": "Invia rapporto",
+  "report_parts": "Numero di messaggi: {count}",
+  "report_sent": "Rapporto inviato"
 }
