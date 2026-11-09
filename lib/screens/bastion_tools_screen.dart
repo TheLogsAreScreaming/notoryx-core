@@ -1,5 +1,8 @@
 import '../theme/mesh_theme.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
+
+import 'team_config_screen.dart';
 import '../l10n/l10n.dart';
 import '../widgets/ember_backdrop.dart';
 import '../widgets/instrument.dart';
@@ -224,6 +227,13 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
       (
         title: null as String?,
         actions: <_ToolAction>[
+          if (!kIsWeb)
+            _ToolAction(
+              icon: Icons.groups_outlined,
+              title: 'Team setup',
+              subtitle: 'Share radio settings, channels and routes',
+              builder: (_) => const TeamConfigScreen(),
+            ),
           _ToolAction(
             icon: Icons.lock_outline,
             title: l10n.security_title,
