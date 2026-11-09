@@ -11049,4 +11049,8 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get contacts_addTooltip => 'Добавить контакт';
+
+  @override
+  String get dbEncrypt_covers =>
+      'Также защищает контакты, ключи каналов, путевые точки, сохранённые маршруты, черновики и ожидающие сообщения.';
 }

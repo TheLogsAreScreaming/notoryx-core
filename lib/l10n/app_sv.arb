@@ -4439,5 +4439,6 @@
   "report_send": "Skicka rapport",
   "report_parts": "Antal meddelanden: {count}",
   "report_sent": "Rapporten skickades",
-  "contacts_addTooltip": "Lägg till kontakt"
+  "contacts_addTooltip": "Lägg till kontakt",
+  "dbEncrypt_covers": "Omfattar även kontakter, kanalnycklar, vägpunkter, sparade rutter, utkast och väntande meddelanden."
 }

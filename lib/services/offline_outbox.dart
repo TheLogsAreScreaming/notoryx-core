@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import '../connector/meshcore_connector.dart';
 import '../storage/draft_store.dart';
 import '../storage/prefs_manager.dart';
+import '../storage/secure_prefs.dart';
 
 /// A message written while no radio was connected.
 class OutboxEntry {
@@ -224,7 +225,7 @@ class OfflineOutbox extends ChangeNotifier {
     try {
       final prefs = PrefsManager.instance;
       _lastRadio = prefs.getString(_radioKey) ?? '';
-      final raw = prefs.getString(_entriesKey);
+      final raw = SecurePrefs.getString(_entriesKey);
       if (raw == null) return;
       for (final item in jsonDecode(raw) as List<dynamic>) {
         _entries.add(OutboxEntry.fromJson(item as Map<String, dynamic>));
@@ -238,7 +239,7 @@ class OfflineOutbox extends ChangeNotifier {
 
   Future<void> _save() async {
     try {
-      await PrefsManager.instance.setString(
+      await SecurePrefs.setString(
         _entriesKey,
         jsonEncode(_entries.map((e) => e.toJson()).toList()),
       );

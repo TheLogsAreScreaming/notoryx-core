@@ -10489,4 +10489,8 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get contacts_addTooltip => '連絡先を追加';
+
+  @override
+  String get dbEncrypt_covers =>
+      '連絡先、チャンネルキー、ウェイポイント、保存したルート、下書き、送信待ちメッセージも対象です。';
 }

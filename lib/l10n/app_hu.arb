@@ -4477,5 +4477,6 @@
   "report_send": "Jelentés küldése",
   "report_parts": "Üzenetek száma: {count}",
   "report_sent": "Jelentés elküldve",
-  "contacts_addTooltip": "Névjegy hozzáadása"
+  "contacts_addTooltip": "Névjegy hozzáadása",
+  "dbEncrypt_covers": "Kiterjed a névjegyekre, csatornakulcsokra, útpontokra, mentett útvonalakra, piszkozatokra és a várakozó üzenetekre is."
 }

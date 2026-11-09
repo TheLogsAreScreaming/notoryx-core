@@ -10874,4 +10874,8 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get contacts_addTooltip => 'Add a contact';
+
+  @override
+  String get dbEncrypt_covers =>
+      'Also covers contacts, channel keys, waypoints, saved routes, drafts and waiting messages.';
 }

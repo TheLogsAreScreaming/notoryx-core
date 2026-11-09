@@ -4439,5 +4439,6 @@
   "report_send": "Rapport versturen",
   "report_parts": "Aantal berichten: {count}",
   "report_sent": "Rapport verstuurd",
-  "contacts_addTooltip": "Contact toevoegen"
+  "contacts_addTooltip": "Contact toevoegen",
+  "dbEncrypt_covers": "Omvat ook contacten, kanaalsleutels, waypoints, opgeslagen routes, concepten en wachtende berichten."
 }

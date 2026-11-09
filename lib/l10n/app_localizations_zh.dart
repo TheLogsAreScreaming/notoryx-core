@@ -10272,4 +10272,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get contacts_addTooltip => '添加联系人';
+
+  @override
+  String get dbEncrypt_covers => '同时涵盖联系人、频道密钥、航点、已保存的路线、草稿和待发送消息。';
 }

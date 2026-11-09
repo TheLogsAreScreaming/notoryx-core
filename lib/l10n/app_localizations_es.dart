@@ -11011,4 +11011,8 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get contacts_addTooltip => 'Añadir contacto';
+
+  @override
+  String get dbEncrypt_covers =>
+      'También cubre contactos, claves de canal, puntos de ruta, rutas guardadas, borradores y mensajes en espera.';
 }

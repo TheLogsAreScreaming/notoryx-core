@@ -11018,4 +11018,8 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get contacts_addTooltip => 'Kontakt hinzufügen';
+
+  @override
+  String get dbEncrypt_covers =>
+      'Umfasst auch Kontakte, Kanalschlüssel, Wegpunkte, gespeicherte Routen, Entwürfe und wartende Nachrichten.';
 }

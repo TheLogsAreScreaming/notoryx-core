@@ -4477,5 +4477,6 @@
   "report_send": "Wyślij raport",
   "report_parts": "Liczba wiadomości: {count}",
   "report_sent": "Raport wysłany",
-  "contacts_addTooltip": "Dodaj kontakt"
+  "contacts_addTooltip": "Dodaj kontakt",
+  "dbEncrypt_covers": "Obejmuje też kontakty, klucze kanałów, punkty trasy, zapisane trasy, wersje robocze i oczekujące wiadomości."
 }

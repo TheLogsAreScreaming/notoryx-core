@@ -10990,4 +10990,8 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get contacts_addTooltip => 'Adicionar contacto';
+
+  @override
+  String get dbEncrypt_covers =>
+      'Abrange também contactos, chaves de canal, pontos de passagem, rotas guardadas, rascunhos e mensagens em espera.';
 }
