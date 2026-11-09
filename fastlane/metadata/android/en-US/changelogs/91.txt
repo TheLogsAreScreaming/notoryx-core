@@ -1,0 +1,4 @@
+• Send an SOS from the app lock screen without unlocking
+• Reply from a message notification
+• Reply to a specific message in direct chats
+• Messages written while disconnected now wait and send on reconnect, instead of being lost
