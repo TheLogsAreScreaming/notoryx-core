@@ -18288,6 +18288,216 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Also covers contacts, channel keys, waypoints, saved routes, drafts and waiting messages.'**
   String get dbEncrypt_covers;
+
+  /// No description provided for @auto_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Automation'**
+  String get auto_title;
+
+  /// No description provided for @auto_add.
+  ///
+  /// In en, this message translates to:
+  /// **'Add rule'**
+  String get auto_add;
+
+  /// No description provided for @auto_intro.
+  ///
+  /// In en, this message translates to:
+  /// **'Rules run only while the app is open. Each fires when its condition starts being true, at most once every 15 minutes. Rules that send messages are limited to 3 sends every 10 minutes in total, and are labelled as automated.'**
+  String get auto_intro;
+
+  /// No description provided for @auto_trigBattery.
+  ///
+  /// In en, this message translates to:
+  /// **'Radio battery drops below'**
+  String get auto_trigBattery;
+
+  /// No description provided for @auto_trigTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Every day at'**
+  String get auto_trigTime;
+
+  /// No description provided for @auto_trigEnter.
+  ///
+  /// In en, this message translates to:
+  /// **'I enter an area'**
+  String get auto_trigEnter;
+
+  /// No description provided for @auto_trigLeave.
+  ///
+  /// In en, this message translates to:
+  /// **'I leave an area'**
+  String get auto_trigLeave;
+
+  /// No description provided for @auto_trigHeard.
+  ///
+  /// In en, this message translates to:
+  /// **'A node is heard again'**
+  String get auto_trigHeard;
+
+  /// No description provided for @auto_trigQuiet.
+  ///
+  /// In en, this message translates to:
+  /// **'A node goes quiet'**
+  String get auto_trigQuiet;
+
+  /// No description provided for @auto_edit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit {name}'**
+  String auto_edit(String name);
+
+  /// No description provided for @auto_new.
+  ///
+  /// In en, this message translates to:
+  /// **'New rule'**
+  String get auto_new;
+
+  /// No description provided for @auto_editTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit rule'**
+  String get auto_editTitle;
+
+  /// No description provided for @auto_delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete rule'**
+  String get auto_delete;
+
+  /// No description provided for @auto_needName.
+  ///
+  /// In en, this message translates to:
+  /// **'Give the rule a name.'**
+  String get auto_needName;
+
+  /// No description provided for @auto_needArea.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the area\'s latitude and longitude.'**
+  String get auto_needArea;
+
+  /// No description provided for @auto_needNode.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a node.'**
+  String get auto_needNode;
+
+  /// No description provided for @auto_needMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Write the message.'**
+  String get auto_needMessage;
+
+  /// No description provided for @auto_needTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose who gets the message.'**
+  String get auto_needTarget;
+
+  /// No description provided for @auto_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Rule name'**
+  String get auto_name;
+
+  /// No description provided for @auto_when.
+  ///
+  /// In en, this message translates to:
+  /// **'When'**
+  String get auto_when;
+
+  /// No description provided for @auto_below.
+  ///
+  /// In en, this message translates to:
+  /// **'Below {percent}%'**
+  String auto_below(int percent);
+
+  /// No description provided for @auto_time.
+  ///
+  /// In en, this message translates to:
+  /// **'Time'**
+  String get auto_time;
+
+  /// No description provided for @auto_latitude.
+  ///
+  /// In en, this message translates to:
+  /// **'Latitude'**
+  String get auto_latitude;
+
+  /// No description provided for @auto_longitude.
+  ///
+  /// In en, this message translates to:
+  /// **'Longitude'**
+  String get auto_longitude;
+
+  /// No description provided for @auto_usePosition.
+  ///
+  /// In en, this message translates to:
+  /// **'Use the radio\'s position'**
+  String get auto_usePosition;
+
+  /// No description provided for @auto_radius.
+  ///
+  /// In en, this message translates to:
+  /// **'Radius: {meters} m'**
+  String auto_radius(int meters);
+
+  /// No description provided for @auto_node.
+  ///
+  /// In en, this message translates to:
+  /// **'Node'**
+  String get auto_node;
+
+  /// No description provided for @auto_heardWithin.
+  ///
+  /// In en, this message translates to:
+  /// **'Counts as heard within {minutes} minutes'**
+  String auto_heardWithin(int minutes);
+
+  /// No description provided for @auto_notify.
+  ///
+  /// In en, this message translates to:
+  /// **'Notify me'**
+  String get auto_notify;
+
+  /// No description provided for @auto_send.
+  ///
+  /// In en, this message translates to:
+  /// **'Send a message'**
+  String get auto_send;
+
+  /// No description provided for @auto_sendTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Send to'**
+  String get auto_sendTo;
+
+  /// No description provided for @auto_message.
+  ///
+  /// In en, this message translates to:
+  /// **'Message'**
+  String get auto_message;
+
+  /// No description provided for @auto_save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get auto_save;
+
+  /// No description provided for @auto_entry.
+  ///
+  /// In en, this message translates to:
+  /// **'Automation rules'**
+  String get auto_entry;
+
+  /// No description provided for @auto_entrySub.
+  ///
+  /// In en, this message translates to:
+  /// **'Battery, time, area and node triggers'**
+  String get auto_entrySub;
 }
 
 class _AppLocalizationsDelegate

@@ -10969,4 +10969,119 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get dbEncrypt_covers =>
       'Omvat ook contacten, kanaalsleutels, waypoints, opgeslagen routes, concepten en wachtende berichten.';
+
+  @override
+  String get auto_title => 'Automatisering';
+
+  @override
+  String get auto_add => 'Regel toevoegen';
+
+  @override
+  String get auto_intro =>
+      'Regels werken alleen als de app open is. Elke regel gaat af zodra de voorwaarde waar wordt, hooguit eens per 15 minuten. Regels die berichten versturen zijn in totaal beperkt tot 3 keer per 10 minuten en worden als geautomatiseerd gemarkeerd.';
+
+  @override
+  String get auto_trigBattery => 'Radiobatterij zakt onder';
+
+  @override
+  String get auto_trigTime => 'Elke dag om';
+
+  @override
+  String get auto_trigEnter => 'Ik kom een gebied in';
+
+  @override
+  String get auto_trigLeave => 'Ik verlaat een gebied';
+
+  @override
+  String get auto_trigHeard => 'Een node wordt weer gehoord';
+
+  @override
+  String get auto_trigQuiet => 'Een node wordt stil';
+
+  @override
+  String auto_edit(String name) {
+    return '$name bewerken';
+  }
+
+  @override
+  String get auto_new => 'Nieuwe regel';
+
+  @override
+  String get auto_editTitle => 'Regel bewerken';
+
+  @override
+  String get auto_delete => 'Regel verwijderen';
+
+  @override
+  String get auto_needName => 'Geef de regel een naam.';
+
+  @override
+  String get auto_needArea =>
+      'Vul de breedte- en lengtegraad van het gebied in.';
+
+  @override
+  String get auto_needNode => 'Kies een node.';
+
+  @override
+  String get auto_needMessage => 'Schrijf het bericht.';
+
+  @override
+  String get auto_needTarget => 'Kies wie het bericht krijgt.';
+
+  @override
+  String get auto_name => 'Regelnaam';
+
+  @override
+  String get auto_when => 'Wanneer';
+
+  @override
+  String auto_below(int percent) {
+    return 'Onder $percent%';
+  }
+
+  @override
+  String get auto_time => 'Tijd';
+
+  @override
+  String get auto_latitude => 'Breedtegraad';
+
+  @override
+  String get auto_longitude => 'Lengtegraad';
+
+  @override
+  String get auto_usePosition => 'Positie van de radio gebruiken';
+
+  @override
+  String auto_radius(int meters) {
+    return 'Straal: $meters m';
+  }
+
+  @override
+  String get auto_node => 'Node';
+
+  @override
+  String auto_heardWithin(int minutes) {
+    return 'Telt als gehoord binnen $minutes minuten';
+  }
+
+  @override
+  String get auto_notify => 'Mij waarschuwen';
+
+  @override
+  String get auto_send => 'Bericht versturen';
+
+  @override
+  String get auto_sendTo => 'Versturen naar';
+
+  @override
+  String get auto_message => 'Bericht';
+
+  @override
+  String get auto_save => 'Opslaan';
+
+  @override
+  String get auto_entry => 'Automatiseringsregels';
+
+  @override
+  String get auto_entrySub => 'Triggers voor batterij, tijd, gebied en node';
 }

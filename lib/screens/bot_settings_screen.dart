@@ -415,8 +415,8 @@ class BotSettingsScreen extends StatelessWidget {
               ListTile(
                 contentPadding: EdgeInsets.zero,
                 leading: const Icon(Icons.bolt_outlined),
-                title: const Text('Automation rules'),
-                subtitle: const Text('Battery, time, area and node triggers'),
+                title: Text(context.l10n.auto_entry),
+                subtitle: Text(context.l10n.auto_entrySub),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () => Navigator.of(context).push(
                   MaterialPageRoute<void>(

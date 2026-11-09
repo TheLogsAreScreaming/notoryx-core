@@ -11054,4 +11054,118 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get dbEncrypt_covers =>
       'Obejmuje też kontakty, klucze kanałów, punkty trasy, zapisane trasy, wersje robocze i oczekujące wiadomości.';
+
+  @override
+  String get auto_title => 'Automatyzacja';
+
+  @override
+  String get auto_add => 'Dodaj regułę';
+
+  @override
+  String get auto_intro =>
+      'Reguły działają tylko przy otwartej aplikacji. Każda uruchamia się, gdy jej warunek zaczyna być spełniony, najwyżej raz na 15 minut. Reguły wysyłające wiadomości są łącznie ograniczone do 3 wysyłek na 10 minut i oznaczone jako automatyczne.';
+
+  @override
+  String get auto_trigBattery => 'Bateria radia spada poniżej';
+
+  @override
+  String get auto_trigTime => 'Codziennie o';
+
+  @override
+  String get auto_trigEnter => 'Wchodzę na obszar';
+
+  @override
+  String get auto_trigLeave => 'Opuszczam obszar';
+
+  @override
+  String get auto_trigHeard => 'Węzeł znów jest słyszany';
+
+  @override
+  String get auto_trigQuiet => 'Węzeł milknie';
+
+  @override
+  String auto_edit(String name) {
+    return 'Edytuj $name';
+  }
+
+  @override
+  String get auto_new => 'Nowa reguła';
+
+  @override
+  String get auto_editTitle => 'Edytuj regułę';
+
+  @override
+  String get auto_delete => 'Usuń regułę';
+
+  @override
+  String get auto_needName => 'Nadaj regule nazwę.';
+
+  @override
+  String get auto_needArea => 'Podaj szerokość i długość geograficzną obszaru.';
+
+  @override
+  String get auto_needNode => 'Wybierz węzeł.';
+
+  @override
+  String get auto_needMessage => 'Napisz wiadomość.';
+
+  @override
+  String get auto_needTarget => 'Wybierz odbiorcę.';
+
+  @override
+  String get auto_name => 'Nazwa reguły';
+
+  @override
+  String get auto_when => 'Kiedy';
+
+  @override
+  String auto_below(int percent) {
+    return 'Poniżej $percent%';
+  }
+
+  @override
+  String get auto_time => 'Godzina';
+
+  @override
+  String get auto_latitude => 'Szerokość';
+
+  @override
+  String get auto_longitude => 'Długość';
+
+  @override
+  String get auto_usePosition => 'Użyj pozycji radia';
+
+  @override
+  String auto_radius(int meters) {
+    return 'Promień: $meters m';
+  }
+
+  @override
+  String get auto_node => 'Węzeł';
+
+  @override
+  String auto_heardWithin(int minutes) {
+    return 'Uznaj za słyszany w ciągu $minutes minut';
+  }
+
+  @override
+  String get auto_notify => 'Powiadom mnie';
+
+  @override
+  String get auto_send => 'Wyślij wiadomość';
+
+  @override
+  String get auto_sendTo => 'Wyślij do';
+
+  @override
+  String get auto_message => 'Wiadomość';
+
+  @override
+  String get auto_save => 'Zapisz';
+
+  @override
+  String get auto_entry => 'Reguły automatyzacji';
+
+  @override
+  String get auto_entrySub => 'Wyzwalacze baterii, czasu, obszaru i węzła';
 }

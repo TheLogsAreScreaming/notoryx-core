@@ -10989,4 +10989,118 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get dbEncrypt_covers =>
       'Zahŕňa aj kontakty, kľúče kanálov, body trasy, uložené trasy, koncepty a čakajúce správy.';
+
+  @override
+  String get auto_title => 'Automatizácia';
+
+  @override
+  String get auto_add => 'Pridať pravidlo';
+
+  @override
+  String get auto_intro =>
+      'Pravidlá fungujú len pri otvorenej aplikácii. Každé sa spustí, keď sa jeho podmienka začne plniť, najviac raz za 15 minút. Pravidlá odosielajúce správy sú spolu obmedzené na 3 odoslania za 10 minút a sú označené ako automatické.';
+
+  @override
+  String get auto_trigBattery => 'Batéria rádia klesne pod';
+
+  @override
+  String get auto_trigTime => 'Každý deň o';
+
+  @override
+  String get auto_trigEnter => 'Vstúpim do oblasti';
+
+  @override
+  String get auto_trigLeave => 'Opustím oblasť';
+
+  @override
+  String get auto_trigHeard => 'Uzol je znova počuť';
+
+  @override
+  String get auto_trigQuiet => 'Uzol stíchne';
+
+  @override
+  String auto_edit(String name) {
+    return 'Upraviť $name';
+  }
+
+  @override
+  String get auto_new => 'Nové pravidlo';
+
+  @override
+  String get auto_editTitle => 'Upraviť pravidlo';
+
+  @override
+  String get auto_delete => 'Odstrániť pravidlo';
+
+  @override
+  String get auto_needName => 'Pomenujte pravidlo.';
+
+  @override
+  String get auto_needArea => 'Zadajte zemepisnú šírku a dĺžku oblasti.';
+
+  @override
+  String get auto_needNode => 'Vyberte uzol.';
+
+  @override
+  String get auto_needMessage => 'Napíšte správu.';
+
+  @override
+  String get auto_needTarget => 'Vyberte príjemcu.';
+
+  @override
+  String get auto_name => 'Názov pravidla';
+
+  @override
+  String get auto_when => 'Kedy';
+
+  @override
+  String auto_below(int percent) {
+    return 'Pod $percent %';
+  }
+
+  @override
+  String get auto_time => 'Čas';
+
+  @override
+  String get auto_latitude => 'Šírka';
+
+  @override
+  String get auto_longitude => 'Dĺžka';
+
+  @override
+  String get auto_usePosition => 'Použiť polohu rádia';
+
+  @override
+  String auto_radius(int meters) {
+    return 'Polomer: $meters m';
+  }
+
+  @override
+  String get auto_node => 'Uzol';
+
+  @override
+  String auto_heardWithin(int minutes) {
+    return 'Považuje sa za počutý do $minutes minút';
+  }
+
+  @override
+  String get auto_notify => 'Upozorniť ma';
+
+  @override
+  String get auto_send => 'Odoslať správu';
+
+  @override
+  String get auto_sendTo => 'Odoslať komu';
+
+  @override
+  String get auto_message => 'Správa';
+
+  @override
+  String get auto_save => 'Uložiť';
+
+  @override
+  String get auto_entry => 'Pravidlá automatizácie';
+
+  @override
+  String get auto_entrySub => 'Spúšťače batérie, času, oblasti a uzla';
 }

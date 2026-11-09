@@ -5,17 +5,21 @@ import 'package:provider/provider.dart';
 
 import '../connector/meshcore_connector.dart';
 import '../connector/meshcore_protocol.dart';
+import '../l10n/l10n.dart';
 import '../models/automation_rule.dart';
 import '../services/automation_service.dart';
 
-const _triggerLabels = {
-  AutomationTrigger.batteryBelow: 'Radio battery drops below',
-  AutomationTrigger.atTime: 'Every day at',
-  AutomationTrigger.enterArea: 'I enter an area',
-  AutomationTrigger.leaveArea: 'I leave an area',
-  AutomationTrigger.nodeHeard: 'A node is heard again',
-  AutomationTrigger.nodeQuiet: 'A node goes quiet',
-};
+String _triggerLabel(BuildContext context, AutomationTrigger trigger) {
+  final l10n = context.l10n;
+  return switch (trigger) {
+    AutomationTrigger.batteryBelow => l10n.auto_trigBattery,
+    AutomationTrigger.atTime => l10n.auto_trigTime,
+    AutomationTrigger.enterArea => l10n.auto_trigEnter,
+    AutomationTrigger.leaveArea => l10n.auto_trigLeave,
+    AutomationTrigger.nodeHeard => l10n.auto_trigHeard,
+    AutomationTrigger.nodeQuiet => l10n.auto_trigQuiet,
+  };
+}
 
 /// Lists automation rules and turns them on or off.
 class AutomationScreen extends StatelessWidget {
@@ -26,33 +30,28 @@ class AutomationScreen extends StatelessWidget {
     final service = context.watch<AutomationService>();
     final rules = service.rules;
     return Scaffold(
-      appBar: AppBar(title: const Text('Automation')),
+      appBar: AppBar(title: Text(context.l10n.auto_title)),
       floatingActionButton: FloatingActionButton(
-        tooltip: 'Add rule',
+        tooltip: context.l10n.auto_add,
         onPressed: () => _edit(context, null),
         child: const Icon(Icons.add),
       ),
       body: ListView(
         padding: const EdgeInsets.only(bottom: 88),
         children: [
-          const Padding(
-            padding: EdgeInsets.all(16),
-            child: Text(
-              'Rules run only while the app is open. Each fires when its '
-              'condition starts being true, at most once every 15 minutes. '
-              'Rules that send messages are limited to 3 sends every 10 '
-              'minutes in total, and are labelled as automated.',
-            ),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Text(context.l10n.auto_intro),
           ),
           for (final rule in rules)
             SwitchListTile(
               title: Text(rule.name),
-              subtitle: Text(_triggerLabels[rule.trigger]!),
+              subtitle: Text(_triggerLabel(context, rule.trigger)),
               value: rule.enabled,
               onChanged: (on) =>
                   unawaited(service.save(rule.copyWith(enabled: on))),
               secondary: IconButton(
-                tooltip: 'Edit ${rule.name}',
+                tooltip: context.l10n.auto_edit(rule.name),
                 icon: const Icon(Icons.edit_outlined),
                 onPressed: () => _edit(context, rule),
               ),
@@ -105,16 +104,16 @@ class _RuleEditorState extends State<_RuleEditor> {
       _trigger == AutomationTrigger.nodeQuiet;
 
   String? get _problem {
-    if (_name.text.trim().isEmpty) return 'Give the rule a name.';
+    if (_name.text.trim().isEmpty) return context.l10n.auto_needName;
     if (_isArea &&
         (double.tryParse(_lat.text) == null ||
             double.tryParse(_lon.text) == null)) {
-      return 'Enter the area\'s latitude and longitude.';
+      return context.l10n.auto_needArea;
     }
-    if (_isNode && _node == null) return 'Choose a node.';
-    if (_text.text.trim().isEmpty) return 'Write the message.';
+    if (_isNode && _node == null) return context.l10n.auto_needNode;
+    if (_text.text.trim().isEmpty) return context.l10n.auto_needMessage;
     if (_action == AutomationAction.send && _target == null) {
-      return 'Choose who gets the message.';
+      return context.l10n.auto_needTarget;
     }
     return null;
   }
@@ -185,11 +184,15 @@ class _RuleEditorState extends State<_RuleEditor> {
     final problem = _problem;
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.rule == null ? 'New rule' : 'Edit rule'),
+        title: Text(
+          widget.rule == null
+              ? context.l10n.auto_new
+              : context.l10n.auto_editTitle,
+        ),
         actions: [
           if (widget.rule != null)
             IconButton(
-              tooltip: 'Delete rule',
+              tooltip: context.l10n.auto_delete,
               icon: const Icon(Icons.delete_outline),
               onPressed: _delete,
             ),
@@ -201,21 +204,24 @@ class _RuleEditorState extends State<_RuleEditor> {
           TextField(
             controller: _name,
             onChanged: (_) => setState(() {}),
-            decoration: const InputDecoration(labelText: 'Rule name'),
+            decoration: InputDecoration(labelText: context.l10n.auto_name),
           ),
           const SizedBox(height: 12),
           DropdownButtonFormField<AutomationTrigger>(
             initialValue: _trigger,
             isExpanded: true,
-            decoration: const InputDecoration(labelText: 'When'),
+            decoration: InputDecoration(labelText: context.l10n.auto_when),
             items: [
-              for (final e in _triggerLabels.entries)
-                DropdownMenuItem(value: e.key, child: Text(e.value)),
+              for (final t in AutomationTrigger.values)
+                DropdownMenuItem(
+                  value: t,
+                  child: Text(_triggerLabel(context, t)),
+                ),
             ],
             onChanged: (v) => setState(() => _trigger = v!),
           ),
           if (_trigger == AutomationTrigger.batteryBelow) ...[
-            Text('Below $_battery%'),
+            Text(context.l10n.auto_below(_battery)),
             Slider(
               value: _battery.toDouble(),
               min: 5,
@@ -228,7 +234,7 @@ class _RuleEditorState extends State<_RuleEditor> {
           if (_trigger == AutomationTrigger.atTime)
             ListTile(
               contentPadding: EdgeInsets.zero,
-              title: const Text('Time'),
+              title: Text(context.l10n.auto_time),
               trailing: Text(
                 TimeOfDay(
                   hour: _minute ~/ 60,
@@ -245,7 +251,9 @@ class _RuleEditorState extends State<_RuleEditor> {
                 decimal: true,
                 signed: true,
               ),
-              decoration: const InputDecoration(labelText: 'Latitude'),
+              decoration: InputDecoration(
+                labelText: context.l10n.auto_latitude,
+              ),
             ),
             TextField(
               controller: _lon,
@@ -254,7 +262,9 @@ class _RuleEditorState extends State<_RuleEditor> {
                 decimal: true,
                 signed: true,
               ),
-              decoration: const InputDecoration(labelText: 'Longitude'),
+              decoration: InputDecoration(
+                labelText: context.l10n.auto_longitude,
+              ),
             ),
             if (radio.selfLatitude != null && radio.selfLongitude != null)
               Align(
@@ -264,10 +274,10 @@ class _RuleEditorState extends State<_RuleEditor> {
                     _lat.text = radio.selfLatitude!.toStringAsFixed(5);
                     _lon.text = radio.selfLongitude!.toStringAsFixed(5);
                   }),
-                  child: const Text('Use the radio\'s position'),
+                  child: Text(context.l10n.auto_usePosition),
                 ),
               ),
-            Text('Radius: $_radius m'),
+            Text(context.l10n.auto_radius(_radius)),
             Slider(
               value: _radius.toDouble(),
               min: 100,
@@ -283,7 +293,7 @@ class _RuleEditorState extends State<_RuleEditor> {
                   ? _node
                   : null,
               isExpanded: true,
-              decoration: const InputDecoration(labelText: 'Node'),
+              decoration: InputDecoration(labelText: context.l10n.auto_node),
               items: [
                 for (final c in allNodes)
                   DropdownMenuItem(
@@ -293,7 +303,7 @@ class _RuleEditorState extends State<_RuleEditor> {
               ],
               onChanged: (v) => setState(() => _node = v),
             ),
-            Text('Counts as heard within $_nodeMinutes minutes'),
+            Text(context.l10n.auto_heardWithin(_nodeMinutes)),
             Slider(
               value: _nodeMinutes.toDouble(),
               min: 10,
@@ -305,14 +315,14 @@ class _RuleEditorState extends State<_RuleEditor> {
           ],
           const SizedBox(height: 12),
           SegmentedButton<AutomationAction>(
-            segments: const [
+            segments: [
               ButtonSegment(
                 value: AutomationAction.notify,
-                label: Text('Notify me'),
+                label: Text(context.l10n.auto_notify),
               ),
               ButtonSegment(
                 value: AutomationAction.send,
-                label: Text('Send a message'),
+                label: Text(context.l10n.auto_send),
               ),
             ],
             selected: {_action},
@@ -322,7 +332,7 @@ class _RuleEditorState extends State<_RuleEditor> {
             DropdownButtonFormField<String>(
               initialValue: targets.containsKey(_target) ? _target : null,
               isExpanded: true,
-              decoration: const InputDecoration(labelText: 'Send to'),
+              decoration: InputDecoration(labelText: context.l10n.auto_sendTo),
               items: [
                 for (final e in targets.entries)
                   DropdownMenuItem(
@@ -337,13 +347,13 @@ class _RuleEditorState extends State<_RuleEditor> {
             controller: _text,
             onChanged: (_) => setState(() {}),
             maxLength: 120,
-            decoration: const InputDecoration(labelText: 'Message'),
+            decoration: InputDecoration(labelText: context.l10n.auto_message),
           ),
           if (problem != null) Text(problem),
           const SizedBox(height: 8),
           FilledButton(
             onPressed: problem == null ? _save : null,
-            child: const Text('Save'),
+            child: Text(context.l10n.auto_save),
           ),
         ],
       ),

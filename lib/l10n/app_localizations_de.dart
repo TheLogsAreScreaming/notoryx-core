@@ -11022,4 +11022,118 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get dbEncrypt_covers =>
       'Umfasst auch Kontakte, Kanalschlüssel, Wegpunkte, gespeicherte Routen, Entwürfe und wartende Nachrichten.';
+
+  @override
+  String get auto_title => 'Automatisierung';
+
+  @override
+  String get auto_add => 'Regel hinzufügen';
+
+  @override
+  String get auto_intro =>
+      'Regeln laufen nur, solange die App geöffnet ist. Jede löst aus, wenn ihre Bedingung eintritt, höchstens einmal alle 15 Minuten. Regeln, die Nachrichten senden, sind insgesamt auf 3 Sendungen alle 10 Minuten begrenzt und als automatisiert gekennzeichnet.';
+
+  @override
+  String get auto_trigBattery => 'Funkgerät-Akku fällt unter';
+
+  @override
+  String get auto_trigTime => 'Täglich um';
+
+  @override
+  String get auto_trigEnter => 'Ich betrete ein Gebiet';
+
+  @override
+  String get auto_trigLeave => 'Ich verlasse ein Gebiet';
+
+  @override
+  String get auto_trigHeard => 'Ein Knoten ist wieder zu hören';
+
+  @override
+  String get auto_trigQuiet => 'Ein Knoten verstummt';
+
+  @override
+  String auto_edit(String name) {
+    return '$name bearbeiten';
+  }
+
+  @override
+  String get auto_new => 'Neue Regel';
+
+  @override
+  String get auto_editTitle => 'Regel bearbeiten';
+
+  @override
+  String get auto_delete => 'Regel löschen';
+
+  @override
+  String get auto_needName => 'Gib der Regel einen Namen.';
+
+  @override
+  String get auto_needArea => 'Gib Breiten- und Längengrad des Gebiets ein.';
+
+  @override
+  String get auto_needNode => 'Wähle einen Knoten.';
+
+  @override
+  String get auto_needMessage => 'Schreibe die Nachricht.';
+
+  @override
+  String get auto_needTarget => 'Wähle den Empfänger.';
+
+  @override
+  String get auto_name => 'Regelname';
+
+  @override
+  String get auto_when => 'Wann';
+
+  @override
+  String auto_below(int percent) {
+    return 'Unter $percent %';
+  }
+
+  @override
+  String get auto_time => 'Uhrzeit';
+
+  @override
+  String get auto_latitude => 'Breitengrad';
+
+  @override
+  String get auto_longitude => 'Längengrad';
+
+  @override
+  String get auto_usePosition => 'Position des Funkgeräts verwenden';
+
+  @override
+  String auto_radius(int meters) {
+    return 'Radius: $meters m';
+  }
+
+  @override
+  String get auto_node => 'Knoten';
+
+  @override
+  String auto_heardWithin(int minutes) {
+    return 'Gilt als gehört innerhalb von $minutes Minuten';
+  }
+
+  @override
+  String get auto_notify => 'Mich benachrichtigen';
+
+  @override
+  String get auto_send => 'Nachricht senden';
+
+  @override
+  String get auto_sendTo => 'Senden an';
+
+  @override
+  String get auto_message => 'Nachricht';
+
+  @override
+  String get auto_save => 'Speichern';
+
+  @override
+  String get auto_entry => 'Automatisierungsregeln';
+
+  @override
+  String get auto_entrySub => 'Auslöser für Akku, Zeit, Gebiet und Knoten';
 }

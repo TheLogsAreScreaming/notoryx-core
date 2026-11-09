@@ -10998,4 +10998,118 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get dbEncrypt_covers =>
       'Kiterjed a névjegyekre, csatornakulcsokra, útpontokra, mentett útvonalakra, piszkozatokra és a várakozó üzenetekre is.';
+
+  @override
+  String get auto_title => 'Automatizálás';
+
+  @override
+  String get auto_add => 'Szabály hozzáadása';
+
+  @override
+  String get auto_intro =>
+      'A szabályok csak nyitott alkalmazásnál futnak. Mindegyik akkor lép életbe, amikor a feltétele teljesülni kezd, legfeljebb 15 percenként egyszer. Az üzenetküldő szabályok összesen 10 percenként 3 küldésre korlátozottak, és automatikusként vannak jelölve.';
+
+  @override
+  String get auto_trigBattery => 'A rádió akkuja ez alá esik:';
+
+  @override
+  String get auto_trigTime => 'Minden nap ekkor:';
+
+  @override
+  String get auto_trigEnter => 'Belépek egy területre';
+
+  @override
+  String get auto_trigLeave => 'Elhagyok egy területet';
+
+  @override
+  String get auto_trigHeard => 'Egy csomópont újra hallható';
+
+  @override
+  String get auto_trigQuiet => 'Egy csomópont elhallgat';
+
+  @override
+  String auto_edit(String name) {
+    return '$name szerkesztése';
+  }
+
+  @override
+  String get auto_new => 'Új szabály';
+
+  @override
+  String get auto_editTitle => 'Szabály szerkesztése';
+
+  @override
+  String get auto_delete => 'Szabály törlése';
+
+  @override
+  String get auto_needName => 'Adj nevet a szabálynak.';
+
+  @override
+  String get auto_needArea => 'Add meg a terület szélességét és hosszúságát.';
+
+  @override
+  String get auto_needNode => 'Válassz csomópontot.';
+
+  @override
+  String get auto_needMessage => 'Írd meg az üzenetet.';
+
+  @override
+  String get auto_needTarget => 'Válaszd ki a címzettet.';
+
+  @override
+  String get auto_name => 'Szabály neve';
+
+  @override
+  String get auto_when => 'Mikor';
+
+  @override
+  String auto_below(int percent) {
+    return '$percent% alatt';
+  }
+
+  @override
+  String get auto_time => 'Idő';
+
+  @override
+  String get auto_latitude => 'Szélesség';
+
+  @override
+  String get auto_longitude => 'Hosszúság';
+
+  @override
+  String get auto_usePosition => 'A rádió pozíciójának használata';
+
+  @override
+  String auto_radius(int meters) {
+    return 'Sugár: $meters m';
+  }
+
+  @override
+  String get auto_node => 'Csomópont';
+
+  @override
+  String auto_heardWithin(int minutes) {
+    return 'Hallottnak számít $minutes percen belül';
+  }
+
+  @override
+  String get auto_notify => 'Értesítés nekem';
+
+  @override
+  String get auto_send => 'Üzenet küldése';
+
+  @override
+  String get auto_sendTo => 'Címzett';
+
+  @override
+  String get auto_message => 'Üzenet';
+
+  @override
+  String get auto_save => 'Mentés';
+
+  @override
+  String get auto_entry => 'Automatizálási szabályok';
+
+  @override
+  String get auto_entrySub => 'Akku-, idő-, terület- és csomópont-feltételek';
 }

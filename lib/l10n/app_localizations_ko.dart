@@ -10508,4 +10508,118 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get dbEncrypt_covers =>
       '연락처, 채널 키, 웨이포인트, 저장된 경로, 임시 저장 글, 대기 중인 메시지도 포함합니다.';
+
+  @override
+  String get auto_title => '자동화';
+
+  @override
+  String get auto_add => '규칙 추가';
+
+  @override
+  String get auto_intro =>
+      '규칙은 앱이 열려 있는 동안에만 실행됩니다. 조건이 참이 되기 시작할 때 15분에 최대 한 번 실행됩니다. 메시지를 보내는 규칙은 합계 10분에 3회로 제한되며 자동 발송으로 표시됩니다.';
+
+  @override
+  String get auto_trigBattery => '무전기 배터리가 다음 아래로 떨어짐';
+
+  @override
+  String get auto_trigTime => '매일 다음 시각';
+
+  @override
+  String get auto_trigEnter => '구역에 들어감';
+
+  @override
+  String get auto_trigLeave => '구역을 벗어남';
+
+  @override
+  String get auto_trigHeard => '노드가 다시 수신됨';
+
+  @override
+  String get auto_trigQuiet => '노드가 조용해짐';
+
+  @override
+  String auto_edit(String name) {
+    return '$name 편집';
+  }
+
+  @override
+  String get auto_new => '새 규칙';
+
+  @override
+  String get auto_editTitle => '규칙 편집';
+
+  @override
+  String get auto_delete => '규칙 삭제';
+
+  @override
+  String get auto_needName => '규칙 이름을 입력하세요.';
+
+  @override
+  String get auto_needArea => '구역의 위도와 경도를 입력하세요.';
+
+  @override
+  String get auto_needNode => '노드를 선택하세요.';
+
+  @override
+  String get auto_needMessage => '메시지를 입력하세요.';
+
+  @override
+  String get auto_needTarget => '받는 사람을 선택하세요.';
+
+  @override
+  String get auto_name => '규칙 이름';
+
+  @override
+  String get auto_when => '조건';
+
+  @override
+  String auto_below(int percent) {
+    return '$percent% 미만';
+  }
+
+  @override
+  String get auto_time => '시각';
+
+  @override
+  String get auto_latitude => '위도';
+
+  @override
+  String get auto_longitude => '경도';
+
+  @override
+  String get auto_usePosition => '무전기 위치 사용';
+
+  @override
+  String auto_radius(int meters) {
+    return '반경: ${meters}m';
+  }
+
+  @override
+  String get auto_node => '노드';
+
+  @override
+  String auto_heardWithin(int minutes) {
+    return '$minutes분 이내면 수신으로 간주';
+  }
+
+  @override
+  String get auto_notify => '나에게 알림';
+
+  @override
+  String get auto_send => '메시지 보내기';
+
+  @override
+  String get auto_sendTo => '받는 사람';
+
+  @override
+  String get auto_message => '메시지';
+
+  @override
+  String get auto_save => '저장';
+
+  @override
+  String get auto_entry => '자동화 규칙';
+
+  @override
+  String get auto_entrySub => '배터리, 시간, 구역, 노드 조건';
 }

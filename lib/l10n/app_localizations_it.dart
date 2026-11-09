@@ -11021,4 +11021,118 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get dbEncrypt_covers =>
       'Copre anche contatti, chiavi dei canali, waypoint, percorsi salvati, bozze e messaggi in attesa.';
+
+  @override
+  String get auto_title => 'Automazione';
+
+  @override
+  String get auto_add => 'Aggiungi regola';
+
+  @override
+  String get auto_intro =>
+      'Le regole funzionano solo con l\'app aperta. Ognuna scatta quando la sua condizione diventa vera, al massimo una volta ogni 15 minuti. Le regole che inviano messaggi sono limitate a 3 invii ogni 10 minuti in totale e sono indicate come automatiche.';
+
+  @override
+  String get auto_trigBattery => 'La batteria della radio scende sotto';
+
+  @override
+  String get auto_trigTime => 'Ogni giorno alle';
+
+  @override
+  String get auto_trigEnter => 'Entro in un\'area';
+
+  @override
+  String get auto_trigLeave => 'Esco da un\'area';
+
+  @override
+  String get auto_trigHeard => 'Un nodo viene risentito';
+
+  @override
+  String get auto_trigQuiet => 'Un nodo tace';
+
+  @override
+  String auto_edit(String name) {
+    return 'Modifica $name';
+  }
+
+  @override
+  String get auto_new => 'Nuova regola';
+
+  @override
+  String get auto_editTitle => 'Modifica regola';
+
+  @override
+  String get auto_delete => 'Elimina regola';
+
+  @override
+  String get auto_needName => 'Dai un nome alla regola.';
+
+  @override
+  String get auto_needArea => 'Inserisci latitudine e longitudine dell\'area.';
+
+  @override
+  String get auto_needNode => 'Scegli un nodo.';
+
+  @override
+  String get auto_needMessage => 'Scrivi il messaggio.';
+
+  @override
+  String get auto_needTarget => 'Scegli chi riceve il messaggio.';
+
+  @override
+  String get auto_name => 'Nome regola';
+
+  @override
+  String get auto_when => 'Quando';
+
+  @override
+  String auto_below(int percent) {
+    return 'Sotto il $percent%';
+  }
+
+  @override
+  String get auto_time => 'Ora';
+
+  @override
+  String get auto_latitude => 'Latitudine';
+
+  @override
+  String get auto_longitude => 'Longitudine';
+
+  @override
+  String get auto_usePosition => 'Usa la posizione della radio';
+
+  @override
+  String auto_radius(int meters) {
+    return 'Raggio: $meters m';
+  }
+
+  @override
+  String get auto_node => 'Nodo';
+
+  @override
+  String auto_heardWithin(int minutes) {
+    return 'Considerato sentito entro $minutes minuti';
+  }
+
+  @override
+  String get auto_notify => 'Avvisami';
+
+  @override
+  String get auto_send => 'Invia un messaggio';
+
+  @override
+  String get auto_sendTo => 'Invia a';
+
+  @override
+  String get auto_message => 'Messaggio';
+
+  @override
+  String get auto_save => 'Salva';
+
+  @override
+  String get auto_entry => 'Regole di automazione';
+
+  @override
+  String get auto_entrySub => 'Attivazione per batteria, ora, area e nodo';
 }

@@ -11009,4 +11009,118 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String get dbEncrypt_covers =>
       'Zajema tudi stike, ključe kanalov, točke poti, shranjene poti, osnutke in čakajoča sporočila.';
+
+  @override
+  String get auto_title => 'Avtomatizacija';
+
+  @override
+  String get auto_add => 'Dodaj pravilo';
+
+  @override
+  String get auto_intro =>
+      'Pravila delujejo le, ko je aplikacija odprta. Vsako se sproži, ko pogoj začne veljati, največ enkrat na 15 minut. Pravila, ki pošiljajo sporočila, so skupaj omejena na 3 pošiljanja na 10 minut in označena kot samodejna.';
+
+  @override
+  String get auto_trigBattery => 'Baterija radia pade pod';
+
+  @override
+  String get auto_trigTime => 'Vsak dan ob';
+
+  @override
+  String get auto_trigEnter => 'Vstopim v območje';
+
+  @override
+  String get auto_trigLeave => 'Zapustim območje';
+
+  @override
+  String get auto_trigHeard => 'Vozlišče je spet slišati';
+
+  @override
+  String get auto_trigQuiet => 'Vozlišče utihne';
+
+  @override
+  String auto_edit(String name) {
+    return 'Uredi $name';
+  }
+
+  @override
+  String get auto_new => 'Novo pravilo';
+
+  @override
+  String get auto_editTitle => 'Uredi pravilo';
+
+  @override
+  String get auto_delete => 'Izbriši pravilo';
+
+  @override
+  String get auto_needName => 'Poimenujte pravilo.';
+
+  @override
+  String get auto_needArea => 'Vnesite zemljepisno širino in dolžino območja.';
+
+  @override
+  String get auto_needNode => 'Izberite vozlišče.';
+
+  @override
+  String get auto_needMessage => 'Napišite sporočilo.';
+
+  @override
+  String get auto_needTarget => 'Izberite prejemnika.';
+
+  @override
+  String get auto_name => 'Ime pravila';
+
+  @override
+  String get auto_when => 'Kdaj';
+
+  @override
+  String auto_below(int percent) {
+    return 'Pod $percent %';
+  }
+
+  @override
+  String get auto_time => 'Čas';
+
+  @override
+  String get auto_latitude => 'Širina';
+
+  @override
+  String get auto_longitude => 'Dolžina';
+
+  @override
+  String get auto_usePosition => 'Uporabi položaj radia';
+
+  @override
+  String auto_radius(int meters) {
+    return 'Polmer: $meters m';
+  }
+
+  @override
+  String get auto_node => 'Vozlišče';
+
+  @override
+  String auto_heardWithin(int minutes) {
+    return 'Šteje kot slišano v $minutes minutah';
+  }
+
+  @override
+  String get auto_notify => 'Obvesti me';
+
+  @override
+  String get auto_send => 'Pošlji sporočilo';
+
+  @override
+  String get auto_sendTo => 'Pošlji';
+
+  @override
+  String get auto_message => 'Sporočilo';
+
+  @override
+  String get auto_save => 'Shrani';
+
+  @override
+  String get auto_entry => 'Pravila avtomatizacije';
+
+  @override
+  String get auto_entrySub => 'Sprožilci baterije, časa, območja in vozlišča';
 }

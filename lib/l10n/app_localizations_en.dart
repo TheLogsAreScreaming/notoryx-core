@@ -10878,4 +10878,118 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get dbEncrypt_covers =>
       'Also covers contacts, channel keys, waypoints, saved routes, drafts and waiting messages.';
+
+  @override
+  String get auto_title => 'Automation';
+
+  @override
+  String get auto_add => 'Add rule';
+
+  @override
+  String get auto_intro =>
+      'Rules run only while the app is open. Each fires when its condition starts being true, at most once every 15 minutes. Rules that send messages are limited to 3 sends every 10 minutes in total, and are labelled as automated.';
+
+  @override
+  String get auto_trigBattery => 'Radio battery drops below';
+
+  @override
+  String get auto_trigTime => 'Every day at';
+
+  @override
+  String get auto_trigEnter => 'I enter an area';
+
+  @override
+  String get auto_trigLeave => 'I leave an area';
+
+  @override
+  String get auto_trigHeard => 'A node is heard again';
+
+  @override
+  String get auto_trigQuiet => 'A node goes quiet';
+
+  @override
+  String auto_edit(String name) {
+    return 'Edit $name';
+  }
+
+  @override
+  String get auto_new => 'New rule';
+
+  @override
+  String get auto_editTitle => 'Edit rule';
+
+  @override
+  String get auto_delete => 'Delete rule';
+
+  @override
+  String get auto_needName => 'Give the rule a name.';
+
+  @override
+  String get auto_needArea => 'Enter the area\'s latitude and longitude.';
+
+  @override
+  String get auto_needNode => 'Choose a node.';
+
+  @override
+  String get auto_needMessage => 'Write the message.';
+
+  @override
+  String get auto_needTarget => 'Choose who gets the message.';
+
+  @override
+  String get auto_name => 'Rule name';
+
+  @override
+  String get auto_when => 'When';
+
+  @override
+  String auto_below(int percent) {
+    return 'Below $percent%';
+  }
+
+  @override
+  String get auto_time => 'Time';
+
+  @override
+  String get auto_latitude => 'Latitude';
+
+  @override
+  String get auto_longitude => 'Longitude';
+
+  @override
+  String get auto_usePosition => 'Use the radio\'s position';
+
+  @override
+  String auto_radius(int meters) {
+    return 'Radius: $meters m';
+  }
+
+  @override
+  String get auto_node => 'Node';
+
+  @override
+  String auto_heardWithin(int minutes) {
+    return 'Counts as heard within $minutes minutes';
+  }
+
+  @override
+  String get auto_notify => 'Notify me';
+
+  @override
+  String get auto_send => 'Send a message';
+
+  @override
+  String get auto_sendTo => 'Send to';
+
+  @override
+  String get auto_message => 'Message';
+
+  @override
+  String get auto_save => 'Save';
+
+  @override
+  String get auto_entry => 'Automation rules';
+
+  @override
+  String get auto_entrySub => 'Battery, time, area and node triggers';
 }

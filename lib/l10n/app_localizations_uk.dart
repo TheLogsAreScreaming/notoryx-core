@@ -11050,4 +11050,118 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get dbEncrypt_covers =>
       'Також захищає контакти, ключі каналів, путівні точки, збережені маршрути, чернетки й очікувані повідомлення.';
+
+  @override
+  String get auto_title => 'Автоматизація';
+
+  @override
+  String get auto_add => 'Додати правило';
+
+  @override
+  String get auto_intro =>
+      'Правила працюють, лише поки застосунок відкрито. Кожне спрацьовує, коли умова починає виконуватися, не частіше разу на 15 хвилин. Правила з надсиланням повідомлень обмежені загалом 3 надсиланнями за 10 хвилин і позначаються як автоматичні.';
+
+  @override
+  String get auto_trigBattery => 'Заряд радіо падає нижче';
+
+  @override
+  String get auto_trigTime => 'Щодня о';
+
+  @override
+  String get auto_trigEnter => 'Я входжу в зону';
+
+  @override
+  String get auto_trigLeave => 'Я виходжу із зони';
+
+  @override
+  String get auto_trigHeard => 'Вузол знову чути';
+
+  @override
+  String get auto_trigQuiet => 'Вузол замовкає';
+
+  @override
+  String auto_edit(String name) {
+    return 'Редагувати $name';
+  }
+
+  @override
+  String get auto_new => 'Нове правило';
+
+  @override
+  String get auto_editTitle => 'Редагувати правило';
+
+  @override
+  String get auto_delete => 'Видалити правило';
+
+  @override
+  String get auto_needName => 'Назвіть правило.';
+
+  @override
+  String get auto_needArea => 'Введіть широту й довготу зони.';
+
+  @override
+  String get auto_needNode => 'Виберіть вузол.';
+
+  @override
+  String get auto_needMessage => 'Напишіть повідомлення.';
+
+  @override
+  String get auto_needTarget => 'Виберіть отримувача.';
+
+  @override
+  String get auto_name => 'Назва правила';
+
+  @override
+  String get auto_when => 'Коли';
+
+  @override
+  String auto_below(int percent) {
+    return 'Нижче $percent%';
+  }
+
+  @override
+  String get auto_time => 'Час';
+
+  @override
+  String get auto_latitude => 'Широта';
+
+  @override
+  String get auto_longitude => 'Довгота';
+
+  @override
+  String get auto_usePosition => 'Використати позицію радіо';
+
+  @override
+  String auto_radius(int meters) {
+    return 'Радіус: $meters м';
+  }
+
+  @override
+  String get auto_node => 'Вузол';
+
+  @override
+  String auto_heardWithin(int minutes) {
+    return 'Вважається почутим протягом $minutes хв';
+  }
+
+  @override
+  String get auto_notify => 'Сповістити мене';
+
+  @override
+  String get auto_send => 'Надіслати повідомлення';
+
+  @override
+  String get auto_sendTo => 'Кому';
+
+  @override
+  String get auto_message => 'Повідомлення';
+
+  @override
+  String get auto_save => 'Зберегти';
+
+  @override
+  String get auto_entry => 'Правила автоматизації';
+
+  @override
+  String get auto_entrySub => 'Батарея, час, зона та вузли';
 }

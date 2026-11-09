@@ -10926,4 +10926,118 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get dbEncrypt_covers =>
       'Omfattar även kontakter, kanalnycklar, vägpunkter, sparade rutter, utkast och väntande meddelanden.';
+
+  @override
+  String get auto_title => 'Automatisering';
+
+  @override
+  String get auto_add => 'Lägg till regel';
+
+  @override
+  String get auto_intro =>
+      'Regler körs bara när appen är öppen. Varje regel utlöses när villkoret börjar gälla, högst en gång per 15 minuter. Regler som skickar meddelanden är totalt begränsade till 3 sändningar per 10 minuter och märks som automatiska.';
+
+  @override
+  String get auto_trigBattery => 'Radions batteri sjunker under';
+
+  @override
+  String get auto_trigTime => 'Varje dag kl.';
+
+  @override
+  String get auto_trigEnter => 'Jag går in i ett område';
+
+  @override
+  String get auto_trigLeave => 'Jag lämnar ett område';
+
+  @override
+  String get auto_trigHeard => 'En nod hörs igen';
+
+  @override
+  String get auto_trigQuiet => 'En nod tystnar';
+
+  @override
+  String auto_edit(String name) {
+    return 'Redigera $name';
+  }
+
+  @override
+  String get auto_new => 'Ny regel';
+
+  @override
+  String get auto_editTitle => 'Redigera regel';
+
+  @override
+  String get auto_delete => 'Ta bort regel';
+
+  @override
+  String get auto_needName => 'Ge regeln ett namn.';
+
+  @override
+  String get auto_needArea => 'Ange områdets latitud och longitud.';
+
+  @override
+  String get auto_needNode => 'Välj en nod.';
+
+  @override
+  String get auto_needMessage => 'Skriv meddelandet.';
+
+  @override
+  String get auto_needTarget => 'Välj vem som ska få meddelandet.';
+
+  @override
+  String get auto_name => 'Regelnamn';
+
+  @override
+  String get auto_when => 'När';
+
+  @override
+  String auto_below(int percent) {
+    return 'Under $percent %';
+  }
+
+  @override
+  String get auto_time => 'Tid';
+
+  @override
+  String get auto_latitude => 'Latitud';
+
+  @override
+  String get auto_longitude => 'Longitud';
+
+  @override
+  String get auto_usePosition => 'Använd radions position';
+
+  @override
+  String auto_radius(int meters) {
+    return 'Radie: $meters m';
+  }
+
+  @override
+  String get auto_node => 'Nod';
+
+  @override
+  String auto_heardWithin(int minutes) {
+    return 'Räknas som hörd inom $minutes minuter';
+  }
+
+  @override
+  String get auto_notify => 'Meddela mig';
+
+  @override
+  String get auto_send => 'Skicka ett meddelande';
+
+  @override
+  String get auto_sendTo => 'Skicka till';
+
+  @override
+  String get auto_message => 'Meddelande';
+
+  @override
+  String get auto_save => 'Spara';
+
+  @override
+  String get auto_entry => 'Automatiseringsregler';
+
+  @override
+  String get auto_entrySub => 'Utlösare för batteri, tid, område och nod';
 }

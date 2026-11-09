@@ -11050,4 +11050,119 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get dbEncrypt_covers =>
       'Couvre aussi les contacts, les clés de canal, les points de repère, les itinéraires enregistrés, les brouillons et les messages en attente.';
+
+  @override
+  String get auto_title => 'Automatisation';
+
+  @override
+  String get auto_add => 'Ajouter une règle';
+
+  @override
+  String get auto_intro =>
+      'Les règles ne fonctionnent que lorsque l\'application est ouverte. Chacune se déclenche quand sa condition devient vraie, au plus une fois toutes les 15 minutes. Les règles qui envoient des messages sont limitées à 3 envois toutes les 10 minutes au total et sont signalées comme automatisées.';
+
+  @override
+  String get auto_trigBattery => 'La batterie de la radio passe sous';
+
+  @override
+  String get auto_trigTime => 'Tous les jours à';
+
+  @override
+  String get auto_trigEnter => 'J\'entre dans une zone';
+
+  @override
+  String get auto_trigLeave => 'Je quitte une zone';
+
+  @override
+  String get auto_trigHeard => 'Un nœud est de nouveau entendu';
+
+  @override
+  String get auto_trigQuiet => 'Un nœud devient silencieux';
+
+  @override
+  String auto_edit(String name) {
+    return 'Modifier $name';
+  }
+
+  @override
+  String get auto_new => 'Nouvelle règle';
+
+  @override
+  String get auto_editTitle => 'Modifier la règle';
+
+  @override
+  String get auto_delete => 'Supprimer la règle';
+
+  @override
+  String get auto_needName => 'Donnez un nom à la règle.';
+
+  @override
+  String get auto_needArea =>
+      'Saisissez la latitude et la longitude de la zone.';
+
+  @override
+  String get auto_needNode => 'Choisissez un nœud.';
+
+  @override
+  String get auto_needMessage => 'Écrivez le message.';
+
+  @override
+  String get auto_needTarget => 'Choisissez le destinataire.';
+
+  @override
+  String get auto_name => 'Nom de la règle';
+
+  @override
+  String get auto_when => 'Quand';
+
+  @override
+  String auto_below(int percent) {
+    return 'Sous $percent %';
+  }
+
+  @override
+  String get auto_time => 'Heure';
+
+  @override
+  String get auto_latitude => 'Latitude';
+
+  @override
+  String get auto_longitude => 'Longitude';
+
+  @override
+  String get auto_usePosition => 'Utiliser la position de la radio';
+
+  @override
+  String auto_radius(int meters) {
+    return 'Rayon : $meters m';
+  }
+
+  @override
+  String get auto_node => 'Nœud';
+
+  @override
+  String auto_heardWithin(int minutes) {
+    return 'Compte comme entendu dans les $minutes minutes';
+  }
+
+  @override
+  String get auto_notify => 'M\'avertir';
+
+  @override
+  String get auto_send => 'Envoyer un message';
+
+  @override
+  String get auto_sendTo => 'Envoyer à';
+
+  @override
+  String get auto_message => 'Message';
+
+  @override
+  String get auto_save => 'Enregistrer';
+
+  @override
+  String get auto_entry => 'Règles d\'automatisation';
+
+  @override
+  String get auto_entrySub => 'Déclencheurs batterie, heure, zone et nœud';
 }

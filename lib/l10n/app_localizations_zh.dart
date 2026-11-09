@@ -10275,4 +10275,118 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get dbEncrypt_covers => '同时涵盖联系人、频道密钥、航点、已保存的路线、草稿和待发送消息。';
+
+  @override
+  String get auto_title => '自动化';
+
+  @override
+  String get auto_add => '添加规则';
+
+  @override
+  String get auto_intro =>
+      '规则仅在应用打开时运行。每条规则在条件开始成立时触发，最多每 15 分钟一次。发送消息的规则合计限制为每 10 分钟 3 次，并标记为自动发送。';
+
+  @override
+  String get auto_trigBattery => '电台电量低于';
+
+  @override
+  String get auto_trigTime => '每天的';
+
+  @override
+  String get auto_trigEnter => '我进入某区域';
+
+  @override
+  String get auto_trigLeave => '我离开某区域';
+
+  @override
+  String get auto_trigHeard => '某节点再次被听到';
+
+  @override
+  String get auto_trigQuiet => '某节点变得沉默';
+
+  @override
+  String auto_edit(String name) {
+    return '编辑 $name';
+  }
+
+  @override
+  String get auto_new => '新规则';
+
+  @override
+  String get auto_editTitle => '编辑规则';
+
+  @override
+  String get auto_delete => '删除规则';
+
+  @override
+  String get auto_needName => '请为规则命名。';
+
+  @override
+  String get auto_needArea => '请输入区域的纬度和经度。';
+
+  @override
+  String get auto_needNode => '请选择节点。';
+
+  @override
+  String get auto_needMessage => '请输入消息。';
+
+  @override
+  String get auto_needTarget => '请选择接收者。';
+
+  @override
+  String get auto_name => '规则名称';
+
+  @override
+  String get auto_when => '条件';
+
+  @override
+  String auto_below(int percent) {
+    return '低于 $percent%';
+  }
+
+  @override
+  String get auto_time => '时间';
+
+  @override
+  String get auto_latitude => '纬度';
+
+  @override
+  String get auto_longitude => '经度';
+
+  @override
+  String get auto_usePosition => '使用电台位置';
+
+  @override
+  String auto_radius(int meters) {
+    return '半径：$meters 米';
+  }
+
+  @override
+  String get auto_node => '节点';
+
+  @override
+  String auto_heardWithin(int minutes) {
+    return '$minutes 分钟内算作听到';
+  }
+
+  @override
+  String get auto_notify => '通知我';
+
+  @override
+  String get auto_send => '发送消息';
+
+  @override
+  String get auto_sendTo => '发送给';
+
+  @override
+  String get auto_message => '消息';
+
+  @override
+  String get auto_save => '保存';
+
+  @override
+  String get auto_entry => '自动化规则';
+
+  @override
+  String get auto_entrySub => '电量、时间、区域和节点触发';
 }

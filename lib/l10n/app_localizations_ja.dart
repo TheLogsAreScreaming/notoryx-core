@@ -10493,4 +10493,118 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get dbEncrypt_covers =>
       '連絡先、チャンネルキー、ウェイポイント、保存したルート、下書き、送信待ちメッセージも対象です。';
+
+  @override
+  String get auto_title => '自動化';
+
+  @override
+  String get auto_add => 'ルールを追加';
+
+  @override
+  String get auto_intro =>
+      'ルールはアプリを開いている間だけ動作します。条件が成立したときに、15分に1回まで実行されます。メッセージを送るルールは合計で10分間に3件までに制限され、自動送信と表示されます。';
+
+  @override
+  String get auto_trigBattery => '無線機のバッテリーが次を下回る';
+
+  @override
+  String get auto_trigTime => '毎日この時刻';
+
+  @override
+  String get auto_trigEnter => 'エリアに入る';
+
+  @override
+  String get auto_trigLeave => 'エリアから出る';
+
+  @override
+  String get auto_trigHeard => 'ノードが再び受信される';
+
+  @override
+  String get auto_trigQuiet => 'ノードが沈黙する';
+
+  @override
+  String auto_edit(String name) {
+    return '$nameを編集';
+  }
+
+  @override
+  String get auto_new => '新しいルール';
+
+  @override
+  String get auto_editTitle => 'ルールを編集';
+
+  @override
+  String get auto_delete => 'ルールを削除';
+
+  @override
+  String get auto_needName => 'ルールに名前を付けてください。';
+
+  @override
+  String get auto_needArea => 'エリアの緯度と経度を入力してください。';
+
+  @override
+  String get auto_needNode => 'ノードを選んでください。';
+
+  @override
+  String get auto_needMessage => 'メッセージを入力してください。';
+
+  @override
+  String get auto_needTarget => '送信先を選んでください。';
+
+  @override
+  String get auto_name => 'ルール名';
+
+  @override
+  String get auto_when => '条件';
+
+  @override
+  String auto_below(int percent) {
+    return '$percent%未満';
+  }
+
+  @override
+  String get auto_time => '時刻';
+
+  @override
+  String get auto_latitude => '緯度';
+
+  @override
+  String get auto_longitude => '経度';
+
+  @override
+  String get auto_usePosition => '無線機の位置を使う';
+
+  @override
+  String auto_radius(int meters) {
+    return '半径: $meters m';
+  }
+
+  @override
+  String get auto_node => 'ノード';
+
+  @override
+  String auto_heardWithin(int minutes) {
+    return '$minutes分以内なら受信ありとみなす';
+  }
+
+  @override
+  String get auto_notify => '通知する';
+
+  @override
+  String get auto_send => 'メッセージを送信';
+
+  @override
+  String get auto_sendTo => '送信先';
+
+  @override
+  String get auto_message => 'メッセージ';
+
+  @override
+  String get auto_save => '保存';
+
+  @override
+  String get auto_entry => '自動化ルール';
+
+  @override
+  String get auto_entrySub => 'バッテリー、時刻、エリア、ノードで実行';
 }
