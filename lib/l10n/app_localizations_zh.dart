@@ -10743,4 +10743,166 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String get trail_safety =>
       '路线数据 © OpenStreetMap 贡献者。可能不完整或已过时。路线未经安全或可通行性检查，请勿将其作为唯一的导航手段。';
+
+  @override
+  String get ant_title => '天线覆盖范围';
+
+  @override
+  String get ant_placeHint => '长按地图放置天线。';
+
+  @override
+  String get ant_fromRadio => '天线位于你电台的位置。长按地图可移动。';
+
+  @override
+  String get ant_placed => '天线已放在地图上。长按可移动。';
+
+  @override
+  String get ant_height => '天线高度';
+
+  @override
+  String get ant_radius => '半径';
+
+  @override
+  String get ant_checking => '正在检查地形…';
+
+  @override
+  String get ant_estimate => '估算覆盖范围';
+
+  @override
+  String get ant_noTerrain => '无法加载地形高度。首次使用需要联网。';
+
+  @override
+  String get ant_legendSignal =>
+      '大绿点：信号强。小橙点：勉强。根据地形和电台设置的粗略估算，假设使用 2 dBi 天线。不包括树木和建筑，实际范围通常更短。';
+
+  @override
+  String get ant_legendLos => '连接电台以估算信号。绿点表示与手持电台（1.5 米）之间无遮挡。只是粗略估算，并非保证。';
+
+  @override
+  String ant_losSummary(int percent, String km) {
+    return '对 $percent% 的采样点可视 • 最远 $km 公里';
+  }
+
+  @override
+  String ant_signalSummary(int strong, int marginal, String km) {
+    return '估算信号：$strong% 的区域强，$marginal% 勉强，最远可用 $km 公里。';
+  }
+
+  @override
+  String rp_title(String name) {
+    return '$name 网络设置';
+  }
+
+  @override
+  String rp_mostNodes(String summary) {
+    return '附近大多数节点使用 $summary。你的电台设置不同，可能收不到它们。';
+  }
+
+  @override
+  String rp_mostNodesCount(int count, String summary) {
+    return '附近大多数节点（MeshCore 地图上 $count 个）使用 $summary。你的电台设置不同，可能收不到它们。';
+  }
+
+  @override
+  String rp_localMesh(String summary) {
+    return '本地网络使用 $summary。你的电台设置不同，可能收不到。';
+  }
+
+  @override
+  String get rp_notNow => '以后再说';
+
+  @override
+  String get rp_review => '查看';
+
+  @override
+  String rp_useTitle(String name) {
+    return '使用 $name 的设置？';
+  }
+
+  @override
+  String get rp_already => '你的电台已在使用这些设置。';
+
+  @override
+  String get rp_fromMap => '由节点所有者在 MeshCore 地图上报告，未经空中验证。';
+
+  @override
+  String rp_updated(String date) {
+    return '更新于 $date。切换后只能收到相同设置的电台。';
+  }
+
+  @override
+  String get rp_powerOnly => '发射功率不会更改。';
+
+  @override
+  String get rp_powerHash => '发射功率和路径哈希大小不会更改。';
+
+  @override
+  String get rp_apply => '应用到电台';
+
+  @override
+  String rp_setTo(String name) {
+    return '电台已设为 $name 设置。';
+  }
+
+  @override
+  String rp_failed(String error) {
+    return '无法更改电台：$error';
+  }
+
+  @override
+  String get rp_noArea => '你附近没有列出的区域。';
+
+  @override
+  String get rp_noLonger => '所选区域已不在列表中。';
+
+  @override
+  String get rp_autoPrefix => '自动：';
+
+  @override
+  String get rp_tileTitle => '本地网络设置';
+
+  @override
+  String get rp_automatic => '自动';
+
+  @override
+  String get rp_autoSub => '根据电台或手机的位置';
+
+  @override
+  String get rp_mapSuffix => 'MeshCore 地图';
+
+  @override
+  String get rp_savedList => '正在使用已保存的列表。联网时会从 GitHub 更新。';
+
+  @override
+  String rp_checked(String time) {
+    return '列表检查于 $time。区域通过拉取请求添加。';
+  }
+
+  @override
+  String get sh_title => '分享联系人';
+
+  @override
+  String get sh_hint => '以链接形式发送其名称和公钥，任何人点按即可添加。';
+
+  @override
+  String get sh_you => '这是你自己。';
+
+  @override
+  String get sh_already => '已在你的联系人中。';
+
+  @override
+  String get sh_adding => '正在添加…';
+
+  @override
+  String get sh_add => '添加联系人';
+
+  @override
+  String sh_added(String name) {
+    return '已添加 $name。';
+  }
+
+  @override
+  String sh_addFailed(String name, String error) {
+    return '无法添加 $name：$error';
+  }
 }

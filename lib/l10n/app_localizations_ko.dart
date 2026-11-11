@@ -10981,4 +10981,167 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get trail_safety =>
       '트레일 데이터 © OpenStreetMap 기여자. 불완전하거나 오래되었을 수 있습니다. 경로의 안전성이나 통행 가능 여부는 확인하지 않으므로 유일한 내비게이션으로 사용하지 마세요.';
+
+  @override
+  String get ant_title => '안테나 커버리지';
+
+  @override
+  String get ant_placeHint => '지도를 길게 눌러 안테나를 놓으세요.';
+
+  @override
+  String get ant_fromRadio => '안테나가 무전기 위치에 있습니다. 지도를 길게 눌러 옮기세요.';
+
+  @override
+  String get ant_placed => '안테나를 지도에 놓았습니다. 길게 눌러 옮기세요.';
+
+  @override
+  String get ant_height => '안테나 높이';
+
+  @override
+  String get ant_radius => '반경';
+
+  @override
+  String get ant_checking => '지형 확인 중…';
+
+  @override
+  String get ant_estimate => '커버리지 추정';
+
+  @override
+  String get ant_noTerrain => '지형 고도를 불러오지 못했습니다. 처음에는 인터넷 연결이 필요합니다.';
+
+  @override
+  String get ant_legendSignal =>
+      '큰 초록 점: 강한 신호. 작은 주황 점: 경계. 지형과 무전기 설정으로 낸 대략적 추정이며 2 dBi 안테나를 가정합니다. 나무와 건물은 포함되지 않아 실제 범위는 대개 더 짧습니다.';
+
+  @override
+  String get ant_legendLos =>
+      '신호를 추정하려면 무전기를 연결하세요. 초록 점은 휴대용 무전기(1.5 m)까지 가시선이 있습니다. 대략적 추정이며 보장이 아닙니다.';
+
+  @override
+  String ant_losSummary(int percent, String km) {
+    return '측정 지점의 $percent%까지 가시선 • 가장 먼 곳 $km km';
+  }
+
+  @override
+  String ant_signalSummary(int strong, int marginal, String km) {
+    return '추정 신호: 지역의 $strong%에서 강함, $marginal%에서 경계, $km km까지 사용 가능.';
+  }
+
+  @override
+  String rp_title(String name) {
+    return '$name 메시 설정';
+  }
+
+  @override
+  String rp_mostNodes(String summary) {
+    return '이 근처 대부분의 노드는 $summary을 사용합니다. 내 무전기 설정이 달라 들리지 않을 수 있습니다.';
+  }
+
+  @override
+  String rp_mostNodesCount(int count, String summary) {
+    return '이 근처 대부분의 노드(MeshCore 지도에 $count개)는 $summary을 사용합니다. 내 무전기 설정이 달라 들리지 않을 수 있습니다.';
+  }
+
+  @override
+  String rp_localMesh(String summary) {
+    return '지역 메시는 $summary을 사용합니다. 내 무전기 설정이 달라 들리지 않을 수 있습니다.';
+  }
+
+  @override
+  String get rp_notNow => '나중에';
+
+  @override
+  String get rp_review => '검토';
+
+  @override
+  String rp_useTitle(String name) {
+    return '$name 설정을 사용할까요?';
+  }
+
+  @override
+  String get rp_already => '무전기가 이미 이 설정을 사용합니다.';
+
+  @override
+  String get rp_fromMap => 'MeshCore 지도에서 노드 소유자가 보고한 것으로 무선으로 확인되지 않았습니다.';
+
+  @override
+  String rp_updated(String date) {
+    return '$date 업데이트. 바꾸면 같은 설정의 무전기만 들립니다.';
+  }
+
+  @override
+  String get rp_powerOnly => '송신 출력은 바뀌지 않습니다.';
+
+  @override
+  String get rp_powerHash => '송신 출력과 경로 해시 크기는 바뀌지 않습니다.';
+
+  @override
+  String get rp_apply => '무전기에 적용';
+
+  @override
+  String rp_setTo(String name) {
+    return '무전기를 $name 설정으로 바꿨습니다.';
+  }
+
+  @override
+  String rp_failed(String error) {
+    return '무전기를 바꾸지 못했습니다: $error';
+  }
+
+  @override
+  String get rp_noArea => '근처에 목록의 지역이 없습니다.';
+
+  @override
+  String get rp_noLonger => '선택한 지역이 더 이상 목록에 없습니다.';
+
+  @override
+  String get rp_autoPrefix => '자동: ';
+
+  @override
+  String get rp_tileTitle => '지역 메시 설정';
+
+  @override
+  String get rp_automatic => '자동';
+
+  @override
+  String get rp_autoSub => '무전기 또는 휴대폰 위치 기준';
+
+  @override
+  String get rp_mapSuffix => 'MeshCore 지도';
+
+  @override
+  String get rp_savedList => '저장된 목록을 사용 중입니다. 온라인일 때 GitHub에서 업데이트됩니다.';
+
+  @override
+  String rp_checked(String time) {
+    return '$time에 목록 확인. 지역은 풀 리퀘스트로 추가됩니다.';
+  }
+
+  @override
+  String get sh_title => '연락처 공유';
+
+  @override
+  String get sh_hint => '이름과 공개 키를 누구나 눌러 추가할 수 있는 링크로 보냅니다.';
+
+  @override
+  String get sh_you => '나입니다.';
+
+  @override
+  String get sh_already => '이미 연락처에 있습니다.';
+
+  @override
+  String get sh_adding => '추가 중…';
+
+  @override
+  String get sh_add => '연락처 추가';
+
+  @override
+  String sh_added(String name) {
+    return '$name님을 추가했습니다.';
+  }
+
+  @override
+  String sh_addFailed(String name, String error) {
+    return '$name님을 추가하지 못했습니다: $error';
+  }
 }

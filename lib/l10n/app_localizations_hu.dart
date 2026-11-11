@@ -11486,4 +11486,175 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get trail_safety =>
       'Ösvényadatok © OpenStreetMap közreműködők. Hiányosak vagy elavultak lehetnek. Az útvonalak biztonságát és járhatóságát senki nem ellenőrzi, ezért ne ez legyen az egyetlen navigációd.';
+
+  @override
+  String get ant_title => 'Antennalefedettség';
+
+  @override
+  String get ant_placeHint =>
+      'Tartsd nyomva a térképet az antenna elhelyezéséhez.';
+
+  @override
+  String get ant_fromRadio =>
+      'Az antenna a rádiód helyén van. Tartsd nyomva a térképet az áthelyezéshez.';
+
+  @override
+  String get ant_placed =>
+      'Az antenna a térképen van. Tartsd nyomva az áthelyezéshez.';
+
+  @override
+  String get ant_height => 'Antennamagasság';
+
+  @override
+  String get ant_radius => 'Sugár';
+
+  @override
+  String get ant_checking => 'Terep ellenőrzése…';
+
+  @override
+  String get ant_estimate => 'Lefedettség becslése';
+
+  @override
+  String get ant_noTerrain =>
+      'A terepmagasságok nem tölthetők be. Első alkalommal internet kell.';
+
+  @override
+  String get ant_legendSignal =>
+      'Nagy zöld pontok: erős jel. Kis narancs pontok: határeset. Durva becslés a terep és a rádióbeállítások alapján, 2 dBi antennákkal. Fák és épületek nélkül, így a valódi hatótáv gyakran kisebb.';
+
+  @override
+  String get ant_legendLos =>
+      'Csatlakoztass rádiót a jelbecsléshez. A zöld pontokról rálátás van egy kézi rádióra (1,5 m). Durva becslés, nem garancia.';
+
+  @override
+  String ant_losSummary(int percent, String km) {
+    return 'Rálátás a pontok $percent%-ára • legtávolabb $km km';
+  }
+
+  @override
+  String ant_signalSummary(int strong, int marginal, String km) {
+    return 'Becsült jel: erős a terület $strong%-án, határeset $marginal%-án, használható $km km-ig.';
+  }
+
+  @override
+  String rp_title(String name) {
+    return '$name hálóbeállításai';
+  }
+
+  @override
+  String rp_mostNodes(String summary) {
+    return 'Errefelé a legtöbb csomópont ezt használja: $summary. A rádiód másként van beállítva, így lehet, hogy nem hallod őket.';
+  }
+
+  @override
+  String rp_mostNodesCount(int count, String summary) {
+    return 'Errefelé a legtöbb csomópont ($count a MeshCore térképen) ezt használja: $summary. A rádiód másként van beállítva, így lehet, hogy nem hallod őket.';
+  }
+
+  @override
+  String rp_localMesh(String summary) {
+    return 'A helyi háló ezt használja: $summary. A rádiód másként van beállítva, így lehet, hogy nem hallod.';
+  }
+
+  @override
+  String get rp_notNow => 'Most nem';
+
+  @override
+  String get rp_review => 'Áttekintés';
+
+  @override
+  String rp_useTitle(String name) {
+    return 'Használod a(z) $name beállításait?';
+  }
+
+  @override
+  String get rp_already => 'A rádiód már ezeket a beállításokat használja.';
+
+  @override
+  String get rp_fromMap =>
+      'A MeshCore térképen csomópont-tulajdonosok jelentették, adásban nem ellenőrizve.';
+
+  @override
+  String rp_updated(String date) {
+    return 'Frissítve: $date. Váltás után csak az azonos beállítású rádiókat hallod.';
+  }
+
+  @override
+  String get rp_powerOnly => 'Az adóteljesítmény nem változik.';
+
+  @override
+  String get rp_powerHash =>
+      'Az adóteljesítmény és az útvonal-hash mérete nem változik.';
+
+  @override
+  String get rp_apply => 'Alkalmazás a rádióra';
+
+  @override
+  String rp_setTo(String name) {
+    return 'A rádió beállítva: $name.';
+  }
+
+  @override
+  String rp_failed(String error) {
+    return 'A rádió nem módosítható: $error';
+  }
+
+  @override
+  String get rp_noArea => 'Nincs listázott terület a közelben.';
+
+  @override
+  String get rp_noLonger => 'A választott terület már nincs a listán.';
+
+  @override
+  String get rp_autoPrefix => 'Auto: ';
+
+  @override
+  String get rp_tileTitle => 'Helyi hálóbeállítások';
+
+  @override
+  String get rp_automatic => 'Automatikus';
+
+  @override
+  String get rp_autoSub => 'A rádió vagy a telefon helyzete alapján';
+
+  @override
+  String get rp_mapSuffix => 'MeshCore térkép';
+
+  @override
+  String get rp_savedList =>
+      'A mentett listát használja. Online frissül a GitHubról.';
+
+  @override
+  String rp_checked(String time) {
+    return 'Lista ellenőrizve: $time. Területeket pull requesttel lehet hozzáadni.';
+  }
+
+  @override
+  String get sh_title => 'Névjegy megosztása';
+
+  @override
+  String get sh_hint =>
+      'Elküldi a nevét és nyilvános kulcsát linkként, amellyel bárki felveheti.';
+
+  @override
+  String get sh_you => 'Ez te vagy.';
+
+  @override
+  String get sh_already => 'Már a névjegyeid között van.';
+
+  @override
+  String get sh_adding => 'Hozzáadás…';
+
+  @override
+  String get sh_add => 'Névjegy hozzáadása';
+
+  @override
+  String sh_added(String name) {
+    return '$name hozzáadva.';
+  }
+
+  @override
+  String sh_addFailed(String name, String error) {
+    return '$name nem adható hozzá: $error';
+  }
 }

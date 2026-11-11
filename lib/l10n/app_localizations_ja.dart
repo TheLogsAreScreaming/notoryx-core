@@ -10966,4 +10966,167 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get trail_safety =>
       'トレイルデータ © OpenStreetMap 寄稿者。不完全または古い場合があります。ルートの安全性や通行可否は確認していないため、唯一のナビゲーション手段として使わないでください。';
+
+  @override
+  String get ant_title => 'アンテナのカバー範囲';
+
+  @override
+  String get ant_placeHint => '地図を長押ししてアンテナを置きます。';
+
+  @override
+  String get ant_fromRadio => 'アンテナは無線機の位置にあります。地図を長押しすると移動できます。';
+
+  @override
+  String get ant_placed => 'アンテナを地図に置きました。長押しで移動できます。';
+
+  @override
+  String get ant_height => 'アンテナの高さ';
+
+  @override
+  String get ant_radius => '半径';
+
+  @override
+  String get ant_checking => '地形を確認中…';
+
+  @override
+  String get ant_estimate => 'カバー範囲を推定';
+
+  @override
+  String get ant_noTerrain => '地形の標高を読み込めませんでした。初回はインターネット接続が必要です。';
+
+  @override
+  String get ant_legendSignal =>
+      '大きな緑の点: 強い信号。小さなオレンジの点: ぎりぎり。地形と無線設定からの大まかな推定で、2 dBiアンテナを想定しています。樹木や建物は含まないため、実際の範囲は短いことが多いです。';
+
+  @override
+  String get ant_legendLos =>
+      '信号を推定するには無線機を接続してください。緑の点は携帯無線機（1.5 m）への見通しがあります。大まかな推定で、保証ではありません。';
+
+  @override
+  String ant_losSummary(int percent, String km) {
+    return '測定点の$percent%に見通しあり • 最遠$km km';
+  }
+
+  @override
+  String ant_signalSummary(int strong, int marginal, String km) {
+    return '推定信号: エリアの$strong%で強い、$marginal%でぎりぎり、$km kmまで使用可能。';
+  }
+
+  @override
+  String rp_title(String name) {
+    return '$nameのメッシュ設定';
+  }
+
+  @override
+  String rp_mostNodes(String summary) {
+    return 'この辺りのほとんどのノードは$summaryを使っています。無線機の設定が違うため受信できない可能性があります。';
+  }
+
+  @override
+  String rp_mostNodesCount(int count, String summary) {
+    return 'この辺りのほとんどのノード（MeshCoreマップ上で$count台）は$summaryを使っています。無線機の設定が違うため受信できない可能性があります。';
+  }
+
+  @override
+  String rp_localMesh(String summary) {
+    return '地域のメッシュは$summaryを使っています。無線機の設定が違うため受信できない可能性があります。';
+  }
+
+  @override
+  String get rp_notNow => '今はしない';
+
+  @override
+  String get rp_review => '確認';
+
+  @override
+  String rp_useTitle(String name) {
+    return '$nameの設定を使いますか？';
+  }
+
+  @override
+  String get rp_already => '無線機はすでにこの設定です。';
+
+  @override
+  String get rp_fromMap => 'MeshCoreマップでノード所有者が報告したもので、電波では未確認です。';
+
+  @override
+  String rp_updated(String date) {
+    return '$date更新。切り替えると同じ設定の無線機だけが聞こえるようになります。';
+  }
+
+  @override
+  String get rp_powerOnly => '送信出力は変更しません。';
+
+  @override
+  String get rp_powerHash => '送信出力とパスハッシュサイズは変更しません。';
+
+  @override
+  String get rp_apply => '無線機に適用';
+
+  @override
+  String rp_setTo(String name) {
+    return '無線機を$nameの設定にしました。';
+  }
+
+  @override
+  String rp_failed(String error) {
+    return '無線機を変更できませんでした: $error';
+  }
+
+  @override
+  String get rp_noArea => '近くに一覧のエリアはありません。';
+
+  @override
+  String get rp_noLonger => '選んだエリアは一覧から外れています。';
+
+  @override
+  String get rp_autoPrefix => '自動: ';
+
+  @override
+  String get rp_tileTitle => '地域のメッシュ設定';
+
+  @override
+  String get rp_automatic => '自動';
+
+  @override
+  String get rp_autoSub => '無線機またはスマートフォンの位置から';
+
+  @override
+  String get rp_mapSuffix => 'MeshCoreマップ';
+
+  @override
+  String get rp_savedList => '保存済みの一覧を使用中。オンライン時にGitHubから更新されます。';
+
+  @override
+  String rp_checked(String time) {
+    return '一覧を$timeに確認。エリアはプルリクエストで追加されます。';
+  }
+
+  @override
+  String get sh_title => '連絡先を共有';
+
+  @override
+  String get sh_hint => '名前と公開鍵を、誰でもタップして追加できるリンクとして送ります。';
+
+  @override
+  String get sh_you => 'これはあなたです。';
+
+  @override
+  String get sh_already => 'すでに連絡先にあります。';
+
+  @override
+  String get sh_adding => '追加中…';
+
+  @override
+  String get sh_add => '連絡先を追加';
+
+  @override
+  String sh_added(String name) {
+    return '$nameを追加しました。';
+  }
+
+  @override
+  String sh_addFailed(String name, String error) {
+    return '$nameを追加できませんでした: $error';
+  }
 }

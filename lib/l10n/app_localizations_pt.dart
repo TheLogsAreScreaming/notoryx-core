@@ -11484,4 +11484,174 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get trail_safety =>
       'Dados de trilhos © colaboradores do OpenStreetMap. Podem estar incompletos ou desatualizados. As rotas não são verificadas quanto a segurança ou transitabilidade; não as uses como única navegação.';
+
+  @override
+  String get ant_title => 'Cobertura da antena';
+
+  @override
+  String get ant_placeHint => 'Mantém premido o mapa para colocar a antena.';
+
+  @override
+  String get ant_fromRadio =>
+      'Antena na posição do teu rádio. Mantém premido o mapa para a mover.';
+
+  @override
+  String get ant_placed =>
+      'Antena colocada no mapa. Mantém premido para a mover.';
+
+  @override
+  String get ant_height => 'Altura da antena';
+
+  @override
+  String get ant_radius => 'Raio';
+
+  @override
+  String get ant_checking => 'A verificar o terreno…';
+
+  @override
+  String get ant_estimate => 'Estimar cobertura';
+
+  @override
+  String get ant_noTerrain =>
+      'Não foi possível carregar as altitudes do terreno. Da primeira vez é precisa ligação à internet.';
+
+  @override
+  String get ant_legendSignal =>
+      'Pontos verdes grandes: sinal forte. Pontos laranja pequenos: no limite. Estimativa aproximada a partir do terreno e das definições do rádio, com antenas de 2 dBi. Não inclui árvores nem edifícios, por isso o alcance real é muitas vezes menor.';
+
+  @override
+  String get ant_legendLos =>
+      'Liga um rádio para estimar o sinal. Os pontos verdes têm linha de vista para um rádio portátil (1,5 m). Uma estimativa aproximada, não uma garantia.';
+
+  @override
+  String ant_losSummary(int percent, String km) {
+    return 'Linha de vista para $percent% dos pontos • o mais distante a $km km';
+  }
+
+  @override
+  String ant_signalSummary(int strong, int marginal, String km) {
+    return 'Sinal estimado: forte em $strong% da área, no limite em $marginal%, utilizável até $km km.';
+  }
+
+  @override
+  String rp_title(String name) {
+    return 'Definições de rede de $name';
+  }
+
+  @override
+  String rp_mostNodes(String summary) {
+    return 'A maioria dos nós aqui usa $summary. O teu rádio está configurado de forma diferente, por isso podes não os ouvir.';
+  }
+
+  @override
+  String rp_mostNodesCount(int count, String summary) {
+    return 'A maioria dos nós aqui ($count no mapa MeshCore) usa $summary. O teu rádio está configurado de forma diferente, por isso podes não os ouvir.';
+  }
+
+  @override
+  String rp_localMesh(String summary) {
+    return 'A rede local usa $summary. O teu rádio está configurado de forma diferente, por isso podes não a ouvir.';
+  }
+
+  @override
+  String get rp_notNow => 'Agora não';
+
+  @override
+  String get rp_review => 'Rever';
+
+  @override
+  String rp_useTitle(String name) {
+    return 'Usar as definições de $name?';
+  }
+
+  @override
+  String get rp_already => 'O teu rádio já usa estas definições.';
+
+  @override
+  String get rp_fromMap =>
+      'Indicado por donos de nós no mapa MeshCore, não verificado no ar.';
+
+  @override
+  String rp_updated(String date) {
+    return 'Atualizado a $date. Depois de mudar só ouvirás rádios com as mesmas definições.';
+  }
+
+  @override
+  String get rp_powerOnly => 'A potência de transmissão não muda.';
+
+  @override
+  String get rp_powerHash =>
+      'A potência de transmissão e o tamanho do hash de caminho não mudam.';
+
+  @override
+  String get rp_apply => 'Aplicar ao rádio';
+
+  @override
+  String rp_setTo(String name) {
+    return 'Rádio definido para $name.';
+  }
+
+  @override
+  String rp_failed(String error) {
+    return 'Não foi possível alterar o rádio: $error';
+  }
+
+  @override
+  String get rp_noArea => 'Nenhuma área listada perto de ti.';
+
+  @override
+  String get rp_noLonger => 'A área escolhida já não está listada.';
+
+  @override
+  String get rp_autoPrefix => 'Auto: ';
+
+  @override
+  String get rp_tileTitle => 'Definições da rede local';
+
+  @override
+  String get rp_automatic => 'Automático';
+
+  @override
+  String get rp_autoSub => 'Pela posição do rádio ou do telefone';
+
+  @override
+  String get rp_mapSuffix => 'mapa MeshCore';
+
+  @override
+  String get rp_savedList =>
+      'A usar a lista guardada. Atualiza-se a partir do GitHub quando online.';
+
+  @override
+  String rp_checked(String time) {
+    return 'Lista verificada às $time. As áreas são adicionadas por pull request.';
+  }
+
+  @override
+  String get sh_title => 'Partilhar um contacto';
+
+  @override
+  String get sh_hint =>
+      'Envia o nome e a chave pública como uma ligação em que qualquer pessoa pode tocar para o adicionar.';
+
+  @override
+  String get sh_you => 'És tu.';
+
+  @override
+  String get sh_already => 'Já está nos teus contactos.';
+
+  @override
+  String get sh_adding => 'A adicionar…';
+
+  @override
+  String get sh_add => 'Adicionar contacto';
+
+  @override
+  String sh_added(String name) {
+    return '$name adicionado.';
+  }
+
+  @override
+  String sh_addFailed(String name, String error) {
+    return 'Não foi possível adicionar $name: $error';
+  }
 }

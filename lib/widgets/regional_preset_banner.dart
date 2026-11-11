@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../models/regional_preset.dart';
 import '../services/regional_preset_service.dart';
+import '../l10n/l10n.dart';
 
 /// "Your area's mesh uses…" with Review and Not now, shown when the radio
 /// doesn't match the local mesh's published settings.
@@ -35,7 +36,7 @@ class RegionalPresetBanner extends StatelessWidget {
                 const SizedBox(width: 10),
                 Expanded(
                   child: Text(
-                    '${preset.name} mesh settings',
+                    context.l10n.rp_title(preset.name),
                     style: TextStyle(
                       fontWeight: FontWeight.w700,
                       color: scheme.onTertiaryContainer,
@@ -47,8 +48,13 @@ class RegionalPresetBanner extends StatelessWidget {
             const SizedBox(height: 4),
             Text(
               preset.fromMap
-                  ? 'Most nodes around here${preset.nodeCount == null ? '' : ' (${preset.nodeCount} on the MeshCore map)'} use ${preset.summary}. Your radio is set differently, so you may not hear them.'
-                  : 'The local mesh uses ${preset.summary}. Your radio is set differently, so you may not hear it.',
+                  ? (preset.nodeCount == null
+                        ? context.l10n.rp_mostNodes(preset.summary)
+                        : context.l10n.rp_mostNodesCount(
+                            preset.nodeCount!,
+                            preset.summary,
+                          ))
+                  : context.l10n.rp_localMesh(preset.summary),
               style: TextStyle(color: scheme.onTertiaryContainer),
             ),
             Align(
@@ -58,11 +64,11 @@ class RegionalPresetBanner extends StatelessWidget {
                 children: [
                   TextButton(
                     onPressed: service.dismiss,
-                    child: const Text('Not now'),
+                    child: Text(context.l10n.rp_notNow),
                   ),
                   FilledButton.tonal(
                     onPressed: () => reviewRegionalPreset(context, preset),
-                    child: const Text('Review'),
+                    child: Text(context.l10n.rp_review),
                   ),
                 ],
               ),
@@ -81,20 +87,21 @@ Future<void> reviewRegionalPreset(
 ) async {
   final service = context.read<RegionalPresetService>();
   final messenger = ScaffoldMessenger.of(context);
+  final l10n = context.l10n;
   final changes = service.active == preset
       ? service.differences
       : preset.differences(service.radio);
   final ok = await showDialog<bool>(
     context: context,
     builder: (context) => AlertDialog(
-      title: Text('Use ${preset.name} settings?'),
+      title: Text(context.l10n.rp_useTitle(preset.name)),
       content: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             if (changes.isEmpty)
-              const Text('Your radio already uses these settings.')
+              Text(context.l10n.rp_already)
             else
               for (final c in changes)
                 Padding(
@@ -107,8 +114,13 @@ Future<void> reviewRegionalPreset(
             ],
             const SizedBox(height: 8),
             Text(
-              '${preset.fromMap ? 'Reported by node owners on the MeshCore map, not checked on air. ' : ''}'
-              'Updated ${preset.updated}. After switching you will only hear radios that use the same settings. Transmit power${preset.pathHashBytes == null ? ' and path hash size are' : ' is'} not changed.',
+              [
+                if (preset.fromMap) context.l10n.rp_fromMap,
+                context.l10n.rp_updated(preset.updated),
+                preset.pathHashBytes == null
+                    ? context.l10n.rp_powerHash
+                    : context.l10n.rp_powerOnly,
+              ].join(' '),
               style: Theme.of(context).textTheme.bodySmall,
             ),
           ],
@@ -117,13 +129,13 @@ Future<void> reviewRegionalPreset(
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context, false),
-          child: const Text('Cancel'),
+          child: Text(context.l10n.common_cancel),
         ),
         FilledButton(
           onPressed: changes.isEmpty
               ? null
               : () => Navigator.pop(context, true),
-          child: const Text('Apply to radio'),
+          child: Text(context.l10n.rp_apply),
         ),
       ],
     ),
@@ -131,13 +143,9 @@ Future<void> reviewRegionalPreset(
   if (ok != true) return;
   try {
     await service.apply(preset);
-    messenger.showSnackBar(
-      SnackBar(content: Text('Radio set to ${preset.name} settings.')),
-    );
+    messenger.showSnackBar(SnackBar(content: Text(l10n.rp_setTo(preset.name))));
   } catch (e) {
-    messenger.showSnackBar(
-      SnackBar(content: Text('Could not change the radio: $e')),
-    );
+    messenger.showSnackBar(SnackBar(content: Text(l10n.rp_failed('$e'))));
   }
 }
 
@@ -153,14 +161,12 @@ class RegionalPresetTile extends StatelessWidget {
     final active = service.active;
     final auto = service.selection == RegionalPresetService.auto;
     final subtitle = active == null
-        ? (auto
-              ? 'No listed area around you.'
-              : 'Chosen area is no longer listed.')
-        : '${auto ? 'Auto: ' : ''}${active.name} • ${active.summary}';
+        ? (auto ? context.l10n.rp_noArea : context.l10n.rp_noLonger)
+        : '${auto ? context.l10n.rp_autoPrefix : ''}${active.name} • ${active.summary}';
     return ListTile(
       key: const ValueKey('regional-preset-tile'),
-      leading: const Icon(Icons.public),
-      title: const Text('Local mesh settings'),
+      leading: Icon(Icons.public),
+      title: Text(context.l10n.rp_tileTitle),
       subtitle: Text(subtitle),
       trailing: const Icon(Icons.chevron_right),
       onTap: () => _choose(context, service),
@@ -174,7 +180,7 @@ class RegionalPresetTile extends StatelessWidget {
     final picked = await showDialog<String>(
       context: context,
       builder: (context) => SimpleDialog(
-        title: const Text('Local mesh settings'),
+        title: Text(context.l10n.rp_tileTitle),
         children: [
           RadioGroup<String>(
             groupValue: service.selection,
@@ -182,17 +188,19 @@ class RegionalPresetTile extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const RadioListTile<String>(
+                RadioListTile<String>(
                   value: RegionalPresetService.auto,
-                  title: Text('Automatic'),
-                  subtitle: Text("From your radio's or phone's position"),
+                  title: Text(context.l10n.rp_automatic),
+                  subtitle: Text(context.l10n.rp_autoSub),
                 ),
                 for (final p in service.presets)
                   RadioListTile<String>(
                     value: p.id,
                     title: Text(p.name),
                     subtitle: Text(
-                      p.fromMap ? '${p.summary} · MeshCore map' : p.summary,
+                      p.fromMap
+                          ? '${p.summary} · ${context.l10n.rp_mapSuffix}'
+                          : p.summary,
                     ),
                   ),
               ],
@@ -202,8 +210,12 @@ class RegionalPresetTile extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(24, 8, 24, 0),
             child: Text(
               service.lastChecked == null
-                  ? 'Using the saved list. It updates from GitHub when online.'
-                  : 'List checked ${TimeOfDay.fromDateTime(service.lastChecked!).format(context)}. Areas are added by pull request.',
+                  ? context.l10n.rp_savedList
+                  : context.l10n.rp_checked(
+                      TimeOfDay.fromDateTime(
+                        service.lastChecked!,
+                      ).format(context),
+                    ),
               style: Theme.of(context).textTheme.bodySmall,
             ),
           ),

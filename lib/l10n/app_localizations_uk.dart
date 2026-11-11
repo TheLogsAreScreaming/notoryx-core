@@ -11537,4 +11537,175 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get trail_safety =>
       'Дані стежок © учасники OpenStreetMap. Вони можуть бути неповними або застарілими. Маршрути не перевіряються на безпеку чи прохідність — не використовуйте їх як єдину навігацію.';
+
+  @override
+  String get ant_title => 'Покриття антени';
+
+  @override
+  String get ant_placeHint =>
+      'Натисніть і утримуйте карту, щоб поставити антену.';
+
+  @override
+  String get ant_fromRadio =>
+      'Антена в позиції вашого радіо. Натисніть і утримуйте карту, щоб перемістити її.';
+
+  @override
+  String get ant_placed =>
+      'Антену поставлено на карту. Утримуйте, щоб перемістити.';
+
+  @override
+  String get ant_height => 'Висота антени';
+
+  @override
+  String get ant_radius => 'Радіус';
+
+  @override
+  String get ant_checking => 'Перевірка рельєфу…';
+
+  @override
+  String get ant_estimate => 'Оцінити покриття';
+
+  @override
+  String get ant_noTerrain =>
+      'Не вдалося завантажити висоти рельєфу. Першого разу потрібен інтернет.';
+
+  @override
+  String get ant_legendSignal =>
+      'Великі зелені точки: сильний сигнал. Малі помаранчеві: на межі. Груба оцінка за рельєфом і налаштуваннями радіо з антенами 2 дБі. Дерева й будівлі не враховано, тож реальна дальність часто менша.';
+
+  @override
+  String get ant_legendLos =>
+      'Підключіть радіо для оцінки сигналу. Зелені точки в прямій видимості портативного радіо (1,5 м). Груба оцінка, не гарантія.';
+
+  @override
+  String ant_losSummary(int percent, String km) {
+    return 'Пряма видимість до $percent% точок • найдалі $km км';
+  }
+
+  @override
+  String ant_signalSummary(int strong, int marginal, String km) {
+    return 'Оцінка сигналу: сильний на $strong% площі, на межі на $marginal%, придатний до $km км.';
+  }
+
+  @override
+  String rp_title(String name) {
+    return 'Налаштування мережі $name';
+  }
+
+  @override
+  String rp_mostNodes(String summary) {
+    return 'Більшість вузлів тут використовує $summary. Ваше радіо налаштоване інакше, тож ви можете їх не чути.';
+  }
+
+  @override
+  String rp_mostNodesCount(int count, String summary) {
+    return 'Більшість вузлів тут ($count на карті MeshCore) використовує $summary. Ваше радіо налаштоване інакше, тож ви можете їх не чути.';
+  }
+
+  @override
+  String rp_localMesh(String summary) {
+    return 'Місцева мережа використовує $summary. Ваше радіо налаштоване інакше, тож ви можете її не чути.';
+  }
+
+  @override
+  String get rp_notNow => 'Не зараз';
+
+  @override
+  String get rp_review => 'Переглянути';
+
+  @override
+  String rp_useTitle(String name) {
+    return 'Використати налаштування $name?';
+  }
+
+  @override
+  String get rp_already => 'Ваше радіо вже використовує ці налаштування.';
+
+  @override
+  String get rp_fromMap =>
+      'Повідомлено власниками вузлів на карті MeshCore, в ефірі не перевірено.';
+
+  @override
+  String rp_updated(String date) {
+    return 'Оновлено $date. Після зміни ви чутимете лише радіо з тими самими налаштуваннями.';
+  }
+
+  @override
+  String get rp_powerOnly => 'Потужність передавача не змінюється.';
+
+  @override
+  String get rp_powerHash =>
+      'Потужність передавача й розмір хешу шляху не змінюються.';
+
+  @override
+  String get rp_apply => 'Застосувати до радіо';
+
+  @override
+  String rp_setTo(String name) {
+    return 'Радіо налаштовано на $name.';
+  }
+
+  @override
+  String rp_failed(String error) {
+    return 'Не вдалося змінити радіо: $error';
+  }
+
+  @override
+  String get rp_noArea => 'Поруч немає областей зі списку.';
+
+  @override
+  String get rp_noLonger => 'Вибраної області більше немає в списку.';
+
+  @override
+  String get rp_autoPrefix => 'Авто: ';
+
+  @override
+  String get rp_tileTitle => 'Налаштування місцевої мережі';
+
+  @override
+  String get rp_automatic => 'Автоматично';
+
+  @override
+  String get rp_autoSub => 'За позицією радіо або телефона';
+
+  @override
+  String get rp_mapSuffix => 'карта MeshCore';
+
+  @override
+  String get rp_savedList =>
+      'Використовується збережений список. Він оновлюється з GitHub онлайн.';
+
+  @override
+  String rp_checked(String time) {
+    return 'Список перевірено о $time. Області додаються через pull request.';
+  }
+
+  @override
+  String get sh_title => 'Поділитися контактом';
+
+  @override
+  String get sh_hint =>
+      'Надсилає ім\'я та відкритий ключ посиланням, за яким будь-хто може додати контакт.';
+
+  @override
+  String get sh_you => 'Це ви.';
+
+  @override
+  String get sh_already => 'Уже у ваших контактах.';
+
+  @override
+  String get sh_adding => 'Додавання…';
+
+  @override
+  String get sh_add => 'Додати контакт';
+
+  @override
+  String sh_added(String name) {
+    return '$name додано.';
+  }
+
+  @override
+  String sh_addFailed(String name, String error) {
+    return 'Не вдалося додати $name: $error';
+  }
 }

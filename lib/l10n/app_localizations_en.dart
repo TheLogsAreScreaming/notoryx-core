@@ -11364,4 +11364,173 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get trail_safety =>
       'Trail data © OpenStreetMap contributors. It can be incomplete or out of date. Routes aren\'t checked for safety or whether they\'re passable, so don\'t use this as your only navigation.';
+
+  @override
+  String get ant_title => 'Antenna coverage';
+
+  @override
+  String get ant_placeHint => 'Long-press the map to place the antenna.';
+
+  @override
+  String get ant_fromRadio =>
+      'Antenna at your radio\'s position. Long-press the map to move it.';
+
+  @override
+  String get ant_placed => 'Antenna placed on the map. Long-press to move it.';
+
+  @override
+  String get ant_height => 'Antenna height';
+
+  @override
+  String get ant_radius => 'Radius';
+
+  @override
+  String get ant_checking => 'Checking terrain…';
+
+  @override
+  String get ant_estimate => 'Estimate coverage';
+
+  @override
+  String get ant_noTerrain =>
+      'Terrain heights could not be loaded. This needs an internet connection the first time.';
+
+  @override
+  String get ant_legendSignal =>
+      'Large green dots: strong signal. Small orange dots: marginal. A rough estimate from terrain and your radio settings, assuming 2 dBi antennas. Trees and buildings are not included, so real range is often shorter.';
+
+  @override
+  String get ant_legendLos =>
+      'Connect a radio for signal estimates. Green dots have terrain line of sight to a handheld radio (1.5 m). A rough estimate, not a guarantee.';
+
+  @override
+  String ant_losSummary(int percent, String km) {
+    return 'Line of sight to $percent% of sampled points • farthest $km km';
+  }
+
+  @override
+  String ant_signalSummary(int strong, int marginal, String km) {
+    return 'Estimated signal: strong to $strong% of the area, marginal to $marginal%, usable up to $km km.';
+  }
+
+  @override
+  String rp_title(String name) {
+    return '$name mesh settings';
+  }
+
+  @override
+  String rp_mostNodes(String summary) {
+    return 'Most nodes around here use $summary. Your radio is set differently, so you may not hear them.';
+  }
+
+  @override
+  String rp_mostNodesCount(int count, String summary) {
+    return 'Most nodes around here ($count on the MeshCore map) use $summary. Your radio is set differently, so you may not hear them.';
+  }
+
+  @override
+  String rp_localMesh(String summary) {
+    return 'The local mesh uses $summary. Your radio is set differently, so you may not hear it.';
+  }
+
+  @override
+  String get rp_notNow => 'Not now';
+
+  @override
+  String get rp_review => 'Review';
+
+  @override
+  String rp_useTitle(String name) {
+    return 'Use $name settings?';
+  }
+
+  @override
+  String get rp_already => 'Your radio already uses these settings.';
+
+  @override
+  String get rp_fromMap =>
+      'Reported by node owners on the MeshCore map, not checked on air.';
+
+  @override
+  String rp_updated(String date) {
+    return 'Updated $date. After switching you will only hear radios that use the same settings.';
+  }
+
+  @override
+  String get rp_powerOnly => 'Transmit power is not changed.';
+
+  @override
+  String get rp_powerHash =>
+      'Transmit power and path hash size are not changed.';
+
+  @override
+  String get rp_apply => 'Apply to radio';
+
+  @override
+  String rp_setTo(String name) {
+    return 'Radio set to $name settings.';
+  }
+
+  @override
+  String rp_failed(String error) {
+    return 'Could not change the radio: $error';
+  }
+
+  @override
+  String get rp_noArea => 'No listed area around you.';
+
+  @override
+  String get rp_noLonger => 'Chosen area is no longer listed.';
+
+  @override
+  String get rp_autoPrefix => 'Auto: ';
+
+  @override
+  String get rp_tileTitle => 'Local mesh settings';
+
+  @override
+  String get rp_automatic => 'Automatic';
+
+  @override
+  String get rp_autoSub => 'From your radio\'s or phone\'s position';
+
+  @override
+  String get rp_mapSuffix => 'MeshCore map';
+
+  @override
+  String get rp_savedList =>
+      'Using the saved list. It updates from GitHub when online.';
+
+  @override
+  String rp_checked(String time) {
+    return 'List checked $time. Areas are added by pull request.';
+  }
+
+  @override
+  String get sh_title => 'Share a contact';
+
+  @override
+  String get sh_hint =>
+      'Sends its name and public key as a link anyone can tap to add it.';
+
+  @override
+  String get sh_you => 'This is you.';
+
+  @override
+  String get sh_already => 'Already in your contacts.';
+
+  @override
+  String get sh_adding => 'Adding…';
+
+  @override
+  String get sh_add => 'Add contact';
+
+  @override
+  String sh_added(String name) {
+    return 'Added $name.';
+  }
+
+  @override
+  String sh_addFailed(String name, String error) {
+    return 'Could not add $name: $error';
+  }
 }

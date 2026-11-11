@@ -19140,6 +19140,276 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Trail data © OpenStreetMap contributors. It can be incomplete or out of date. Routes aren\'t checked for safety or whether they\'re passable, so don\'t use this as your only navigation.'**
   String get trail_safety;
+
+  /// No description provided for @ant_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Antenna coverage'**
+  String get ant_title;
+
+  /// No description provided for @ant_placeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Long-press the map to place the antenna.'**
+  String get ant_placeHint;
+
+  /// No description provided for @ant_fromRadio.
+  ///
+  /// In en, this message translates to:
+  /// **'Antenna at your radio\'s position. Long-press the map to move it.'**
+  String get ant_fromRadio;
+
+  /// No description provided for @ant_placed.
+  ///
+  /// In en, this message translates to:
+  /// **'Antenna placed on the map. Long-press to move it.'**
+  String get ant_placed;
+
+  /// No description provided for @ant_height.
+  ///
+  /// In en, this message translates to:
+  /// **'Antenna height'**
+  String get ant_height;
+
+  /// No description provided for @ant_radius.
+  ///
+  /// In en, this message translates to:
+  /// **'Radius'**
+  String get ant_radius;
+
+  /// No description provided for @ant_checking.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking terrain…'**
+  String get ant_checking;
+
+  /// No description provided for @ant_estimate.
+  ///
+  /// In en, this message translates to:
+  /// **'Estimate coverage'**
+  String get ant_estimate;
+
+  /// No description provided for @ant_noTerrain.
+  ///
+  /// In en, this message translates to:
+  /// **'Terrain heights could not be loaded. This needs an internet connection the first time.'**
+  String get ant_noTerrain;
+
+  /// No description provided for @ant_legendSignal.
+  ///
+  /// In en, this message translates to:
+  /// **'Large green dots: strong signal. Small orange dots: marginal. A rough estimate from terrain and your radio settings, assuming 2 dBi antennas. Trees and buildings are not included, so real range is often shorter.'**
+  String get ant_legendSignal;
+
+  /// No description provided for @ant_legendLos.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect a radio for signal estimates. Green dots have terrain line of sight to a handheld radio (1.5 m). A rough estimate, not a guarantee.'**
+  String get ant_legendLos;
+
+  /// No description provided for @ant_losSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Line of sight to {percent}% of sampled points • farthest {km} km'**
+  String ant_losSummary(int percent, String km);
+
+  /// No description provided for @ant_signalSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'Estimated signal: strong to {strong}% of the area, marginal to {marginal}%, usable up to {km} km.'**
+  String ant_signalSummary(int strong, int marginal, String km);
+
+  /// No description provided for @rp_title.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} mesh settings'**
+  String rp_title(String name);
+
+  /// No description provided for @rp_mostNodes.
+  ///
+  /// In en, this message translates to:
+  /// **'Most nodes around here use {summary}. Your radio is set differently, so you may not hear them.'**
+  String rp_mostNodes(String summary);
+
+  /// No description provided for @rp_mostNodesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Most nodes around here ({count} on the MeshCore map) use {summary}. Your radio is set differently, so you may not hear them.'**
+  String rp_mostNodesCount(int count, String summary);
+
+  /// No description provided for @rp_localMesh.
+  ///
+  /// In en, this message translates to:
+  /// **'The local mesh uses {summary}. Your radio is set differently, so you may not hear it.'**
+  String rp_localMesh(String summary);
+
+  /// No description provided for @rp_notNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Not now'**
+  String get rp_notNow;
+
+  /// No description provided for @rp_review.
+  ///
+  /// In en, this message translates to:
+  /// **'Review'**
+  String get rp_review;
+
+  /// No description provided for @rp_useTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Use {name} settings?'**
+  String rp_useTitle(String name);
+
+  /// No description provided for @rp_already.
+  ///
+  /// In en, this message translates to:
+  /// **'Your radio already uses these settings.'**
+  String get rp_already;
+
+  /// No description provided for @rp_fromMap.
+  ///
+  /// In en, this message translates to:
+  /// **'Reported by node owners on the MeshCore map, not checked on air.'**
+  String get rp_fromMap;
+
+  /// No description provided for @rp_updated.
+  ///
+  /// In en, this message translates to:
+  /// **'Updated {date}. After switching you will only hear radios that use the same settings.'**
+  String rp_updated(String date);
+
+  /// No description provided for @rp_powerOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Transmit power is not changed.'**
+  String get rp_powerOnly;
+
+  /// No description provided for @rp_powerHash.
+  ///
+  /// In en, this message translates to:
+  /// **'Transmit power and path hash size are not changed.'**
+  String get rp_powerHash;
+
+  /// No description provided for @rp_apply.
+  ///
+  /// In en, this message translates to:
+  /// **'Apply to radio'**
+  String get rp_apply;
+
+  /// No description provided for @rp_setTo.
+  ///
+  /// In en, this message translates to:
+  /// **'Radio set to {name} settings.'**
+  String rp_setTo(String name);
+
+  /// No description provided for @rp_failed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not change the radio: {error}'**
+  String rp_failed(String error);
+
+  /// No description provided for @rp_noArea.
+  ///
+  /// In en, this message translates to:
+  /// **'No listed area around you.'**
+  String get rp_noArea;
+
+  /// No description provided for @rp_noLonger.
+  ///
+  /// In en, this message translates to:
+  /// **'Chosen area is no longer listed.'**
+  String get rp_noLonger;
+
+  /// No description provided for @rp_autoPrefix.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto: '**
+  String get rp_autoPrefix;
+
+  /// No description provided for @rp_tileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Local mesh settings'**
+  String get rp_tileTitle;
+
+  /// No description provided for @rp_automatic.
+  ///
+  /// In en, this message translates to:
+  /// **'Automatic'**
+  String get rp_automatic;
+
+  /// No description provided for @rp_autoSub.
+  ///
+  /// In en, this message translates to:
+  /// **'From your radio\'s or phone\'s position'**
+  String get rp_autoSub;
+
+  /// No description provided for @rp_mapSuffix.
+  ///
+  /// In en, this message translates to:
+  /// **'MeshCore map'**
+  String get rp_mapSuffix;
+
+  /// No description provided for @rp_savedList.
+  ///
+  /// In en, this message translates to:
+  /// **'Using the saved list. It updates from GitHub when online.'**
+  String get rp_savedList;
+
+  /// No description provided for @rp_checked.
+  ///
+  /// In en, this message translates to:
+  /// **'List checked {time}. Areas are added by pull request.'**
+  String rp_checked(String time);
+
+  /// No description provided for @sh_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Share a contact'**
+  String get sh_title;
+
+  /// No description provided for @sh_hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Sends its name and public key as a link anyone can tap to add it.'**
+  String get sh_hint;
+
+  /// No description provided for @sh_you.
+  ///
+  /// In en, this message translates to:
+  /// **'This is you.'**
+  String get sh_you;
+
+  /// No description provided for @sh_already.
+  ///
+  /// In en, this message translates to:
+  /// **'Already in your contacts.'**
+  String get sh_already;
+
+  /// No description provided for @sh_adding.
+  ///
+  /// In en, this message translates to:
+  /// **'Adding…'**
+  String get sh_adding;
+
+  /// No description provided for @sh_add.
+  ///
+  /// In en, this message translates to:
+  /// **'Add contact'**
+  String get sh_add;
+
+  /// No description provided for @sh_added.
+  ///
+  /// In en, this message translates to:
+  /// **'Added {name}.'**
+  String sh_added(String name);
+
+  /// No description provided for @sh_addFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not add {name}: {error}'**
+  String sh_addFailed(String name, String error);
 }
 
 class _AppLocalizationsDelegate
