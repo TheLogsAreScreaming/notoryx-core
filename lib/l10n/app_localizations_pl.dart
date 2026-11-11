@@ -11539,4 +11539,144 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get trail_safety =>
       'Dane szlaków © współtwórcy OpenStreetMap. Mogą być niepełne lub nieaktualne. Trasy nie są sprawdzane pod kątem bezpieczeństwa ani przejezdności — nie używaj ich jako jedynej nawigacji.';
+
+  @override
+  String get tr_needArea => 'Najpierw pobierz obszar obejmujący oba punkty.';
+
+  @override
+  String get tr_startFar => 'Start jest ponad 500 m od znanego szlaku.';
+
+  @override
+  String get tr_endFar => 'Koniec jest ponad 500 m od znanego szlaku.';
+
+  @override
+  String get tr_notJoined => 'Żadne znane szlaki nie łączą tych punktów.';
+
+  @override
+  String get tr_damaged =>
+      'Dane tego obszaru są uszkodzone. Usuń go i pobierz ponownie.';
+
+  @override
+  String tr_zoomIn(int max, int current) {
+    return 'Przybliż: obszar może mieć do $max km², a ten widok ma $current km².';
+  }
+
+  @override
+  String get tr_downloading => 'Pobieranie szlaków…';
+
+  @override
+  String tr_saved(String size) {
+    return 'Zapisano $size szlaków.';
+  }
+
+  @override
+  String get tr_tooLarge => 'Przybliż do mniejszego obszaru.';
+
+  @override
+  String get tr_full =>
+      'Miejsce na szlaki jest pełne (500 MB). Najpierw usuń obszar.';
+
+  @override
+  String get tr_noTrails => 'Brak szlaków w tym widoku.';
+
+  @override
+  String get tr_failed =>
+      'Pobieranie nie powiodło się. Serwer map może być zajęty; spróbuj później.';
+
+  @override
+  String tr_routeName(String distance) {
+    return 'Trasa szlakiem $distance';
+  }
+
+  @override
+  String get tr_savedRoute => 'Zapisano w Twoich trasach.';
+
+  @override
+  String get tr_areas => 'Pobrane obszary';
+
+  @override
+  String tr_used(String size) {
+    return 'Zajęte $size z 500 MB';
+  }
+
+  @override
+  String tr_deleteArea(String name) {
+    return 'Usuń $name';
+  }
+
+  @override
+  String get tr_title => 'Trasy szlakami';
+
+  @override
+  String get tr_search => 'Szukaj miejsc';
+
+  @override
+  String get tr_start => 'Początek trasy';
+
+  @override
+  String get tr_end => 'Koniec trasy';
+
+  @override
+  String tr_route(String distance) {
+    return 'Trasa: $distance znanymi szlakami.';
+  }
+
+  @override
+  String get tr_tapStart => 'Dotknij mapy, aby wskazać start, a potem koniec.';
+
+  @override
+  String get tr_tapEnd => 'Dotknij mapy, aby wskazać koniec.';
+
+  @override
+  String get tr_download => 'Pobierz ten widok';
+
+  @override
+  String get tr_save => 'Zapisz trasę';
+
+  @override
+  String get tr_searchLabel => 'Szukaj w pobranych miejscach';
+
+  @override
+  String get tr_searchHelp =>
+      'Szczyty, początki szlaków, woda, schroniska, miejscowości i Twoje punkty. Wybrany staje się kolejnym punktem trasy.';
+
+  @override
+  String get tr_nothing =>
+      'Nic nie znaleziono. Wyszukiwanie obejmuje tylko pobrane obszary, a te zapisane przed wyszukiwaniem miejsc trzeba pobrać ponownie.';
+
+  @override
+  String get tr_toolSub => 'Trasy offline po pobranych szlakach';
+
+  @override
+  String get place_peak => 'Szczyt';
+
+  @override
+  String get place_pass => 'Przełęcz';
+
+  @override
+  String get place_spring => 'Źródło';
+
+  @override
+  String get place_hut => 'Schronisko';
+
+  @override
+  String get place_campsite => 'Kemping';
+
+  @override
+  String get place_viewpoint => 'Punkt widokowy';
+
+  @override
+  String get place_shelter => 'Wiata';
+
+  @override
+  String get place_trailhead => 'Początek szlaku';
+
+  @override
+  String get place_town => 'Miejscowość';
+
+  @override
+  String get place_locality => 'Miejsce';
+
+  @override
+  String get place_waypoint => 'Zapisany punkt';
 }

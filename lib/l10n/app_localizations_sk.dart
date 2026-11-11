@@ -11471,4 +11471,144 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get trail_safety =>
       'Údaje o chodníkoch © prispievatelia OpenStreetMap. Môžu byť neúplné alebo zastarané. Trasy sa nekontrolujú z hľadiska bezpečnosti ani priechodnosti, preto ich nepoužívaj ako jedinú navigáciu.';
+
+  @override
+  String get tr_needArea => 'Najprv stiahni oblasť, ktorá obsahuje oba body.';
+
+  @override
+  String get tr_startFar => 'Začiatok je viac ako 500 m od známeho chodníka.';
+
+  @override
+  String get tr_endFar => 'Koniec je viac ako 500 m od známeho chodníka.';
+
+  @override
+  String get tr_notJoined => 'Žiadne známe chodníky tieto body nespájajú.';
+
+  @override
+  String get tr_damaged =>
+      'Údaje tejto oblasti sú poškodené. Odstráň ju a stiahni znova.';
+
+  @override
+  String tr_zoomIn(int max, int current) {
+    return 'Priblíž: oblasť môže mať najviac $max km², tento pohľad má $current km².';
+  }
+
+  @override
+  String get tr_downloading => 'Sťahujú sa chodníky…';
+
+  @override
+  String tr_saved(String size) {
+    return 'Uložené chodníky: $size.';
+  }
+
+  @override
+  String get tr_tooLarge => 'Priblíž na menšiu oblasť.';
+
+  @override
+  String get tr_full =>
+      'Úložisko chodníkov je plné (500 MB). Najprv odstráň oblasť.';
+
+  @override
+  String get tr_noTrails => 'V tomto pohľade nie sú žiadne chodníky.';
+
+  @override
+  String get tr_failed =>
+      'Sťahovanie zlyhalo. Mapový server môže byť zaneprázdnený; skús to neskôr.';
+
+  @override
+  String tr_routeName(String distance) {
+    return 'Trasa po chodníkoch $distance';
+  }
+
+  @override
+  String get tr_savedRoute => 'Uložené do tvojich trás.';
+
+  @override
+  String get tr_areas => 'Stiahnuté oblasti';
+
+  @override
+  String tr_used(String size) {
+    return 'Využité $size z 500 MB';
+  }
+
+  @override
+  String tr_deleteArea(String name) {
+    return 'Odstrániť $name';
+  }
+
+  @override
+  String get tr_title => 'Trasy po chodníkoch';
+
+  @override
+  String get tr_search => 'Hľadať miesta';
+
+  @override
+  String get tr_start => 'Začiatok trasy';
+
+  @override
+  String get tr_end => 'Koniec trasy';
+
+  @override
+  String tr_route(String distance) {
+    return 'Trasa: $distance po známych chodníkoch.';
+  }
+
+  @override
+  String get tr_tapStart => 'Ťukni na mapu pre začiatok, potom pre koniec.';
+
+  @override
+  String get tr_tapEnd => 'Ťukni na mapu pre koniec.';
+
+  @override
+  String get tr_download => 'Stiahnuť tento pohľad';
+
+  @override
+  String get tr_save => 'Uložiť trasu';
+
+  @override
+  String get tr_searchLabel => 'Hľadať v stiahnutých miestach';
+
+  @override
+  String get tr_searchHelp =>
+      'Vrcholy, začiatky trás, voda, chaty, obce a tvoje body. Vybraný sa stane ďalším bodom trasy.';
+
+  @override
+  String get tr_nothing =>
+      'Nič sa nenašlo. Vyhľadávanie pokrýva len stiahnuté oblasti; oblasti uložené pred vyhľadávaním miest treba stiahnuť znova.';
+
+  @override
+  String get tr_toolSub => 'Offline trasy po stiahnutých chodníkoch';
+
+  @override
+  String get place_peak => 'Vrchol';
+
+  @override
+  String get place_pass => 'Sedlo';
+
+  @override
+  String get place_spring => 'Prameň';
+
+  @override
+  String get place_hut => 'Chata';
+
+  @override
+  String get place_campsite => 'Kemp';
+
+  @override
+  String get place_viewpoint => 'Vyhliadka';
+
+  @override
+  String get place_shelter => 'Prístrešok';
+
+  @override
+  String get place_trailhead => 'Začiatok trasy';
+
+  @override
+  String get place_town => 'Obec';
+
+  @override
+  String get place_locality => 'Lokalita';
+
+  @override
+  String get place_waypoint => 'Uložený bod';
 }

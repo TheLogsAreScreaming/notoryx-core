@@ -11538,4 +11538,144 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get trail_safety =>
       'Данные троп © участники OpenStreetMap. Они могут быть неполными или устаревшими. Маршруты не проверяются на безопасность и проходимость — не используйте их как единственную навигацию.';
+
+  @override
+  String get tr_needArea => 'Сначала загрузите область, где есть обе точки.';
+
+  @override
+  String get tr_startFar => 'Начало дальше 500 м от известной тропы.';
+
+  @override
+  String get tr_endFar => 'Конец дальше 500 м от известной тропы.';
+
+  @override
+  String get tr_notJoined => 'Известные тропы не соединяют эти точки.';
+
+  @override
+  String get tr_damaged =>
+      'Данные этой области повреждены. Удалите её и загрузите снова.';
+
+  @override
+  String tr_zoomIn(int max, int current) {
+    return 'Приблизьте: область может быть до $max км², а этот вид — $current км².';
+  }
+
+  @override
+  String get tr_downloading => 'Загрузка троп…';
+
+  @override
+  String tr_saved(String size) {
+    return 'Сохранено троп: $size.';
+  }
+
+  @override
+  String get tr_tooLarge => 'Приблизьте к меньшей области.';
+
+  @override
+  String get tr_full =>
+      'Хранилище троп заполнено (500 МБ). Сначала удалите область.';
+
+  @override
+  String get tr_noTrails => 'В этом виде троп не найдено.';
+
+  @override
+  String get tr_failed =>
+      'Загрузка не удалась. Возможно, сервер карт занят; попробуйте позже.';
+
+  @override
+  String tr_routeName(String distance) {
+    return 'Маршрут по тропам $distance';
+  }
+
+  @override
+  String get tr_savedRoute => 'Сохранено в ваших маршрутах.';
+
+  @override
+  String get tr_areas => 'Загруженные области';
+
+  @override
+  String tr_used(String size) {
+    return 'Занято $size из 500 МБ';
+  }
+
+  @override
+  String tr_deleteArea(String name) {
+    return 'Удалить $name';
+  }
+
+  @override
+  String get tr_title => 'Маршруты по тропам';
+
+  @override
+  String get tr_search => 'Поиск мест';
+
+  @override
+  String get tr_start => 'Начало маршрута';
+
+  @override
+  String get tr_end => 'Конец маршрута';
+
+  @override
+  String tr_route(String distance) {
+    return 'Маршрут: $distance по известным тропам.';
+  }
+
+  @override
+  String get tr_tapStart => 'Нажмите на карту для начала, затем для конца.';
+
+  @override
+  String get tr_tapEnd => 'Нажмите на карту для конца.';
+
+  @override
+  String get tr_download => 'Загрузить этот вид';
+
+  @override
+  String get tr_save => 'Сохранить маршрут';
+
+  @override
+  String get tr_searchLabel => 'Поиск по загруженным местам';
+
+  @override
+  String get tr_searchHelp =>
+      'Вершины, начала троп, вода, приюты, посёлки и ваши точки. Выбранное станет следующей точкой маршрута.';
+
+  @override
+  String get tr_nothing =>
+      'Ничего не найдено. Поиск идёт только по загруженным областям, а области, сохранённые до появления поиска, нужно загрузить заново.';
+
+  @override
+  String get tr_toolSub => 'Офлайн-маршруты по загруженным тропам';
+
+  @override
+  String get place_peak => 'Вершина';
+
+  @override
+  String get place_pass => 'Перевал';
+
+  @override
+  String get place_spring => 'Родник';
+
+  @override
+  String get place_hut => 'Приют';
+
+  @override
+  String get place_campsite => 'Кемпинг';
+
+  @override
+  String get place_viewpoint => 'Смотровая точка';
+
+  @override
+  String get place_shelter => 'Укрытие';
+
+  @override
+  String get place_trailhead => 'Начало тропы';
+
+  @override
+  String get place_town => 'Населённый пункт';
+
+  @override
+  String get place_locality => 'Урочище';
+
+  @override
+  String get place_waypoint => 'Сохранённая точка';
 }

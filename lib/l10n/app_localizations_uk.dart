@@ -11537,4 +11537,144 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get trail_safety =>
       'Дані стежок © учасники OpenStreetMap. Вони можуть бути неповними або застарілими. Маршрути не перевіряються на безпеку чи прохідність — не використовуйте їх як єдину навігацію.';
+
+  @override
+  String get tr_needArea => 'Спершу завантажте область, де є обидві точки.';
+
+  @override
+  String get tr_startFar => 'Початок далі ніж 500 м від відомої стежки.';
+
+  @override
+  String get tr_endFar => 'Кінець далі ніж 500 м від відомої стежки.';
+
+  @override
+  String get tr_notJoined => 'Відомі стежки не з\'єднують ці точки.';
+
+  @override
+  String get tr_damaged =>
+      'Дані цієї області пошкоджено. Видаліть її та завантажте знову.';
+
+  @override
+  String tr_zoomIn(int max, int current) {
+    return 'Наблизьте: область може бути до $max км², а цей вигляд — $current км².';
+  }
+
+  @override
+  String get tr_downloading => 'Завантаження стежок…';
+
+  @override
+  String tr_saved(String size) {
+    return 'Збережено стежок: $size.';
+  }
+
+  @override
+  String get tr_tooLarge => 'Наблизьте до меншої області.';
+
+  @override
+  String get tr_full =>
+      'Сховище стежок заповнене (500 МБ). Спершу видаліть область.';
+
+  @override
+  String get tr_noTrails => 'У цьому вигляді стежок не знайдено.';
+
+  @override
+  String get tr_failed =>
+      'Завантаження не вдалося. Можливо, сервер карт зайнятий; спробуйте пізніше.';
+
+  @override
+  String tr_routeName(String distance) {
+    return 'Маршрут стежками $distance';
+  }
+
+  @override
+  String get tr_savedRoute => 'Збережено у ваших маршрутах.';
+
+  @override
+  String get tr_areas => 'Завантажені області';
+
+  @override
+  String tr_used(String size) {
+    return 'Зайнято $size із 500 МБ';
+  }
+
+  @override
+  String tr_deleteArea(String name) {
+    return 'Видалити $name';
+  }
+
+  @override
+  String get tr_title => 'Маршрути стежками';
+
+  @override
+  String get tr_search => 'Пошук місць';
+
+  @override
+  String get tr_start => 'Початок маршруту';
+
+  @override
+  String get tr_end => 'Кінець маршруту';
+
+  @override
+  String tr_route(String distance) {
+    return 'Маршрут: $distance відомими стежками.';
+  }
+
+  @override
+  String get tr_tapStart => 'Торкніться карти для початку, потім для кінця.';
+
+  @override
+  String get tr_tapEnd => 'Торкніться карти для кінця.';
+
+  @override
+  String get tr_download => 'Завантажити цей вигляд';
+
+  @override
+  String get tr_save => 'Зберегти маршрут';
+
+  @override
+  String get tr_searchLabel => 'Пошук у завантажених місцях';
+
+  @override
+  String get tr_searchHelp =>
+      'Вершини, початки стежок, вода, притулки, населені пункти та ваші точки. Вибране стане наступною точкою маршруту.';
+
+  @override
+  String get tr_nothing =>
+      'Нічого не знайдено. Пошук охоплює лише завантажені області, а ті, що збережені до появи пошуку, треба завантажити знову.';
+
+  @override
+  String get tr_toolSub => 'Офлайн-маршрути завантаженими стежками';
+
+  @override
+  String get place_peak => 'Вершина';
+
+  @override
+  String get place_pass => 'Перевал';
+
+  @override
+  String get place_spring => 'Джерело';
+
+  @override
+  String get place_hut => 'Притулок';
+
+  @override
+  String get place_campsite => 'Кемпінг';
+
+  @override
+  String get place_viewpoint => 'Оглядовий майданчик';
+
+  @override
+  String get place_shelter => 'Укриття';
+
+  @override
+  String get place_trailhead => 'Початок стежки';
+
+  @override
+  String get place_town => 'Населений пункт';
+
+  @override
+  String get place_locality => 'Урочище';
+
+  @override
+  String get place_waypoint => 'Збережена точка';
 }

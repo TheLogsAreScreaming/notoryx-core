@@ -11364,4 +11364,143 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get trail_safety =>
       'Trail data © OpenStreetMap contributors. It can be incomplete or out of date. Routes aren\'t checked for safety or whether they\'re passable, so don\'t use this as your only navigation.';
+
+  @override
+  String get tr_needArea => 'Download an area that holds both points first.';
+
+  @override
+  String get tr_startFar => 'The start is more than 500 m from a known trail.';
+
+  @override
+  String get tr_endFar => 'The end is more than 500 m from a known trail.';
+
+  @override
+  String get tr_notJoined => 'No known trails join these points.';
+
+  @override
+  String get tr_damaged =>
+      'This area\'s data is damaged. Delete it and download it again.';
+
+  @override
+  String tr_zoomIn(int max, int current) {
+    return 'Zoom in: an area can be up to $max km², and this view is $current km².';
+  }
+
+  @override
+  String get tr_downloading => 'Downloading trails…';
+
+  @override
+  String tr_saved(String size) {
+    return 'Saved $size of trails.';
+  }
+
+  @override
+  String get tr_tooLarge => 'Zoom in to a smaller area.';
+
+  @override
+  String get tr_full => 'Trail storage is full (500 MB). Delete an area first.';
+
+  @override
+  String get tr_noTrails => 'No trails found in this view.';
+
+  @override
+  String get tr_failed =>
+      'Download failed. The map server may be busy, so try again later.';
+
+  @override
+  String tr_routeName(String distance) {
+    return 'Trail route $distance';
+  }
+
+  @override
+  String get tr_savedRoute => 'Saved to your routes.';
+
+  @override
+  String get tr_areas => 'Downloaded areas';
+
+  @override
+  String tr_used(String size) {
+    return '$size of 500 MB used';
+  }
+
+  @override
+  String tr_deleteArea(String name) {
+    return 'Delete $name';
+  }
+
+  @override
+  String get tr_title => 'Trail routing';
+
+  @override
+  String get tr_search => 'Search places';
+
+  @override
+  String get tr_start => 'Route start';
+
+  @override
+  String get tr_end => 'Route end';
+
+  @override
+  String tr_route(String distance) {
+    return 'Route: $distance along known trails.';
+  }
+
+  @override
+  String get tr_tapStart => 'Tap the map for a start, then an end.';
+
+  @override
+  String get tr_tapEnd => 'Tap the map for the end.';
+
+  @override
+  String get tr_download => 'Download this view';
+
+  @override
+  String get tr_save => 'Save route';
+
+  @override
+  String get tr_searchLabel => 'Search downloaded places';
+
+  @override
+  String get tr_searchHelp =>
+      'Peaks, trailheads, water, huts, towns and your waypoints. Choosing one sets the next route point.';
+
+  @override
+  String get tr_nothing =>
+      'Nothing found. Search only covers downloaded areas, and areas saved before place search need downloading again.';
+
+  @override
+  String get tr_toolSub => 'Offline routes along downloaded trails';
+
+  @override
+  String get place_peak => 'Peak';
+
+  @override
+  String get place_pass => 'Pass';
+
+  @override
+  String get place_spring => 'Spring';
+
+  @override
+  String get place_hut => 'Hut';
+
+  @override
+  String get place_campsite => 'Campsite';
+
+  @override
+  String get place_viewpoint => 'Viewpoint';
+
+  @override
+  String get place_shelter => 'Shelter';
+
+  @override
+  String get place_trailhead => 'Trailhead';
+
+  @override
+  String get place_town => 'Town';
+
+  @override
+  String get place_locality => 'Locality';
+
+  @override
+  String get place_waypoint => 'Saved waypoint';
 }

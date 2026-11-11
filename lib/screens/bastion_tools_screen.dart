@@ -159,8 +159,8 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
           if (!PlatformInfo.isWeb)
             _ToolAction(
               icon: Icons.hiking,
-              title: 'Trail routing',
-              subtitle: 'Offline routes along downloaded trails',
+              title: l10n.tr_title,
+              subtitle: l10n.tr_toolSub,
               builder: (_) => const TrailRoutingScreen(),
             ),
           if (!PlatformInfo.isWeb)
