@@ -11581,4 +11581,145 @@ class AppLocalizationsSv extends AppLocalizations {
   String sh_addFailed(String name, String error) {
     return 'Kunde inte lägga till $name: $error';
   }
+
+  @override
+  String get tr_needArea =>
+      'Ladda först ned ett område som innehåller båda punkterna.';
+
+  @override
+  String get tr_startFar => 'Starten ligger mer än 500 m från en känd led.';
+
+  @override
+  String get tr_endFar => 'Målet ligger mer än 500 m från en känd led.';
+
+  @override
+  String get tr_notJoined => 'Inga kända leder förbinder punkterna.';
+
+  @override
+  String get tr_damaged =>
+      'Områdets data är skadade. Ta bort det och ladda ned det igen.';
+
+  @override
+  String tr_zoomIn(int max, int current) {
+    return 'Zooma in: ett område får vara högst $max km², och den här vyn är $current km².';
+  }
+
+  @override
+  String get tr_downloading => 'Laddar ned leder…';
+
+  @override
+  String tr_saved(String size) {
+    return 'Sparade $size leddata.';
+  }
+
+  @override
+  String get tr_tooLarge => 'Zooma in till ett mindre område.';
+
+  @override
+  String get tr_full =>
+      'Lagringen för leder är full (500 MB). Ta bort ett område först.';
+
+  @override
+  String get tr_noTrails => 'Inga leder hittades i den här vyn.';
+
+  @override
+  String get tr_failed =>
+      'Nedladdningen misslyckades. Kartservern kan vara upptagen; försök igen senare.';
+
+  @override
+  String tr_routeName(String distance) {
+    return 'Ledrutt $distance';
+  }
+
+  @override
+  String get tr_savedRoute => 'Sparad bland dina rutter.';
+
+  @override
+  String get tr_areas => 'Nedladdade områden';
+
+  @override
+  String tr_used(String size) {
+    return '$size av 500 MB används';
+  }
+
+  @override
+  String tr_deleteArea(String name) {
+    return 'Ta bort $name';
+  }
+
+  @override
+  String get tr_title => 'Ruttplanering på leder';
+
+  @override
+  String get tr_search => 'Sök platser';
+
+  @override
+  String get tr_start => 'Ruttstart';
+
+  @override
+  String get tr_end => 'Ruttmål';
+
+  @override
+  String tr_route(String distance) {
+    return 'Rutt: $distance längs kända leder.';
+  }
+
+  @override
+  String get tr_tapStart => 'Tryck på kartan för start och sedan för mål.';
+
+  @override
+  String get tr_tapEnd => 'Tryck på kartan för målet.';
+
+  @override
+  String get tr_download => 'Ladda ned den här vyn';
+
+  @override
+  String get tr_save => 'Spara rutt';
+
+  @override
+  String get tr_searchLabel => 'Sök nedladdade platser';
+
+  @override
+  String get tr_searchHelp =>
+      'Toppar, ledstarter, vatten, stugor, orter och dina vägpunkter. Ett val blir nästa ruttpunkt.';
+
+  @override
+  String get tr_nothing =>
+      'Inget hittades. Sökningen gäller bara nedladdade områden, och områden sparade före platssökningen måste laddas ned igen.';
+
+  @override
+  String get tr_toolSub => 'Offline-rutter längs nedladdade leder';
+
+  @override
+  String get place_peak => 'Topp';
+
+  @override
+  String get place_pass => 'Pass';
+
+  @override
+  String get place_spring => 'Källa';
+
+  @override
+  String get place_hut => 'Stuga';
+
+  @override
+  String get place_campsite => 'Campingplats';
+
+  @override
+  String get place_viewpoint => 'Utsiktspunkt';
+
+  @override
+  String get place_shelter => 'Vindskydd';
+
+  @override
+  String get place_trailhead => 'Ledstart';
+
+  @override
+  String get place_town => 'Ort';
+
+  @override
+  String get place_locality => 'Plats';
+
+  @override
+  String get place_waypoint => 'Sparad vägpunkt';
 }

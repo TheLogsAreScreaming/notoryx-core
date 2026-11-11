@@ -11681,4 +11681,148 @@ class AppLocalizationsDe extends AppLocalizations {
   String sh_addFailed(String name, String error) {
     return '$name konnte nicht hinzugefügt werden: $error';
   }
+
+  @override
+  String get tr_needArea =>
+      'Lade zuerst ein Gebiet herunter, das beide Punkte enthält.';
+
+  @override
+  String get tr_startFar =>
+      'Der Start ist mehr als 500 m von einem bekannten Weg entfernt.';
+
+  @override
+  String get tr_endFar =>
+      'Das Ziel ist mehr als 500 m von einem bekannten Weg entfernt.';
+
+  @override
+  String get tr_notJoined => 'Keine bekannten Wege verbinden diese Punkte.';
+
+  @override
+  String get tr_damaged =>
+      'Die Daten dieses Gebiets sind beschädigt. Lösche es und lade es erneut herunter.';
+
+  @override
+  String tr_zoomIn(int max, int current) {
+    return 'Vergrößere: Ein Gebiet darf bis zu $max km² groß sein, diese Ansicht hat $current km².';
+  }
+
+  @override
+  String get tr_downloading => 'Wege werden geladen…';
+
+  @override
+  String tr_saved(String size) {
+    return '$size Wegdaten gespeichert.';
+  }
+
+  @override
+  String get tr_tooLarge => 'Vergrößere auf ein kleineres Gebiet.';
+
+  @override
+  String get tr_full =>
+      'Der Wegspeicher ist voll (500 MB). Lösche zuerst ein Gebiet.';
+
+  @override
+  String get tr_noTrails => 'In dieser Ansicht wurden keine Wege gefunden.';
+
+  @override
+  String get tr_failed =>
+      'Download fehlgeschlagen. Der Kartenserver ist vielleicht ausgelastet; versuche es später erneut.';
+
+  @override
+  String tr_routeName(String distance) {
+    return 'Wegroute $distance';
+  }
+
+  @override
+  String get tr_savedRoute => 'In deinen Routen gespeichert.';
+
+  @override
+  String get tr_areas => 'Heruntergeladene Gebiete';
+
+  @override
+  String tr_used(String size) {
+    return '$size von 500 MB belegt';
+  }
+
+  @override
+  String tr_deleteArea(String name) {
+    return '$name löschen';
+  }
+
+  @override
+  String get tr_title => 'Wegrouting';
+
+  @override
+  String get tr_search => 'Orte suchen';
+
+  @override
+  String get tr_start => 'Routenstart';
+
+  @override
+  String get tr_end => 'Routenziel';
+
+  @override
+  String tr_route(String distance) {
+    return 'Route: $distance auf bekannten Wegen.';
+  }
+
+  @override
+  String get tr_tapStart =>
+      'Tippe für den Start auf die Karte, dann für das Ziel.';
+
+  @override
+  String get tr_tapEnd => 'Tippe für das Ziel auf die Karte.';
+
+  @override
+  String get tr_download => 'Diese Ansicht laden';
+
+  @override
+  String get tr_save => 'Route speichern';
+
+  @override
+  String get tr_searchLabel => 'Heruntergeladene Orte suchen';
+
+  @override
+  String get tr_searchHelp =>
+      'Gipfel, Wanderparkplätze, Wasser, Hütten, Orte und deine Wegpunkte. Eine Auswahl wird der nächste Routenpunkt.';
+
+  @override
+  String get tr_nothing =>
+      'Nichts gefunden. Gesucht wird nur in heruntergeladenen Gebieten; Gebiete von vor der Ortssuche müssen neu geladen werden.';
+
+  @override
+  String get tr_toolSub => 'Offline-Routen auf heruntergeladenen Wegen';
+
+  @override
+  String get place_peak => 'Gipfel';
+
+  @override
+  String get place_pass => 'Pass';
+
+  @override
+  String get place_spring => 'Quelle';
+
+  @override
+  String get place_hut => 'Hütte';
+
+  @override
+  String get place_campsite => 'Zeltplatz';
+
+  @override
+  String get place_viewpoint => 'Aussichtspunkt';
+
+  @override
+  String get place_shelter => 'Unterstand';
+
+  @override
+  String get place_trailhead => 'Wanderparkplatz';
+
+  @override
+  String get place_town => 'Ort';
+
+  @override
+  String get place_locality => 'Örtlichkeit';
+
+  @override
+  String get place_waypoint => 'Gespeicherter Wegpunkt';
 }

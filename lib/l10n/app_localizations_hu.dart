@@ -11657,4 +11657,147 @@ class AppLocalizationsHu extends AppLocalizations {
   String sh_addFailed(String name, String error) {
     return '$name nem adható hozzá: $error';
   }
+
+  @override
+  String get tr_needArea =>
+      'Előbb tölts le egy mindkét pontot tartalmazó területet.';
+
+  @override
+  String get tr_startFar =>
+      'A kezdőpont több mint 500 m-re van ismert ösvénytől.';
+
+  @override
+  String get tr_endFar => 'A végpont több mint 500 m-re van ismert ösvénytől.';
+
+  @override
+  String get tr_notJoined => 'Nincs ismert ösvény a pontok között.';
+
+  @override
+  String get tr_damaged =>
+      'A terület adatai sérültek. Töröld, és töltsd le újra.';
+
+  @override
+  String tr_zoomIn(int max, int current) {
+    return 'Nagyíts: egy terület legfeljebb $max km² lehet, ez a nézet $current km².';
+  }
+
+  @override
+  String get tr_downloading => 'Ösvények letöltése…';
+
+  @override
+  String tr_saved(String size) {
+    return '$size ösvényadat mentve.';
+  }
+
+  @override
+  String get tr_tooLarge => 'Nagyíts kisebb területre.';
+
+  @override
+  String get tr_full =>
+      'Az ösvénytár megtelt (500 MB). Előbb törölj egy területet.';
+
+  @override
+  String get tr_noTrails => 'Ebben a nézetben nincs ösvény.';
+
+  @override
+  String get tr_failed =>
+      'A letöltés nem sikerült. Lehet, hogy a térképszerver foglalt; próbáld később.';
+
+  @override
+  String tr_routeName(String distance) {
+    return 'Ösvényútvonal $distance';
+  }
+
+  @override
+  String get tr_savedRoute => 'Mentve az útvonalaid közé.';
+
+  @override
+  String get tr_areas => 'Letöltött területek';
+
+  @override
+  String tr_used(String size) {
+    return '$size / 500 MB használva';
+  }
+
+  @override
+  String tr_deleteArea(String name) {
+    return '$name törlése';
+  }
+
+  @override
+  String get tr_title => 'Útvonaltervezés ösvényeken';
+
+  @override
+  String get tr_search => 'Helyek keresése';
+
+  @override
+  String get tr_start => 'Útvonal kezdete';
+
+  @override
+  String get tr_end => 'Útvonal vége';
+
+  @override
+  String tr_route(String distance) {
+    return 'Útvonal: $distance ismert ösvényeken.';
+  }
+
+  @override
+  String get tr_tapStart =>
+      'Koppints a térképre a kezdőponthoz, majd a végponthoz.';
+
+  @override
+  String get tr_tapEnd => 'Koppints a térképre a végponthoz.';
+
+  @override
+  String get tr_download => 'Nézet letöltése';
+
+  @override
+  String get tr_save => 'Útvonal mentése';
+
+  @override
+  String get tr_searchLabel => 'Keresés a letöltött helyek között';
+
+  @override
+  String get tr_searchHelp =>
+      'Csúcsok, túrakezdőpontok, víz, menedékházak, települések és az útpontjaid. A választott elem lesz a következő útvonalpont.';
+
+  @override
+  String get tr_nothing =>
+      'Nincs találat. A keresés csak a letöltött területekre terjed ki, a helykeresés előtt mentett területeket újra le kell tölteni.';
+
+  @override
+  String get tr_toolSub => 'Offline útvonalak letöltött ösvényeken';
+
+  @override
+  String get place_peak => 'Csúcs';
+
+  @override
+  String get place_pass => 'Hágó';
+
+  @override
+  String get place_spring => 'Forrás';
+
+  @override
+  String get place_hut => 'Menedékház';
+
+  @override
+  String get place_campsite => 'Kemping';
+
+  @override
+  String get place_viewpoint => 'Kilátópont';
+
+  @override
+  String get place_shelter => 'Esőbeálló';
+
+  @override
+  String get place_trailhead => 'Túrakezdőpont';
+
+  @override
+  String get place_town => 'Település';
+
+  @override
+  String get place_locality => 'Helyszín';
+
+  @override
+  String get place_waypoint => 'Mentett útpont';
 }

@@ -11144,4 +11144,141 @@ class AppLocalizationsKo extends AppLocalizations {
   String sh_addFailed(String name, String error) {
     return '$name님을 추가하지 못했습니다: $error';
   }
+
+  @override
+  String get tr_needArea => '먼저 두 지점을 모두 포함하는 지역을 다운로드하세요.';
+
+  @override
+  String get tr_startFar => '출발점이 알려진 길에서 500 m 넘게 떨어져 있습니다.';
+
+  @override
+  String get tr_endFar => '도착점이 알려진 길에서 500 m 넘게 떨어져 있습니다.';
+
+  @override
+  String get tr_notJoined => '이 지점들을 잇는 알려진 길이 없습니다.';
+
+  @override
+  String get tr_damaged => '이 지역의 데이터가 손상되었습니다. 삭제한 뒤 다시 다운로드하세요.';
+
+  @override
+  String tr_zoomIn(int max, int current) {
+    return '확대하세요. 지역은 최대 $max km²이며, 현재 화면은 $current km²입니다.';
+  }
+
+  @override
+  String get tr_downloading => '길 다운로드 중…';
+
+  @override
+  String tr_saved(String size) {
+    return '길 데이터 $size를 저장했습니다.';
+  }
+
+  @override
+  String get tr_tooLarge => '더 작은 지역으로 확대하세요.';
+
+  @override
+  String get tr_full => '길 저장 공간이 가득 찼습니다(500 MB). 먼저 지역을 삭제하세요.';
+
+  @override
+  String get tr_noTrails => '이 화면에서 길을 찾을 수 없습니다.';
+
+  @override
+  String get tr_failed => '다운로드에 실패했습니다. 지도 서버가 바쁠 수 있으니 나중에 다시 시도하세요.';
+
+  @override
+  String tr_routeName(String distance) {
+    return '트레일 경로 $distance';
+  }
+
+  @override
+  String get tr_savedRoute => '내 경로에 저장했습니다.';
+
+  @override
+  String get tr_areas => '다운로드한 지역';
+
+  @override
+  String tr_used(String size) {
+    return '500 MB 중 $size 사용';
+  }
+
+  @override
+  String tr_deleteArea(String name) {
+    return '$name 삭제';
+  }
+
+  @override
+  String get tr_title => '트레일 경로 찾기';
+
+  @override
+  String get tr_search => '장소 검색';
+
+  @override
+  String get tr_start => '출발점';
+
+  @override
+  String get tr_end => '도착점';
+
+  @override
+  String tr_route(String distance) {
+    return '경로: 알려진 길로 $distance.';
+  }
+
+  @override
+  String get tr_tapStart => '지도를 눌러 출발점을 정한 다음 도착점을 정하세요.';
+
+  @override
+  String get tr_tapEnd => '지도를 눌러 도착점을 정하세요.';
+
+  @override
+  String get tr_download => '이 화면 다운로드';
+
+  @override
+  String get tr_save => '경로 저장';
+
+  @override
+  String get tr_searchLabel => '다운로드한 장소 검색';
+
+  @override
+  String get tr_searchHelp =>
+      '봉우리, 등산로 입구, 물, 대피소, 마을, 저장한 웨이포인트. 하나를 고르면 다음 경로 지점이 됩니다.';
+
+  @override
+  String get tr_nothing =>
+      '결과가 없습니다. 검색은 다운로드한 지역만 다루며, 장소 검색 이전에 저장한 지역은 다시 다운로드해야 합니다.';
+
+  @override
+  String get tr_toolSub => '다운로드한 길로 오프라인 경로 찾기';
+
+  @override
+  String get place_peak => '봉우리';
+
+  @override
+  String get place_pass => '고개';
+
+  @override
+  String get place_spring => '샘';
+
+  @override
+  String get place_hut => '대피소';
+
+  @override
+  String get place_campsite => '캠핑장';
+
+  @override
+  String get place_viewpoint => '전망대';
+
+  @override
+  String get place_shelter => '쉼터';
+
+  @override
+  String get place_trailhead => '등산로 입구';
+
+  @override
+  String get place_town => '마을';
+
+  @override
+  String get place_locality => '지명';
+
+  @override
+  String get place_waypoint => '저장한 웨이포인트';
 }

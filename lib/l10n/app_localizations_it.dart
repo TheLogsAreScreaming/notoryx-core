@@ -11682,4 +11682,146 @@ class AppLocalizationsIt extends AppLocalizations {
   String sh_addFailed(String name, String error) {
     return 'Impossibile aggiungere $name: $error';
   }
+
+  @override
+  String get tr_needArea =>
+      'Scarica prima un\'area che contenga entrambi i punti.';
+
+  @override
+  String get tr_startFar => 'La partenza è a più di 500 m da un sentiero noto.';
+
+  @override
+  String get tr_endFar => 'L\'arrivo è a più di 500 m da un sentiero noto.';
+
+  @override
+  String get tr_notJoined => 'Nessun sentiero noto collega questi punti.';
+
+  @override
+  String get tr_damaged =>
+      'I dati di quest\'area sono danneggiati. Eliminala e scaricala di nuovo.';
+
+  @override
+  String tr_zoomIn(int max, int current) {
+    return 'Ingrandisci: un\'area può essere al massimo di $max km², questa vista è di $current km².';
+  }
+
+  @override
+  String get tr_downloading => 'Download dei sentieri…';
+
+  @override
+  String tr_saved(String size) {
+    return 'Salvati $size di sentieri.';
+  }
+
+  @override
+  String get tr_tooLarge => 'Ingrandisci su un\'area più piccola.';
+
+  @override
+  String get tr_full =>
+      'Lo spazio per i sentieri è pieno (500 MB). Elimina prima un\'area.';
+
+  @override
+  String get tr_noTrails => 'Nessun sentiero in questa vista.';
+
+  @override
+  String get tr_failed =>
+      'Download non riuscito. Il server delle mappe potrebbe essere occupato; riprova più tardi.';
+
+  @override
+  String tr_routeName(String distance) {
+    return 'Percorso sui sentieri $distance';
+  }
+
+  @override
+  String get tr_savedRoute => 'Salvato nei tuoi percorsi.';
+
+  @override
+  String get tr_areas => 'Aree scaricate';
+
+  @override
+  String tr_used(String size) {
+    return '$size usati su 500 MB';
+  }
+
+  @override
+  String tr_deleteArea(String name) {
+    return 'Elimina $name';
+  }
+
+  @override
+  String get tr_title => 'Percorsi sui sentieri';
+
+  @override
+  String get tr_search => 'Cerca luoghi';
+
+  @override
+  String get tr_start => 'Partenza';
+
+  @override
+  String get tr_end => 'Arrivo';
+
+  @override
+  String tr_route(String distance) {
+    return 'Percorso: $distance su sentieri noti.';
+  }
+
+  @override
+  String get tr_tapStart =>
+      'Tocca la mappa per la partenza, poi per l\'arrivo.';
+
+  @override
+  String get tr_tapEnd => 'Tocca la mappa per l\'arrivo.';
+
+  @override
+  String get tr_download => 'Scarica questa vista';
+
+  @override
+  String get tr_save => 'Salva percorso';
+
+  @override
+  String get tr_searchLabel => 'Cerca tra i luoghi scaricati';
+
+  @override
+  String get tr_searchHelp =>
+      'Cime, partenze dei sentieri, acqua, rifugi, paesi e i tuoi waypoint. Sceglierne uno lo imposta come prossimo punto.';
+
+  @override
+  String get tr_nothing =>
+      'Nessun risultato. La ricerca copre solo le aree scaricate, e quelle salvate prima della ricerca luoghi vanno riscaricate.';
+
+  @override
+  String get tr_toolSub => 'Percorsi offline sui sentieri scaricati';
+
+  @override
+  String get place_peak => 'Cima';
+
+  @override
+  String get place_pass => 'Passo';
+
+  @override
+  String get place_spring => 'Sorgente';
+
+  @override
+  String get place_hut => 'Rifugio';
+
+  @override
+  String get place_campsite => 'Campeggio';
+
+  @override
+  String get place_viewpoint => 'Punto panoramico';
+
+  @override
+  String get place_shelter => 'Riparo';
+
+  @override
+  String get place_trailhead => 'Partenza sentiero';
+
+  @override
+  String get place_town => 'Paese';
+
+  @override
+  String get place_locality => 'Località';
+
+  @override
+  String get place_waypoint => 'Waypoint salvato';
 }

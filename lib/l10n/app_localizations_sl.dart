@@ -11662,4 +11662,144 @@ class AppLocalizationsSl extends AppLocalizations {
   String sh_addFailed(String name, String error) {
     return '$name ni bilo mogoče dodati: $error';
   }
+
+  @override
+  String get tr_needArea => 'Najprej prenesi območje, ki vsebuje obe točki.';
+
+  @override
+  String get tr_startFar => 'Začetek je več kot 500 m od znane poti.';
+
+  @override
+  String get tr_endFar => 'Konec je več kot 500 m od znane poti.';
+
+  @override
+  String get tr_notJoined => 'Nobena znana pot ne povezuje teh točk.';
+
+  @override
+  String get tr_damaged =>
+      'Podatki tega območja so poškodovani. Izbriši ga in ga znova prenesi.';
+
+  @override
+  String tr_zoomIn(int max, int current) {
+    return 'Približaj: območje je lahko največ $max km², ta pogled pa je $current km².';
+  }
+
+  @override
+  String get tr_downloading => 'Prenašanje poti…';
+
+  @override
+  String tr_saved(String size) {
+    return 'Shranjene poti: $size.';
+  }
+
+  @override
+  String get tr_tooLarge => 'Približaj na manjše območje.';
+
+  @override
+  String get tr_full =>
+      'Shramba poti je polna (500 MB). Najprej izbriši območje.';
+
+  @override
+  String get tr_noTrails => 'V tem pogledu ni poti.';
+
+  @override
+  String get tr_failed =>
+      'Prenos ni uspel. Strežnik zemljevidov je morda zaseden; poskusi pozneje.';
+
+  @override
+  String tr_routeName(String distance) {
+    return 'Pot po stezah $distance';
+  }
+
+  @override
+  String get tr_savedRoute => 'Shranjeno med tvoje poti.';
+
+  @override
+  String get tr_areas => 'Prenesena območja';
+
+  @override
+  String tr_used(String size) {
+    return 'Porabljeno $size od 500 MB';
+  }
+
+  @override
+  String tr_deleteArea(String name) {
+    return 'Izbriši $name';
+  }
+
+  @override
+  String get tr_title => 'Načrtovanje po stezah';
+
+  @override
+  String get tr_search => 'Išči kraje';
+
+  @override
+  String get tr_start => 'Začetek poti';
+
+  @override
+  String get tr_end => 'Konec poti';
+
+  @override
+  String tr_route(String distance) {
+    return 'Pot: $distance po znanih stezah.';
+  }
+
+  @override
+  String get tr_tapStart => 'Tapni zemljevid za začetek, nato za konec.';
+
+  @override
+  String get tr_tapEnd => 'Tapni zemljevid za konec.';
+
+  @override
+  String get tr_download => 'Prenesi ta pogled';
+
+  @override
+  String get tr_save => 'Shrani pot';
+
+  @override
+  String get tr_searchLabel => 'Išči med prenesenimi kraji';
+
+  @override
+  String get tr_searchHelp =>
+      'Vrhovi, izhodišča, voda, koče, kraji in tvoje točke poti. Izbrani postane naslednja točka poti.';
+
+  @override
+  String get tr_nothing =>
+      'Ni zadetkov. Iskanje zajema le prenesena območja; območja, shranjena pred iskanjem krajev, je treba prenesti znova.';
+
+  @override
+  String get tr_toolSub => 'Poti brez povezave po prenesenih stezah';
+
+  @override
+  String get place_peak => 'Vrh';
+
+  @override
+  String get place_pass => 'Prelaz';
+
+  @override
+  String get place_spring => 'Izvir';
+
+  @override
+  String get place_hut => 'Koča';
+
+  @override
+  String get place_campsite => 'Kamp';
+
+  @override
+  String get place_viewpoint => 'Razgledišče';
+
+  @override
+  String get place_shelter => 'Zavetje';
+
+  @override
+  String get place_trailhead => 'Izhodišče';
+
+  @override
+  String get place_town => 'Kraj';
+
+  @override
+  String get place_locality => 'Lokacija';
+
+  @override
+  String get place_waypoint => 'Shranjena točka poti';
 }

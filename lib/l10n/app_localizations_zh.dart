@@ -10905,4 +10905,139 @@ class AppLocalizationsZh extends AppLocalizations {
   String sh_addFailed(String name, String error) {
     return '无法添加 $name：$error';
   }
+
+  @override
+  String get tr_needArea => '请先下载包含这两个点的区域。';
+
+  @override
+  String get tr_startFar => '起点距离已知步道超过 500 米。';
+
+  @override
+  String get tr_endFar => '终点距离已知步道超过 500 米。';
+
+  @override
+  String get tr_notJoined => '没有已知步道连接这些点。';
+
+  @override
+  String get tr_damaged => '此区域的数据已损坏。请删除后重新下载。';
+
+  @override
+  String tr_zoomIn(int max, int current) {
+    return '请放大：每个区域最多 $max 平方公里，当前视图为 $current 平方公里。';
+  }
+
+  @override
+  String get tr_downloading => '正在下载步道…';
+
+  @override
+  String tr_saved(String size) {
+    return '已保存 $size 步道数据。';
+  }
+
+  @override
+  String get tr_tooLarge => '请放大到更小的区域。';
+
+  @override
+  String get tr_full => '步道存储空间已满（500 MB）。请先删除一个区域。';
+
+  @override
+  String get tr_noTrails => '此视图中未找到步道。';
+
+  @override
+  String get tr_failed => '下载失败。地图服务器可能繁忙，请稍后重试。';
+
+  @override
+  String tr_routeName(String distance) {
+    return '步道路线 $distance';
+  }
+
+  @override
+  String get tr_savedRoute => '已保存到你的路线。';
+
+  @override
+  String get tr_areas => '已下载的区域';
+
+  @override
+  String tr_used(String size) {
+    return '已用 $size，共 500 MB';
+  }
+
+  @override
+  String tr_deleteArea(String name) {
+    return '删除 $name';
+  }
+
+  @override
+  String get tr_title => '步道路线规划';
+
+  @override
+  String get tr_search => '搜索地点';
+
+  @override
+  String get tr_start => '路线起点';
+
+  @override
+  String get tr_end => '路线终点';
+
+  @override
+  String tr_route(String distance) {
+    return '路线：沿已知步道 $distance。';
+  }
+
+  @override
+  String get tr_tapStart => '点按地图选择起点，再选择终点。';
+
+  @override
+  String get tr_tapEnd => '点按地图选择终点。';
+
+  @override
+  String get tr_download => '下载此视图';
+
+  @override
+  String get tr_save => '保存路线';
+
+  @override
+  String get tr_searchLabel => '搜索已下载的地点';
+
+  @override
+  String get tr_searchHelp => '山峰、步道入口、水源、小屋、城镇和你的航点。选择后将成为下一个路线点。';
+
+  @override
+  String get tr_nothing => '未找到结果。搜索只覆盖已下载的区域，在加入地点搜索之前保存的区域需要重新下载。';
+
+  @override
+  String get tr_toolSub => '沿已下载步道的离线路线';
+
+  @override
+  String get place_peak => '山峰';
+
+  @override
+  String get place_pass => '山口';
+
+  @override
+  String get place_spring => '泉水';
+
+  @override
+  String get place_hut => '小屋';
+
+  @override
+  String get place_campsite => '营地';
+
+  @override
+  String get place_viewpoint => '观景点';
+
+  @override
+  String get place_shelter => '避难棚';
+
+  @override
+  String get place_trailhead => '步道入口';
+
+  @override
+  String get place_town => '城镇';
+
+  @override
+  String get place_locality => '地名';
+
+  @override
+  String get place_waypoint => '已保存的航点';
 }

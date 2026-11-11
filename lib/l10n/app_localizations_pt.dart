@@ -11654,4 +11654,146 @@ class AppLocalizationsPt extends AppLocalizations {
   String sh_addFailed(String name, String error) {
     return 'Não foi possível adicionar $name: $error';
   }
+
+  @override
+  String get tr_needArea =>
+      'Descarrega primeiro uma área que contenha os dois pontos.';
+
+  @override
+  String get tr_startFar =>
+      'O início está a mais de 500 m de um trilho conhecido.';
+
+  @override
+  String get tr_endFar => 'O fim está a mais de 500 m de um trilho conhecido.';
+
+  @override
+  String get tr_notJoined => 'Nenhum trilho conhecido liga estes pontos.';
+
+  @override
+  String get tr_damaged =>
+      'Os dados desta área estão danificados. Elimina-a e descarrega-a novamente.';
+
+  @override
+  String tr_zoomIn(int max, int current) {
+    return 'Aproxima: uma área pode ter até $max km² e esta vista tem $current km².';
+  }
+
+  @override
+  String get tr_downloading => 'A descarregar trilhos…';
+
+  @override
+  String tr_saved(String size) {
+    return 'Guardados $size de trilhos.';
+  }
+
+  @override
+  String get tr_tooLarge => 'Aproxima para uma área mais pequena.';
+
+  @override
+  String get tr_full =>
+      'O espaço para trilhos está cheio (500 MB). Elimina primeiro uma área.';
+
+  @override
+  String get tr_noTrails => 'Nenhum trilho nesta vista.';
+
+  @override
+  String get tr_failed =>
+      'A descarga falhou. O servidor de mapas pode estar ocupado; tenta mais tarde.';
+
+  @override
+  String tr_routeName(String distance) {
+    return 'Rota de trilho $distance';
+  }
+
+  @override
+  String get tr_savedRoute => 'Guardada nas tuas rotas.';
+
+  @override
+  String get tr_areas => 'Áreas descarregadas';
+
+  @override
+  String tr_used(String size) {
+    return '$size de 500 MB usados';
+  }
+
+  @override
+  String tr_deleteArea(String name) {
+    return 'Eliminar $name';
+  }
+
+  @override
+  String get tr_title => 'Rotas por trilhos';
+
+  @override
+  String get tr_search => 'Procurar locais';
+
+  @override
+  String get tr_start => 'Início da rota';
+
+  @override
+  String get tr_end => 'Fim da rota';
+
+  @override
+  String tr_route(String distance) {
+    return 'Rota: $distance por trilhos conhecidos.';
+  }
+
+  @override
+  String get tr_tapStart => 'Toca no mapa para o início e depois para o fim.';
+
+  @override
+  String get tr_tapEnd => 'Toca no mapa para o fim.';
+
+  @override
+  String get tr_download => 'Descarregar esta vista';
+
+  @override
+  String get tr_save => 'Guardar rota';
+
+  @override
+  String get tr_searchLabel => 'Procurar locais descarregados';
+
+  @override
+  String get tr_searchHelp =>
+      'Picos, inícios de trilho, água, abrigos, localidades e os teus pontos de passagem. Escolher um torna-o o próximo ponto da rota.';
+
+  @override
+  String get tr_nothing =>
+      'Nada encontrado. A pesquisa só abrange áreas descarregadas, e as guardadas antes da pesquisa de locais têm de ser descarregadas novamente.';
+
+  @override
+  String get tr_toolSub => 'Rotas offline em trilhos descarregados';
+
+  @override
+  String get place_peak => 'Pico';
+
+  @override
+  String get place_pass => 'Colo';
+
+  @override
+  String get place_spring => 'Nascente';
+
+  @override
+  String get place_hut => 'Refúgio';
+
+  @override
+  String get place_campsite => 'Parque de campismo';
+
+  @override
+  String get place_viewpoint => 'Miradouro';
+
+  @override
+  String get place_shelter => 'Abrigo';
+
+  @override
+  String get place_trailhead => 'Início de trilho';
+
+  @override
+  String get place_town => 'Localidade';
+
+  @override
+  String get place_locality => 'Lugar';
+
+  @override
+  String get place_waypoint => 'Ponto de passagem guardado';
 }

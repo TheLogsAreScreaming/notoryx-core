@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 
 import '../models/trail_graph.dart';
 import '../models/trail_place.dart';
+import '../l10n/app_localizations.dart';
 import '../models/waypoint.dart';
 import '../services/map_tile_cache_service.dart';
 import '../services/trail_store.dart';
@@ -72,9 +73,7 @@ class _TrailRoutingScreenState extends State<TrailRoutingScreen> {
       b.longitude,
     );
     if (area == null) {
-      setState(
-        () => _message = 'Download an area that holds both points first.',
-      );
+      setState(() => _message = context.l10n.tr_needArea);
       return;
     }
     setState(() => _busy = true);
@@ -91,20 +90,14 @@ class _TrailRoutingScreenState extends State<TrailRoutingScreen> {
         _route = route;
         _message = switch (route.problem) {
           null => null,
-          TrailRouteProblem.startTooFar =>
-            'The start is more than 500 m from a known trail.',
-          TrailRouteProblem.endTooFar =>
-            'The end is more than 500 m from a known trail.',
-          TrailRouteProblem.notConnected =>
-            'No known trails join these points.',
+          TrailRouteProblem.startTooFar => context.l10n.tr_startFar,
+          TrailRouteProblem.endTooFar => context.l10n.tr_endFar,
+          TrailRouteProblem.notConnected => context.l10n.tr_notJoined,
         };
       });
     } on FormatException {
       if (mounted) {
-        setState(
-          () => _message =
-              'This area\'s data is damaged. Delete it and download it again.',
-        );
+        setState(() => _message = context.l10n.tr_damaged);
       }
     } finally {
       if (mounted) setState(() => _busy = false);
@@ -125,8 +118,10 @@ class _TrailRoutingScreenState extends State<TrailRoutingScreen> {
     final bounds = _visible();
     if (bounds.areaKm2 > maxTrailAreaKm2) {
       setState(
-        () => _message =
-            'Zoom in: an area can be up to ${maxTrailAreaKm2.round()} km², and this view is ${bounds.areaKm2.round()} km².',
+        () => _message = context.l10n.tr_zoomIn(
+          maxTrailAreaKm2.round(),
+          bounds.areaKm2.round(),
+        ),
       );
       return;
     }
@@ -135,23 +130,21 @@ class _TrailRoutingScreenState extends State<TrailRoutingScreen> {
         '${center.latitude.toStringAsFixed(2)}, ${center.longitude.toStringAsFixed(2)}';
     setState(() {
       _busy = true;
-      _message = 'Downloading trails…';
+      _message = context.l10n.tr_downloading;
     });
     try {
       final area = await _store.download(name, bounds);
       if (mounted) {
-        setState(() => _message = 'Saved ${_size(area.bytes)} of trails.');
+        setState(() => _message = context.l10n.tr_saved(_size(area.bytes)));
       }
     } on TrailDownloadException catch (e) {
       if (mounted) {
         setState(
           () => _message = switch (e.problem) {
-            TrailDownloadProblem.tooLarge => 'Zoom in to a smaller area.',
-            TrailDownloadProblem.storageFull =>
-              'Trail storage is full (500 MB). Delete an area first.',
-            TrailDownloadProblem.noTrails => 'No trails found in this view.',
-            TrailDownloadProblem.failed =>
-              'Download failed. The map server may be busy, so try again later.',
+            TrailDownloadProblem.tooLarge => context.l10n.tr_tooLarge,
+            TrailDownloadProblem.storageFull => context.l10n.tr_full,
+            TrailDownloadProblem.noTrails => context.l10n.tr_noTrails,
+            TrailDownloadProblem.failed => context.l10n.tr_failed,
           },
         );
       }
@@ -171,12 +164,13 @@ class _TrailRoutingScreenState extends State<TrailRoutingScreen> {
     if (route == null || route.problem != null) return;
     final stamp = DateTime.now().microsecondsSinceEpoch;
     final store = context.read<WaypointStore>();
+    final routeName = context.l10n.tr_routeName(_distance(route.meters));
     final points = thin(route.points, maxRoutePoints);
     await store.addImport(
       GpxImport(const [], [
         WaypointRoute(
           id: 'trail-$stamp',
-          name: 'Trail route ${_distance(route.meters)}',
+          name: routeName,
           points: [
             for (final (i, p) in points.indexed)
               Waypoint(
@@ -189,7 +183,7 @@ class _TrailRoutingScreenState extends State<TrailRoutingScreen> {
         ),
       ]),
     );
-    if (mounted) setState(() => _message = 'Saved to your routes.');
+    if (mounted) setState(() => _message = context.l10n.tr_savedRoute);
   }
 
   Future<void> _search() async {
@@ -223,15 +217,15 @@ class _TrailRoutingScreenState extends State<TrailRoutingScreen> {
               shrinkWrap: true,
               children: [
                 ListTile(
-                  title: const Text('Downloaded areas'),
-                  subtitle: Text('${_size(_store.usedBytes)} of 500 MB used'),
+                  title: Text(context.l10n.tr_areas),
+                  subtitle: Text(context.l10n.tr_used(_size(_store.usedBytes))),
                 ),
                 for (final area in _store.areas)
                   ListTile(
                     title: Text(area.name),
                     subtitle: Text(_size(area.bytes)),
                     trailing: IconButton(
-                      tooltip: 'Delete ${area.name}',
+                      tooltip: context.l10n.tr_deleteArea(area.name),
                       icon: const Icon(Icons.delete_outline),
                       onPressed: () => unawaited(_store.delete(area.id)),
                     ),
@@ -251,15 +245,15 @@ class _TrailRoutingScreenState extends State<TrailRoutingScreen> {
     final found = route != null && route.problem == null;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Trail routing'),
+        title: Text(context.l10n.tr_title),
         actions: [
           IconButton(
-            tooltip: 'Search places',
-            icon: const Icon(Icons.search),
+            tooltip: context.l10n.tr_search,
+            icon: Icon(Icons.search),
             onPressed: _search,
           ),
           IconButton(
-            tooltip: 'Downloaded areas',
+            tooltip: context.l10n.tr_areas,
             icon: const Icon(Icons.folder_outlined),
             onPressed: _showAreas,
           ),
@@ -316,8 +310,8 @@ class _TrailRoutingScreenState extends State<TrailRoutingScreen> {
                         width: 32,
                         height: 32,
                         child: Semantics(
-                          label: 'Route start',
-                          child: const Icon(Icons.trip_origin, size: 28),
+                          label: context.l10n.tr_start,
+                          child: Icon(Icons.trip_origin, size: 28),
                         ),
                       ),
                     if (_end case final p?)
@@ -326,7 +320,7 @@ class _TrailRoutingScreenState extends State<TrailRoutingScreen> {
                         width: 32,
                         height: 32,
                         child: Semantics(
-                          label: 'Route end',
+                          label: context.l10n.tr_end,
                           child: const Icon(Icons.flag, size: 28),
                         ),
                       ),
@@ -344,11 +338,11 @@ class _TrailRoutingScreenState extends State<TrailRoutingScreen> {
                 children: [
                   Text(
                     found
-                        ? 'Route: ${_distance(route.meters)} along known trails.'
+                        ? context.l10n.tr_route(_distance(route.meters))
                         : _start == null
-                        ? 'Tap the map for a start, then an end.'
+                        ? context.l10n.tr_tapStart
                         : _end == null
-                        ? 'Tap the map for the end.'
+                        ? context.l10n.tr_tapEnd
                         : '',
                     style: const TextStyle(fontWeight: FontWeight.w700),
                   ),
@@ -363,16 +357,16 @@ class _TrailRoutingScreenState extends State<TrailRoutingScreen> {
                       Expanded(
                         child: OutlinedButton.icon(
                           onPressed: _busy ? null : _download,
-                          icon: const Icon(Icons.download),
-                          label: const Text('Download this view'),
+                          icon: Icon(Icons.download),
+                          label: Text(context.l10n.tr_download),
                         ),
                       ),
                       const SizedBox(width: 8),
                       Expanded(
                         child: FilledButton.icon(
                           onPressed: found && !_busy ? _save : null,
-                          icon: const Icon(Icons.save_outlined),
-                          label: const Text('Save route'),
+                          icon: Icon(Icons.save_outlined),
+                          label: Text(context.l10n.tr_save),
                         ),
                       ),
                     ],
@@ -418,20 +412,17 @@ class _PlaceSearchSheetState extends State<_PlaceSearchSheet> {
                 key: const ValueKey('place-search'),
                 autofocus: true,
                 onChanged: (v) => setState(() => _query = v),
-                decoration: const InputDecoration(
-                  labelText: 'Search downloaded places',
-                  helperText:
-                      'Peaks, trailheads, water, huts, towns and your waypoints. Choosing one sets the next route point.',
+                decoration: InputDecoration(
+                  labelText: context.l10n.tr_searchLabel,
+                  helperText: context.l10n.tr_searchHelp,
                   helperMaxLines: 3,
                 ),
               ),
             ),
             if (_query.trim().isNotEmpty && results.isEmpty)
-              const Padding(
+              Padding(
                 padding: EdgeInsets.all(12),
-                child: Text(
-                  'Nothing found. Search only covers downloaded areas, and areas saved before place search need downloading again.',
-                ),
+                child: Text(context.l10n.tr_nothing),
               ),
             Expanded(
               child: ListView(
@@ -439,7 +430,7 @@ class _PlaceSearchSheetState extends State<_PlaceSearchSheet> {
                   for (final place in results)
                     ListTile(
                       title: Text(place.name),
-                      subtitle: Text(place.kind.label),
+                      subtitle: Text(placeKindLabel(context.l10n, place.kind)),
                       onTap: () => Navigator.of(context).pop(place),
                     ),
                 ],
@@ -451,3 +442,19 @@ class _PlaceSearchSheetState extends State<_PlaceSearchSheet> {
     );
   }
 }
+
+/// The translated name for a kind of place.
+String placeKindLabel(AppLocalizations l10n, TrailPlaceKind kind) =>
+    switch (kind) {
+      TrailPlaceKind.peak => l10n.place_peak,
+      TrailPlaceKind.saddle => l10n.place_pass,
+      TrailPlaceKind.spring => l10n.place_spring,
+      TrailPlaceKind.hut => l10n.place_hut,
+      TrailPlaceKind.campsite => l10n.place_campsite,
+      TrailPlaceKind.viewpoint => l10n.place_viewpoint,
+      TrailPlaceKind.shelter => l10n.place_shelter,
+      TrailPlaceKind.trailhead => l10n.place_trailhead,
+      TrailPlaceKind.town => l10n.place_town,
+      TrailPlaceKind.locality => l10n.place_locality,
+      TrailPlaceKind.waypoint => l10n.place_waypoint,
+    };

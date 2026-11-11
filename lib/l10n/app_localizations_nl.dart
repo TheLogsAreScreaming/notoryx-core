@@ -11629,4 +11629,145 @@ class AppLocalizationsNl extends AppLocalizations {
   String sh_addFailed(String name, String error) {
     return 'Kon $name niet toevoegen: $error';
   }
+
+  @override
+  String get tr_needArea => 'Download eerst een gebied met beide punten.';
+
+  @override
+  String get tr_startFar => 'Het begin ligt meer dan 500 m van een bekend pad.';
+
+  @override
+  String get tr_endFar => 'Het eind ligt meer dan 500 m van een bekend pad.';
+
+  @override
+  String get tr_notJoined => 'Geen bekende paden verbinden deze punten.';
+
+  @override
+  String get tr_damaged =>
+      'De gegevens van dit gebied zijn beschadigd. Verwijder het en download het opnieuw.';
+
+  @override
+  String tr_zoomIn(int max, int current) {
+    return 'Zoom in: een gebied mag tot $max km² zijn, en deze weergave is $current km².';
+  }
+
+  @override
+  String get tr_downloading => 'Paden downloaden…';
+
+  @override
+  String tr_saved(String size) {
+    return '$size aan paden opgeslagen.';
+  }
+
+  @override
+  String get tr_tooLarge => 'Zoom in op een kleiner gebied.';
+
+  @override
+  String get tr_full =>
+      'De opslag voor paden is vol (500 MB). Verwijder eerst een gebied.';
+
+  @override
+  String get tr_noTrails => 'Geen paden gevonden in deze weergave.';
+
+  @override
+  String get tr_failed =>
+      'Download mislukt. De kaartserver is misschien druk; probeer het later opnieuw.';
+
+  @override
+  String tr_routeName(String distance) {
+    return 'Padroute $distance';
+  }
+
+  @override
+  String get tr_savedRoute => 'Opgeslagen bij je routes.';
+
+  @override
+  String get tr_areas => 'Gedownloade gebieden';
+
+  @override
+  String tr_used(String size) {
+    return '$size van 500 MB gebruikt';
+  }
+
+  @override
+  String tr_deleteArea(String name) {
+    return '$name verwijderen';
+  }
+
+  @override
+  String get tr_title => 'Routes over paden';
+
+  @override
+  String get tr_search => 'Plaatsen zoeken';
+
+  @override
+  String get tr_start => 'Routebegin';
+
+  @override
+  String get tr_end => 'Route-einde';
+
+  @override
+  String tr_route(String distance) {
+    return 'Route: $distance over bekende paden.';
+  }
+
+  @override
+  String get tr_tapStart =>
+      'Tik op de kaart voor het begin, daarna voor het einde.';
+
+  @override
+  String get tr_tapEnd => 'Tik op de kaart voor het einde.';
+
+  @override
+  String get tr_download => 'Deze weergave downloaden';
+
+  @override
+  String get tr_save => 'Route opslaan';
+
+  @override
+  String get tr_searchLabel => 'Gedownloade plaatsen zoeken';
+
+  @override
+  String get tr_searchHelp =>
+      'Toppen, startpunten, water, hutten, plaatsen en je waypoints. Een keuze wordt het volgende routepunt.';
+
+  @override
+  String get tr_nothing =>
+      'Niets gevonden. Zoeken werkt alleen in gedownloade gebieden; gebieden van voor plaatszoeken moeten opnieuw gedownload worden.';
+
+  @override
+  String get tr_toolSub => 'Offline routes over gedownloade paden';
+
+  @override
+  String get place_peak => 'Top';
+
+  @override
+  String get place_pass => 'Pas';
+
+  @override
+  String get place_spring => 'Bron';
+
+  @override
+  String get place_hut => 'Hut';
+
+  @override
+  String get place_campsite => 'Camping';
+
+  @override
+  String get place_viewpoint => 'Uitzichtpunt';
+
+  @override
+  String get place_shelter => 'Schuilplaats';
+
+  @override
+  String get place_trailhead => 'Startpunt';
+
+  @override
+  String get place_town => 'Plaats';
+
+  @override
+  String get place_locality => 'Locatie';
+
+  @override
+  String get place_waypoint => 'Opgeslagen waypoint';
 }

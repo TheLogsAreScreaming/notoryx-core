@@ -11654,4 +11654,144 @@ class AppLocalizationsBg extends AppLocalizations {
   String sh_addFailed(String name, String error) {
     return '$name не можа да се добави: $error';
   }
+
+  @override
+  String get tr_needArea => 'Първо изтеглете район, който съдържа двете точки.';
+
+  @override
+  String get tr_startFar => 'Началото е на повече от 500 м от позната пътека.';
+
+  @override
+  String get tr_endFar => 'Краят е на повече от 500 м от позната пътека.';
+
+  @override
+  String get tr_notJoined => 'Няма познати пътеки, които свързват тези точки.';
+
+  @override
+  String get tr_damaged =>
+      'Данните за този район са повредени. Изтрийте го и го изтеглете отново.';
+
+  @override
+  String tr_zoomIn(int max, int current) {
+    return 'Увеличете: районът може да е до $max км², а този изглед е $current км².';
+  }
+
+  @override
+  String get tr_downloading => 'Изтегляне на пътеки…';
+
+  @override
+  String tr_saved(String size) {
+    return 'Запазени са $size пътеки.';
+  }
+
+  @override
+  String get tr_tooLarge => 'Увеличете към по-малък район.';
+
+  @override
+  String get tr_full =>
+      'Хранилището за пътеки е пълно (500 MB). Първо изтрийте район.';
+
+  @override
+  String get tr_noTrails => 'В този изглед няма пътеки.';
+
+  @override
+  String get tr_failed =>
+      'Изтеглянето не успя. Сървърът за карти може да е зает; опитайте по-късно.';
+
+  @override
+  String tr_routeName(String distance) {
+    return 'Маршрут по пътеки $distance';
+  }
+
+  @override
+  String get tr_savedRoute => 'Запазено в маршрутите ви.';
+
+  @override
+  String get tr_areas => 'Изтеглени райони';
+
+  @override
+  String tr_used(String size) {
+    return 'Използвани $size от 500 MB';
+  }
+
+  @override
+  String tr_deleteArea(String name) {
+    return 'Изтриване на $name';
+  }
+
+  @override
+  String get tr_title => 'Маршрути по пътеки';
+
+  @override
+  String get tr_search => 'Търсене на места';
+
+  @override
+  String get tr_start => 'Начало на маршрута';
+
+  @override
+  String get tr_end => 'Край на маршрута';
+
+  @override
+  String tr_route(String distance) {
+    return 'Маршрут: $distance по познати пътеки.';
+  }
+
+  @override
+  String get tr_tapStart => 'Докоснете картата за начало, после за край.';
+
+  @override
+  String get tr_tapEnd => 'Докоснете картата за края.';
+
+  @override
+  String get tr_download => 'Изтегли този изглед';
+
+  @override
+  String get tr_save => 'Запази маршрута';
+
+  @override
+  String get tr_searchLabel => 'Търсене в изтеглените места';
+
+  @override
+  String get tr_searchHelp =>
+      'Върхове, начала на пътеки, вода, хижи, селища и вашите точки. Избраното става следващата точка от маршрута.';
+
+  @override
+  String get tr_nothing =>
+      'Нищо не е намерено. Търсенето обхваща само изтеглени райони, а запазените преди търсенето на места трябва да се изтеглят отново.';
+
+  @override
+  String get tr_toolSub => 'Офлайн маршрути по изтеглени пътеки';
+
+  @override
+  String get place_peak => 'Връх';
+
+  @override
+  String get place_pass => 'Седловина';
+
+  @override
+  String get place_spring => 'Извор';
+
+  @override
+  String get place_hut => 'Хижа';
+
+  @override
+  String get place_campsite => 'Къмпинг';
+
+  @override
+  String get place_viewpoint => 'Гледка';
+
+  @override
+  String get place_shelter => 'Заслон';
+
+  @override
+  String get place_trailhead => 'Начало на пътека';
+
+  @override
+  String get place_town => 'Селище';
+
+  @override
+  String get place_locality => 'Местност';
+
+  @override
+  String get place_waypoint => 'Запазена точка';
 }

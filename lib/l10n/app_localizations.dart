@@ -19410,6 +19410,252 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Could not add {name}: {error}'**
   String sh_addFailed(String name, String error);
+
+  /// No description provided for @tr_needArea.
+  ///
+  /// In en, this message translates to:
+  /// **'Download an area that holds both points first.'**
+  String get tr_needArea;
+
+  /// No description provided for @tr_startFar.
+  ///
+  /// In en, this message translates to:
+  /// **'The start is more than 500 m from a known trail.'**
+  String get tr_startFar;
+
+  /// No description provided for @tr_endFar.
+  ///
+  /// In en, this message translates to:
+  /// **'The end is more than 500 m from a known trail.'**
+  String get tr_endFar;
+
+  /// No description provided for @tr_notJoined.
+  ///
+  /// In en, this message translates to:
+  /// **'No known trails join these points.'**
+  String get tr_notJoined;
+
+  /// No description provided for @tr_damaged.
+  ///
+  /// In en, this message translates to:
+  /// **'This area\'s data is damaged. Delete it and download it again.'**
+  String get tr_damaged;
+
+  /// No description provided for @tr_zoomIn.
+  ///
+  /// In en, this message translates to:
+  /// **'Zoom in: an area can be up to {max} km², and this view is {current} km².'**
+  String tr_zoomIn(int max, int current);
+
+  /// No description provided for @tr_downloading.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloading trails…'**
+  String get tr_downloading;
+
+  /// No description provided for @tr_saved.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved {size} of trails.'**
+  String tr_saved(String size);
+
+  /// No description provided for @tr_tooLarge.
+  ///
+  /// In en, this message translates to:
+  /// **'Zoom in to a smaller area.'**
+  String get tr_tooLarge;
+
+  /// No description provided for @tr_full.
+  ///
+  /// In en, this message translates to:
+  /// **'Trail storage is full (500 MB). Delete an area first.'**
+  String get tr_full;
+
+  /// No description provided for @tr_noTrails.
+  ///
+  /// In en, this message translates to:
+  /// **'No trails found in this view.'**
+  String get tr_noTrails;
+
+  /// No description provided for @tr_failed.
+  ///
+  /// In en, this message translates to:
+  /// **'Download failed. The map server may be busy, so try again later.'**
+  String get tr_failed;
+
+  /// No description provided for @tr_routeName.
+  ///
+  /// In en, this message translates to:
+  /// **'Trail route {distance}'**
+  String tr_routeName(String distance);
+
+  /// No description provided for @tr_savedRoute.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved to your routes.'**
+  String get tr_savedRoute;
+
+  /// No description provided for @tr_areas.
+  ///
+  /// In en, this message translates to:
+  /// **'Downloaded areas'**
+  String get tr_areas;
+
+  /// No description provided for @tr_used.
+  ///
+  /// In en, this message translates to:
+  /// **'{size} of 500 MB used'**
+  String tr_used(String size);
+
+  /// No description provided for @tr_deleteArea.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete {name}'**
+  String tr_deleteArea(String name);
+
+  /// No description provided for @tr_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Trail routing'**
+  String get tr_title;
+
+  /// No description provided for @tr_search.
+  ///
+  /// In en, this message translates to:
+  /// **'Search places'**
+  String get tr_search;
+
+  /// No description provided for @tr_start.
+  ///
+  /// In en, this message translates to:
+  /// **'Route start'**
+  String get tr_start;
+
+  /// No description provided for @tr_end.
+  ///
+  /// In en, this message translates to:
+  /// **'Route end'**
+  String get tr_end;
+
+  /// No description provided for @tr_route.
+  ///
+  /// In en, this message translates to:
+  /// **'Route: {distance} along known trails.'**
+  String tr_route(String distance);
+
+  /// No description provided for @tr_tapStart.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the map for a start, then an end.'**
+  String get tr_tapStart;
+
+  /// No description provided for @tr_tapEnd.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the map for the end.'**
+  String get tr_tapEnd;
+
+  /// No description provided for @tr_download.
+  ///
+  /// In en, this message translates to:
+  /// **'Download this view'**
+  String get tr_download;
+
+  /// No description provided for @tr_save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save route'**
+  String get tr_save;
+
+  /// No description provided for @tr_searchLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Search downloaded places'**
+  String get tr_searchLabel;
+
+  /// No description provided for @tr_searchHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Peaks, trailheads, water, huts, towns and your waypoints. Choosing one sets the next route point.'**
+  String get tr_searchHelp;
+
+  /// No description provided for @tr_nothing.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing found. Search only covers downloaded areas, and areas saved before place search need downloading again.'**
+  String get tr_nothing;
+
+  /// No description provided for @tr_toolSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline routes along downloaded trails'**
+  String get tr_toolSub;
+
+  /// No description provided for @place_peak.
+  ///
+  /// In en, this message translates to:
+  /// **'Peak'**
+  String get place_peak;
+
+  /// No description provided for @place_pass.
+  ///
+  /// In en, this message translates to:
+  /// **'Pass'**
+  String get place_pass;
+
+  /// No description provided for @place_spring.
+  ///
+  /// In en, this message translates to:
+  /// **'Spring'**
+  String get place_spring;
+
+  /// No description provided for @place_hut.
+  ///
+  /// In en, this message translates to:
+  /// **'Hut'**
+  String get place_hut;
+
+  /// No description provided for @place_campsite.
+  ///
+  /// In en, this message translates to:
+  /// **'Campsite'**
+  String get place_campsite;
+
+  /// No description provided for @place_viewpoint.
+  ///
+  /// In en, this message translates to:
+  /// **'Viewpoint'**
+  String get place_viewpoint;
+
+  /// No description provided for @place_shelter.
+  ///
+  /// In en, this message translates to:
+  /// **'Shelter'**
+  String get place_shelter;
+
+  /// No description provided for @place_trailhead.
+  ///
+  /// In en, this message translates to:
+  /// **'Trailhead'**
+  String get place_trailhead;
+
+  /// No description provided for @place_town.
+  ///
+  /// In en, this message translates to:
+  /// **'Town'**
+  String get place_town;
+
+  /// No description provided for @place_locality.
+  ///
+  /// In en, this message translates to:
+  /// **'Locality'**
+  String get place_locality;
+
+  /// No description provided for @place_waypoint.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved waypoint'**
+  String get place_waypoint;
 }
 
 class _AppLocalizationsDelegate
