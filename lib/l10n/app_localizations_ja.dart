@@ -10966,4 +10966,140 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get trail_safety =>
       'トレイルデータ © OpenStreetMap 寄稿者。不完全または古い場合があります。ルートの安全性や通行可否は確認していないため、唯一のナビゲーション手段として使わないでください。';
+
+  @override
+  String get tr_needArea => 'まず両方の地点を含むエリアをダウンロードしてください。';
+
+  @override
+  String get tr_startFar => '出発地点が既知の道から500 m以上離れています。';
+
+  @override
+  String get tr_endFar => '到着地点が既知の道から500 m以上離れています。';
+
+  @override
+  String get tr_notJoined => 'これらの地点をつなぐ既知の道がありません。';
+
+  @override
+  String get tr_damaged => 'このエリアのデータが破損しています。削除して再ダウンロードしてください。';
+
+  @override
+  String tr_zoomIn(int max, int current) {
+    return '拡大してください。エリアは最大$max km²で、この表示は$current km²です。';
+  }
+
+  @override
+  String get tr_downloading => '道をダウンロード中…';
+
+  @override
+  String tr_saved(String size) {
+    return '$sizeの道データを保存しました。';
+  }
+
+  @override
+  String get tr_tooLarge => 'より狭い範囲に拡大してください。';
+
+  @override
+  String get tr_full => '道の保存容量がいっぱいです（500 MB）。先にエリアを削除してください。';
+
+  @override
+  String get tr_noTrails => 'この表示範囲に道は見つかりません。';
+
+  @override
+  String get tr_failed => 'ダウンロードに失敗しました。地図サーバーが混雑している可能性があります。後でもう一度お試しください。';
+
+  @override
+  String tr_routeName(String distance) {
+    return 'トレイルルート $distance';
+  }
+
+  @override
+  String get tr_savedRoute => 'ルートに保存しました。';
+
+  @override
+  String get tr_areas => 'ダウンロード済みのエリア';
+
+  @override
+  String tr_used(String size) {
+    return '500 MB中$size使用';
+  }
+
+  @override
+  String tr_deleteArea(String name) {
+    return '$nameを削除';
+  }
+
+  @override
+  String get tr_title => 'トレイルルート検索';
+
+  @override
+  String get tr_search => '場所を検索';
+
+  @override
+  String get tr_start => '出発地点';
+
+  @override
+  String get tr_end => '到着地点';
+
+  @override
+  String tr_route(String distance) {
+    return 'ルート: 既知の道で$distance。';
+  }
+
+  @override
+  String get tr_tapStart => '地図をタップして出発地点、次に到着地点を選びます。';
+
+  @override
+  String get tr_tapEnd => '地図をタップして到着地点を選びます。';
+
+  @override
+  String get tr_download => 'この表示範囲をダウンロード';
+
+  @override
+  String get tr_save => 'ルートを保存';
+
+  @override
+  String get tr_searchLabel => 'ダウンロード済みの場所を検索';
+
+  @override
+  String get tr_searchHelp => '山頂、登山口、水場、山小屋、町、保存したウェイポイント。選ぶと次のルート地点になります。';
+
+  @override
+  String get tr_nothing =>
+      '見つかりません。検索対象はダウンロード済みのエリアだけです。場所検索の追加前に保存したエリアは再ダウンロードが必要です。';
+
+  @override
+  String get tr_toolSub => 'ダウンロードした道でオフラインルート';
+
+  @override
+  String get place_peak => '山頂';
+
+  @override
+  String get place_pass => '峠';
+
+  @override
+  String get place_spring => '湧水';
+
+  @override
+  String get place_hut => '山小屋';
+
+  @override
+  String get place_campsite => 'キャンプ場';
+
+  @override
+  String get place_viewpoint => '展望地';
+
+  @override
+  String get place_shelter => '避難所';
+
+  @override
+  String get place_trailhead => '登山口';
+
+  @override
+  String get place_town => '町';
+
+  @override
+  String get place_locality => '地名';
+
+  @override
+  String get place_waypoint => '保存したウェイポイント';
 }

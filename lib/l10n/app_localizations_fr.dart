@@ -11542,4 +11542,148 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get trail_safety =>
       'Données de sentiers © contributeurs OpenStreetMap. Elles peuvent être incomplètes ou obsolètes. Les itinéraires ne sont pas vérifiés pour la sécurité ni la praticabilité : ne vous en servez pas comme seule navigation.';
+
+  @override
+  String get tr_needArea =>
+      'Téléchargez d\'abord une zone contenant les deux points.';
+
+  @override
+  String get tr_startFar =>
+      'Le départ est à plus de 500 m d\'un sentier connu.';
+
+  @override
+  String get tr_endFar => 'L\'arrivée est à plus de 500 m d\'un sentier connu.';
+
+  @override
+  String get tr_notJoined => 'Aucun sentier connu ne relie ces points.';
+
+  @override
+  String get tr_damaged =>
+      'Les données de cette zone sont endommagées. Supprimez-la et téléchargez-la à nouveau.';
+
+  @override
+  String tr_zoomIn(int max, int current) {
+    return 'Zoomez : une zone peut faire jusqu\'à $max km², et cette vue fait $current km².';
+  }
+
+  @override
+  String get tr_downloading => 'Téléchargement des sentiers…';
+
+  @override
+  String tr_saved(String size) {
+    return '$size de sentiers enregistrés.';
+  }
+
+  @override
+  String get tr_tooLarge => 'Zoomez sur une zone plus petite.';
+
+  @override
+  String get tr_full =>
+      'Le stockage des sentiers est plein (500 Mo). Supprimez d\'abord une zone.';
+
+  @override
+  String get tr_noTrails => 'Aucun sentier dans cette vue.';
+
+  @override
+  String get tr_failed =>
+      'Échec du téléchargement. Le serveur de cartes est peut-être occupé ; réessayez plus tard.';
+
+  @override
+  String tr_routeName(String distance) {
+    return 'Itinéraire $distance';
+  }
+
+  @override
+  String get tr_savedRoute => 'Enregistré dans vos itinéraires.';
+
+  @override
+  String get tr_areas => 'Zones téléchargées';
+
+  @override
+  String tr_used(String size) {
+    return '$size utilisés sur 500 Mo';
+  }
+
+  @override
+  String tr_deleteArea(String name) {
+    return 'Supprimer $name';
+  }
+
+  @override
+  String get tr_title => 'Itinéraires sur sentiers';
+
+  @override
+  String get tr_search => 'Rechercher des lieux';
+
+  @override
+  String get tr_start => 'Départ';
+
+  @override
+  String get tr_end => 'Arrivée';
+
+  @override
+  String tr_route(String distance) {
+    return 'Itinéraire : $distance sur des sentiers connus.';
+  }
+
+  @override
+  String get tr_tapStart =>
+      'Touchez la carte pour le départ, puis pour l\'arrivée.';
+
+  @override
+  String get tr_tapEnd => 'Touchez la carte pour l\'arrivée.';
+
+  @override
+  String get tr_download => 'Télécharger cette vue';
+
+  @override
+  String get tr_save => 'Enregistrer l\'itinéraire';
+
+  @override
+  String get tr_searchLabel => 'Rechercher dans les lieux téléchargés';
+
+  @override
+  String get tr_searchHelp =>
+      'Sommets, départs de sentier, eau, refuges, villes et vos points de repère. Un choix devient le prochain point de l\'itinéraire.';
+
+  @override
+  String get tr_nothing =>
+      'Aucun résultat. La recherche ne couvre que les zones téléchargées ; celles enregistrées avant la recherche de lieux doivent être retéléchargées.';
+
+  @override
+  String get tr_toolSub =>
+      'Itinéraires hors ligne sur les sentiers téléchargés';
+
+  @override
+  String get place_peak => 'Sommet';
+
+  @override
+  String get place_pass => 'Col';
+
+  @override
+  String get place_spring => 'Source';
+
+  @override
+  String get place_hut => 'Refuge';
+
+  @override
+  String get place_campsite => 'Camping';
+
+  @override
+  String get place_viewpoint => 'Point de vue';
+
+  @override
+  String get place_shelter => 'Abri';
+
+  @override
+  String get place_trailhead => 'Départ de sentier';
+
+  @override
+  String get place_town => 'Ville';
+
+  @override
+  String get place_locality => 'Lieu-dit';
+
+  @override
+  String get place_waypoint => 'Point de repère enregistré';
 }

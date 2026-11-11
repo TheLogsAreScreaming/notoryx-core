@@ -11503,4 +11503,148 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get trail_safety =>
       'Datos de senderos © colaboradores de OpenStreetMap. Pueden estar incompletos o desactualizados. No se comprueba si las rutas son seguras o transitables, así que no las uses como única forma de orientarte.';
+
+  @override
+  String get tr_needArea =>
+      'Primero descarga una zona que contenga ambos puntos.';
+
+  @override
+  String get tr_startFar =>
+      'El inicio está a más de 500 m de un sendero conocido.';
+
+  @override
+  String get tr_endFar =>
+      'El final está a más de 500 m de un sendero conocido.';
+
+  @override
+  String get tr_notJoined => 'Ningún sendero conocido une estos puntos.';
+
+  @override
+  String get tr_damaged =>
+      'Los datos de esta zona están dañados. Bórrala y descárgala de nuevo.';
+
+  @override
+  String tr_zoomIn(int max, int current) {
+    return 'Acerca: una zona puede tener hasta $max km² y esta vista tiene $current km².';
+  }
+
+  @override
+  String get tr_downloading => 'Descargando senderos…';
+
+  @override
+  String tr_saved(String size) {
+    return 'Se guardaron $size de senderos.';
+  }
+
+  @override
+  String get tr_tooLarge => 'Acerca a una zona más pequeña.';
+
+  @override
+  String get tr_full =>
+      'El almacenamiento de senderos está lleno (500 MB). Borra primero una zona.';
+
+  @override
+  String get tr_noTrails => 'No se encontraron senderos en esta vista.';
+
+  @override
+  String get tr_failed =>
+      'La descarga falló. Puede que el servidor de mapas esté ocupado; inténtalo más tarde.';
+
+  @override
+  String tr_routeName(String distance) {
+    return 'Ruta de sendero $distance';
+  }
+
+  @override
+  String get tr_savedRoute => 'Guardada en tus rutas.';
+
+  @override
+  String get tr_areas => 'Zonas descargadas';
+
+  @override
+  String tr_used(String size) {
+    return '$size de 500 MB usados';
+  }
+
+  @override
+  String tr_deleteArea(String name) {
+    return 'Borrar $name';
+  }
+
+  @override
+  String get tr_title => 'Rutas por senderos';
+
+  @override
+  String get tr_search => 'Buscar lugares';
+
+  @override
+  String get tr_start => 'Inicio de ruta';
+
+  @override
+  String get tr_end => 'Final de ruta';
+
+  @override
+  String tr_route(String distance) {
+    return 'Ruta: $distance por senderos conocidos.';
+  }
+
+  @override
+  String get tr_tapStart =>
+      'Toca el mapa para el inicio y luego para el final.';
+
+  @override
+  String get tr_tapEnd => 'Toca el mapa para el final.';
+
+  @override
+  String get tr_download => 'Descargar esta vista';
+
+  @override
+  String get tr_save => 'Guardar ruta';
+
+  @override
+  String get tr_searchLabel => 'Buscar lugares descargados';
+
+  @override
+  String get tr_searchHelp =>
+      'Cumbres, accesos a senderos, agua, refugios, pueblos y tus puntos de ruta. Al elegir uno, pasa a ser el siguiente punto de la ruta.';
+
+  @override
+  String get tr_nothing =>
+      'Nada encontrado. La búsqueda solo cubre zonas descargadas, y las guardadas antes de la búsqueda de lugares deben descargarse de nuevo.';
+
+  @override
+  String get tr_toolSub => 'Rutas sin conexión por senderos descargados';
+
+  @override
+  String get place_peak => 'Cumbre';
+
+  @override
+  String get place_pass => 'Collado';
+
+  @override
+  String get place_spring => 'Fuente';
+
+  @override
+  String get place_hut => 'Refugio';
+
+  @override
+  String get place_campsite => 'Camping';
+
+  @override
+  String get place_viewpoint => 'Mirador';
+
+  @override
+  String get place_shelter => 'Abrigo';
+
+  @override
+  String get place_trailhead => 'Acceso al sendero';
+
+  @override
+  String get place_town => 'Pueblo';
+
+  @override
+  String get place_locality => 'Paraje';
+
+  @override
+  String get place_waypoint => 'Punto de ruta guardado';
 }
