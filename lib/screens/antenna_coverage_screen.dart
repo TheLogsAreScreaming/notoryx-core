@@ -10,6 +10,7 @@ import '../services/line_of_sight_service.dart';
 import '../services/map_tile_cache_service.dart';
 import '../theme/mesh_theme.dart';
 import '../widgets/ember_backdrop.dart';
+import '../l10n/l10n.dart';
 
 /// Estimates where an antenna could reach with terrain line of sight:
 /// 36 bearings sampled out to a chosen radius against terrain heights.
@@ -70,11 +71,18 @@ class _AntennaCoverageScreenState extends State<AntennaCoverageScreen> {
 
   String _summary(CoverageResult r) {
     if (r.radio == null) {
-      return 'Line of sight to ${(r.visibleFraction * 100).round()}% of sampled points • farthest ${(r.maxReachMeters / 1000).toStringAsFixed(1)} km';
+      return context.l10n.ant_losSummary(
+        (r.visibleFraction * 100).round(),
+        (r.maxReachMeters / 1000).toStringAsFixed(1),
+      );
     }
     final strong = (r.fractionAt(SignalLevel.strong) * 100).round();
     final marginal = (r.fractionAt(SignalLevel.marginal) * 100).round();
-    return 'Estimated signal: strong to $strong% of the area, marginal to $marginal%, usable up to ${(r.maxSignalReachMeters / 1000).toStringAsFixed(1)} km.';
+    return context.l10n.ant_signalSummary(
+      strong,
+      marginal,
+      (r.maxSignalReachMeters / 1000).toStringAsFixed(1),
+    );
   }
 
   Future<void> _analyze() async {
@@ -118,7 +126,7 @@ class _AntennaCoverageScreenState extends State<AntennaCoverageScreen> {
           backgroundColor: Colors.transparent,
           surfaceTintColor: Colors.transparent,
           scrolledUnderElevation: 0,
-          title: const Text('Antenna coverage'),
+          title: Text(context.l10n.ant_title),
         ),
         body: Column(
           children: [
@@ -180,14 +188,14 @@ class _AntennaCoverageScreenState extends State<AntennaCoverageScreen> {
                   children: [
                     Text(
                       origin == null
-                          ? 'Long-press the map to place the antenna.'
+                          ? context.l10n.ant_placeHint
                           : _fromRadio
-                          ? "Antenna at your radio's position. Long-press the map to move it."
-                          : 'Antenna placed on the map. Long-press to move it.',
+                          ? context.l10n.ant_fromRadio
+                          : context.l10n.ant_placed,
                     ),
                     const SizedBox(height: 8),
                     _choices<double>(
-                      'Antenna height',
+                      context.l10n.ant_height,
                       antennaHeights,
                       _height,
                       (h) => '${h.toStringAsFixed(0)} m',
@@ -197,7 +205,7 @@ class _AntennaCoverageScreenState extends State<AntennaCoverageScreen> {
                       }),
                     ),
                     _choices<int>(
-                      'Radius',
+                      context.l10n.ant_radius,
                       coverageRadiiKm,
                       _radiusKm,
                       (r) => '$r km',
@@ -215,16 +223,18 @@ class _AntennaCoverageScreenState extends State<AntennaCoverageScreen> {
                               dimension: 18,
                               child: CircularProgressIndicator(strokeWidth: 2),
                             )
-                          : const Icon(Icons.radar),
+                          : Icon(Icons.radar),
                       label: Text(
-                        _running ? 'Checking terrain…' : 'Estimate coverage',
+                        _running
+                            ? context.l10n.ant_checking
+                            : context.l10n.ant_estimate,
                       ),
                     ),
                     if (result != null) ...[
                       const SizedBox(height: 8),
                       Text(
                         result.error != null
-                            ? 'Terrain heights could not be loaded. This needs an internet connection the first time.'
+                            ? context.l10n.ant_noTerrain
                             : _summary(result),
                         key: const ValueKey('coverage-summary'),
                         style: const TextStyle(fontWeight: FontWeight.w700),
@@ -233,8 +243,8 @@ class _AntennaCoverageScreenState extends State<AntennaCoverageScreen> {
                     const SizedBox(height: 4),
                     Text(
                       result?.radio != null
-                          ? 'Large green dots: strong signal. Small orange dots: marginal. A rough estimate from terrain and your radio settings, assuming 2 dBi antennas. Trees and buildings are not included, so real range is often shorter.'
-                          : 'Connect a radio for signal estimates. Green dots have terrain line of sight to a handheld radio (1.5 m). A rough estimate, not a guarantee.',
+                          ? context.l10n.ant_legendSignal
+                          : context.l10n.ant_legendLos,
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
                   ],

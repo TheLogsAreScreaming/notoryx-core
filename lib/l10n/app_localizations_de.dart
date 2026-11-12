@@ -11512,6 +11512,177 @@ class AppLocalizationsDe extends AppLocalizations {
       'Wegdaten © OpenStreetMap-Mitwirkende. Sie können unvollständig oder veraltet sein. Routen werden nicht auf Sicherheit oder Begehbarkeit geprüft; nutze dies nicht als einzige Navigation.';
 
   @override
+  String get ant_title => 'Antennenabdeckung';
+
+  @override
+  String get ant_placeHint =>
+      'Tippe lange auf die Karte, um die Antenne zu platzieren.';
+
+  @override
+  String get ant_fromRadio =>
+      'Antenne an der Position deines Funkgeräts. Tippe lange auf die Karte, um sie zu verschieben.';
+
+  @override
+  String get ant_placed =>
+      'Antenne auf der Karte platziert. Lange tippen zum Verschieben.';
+
+  @override
+  String get ant_height => 'Antennenhöhe';
+
+  @override
+  String get ant_radius => 'Radius';
+
+  @override
+  String get ant_checking => 'Gelände wird geprüft…';
+
+  @override
+  String get ant_estimate => 'Abdeckung schätzen';
+
+  @override
+  String get ant_noTerrain =>
+      'Geländehöhen konnten nicht geladen werden. Beim ersten Mal ist eine Internetverbindung nötig.';
+
+  @override
+  String get ant_legendSignal =>
+      'Große grüne Punkte: starkes Signal. Kleine orange Punkte: grenzwertig. Grobe Schätzung aus Gelände und Funkeinstellungen bei 2-dBi-Antennen. Bäume und Gebäude sind nicht berücksichtigt, die echte Reichweite ist oft kürzer.';
+
+  @override
+  String get ant_legendLos =>
+      'Verbinde ein Funkgerät für Signalschätzungen. Grüne Punkte haben Sichtverbindung zu einem Handfunkgerät (1,5 m). Eine grobe Schätzung, keine Garantie.';
+
+  @override
+  String ant_losSummary(int percent, String km) {
+    return 'Sichtverbindung zu $percent % der Messpunkte • am weitesten $km km';
+  }
+
+  @override
+  String ant_signalSummary(int strong, int marginal, String km) {
+    return 'Geschätztes Signal: stark in $strong % des Gebiets, grenzwertig in $marginal %, nutzbar bis $km km.';
+  }
+
+  @override
+  String rp_title(String name) {
+    return 'Mesh-Einstellungen für $name';
+  }
+
+  @override
+  String rp_mostNodes(String summary) {
+    return 'Die meisten Knoten hier nutzen $summary. Dein Funkgerät ist anders eingestellt, du hörst sie eventuell nicht.';
+  }
+
+  @override
+  String rp_mostNodesCount(int count, String summary) {
+    return 'Die meisten Knoten hier ($count auf der MeshCore-Karte) nutzen $summary. Dein Funkgerät ist anders eingestellt, du hörst sie eventuell nicht.';
+  }
+
+  @override
+  String rp_localMesh(String summary) {
+    return 'Das lokale Mesh nutzt $summary. Dein Funkgerät ist anders eingestellt, du hörst es eventuell nicht.';
+  }
+
+  @override
+  String get rp_notNow => 'Nicht jetzt';
+
+  @override
+  String get rp_review => 'Prüfen';
+
+  @override
+  String rp_useTitle(String name) {
+    return 'Einstellungen für $name verwenden?';
+  }
+
+  @override
+  String get rp_already => 'Dein Funkgerät nutzt diese Einstellungen bereits.';
+
+  @override
+  String get rp_fromMap =>
+      'Von Knotenbetreibern auf der MeshCore-Karte gemeldet, nicht per Funk geprüft.';
+
+  @override
+  String rp_updated(String date) {
+    return 'Aktualisiert $date. Nach dem Wechsel hörst du nur noch Funkgeräte mit denselben Einstellungen.';
+  }
+
+  @override
+  String get rp_powerOnly => 'Die Sendeleistung wird nicht geändert.';
+
+  @override
+  String get rp_powerHash =>
+      'Sendeleistung und Pfad-Hash-Größe werden nicht geändert.';
+
+  @override
+  String get rp_apply => 'Auf das Funkgerät anwenden';
+
+  @override
+  String rp_setTo(String name) {
+    return 'Funkgerät auf $name eingestellt.';
+  }
+
+  @override
+  String rp_failed(String error) {
+    return 'Funkgerät konnte nicht geändert werden: $error';
+  }
+
+  @override
+  String get rp_noArea => 'Kein gelistetes Gebiet in deiner Nähe.';
+
+  @override
+  String get rp_noLonger => 'Das gewählte Gebiet ist nicht mehr gelistet.';
+
+  @override
+  String get rp_autoPrefix => 'Auto: ';
+
+  @override
+  String get rp_tileTitle => 'Lokale Mesh-Einstellungen';
+
+  @override
+  String get rp_automatic => 'Automatisch';
+
+  @override
+  String get rp_autoSub => 'Aus der Position von Funkgerät oder Telefon';
+
+  @override
+  String get rp_mapSuffix => 'MeshCore-Karte';
+
+  @override
+  String get rp_savedList =>
+      'Gespeicherte Liste in Verwendung. Sie wird online von GitHub aktualisiert.';
+
+  @override
+  String rp_checked(String time) {
+    return 'Liste geprüft um $time. Gebiete werden per Pull-Request ergänzt.';
+  }
+
+  @override
+  String get sh_title => 'Kontakt teilen';
+
+  @override
+  String get sh_hint =>
+      'Sendet Name und öffentlichen Schlüssel als Link, über den ihn jeder hinzufügen kann.';
+
+  @override
+  String get sh_you => 'Das bist du.';
+
+  @override
+  String get sh_already => 'Bereits in deinen Kontakten.';
+
+  @override
+  String get sh_adding => 'Wird hinzugefügt…';
+
+  @override
+  String get sh_add => 'Kontakt hinzufügen';
+
+  @override
+  String sh_added(String name) {
+    return '$name hinzugefügt.';
+  }
+
+  @override
+  String sh_addFailed(String name, String error) {
+    return '$name konnte nicht hinzugefügt werden: $error';
+  }
+
+  @override
   String get tr_needArea =>
       'Lade zuerst ein Gebiet herunter, das beide Punkte enthält.';
 

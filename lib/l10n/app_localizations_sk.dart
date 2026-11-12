@@ -11473,6 +11473,174 @@ class AppLocalizationsSk extends AppLocalizations {
       'Údaje o chodníkoch © prispievatelia OpenStreetMap. Môžu byť neúplné alebo zastarané. Trasy sa nekontrolujú z hľadiska bezpečnosti ani priechodnosti, preto ich nepoužívaj ako jedinú navigáciu.';
 
   @override
+  String get ant_title => 'Pokrytie antény';
+
+  @override
+  String get ant_placeHint => 'Podrž mapu na umiestnenie antény.';
+
+  @override
+  String get ant_fromRadio =>
+      'Anténa na pozícii tvojho rádia. Podrž mapu na jej presunutie.';
+
+  @override
+  String get ant_placed => 'Anténa umiestnená na mape. Podrž na presunutie.';
+
+  @override
+  String get ant_height => 'Výška antény';
+
+  @override
+  String get ant_radius => 'Polomer';
+
+  @override
+  String get ant_checking => 'Kontrola terénu…';
+
+  @override
+  String get ant_estimate => 'Odhadnúť pokrytie';
+
+  @override
+  String get ant_noTerrain =>
+      'Výšky terénu sa nepodarilo načítať. Prvýkrát je potrebný internet.';
+
+  @override
+  String get ant_legendSignal =>
+      'Veľké zelené body: silný signál. Malé oranžové: na hrane. Hrubý odhad z terénu a nastavení rádia pri anténach 2 dBi. Stromy a budovy nie sú zahrnuté, skutočný dosah býva kratší.';
+
+  @override
+  String get ant_legendLos =>
+      'Pripoj rádio na odhad signálu. Zelené body majú priamu viditeľnosť na ručné rádio (1,5 m). Hrubý odhad, nie záruka.';
+
+  @override
+  String ant_losSummary(int percent, String km) {
+    return 'Priama viditeľnosť na $percent % bodov • najďalej $km km';
+  }
+
+  @override
+  String ant_signalSummary(int strong, int marginal, String km) {
+    return 'Odhadovaný signál: silný na $strong % oblasti, na hrane na $marginal %, použiteľný do $km km.';
+  }
+
+  @override
+  String rp_title(String name) {
+    return 'Nastavenia siete $name';
+  }
+
+  @override
+  String rp_mostNodes(String summary) {
+    return 'Väčšina uzlov tu používa $summary. Tvoje rádio je nastavené inak, takže ich možno nebudeš počuť.';
+  }
+
+  @override
+  String rp_mostNodesCount(int count, String summary) {
+    return 'Väčšina uzlov tu ($count na mape MeshCore) používa $summary. Tvoje rádio je nastavené inak, takže ich možno nebudeš počuť.';
+  }
+
+  @override
+  String rp_localMesh(String summary) {
+    return 'Miestna sieť používa $summary. Tvoje rádio je nastavené inak, takže ju možno nebudeš počuť.';
+  }
+
+  @override
+  String get rp_notNow => 'Teraz nie';
+
+  @override
+  String get rp_review => 'Skontrolovať';
+
+  @override
+  String rp_useTitle(String name) {
+    return 'Použiť nastavenia $name?';
+  }
+
+  @override
+  String get rp_already => 'Tvoje rádio už tieto nastavenia používa.';
+
+  @override
+  String get rp_fromMap =>
+      'Nahlásené vlastníkmi uzlov na mape MeshCore, neoverené vo vysielaní.';
+
+  @override
+  String rp_updated(String date) {
+    return 'Aktualizované $date. Po zmene budeš počuť len rádiá s rovnakými nastaveniami.';
+  }
+
+  @override
+  String get rp_powerOnly => 'Vysielací výkon sa nemení.';
+
+  @override
+  String get rp_powerHash => 'Vysielací výkon a veľkosť hash cesty sa nemenia.';
+
+  @override
+  String get rp_apply => 'Použiť v rádiu';
+
+  @override
+  String rp_setTo(String name) {
+    return 'Rádio nastavené na $name.';
+  }
+
+  @override
+  String rp_failed(String error) {
+    return 'Rádio sa nepodarilo zmeniť: $error';
+  }
+
+  @override
+  String get rp_noArea => 'Nablízku nie je žiadna oblasť zo zoznamu.';
+
+  @override
+  String get rp_noLonger => 'Zvolená oblasť už nie je v zozname.';
+
+  @override
+  String get rp_autoPrefix => 'Auto: ';
+
+  @override
+  String get rp_tileTitle => 'Nastavenia miestnej siete';
+
+  @override
+  String get rp_automatic => 'Automaticky';
+
+  @override
+  String get rp_autoSub => 'Podľa polohy rádia alebo telefónu';
+
+  @override
+  String get rp_mapSuffix => 'mapa MeshCore';
+
+  @override
+  String get rp_savedList =>
+      'Používa sa uložený zoznam. Online sa aktualizuje z GitHubu.';
+
+  @override
+  String rp_checked(String time) {
+    return 'Zoznam skontrolovaný o $time. Oblasti sa pridávajú cez pull request.';
+  }
+
+  @override
+  String get sh_title => 'Zdieľať kontakt';
+
+  @override
+  String get sh_hint =>
+      'Pošle jeho meno a verejný kľúč ako odkaz, cez ktorý ho ktokoľvek pridá.';
+
+  @override
+  String get sh_you => 'Toto si ty.';
+
+  @override
+  String get sh_already => 'Už je v tvojich kontaktoch.';
+
+  @override
+  String get sh_adding => 'Pridáva sa…';
+
+  @override
+  String get sh_add => 'Pridať kontakt';
+
+  @override
+  String sh_added(String name) {
+    return '$name pridaný.';
+  }
+
+  @override
+  String sh_addFailed(String name, String error) {
+    return '$name sa nepodarilo pridať: $error';
+  }
+
+  @override
   String get tr_needArea => 'Najprv stiahni oblasť, ktorá obsahuje oba body.';
 
   @override

@@ -11413,6 +11413,176 @@ class AppLocalizationsSv extends AppLocalizations {
       'Leddata © OpenStreetMaps bidragsgivare. De kan vara ofullständiga eller inaktuella. Rutter kontrolleras inte för säkerhet eller framkomlighet, så använd inte detta som enda navigering.';
 
   @override
+  String get ant_title => 'Antenntäckning';
+
+  @override
+  String get ant_placeHint => 'Tryck länge på kartan för att placera antennen.';
+
+  @override
+  String get ant_fromRadio =>
+      'Antennen vid din radios position. Tryck länge på kartan för att flytta den.';
+
+  @override
+  String get ant_placed =>
+      'Antennen placerad på kartan. Tryck länge för att flytta den.';
+
+  @override
+  String get ant_height => 'Antennhöjd';
+
+  @override
+  String get ant_radius => 'Radie';
+
+  @override
+  String get ant_checking => 'Kontrollerar terrängen…';
+
+  @override
+  String get ant_estimate => 'Uppskatta täckning';
+
+  @override
+  String get ant_noTerrain =>
+      'Terränghöjder kunde inte laddas. Första gången behövs internet.';
+
+  @override
+  String get ant_legendSignal =>
+      'Stora gröna punkter: starkt signal. Små orange punkter: gränsfall. En grov uppskattning från terräng och radioinställningar, med 2 dBi-antenner. Träd och byggnader ingår inte, så verklig räckvidd är ofta kortare.';
+
+  @override
+  String get ant_legendLos =>
+      'Anslut en radio för signaluppskattningar. Gröna punkter har fri sikt till en handradio (1,5 m). En grov uppskattning, ingen garanti.';
+
+  @override
+  String ant_losSummary(int percent, String km) {
+    return 'Fri sikt till $percent % av punkterna • längst bort $km km';
+  }
+
+  @override
+  String ant_signalSummary(int strong, int marginal, String km) {
+    return 'Uppskattad signal: stark i $strong % av området, gränsfall i $marginal %, användbar upp till $km km.';
+  }
+
+  @override
+  String rp_title(String name) {
+    return 'Mesh-inställningar för $name';
+  }
+
+  @override
+  String rp_mostNodes(String summary) {
+    return 'De flesta noder här använder $summary. Din radio är inställd annorlunda, så du kanske inte hör dem.';
+  }
+
+  @override
+  String rp_mostNodesCount(int count, String summary) {
+    return 'De flesta noder här ($count på MeshCore-kartan) använder $summary. Din radio är inställd annorlunda, så du kanske inte hör dem.';
+  }
+
+  @override
+  String rp_localMesh(String summary) {
+    return 'Det lokala meshet använder $summary. Din radio är inställd annorlunda, så du kanske inte hör det.';
+  }
+
+  @override
+  String get rp_notNow => 'Inte nu';
+
+  @override
+  String get rp_review => 'Granska';
+
+  @override
+  String rp_useTitle(String name) {
+    return 'Använda inställningarna för $name?';
+  }
+
+  @override
+  String get rp_already => 'Din radio använder redan dessa inställningar.';
+
+  @override
+  String get rp_fromMap =>
+      'Rapporterat av nodägare på MeshCore-kartan, inte kontrollerat i luften.';
+
+  @override
+  String rp_updated(String date) {
+    return 'Uppdaterad $date. Efter bytet hör du bara radioapparater med samma inställningar.';
+  }
+
+  @override
+  String get rp_powerOnly => 'Sändareffekten ändras inte.';
+
+  @override
+  String get rp_powerHash =>
+      'Sändareffekten och storleken på väg-hashen ändras inte.';
+
+  @override
+  String get rp_apply => 'Tillämpa på radion';
+
+  @override
+  String rp_setTo(String name) {
+    return 'Radion inställd på $name.';
+  }
+
+  @override
+  String rp_failed(String error) {
+    return 'Kunde inte ändra radion: $error';
+  }
+
+  @override
+  String get rp_noArea => 'Inget listat område i närheten.';
+
+  @override
+  String get rp_noLonger => 'Det valda området är inte längre listat.';
+
+  @override
+  String get rp_autoPrefix => 'Auto: ';
+
+  @override
+  String get rp_tileTitle => 'Lokala mesh-inställningar';
+
+  @override
+  String get rp_automatic => 'Automatiskt';
+
+  @override
+  String get rp_autoSub => 'Utifrån radions eller telefonens position';
+
+  @override
+  String get rp_mapSuffix => 'MeshCore-kartan';
+
+  @override
+  String get rp_savedList =>
+      'Använder den sparade listan. Den uppdateras från GitHub när du är online.';
+
+  @override
+  String rp_checked(String time) {
+    return 'Listan kontrollerad $time. Områden läggs till via pull request.';
+  }
+
+  @override
+  String get sh_title => 'Dela en kontakt';
+
+  @override
+  String get sh_hint =>
+      'Skickar namn och publik nyckel som en länk som vem som helst kan trycka på för att lägga till den.';
+
+  @override
+  String get sh_you => 'Det här är du.';
+
+  @override
+  String get sh_already => 'Finns redan bland dina kontakter.';
+
+  @override
+  String get sh_adding => 'Lägger till…';
+
+  @override
+  String get sh_add => 'Lägg till kontakt';
+
+  @override
+  String sh_added(String name) {
+    return '$name tillagd.';
+  }
+
+  @override
+  String sh_addFailed(String name, String error) {
+    return 'Kunde inte lägga till $name: $error';
+  }
+
+  @override
   String get tr_needArea =>
       'Ladda först ned ett område som innehåller båda punkterna.';
 

@@ -5,6 +5,7 @@ import '../connector/meshcore_connector.dart';
 import '../connector/meshcore_protocol.dart';
 import '../helpers/share_links.dart';
 import '../models/contact.dart';
+import '../l10n/l10n.dart';
 
 /// The radio's advertised position as a map-marker message, or null when
 /// the radio has none.
@@ -37,18 +38,16 @@ Future<String?> pickContactToShare(BuildContext context) async {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Padding(
+            Padding(
               padding: EdgeInsets.fromLTRB(16, 16, 16, 4),
               child: Text(
-                'Share a contact',
+                context.l10n.sh_title,
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
               ),
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.fromLTRB(16, 0, 16, 8),
-              child: Text(
-                'Sends its name and public key as a link anyone can tap to add it.',
-              ),
+              child: Text(context.l10n.sh_hint),
             ),
             Flexible(
               child: ListView(
@@ -139,17 +138,17 @@ class _ContactLinkCardState extends State<ContactLinkCard> {
         ),
         const SizedBox(height: 6),
         if (mine)
-          Text('This is you.', style: TextStyle(color: widget.textColor))
+          Text(context.l10n.sh_you, style: TextStyle(color: widget.textColor))
         else if (known)
           Text(
-            'Already in your contacts.',
+            context.l10n.sh_already,
             style: TextStyle(color: widget.textColor),
           )
         else
           FilledButton.tonalIcon(
             onPressed: _adding || !connector.isConnected ? null : _add,
-            icon: const Icon(Icons.person_add_alt_1, size: 18),
-            label: Text(_adding ? 'Adding…' : 'Add contact'),
+            icon: Icon(Icons.person_add_alt_1, size: 18),
+            label: Text(_adding ? context.l10n.sh_adding : context.l10n.sh_add),
           ),
       ],
     );
@@ -157,15 +156,16 @@ class _ContactLinkCardState extends State<ContactLinkCard> {
 
   Future<void> _add() async {
     final messenger = ScaffoldMessenger.of(context);
+    final l10n = context.l10n;
     final link = widget.link;
     setState(() => _adding = true);
     try {
       await context.read<MeshCoreConnector>().addContactFromLink(link);
       if (mounted) setState(() => _addedPublicKeyHex = link.publicKeyHex);
-      messenger.showSnackBar(SnackBar(content: Text('Added ${link.name}.')));
+      messenger.showSnackBar(SnackBar(content: Text(l10n.sh_added(link.name))));
     } catch (e) {
       messenger.showSnackBar(
-        SnackBar(content: Text('Could not add ${link.name}: $e')),
+        SnackBar(content: Text(l10n.sh_addFailed(link.name, '$e'))),
       );
     } finally {
       if (mounted) setState(() => _adding = false);

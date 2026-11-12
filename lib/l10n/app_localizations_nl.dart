@@ -11460,6 +11460,177 @@ class AppLocalizationsNl extends AppLocalizations {
       'Padgegevens © OpenStreetMap-bijdragers. Ze kunnen onvolledig of verouderd zijn. Routes worden niet gecontroleerd op veiligheid of begaanbaarheid, dus gebruik dit niet als je enige navigatie.';
 
   @override
+  String get ant_title => 'Antennedekking';
+
+  @override
+  String get ant_placeHint =>
+      'Houd de kaart ingedrukt om de antenne te plaatsen.';
+
+  @override
+  String get ant_fromRadio =>
+      'Antenne op de positie van je radio. Houd de kaart ingedrukt om hem te verplaatsen.';
+
+  @override
+  String get ant_placed =>
+      'Antenne op de kaart geplaatst. Ingedrukt houden om te verplaatsen.';
+
+  @override
+  String get ant_height => 'Antennehoogte';
+
+  @override
+  String get ant_radius => 'Straal';
+
+  @override
+  String get ant_checking => 'Terrein controleren…';
+
+  @override
+  String get ant_estimate => 'Dekking schatten';
+
+  @override
+  String get ant_noTerrain =>
+      'Terreinhoogtes konden niet geladen worden. De eerste keer is internet nodig.';
+
+  @override
+  String get ant_legendSignal =>
+      'Grote groene stippen: sterk signaal. Kleine oranje stippen: matig. Ruwe schatting uit terrein en je radio-instellingen, met 2 dBi-antennes. Bomen en gebouwen tellen niet mee, dus het echte bereik is vaak korter.';
+
+  @override
+  String get ant_legendLos =>
+      'Verbind een radio voor signaalschattingen. Groene stippen hebben zicht op een handradio (1,5 m). Een ruwe schatting, geen garantie.';
+
+  @override
+  String ant_losSummary(int percent, String km) {
+    return 'Zicht op $percent% van de punten • verst op $km km';
+  }
+
+  @override
+  String ant_signalSummary(int strong, int marginal, String km) {
+    return 'Geschat signaal: sterk in $strong% van het gebied, matig in $marginal%, bruikbaar tot $km km.';
+  }
+
+  @override
+  String rp_title(String name) {
+    return 'Mesh-instellingen $name';
+  }
+
+  @override
+  String rp_mostNodes(String summary) {
+    return 'De meeste nodes hier gebruiken $summary. Je radio staat anders ingesteld, dus je hoort ze misschien niet.';
+  }
+
+  @override
+  String rp_mostNodesCount(int count, String summary) {
+    return 'De meeste nodes hier ($count op de MeshCore-kaart) gebruiken $summary. Je radio staat anders ingesteld, dus je hoort ze misschien niet.';
+  }
+
+  @override
+  String rp_localMesh(String summary) {
+    return 'Het lokale mesh gebruikt $summary. Je radio staat anders ingesteld, dus je hoort het misschien niet.';
+  }
+
+  @override
+  String get rp_notNow => 'Niet nu';
+
+  @override
+  String get rp_review => 'Bekijken';
+
+  @override
+  String rp_useTitle(String name) {
+    return 'Instellingen van $name gebruiken?';
+  }
+
+  @override
+  String get rp_already => 'Je radio gebruikt deze instellingen al.';
+
+  @override
+  String get rp_fromMap =>
+      'Gemeld door node-eigenaren op de MeshCore-kaart, niet in de lucht gecontroleerd.';
+
+  @override
+  String rp_updated(String date) {
+    return 'Bijgewerkt $date. Na het wisselen hoor je alleen radio\'s met dezelfde instellingen.';
+  }
+
+  @override
+  String get rp_powerOnly => 'Het zendvermogen verandert niet.';
+
+  @override
+  String get rp_powerHash =>
+      'Het zendvermogen en de pad-hashgrootte veranderen niet.';
+
+  @override
+  String get rp_apply => 'Op radio toepassen';
+
+  @override
+  String rp_setTo(String name) {
+    return 'Radio ingesteld op $name.';
+  }
+
+  @override
+  String rp_failed(String error) {
+    return 'Kon de radio niet wijzigen: $error';
+  }
+
+  @override
+  String get rp_noArea => 'Geen vermeld gebied in de buurt.';
+
+  @override
+  String get rp_noLonger => 'Het gekozen gebied staat niet meer in de lijst.';
+
+  @override
+  String get rp_autoPrefix => 'Auto: ';
+
+  @override
+  String get rp_tileTitle => 'Lokale mesh-instellingen';
+
+  @override
+  String get rp_automatic => 'Automatisch';
+
+  @override
+  String get rp_autoSub => 'Op basis van de positie van je radio of telefoon';
+
+  @override
+  String get rp_mapSuffix => 'MeshCore-kaart';
+
+  @override
+  String get rp_savedList =>
+      'Opgeslagen lijst in gebruik. Wordt online bijgewerkt via GitHub.';
+
+  @override
+  String rp_checked(String time) {
+    return 'Lijst gecontroleerd om $time. Gebieden worden via een pull request toegevoegd.';
+  }
+
+  @override
+  String get sh_title => 'Contact delen';
+
+  @override
+  String get sh_hint =>
+      'Stuurt naam en publieke sleutel als link waarop iedereen kan tikken om hem toe te voegen.';
+
+  @override
+  String get sh_you => 'Dit ben jij.';
+
+  @override
+  String get sh_already => 'Staat al in je contacten.';
+
+  @override
+  String get sh_adding => 'Toevoegen…';
+
+  @override
+  String get sh_add => 'Contact toevoegen';
+
+  @override
+  String sh_added(String name) {
+    return '$name toegevoegd.';
+  }
+
+  @override
+  String sh_addFailed(String name, String error) {
+    return 'Kon $name niet toevoegen: $error';
+  }
+
+  @override
   String get tr_needArea => 'Download eerst een gebied met beide punten.';
 
   @override

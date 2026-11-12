@@ -8,6 +8,7 @@ import 'package:meshcore_open/screens/antenna_coverage_screen.dart';
 import 'package:meshcore_open/services/app_settings_service.dart';
 import 'package:meshcore_open/services/line_of_sight_service.dart';
 import 'package:meshcore_open/services/map_tile_cache_service.dart';
+import 'package:meshcore_open/l10n/app_localizations.dart';
 
 const _origin = LatLng(49.0, -122.0);
 
@@ -135,7 +136,11 @@ void main() {
             create: (_) => MapTileCacheService(appSettingsService: settings),
           ),
         ],
-        child: MaterialApp(home: AntennaCoverageScreen(service: service)),
+        child: MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: AntennaCoverageScreen(service: service),
+        ),
       ),
     );
     expect(find.textContaining("your radio's position"), findsOneWidget);

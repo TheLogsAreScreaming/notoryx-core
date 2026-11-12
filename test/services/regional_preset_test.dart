@@ -15,6 +15,7 @@ import 'package:meshcore_open/models/regional_preset.dart';
 import 'package:meshcore_open/services/regional_preset_service.dart';
 import 'package:meshcore_open/storage/prefs_manager.dart';
 import 'package:meshcore_open/widgets/regional_preset_banner.dart';
+import 'package:meshcore_open/l10n/app_localizations.dart';
 
 String _doc({String updated = '2026-10-17', double freq = 919.5}) =>
     jsonEncode({
@@ -308,7 +309,9 @@ void main() {
       await tester.pumpWidget(
         ChangeNotifierProvider<RegionalPresetService?>.value(
           value: s,
-          child: const MaterialApp(
+          child: MaterialApp(
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            supportedLocales: AppLocalizations.supportedLocales,
             home: Scaffold(body: RegionalPresetBanner()),
           ),
         ),

@@ -11494,6 +11494,176 @@ class AppLocalizationsSl extends AppLocalizations {
       'Podatki o poteh © sodelavci OpenStreetMap. Lahko so nepopolni ali zastareli. Poti niso preverjene glede varnosti ali prehodnosti, zato jih ne uporabljaj kot edine navigacije.';
 
   @override
+  String get ant_title => 'Pokritost antene';
+
+  @override
+  String get ant_placeHint => 'Pridrži zemljevid, da postaviš anteno.';
+
+  @override
+  String get ant_fromRadio =>
+      'Antena na položaju tvojega radia. Pridrži zemljevid, da jo premakneš.';
+
+  @override
+  String get ant_placed =>
+      'Antena postavljena na zemljevid. Pridrži za premik.';
+
+  @override
+  String get ant_height => 'Višina antene';
+
+  @override
+  String get ant_radius => 'Polmer';
+
+  @override
+  String get ant_checking => 'Preverjanje terena…';
+
+  @override
+  String get ant_estimate => 'Oceni pokritost';
+
+  @override
+  String get ant_noTerrain =>
+      'Višin terena ni bilo mogoče naložiti. Prvič je potreben internet.';
+
+  @override
+  String get ant_legendSignal =>
+      'Velike zelene pike: močan signal. Majhne oranžne: mejno. Groba ocena iz terena in nastavitev radia z antenama 2 dBi. Drevesa in stavbe niso upoštevani, zato je dejanski doseg pogosto krajši.';
+
+  @override
+  String get ant_legendLos =>
+      'Poveži radio za oceno signala. Zelene pike imajo neposreden vidik do ročnega radia (1,5 m). Groba ocena, ne zagotovilo.';
+
+  @override
+  String ant_losSummary(int percent, String km) {
+    return 'Neposreden vidik do $percent % točk • najdlje $km km';
+  }
+
+  @override
+  String ant_signalSummary(int strong, int marginal, String km) {
+    return 'Ocenjen signal: močan na $strong % območja, mejen na $marginal %, uporaben do $km km.';
+  }
+
+  @override
+  String rp_title(String name) {
+    return 'Nastavitve omrežja $name';
+  }
+
+  @override
+  String rp_mostNodes(String summary) {
+    return 'Večina vozlišč tukaj uporablja $summary. Tvoj radio je nastavljen drugače, zato jih morda ne boš slišal.';
+  }
+
+  @override
+  String rp_mostNodesCount(int count, String summary) {
+    return 'Večina vozlišč tukaj ($count na zemljevidu MeshCore) uporablja $summary. Tvoj radio je nastavljen drugače, zato jih morda ne boš slišal.';
+  }
+
+  @override
+  String rp_localMesh(String summary) {
+    return 'Lokalno omrežje uporablja $summary. Tvoj radio je nastavljen drugače, zato ga morda ne boš slišal.';
+  }
+
+  @override
+  String get rp_notNow => 'Ne zdaj';
+
+  @override
+  String get rp_review => 'Preglej';
+
+  @override
+  String rp_useTitle(String name) {
+    return 'Uporabim nastavitve $name?';
+  }
+
+  @override
+  String get rp_already => 'Tvoj radio že uporablja te nastavitve.';
+
+  @override
+  String get rp_fromMap =>
+      'Sporočili lastniki vozlišč na zemljevidu MeshCore, ni preverjeno v etru.';
+
+  @override
+  String rp_updated(String date) {
+    return 'Posodobljeno $date. Po menjavi boš slišal le radie z enakimi nastavitvami.';
+  }
+
+  @override
+  String get rp_powerOnly => 'Oddajna moč se ne spremeni.';
+
+  @override
+  String get rp_powerHash =>
+      'Oddajna moč in velikost razpršila poti se ne spremenita.';
+
+  @override
+  String get rp_apply => 'Uporabi na radiu';
+
+  @override
+  String rp_setTo(String name) {
+    return 'Radio nastavljen na $name.';
+  }
+
+  @override
+  String rp_failed(String error) {
+    return 'Radia ni bilo mogoče spremeniti: $error';
+  }
+
+  @override
+  String get rp_noArea => 'V bližini ni območja s seznama.';
+
+  @override
+  String get rp_noLonger => 'Izbranega območja ni več na seznamu.';
+
+  @override
+  String get rp_autoPrefix => 'Samodejno: ';
+
+  @override
+  String get rp_tileTitle => 'Nastavitve lokalnega omrežja';
+
+  @override
+  String get rp_automatic => 'Samodejno';
+
+  @override
+  String get rp_autoSub => 'Glede na položaj radia ali telefona';
+
+  @override
+  String get rp_mapSuffix => 'zemljevid MeshCore';
+
+  @override
+  String get rp_savedList =>
+      'Uporablja se shranjeni seznam. Ob povezavi se posodobi z GitHuba.';
+
+  @override
+  String rp_checked(String time) {
+    return 'Seznam preverjen ob $time. Območja se dodajajo z zahtevo za združitev.';
+  }
+
+  @override
+  String get sh_title => 'Deli stik';
+
+  @override
+  String get sh_hint =>
+      'Pošlje ime in javni ključ kot povezavo, ki jo lahko kdorkoli tapne, da doda stik.';
+
+  @override
+  String get sh_you => 'To si ti.';
+
+  @override
+  String get sh_already => 'Že med tvojimi stiki.';
+
+  @override
+  String get sh_adding => 'Dodajanje…';
+
+  @override
+  String get sh_add => 'Dodaj stik';
+
+  @override
+  String sh_added(String name) {
+    return '$name dodan.';
+  }
+
+  @override
+  String sh_addFailed(String name, String error) {
+    return '$name ni bilo mogoče dodati: $error';
+  }
+
+  @override
   String get tr_needArea => 'Najprej prenesi območje, ki vsebuje obe točki.';
 
   @override

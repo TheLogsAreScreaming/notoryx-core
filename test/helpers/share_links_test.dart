@@ -9,6 +9,7 @@ import 'package:meshcore_open/helpers/share_links.dart';
 import 'package:meshcore_open/models/contact.dart';
 import 'package:meshcore_open/screens/map_screen.dart' show parseMarkerText;
 import 'package:meshcore_open/widgets/share_in_chat.dart';
+import 'package:meshcore_open/l10n/app_localizations.dart';
 
 Contact _contact(String name, int fill, {int type = advTypeChat}) => Contact(
   publicKey: Uint8List.fromList(List.filled(32, fill)),
@@ -206,6 +207,8 @@ void main() {
       ChangeNotifierProvider<MeshCoreConnector>.value(
         value: radio,
         child: MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
           home: Scaffold(
             body: ContactLinkCard(
               link: parseContactLink(contactLinkFor(c))!,
