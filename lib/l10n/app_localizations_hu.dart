@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -11403,7 +11404,7 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get bk_intro =>
-      'Titkosított másolatot ment a beállításokról, névjegyekről, csatornakulcsokról, útpontokról és piszkozatokról. Az üzenetelőzmények, offline térképek, fotók és a rádió firmware nincsenek benne.';
+      'Titkosított másolatot ment a beállításokról, névjegyekről, csatornakulcsokról, útpontokról és piszkozatokról, és ha kéri, az üzenetelőzményekről. Az offline térképek, fotók és a rádió firmware-e nem kerül bele.';
 
   @override
   String get bk_keep =>
@@ -11454,7 +11455,7 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String bk_confirmBody(int count) {
-    return 'Ez $count mentett beállítást cserél le ezen az eszközön, köztük a névjegyeket, csatornakulcsokat és útpontokat, a mentésben lévőkre. Az üzenetelőzmények nem változnak. Nem vonható vissza.';
+    return 'Ez lecseréli a készüléken tárolt $count beállítást, köztük a névjegyeket, csatornakulcsokat és útpontokat, a mentésben lévőkre. Ez nem vonható vissza.';
   }
 
   @override
@@ -11468,6 +11469,27 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get bk_partial =>
       'A visszaállítás félúton leállt; egyes beállítások megváltozhattak. Próbáld újra.';
+
+  @override
+  String get bk_history => 'Üzenetelőzmények hozzáadása';
+
+  @override
+  String get bk_historyHint =>
+      'Közvetlen és csatornaüzenetek minden rádióhoz. A fájl nagyobb lesz.';
+
+  @override
+  String get bk_tooLarge =>
+      'A mentés túl nagy. Kapcsolja ki az üzenetelőzményeket, és próbálja újra.';
+
+  @override
+  String bk_confirmHistory(int count) {
+    return 'Emellett legfeljebb $count üzenetet ad az előzményekhez. A készüléken már meglévő üzenetek megmaradnak.';
+  }
+
+  @override
+  String bk_restoredHistory(int count) {
+    return '$count üzenet került az előzményekbe.';
+  }
 
   @override
   String get sosSetup_noPeople =>

@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -10905,7 +10906,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get bk_intro =>
-      '앱 설정, 연락처, 채널 키, 웨이포인트, 임시 저장 글의 암호화된 사본을 저장합니다. 메시지 기록, 오프라인 지도, 사진, 무전기 펌웨어는 포함되지 않습니다.';
+      '앱 설정, 연락처, 채널 키, 웨이포인트, 임시 저장 메시지를 암호화해 저장하며, 선택하면 메시지 기록도 포함합니다. 오프라인 지도, 사진, 무전기 펌웨어는 포함되지 않습니다.';
 
   @override
   String get bk_keep => '암호문은 따로 보관하세요. 잃어버린 암호문은 복구할 수 없습니다.';
@@ -10951,7 +10952,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String bk_confirmBody(int count) {
-    return '이 기기에 저장된 설정 $count개(연락처, 채널 키, 웨이포인트 포함)를 백업의 내용으로 바꿉니다. 메시지 기록은 영향을 받지 않습니다. 되돌릴 수 없습니다.';
+    return '이 기기에 저장된 설정 $count개(연락처, 채널 키, 웨이포인트 포함)를 백업의 내용으로 바꿉니다. 되돌릴 수 없습니다.';
   }
 
   @override
@@ -10964,6 +10965,25 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get bk_partial => '복원이 중간에 멈췄습니다. 일부 설정이 바뀌었을 수 있습니다. 다시 시도하세요.';
+
+  @override
+  String get bk_history => '메시지 기록 포함';
+
+  @override
+  String get bk_historyHint => '모든 무전기의 개인 메시지와 채널 메시지입니다. 파일이 커집니다.';
+
+  @override
+  String get bk_tooLarge => '백업이 너무 큽니다. 메시지 기록을 끄고 다시 시도하세요.';
+
+  @override
+  String bk_confirmHistory(int count) {
+    return '메시지 최대 $count개도 기록에 추가합니다. 이 기기에 이미 있는 메시지는 유지됩니다.';
+  }
+
+  @override
+  String bk_restoredHistory(int count) {
+    return '메시지 $count개를 기록에 추가했습니다.';
+  }
 
   @override
   String get sosSetup_noPeople =>

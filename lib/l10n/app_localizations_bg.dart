@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -11402,7 +11403,7 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get bk_intro =>
-      'Запазва шифровано копие на настройки, контакти, ключове на канали, точки и чернови. Историята на съобщенията, офлайн картите, снимките и фърмуерът на радиото не са включени.';
+      'Запазва криптирано копие на настройките, контактите, ключовете на каналите, точките и черновите, а по избор и историята на съобщенията. Офлайн карти, снимки и фърмуер на радиото не се включват.';
 
   @override
   String get bk_keep =>
@@ -11452,7 +11453,7 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String bk_confirmBody(int count) {
-    return 'Това заменя $count запазени настройки на устройството, включително контакти, ключове на канали и точки, с тези от копието. Историята на съобщенията не се засяга. Не може да се отмени.';
+    return 'Това заменя $count запазени настройки на това устройство, включително контакти, ключове на канали и точки, с тези от резервното копие. Действието не може да бъде отменено.';
   }
 
   @override
@@ -11466,6 +11467,27 @@ class AppLocalizationsBg extends AppLocalizations {
   @override
   String get bk_partial =>
       'Възстановяването спря по средата; някои настройки може да са променени. Опитайте отново.';
+
+  @override
+  String get bk_history => 'Включи историята на съобщенията';
+
+  @override
+  String get bk_historyHint =>
+      'Лични и канални съобщения за всяко радио. Файлът ще е по-голям.';
+
+  @override
+  String get bk_tooLarge =>
+      'Резервното копие е твърде голямо. Изключете историята на съобщенията и опитайте отново.';
+
+  @override
+  String bk_confirmHistory(int count) {
+    return 'Освен това добавя до $count съобщения към историята. Съобщенията, които вече са на устройството, се запазват.';
+  }
+
+  @override
+  String bk_restoredHistory(int count) {
+    return 'Добавени са $count съобщения към историята.';
+  }
 
   @override
   String get sosSetup_noPeople =>

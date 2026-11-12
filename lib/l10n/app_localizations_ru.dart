@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -11456,7 +11457,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get bk_intro =>
-      'Сохраняет зашифрованную копию настроек, контактов, ключей каналов, точек и черновиков. История сообщений, офлайн-карты, фото и прошивка радио не входят.';
+      'Сохраняет зашифрованную копию настроек, контактов, ключей каналов, путевых точек и черновиков, а по желанию и историю сообщений. Офлайн-карты, фото и прошивка радио не включаются.';
 
   @override
   String get bk_keep =>
@@ -11507,7 +11508,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String bk_confirmBody(int count) {
-    return 'Будут заменены $count сохранённых настроек на этом устройстве, включая контакты, ключи каналов и точки, настройками из копии. История сообщений не затрагивается. Отменить нельзя.';
+    return 'Будут заменены $count сохранённых настроек на этом устройстве, включая контакты, ключи каналов и путевые точки, на настройки из резервной копии. Отменить это нельзя.';
   }
 
   @override
@@ -11521,6 +11522,27 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get bk_partial =>
       'Восстановление прервано; часть настроек могла измениться. Повторите попытку.';
+
+  @override
+  String get bk_history => 'Включить историю сообщений';
+
+  @override
+  String get bk_historyHint =>
+      'Личные сообщения и сообщения каналов для всех радио. Файл станет больше.';
+
+  @override
+  String get bk_tooLarge =>
+      'Резервная копия слишком большая. Отключите историю сообщений и повторите попытку.';
+
+  @override
+  String bk_confirmHistory(int count) {
+    return 'Также в историю будет добавлено до $count сообщений. Сообщения, которые уже есть на устройстве, сохранятся.';
+  }
+
+  @override
+  String bk_restoredHistory(int count) {
+    return 'В историю добавлено сообщений: $count.';
+  }
 
   @override
   String get sosSetup_noPeople =>

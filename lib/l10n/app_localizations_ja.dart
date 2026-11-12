@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -10890,7 +10891,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get bk_intro =>
-      'アプリ設定、連絡先、チャンネルキー、ウェイポイント、下書きの暗号化コピーを保存します。メッセージ履歴、オフライン地図、写真、無線機のファームウェアは含まれません。';
+      'アプリ設定、連絡先、チャンネル鍵、ウェイポイント、下書きを暗号化して保存します。選択すればメッセージ履歴も含めます。オフライン地図、写真、無線機のファームウェアは含まれません。';
 
   @override
   String get bk_keep => 'パスフレーズは別に保管してください。失ったパスフレーズは復元できません。';
@@ -10936,7 +10937,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String bk_confirmBody(int count) {
-    return 'この端末に保存された$count件の設定（連絡先、チャンネルキー、ウェイポイントを含む）をバックアップの内容に置き換えます。メッセージ履歴には影響しません。元に戻せません。';
+    return 'この端末に保存されている$count件の設定（連絡先、チャンネル鍵、ウェイポイントを含む）をバックアップの内容で置き換えます。元に戻すことはできません。';
   }
 
   @override
@@ -10949,6 +10950,25 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get bk_partial => '復元が途中で止まりました。一部の設定が変わった可能性があります。もう一度お試しください。';
+
+  @override
+  String get bk_history => 'メッセージ履歴を含める';
+
+  @override
+  String get bk_historyHint => 'すべての無線機のダイレクトメッセージとチャンネルメッセージ。ファイルが大きくなります。';
+
+  @override
+  String get bk_tooLarge => 'バックアップが大きすぎます。メッセージ履歴をオフにしてもう一度お試しください。';
+
+  @override
+  String bk_confirmHistory(int count) {
+    return '最大$count件のメッセージも履歴に追加します。この端末にすでにあるメッセージは残ります。';
+  }
+
+  @override
+  String bk_restoredHistory(int count) {
+    return '$count件のメッセージを履歴に追加しました。';
+  }
 
   @override
   String get sosSetup_noPeople =>

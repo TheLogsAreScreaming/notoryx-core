@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -11281,7 +11282,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get bk_intro =>
-      'Save an encrypted copy of app settings, contacts, channel keys, waypoints and drafts. Message history, offline maps, photos and radio firmware are not included.';
+      'Save an encrypted copy of app settings, contacts, channel keys, waypoints and drafts, and if you choose, your message history. Offline maps, photos and radio firmware are not included.';
 
   @override
   String get bk_keep =>
@@ -11332,7 +11333,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String bk_confirmBody(int count) {
-    return 'This replaces $count saved settings on this device, including contacts, channel keys and waypoints, with the ones in the backup. Message history is not affected. This cannot be undone.';
+    return 'This replaces $count saved settings on this device, including contacts, channel keys and waypoints, with the ones in the backup. This cannot be undone.';
   }
 
   @override
@@ -11346,6 +11347,27 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get bk_partial =>
       'Restore stopped part way, so some settings may have changed. Try again.';
+
+  @override
+  String get bk_history => 'Include message history';
+
+  @override
+  String get bk_historyHint =>
+      'Direct and channel messages for every radio. The file will be bigger.';
+
+  @override
+  String get bk_tooLarge =>
+      'The backup is too large. Turn off message history and try again.';
+
+  @override
+  String bk_confirmHistory(int count) {
+    return 'It also adds up to $count messages to your history. Messages already on this device are kept.';
+  }
+
+  @override
+  String bk_restoredHistory(int count) {
+    return 'Added $count messages to your history.';
+  }
 
   @override
   String get sosSetup_noPeople =>

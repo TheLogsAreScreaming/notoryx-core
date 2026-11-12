@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -11458,7 +11459,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get bk_intro =>
-      'Zapisuje zaszyfrowaną kopię ustawień, kontaktów, kluczy kanałów, punktów i wersji roboczych. Bez historii wiadomości, map offline, zdjęć i oprogramowania radia.';
+      'Zapisuje zaszyfrowaną kopię ustawień, kontaktów, kluczy kanałów, punktów i szkiców, a jeśli chcesz, także historii wiadomości. Mapy offline, zdjęcia i oprogramowanie radia nie są dołączane.';
 
   @override
   String get bk_keep =>
@@ -11508,7 +11509,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String bk_confirmBody(int count) {
-    return 'Zastąpi to $count zapisanych ustawień na tym urządzeniu, w tym kontakty, klucze kanałów i punkty, tymi z kopii. Historia wiadomości pozostaje bez zmian. Tego nie można cofnąć.';
+    return 'Zastąpi to $count zapisanych ustawień na tym urządzeniu, w tym kontakty, klucze kanałów i punkty, ustawieniami z kopii. Tego nie można cofnąć.';
   }
 
   @override
@@ -11522,6 +11523,27 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get bk_partial =>
       'Przywracanie przerwane w połowie; część ustawień mogła się zmienić. Spróbuj ponownie.';
+
+  @override
+  String get bk_history => 'Dołącz historię wiadomości';
+
+  @override
+  String get bk_historyHint =>
+      'Wiadomości prywatne i z kanałów dla każdego radia. Plik będzie większy.';
+
+  @override
+  String get bk_tooLarge =>
+      'Kopia jest za duża. Wyłącz historię wiadomości i spróbuj ponownie.';
+
+  @override
+  String bk_confirmHistory(int count) {
+    return 'Doda też do $count wiadomości do historii. Wiadomości, które już są na tym urządzeniu, zostaną zachowane.';
+  }
+
+  @override
+  String bk_restoredHistory(int count) {
+    return 'Dodano $count wiadomości do historii.';
+  }
 
   @override
   String get sosSetup_noPeople =>

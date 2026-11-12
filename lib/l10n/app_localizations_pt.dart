@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -11402,7 +11403,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get bk_intro =>
-      'Guarda uma cópia cifrada das definições, contactos, chaves de canal, pontos de passagem e rascunhos. Não inclui histórico de mensagens, mapas offline, fotos nem o firmware do rádio.';
+      'Guarda uma cópia encriptada das definições, contactos, chaves de canal, pontos de passagem e rascunhos e, se quiser, do histórico de mensagens. Mapas offline, fotos e firmware do rádio não são incluídos.';
 
   @override
   String get bk_keep =>
@@ -11453,7 +11454,7 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String bk_confirmBody(int count) {
-    return 'Isto substitui $count definições guardadas neste dispositivo, incluindo contactos, chaves de canal e pontos de passagem, pelas da cópia. O histórico de mensagens não é afetado. Não pode ser anulado.';
+    return 'Isto substitui $count definições guardadas neste dispositivo, incluindo contactos, chaves de canal e pontos de passagem, pelas da cópia. Não é possível anular.';
   }
 
   @override
@@ -11467,6 +11468,27 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get bk_partial =>
       'O restauro parou a meio; algumas definições podem ter mudado. Tenta novamente.';
+
+  @override
+  String get bk_history => 'Incluir histórico de mensagens';
+
+  @override
+  String get bk_historyHint =>
+      'Mensagens diretas e de canal de todos os rádios. O ficheiro ficará maior.';
+
+  @override
+  String get bk_tooLarge =>
+      'A cópia é demasiado grande. Desative o histórico de mensagens e tente novamente.';
+
+  @override
+  String bk_confirmHistory(int count) {
+    return 'Também adiciona até $count mensagens ao histórico. As mensagens que já estão neste dispositivo são mantidas.';
+  }
+
+  @override
+  String bk_restoredHistory(int count) {
+    return 'Foram adicionadas $count mensagens ao histórico.';
+  }
 
   @override
   String get sosSetup_noPeople =>

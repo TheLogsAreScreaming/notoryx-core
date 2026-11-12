@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -11329,7 +11330,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get bk_intro =>
-      'Sparar en krypterad kopia av inställningar, kontakter, kanalnycklar, vägpunkter och utkast. Meddelandehistorik, offlinekartor, foton och radiofirmware ingår inte.';
+      'Sparar en krypterad kopia av inställningar, kontakter, kanalnycklar, waypoints och utkast, och om du vill även meddelandehistoriken. Offlinekartor, foton och radions firmware ingår inte.';
 
   @override
   String get bk_keep =>
@@ -11380,7 +11381,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String bk_confirmBody(int count) {
-    return 'Det ersätter $count sparade inställningar på enheten, bland annat kontakter, kanalnycklar och vägpunkter, med dem i säkerhetskopian. Meddelandehistoriken påverkas inte. Det kan inte ångras.';
+    return 'Det här ersätter $count sparade inställningar på enheten, bland annat kontakter, kanalnycklar och waypoints, med dem i säkerhetskopian. Det går inte att ångra.';
   }
 
   @override
@@ -11394,6 +11395,27 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get bk_partial =>
       'Återställningen avbröts halvvägs; vissa inställningar kan ha ändrats. Försök igen.';
+
+  @override
+  String get bk_history => 'Ta med meddelandehistorik';
+
+  @override
+  String get bk_historyHint =>
+      'Direkt- och kanalmeddelanden för alla radioenheter. Filen blir större.';
+
+  @override
+  String get bk_tooLarge =>
+      'Säkerhetskopian är för stor. Stäng av meddelandehistorik och försök igen.';
+
+  @override
+  String bk_confirmHistory(int count) {
+    return 'Den lägger också till upp till $count meddelanden i historiken. Meddelanden som redan finns på enheten behålls.';
+  }
+
+  @override
+  String bk_restoredHistory(int count) {
+    return '$count meddelanden har lagts till i historiken.';
+  }
 
   @override
   String get sosSetup_noPeople =>
