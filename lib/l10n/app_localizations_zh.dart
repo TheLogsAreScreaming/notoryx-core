@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -10668,7 +10669,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get bk_title => '加密备份';
 
   @override
-  String get bk_intro => '保存应用设置、联系人、频道密钥、航点和草稿的加密副本。不包括消息记录、离线地图、照片和电台固件。';
+  String get bk_intro => '加密保存应用设置、联系人、频道密钥、航点和草稿，也可选择包含消息记录。不包括离线地图、照片和电台固件。';
 
   @override
   String get bk_keep => '请另外保管密码短语。密码短语丢失后无法找回。';
@@ -10714,7 +10715,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String bk_confirmBody(int count) {
-    return '这会用备份中的内容替换本设备上 $count 项已保存的设置，包括联系人、频道密钥和航点。消息记录不受影响。此操作无法撤销。';
+    return '这将用备份中的内容替换此设备上已保存的 $count 项设置，包括联系人、频道密钥和航点。此操作无法撤销。';
   }
 
   @override
@@ -10727,6 +10728,25 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get bk_partial => '恢复中途停止，部分设置可能已更改。请重试。';
+
+  @override
+  String get bk_history => '包含消息记录';
+
+  @override
+  String get bk_historyHint => '所有电台的私信和频道消息。文件会更大。';
+
+  @override
+  String get bk_tooLarge => '备份太大。请关闭消息记录后重试。';
+
+  @override
+  String bk_confirmHistory(int count) {
+    return '还会向消息记录添加最多 $count 条消息。此设备上已有的消息会保留。';
+  }
+
+  @override
+  String bk_restoredHistory(int count) {
+    return '已向消息记录添加 $count 条消息。';
+  }
 
   @override
   String get sosSetup_noPeople => '联系人中还没有人。有人分享联系人或收到其广播后就会出现在这里。';

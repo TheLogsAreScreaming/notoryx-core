@@ -19000,7 +19000,7 @@ abstract class AppLocalizations {
   /// No description provided for @bk_intro.
   ///
   /// In en, this message translates to:
-  /// **'Save an encrypted copy of app settings, contacts, channel keys, waypoints and drafts. Message history, offline maps, photos and radio firmware are not included.'**
+  /// **'Save an encrypted copy of app settings, contacts, channel keys, waypoints and drafts, and if you choose, your message history. Offline maps, photos and radio firmware are not included.'**
   String get bk_intro;
 
   /// No description provided for @bk_keep.
@@ -19090,7 +19090,7 @@ abstract class AppLocalizations {
   /// No description provided for @bk_confirmBody.
   ///
   /// In en, this message translates to:
-  /// **'This replaces {count} saved settings on this device, including contacts, channel keys and waypoints, with the ones in the backup. Message history is not affected. This cannot be undone.'**
+  /// **'This replaces {count} saved settings on this device, including contacts, channel keys and waypoints, with the ones in the backup. This cannot be undone.'**
   String bk_confirmBody(int count);
 
   /// No description provided for @bk_restore.
@@ -19110,6 +19110,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Restore stopped part way, so some settings may have changed. Try again.'**
   String get bk_partial;
+
+  /// No description provided for @bk_history.
+  ///
+  /// In en, this message translates to:
+  /// **'Include message history'**
+  String get bk_history;
+
+  /// No description provided for @bk_historyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Direct and channel messages for every radio. The file will be bigger.'**
+  String get bk_historyHint;
+
+  /// No description provided for @bk_tooLarge.
+  ///
+  /// In en, this message translates to:
+  /// **'The backup is too large. Turn off message history and try again.'**
+  String get bk_tooLarge;
+
+  /// No description provided for @bk_confirmHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'It also adds up to {count} messages to your history. Messages already on this device are kept.'**
+  String bk_confirmHistory(int count);
+
+  /// No description provided for @bk_restoredHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Added {count} messages to your history.'**
+  String bk_restoredHistory(int count);
 
   /// No description provided for @sosSetup_noPeople.
   ///

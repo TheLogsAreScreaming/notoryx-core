@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -11455,7 +11456,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get bk_intro =>
-      'Зберігає зашифровану копію налаштувань, контактів, ключів каналів, точок і чернеток. Історія повідомлень, офлайн-карти, фото та прошивка радіо не входять.';
+      'Зберігає зашифровану копію налаштувань, контактів, ключів каналів, точок маршруту й чернеток, а за бажанням і історію повідомлень. Офлайн-карти, фото та прошивка радіо не включаються.';
 
   @override
   String get bk_keep =>
@@ -11506,7 +11507,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String bk_confirmBody(int count) {
-    return 'Буде замінено $count збережених налаштувань на цьому пристрої, зокрема контакти, ключі каналів і точки, налаштуваннями з копії. Історія повідомлень не змінюється. Скасувати неможливо.';
+    return 'Буде замінено $count збережених налаштувань на цьому пристрої, зокрема контакти, ключі каналів і точки маршруту, на ті, що в резервній копії. Скасувати це не можна.';
   }
 
   @override
@@ -11520,6 +11521,27 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get bk_partial =>
       'Відновлення перервано; частина налаштувань могла змінитися. Спробуйте ще раз.';
+
+  @override
+  String get bk_history => 'Додати історію повідомлень';
+
+  @override
+  String get bk_historyHint =>
+      'Особисті повідомлення та повідомлення каналів для кожного радіо. Файл буде більшим.';
+
+  @override
+  String get bk_tooLarge =>
+      'Резервна копія завелика. Вимкніть історію повідомлень і спробуйте ще раз.';
+
+  @override
+  String bk_confirmHistory(int count) {
+    return 'Також до історії буде додано до $count повідомлень. Повідомлення, які вже є на пристрої, збережуться.';
+  }
+
+  @override
+  String bk_restoredHistory(int count) {
+    return 'До історії додано повідомлень: $count.';
+  }
 
   @override
   String get sosSetup_noPeople =>

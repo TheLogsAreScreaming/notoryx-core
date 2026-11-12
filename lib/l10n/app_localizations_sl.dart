@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -11411,7 +11412,7 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get bk_intro =>
-      'Shrani šifrirano kopijo nastavitev, stikov, ključev kanalov, točk poti in osnutkov. Zgodovina sporočil, zemljevidi brez povezave, fotografije in strojna programska oprema radia niso vključeni.';
+      'Shrani šifrirano kopijo nastavitev, stikov, ključev kanalov, točk poti in osnutkov ter po želji zgodovino sporočil. Zemljevidi brez povezave, fotografije in vdelana programska oprema radia niso vključeni.';
 
   @override
   String get bk_keep =>
@@ -11461,7 +11462,7 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String bk_confirmBody(int count) {
-    return 'To zamenja $count shranjenih nastavitev v tej napravi, vključno s stiki, ključi kanalov in točkami poti, s tistimi iz kopije. Zgodovina sporočil ostane nespremenjena. Tega ni mogoče razveljaviti.';
+    return 'S tem boste $count shranjenih nastavitev v tej napravi, vključno s stiki, ključi kanalov in točkami poti, zamenjali s tistimi iz varnostne kopije. Tega ni mogoče razveljaviti.';
   }
 
   @override
@@ -11475,6 +11476,27 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String get bk_partial =>
       'Obnova se je ustavila na pol poti; nekatere nastavitve so se morda spremenile. Poskusi znova.';
+
+  @override
+  String get bk_history => 'Vključi zgodovino sporočil';
+
+  @override
+  String get bk_historyHint =>
+      'Neposredna sporočila in sporočila kanalov za vse radie. Datoteka bo večja.';
+
+  @override
+  String get bk_tooLarge =>
+      'Varnostna kopija je prevelika. Izklopite zgodovino sporočil in poskusite znova.';
+
+  @override
+  String bk_confirmHistory(int count) {
+    return 'Doda tudi do $count sporočil v zgodovino. Sporočila, ki so že v napravi, ostanejo.';
+  }
+
+  @override
+  String bk_restoredHistory(int count) {
+    return 'V zgodovino je bilo dodanih $count sporočil.';
+  }
 
   @override
   String get sosSetup_noPeople =>

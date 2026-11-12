@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -11376,7 +11377,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get bk_intro =>
-      'Bewaart een versleutelde kopie van instellingen, contacten, kanaalsleutels, waypoints en concepten. Berichtgeschiedenis, offline kaarten, foto\'s en radiofirmware zitten er niet in.';
+      'Slaat een versleutelde kopie op van app-instellingen, contacten, kanaalsleutels, waypoints en concepten, en desgewenst je berichtgeschiedenis. Offline kaarten, foto\'s en radiofirmware zitten er niet in.';
 
   @override
   String get bk_keep =>
@@ -11427,7 +11428,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String bk_confirmBody(int count) {
-    return 'Hiermee worden $count opgeslagen instellingen op dit apparaat, waaronder contacten, kanaalsleutels en waypoints, vervangen door die uit de back-up. De berichtgeschiedenis blijft ongewijzigd. Dit kan niet ongedaan worden.';
+    return 'Hiermee worden $count opgeslagen instellingen op dit apparaat, waaronder contacten, kanaalsleutels en waypoints, vervangen door die uit de back-up. Dit kan niet ongedaan worden gemaakt.';
   }
 
   @override
@@ -11441,6 +11442,27 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get bk_partial =>
       'Terugzetten halverwege gestopt; sommige instellingen kunnen gewijzigd zijn. Probeer het opnieuw.';
+
+  @override
+  String get bk_history => 'Berichtgeschiedenis meenemen';
+
+  @override
+  String get bk_historyHint =>
+      'Directe en kanaalberichten van elke radio. Het bestand wordt groter.';
+
+  @override
+  String get bk_tooLarge =>
+      'De back-up is te groot. Zet berichtgeschiedenis uit en probeer het opnieuw.';
+
+  @override
+  String bk_confirmHistory(int count) {
+    return 'Er worden ook tot $count berichten aan je geschiedenis toegevoegd. Berichten die al op dit apparaat staan, blijven bewaard.';
+  }
+
+  @override
+  String bk_restoredHistory(int count) {
+    return '$count berichten aan je geschiedenis toegevoegd.';
+  }
 
   @override
   String get sosSetup_noPeople =>

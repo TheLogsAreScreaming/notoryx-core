@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -5269,8 +5270,7 @@ class AppLocalizationsIt extends AppLocalizations {
       locale: localeName,
       other:
           '$count salti non hanno una posizione specifica — il percorso mostrato è parziale',
-      one:
-          '1 salto non ha una posizione specifica — il percorso mostrato è parziale',
+      one: '1 salto non ha una posizione specifica — il percorso mostrato è parziale',
     );
     return '$_temp0';
   }
@@ -11429,7 +11429,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get bk_intro =>
-      'Salva una copia cifrata di impostazioni, contatti, chiavi dei canali, waypoint e bozze. Cronologia messaggi, mappe offline, foto e firmware della radio non sono inclusi.';
+      'Salva una copia cifrata di impostazioni, contatti, chiavi dei canali, waypoint e bozze e, se vuoi, della cronologia dei messaggi. Mappe offline, foto e firmware della radio non sono inclusi.';
 
   @override
   String get bk_keep =>
@@ -11479,7 +11479,7 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String bk_confirmBody(int count) {
-    return 'Sostituisce $count impostazioni salvate su questo dispositivo, inclusi contatti, chiavi dei canali e waypoint, con quelle del backup. La cronologia dei messaggi non cambia. Non si può annullare.';
+    return 'Sostituisce $count impostazioni salvate su questo dispositivo, inclusi contatti, chiavi dei canali e waypoint, con quelle del backup. L\'operazione non si può annullare.';
   }
 
   @override
@@ -11493,6 +11493,27 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get bk_partial =>
       'Ripristino interrotto: alcune impostazioni potrebbero essere cambiate. Riprova.';
+
+  @override
+  String get bk_history => 'Includi cronologia messaggi';
+
+  @override
+  String get bk_historyHint =>
+      'Messaggi diretti e di canale di tutte le radio. Il file sarà più grande.';
+
+  @override
+  String get bk_tooLarge =>
+      'Il backup è troppo grande. Disattiva la cronologia dei messaggi e riprova.';
+
+  @override
+  String bk_confirmHistory(int count) {
+    return 'Aggiunge anche fino a $count messaggi alla cronologia. I messaggi già presenti su questo dispositivo restano.';
+  }
+
+  @override
+  String bk_restoredHistory(int count) {
+    return 'Aggiunti $count messaggi alla cronologia.';
+  }
 
   @override
   String get sosSetup_noPeople =>

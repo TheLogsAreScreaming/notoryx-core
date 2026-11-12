@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -11421,7 +11422,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get bk_intro =>
-      'Guarda una copia cifrada de los ajustes, contactos, claves de canal, puntos de ruta y borradores. No incluye el historial de mensajes, mapas sin conexión, fotos ni el firmware de la radio.';
+      'Guarda una copia cifrada de los ajustes, contactos, claves de canal, puntos de ruta y borradores y, si quieres, del historial de mensajes. No incluye mapas sin conexión, fotos ni el firmware de la radio.';
 
   @override
   String get bk_keep =>
@@ -11472,7 +11473,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String bk_confirmBody(int count) {
-    return 'Esto sustituye $count ajustes guardados en este dispositivo, incluidos contactos, claves de canal y puntos de ruta, por los de la copia. El historial de mensajes no se ve afectado. No se puede deshacer.';
+    return 'Esto sustituye $count ajustes guardados en este dispositivo, incluidos contactos, claves de canal y puntos de ruta, por los de la copia. No se puede deshacer.';
   }
 
   @override
@@ -11486,6 +11487,27 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get bk_partial =>
       'La restauración se detuvo a medias; puede que algunos ajustes hayan cambiado. Inténtalo de nuevo.';
+
+  @override
+  String get bk_history => 'Incluir historial de mensajes';
+
+  @override
+  String get bk_historyHint =>
+      'Mensajes directos y de canal de todas las radios. El archivo será más grande.';
+
+  @override
+  String get bk_tooLarge =>
+      'La copia es demasiado grande. Desactiva el historial de mensajes y vuelve a intentarlo.';
+
+  @override
+  String bk_confirmHistory(int count) {
+    return 'También añade hasta $count mensajes a tu historial. Los mensajes que ya están en este dispositivo se conservan.';
+  }
+
+  @override
+  String bk_restoredHistory(int count) {
+    return 'Se añadieron $count mensajes a tu historial.';
+  }
 
   @override
   String get sosSetup_noPeople =>

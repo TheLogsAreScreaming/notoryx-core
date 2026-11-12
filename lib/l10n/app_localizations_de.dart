@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -5270,8 +5271,7 @@ class AppLocalizationsDe extends AppLocalizations {
       locale: localeName,
       other:
           '$count Sprünge haben keinen Standort - der angezeigte Pfad ist unvollständig',
-      one:
-          '1 Sprung hat keinen Standort - der angezeigte Pfad ist unvollständig',
+      one: '1 Sprung hat keinen Standort - der angezeigte Pfad ist unvollständig',
     );
     return '$_temp0';
   }
@@ -11428,7 +11428,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get bk_intro =>
-      'Speichert eine verschlüsselte Kopie von App-Einstellungen, Kontakten, Kanalschlüsseln, Wegpunkten und Entwürfen. Nachrichtenverlauf, Offline-Karten, Fotos und Funk-Firmware sind nicht enthalten.';
+      'Speichert eine verschlüsselte Kopie von App-Einstellungen, Kontakten, Kanalschlüsseln, Wegpunkten und Entwürfen und auf Wunsch auch den Nachrichtenverlauf. Offline-Karten, Fotos und Funk-Firmware sind nicht enthalten.';
 
   @override
   String get bk_keep =>
@@ -11479,7 +11479,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String bk_confirmBody(int count) {
-    return 'Damit werden $count gespeicherte Einstellungen auf diesem Gerät, darunter Kontakte, Kanalschlüssel und Wegpunkte, durch die aus der Sicherung ersetzt. Der Nachrichtenverlauf bleibt unberührt. Das lässt sich nicht rückgängig machen.';
+    return 'Damit werden $count gespeicherte Einstellungen auf diesem Gerät, darunter Kontakte, Kanalschlüssel und Wegpunkte, durch die aus der Sicherung ersetzt. Das lässt sich nicht rückgängig machen.';
   }
 
   @override
@@ -11493,6 +11493,27 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get bk_partial =>
       'Wiederherstellung abgebrochen; einige Einstellungen wurden eventuell schon geändert. Versuche es erneut.';
+
+  @override
+  String get bk_history => 'Nachrichtenverlauf einschließen';
+
+  @override
+  String get bk_historyHint =>
+      'Direkt- und Kanalnachrichten aller Funkgeräte. Die Datei wird größer.';
+
+  @override
+  String get bk_tooLarge =>
+      'Die Sicherung ist zu groß. Schalte den Nachrichtenverlauf aus und versuche es erneut.';
+
+  @override
+  String bk_confirmHistory(int count) {
+    return 'Außerdem werden bis zu $count Nachrichten zum Verlauf hinzugefügt. Nachrichten, die schon auf dem Gerät sind, bleiben erhalten.';
+  }
+
+  @override
+  String bk_restoredHistory(int count) {
+    return '$count Nachrichten zum Verlauf hinzugefügt.';
+  }
 
   @override
   String get sosSetup_noPeople =>

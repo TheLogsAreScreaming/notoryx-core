@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -11459,7 +11460,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get bk_intro =>
-      'Enregistre une copie chiffrée des réglages, contacts, clés de canal, points de repère et brouillons. L\'historique des messages, les cartes hors ligne, les photos et le micrologiciel radio ne sont pas inclus.';
+      'Enregistre une copie chiffrée des réglages, contacts, clés de canal, points de repère et brouillons, et si vous le souhaitez de l\'historique des messages. Les cartes hors ligne, les photos et le firmware de la radio ne sont pas inclus.';
 
   @override
   String get bk_keep =>
@@ -11510,7 +11511,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String bk_confirmBody(int count) {
-    return 'Cela remplace $count réglages enregistrés sur cet appareil, dont les contacts, clés de canal et points de repère, par ceux de la sauvegarde. L\'historique des messages n\'est pas touché. C\'est irréversible.';
+    return 'Cela remplace $count réglages enregistrés sur cet appareil, dont les contacts, les clés de canal et les points de repère, par ceux de la sauvegarde. Cette action est irréversible.';
   }
 
   @override
@@ -11524,6 +11525,27 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get bk_partial =>
       'Restauration interrompue ; certains réglages ont pu changer. Réessayez.';
+
+  @override
+  String get bk_history => 'Inclure l\'historique des messages';
+
+  @override
+  String get bk_historyHint =>
+      'Messages directs et de canal de toutes les radios. Le fichier sera plus gros.';
+
+  @override
+  String get bk_tooLarge =>
+      'La sauvegarde est trop volumineuse. Désactivez l\'historique des messages et réessayez.';
+
+  @override
+  String bk_confirmHistory(int count) {
+    return 'Elle ajoute aussi jusqu\'à $count messages à votre historique. Les messages déjà présents sur cet appareil sont conservés.';
+  }
+
+  @override
+  String bk_restoredHistory(int count) {
+    return '$count messages ajoutés à votre historique.';
+  }
 
   @override
   String get sosSetup_noPeople =>
