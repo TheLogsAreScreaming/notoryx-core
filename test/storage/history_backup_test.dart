@@ -11,7 +11,7 @@ String row(int t, {String? id, String text = 'hi', int status = 0}) =>
       'text': text,
       'isOutgoing': false,
       'status': status,
-      if (id != null) 'messageId': id,
+      'messageId': ?id,
     });
 
 void main() {
