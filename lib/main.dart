@@ -75,6 +75,7 @@ import 'utils/app_logger.dart';
 import 'widgets/image_send_codec_binding.dart';
 import 'services/direct_repeater_service.dart';
 import 'services/mqtt_uploaders_service.dart';
+import 'services/checklist_store.dart';
 import 'services/coverage_hex_service.dart';
 import 'services/channel_discovery_service.dart';
 import 'services/corescope.dart';
@@ -306,6 +307,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   late final WaypointStore _waypoints;
   late final TimelineService _timeline;
   late final AppLockService _appLock;
+  late final ChecklistStore _checklists;
   late final TrackLogService _trackLog;
   late final ChannelDiscoveryService _channelDiscovery;
   late final AnalyzerService _analyzer;
@@ -361,6 +363,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
       waypoints: _waypoints,
     );
     _appLock = AppLockService(PrefsManager.instance);
+    _checklists = ChecklistStore(PrefsManager.instance);
     _outbox = OfflineOutbox(widget.connector);
     _trackLog = TrackLogService(widget.connector);
     _channelDiscovery = ChannelDiscoveryService(widget.connector);
@@ -596,6 +599,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _sosRelay.dispose();
     _teamTracking.dispose();
     _coverageHex.dispose();
+    _checklists.dispose();
     _readAloud.dispose();
     _sensorSubscriptions.dispose();
     unawaited(_notificationTaps?.cancel());
@@ -773,6 +777,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         ChangeNotifierProvider<WaypointStore>.value(value: _waypoints),
         ChangeNotifierProvider<TimelineService?>.value(value: _timeline),
         ChangeNotifierProvider<AppLockService>.value(value: _appLock),
+        ChangeNotifierProvider.value(value: _checklists),
         ChangeNotifierProvider<OfflineOutbox?>.value(value: _outbox),
         ChangeNotifierProvider<NetworkChangeService?>.value(
           value: _networkChanges,
