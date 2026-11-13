@@ -19986,6 +19986,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Hide every node you haven\'t starred'**
   String get mapTrust_favoritesOnlyHint;
+
+  /// No description provided for @topology_flows.
+  ///
+  /// In en, this message translates to:
+  /// **'Flows'**
+  String get topology_flows;
+
+  /// No description provided for @topology_network.
+  ///
+  /// In en, this message translates to:
+  /// **'Network'**
+  String get topology_network;
+
+  /// No description provided for @topology_hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Rings show hops away from you, in the middle. Thicker lines carried more messages; bigger dots relayed more. Tap a dot to see that repeater.'**
+  String get topology_hint;
+
+  /// No description provided for @topology_semantics.
+  ///
+  /// In en, this message translates to:
+  /// **'Network diagram. {repeaters} repeaters on {rings} rings around you.'**
+  String topology_semantics(int repeaters, int rings);
 }
 
 class _AppLocalizationsDelegate

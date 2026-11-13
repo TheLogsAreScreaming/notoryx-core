@@ -12050,4 +12050,19 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get mapTrust_favoritesOnlyHint => 'Ukryj węzły bez gwiazdki';
+
+  @override
+  String get topology_flows => 'Przepływy';
+
+  @override
+  String get topology_network => 'Sieć';
+
+  @override
+  String get topology_hint =>
+      'Pierścienie pokazują liczbę przeskoków od ciebie, w środku. Grubsze linie przeniosły więcej wiadomości, większe kropki przekazały więcej. Dotknij kropki, aby zobaczyć ten przekaźnik.';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return 'Diagram sieci. $repeaters przekaźników na $rings pierścieniach wokół ciebie.';
+  }
 }

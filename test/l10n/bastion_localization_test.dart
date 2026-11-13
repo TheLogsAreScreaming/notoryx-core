@@ -31,6 +31,7 @@ const _bastionPrefixes = [
   'chat_readAloud',
   'sentinel_',
   'mapTrust_',
+  'topology_',
 ];
 
 Map<String, dynamic> _arb(String locale) =>

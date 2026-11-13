@@ -11996,4 +11996,19 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get mapTrust_favoritesOnlyHint => 'Ocultar nós sem estrela';
+
+  @override
+  String get topology_flows => 'Fluxos';
+
+  @override
+  String get topology_network => 'Rede';
+
+  @override
+  String get topology_hint =>
+      'Os anéis mostram os saltos a partir de você, no centro. Linhas mais grossas levaram mais mensagens e pontos maiores retransmitiram mais. Toque num ponto para ver esse repetidor.';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return 'Diagrama de rede. $repeaters repetidores em $rings anéis à sua volta.';
+  }
 }

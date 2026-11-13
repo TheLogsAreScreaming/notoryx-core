@@ -11227,4 +11227,18 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get mapTrust_favoritesOnlyHint => '隐藏未加星标的节点';
+
+  @override
+  String get topology_flows => '流向';
+
+  @override
+  String get topology_network => '网络';
+
+  @override
+  String get topology_hint => '圆环表示距离中心（你）的跳数。线越粗承载的消息越多，点越大转发得越多。点按一个点查看该中继器。';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return '网络图。你周围 $rings 个圆环上有 $repeaters 个中继器。';
+  }
 }

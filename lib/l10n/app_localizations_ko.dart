@@ -11470,4 +11470,19 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get mapTrust_favoritesOnlyHint => '별표하지 않은 노드 숨기기';
+
+  @override
+  String get topology_flows => '흐름';
+
+  @override
+  String get topology_network => '네트워크';
+
+  @override
+  String get topology_hint =>
+      '고리는 가운데 있는 나로부터의 홉 수를 나타냅니다. 굵은 선일수록 더 많은 메시지를 전달했고, 큰 점일수록 더 많이 중계했습니다. 점을 탭하면 해당 리피터를 볼 수 있습니다.';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return '네트워크 다이어그램. 내 주변 $rings개 고리에 리피터 $repeaters개.';
+  }
 }

@@ -4761,5 +4761,9 @@
   "sentinel_failed": "A moderálási szolgáltatás nem érhető el. Próbáld később.",
   "privacy_netSentinel": "Moderálás: csak ha bekapcsolod a közösségi moderálást. A tiltólista, valamint az általad küldött jelentések és fellebbezések a sentinel-relay.meshmayhem.org címen át jutnak a NOTORYX moderátoraihoz.",
   "mapTrust_favoritesOnly": "Csak kedvencek",
-  "mapTrust_favoritesOnlyHint": "Csillag nélküli csomópontok elrejtése"
+  "mapTrust_favoritesOnlyHint": "Csillag nélküli csomópontok elrejtése",
+  "topology_flows": "Folyamok",
+  "topology_network": "Hálózat",
+  "topology_hint": "A gyűrűk mutatják, hány ugrásra vannak tőled (középen). A vastagabb vonalak több üzenetet vittek, a nagyobb pontok többet továbbítottak. Koppints egy pontra az ismétlő megtekintéséhez.",
+  "topology_semantics": "Hálózati ábra. {repeaters} ismétlő {rings} gyűrűn körülötted."
 }

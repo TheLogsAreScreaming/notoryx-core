@@ -11454,4 +11454,19 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get mapTrust_favoritesOnlyHint => '星を付けていないノードを隠す';
+
+  @override
+  String get topology_flows => 'フロー';
+
+  @override
+  String get topology_network => 'ネットワーク';
+
+  @override
+  String get topology_hint =>
+      'リングは中央のあなたからのホップ数を示します。太い線ほど多くのメッセージを運び、大きな点ほど多く中継しました。点をタップするとそのリピーターを表示します。';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return 'ネットワーク図。あなたの周りの$ringsつのリングに$repeaters台のリピーター。';
+  }
 }

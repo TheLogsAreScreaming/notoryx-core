@@ -11994,4 +11994,19 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get mapTrust_favoritesOnlyHint => 'Скрий всички възли без звезда';
+
+  @override
+  String get topology_flows => 'Потоци';
+
+  @override
+  String get topology_network => 'Мрежа';
+
+  @override
+  String get topology_hint =>
+      'Пръстените показват броя скокове от вас в центъра. По-дебелите линии са пренесли повече съобщения, по-големите точки са препредали повече. Докоснете точка, за да видите повторителя.';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return 'Мрежова диаграма. $repeaters повторителя на $rings пръстена около вас.';
+  }
 }

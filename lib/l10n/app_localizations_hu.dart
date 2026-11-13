@@ -12001,4 +12001,19 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get mapTrust_favoritesOnlyHint =>
       'Csillag nélküli csomópontok elrejtése';
+
+  @override
+  String get topology_flows => 'Folyamok';
+
+  @override
+  String get topology_network => 'Hálózat';
+
+  @override
+  String get topology_hint =>
+      'A gyűrűk mutatják, hány ugrásra vannak tőled (középen). A vastagabb vonalak több üzenetet vittek, a nagyobb pontok többet továbbítottak. Koppints egy pontra az ismétlő megtekintéséhez.';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return 'Hálózati ábra. $repeaters ismétlő $rings gyűrűn körülötted.';
+  }
 }
