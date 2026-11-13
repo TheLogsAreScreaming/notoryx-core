@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'meshcore_connector.dart';
 
@@ -8,14 +11,31 @@ typedef ConnectorFactory = MeshCoreConnector Function(String slot);
 /// Holds every radio connection and says which one is active: the one the
 /// screens show and send through.
 ///
-/// Phase 1 of docs/MULTI_RADIO_DESIGN.md: the app still uses only the first
-/// radio, so nothing changes for users yet. Later phases add a switcher and
-/// let background radios keep receiving.
+/// The app's services follow the active radio. Other radios stay connected
+/// in the background (docs/MULTI_RADIO_DESIGN.md, phase 2). Added radios are
+/// remembered in [prefs], and come back unconnected after a restart.
 class RadioManager extends ChangeNotifier {
-  RadioManager(MeshCoreConnector primary, {ConnectorFactory? create})
-    : assert(primary.slot.isEmpty, 'the first radio uses slot ""'),
-      _radios = [primary],
-      _create = create ?? ((slot) => MeshCoreConnector(slot: slot));
+  RadioManager(
+    MeshCoreConnector primary, {
+    ConnectorFactory? create,
+    this.prefs,
+  }) : assert(primary.slot.isEmpty, 'the first radio uses slot ""'),
+       _radios = [primary],
+       _create = create ?? ((slot) => MeshCoreConnector(slot: slot)) {
+    for (final slot in prefs?.getStringList(slotsKey) ?? const <String>[]) {
+      if (!_validSlot(slot) || !canAdd) continue;
+      if (_radios.any((r) => r.slot == slot)) continue;
+      _radios.add(_create(slot));
+    }
+  }
+
+  /// Where the added radios' slots are remembered.
+  static const slotsKey = 'radio_slots';
+
+  /// Remembers added radios; null in tests that don't need it.
+  final SharedPreferences? prefs;
+
+  static bool _validSlot(String slot) => RegExp(r'^r[2-9]$').hasMatch(slot);
 
   /// The most radios at once. Each live connection costs battery and, on
   /// Bluetooth, one of the phone's limited connection slots.
@@ -51,14 +71,25 @@ class RadioManager extends ChangeNotifier {
     }
     final radio = _create('r$n');
     _radios.add(radio);
+    _saveSlots();
     notifyListeners();
     return radio;
   }
+
+  void _saveSlots() => unawaited(
+    prefs?.setStringList(slotsKey, [for (final r in _radios.skip(1)) r.slot]),
+  );
+
+  /// The position of [radio] in [radios], from 1: "Radio 2" and so on.
+  int numberOf(MeshCoreConnector radio) => _radios.indexOf(radio) + 1;
 
   /// Makes [radio] the active one. Does nothing if it isn't one of ours.
   void setActive(MeshCoreConnector radio) {
     final index = _radios.indexOf(radio);
     if (index < 0 || index == _active) return;
+    // Bluetooth scanning is shared by the whole phone, so only the active
+    // radio may scan.
+    unawaited(active.stopScan());
     _active = index;
     notifyListeners();
   }
@@ -72,6 +103,7 @@ class RadioManager extends ChangeNotifier {
     final active = this.active;
     _radios.removeAt(index);
     _active = wasActive ? 0 : _radios.indexOf(active);
+    _saveSlots();
     notifyListeners();
     try {
       await radio.disconnect(manual: true);

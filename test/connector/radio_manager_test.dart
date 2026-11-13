@@ -74,6 +74,52 @@ void main() {
     });
   });
 
+  group('remembered radios', () {
+    test('added radios come back after a restart', () {
+      final prefs = PrefsManager.instance;
+      final radios = RadioManager(MeshCoreConnector(), prefs: prefs);
+      radios.add();
+      radios.add();
+      expect(prefs.getStringList(RadioManager.slotsKey), ['r2', 'r3']);
+      final again = RadioManager(MeshCoreConnector(), prefs: prefs);
+      expect(again.radios.map((r) => r.slot), ['', 'r2', 'r3']);
+      expect(again.active, again.primary);
+    });
+
+    test('removed radios are forgotten', () async {
+      final prefs = PrefsManager.instance;
+      final radios = RadioManager(MeshCoreConnector(), prefs: prefs);
+      final second = radios.add();
+      await radios.remove(second);
+      expect(prefs.getStringList(RadioManager.slotsKey), isEmpty);
+      expect(
+        RadioManager(MeshCoreConnector(), prefs: prefs).hasMultiple,
+        isFalse,
+      );
+    });
+
+    test('bad or duplicate saved slots are ignored', () async {
+      final prefs = PrefsManager.instance;
+      await prefs.setStringList(RadioManager.slotsKey, [
+        '',
+        'r2',
+        'r2',
+        'x',
+        'r3',
+        'r4',
+      ]);
+      final radios = RadioManager(MeshCoreConnector(), prefs: prefs);
+      expect(radios.radios.map((r) => r.slot), ['', 'r2', 'r3']);
+    });
+
+    test('numbers radios in order', () {
+      final radios = RadioManager(MeshCoreConnector());
+      final second = radios.add();
+      expect(radios.numberOf(radios.primary), 1);
+      expect(radios.numberOf(second), 2);
+    });
+  });
+
   group('saved radio slots', () {
     const base = SavedRadio(
       transport: SavedRadioTransport.bluetooth,

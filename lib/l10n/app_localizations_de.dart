@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -7938,6 +7937,43 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => 'Verbindungsübersicht anzeigen';
+
+  @override
+  String get radios_title => 'Funkgeräte';
+
+  @override
+  String radios_number(int number) {
+    return 'Funkgerät $number';
+  }
+
+  @override
+  String get radios_active => 'In Verwendung';
+
+  @override
+  String get radios_switch => 'Dieses Funkgerät verwenden';
+
+  @override
+  String get radios_add => 'Funkgerät hinzufügen';
+
+  @override
+  String get radios_switcher => 'Funkgerät wechseln';
+
+  @override
+  String get radios_hint =>
+      'Du kannst mit mehreren Funkgeräten verbunden bleiben, etwa einem Handgerät und einer Basisstation. Die App zeigt und sendet über das Funkgerät in Verwendung. Die anderen bleiben verbunden, und ihre Nachrichten werden für den Wechsel gespeichert.';
+
+  @override
+  String get radios_switchNote =>
+      'Beim Wechsel des Funkgeräts kehrst du zum Startbildschirm zurück. Bots, Automatisierung, Hinweise, Tracking und SOS-Weiterleitung laufen auf dem Funkgerät in Verwendung.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return '$name entfernen?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Damit wird das Funkgerät getrennt und vergessen. Seine Nachrichten und Kontakte bleiben gespeichert.';
 
   @override
   String get channelDirectory_title => 'Kanalverzeichnis';

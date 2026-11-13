@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -7861,6 +7860,43 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => 'Visa anslutningsöversikt';
+
+  @override
+  String get radios_title => 'Radioenheter';
+
+  @override
+  String radios_number(int number) {
+    return 'Radio $number';
+  }
+
+  @override
+  String get radios_active => 'Används';
+
+  @override
+  String get radios_switch => 'Använd den här radion';
+
+  @override
+  String get radios_add => 'Lägg till en radio';
+
+  @override
+  String get radios_switcher => 'Byt radio';
+
+  @override
+  String get radios_hint =>
+      'Du kan vara ansluten till mer än en radio, till exempel en handenhet och en basstation. Appen visar och skickar via radion som används. De andra förblir anslutna och deras meddelanden sparas tills du byter.';
+
+  @override
+  String get radios_switchNote =>
+      'När du byter radio kommer du tillbaka till startskärmen. Bottar, automatisering, aviseringar, spårning och SOS-vidarebefordran körs på radion som används.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return 'Ta bort $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Radion kopplas från och glöms. Dess meddelanden och kontakter förblir sparade.';
 
   @override
   String get channelDirectory_title => 'Kanalkatalog';

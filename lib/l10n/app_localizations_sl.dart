@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -7922,6 +7921,43 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => 'Prikaži pregled povezav';
+
+  @override
+  String get radios_title => 'Radii';
+
+  @override
+  String radios_number(int number) {
+    return 'Radio $number';
+  }
+
+  @override
+  String get radios_active => 'V uporabi';
+
+  @override
+  String get radios_switch => 'Uporabi ta radio';
+
+  @override
+  String get radios_add => 'Dodaj radio';
+
+  @override
+  String get radios_switcher => 'Zamenjaj radio';
+
+  @override
+  String get radios_hint =>
+      'Povezani ste lahko z več radii, na primer ročnim in bazno postajo. Aplikacija prikazuje in pošilja prek radia v uporabi. Drugi ostanejo povezani, njihova sporočila pa se shranijo za takrat, ko preklopite.';
+
+  @override
+  String get radios_switchNote =>
+      'Ob zamenjavi radia se vrnete na začetni zaslon. Boti, avtomatizacija, opozorila, sledenje in posredovanje SOS delujejo na radiu v uporabi.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return 'Odstranim $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Radio se prekine in pozabi. Njegova sporočila in stiki ostanejo shranjeni.';
 
   @override
   String get channelDirectory_title => 'Imenik kanalov';

@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -7543,6 +7542,42 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => '接続ダッシュボードを表示';
+
+  @override
+  String get radios_title => '無線機';
+
+  @override
+  String radios_number(int number) {
+    return '無線機 $number';
+  }
+
+  @override
+  String get radios_active => '使用中';
+
+  @override
+  String get radios_switch => 'この無線機を使う';
+
+  @override
+  String get radios_add => '無線機を追加';
+
+  @override
+  String get radios_switcher => '無線機を切り替え';
+
+  @override
+  String get radios_hint =>
+      'ハンディ機と基地局など、複数の無線機に接続したままにできます。アプリは使用中の無線機で表示・送信します。他の無線機は接続を保ち、メッセージは切り替えたときのために保存されます。';
+
+  @override
+  String get radios_switchNote =>
+      '無線機を切り替えるとホーム画面に戻ります。ボット、自動化、通知、追跡、SOS中継は使用中の無線機で動作します。';
+
+  @override
+  String radios_removeTitle(String name) {
+    return '$nameを削除しますか？';
+  }
+
+  @override
+  String get radios_removeBody => '無線機を切断して登録を解除します。メッセージと連絡先は保存されたままです。';
 
   @override
   String get channelDirectory_title => 'チャンネル一覧';

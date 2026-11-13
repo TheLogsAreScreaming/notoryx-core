@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -7552,6 +7551,42 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => '연결 대시보드 보기';
+
+  @override
+  String get radios_title => '무전기';
+
+  @override
+  String radios_number(int number) {
+    return '무전기 $number';
+  }
+
+  @override
+  String get radios_active => '사용 중';
+
+  @override
+  String get radios_switch => '이 무전기 사용';
+
+  @override
+  String get radios_add => '무전기 추가';
+
+  @override
+  String get radios_switcher => '무전기 전환';
+
+  @override
+  String get radios_hint =>
+      '휴대용 무전기와 기지국처럼 여러 무전기에 계속 연결할 수 있습니다. 앱은 사용 중인 무전기로 표시하고 보냅니다. 다른 무전기는 연결을 유지하며, 전환할 때를 위해 메시지가 저장됩니다.';
+
+  @override
+  String get radios_switchNote =>
+      '무전기를 전환하면 홈 화면으로 돌아갑니다. 봇, 자동화, 알림, 추적, SOS 중계는 사용 중인 무전기에서 실행됩니다.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return '$name을(를) 제거할까요?';
+  }
+
+  @override
+  String get radios_removeBody => '무전기 연결을 끊고 등록을 해제합니다. 메시지와 연락처는 계속 저장됩니다.';
 
   @override
   String get channelDirectory_title => '채널 목록';

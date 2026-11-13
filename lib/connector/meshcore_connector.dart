@@ -97,6 +97,9 @@ class MeshCoreConnector extends ChangeNotifier {
   /// Which saved-radio slot this connection uses: '' for the first radio.
   final String slot;
 
+  /// This connection's retry service, once [initialize] has run.
+  MessageRetryService? get retryService => _retryService;
+
   /// Lets the part files notify, since extensions can't call protected
   /// members directly.
   void _notifyFromPart() => notifyListeners();

@@ -91,6 +91,8 @@ void main() async {
   await SecurePrefs.initialize();
   final storage = StorageService();
   final connector = MeshCoreConnector();
+  // Assigned once the shared services exist; see below.
+  late final RadioManager radios;
   final pathHistoryService = PathHistoryService(storage);
   final retryService = MessageRetryService();
   final appSettingsService = AppSettingsService();
@@ -122,7 +124,7 @@ void main() async {
   final imageReassembler = ImageStreamReassembler(store: receivedImageStore);
   final imageTransport = ImageChunkTransport(
     reassembler: imageReassembler,
-    send: (blob, channelIndex) => connector.sendImageChunks(
+    send: (blob, channelIndex) => radios.active.sendImageChunks(
       <Uint8List>[blob],
       channelIndex: channelIndex,
       interChunkDelay: Duration.zero,
@@ -146,41 +148,66 @@ void main() async {
   await receivedImageStore.load();
   await uiViewStateService.initialize();
   await timeoutPredictionService.initialize();
-  connector.initialize(
-    retryService: retryService,
-    pathHistoryService: pathHistoryService,
-    appSettingsService: appSettingsService,
-    translationService: translationService,
-    bleDebugLogService: bleDebugLogService,
-    appDebugLogService: appDebugLogService,
-    backgroundService: backgroundService,
-    timeoutPredictionService: timeoutPredictionService,
-    imageCodecService: imageCodecService,
-    imageTransport: imageTransport,
-    onImageSenderPrefix: (prefix) => imageReassembler.selfPrefix = prefix,
+  // Each radio gets its own retry service, since it calls back into one
+  // connection, and its own hold on the shared background service.
+  MeshCoreConnector setUpRadio(
+    MeshCoreConnector radio,
+    MessageRetryService radioRetries,
+  ) {
+    radio.initialize(
+      retryService: radioRetries,
+      pathHistoryService: pathHistoryService,
+      appSettingsService: appSettingsService,
+      translationService: translationService,
+      bleDebugLogService: bleDebugLogService,
+      appDebugLogService: appDebugLogService,
+      backgroundService: backgroundService.forRadio(radio.slot),
+      timeoutPredictionService: timeoutPredictionService,
+      imageCodecService: imageCodecService,
+      imageTransport: imageTransport,
+      onImageSenderPrefix: (prefix) => imageReassembler.selfPrefix = prefix,
+    );
+    return radio;
+  }
+
+  setUpRadio(connector, retryService);
+  radios = RadioManager(
+    connector,
+    create: (slot) =>
+        setUpRadio(MeshCoreConnector(slot: slot), MessageRetryService()),
+    prefs: PrefsManager.instance,
   );
+  final appLock = AppLockService(PrefsManager.instance);
   await connector.loadContactCache();
   await connector.loadChannelSettings();
   await connector.loadCachedChannels();
   await connector.loadAllChannelMessages();
   await connector.loadUnreadState();
   runApp(
-    MeshCoreApp(
-      connector: connector,
-      retryService: retryService,
-      pathHistoryService: pathHistoryService,
-      storage: storage,
-      appSettingsService: appSettingsService,
-      bleDebugLogService: bleDebugLogService,
-      appDebugLogService: appDebugLogService,
-      mapTileCacheService: mapTileCacheService,
-      chatTextScaleService: chatTextScaleService,
-      translationService: translationService,
-      uiViewStateService: uiViewStateService,
-      timeoutPredictionService: timeoutPredictionService,
-      imageCodecService: imageCodecService,
-      receivedImageStore: receivedImageStore,
-      imageReassembler: imageReassembler,
+    // The app's services follow the active radio: switching radios rebuilds
+    // them for the new one, while the others stay connected.
+    ListenableBuilder(
+      listenable: radios,
+      builder: (context, _) => MeshCoreApp(
+        key: ValueKey(radios.active.slot),
+        connector: radios.active,
+        radios: radios,
+        appLock: appLock,
+        retryService: radios.active.retryService ?? retryService,
+        pathHistoryService: pathHistoryService,
+        storage: storage,
+        appSettingsService: appSettingsService,
+        bleDebugLogService: bleDebugLogService,
+        appDebugLogService: appDebugLogService,
+        mapTileCacheService: mapTileCacheService,
+        chatTextScaleService: chatTextScaleService,
+        translationService: translationService,
+        uiViewStateService: uiViewStateService,
+        timeoutPredictionService: timeoutPredictionService,
+        imageCodecService: imageCodecService,
+        receivedImageStore: receivedImageStore,
+        imageReassembler: imageReassembler,
+      ),
     ),
   );
 }
@@ -249,6 +276,8 @@ void _registerThirdPartyLicenses() {
 
 class MeshCoreApp extends StatefulWidget {
   final MeshCoreConnector connector;
+  final RadioManager radios;
+  final AppLockService appLock;
   final MessageRetryService retryService;
   final PathHistoryService pathHistoryService;
   final StorageService storage;
@@ -266,6 +295,8 @@ class MeshCoreApp extends StatefulWidget {
   const MeshCoreApp({
     super.key,
     required this.connector,
+    required this.radios,
+    required this.appLock,
     required this.retryService,
     required this.pathHistoryService,
     required this.storage,
@@ -299,10 +330,6 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   late final WaypointStore _waypoints;
   late final AppLockService _appLock;
   late final TrackLogService _trackLog;
-
-  /// Every radio connection; only the first is used until the multi-radio
-  /// switcher lands (docs/MULTI_RADIO_DESIGN.md).
-  late final RadioManager _radios = RadioManager(widget.connector);
   late final ChannelDiscoveryService _channelDiscovery;
   late final AnalyzerService _analyzer;
   late final NodeTelemetryStore _telemetry;
@@ -347,7 +374,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     unawaited(_regionalPresets.start());
     _directRepeaters = DirectRepeaterService(widget.connector);
     _waypoints = WaypointStore(PrefsManager.instance);
-    _appLock = AppLockService(PrefsManager.instance);
+    _appLock = widget.appLock;
     _outbox = OfflineOutbox(widget.connector);
     _trackLog = TrackLogService(widget.connector);
     _channelDiscovery = ChannelDiscoveryService(widget.connector);
@@ -507,7 +534,6 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
 
   @override
   void dispose() {
-    _radios.dispose();
     _rxLog.dispose();
     _favoriteReturn.dispose();
     _networkChanges.dispose();
@@ -744,7 +770,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         ChangeNotifierProvider.value(value: _mqtt),
         ChangeNotifierProvider<MqttUploadersService?>.value(value: _uploaders),
         ChangeNotifierProvider.value(value: connector),
-        ChangeNotifierProvider.value(value: _radios),
+        ChangeNotifierProvider.value(value: widget.radios),
         ChangeNotifierProvider.value(value: widget.retryService),
         ChangeNotifierProvider.value(value: widget.pathHistoryService),
         ChangeNotifierProvider.value(value: widget.appSettingsService),

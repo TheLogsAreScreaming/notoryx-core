@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -7384,6 +7383,42 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => '查看连接面板';
+
+  @override
+  String get radios_title => '电台';
+
+  @override
+  String radios_number(int number) {
+    return '电台 $number';
+  }
+
+  @override
+  String get radios_active => '使用中';
+
+  @override
+  String get radios_switch => '使用此电台';
+
+  @override
+  String get radios_add => '添加电台';
+
+  @override
+  String get radios_switcher => '切换电台';
+
+  @override
+  String get radios_hint =>
+      '您可以同时连接多台电台，例如手持台和基地台。应用通过正在使用的电台显示和发送。其他电台保持连接，其消息会保存，等您切换时查看。';
+
+  @override
+  String get radios_switchNote =>
+      '切换电台会回到主屏幕。机器人、自动化、提醒、追踪和 SOS 中继在正在使用的电台上运行。';
+
+  @override
+  String radios_removeTitle(String name) {
+    return '移除 $name？';
+  }
+
+  @override
+  String get radios_removeBody => '这会断开并移除该电台。其消息和联系人仍会保存。';
 
   @override
   String get channelDirectory_title => '频道目录';

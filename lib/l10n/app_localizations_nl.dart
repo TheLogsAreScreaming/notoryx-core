@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -7895,6 +7894,43 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => 'Verbindingsoverzicht bekijken';
+
+  @override
+  String get radios_title => 'Radio\'s';
+
+  @override
+  String radios_number(int number) {
+    return 'Radio $number';
+  }
+
+  @override
+  String get radios_active => 'In gebruik';
+
+  @override
+  String get radios_switch => 'Deze radio gebruiken';
+
+  @override
+  String get radios_add => 'Radio toevoegen';
+
+  @override
+  String get radios_switcher => 'Andere radio';
+
+  @override
+  String get radios_hint =>
+      'Je kunt met meer dan één radio verbonden blijven, zoals een handheld en een basisstation. De app toont en verstuurt via de radio die in gebruik is. De andere blijven verbonden en hun berichten worden bewaard voor als je wisselt.';
+
+  @override
+  String get radios_switchNote =>
+      'Wisselen van radio brengt je terug naar het startscherm. Bots, automatisering, meldingen, tracking en SOS-doorgifte draaien op de radio die in gebruik is.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return '$name verwijderen?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Hiermee wordt de radio losgekoppeld en vergeten. Berichten en contacten blijven bewaard.';
 
   @override
   String get channelDirectory_title => 'Kanalengids';

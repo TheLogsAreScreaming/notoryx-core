@@ -13279,6 +13279,66 @@ abstract class AppLocalizations {
   /// **'View connection dashboard'**
   String get connections_viewDashboard;
 
+  /// No description provided for @radios_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Radios'**
+  String get radios_title;
+
+  /// No description provided for @radios_number.
+  ///
+  /// In en, this message translates to:
+  /// **'Radio {number}'**
+  String radios_number(int number);
+
+  /// No description provided for @radios_active.
+  ///
+  /// In en, this message translates to:
+  /// **'In use'**
+  String get radios_active;
+
+  /// No description provided for @radios_switch.
+  ///
+  /// In en, this message translates to:
+  /// **'Use this radio'**
+  String get radios_switch;
+
+  /// No description provided for @radios_add.
+  ///
+  /// In en, this message translates to:
+  /// **'Add a radio'**
+  String get radios_add;
+
+  /// No description provided for @radios_switcher.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch radio'**
+  String get radios_switcher;
+
+  /// No description provided for @radios_hint.
+  ///
+  /// In en, this message translates to:
+  /// **'You can stay connected to more than one radio, such as a handheld and a base station. The app shows and sends through the radio in use. The others stay connected, and their messages are saved for when you switch.'**
+  String get radios_hint;
+
+  /// No description provided for @radios_switchNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Switching radios takes you back to the home screen. Bots, automation, alerts, tracking and the SOS relay run on the radio in use.'**
+  String get radios_switchNote;
+
+  /// No description provided for @radios_removeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove {name}?'**
+  String radios_removeTitle(String name);
+
+  /// No description provided for @radios_removeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This disconnects the radio and forgets it. Its messages and contacts stay saved.'**
+  String get radios_removeBody;
+
   /// No description provided for @channelDirectory_title.
   ///
   /// In en, this message translates to:

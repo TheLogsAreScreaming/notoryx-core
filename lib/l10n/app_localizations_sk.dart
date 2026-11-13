@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -7916,6 +7915,43 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => 'Zobraziť prehľad pripojení';
+
+  @override
+  String get radios_title => 'Rádiá';
+
+  @override
+  String radios_number(int number) {
+    return 'Rádio $number';
+  }
+
+  @override
+  String get radios_active => 'Používa sa';
+
+  @override
+  String get radios_switch => 'Použiť toto rádio';
+
+  @override
+  String get radios_add => 'Pridať rádio';
+
+  @override
+  String get radios_switcher => 'Prepnúť rádio';
+
+  @override
+  String get radios_hint =>
+      'Môžete zostať pripojení k viacerým rádiám, napríklad ručnému a základňovej stanici. Aplikácia zobrazuje a odosiela cez používané rádio. Ostatné zostávajú pripojené a ich správy sa ukladajú na prepnutie.';
+
+  @override
+  String get radios_switchNote =>
+      'Prepnutím rádia sa vrátite na domovskú obrazovku. Boty, automatizácia, upozornenia, sledovanie a preposielanie SOS bežia na používanom rádiu.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return 'Odstrániť $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Rádio sa odpojí a zabudne. Jeho správy a kontakty zostanú uložené.';
 
   @override
   String get channelDirectory_title => 'Adresár kanálov';

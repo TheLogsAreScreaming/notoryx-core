@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -7944,6 +7943,43 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => 'Apri il pannello connessioni';
+
+  @override
+  String get radios_title => 'Radio';
+
+  @override
+  String radios_number(int number) {
+    return 'Radio $number';
+  }
+
+  @override
+  String get radios_active => 'In uso';
+
+  @override
+  String get radios_switch => 'Usa questa radio';
+
+  @override
+  String get radios_add => 'Aggiungi una radio';
+
+  @override
+  String get radios_switcher => 'Cambia radio';
+
+  @override
+  String get radios_hint =>
+      'Puoi restare connesso a più radio, ad esempio una portatile e una stazione base. L\'app mostra e invia tramite la radio in uso. Le altre restano connesse e i loro messaggi vengono salvati per quando cambi.';
+
+  @override
+  String get radios_switchNote =>
+      'Cambiare radio ti riporta alla schermata iniziale. Bot, automazione, avvisi, tracciamento e inoltro SOS funzionano sulla radio in uso.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return 'Rimuovere $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'La radio viene disconnessa e dimenticata. I suoi messaggi e contatti restano salvati.';
 
   @override
   String get channelDirectory_title => 'Elenco canali';
