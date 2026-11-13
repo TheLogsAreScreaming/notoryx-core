@@ -23,6 +23,7 @@ import 'models/mqtt_mesh_packet.dart';
 import 'models/mqtt_observer_status.dart';
 import 'models/radio_rx_packet.dart';
 import 'screens/bastion_home_screen.dart';
+import 'services/sentinel_service.dart';
 import 'services/regional_preset_service.dart';
 import 'services/read_aloud_service.dart';
 import 'services/app_shortcuts.dart';
@@ -326,6 +327,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   late final WeatherService _weather;
   late final FieldOpsService _fieldOps;
   late final RegionalPresetService _regionalPresets;
+  late final SentinelService _sentinel;
   late final DirectRepeaterService _directRepeaters;
   late final WaypointStore _waypoints;
   late final AppLockService _appLock;
@@ -372,6 +374,8 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     unawaited(_fieldOps.load());
     _regionalPresets = RegionalPresetService(widget.connector);
     unawaited(_regionalPresets.start());
+    _sentinel = SentinelService();
+    unawaited(_sentinel.start());
     _directRepeaters = DirectRepeaterService(widget.connector);
     _waypoints = WaypointStore(PrefsManager.instance);
     _appLock = widget.appLock;
@@ -543,6 +547,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     widget.appSettingsService.removeListener(_applyBatterySaver);
     _fieldOps.dispose();
     _regionalPresets.dispose();
+    _sentinel.dispose();
     _directRepeaters.dispose();
     _waypoints.dispose();
     _trackLog.dispose();
@@ -731,6 +736,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider.value(value: _botService),
+        ChangeNotifierProvider.value(value: _sentinel),
         ChangeNotifierProvider.value(value: _automation),
         ChangeNotifierProvider<WeatherService?>.value(value: _weather),
         ChangeNotifierProvider.value(value: _fieldOps),

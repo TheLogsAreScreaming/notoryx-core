@@ -12,6 +12,7 @@ import '../widgets/glass_action_row.dart';
 import 'antenna_coverage_screen.dart';
 import 'antenna_hunt_screen.dart';
 import 'security_screen.dart';
+import 'sentinel_screen.dart';
 import 'privacy_screen.dart';
 import 'waypoints_screen.dart';
 import 'network_changes_screen.dart';
@@ -247,6 +248,12 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
             title: l10n.security_title,
             subtitle: l10n.security_toolSubtitle,
             builder: (_) => const SecurityScreen(),
+          ),
+          _ToolAction(
+            icon: Icons.shield_outlined,
+            title: l10n.sentinel_title,
+            subtitle: l10n.sentinel_toolSubtitle,
+            builder: (_) => const SentinelScreen(),
           ),
           _ToolAction(
             icon: Icons.privacy_tip_outlined,

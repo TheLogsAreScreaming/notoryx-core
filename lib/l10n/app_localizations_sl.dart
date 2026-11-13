@@ -11860,4 +11860,177 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get place_waypoint => 'Shranjena točka poti';
+
+  @override
+  String get sentinel_title => 'Moderiranje skupnosti';
+
+  @override
+  String get sentinel_toolSubtitle =>
+      'Prijavite neželeno pošto moderatorjem NOTORYX in si oglejte označena vozlišča';
+
+  @override
+  String get sentinel_intro =>
+      'Prijave prejmejo moderatorji NOTORYX, ki vsako pregledajo ročno. Odobrene prepovedi se vrnejo kot priporočilni seznam: označena vozlišča dobijo oznako, v omrežju se nič ne blokira.';
+
+  @override
+  String get sentinel_enable => 'Uporabi moderiranje skupnosti';
+
+  @override
+  String get sentinel_enableSub =>
+      'Privzeto izklopljeno. Dokler je izklopljeno, NOTORYX nikoli ne kontaktira storitve za moderiranje.';
+
+  @override
+  String get sentinel_hide => 'Skrij sporočila označenih pošiljateljev';
+
+  @override
+  String get sentinel_hideSub =>
+      'Samo sporočila v kanalih. Kadar koli lahko izklopite.';
+
+  @override
+  String sentinel_synced(String time) {
+    return 'Seznam prepovedi posodobljen $time';
+  }
+
+  @override
+  String get sentinel_neverSynced => 'Seznam prepovedi še ni prenesen';
+
+  @override
+  String sentinel_flaggedCount(int count) {
+    return 'Označena vozlišča: $count';
+  }
+
+  @override
+  String sentinel_queued(int count) {
+    return 'Prijave, ki čakajo na pošiljanje: $count';
+  }
+
+  @override
+  String get sentinel_refresh => 'Posodobi zdaj';
+
+  @override
+  String get sentinel_yourNode => 'Vaše vozlišče';
+
+  @override
+  String get sentinel_yourNodeClear => 'Vaše vozlišče ni označeno.';
+
+  @override
+  String sentinel_yourNodeFlagged(String caseRef) {
+    return 'Vaše vozlišče je označeno (primer $caseRef). Če gre za napako, se lahko pritožite.';
+  }
+
+  @override
+  String get sentinel_yourNodeUnknown =>
+      'Povežite radio, da preverite svoje vozlišče.';
+
+  @override
+  String get sentinel_appealPending => 'Vaša pritožba je v obravnavi.';
+
+  @override
+  String get sentinel_appeal => 'Pritožba';
+
+  @override
+  String get sentinel_appealOther => 'Pritožba po številki primera';
+
+  @override
+  String get sentinel_yourReports => 'Vaše nedavne prijave';
+
+  @override
+  String get sentinel_report => 'Prijavi moderatorjem';
+
+  @override
+  String sentinel_reportTitle(String name) {
+    return 'Prijavi $name';
+  }
+
+  @override
+  String get sentinel_reasonSpam => 'Neželena pošta ali oglaševanje';
+
+  @override
+  String get sentinel_reasonFlooding => 'Preplavljanje omrežja';
+
+  @override
+  String get sentinel_reasonAbuse => 'Nadlegovanje ali žaljenje';
+
+  @override
+  String get sentinel_reasonImpersonation => 'Lažno predstavljanje';
+
+  @override
+  String get sentinel_reasonOther => 'Drugo';
+
+  @override
+  String get sentinel_note => 'Podrobnosti (neobvezno)';
+
+  @override
+  String get sentinel_includeMessage => 'Priloži to sporočilo';
+
+  @override
+  String get sentinel_sends =>
+      'Pošlje ID in ime vozlišča, vaš razlog in, če je označeno, to sporočilo. Ne vašega imena, ključa ali lokacije.';
+
+  @override
+  String get sentinel_send => 'Pošlji prijavo';
+
+  @override
+  String sentinel_sent(String caseRef) {
+    return 'Prijava poslana ($caseRef)';
+  }
+
+  @override
+  String get sentinel_queuedOne => 'Ni povezave. Prijava bo poslana pozneje.';
+
+  @override
+  String sentinel_rejected(String message) {
+    return 'Prijava ni sprejeta: $message';
+  }
+
+  @override
+  String get sentinel_offPrompt => 'Vklopim moderiranje skupnosti?';
+
+  @override
+  String get sentinel_turnOn => 'Vklopi';
+
+  @override
+  String get sentinel_flagged => 'Označeno';
+
+  @override
+  String sentinel_flaggedHint(String caseRef) {
+    return 'Označili moderatorji NOTORYX (primer $caseRef). Samo priporočilo.';
+  }
+
+  @override
+  String get sentinel_caseRef => 'Številka primera (SNT-1234)';
+
+  @override
+  String get sentinel_statement => 'Zakaj bi bilo treba prepoved odpraviti?';
+
+  @override
+  String get sentinel_contact =>
+      'Kontakt (neobvezno, vidijo ga le moderatorji)';
+
+  @override
+  String get sentinel_appealSend => 'Pošlji pritožbo';
+
+  @override
+  String get sentinel_appealReceived =>
+      'Pritožba poslana. Moderator jo bo pregledal.';
+
+  @override
+  String get sentinel_appealUnknown =>
+      'Noben primer MeshCore nima te številke.';
+
+  @override
+  String get sentinel_appealNotOpen =>
+      'Ta primer nima aktivne prepovedi ali pa že čaka pritožba.';
+
+  @override
+  String get sentinel_appealTooMany =>
+      'Preveč pritožb. Poskusite znova čez minuto.';
+
+  @override
+  String get sentinel_failed =>
+      'Storitev za moderiranje ni dosegljiva. Poskusite pozneje.';
+
+  @override
+  String get privacy_netSentinel =>
+      'Moderiranje: samo če vklopite moderiranje skupnosti. Seznam prepovedi ter prijave ali pritožbe, ki jih pošljete, gredo moderatorjem NOTORYX prek sentinel-relay.meshmayhem.org.';
 }

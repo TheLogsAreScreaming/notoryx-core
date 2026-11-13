@@ -11336,4 +11336,168 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get place_waypoint => '저장한 웨이포인트';
+
+  @override
+  String get sentinel_title => '커뮤니티 관리';
+
+  @override
+  String get sentinel_toolSubtitle => 'NOTORYX 관리자에게 스팸을 신고하고 표시된 노드 보기';
+
+  @override
+  String get sentinel_intro =>
+      '신고는 NOTORYX 관리자에게 전달되며 하나씩 직접 검토됩니다. 승인된 차단은 참고용 목록으로 돌아옵니다. 표시된 노드에는 라벨이 붙지만 메시에서 아무것도 차단되지 않습니다.';
+
+  @override
+  String get sentinel_enable => '커뮤니티 관리 사용';
+
+  @override
+  String get sentinel_enableSub =>
+      '기본값은 꺼짐입니다. 꺼져 있는 동안 NOTORYX는 관리 서비스에 절대 연결하지 않습니다.';
+
+  @override
+  String get sentinel_hide => '표시된 발신자의 메시지 숨기기';
+
+  @override
+  String get sentinel_hideSub => '채널 메시지만 해당. 언제든지 끌 수 있습니다.';
+
+  @override
+  String sentinel_synced(String time) {
+    return '차단 목록 업데이트: $time';
+  }
+
+  @override
+  String get sentinel_neverSynced => '차단 목록을 아직 내려받지 않았습니다';
+
+  @override
+  String sentinel_flaggedCount(int count) {
+    return '표시된 노드: $count';
+  }
+
+  @override
+  String sentinel_queued(int count) {
+    return '전송 대기 중인 신고: $count';
+  }
+
+  @override
+  String get sentinel_refresh => '지금 업데이트';
+
+  @override
+  String get sentinel_yourNode => '내 노드';
+
+  @override
+  String get sentinel_yourNodeClear => '내 노드는 표시되지 않았습니다.';
+
+  @override
+  String sentinel_yourNodeFlagged(String caseRef) {
+    return '내 노드가 표시되었습니다(사건 $caseRef). 잘못된 경우 이의를 제기할 수 있습니다.';
+  }
+
+  @override
+  String get sentinel_yourNodeUnknown => '무전기를 연결하면 내 노드를 확인할 수 있습니다.';
+
+  @override
+  String get sentinel_appealPending => '이의 제기를 검토 중입니다.';
+
+  @override
+  String get sentinel_appeal => '이의 제기';
+
+  @override
+  String get sentinel_appealOther => '사건 번호로 이의 제기';
+
+  @override
+  String get sentinel_yourReports => '최근 신고';
+
+  @override
+  String get sentinel_report => '관리자에게 신고';
+
+  @override
+  String sentinel_reportTitle(String name) {
+    return '$name 신고';
+  }
+
+  @override
+  String get sentinel_reasonSpam => '스팸 또는 광고';
+
+  @override
+  String get sentinel_reasonFlooding => '메시 도배';
+
+  @override
+  String get sentinel_reasonAbuse => '괴롭힘 또는 욕설';
+
+  @override
+  String get sentinel_reasonImpersonation => '사칭';
+
+  @override
+  String get sentinel_reasonOther => '기타';
+
+  @override
+  String get sentinel_note => '세부 내용(선택)';
+
+  @override
+  String get sentinel_includeMessage => '이 메시지 포함';
+
+  @override
+  String get sentinel_sends =>
+      '노드의 ID와 이름, 신고 사유, 선택한 경우 이 메시지를 보냅니다. 내 이름, 키, 위치는 보내지 않습니다.';
+
+  @override
+  String get sentinel_send => '신고 보내기';
+
+  @override
+  String sentinel_sent(String caseRef) {
+    return '신고를 보냈습니다($caseRef)';
+  }
+
+  @override
+  String get sentinel_queuedOne => '연결이 없습니다. 신고는 나중에 전송됩니다.';
+
+  @override
+  String sentinel_rejected(String message) {
+    return '신고가 접수되지 않았습니다: $message';
+  }
+
+  @override
+  String get sentinel_offPrompt => '커뮤니티 관리를 켤까요?';
+
+  @override
+  String get sentinel_turnOn => '켜기';
+
+  @override
+  String get sentinel_flagged => '표시됨';
+
+  @override
+  String sentinel_flaggedHint(String caseRef) {
+    return 'NOTORYX 관리자가 표시함(사건 $caseRef). 참고용입니다.';
+  }
+
+  @override
+  String get sentinel_caseRef => '사건 번호(SNT-1234)';
+
+  @override
+  String get sentinel_statement => '차단을 해제해야 하는 이유';
+
+  @override
+  String get sentinel_contact => '연락처(선택, 관리자만 볼 수 있음)';
+
+  @override
+  String get sentinel_appealSend => '이의 제기 보내기';
+
+  @override
+  String get sentinel_appealReceived => '이의 제기를 보냈습니다. 관리자가 검토합니다.';
+
+  @override
+  String get sentinel_appealUnknown => '해당 번호의 MeshCore 사건이 없습니다.';
+
+  @override
+  String get sentinel_appealNotOpen => '이 사건에는 유효한 차단이 없거나 이미 이의 제기가 대기 중입니다.';
+
+  @override
+  String get sentinel_appealTooMany => '이의 제기가 너무 많습니다. 1분 후 다시 시도하세요.';
+
+  @override
+  String get sentinel_failed => '관리 서비스에 연결할 수 없습니다. 나중에 다시 시도하세요.';
+
+  @override
+  String get privacy_netSentinel =>
+      '관리: 커뮤니티 관리를 켠 경우에만. 차단 목록과 보낸 신고 및 이의 제기는 sentinel-relay.meshmayhem.org를 거쳐 NOTORYX 관리자에게 전달됩니다.';
 }
