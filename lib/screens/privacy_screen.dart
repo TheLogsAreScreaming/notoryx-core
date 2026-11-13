@@ -118,6 +118,7 @@ class PrivacyScreen extends StatelessWidget {
                 bullet(l10n.privacy_netLists),
                 bullet(l10n.privacy_netMqtt),
                 bullet(l10n.privacy_netAnalyzer),
+                bullet(l10n.privacy_netSentinel),
               ]),
               section(l10n.privacy_notHeading, Icons.block, [
                 Text(

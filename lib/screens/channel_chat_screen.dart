@@ -40,6 +40,8 @@ import '../services/translation_llm.dart';
 import '../services/translation_service.dart';
 import '../utils/lora_airtime.dart';
 import '../services/offline_outbox.dart';
+import '../services/sentinel_service.dart';
+import '../widgets/sentinel_report_sheet.dart';
 import '../widgets/forward_sheet.dart';
 import '../widgets/outbox_banner.dart';
 import '../helpers/share_links.dart';
@@ -435,13 +437,14 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
               Expanded(
                 child: Consumer<MeshCoreConnector>(
                   builder: (context, connector, child) {
+                    final sentinel = maybeSentinel(context);
                     final messages = withoutBlockedSenders(
                       connector.getChannelMessages(widget.channel),
                       context
                           .watch<AppSettingsService>()
                           .settings
                           .blockedSenders,
-                    );
+                    ).where((m) => !sentinelHides(sentinel, m)).toList();
                     final imageRows = _receivedImageRows(context);
 
                     if (messages.isEmpty && imageRows.isEmpty) {
@@ -750,13 +753,21 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
                                     bottom: 4,
                                   )
                                 : EdgeInsets.zero,
-                            child: Text(
-                              message.senderName,
-                              style: TextStyle(
-                                fontSize: 13 * textScale,
-                                fontWeight: FontWeight.w600,
-                                color: scheme.onSurfaceVariant,
-                              ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Flexible(
+                                  child: Text(
+                                    message.senderName,
+                                    style: TextStyle(
+                                      fontSize: 13 * textScale,
+                                      fontWeight: FontWeight.w600,
+                                      color: scheme.onSurfaceVariant,
+                                    ),
+                                  ),
+                                ),
+                                SentinelFlag.forName(message.senderName),
+                              ],
                             ),
                           ),
                           if (gifId == null) const SizedBox(height: 2),
@@ -2582,6 +2593,23 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
                 onTap: () {
                   Navigator.pop(sheetContext);
                   _markAsUnread(message);
+                },
+              ),
+            if (!message.isOutgoing && message.senderName.trim().isNotEmpty)
+              ListTile(
+                key: const ValueKey('channel-sentinel-report'),
+                leading: const Icon(Icons.flag_outlined),
+                title: Text(context.l10n.sentinel_report),
+                onTap: () {
+                  Navigator.pop(sheetContext);
+                  unawaited(
+                    showSentinelReportSheet(
+                      context,
+                      nodeId: sentinelNameId(message.senderName),
+                      nodeName: message.senderName,
+                      messageExcerpt: message.text,
+                    ),
+                  );
                 },
               ),
             if (!message.isOutgoing && message.senderName.trim().isNotEmpty)

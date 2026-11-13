@@ -19788,6 +19788,294 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Saved waypoint'**
   String get place_waypoint;
+
+  /// No description provided for @sentinel_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Community moderation'**
+  String get sentinel_title;
+
+  /// No description provided for @sentinel_toolSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Report spam to NOTORYX moderators and see flagged nodes'**
+  String get sentinel_toolSubtitle;
+
+  /// No description provided for @sentinel_intro.
+  ///
+  /// In en, this message translates to:
+  /// **'Reports go to NOTORYX moderators, who review each one by hand. Approved bans come back as an advisory list: flagged nodes get a label, and nothing on the mesh is blocked.'**
+  String get sentinel_intro;
+
+  /// No description provided for @sentinel_enable.
+  ///
+  /// In en, this message translates to:
+  /// **'Use community moderation'**
+  String get sentinel_enable;
+
+  /// No description provided for @sentinel_enableSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Off by default. While it is off, NOTORYX never contacts the moderation service.'**
+  String get sentinel_enableSub;
+
+  /// No description provided for @sentinel_hide.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide messages from flagged senders'**
+  String get sentinel_hide;
+
+  /// No description provided for @sentinel_hideSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Channel messages only. You can turn this off at any time.'**
+  String get sentinel_hideSub;
+
+  /// No description provided for @sentinel_synced.
+  ///
+  /// In en, this message translates to:
+  /// **'Ban list updated {time}'**
+  String sentinel_synced(String time);
+
+  /// No description provided for @sentinel_neverSynced.
+  ///
+  /// In en, this message translates to:
+  /// **'Ban list not downloaded yet'**
+  String get sentinel_neverSynced;
+
+  /// No description provided for @sentinel_flaggedCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Flagged nodes: {count}'**
+  String sentinel_flaggedCount(int count);
+
+  /// No description provided for @sentinel_queued.
+  ///
+  /// In en, this message translates to:
+  /// **'Reports waiting to send: {count}'**
+  String sentinel_queued(int count);
+
+  /// No description provided for @sentinel_refresh.
+  ///
+  /// In en, this message translates to:
+  /// **'Update now'**
+  String get sentinel_refresh;
+
+  /// No description provided for @sentinel_yourNode.
+  ///
+  /// In en, this message translates to:
+  /// **'Your node'**
+  String get sentinel_yourNode;
+
+  /// No description provided for @sentinel_yourNodeClear.
+  ///
+  /// In en, this message translates to:
+  /// **'Your node is not flagged.'**
+  String get sentinel_yourNodeClear;
+
+  /// No description provided for @sentinel_yourNodeFlagged.
+  ///
+  /// In en, this message translates to:
+  /// **'Your node is flagged (case {caseRef}). If this is a mistake, you can appeal.'**
+  String sentinel_yourNodeFlagged(String caseRef);
+
+  /// No description provided for @sentinel_yourNodeUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect a radio to check your node.'**
+  String get sentinel_yourNodeUnknown;
+
+  /// No description provided for @sentinel_appealPending.
+  ///
+  /// In en, this message translates to:
+  /// **'Your appeal is being reviewed.'**
+  String get sentinel_appealPending;
+
+  /// No description provided for @sentinel_appeal.
+  ///
+  /// In en, this message translates to:
+  /// **'Appeal'**
+  String get sentinel_appeal;
+
+  /// No description provided for @sentinel_appealOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Appeal a case by number'**
+  String get sentinel_appealOther;
+
+  /// No description provided for @sentinel_yourReports.
+  ///
+  /// In en, this message translates to:
+  /// **'Your recent reports'**
+  String get sentinel_yourReports;
+
+  /// No description provided for @sentinel_report.
+  ///
+  /// In en, this message translates to:
+  /// **'Report to moderators'**
+  String get sentinel_report;
+
+  /// No description provided for @sentinel_reportTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Report {name}'**
+  String sentinel_reportTitle(String name);
+
+  /// No description provided for @sentinel_reasonSpam.
+  ///
+  /// In en, this message translates to:
+  /// **'Spam or advertising'**
+  String get sentinel_reasonSpam;
+
+  /// No description provided for @sentinel_reasonFlooding.
+  ///
+  /// In en, this message translates to:
+  /// **'Flooding the mesh'**
+  String get sentinel_reasonFlooding;
+
+  /// No description provided for @sentinel_reasonAbuse.
+  ///
+  /// In en, this message translates to:
+  /// **'Harassment or abuse'**
+  String get sentinel_reasonAbuse;
+
+  /// No description provided for @sentinel_reasonImpersonation.
+  ///
+  /// In en, this message translates to:
+  /// **'Impersonation'**
+  String get sentinel_reasonImpersonation;
+
+  /// No description provided for @sentinel_reasonOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get sentinel_reasonOther;
+
+  /// No description provided for @sentinel_note.
+  ///
+  /// In en, this message translates to:
+  /// **'Details (optional)'**
+  String get sentinel_note;
+
+  /// No description provided for @sentinel_includeMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'Include this message'**
+  String get sentinel_includeMessage;
+
+  /// No description provided for @sentinel_sends.
+  ///
+  /// In en, this message translates to:
+  /// **'Sends the node\'s ID and name, your reason and, if ticked, this message. Not your name, key or location.'**
+  String get sentinel_sends;
+
+  /// No description provided for @sentinel_send.
+  ///
+  /// In en, this message translates to:
+  /// **'Send report'**
+  String get sentinel_send;
+
+  /// No description provided for @sentinel_sent.
+  ///
+  /// In en, this message translates to:
+  /// **'Report sent ({caseRef})'**
+  String sentinel_sent(String caseRef);
+
+  /// No description provided for @sentinel_queuedOne.
+  ///
+  /// In en, this message translates to:
+  /// **'No connection. The report will be sent later.'**
+  String get sentinel_queuedOne;
+
+  /// No description provided for @sentinel_rejected.
+  ///
+  /// In en, this message translates to:
+  /// **'Report not accepted: {message}'**
+  String sentinel_rejected(String message);
+
+  /// No description provided for @sentinel_offPrompt.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn on community moderation?'**
+  String get sentinel_offPrompt;
+
+  /// No description provided for @sentinel_turnOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn on'**
+  String get sentinel_turnOn;
+
+  /// No description provided for @sentinel_flagged.
+  ///
+  /// In en, this message translates to:
+  /// **'Flagged'**
+  String get sentinel_flagged;
+
+  /// No description provided for @sentinel_flaggedHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Flagged by NOTORYX moderators (case {caseRef}). Advisory only.'**
+  String sentinel_flaggedHint(String caseRef);
+
+  /// No description provided for @sentinel_caseRef.
+  ///
+  /// In en, this message translates to:
+  /// **'Case number (SNT-1234)'**
+  String get sentinel_caseRef;
+
+  /// No description provided for @sentinel_statement.
+  ///
+  /// In en, this message translates to:
+  /// **'Why should the ban be lifted?'**
+  String get sentinel_statement;
+
+  /// No description provided for @sentinel_contact.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact (optional, only moderators see it)'**
+  String get sentinel_contact;
+
+  /// No description provided for @sentinel_appealSend.
+  ///
+  /// In en, this message translates to:
+  /// **'Send appeal'**
+  String get sentinel_appealSend;
+
+  /// No description provided for @sentinel_appealReceived.
+  ///
+  /// In en, this message translates to:
+  /// **'Appeal sent. A moderator will review it.'**
+  String get sentinel_appealReceived;
+
+  /// No description provided for @sentinel_appealUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'No MeshCore case has that number.'**
+  String get sentinel_appealUnknown;
+
+  /// No description provided for @sentinel_appealNotOpen.
+  ///
+  /// In en, this message translates to:
+  /// **'That case has no active ban, or an appeal is already waiting.'**
+  String get sentinel_appealNotOpen;
+
+  /// No description provided for @sentinel_appealTooMany.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many appeals. Try again in a minute.'**
+  String get sentinel_appealTooMany;
+
+  /// No description provided for @sentinel_failed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t reach the moderation service. Try again later.'**
+  String get sentinel_failed;
+
+  /// No description provided for @privacy_netSentinel.
+  ///
+  /// In en, this message translates to:
+  /// **'Moderation: only if you turn on community moderation. The ban list, and any reports or appeals you send, go to NOTORYX moderators through sentinel-relay.meshmayhem.org.'**
+  String get privacy_netSentinel;
 }
 
 class _AppLocalizationsDelegate

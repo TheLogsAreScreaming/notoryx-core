@@ -11349,4 +11349,168 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get place_waypoint => '保存したウェイポイント';
+
+  @override
+  String get sentinel_title => 'コミュニティモデレーション';
+
+  @override
+  String get sentinel_toolSubtitle => 'スパムをNOTORYXモデレーターに報告し、フラグ付きノードを確認';
+
+  @override
+  String get sentinel_intro =>
+      '報告はNOTORYXのモデレーターに届き、1件ずつ人の手で確認されます。承認された禁止は参考リストとして戻ります。フラグ付きノードにはラベルが付きますが、メッシュ上で何もブロックされません。';
+
+  @override
+  String get sentinel_enable => 'コミュニティモデレーションを使う';
+
+  @override
+  String get sentinel_enableSub =>
+      '初期設定はオフです。オフの間、NOTORYXはモデレーションサービスに一切接続しません。';
+
+  @override
+  String get sentinel_hide => 'フラグ付き送信者のメッセージを隠す';
+
+  @override
+  String get sentinel_hideSub => 'チャンネルメッセージのみ。いつでもオフにできます。';
+
+  @override
+  String sentinel_synced(String time) {
+    return '禁止リスト更新: $time';
+  }
+
+  @override
+  String get sentinel_neverSynced => '禁止リストはまだダウンロードされていません';
+
+  @override
+  String sentinel_flaggedCount(int count) {
+    return 'フラグ付きノード: $count';
+  }
+
+  @override
+  String sentinel_queued(int count) {
+    return '送信待ちの報告: $count';
+  }
+
+  @override
+  String get sentinel_refresh => '今すぐ更新';
+
+  @override
+  String get sentinel_yourNode => '自分のノード';
+
+  @override
+  String get sentinel_yourNodeClear => '自分のノードにフラグはありません。';
+
+  @override
+  String sentinel_yourNodeFlagged(String caseRef) {
+    return '自分のノードにフラグがあります(案件 $caseRef)。誤りであれば異議を申し立てられます。';
+  }
+
+  @override
+  String get sentinel_yourNodeUnknown => '無線機を接続すると自分のノードを確認できます。';
+
+  @override
+  String get sentinel_appealPending => '異議申し立てを審査中です。';
+
+  @override
+  String get sentinel_appeal => '異議申し立て';
+
+  @override
+  String get sentinel_appealOther => '案件番号で異議を申し立てる';
+
+  @override
+  String get sentinel_yourReports => '最近の報告';
+
+  @override
+  String get sentinel_report => 'モデレーターに報告';
+
+  @override
+  String sentinel_reportTitle(String name) {
+    return '$name を報告';
+  }
+
+  @override
+  String get sentinel_reasonSpam => 'スパム・広告';
+
+  @override
+  String get sentinel_reasonFlooding => 'メッシュの占有';
+
+  @override
+  String get sentinel_reasonAbuse => '嫌がらせ・暴言';
+
+  @override
+  String get sentinel_reasonImpersonation => 'なりすまし';
+
+  @override
+  String get sentinel_reasonOther => 'その他';
+
+  @override
+  String get sentinel_note => '詳細(任意)';
+
+  @override
+  String get sentinel_includeMessage => 'このメッセージを含める';
+
+  @override
+  String get sentinel_sends =>
+      'ノードのIDと名前、報告理由、チェックした場合はこのメッセージを送信します。あなたの名前・鍵・位置は送信しません。';
+
+  @override
+  String get sentinel_send => '報告を送信';
+
+  @override
+  String sentinel_sent(String caseRef) {
+    return '報告を送信しました($caseRef)';
+  }
+
+  @override
+  String get sentinel_queuedOne => '接続がありません。報告は後で送信されます。';
+
+  @override
+  String sentinel_rejected(String message) {
+    return '報告は受理されませんでした: $message';
+  }
+
+  @override
+  String get sentinel_offPrompt => 'コミュニティモデレーションをオンにしますか?';
+
+  @override
+  String get sentinel_turnOn => 'オンにする';
+
+  @override
+  String get sentinel_flagged => 'フラグ付き';
+
+  @override
+  String sentinel_flaggedHint(String caseRef) {
+    return 'NOTORYXモデレーターがフラグを付けました(案件 $caseRef)。参考情報です。';
+  }
+
+  @override
+  String get sentinel_caseRef => '案件番号(SNT-1234)';
+
+  @override
+  String get sentinel_statement => '禁止を解除すべき理由';
+
+  @override
+  String get sentinel_contact => '連絡先(任意、モデレーターのみ閲覧)';
+
+  @override
+  String get sentinel_appealSend => '異議を送信';
+
+  @override
+  String get sentinel_appealReceived => '異議を送信しました。モデレーターが審査します。';
+
+  @override
+  String get sentinel_appealUnknown => 'その番号のMeshCore案件はありません。';
+
+  @override
+  String get sentinel_appealNotOpen => 'この案件には有効な禁止がないか、すでに異議申し立てが待機中です。';
+
+  @override
+  String get sentinel_appealTooMany => '異議申し立てが多すぎます。1分後に再試行してください。';
+
+  @override
+  String get sentinel_failed => 'モデレーションサービスに接続できません。後でもう一度お試しください。';
+
+  @override
+  String get privacy_netSentinel =>
+      'モデレーション: コミュニティモデレーションをオンにした場合のみ。禁止リストと、送信した報告や異議はsentinel-relay.meshmayhem.orgを経由してNOTORYXモデレーターに届きます。';
 }

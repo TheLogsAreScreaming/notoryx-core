@@ -11904,4 +11904,178 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get place_waypoint => 'Punto de ruta guardado';
+
+  @override
+  String get sentinel_title => 'Moderación comunitaria';
+
+  @override
+  String get sentinel_toolSubtitle =>
+      'Denuncia spam a los moderadores de NOTORYX y ve nodos marcados';
+
+  @override
+  String get sentinel_intro =>
+      'Las denuncias llegan a los moderadores de NOTORYX, que revisan cada una a mano. Los bloqueos aprobados vuelven como lista orientativa: los nodos marcados llevan una etiqueta y nada se bloquea en la malla.';
+
+  @override
+  String get sentinel_enable => 'Usar moderación comunitaria';
+
+  @override
+  String get sentinel_enableSub =>
+      'Desactivada por defecto. Mientras esté desactivada, NOTORYX nunca contacta con el servicio de moderación.';
+
+  @override
+  String get sentinel_hide => 'Ocultar mensajes de remitentes marcados';
+
+  @override
+  String get sentinel_hideSub =>
+      'Solo mensajes de canal. Puedes desactivarlo cuando quieras.';
+
+  @override
+  String sentinel_synced(String time) {
+    return 'Lista de bloqueos actualizada $time';
+  }
+
+  @override
+  String get sentinel_neverSynced => 'Lista de bloqueos aún no descargada';
+
+  @override
+  String sentinel_flaggedCount(int count) {
+    return 'Nodos marcados: $count';
+  }
+
+  @override
+  String sentinel_queued(int count) {
+    return 'Denuncias pendientes de envío: $count';
+  }
+
+  @override
+  String get sentinel_refresh => 'Actualizar ahora';
+
+  @override
+  String get sentinel_yourNode => 'Tu nodo';
+
+  @override
+  String get sentinel_yourNodeClear => 'Tu nodo no está marcado.';
+
+  @override
+  String sentinel_yourNodeFlagged(String caseRef) {
+    return 'Tu nodo está marcado (caso $caseRef). Si es un error, puedes apelar.';
+  }
+
+  @override
+  String get sentinel_yourNodeUnknown =>
+      'Conecta una radio para comprobar tu nodo.';
+
+  @override
+  String get sentinel_appealPending => 'Tu apelación está en revisión.';
+
+  @override
+  String get sentinel_appeal => 'Apelar';
+
+  @override
+  String get sentinel_appealOther => 'Apelar un caso por número';
+
+  @override
+  String get sentinel_yourReports => 'Tus denuncias recientes';
+
+  @override
+  String get sentinel_report => 'Denunciar a los moderadores';
+
+  @override
+  String sentinel_reportTitle(String name) {
+    return 'Denunciar a $name';
+  }
+
+  @override
+  String get sentinel_reasonSpam => 'Spam o publicidad';
+
+  @override
+  String get sentinel_reasonFlooding => 'Saturar la malla';
+
+  @override
+  String get sentinel_reasonAbuse => 'Acoso o abuso';
+
+  @override
+  String get sentinel_reasonImpersonation => 'Suplantación';
+
+  @override
+  String get sentinel_reasonOther => 'Otro';
+
+  @override
+  String get sentinel_note => 'Detalles (opcional)';
+
+  @override
+  String get sentinel_includeMessage => 'Incluir este mensaje';
+
+  @override
+  String get sentinel_sends =>
+      'Envía el ID y el nombre del nodo, tu motivo y, si está marcado, este mensaje. No tu nombre, clave ni ubicación.';
+
+  @override
+  String get sentinel_send => 'Enviar denuncia';
+
+  @override
+  String sentinel_sent(String caseRef) {
+    return 'Denuncia enviada ($caseRef)';
+  }
+
+  @override
+  String get sentinel_queuedOne =>
+      'Sin conexión. La denuncia se enviará más tarde.';
+
+  @override
+  String sentinel_rejected(String message) {
+    return 'Denuncia no aceptada: $message';
+  }
+
+  @override
+  String get sentinel_offPrompt => '¿Activar la moderación comunitaria?';
+
+  @override
+  String get sentinel_turnOn => 'Activar';
+
+  @override
+  String get sentinel_flagged => 'Marcado';
+
+  @override
+  String sentinel_flaggedHint(String caseRef) {
+    return 'Marcado por los moderadores de NOTORYX (caso $caseRef). Solo orientativo.';
+  }
+
+  @override
+  String get sentinel_caseRef => 'Número de caso (SNT-1234)';
+
+  @override
+  String get sentinel_statement => '¿Por qué debería levantarse el bloqueo?';
+
+  @override
+  String get sentinel_contact =>
+      'Contacto (opcional, solo lo ven los moderadores)';
+
+  @override
+  String get sentinel_appealSend => 'Enviar apelación';
+
+  @override
+  String get sentinel_appealReceived =>
+      'Apelación enviada. Un moderador la revisará.';
+
+  @override
+  String get sentinel_appealUnknown =>
+      'Ningún caso de MeshCore tiene ese número.';
+
+  @override
+  String get sentinel_appealNotOpen =>
+      'Ese caso no tiene un bloqueo activo o ya hay una apelación pendiente.';
+
+  @override
+  String get sentinel_appealTooMany =>
+      'Demasiadas apelaciones. Inténtalo de nuevo en un minuto.';
+
+  @override
+  String get sentinel_failed =>
+      'No se pudo contactar con el servicio de moderación. Inténtalo más tarde.';
+
+  @override
+  String get privacy_netSentinel =>
+      'Moderación: solo si activas la moderación comunitaria. La lista de bloqueos y las denuncias o apelaciones que envíes van a los moderadores de NOTORYX a través de sentinel-relay.meshmayhem.org.';
 }

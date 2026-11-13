@@ -11866,4 +11866,177 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get place_waypoint => 'Uložený bod';
+
+  @override
+  String get sentinel_title => 'Moderovanie komunity';
+
+  @override
+  String get sentinel_toolSubtitle =>
+      'Nahláste spam moderátorom NOTORYX a pozrite si označené uzly';
+
+  @override
+  String get sentinel_intro =>
+      'Nahlásenia idú moderátorom NOTORYX, ktorí každé posúdia ručne. Schválené zákazy sa vrátia ako odporúčací zoznam: označené uzly dostanú štítok a v sieti sa nič neblokuje.';
+
+  @override
+  String get sentinel_enable => 'Používať moderovanie komunity';
+
+  @override
+  String get sentinel_enableSub =>
+      'Predvolene vypnuté. Kým je vypnuté, NOTORYX nikdy nekontaktuje moderovaciu službu.';
+
+  @override
+  String get sentinel_hide => 'Skryť správy od označených odosielateľov';
+
+  @override
+  String get sentinel_hideSub =>
+      'Iba správy v kanáloch. Môžete to kedykoľvek vypnúť.';
+
+  @override
+  String sentinel_synced(String time) {
+    return 'Zoznam zákazov aktualizovaný $time';
+  }
+
+  @override
+  String get sentinel_neverSynced => 'Zoznam zákazov ešte nie je stiahnutý';
+
+  @override
+  String sentinel_flaggedCount(int count) {
+    return 'Označené uzly: $count';
+  }
+
+  @override
+  String sentinel_queued(int count) {
+    return 'Nahlásenia čakajúce na odoslanie: $count';
+  }
+
+  @override
+  String get sentinel_refresh => 'Aktualizovať';
+
+  @override
+  String get sentinel_yourNode => 'Váš uzol';
+
+  @override
+  String get sentinel_yourNodeClear => 'Váš uzol nie je označený.';
+
+  @override
+  String sentinel_yourNodeFlagged(String caseRef) {
+    return 'Váš uzol je označený (prípad $caseRef). Ak ide o omyl, môžete sa odvolať.';
+  }
+
+  @override
+  String get sentinel_yourNodeUnknown =>
+      'Pripojte rádio a skontrolujte svoj uzol.';
+
+  @override
+  String get sentinel_appealPending => 'Vaše odvolanie sa posudzuje.';
+
+  @override
+  String get sentinel_appeal => 'Odvolať sa';
+
+  @override
+  String get sentinel_appealOther => 'Odvolanie podľa čísla prípadu';
+
+  @override
+  String get sentinel_yourReports => 'Vaše nedávne nahlásenia';
+
+  @override
+  String get sentinel_report => 'Nahlásiť moderátorom';
+
+  @override
+  String sentinel_reportTitle(String name) {
+    return 'Nahlásiť $name';
+  }
+
+  @override
+  String get sentinel_reasonSpam => 'Spam alebo reklama';
+
+  @override
+  String get sentinel_reasonFlooding => 'Zahlcovanie siete';
+
+  @override
+  String get sentinel_reasonAbuse => 'Obťažovanie alebo urážky';
+
+  @override
+  String get sentinel_reasonImpersonation => 'Vydávanie sa za iného';
+
+  @override
+  String get sentinel_reasonOther => 'Iné';
+
+  @override
+  String get sentinel_note => 'Podrobnosti (nepovinné)';
+
+  @override
+  String get sentinel_includeMessage => 'Priložiť túto správu';
+
+  @override
+  String get sentinel_sends =>
+      'Odošle ID a názov uzla, váš dôvod a, ak je zaškrtnuté, túto správu. Nie vaše meno, kľúč ani polohu.';
+
+  @override
+  String get sentinel_send => 'Odoslať nahlásenie';
+
+  @override
+  String sentinel_sent(String caseRef) {
+    return 'Nahlásenie odoslané ($caseRef)';
+  }
+
+  @override
+  String get sentinel_queuedOne =>
+      'Bez pripojenia. Nahlásenie sa odošle neskôr.';
+
+  @override
+  String sentinel_rejected(String message) {
+    return 'Nahlásenie neprijaté: $message';
+  }
+
+  @override
+  String get sentinel_offPrompt => 'Zapnúť moderovanie komunity?';
+
+  @override
+  String get sentinel_turnOn => 'Zapnúť';
+
+  @override
+  String get sentinel_flagged => 'Označený';
+
+  @override
+  String sentinel_flaggedHint(String caseRef) {
+    return 'Označený moderátormi NOTORYX (prípad $caseRef). Len odporúčanie.';
+  }
+
+  @override
+  String get sentinel_caseRef => 'Číslo prípadu (SNT-1234)';
+
+  @override
+  String get sentinel_statement => 'Prečo by sa mal zákaz zrušiť?';
+
+  @override
+  String get sentinel_contact => 'Kontakt (nepovinné, vidia ho len moderátori)';
+
+  @override
+  String get sentinel_appealSend => 'Odoslať odvolanie';
+
+  @override
+  String get sentinel_appealReceived =>
+      'Odvolanie odoslané. Moderátor ho posúdi.';
+
+  @override
+  String get sentinel_appealUnknown =>
+      'Žiadny prípad MeshCore nemá toto číslo.';
+
+  @override
+  String get sentinel_appealNotOpen =>
+      'Tento prípad nemá aktívny zákaz alebo už čaká odvolanie.';
+
+  @override
+  String get sentinel_appealTooMany =>
+      'Príliš veľa odvolaní. Skúste to o minútu.';
+
+  @override
+  String get sentinel_failed =>
+      'Moderovacia služba je nedostupná. Skúste neskôr.';
+
+  @override
+  String get privacy_netSentinel =>
+      'Moderovanie: iba ak zapnete moderovanie komunity. Zoznam zákazov a vaše nahlásenia či odvolania idú moderátorom NOTORYX cez sentinel-relay.meshmayhem.org.';
 }

@@ -11936,4 +11936,175 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get place_waypoint => 'Сохранённая точка';
+
+  @override
+  String get sentinel_title => 'Модерация сообщества';
+
+  @override
+  String get sentinel_toolSubtitle =>
+      'Сообщайте о спаме модераторам NOTORYX и видите отмеченные узлы';
+
+  @override
+  String get sentinel_intro =>
+      'Жалобы получают модераторы NOTORYX и проверяют каждую вручную. Одобренные блокировки возвращаются как рекомендательный список: отмеченные узлы получают метку, в сети ничего не блокируется.';
+
+  @override
+  String get sentinel_enable => 'Использовать модерацию сообщества';
+
+  @override
+  String get sentinel_enableSub =>
+      'По умолчанию выключено. Пока выключено, NOTORYX никогда не обращается к службе модерации.';
+
+  @override
+  String get sentinel_hide => 'Скрывать сообщения отмеченных отправителей';
+
+  @override
+  String get sentinel_hideSub =>
+      'Только сообщения каналов. Можно выключить в любой момент.';
+
+  @override
+  String sentinel_synced(String time) {
+    return 'Список блокировок обновлён $time';
+  }
+
+  @override
+  String get sentinel_neverSynced => 'Список блокировок ещё не загружен';
+
+  @override
+  String sentinel_flaggedCount(int count) {
+    return 'Отмеченные узлы: $count';
+  }
+
+  @override
+  String sentinel_queued(int count) {
+    return 'Жалобы в очереди на отправку: $count';
+  }
+
+  @override
+  String get sentinel_refresh => 'Обновить';
+
+  @override
+  String get sentinel_yourNode => 'Ваш узел';
+
+  @override
+  String get sentinel_yourNodeClear => 'Ваш узел не отмечен.';
+
+  @override
+  String sentinel_yourNodeFlagged(String caseRef) {
+    return 'Ваш узел отмечен (дело $caseRef). Если это ошибка, вы можете подать апелляцию.';
+  }
+
+  @override
+  String get sentinel_yourNodeUnknown =>
+      'Подключите радио, чтобы проверить свой узел.';
+
+  @override
+  String get sentinel_appealPending => 'Ваша апелляция рассматривается.';
+
+  @override
+  String get sentinel_appeal => 'Апелляция';
+
+  @override
+  String get sentinel_appealOther => 'Апелляция по номеру дела';
+
+  @override
+  String get sentinel_yourReports => 'Ваши недавние жалобы';
+
+  @override
+  String get sentinel_report => 'Пожаловаться модераторам';
+
+  @override
+  String sentinel_reportTitle(String name) {
+    return 'Пожаловаться на $name';
+  }
+
+  @override
+  String get sentinel_reasonSpam => 'Спам или реклама';
+
+  @override
+  String get sentinel_reasonFlooding => 'Засорение сети';
+
+  @override
+  String get sentinel_reasonAbuse => 'Травля или оскорбления';
+
+  @override
+  String get sentinel_reasonImpersonation => 'Выдача себя за другого';
+
+  @override
+  String get sentinel_reasonOther => 'Другое';
+
+  @override
+  String get sentinel_note => 'Подробности (необязательно)';
+
+  @override
+  String get sentinel_includeMessage => 'Приложить это сообщение';
+
+  @override
+  String get sentinel_sends =>
+      'Отправляет ID и имя узла, вашу причину и, если отмечено, это сообщение. Не ваше имя, ключ или местоположение.';
+
+  @override
+  String get sentinel_send => 'Отправить жалобу';
+
+  @override
+  String sentinel_sent(String caseRef) {
+    return 'Жалоба отправлена ($caseRef)';
+  }
+
+  @override
+  String get sentinel_queuedOne => 'Нет связи. Жалоба будет отправлена позже.';
+
+  @override
+  String sentinel_rejected(String message) {
+    return 'Жалоба не принята: $message';
+  }
+
+  @override
+  String get sentinel_offPrompt => 'Включить модерацию сообщества?';
+
+  @override
+  String get sentinel_turnOn => 'Включить';
+
+  @override
+  String get sentinel_flagged => 'Отмечен';
+
+  @override
+  String sentinel_flaggedHint(String caseRef) {
+    return 'Отмечен модераторами NOTORYX (дело $caseRef). Только рекомендация.';
+  }
+
+  @override
+  String get sentinel_caseRef => 'Номер дела (SNT-1234)';
+
+  @override
+  String get sentinel_statement => 'Почему блокировку следует снять?';
+
+  @override
+  String get sentinel_contact =>
+      'Контакт (необязательно, видят только модераторы)';
+
+  @override
+  String get sentinel_appealSend => 'Отправить апелляцию';
+
+  @override
+  String get sentinel_appealReceived =>
+      'Апелляция отправлена. Модератор её рассмотрит.';
+
+  @override
+  String get sentinel_appealUnknown => 'Дела MeshCore с таким номером нет.';
+
+  @override
+  String get sentinel_appealNotOpen =>
+      'По этому делу нет активной блокировки или апелляция уже ожидает.';
+
+  @override
+  String get sentinel_appealTooMany =>
+      'Слишком много апелляций. Повторите через минуту.';
+
+  @override
+  String get sentinel_failed => 'Служба модерации недоступна. Повторите позже.';
+
+  @override
+  String get privacy_netSentinel =>
+      'Модерация: только если вы включите модерацию сообщества. Список блокировок и отправленные вами жалобы или апелляции идут модераторам NOTORYX через sentinel-relay.meshmayhem.org.';
 }
