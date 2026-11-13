@@ -11124,4 +11124,166 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get place_waypoint => '已保存的航点';
+
+  @override
+  String get sentinel_title => '社区审核';
+
+  @override
+  String get sentinel_toolSubtitle => '向 NOTORYX 审核员举报垃圾信息并查看被标记的节点';
+
+  @override
+  String get sentinel_intro =>
+      '举报会发送给 NOTORYX 审核员,由人工逐条审查。获批的封禁会以参考列表的形式返回:被标记的节点会显示标签,网状网络中不会屏蔽任何内容。';
+
+  @override
+  String get sentinel_enable => '使用社区审核';
+
+  @override
+  String get sentinel_enableSub => '默认关闭。关闭期间,NOTORYX 绝不会连接审核服务。';
+
+  @override
+  String get sentinel_hide => '隐藏被标记发送者的消息';
+
+  @override
+  String get sentinel_hideSub => '仅限频道消息。可随时关闭。';
+
+  @override
+  String sentinel_synced(String time) {
+    return '封禁列表已更新 $time';
+  }
+
+  @override
+  String get sentinel_neverSynced => '尚未下载封禁列表';
+
+  @override
+  String sentinel_flaggedCount(int count) {
+    return '被标记的节点:$count';
+  }
+
+  @override
+  String sentinel_queued(int count) {
+    return '等待发送的举报:$count';
+  }
+
+  @override
+  String get sentinel_refresh => '立即更新';
+
+  @override
+  String get sentinel_yourNode => '你的节点';
+
+  @override
+  String get sentinel_yourNodeClear => '你的节点未被标记。';
+
+  @override
+  String sentinel_yourNodeFlagged(String caseRef) {
+    return '你的节点已被标记(案件 $caseRef)。如有误,可以申诉。';
+  }
+
+  @override
+  String get sentinel_yourNodeUnknown => '连接电台以检查你的节点。';
+
+  @override
+  String get sentinel_appealPending => '你的申诉正在审核中。';
+
+  @override
+  String get sentinel_appeal => '申诉';
+
+  @override
+  String get sentinel_appealOther => '按案件编号申诉';
+
+  @override
+  String get sentinel_yourReports => '你最近的举报';
+
+  @override
+  String get sentinel_report => '向审核员举报';
+
+  @override
+  String sentinel_reportTitle(String name) {
+    return '举报 $name';
+  }
+
+  @override
+  String get sentinel_reasonSpam => '垃圾信息或广告';
+
+  @override
+  String get sentinel_reasonFlooding => '刷屏占用网络';
+
+  @override
+  String get sentinel_reasonAbuse => '骚扰或辱骂';
+
+  @override
+  String get sentinel_reasonImpersonation => '冒充他人';
+
+  @override
+  String get sentinel_reasonOther => '其他';
+
+  @override
+  String get sentinel_note => '详情(可选)';
+
+  @override
+  String get sentinel_includeMessage => '附上这条消息';
+
+  @override
+  String get sentinel_sends => '发送该节点的 ID 和名称、你的理由,以及勾选时的这条消息。不会发送你的名称、密钥或位置。';
+
+  @override
+  String get sentinel_send => '发送举报';
+
+  @override
+  String sentinel_sent(String caseRef) {
+    return '举报已发送($caseRef)';
+  }
+
+  @override
+  String get sentinel_queuedOne => '没有网络连接。举报将稍后发送。';
+
+  @override
+  String sentinel_rejected(String message) {
+    return '举报未被接受:$message';
+  }
+
+  @override
+  String get sentinel_offPrompt => '开启社区审核?';
+
+  @override
+  String get sentinel_turnOn => '开启';
+
+  @override
+  String get sentinel_flagged => '已标记';
+
+  @override
+  String sentinel_flaggedHint(String caseRef) {
+    return '已被 NOTORYX 审核员标记(案件 $caseRef)。仅供参考。';
+  }
+
+  @override
+  String get sentinel_caseRef => '案件编号(SNT-1234)';
+
+  @override
+  String get sentinel_statement => '为什么应解除封禁?';
+
+  @override
+  String get sentinel_contact => '联系方式(可选,仅审核员可见)';
+
+  @override
+  String get sentinel_appealSend => '发送申诉';
+
+  @override
+  String get sentinel_appealReceived => '申诉已发送。审核员将进行审查。';
+
+  @override
+  String get sentinel_appealUnknown => '没有该编号的 MeshCore 案件。';
+
+  @override
+  String get sentinel_appealNotOpen => '该案件没有生效的封禁,或已有申诉在等待处理。';
+
+  @override
+  String get sentinel_appealTooMany => '申诉过于频繁。请一分钟后再试。';
+
+  @override
+  String get sentinel_failed => '无法连接审核服务。请稍后再试。';
+
+  @override
+  String get privacy_netSentinel =>
+      '审核:仅在你开启社区审核时。封禁列表以及你发送的举报或申诉会通过 sentinel-relay.meshmayhem.org 发送给 NOTORYX 审核员。';
 }

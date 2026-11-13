@@ -11936,4 +11936,178 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get place_waypoint => 'Zapisany punkt';
+
+  @override
+  String get sentinel_title => 'Moderacja społeczności';
+
+  @override
+  String get sentinel_toolSubtitle =>
+      'Zgłaszaj spam moderatorom NOTORYX i zobacz oznaczone węzły';
+
+  @override
+  String get sentinel_intro =>
+      'Zgłoszenia trafiają do moderatorów NOTORYX, którzy sprawdzają każde ręcznie. Zatwierdzone bany wracają jako lista poglądowa: oznaczone węzły dostają etykietę, a w sieci nic nie jest blokowane.';
+
+  @override
+  String get sentinel_enable => 'Używaj moderacji społeczności';
+
+  @override
+  String get sentinel_enableSub =>
+      'Domyślnie wyłączona. Gdy jest wyłączona, NOTORYX nigdy nie łączy się z usługą moderacji.';
+
+  @override
+  String get sentinel_hide => 'Ukryj wiadomości od oznaczonych nadawców';
+
+  @override
+  String get sentinel_hideSub =>
+      'Tylko wiadomości z kanałów. Możesz to wyłączyć w każdej chwili.';
+
+  @override
+  String sentinel_synced(String time) {
+    return 'Lista banów zaktualizowana $time';
+  }
+
+  @override
+  String get sentinel_neverSynced => 'Lista banów jeszcze nie pobrana';
+
+  @override
+  String sentinel_flaggedCount(int count) {
+    return 'Oznaczone węzły: $count';
+  }
+
+  @override
+  String sentinel_queued(int count) {
+    return 'Zgłoszenia czekające na wysłanie: $count';
+  }
+
+  @override
+  String get sentinel_refresh => 'Aktualizuj teraz';
+
+  @override
+  String get sentinel_yourNode => 'Twój węzeł';
+
+  @override
+  String get sentinel_yourNodeClear => 'Twój węzeł nie jest oznaczony.';
+
+  @override
+  String sentinel_yourNodeFlagged(String caseRef) {
+    return 'Twój węzeł jest oznaczony (sprawa $caseRef). Jeśli to pomyłka, możesz się odwołać.';
+  }
+
+  @override
+  String get sentinel_yourNodeUnknown =>
+      'Połącz radio, aby sprawdzić swój węzeł.';
+
+  @override
+  String get sentinel_appealPending => 'Twoje odwołanie jest rozpatrywane.';
+
+  @override
+  String get sentinel_appeal => 'Odwołaj się';
+
+  @override
+  String get sentinel_appealOther => 'Odwołanie według numeru sprawy';
+
+  @override
+  String get sentinel_yourReports => 'Twoje ostatnie zgłoszenia';
+
+  @override
+  String get sentinel_report => 'Zgłoś moderatorom';
+
+  @override
+  String sentinel_reportTitle(String name) {
+    return 'Zgłoś $name';
+  }
+
+  @override
+  String get sentinel_reasonSpam => 'Spam lub reklama';
+
+  @override
+  String get sentinel_reasonFlooding => 'Zalewanie sieci';
+
+  @override
+  String get sentinel_reasonAbuse => 'Nękanie lub obraźliwe treści';
+
+  @override
+  String get sentinel_reasonImpersonation => 'Podszywanie się';
+
+  @override
+  String get sentinel_reasonOther => 'Inne';
+
+  @override
+  String get sentinel_note => 'Szczegóły (opcjonalnie)';
+
+  @override
+  String get sentinel_includeMessage => 'Dołącz tę wiadomość';
+
+  @override
+  String get sentinel_sends =>
+      'Wysyła ID i nazwę węzła, Twój powód oraz, jeśli zaznaczono, tę wiadomość. Nie Twoją nazwę, klucz ani lokalizację.';
+
+  @override
+  String get sentinel_send => 'Wyślij zgłoszenie';
+
+  @override
+  String sentinel_sent(String caseRef) {
+    return 'Zgłoszenie wysłane ($caseRef)';
+  }
+
+  @override
+  String get sentinel_queuedOne =>
+      'Brak połączenia. Zgłoszenie zostanie wysłane później.';
+
+  @override
+  String sentinel_rejected(String message) {
+    return 'Zgłoszenie nieprzyjęte: $message';
+  }
+
+  @override
+  String get sentinel_offPrompt => 'Włączyć moderację społeczności?';
+
+  @override
+  String get sentinel_turnOn => 'Włącz';
+
+  @override
+  String get sentinel_flagged => 'Oznaczony';
+
+  @override
+  String sentinel_flaggedHint(String caseRef) {
+    return 'Oznaczony przez moderatorów NOTORYX (sprawa $caseRef). Tylko informacyjnie.';
+  }
+
+  @override
+  String get sentinel_caseRef => 'Numer sprawy (SNT-1234)';
+
+  @override
+  String get sentinel_statement => 'Dlaczego ban powinien zostać zdjęty?';
+
+  @override
+  String get sentinel_contact =>
+      'Kontakt (opcjonalnie, widzą go tylko moderatorzy)';
+
+  @override
+  String get sentinel_appealSend => 'Wyślij odwołanie';
+
+  @override
+  String get sentinel_appealReceived =>
+      'Odwołanie wysłane. Moderator je rozpatrzy.';
+
+  @override
+  String get sentinel_appealUnknown =>
+      'Żadna sprawa MeshCore nie ma tego numeru.';
+
+  @override
+  String get sentinel_appealNotOpen =>
+      'Ta sprawa nie ma aktywnego bana albo odwołanie już czeka.';
+
+  @override
+  String get sentinel_appealTooMany =>
+      'Zbyt wiele odwołań. Spróbuj ponownie za minutę.';
+
+  @override
+  String get sentinel_failed =>
+      'Nie udało się połączyć z usługą moderacji. Spróbuj później.';
+
+  @override
+  String get privacy_netSentinel =>
+      'Moderacja: tylko po włączeniu moderacji społeczności. Lista banów oraz wysłane zgłoszenia i odwołania trafiają do moderatorów NOTORYX przez sentinel-relay.meshmayhem.org.';
 }

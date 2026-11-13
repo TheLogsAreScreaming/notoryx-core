@@ -11809,4 +11809,177 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get place_waypoint => 'Sparad vägpunkt';
+
+  @override
+  String get sentinel_title => 'Gemenskapsmoderering';
+
+  @override
+  String get sentinel_toolSubtitle =>
+      'Rapportera spam till NOTORYX-moderatorer och se flaggade noder';
+
+  @override
+  String get sentinel_intro =>
+      'Rapporter går till NOTORYX-moderatorer som granskar varje rapport för hand. Godkända avstängningar kommer tillbaka som en rådgivande lista: flaggade noder får en etikett och inget blockeras i meshen.';
+
+  @override
+  String get sentinel_enable => 'Använd gemenskapsmoderering';
+
+  @override
+  String get sentinel_enableSub =>
+      'Av som standard. Så länge den är av kontaktar NOTORYX aldrig modereringstjänsten.';
+
+  @override
+  String get sentinel_hide => 'Dölj meddelanden från flaggade avsändare';
+
+  @override
+  String get sentinel_hideSub =>
+      'Endast kanalmeddelanden. Du kan stänga av det när som helst.';
+
+  @override
+  String sentinel_synced(String time) {
+    return 'Avstängningslistan uppdaterad $time';
+  }
+
+  @override
+  String get sentinel_neverSynced => 'Avstängningslistan inte hämtad än';
+
+  @override
+  String sentinel_flaggedCount(int count) {
+    return 'Flaggade noder: $count';
+  }
+
+  @override
+  String sentinel_queued(int count) {
+    return 'Rapporter som väntar på att skickas: $count';
+  }
+
+  @override
+  String get sentinel_refresh => 'Uppdatera nu';
+
+  @override
+  String get sentinel_yourNode => 'Din nod';
+
+  @override
+  String get sentinel_yourNodeClear => 'Din nod är inte flaggad.';
+
+  @override
+  String sentinel_yourNodeFlagged(String caseRef) {
+    return 'Din nod är flaggad (ärende $caseRef). Om det är ett misstag kan du överklaga.';
+  }
+
+  @override
+  String get sentinel_yourNodeUnknown =>
+      'Anslut en radio för att kontrollera din nod.';
+
+  @override
+  String get sentinel_appealPending => 'Din överklagan granskas.';
+
+  @override
+  String get sentinel_appeal => 'Överklaga';
+
+  @override
+  String get sentinel_appealOther => 'Överklaga ett ärende via nummer';
+
+  @override
+  String get sentinel_yourReports => 'Dina senaste rapporter';
+
+  @override
+  String get sentinel_report => 'Rapportera till moderatorer';
+
+  @override
+  String sentinel_reportTitle(String name) {
+    return 'Rapportera $name';
+  }
+
+  @override
+  String get sentinel_reasonSpam => 'Spam eller reklam';
+
+  @override
+  String get sentinel_reasonFlooding => 'Översvämmar meshen';
+
+  @override
+  String get sentinel_reasonAbuse => 'Trakasserier eller övergrepp';
+
+  @override
+  String get sentinel_reasonImpersonation => 'Identitetsstöld';
+
+  @override
+  String get sentinel_reasonOther => 'Annat';
+
+  @override
+  String get sentinel_note => 'Detaljer (valfritt)';
+
+  @override
+  String get sentinel_includeMessage => 'Bifoga det här meddelandet';
+
+  @override
+  String get sentinel_sends =>
+      'Skickar nodens ID och namn, ditt skäl och, om ikryssat, det här meddelandet. Inte ditt namn, din nyckel eller din plats.';
+
+  @override
+  String get sentinel_send => 'Skicka rapport';
+
+  @override
+  String sentinel_sent(String caseRef) {
+    return 'Rapport skickad ($caseRef)';
+  }
+
+  @override
+  String get sentinel_queuedOne =>
+      'Ingen anslutning. Rapporten skickas senare.';
+
+  @override
+  String sentinel_rejected(String message) {
+    return 'Rapporten godtogs inte: $message';
+  }
+
+  @override
+  String get sentinel_offPrompt => 'Slå på gemenskapsmoderering?';
+
+  @override
+  String get sentinel_turnOn => 'Slå på';
+
+  @override
+  String get sentinel_flagged => 'Flaggad';
+
+  @override
+  String sentinel_flaggedHint(String caseRef) {
+    return 'Flaggad av NOTORYX-moderatorer (ärende $caseRef). Endast rådgivande.';
+  }
+
+  @override
+  String get sentinel_caseRef => 'Ärendenummer (SNT-1234)';
+
+  @override
+  String get sentinel_statement => 'Varför ska avstängningen hävas?';
+
+  @override
+  String get sentinel_contact =>
+      'Kontakt (valfritt, syns bara för moderatorer)';
+
+  @override
+  String get sentinel_appealSend => 'Skicka överklagan';
+
+  @override
+  String get sentinel_appealReceived =>
+      'Överklagan skickad. En moderator granskar den.';
+
+  @override
+  String get sentinel_appealUnknown => 'Inget MeshCore-ärende har det numret.';
+
+  @override
+  String get sentinel_appealNotOpen =>
+      'Ärendet har ingen aktiv avstängning, eller så väntar redan en överklagan.';
+
+  @override
+  String get sentinel_appealTooMany =>
+      'För många överklaganden. Försök igen om en minut.';
+
+  @override
+  String get sentinel_failed =>
+      'Kunde inte nå modereringstjänsten. Försök igen senare.';
+
+  @override
+  String get privacy_netSentinel =>
+      'Moderering: bara om du slår på gemenskapsmoderering. Avstängningslistan och rapporter eller överklaganden du skickar går till NOTORYX-moderatorer via sentinel-relay.meshmayhem.org.';
 }

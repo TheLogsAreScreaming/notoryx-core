@@ -1,0 +1,2 @@
+• Community moderation (off by default): report spam to NOTORYX moderators
+• Flagged label on nodes with an approved ban, optional hiding, and appeals
