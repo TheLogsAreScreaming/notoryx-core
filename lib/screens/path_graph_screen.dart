@@ -10,6 +10,7 @@ import '../theme/mesh_theme.dart';
 import '../widgets/ember_backdrop.dart';
 import '../widgets/instrument.dart';
 import '../widgets/mesh_ui.dart';
+import '../widgets/network_diagram.dart';
 import '../widgets/node_sheet.dart';
 import '../widgets/path_sankey.dart';
 
@@ -35,6 +36,9 @@ enum _Range {
 
 class _PathGraphScreenState extends State<PathGraphScreen> {
   _Range _range = _Range.week;
+
+  /// Network diagram instead of the flow chart.
+  bool _network = false;
   PathGraph? _graph;
   int _messages = 0;
   bool _loading = true;
@@ -250,17 +254,41 @@ class _PathGraphScreenState extends State<PathGraphScreen> {
                   style: TextStyle(color: MeshPalette.ink3, fontSize: 12),
                 ),
                 const SizedBox(height: MeshSpace.md),
+                SegmentedButton<bool>(
+                  key: const ValueKey('path-graph-view'),
+                  segments: [
+                    ButtonSegment(
+                      value: false,
+                      icon: const Icon(Icons.stacked_line_chart),
+                      label: Text(l10n.topology_flows),
+                    ),
+                    ButtonSegment(
+                      value: true,
+                      icon: const Icon(Icons.hub_outlined),
+                      label: Text(l10n.topology_network),
+                    ),
+                  ],
+                  selected: {_network},
+                  onSelectionChanged: (v) => setState(() => _network = v.first),
+                ),
+                const SizedBox(height: MeshSpace.sm),
                 MeshCard(
                   margin: EdgeInsets.zero,
                   padding: const EdgeInsets.all(MeshSpace.sm),
-                  child: _Chart(
-                    graph: graph,
-                    onTapNode: (id) => _showHop(graph, id),
-                  ),
+                  child: _network
+                      ? _Network(
+                          graph: graph,
+                          you: l10n.pathGraph_you,
+                          onTapNode: (id) => _showHop(graph, id),
+                        )
+                      : _Chart(
+                          graph: graph,
+                          onTapNode: (id) => _showHop(graph, id),
+                        ),
                 ),
                 const SizedBox(height: 6),
                 Text(
-                  l10n.pathGraph_chartHint,
+                  _network ? l10n.topology_hint : l10n.pathGraph_chartHint,
                   style: TextStyle(color: MeshPalette.ink3, fontSize: 12),
                 ),
                 InstrumentLabel(l10n.pathGraph_busiest),
@@ -341,6 +369,75 @@ class _Chart extends StatelessWidget {
                             fontWeight: FontWeight.w700,
                           ),
                   labelBackground: scheme.surface.withValues(alpha: .8),
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+
+/// Repeaters on rings around you, by hops away.
+class _Network extends StatelessWidget {
+  final PathGraph graph;
+  final String you;
+  final ValueChanged<String> onTapNode;
+  const _Network({
+    required this.graph,
+    required this.you,
+    required this.onTapNode,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final side = constraints.maxWidth.clamp(200.0, 420.0);
+        final size = Size(constraints.maxWidth, side);
+        final layout = layoutNetwork(graph, size);
+        final labels = {
+          for (final n in graph.nodes.values) n.id: n.label,
+          pathGraphSelf: you,
+        };
+        return Semantics(
+          label: context.l10n.topology_semantics(
+            layout.dots.length - 1,
+            layout.rings,
+          ),
+          child: GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTapUp: (d) {
+              final id = layout.hit(d.localPosition);
+              if (id != null && id != pathGraphSelf) onTapNode(id);
+            },
+            child: SizedBox.fromSize(
+              key: const ValueKey('path-network'),
+              size: size,
+              child: CustomPaint(
+                painter: NetworkDiagramPainter(
+                  layout: layout,
+                  labels: labels,
+                  nodeColor: scheme.primary,
+                  selfColor: MapPalette.cluster,
+                  linkColor: scheme.primary,
+                  ringColor: scheme.outlineVariant.withValues(alpha: .6),
+                  ambiguousColor: MapPalette.stale,
+                  ambiguous: {
+                    for (final n in graph.nodes.values)
+                      if (n.ambiguous) n.id,
+                  },
+                  labelStyle:
+                      (Theme.of(context).textTheme.labelSmall ??
+                              const TextStyle())
+                          .copyWith(
+                            color: scheme.onSurface,
+                            fontSize: 10,
+                            fontWeight: FontWeight.w700,
+                          ),
+                  labelBackground: scheme.surface.withValues(alpha: .85),
                 ),
               ),
             ),

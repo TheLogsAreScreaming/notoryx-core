@@ -12045,6 +12045,27 @@ class AppLocalizationsUk extends AppLocalizations {
       'Модерація: лише якщо ви увімкнете модерацію спільноти. Список блокувань і надіслані вами скарги чи апеляції йдуть модераторам NOTORYX через sentinel-relay.meshmayhem.org.';
 
   @override
+  String get mapTrust_favoritesOnly => 'Лише обрані';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => 'Приховати вузли без зірочки';
+
+  @override
+  String get topology_flows => 'Потоки';
+
+  @override
+  String get topology_network => 'Мережа';
+
+  @override
+  String get topology_hint =>
+      'Кільця показують кількість переходів від вас (у центрі). Товщі лінії передали більше повідомлень, більші точки ретранслювали більше. Торкніться точки, щоб відкрити ретранслятор.';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return 'Схема мережі. $repeaters ретрансляторів на $rings кільцях навколо вас.';
+  }
+
+  @override
   String get zones_title => 'Сповіщення про зони й стежку';
 
   @override

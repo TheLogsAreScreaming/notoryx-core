@@ -11966,6 +11966,27 @@ class AppLocalizationsNl extends AppLocalizations {
       'Moderatie: alleen als je communitymoderatie aanzet. De banlijst en meldingen of bezwaren die je verstuurt gaan via sentinel-relay.meshmayhem.org naar NOTORYX-moderators.';
 
   @override
+  String get mapTrust_favoritesOnly => 'Alleen favorieten';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => 'Verberg nodes zonder ster';
+
+  @override
+  String get topology_flows => 'Stromen';
+
+  @override
+  String get topology_network => 'Netwerk';
+
+  @override
+  String get topology_hint =>
+      'Ringen tonen het aantal hops vanaf jou, in het midden. Dikkere lijnen droegen meer berichten, grotere stippen stuurden meer door. Tik op een stip om die repeater te zien.';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return 'Netwerkdiagram. $repeaters repeaters op $rings ringen om je heen.';
+  }
+
+  @override
   String get zones_title => 'Zone- en routemeldingen';
 
   @override

@@ -12014,6 +12014,27 @@ class AppLocalizationsEs extends AppLocalizations {
       'Moderación: solo si activas la moderación comunitaria. La lista de bloqueos y las denuncias o apelaciones que envíes van a los moderadores de NOTORYX a través de sentinel-relay.meshmayhem.org.';
 
   @override
+  String get mapTrust_favoritesOnly => 'Solo favoritos';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => 'Oculta los nodos sin estrella';
+
+  @override
+  String get topology_flows => 'Flujos';
+
+  @override
+  String get topology_network => 'Red';
+
+  @override
+  String get topology_hint =>
+      'Los anillos muestran los saltos desde ti, en el centro. Las líneas más gruesas llevaron más mensajes y los puntos más grandes retransmitieron más. Toca un punto para ver ese repetidor.';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return 'Diagrama de red. $repeaters repetidores en $rings anillos a tu alrededor.';
+  }
+
+  @override
   String get zones_title => 'Alertas de zona y sendero';
 
   @override

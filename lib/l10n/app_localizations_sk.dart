@@ -11975,6 +11975,27 @@ class AppLocalizationsSk extends AppLocalizations {
       'Moderovanie: iba ak zapnete moderovanie komunity. Zoznam zákazov a vaše nahlásenia či odvolania idú moderátorom NOTORYX cez sentinel-relay.meshmayhem.org.';
 
   @override
+  String get mapTrust_favoritesOnly => 'Iba obľúbené';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => 'Skryť uzly bez hviezdičky';
+
+  @override
+  String get topology_flows => 'Toky';
+
+  @override
+  String get topology_network => 'Sieť';
+
+  @override
+  String get topology_hint =>
+      'Kruhy ukazujú počet skokov od vás v strede. Hrubšie čiary preniesli viac správ, väčšie body preposlali viac. Ťuknutím na bod zobrazíte daný opakovač.';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return 'Diagram siete. $repeaters opakovačov na $rings kruhoch okolo vás.';
+  }
+
+  @override
   String get zones_title => 'Upozornenia na zóny a trasu';
 
   @override

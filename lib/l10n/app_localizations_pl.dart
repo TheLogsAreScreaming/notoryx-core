@@ -12046,6 +12046,27 @@ class AppLocalizationsPl extends AppLocalizations {
       'Moderacja: tylko po włączeniu moderacji społeczności. Lista banów oraz wysłane zgłoszenia i odwołania trafiają do moderatorów NOTORYX przez sentinel-relay.meshmayhem.org.';
 
   @override
+  String get mapTrust_favoritesOnly => 'Tylko ulubione';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => 'Ukryj węzły bez gwiazdki';
+
+  @override
+  String get topology_flows => 'Przepływy';
+
+  @override
+  String get topology_network => 'Sieć';
+
+  @override
+  String get topology_hint =>
+      'Pierścienie pokazują liczbę przeskoków od ciebie, w środku. Grubsze linie przeniosły więcej wiadomości, większe kropki przekazały więcej. Dotknij kropki, aby zobaczyć ten przekaźnik.';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return 'Diagram sieci. $repeaters przekaźników na $rings pierścieniach wokół ciebie.';
+  }
+
+  @override
   String get zones_title => 'Alerty stref i szlaków';
 
   @override

@@ -11998,6 +11998,27 @@ class AppLocalizationsSl extends AppLocalizations {
       'Moderiranje: samo če vklopite moderiranje skupnosti. Seznam prepovedi ter prijave ali pritožbe, ki jih pošljete, gredo moderatorjem NOTORYX prek sentinel-relay.meshmayhem.org.';
 
   @override
+  String get mapTrust_favoritesOnly => 'Samo priljubljeni';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => 'Skrij vozlišča brez zvezdice';
+
+  @override
+  String get topology_flows => 'Tokovi';
+
+  @override
+  String get topology_network => 'Omrežje';
+
+  @override
+  String get topology_hint =>
+      'Obroči kažejo število skokov od vas na sredini. Debelejše črte so prenesle več sporočil, večje pike so posredovale več. Tapnite piko za ogled tega repetitorja.';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return 'Diagram omrežja. $repeaters repetitorjev na $rings obročih okoli vas.';
+  }
+
+  @override
   String get zones_title => 'Opozorila za cone in pot';
 
   @override
