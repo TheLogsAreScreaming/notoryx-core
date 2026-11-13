@@ -33,6 +33,7 @@ import '../widgets/mesh_ui.dart';
 import '../widgets/quick_switch_bar.dart';
 import '../widgets/repeater_login_dialog.dart';
 import '../widgets/room_login_dialog.dart';
+import '../widgets/sentinel_report_sheet.dart';
 import '../widgets/sync_progress_overlay.dart';
 import '../helpers/snack_bar_builder.dart';
 import '../helpers/share_links.dart';
@@ -1549,6 +1550,21 @@ class _ContactsScreenState extends State<ContactsScreen>
               },
             ),
             ListTile(
+              key: const ValueKey('contact-sentinel-report'),
+              leading: const Icon(Icons.flag_outlined),
+              title: Text(context.l10n.sentinel_report),
+              onTap: () {
+                Navigator.pop(sheetContext);
+                unawaited(
+                  showSentinelReportSheet(
+                    context,
+                    nodeId: contact.publicKeyHex,
+                    nodeName: contact.name,
+                  ),
+                );
+              },
+            ),
+            ListTile(
               leading: Icon(
                 Icons.delete,
                 color: Theme.of(context).colorScheme.error,
@@ -1700,6 +1716,7 @@ class _ContactTile extends StatelessWidget {
                                 ),
                               ),
                             ),
+                            SentinelFlag.forKey(contact.publicKeyHex),
                             if (isFavorite) ...[
                               const SizedBox(width: 6),
                               Icon(

@@ -11868,4 +11868,177 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get place_waypoint => 'Mentett útpont';
+
+  @override
+  String get sentinel_title => 'Közösségi moderálás';
+
+  @override
+  String get sentinel_toolSubtitle =>
+      'Spam jelentése a NOTORYX moderátorainak és a megjelölt csomópontok megtekintése';
+
+  @override
+  String get sentinel_intro =>
+      'A jelentéseket a NOTORYX moderátorai kapják, akik egyenként, kézzel nézik át őket. A jóváhagyott tiltások tájékoztató listaként jönnek vissza: a megjelölt csomópontok címkét kapnak, a hálózaton semmi sincs letiltva.';
+
+  @override
+  String get sentinel_enable => 'Közösségi moderálás használata';
+
+  @override
+  String get sentinel_enableSub =>
+      'Alapból ki van kapcsolva. Amíg ki van kapcsolva, a NOTORYX soha nem lép kapcsolatba a moderálási szolgáltatással.';
+
+  @override
+  String get sentinel_hide => 'Megjelölt küldők üzeneteinek elrejtése';
+
+  @override
+  String get sentinel_hideSub =>
+      'Csak csatornaüzenetek. Bármikor kikapcsolhatod.';
+
+  @override
+  String sentinel_synced(String time) {
+    return 'Tiltólista frissítve: $time';
+  }
+
+  @override
+  String get sentinel_neverSynced => 'A tiltólista még nincs letöltve';
+
+  @override
+  String sentinel_flaggedCount(int count) {
+    return 'Megjelölt csomópontok: $count';
+  }
+
+  @override
+  String sentinel_queued(int count) {
+    return 'Küldésre váró jelentések: $count';
+  }
+
+  @override
+  String get sentinel_refresh => 'Frissítés most';
+
+  @override
+  String get sentinel_yourNode => 'A csomópontod';
+
+  @override
+  String get sentinel_yourNodeClear => 'A csomópontod nincs megjelölve.';
+
+  @override
+  String sentinel_yourNodeFlagged(String caseRef) {
+    return 'A csomópontod meg van jelölve (ügy: $caseRef). Ha ez tévedés, fellebbezhetsz.';
+  }
+
+  @override
+  String get sentinel_yourNodeUnknown =>
+      'Csatlakoztass egy rádiót a csomópontod ellenőrzéséhez.';
+
+  @override
+  String get sentinel_appealPending => 'A fellebbezésed elbírálás alatt van.';
+
+  @override
+  String get sentinel_appeal => 'Fellebbezés';
+
+  @override
+  String get sentinel_appealOther => 'Fellebbezés ügyszám alapján';
+
+  @override
+  String get sentinel_yourReports => 'Legutóbbi jelentéseid';
+
+  @override
+  String get sentinel_report => 'Jelentés a moderátoroknak';
+
+  @override
+  String sentinel_reportTitle(String name) {
+    return '$name jelentése';
+  }
+
+  @override
+  String get sentinel_reasonSpam => 'Spam vagy reklám';
+
+  @override
+  String get sentinel_reasonFlooding => 'A hálózat elárasztása';
+
+  @override
+  String get sentinel_reasonAbuse => 'Zaklatás vagy sértegetés';
+
+  @override
+  String get sentinel_reasonImpersonation => 'Megszemélyesítés';
+
+  @override
+  String get sentinel_reasonOther => 'Egyéb';
+
+  @override
+  String get sentinel_note => 'Részletek (nem kötelező)';
+
+  @override
+  String get sentinel_includeMessage => 'Ez az üzenet is menjen';
+
+  @override
+  String get sentinel_sends =>
+      'Elküldi a csomópont azonosítóját és nevét, az indokodat és, ha be van jelölve, ezt az üzenetet. A neved, kulcsod és helyzeted nem.';
+
+  @override
+  String get sentinel_send => 'Jelentés küldése';
+
+  @override
+  String sentinel_sent(String caseRef) {
+    return 'Jelentés elküldve ($caseRef)';
+  }
+
+  @override
+  String get sentinel_queuedOne =>
+      'Nincs kapcsolat. A jelentés később megy el.';
+
+  @override
+  String sentinel_rejected(String message) {
+    return 'A jelentést nem fogadták el: $message';
+  }
+
+  @override
+  String get sentinel_offPrompt => 'Bekapcsolod a közösségi moderálást?';
+
+  @override
+  String get sentinel_turnOn => 'Bekapcsolás';
+
+  @override
+  String get sentinel_flagged => 'Megjelölve';
+
+  @override
+  String sentinel_flaggedHint(String caseRef) {
+    return 'A NOTORYX moderátorai megjelölték (ügy: $caseRef). Csak tájékoztató.';
+  }
+
+  @override
+  String get sentinel_caseRef => 'Ügyszám (SNT-1234)';
+
+  @override
+  String get sentinel_statement => 'Miért kellene feloldani a tiltást?';
+
+  @override
+  String get sentinel_contact =>
+      'Elérhetőség (nem kötelező, csak a moderátorok látják)';
+
+  @override
+  String get sentinel_appealSend => 'Fellebbezés küldése';
+
+  @override
+  String get sentinel_appealReceived =>
+      'Fellebbezés elküldve. Egy moderátor elbírálja.';
+
+  @override
+  String get sentinel_appealUnknown => 'Nincs ilyen számú MeshCore-ügy.';
+
+  @override
+  String get sentinel_appealNotOpen =>
+      'Ennek az ügynek nincs aktív tiltása, vagy már vár egy fellebbezés.';
+
+  @override
+  String get sentinel_appealTooMany =>
+      'Túl sok fellebbezés. Próbáld újra egy perc múlva.';
+
+  @override
+  String get sentinel_failed =>
+      'A moderálási szolgáltatás nem érhető el. Próbáld később.';
+
+  @override
+  String get privacy_netSentinel =>
+      'Moderálás: csak ha bekapcsolod a közösségi moderálást. A tiltólista, valamint az általad küldött jelentések és fellebbezések a sentinel-relay.meshmayhem.org címen át jutnak a NOTORYX moderátoraihoz.';
 }

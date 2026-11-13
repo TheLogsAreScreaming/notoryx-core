@@ -11916,4 +11916,178 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get place_waypoint => 'Збережена точка';
+
+  @override
+  String get sentinel_title => 'Модерація спільноти';
+
+  @override
+  String get sentinel_toolSubtitle =>
+      'Повідомляйте про спам модераторам NOTORYX і бачте позначені вузли';
+
+  @override
+  String get sentinel_intro =>
+      'Скарги отримують модератори NOTORYX і перевіряють кожну вручну. Схвалені блокування повертаються як рекомендаційний список: позначені вузли отримують мітку, у мережі нічого не блокується.';
+
+  @override
+  String get sentinel_enable => 'Використовувати модерацію спільноти';
+
+  @override
+  String get sentinel_enableSub =>
+      'За замовчуванням вимкнено. Поки вимкнено, NOTORYX ніколи не звертається до служби модерації.';
+
+  @override
+  String get sentinel_hide =>
+      'Приховувати повідомлення позначених відправників';
+
+  @override
+  String get sentinel_hideSub =>
+      'Лише повідомлення каналів. Можна вимкнути будь-коли.';
+
+  @override
+  String sentinel_synced(String time) {
+    return 'Список блокувань оновлено $time';
+  }
+
+  @override
+  String get sentinel_neverSynced => 'Список блокувань ще не завантажено';
+
+  @override
+  String sentinel_flaggedCount(int count) {
+    return 'Позначені вузли: $count';
+  }
+
+  @override
+  String sentinel_queued(int count) {
+    return 'Скарги в черзі на надсилання: $count';
+  }
+
+  @override
+  String get sentinel_refresh => 'Оновити';
+
+  @override
+  String get sentinel_yourNode => 'Ваш вузол';
+
+  @override
+  String get sentinel_yourNodeClear => 'Ваш вузол не позначено.';
+
+  @override
+  String sentinel_yourNodeFlagged(String caseRef) {
+    return 'Ваш вузол позначено (справа $caseRef). Якщо це помилка, ви можете подати апеляцію.';
+  }
+
+  @override
+  String get sentinel_yourNodeUnknown =>
+      'Під\'єднайте радіо, щоб перевірити свій вузол.';
+
+  @override
+  String get sentinel_appealPending => 'Ваша апеляція розглядається.';
+
+  @override
+  String get sentinel_appeal => 'Апеляція';
+
+  @override
+  String get sentinel_appealOther => 'Апеляція за номером справи';
+
+  @override
+  String get sentinel_yourReports => 'Ваші нещодавні скарги';
+
+  @override
+  String get sentinel_report => 'Поскаржитися модераторам';
+
+  @override
+  String sentinel_reportTitle(String name) {
+    return 'Поскаржитися на $name';
+  }
+
+  @override
+  String get sentinel_reasonSpam => 'Спам або реклама';
+
+  @override
+  String get sentinel_reasonFlooding => 'Засмічення мережі';
+
+  @override
+  String get sentinel_reasonAbuse => 'Цькування або образи';
+
+  @override
+  String get sentinel_reasonImpersonation => 'Видавання себе за іншого';
+
+  @override
+  String get sentinel_reasonOther => 'Інше';
+
+  @override
+  String get sentinel_note => 'Подробиці (необов\'язково)';
+
+  @override
+  String get sentinel_includeMessage => 'Додати це повідомлення';
+
+  @override
+  String get sentinel_sends =>
+      'Надсилає ID та ім\'я вузла, вашу причину і, якщо позначено, це повідомлення. Не ваше ім\'я, ключ чи місцезнаходження.';
+
+  @override
+  String get sentinel_send => 'Надіслати скаргу';
+
+  @override
+  String sentinel_sent(String caseRef) {
+    return 'Скаргу надіслано ($caseRef)';
+  }
+
+  @override
+  String get sentinel_queuedOne =>
+      'Немає зв\'язку. Скаргу буде надіслано пізніше.';
+
+  @override
+  String sentinel_rejected(String message) {
+    return 'Скаргу не прийнято: $message';
+  }
+
+  @override
+  String get sentinel_offPrompt => 'Увімкнути модерацію спільноти?';
+
+  @override
+  String get sentinel_turnOn => 'Увімкнути';
+
+  @override
+  String get sentinel_flagged => 'Позначено';
+
+  @override
+  String sentinel_flaggedHint(String caseRef) {
+    return 'Позначено модераторами NOTORYX (справа $caseRef). Лише рекомендація.';
+  }
+
+  @override
+  String get sentinel_caseRef => 'Номер справи (SNT-1234)';
+
+  @override
+  String get sentinel_statement => 'Чому блокування слід зняти?';
+
+  @override
+  String get sentinel_contact =>
+      'Контакт (необов\'язково, бачать лише модератори)';
+
+  @override
+  String get sentinel_appealSend => 'Надіслати апеляцію';
+
+  @override
+  String get sentinel_appealReceived =>
+      'Апеляцію надіслано. Модератор її розгляне.';
+
+  @override
+  String get sentinel_appealUnknown => 'Справи MeshCore з таким номером немає.';
+
+  @override
+  String get sentinel_appealNotOpen =>
+      'У цій справі немає активного блокування або апеляція вже очікує.';
+
+  @override
+  String get sentinel_appealTooMany =>
+      'Забагато апеляцій. Спробуйте за хвилину.';
+
+  @override
+  String get sentinel_failed =>
+      'Служба модерації недоступна. Спробуйте пізніше.';
+
+  @override
+  String get privacy_netSentinel =>
+      'Модерація: лише якщо ви увімкнете модерацію спільноти. Список блокувань і надіслані вами скарги чи апеляції йдуть модераторам NOTORYX через sentinel-relay.meshmayhem.org.';
 }

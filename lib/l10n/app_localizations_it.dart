@@ -5269,7 +5269,8 @@ class AppLocalizationsIt extends AppLocalizations {
       locale: localeName,
       other:
           '$count salti non hanno una posizione specifica — il percorso mostrato è parziale',
-      one: '1 salto non ha una posizione specifica — il percorso mostrato è parziale',
+      one:
+          '1 salto non ha una posizione specifica — il percorso mostrato è parziale',
     );
     return '$_temp0';
   }
@@ -11891,4 +11892,176 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get place_waypoint => 'Waypoint salvato';
+
+  @override
+  String get sentinel_title => 'Moderazione della comunità';
+
+  @override
+  String get sentinel_toolSubtitle =>
+      'Segnala lo spam ai moderatori NOTORYX e vedi i nodi segnalati';
+
+  @override
+  String get sentinel_intro =>
+      'Le segnalazioni vanno ai moderatori NOTORYX, che le esaminano una per una. I ban approvati tornano come elenco indicativo: i nodi segnalati ricevono un\'etichetta e nulla viene bloccato sulla rete.';
+
+  @override
+  String get sentinel_enable => 'Usa la moderazione della comunità';
+
+  @override
+  String get sentinel_enableSub =>
+      'Disattivata per impostazione predefinita. Finché è disattivata, NOTORYX non contatta mai il servizio di moderazione.';
+
+  @override
+  String get sentinel_hide => 'Nascondi i messaggi dei mittenti segnalati';
+
+  @override
+  String get sentinel_hideSub =>
+      'Solo messaggi dei canali. Puoi disattivarlo in qualsiasi momento.';
+
+  @override
+  String sentinel_synced(String time) {
+    return 'Elenco ban aggiornato $time';
+  }
+
+  @override
+  String get sentinel_neverSynced => 'Elenco ban non ancora scaricato';
+
+  @override
+  String sentinel_flaggedCount(int count) {
+    return 'Nodi segnalati: $count';
+  }
+
+  @override
+  String sentinel_queued(int count) {
+    return 'Segnalazioni in attesa di invio: $count';
+  }
+
+  @override
+  String get sentinel_refresh => 'Aggiorna ora';
+
+  @override
+  String get sentinel_yourNode => 'Il tuo nodo';
+
+  @override
+  String get sentinel_yourNodeClear => 'Il tuo nodo non è segnalato.';
+
+  @override
+  String sentinel_yourNodeFlagged(String caseRef) {
+    return 'Il tuo nodo è segnalato (caso $caseRef). Se è un errore, puoi fare ricorso.';
+  }
+
+  @override
+  String get sentinel_yourNodeUnknown =>
+      'Collega una radio per controllare il tuo nodo.';
+
+  @override
+  String get sentinel_appealPending => 'Il tuo ricorso è in esame.';
+
+  @override
+  String get sentinel_appeal => 'Ricorso';
+
+  @override
+  String get sentinel_appealOther => 'Ricorso per numero di caso';
+
+  @override
+  String get sentinel_yourReports => 'Le tue segnalazioni recenti';
+
+  @override
+  String get sentinel_report => 'Segnala ai moderatori';
+
+  @override
+  String sentinel_reportTitle(String name) {
+    return 'Segnala $name';
+  }
+
+  @override
+  String get sentinel_reasonSpam => 'Spam o pubblicità';
+
+  @override
+  String get sentinel_reasonFlooding => 'Intasamento della rete';
+
+  @override
+  String get sentinel_reasonAbuse => 'Molestie o abusi';
+
+  @override
+  String get sentinel_reasonImpersonation => 'Furto d\'identità';
+
+  @override
+  String get sentinel_reasonOther => 'Altro';
+
+  @override
+  String get sentinel_note => 'Dettagli (facoltativo)';
+
+  @override
+  String get sentinel_includeMessage => 'Includi questo messaggio';
+
+  @override
+  String get sentinel_sends =>
+      'Invia ID e nome del nodo, il tuo motivo e, se spuntato, questo messaggio. Non il tuo nome, la tua chiave o la tua posizione.';
+
+  @override
+  String get sentinel_send => 'Invia segnalazione';
+
+  @override
+  String sentinel_sent(String caseRef) {
+    return 'Segnalazione inviata ($caseRef)';
+  }
+
+  @override
+  String get sentinel_queuedOne =>
+      'Nessuna connessione. La segnalazione verrà inviata più tardi.';
+
+  @override
+  String sentinel_rejected(String message) {
+    return 'Segnalazione non accettata: $message';
+  }
+
+  @override
+  String get sentinel_offPrompt => 'Attivare la moderazione della comunità?';
+
+  @override
+  String get sentinel_turnOn => 'Attiva';
+
+  @override
+  String get sentinel_flagged => 'Segnalato';
+
+  @override
+  String sentinel_flaggedHint(String caseRef) {
+    return 'Segnalato dai moderatori NOTORYX (caso $caseRef). Solo indicativo.';
+  }
+
+  @override
+  String get sentinel_caseRef => 'Numero del caso (SNT-1234)';
+
+  @override
+  String get sentinel_statement => 'Perché il ban dovrebbe essere revocato?';
+
+  @override
+  String get sentinel_contact =>
+      'Contatto (facoltativo, visibile solo ai moderatori)';
+
+  @override
+  String get sentinel_appealSend => 'Invia ricorso';
+
+  @override
+  String get sentinel_appealReceived =>
+      'Ricorso inviato. Un moderatore lo esaminerà.';
+
+  @override
+  String get sentinel_appealUnknown => 'Nessun caso MeshCore ha questo numero.';
+
+  @override
+  String get sentinel_appealNotOpen =>
+      'Questo caso non ha un ban attivo, oppure c\'è già un ricorso in attesa.';
+
+  @override
+  String get sentinel_appealTooMany => 'Troppi ricorsi. Riprova tra un minuto.';
+
+  @override
+  String get sentinel_failed =>
+      'Impossibile raggiungere il servizio di moderazione. Riprova più tardi.';
+
+  @override
+  String get privacy_netSentinel =>
+      'Moderazione: solo se attivi la moderazione della comunità. L\'elenco ban e le segnalazioni o i ricorsi che invii vanno ai moderatori NOTORYX tramite sentinel-relay.meshmayhem.org.';
 }

@@ -11838,4 +11838,177 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get place_waypoint => 'Opgeslagen waypoint';
+
+  @override
+  String get sentinel_title => 'Communitymoderatie';
+
+  @override
+  String get sentinel_toolSubtitle =>
+      'Meld spam bij NOTORYX-moderators en zie gemarkeerde nodes';
+
+  @override
+  String get sentinel_intro =>
+      'Meldingen gaan naar NOTORYX-moderators, die ze stuk voor stuk beoordelen. Goedgekeurde bans komen terug als adviserende lijst: gemarkeerde nodes krijgen een label en niets op de mesh wordt geblokkeerd.';
+
+  @override
+  String get sentinel_enable => 'Communitymoderatie gebruiken';
+
+  @override
+  String get sentinel_enableSub =>
+      'Standaard uit. Zolang het uit staat, neemt NOTORYX nooit contact op met de moderatiedienst.';
+
+  @override
+  String get sentinel_hide => 'Berichten van gemarkeerde afzenders verbergen';
+
+  @override
+  String get sentinel_hideSub =>
+      'Alleen kanaalberichten. Je kunt dit altijd uitzetten.';
+
+  @override
+  String sentinel_synced(String time) {
+    return 'Banlijst bijgewerkt $time';
+  }
+
+  @override
+  String get sentinel_neverSynced => 'Banlijst nog niet gedownload';
+
+  @override
+  String sentinel_flaggedCount(int count) {
+    return 'Gemarkeerde nodes: $count';
+  }
+
+  @override
+  String sentinel_queued(int count) {
+    return 'Meldingen die wachten op verzending: $count';
+  }
+
+  @override
+  String get sentinel_refresh => 'Nu bijwerken';
+
+  @override
+  String get sentinel_yourNode => 'Jouw node';
+
+  @override
+  String get sentinel_yourNodeClear => 'Jouw node is niet gemarkeerd.';
+
+  @override
+  String sentinel_yourNodeFlagged(String caseRef) {
+    return 'Jouw node is gemarkeerd (zaak $caseRef). Als dit een vergissing is, kun je bezwaar maken.';
+  }
+
+  @override
+  String get sentinel_yourNodeUnknown =>
+      'Verbind een radio om je node te controleren.';
+
+  @override
+  String get sentinel_appealPending => 'Je bezwaar wordt beoordeeld.';
+
+  @override
+  String get sentinel_appeal => 'Bezwaar';
+
+  @override
+  String get sentinel_appealOther => 'Bezwaar maken op zaaknummer';
+
+  @override
+  String get sentinel_yourReports => 'Je recente meldingen';
+
+  @override
+  String get sentinel_report => 'Melden bij moderators';
+
+  @override
+  String sentinel_reportTitle(String name) {
+    return '$name melden';
+  }
+
+  @override
+  String get sentinel_reasonSpam => 'Spam of reclame';
+
+  @override
+  String get sentinel_reasonFlooding => 'De mesh overspoelen';
+
+  @override
+  String get sentinel_reasonAbuse => 'Intimidatie of misbruik';
+
+  @override
+  String get sentinel_reasonImpersonation => 'Imitatie';
+
+  @override
+  String get sentinel_reasonOther => 'Anders';
+
+  @override
+  String get sentinel_note => 'Details (optioneel)';
+
+  @override
+  String get sentinel_includeMessage => 'Dit bericht meesturen';
+
+  @override
+  String get sentinel_sends =>
+      'Verstuurt het ID en de naam van de node, je reden en, indien aangevinkt, dit bericht. Niet je naam, sleutel of locatie.';
+
+  @override
+  String get sentinel_send => 'Melding versturen';
+
+  @override
+  String sentinel_sent(String caseRef) {
+    return 'Melding verstuurd ($caseRef)';
+  }
+
+  @override
+  String get sentinel_queuedOne =>
+      'Geen verbinding. De melding wordt later verstuurd.';
+
+  @override
+  String sentinel_rejected(String message) {
+    return 'Melding niet geaccepteerd: $message';
+  }
+
+  @override
+  String get sentinel_offPrompt => 'Communitymoderatie aanzetten?';
+
+  @override
+  String get sentinel_turnOn => 'Aanzetten';
+
+  @override
+  String get sentinel_flagged => 'Gemarkeerd';
+
+  @override
+  String sentinel_flaggedHint(String caseRef) {
+    return 'Gemarkeerd door NOTORYX-moderators (zaak $caseRef). Alleen ter informatie.';
+  }
+
+  @override
+  String get sentinel_caseRef => 'Zaaknummer (SNT-1234)';
+
+  @override
+  String get sentinel_statement => 'Waarom moet de ban worden opgeheven?';
+
+  @override
+  String get sentinel_contact =>
+      'Contact (optioneel, alleen zichtbaar voor moderators)';
+
+  @override
+  String get sentinel_appealSend => 'Bezwaar versturen';
+
+  @override
+  String get sentinel_appealReceived =>
+      'Bezwaar verstuurd. Een moderator beoordeelt het.';
+
+  @override
+  String get sentinel_appealUnknown => 'Geen MeshCore-zaak heeft dat nummer.';
+
+  @override
+  String get sentinel_appealNotOpen =>
+      'Die zaak heeft geen actieve ban, of er wacht al een bezwaar.';
+
+  @override
+  String get sentinel_appealTooMany =>
+      'Te veel bezwaren. Probeer het over een minuut opnieuw.';
+
+  @override
+  String get sentinel_failed =>
+      'Moderatiedienst niet bereikbaar. Probeer het later opnieuw.';
+
+  @override
+  String get privacy_netSentinel =>
+      'Moderatie: alleen als je communitymoderatie aanzet. De banlijst en meldingen of bezwaren die je verstuurt gaan via sentinel-relay.meshmayhem.org naar NOTORYX-moderators.';
 }

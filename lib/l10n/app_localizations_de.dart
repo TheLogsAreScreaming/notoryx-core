@@ -5270,7 +5270,8 @@ class AppLocalizationsDe extends AppLocalizations {
       locale: localeName,
       other:
           '$count Sprünge haben keinen Standort - der angezeigte Pfad ist unvollständig',
-      one: '1 Sprung hat keinen Standort - der angezeigte Pfad ist unvollständig',
+      one:
+          '1 Sprung hat keinen Standort - der angezeigte Pfad ist unvollständig',
     );
     return '$_temp0';
   }
@@ -11892,4 +11893,177 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get place_waypoint => 'Gespeicherter Wegpunkt';
+
+  @override
+  String get sentinel_title => 'Community-Moderation';
+
+  @override
+  String get sentinel_toolSubtitle =>
+      'Spam an die NOTORYX-Moderation melden und markierte Knoten sehen';
+
+  @override
+  String get sentinel_intro =>
+      'Meldungen gehen an die NOTORYX-Moderation, die jede einzeln prüft. Bestätigte Sperren kommen als Hinweisliste zurück: Markierte Knoten erhalten ein Label, im Mesh wird nichts blockiert.';
+
+  @override
+  String get sentinel_enable => 'Community-Moderation verwenden';
+
+  @override
+  String get sentinel_enableSub =>
+      'Standardmäßig aus. Solange sie aus ist, kontaktiert NOTORYX den Moderationsdienst nie.';
+
+  @override
+  String get sentinel_hide => 'Nachrichten markierter Absender ausblenden';
+
+  @override
+  String get sentinel_hideSub =>
+      'Nur Kanalnachrichten. Du kannst das jederzeit ausschalten.';
+
+  @override
+  String sentinel_synced(String time) {
+    return 'Sperrliste aktualisiert $time';
+  }
+
+  @override
+  String get sentinel_neverSynced => 'Sperrliste noch nicht geladen';
+
+  @override
+  String sentinel_flaggedCount(int count) {
+    return 'Markierte Knoten: $count';
+  }
+
+  @override
+  String sentinel_queued(int count) {
+    return 'Wartende Meldungen: $count';
+  }
+
+  @override
+  String get sentinel_refresh => 'Jetzt aktualisieren';
+
+  @override
+  String get sentinel_yourNode => 'Dein Knoten';
+
+  @override
+  String get sentinel_yourNodeClear => 'Dein Knoten ist nicht markiert.';
+
+  @override
+  String sentinel_yourNodeFlagged(String caseRef) {
+    return 'Dein Knoten ist markiert (Fall $caseRef). Wenn das ein Irrtum ist, kannst du Einspruch einlegen.';
+  }
+
+  @override
+  String get sentinel_yourNodeUnknown =>
+      'Verbinde ein Funkgerät, um deinen Knoten zu prüfen.';
+
+  @override
+  String get sentinel_appealPending => 'Dein Einspruch wird geprüft.';
+
+  @override
+  String get sentinel_appeal => 'Einspruch';
+
+  @override
+  String get sentinel_appealOther => 'Einspruch zu einer Fallnummer';
+
+  @override
+  String get sentinel_yourReports => 'Deine letzten Meldungen';
+
+  @override
+  String get sentinel_report => 'An Moderation melden';
+
+  @override
+  String sentinel_reportTitle(String name) {
+    return '$name melden';
+  }
+
+  @override
+  String get sentinel_reasonSpam => 'Spam oder Werbung';
+
+  @override
+  String get sentinel_reasonFlooding => 'Mesh überfluten';
+
+  @override
+  String get sentinel_reasonAbuse => 'Belästigung oder Beleidigung';
+
+  @override
+  String get sentinel_reasonImpersonation => 'Identitätsvortäuschung';
+
+  @override
+  String get sentinel_reasonOther => 'Sonstiges';
+
+  @override
+  String get sentinel_note => 'Details (optional)';
+
+  @override
+  String get sentinel_includeMessage => 'Diese Nachricht mitsenden';
+
+  @override
+  String get sentinel_sends =>
+      'Sendet ID und Namen des Knotens, deinen Grund und, falls angehakt, diese Nachricht. Nicht deinen Namen, Schlüssel oder Standort.';
+
+  @override
+  String get sentinel_send => 'Meldung senden';
+
+  @override
+  String sentinel_sent(String caseRef) {
+    return 'Meldung gesendet ($caseRef)';
+  }
+
+  @override
+  String get sentinel_queuedOne =>
+      'Keine Verbindung. Die Meldung wird später gesendet.';
+
+  @override
+  String sentinel_rejected(String message) {
+    return 'Meldung nicht angenommen: $message';
+  }
+
+  @override
+  String get sentinel_offPrompt => 'Community-Moderation einschalten?';
+
+  @override
+  String get sentinel_turnOn => 'Einschalten';
+
+  @override
+  String get sentinel_flagged => 'Markiert';
+
+  @override
+  String sentinel_flaggedHint(String caseRef) {
+    return 'Von der NOTORYX-Moderation markiert (Fall $caseRef). Nur ein Hinweis.';
+  }
+
+  @override
+  String get sentinel_caseRef => 'Fallnummer (SNT-1234)';
+
+  @override
+  String get sentinel_statement => 'Warum sollte die Sperre aufgehoben werden?';
+
+  @override
+  String get sentinel_contact =>
+      'Kontakt (optional, nur für die Moderation sichtbar)';
+
+  @override
+  String get sentinel_appealSend => 'Einspruch senden';
+
+  @override
+  String get sentinel_appealReceived =>
+      'Einspruch gesendet. Die Moderation prüft ihn.';
+
+  @override
+  String get sentinel_appealUnknown => 'Kein MeshCore-Fall hat diese Nummer.';
+
+  @override
+  String get sentinel_appealNotOpen =>
+      'Für diesen Fall gibt es keine aktive Sperre oder schon einen offenen Einspruch.';
+
+  @override
+  String get sentinel_appealTooMany =>
+      'Zu viele Einsprüche. Versuche es in einer Minute erneut.';
+
+  @override
+  String get sentinel_failed =>
+      'Moderationsdienst nicht erreichbar. Versuche es später erneut.';
+
+  @override
+  String get privacy_netSentinel =>
+      'Moderation: nur wenn du die Community-Moderation einschaltest. Die Sperrliste sowie deine Meldungen und Einsprüche laufen über sentinel-relay.meshmayhem.org zur NOTORYX-Moderation.';
 }
