@@ -12041,4 +12041,140 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       'Модерация: только если вы включите модерацию сообщества. Список блокировок и отправленные вами жалобы или апелляции идут модераторам NOTORYX через sentinel-relay.meshmayhem.org.';
+
+  @override
+  String get zones_title => 'Оповещения о зонах и тропе';
+
+  @override
+  String get zones_toolSubtitle =>
+      'Оповещение, когда кто-то входит в зону, покидает её или сходит с тропы';
+
+  @override
+  String get zones_enabled => 'Оповещения включены';
+
+  @override
+  String get zones_enabledHint =>
+      'Использует координаты из объявлений, которые слышит радио, поэтому оповещение свежо настолько, насколько свежо последнее объявление.';
+
+  @override
+  String get zones_watch => 'Следить';
+
+  @override
+  String get zones_scopeFavorites => 'Избранные';
+
+  @override
+  String get zones_scopeEveryone => 'Все';
+
+  @override
+  String get zones_includeSelf => 'И моё радио';
+
+  @override
+  String get zones_zones => 'Зоны';
+
+  @override
+  String get zones_none =>
+      'Зон пока нет. Добавьте зону вокруг лагеря, начала тропы или места сбора.';
+
+  @override
+  String get zones_add => 'Добавить зону';
+
+  @override
+  String get zones_edit => 'Изменить зону';
+
+  @override
+  String get zones_name => 'Название';
+
+  @override
+  String get zones_defaultName => 'Зона';
+
+  @override
+  String get zones_center => 'Центр';
+
+  @override
+  String get zones_centerMyRadio => 'Положение моего радио';
+
+  @override
+  String zones_centerWaypoint(String name) {
+    return 'Точка: $name';
+  }
+
+  @override
+  String get zones_noCenter =>
+      'У радио нет координат и нет сохранённых точек. Сначала задайте координаты или сохраните точку.';
+
+  @override
+  String zones_radius(String distance) {
+    return 'Радиус: $distance';
+  }
+
+  @override
+  String get zones_alertOn => 'Оповещать при';
+
+  @override
+  String get zones_onEnter => 'Входе';
+
+  @override
+  String get zones_onLeave => 'Выходе';
+
+  @override
+  String get zones_onBoth => 'Обоих';
+
+  @override
+  String get zones_delete => 'Удалить зону';
+
+  @override
+  String zones_full(int count) {
+    return 'Можно хранить до $count зон.';
+  }
+
+  @override
+  String get zones_trail => 'Тропа';
+
+  @override
+  String get zones_trailNone => 'Тропа не выбрана';
+
+  @override
+  String get zones_trailHint =>
+      'Выберите маршрут из точек или записанный трек. Любой, за кем вы следите, отойдя дальше предела, вызовет оповещение.';
+
+  @override
+  String zones_offTrailLimit(String distance) {
+    return 'Сход с тропы после $distance';
+  }
+
+  @override
+  String get zones_you => 'Вы';
+
+  @override
+  String zones_trackName(String date, String km) {
+    return 'Трек $date · $km км';
+  }
+
+  @override
+  String zones_alertEnteredTitle(String zone) {
+    return 'Вход в зону $zone';
+  }
+
+  @override
+  String zones_alertEnteredBody(String name, String zone) {
+    return '$name в зоне $zone.';
+  }
+
+  @override
+  String zones_alertLeftTitle(String zone) {
+    return 'Выход из зоны $zone';
+  }
+
+  @override
+  String zones_alertLeftBody(String name, String zone) {
+    return '$name покинул зону $zone.';
+  }
+
+  @override
+  String get zones_alertOffTrailTitle => 'Сход с тропы';
+
+  @override
+  String zones_alertOffTrailBody(String name, String distance, String trail) {
+    return '$name в $distance от: $trail.';
+  }
 }

@@ -1,3 +1,4 @@
+import 'zone_alerts_screen.dart';
 import '../theme/mesh_theme.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
@@ -150,6 +151,12 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
             title: l10n.waypoints_title,
             subtitle: l10n.waypoints_toolSubtitle,
             builder: (_) => const WaypointsScreen(),
+          ),
+          _ToolAction(
+            icon: Icons.radar,
+            title: l10n.zones_title,
+            subtitle: l10n.zones_toolSubtitle,
+            builder: (_) => const ZoneAlertsScreen(),
           ),
           _ToolAction(
             icon: Icons.cell_tower,

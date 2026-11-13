@@ -12012,4 +12012,140 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       'Moderación: solo si activas la moderación comunitaria. La lista de bloqueos y las denuncias o apelaciones que envíes van a los moderadores de NOTORYX a través de sentinel-relay.meshmayhem.org.';
+
+  @override
+  String get zones_title => 'Alertas de zona y sendero';
+
+  @override
+  String get zones_toolSubtitle =>
+      'Avisa cuando alguien entra o sale de una zona, o se aleja de un sendero';
+
+  @override
+  String get zones_enabled => 'Alertas activadas';
+
+  @override
+  String get zones_enabledHint =>
+      'Usa las posiciones de los anuncios que oye tu radio, así que una alerta es tan reciente como el último anuncio.';
+
+  @override
+  String get zones_watch => 'Vigilar';
+
+  @override
+  String get zones_scopeFavorites => 'Favoritos';
+
+  @override
+  String get zones_scopeEveryone => 'Todos';
+
+  @override
+  String get zones_includeSelf => 'También mi radio';
+
+  @override
+  String get zones_zones => 'Zonas';
+
+  @override
+  String get zones_none =>
+      'Aún no hay zonas. Añade una alrededor del campamento, un inicio de sendero o un punto de encuentro.';
+
+  @override
+  String get zones_add => 'Añadir zona';
+
+  @override
+  String get zones_edit => 'Editar zona';
+
+  @override
+  String get zones_name => 'Nombre';
+
+  @override
+  String get zones_defaultName => 'Zona';
+
+  @override
+  String get zones_center => 'Centro';
+
+  @override
+  String get zones_centerMyRadio => 'Posición de mi radio';
+
+  @override
+  String zones_centerWaypoint(String name) {
+    return 'Punto: $name';
+  }
+
+  @override
+  String get zones_noCenter =>
+      'Tu radio no tiene posición y no hay puntos. Fija una posición o guarda un punto primero.';
+
+  @override
+  String zones_radius(String distance) {
+    return 'Radio: $distance';
+  }
+
+  @override
+  String get zones_alertOn => 'Avisar al';
+
+  @override
+  String get zones_onEnter => 'Entrar';
+
+  @override
+  String get zones_onLeave => 'Salir';
+
+  @override
+  String get zones_onBoth => 'Ambos';
+
+  @override
+  String get zones_delete => 'Eliminar zona';
+
+  @override
+  String zones_full(int count) {
+    return 'Puedes tener hasta $count zonas.';
+  }
+
+  @override
+  String get zones_trail => 'Sendero';
+
+  @override
+  String get zones_trailNone => 'Ningún sendero vigilado';
+
+  @override
+  String get zones_trailHint =>
+      'Elige una ruta de puntos o un track grabado. Cualquier persona vigilada que se aleje más del límite genera una alerta.';
+
+  @override
+  String zones_offTrailLimit(String distance) {
+    return 'Fuera del sendero a partir de $distance';
+  }
+
+  @override
+  String get zones_you => 'Tú';
+
+  @override
+  String zones_trackName(String date, String km) {
+    return 'Track $date · $km km';
+  }
+
+  @override
+  String zones_alertEnteredTitle(String zone) {
+    return 'Entrada en $zone';
+  }
+
+  @override
+  String zones_alertEnteredBody(String name, String zone) {
+    return '$name está dentro de $zone.';
+  }
+
+  @override
+  String zones_alertLeftTitle(String zone) {
+    return 'Salida de $zone';
+  }
+
+  @override
+  String zones_alertLeftBody(String name, String zone) {
+    return '$name ha salido de $zone.';
+  }
+
+  @override
+  String get zones_alertOffTrailTitle => 'Fuera del sendero';
+
+  @override
+  String zones_alertOffTrailBody(String name, String distance, String trail) {
+    return '$name está a $distance de $trail.';
+  }
 }

@@ -11464,4 +11464,137 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       '관리: 커뮤니티 관리를 켠 경우에만. 차단 목록과 보낸 신고 및 이의 제기는 sentinel-relay.meshmayhem.org를 거쳐 NOTORYX 관리자에게 전달됩니다.';
+
+  @override
+  String get zones_title => '구역 및 트레일 알림';
+
+  @override
+  String get zones_toolSubtitle => '누군가 구역에 들어오거나 나가거나 트레일을 벗어나면 알림';
+
+  @override
+  String get zones_enabled => '알림 켜기';
+
+  @override
+  String get zones_enabledHint => '무전기가 수신한 광고의 위치를 사용하므로 알림은 마지막 광고만큼만 최신입니다.';
+
+  @override
+  String get zones_watch => '감시';
+
+  @override
+  String get zones_scopeFavorites => '즐겨찾기';
+
+  @override
+  String get zones_scopeEveryone => '모두';
+
+  @override
+  String get zones_includeSelf => '내 무전기도';
+
+  @override
+  String get zones_zones => '구역';
+
+  @override
+  String get zones_none => '아직 구역이 없습니다. 캠프, 등산로 입구, 집결지 주변에 추가하세요.';
+
+  @override
+  String get zones_add => '구역 추가';
+
+  @override
+  String get zones_edit => '구역 편집';
+
+  @override
+  String get zones_name => '이름';
+
+  @override
+  String get zones_defaultName => '구역';
+
+  @override
+  String get zones_center => '중심';
+
+  @override
+  String get zones_centerMyRadio => '내 무전기 위치';
+
+  @override
+  String zones_centerWaypoint(String name) {
+    return '웨이포인트: $name';
+  }
+
+  @override
+  String get zones_noCenter =>
+      '무전기 위치가 없고 웨이포인트도 없습니다. 먼저 위치를 설정하거나 웨이포인트를 저장하세요.';
+
+  @override
+  String zones_radius(String distance) {
+    return '반경: $distance';
+  }
+
+  @override
+  String get zones_alertOn => '알림 시점';
+
+  @override
+  String get zones_onEnter => '진입';
+
+  @override
+  String get zones_onLeave => '이탈';
+
+  @override
+  String get zones_onBoth => '둘 다';
+
+  @override
+  String get zones_delete => '구역 삭제';
+
+  @override
+  String zones_full(int count) {
+    return '구역은 최대 $count개까지 저장할 수 있습니다.';
+  }
+
+  @override
+  String get zones_trail => '트레일';
+
+  @override
+  String get zones_trailNone => '감시하는 트레일 없음';
+
+  @override
+  String get zones_trailHint =>
+      '웨이포인트 경로나 기록된 트랙을 선택하세요. 감시 대상이 한도보다 멀리 벗어나면 알림이 옵니다.';
+
+  @override
+  String zones_offTrailLimit(String distance) {
+    return '$distance 이상 벗어나면 이탈';
+  }
+
+  @override
+  String get zones_you => '나';
+
+  @override
+  String zones_trackName(String date, String km) {
+    return '트랙 $date · $km km';
+  }
+
+  @override
+  String zones_alertEnteredTitle(String zone) {
+    return '$zone 진입';
+  }
+
+  @override
+  String zones_alertEnteredBody(String name, String zone) {
+    return '$name님이 $zone 안에 있습니다.';
+  }
+
+  @override
+  String zones_alertLeftTitle(String zone) {
+    return '$zone 이탈';
+  }
+
+  @override
+  String zones_alertLeftBody(String name, String zone) {
+    return '$name님이 $zone을(를) 벗어났습니다.';
+  }
+
+  @override
+  String get zones_alertOffTrailTitle => '트레일 이탈';
+
+  @override
+  String zones_alertOffTrailBody(String name, String distance, String trail) {
+    return '$name님이 $trail에서 $distance 떨어져 있습니다.';
+  }
 }

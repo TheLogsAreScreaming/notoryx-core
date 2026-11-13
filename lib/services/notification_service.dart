@@ -321,6 +321,38 @@ class NotificationService {
     }
   }
 
+  /// Someone entered or left a zone, or wandered off the watched trail.
+  Future<bool> showPositionAlert({
+    required String id,
+    required String title,
+    required String body,
+  }) async {
+    if (_suppressNotifications || !await _ensureCanNotify()) return false;
+    try {
+      await _notifications.show(
+        id: 'position_watch:$id'.hashCode,
+        title: title,
+        body: body,
+        notificationDetails: const NotificationDetails(
+          android: AndroidNotificationDetails(
+            'bastion_zones',
+            'Zone and trail alerts',
+            channelDescription:
+                'Someone entered or left a zone, or went off the trail',
+            importance: Importance.high,
+            priority: Priority.high,
+            icon: '@mipmap/ic_launcher',
+          ),
+          iOS: DarwinNotificationDetails(),
+          macOS: DarwinNotificationDetails(),
+        ),
+      );
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
   /// A watched repeater's battery is low, falling fast, or not answering.
   Future<bool> showBatteryAlert({
     required String repeaterKey,

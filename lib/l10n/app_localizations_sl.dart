@@ -11996,4 +11996,140 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       'Moderiranje: samo če vklopite moderiranje skupnosti. Seznam prepovedi ter prijave ali pritožbe, ki jih pošljete, gredo moderatorjem NOTORYX prek sentinel-relay.meshmayhem.org.';
+
+  @override
+  String get zones_title => 'Opozorila za cone in pot';
+
+  @override
+  String get zones_toolSubtitle =>
+      'Opozori, ko nekdo vstopi v cono, jo zapusti ali zaide s poti';
+
+  @override
+  String get zones_enabled => 'Opozorila vklopljena';
+
+  @override
+  String get zones_enabledHint =>
+      'Uporablja položaje iz oglasov, ki jih sliši radio, zato je opozorilo tako sveže kot zadnji oglas.';
+
+  @override
+  String get zones_watch => 'Spremljaj';
+
+  @override
+  String get zones_scopeFavorites => 'Priljubljeni';
+
+  @override
+  String get zones_scopeEveryone => 'Vsi';
+
+  @override
+  String get zones_includeSelf => 'Tudi moj radio';
+
+  @override
+  String get zones_zones => 'Cone';
+
+  @override
+  String get zones_none =>
+      'Še ni con. Dodajte eno okoli tabora, izhodišča poti ali zbirnega mesta.';
+
+  @override
+  String get zones_add => 'Dodaj cono';
+
+  @override
+  String get zones_edit => 'Uredi cono';
+
+  @override
+  String get zones_name => 'Ime';
+
+  @override
+  String get zones_defaultName => 'Cona';
+
+  @override
+  String get zones_center => 'Središče';
+
+  @override
+  String get zones_centerMyRadio => 'Položaj mojega radia';
+
+  @override
+  String zones_centerWaypoint(String name) {
+    return 'Točka: $name';
+  }
+
+  @override
+  String get zones_noCenter =>
+      'Radio nima položaja in ni točk. Najprej nastavite položaj ali shranite točko.';
+
+  @override
+  String zones_radius(String distance) {
+    return 'Polmer: $distance';
+  }
+
+  @override
+  String get zones_alertOn => 'Opozori ob';
+
+  @override
+  String get zones_onEnter => 'Vstopu';
+
+  @override
+  String get zones_onLeave => 'Izstopu';
+
+  @override
+  String get zones_onBoth => 'Obojem';
+
+  @override
+  String get zones_delete => 'Izbriši cono';
+
+  @override
+  String zones_full(int count) {
+    return 'Shranite lahko do $count con.';
+  }
+
+  @override
+  String get zones_trail => 'Pot';
+
+  @override
+  String get zones_trailNone => 'Nobena pot ni spremljana';
+
+  @override
+  String get zones_trailHint =>
+      'Izberite pot iz točk ali posneto sled. Vsakdo, ki ga spremljate in se oddalji bolj od meje, sproži opozorilo.';
+
+  @override
+  String zones_offTrailLimit(String distance) {
+    return 'Izven poti po $distance';
+  }
+
+  @override
+  String get zones_you => 'Vi';
+
+  @override
+  String zones_trackName(String date, String km) {
+    return 'Sled $date · $km km';
+  }
+
+  @override
+  String zones_alertEnteredTitle(String zone) {
+    return 'Vstop v $zone';
+  }
+
+  @override
+  String zones_alertEnteredBody(String name, String zone) {
+    return '$name je v coni $zone.';
+  }
+
+  @override
+  String zones_alertLeftTitle(String zone) {
+    return 'Izstop iz $zone';
+  }
+
+  @override
+  String zones_alertLeftBody(String name, String zone) {
+    return '$name je zapustil cono $zone.';
+  }
+
+  @override
+  String get zones_alertOffTrailTitle => 'Izven poti';
+
+  @override
+  String zones_alertOffTrailBody(String name, String distance, String trail) {
+    return '$name je $distance od: $trail.';
+  }
 }

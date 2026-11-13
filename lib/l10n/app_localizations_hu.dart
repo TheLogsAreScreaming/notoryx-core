@@ -11994,4 +11994,140 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       'Moderálás: csak ha bekapcsolod a közösségi moderálást. A tiltólista, valamint az általad küldött jelentések és fellebbezések a sentinel-relay.meshmayhem.org címen át jutnak a NOTORYX moderátoraihoz.';
+
+  @override
+  String get zones_title => 'Zóna- és ösvényriasztások';
+
+  @override
+  String get zones_toolSubtitle =>
+      'Riaszt, ha valaki belép egy zónába, elhagyja, vagy letér az ösvényről';
+
+  @override
+  String get zones_enabled => 'Riasztások be';
+
+  @override
+  String get zones_enabledHint =>
+      'A rádiód által hallott hirdetések pozícióit használja, így a riasztás csak annyira friss, mint az utolsó hirdetés.';
+
+  @override
+  String get zones_watch => 'Figyelés';
+
+  @override
+  String get zones_scopeFavorites => 'Kedvencek';
+
+  @override
+  String get zones_scopeEveryone => 'Mindenki';
+
+  @override
+  String get zones_includeSelf => 'A saját rádióm is';
+
+  @override
+  String get zones_zones => 'Zónák';
+
+  @override
+  String get zones_none =>
+      'Még nincs zóna. Adj hozzá egyet a tábor, egy túrakiindulópont vagy egy találkozóhely köré.';
+
+  @override
+  String get zones_add => 'Zóna hozzáadása';
+
+  @override
+  String get zones_edit => 'Zóna szerkesztése';
+
+  @override
+  String get zones_name => 'Név';
+
+  @override
+  String get zones_defaultName => 'Zóna';
+
+  @override
+  String get zones_center => 'Középpont';
+
+  @override
+  String get zones_centerMyRadio => 'A rádióm pozíciója';
+
+  @override
+  String zones_centerWaypoint(String name) {
+    return 'Útpont: $name';
+  }
+
+  @override
+  String get zones_noCenter =>
+      'A rádiódnak nincs pozíciója, és nincs útpont. Előbb állíts be pozíciót vagy ments egy útpontot.';
+
+  @override
+  String zones_radius(String distance) {
+    return 'Sugár: $distance';
+  }
+
+  @override
+  String get zones_alertOn => 'Riasztás, ha';
+
+  @override
+  String get zones_onEnter => 'Belépés';
+
+  @override
+  String get zones_onLeave => 'Kilépés';
+
+  @override
+  String get zones_onBoth => 'Mindkettő';
+
+  @override
+  String get zones_delete => 'Zóna törlése';
+
+  @override
+  String zones_full(int count) {
+    return 'Legfeljebb $count zónát tarthatsz meg.';
+  }
+
+  @override
+  String get zones_trail => 'Ösvény';
+
+  @override
+  String get zones_trailNone => 'Nincs figyelt ösvény';
+
+  @override
+  String get zones_trailHint =>
+      'Válassz útpont-útvonalat vagy rögzített nyomvonalat. Bárki, akit figyelsz, és a határnál messzebb kerül tőle, riasztást vált ki.';
+
+  @override
+  String zones_offTrailLimit(String distance) {
+    return 'Letérés $distance után';
+  }
+
+  @override
+  String get zones_you => 'Te';
+
+  @override
+  String zones_trackName(String date, String km) {
+    return 'Nyomvonal $date · $km km';
+  }
+
+  @override
+  String zones_alertEnteredTitle(String zone) {
+    return 'Belépés: $zone';
+  }
+
+  @override
+  String zones_alertEnteredBody(String name, String zone) {
+    return '$name a(z) $zone zónában van.';
+  }
+
+  @override
+  String zones_alertLeftTitle(String zone) {
+    return 'Kilépés: $zone';
+  }
+
+  @override
+  String zones_alertLeftBody(String name, String zone) {
+    return '$name elhagyta a(z) $zone zónát.';
+  }
+
+  @override
+  String get zones_alertOffTrailTitle => 'Letért az ösvényről';
+
+  @override
+  String zones_alertOffTrailBody(String name, String distance, String trail) {
+    return '$name $distance távolságra van ettől: $trail.';
+  }
 }

@@ -11916,4 +11916,140 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       'Moderering: bara om du slår på gemenskapsmoderering. Avstängningslistan och rapporter eller överklaganden du skickar går till NOTORYX-moderatorer via sentinel-relay.meshmayhem.org.';
+
+  @override
+  String get zones_title => 'Zon- och ledlarm';
+
+  @override
+  String get zones_toolSubtitle =>
+      'Larmar när någon går in i eller lämnar en zon, eller avviker från en led';
+
+  @override
+  String get zones_enabled => 'Larm på';
+
+  @override
+  String get zones_enabledHint =>
+      'Använder positioner från adverts som radion hör, så ett larm är bara så färskt som senaste advert.';
+
+  @override
+  String get zones_watch => 'Bevaka';
+
+  @override
+  String get zones_scopeFavorites => 'Favoriter';
+
+  @override
+  String get zones_scopeEveryone => 'Alla';
+
+  @override
+  String get zones_includeSelf => 'Även min radio';
+
+  @override
+  String get zones_zones => 'Zoner';
+
+  @override
+  String get zones_none =>
+      'Inga zoner än. Lägg till en runt lägret, ett ledstart eller en mötesplats.';
+
+  @override
+  String get zones_add => 'Lägg till zon';
+
+  @override
+  String get zones_edit => 'Redigera zon';
+
+  @override
+  String get zones_name => 'Namn';
+
+  @override
+  String get zones_defaultName => 'Zon';
+
+  @override
+  String get zones_center => 'Mittpunkt';
+
+  @override
+  String get zones_centerMyRadio => 'Min radios position';
+
+  @override
+  String zones_centerWaypoint(String name) {
+    return 'Waypoint: $name';
+  }
+
+  @override
+  String get zones_noCenter =>
+      'Radion har ingen position och det finns inga waypoints. Ange en position eller spara en waypoint först.';
+
+  @override
+  String zones_radius(String distance) {
+    return 'Radie: $distance';
+  }
+
+  @override
+  String get zones_alertOn => 'Larma vid';
+
+  @override
+  String get zones_onEnter => 'Inträde';
+
+  @override
+  String get zones_onLeave => 'Utträde';
+
+  @override
+  String get zones_onBoth => 'Båda';
+
+  @override
+  String get zones_delete => 'Ta bort zon';
+
+  @override
+  String zones_full(int count) {
+    return 'Du kan ha upp till $count zoner.';
+  }
+
+  @override
+  String get zones_trail => 'Led';
+
+  @override
+  String get zones_trailNone => 'Ingen led bevakas';
+
+  @override
+  String get zones_trailHint =>
+      'Välj en waypoint-rutt eller ett inspelat spår. Den som bevakas och kommer längre bort än gränsen ger ett larm.';
+
+  @override
+  String zones_offTrailLimit(String distance) {
+    return 'Utanför leden efter $distance';
+  }
+
+  @override
+  String get zones_you => 'Du';
+
+  @override
+  String zones_trackName(String date, String km) {
+    return 'Spår $date · $km km';
+  }
+
+  @override
+  String zones_alertEnteredTitle(String zone) {
+    return 'In i $zone';
+  }
+
+  @override
+  String zones_alertEnteredBody(String name, String zone) {
+    return '$name är inne i $zone.';
+  }
+
+  @override
+  String zones_alertLeftTitle(String zone) {
+    return 'Lämnade $zone';
+  }
+
+  @override
+  String zones_alertLeftBody(String name, String zone) {
+    return '$name har lämnat $zone.';
+  }
+
+  @override
+  String get zones_alertOffTrailTitle => 'Utanför leden';
+
+  @override
+  String zones_alertOffTrailBody(String name, String distance, String trail) {
+    return '$name är $distance från $trail.';
+  }
 }
