@@ -11241,4 +11241,135 @@ class AppLocalizationsZh extends AppLocalizations {
   String topology_semantics(int repeaters, int rings) {
     return '网络图。你周围 $rings 个圆环上有 $repeaters 个中继器。';
   }
+
+  @override
+  String get zones_title => '区域与路线提醒';
+
+  @override
+  String get zones_toolSubtitle => '有人进入或离开区域、或偏离路线时提醒';
+
+  @override
+  String get zones_enabled => '开启提醒';
+
+  @override
+  String get zones_enabledHint => '使用电台收到的广播中的位置，因此提醒的时效取决于最近一次广播。';
+
+  @override
+  String get zones_watch => '关注';
+
+  @override
+  String get zones_scopeFavorites => '收藏';
+
+  @override
+  String get zones_scopeEveryone => '所有人';
+
+  @override
+  String get zones_includeSelf => '包括我的电台';
+
+  @override
+  String get zones_zones => '区域';
+
+  @override
+  String get zones_none => '还没有区域。可以在营地、步道起点或集合点周围添加一个。';
+
+  @override
+  String get zones_add => '添加区域';
+
+  @override
+  String get zones_edit => '编辑区域';
+
+  @override
+  String get zones_name => '名称';
+
+  @override
+  String get zones_defaultName => '区域';
+
+  @override
+  String get zones_center => '中心';
+
+  @override
+  String get zones_centerMyRadio => '我的电台位置';
+
+  @override
+  String zones_centerWaypoint(String name) {
+    return '航点：$name';
+  }
+
+  @override
+  String get zones_noCenter => '电台没有位置，也没有航点。请先设置位置或保存一个航点。';
+
+  @override
+  String zones_radius(String distance) {
+    return '半径：$distance';
+  }
+
+  @override
+  String get zones_alertOn => '提醒时机';
+
+  @override
+  String get zones_onEnter => '进入';
+
+  @override
+  String get zones_onLeave => '离开';
+
+  @override
+  String get zones_onBoth => '两者';
+
+  @override
+  String get zones_delete => '删除区域';
+
+  @override
+  String zones_full(int count) {
+    return '最多可保存 $count 个区域。';
+  }
+
+  @override
+  String get zones_trail => '路线';
+
+  @override
+  String get zones_trailNone => '未关注路线';
+
+  @override
+  String get zones_trailHint => '选择航点路线或已录制的轨迹。被关注的人离路线超过限制距离就会提醒。';
+
+  @override
+  String zones_offTrailLimit(String distance) {
+    return '偏离超过 $distance 视为离开路线';
+  }
+
+  @override
+  String get zones_you => '你';
+
+  @override
+  String zones_trackName(String date, String km) {
+    return '轨迹 $date · $km 公里';
+  }
+
+  @override
+  String zones_alertEnteredTitle(String zone) {
+    return '进入 $zone';
+  }
+
+  @override
+  String zones_alertEnteredBody(String name, String zone) {
+    return '$name 在 $zone 内。';
+  }
+
+  @override
+  String zones_alertLeftTitle(String zone) {
+    return '离开 $zone';
+  }
+
+  @override
+  String zones_alertLeftBody(String name, String zone) {
+    return '$name 已离开 $zone。';
+  }
+
+  @override
+  String get zones_alertOffTrailTitle => '偏离路线';
+
+  @override
+  String zones_alertOffTrailBody(String name, String distance, String trail) {
+    return '$name 距离 $trail $distance。';
+  }
 }

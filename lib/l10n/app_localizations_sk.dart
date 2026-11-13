@@ -11994,4 +11994,140 @@ class AppLocalizationsSk extends AppLocalizations {
   String topology_semantics(int repeaters, int rings) {
     return 'Diagram siete. $repeaters opakovačov na $rings kruhoch okolo vás.';
   }
+
+  @override
+  String get zones_title => 'Upozornenia na zóny a trasu';
+
+  @override
+  String get zones_toolSubtitle =>
+      'Upozorní, keď niekto vstúpi do zóny, opustí ju alebo zíde z trasy';
+
+  @override
+  String get zones_enabled => 'Upozornenia zapnuté';
+
+  @override
+  String get zones_enabledHint =>
+      'Používa polohy z oznámení, ktoré rádio počuje, takže upozornenie je len také aktuálne ako posledné oznámenie.';
+
+  @override
+  String get zones_watch => 'Sledovať';
+
+  @override
+  String get zones_scopeFavorites => 'Obľúbené';
+
+  @override
+  String get zones_scopeEveryone => 'Všetci';
+
+  @override
+  String get zones_includeSelf => 'Aj moje rádio';
+
+  @override
+  String get zones_zones => 'Zóny';
+
+  @override
+  String get zones_none =>
+      'Zatiaľ žiadne zóny. Pridajte jednu okolo tábora, začiatku trasy alebo miesta stretnutia.';
+
+  @override
+  String get zones_add => 'Pridať zónu';
+
+  @override
+  String get zones_edit => 'Upraviť zónu';
+
+  @override
+  String get zones_name => 'Názov';
+
+  @override
+  String get zones_defaultName => 'Zóna';
+
+  @override
+  String get zones_center => 'Stred';
+
+  @override
+  String get zones_centerMyRadio => 'Poloha môjho rádia';
+
+  @override
+  String zones_centerWaypoint(String name) {
+    return 'Bod: $name';
+  }
+
+  @override
+  String get zones_noCenter =>
+      'Rádio nemá polohu a nie sú žiadne body. Najprv nastavte polohu alebo uložte bod.';
+
+  @override
+  String zones_radius(String distance) {
+    return 'Polomer: $distance';
+  }
+
+  @override
+  String get zones_alertOn => 'Upozorniť pri';
+
+  @override
+  String get zones_onEnter => 'Vstupe';
+
+  @override
+  String get zones_onLeave => 'Odchode';
+
+  @override
+  String get zones_onBoth => 'Oboch';
+
+  @override
+  String get zones_delete => 'Odstrániť zónu';
+
+  @override
+  String zones_full(int count) {
+    return 'Môžete mať najviac $count zón.';
+  }
+
+  @override
+  String get zones_trail => 'Trasa';
+
+  @override
+  String get zones_trailNone => 'Žiadna sledovaná trasa';
+
+  @override
+  String get zones_trailHint =>
+      'Vyberte trasu z bodov alebo nahratú stopu. Každý sledovaný, kto sa od nej vzdiali viac ako je limit, spustí upozornenie.';
+
+  @override
+  String zones_offTrailLimit(String distance) {
+    return 'Mimo trasy po $distance';
+  }
+
+  @override
+  String get zones_you => 'Vy';
+
+  @override
+  String zones_trackName(String date, String km) {
+    return 'Stopa $date · $km km';
+  }
+
+  @override
+  String zones_alertEnteredTitle(String zone) {
+    return 'Vstup do $zone';
+  }
+
+  @override
+  String zones_alertEnteredBody(String name, String zone) {
+    return '$name je v zóne $zone.';
+  }
+
+  @override
+  String zones_alertLeftTitle(String zone) {
+    return 'Odchod zo $zone';
+  }
+
+  @override
+  String zones_alertLeftBody(String name, String zone) {
+    return '$name opustil zónu $zone.';
+  }
+
+  @override
+  String get zones_alertOffTrailTitle => 'Mimo trasy';
+
+  @override
+  String zones_alertOffTrailBody(String name, String distance, String trail) {
+    return '$name je $distance od: $trail.';
+  }
 }

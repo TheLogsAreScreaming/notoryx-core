@@ -12040,4 +12040,140 @@ class AppLocalizationsDe extends AppLocalizations {
   String topology_semantics(int repeaters, int rings) {
     return 'Netzdiagramm. $repeaters Repeater auf $rings Ringen um dich.';
   }
+
+  @override
+  String get zones_title => 'Zonen- & Wegalarme';
+
+  @override
+  String get zones_toolSubtitle =>
+      'Alarm, wenn jemand eine Zone betritt oder verlässt oder vom Weg abkommt';
+
+  @override
+  String get zones_enabled => 'Alarme an';
+
+  @override
+  String get zones_enabledHint =>
+      'Nutzt Positionen aus Adverts, die dein Funkgerät hört. Ein Alarm ist also nur so aktuell wie das letzte Advert.';
+
+  @override
+  String get zones_watch => 'Beobachten';
+
+  @override
+  String get zones_scopeFavorites => 'Favoriten';
+
+  @override
+  String get zones_scopeEveryone => 'Alle';
+
+  @override
+  String get zones_includeSelf => 'Auch mein Funkgerät';
+
+  @override
+  String get zones_zones => 'Zonen';
+
+  @override
+  String get zones_none =>
+      'Noch keine Zonen. Leg eine um das Lager, einen Wanderparkplatz oder einen Treffpunkt an.';
+
+  @override
+  String get zones_add => 'Zone hinzufügen';
+
+  @override
+  String get zones_edit => 'Zone bearbeiten';
+
+  @override
+  String get zones_name => 'Name';
+
+  @override
+  String get zones_defaultName => 'Zone';
+
+  @override
+  String get zones_center => 'Mittelpunkt';
+
+  @override
+  String get zones_centerMyRadio => 'Position meines Funkgeräts';
+
+  @override
+  String zones_centerWaypoint(String name) {
+    return 'Wegpunkt: $name';
+  }
+
+  @override
+  String get zones_noCenter =>
+      'Dein Funkgerät hat keine Position und es gibt keine Wegpunkte. Setze zuerst eine Position oder speichere einen Wegpunkt.';
+
+  @override
+  String zones_radius(String distance) {
+    return 'Radius: $distance';
+  }
+
+  @override
+  String get zones_alertOn => 'Alarm beim';
+
+  @override
+  String get zones_onEnter => 'Betreten';
+
+  @override
+  String get zones_onLeave => 'Verlassen';
+
+  @override
+  String get zones_onBoth => 'Beides';
+
+  @override
+  String get zones_delete => 'Zone löschen';
+
+  @override
+  String zones_full(int count) {
+    return 'Du kannst bis zu $count Zonen behalten.';
+  }
+
+  @override
+  String get zones_trail => 'Weg';
+
+  @override
+  String get zones_trailNone => 'Kein Weg beobachtet';
+
+  @override
+  String get zones_trailHint =>
+      'Wähle eine Wegpunkt-Route oder einen aufgezeichneten Track. Wer beobachtet wird und sich weiter als das Limit entfernt, löst einen Alarm aus.';
+
+  @override
+  String zones_offTrailLimit(String distance) {
+    return 'Abseits des Wegs ab $distance';
+  }
+
+  @override
+  String get zones_you => 'Du';
+
+  @override
+  String zones_trackName(String date, String km) {
+    return 'Track $date · $km km';
+  }
+
+  @override
+  String zones_alertEnteredTitle(String zone) {
+    return '$zone betreten';
+  }
+
+  @override
+  String zones_alertEnteredBody(String name, String zone) {
+    return '$name ist in $zone.';
+  }
+
+  @override
+  String zones_alertLeftTitle(String zone) {
+    return '$zone verlassen';
+  }
+
+  @override
+  String zones_alertLeftBody(String name, String zone) {
+    return '$name hat $zone verlassen.';
+  }
+
+  @override
+  String get zones_alertOffTrailTitle => 'Vom Weg abgekommen';
+
+  @override
+  String zones_alertOffTrailBody(String name, String distance, String trail) {
+    return '$name ist $distance von $trail entfernt.';
+  }
 }

@@ -11469,4 +11469,136 @@ class AppLocalizationsJa extends AppLocalizations {
   String topology_semantics(int repeaters, int rings) {
     return 'ネットワーク図。あなたの周りの$ringsつのリングに$repeaters台のリピーター。';
   }
+
+  @override
+  String get zones_title => 'ゾーン・トレイル通知';
+
+  @override
+  String get zones_toolSubtitle => '誰かがゾーンに出入りしたり、トレイルから外れたりすると通知';
+
+  @override
+  String get zones_enabled => '通知オン';
+
+  @override
+  String get zones_enabledHint => '無線機が受信したアドバートの位置を使うため、通知は最後のアドバートの時点の情報です。';
+
+  @override
+  String get zones_watch => '対象';
+
+  @override
+  String get zones_scopeFavorites => 'お気に入り';
+
+  @override
+  String get zones_scopeEveryone => '全員';
+
+  @override
+  String get zones_includeSelf => '自分の無線機も';
+
+  @override
+  String get zones_zones => 'ゾーン';
+
+  @override
+  String get zones_none => 'ゾーンはまだありません。キャンプ地、登山口、集合場所の周りに追加しましょう。';
+
+  @override
+  String get zones_add => 'ゾーンを追加';
+
+  @override
+  String get zones_edit => 'ゾーンを編集';
+
+  @override
+  String get zones_name => '名前';
+
+  @override
+  String get zones_defaultName => 'ゾーン';
+
+  @override
+  String get zones_center => '中心';
+
+  @override
+  String get zones_centerMyRadio => '自分の無線機の位置';
+
+  @override
+  String zones_centerWaypoint(String name) {
+    return 'ウェイポイント: $name';
+  }
+
+  @override
+  String get zones_noCenter =>
+      '無線機に位置がなく、ウェイポイントもありません。先に位置を設定するかウェイポイントを保存してください。';
+
+  @override
+  String zones_radius(String distance) {
+    return '半径: $distance';
+  }
+
+  @override
+  String get zones_alertOn => '通知するタイミング';
+
+  @override
+  String get zones_onEnter => '入る';
+
+  @override
+  String get zones_onLeave => '出る';
+
+  @override
+  String get zones_onBoth => '両方';
+
+  @override
+  String get zones_delete => 'ゾーンを削除';
+
+  @override
+  String zones_full(int count) {
+    return 'ゾーンは$count個まで保存できます。';
+  }
+
+  @override
+  String get zones_trail => 'トレイル';
+
+  @override
+  String get zones_trailNone => '監視するトレイルなし';
+
+  @override
+  String get zones_trailHint => 'ウェイポイントのルートか記録したトラックを選びます。監視対象が上限より離れると通知します。';
+
+  @override
+  String zones_offTrailLimit(String distance) {
+    return '$distance以上離れたら外れたと判断';
+  }
+
+  @override
+  String get zones_you => 'あなた';
+
+  @override
+  String zones_trackName(String date, String km) {
+    return 'トラック $date · $km km';
+  }
+
+  @override
+  String zones_alertEnteredTitle(String zone) {
+    return '$zoneに入りました';
+  }
+
+  @override
+  String zones_alertEnteredBody(String name, String zone) {
+    return '$nameが$zone内にいます。';
+  }
+
+  @override
+  String zones_alertLeftTitle(String zone) {
+    return '$zoneから出ました';
+  }
+
+  @override
+  String zones_alertLeftBody(String name, String zone) {
+    return '$nameが$zoneから出ました。';
+  }
+
+  @override
+  String get zones_alertOffTrailTitle => 'トレイルから外れました';
+
+  @override
+  String zones_alertOffTrailBody(String name, String distance, String trail) {
+    return '$nameは$trailから$distance離れています。';
+  }
 }

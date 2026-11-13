@@ -12064,4 +12064,140 @@ class AppLocalizationsUk extends AppLocalizations {
   String topology_semantics(int repeaters, int rings) {
     return 'Схема мережі. $repeaters ретрансляторів на $rings кільцях навколо вас.';
   }
+
+  @override
+  String get zones_title => 'Сповіщення про зони й стежку';
+
+  @override
+  String get zones_toolSubtitle =>
+      'Сповіщає, коли хтось заходить у зону, виходить з неї чи сходить зі стежки';
+
+  @override
+  String get zones_enabled => 'Сповіщення увімкнено';
+
+  @override
+  String get zones_enabledHint =>
+      'Використовує координати з оголошень, які чує радіо, тож сповіщення таке свіже, як останнє оголошення.';
+
+  @override
+  String get zones_watch => 'Стежити';
+
+  @override
+  String get zones_scopeFavorites => 'Обрані';
+
+  @override
+  String get zones_scopeEveryone => 'Усі';
+
+  @override
+  String get zones_includeSelf => 'І моє радіо';
+
+  @override
+  String get zones_zones => 'Зони';
+
+  @override
+  String get zones_none =>
+      'Зон ще немає. Додайте зону навколо табору, початку стежки чи місця збору.';
+
+  @override
+  String get zones_add => 'Додати зону';
+
+  @override
+  String get zones_edit => 'Редагувати зону';
+
+  @override
+  String get zones_name => 'Назва';
+
+  @override
+  String get zones_defaultName => 'Зона';
+
+  @override
+  String get zones_center => 'Центр';
+
+  @override
+  String get zones_centerMyRadio => 'Положення мого радіо';
+
+  @override
+  String zones_centerWaypoint(String name) {
+    return 'Точка: $name';
+  }
+
+  @override
+  String get zones_noCenter =>
+      'Радіо не має координат і немає точок. Спершу задайте координати або збережіть точку.';
+
+  @override
+  String zones_radius(String distance) {
+    return 'Радіус: $distance';
+  }
+
+  @override
+  String get zones_alertOn => 'Сповіщати при';
+
+  @override
+  String get zones_onEnter => 'Вході';
+
+  @override
+  String get zones_onLeave => 'Виході';
+
+  @override
+  String get zones_onBoth => 'Обох';
+
+  @override
+  String get zones_delete => 'Видалити зону';
+
+  @override
+  String zones_full(int count) {
+    return 'Можна мати до $count зон.';
+  }
+
+  @override
+  String get zones_trail => 'Стежка';
+
+  @override
+  String get zones_trailNone => 'Стежку не вибрано';
+
+  @override
+  String get zones_trailHint =>
+      'Виберіть маршрут із точок або записаний трек. Кожен, за ким ви стежите, відійшовши далі за межу, викличе сповіщення.';
+
+  @override
+  String zones_offTrailLimit(String distance) {
+    return 'Схід зі стежки після $distance';
+  }
+
+  @override
+  String get zones_you => 'Ви';
+
+  @override
+  String zones_trackName(String date, String km) {
+    return 'Трек $date · $km км';
+  }
+
+  @override
+  String zones_alertEnteredTitle(String zone) {
+    return 'Вхід у зону $zone';
+  }
+
+  @override
+  String zones_alertEnteredBody(String name, String zone) {
+    return '$name у зоні $zone.';
+  }
+
+  @override
+  String zones_alertLeftTitle(String zone) {
+    return 'Вихід із зони $zone';
+  }
+
+  @override
+  String zones_alertLeftBody(String name, String zone) {
+    return '$name залишив зону $zone.';
+  }
+
+  @override
+  String get zones_alertOffTrailTitle => 'Схід зі стежки';
+
+  @override
+  String zones_alertOffTrailBody(String name, String distance, String trail) {
+    return '$name за $distance від: $trail.';
+  }
 }

@@ -20010,6 +20010,228 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Network diagram. {repeaters} repeaters on {rings} rings around you.'**
   String topology_semantics(int repeaters, int rings);
+
+  /// No description provided for @zones_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Zone & trail alerts'**
+  String get zones_title;
+
+  /// No description provided for @zones_toolSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Alerts when someone enters or leaves a zone, or wanders off a trail'**
+  String get zones_toolSubtitle;
+
+  /// No description provided for @zones_enabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Alerts on'**
+  String get zones_enabled;
+
+  /// No description provided for @zones_enabledHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Uses positions from adverts your radio hears, so an alert is only as fresh as the last advert.'**
+  String get zones_enabledHint;
+
+  /// No description provided for @zones_watch.
+  ///
+  /// In en, this message translates to:
+  /// **'Watch'**
+  String get zones_watch;
+
+  /// No description provided for @zones_scopeFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites'**
+  String get zones_scopeFavorites;
+
+  /// No description provided for @zones_scopeEveryone.
+  ///
+  /// In en, this message translates to:
+  /// **'Everyone'**
+  String get zones_scopeEveryone;
+
+  /// No description provided for @zones_includeSelf.
+  ///
+  /// In en, this message translates to:
+  /// **'My radio too'**
+  String get zones_includeSelf;
+
+  /// No description provided for @zones_zones.
+  ///
+  /// In en, this message translates to:
+  /// **'Zones'**
+  String get zones_zones;
+
+  /// No description provided for @zones_none.
+  ///
+  /// In en, this message translates to:
+  /// **'No zones yet. Add one around camp, a trailhead or a meeting point.'**
+  String get zones_none;
+
+  /// No description provided for @zones_add.
+  ///
+  /// In en, this message translates to:
+  /// **'Add zone'**
+  String get zones_add;
+
+  /// No description provided for @zones_edit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit zone'**
+  String get zones_edit;
+
+  /// No description provided for @zones_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get zones_name;
+
+  /// No description provided for @zones_defaultName.
+  ///
+  /// In en, this message translates to:
+  /// **'Zone'**
+  String get zones_defaultName;
+
+  /// No description provided for @zones_center.
+  ///
+  /// In en, this message translates to:
+  /// **'Center'**
+  String get zones_center;
+
+  /// No description provided for @zones_centerMyRadio.
+  ///
+  /// In en, this message translates to:
+  /// **'My radio\'s position'**
+  String get zones_centerMyRadio;
+
+  /// No description provided for @zones_centerWaypoint.
+  ///
+  /// In en, this message translates to:
+  /// **'Waypoint: {name}'**
+  String zones_centerWaypoint(String name);
+
+  /// No description provided for @zones_noCenter.
+  ///
+  /// In en, this message translates to:
+  /// **'Your radio has no position and there are no waypoints. Set a position or save a waypoint first.'**
+  String get zones_noCenter;
+
+  /// No description provided for @zones_radius.
+  ///
+  /// In en, this message translates to:
+  /// **'Radius: {distance}'**
+  String zones_radius(String distance);
+
+  /// No description provided for @zones_alertOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Alert when'**
+  String get zones_alertOn;
+
+  /// No description provided for @zones_onEnter.
+  ///
+  /// In en, this message translates to:
+  /// **'Entering'**
+  String get zones_onEnter;
+
+  /// No description provided for @zones_onLeave.
+  ///
+  /// In en, this message translates to:
+  /// **'Leaving'**
+  String get zones_onLeave;
+
+  /// No description provided for @zones_onBoth.
+  ///
+  /// In en, this message translates to:
+  /// **'Both'**
+  String get zones_onBoth;
+
+  /// No description provided for @zones_delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete zone'**
+  String get zones_delete;
+
+  /// No description provided for @zones_full.
+  ///
+  /// In en, this message translates to:
+  /// **'You can keep up to {count} zones.'**
+  String zones_full(int count);
+
+  /// No description provided for @zones_trail.
+  ///
+  /// In en, this message translates to:
+  /// **'Trail'**
+  String get zones_trail;
+
+  /// No description provided for @zones_trailNone.
+  ///
+  /// In en, this message translates to:
+  /// **'No trail watched'**
+  String get zones_trailNone;
+
+  /// No description provided for @zones_trailHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick a waypoint route or a recorded track. Anyone watched who goes farther from it than the limit gets an alert.'**
+  String get zones_trailHint;
+
+  /// No description provided for @zones_offTrailLimit.
+  ///
+  /// In en, this message translates to:
+  /// **'Off the trail after {distance}'**
+  String zones_offTrailLimit(String distance);
+
+  /// No description provided for @zones_you.
+  ///
+  /// In en, this message translates to:
+  /// **'You'**
+  String get zones_you;
+
+  /// No description provided for @zones_trackName.
+  ///
+  /// In en, this message translates to:
+  /// **'Track {date} · {km} km'**
+  String zones_trackName(String date, String km);
+
+  /// No description provided for @zones_alertEnteredTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Entered {zone}'**
+  String zones_alertEnteredTitle(String zone);
+
+  /// No description provided for @zones_alertEnteredBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} is inside {zone}.'**
+  String zones_alertEnteredBody(String name, String zone);
+
+  /// No description provided for @zones_alertLeftTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Left {zone}'**
+  String zones_alertLeftTitle(String zone);
+
+  /// No description provided for @zones_alertLeftBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} has left {zone}.'**
+  String zones_alertLeftBody(String name, String zone);
+
+  /// No description provided for @zones_alertOffTrailTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Off the trail'**
+  String get zones_alertOffTrailTitle;
+
+  /// No description provided for @zones_alertOffTrailBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} is {distance} from {trail}.'**
+  String zones_alertOffTrailBody(String name, String distance, String trail);
 }
 
 class _AppLocalizationsDelegate

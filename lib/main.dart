@@ -16,6 +16,8 @@ import 'utils/platform_info.dart';
 
 import 'connector/meshcore_connector.dart';
 import 'connector/meshcore_protocol.dart';
+import 'package:intl/intl.dart';
+import 'package:latlong2/latlong.dart';
 import 'models/app_settings.dart';
 import 'models/image_codec_support.dart';
 import 'models/mqtt_mesh_packet.dart';
@@ -80,6 +82,8 @@ import 'services/network_scan_service.dart';
 import 'services/rx_log_service.dart';
 import 'services/wardrive_service.dart';
 import 'services/track_log_service.dart';
+import 'services/position_watch_service.dart';
+import 'screens/zone_alerts_screen.dart';
 import 'services/weather_service.dart';
 
 void main() async {
@@ -310,6 +314,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   late final NetworkScanService _networkScan;
   late final RxLogService _rxLog;
   late final FavoriteReturnService _favoriteReturn;
+  late final PositionWatchService _positionWatch;
   late final NetworkChangeService _networkChanges;
   late final SosRelayService _sosRelay;
   late final TeamTrackingService _teamTracking;
@@ -389,6 +394,47 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
           contactId: back.key,
           name: back.name,
           quietHours: back.quiet.inHours,
+        );
+      },
+    );
+    _positionWatch = PositionWatchService(
+      widget.connector,
+      prefs: PrefsManager.instance,
+      selfName: () =>
+          widget.connector.selfName ?? NotificationService().l10n.zones_you,
+      trails: () => [
+        for (final r in _waypoints.routes)
+          if (r.points.length >= 2)
+            TrailOption(
+              ref: 'route:${r.id}',
+              name: r.name,
+              points: [for (final p in r.points) LatLng(p.lat, p.lon)],
+            ),
+        for (final t in _trackLog.tracks.reversed)
+          if (t.points.length >= 2)
+            TrailOption(
+              ref: 'track:${t.id}',
+              name: NotificationService().l10n.zones_trackName(
+                DateFormat.yMMMd().add_Hm().format(t.started.toLocal()),
+                t.distanceKm.toStringAsFixed(1),
+              ),
+              points: [for (final p in t.points) p.latLng],
+            ),
+      ],
+      notify: (alert) async {
+        final settings = widget.appSettingsService.settings;
+        if (!settings.notificationsEnabled) return;
+        final notifications = NotificationService();
+        final text = positionAlertText(
+          notifications.l10n,
+          alert,
+          trailName: _positionWatch.trail?.name,
+          imperial: settings.unitSystem == UnitSystem.imperial,
+        );
+        await notifications.showPositionAlert(
+          id: '${alert.kind.name}:${alert.key}:${alert.zone?.id ?? ''}',
+          title: text.title,
+          body: text.body,
         );
       },
     );
@@ -508,6 +554,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   void dispose() {
     _rxLog.dispose();
     _favoriteReturn.dispose();
+    _positionWatch.dispose();
     _networkChanges.dispose();
     _botService.dispose();
     _automation.dispose();
@@ -718,6 +765,9 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
           value: _directRepeaters,
         ),
         ChangeNotifierProvider.value(value: _trackLog),
+        ChangeNotifierProvider<PositionWatchService?>.value(
+          value: _positionWatch,
+        ),
         ChangeNotifierProvider<ChannelDiscoveryService?>.value(
           value: _channelDiscovery,
         ),

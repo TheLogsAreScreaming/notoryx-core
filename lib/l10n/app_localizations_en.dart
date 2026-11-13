@@ -11886,4 +11886,140 @@ class AppLocalizationsEn extends AppLocalizations {
   String topology_semantics(int repeaters, int rings) {
     return 'Network diagram. $repeaters repeaters on $rings rings around you.';
   }
+
+  @override
+  String get zones_title => 'Zone & trail alerts';
+
+  @override
+  String get zones_toolSubtitle =>
+      'Alerts when someone enters or leaves a zone, or wanders off a trail';
+
+  @override
+  String get zones_enabled => 'Alerts on';
+
+  @override
+  String get zones_enabledHint =>
+      'Uses positions from adverts your radio hears, so an alert is only as fresh as the last advert.';
+
+  @override
+  String get zones_watch => 'Watch';
+
+  @override
+  String get zones_scopeFavorites => 'Favorites';
+
+  @override
+  String get zones_scopeEveryone => 'Everyone';
+
+  @override
+  String get zones_includeSelf => 'My radio too';
+
+  @override
+  String get zones_zones => 'Zones';
+
+  @override
+  String get zones_none =>
+      'No zones yet. Add one around camp, a trailhead or a meeting point.';
+
+  @override
+  String get zones_add => 'Add zone';
+
+  @override
+  String get zones_edit => 'Edit zone';
+
+  @override
+  String get zones_name => 'Name';
+
+  @override
+  String get zones_defaultName => 'Zone';
+
+  @override
+  String get zones_center => 'Center';
+
+  @override
+  String get zones_centerMyRadio => 'My radio\'s position';
+
+  @override
+  String zones_centerWaypoint(String name) {
+    return 'Waypoint: $name';
+  }
+
+  @override
+  String get zones_noCenter =>
+      'Your radio has no position and there are no waypoints. Set a position or save a waypoint first.';
+
+  @override
+  String zones_radius(String distance) {
+    return 'Radius: $distance';
+  }
+
+  @override
+  String get zones_alertOn => 'Alert when';
+
+  @override
+  String get zones_onEnter => 'Entering';
+
+  @override
+  String get zones_onLeave => 'Leaving';
+
+  @override
+  String get zones_onBoth => 'Both';
+
+  @override
+  String get zones_delete => 'Delete zone';
+
+  @override
+  String zones_full(int count) {
+    return 'You can keep up to $count zones.';
+  }
+
+  @override
+  String get zones_trail => 'Trail';
+
+  @override
+  String get zones_trailNone => 'No trail watched';
+
+  @override
+  String get zones_trailHint =>
+      'Pick a waypoint route or a recorded track. Anyone watched who goes farther from it than the limit gets an alert.';
+
+  @override
+  String zones_offTrailLimit(String distance) {
+    return 'Off the trail after $distance';
+  }
+
+  @override
+  String get zones_you => 'You';
+
+  @override
+  String zones_trackName(String date, String km) {
+    return 'Track $date · $km km';
+  }
+
+  @override
+  String zones_alertEnteredTitle(String zone) {
+    return 'Entered $zone';
+  }
+
+  @override
+  String zones_alertEnteredBody(String name, String zone) {
+    return '$name is inside $zone.';
+  }
+
+  @override
+  String zones_alertLeftTitle(String zone) {
+    return 'Left $zone';
+  }
+
+  @override
+  String zones_alertLeftBody(String name, String zone) {
+    return '$name has left $zone.';
+  }
+
+  @override
+  String get zones_alertOffTrailTitle => 'Off the trail';
+
+  @override
+  String zones_alertOffTrailBody(String name, String distance, String trail) {
+    return '$name is $distance from $trail.';
+  }
 }

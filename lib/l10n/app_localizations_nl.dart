@@ -11985,4 +11985,140 @@ class AppLocalizationsNl extends AppLocalizations {
   String topology_semantics(int repeaters, int rings) {
     return 'Netwerkdiagram. $repeaters repeaters op $rings ringen om je heen.';
   }
+
+  @override
+  String get zones_title => 'Zone- en routemeldingen';
+
+  @override
+  String get zones_toolSubtitle =>
+      'Melding wanneer iemand een zone in- of uitgaat of van een route afdwaalt';
+
+  @override
+  String get zones_enabled => 'Meldingen aan';
+
+  @override
+  String get zones_enabledHint =>
+      'Gebruikt posities uit adverts die je radio hoort, dus een melding is zo actueel als het laatste advert.';
+
+  @override
+  String get zones_watch => 'Volgen';
+
+  @override
+  String get zones_scopeFavorites => 'Favorieten';
+
+  @override
+  String get zones_scopeEveryone => 'Iedereen';
+
+  @override
+  String get zones_includeSelf => 'Ook mijn radio';
+
+  @override
+  String get zones_zones => 'Zones';
+
+  @override
+  String get zones_none =>
+      'Nog geen zones. Voeg er een toe rond het kamp, een startpunt of een ontmoetingsplek.';
+
+  @override
+  String get zones_add => 'Zone toevoegen';
+
+  @override
+  String get zones_edit => 'Zone bewerken';
+
+  @override
+  String get zones_name => 'Naam';
+
+  @override
+  String get zones_defaultName => 'Zone';
+
+  @override
+  String get zones_center => 'Middelpunt';
+
+  @override
+  String get zones_centerMyRadio => 'Positie van mijn radio';
+
+  @override
+  String zones_centerWaypoint(String name) {
+    return 'Waypoint: $name';
+  }
+
+  @override
+  String get zones_noCenter =>
+      'Je radio heeft geen positie en er zijn geen waypoints. Stel eerst een positie in of bewaar een waypoint.';
+
+  @override
+  String zones_radius(String distance) {
+    return 'Straal: $distance';
+  }
+
+  @override
+  String get zones_alertOn => 'Melden bij';
+
+  @override
+  String get zones_onEnter => 'Binnengaan';
+
+  @override
+  String get zones_onLeave => 'Verlaten';
+
+  @override
+  String get zones_onBoth => 'Beide';
+
+  @override
+  String get zones_delete => 'Zone verwijderen';
+
+  @override
+  String zones_full(int count) {
+    return 'Je kunt tot $count zones bewaren.';
+  }
+
+  @override
+  String get zones_trail => 'Route';
+
+  @override
+  String get zones_trailNone => 'Geen route gevolgd';
+
+  @override
+  String get zones_trailHint =>
+      'Kies een waypointroute of een opgenomen track. Iedereen die je volgt en verder dan de limiet afwijkt, geeft een melding.';
+
+  @override
+  String zones_offTrailLimit(String distance) {
+    return 'Van de route na $distance';
+  }
+
+  @override
+  String get zones_you => 'Jij';
+
+  @override
+  String zones_trackName(String date, String km) {
+    return 'Track $date · $km km';
+  }
+
+  @override
+  String zones_alertEnteredTitle(String zone) {
+    return '$zone binnengegaan';
+  }
+
+  @override
+  String zones_alertEnteredBody(String name, String zone) {
+    return '$name is in $zone.';
+  }
+
+  @override
+  String zones_alertLeftTitle(String zone) {
+    return '$zone verlaten';
+  }
+
+  @override
+  String zones_alertLeftBody(String name, String zone) {
+    return '$name heeft $zone verlaten.';
+  }
+
+  @override
+  String get zones_alertOffTrailTitle => 'Van de route af';
+
+  @override
+  String zones_alertOffTrailBody(String name, String distance, String trail) {
+    return '$name is $distance van $trail.';
+  }
 }

@@ -6249,5 +6249,127 @@
         "type": "int"
       }
     }
+  },
+  "zones_title": "Zone & trail alerts",
+  "zones_toolSubtitle": "Alerts when someone enters or leaves a zone, or wanders off a trail",
+  "zones_enabled": "Alerts on",
+  "zones_enabledHint": "Uses positions from adverts your radio hears, so an alert is only as fresh as the last advert.",
+  "zones_watch": "Watch",
+  "zones_scopeFavorites": "Favorites",
+  "zones_scopeEveryone": "Everyone",
+  "zones_includeSelf": "My radio too",
+  "zones_zones": "Zones",
+  "zones_none": "No zones yet. Add one around camp, a trailhead or a meeting point.",
+  "zones_add": "Add zone",
+  "zones_edit": "Edit zone",
+  "zones_name": "Name",
+  "zones_defaultName": "Zone",
+  "zones_center": "Center",
+  "zones_centerMyRadio": "My radio's position",
+  "zones_centerWaypoint": "Waypoint: {name}",
+  "@zones_centerWaypoint": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "zones_noCenter": "Your radio has no position and there are no waypoints. Set a position or save a waypoint first.",
+  "zones_radius": "Radius: {distance}",
+  "@zones_radius": {
+    "placeholders": {
+      "distance": {
+        "type": "String"
+      }
+    }
+  },
+  "zones_alertOn": "Alert when",
+  "zones_onEnter": "Entering",
+  "zones_onLeave": "Leaving",
+  "zones_onBoth": "Both",
+  "zones_delete": "Delete zone",
+  "zones_full": "You can keep up to {count} zones.",
+  "@zones_full": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "zones_trail": "Trail",
+  "zones_trailNone": "No trail watched",
+  "zones_trailHint": "Pick a waypoint route or a recorded track. Anyone watched who goes farther from it than the limit gets an alert.",
+  "zones_offTrailLimit": "Off the trail after {distance}",
+  "@zones_offTrailLimit": {
+    "placeholders": {
+      "distance": {
+        "type": "String"
+      }
+    }
+  },
+  "zones_you": "You",
+  "zones_trackName": "Track {date} · {km} km",
+  "@zones_trackName": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "km": {
+        "type": "String"
+      }
+    }
+  },
+  "zones_alertEnteredTitle": "Entered {zone}",
+  "@zones_alertEnteredTitle": {
+    "placeholders": {
+      "zone": {
+        "type": "String"
+      }
+    }
+  },
+  "zones_alertEnteredBody": "{name} is inside {zone}.",
+  "@zones_alertEnteredBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "zone": {
+        "type": "String"
+      }
+    }
+  },
+  "zones_alertLeftTitle": "Left {zone}",
+  "@zones_alertLeftTitle": {
+    "placeholders": {
+      "zone": {
+        "type": "String"
+      }
+    }
+  },
+  "zones_alertLeftBody": "{name} has left {zone}.",
+  "@zones_alertLeftBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "zone": {
+        "type": "String"
+      }
+    }
+  },
+  "zones_alertOffTrailTitle": "Off the trail",
+  "zones_alertOffTrailBody": "{name} is {distance} from {trail}.",
+  "@zones_alertOffTrailBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "distance": {
+        "type": "String"
+      },
+      "trail": {
+        "type": "String"
+      }
+    }
   }
 }
