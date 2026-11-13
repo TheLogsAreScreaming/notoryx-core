@@ -11556,7 +11556,142 @@ class AppLocalizationsHu extends AppLocalizations {
   String get auto_entry => 'Automatizálási szabályok';
 
   @override
-  String get auto_entrySub => 'Akku-, idő-, terület- és csomópont-feltételek';
+  String get auto_entrySub =>
+      'Akku-, idő-, terület-, csomópont- és üzenetindítók; ÉS/VAGY';
+
+  @override
+  String get auto_trigMessage => 'Üzenet érkezik';
+
+  @override
+  String get auto_actJoin => 'Csatlakozás hashtag-csatornához';
+
+  @override
+  String get auto_actSound => 'Hang lejátszása';
+
+  @override
+  String get auto_actWebhook => 'Webhook hívása';
+
+  @override
+  String get auto_outDone => 'Kész';
+
+  @override
+  String get auto_outNotConnected => 'A rádió nincs csatlakoztatva';
+
+  @override
+  String get auto_outNoTarget => 'Hiányzó címzett vagy cím';
+
+  @override
+  String get auto_outWebOff => 'A webes kérések ki vannak kapcsolva';
+
+  @override
+  String get auto_outWebFailed => 'A webes kérés sikertelen';
+
+  @override
+  String get auto_outNoSlot => 'Nincs szabad csatornahely';
+
+  @override
+  String get auto_outFailed => 'Sikertelen';
+
+  @override
+  String get auto_anyone => 'Bárki';
+
+  @override
+  String get auto_webSwitch => 'Webes kérések engedélyezése (webhookok)';
+
+  @override
+  String get auto_webSwitchSub =>
+      'Alapból ki van kapcsolva. A webhook-műveletekhez internet kell, és amíg ez ki van kapcsolva, kimaradnak. Minden más csak rádión is működik.';
+
+  @override
+  String get auto_andJoin => ' és ';
+
+  @override
+  String get auto_orJoin => ' vagy ';
+
+  @override
+  String get auto_needsInternet => 'Internet kell';
+
+  @override
+  String get auto_recent => 'Legutóbbi futások';
+
+  @override
+  String get auto_needCondition => 'Adj hozzá legalább egy feltételt.';
+
+  @override
+  String get auto_needAction => 'Adj hozzá legalább egy műveletet.';
+
+  @override
+  String get auto_conditions => 'Feltételek';
+
+  @override
+  String get auto_actions => 'Műveletek';
+
+  @override
+  String get auto_addCondition => 'Feltétel hozzáadása';
+
+  @override
+  String get auto_addAction => 'Művelet hozzáadása';
+
+  @override
+  String auto_remove(String item) {
+    return '$item eltávolítása';
+  }
+
+  @override
+  String get auto_combine => 'A szabály fut, ha';
+
+  @override
+  String get auto_combineAny => 'Bármelyik (VAGY)';
+
+  @override
+  String get auto_combineAll => 'Mind (ÉS)';
+
+  @override
+  String get auto_combineAnyHint =>
+      'Akkor fut, ha bármelyik feltétel teljesül.';
+
+  @override
+  String get auto_combineAllHint =>
+      'Akkor fut, ha egy feltétel teljesül, és abban a pillanatban az összes többi is igaz, pl. „18:00-kor ÉS 30% alatti akku”.';
+
+  @override
+  String get auto_editCondition => 'Feltétel';
+
+  @override
+  String get auto_editAction => 'Művelet';
+
+  @override
+  String get auto_done => 'Kész';
+
+  @override
+  String get auto_contains => 'Az üzenet tartalmazza (nem kötelező)';
+
+  @override
+  String get auto_from => 'Feladó';
+
+  @override
+  String get auto_do => 'Teendő';
+
+  @override
+  String get auto_webhookHint =>
+      'Internet kell. JSON-ként küldi a szabály nevét, az időt, az akkut, a csomópontot és a szöveget. Csak akkor működik, ha a webes kérések engedélyezettek.';
+
+  @override
+  String get auto_webhookUrl => 'Webhook címe (https://…)';
+
+  @override
+  String get auto_channelName => 'Hashtag-csatorna, pl. #turazok';
+
+  @override
+  String get auto_needChannel => 'Add meg a csatorna nevét.';
+
+  @override
+  String get auto_needUrl => 'Adj meg egy https://-sel kezdődő webcímet';
+
+  @override
+  String auto_placeholders(String list) {
+    return 'Használható: $list';
+  }
 
   @override
   String get teamSetup_title => 'Csapatbeállítás';

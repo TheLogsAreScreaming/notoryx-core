@@ -21,6 +21,7 @@ const _bastionPrefixes = [
   'signedCov_',
   'tripBrief_',
   'checklist_',
+  'auto_',
   'fieldOps_',
   'coverage_',
   'fieldStats_',

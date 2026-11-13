@@ -11582,7 +11582,143 @@ class AppLocalizationsDe extends AppLocalizations {
   String get auto_entry => 'Automatisierungsregeln';
 
   @override
-  String get auto_entrySub => 'Auslöser für Akku, Zeit, Gebiet und Knoten';
+  String get auto_entrySub =>
+      'Auslöser für Akku, Zeit, Gebiet, Knoten und Nachrichten; UND/ODER';
+
+  @override
+  String get auto_trigMessage => 'Eine Nachricht kommt an';
+
+  @override
+  String get auto_actJoin => 'Hashtag-Kanal beitreten';
+
+  @override
+  String get auto_actSound => 'Ton abspielen';
+
+  @override
+  String get auto_actWebhook => 'Webhook aufrufen';
+
+  @override
+  String get auto_outDone => 'Erledigt';
+
+  @override
+  String get auto_outNotConnected => 'Funkgerät nicht verbunden';
+
+  @override
+  String get auto_outNoTarget => 'Empfänger oder Adresse fehlt';
+
+  @override
+  String get auto_outWebOff => 'Webanfragen sind aus';
+
+  @override
+  String get auto_outWebFailed => 'Webanfrage fehlgeschlagen';
+
+  @override
+  String get auto_outNoSlot => 'Kein freier Kanalplatz';
+
+  @override
+  String get auto_outFailed => 'Fehlgeschlagen';
+
+  @override
+  String get auto_anyone => 'Jeder';
+
+  @override
+  String get auto_webSwitch => 'Webanfragen erlauben (Webhooks)';
+
+  @override
+  String get auto_webSwitchSub =>
+      'Standardmäßig aus. Webhook-Aktionen brauchen Internet und werden übersprungen, solange dies aus ist. Alles andere funktioniert nur über Funk.';
+
+  @override
+  String get auto_andJoin => ' und ';
+
+  @override
+  String get auto_orJoin => ' oder ';
+
+  @override
+  String get auto_needsInternet => 'Braucht Internet';
+
+  @override
+  String get auto_recent => 'Letzte Ausführungen';
+
+  @override
+  String get auto_needCondition => 'Füge mindestens eine Bedingung hinzu.';
+
+  @override
+  String get auto_needAction => 'Füge mindestens eine Aktion hinzu.';
+
+  @override
+  String get auto_conditions => 'Bedingungen';
+
+  @override
+  String get auto_actions => 'Aktionen';
+
+  @override
+  String get auto_addCondition => 'Bedingung hinzufügen';
+
+  @override
+  String get auto_addAction => 'Aktion hinzufügen';
+
+  @override
+  String auto_remove(String item) {
+    return '$item entfernen';
+  }
+
+  @override
+  String get auto_combine => 'Regel ausführen, wenn';
+
+  @override
+  String get auto_combineAny => 'Eine (ODER)';
+
+  @override
+  String get auto_combineAll => 'Alle (UND)';
+
+  @override
+  String get auto_combineAnyHint =>
+      'Läuft, wenn irgendeine der Bedingungen eintritt.';
+
+  @override
+  String get auto_combineAllHint =>
+      'Läuft, wenn eine Bedingung eintritt und alle anderen in dem Moment gelten, z. B. „um 18:00 UND Akku unter 30 %“.';
+
+  @override
+  String get auto_editCondition => 'Bedingung';
+
+  @override
+  String get auto_editAction => 'Aktion';
+
+  @override
+  String get auto_done => 'Fertig';
+
+  @override
+  String get auto_contains => 'Nachricht enthält (optional)';
+
+  @override
+  String get auto_from => 'Von';
+
+  @override
+  String get auto_do => 'Aktion';
+
+  @override
+  String get auto_webhookHint =>
+      'Braucht Internet. Sendet Regelname, Zeit, Akku, Knoten und Text als JSON. Funktioniert nur, solange Webanfragen erlaubt sind.';
+
+  @override
+  String get auto_webhookUrl => 'Webhook-Adresse (https://…)';
+
+  @override
+  String get auto_channelName => 'Hashtag-Kanal, z. B. #wandern';
+
+  @override
+  String get auto_needChannel => 'Gib den Kanalnamen ein.';
+
+  @override
+  String get auto_needUrl =>
+      'Gib eine Webadresse ein, die mit https:// beginnt';
+
+  @override
+  String auto_placeholders(String list) {
+    return 'Verwendbar: $list';
+  }
 
   @override
   String get teamSetup_title => 'Team-Einrichtung';
