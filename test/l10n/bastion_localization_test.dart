@@ -36,6 +36,7 @@ const _bastionPrefixes = [
   'sentinel_',
   'mapTrust_',
   'topology_',
+  'traceCard_',
   'zones_',
 ];
 
