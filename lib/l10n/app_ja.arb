@@ -3744,6 +3744,8 @@
   "radios_switchNote": "無線機を切り替えるとホーム画面に戻ります。ボット、自動化、通知、追跡、SOS中継は使用中の無線機で動作します。",
   "radios_removeTitle": "{name}を削除しますか？",
   "radios_removeBody": "無線機を切断して登録を解除します。メッセージと連絡先は保存されたままです。",
+  "radios_unread": "未読 {count}件",
+  "radios_backgroundUnread": "他の無線機に未読 {count}件",
   "channelDirectory_title": "チャンネル一覧",
   "channelDirectory_subtitle": "近くの公開ハッシュタグチャンネルを探す",
   "channelDirectory_search": "チャンネルや地名を検索",

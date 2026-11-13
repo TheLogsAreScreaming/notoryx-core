@@ -13339,6 +13339,18 @@ abstract class AppLocalizations {
   /// **'This disconnects the radio and forgets it. Its messages and contacts stay saved.'**
   String get radios_removeBody;
 
+  /// No description provided for @radios_unread.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} unread'**
+  String radios_unread(int count);
+
+  /// No description provided for @radios_backgroundUnread.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} unread on other radios'**
+  String radios_backgroundUnread(int count);
+
   /// No description provided for @channelDirectory_title.
   ///
   /// In en, this message translates to:

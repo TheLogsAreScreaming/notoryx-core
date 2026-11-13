@@ -3744,6 +3744,8 @@
   "radios_switchNote": "Changer de radio vous ramène à l'écran d'accueil. Les bots, l'automatisation, les alertes, le suivi et le relais SOS fonctionnent sur la radio utilisée.",
   "radios_removeTitle": "Retirer {name} ?",
   "radios_removeBody": "La radio est déconnectée et oubliée. Ses messages et contacts restent enregistrés.",
+  "radios_unread": "{count} non lus",
+  "radios_backgroundUnread": "{count} non lus sur d'autres radios",
   "channelDirectory_title": "Annuaire des canaux",
   "channelDirectory_subtitle": "Trouvez des canaux hashtag publics près de vous",
   "channelDirectory_search": "Rechercher des canaux ou des lieux",

@@ -7589,6 +7589,16 @@ class AppLocalizationsKo extends AppLocalizations {
   String get radios_removeBody => '무전기 연결을 끊고 등록을 해제합니다. 메시지와 연락처는 계속 저장됩니다.';
 
   @override
+  String radios_unread(int count) {
+    return '읽지 않음 $count개';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '다른 무전기에 읽지 않음 $count개';
+  }
+
+  @override
   String get channelDirectory_title => '채널 목록';
 
   @override

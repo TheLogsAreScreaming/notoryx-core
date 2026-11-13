@@ -7982,6 +7982,16 @@ class AppLocalizationsIt extends AppLocalizations {
       'La radio viene disconnessa e dimenticata. I suoi messaggi e contatti restano salvati.';
 
   @override
+  String radios_unread(int count) {
+    return '$count non letti';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count non letti su altre radio';
+  }
+
+  @override
   String get channelDirectory_title => 'Elenco canali';
 
   @override

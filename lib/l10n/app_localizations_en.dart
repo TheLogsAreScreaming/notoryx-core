@@ -7851,6 +7851,16 @@ class AppLocalizationsEn extends AppLocalizations {
       'This disconnects the radio and forgets it. Its messages and contacts stay saved.';
 
   @override
+  String radios_unread(int count) {
+    return '$count unread';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count unread on other radios';
+  }
+
+  @override
   String get channelDirectory_title => 'Channel directory';
 
   @override

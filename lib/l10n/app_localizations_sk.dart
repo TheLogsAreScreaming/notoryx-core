@@ -7954,6 +7954,16 @@ class AppLocalizationsSk extends AppLocalizations {
       'Rádio sa odpojí a zabudne. Jeho správy a kontakty zostanú uložené.';
 
   @override
+  String radios_unread(int count) {
+    return 'Neprečítané: $count';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return 'Neprečítané na iných rádiách: $count';
+  }
+
+  @override
   String get channelDirectory_title => 'Adresár kanálov';
 
   @override

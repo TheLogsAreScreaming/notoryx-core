@@ -3648,6 +3648,8 @@
   "radios_switchNote": "Przełączenie radia przenosi na ekran główny. Boty, automatyzacja, alerty, śledzenie i przekazywanie SOS działają na radiu w użyciu.",
   "radios_removeTitle": "Usunąć {name}?",
   "radios_removeBody": "Radio zostanie rozłączone i zapomniane. Jego wiadomości i kontakty pozostaną zapisane.",
+  "radios_unread": "Nieprzeczytane: {count}",
+  "radios_backgroundUnread": "Nieprzeczytane na innych radiach: {count}",
   "channelDirectory_title": "Katalog kanałów",
   "channelDirectory_subtitle": "Znajdź publiczne kanały hashtagowe w pobliżu",
   "channelDirectory_search": "Szukaj kanałów lub miejsc",

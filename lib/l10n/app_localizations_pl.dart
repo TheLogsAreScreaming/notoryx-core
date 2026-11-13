@@ -8004,6 +8004,16 @@ class AppLocalizationsPl extends AppLocalizations {
       'Radio zostanie rozłączone i zapomniane. Jego wiadomości i kontakty pozostaną zapisane.';
 
   @override
+  String radios_unread(int count) {
+    return 'Nieprzeczytane: $count';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return 'Nieprzeczytane na innych radiach: $count';
+  }
+
+  @override
   String get channelDirectory_title => 'Katalog kanałów';
 
   @override

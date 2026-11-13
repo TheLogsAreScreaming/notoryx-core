@@ -7954,6 +7954,16 @@ class AppLocalizationsPt extends AppLocalizations {
       'Isto desliga o rádio e esquece-o. As mensagens e contactos dele continuam guardados.';
 
   @override
+  String radios_unread(int count) {
+    return '$count por ler';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count por ler noutros rádios';
+  }
+
+  @override
   String get channelDirectory_title => 'Diretório de canais';
 
   @override

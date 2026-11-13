@@ -7960,6 +7960,16 @@ class AppLocalizationsSl extends AppLocalizations {
       'Radio se prekine in pozabi. Njegova sporočila in stiki ostanejo shranjeni.';
 
   @override
+  String radios_unread(int count) {
+    return 'Neprebrano: $count';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return 'Neprebrano na drugih radiih: $count';
+  }
+
+  @override
   String get channelDirectory_title => 'Imenik kanalov';
 
   @override

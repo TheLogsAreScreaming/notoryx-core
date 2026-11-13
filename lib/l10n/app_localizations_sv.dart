@@ -7899,6 +7899,16 @@ class AppLocalizationsSv extends AppLocalizations {
       'Radion kopplas från och glöms. Dess meddelanden och kontakter förblir sparade.';
 
   @override
+  String radios_unread(int count) {
+    return '$count olästa';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count olästa på andra radioenheter';
+  }
+
+  @override
   String get channelDirectory_title => 'Kanalkatalog';
 
   @override

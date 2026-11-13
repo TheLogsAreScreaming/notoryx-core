@@ -3648,6 +3648,8 @@
   "radios_switchNote": "Rádióváltáskor visszakerül a kezdőképernyőre. A botok, az automatizálás, a riasztások, a követés és az SOS-továbbítás a használatban lévő rádión fut.",
   "radios_removeTitle": "Eltávolítja: {name}?",
   "radios_removeBody": "Ez bontja a rádió kapcsolatát és elfelejti. Üzenetei és névjegyei mentve maradnak.",
+  "radios_unread": "{count} olvasatlan",
+  "radios_backgroundUnread": "{count} olvasatlan más rádiókon",
   "channelDirectory_title": "Csatornakönyvtár",
   "channelDirectory_subtitle": "Nyilvános hashtag-csatornák a közeledben",
   "channelDirectory_search": "Csatornák vagy helyek keresése",

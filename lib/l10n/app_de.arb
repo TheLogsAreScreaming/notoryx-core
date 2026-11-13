@@ -3744,6 +3744,8 @@
   "radios_switchNote": "Beim Wechsel des Funkgeräts kehrst du zum Startbildschirm zurück. Bots, Automatisierung, Hinweise, Tracking und SOS-Weiterleitung laufen auf dem Funkgerät in Verwendung.",
   "radios_removeTitle": "{name} entfernen?",
   "radios_removeBody": "Damit wird das Funkgerät getrennt und vergessen. Seine Nachrichten und Kontakte bleiben gespeichert.",
+  "radios_unread": "{count} ungelesen",
+  "radios_backgroundUnread": "{count} ungelesen auf anderen Funkgeräten",
   "channelDirectory_title": "Kanalverzeichnis",
   "channelDirectory_subtitle": "Öffentliche Hashtag-Kanäle in deiner Nähe finden",
   "channelDirectory_search": "Kanäle oder Orte suchen",

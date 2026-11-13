@@ -3610,6 +3610,8 @@
   "radios_switchNote": "Wisselen van radio brengt je terug naar het startscherm. Bots, automatisering, meldingen, tracking en SOS-doorgifte draaien op de radio die in gebruik is.",
   "radios_removeTitle": "{name} verwijderen?",
   "radios_removeBody": "Hiermee wordt de radio losgekoppeld en vergeten. Berichten en contacten blijven bewaard.",
+  "radios_unread": "{count} ongelezen",
+  "radios_backgroundUnread": "{count} ongelezen op andere radio's",
   "channelDirectory_title": "Kanalengids",
   "channelDirectory_subtitle": "Vind openbare hashtagkanalen in je buurt",
   "channelDirectory_search": "Kanalen of plaatsen zoeken",

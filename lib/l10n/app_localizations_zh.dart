@@ -7421,6 +7421,16 @@ class AppLocalizationsZh extends AppLocalizations {
   String get radios_removeBody => '这会断开并移除该电台。其消息和联系人仍会保存。';
 
   @override
+  String radios_unread(int count) {
+    return '$count 条未读';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '其他电台有 $count 条未读';
+  }
+
+  @override
   String get channelDirectory_title => '频道目录';
 
   @override

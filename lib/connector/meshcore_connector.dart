@@ -97,6 +97,17 @@ class MeshCoreConnector extends ChangeNotifier {
   /// Which saved-radio slot this connection uses: '' for the first radio.
   final String slot;
 
+  /// The radio's name to add to notification titles, or null. Set by the
+  /// app when it has more than one radio, so you can tell which one a
+  /// message came in on.
+  String? Function()? notificationRadioName;
+
+  /// [title] with the radio's name after it, when there is one.
+  String notificationTitle(String title) {
+    final radio = notificationRadioName?.call();
+    return radio == null || radio.isEmpty ? title : '$title · $radio';
+  }
+
   /// This connection's retry service, once [initialize] has run.
   MessageRetryService? get retryService => _retryService;
 
@@ -983,6 +994,7 @@ class MeshCoreConnector extends ChangeNotifier {
       _notificationService.clearContactNotification(
         contactKeyHex,
         getTotalUnreadCount(),
+        radio: slot,
       );
       notifyListeners();
     }
@@ -1028,6 +1040,7 @@ class MeshCoreConnector extends ChangeNotifier {
       _notificationService.clearChannelNotification(
         channelIndex,
         getTotalUnreadCount(),
+        radio: slot,
       );
       notifyListeners();
     }

@@ -3615,6 +3615,8 @@
   "radios_switchNote": "切换电台会回到主屏幕。机器人、自动化、提醒、追踪和 SOS 中继在正在使用的电台上运行。",
   "radios_removeTitle": "移除 {name}？",
   "radios_removeBody": "这会断开并移除该电台。其消息和联系人仍会保存。",
+  "radios_unread": "{count} 条未读",
+  "radios_backgroundUnread": "其他电台有 {count} 条未读",
   "channelDirectory_title": "频道目录",
   "channelDirectory_subtitle": "查找附近的公开话题频道",
   "channelDirectory_search": "搜索频道或地点",

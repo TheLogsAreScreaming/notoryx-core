@@ -7933,6 +7933,16 @@ class AppLocalizationsNl extends AppLocalizations {
       'Hiermee wordt de radio losgekoppeld en vergeten. Berichten en contacten blijven bewaard.';
 
   @override
+  String radios_unread(int count) {
+    return '$count ongelezen';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count ongelezen op andere radio\'s';
+  }
+
+  @override
   String get channelDirectory_title => 'Kanalengids';
 
   @override

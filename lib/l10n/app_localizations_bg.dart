@@ -7955,6 +7955,16 @@ class AppLocalizationsBg extends AppLocalizations {
       'Така радиото се изключва и забравя. Съобщенията и контактите му остават запазени.';
 
   @override
+  String radios_unread(int count) {
+    return '$count непрочетени';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count непрочетени на други радиа';
+  }
+
+  @override
   String get channelDirectory_title => 'Каталог на канали';
 
   @override

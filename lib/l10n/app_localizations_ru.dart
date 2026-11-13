@@ -8003,6 +8003,16 @@ class AppLocalizationsRu extends AppLocalizations {
       'Радио будет отключено и забыто. Его сообщения и контакты останутся сохранены.';
 
   @override
+  String radios_unread(int count) {
+    return 'Непрочитанных: $count';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return 'Непрочитанных на других радио: $count';
+  }
+
+  @override
   String get channelDirectory_title => 'Каталог каналов';
 
   @override

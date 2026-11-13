@@ -3744,6 +3744,8 @@
   "radios_switchNote": "무전기를 전환하면 홈 화면으로 돌아갑니다. 봇, 자동화, 알림, 추적, SOS 중계는 사용 중인 무전기에서 실행됩니다.",
   "radios_removeTitle": "{name}을(를) 제거할까요?",
   "radios_removeBody": "무전기 연결을 끊고 등록을 해제합니다. 메시지와 연락처는 계속 저장됩니다.",
+  "radios_unread": "읽지 않음 {count}개",
+  "radios_backgroundUnread": "다른 무전기에 읽지 않음 {count}개",
   "channelDirectory_title": "채널 목록",
   "channelDirectory_subtitle": "주변의 공개 해시태그 채널 찾기",
   "channelDirectory_search": "채널 또는 장소 검색",

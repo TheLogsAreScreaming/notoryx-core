@@ -3610,6 +3610,8 @@
   "radios_switchNote": "Mudar de rádio leva-o de volta ao ecrã inicial. Os bots, a automação, os alertas, o seguimento e o reencaminhamento de SOS funcionam no rádio em uso.",
   "radios_removeTitle": "Remover {name}?",
   "radios_removeBody": "Isto desliga o rádio e esquece-o. As mensagens e contactos dele continuam guardados.",
+  "radios_unread": "{count} por ler",
+  "radios_backgroundUnread": "{count} por ler noutros rádios",
   "channelDirectory_title": "Diretório de canais",
   "channelDirectory_subtitle": "Encontre canais públicos com hashtag perto de você",
   "channelDirectory_search": "Pesquisar canais ou lugares",

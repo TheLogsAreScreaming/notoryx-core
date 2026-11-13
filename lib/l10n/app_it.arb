@@ -3744,6 +3744,8 @@
   "radios_switchNote": "Cambiare radio ti riporta alla schermata iniziale. Bot, automazione, avvisi, tracciamento e inoltro SOS funzionano sulla radio in uso.",
   "radios_removeTitle": "Rimuovere {name}?",
   "radios_removeBody": "La radio viene disconnessa e dimenticata. I suoi messaggi e contatti restano salvati.",
+  "radios_unread": "{count} non letti",
+  "radios_backgroundUnread": "{count} non letti su altre radio",
   "channelDirectory_title": "Elenco canali",
   "channelDirectory_subtitle": "Trova canali hashtag pubblici vicino a te",
   "channelDirectory_search": "Cerca canali o luoghi",

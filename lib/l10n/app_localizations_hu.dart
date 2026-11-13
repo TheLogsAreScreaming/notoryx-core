@@ -7956,6 +7956,16 @@ class AppLocalizationsHu extends AppLocalizations {
       'Ez bontja a rádió kapcsolatát és elfelejti. Üzenetei és névjegyei mentve maradnak.';
 
   @override
+  String radios_unread(int count) {
+    return '$count olvasatlan';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count olvasatlan más rádiókon';
+  }
+
+  @override
   String get channelDirectory_title => 'Csatornakönyvtár';
 
   @override

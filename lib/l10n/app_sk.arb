@@ -3610,6 +3610,8 @@
   "radios_switchNote": "Prepnutím rádia sa vrátite na domovskú obrazovku. Boty, automatizácia, upozornenia, sledovanie a preposielanie SOS bežia na používanom rádiu.",
   "radios_removeTitle": "Odstrániť {name}?",
   "radios_removeBody": "Rádio sa odpojí a zabudne. Jeho správy a kontakty zostanú uložené.",
+  "radios_unread": "Neprečítané: {count}",
+  "radios_backgroundUnread": "Neprečítané na iných rádiách: {count}",
   "channelDirectory_title": "Adresár kanálov",
   "channelDirectory_subtitle": "Nájdite verejné hashtagové kanály vo svojom okolí",
   "channelDirectory_search": "Hľadať kanály alebo miesta",

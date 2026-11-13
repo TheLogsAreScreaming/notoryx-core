@@ -7976,6 +7976,16 @@ class AppLocalizationsDe extends AppLocalizations {
       'Damit wird das Funkgerät getrennt und vergessen. Seine Nachrichten und Kontakte bleiben gespeichert.';
 
   @override
+  String radios_unread(int count) {
+    return '$count ungelesen';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count ungelesen auf anderen Funkgeräten';
+  }
+
+  @override
   String get channelDirectory_title => 'Kanalverzeichnis';
 
   @override

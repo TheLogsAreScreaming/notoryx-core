@@ -102,6 +102,7 @@ class RadioTile extends StatelessWidget {
         radio.state == MeshCoreConnectionState.disconnecting;
     final name = radioLabel(context, radios, radio);
     final status = _status(context, radio);
+    final unread = radio.getTotalUnreadCount();
     final color = connected ? MeshPalette.signal : MeshPalette.ink3;
     return ListTile(
       key: ValueKey('radio-${radio.slot}'),
@@ -113,7 +114,13 @@ class RadioTile extends StatelessWidget {
         semanticLabel: status,
       ),
       title: Text(name, maxLines: 2, overflow: TextOverflow.ellipsis),
-      subtitle: Text(active ? '$status · ${l10n.radios_active}' : status),
+      subtitle: Text(
+        [
+          status,
+          if (active) l10n.radios_active,
+          if (unread > 0) l10n.radios_unread(unread),
+        ].join(' · '),
+      ),
       selected: active,
       onTap: active ? null : () => radios.setActive(radio),
       trailing: PopupMenuButton<String>(
@@ -175,11 +182,23 @@ class RadioSwitcherButton extends StatelessWidget {
       return const SizedBox.shrink();
     }
     if (!radios.hasMultiple) return const SizedBox.shrink();
+    return ListenableBuilder(
+      listenable: Listenable.merge(radios.radios),
+      builder: (context, _) => _switcher(context, radios),
+    );
+  }
+
+  Widget _switcher(BuildContext context, RadioManager radios) {
+    final l10n = context.l10n;
+    final unread = radios.backgroundUnread;
     return IconButton(
       key: const ValueKey('radio-switcher'),
-      tooltip: context.l10n.radios_switcher,
+      tooltip: unread > 0
+          ? '${l10n.radios_switcher}. ${l10n.radios_backgroundUnread(unread)}'
+          : l10n.radios_switcher,
       icon: Badge(
-        label: Text('${radios.numberOf(radios.active)}'),
+        isLabelVisible: unread > 0,
+        label: Text('$unread'),
         child: const Icon(Icons.swap_horiz_rounded),
       ),
       onPressed: () => showModalBottomSheet<void>(

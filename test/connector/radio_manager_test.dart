@@ -74,6 +74,47 @@ void main() {
     });
   });
 
+  group('notifications', () {
+    test('name the radio only when there is more than one', () {
+      final radios = RadioManager(MeshCoreConnector());
+      expect(radios.primary.notificationTitle('Sam'), 'Sam');
+      final second = radios.add();
+      expect(second.notificationTitle('Sam'), 'Sam · #2');
+      expect(radios.primary.notificationTitle('Sam'), 'Sam · #1');
+    });
+
+    test('use the saved name when not connected', () async {
+      final prefs = PrefsManager.instance;
+      await const SavedRadio(
+        transport: SavedRadioTransport.tcp,
+        address: '10.0.0.5:5000',
+        name: 'Hill',
+      ).save(prefs, slot: 'r2');
+      final radios = RadioManager(MeshCoreConnector());
+      final second = radios.add();
+      expect(second.notificationTitle('#hiking'), '#hiking · Hill');
+    });
+
+    test('a notification from another radio switches to it once', () {
+      final radios = RadioManager(MeshCoreConnector());
+      final second = radios.add();
+      expect(radios.radioIn('r2'), second);
+      expect(radios.radioIn('r9'), isNull);
+      radios.switchFor(second, 'message:r2/abcd', reply: 'on my way');
+      expect(radios.active, second);
+      expect(radios.takeHandOff(), (
+        payload: 'message:r2/abcd',
+        reply: 'on my way',
+      ));
+      expect(radios.takeHandOff(), isNull);
+    });
+
+    test('unread on the radio in use is not counted as background', () {
+      final radios = RadioManager(MeshCoreConnector())..add();
+      expect(radios.backgroundUnread, 0);
+    });
+  });
+
   group('remembered radios', () {
     test('added radios come back after a restart', () {
       final prefs = PrefsManager.instance;

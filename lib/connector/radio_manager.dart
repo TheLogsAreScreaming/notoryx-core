@@ -22,11 +22,26 @@ class RadioManager extends ChangeNotifier {
   }) : assert(primary.slot.isEmpty, 'the first radio uses slot ""'),
        _radios = [primary],
        _create = create ?? ((slot) => MeshCoreConnector(slot: slot)) {
+    _nameNotifications(primary);
     for (final slot in prefs?.getStringList(slotsKey) ?? const <String>[]) {
       if (!_validSlot(slot) || !canAdd) continue;
       if (_radios.any((r) => r.slot == slot)) continue;
-      _radios.add(_create(slot));
+      _radios.add(_nameNotifications(_create(slot)));
     }
+  }
+
+  /// With more than one radio, notifications name the radio they came in
+  /// on: its own name, else its saved name, else "#2" and so on.
+  MeshCoreConnector _nameNotifications(MeshCoreConnector radio) {
+    radio.notificationRadioName = () {
+      if (!hasMultiple) return null;
+      final own = radio.selfName?.trim();
+      if (own != null && own.isNotEmpty) return own;
+      final saved = radio.savedRadio?.name.trim();
+      if (saved != null && saved.isNotEmpty) return saved;
+      return '#${numberOf(radio)}';
+    };
+    return radio;
   }
 
   /// Where the added radios' slots are remembered.
@@ -69,7 +84,7 @@ class RadioManager extends ChangeNotifier {
     while (used.contains('r$n')) {
       n++;
     }
-    final radio = _create('r$n');
+    final radio = _nameNotifications(_create('r$n'));
     _radios.add(radio);
     _saveSlots();
     notifyListeners();
@@ -79,6 +94,35 @@ class RadioManager extends ChangeNotifier {
   void _saveSlots() => unawaited(
     prefs?.setStringList(slotsKey, [for (final r in _radios.skip(1)) r.slot]),
   );
+
+  ({String payload, String? reply})? _handOff;
+
+  /// Switches to [radio] and leaves a notification tap ([reply] null) or a
+  /// quick reply for the app to finish once it's rebuilt for that radio.
+  void switchFor(MeshCoreConnector radio, String payload, {String? reply}) {
+    _handOff = (payload: payload, reply: reply);
+    setActive(radio);
+  }
+
+  /// The notification action left by [switchFor], once.
+  ({String payload, String? reply})? takeHandOff() {
+    final handOff = _handOff;
+    _handOff = null;
+    return handOff;
+  }
+
+  /// Unread messages on the radios not in use.
+  int get backgroundUnread => _radios
+      .where((r) => r != active)
+      .fold(0, (sum, r) => sum + r.getTotalUnreadCount());
+
+  /// The radio in [slot], or null.
+  MeshCoreConnector? radioIn(String slot) {
+    for (final radio in _radios) {
+      if (radio.slot == slot) return radio;
+    }
+    return null;
+  }
 
   /// The position of [radio] in [radios], from 1: "Radio 2" and so on.
   int numberOf(MeshCoreConnector radio) => _radios.indexOf(radio) + 1;

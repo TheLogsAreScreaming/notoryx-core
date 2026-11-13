@@ -7580,6 +7580,16 @@ class AppLocalizationsJa extends AppLocalizations {
   String get radios_removeBody => '無線機を切断して登録を解除します。メッセージと連絡先は保存されたままです。';
 
   @override
+  String radios_unread(int count) {
+    return '未読 $count件';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '他の無線機に未読 $count件';
+  }
+
+  @override
   String get channelDirectory_title => 'チャンネル一覧';
 
   @override

@@ -7998,6 +7998,16 @@ class AppLocalizationsFr extends AppLocalizations {
       'La radio est déconnectée et oubliée. Ses messages et contacts restent enregistrés.';
 
   @override
+  String radios_unread(int count) {
+    return '$count non lus';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count non lus sur d\'autres radios';
+  }
+
+  @override
   String get channelDirectory_title => 'Annuaire des canaux';
 
   @override

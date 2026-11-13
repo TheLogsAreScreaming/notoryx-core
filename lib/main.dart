@@ -178,6 +178,23 @@ void main() async {
     prefs: PrefsManager.instance,
   );
   final appLock = AppLockService(PrefsManager.instance);
+  // One outbox per radio for the app's whole life, so messages queued on a
+  // radio still go out while another radio is in use.
+  final outboxes = <MeshCoreConnector, OfflineOutbox>{};
+  OfflineOutbox outboxFor(MeshCoreConnector radio) =>
+      outboxes.putIfAbsent(radio, () => OfflineOutbox(radio));
+  for (final radio in radios.radios) {
+    outboxFor(radio);
+  }
+  radios.addListener(() {
+    for (final radio in radios.radios) {
+      outboxFor(radio);
+    }
+    final gone = outboxes.keys.where((r) => !radios.radios.contains(r));
+    for (final radio in gone.toList()) {
+      outboxes.remove(radio)?.dispose();
+    }
+  });
   await connector.loadContactCache();
   await connector.loadChannelSettings();
   await connector.loadCachedChannels();
@@ -193,6 +210,7 @@ void main() async {
         connector: radios.active,
         radios: radios,
         appLock: appLock,
+        outbox: outboxFor(radios.active),
         retryService: radios.active.retryService ?? retryService,
         pathHistoryService: pathHistoryService,
         storage: storage,
@@ -278,6 +296,9 @@ class MeshCoreApp extends StatefulWidget {
   final MeshCoreConnector connector;
   final RadioManager radios;
   final AppLockService appLock;
+
+  /// The active radio's outbox; it outlives switching radios.
+  final OfflineOutbox outbox;
   final MessageRetryService retryService;
   final PathHistoryService pathHistoryService;
   final StorageService storage;
@@ -297,6 +318,7 @@ class MeshCoreApp extends StatefulWidget {
     required this.connector,
     required this.radios,
     required this.appLock,
+    required this.outbox,
     required this.retryService,
     required this.pathHistoryService,
     required this.storage,
@@ -375,7 +397,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _directRepeaters = DirectRepeaterService(widget.connector);
     _waypoints = WaypointStore(PrefsManager.instance);
     _appLock = widget.appLock;
-    _outbox = OfflineOutbox(widget.connector);
+    _outbox = widget.outbox;
     _trackLog = TrackLogService(widget.connector);
     _channelDiscovery = ChannelDiscoveryService(widget.connector);
     unawaited(_channelDiscovery.load());
@@ -474,14 +496,22 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _syncQuickReply();
     _appLock.addListener(_syncQuickReply);
     _linkRouter = LinkRouter(_navigatorKey, widget.connector)..start();
-    _notificationTaps = NotificationService().taps.listen(
-      _notificationRouter.open,
-    );
+    _notificationTaps = NotificationService().taps.listen(_openNotification);
     final launchPayload = NotificationService().takeLaunchPayload();
-    if (launchPayload != null) _notificationRouter.open(launchPayload);
+    if (launchPayload != null) _openNotification(launchPayload);
     _notificationReplies = NotificationService().replies.listen(_sendReply);
     final launchReply = NotificationService().takeLaunchReply();
     if (launchReply != null) _sendReply(launchReply);
+    // A notification from another radio switched to this one; finish it.
+    final handOff = widget.radios.takeHandOff();
+    if (handOff != null) {
+      final reply = handOff.reply;
+      if (reply == null) {
+        _openNotification(handOff.payload);
+      } else {
+        _sendReply(NotificationReply(handOff.payload, reply));
+      }
+    }
     _sensorSubscriptions = SensorSubscriptionService(widget.connector);
     _mqtt = MqttBrokerService(
       prefs: PrefsManager.instance,
@@ -567,7 +597,6 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     unawaited(_notificationReplies?.cancel());
     _appLock.removeListener(_syncQuickReply);
     _autoConnect.dispose();
-    _outbox.dispose();
     unawaited(_mqttPackets?.cancel());
     unawaited(_radioRxPackets?.cancel());
     widget.connector.removeListener(_syncMqttObserverIdentity);
@@ -623,11 +652,32 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     NotificationService().quickReplyEnabled = !_appLock.enabled;
   }
 
+  /// The radio a notification [payload] belongs to, if it's a radio in
+  /// the background; null when it's for the radio in use or for none.
+  MeshCoreConnector? _backgroundRadioFor(String payload) {
+    final slot = NotificationService.untag(payload).radio;
+    if (slot == null || slot == widget.connector.slot) return null;
+    return widget.radios.radioIn(slot);
+  }
+
+  void _openNotification(String payload) {
+    final radio = _backgroundRadioFor(payload);
+    if (radio != null) {
+      widget.radios.switchFor(radio, payload);
+      return;
+    }
+    _notificationRouter.open(NotificationService.untag(payload).payload);
+  }
+
   void _sendReply(NotificationReply reply) {
+    final radio = _backgroundRadioFor(reply.payload);
+    if (radio != null) {
+      widget.radios.switchFor(radio, reply.payload, reply: reply.text);
+      return;
+    }
+    final payload = NotificationService.untag(reply.payload).payload;
     unawaited(
-      _notificationRouter.reply(reply.payload, reply.text).catchError((
-        Object e,
-      ) {
+      _notificationRouter.reply(payload, reply.text).catchError((Object e) {
         debugPrint('Quick reply failed: $e');
       }),
     );
