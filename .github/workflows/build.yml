@@ -78,7 +78,10 @@ jobs:
       - run: flutter build ios --release --no-codesign --no-pub
 
   linux:
-    runs-on: ubuntu-latest
+    # Pinned: ubuntu-latest moved to 26.04 in November 2026, and its newer
+    # glibc headers clash with Flutter 3.47's Linux build
+    # (pthread_once / __once_flag). Move up once Flutter builds there.
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
