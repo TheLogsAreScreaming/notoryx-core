@@ -11996,4 +11996,10 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       'Moderiranje: samo če vklopite moderiranje skupnosti. Seznam prepovedi ter prijave ali pritožbe, ki jih pošljete, gredo moderatorjem NOTORYX prek sentinel-relay.meshmayhem.org.';
+
+  @override
+  String get mapTrust_favoritesOnly => 'Samo priljubljeni';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => 'Skrij vozlišča brez zvezdice';
 }

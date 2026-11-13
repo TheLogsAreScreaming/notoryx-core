@@ -4759,5 +4759,7 @@
   "sentinel_appealNotOpen": "Ta sprawa nie ma aktywnego bana albo odwołanie już czeka.",
   "sentinel_appealTooMany": "Zbyt wiele odwołań. Spróbuj ponownie za minutę.",
   "sentinel_failed": "Nie udało się połączyć z usługą moderacji. Spróbuj później.",
-  "privacy_netSentinel": "Moderacja: tylko po włączeniu moderacji społeczności. Lista banów oraz wysłane zgłoszenia i odwołania trafiają do moderatorów NOTORYX przez sentinel-relay.meshmayhem.org."
+  "privacy_netSentinel": "Moderacja: tylko po włączeniu moderacji społeczności. Lista banów oraz wysłane zgłoszenia i odwołania trafiają do moderatorów NOTORYX przez sentinel-relay.meshmayhem.org.",
+  "mapTrust_favoritesOnly": "Tylko ulubione",
+  "mapTrust_favoritesOnlyHint": "Ukryj węzły bez gwiazdki"
 }

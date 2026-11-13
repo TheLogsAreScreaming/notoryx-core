@@ -360,6 +360,10 @@ class AppSettingsService extends ChangeNotifier {
     await updateSettings(_settings.copyWith(mapShowTelemetry: value));
   }
 
+  Future<void> setMapFavoritesOnly(bool value) async {
+    await updateSettings(_settings.copyWith(mapFavoritesOnly: value));
+  }
+
   Future<void> setMapTelemetryMetric(String value) async {
     await updateSettings(_settings.copyWith(mapTelemetryMetric: value));
   }

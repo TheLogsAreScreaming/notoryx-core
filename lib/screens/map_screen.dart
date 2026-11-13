@@ -1394,6 +1394,13 @@ class _MapScreenState extends State<MapScreen> {
         addContact = false;
       }
 
+      // Trusted only: hide every node that isn't a favourite.
+      if (settings.mapFavoritesOnly &&
+          !contact.isFavorite &&
+          !_isBuildingPathTrace) {
+        addContact = false;
+      }
+
       if (addContact) {
         filtered.add(contact);
       }
@@ -3596,6 +3603,17 @@ class _MapScreenState extends State<MapScreen> {
                           ),
                         ),
                         SectionHeader(sheetContext.l10n.map_nodeTypes),
+                        SwitchListTile(
+                          secondary: const Icon(Icons.star_outline),
+                          title: Text(sheetContext.l10n.mapTrust_favoritesOnly),
+                          subtitle: Text(
+                            sheetContext.l10n.mapTrust_favoritesOnlyHint,
+                          ),
+                          value: settings.mapFavoritesOnly,
+                          dense: true,
+                          onChanged: (value) =>
+                              service.setMapFavoritesOnly(value),
+                        ),
                         SwitchListTile(
                           title: Text(sheetContext.l10n.map_chatNodes),
                           value: settings.mapShowChatNodes,

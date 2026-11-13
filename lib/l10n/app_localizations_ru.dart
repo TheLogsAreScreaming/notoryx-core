@@ -12041,4 +12041,10 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       'Модерация: только если вы включите модерацию сообщества. Список блокировок и отправленные вами жалобы или апелляции идут модераторам NOTORYX через sentinel-relay.meshmayhem.org.';
+
+  @override
+  String get mapTrust_favoritesOnly => 'Только избранные';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => 'Скрыть узлы без звёздочки';
 }

@@ -11988,4 +11988,10 @@ class AppLocalizationsBg extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       'Модерация: само ако включите модерацията на общността. Списъкът със забрани и изпратените от вас сигнали или жалби отиват при модераторите на NOTORYX чрез sentinel-relay.meshmayhem.org.';
+
+  @override
+  String get mapTrust_favoritesOnly => 'Само любими';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => 'Скрий всички възли без звезда';
 }

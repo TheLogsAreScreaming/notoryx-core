@@ -4855,5 +4855,7 @@
   "sentinel_appealNotOpen": "이 사건에는 유효한 차단이 없거나 이미 이의 제기가 대기 중입니다.",
   "sentinel_appealTooMany": "이의 제기가 너무 많습니다. 1분 후 다시 시도하세요.",
   "sentinel_failed": "관리 서비스에 연결할 수 없습니다. 나중에 다시 시도하세요.",
-  "privacy_netSentinel": "관리: 커뮤니티 관리를 켠 경우에만. 차단 목록과 보낸 신고 및 이의 제기는 sentinel-relay.meshmayhem.org를 거쳐 NOTORYX 관리자에게 전달됩니다."
+  "privacy_netSentinel": "관리: 커뮤니티 관리를 켠 경우에만. 차단 목록과 보낸 신고 및 이의 제기는 sentinel-relay.meshmayhem.org를 거쳐 NOTORYX 관리자에게 전달됩니다.",
+  "mapTrust_favoritesOnly": "즐겨찾기만",
+  "mapTrust_favoritesOnlyHint": "별표하지 않은 노드 숨기기"
 }

@@ -11221,4 +11221,10 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       '审核:仅在你开启社区审核时。封禁列表以及你发送的举报或申诉会通过 sentinel-relay.meshmayhem.org 发送给 NOTORYX 审核员。';
+
+  @override
+  String get mapTrust_favoritesOnly => '仅收藏';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => '隐藏未加星标的节点';
 }

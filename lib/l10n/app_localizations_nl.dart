@@ -11964,4 +11964,10 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       'Moderatie: alleen als je communitymoderatie aanzet. De banlijst en meldingen of bezwaren die je verstuurt gaan via sentinel-relay.meshmayhem.org naar NOTORYX-moderators.';
+
+  @override
+  String get mapTrust_favoritesOnly => 'Alleen favorieten';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => 'Verberg nodes zonder ster';
 }
