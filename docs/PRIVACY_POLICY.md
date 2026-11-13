@@ -44,6 +44,8 @@ Depending on the features and settings used, the app may request map tiles from 
 
 **MQTT** connects only to brokers you add. If you turn uploading on, packets your radio hears are published to them. Broker passwords are kept in the phone's secure storage (Keychain on Apple platforms, the Android Keystore on Android). Those requests can reveal your IP address and relevant request data (for example, map tile coordinates, selected path coordinates or a GIF search query) to the provider. Review each provider's privacy policy before using the feature.
 
+**Community moderation** is off unless you turn it on (More → Tools → Community moderation). While it is on, the app downloads the moderators' advisory ban list (node IDs and case numbers only) from sentinel-relay.meshmayhem.org every few hours. When you report a node, it sends that node's ID and name, the reason you pick, your optional note and, if you leave it ticked, the one message you reported (at most 280 characters). An appeal sends the case number, your statement and any contact you give. Reports and appeals are read by NOTORYX moderators; your own name, key and location are not sent, but the relay sees your IP address. Turning the feature off deletes the downloaded list and any unsent reports.
+
 ## What NOTORYX Core doesn't do
 
 No account, no analytics, no advertising and no crash reporting. The developers receive nothing unless you send it yourself, for example by attaching an exported log to an issue.

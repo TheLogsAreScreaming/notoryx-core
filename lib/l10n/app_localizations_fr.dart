@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -11879,4 +11878,180 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get place_waypoint => 'Point de repère enregistré';
+
+  @override
+  String get sentinel_title => 'Modération communautaire';
+
+  @override
+  String get sentinel_toolSubtitle =>
+      'Signaler le spam aux modérateurs NOTORYX et voir les nœuds signalés';
+
+  @override
+  String get sentinel_intro =>
+      'Les signalements vont aux modérateurs NOTORYX, qui les examinent un par un. Les bannissements approuvés reviennent sous forme de liste indicative : les nœuds signalés reçoivent une étiquette et rien n\'est bloqué sur le maillage.';
+
+  @override
+  String get sentinel_enable => 'Utiliser la modération communautaire';
+
+  @override
+  String get sentinel_enableSub =>
+      'Désactivée par défaut. Tant qu\'elle est désactivée, NOTORYX ne contacte jamais le service de modération.';
+
+  @override
+  String get sentinel_hide => 'Masquer les messages des expéditeurs signalés';
+
+  @override
+  String get sentinel_hideSub =>
+      'Messages de canal uniquement. Vous pouvez le désactiver à tout moment.';
+
+  @override
+  String sentinel_synced(String time) {
+    return 'Liste des bannissements mise à jour $time';
+  }
+
+  @override
+  String get sentinel_neverSynced =>
+      'Liste des bannissements pas encore téléchargée';
+
+  @override
+  String sentinel_flaggedCount(int count) {
+    return 'Nœuds signalés : $count';
+  }
+
+  @override
+  String sentinel_queued(int count) {
+    return 'Signalements en attente d\'envoi : $count';
+  }
+
+  @override
+  String get sentinel_refresh => 'Mettre à jour';
+
+  @override
+  String get sentinel_yourNode => 'Votre nœud';
+
+  @override
+  String get sentinel_yourNodeClear => 'Votre nœud n\'est pas signalé.';
+
+  @override
+  String sentinel_yourNodeFlagged(String caseRef) {
+    return 'Votre nœud est signalé (dossier $caseRef). En cas d\'erreur, vous pouvez faire appel.';
+  }
+
+  @override
+  String get sentinel_yourNodeUnknown =>
+      'Connectez une radio pour vérifier votre nœud.';
+
+  @override
+  String get sentinel_appealPending => 'Votre appel est en cours d\'examen.';
+
+  @override
+  String get sentinel_appeal => 'Faire appel';
+
+  @override
+  String get sentinel_appealOther => 'Faire appel d\'un dossier par numéro';
+
+  @override
+  String get sentinel_yourReports => 'Vos signalements récents';
+
+  @override
+  String get sentinel_report => 'Signaler aux modérateurs';
+
+  @override
+  String sentinel_reportTitle(String name) {
+    return 'Signaler $name';
+  }
+
+  @override
+  String get sentinel_reasonSpam => 'Spam ou publicité';
+
+  @override
+  String get sentinel_reasonFlooding => 'Saturation du maillage';
+
+  @override
+  String get sentinel_reasonAbuse => 'Harcèlement ou abus';
+
+  @override
+  String get sentinel_reasonImpersonation => 'Usurpation d\'identité';
+
+  @override
+  String get sentinel_reasonOther => 'Autre';
+
+  @override
+  String get sentinel_note => 'Détails (facultatif)';
+
+  @override
+  String get sentinel_includeMessage => 'Inclure ce message';
+
+  @override
+  String get sentinel_sends =>
+      'Envoie l\'ID et le nom du nœud, votre motif et, si coché, ce message. Pas votre nom, votre clé ni votre position.';
+
+  @override
+  String get sentinel_send => 'Envoyer le signalement';
+
+  @override
+  String sentinel_sent(String caseRef) {
+    return 'Signalement envoyé ($caseRef)';
+  }
+
+  @override
+  String get sentinel_queuedOne =>
+      'Pas de connexion. Le signalement sera envoyé plus tard.';
+
+  @override
+  String sentinel_rejected(String message) {
+    return 'Signalement refusé : $message';
+  }
+
+  @override
+  String get sentinel_offPrompt => 'Activer la modération communautaire ?';
+
+  @override
+  String get sentinel_turnOn => 'Activer';
+
+  @override
+  String get sentinel_flagged => 'Signalé';
+
+  @override
+  String sentinel_flaggedHint(String caseRef) {
+    return 'Signalé par les modérateurs NOTORYX (dossier $caseRef). À titre indicatif.';
+  }
+
+  @override
+  String get sentinel_caseRef => 'Numéro de dossier (SNT-1234)';
+
+  @override
+  String get sentinel_statement =>
+      'Pourquoi le bannissement devrait-il être levé ?';
+
+  @override
+  String get sentinel_contact =>
+      'Contact (facultatif, visible des modérateurs uniquement)';
+
+  @override
+  String get sentinel_appealSend => 'Envoyer l\'appel';
+
+  @override
+  String get sentinel_appealReceived =>
+      'Appel envoyé. Un modérateur l\'examinera.';
+
+  @override
+  String get sentinel_appealUnknown =>
+      'Aucun dossier MeshCore ne porte ce numéro.';
+
+  @override
+  String get sentinel_appealNotOpen =>
+      'Ce dossier n\'a pas de bannissement actif, ou un appel est déjà en attente.';
+
+  @override
+  String get sentinel_appealTooMany =>
+      'Trop d\'appels. Réessayez dans une minute.';
+
+  @override
+  String get sentinel_failed =>
+      'Impossible de joindre le service de modération. Réessayez plus tard.';
+
+  @override
+  String get privacy_netSentinel =>
+      'Modération : uniquement si vous activez la modération communautaire. La liste des bannissements et vos signalements ou appels transitent par sentinel-relay.meshmayhem.org vers les modérateurs NOTORYX.';
 }

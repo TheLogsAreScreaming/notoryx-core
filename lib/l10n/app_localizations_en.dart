@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -11694,4 +11693,175 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get place_waypoint => 'Saved waypoint';
+
+  @override
+  String get sentinel_title => 'Community moderation';
+
+  @override
+  String get sentinel_toolSubtitle =>
+      'Report spam to NOTORYX moderators and see flagged nodes';
+
+  @override
+  String get sentinel_intro =>
+      'Reports go to NOTORYX moderators, who review each one by hand. Approved bans come back as an advisory list: flagged nodes get a label, and nothing on the mesh is blocked.';
+
+  @override
+  String get sentinel_enable => 'Use community moderation';
+
+  @override
+  String get sentinel_enableSub =>
+      'Off by default. While it is off, NOTORYX never contacts the moderation service.';
+
+  @override
+  String get sentinel_hide => 'Hide messages from flagged senders';
+
+  @override
+  String get sentinel_hideSub =>
+      'Channel messages only. You can turn this off at any time.';
+
+  @override
+  String sentinel_synced(String time) {
+    return 'Ban list updated $time';
+  }
+
+  @override
+  String get sentinel_neverSynced => 'Ban list not downloaded yet';
+
+  @override
+  String sentinel_flaggedCount(int count) {
+    return 'Flagged nodes: $count';
+  }
+
+  @override
+  String sentinel_queued(int count) {
+    return 'Reports waiting to send: $count';
+  }
+
+  @override
+  String get sentinel_refresh => 'Update now';
+
+  @override
+  String get sentinel_yourNode => 'Your node';
+
+  @override
+  String get sentinel_yourNodeClear => 'Your node is not flagged.';
+
+  @override
+  String sentinel_yourNodeFlagged(String caseRef) {
+    return 'Your node is flagged (case $caseRef). If this is a mistake, you can appeal.';
+  }
+
+  @override
+  String get sentinel_yourNodeUnknown => 'Connect a radio to check your node.';
+
+  @override
+  String get sentinel_appealPending => 'Your appeal is being reviewed.';
+
+  @override
+  String get sentinel_appeal => 'Appeal';
+
+  @override
+  String get sentinel_appealOther => 'Appeal a case by number';
+
+  @override
+  String get sentinel_yourReports => 'Your recent reports';
+
+  @override
+  String get sentinel_report => 'Report to moderators';
+
+  @override
+  String sentinel_reportTitle(String name) {
+    return 'Report $name';
+  }
+
+  @override
+  String get sentinel_reasonSpam => 'Spam or advertising';
+
+  @override
+  String get sentinel_reasonFlooding => 'Flooding the mesh';
+
+  @override
+  String get sentinel_reasonAbuse => 'Harassment or abuse';
+
+  @override
+  String get sentinel_reasonImpersonation => 'Impersonation';
+
+  @override
+  String get sentinel_reasonOther => 'Other';
+
+  @override
+  String get sentinel_note => 'Details (optional)';
+
+  @override
+  String get sentinel_includeMessage => 'Include this message';
+
+  @override
+  String get sentinel_sends =>
+      'Sends the node\'s ID and name, your reason and, if ticked, this message. Not your name, key or location.';
+
+  @override
+  String get sentinel_send => 'Send report';
+
+  @override
+  String sentinel_sent(String caseRef) {
+    return 'Report sent ($caseRef)';
+  }
+
+  @override
+  String get sentinel_queuedOne =>
+      'No connection. The report will be sent later.';
+
+  @override
+  String sentinel_rejected(String message) {
+    return 'Report not accepted: $message';
+  }
+
+  @override
+  String get sentinel_offPrompt => 'Turn on community moderation?';
+
+  @override
+  String get sentinel_turnOn => 'Turn on';
+
+  @override
+  String get sentinel_flagged => 'Flagged';
+
+  @override
+  String sentinel_flaggedHint(String caseRef) {
+    return 'Flagged by NOTORYX moderators (case $caseRef). Advisory only.';
+  }
+
+  @override
+  String get sentinel_caseRef => 'Case number (SNT-1234)';
+
+  @override
+  String get sentinel_statement => 'Why should the ban be lifted?';
+
+  @override
+  String get sentinel_contact => 'Contact (optional, only moderators see it)';
+
+  @override
+  String get sentinel_appealSend => 'Send appeal';
+
+  @override
+  String get sentinel_appealReceived =>
+      'Appeal sent. A moderator will review it.';
+
+  @override
+  String get sentinel_appealUnknown => 'No MeshCore case has that number.';
+
+  @override
+  String get sentinel_appealNotOpen =>
+      'That case has no active ban, or an appeal is already waiting.';
+
+  @override
+  String get sentinel_appealTooMany =>
+      'Too many appeals. Try again in a minute.';
+
+  @override
+  String get sentinel_failed =>
+      'Couldn\'t reach the moderation service. Try again later.';
+
+  @override
+  String get privacy_netSentinel =>
+      'Moderation: only if you turn on community moderation. The ban list, and any reports or appeals you send, go to NOTORYX moderators through sentinel-relay.meshmayhem.org.';
 }

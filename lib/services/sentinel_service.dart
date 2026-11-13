@@ -203,6 +203,7 @@ class SentinelService extends ChangeNotifier {
   List<({String caseRef, String? nodeName, DateTime at})> _sent = const [];
   Timer? _timer;
   bool _syncing = false;
+  Future<bool>? _inflight;
   bool _flushing = false;
   bool _disposed = false;
   String? lastError;
@@ -285,10 +286,7 @@ class SentinelService extends ChangeNotifier {
     try {
       final list = jsonDecode(raw);
       if (list is List) {
-        _queue = [
-          for (final j in list)
-            if (SentinelReport.fromJson(j) case final r?) r,
-        ];
+        _queue = [for (final j in list) ?SentinelReport.fromJson(j)];
       }
     } on FormatException {
       _queue = const [];
@@ -308,7 +306,9 @@ class SentinelService extends ChangeNotifier {
               DateTime.tryParse('${j['at']}') != null)
             (
               caseRef: j['caseRef'] as String,
-              nodeName: j['nodeName'] is String ? j['nodeName'] as String : null,
+              nodeName: j['nodeName'] is String
+                  ? j['nodeName'] as String
+                  : null,
               at: DateTime.parse('${j['at']}'),
             ),
       ];
@@ -319,10 +319,12 @@ class SentinelService extends ChangeNotifier {
 
   static Map<String, SentinelBan> _indexBans(Object? list) {
     if (list is! List) return const {};
-    return {
-      for (final j in list)
-        if (SentinelBan.fromJson(j) case final b?) b.nodeId: b,
-    };
+    final out = <String, SentinelBan>{};
+    for (final j in list) {
+      final b = SentinelBan.fromJson(j);
+      if (b != null) out[b.nodeId] = b;
+    }
+    return out;
   }
 
   void _schedule() {
@@ -368,12 +370,21 @@ class SentinelService extends ChangeNotifier {
 
   /// Fetches the advisory ban list (at most once every five minutes unless
   /// [force]d). Keeps the last good list when offline.
-  Future<bool> syncDecisions({bool force = false}) async {
-    if (!_enabled || _syncing) return false;
+  Future<bool> syncDecisions({bool force = false}) {
+    if (!_enabled) return Future.value(false);
+    // Join a download already under way rather than starting a second.
+    final running = _inflight;
+    if (running != null) return running;
     final last = _syncedAt;
     if (!force && last != null && _now().difference(last) < _minSyncGap) {
-      return true;
+      return Future.value(true);
     }
+    final f = _download().whenComplete(() => _inflight = null);
+    _inflight = f;
+    return f;
+  }
+
+  Future<bool> _download() async {
     _syncing = true;
     _notify();
     try {
