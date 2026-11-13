@@ -79,6 +79,7 @@ import 'services/my_sensors_service.dart';
 import 'services/network_scan_service.dart';
 import 'services/rx_log_service.dart';
 import 'services/wardrive_service.dart';
+import 'services/timeline_service.dart';
 import 'services/track_log_service.dart';
 import 'services/weather_service.dart';
 
@@ -298,6 +299,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   late final SentinelService _sentinel;
   late final DirectRepeaterService _directRepeaters;
   late final WaypointStore _waypoints;
+  late final TimelineService _timeline;
   late final AppLockService _appLock;
   late final TrackLogService _trackLog;
   late final ChannelDiscoveryService _channelDiscovery;
@@ -346,6 +348,11 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     unawaited(_sentinel.start());
     _directRepeaters = DirectRepeaterService(widget.connector);
     _waypoints = WaypointStore(PrefsManager.instance);
+    _timeline = TimelineService(
+      widget.connector,
+      prefs: PrefsManager.instance,
+      waypoints: _waypoints,
+    );
     _appLock = AppLockService(PrefsManager.instance);
     _outbox = OfflineOutbox(widget.connector);
     _trackLog = TrackLogService(widget.connector);
@@ -517,6 +524,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _regionalPresets.dispose();
     _sentinel.dispose();
     _directRepeaters.dispose();
+    _timeline.dispose();
     _waypoints.dispose();
     _trackLog.dispose();
     _channelDiscovery.dispose();
@@ -709,6 +717,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         ChangeNotifierProvider<WeatherService?>.value(value: _weather),
         ChangeNotifierProvider.value(value: _fieldOps),
         ChangeNotifierProvider<WaypointStore>.value(value: _waypoints),
+        ChangeNotifierProvider<TimelineService?>.value(value: _timeline),
         ChangeNotifierProvider<AppLockService>.value(value: _appLock),
         ChangeNotifierProvider<OfflineOutbox?>.value(value: _outbox),
         ChangeNotifierProvider<NetworkChangeService?>.value(
