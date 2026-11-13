@@ -11916,4 +11916,10 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       'Moderering: bara om du slår på gemenskapsmoderering. Avstängningslistan och rapporter eller överklaganden du skickar går till NOTORYX-moderatorer via sentinel-relay.meshmayhem.org.';
+
+  @override
+  String get mapTrust_favoritesOnly => 'Endast favoriter';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => 'Dölj noder utan stjärna';
 }

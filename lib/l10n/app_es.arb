@@ -4855,5 +4855,7 @@
   "sentinel_appealNotOpen": "Ese caso no tiene un bloqueo activo o ya hay una apelación pendiente.",
   "sentinel_appealTooMany": "Demasiadas apelaciones. Inténtalo de nuevo en un minuto.",
   "sentinel_failed": "No se pudo contactar con el servicio de moderación. Inténtalo más tarde.",
-  "privacy_netSentinel": "Moderación: solo si activas la moderación comunitaria. La lista de bloqueos y las denuncias o apelaciones que envíes van a los moderadores de NOTORYX a través de sentinel-relay.meshmayhem.org."
+  "privacy_netSentinel": "Moderación: solo si activas la moderación comunitaria. La lista de bloqueos y las denuncias o apelaciones que envíes van a los moderadores de NOTORYX a través de sentinel-relay.meshmayhem.org.",
+  "mapTrust_favoritesOnly": "Solo favoritos",
+  "mapTrust_favoritesOnlyHint": "Oculta los nodos sin estrella"
 }

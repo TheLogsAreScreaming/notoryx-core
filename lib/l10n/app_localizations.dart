@@ -19974,6 +19974,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Moderation: only if you turn on community moderation. The ban list, and any reports or appeals you send, go to NOTORYX moderators through sentinel-relay.meshmayhem.org.'**
   String get privacy_netSentinel;
+
+  /// No description provided for @mapTrust_favoritesOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites only'**
+  String get mapTrust_favoritesOnly;
+
+  /// No description provided for @mapTrust_favoritesOnlyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide every node you haven\'t starred'**
+  String get mapTrust_favoritesOnlyHint;
 }
 
 class _AppLocalizationsDelegate

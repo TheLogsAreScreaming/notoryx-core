@@ -11464,4 +11464,10 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       '관리: 커뮤니티 관리를 켠 경우에만. 차단 목록과 보낸 신고 및 이의 제기는 sentinel-relay.meshmayhem.org를 거쳐 NOTORYX 관리자에게 전달됩니다.';
+
+  @override
+  String get mapTrust_favoritesOnly => '즐겨찾기만';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => '별표하지 않은 노드 숨기기';
 }

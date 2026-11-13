@@ -4721,5 +4721,7 @@
   "sentinel_appealNotOpen": "Ärendet har ingen aktiv avstängning, eller så väntar redan en överklagan.",
   "sentinel_appealTooMany": "För många överklaganden. Försök igen om en minut.",
   "sentinel_failed": "Kunde inte nå modereringstjänsten. Försök igen senare.",
-  "privacy_netSentinel": "Moderering: bara om du slår på gemenskapsmoderering. Avstängningslistan och rapporter eller överklaganden du skickar går till NOTORYX-moderatorer via sentinel-relay.meshmayhem.org."
+  "privacy_netSentinel": "Moderering: bara om du slår på gemenskapsmoderering. Avstängningslistan och rapporter eller överklaganden du skickar går till NOTORYX-moderatorer via sentinel-relay.meshmayhem.org.",
+  "mapTrust_favoritesOnly": "Endast favoriter",
+  "mapTrust_favoritesOnlyHint": "Dölj noder utan stjärna"
 }

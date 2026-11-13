@@ -4721,5 +4721,7 @@
   "sentinel_appealNotOpen": "Die zaak heeft geen actieve ban, of er wacht al een bezwaar.",
   "sentinel_appealTooMany": "Te veel bezwaren. Probeer het over een minuut opnieuw.",
   "sentinel_failed": "Moderatiedienst niet bereikbaar. Probeer het later opnieuw.",
-  "privacy_netSentinel": "Moderatie: alleen als je communitymoderatie aanzet. De banlijst en meldingen of bezwaren die je verstuurt gaan via sentinel-relay.meshmayhem.org naar NOTORYX-moderators."
+  "privacy_netSentinel": "Moderatie: alleen als je communitymoderatie aanzet. De banlijst en meldingen of bezwaren die je verstuurt gaan via sentinel-relay.meshmayhem.org naar NOTORYX-moderators.",
+  "mapTrust_favoritesOnly": "Alleen favorieten",
+  "mapTrust_favoritesOnlyHint": "Verberg nodes zonder ster"
 }

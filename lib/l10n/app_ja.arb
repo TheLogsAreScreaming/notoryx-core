@@ -4855,5 +4855,7 @@
   "sentinel_appealNotOpen": "この案件には有効な禁止がないか、すでに異議申し立てが待機中です。",
   "sentinel_appealTooMany": "異議申し立てが多すぎます。1分後に再試行してください。",
   "sentinel_failed": "モデレーションサービスに接続できません。後でもう一度お試しください。",
-  "privacy_netSentinel": "モデレーション: コミュニティモデレーションをオンにした場合のみ。禁止リストと、送信した報告や異議はsentinel-relay.meshmayhem.orgを経由してNOTORYXモデレーターに届きます。"
+  "privacy_netSentinel": "モデレーション: コミュニティモデレーションをオンにした場合のみ。禁止リストと、送信した報告や異議はsentinel-relay.meshmayhem.orgを経由してNOTORYXモデレーターに届きます。",
+  "mapTrust_favoritesOnly": "お気に入りのみ",
+  "mapTrust_favoritesOnlyHint": "星を付けていないノードを隠す"
 }

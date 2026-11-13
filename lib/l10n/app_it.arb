@@ -4855,5 +4855,7 @@
   "sentinel_appealNotOpen": "Questo caso non ha un ban attivo, oppure c'è già un ricorso in attesa.",
   "sentinel_appealTooMany": "Troppi ricorsi. Riprova tra un minuto.",
   "sentinel_failed": "Impossibile raggiungere il servizio di moderazione. Riprova più tardi.",
-  "privacy_netSentinel": "Moderazione: solo se attivi la moderazione della comunità. L'elenco ban e le segnalazioni o i ricorsi che invii vanno ai moderatori NOTORYX tramite sentinel-relay.meshmayhem.org."
+  "privacy_netSentinel": "Moderazione: solo se attivi la moderazione della comunità. L'elenco ban e le segnalazioni o i ricorsi che invii vanno ai moderatori NOTORYX tramite sentinel-relay.meshmayhem.org.",
+  "mapTrust_favoritesOnly": "Solo preferiti",
+  "mapTrust_favoritesOnlyHint": "Nascondi i nodi senza stella"
 }

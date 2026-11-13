@@ -6233,5 +6233,7 @@
   "sentinel_appealNotOpen": "That case has no active ban, or an appeal is already waiting.",
   "sentinel_appealTooMany": "Too many appeals. Try again in a minute.",
   "sentinel_failed": "Couldn't reach the moderation service. Try again later.",
-  "privacy_netSentinel": "Moderation: only if you turn on community moderation. The ban list, and any reports or appeals you send, go to NOTORYX moderators through sentinel-relay.meshmayhem.org."
+  "privacy_netSentinel": "Moderation: only if you turn on community moderation. The ban list, and any reports or appeals you send, go to NOTORYX moderators through sentinel-relay.meshmayhem.org.",
+  "mapTrust_favoritesOnly": "Favorites only",
+  "mapTrust_favoritesOnlyHint": "Hide every node you haven't starred"
 }

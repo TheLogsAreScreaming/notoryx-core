@@ -378,6 +378,14 @@ void main() {
   });
 
   group('AppSettings — new fields', () {
+    test('map favourites-only filter survives a save and reload', () {
+      expect(AppSettings().mapFavoritesOnly, isFalse);
+      final saved = AppSettings(mapFavoritesOnly: true).toJson();
+      final back = AppSettings.fromJson(jsonDecode(jsonEncode(saved)));
+      expect(back.mapFavoritesOnly, isTrue);
+      expect(back.copyWith(mapShowTelemetry: true).mapFavoritesOnly, isTrue);
+    });
+
     test('map telemetry badges and metric survive a save and reload', () {
       expect(AppSettings().mapShowTelemetry, isFalse);
       expect(AppSettings().mapTelemetryMetric, 'battery');

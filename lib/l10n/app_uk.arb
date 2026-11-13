@@ -4701,5 +4701,7 @@
   "sentinel_appealNotOpen": "У цій справі немає активного блокування або апеляція вже очікує.",
   "sentinel_appealTooMany": "Забагато апеляцій. Спробуйте за хвилину.",
   "sentinel_failed": "Служба модерації недоступна. Спробуйте пізніше.",
-  "privacy_netSentinel": "Модерація: лише якщо ви увімкнете модерацію спільноти. Список блокувань і надіслані вами скарги чи апеляції йдуть модераторам NOTORYX через sentinel-relay.meshmayhem.org."
+  "privacy_netSentinel": "Модерація: лише якщо ви увімкнете модерацію спільноти. Список блокувань і надіслані вами скарги чи апеляції йдуть модераторам NOTORYX через sentinel-relay.meshmayhem.org.",
+  "mapTrust_favoritesOnly": "Лише обрані",
+  "mapTrust_favoritesOnlyHint": "Приховати вузли без зірочки"
 }
