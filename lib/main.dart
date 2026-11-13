@@ -183,18 +183,32 @@ void main() async {
   final outboxes = <MeshCoreConnector, OfflineOutbox>{};
   OfflineOutbox outboxFor(MeshCoreConnector radio) =>
       outboxes.putIfAbsent(radio, () => OfflineOutbox(radio));
-  for (final radio in radios.radios) {
-    outboxFor(radio);
-  }
-  radios.addListener(() {
+  // "Connect to my radio automatically", for every radio, when it's on.
+  // Extra radios start a few seconds apart so the phone isn't opening
+  // several Bluetooth links at once.
+  final autoConnects = <MeshCoreConnector, AutoConnectService>{};
+  void autoConnectFor(MeshCoreConnector radio) => autoConnects.putIfAbsent(
+    radio,
+    () => AutoConnectService(
+      radio,
+      appSettingsService,
+      delays: AutoConnectService.staggered(radios.numberOf(radio) - 1),
+    )..start(),
+  );
+  void syncRadioServices() {
     for (final radio in radios.radios) {
       outboxFor(radio);
+      autoConnectFor(radio);
     }
     final gone = outboxes.keys.where((r) => !radios.radios.contains(r));
     for (final radio in gone.toList()) {
       outboxes.remove(radio)?.dispose();
+      autoConnects.remove(radio)?.dispose();
     }
-  });
+  }
+
+  syncRadioServices();
+  radios.addListener(syncRadioServices);
   await connector.loadContactCache();
   await connector.loadChannelSettings();
   await connector.loadCachedChannels();
@@ -370,7 +384,6 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   final _navigatorKey = GlobalKey<NavigatorState>();
   AppShortcuts? _shortcuts;
   HomeWidgetSync? _homeWidget;
-  late final AutoConnectService _autoConnect;
   late final OfflineOutbox _outbox;
   late final NotificationRouter _notificationRouter;
   late final LinkRouter _linkRouter;
@@ -482,11 +495,6 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         }),
       );
     }
-    // "Connect to my radio automatically", when it's on.
-    _autoConnect = AutoConnectService(
-      widget.connector,
-      widget.appSettingsService,
-    )..start();
     // Clicking a notification opens what it's about.
     _notificationRouter = NotificationRouter(
       _navigatorKey,
@@ -596,7 +604,6 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     unawaited(_notificationTaps?.cancel());
     unawaited(_notificationReplies?.cancel());
     _appLock.removeListener(_syncQuickReply);
-    _autoConnect.dispose();
     unawaited(_mqttPackets?.cancel());
     unawaited(_radioRxPackets?.cancel());
     widget.connector.removeListener(_syncMqttObserverIdentity);

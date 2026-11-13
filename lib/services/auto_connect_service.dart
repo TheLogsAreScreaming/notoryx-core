@@ -26,6 +26,15 @@ class AutoConnectService {
   final AppSettingsService settings;
   final List<Duration> delays;
 
+  /// The usual attempts, with the first one [position] × 3 seconds late,
+  /// so the radio at [position] (0 for the first) waits its turn.
+  static List<Duration> staggered(int position) => [
+    Duration(seconds: 3 * (position < 0 ? 0 : position)),
+    const Duration(seconds: 5),
+    const Duration(seconds: 15),
+    const Duration(seconds: 30),
+  ];
+
   bool _wasOn = false;
   bool _running = false;
   bool _disposed = false;
