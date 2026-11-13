@@ -18,15 +18,20 @@ class SavedRadio {
   static const String addressKey = 'last_radio_address';
   static const String nameKey = 'last_radio_name';
 
+  /// The preference key for [base] in [slot]: the plain key for the first
+  /// radio (slot ''), so earlier builds' saved radio still loads.
+  static String keyFor(String base, String slot) =>
+      slot.isEmpty ? base : '${base}_$slot';
+
   final SavedRadioTransport transport;
   final String address;
   final String name;
 
   /// Reads the saved radio, or null when nothing (or something unreadable) is
   /// stored.
-  static SavedRadio? load(SharedPreferences prefs) {
-    final transportName = prefs.getString(transportKey);
-    final address = prefs.getString(addressKey)?.trim();
+  static SavedRadio? load(SharedPreferences prefs, {String slot = ''}) {
+    final transportName = prefs.getString(keyFor(transportKey, slot));
+    final address = prefs.getString(keyFor(addressKey, slot))?.trim();
     if (transportName == null || address == null || address.isEmpty) {
       return null;
     }
@@ -37,7 +42,7 @@ class SavedRadio {
     if (transport == SavedRadioTransport.tcp && parseTcp(address) == null) {
       return null;
     }
-    final name = prefs.getString(nameKey)?.trim();
+    final name = prefs.getString(keyFor(nameKey, slot))?.trim();
     return SavedRadio(
       transport: transport,
       address: address,
@@ -45,16 +50,16 @@ class SavedRadio {
     );
   }
 
-  Future<void> save(SharedPreferences prefs) async {
-    await prefs.setString(transportKey, transport.name);
-    await prefs.setString(addressKey, address);
-    await prefs.setString(nameKey, name);
+  Future<void> save(SharedPreferences prefs, {String slot = ''}) async {
+    await prefs.setString(keyFor(transportKey, slot), transport.name);
+    await prefs.setString(keyFor(addressKey, slot), address);
+    await prefs.setString(keyFor(nameKey, slot), name);
   }
 
-  static Future<void> clear(SharedPreferences prefs) async {
-    await prefs.remove(transportKey);
-    await prefs.remove(addressKey);
-    await prefs.remove(nameKey);
+  static Future<void> clear(SharedPreferences prefs, {String slot = ''}) async {
+    await prefs.remove(keyFor(transportKey, slot));
+    await prefs.remove(keyFor(addressKey, slot));
+    await prefs.remove(keyFor(nameKey, slot));
   }
 
   /// Splits a saved "host:port" TCP address. The last colon separates the

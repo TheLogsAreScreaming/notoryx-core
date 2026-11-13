@@ -16,6 +16,7 @@ import 'utils/platform_info.dart';
 
 import 'connector/meshcore_connector.dart';
 import 'connector/meshcore_protocol.dart';
+import 'connector/radio_manager.dart';
 import 'models/app_settings.dart';
 import 'models/image_codec_support.dart';
 import 'models/mqtt_mesh_packet.dart';
@@ -298,6 +299,10 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   late final WaypointStore _waypoints;
   late final AppLockService _appLock;
   late final TrackLogService _trackLog;
+
+  /// Every radio connection; only the first is used until the multi-radio
+  /// switcher lands (docs/MULTI_RADIO_DESIGN.md).
+  late final RadioManager _radios = RadioManager(widget.connector);
   late final ChannelDiscoveryService _channelDiscovery;
   late final AnalyzerService _analyzer;
   late final NodeTelemetryStore _telemetry;
@@ -502,6 +507,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
 
   @override
   void dispose() {
+    _radios.dispose();
     _rxLog.dispose();
     _favoriteReturn.dispose();
     _networkChanges.dispose();
@@ -738,6 +744,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         ChangeNotifierProvider.value(value: _mqtt),
         ChangeNotifierProvider<MqttUploadersService?>.value(value: _uploaders),
         ChangeNotifierProvider.value(value: connector),
+        ChangeNotifierProvider.value(value: _radios),
         ChangeNotifierProvider.value(value: widget.retryService),
         ChangeNotifierProvider.value(value: widget.pathHistoryService),
         ChangeNotifierProvider.value(value: widget.appSettingsService),
