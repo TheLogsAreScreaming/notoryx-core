@@ -34,6 +34,7 @@ const _bastionPrefixes = [
   'settings_readAloud',
   'chat_readAloud',
   'sentinel_',
+  'rptTest_',
   'mapTrust_',
   'topology_',
   'traceCard_',
