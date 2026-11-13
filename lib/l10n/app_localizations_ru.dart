@@ -12041,4 +12041,19 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       'Модерация: только если вы включите модерацию сообщества. Список блокировок и отправленные вами жалобы или апелляции идут модераторам NOTORYX через sentinel-relay.meshmayhem.org.';
+
+  @override
+  String get topology_flows => 'Потоки';
+
+  @override
+  String get topology_network => 'Сеть';
+
+  @override
+  String get topology_hint =>
+      'Кольца показывают число переходов от вас (в центре). Более толстые линии передали больше сообщений, более крупные точки ретранслировали больше. Нажмите на точку, чтобы открыть ретранслятор.';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return 'Схема сети. $repeaters ретрансляторов на $rings кольцах вокруг вас.';
+  }
 }

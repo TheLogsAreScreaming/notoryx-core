@@ -11994,4 +11994,19 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       'Moderálás: csak ha bekapcsolod a közösségi moderálást. A tiltólista, valamint az általad küldött jelentések és fellebbezések a sentinel-relay.meshmayhem.org címen át jutnak a NOTORYX moderátoraihoz.';
+
+  @override
+  String get topology_flows => 'Folyamok';
+
+  @override
+  String get topology_network => 'Hálózat';
+
+  @override
+  String get topology_hint =>
+      'A gyűrűk mutatják, hány ugrásra vannak tőled (középen). A vastagabb vonalak több üzenetet vittek, a nagyobb pontok többet továbbítottak. Koppints egy pontra az ismétlő megtekintéséhez.';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return 'Hálózati ábra. $repeaters ismétlő $rings gyűrűn körülötted.';
+  }
 }

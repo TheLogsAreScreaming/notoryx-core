@@ -4726,5 +4726,9 @@
   "sentinel_appealNotOpen": "该案件没有生效的封禁,或已有申诉在等待处理。",
   "sentinel_appealTooMany": "申诉过于频繁。请一分钟后再试。",
   "sentinel_failed": "无法连接审核服务。请稍后再试。",
-  "privacy_netSentinel": "审核:仅在你开启社区审核时。封禁列表以及你发送的举报或申诉会通过 sentinel-relay.meshmayhem.org 发送给 NOTORYX 审核员。"
+  "privacy_netSentinel": "审核:仅在你开启社区审核时。封禁列表以及你发送的举报或申诉会通过 sentinel-relay.meshmayhem.org 发送给 NOTORYX 审核员。",
+  "topology_flows": "流向",
+  "topology_network": "网络",
+  "topology_hint": "圆环表示距离中心（你）的跳数。线越粗承载的消息越多，点越大转发得越多。点按一个点查看该中继器。",
+  "topology_semantics": "网络图。你周围 {rings} 个圆环上有 {repeaters} 个中继器。"
 }

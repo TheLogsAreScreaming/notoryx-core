@@ -4855,5 +4855,9 @@
   "sentinel_appealNotOpen": "Für diesen Fall gibt es keine aktive Sperre oder schon einen offenen Einspruch.",
   "sentinel_appealTooMany": "Zu viele Einsprüche. Versuche es in einer Minute erneut.",
   "sentinel_failed": "Moderationsdienst nicht erreichbar. Versuche es später erneut.",
-  "privacy_netSentinel": "Moderation: nur wenn du die Community-Moderation einschaltest. Die Sperrliste sowie deine Meldungen und Einsprüche laufen über sentinel-relay.meshmayhem.org zur NOTORYX-Moderation."
+  "privacy_netSentinel": "Moderation: nur wenn du die Community-Moderation einschaltest. Die Sperrliste sowie deine Meldungen und Einsprüche laufen über sentinel-relay.meshmayhem.org zur NOTORYX-Moderation.",
+  "topology_flows": "Flüsse",
+  "topology_network": "Netz",
+  "topology_hint": "Die Ringe zeigen, wie viele Sprünge du in der Mitte entfernt bist. Dickere Linien trugen mehr Nachrichten, größere Punkte haben mehr weitergeleitet. Tippe auf einen Punkt, um den Repeater zu sehen.",
+  "topology_semantics": "Netzdiagramm. {repeaters} Repeater auf {rings} Ringen um dich."
 }

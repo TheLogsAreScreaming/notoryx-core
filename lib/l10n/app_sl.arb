@@ -4721,5 +4721,9 @@
   "sentinel_appealNotOpen": "Ta primer nima aktivne prepovedi ali pa že čaka pritožba.",
   "sentinel_appealTooMany": "Preveč pritožb. Poskusite znova čez minuto.",
   "sentinel_failed": "Storitev za moderiranje ni dosegljiva. Poskusite pozneje.",
-  "privacy_netSentinel": "Moderiranje: samo če vklopite moderiranje skupnosti. Seznam prepovedi ter prijave ali pritožbe, ki jih pošljete, gredo moderatorjem NOTORYX prek sentinel-relay.meshmayhem.org."
+  "privacy_netSentinel": "Moderiranje: samo če vklopite moderiranje skupnosti. Seznam prepovedi ter prijave ali pritožbe, ki jih pošljete, gredo moderatorjem NOTORYX prek sentinel-relay.meshmayhem.org.",
+  "topology_flows": "Tokovi",
+  "topology_network": "Omrežje",
+  "topology_hint": "Obroči kažejo število skokov od vas na sredini. Debelejše črte so prenesle več sporočil, večje pike so posredovale več. Tapnite piko za ogled tega repetitorja.",
+  "topology_semantics": "Diagram omrežja. {repeaters} repetitorjev na {rings} obročih okoli vas."
 }

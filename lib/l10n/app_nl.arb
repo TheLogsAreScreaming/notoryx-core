@@ -4721,5 +4721,9 @@
   "sentinel_appealNotOpen": "Die zaak heeft geen actieve ban, of er wacht al een bezwaar.",
   "sentinel_appealTooMany": "Te veel bezwaren. Probeer het over een minuut opnieuw.",
   "sentinel_failed": "Moderatiedienst niet bereikbaar. Probeer het later opnieuw.",
-  "privacy_netSentinel": "Moderatie: alleen als je communitymoderatie aanzet. De banlijst en meldingen of bezwaren die je verstuurt gaan via sentinel-relay.meshmayhem.org naar NOTORYX-moderators."
+  "privacy_netSentinel": "Moderatie: alleen als je communitymoderatie aanzet. De banlijst en meldingen of bezwaren die je verstuurt gaan via sentinel-relay.meshmayhem.org naar NOTORYX-moderators.",
+  "topology_flows": "Stromen",
+  "topology_network": "Netwerk",
+  "topology_hint": "Ringen tonen het aantal hops vanaf jou, in het midden. Dikkere lijnen droegen meer berichten, grotere stippen stuurden meer door. Tik op een stip om die repeater te zien.",
+  "topology_semantics": "Netwerkdiagram. {repeaters} repeaters op {rings} ringen om je heen."
 }

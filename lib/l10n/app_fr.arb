@@ -4855,5 +4855,9 @@
   "sentinel_appealNotOpen": "Ce dossier n'a pas de bannissement actif, ou un appel est déjà en attente.",
   "sentinel_appealTooMany": "Trop d'appels. Réessayez dans une minute.",
   "sentinel_failed": "Impossible de joindre le service de modération. Réessayez plus tard.",
-  "privacy_netSentinel": "Modération : uniquement si vous activez la modération communautaire. La liste des bannissements et vos signalements ou appels transitent par sentinel-relay.meshmayhem.org vers les modérateurs NOTORYX."
+  "privacy_netSentinel": "Modération : uniquement si vous activez la modération communautaire. La liste des bannissements et vos signalements ou appels transitent par sentinel-relay.meshmayhem.org vers les modérateurs NOTORYX.",
+  "topology_flows": "Flux",
+  "topology_network": "Réseau",
+  "topology_hint": "Les anneaux indiquent le nombre de sauts depuis vous, au centre. Les lignes plus épaisses ont transporté plus de messages, les points plus gros en ont relayé plus. Touchez un point pour voir ce répéteur.",
+  "topology_semantics": "Schéma du réseau. {repeaters} répéteurs sur {rings} anneaux autour de vous."
 }

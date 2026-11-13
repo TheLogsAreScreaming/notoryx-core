@@ -11221,4 +11221,18 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       '审核:仅在你开启社区审核时。封禁列表以及你发送的举报或申诉会通过 sentinel-relay.meshmayhem.org 发送给 NOTORYX 审核员。';
+
+  @override
+  String get topology_flows => '流向';
+
+  @override
+  String get topology_network => '网络';
+
+  @override
+  String get topology_hint => '圆环表示距离中心（你）的跳数。线越粗承载的消息越多，点越大转发得越多。点按一个点查看该中继器。';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return '网络图。你周围 $rings 个圆环上有 $repeaters 个中继器。';
+  }
 }

@@ -11916,4 +11916,19 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       'Moderering: bara om du slår på gemenskapsmoderering. Avstängningslistan och rapporter eller överklaganden du skickar går till NOTORYX-moderatorer via sentinel-relay.meshmayhem.org.';
+
+  @override
+  String get topology_flows => 'Flöden';
+
+  @override
+  String get topology_network => 'Nätverk';
+
+  @override
+  String get topology_hint =>
+      'Ringarna visar antal hopp från dig i mitten. Tjockare linjer bar fler meddelanden, större prickar vidarebefordrade mer. Tryck på en prick för att se den repeatern.';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return 'Nätverksdiagram. $repeaters repeatrar på $rings ringar runt dig.';
+  }
 }

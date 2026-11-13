@@ -4855,5 +4855,9 @@
   "sentinel_appealNotOpen": "Ese caso no tiene un bloqueo activo o ya hay una apelación pendiente.",
   "sentinel_appealTooMany": "Demasiadas apelaciones. Inténtalo de nuevo en un minuto.",
   "sentinel_failed": "No se pudo contactar con el servicio de moderación. Inténtalo más tarde.",
-  "privacy_netSentinel": "Moderación: solo si activas la moderación comunitaria. La lista de bloqueos y las denuncias o apelaciones que envíes van a los moderadores de NOTORYX a través de sentinel-relay.meshmayhem.org."
+  "privacy_netSentinel": "Moderación: solo si activas la moderación comunitaria. La lista de bloqueos y las denuncias o apelaciones que envíes van a los moderadores de NOTORYX a través de sentinel-relay.meshmayhem.org.",
+  "topology_flows": "Flujos",
+  "topology_network": "Red",
+  "topology_hint": "Los anillos muestran los saltos desde ti, en el centro. Las líneas más gruesas llevaron más mensajes y los puntos más grandes retransmitieron más. Toca un punto para ver ese repetidor.",
+  "topology_semantics": "Diagrama de red. {repeaters} repetidores en {rings} anillos a tu alrededor."
 }

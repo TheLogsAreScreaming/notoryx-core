@@ -11864,4 +11864,19 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       'Moderation: only if you turn on community moderation. The ban list, and any reports or appeals you send, go to NOTORYX moderators through sentinel-relay.meshmayhem.org.';
+
+  @override
+  String get topology_flows => 'Flows';
+
+  @override
+  String get topology_network => 'Network';
+
+  @override
+  String get topology_hint =>
+      'Rings show hops away from you, in the middle. Thicker lines carried more messages; bigger dots relayed more. Tap a dot to see that repeater.';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return 'Network diagram. $repeaters repeaters on $rings rings around you.';
+  }
 }

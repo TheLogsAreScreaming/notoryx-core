@@ -12054,4 +12054,19 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       'Modération : uniquement si vous activez la modération communautaire. La liste des bannissements et vos signalements ou appels transitent par sentinel-relay.meshmayhem.org vers les modérateurs NOTORYX.';
+
+  @override
+  String get topology_flows => 'Flux';
+
+  @override
+  String get topology_network => 'Réseau';
+
+  @override
+  String get topology_hint =>
+      'Les anneaux indiquent le nombre de sauts depuis vous, au centre. Les lignes plus épaisses ont transporté plus de messages, les points plus gros en ont relayé plus. Touchez un point pour voir ce répéteur.';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return 'Schéma du réseau. $repeaters répéteurs sur $rings anneaux autour de vous.';
+  }
 }
