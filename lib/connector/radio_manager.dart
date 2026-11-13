@@ -116,6 +116,30 @@ class RadioManager extends ChangeNotifier {
       .where((r) => r != active)
       .fold(0, (sum, r) => sum + r.getTotalUnreadCount());
 
+  /// Other connected radios that know the contact with [publicKeyHex],
+  /// each with its route length to them: 0 direct, more for hops, -1 when
+  /// it has no route and would flood.
+  List<({MeshCoreConnector radio, int hops})> otherRadiosForContact(
+    String publicKeyHex,
+  ) => [
+    for (final radio in _radios)
+      if (radio != active && radio.isConnected)
+        if (radio.getContactByPubKeyHex(publicKeyHex) case final contact?)
+          (radio: radio, hops: contact.pathLength),
+  ];
+
+  /// Other connected radios with a channel using the same key as [psk],
+  /// with that channel's slot on each radio.
+  List<({MeshCoreConnector radio, int index})> otherRadiosForChannel(
+    Uint8List psk,
+  ) => [
+    for (final radio in _radios)
+      if (radio != active && radio.isConnected)
+        for (final channel in radio.channels)
+          if (listEquals(channel.psk, psk))
+            (radio: radio, index: channel.index),
+  ];
+
   /// The radio in [slot], or null.
   MeshCoreConnector? radioIn(String slot) {
     for (final radio in _radios) {

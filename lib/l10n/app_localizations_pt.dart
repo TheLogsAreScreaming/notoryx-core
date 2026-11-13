@@ -7964,6 +7964,25 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
+  String get radios_continueOn => 'Continuar noutro rádio';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Continuar em $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Direto';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Saltos: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Sem rota conhecida';
+
+  @override
   String get channelDirectory_title => 'Diretório de canais';
 
   @override

@@ -7909,6 +7909,25 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
+  String get radios_continueOn => 'Fortsätt på en annan radio';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Fortsätt på $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Direkt';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Hopp: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Ingen känd rutt';
+
+  @override
   String get channelDirectory_title => 'Kanalkatalog';
 
   @override

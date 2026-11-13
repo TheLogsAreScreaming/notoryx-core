@@ -64,6 +64,7 @@ import '../widgets/unread_divider.dart';
 import '../theme/mesh_theme.dart';
 import '../widgets/link_preview_card.dart';
 import '../services/link_preview.dart';
+import '../widgets/continue_on_radio.dart';
 import '../widgets/mesh_ui.dart';
 import 'telemetry_screen.dart';
 
@@ -279,6 +280,7 @@ class _ChatScreenState extends State<ChatScreen> {
           centerTitle: false,
           bottom: const SyncProgressAppBarBottom(),
           actions: [
+            ContinueOnRadioButton.contact(widget.contact.publicKeyHex),
             const RadioStatsIconButton(),
             Consumer<MeshCoreConnector>(
               builder: (context, connector, _) {

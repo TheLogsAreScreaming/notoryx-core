@@ -7861,6 +7861,25 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get radios_continueOn => 'Continue on another radio';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Continue on $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Direct';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Hops: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'No known route';
+
+  @override
   String get channelDirectory_title => 'Channel directory';
 
   @override

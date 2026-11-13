@@ -70,6 +70,7 @@ import '../theme/mesh_theme.dart';
 import '../widgets/link_preview_card.dart';
 import '../services/link_preview.dart';
 import '../widgets/observer_reach_sheet.dart';
+import '../widgets/continue_on_radio.dart';
 import '../widgets/mesh_ui.dart';
 import 'app_settings_screen.dart';
 import 'channel_message_path_screen.dart';
@@ -394,6 +395,7 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
               icon: const Icon(Icons.landscape),
               onPressed: () => openRegionSelectDialog(widget.channel),
             ),
+            ContinueOnRadioButton.channel(widget.channel.psk),
             const RadioStatsIconButton(),
             PopupMenuButton<String>(
               icon: const Icon(Icons.more_vert),

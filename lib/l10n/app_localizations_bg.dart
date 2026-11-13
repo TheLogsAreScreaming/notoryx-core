@@ -7965,6 +7965,25 @@ class AppLocalizationsBg extends AppLocalizations {
   }
 
   @override
+  String get radios_continueOn => 'Продължи с друго радио';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Продължи с $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Директно';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Скокове: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Няма известен маршрут';
+
+  @override
   String get channelDirectory_title => 'Каталог на канали';
 
   @override

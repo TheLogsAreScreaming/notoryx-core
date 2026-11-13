@@ -8013,6 +8013,25 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
+  String get radios_continueOn => 'Продолжить на другом радио';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Продолжить на $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Напрямую';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Переходов: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Маршрут неизвестен';
+
+  @override
   String get channelDirectory_title => 'Каталог каналов';
 
   @override

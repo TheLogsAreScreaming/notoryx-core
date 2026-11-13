@@ -7964,6 +7964,25 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
+  String get radios_continueOn => 'Pokračovať na inom rádiu';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Pokračovať na $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Priamo';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Skoky: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Žiadna známa trasa';
+
+  @override
   String get channelDirectory_title => 'Adresár kanálov';
 
   @override

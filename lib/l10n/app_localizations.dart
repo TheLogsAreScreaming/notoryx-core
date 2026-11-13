@@ -13351,6 +13351,36 @@ abstract class AppLocalizations {
   /// **'{count} unread on other radios'**
   String radios_backgroundUnread(int count);
 
+  /// No description provided for @radios_continueOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue on another radio'**
+  String get radios_continueOn;
+
+  /// No description provided for @radios_continueOnName.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue on {name}'**
+  String radios_continueOnName(String name);
+
+  /// No description provided for @radios_routeDirect.
+  ///
+  /// In en, this message translates to:
+  /// **'Direct'**
+  String get radios_routeDirect;
+
+  /// No description provided for @radios_routeHops.
+  ///
+  /// In en, this message translates to:
+  /// **'Hops: {count}'**
+  String radios_routeHops(int count);
+
+  /// No description provided for @radios_routeFlood.
+  ///
+  /// In en, this message translates to:
+  /// **'No known route'**
+  String get radios_routeFlood;
+
   /// No description provided for @channelDirectory_title.
   ///
   /// In en, this message translates to:

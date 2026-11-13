@@ -7992,6 +7992,25 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
+  String get radios_continueOn => 'Continua su un\'altra radio';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Continua su $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Diretto';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Salti: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Nessun percorso noto';
+
+  @override
   String get channelDirectory_title => 'Elenco canali';
 
   @override

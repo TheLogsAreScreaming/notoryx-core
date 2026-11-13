@@ -8014,6 +8014,25 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
+  String get radios_continueOn => 'Kontynuuj na innym radiu';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Kontynuuj na $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Bezpośrednio';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Przeskoki: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Brak znanej trasy';
+
+  @override
   String get channelDirectory_title => 'Katalog kanałów';
 
   @override

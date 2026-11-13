@@ -7943,6 +7943,25 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
+  String get radios_continueOn => 'Doorgaan op een andere radio';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Doorgaan op $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Direct';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Hops: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Geen bekende route';
+
+  @override
   String get channelDirectory_title => 'Kanalengids';
 
   @override

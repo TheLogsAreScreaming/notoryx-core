@@ -7599,6 +7599,25 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String get radios_continueOn => '다른 무전기로 계속';
+
+  @override
+  String radios_continueOnName(String name) {
+    return '$name(으)로 계속';
+  }
+
+  @override
+  String get radios_routeDirect => '직접';
+
+  @override
+  String radios_routeHops(int count) {
+    return '홉: $count';
+  }
+
+  @override
+  String get radios_routeFlood => '알려진 경로 없음';
+
+  @override
   String get channelDirectory_title => '채널 목록';
 
   @override

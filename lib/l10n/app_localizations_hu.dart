@@ -7966,6 +7966,25 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
+  String get radios_continueOn => 'Folytatás másik rádión';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Folytatás ezen: $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Közvetlen';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Ugrások: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Nincs ismert útvonal';
+
+  @override
   String get channelDirectory_title => 'Csatornakönyvtár';
 
   @override

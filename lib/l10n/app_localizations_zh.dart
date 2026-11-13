@@ -7431,6 +7431,25 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
+  String get radios_continueOn => '在另一台电台上继续';
+
+  @override
+  String radios_continueOnName(String name) {
+    return '在 $name 上继续';
+  }
+
+  @override
+  String get radios_routeDirect => '直连';
+
+  @override
+  String radios_routeHops(int count) {
+    return '跳数：$count';
+  }
+
+  @override
+  String get radios_routeFlood => '无已知路由';
+
+  @override
   String get channelDirectory_title => '频道目录';
 
   @override

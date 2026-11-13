@@ -7590,6 +7590,25 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
+  String get radios_continueOn => '別の無線機で続ける';
+
+  @override
+  String radios_continueOnName(String name) {
+    return '$nameで続ける';
+  }
+
+  @override
+  String get radios_routeDirect => '直接';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'ホップ数: $count';
+  }
+
+  @override
+  String get radios_routeFlood => '既知の経路なし';
+
+  @override
   String get channelDirectory_title => 'チャンネル一覧';
 
   @override

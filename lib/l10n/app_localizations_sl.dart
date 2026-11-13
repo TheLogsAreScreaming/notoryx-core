@@ -7970,6 +7970,25 @@ class AppLocalizationsSl extends AppLocalizations {
   }
 
   @override
+  String get radios_continueOn => 'Nadaljuj na drugem radiu';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Nadaljuj na $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Neposredno';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Skoki: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Ni znane poti';
+
+  @override
   String get channelDirectory_title => 'Imenik kanalov';
 
   @override

@@ -8008,6 +8008,25 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
+  String get radios_continueOn => 'Continuer sur une autre radio';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Continuer sur $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Direct';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Sauts : $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Aucun itinéraire connu';
+
+  @override
   String get channelDirectory_title => 'Annuaire des canaux';
 
   @override

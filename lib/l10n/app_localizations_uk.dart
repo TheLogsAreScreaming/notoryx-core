@@ -8011,6 +8011,25 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
+  String get radios_continueOn => 'Продовжити на іншому радіо';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Продовжити на $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Напряму';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Переходів: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Маршрут невідомий';
+
+  @override
   String get channelDirectory_title => 'Каталог каналів';
 
   @override

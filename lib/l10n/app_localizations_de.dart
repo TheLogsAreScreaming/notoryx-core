@@ -7986,6 +7986,25 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
+  String get radios_continueOn => 'Mit anderem Funkgerät fortsetzen';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Mit $name fortsetzen';
+  }
+
+  @override
+  String get radios_routeDirect => 'Direkt';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Sprünge: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Keine bekannte Route';
+
+  @override
   String get channelDirectory_title => 'Kanalverzeichnis';
 
   @override
