@@ -8021,6 +8021,72 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String get signedCov_section => '서명된 보고서';
+
+  @override
+  String get signedCov_share => '서명된 보고서 공유';
+
+  @override
+  String get signedCov_shareHint =>
+      '모든 육각형은 이 휴대폰의 커버리지 키로 서명되어 수정되거나 꾸며낸 것을 가려낼 수 있습니다. 공유하지 않으면 휴대폰 밖으로 나가지 않습니다.';
+
+  @override
+  String get signedCov_check => '보고서 확인';
+
+  @override
+  String get signedCov_checkHint => '서명된 보고서를 붙여 넣어 어떤 관측이 진짜인지 확인';
+
+  @override
+  String get signedCov_paste => '서명된 보고서(JSON)';
+
+  @override
+  String get signedCov_verify => '확인';
+
+  @override
+  String signedCov_yourKey(String fingerprint) {
+    return '내 커버리지 키: $fingerprint';
+  }
+
+  @override
+  String signedCov_result(int accepted, int rejected) {
+    return '관측 $accepted개 확인, $rejected개 거부';
+  }
+
+  @override
+  String signedCov_signer(String fingerprint) {
+    return '서명 키 $fingerprint';
+  }
+
+  @override
+  String get signedCov_unreadable => '서명된 커버리지 보고서가 아닙니다.';
+
+  @override
+  String signedCov_rBadSignature(int count) {
+    return '서명이 없거나 잘못됨: $count개';
+  }
+
+  @override
+  String signedCov_rMalformed(int count) {
+    return '손상됨: $count개';
+  }
+
+  @override
+  String signedCov_rImpossible(int count) {
+    return '불가능한 신호 값: $count개';
+  }
+
+  @override
+  String signedCov_rFuture(int count) {
+    return '미래 날짜: $count개';
+  }
+
+  @override
+  String get signedCov_empty => '아직 공유할 커버리지 샘플이 없습니다.';
+
+  @override
+  String get signedCov_shareFailed => '보고서를 공유할 수 없습니다.';
+
+  @override
   String get coverageHex_title => '커버리지 육각형';
 
   @override
@@ -8684,6 +8750,63 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get channels_regionUnknownSemantics => '앱이 모르는 지역으로 보냄';
+
+  @override
+  String get timeline_title => '타임라인';
+
+  @override
+  String get timeline_toolSubtitle => '메시지, 새 노드, 신호 변화, 장소를 한 피드에서';
+
+  @override
+  String get timeline_refresh => '새로고침';
+
+  @override
+  String get timeline_search => '타임라인 검색';
+
+  @override
+  String get timeline_kindMessages => '메시지';
+
+  @override
+  String get timeline_kindNodes => '새 노드';
+
+  @override
+  String get timeline_kindSignal => '신호';
+
+  @override
+  String get timeline_kindPlaces => '장소';
+
+  @override
+  String timeline_messageFrom(String sender, String where) {
+    return '$where의 $sender';
+  }
+
+  @override
+  String timeline_nodeJoined(String name) {
+    return '처음 수신: $name';
+  }
+
+  @override
+  String timeline_signalUp(String name, String from, String to) {
+    return '$name: 신호가 $from에서 $to dB로 상승';
+  }
+
+  @override
+  String timeline_signalDown(String name, String from, String to) {
+    return '$name: 신호가 $from에서 $to dB로 하락';
+  }
+
+  @override
+  String timeline_placeSaved(String name) {
+    return '장소 저장: $name';
+  }
+
+  @override
+  String timeline_placeShared(String sender, String where) {
+    return '$sender님이 $where에서 장소를 공유함';
+  }
+
+  @override
+  String get timeline_empty => '아직 없습니다. 메시지, 새로 수신한 노드, 신호 변화, 장소가 여기에 표시됩니다.';
 
   @override
   String get wardrive_title => '워드라이브';
@@ -9969,6 +10092,133 @@ class AppLocalizationsKo extends AppLocalizations {
   String get team_waitingGps => '무전기의 위치를 기다리는 중';
 
   @override
+  String get checklist_title => '체크리스트';
+
+  @override
+  String get checklist_toolSubtitle => '출발 전·설치용 재사용 체크리스트, 오프라인 작동';
+
+  @override
+  String get checklist_empty => '체크리스트가 없습니다. 아래 버튼으로 추가하세요.';
+
+  @override
+  String get checklist_add => '새 체크리스트';
+
+  @override
+  String get checklist_edit => '체크리스트 편집';
+
+  @override
+  String get checklist_name => '이름';
+
+  @override
+  String get checklist_items => '항목 (한 줄에 하나)';
+
+  @override
+  String checklist_itemCount(int count) {
+    return '항목: $count';
+  }
+
+  @override
+  String get checklist_history => '완료된 기록';
+
+  @override
+  String get checklist_noRuns => '아직 완료된 기록이 없습니다.';
+
+  @override
+  String get checklist_inProgress => '진행 중';
+
+  @override
+  String checklist_progress(int done, int total) {
+    return '$total개 중 $done개 완료';
+  }
+
+  @override
+  String checklist_startedAt(String time) {
+    return '시작 $time';
+  }
+
+  @override
+  String checklist_finishedAt(String time) {
+    return '완료 $time';
+  }
+
+  @override
+  String get checklist_note => '메모';
+
+  @override
+  String get checklist_finish => '완료하고 저장';
+
+  @override
+  String get checklist_unfinished => '체크하지 않은 항목이 있습니다. 그래도 저장할까요?';
+
+  @override
+  String get checklist_saveAnyway => '그래도 저장';
+
+  @override
+  String get checklist_export => '내보내기 또는 삭제';
+
+  @override
+  String get checklist_exportText => '텍스트로 공유';
+
+  @override
+  String get checklist_exportJson => 'JSON으로 공유';
+
+  @override
+  String get checklist_exportFailed => '기록을 공유할 수 없습니다.';
+
+  @override
+  String get checklist_deleteRun => '기록 삭제';
+
+  @override
+  String get checklist_deleteRunConfirm => '이 기록을 삭제할까요? 되돌릴 수 없습니다.';
+
+  @override
+  String checklist_deleteConfirm(String name) {
+    return '$name을(를) 삭제할까요? 완료된 기록은 유지됩니다.';
+  }
+
+  @override
+  String get checklist_preTrip => '출발 전';
+
+  @override
+  String get checklist_preTrip1 => '무전기 충전, 예비 배터리 챙김';
+
+  @override
+  String get checklist_preTrip2 => '무전기와 휴대폰 연결, 테스트 메시지 전송';
+
+  @override
+  String get checklist_preTrip3 => '해당 지역 오프라인 지도 저장';
+
+  @override
+  String get checklist_preTrip4 => '경로와 귀환 시간을 누군가에게 알림';
+
+  @override
+  String get checklist_preTrip5 => '그룹 채널과 팀 연락처 확인';
+
+  @override
+  String get checklist_preTrip6 => 'SOS와 체크인을 한 번 시험';
+
+  @override
+  String get checklist_deploy => '노드 설치';
+
+  @override
+  String get checklist_deploy1 => '장소와 허가 확인';
+
+  @override
+  String get checklist_deploy2 => '안테나 설치, 커넥터 방수 처리';
+
+  @override
+  String get checklist_deploy3 => '전원과 태양광 확인';
+
+  @override
+  String get checklist_deploy4 => '무선 설정과 지역 확인';
+
+  @override
+  String get checklist_deploy5 => '노드를 통해 테스트 메시지 수신';
+
+  @override
+  String get checklist_deploy6 => '위치, 사진, 메모 기록';
+
+  @override
   String get waypoints_title => '웨이포인트';
 
   @override
@@ -10087,6 +10337,123 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get netChange_notifTitle => '네트워크 변화';
+
+  @override
+  String get journal_title => '노드 일지';
+
+  @override
+  String get journal_toolSubtitle => '지금까지 수신한 모든 노드와 행동 라벨, 태그, 메모';
+
+  @override
+  String get journal_empty => '아직 노드가 없습니다. 무전기가 수신한 모든 노드가 자동으로 여기에 추가됩니다.';
+
+  @override
+  String get journal_search => '이름, ID, 태그, 메모 검색';
+
+  @override
+  String get journal_filterAll => '전체';
+
+  @override
+  String get journal_bSteadyRelay => '상시 중계기';
+
+  @override
+  String get journal_bRegular => '단골';
+
+  @override
+  String get journal_bRoamer => '이동형';
+
+  @override
+  String get journal_bRarelyHeard => '드물게 수신';
+
+  @override
+  String get journal_bNewcomer => '새로 등장';
+
+  @override
+  String get journal_bGoneQuiet => '조용해짐';
+
+  @override
+  String journal_confidence(int percent) {
+    return '확신도 $percent%';
+  }
+
+  @override
+  String journal_eDaysHeard(int heard, int days) {
+    return '$days일 중 $heard일 수신';
+  }
+
+  @override
+  String journal_eFirstHeard(int hours) {
+    return '$hours시간 전 처음 수신';
+  }
+
+  @override
+  String journal_eSilent(int days) {
+    return '$days일 동안 수신 없음';
+  }
+
+  @override
+  String journal_ePlaces(int places, int km) {
+    return '$places곳에서 확인, 최대 ${km}km 떨어짐';
+  }
+
+  @override
+  String journal_eSightings(int count) {
+    return '새 알림 총 $count개';
+  }
+
+  @override
+  String get journal_noLabel => '라벨을 붙이기엔 아직 자료가 부족합니다.';
+
+  @override
+  String journal_firstSeen(String time) {
+    return '처음 수신: $time';
+  }
+
+  @override
+  String journal_lastSeen(String time) {
+    return '마지막 수신: $time';
+  }
+
+  @override
+  String journal_hops(int min, int max) {
+    return '확인된 홉: $min~$max';
+  }
+
+  @override
+  String get journal_tags => '태그';
+
+  @override
+  String get journal_addTag => '태그 추가';
+
+  @override
+  String get journal_tagHint => '예: 등산로 입구, 클럽, 내 것';
+
+  @override
+  String journal_removeTag(String tag) {
+    return '태그 $tag 제거';
+  }
+
+  @override
+  String get journal_note => '메모';
+
+  @override
+  String get journal_saveNote => '메모 저장';
+
+  @override
+  String get journal_forget => '이 노드 잊기';
+
+  @override
+  String journal_forgetConfirm(String name) {
+    return '$name을(를) 태그와 메모와 함께 일지에서 제거할까요? 다시 수신되면 새로 시작합니다.';
+  }
+
+  @override
+  String get journal_forgotten => '노드를 일지에서 제거했습니다.';
+
+  @override
+  String journal_markLabel(String name) {
+    return '$name의 생성된 표식';
+  }
 
   @override
   String get trouble_title => '문제 해결';
@@ -11549,5 +11916,138 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String topology_semantics(int repeaters, int rings) {
     return '네트워크 다이어그램. 내 주변 $rings개 고리에 리피터 $repeaters개.';
+  }
+
+  @override
+  String get zones_title => '구역 및 트레일 알림';
+
+  @override
+  String get zones_toolSubtitle => '누군가 구역에 들어오거나 나가거나 트레일을 벗어나면 알림';
+
+  @override
+  String get zones_enabled => '알림 켜기';
+
+  @override
+  String get zones_enabledHint => '무전기가 수신한 광고의 위치를 사용하므로 알림은 마지막 광고만큼만 최신입니다.';
+
+  @override
+  String get zones_watch => '감시';
+
+  @override
+  String get zones_scopeFavorites => '즐겨찾기';
+
+  @override
+  String get zones_scopeEveryone => '모두';
+
+  @override
+  String get zones_includeSelf => '내 무전기도';
+
+  @override
+  String get zones_zones => '구역';
+
+  @override
+  String get zones_none => '아직 구역이 없습니다. 캠프, 등산로 입구, 집결지 주변에 추가하세요.';
+
+  @override
+  String get zones_add => '구역 추가';
+
+  @override
+  String get zones_edit => '구역 편집';
+
+  @override
+  String get zones_name => '이름';
+
+  @override
+  String get zones_defaultName => '구역';
+
+  @override
+  String get zones_center => '중심';
+
+  @override
+  String get zones_centerMyRadio => '내 무전기 위치';
+
+  @override
+  String zones_centerWaypoint(String name) {
+    return '웨이포인트: $name';
+  }
+
+  @override
+  String get zones_noCenter =>
+      '무전기 위치가 없고 웨이포인트도 없습니다. 먼저 위치를 설정하거나 웨이포인트를 저장하세요.';
+
+  @override
+  String zones_radius(String distance) {
+    return '반경: $distance';
+  }
+
+  @override
+  String get zones_alertOn => '알림 시점';
+
+  @override
+  String get zones_onEnter => '진입';
+
+  @override
+  String get zones_onLeave => '이탈';
+
+  @override
+  String get zones_onBoth => '둘 다';
+
+  @override
+  String get zones_delete => '구역 삭제';
+
+  @override
+  String zones_full(int count) {
+    return '구역은 최대 $count개까지 저장할 수 있습니다.';
+  }
+
+  @override
+  String get zones_trail => '트레일';
+
+  @override
+  String get zones_trailNone => '감시하는 트레일 없음';
+
+  @override
+  String get zones_trailHint =>
+      '웨이포인트 경로나 기록된 트랙을 선택하세요. 감시 대상이 한도보다 멀리 벗어나면 알림이 옵니다.';
+
+  @override
+  String zones_offTrailLimit(String distance) {
+    return '$distance 이상 벗어나면 이탈';
+  }
+
+  @override
+  String get zones_you => '나';
+
+  @override
+  String zones_trackName(String date, String km) {
+    return '트랙 $date · $km km';
+  }
+
+  @override
+  String zones_alertEnteredTitle(String zone) {
+    return '$zone 진입';
+  }
+
+  @override
+  String zones_alertEnteredBody(String name, String zone) {
+    return '$name님이 $zone 안에 있습니다.';
+  }
+
+  @override
+  String zones_alertLeftTitle(String zone) {
+    return '$zone 이탈';
+  }
+
+  @override
+  String zones_alertLeftBody(String name, String zone) {
+    return '$name님이 $zone을(를) 벗어났습니다.';
+  }
+
+  @override
+  String get zones_alertOffTrailTitle => '트레일 이탈';
+
+  @override
+  String zones_alertOffTrailBody(String name, String distance, String trail) {
+    return '$name님이 $trail에서 $distance 떨어져 있습니다.';
   }
 }

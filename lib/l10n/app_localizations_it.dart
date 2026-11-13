@@ -8433,6 +8433,75 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
+  String get signedCov_section => 'Rapporti firmati';
+
+  @override
+  String get signedCov_share => 'Condividi rapporto firmato';
+
+  @override
+  String get signedCov_shareHint =>
+      'Ogni esagono è firmato con la chiave di copertura del telefono, così quelli modificati o inventati si riconoscono. Nulla lascia il telefono se non lo condividi.';
+
+  @override
+  String get signedCov_check => 'Verifica un rapporto';
+
+  @override
+  String get signedCov_checkHint =>
+      'Incolla un rapporto firmato per vedere quali osservazioni sono autentiche';
+
+  @override
+  String get signedCov_paste => 'Rapporto firmato (JSON)';
+
+  @override
+  String get signedCov_verify => 'Verifica';
+
+  @override
+  String signedCov_yourKey(String fingerprint) {
+    return 'La tua chiave di copertura: $fingerprint';
+  }
+
+  @override
+  String signedCov_result(int accepted, int rejected) {
+    return '$accepted osservazioni verificate, $rejected rifiutate';
+  }
+
+  @override
+  String signedCov_signer(String fingerprint) {
+    return 'Firmato con la chiave $fingerprint';
+  }
+
+  @override
+  String get signedCov_unreadable =>
+      'Questo non è un rapporto di copertura firmato.';
+
+  @override
+  String signedCov_rBadSignature(int count) {
+    return '$count con firma mancante o errata';
+  }
+
+  @override
+  String signedCov_rMalformed(int count) {
+    return '$count danneggiate';
+  }
+
+  @override
+  String signedCov_rImpossible(int count) {
+    return '$count con valori di segnale impossibili';
+  }
+
+  @override
+  String signedCov_rFuture(int count) {
+    return '$count con data futura';
+  }
+
+  @override
+  String get signedCov_empty =>
+      'Ancora nessun campione di copertura da condividere.';
+
+  @override
+  String get signedCov_shareFailed => 'Impossibile condividere il rapporto.';
+
+  @override
   String get coverageHex_title => 'Esagoni di copertura';
 
   @override
@@ -9126,6 +9195,65 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get channels_regionUnknownSemantics =>
       'Inviato a una regione sconosciuta all’app';
+
+  @override
+  String get timeline_title => 'Cronologia';
+
+  @override
+  String get timeline_toolSubtitle =>
+      'Messaggi, nuovi nodi, variazioni di segnale e luoghi in un unico flusso';
+
+  @override
+  String get timeline_refresh => 'Ricarica';
+
+  @override
+  String get timeline_search => 'Cerca nella cronologia';
+
+  @override
+  String get timeline_kindMessages => 'Messaggi';
+
+  @override
+  String get timeline_kindNodes => 'Nuovi nodi';
+
+  @override
+  String get timeline_kindSignal => 'Segnale';
+
+  @override
+  String get timeline_kindPlaces => 'Luoghi';
+
+  @override
+  String timeline_messageFrom(String sender, String where) {
+    return '$sender in $where';
+  }
+
+  @override
+  String timeline_nodeJoined(String name) {
+    return 'Sentito per la prima volta: $name';
+  }
+
+  @override
+  String timeline_signalUp(String name, String from, String to) {
+    return '$name: segnale salito da $from a $to dB';
+  }
+
+  @override
+  String timeline_signalDown(String name, String from, String to) {
+    return '$name: segnale sceso da $from a $to dB';
+  }
+
+  @override
+  String timeline_placeSaved(String name) {
+    return 'Luogo salvato: $name';
+  }
+
+  @override
+  String timeline_placeShared(String sender, String where) {
+    return '$sender ha condiviso un luogo in $where';
+  }
+
+  @override
+  String get timeline_empty =>
+      'Ancora niente. Qui compaiono messaggi, nodi appena sentiti, variazioni di segnale e luoghi.';
 
   @override
   String get wardrive_title => 'Wardrive';
@@ -10463,6 +10591,141 @@ class AppLocalizationsIt extends AppLocalizations {
   String get team_waitingGps => 'In attesa di una posizione dalla radio';
 
   @override
+  String get checklist_title => 'Liste di controllo';
+
+  @override
+  String get checklist_toolSubtitle =>
+      'Liste riutilizzabili per uscite e installazioni, anche offline';
+
+  @override
+  String get checklist_empty =>
+      'Nessuna lista. Aggiungine una con il pulsante sotto.';
+
+  @override
+  String get checklist_add => 'Nuova lista';
+
+  @override
+  String get checklist_edit => 'Modifica lista';
+
+  @override
+  String get checklist_name => 'Nome';
+
+  @override
+  String get checklist_items => 'Voci, una per riga';
+
+  @override
+  String checklist_itemCount(int count) {
+    return 'Voci: $count';
+  }
+
+  @override
+  String get checklist_history => 'Controlli completati';
+
+  @override
+  String get checklist_noRuns => 'Ancora nessun controllo completato.';
+
+  @override
+  String get checklist_inProgress => 'In corso';
+
+  @override
+  String checklist_progress(int done, int total) {
+    return '$done di $total fatti';
+  }
+
+  @override
+  String checklist_startedAt(String time) {
+    return 'Iniziata $time';
+  }
+
+  @override
+  String checklist_finishedAt(String time) {
+    return 'Terminata $time';
+  }
+
+  @override
+  String get checklist_note => 'Nota';
+
+  @override
+  String get checklist_finish => 'Termina e salva';
+
+  @override
+  String get checklist_unfinished =>
+      'Alcune voci non sono spuntate. Salvare comunque?';
+
+  @override
+  String get checklist_saveAnyway => 'Salva comunque';
+
+  @override
+  String get checklist_export => 'Esporta o elimina';
+
+  @override
+  String get checklist_exportText => 'Condividi come testo';
+
+  @override
+  String get checklist_exportJson => 'Condividi come JSON';
+
+  @override
+  String get checklist_exportFailed => 'Impossibile condividere il registro.';
+
+  @override
+  String get checklist_deleteRun => 'Elimina registro';
+
+  @override
+  String get checklist_deleteRunConfirm =>
+      'Eliminare questo registro? Non si può annullare.';
+
+  @override
+  String checklist_deleteConfirm(String name) {
+    return 'Eliminare $name? I registri completati restano.';
+  }
+
+  @override
+  String get checklist_preTrip => 'Prima di un\'uscita';
+
+  @override
+  String get checklist_preTrip1 =>
+      'Radio carica e batteria di scorta nello zaino';
+
+  @override
+  String get checklist_preTrip2 =>
+      'Radio associata al telefono e messaggio di prova inviato';
+
+  @override
+  String get checklist_preTrip3 => 'Mappe offline della zona salvate';
+
+  @override
+  String get checklist_preTrip4 =>
+      'Percorso e ora di rientro lasciati a qualcuno';
+
+  @override
+  String get checklist_preTrip5 =>
+      'Canale del gruppo e contatti del team controllati';
+
+  @override
+  String get checklist_preTrip6 => 'SOS e check-in provati una volta';
+
+  @override
+  String get checklist_deploy => 'Installare un nodo';
+
+  @override
+  String get checklist_deploy1 => 'Sito e permesso confermati';
+
+  @override
+  String get checklist_deploy2 => 'Antenna montata e connettori sigillati';
+
+  @override
+  String get checklist_deploy3 => 'Alimentazione e solare controllati';
+
+  @override
+  String get checklist_deploy4 => 'Impostazioni radio e regione confermate';
+
+  @override
+  String get checklist_deploy5 => 'Messaggio di prova sentito tramite il nodo';
+
+  @override
+  String get checklist_deploy6 => 'Posizione, foto e note registrate';
+
+  @override
   String get waypoints_title => 'Waypoint';
 
   @override
@@ -10585,6 +10848,125 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get netChange_notifTitle => 'Cambiamento della rete';
+
+  @override
+  String get journal_title => 'Diario dei nodi';
+
+  @override
+  String get journal_toolSubtitle =>
+      'Ogni nodo mai sentito, con comportamento, etichette e note';
+
+  @override
+  String get journal_empty =>
+      'Ancora nessun nodo. Ogni nodo sentito dalla radio viene aggiunto qui automaticamente.';
+
+  @override
+  String get journal_search => 'Cerca nomi, ID, etichette e note';
+
+  @override
+  String get journal_filterAll => 'Tutti';
+
+  @override
+  String get journal_bSteadyRelay => 'Ripetitore sempre attivo';
+
+  @override
+  String get journal_bRegular => 'Abituale';
+
+  @override
+  String get journal_bRoamer => 'Itinerante';
+
+  @override
+  String get journal_bRarelyHeard => 'Raramente sentito';
+
+  @override
+  String get journal_bNewcomer => 'Nuovo arrivato';
+
+  @override
+  String get journal_bGoneQuiet => 'Silenzioso';
+
+  @override
+  String journal_confidence(int percent) {
+    return '$percent% di certezza';
+  }
+
+  @override
+  String journal_eDaysHeard(int heard, int days) {
+    return 'Sentito in $heard giorni su $days';
+  }
+
+  @override
+  String journal_eFirstHeard(int hours) {
+    return 'Sentito la prima volta $hours h fa';
+  }
+
+  @override
+  String journal_eSilent(int days) {
+    return 'Non sentito da $days giorni';
+  }
+
+  @override
+  String journal_ePlaces(int places, int km) {
+    return 'Visto in $places luoghi fino a $km km di distanza';
+  }
+
+  @override
+  String journal_eSightings(int count) {
+    return '$count annunci nuovi in tutto';
+  }
+
+  @override
+  String get journal_noLabel => 'Non ancora abbastanza dati per un\'etichetta.';
+
+  @override
+  String journal_firstSeen(String time) {
+    return 'Primo ascolto: $time';
+  }
+
+  @override
+  String journal_lastSeen(String time) {
+    return 'Ultimo ascolto: $time';
+  }
+
+  @override
+  String journal_hops(int min, int max) {
+    return 'Salti visti: da $min a $max';
+  }
+
+  @override
+  String get journal_tags => 'Etichette';
+
+  @override
+  String get journal_addTag => 'Aggiungi etichetta';
+
+  @override
+  String get journal_tagHint => 'es. sentiero, club, mio';
+
+  @override
+  String journal_removeTag(String tag) {
+    return 'Rimuovi etichetta $tag';
+  }
+
+  @override
+  String get journal_note => 'Nota';
+
+  @override
+  String get journal_saveNote => 'Salva nota';
+
+  @override
+  String get journal_forget => 'Dimentica questo nodo';
+
+  @override
+  String journal_forgetConfirm(String name) {
+    return 'Rimuovere $name dal diario, con etichette e nota? Se risentito, riparte da zero.';
+  }
+
+  @override
+  String get journal_forgotten => 'Nodo rimosso dal diario.';
+
+  @override
+  String journal_markLabel(String name) {
+    return 'Segno generato per $name';
+  }
 
   @override
   String get trouble_title => 'Risoluzione dei problemi';
@@ -12104,5 +12486,141 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String topology_semantics(int repeaters, int rings) {
     return 'Diagramma di rete. $repeaters ripetitori su $rings anelli intorno a te.';
+  }
+
+  @override
+  String get zones_title => 'Avvisi di zona e sentiero';
+
+  @override
+  String get zones_toolSubtitle =>
+      'Avvisa quando qualcuno entra o esce da una zona o si allontana da un sentiero';
+
+  @override
+  String get zones_enabled => 'Avvisi attivi';
+
+  @override
+  String get zones_enabledHint =>
+      'Usa le posizioni degli annunci ricevuti dalla radio, quindi un avviso è aggiornato quanto l\'ultimo annuncio.';
+
+  @override
+  String get zones_watch => 'Monitora';
+
+  @override
+  String get zones_scopeFavorites => 'Preferiti';
+
+  @override
+  String get zones_scopeEveryone => 'Tutti';
+
+  @override
+  String get zones_includeSelf => 'Anche la mia radio';
+
+  @override
+  String get zones_zones => 'Zone';
+
+  @override
+  String get zones_none =>
+      'Ancora nessuna zona. Aggiungine una attorno al campo, a un punto di partenza o a un punto d\'incontro.';
+
+  @override
+  String get zones_add => 'Aggiungi zona';
+
+  @override
+  String get zones_edit => 'Modifica zona';
+
+  @override
+  String get zones_name => 'Nome';
+
+  @override
+  String get zones_defaultName => 'Zona';
+
+  @override
+  String get zones_center => 'Centro';
+
+  @override
+  String get zones_centerMyRadio => 'Posizione della mia radio';
+
+  @override
+  String zones_centerWaypoint(String name) {
+    return 'Waypoint: $name';
+  }
+
+  @override
+  String get zones_noCenter =>
+      'La radio non ha una posizione e non ci sono waypoint. Imposta una posizione o salva un waypoint prima.';
+
+  @override
+  String zones_radius(String distance) {
+    return 'Raggio: $distance';
+  }
+
+  @override
+  String get zones_alertOn => 'Avvisa quando';
+
+  @override
+  String get zones_onEnter => 'Ingresso';
+
+  @override
+  String get zones_onLeave => 'Uscita';
+
+  @override
+  String get zones_onBoth => 'Entrambi';
+
+  @override
+  String get zones_delete => 'Elimina zona';
+
+  @override
+  String zones_full(int count) {
+    return 'Puoi tenere fino a $count zone.';
+  }
+
+  @override
+  String get zones_trail => 'Sentiero';
+
+  @override
+  String get zones_trailNone => 'Nessun sentiero monitorato';
+
+  @override
+  String get zones_trailHint =>
+      'Scegli un percorso di waypoint o una traccia registrata. Chi è monitorato e se ne allontana oltre il limite genera un avviso.';
+
+  @override
+  String zones_offTrailLimit(String distance) {
+    return 'Fuori sentiero oltre $distance';
+  }
+
+  @override
+  String get zones_you => 'Tu';
+
+  @override
+  String zones_trackName(String date, String km) {
+    return 'Traccia $date · $km km';
+  }
+
+  @override
+  String zones_alertEnteredTitle(String zone) {
+    return 'Ingresso in $zone';
+  }
+
+  @override
+  String zones_alertEnteredBody(String name, String zone) {
+    return '$name è dentro $zone.';
+  }
+
+  @override
+  String zones_alertLeftTitle(String zone) {
+    return 'Uscita da $zone';
+  }
+
+  @override
+  String zones_alertLeftBody(String name, String zone) {
+    return '$name è uscito da $zone.';
+  }
+
+  @override
+  String get zones_alertOffTrailTitle => 'Fuori sentiero';
+
+  @override
+  String zones_alertOffTrailBody(String name, String distance, String trail) {
+    return '$name è a $distance da $trail.';
   }
 }

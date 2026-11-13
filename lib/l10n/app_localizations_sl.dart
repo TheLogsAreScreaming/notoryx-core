@@ -8410,6 +8410,73 @@ class AppLocalizationsSl extends AppLocalizations {
   }
 
   @override
+  String get signedCov_section => 'Podpisana poročila';
+
+  @override
+  String get signedCov_share => 'Deli podpisano poročilo';
+
+  @override
+  String get signedCov_shareHint =>
+      'Vsak šestkotnik je podpisan s ključem pokritosti tega telefona, zato je spremenjene ali izmišljene mogoče prepoznati. Nič ne zapusti telefona, razen če to deliš.';
+
+  @override
+  String get signedCov_check => 'Preveri poročilo';
+
+  @override
+  String get signedCov_checkHint =>
+      'Prilepi podpisano poročilo in poglej, katera opazovanja so pristna';
+
+  @override
+  String get signedCov_paste => 'Podpisano poročilo (JSON)';
+
+  @override
+  String get signedCov_verify => 'Preveri';
+
+  @override
+  String signedCov_yourKey(String fingerprint) {
+    return 'Tvoj ključ pokritosti: $fingerprint';
+  }
+
+  @override
+  String signedCov_result(int accepted, int rejected) {
+    return 'Potrjenih opazovanj: $accepted, zavrnjenih: $rejected';
+  }
+
+  @override
+  String signedCov_signer(String fingerprint) {
+    return 'Podpisano s ključem $fingerprint';
+  }
+
+  @override
+  String get signedCov_unreadable => 'To ni podpisano poročilo o pokritosti.';
+
+  @override
+  String signedCov_rBadSignature(int count) {
+    return '$count brez podpisa ali z napačnim podpisom';
+  }
+
+  @override
+  String signedCov_rMalformed(int count) {
+    return '$count poškodovanih';
+  }
+
+  @override
+  String signedCov_rImpossible(int count) {
+    return '$count z nemogočimi vrednostmi signala';
+  }
+
+  @override
+  String signedCov_rFuture(int count) {
+    return '$count z datumom v prihodnosti';
+  }
+
+  @override
+  String get signedCov_empty => 'Še ni vzorcev pokritosti za deljenje.';
+
+  @override
+  String get signedCov_shareFailed => 'Poročila ni bilo mogoče deliti.';
+
+  @override
   String get coverageHex_title => 'Šesterokotniki pokritosti';
 
   @override
@@ -9103,6 +9170,65 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String get channels_regionUnknownSemantics =>
       'Poslano v regijo, ki je aplikacija ne pozna';
+
+  @override
+  String get timeline_title => 'Časovnica';
+
+  @override
+  String get timeline_toolSubtitle =>
+      'Sporočila, nova vozlišča, spremembe signala in kraji v enem toku';
+
+  @override
+  String get timeline_refresh => 'Znova naloži';
+
+  @override
+  String get timeline_search => 'Iskanje po časovnici';
+
+  @override
+  String get timeline_kindMessages => 'Sporočila';
+
+  @override
+  String get timeline_kindNodes => 'Nova vozlišča';
+
+  @override
+  String get timeline_kindSignal => 'Signal';
+
+  @override
+  String get timeline_kindPlaces => 'Kraji';
+
+  @override
+  String timeline_messageFrom(String sender, String where) {
+    return '$sender v $where';
+  }
+
+  @override
+  String timeline_nodeJoined(String name) {
+    return 'Prvič slišan: $name';
+  }
+
+  @override
+  String timeline_signalUp(String name, String from, String to) {
+    return '$name: signal se je dvignil s $from na $to dB';
+  }
+
+  @override
+  String timeline_signalDown(String name, String from, String to) {
+    return '$name: signal je padel s $from na $to dB';
+  }
+
+  @override
+  String timeline_placeSaved(String name) {
+    return 'Kraj shranjen: $name';
+  }
+
+  @override
+  String timeline_placeShared(String sender, String where) {
+    return '$sender je delil kraj v $where';
+  }
+
+  @override
+  String get timeline_empty =>
+      'Še nič. Tu se prikažejo sporočila, na novo slišana vozlišča, spremembe signala in kraji.';
 
   @override
   String get wardrive_title => 'Wardrive';
@@ -10450,6 +10576,139 @@ class AppLocalizationsSl extends AppLocalizations {
   String get team_waitingGps => 'Čakanje na položaj iz radia';
 
   @override
+  String get checklist_title => 'Kontrolni seznami';
+
+  @override
+  String get checklist_toolSubtitle =>
+      'Ponovno uporabni seznami pred izletom in za postavitev, delujejo brez povezave';
+
+  @override
+  String get checklist_empty => 'Ni seznamov. Dodaj ga z gumbom spodaj.';
+
+  @override
+  String get checklist_add => 'Nov seznam';
+
+  @override
+  String get checklist_edit => 'Uredi seznam';
+
+  @override
+  String get checklist_name => 'Ime';
+
+  @override
+  String get checklist_items => 'Postavke, ena na vrstico';
+
+  @override
+  String checklist_itemCount(int count) {
+    return 'Postavke: $count';
+  }
+
+  @override
+  String get checklist_history => 'Dokončena preverjanja';
+
+  @override
+  String get checklist_noRuns => 'Še ni dokončanih preverjanj.';
+
+  @override
+  String get checklist_inProgress => 'V teku';
+
+  @override
+  String checklist_progress(int done, int total) {
+    return 'Opravljeno $done od $total';
+  }
+
+  @override
+  String checklist_startedAt(String time) {
+    return 'Začeto $time';
+  }
+
+  @override
+  String checklist_finishedAt(String time) {
+    return 'Končano $time';
+  }
+
+  @override
+  String get checklist_note => 'Opomba';
+
+  @override
+  String get checklist_finish => 'Končaj in shrani';
+
+  @override
+  String get checklist_unfinished =>
+      'Nekatere postavke niso označene. Vseeno shranim?';
+
+  @override
+  String get checklist_saveAnyway => 'Vseeno shrani';
+
+  @override
+  String get checklist_export => 'Izvozi ali izbriši';
+
+  @override
+  String get checklist_exportText => 'Deli kot besedilo';
+
+  @override
+  String get checklist_exportJson => 'Deli kot JSON';
+
+  @override
+  String get checklist_exportFailed => 'Zapisa ni bilo mogoče deliti.';
+
+  @override
+  String get checklist_deleteRun => 'Izbriši zapis';
+
+  @override
+  String get checklist_deleteRunConfirm =>
+      'Izbrišem ta zapis? Tega ni mogoče razveljaviti.';
+
+  @override
+  String checklist_deleteConfirm(String name) {
+    return 'Izbrišem $name? Dokončeni zapisi ostanejo.';
+  }
+
+  @override
+  String get checklist_preTrip => 'Pred izletom';
+
+  @override
+  String get checklist_preTrip1 =>
+      'Radio napolnjen, rezervna baterija spakirana';
+
+  @override
+  String get checklist_preTrip2 =>
+      'Radio seznanjen s telefonom, testno sporočilo poslano';
+
+  @override
+  String get checklist_preTrip3 =>
+      'Zemljevidi območja shranjeni za brez povezave';
+
+  @override
+  String get checklist_preTrip4 => 'Pot in čas vrnitve pustil nekomu';
+
+  @override
+  String get checklist_preTrip5 => 'Skupinski kanal in stiki ekipe preverjeni';
+
+  @override
+  String get checklist_preTrip6 => 'SOS in prijava enkrat preizkušena';
+
+  @override
+  String get checklist_deploy => 'Postavitev vozlišča';
+
+  @override
+  String get checklist_deploy1 => 'Lokacija in dovoljenje potrjena';
+
+  @override
+  String get checklist_deploy2 => 'Antena nameščena, konektorji zatesnjeni';
+
+  @override
+  String get checklist_deploy3 => 'Napajanje in sončna celica preverjena';
+
+  @override
+  String get checklist_deploy4 => 'Nastavitve radia in regija potrjene';
+
+  @override
+  String get checklist_deploy5 => 'Testno sporočilo slišano prek vozlišča';
+
+  @override
+  String get checklist_deploy6 => 'Lokacija, fotografije in opombe zapisane';
+
+  @override
   String get waypoints_title => 'Točke';
 
   @override
@@ -10573,6 +10832,125 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get netChange_notifTitle => 'Sprememba v mreži';
+
+  @override
+  String get journal_title => 'Dnevnik vozlišč';
+
+  @override
+  String get journal_toolSubtitle =>
+      'Vsako slišano vozlišče z oznakami vedenja, značkami in opombami';
+
+  @override
+  String get journal_empty =>
+      'Še ni vozlišč. Vsako vozlišče, ki ga radio sliši, se samodejno doda sem.';
+
+  @override
+  String get journal_search => 'Iskanje imen, ID-jev, značk in opomb';
+
+  @override
+  String get journal_filterAll => 'Vsa';
+
+  @override
+  String get journal_bSteadyRelay => 'Vedno vklopljen rele';
+
+  @override
+  String get journal_bRegular => 'Reden';
+
+  @override
+  String get journal_bRoamer => 'Popotnik';
+
+  @override
+  String get journal_bRarelyHeard => 'Redko slišan';
+
+  @override
+  String get journal_bNewcomer => 'Novinec';
+
+  @override
+  String get journal_bGoneQuiet => 'Utihnil';
+
+  @override
+  String journal_confidence(int percent) {
+    return 'Gotovost $percent %';
+  }
+
+  @override
+  String journal_eDaysHeard(int heard, int days) {
+    return 'Slišan $heard od $days dni';
+  }
+
+  @override
+  String journal_eFirstHeard(int hours) {
+    return 'Prvič slišan pred $hours h';
+  }
+
+  @override
+  String journal_eSilent(int days) {
+    return 'Ni slišan $days dni';
+  }
+
+  @override
+  String journal_ePlaces(int places, int km) {
+    return 'Viden na $places mestih, do $km km narazen';
+  }
+
+  @override
+  String journal_eSightings(int count) {
+    return 'Skupaj $count novih oglasov';
+  }
+
+  @override
+  String get journal_noLabel => 'Še premalo podatkov za oznako.';
+
+  @override
+  String journal_firstSeen(String time) {
+    return 'Prvič: $time';
+  }
+
+  @override
+  String journal_lastSeen(String time) {
+    return 'Nazadnje: $time';
+  }
+
+  @override
+  String journal_hops(int min, int max) {
+    return 'Skoki: od $min do $max';
+  }
+
+  @override
+  String get journal_tags => 'Značke';
+
+  @override
+  String get journal_addTag => 'Dodaj značko';
+
+  @override
+  String get journal_tagHint => 'npr. pot, klub, moj';
+
+  @override
+  String journal_removeTag(String tag) {
+    return 'Odstrani značko $tag';
+  }
+
+  @override
+  String get journal_note => 'Opomba';
+
+  @override
+  String get journal_saveNote => 'Shrani opombo';
+
+  @override
+  String get journal_forget => 'Pozabi to vozlišče';
+
+  @override
+  String journal_forgetConfirm(String name) {
+    return 'Odstranim $name iz dnevnika z značkami in opombo? Če bo spet slišan, se začne znova.';
+  }
+
+  @override
+  String get journal_forgotten => 'Vozlišče odstranjeno iz dnevnika.';
+
+  @override
+  String journal_markLabel(String name) {
+    return 'Ustvarjen znak za $name';
+  }
 
   @override
   String get trouble_title => 'Odpravljanje težav';
@@ -12082,5 +12460,141 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String topology_semantics(int repeaters, int rings) {
     return 'Diagram omrežja. $repeaters repetitorjev na $rings obročih okoli vas.';
+  }
+
+  @override
+  String get zones_title => 'Opozorila za cone in pot';
+
+  @override
+  String get zones_toolSubtitle =>
+      'Opozori, ko nekdo vstopi v cono, jo zapusti ali zaide s poti';
+
+  @override
+  String get zones_enabled => 'Opozorila vklopljena';
+
+  @override
+  String get zones_enabledHint =>
+      'Uporablja položaje iz oglasov, ki jih sliši radio, zato je opozorilo tako sveže kot zadnji oglas.';
+
+  @override
+  String get zones_watch => 'Spremljaj';
+
+  @override
+  String get zones_scopeFavorites => 'Priljubljeni';
+
+  @override
+  String get zones_scopeEveryone => 'Vsi';
+
+  @override
+  String get zones_includeSelf => 'Tudi moj radio';
+
+  @override
+  String get zones_zones => 'Cone';
+
+  @override
+  String get zones_none =>
+      'Še ni con. Dodajte eno okoli tabora, izhodišča poti ali zbirnega mesta.';
+
+  @override
+  String get zones_add => 'Dodaj cono';
+
+  @override
+  String get zones_edit => 'Uredi cono';
+
+  @override
+  String get zones_name => 'Ime';
+
+  @override
+  String get zones_defaultName => 'Cona';
+
+  @override
+  String get zones_center => 'Središče';
+
+  @override
+  String get zones_centerMyRadio => 'Položaj mojega radia';
+
+  @override
+  String zones_centerWaypoint(String name) {
+    return 'Točka: $name';
+  }
+
+  @override
+  String get zones_noCenter =>
+      'Radio nima položaja in ni točk. Najprej nastavite položaj ali shranite točko.';
+
+  @override
+  String zones_radius(String distance) {
+    return 'Polmer: $distance';
+  }
+
+  @override
+  String get zones_alertOn => 'Opozori ob';
+
+  @override
+  String get zones_onEnter => 'Vstopu';
+
+  @override
+  String get zones_onLeave => 'Izstopu';
+
+  @override
+  String get zones_onBoth => 'Obojem';
+
+  @override
+  String get zones_delete => 'Izbriši cono';
+
+  @override
+  String zones_full(int count) {
+    return 'Shranite lahko do $count con.';
+  }
+
+  @override
+  String get zones_trail => 'Pot';
+
+  @override
+  String get zones_trailNone => 'Nobena pot ni spremljana';
+
+  @override
+  String get zones_trailHint =>
+      'Izberite pot iz točk ali posneto sled. Vsakdo, ki ga spremljate in se oddalji bolj od meje, sproži opozorilo.';
+
+  @override
+  String zones_offTrailLimit(String distance) {
+    return 'Izven poti po $distance';
+  }
+
+  @override
+  String get zones_you => 'Vi';
+
+  @override
+  String zones_trackName(String date, String km) {
+    return 'Sled $date · $km km';
+  }
+
+  @override
+  String zones_alertEnteredTitle(String zone) {
+    return 'Vstop v $zone';
+  }
+
+  @override
+  String zones_alertEnteredBody(String name, String zone) {
+    return '$name je v coni $zone.';
+  }
+
+  @override
+  String zones_alertLeftTitle(String zone) {
+    return 'Izstop iz $zone';
+  }
+
+  @override
+  String zones_alertLeftBody(String name, String zone) {
+    return '$name je zapustil cono $zone.';
+  }
+
+  @override
+  String get zones_alertOffTrailTitle => 'Izven poti';
+
+  @override
+  String zones_alertOffTrailBody(String name, String distance, String trail) {
+    return '$name je $distance od: $trail.';
   }
 }

@@ -8409,6 +8409,73 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
+  String get signedCov_section => 'Aláírt jelentések';
+
+  @override
+  String get signedCov_share => 'Aláírt jelentés megosztása';
+
+  @override
+  String get signedCov_shareHint =>
+      'Minden hatszöget a telefon lefedettségi kulcsa ír alá, így a módosított vagy kitalált adatok kiszűrhetők. Semmi sem hagyja el a telefont, hacsak meg nem osztod.';
+
+  @override
+  String get signedCov_check => 'Jelentés ellenőrzése';
+
+  @override
+  String get signedCov_checkHint =>
+      'Illessz be egy aláírt jelentést, és nézd meg, mely megfigyelések valódiak';
+
+  @override
+  String get signedCov_paste => 'Aláírt jelentés (JSON)';
+
+  @override
+  String get signedCov_verify => 'Ellenőrzés';
+
+  @override
+  String signedCov_yourKey(String fingerprint) {
+    return 'Lefedettségi kulcsod: $fingerprint';
+  }
+
+  @override
+  String signedCov_result(int accepted, int rejected) {
+    return '$accepted megfigyelés igazolva, $rejected elutasítva';
+  }
+
+  @override
+  String signedCov_signer(String fingerprint) {
+    return 'Aláíró kulcs: $fingerprint';
+  }
+
+  @override
+  String get signedCov_unreadable => 'Ez nem aláírt lefedettségi jelentés.';
+
+  @override
+  String signedCov_rBadSignature(int count) {
+    return '$count hiányzó vagy hibás aláírással';
+  }
+
+  @override
+  String signedCov_rMalformed(int count) {
+    return '$count sérült';
+  }
+
+  @override
+  String signedCov_rImpossible(int count) {
+    return '$count lehetetlen jelértékekkel';
+  }
+
+  @override
+  String signedCov_rFuture(int count) {
+    return '$count jövőbeli dátummal';
+  }
+
+  @override
+  String get signedCov_empty => 'Még nincs megosztható lefedettségi minta.';
+
+  @override
+  String get signedCov_shareFailed => 'A jelentést nem sikerült megosztani.';
+
+  @override
   String get coverageHex_title => 'Lefedettségi hatszögek';
 
   @override
@@ -9105,6 +9172,65 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get channels_regionUnknownSemantics =>
       'Az alkalmazás által nem ismert régiónak küldve';
+
+  @override
+  String get timeline_title => 'Idővonal';
+
+  @override
+  String get timeline_toolSubtitle =>
+      'Üzenetek, új csomópontok, jelváltozások és helyek egy folyamban';
+
+  @override
+  String get timeline_refresh => 'Újratöltés';
+
+  @override
+  String get timeline_search => 'Keresés az idővonalon';
+
+  @override
+  String get timeline_kindMessages => 'Üzenetek';
+
+  @override
+  String get timeline_kindNodes => 'Új csomópontok';
+
+  @override
+  String get timeline_kindSignal => 'Jel';
+
+  @override
+  String get timeline_kindPlaces => 'Helyek';
+
+  @override
+  String timeline_messageFrom(String sender, String where) {
+    return '$sender itt: $where';
+  }
+
+  @override
+  String timeline_nodeJoined(String name) {
+    return 'Először hallott: $name';
+  }
+
+  @override
+  String timeline_signalUp(String name, String from, String to) {
+    return '$name: a jel $from dB-ről $to dB-re javult';
+  }
+
+  @override
+  String timeline_signalDown(String name, String from, String to) {
+    return '$name: a jel $from dB-ről $to dB-re romlott';
+  }
+
+  @override
+  String timeline_placeSaved(String name) {
+    return 'Hely mentve: $name';
+  }
+
+  @override
+  String timeline_placeShared(String sender, String where) {
+    return '$sender megosztott egy helyet itt: $where';
+  }
+
+  @override
+  String get timeline_empty =>
+      'Még semmi. Itt jelennek meg az üzenetek, az újonnan hallott csomópontok, a jelváltozások és a helyek.';
 
   @override
   String get wardrive_title => 'Lefedettség-felmérés';
@@ -10438,6 +10564,138 @@ class AppLocalizationsHu extends AppLocalizations {
   String get team_waitingGps => 'Várakozás a rádió helyzetére';
 
   @override
+  String get checklist_title => 'Ellenőrzőlisták';
+
+  @override
+  String get checklist_toolSubtitle =>
+      'Újrahasznosítható túra- és telepítési listák, offline is';
+
+  @override
+  String get checklist_empty => 'Nincs lista. Adj hozzá egyet lent a gombbal.';
+
+  @override
+  String get checklist_add => 'Új lista';
+
+  @override
+  String get checklist_edit => 'Lista szerkesztése';
+
+  @override
+  String get checklist_name => 'Név';
+
+  @override
+  String get checklist_items => 'Tételek, soronként egy';
+
+  @override
+  String checklist_itemCount(int count) {
+    return 'Tételek: $count';
+  }
+
+  @override
+  String get checklist_history => 'Befejezett ellenőrzések';
+
+  @override
+  String get checklist_noRuns => 'Még nincs befejezett ellenőrzés.';
+
+  @override
+  String get checklist_inProgress => 'Folyamatban';
+
+  @override
+  String checklist_progress(int done, int total) {
+    return '$total-ből $done kész';
+  }
+
+  @override
+  String checklist_startedAt(String time) {
+    return 'Elkezdve: $time';
+  }
+
+  @override
+  String checklist_finishedAt(String time) {
+    return 'Befejezve: $time';
+  }
+
+  @override
+  String get checklist_note => 'Megjegyzés';
+
+  @override
+  String get checklist_finish => 'Befejezés és mentés';
+
+  @override
+  String get checklist_unfinished =>
+      'Néhány tétel nincs kipipálva. Mégis mented?';
+
+  @override
+  String get checklist_saveAnyway => 'Mentés mégis';
+
+  @override
+  String get checklist_export => 'Exportálás vagy törlés';
+
+  @override
+  String get checklist_exportText => 'Megosztás szövegként';
+
+  @override
+  String get checklist_exportJson => 'Megosztás JSON-ként';
+
+  @override
+  String get checklist_exportFailed => 'A bejegyzést nem sikerült megosztani.';
+
+  @override
+  String get checklist_deleteRun => 'Bejegyzés törlése';
+
+  @override
+  String get checklist_deleteRunConfirm =>
+      'Törlöd ezt a bejegyzést? Nem vonható vissza.';
+
+  @override
+  String checklist_deleteConfirm(String name) {
+    return 'Törlöd: $name? A befejezett bejegyzések megmaradnak.';
+  }
+
+  @override
+  String get checklist_preTrip => 'Túra előtt';
+
+  @override
+  String get checklist_preTrip1 => 'Rádió feltöltve, tartalék akku bepakolva';
+
+  @override
+  String get checklist_preTrip2 =>
+      'Rádió párosítva a telefonnal, tesztüzenet elküldve';
+
+  @override
+  String get checklist_preTrip3 => 'Offline térkép elmentve a területről';
+
+  @override
+  String get checklist_preTrip4 =>
+      'Útvonal és visszaérkezés ideje valakinél hagyva';
+
+  @override
+  String get checklist_preTrip5 => 'Csoportcsatorna és csapattagok ellenőrizve';
+
+  @override
+  String get checklist_preTrip6 => 'SOS és bejelentkezés egyszer kipróbálva';
+
+  @override
+  String get checklist_deploy => 'Csomópont telepítése';
+
+  @override
+  String get checklist_deploy1 => 'Helyszín és engedély megerősítve';
+
+  @override
+  String get checklist_deploy2 => 'Antenna felszerelve, csatlakozók tömítve';
+
+  @override
+  String get checklist_deploy3 => 'Táp és napelem ellenőrizve';
+
+  @override
+  String get checklist_deploy4 => 'Rádióbeállítások és régió megerősítve';
+
+  @override
+  String get checklist_deploy5 => 'Tesztüzenet hallható a csomóponton át';
+
+  @override
+  String get checklist_deploy6 => 'Hely, fotók és jegyzetek rögzítve';
+
+  @override
   String get waypoints_title => 'Útpontok';
 
   @override
@@ -10561,6 +10819,126 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get netChange_notifTitle => 'Hálózati változás';
+
+  @override
+  String get journal_title => 'Csomópontnapló';
+
+  @override
+  String get journal_toolSubtitle =>
+      'Minden valaha hallott csomópont viselkedéscímkékkel, címkékkel és jegyzetekkel';
+
+  @override
+  String get journal_empty =>
+      'Még nincs csomópont. Minden csomópont, amelyet a rádiód hall, automatikusan ide kerül.';
+
+  @override
+  String get journal_search =>
+      'Nevek, azonosítók, címkék és jegyzetek keresése';
+
+  @override
+  String get journal_filterAll => 'Mind';
+
+  @override
+  String get journal_bSteadyRelay => 'Mindig aktív átjátszó';
+
+  @override
+  String get journal_bRegular => 'Rendszeres';
+
+  @override
+  String get journal_bRoamer => 'Vándor';
+
+  @override
+  String get journal_bRarelyHeard => 'Ritkán hallott';
+
+  @override
+  String get journal_bNewcomer => 'Újonc';
+
+  @override
+  String get journal_bGoneQuiet => 'Elnémult';
+
+  @override
+  String journal_confidence(int percent) {
+    return '$percent% biztos';
+  }
+
+  @override
+  String journal_eDaysHeard(int heard, int days) {
+    return '$days napból $heard napon hallott';
+  }
+
+  @override
+  String journal_eFirstHeard(int hours) {
+    return 'Először $hours órája hallott';
+  }
+
+  @override
+  String journal_eSilent(int days) {
+    return '$days napja nem hallott';
+  }
+
+  @override
+  String journal_ePlaces(int places, int km) {
+    return '$places helyen látva, egymástól legfeljebb $km km-re';
+  }
+
+  @override
+  String journal_eSightings(int count) {
+    return 'Összesen $count friss hirdetés';
+  }
+
+  @override
+  String get journal_noLabel => 'Még nincs elég adat a címkéhez.';
+
+  @override
+  String journal_firstSeen(String time) {
+    return 'Először hallott: $time';
+  }
+
+  @override
+  String journal_lastSeen(String time) {
+    return 'Utoljára hallott: $time';
+  }
+
+  @override
+  String journal_hops(int min, int max) {
+    return 'Látott ugrások: $min–$max';
+  }
+
+  @override
+  String get journal_tags => 'Címkék';
+
+  @override
+  String get journal_addTag => 'Címke hozzáadása';
+
+  @override
+  String get journal_tagHint => 'pl. túrakezdet, klub, saját';
+
+  @override
+  String journal_removeTag(String tag) {
+    return '$tag címke eltávolítása';
+  }
+
+  @override
+  String get journal_note => 'Jegyzet';
+
+  @override
+  String get journal_saveNote => 'Jegyzet mentése';
+
+  @override
+  String get journal_forget => 'Csomópont elfelejtése';
+
+  @override
+  String journal_forgetConfirm(String name) {
+    return 'Eltávolítod $name csomópontot a naplóból a címkéivel és jegyzetével? Ha újra hallod, elölről kezdődik.';
+  }
+
+  @override
+  String get journal_forgotten => 'Csomópont eltávolítva a naplóból.';
+
+  @override
+  String journal_markLabel(String name) {
+    return '$name generált jele';
+  }
 
   @override
   String get trouble_title => 'Hibaelhárítás';
@@ -12082,5 +12460,141 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String topology_semantics(int repeaters, int rings) {
     return 'Hálózati ábra. $repeaters ismétlő $rings gyűrűn körülötted.';
+  }
+
+  @override
+  String get zones_title => 'Zóna- és ösvényriasztások';
+
+  @override
+  String get zones_toolSubtitle =>
+      'Riaszt, ha valaki belép egy zónába, elhagyja, vagy letér az ösvényről';
+
+  @override
+  String get zones_enabled => 'Riasztások be';
+
+  @override
+  String get zones_enabledHint =>
+      'A rádiód által hallott hirdetések pozícióit használja, így a riasztás csak annyira friss, mint az utolsó hirdetés.';
+
+  @override
+  String get zones_watch => 'Figyelés';
+
+  @override
+  String get zones_scopeFavorites => 'Kedvencek';
+
+  @override
+  String get zones_scopeEveryone => 'Mindenki';
+
+  @override
+  String get zones_includeSelf => 'A saját rádióm is';
+
+  @override
+  String get zones_zones => 'Zónák';
+
+  @override
+  String get zones_none =>
+      'Még nincs zóna. Adj hozzá egyet a tábor, egy túrakiindulópont vagy egy találkozóhely köré.';
+
+  @override
+  String get zones_add => 'Zóna hozzáadása';
+
+  @override
+  String get zones_edit => 'Zóna szerkesztése';
+
+  @override
+  String get zones_name => 'Név';
+
+  @override
+  String get zones_defaultName => 'Zóna';
+
+  @override
+  String get zones_center => 'Középpont';
+
+  @override
+  String get zones_centerMyRadio => 'A rádióm pozíciója';
+
+  @override
+  String zones_centerWaypoint(String name) {
+    return 'Útpont: $name';
+  }
+
+  @override
+  String get zones_noCenter =>
+      'A rádiódnak nincs pozíciója, és nincs útpont. Előbb állíts be pozíciót vagy ments egy útpontot.';
+
+  @override
+  String zones_radius(String distance) {
+    return 'Sugár: $distance';
+  }
+
+  @override
+  String get zones_alertOn => 'Riasztás, ha';
+
+  @override
+  String get zones_onEnter => 'Belépés';
+
+  @override
+  String get zones_onLeave => 'Kilépés';
+
+  @override
+  String get zones_onBoth => 'Mindkettő';
+
+  @override
+  String get zones_delete => 'Zóna törlése';
+
+  @override
+  String zones_full(int count) {
+    return 'Legfeljebb $count zónát tarthatsz meg.';
+  }
+
+  @override
+  String get zones_trail => 'Ösvény';
+
+  @override
+  String get zones_trailNone => 'Nincs figyelt ösvény';
+
+  @override
+  String get zones_trailHint =>
+      'Válassz útpont-útvonalat vagy rögzített nyomvonalat. Bárki, akit figyelsz, és a határnál messzebb kerül tőle, riasztást vált ki.';
+
+  @override
+  String zones_offTrailLimit(String distance) {
+    return 'Letérés $distance után';
+  }
+
+  @override
+  String get zones_you => 'Te';
+
+  @override
+  String zones_trackName(String date, String km) {
+    return 'Nyomvonal $date · $km km';
+  }
+
+  @override
+  String zones_alertEnteredTitle(String zone) {
+    return 'Belépés: $zone';
+  }
+
+  @override
+  String zones_alertEnteredBody(String name, String zone) {
+    return '$name a(z) $zone zónában van.';
+  }
+
+  @override
+  String zones_alertLeftTitle(String zone) {
+    return 'Kilépés: $zone';
+  }
+
+  @override
+  String zones_alertLeftBody(String name, String zone) {
+    return '$name elhagyta a(z) $zone zónát.';
+  }
+
+  @override
+  String get zones_alertOffTrailTitle => 'Letért az ösvényről';
+
+  @override
+  String zones_alertOffTrailBody(String name, String distance, String trail) {
+    return '$name $distance távolságra van ettől: $trail.';
   }
 }

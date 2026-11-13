@@ -8405,6 +8405,73 @@ class AppLocalizationsBg extends AppLocalizations {
   }
 
   @override
+  String get signedCov_section => 'Подписани отчети';
+
+  @override
+  String get signedCov_share => 'Сподели подписан отчет';
+
+  @override
+  String get signedCov_shareHint =>
+      'Всеки шестоъгълник е подписан с ключа за покритие на телефона, така че променените или измислените се разпознават. Нищо не напуска телефона, освен ако не го споделиш.';
+
+  @override
+  String get signedCov_check => 'Провери отчет';
+
+  @override
+  String get signedCov_checkHint =>
+      'Постави подписан отчет, за да видиш кои наблюдения са истински';
+
+  @override
+  String get signedCov_paste => 'Подписан отчет (JSON)';
+
+  @override
+  String get signedCov_verify => 'Провери';
+
+  @override
+  String signedCov_yourKey(String fingerprint) {
+    return 'Твоят ключ за покритие: $fingerprint';
+  }
+
+  @override
+  String signedCov_result(int accepted, int rejected) {
+    return '$accepted потвърдени наблюдения, $rejected отхвърлени';
+  }
+
+  @override
+  String signedCov_signer(String fingerprint) {
+    return 'Подписано с ключ $fingerprint';
+  }
+
+  @override
+  String get signedCov_unreadable => 'Това не е подписан отчет за покритие.';
+
+  @override
+  String signedCov_rBadSignature(int count) {
+    return '$count с липсващ или грешен подпис';
+  }
+
+  @override
+  String signedCov_rMalformed(int count) {
+    return '$count повредени';
+  }
+
+  @override
+  String signedCov_rImpossible(int count) {
+    return '$count с невъзможни стойности на сигнала';
+  }
+
+  @override
+  String signedCov_rFuture(int count) {
+    return '$count с бъдеща дата';
+  }
+
+  @override
+  String get signedCov_empty => 'Още няма проби за покритие за споделяне.';
+
+  @override
+  String get signedCov_shareFailed => 'Отчетът не можа да бъде споделен.';
+
+  @override
   String get coverageHex_title => 'Шестоъгълници на покритието';
 
   @override
@@ -9102,6 +9169,65 @@ class AppLocalizationsBg extends AppLocalizations {
   @override
   String get channels_regionUnknownSemantics =>
       'Изпратено до регион, непознат за приложението';
+
+  @override
+  String get timeline_title => 'Хронология';
+
+  @override
+  String get timeline_toolSubtitle =>
+      'Съобщения, нови възли, промени в сигнала и места в един поток';
+
+  @override
+  String get timeline_refresh => 'Презареди';
+
+  @override
+  String get timeline_search => 'Търси в хронологията';
+
+  @override
+  String get timeline_kindMessages => 'Съобщения';
+
+  @override
+  String get timeline_kindNodes => 'Нови възли';
+
+  @override
+  String get timeline_kindSignal => 'Сигнал';
+
+  @override
+  String get timeline_kindPlaces => 'Места';
+
+  @override
+  String timeline_messageFrom(String sender, String where) {
+    return '$sender в $where';
+  }
+
+  @override
+  String timeline_nodeJoined(String name) {
+    return 'Чут за първи път: $name';
+  }
+
+  @override
+  String timeline_signalUp(String name, String from, String to) {
+    return '$name: сигналът се подобри от $from на $to dB';
+  }
+
+  @override
+  String timeline_signalDown(String name, String from, String to) {
+    return '$name: сигналът спадна от $from на $to dB';
+  }
+
+  @override
+  String timeline_placeSaved(String name) {
+    return 'Запазено място: $name';
+  }
+
+  @override
+  String timeline_placeShared(String sender, String where) {
+    return '$sender сподели място в $where';
+  }
+
+  @override
+  String get timeline_empty =>
+      'Още няма нищо. Тук се появяват съобщения, новочути възли, промени в сигнала и места.';
 
   @override
   String get wardrive_title => 'Картографиране на покритие';
@@ -10434,6 +10560,142 @@ class AppLocalizationsBg extends AppLocalizations {
   String get team_waitingGps => 'Изчакване на позиция от радиото';
 
   @override
+  String get checklist_title => 'Контролни списъци';
+
+  @override
+  String get checklist_toolSubtitle =>
+      'Многократни списъци преди поход и за разполагане, работят офлайн';
+
+  @override
+  String get checklist_empty => 'Няма списъци. Добави с бутона долу.';
+
+  @override
+  String get checklist_add => 'Нов списък';
+
+  @override
+  String get checklist_edit => 'Редактирай списъка';
+
+  @override
+  String get checklist_name => 'Име';
+
+  @override
+  String get checklist_items => 'Точки, по една на ред';
+
+  @override
+  String checklist_itemCount(int count) {
+    return 'Точки: $count';
+  }
+
+  @override
+  String get checklist_history => 'Завършени проверки';
+
+  @override
+  String get checklist_noRuns => 'Още няма завършени проверки.';
+
+  @override
+  String get checklist_inProgress => 'В процес';
+
+  @override
+  String checklist_progress(int done, int total) {
+    return '$done от $total готови';
+  }
+
+  @override
+  String checklist_startedAt(String time) {
+    return 'Започнато $time';
+  }
+
+  @override
+  String checklist_finishedAt(String time) {
+    return 'Завършено $time';
+  }
+
+  @override
+  String get checklist_note => 'Бележка';
+
+  @override
+  String get checklist_finish => 'Завърши и запази';
+
+  @override
+  String get checklist_unfinished =>
+      'Някои точки не са отметнати. Да се запази ли записът?';
+
+  @override
+  String get checklist_saveAnyway => 'Запази въпреки това';
+
+  @override
+  String get checklist_export => 'Експорт или изтриване';
+
+  @override
+  String get checklist_exportText => 'Сподели като текст';
+
+  @override
+  String get checklist_exportJson => 'Сподели като JSON';
+
+  @override
+  String get checklist_exportFailed => 'Записът не можа да бъде споделен.';
+
+  @override
+  String get checklist_deleteRun => 'Изтрий записа';
+
+  @override
+  String get checklist_deleteRunConfirm =>
+      'Да се изтрие ли този запис? Не може да се отмени.';
+
+  @override
+  String checklist_deleteConfirm(String name) {
+    return 'Да се изтрие ли $name? Завършените записи се запазват.';
+  }
+
+  @override
+  String get checklist_preTrip => 'Преди поход';
+
+  @override
+  String get checklist_preTrip1 => 'Радиото е заредено, има резервна батерия';
+
+  @override
+  String get checklist_preTrip2 =>
+      'Радиото е сдвоено с телефона и е пратено тестово съобщение';
+
+  @override
+  String get checklist_preTrip3 => 'Офлайн картите за района са запазени';
+
+  @override
+  String get checklist_preTrip4 =>
+      'Маршрутът и часът на връщане са оставени на някого';
+
+  @override
+  String get checklist_preTrip5 =>
+      'Груповият канал и контактите на екипа са проверени';
+
+  @override
+  String get checklist_preTrip6 => 'SOS и отметката са пробвани веднъж';
+
+  @override
+  String get checklist_deploy => 'Поставяне на възел';
+
+  @override
+  String get checklist_deploy1 => 'Мястото и разрешението са потвърдени';
+
+  @override
+  String get checklist_deploy2 =>
+      'Антената е монтирана, конекторите са уплътнени';
+
+  @override
+  String get checklist_deploy3 => 'Захранването и соларният панел са проверени';
+
+  @override
+  String get checklist_deploy4 =>
+      'Настройките и регионът на радиото са потвърдени';
+
+  @override
+  String get checklist_deploy5 => 'Тестовото съобщение е чуто през възела';
+
+  @override
+  String get checklist_deploy6 =>
+      'Местоположението, снимките и бележките са записани';
+
+  @override
   String get waypoints_title => 'Точки';
 
   @override
@@ -10557,6 +10819,125 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get netChange_notifTitle => 'Промяна в мрежата';
+
+  @override
+  String get journal_title => 'Дневник на възлите';
+
+  @override
+  String get journal_toolSubtitle =>
+      'Всеки чут възел с етикети за поведение, тагове и бележки';
+
+  @override
+  String get journal_empty =>
+      'Още няма възли. Всеки възел, който радиото ти чуе, се добавя тук автоматично.';
+
+  @override
+  String get journal_search => 'Търси имена, ID, тагове и бележки';
+
+  @override
+  String get journal_filterAll => 'Всички';
+
+  @override
+  String get journal_bSteadyRelay => 'Постоянен ретранслатор';
+
+  @override
+  String get journal_bRegular => 'Редовен';
+
+  @override
+  String get journal_bRoamer => 'Скитник';
+
+  @override
+  String get journal_bRarelyHeard => 'Рядко чуван';
+
+  @override
+  String get journal_bNewcomer => 'Новодошъл';
+
+  @override
+  String get journal_bGoneQuiet => 'Замлъкнал';
+
+  @override
+  String journal_confidence(int percent) {
+    return '$percent% сигурност';
+  }
+
+  @override
+  String journal_eDaysHeard(int heard, int days) {
+    return 'Чут в $heard от $days дни';
+  }
+
+  @override
+  String journal_eFirstHeard(int hours) {
+    return 'За първи път чут преди $hours ч';
+  }
+
+  @override
+  String journal_eSilent(int days) {
+    return 'Не е чут от $days дни';
+  }
+
+  @override
+  String journal_ePlaces(int places, int km) {
+    return 'Видян на $places места на до $km km едно от друго';
+  }
+
+  @override
+  String journal_eSightings(int count) {
+    return 'Общо $count нови обявявания';
+  }
+
+  @override
+  String get journal_noLabel => 'Все още няма достатъчно данни за етикет.';
+
+  @override
+  String journal_firstSeen(String time) {
+    return 'За първи път чут: $time';
+  }
+
+  @override
+  String journal_lastSeen(String time) {
+    return 'Последно чут: $time';
+  }
+
+  @override
+  String journal_hops(int min, int max) {
+    return 'Видени скокове: от $min до $max';
+  }
+
+  @override
+  String get journal_tags => 'Тагове';
+
+  @override
+  String get journal_addTag => 'Добави таг';
+
+  @override
+  String get journal_tagHint => 'напр. начало на пътека, клуб, мой';
+
+  @override
+  String journal_removeTag(String tag) {
+    return 'Премахни таг $tag';
+  }
+
+  @override
+  String get journal_note => 'Бележка';
+
+  @override
+  String get journal_saveNote => 'Запази бележката';
+
+  @override
+  String get journal_forget => 'Забрави този възел';
+
+  @override
+  String journal_forgetConfirm(String name) {
+    return 'Да се премахне ли $name от дневника с таговете и бележката? Ако бъде чут отново, започва наново.';
+  }
+
+  @override
+  String get journal_forgotten => 'Възелът е премахнат от дневника.';
+
+  @override
+  String journal_markLabel(String name) {
+    return 'Генериран знак за $name';
+  }
 
   @override
   String get trouble_title => 'Отстраняване на проблеми';
@@ -12075,5 +12456,141 @@ class AppLocalizationsBg extends AppLocalizations {
   @override
   String topology_semantics(int repeaters, int rings) {
     return 'Мрежова диаграма. $repeaters повторителя на $rings пръстена около вас.';
+  }
+
+  @override
+  String get zones_title => 'Сигнали за зони и пътеки';
+
+  @override
+  String get zones_toolSubtitle =>
+      'Сигнал, когато някой влезе в зона или излезе от нея, или се отклони от пътека';
+
+  @override
+  String get zones_enabled => 'Сигналите са включени';
+
+  @override
+  String get zones_enabledHint =>
+      'Използва позициите от обявите, които радиото чува, така че сигналът е толкова актуален, колкото последната обява.';
+
+  @override
+  String get zones_watch => 'Следи';
+
+  @override
+  String get zones_scopeFavorites => 'Любими';
+
+  @override
+  String get zones_scopeEveryone => 'Всички';
+
+  @override
+  String get zones_includeSelf => 'И моето радио';
+
+  @override
+  String get zones_zones => 'Зони';
+
+  @override
+  String get zones_none =>
+      'Още няма зони. Добавете около лагер, начало на пътека или място за среща.';
+
+  @override
+  String get zones_add => 'Добави зона';
+
+  @override
+  String get zones_edit => 'Редактирай зона';
+
+  @override
+  String get zones_name => 'Име';
+
+  @override
+  String get zones_defaultName => 'Зона';
+
+  @override
+  String get zones_center => 'Център';
+
+  @override
+  String get zones_centerMyRadio => 'Позицията на моето радио';
+
+  @override
+  String zones_centerWaypoint(String name) {
+    return 'Точка: $name';
+  }
+
+  @override
+  String get zones_noCenter =>
+      'Радиото няма позиция и няма точки. Първо задайте позиция или запазете точка.';
+
+  @override
+  String zones_radius(String distance) {
+    return 'Радиус: $distance';
+  }
+
+  @override
+  String get zones_alertOn => 'Сигнал при';
+
+  @override
+  String get zones_onEnter => 'Влизане';
+
+  @override
+  String get zones_onLeave => 'Излизане';
+
+  @override
+  String get zones_onBoth => 'И двете';
+
+  @override
+  String get zones_delete => 'Изтрий зона';
+
+  @override
+  String zones_full(int count) {
+    return 'Можете да имате до $count зони.';
+  }
+
+  @override
+  String get zones_trail => 'Пътека';
+
+  @override
+  String get zones_trailNone => 'Не се следи пътека';
+
+  @override
+  String get zones_trailHint =>
+      'Изберете маршрут от точки или записан трак. Всеки следен, който се отдалечи повече от лимита, предизвиква сигнал.';
+
+  @override
+  String zones_offTrailLimit(String distance) {
+    return 'Извън пътеката след $distance';
+  }
+
+  @override
+  String get zones_you => 'Вие';
+
+  @override
+  String zones_trackName(String date, String km) {
+    return 'Трак $date · $km км';
+  }
+
+  @override
+  String zones_alertEnteredTitle(String zone) {
+    return 'Влизане в $zone';
+  }
+
+  @override
+  String zones_alertEnteredBody(String name, String zone) {
+    return '$name е в $zone.';
+  }
+
+  @override
+  String zones_alertLeftTitle(String zone) {
+    return 'Излизане от $zone';
+  }
+
+  @override
+  String zones_alertLeftBody(String name, String zone) {
+    return '$name излезе от $zone.';
+  }
+
+  @override
+  String get zones_alertOffTrailTitle => 'Извън пътеката';
+
+  @override
+  String zones_alertOffTrailBody(String name, String distance, String trail) {
+    return '$name е на $distance от $trail.';
   }
 }
