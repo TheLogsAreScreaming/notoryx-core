@@ -12056,6 +12056,12 @@ class AppLocalizationsFr extends AppLocalizations {
       'Modération : uniquement si vous activez la modération communautaire. La liste des bannissements et vos signalements ou appels transitent par sentinel-relay.meshmayhem.org vers les modérateurs NOTORYX.';
 
   @override
+  String get mapTrust_favoritesOnly => 'Favoris uniquement';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => 'Masquer les nœuds sans étoile';
+
+  @override
   String get topology_flows => 'Flux';
 
   @override

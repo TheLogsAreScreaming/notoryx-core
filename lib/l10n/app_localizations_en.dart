@@ -11866,6 +11866,13 @@ class AppLocalizationsEn extends AppLocalizations {
       'Moderation: only if you turn on community moderation. The ban list, and any reports or appeals you send, go to NOTORYX moderators through sentinel-relay.meshmayhem.org.';
 
   @override
+  String get mapTrust_favoritesOnly => 'Favorites only';
+
+  @override
+  String get mapTrust_favoritesOnlyHint =>
+      'Hide every node you haven\'t starred';
+
+  @override
   String get topology_flows => 'Flows';
 
   @override

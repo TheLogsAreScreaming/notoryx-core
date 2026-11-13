@@ -12046,6 +12046,12 @@ class AppLocalizationsPl extends AppLocalizations {
       'Moderacja: tylko po włączeniu moderacji społeczności. Lista banów oraz wysłane zgłoszenia i odwołania trafiają do moderatorów NOTORYX przez sentinel-relay.meshmayhem.org.';
 
   @override
+  String get mapTrust_favoritesOnly => 'Tylko ulubione';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => 'Ukryj węzły bez gwiazdki';
+
+  @override
   String get topology_flows => 'Przepływy';
 
   @override

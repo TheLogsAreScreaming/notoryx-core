@@ -4722,6 +4722,8 @@
   "sentinel_appealTooMany": "För många överklaganden. Försök igen om en minut.",
   "sentinel_failed": "Kunde inte nå modereringstjänsten. Försök igen senare.",
   "privacy_netSentinel": "Moderering: bara om du slår på gemenskapsmoderering. Avstängningslistan och rapporter eller överklaganden du skickar går till NOTORYX-moderatorer via sentinel-relay.meshmayhem.org.",
+  "mapTrust_favoritesOnly": "Endast favoriter",
+  "mapTrust_favoritesOnlyHint": "Dölj noder utan stjärna",
   "topology_flows": "Flöden",
   "topology_network": "Nätverk",
   "topology_hint": "Ringarna visar antal hopp från dig i mitten. Tjockare linjer bar fler meddelanden, större prickar vidarebefordrade mer. Tryck på en prick för att se den repeatern.",

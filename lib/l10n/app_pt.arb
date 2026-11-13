@@ -4722,6 +4722,8 @@
   "sentinel_appealTooMany": "Demasiados recursos. Tente novamente dentro de um minuto.",
   "sentinel_failed": "Não foi possível contactar o serviço de moderação. Tente mais tarde.",
   "privacy_netSentinel": "Moderação: só se ativar a moderação comunitária. A lista de banimentos e as denúncias ou recursos que enviar vão para os moderadores NOTORYX através de sentinel-relay.meshmayhem.org.",
+  "mapTrust_favoritesOnly": "Apenas favoritos",
+  "mapTrust_favoritesOnlyHint": "Ocultar nós sem estrela",
   "topology_flows": "Fluxos",
   "topology_network": "Rede",
   "topology_hint": "Os anéis mostram os saltos a partir de você, no centro. Linhas mais grossas levaram mais mensagens e pontos maiores retransmitiram mais. Toque num ponto para ver esse repetidor.",

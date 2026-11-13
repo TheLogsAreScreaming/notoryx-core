@@ -4722,6 +4722,8 @@
   "sentinel_appealTooMany": "Príliš veľa odvolaní. Skúste to o minútu.",
   "sentinel_failed": "Moderovacia služba je nedostupná. Skúste neskôr.",
   "privacy_netSentinel": "Moderovanie: iba ak zapnete moderovanie komunity. Zoznam zákazov a vaše nahlásenia či odvolania idú moderátorom NOTORYX cez sentinel-relay.meshmayhem.org.",
+  "mapTrust_favoritesOnly": "Iba obľúbené",
+  "mapTrust_favoritesOnlyHint": "Skryť uzly bez hviezdičky",
   "topology_flows": "Toky",
   "topology_network": "Sieť",
   "topology_hint": "Kruhy ukazujú počet skokov od vás v strede. Hrubšie čiary preniesli viac správ, väčšie body preposlali viac. Ťuknutím na bod zobrazíte daný opakovač.",

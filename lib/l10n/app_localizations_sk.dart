@@ -11975,6 +11975,12 @@ class AppLocalizationsSk extends AppLocalizations {
       'Moderovanie: iba ak zapnete moderovanie komunity. Zoznam zákazov a vaše nahlásenia či odvolania idú moderátorom NOTORYX cez sentinel-relay.meshmayhem.org.';
 
   @override
+  String get mapTrust_favoritesOnly => 'Iba obľúbené';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => 'Skryť uzly bez hviezdičky';
+
+  @override
   String get topology_flows => 'Toky';
 
   @override

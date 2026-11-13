@@ -6234,6 +6234,8 @@
   "sentinel_appealTooMany": "Too many appeals. Try again in a minute.",
   "sentinel_failed": "Couldn't reach the moderation service. Try again later.",
   "privacy_netSentinel": "Moderation: only if you turn on community moderation. The ban list, and any reports or appeals you send, go to NOTORYX moderators through sentinel-relay.meshmayhem.org.",
+  "mapTrust_favoritesOnly": "Favorites only",
+  "mapTrust_favoritesOnlyHint": "Hide every node you haven't starred",
   "topology_flows": "Flows",
   "topology_network": "Network",
   "topology_hint": "Rings show hops away from you, in the middle. Thicker lines carried more messages; bigger dots relayed more. Tap a dot to see that repeater.",

@@ -11450,6 +11450,12 @@ class AppLocalizationsJa extends AppLocalizations {
       'モデレーション: コミュニティモデレーションをオンにした場合のみ。禁止リストと、送信した報告や異議はsentinel-relay.meshmayhem.orgを経由してNOTORYXモデレーターに届きます。';
 
   @override
+  String get mapTrust_favoritesOnly => 'お気に入りのみ';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => '星を付けていないノードを隠す';
+
+  @override
   String get topology_flows => 'フロー';
 
   @override

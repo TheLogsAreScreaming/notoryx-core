@@ -11996,6 +11996,13 @@ class AppLocalizationsHu extends AppLocalizations {
       'Moderálás: csak ha bekapcsolod a közösségi moderálást. A tiltólista, valamint az általad küldött jelentések és fellebbezések a sentinel-relay.meshmayhem.org címen át jutnak a NOTORYX moderátoraihoz.';
 
   @override
+  String get mapTrust_favoritesOnly => 'Csak kedvencek';
+
+  @override
+  String get mapTrust_favoritesOnlyHint =>
+      'Csillag nélküli csomópontok elrejtése';
+
+  @override
   String get topology_flows => 'Folyamok';
 
   @override

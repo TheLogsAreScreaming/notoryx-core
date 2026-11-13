@@ -11992,6 +11992,12 @@ class AppLocalizationsPt extends AppLocalizations {
       'Moderação: só se ativar a moderação comunitária. A lista de banimentos e as denúncias ou recursos que enviar vão para os moderadores NOTORYX através de sentinel-relay.meshmayhem.org.';
 
   @override
+  String get mapTrust_favoritesOnly => 'Apenas favoritos';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => 'Ocultar nós sem estrela';
+
+  @override
   String get topology_flows => 'Fluxos';
 
   @override

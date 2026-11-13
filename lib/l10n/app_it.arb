@@ -4856,6 +4856,8 @@
   "sentinel_appealTooMany": "Troppi ricorsi. Riprova tra un minuto.",
   "sentinel_failed": "Impossibile raggiungere il servizio di moderazione. Riprova più tardi.",
   "privacy_netSentinel": "Moderazione: solo se attivi la moderazione della comunità. L'elenco ban e le segnalazioni o i ricorsi che invii vanno ai moderatori NOTORYX tramite sentinel-relay.meshmayhem.org.",
+  "mapTrust_favoritesOnly": "Solo preferiti",
+  "mapTrust_favoritesOnlyHint": "Nascondi i nodi senza stella",
   "topology_flows": "Flussi",
   "topology_network": "Rete",
   "topology_hint": "Gli anelli indicano i salti da te, al centro. Le linee più spesse hanno portato più messaggi, i punti più grandi ne hanno inoltrati di più. Tocca un punto per vedere quel ripetitore.",

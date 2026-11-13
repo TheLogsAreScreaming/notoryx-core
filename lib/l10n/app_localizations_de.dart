@@ -12021,6 +12021,12 @@ class AppLocalizationsDe extends AppLocalizations {
       'Moderation: nur wenn du die Community-Moderation einschaltest. Die Sperrliste sowie deine Meldungen und Einsprüche laufen über sentinel-relay.meshmayhem.org zur NOTORYX-Moderation.';
 
   @override
+  String get mapTrust_favoritesOnly => 'Nur Favoriten';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => 'Alle Knoten ohne Stern ausblenden';
+
+  @override
   String get topology_flows => 'Flüsse';
 
   @override
