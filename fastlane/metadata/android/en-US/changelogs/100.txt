@@ -1,0 +1,2 @@
+• First stable release of NOTORYX Core
+• Includes everything from the 10.0.0 test builds
