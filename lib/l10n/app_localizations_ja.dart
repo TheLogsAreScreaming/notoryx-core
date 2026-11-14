@@ -12311,4 +12311,67 @@ class AppLocalizationsJa extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$nameは$trailから$distance離れています。';
   }
+
+  @override
+  String get fw_title => 'ファームウェアを更新';
+
+  @override
+  String get fw_unknownVersion => 'ファームウェアのバージョンはまだ不明です';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return '新しいコンパニオンファームウェアがあります: $version';
+  }
+
+  @override
+  String get fw_upToDate => 'この無線機は最新のコンパニオンファームウェアです。';
+
+  @override
+  String get fw_checkFailed => '確認できませんでした。オフラインかもしれません。';
+
+  @override
+  String get fw_checkLatest => '最新リリースを確認';
+
+  @override
+  String get fw_checkPrivacy =>
+      '確認では GitHub に MeshCore のリリース一覧を問い合わせます。無線機の情報は送信しません。';
+
+  @override
+  String get fw_stepsTitle => '更新の手順';
+
+  @override
+  String get fw_step1 => '先にバックアップしてください。更新で設定や連絡先がリセットされることがあります。';
+
+  @override
+  String get fw_backup => '暗号化バックアップ';
+
+  @override
+  String get fw_step2 =>
+      'Chrome か Edge のあるパソコンで MeshCore 公式ウェブフラッシャーを開き、無線機を USB で接続します。';
+
+  @override
+  String get fw_openFlasher => 'ウェブフラッシャーを開く';
+
+  @override
+  String get fw_copyLink => 'リンクをコピー';
+
+  @override
+  String get fw_linkCopied => 'リンクをコピーしました';
+
+  @override
+  String get fw_step3 =>
+      'お使いのボードを正確に選び、接続方法 (Bluetooth、USB、Wi-Fi) に合った Companion ファームウェアを選びます。リピーターやルームサーバーのファームウェアはこのアプリでは使えません。';
+
+  @override
+  String get fw_step4 => '完了したらここで再接続します。設定がリセットされた場合はバックアップを復元してください。';
+
+  @override
+  String get fw_cautionTitle => '始める前に';
+
+  @override
+  String get fw_caution =>
+      '無線機を充電し、完了までケーブルを抜かないでください。更新に失敗しても、通常は USB で書き込み直せば復旧できます。このアプリが自分でファームウェアを書き込むことはありません。';
+
+  @override
+  String get fw_open => 'ファームウェアの更新方法';
 }

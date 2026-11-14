@@ -12926,4 +12926,69 @@ class AppLocalizationsUk extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name за $distance від: $trail.';
   }
+
+  @override
+  String get fw_title => 'Оновити прошивку';
+
+  @override
+  String get fw_unknownVersion => 'Версію прошивки ще не отримано';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'Доступна новіша прошивка companion: $version';
+  }
+
+  @override
+  String get fw_upToDate => 'На цьому радіо найновіша прошивка companion.';
+
+  @override
+  String get fw_checkFailed => 'Не вдалося перевірити. Можливо, немає мережі.';
+
+  @override
+  String get fw_checkLatest => 'Перевірити останню версію';
+
+  @override
+  String get fw_checkPrivacy =>
+      'Перевірка запитує в GitHub список версій MeshCore. Про ваше радіо нічого не надсилається.';
+
+  @override
+  String get fw_stepsTitle => 'Як оновити';
+
+  @override
+  String get fw_step1 =>
+      'Спершу зробіть резервну копію. Оновлення може скинути налаштування й контакти.';
+
+  @override
+  String get fw_backup => 'Зашифрована копія';
+
+  @override
+  String get fw_step2 =>
+      'На комп\'ютері з Chrome або Edge відкрийте офіційний веб-прошивальник MeshCore і під\'єднайте радіо через USB.';
+
+  @override
+  String get fw_openFlasher => 'Відкрити веб-прошивальник';
+
+  @override
+  String get fw_copyLink => 'Копіювати посилання';
+
+  @override
+  String get fw_linkCopied => 'Посилання скопійовано';
+
+  @override
+  String get fw_step3 =>
+      'Виберіть точну плату, потім прошивку Companion для вашого з\'єднання (Bluetooth, USB або Wi-Fi). Прошивки ретранслятора й room server із цим застосунком не працюють.';
+
+  @override
+  String get fw_step4 =>
+      'Після завершення під\'єднайтеся тут знову. Якщо налаштування скинулися, відновіть копію.';
+
+  @override
+  String get fw_cautionTitle => 'Перед початком';
+
+  @override
+  String get fw_caution =>
+      'Зарядіть радіо й не від\'єднуйте кабель до кінця. Якщо оновлення не вдалося, радіо зазвичай можна відновити повторною прошивкою через USB. Застосунок ніколи не прошиває сам.';
+
+  @override
+  String get fw_open => 'Як оновити прошивку';
 }

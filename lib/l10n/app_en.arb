@@ -6685,5 +6685,31 @@
         "type": "String"
       }
     }
-  }
+  },
+  "fw_title": "Update firmware",
+  "fw_unknownVersion": "Firmware version not reported yet",
+  "fw_updateAvailable": "Newer companion firmware available: {version}",
+  "@fw_updateAvailable": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "fw_upToDate": "This radio has the latest companion firmware.",
+  "fw_checkFailed": "Couldn't check. You may be offline.",
+  "fw_checkLatest": "Check for the latest release",
+  "fw_checkPrivacy": "Checking asks GitHub for the MeshCore release list. Nothing about your radio is sent.",
+  "fw_stepsTitle": "How to update",
+  "fw_step1": "Back up first. Updating can reset the radio's settings and contacts.",
+  "fw_backup": "Encrypted backup",
+  "fw_step2": "On a computer with Chrome or Edge, open the official MeshCore web flasher and connect the radio by USB.",
+  "fw_openFlasher": "Open web flasher",
+  "fw_copyLink": "Copy link",
+  "fw_linkCopied": "Link copied",
+  "fw_step3": "Pick your exact board, then the Companion firmware for how you connect (Bluetooth, USB or Wi-Fi). Repeater and room-server firmware won't work with this app.",
+  "fw_step4": "When it finishes, reconnect here. If settings were reset, restore your backup.",
+  "fw_cautionTitle": "Before you start",
+  "fw_caution": "Charge the radio first and keep the cable connected until it finishes. If an update fails, the radio can usually be recovered by flashing again over USB. This app never flashes firmware itself.",
+  "fw_open": "How to update firmware"
 }

@@ -12927,4 +12927,69 @@ class AppLocalizationsPl extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name jest $distance od: $trail.';
   }
+
+  @override
+  String get fw_title => 'Aktualizuj firmware';
+
+  @override
+  String get fw_unknownVersion => 'Wersja firmware jeszcze nieznana';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'Dostępny nowszy firmware companion: $version';
+  }
+
+  @override
+  String get fw_upToDate => 'To radio ma najnowszy firmware companion.';
+
+  @override
+  String get fw_checkFailed => 'Nie udało się sprawdzić. Może jesteś offline.';
+
+  @override
+  String get fw_checkLatest => 'Sprawdź najnowsze wydanie';
+
+  @override
+  String get fw_checkPrivacy =>
+      'Sprawdzenie pyta GitHub o listę wydań MeshCore. Nic o twoim radiu nie jest wysyłane.';
+
+  @override
+  String get fw_stepsTitle => 'Jak zaktualizować';
+
+  @override
+  String get fw_step1 =>
+      'Najpierw zrób kopię. Aktualizacja może zresetować ustawienia i kontakty.';
+
+  @override
+  String get fw_backup => 'Szyfrowana kopia';
+
+  @override
+  String get fw_step2 =>
+      'Na komputerze z Chrome lub Edge otwórz oficjalny flasher web MeshCore i podłącz radio przez USB.';
+
+  @override
+  String get fw_openFlasher => 'Otwórz flasher web';
+
+  @override
+  String get fw_copyLink => 'Kopiuj link';
+
+  @override
+  String get fw_linkCopied => 'Skopiowano link';
+
+  @override
+  String get fw_step3 =>
+      'Wybierz dokładnie swoją płytkę, potem firmware Companion dla twojego połączenia (Bluetooth, USB lub Wi-Fi). Firmware repeatera i room servera nie działa z tą aplikacją.';
+
+  @override
+  String get fw_step4 =>
+      'Po zakończeniu połącz się tu ponownie. Jeśli ustawienia się zresetowały, przywróć kopię.';
+
+  @override
+  String get fw_cautionTitle => 'Zanim zaczniesz';
+
+  @override
+  String get fw_caution =>
+      'Naładuj radio i nie odłączaj kabla do końca. Jeśli aktualizacja się nie uda, radio zwykle da się odzyskać, flashując ponownie przez USB. Ta aplikacja nigdy sama nie flashuje firmware.';
+
+  @override
+  String get fw_open => 'Jak zaktualizować firmware';
 }

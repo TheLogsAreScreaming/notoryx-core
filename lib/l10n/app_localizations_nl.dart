@@ -12847,4 +12847,69 @@ class AppLocalizationsNl extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name is $distance van $trail.';
   }
+
+  @override
+  String get fw_title => 'Firmware bijwerken';
+
+  @override
+  String get fw_unknownVersion => 'Firmwareversie nog niet gemeld';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'Nieuwere companion-firmware beschikbaar: $version';
+  }
+
+  @override
+  String get fw_upToDate => 'Deze radio heeft de nieuwste companion-firmware.';
+
+  @override
+  String get fw_checkFailed => 'Controle mislukt. Misschien ben je offline.';
+
+  @override
+  String get fw_checkLatest => 'Nieuwste versie controleren';
+
+  @override
+  String get fw_checkPrivacy =>
+      'De controle vraagt GitHub om de MeshCore-versielijst. Er wordt niets over je radio verstuurd.';
+
+  @override
+  String get fw_stepsTitle => 'Zo werk je bij';
+
+  @override
+  String get fw_step1 =>
+      'Maak eerst een back-up. Bijwerken kan instellingen en contacten wissen.';
+
+  @override
+  String get fw_backup => 'Versleutelde back-up';
+
+  @override
+  String get fw_step2 =>
+      'Open op een computer met Chrome of Edge de officiële MeshCore-webflasher en sluit de radio via USB aan.';
+
+  @override
+  String get fw_openFlasher => 'Webflasher openen';
+
+  @override
+  String get fw_copyLink => 'Link kopiëren';
+
+  @override
+  String get fw_linkCopied => 'Link gekopieerd';
+
+  @override
+  String get fw_step3 =>
+      'Kies je exacte board en dan de Companion-firmware voor je verbinding (Bluetooth, USB of wifi). Repeater- en roomserverfirmware werken niet met deze app.';
+
+  @override
+  String get fw_step4 =>
+      'Verbind daarna hier opnieuw. Zijn instellingen gewist, zet dan je back-up terug.';
+
+  @override
+  String get fw_cautionTitle => 'Voordat je begint';
+
+  @override
+  String get fw_caution =>
+      'Laad de radio op en laat de kabel aangesloten tot het klaar is. Mislukt een update, dan is de radio meestal te herstellen door opnieuw via USB te flashen. Deze app flasht nooit zelf firmware.';
+
+  @override
+  String get fw_open => 'Hoe je firmware bijwerkt';
 }

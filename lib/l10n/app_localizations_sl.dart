@@ -12879,4 +12879,70 @@ class AppLocalizationsSl extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name je $distance od: $trail.';
   }
+
+  @override
+  String get fw_title => 'Posodobi strojno programsko opremo';
+
+  @override
+  String get fw_unknownVersion => 'Različica še ni sporočena';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'Na voljo je novejša programska oprema companion: $version';
+  }
+
+  @override
+  String get fw_upToDate =>
+      'Ta radio ima najnovejšo programsko opremo companion.';
+
+  @override
+  String get fw_checkFailed => 'Preverjanje ni uspelo. Morda niste povezani.';
+
+  @override
+  String get fw_checkLatest => 'Preveri najnovejšo izdajo';
+
+  @override
+  String get fw_checkPrivacy =>
+      'Preverjanje vpraša GitHub za seznam izdaj MeshCore. O vašem radiu se ne pošlje nič.';
+
+  @override
+  String get fw_stepsTitle => 'Kako posodobiti';
+
+  @override
+  String get fw_step1 =>
+      'Najprej naredite varnostno kopijo. Posodobitev lahko ponastavi nastavitve in stike.';
+
+  @override
+  String get fw_backup => 'Šifrirana varnostna kopija';
+
+  @override
+  String get fw_step2 =>
+      'Na računalniku s Chrome ali Edge odprite uradni spletni flasher MeshCore in radio povežite prek USB.';
+
+  @override
+  String get fw_openFlasher => 'Odpri spletni flasher';
+
+  @override
+  String get fw_copyLink => 'Kopiraj povezavo';
+
+  @override
+  String get fw_linkCopied => 'Povezava kopirana';
+
+  @override
+  String get fw_step3 =>
+      'Izberite točno svojo ploščo, nato programsko opremo Companion glede na povezavo (Bluetooth, USB ali Wi-Fi). Programska oprema za repetitor ali room server s to aplikacijo ne deluje.';
+
+  @override
+  String get fw_step4 =>
+      'Ko končate, se tukaj znova povežite. Če so se nastavitve ponastavile, obnovite varnostno kopijo.';
+
+  @override
+  String get fw_cautionTitle => 'Preden začnete';
+
+  @override
+  String get fw_caution =>
+      'Napolnite radio in pustite kabel priključen do konca. Če posodobitev ne uspe, se radio običajno da obnoviti s ponovnim nalaganjem prek USB. Ta aplikacija nikoli sama ne nalaga programske opreme.';
+
+  @override
+  String get fw_open => 'Kako posodobiti programsko opremo';
 }

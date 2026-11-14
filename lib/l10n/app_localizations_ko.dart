@@ -12328,4 +12328,67 @@ class AppLocalizationsKo extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name님이 $trail에서 $distance 떨어져 있습니다.';
   }
+
+  @override
+  String get fw_title => '펌웨어 업데이트';
+
+  @override
+  String get fw_unknownVersion => '펌웨어 버전이 아직 보고되지 않았습니다';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return '더 새로운 컴패니언 펌웨어가 있습니다: $version';
+  }
+
+  @override
+  String get fw_upToDate => '이 무전기는 최신 컴패니언 펌웨어입니다.';
+
+  @override
+  String get fw_checkFailed => '확인하지 못했습니다. 오프라인일 수 있습니다.';
+
+  @override
+  String get fw_checkLatest => '최신 릴리스 확인';
+
+  @override
+  String get fw_checkPrivacy =>
+      '확인 시 GitHub에서 MeshCore 릴리스 목록을 가져옵니다. 무전기 정보는 보내지 않습니다.';
+
+  @override
+  String get fw_stepsTitle => '업데이트 방법';
+
+  @override
+  String get fw_step1 => '먼저 백업하세요. 업데이트하면 설정과 연락처가 초기화될 수 있습니다.';
+
+  @override
+  String get fw_backup => '암호화 백업';
+
+  @override
+  String get fw_step2 =>
+      'Chrome 또는 Edge가 있는 컴퓨터에서 MeshCore 공식 웹 플래셔를 열고 무전기를 USB로 연결하세요.';
+
+  @override
+  String get fw_openFlasher => '웹 플래셔 열기';
+
+  @override
+  String get fw_copyLink => '링크 복사';
+
+  @override
+  String get fw_linkCopied => '링크를 복사했습니다';
+
+  @override
+  String get fw_step3 =>
+      '정확한 보드를 고른 뒤, 연결 방식(블루투스, USB, Wi-Fi)에 맞는 Companion 펌웨어를 선택하세요. 리피터나 룸 서버 펌웨어는 이 앱에서 동작하지 않습니다.';
+
+  @override
+  String get fw_step4 => '끝나면 여기서 다시 연결하세요. 설정이 초기화되었다면 백업을 복원하세요.';
+
+  @override
+  String get fw_cautionTitle => '시작하기 전에';
+
+  @override
+  String get fw_caution =>
+      '무전기를 충전하고 끝날 때까지 케이블을 연결해 두세요. 업데이트가 실패해도 보통 USB로 다시 플래시하면 복구됩니다. 이 앱은 펌웨어를 직접 플래시하지 않습니다.';
+
+  @override
+  String get fw_open => '펌웨어 업데이트 방법';
 }

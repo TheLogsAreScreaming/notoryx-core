@@ -12906,4 +12906,71 @@ class AppLocalizationsDe extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name ist $distance von $trail entfernt.';
   }
+
+  @override
+  String get fw_title => 'Firmware aktualisieren';
+
+  @override
+  String get fw_unknownVersion => 'Firmware-Version noch nicht gemeldet';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'Neuere Companion-Firmware verfügbar: $version';
+  }
+
+  @override
+  String get fw_upToDate =>
+      'Dieses Funkgerät hat die neueste Companion-Firmware.';
+
+  @override
+  String get fw_checkFailed =>
+      'Prüfung fehlgeschlagen. Vielleicht bist du offline.';
+
+  @override
+  String get fw_checkLatest => 'Neueste Version prüfen';
+
+  @override
+  String get fw_checkPrivacy =>
+      'Die Prüfung fragt GitHub nach der MeshCore-Versionsliste. Über dein Funkgerät wird nichts gesendet.';
+
+  @override
+  String get fw_stepsTitle => 'So aktualisierst du';
+
+  @override
+  String get fw_step1 =>
+      'Sichere zuerst. Ein Update kann Einstellungen und Kontakte zurücksetzen.';
+
+  @override
+  String get fw_backup => 'Verschlüsselte Sicherung';
+
+  @override
+  String get fw_step2 =>
+      'Öffne auf einem Computer mit Chrome oder Edge den offiziellen MeshCore-Web-Flasher und verbinde das Funkgerät per USB.';
+
+  @override
+  String get fw_openFlasher => 'Web-Flasher öffnen';
+
+  @override
+  String get fw_copyLink => 'Link kopieren';
+
+  @override
+  String get fw_linkCopied => 'Link kopiert';
+
+  @override
+  String get fw_step3 =>
+      'Wähle genau dein Board und dann die Companion-Firmware für deine Verbindungsart (Bluetooth, USB oder WLAN). Repeater- und Room-Server-Firmware funktionieren mit dieser App nicht.';
+
+  @override
+  String get fw_step4 =>
+      'Danach hier wieder verbinden. Falls Einstellungen zurückgesetzt wurden, stelle die Sicherung wieder her.';
+
+  @override
+  String get fw_cautionTitle => 'Bevor du beginnst';
+
+  @override
+  String get fw_caution =>
+      'Lade das Funkgerät vorher auf und lass das Kabel bis zum Ende stecken. Schlägt ein Update fehl, lässt sich das Gerät meist per USB neu flashen. Diese App flasht nie selbst Firmware.';
+
+  @override
+  String get fw_open => 'Firmware aktualisieren – Anleitung';
 }
