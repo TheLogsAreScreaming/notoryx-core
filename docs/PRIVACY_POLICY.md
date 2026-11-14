@@ -61,4 +61,4 @@ NOTORYX Core is not designed to collect information from children. This policy w
 
 ## Contact
 
-For questions, bug reports or privacy concerns, open an issue in this app's GitHub repository. Confirm a permanent support address and public policy URL before publishing a store listing.
+For questions, bug reports or privacy concerns, open an issue at https://github.com/TheLogsAreScreaming/notoryx-core-releases/issues. Confirm a permanent support address and public policy URL before publishing a store listing.
