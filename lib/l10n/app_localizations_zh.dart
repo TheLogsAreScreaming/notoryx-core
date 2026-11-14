@@ -10942,7 +10942,137 @@ class AppLocalizationsZh extends AppLocalizations {
   String get auto_entry => '自动化规则';
 
   @override
-  String get auto_entrySub => '电量、时间、区域和节点触发';
+  String get auto_entrySub => '电量、时间、区域、节点和消息触发；且/或';
+
+  @override
+  String get auto_trigMessage => '收到消息';
+
+  @override
+  String get auto_actJoin => '加入话题频道';
+
+  @override
+  String get auto_actSound => '播放声音';
+
+  @override
+  String get auto_actWebhook => '调用 Webhook';
+
+  @override
+  String get auto_outDone => '完成';
+
+  @override
+  String get auto_outNotConnected => '电台未连接';
+
+  @override
+  String get auto_outNoTarget => '缺少收件人或地址';
+
+  @override
+  String get auto_outWebOff => '网络请求已关闭';
+
+  @override
+  String get auto_outWebFailed => '网络请求失败';
+
+  @override
+  String get auto_outNoSlot => '没有空闲频道位置';
+
+  @override
+  String get auto_outFailed => '失败';
+
+  @override
+  String get auto_anyone => '任何人';
+
+  @override
+  String get auto_webSwitch => '允许网络请求（Webhook）';
+
+  @override
+  String get auto_webSwitchSub => '默认关闭。Webhook 操作需要互联网，关闭时会被跳过。其他功能仅靠电台即可工作。';
+
+  @override
+  String get auto_andJoin => ' 且 ';
+
+  @override
+  String get auto_orJoin => ' 或 ';
+
+  @override
+  String get auto_needsInternet => '需要互联网';
+
+  @override
+  String get auto_recent => '最近运行';
+
+  @override
+  String get auto_needCondition => '请至少添加一个条件。';
+
+  @override
+  String get auto_needAction => '请至少添加一个操作。';
+
+  @override
+  String get auto_conditions => '条件';
+
+  @override
+  String get auto_actions => '操作';
+
+  @override
+  String get auto_addCondition => '添加条件';
+
+  @override
+  String get auto_addAction => '添加操作';
+
+  @override
+  String auto_remove(String item) {
+    return '移除 $item';
+  }
+
+  @override
+  String get auto_combine => '规则运行时机';
+
+  @override
+  String get auto_combineAny => '任一（或）';
+
+  @override
+  String get auto_combineAll => '全部（且）';
+
+  @override
+  String get auto_combineAnyHint => '任一条件发生时运行。';
+
+  @override
+  String get auto_combineAllHint => '某一条件发生且其他条件在当时都成立时运行，例如“18:00 且电量低于 30%”。';
+
+  @override
+  String get auto_editCondition => '条件';
+
+  @override
+  String get auto_editAction => '操作';
+
+  @override
+  String get auto_done => '完成';
+
+  @override
+  String get auto_contains => '消息包含（可选）';
+
+  @override
+  String get auto_from => '来自';
+
+  @override
+  String get auto_do => '执行';
+
+  @override
+  String get auto_webhookHint => '需要互联网。以 JSON 发送规则名、时间、电量、节点和文本。仅在允许网络请求时工作。';
+
+  @override
+  String get auto_webhookUrl => 'Webhook 地址（https://…）';
+
+  @override
+  String get auto_channelName => '话题频道，例如 #hikers';
+
+  @override
+  String get auto_needChannel => '请输入频道名称。';
+
+  @override
+  String get auto_needUrl => '请输入以 https:// 开头的网址';
+
+  @override
+  String auto_placeholders(String list) {
+    return '可使用 $list';
+  }
 
   @override
   String get teamSetup_title => '团队设置';

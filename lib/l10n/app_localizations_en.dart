@@ -11560,7 +11560,142 @@ class AppLocalizationsEn extends AppLocalizations {
   String get auto_entry => 'Automation rules';
 
   @override
-  String get auto_entrySub => 'Battery, time, area and node triggers';
+  String get auto_entrySub =>
+      'Battery, time, area, node and message triggers; AND/OR';
+
+  @override
+  String get auto_trigMessage => 'A message arrives';
+
+  @override
+  String get auto_actJoin => 'Join a hashtag channel';
+
+  @override
+  String get auto_actSound => 'Play a sound';
+
+  @override
+  String get auto_actWebhook => 'Call a webhook';
+
+  @override
+  String get auto_outDone => 'Done';
+
+  @override
+  String get auto_outNotConnected => 'Radio not connected';
+
+  @override
+  String get auto_outNoTarget => 'Recipient or address missing';
+
+  @override
+  String get auto_outWebOff => 'Web requests are off';
+
+  @override
+  String get auto_outWebFailed => 'Web request failed';
+
+  @override
+  String get auto_outNoSlot => 'No free channel slot';
+
+  @override
+  String get auto_outFailed => 'Failed';
+
+  @override
+  String get auto_anyone => 'Anyone';
+
+  @override
+  String get auto_webSwitch => 'Allow web requests (webhooks)';
+
+  @override
+  String get auto_webSwitchSub =>
+      'Off by default. Webhook actions need internet and are skipped while this is off. Everything else works over radio alone.';
+
+  @override
+  String get auto_andJoin => ' and ';
+
+  @override
+  String get auto_orJoin => ' or ';
+
+  @override
+  String get auto_needsInternet => 'Needs internet';
+
+  @override
+  String get auto_recent => 'Recent runs';
+
+  @override
+  String get auto_needCondition => 'Add at least one condition.';
+
+  @override
+  String get auto_needAction => 'Add at least one action.';
+
+  @override
+  String get auto_conditions => 'Conditions';
+
+  @override
+  String get auto_actions => 'Actions';
+
+  @override
+  String get auto_addCondition => 'Add condition';
+
+  @override
+  String get auto_addAction => 'Add action';
+
+  @override
+  String auto_remove(String item) {
+    return 'Remove $item';
+  }
+
+  @override
+  String get auto_combine => 'Run the rule when';
+
+  @override
+  String get auto_combineAny => 'Any (OR)';
+
+  @override
+  String get auto_combineAll => 'All (AND)';
+
+  @override
+  String get auto_combineAnyHint =>
+      'Runs when any one of the conditions happens.';
+
+  @override
+  String get auto_combineAllHint =>
+      'Runs when one condition happens and all the others hold at that moment, like “at 18:00 AND battery below 30%”.';
+
+  @override
+  String get auto_editCondition => 'Condition';
+
+  @override
+  String get auto_editAction => 'Action';
+
+  @override
+  String get auto_done => 'Done';
+
+  @override
+  String get auto_contains => 'Message contains (optional)';
+
+  @override
+  String get auto_from => 'From';
+
+  @override
+  String get auto_do => 'Do';
+
+  @override
+  String get auto_webhookHint =>
+      'Needs internet. Sends the rule name, time, battery, node and text as JSON. Works only while web requests are allowed.';
+
+  @override
+  String get auto_webhookUrl => 'Webhook address (https://…)';
+
+  @override
+  String get auto_channelName => 'Hashtag channel, like #hikers';
+
+  @override
+  String get auto_needChannel => 'Enter the channel name.';
+
+  @override
+  String get auto_needUrl => 'Enter a web address starting with https://';
+
+  @override
+  String auto_placeholders(String list) {
+    return 'You can use $list';
+  }
 
   @override
   String get teamSetup_title => 'Team setup';
