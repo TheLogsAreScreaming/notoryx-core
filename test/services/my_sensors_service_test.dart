@@ -163,4 +163,30 @@ void main() {
     );
     expect(f(CayenneLpp.lppVoltage, 4.19), '4.19 V');
   });
+
+  test(
+    'a request made before the radio is ready is retried once it is',
+    () async {
+      final radio = _Radio()..connected = false;
+      radio.answer = () => _reply(_self, _lpp());
+      final sensors = MySensorsService(
+        radio,
+        timeout: const Duration(seconds: 1),
+      );
+      await sensors.refresh();
+      expect(sensors.failed, isTrue);
+      expect(sensors.updated, isNull);
+
+      radio.connected = true;
+      radio.notifyListeners();
+      // The connector batches change notices on a short timer.
+      await Future<void>.delayed(const Duration(milliseconds: 500));
+      await pumpEventQueue();
+
+      expect(sensors.failed, isFalse);
+      expect(sensors.updated, isNotNull);
+      expect(sensors.readings, isNotEmpty);
+      sensors.dispose();
+    },
+  );
 }

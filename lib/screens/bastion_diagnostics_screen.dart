@@ -13,6 +13,7 @@ import '../l10n/app_localizations.dart';
 import '../l10n/l10n.dart';
 import '../models/radio_features.dart';
 import '../theme/mesh_theme.dart';
+import '../widgets/radio_stats_while_visible.dart';
 import '../widgets/ember_backdrop.dart';
 import '../widgets/instrument.dart';
 import '../widgets/mesh_health_card.dart';
@@ -238,185 +239,196 @@ class BastionDiagnosticsScreen extends StatelessWidget {
           ),
         );
 
-    return EmberBackdrop(
-      scene: EmberScene.more,
-      child: Scaffold(
-        backgroundColor: Colors.transparent,
-        appBar: AppBar(
+    return RadioStatsWhileVisible(
+      child: EmberBackdrop(
+        scene: EmberScene.more,
+        child: Scaffold(
           backgroundColor: Colors.transparent,
-          surfaceTintColor: Colors.transparent,
-          scrolledUnderElevation: 0,
-          title: Text(l10n.bastionDiag_title),
-          actions: [
-            IconButton(
-              tooltip: l10n.trouble_title,
-              onPressed: () => Navigator.of(context).push(
-                MaterialPageRoute<void>(
-                  builder: (_) => const TroubleshootingScreen(),
+          appBar: AppBar(
+            backgroundColor: Colors.transparent,
+            surfaceTintColor: Colors.transparent,
+            scrolledUnderElevation: 0,
+            title: Text(l10n.bastionDiag_title),
+            actions: [
+              IconButton(
+                tooltip: l10n.trouble_title,
+                onPressed: () => Navigator.of(context).push(
+                  MaterialPageRoute<void>(
+                    builder: (_) => const TroubleshootingScreen(),
+                  ),
                 ),
+                icon: const Icon(Icons.healing_outlined),
               ),
-              icon: const Icon(Icons.healing_outlined),
-            ),
-            IconButton(
-              tooltip: l10n.bastionDiag_export,
-              onPressed: () => _export(context, c),
-              icon: const Icon(Icons.ios_share_rounded),
-            ),
-          ],
-        ),
-        body: RefreshIndicator(
-          onRefresh: () => _refresh(c),
-          child: ListView(
-            physics: const AlwaysScrollableScrollPhysics(),
-            padding: const EdgeInsets.only(bottom: MeshSpace.xxl),
-            children: [
-              _statusCard(context, c),
-              if (c.isConnected)
-                const Padding(
-                  padding: EdgeInsets.fromLTRB(16, 8, 16, 0),
-                  child: MeshHealthCard(),
-                ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
-                child: Row(
-                  children: [
-                    metric(
-                      'nodes',
-                      l10n.bastion_nodes,
-                      '${c.contacts.length}',
-                      () =>
-                          showNodeList(context, l10n.bastion_nodes, c.contacts),
-                    ),
-                    const SizedBox(width: 8),
-                    metric(
-                      'repeaters',
-                      l10n.bastion_repeaters,
-                      '${repeaters.length}',
-                      () => showNodeList(
-                        context,
-                        l10n.bastion_repeaters,
-                        repeaters,
+              IconButton(
+                tooltip: l10n.bastionDiag_export,
+                onPressed: () => _export(context, c),
+                icon: const Icon(Icons.ios_share_rounded),
+              ),
+            ],
+          ),
+          body: RefreshIndicator(
+            onRefresh: () => _refresh(c),
+            child: ListView(
+              physics: const AlwaysScrollableScrollPhysics(),
+              padding: const EdgeInsets.only(bottom: MeshSpace.xxl),
+              children: [
+                _statusCard(context, c),
+                if (c.isConnected)
+                  const Padding(
+                    padding: EdgeInsets.fromLTRB(16, 8, 16, 0),
+                    child: MeshHealthCard(),
+                  ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+                  child: Row(
+                    children: [
+                      metric(
+                        'nodes',
+                        l10n.bastion_nodes,
+                        '${c.contacts.length}',
+                        () => showNodeList(
+                          context,
+                          l10n.bastion_nodes,
+                          c.contacts,
+                        ),
                       ),
-                    ),
-                    const SizedBox(width: 8),
-                    metric(
-                      'channels',
-                      l10n.bastionDiag_channels,
-                      '${c.channels.where((ch) => !ch.isEmpty).length}',
-                      () => _showChannels(context, c),
-                    ),
-                  ],
+                      const SizedBox(width: 8),
+                      metric(
+                        'repeaters',
+                        l10n.bastion_repeaters,
+                        '${repeaters.length}',
+                        () => showNodeList(
+                          context,
+                          l10n.bastion_repeaters,
+                          repeaters,
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      metric(
+                        'channels',
+                        l10n.bastionDiag_channels,
+                        '${c.channels.where((ch) => !ch.isEmpty).length}',
+                        () => _showChannels(context, c),
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
-                child: Text(
-                  l10n.diag_tapToCopy,
-                  style: TextStyle(color: MeshPalette.ink3, fontSize: 12),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
+                  child: Text(
+                    l10n.diag_tapToCopy,
+                    style: TextStyle(color: MeshPalette.ink3, fontSize: 12),
+                  ),
                 ),
-              ),
-              section(l10n.bastionDiag_radio, [
-                row(l10n.bastionDiag_frequency, _mhz(c.currentFreqHz)),
-                row(
-                  l10n.bastionDiag_bandwidth,
-                  c.currentBwHz == null ? '—' : '${c.currentBwHz} Hz',
-                ),
-                row(l10n.bastionDiag_spreadingFactor, _value(c.currentSf)),
-                row(l10n.bastionDiag_codingRate, _value(c.currentCr)),
-                row(
-                  l10n.bastionDiag_txPower,
-                  c.currentTxPower == null ? '—' : '${c.currentTxPower} dBm',
-                ),
-                row('RSSI', s == null ? '—' : '${s.lastRssiDbm} dBm'),
-                row(
-                  'SNR',
-                  s == null ? '—' : '${s.lastSnrDb.toStringAsFixed(1)} dB',
-                ),
-                row(
-                  l10n.bastionDiag_noiseFloor,
-                  s == null ? '—' : '${s.noiseFloorDbm} dBm',
-                ),
-              ]),
-              section(l10n.bastionDiag_device, [
-                row(l10n.bastionDiag_name, c.deviceDisplayName),
-                row(l10n.bastionDiag_manufacturer, _value(c.manufacturerName)),
-                row(l10n.bastionDiag_firmware, _value(c.firmwareVersionString)),
-                row(l10n.bastionDiag_battery, _battery(c.batteryMillivolts)),
-                row(
-                  l10n.diag_storage,
-                  used == null || total == null || used < 0 || total <= 0
-                      ? '—'
-                      : l10n.diag_storageValue(used, total),
-                ),
-                row(
-                  l10n.bastionDiag_transport,
-                  c.activeTransport.name.toUpperCase(),
-                ),
-                row(
-                  'GPS',
-                  hasGps
-                      ? '${lat.toStringAsFixed(5)}, ${lon.toStringAsFixed(5)}'
-                      : '—',
-                  trailing: hasGps
-                      ? IconButton(
-                          key: const ValueKey('diag-gps-map'),
-                          tooltip: l10n.fieldIntel_showOnMap,
-                          icon: const Icon(Icons.map_outlined, size: 18),
-                          onPressed: () => Navigator.of(context).push(
-                            MaterialPageRoute<void>(
-                              builder: (_) => MapScreen(
-                                highlightPosition: LatLng(lat, lon),
+                section(l10n.bastionDiag_radio, [
+                  row(l10n.bastionDiag_frequency, _mhz(c.currentFreqHz)),
+                  row(
+                    l10n.bastionDiag_bandwidth,
+                    c.currentBwHz == null ? '—' : '${c.currentBwHz} Hz',
+                  ),
+                  row(l10n.bastionDiag_spreadingFactor, _value(c.currentSf)),
+                  row(l10n.bastionDiag_codingRate, _value(c.currentCr)),
+                  row(
+                    l10n.bastionDiag_txPower,
+                    c.currentTxPower == null ? '—' : '${c.currentTxPower} dBm',
+                  ),
+                  row('RSSI', s == null ? '—' : '${s.lastRssiDbm} dBm'),
+                  row(
+                    'SNR',
+                    s == null ? '—' : '${s.lastSnrDb.toStringAsFixed(1)} dB',
+                  ),
+                  row(
+                    l10n.bastionDiag_noiseFloor,
+                    s == null ? '—' : '${s.noiseFloorDbm} dBm',
+                  ),
+                ]),
+                section(l10n.bastionDiag_device, [
+                  row(l10n.bastionDiag_name, c.deviceDisplayName),
+                  row(
+                    l10n.bastionDiag_manufacturer,
+                    _value(c.manufacturerName),
+                  ),
+                  row(
+                    l10n.bastionDiag_firmware,
+                    _value(c.firmwareVersionString),
+                  ),
+                  row(l10n.bastionDiag_battery, _battery(c.batteryMillivolts)),
+                  row(
+                    l10n.diag_storage,
+                    used == null || total == null || used < 0 || total <= 0
+                        ? '—'
+                        : l10n.diag_storageValue(used, total),
+                  ),
+                  row(
+                    l10n.bastionDiag_transport,
+                    c.activeTransport.name.toUpperCase(),
+                  ),
+                  row(
+                    'GPS',
+                    hasGps
+                        ? '${lat.toStringAsFixed(5)}, ${lon.toStringAsFixed(5)}'
+                        : '—',
+                    trailing: hasGps
+                        ? IconButton(
+                            key: const ValueKey('diag-gps-map'),
+                            tooltip: l10n.fieldIntel_showOnMap,
+                            icon: const Icon(Icons.map_outlined, size: 18),
+                            onPressed: () => Navigator.of(context).push(
+                              MaterialPageRoute<void>(
+                                builder: (_) => MapScreen(
+                                  highlightPosition: LatLng(lat, lon),
+                                ),
                               ),
                             ),
-                          ),
-                        )
-                      : null,
-                ),
-              ]),
-              section(l10n.rf_title, [
-                for (final check in c.radioFeatures)
-                  row(
-                    radioFeatureName(l10n, check.feature),
-                    radioFeatureSummary(l10n, check),
+                          )
+                        : null,
                   ),
-              ]),
-              InstrumentLabel(l10n.bastionDiag_deepTools),
-              for (final (icon, title, subtitle, page) in [
-                (
-                  Icons.monitor_heart_rounded,
-                  l10n.bastionDiag_liveStats,
-                  l10n.bastionDiag_liveStatsHint,
-                  const CompanionRadioStatsScreen() as Widget,
-                ),
-                (
-                  Icons.data_object_rounded,
-                  l10n.bastionDiag_frameDebug,
-                  l10n.bastionDiag_frameDebugHint,
-                  const BleDebugLogScreen(),
-                ),
-                (
-                  Icons.bug_report_outlined,
-                  l10n.bastionDiag_appLog,
-                  l10n.bastionDiag_appLogHint,
-                  const AppDebugLogScreen(),
-                ),
-              ])
-                MeshCard(
-                  onTap: () => Navigator.of(
-                    context,
-                  ).push(MaterialPageRoute<void>(builder: (_) => page)),
-                  child: InstrumentRow(
-                    icon: icon,
-                    title: title,
-                    subtitle: subtitle,
-                    trailing: Icon(
-                      Icons.chevron_right,
-                      color: MeshPalette.ink3,
+                ]),
+                section(l10n.rf_title, [
+                  for (final check in c.radioFeatures)
+                    row(
+                      radioFeatureName(l10n, check.feature),
+                      radioFeatureSummary(l10n, check),
                     ),
-                    divider: false,
+                ]),
+                InstrumentLabel(l10n.bastionDiag_deepTools),
+                for (final (icon, title, subtitle, page) in [
+                  (
+                    Icons.monitor_heart_rounded,
+                    l10n.bastionDiag_liveStats,
+                    l10n.bastionDiag_liveStatsHint,
+                    const CompanionRadioStatsScreen() as Widget,
                   ),
-                ),
-            ],
+                  (
+                    Icons.data_object_rounded,
+                    l10n.bastionDiag_frameDebug,
+                    l10n.bastionDiag_frameDebugHint,
+                    const BleDebugLogScreen(),
+                  ),
+                  (
+                    Icons.bug_report_outlined,
+                    l10n.bastionDiag_appLog,
+                    l10n.bastionDiag_appLogHint,
+                    const AppDebugLogScreen(),
+                  ),
+                ])
+                  MeshCard(
+                    onTap: () => Navigator.of(
+                      context,
+                    ).push(MaterialPageRoute<void>(builder: (_) => page)),
+                    child: InstrumentRow(
+                      icon: icon,
+                      title: title,
+                      subtitle: subtitle,
+                      trailing: Icon(
+                        Icons.chevron_right,
+                        color: MeshPalette.ink3,
+                      ),
+                      divider: false,
+                    ),
+                  ),
+              ],
+            ),
           ),
         ),
       ),

@@ -38,11 +38,15 @@ class MySensorsService extends ChangeNotifier {
   Future<void> refresh() async {
     if (_loading) return;
     final self = connector.selfPublicKey;
-    if (!connector.isConnected || self == null || self.length < 6) {
+    if (!_radioReady) {
       _failed = true;
       _notify();
+      // Home asks as soon as it shows, which can be before the radio has
+      // sent its own key after connecting. Try again once it has.
+      _retryWhenReady();
       return;
     }
+    final key = self!;
     final scope = connector.selfPublicKeyHex;
     _loading = true;
     _failed = false;
@@ -51,7 +55,7 @@ class MySensorsService extends ChangeNotifier {
     final sub = connector.receivedFrames.listen((frame) {
       // [code][reserved][key prefix 6][LPP...]
       if (frame.length < 8 || frame[0] != pushCodeTelemetryResponse) return;
-      if (!listEquals(frame.sublist(2, 8), self.sublist(0, 6))) return;
+      if (!listEquals(frame.sublist(2, 8), key.sublist(0, 6))) return;
       if (!reply.isCompleted) reply.complete(frame.sublist(8));
     });
     try {
@@ -77,6 +81,26 @@ class MySensorsService extends ChangeNotifier {
     }
   }
 
+  bool get _radioReady {
+    final self = connector.selfPublicKey;
+    return connector.isConnected && self != null && self.length >= 6;
+  }
+
+  VoidCallback? _readyListener;
+
+  void _retryWhenReady() {
+    if (_readyListener != null || _disposed) return;
+    void listener() {
+      if (!_radioReady) return;
+      connector.removeListener(listener);
+      _readyListener = null;
+      if (_updated == null) unawaited(refresh());
+    }
+
+    _readyListener = listener;
+    connector.addListener(listener);
+  }
+
   void _notify() {
     if (!_disposed) notifyListeners();
   }
@@ -84,6 +108,8 @@ class MySensorsService extends ChangeNotifier {
   @override
   void dispose() {
     _disposed = true;
+    final l = _readyListener;
+    if (l != null) connector.removeListener(l);
     super.dispose();
   }
 }
