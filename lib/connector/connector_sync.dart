@@ -322,6 +322,9 @@ extension _ConnectorSync on MeshCoreConnector {
 
   void _startRadioStatsPolling() {
     _radioStatsPollTimer?.cancel();
+    // Ask once now: the first periodic tick can be 30 s or more away, and
+    // screens that show the stats would read "No data" until then.
+    if (isConnected) unawaited(requestRadioStats());
     _radioStatsPollTimer = Timer.periodic(radioStatsPollInterval, (_) {
       if (!isConnected) {
         _stopRadioStatsPolling();

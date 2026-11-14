@@ -76,7 +76,7 @@ class MapListScreen extends StatelessWidget {
 
     String nodeLine(Contact c, double? km, double? bearing) => [
       mapListWhere(l10n, km, bearing, imperial: imperial),
-      l10n.ml_heard(agoLabel(l10n, c.lastSeen)),
+      l10n.ml_heard(midSentence(agoLabel(l10n, c.lastSeen))),
       hopLabel(l10n, hopBand(c)),
     ].join(' • ');
 
@@ -110,3 +110,9 @@ class MapListScreen extends StatelessWidget {
     );
   }
 }
+
+/// [label] for use inside a sentence: "Just now" becomes "just now".
+/// Other labels ("5m ago") and scripts without case are unchanged.
+@visibleForTesting
+String midSentence(String label) =>
+    label.isEmpty ? label : label[0].toLowerCase() + label.substring(1);
