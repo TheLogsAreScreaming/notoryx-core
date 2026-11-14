@@ -10768,10 +10768,11 @@ class AppLocalizationsBg extends AppLocalizations {
       'Запазени места и маршрути; внос и износ на GPX';
 
   @override
-  String get waypoints_importFile => 'Внос на GPX файл';
+  String get waypoints_importFile =>
+      'Импорт на картов файл (GPX, KML, GeoJSON)';
 
   @override
-  String get waypoints_importPaste => 'Поставяне на GPX';
+  String get waypoints_importPaste => 'Поставяне на GPX, KML или GeoJSON';
 
   @override
   String get waypoints_export => 'Износ на GPX';
@@ -10814,7 +10815,7 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get waypoints_importFailed =>
-      'Това не е GPX файл, който приложението може да прочете.';
+      'Това не е GPX, KML или GeoJSON файл, който приложението може да прочете.';
 
   @override
   String get waypoints_pasteHint => 'Поставете GPX текста тук';

@@ -136,7 +136,7 @@ void main() {
       expect(find.textContaining('No waypoints yet'), findsOneWidget);
       await tester.tap(find.byKey(const ValueKey('waypoints-menu')));
       await tester.pumpAndSettle();
-      await tester.tap(find.text('Paste GPX'));
+      await tester.tap(find.text('Paste GPX, KML or GeoJSON'));
       await tester.pumpAndSettle();
       await tester.enterText(
         find.byKey(const ValueKey('gpx-paste')),
@@ -154,12 +154,12 @@ void main() {
       await pump(tester, const WaypointsScreen());
       await tester.tap(find.byKey(const ValueKey('waypoints-menu')));
       await tester.pumpAndSettle();
-      await tester.tap(find.text('Paste GPX'));
+      await tester.tap(find.text('Paste GPX, KML or GeoJSON'));
       await tester.pumpAndSettle();
       await tester.enterText(find.byKey(const ValueKey('gpx-paste')), 'nope');
       await tester.tap(find.text('Import'));
       await tester.pumpAndSettle();
-      expect(find.textContaining("isn't a GPX file"), findsOneWidget);
+      expect(find.textContaining("isn't a GPX, KML or GeoJSON file"), findsOneWidget);
     });
 
     testWidgets('a shared marker can be saved once', (tester) async {

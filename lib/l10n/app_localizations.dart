@@ -17884,13 +17884,13 @@ abstract class AppLocalizations {
   /// No description provided for @waypoints_importFile.
   ///
   /// In en, this message translates to:
-  /// **'Import GPX file'**
+  /// **'Import map file (GPX, KML, GeoJSON)'**
   String get waypoints_importFile;
 
   /// No description provided for @waypoints_importPaste.
   ///
   /// In en, this message translates to:
-  /// **'Paste GPX'**
+  /// **'Paste GPX, KML or GeoJSON'**
   String get waypoints_importPaste;
 
   /// No description provided for @waypoints_export.
@@ -17956,7 +17956,7 @@ abstract class AppLocalizations {
   /// No description provided for @waypoints_importFailed.
   ///
   /// In en, this message translates to:
-  /// **'That isn\'t a GPX file the app can read.'**
+  /// **'That isn\'t a GPX, KML or GeoJSON file the app can read.'**
   String get waypoints_importFailed;
 
   /// No description provided for @waypoints_pasteHint.

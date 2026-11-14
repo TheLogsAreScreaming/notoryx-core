@@ -10767,10 +10767,11 @@ class AppLocalizationsHu extends AppLocalizations {
       'Mentett helyek és útvonalak; GPX be- és kivitel';
 
   @override
-  String get waypoints_importFile => 'GPX fájl importálása';
+  String get waypoints_importFile =>
+      'Térképfájl importálása (GPX, KML, GeoJSON)';
 
   @override
-  String get waypoints_importPaste => 'GPX beillesztése';
+  String get waypoints_importPaste => 'GPX, KML vagy GeoJSON beillesztése';
 
   @override
   String get waypoints_export => 'GPX exportálása';
@@ -10813,7 +10814,7 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get waypoints_importFailed =>
-      'Ez nem olyan GPX fájl, amit az alkalmazás be tud olvasni.';
+      'Ez nem olvasható GPX-, KML- vagy GeoJSON-fájl.';
 
   @override
   String get waypoints_pasteHint => 'Illeszd be ide a GPX szöveget';
