@@ -12113,4 +12113,43 @@ class AppLocalizationsKo extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name님이 $trail에서 $distance 떨어져 있습니다.';
   }
+
+  @override
+  String get hopTie_title => '공유 ID 기억';
+
+  @override
+  String get hopTie_tileSubtitle => '짧은 ID가 같은 중계기를 매번 같은 이름으로 표시';
+
+  @override
+  String get hopTie_explainer =>
+      '경로에는 홉마다 짧은 ID만 있고 여러 중계기가 같은 ID를 가질 수 있습니다. 위치로 하나가 정해지면 앱이 경로의 같은 자리에서의 선택을 기억했다가, 위치가 없거나 두 중계기가 거의 같은 거리일 때 다시 사용합니다.';
+
+  @override
+  String get hopTie_ttl => '기억 기간';
+
+  @override
+  String hopTie_days(int days) {
+    return '$days일';
+  }
+
+  @override
+  String get hopTie_ttlHelp => '이 기간 안에 다시 쓰이지 않은 선택은 잊힙니다. 1~180일, 기본값 30일.';
+
+  @override
+  String get hopTie_margin => '동점 허용 범위';
+
+  @override
+  String get hopTie_marginHelp =>
+      '기억한 선택으로 정하려면 두 중계기의 거리가 얼마나 가까워야 하는지(%). 0은 정확히 같을 때만, 최대 20, 기본값 5.';
+
+  @override
+  String hopTie_forget(int count) {
+    return '기억한 선택 지우기 ($count)';
+  }
+
+  @override
+  String get hopTie_less => '줄이기';
+
+  @override
+  String get hopTie_more => '늘리기';
 }

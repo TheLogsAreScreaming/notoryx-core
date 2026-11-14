@@ -12637,4 +12637,45 @@ class AppLocalizationsSk extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name je $distance od: $trail.';
   }
+
+  @override
+  String get hopTie_title => 'Pamäť zdieľaných ID';
+
+  @override
+  String get hopTie_tileSubtitle =>
+      'Rovnako pomenúvať opakovače so zdieľaným krátkym ID';
+
+  @override
+  String get hopTie_explainer =>
+      'Cesta obsahuje pre každý skok len krátke ID a môže ho zdieľať viac opakovačov. Keď poloha jeden z nich určí, aplikácia si výber zapamätá pre to isté miesto v ceste a použije ho znova, keď poloha chýba alebo sú dva opakovače takmer rovnako blízko.';
+
+  @override
+  String get hopTie_ttl => 'Pamätať';
+
+  @override
+  String hopTie_days(int days) {
+    return '$days d';
+  }
+
+  @override
+  String get hopTie_ttlHelp =>
+      'Výber, ktorý sa v tomto počte dní znova nepoužije, sa zabudne. 1 až 180 dní; predvolene 30.';
+
+  @override
+  String get hopTie_margin => 'Rozpätie remízy';
+
+  @override
+  String get hopTie_marginHelp =>
+      'Ako blízko (v %) musia byť vzdialenosti dvoch opakovačov, aby rozhodol zapamätaný výber. 0 len presná zhoda; do 20; predvolene 5.';
+
+  @override
+  String hopTie_forget(int count) {
+    return 'Zabudnúť zapamätané výbery ($count)';
+  }
+
+  @override
+  String get hopTie_less => 'Menej';
+
+  @override
+  String get hopTie_more => 'Viac';
 }

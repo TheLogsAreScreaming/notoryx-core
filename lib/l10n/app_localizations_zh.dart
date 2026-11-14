@@ -11866,4 +11866,43 @@ class AppLocalizationsZh extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name 距离 $trail $distance。';
   }
+
+  @override
+  String get hopTie_title => '共享ID记忆';
+
+  @override
+  String get hopTie_tileSubtitle => '共享短ID的中继每次都以相同名称显示';
+
+  @override
+  String get hopTie_explainer =>
+      '路径中每一跳只有一个短ID，多个中继可能共用。当位置信息确定了其中一个时，应用会记住路径中同一位置的选择，并在没有位置或两个中继距离相近时再次使用。';
+
+  @override
+  String get hopTie_ttl => '记忆时长';
+
+  @override
+  String hopTie_days(int days) {
+    return '$days天';
+  }
+
+  @override
+  String get hopTie_ttlHelp => '在此天数内未再次使用的选择将被遗忘。1–180天，默认30天。';
+
+  @override
+  String get hopTie_margin => '平局容差';
+
+  @override
+  String get hopTie_marginHelp =>
+      '两个中继的距离需要相差多少（%）以内才由记住的选择决定。0表示仅完全相等；最高20，默认5。';
+
+  @override
+  String hopTie_forget(int count) {
+    return '清除记住的选择（$count）';
+  }
+
+  @override
+  String get hopTie_less => '减少';
+
+  @override
+  String get hopTie_more => '增加';
 }

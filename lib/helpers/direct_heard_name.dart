@@ -5,6 +5,7 @@ import 'package:latlong2/latlong.dart';
 import '../connector/meshcore_connector.dart';
 import '../services/corescope.dart';
 import 'path_hop_resolver.dart';
+import '../services/hop_tie_memory.dart';
 
 /// The name of a node heard directly, from its ID (a hop prefix or a full
 /// public key in hex), or null when it can't be pinned to one known node.
@@ -22,6 +23,7 @@ String? directHeardName(MeshCoreConnector connector, String id) {
   }
   final lat = connector.selfLatitude, lon = connector.selfLongitude;
   final hop = PathHopResolver.resolve(
+    memory: HopTieMemory.shared,
     pathBytes: bytes,
     contacts: connector.allContactsUnfiltered,
     endpoint: lat == null || lon == null || (lat == 0 && lon == 0)

@@ -12579,4 +12579,45 @@ class AppLocalizationsSv extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name är $distance från $trail.';
   }
+
+  @override
+  String get hopTie_title => 'Minne för delade ID';
+
+  @override
+  String get hopTie_tileSubtitle =>
+      'Namnge repeatrar med samma korta ID likadant varje gång';
+
+  @override
+  String get hopTie_explainer =>
+      'En väg innehåller bara ett kort ID per hopp, och flera repeatrar kan dela det. När positionen pekar ut en av dem minns appen valet för samma plats i vägen och använder det igen när position saknas eller två repeatrar är ungefär lika nära.';
+
+  @override
+  String get hopTie_ttl => 'Kom ihåg i';
+
+  @override
+  String hopTie_days(int days) {
+    return '$days d';
+  }
+
+  @override
+  String get hopTie_ttlHelp =>
+      'Ett val som inte används igen inom så många dagar glöms. 1 till 180 dagar; 30 som standard.';
+
+  @override
+  String get hopTie_margin => 'Marginal för lika';
+
+  @override
+  String get hopTie_marginHelp =>
+      'Hur nära (i %) två repeatrars avstånd måste vara för att det sparade valet ska avgöra. 0 bara exakt lika; upp till 20; 5 som standard.';
+
+  @override
+  String hopTie_forget(int count) {
+    return 'Glöm sparade val ($count)';
+  }
+
+  @override
+  String get hopTie_less => 'Mindre';
+
+  @override
+  String get hopTie_more => 'Mer';
 }

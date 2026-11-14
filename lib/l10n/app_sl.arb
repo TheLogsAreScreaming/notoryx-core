@@ -4898,5 +4898,16 @@
   "zones_alertLeftTitle": "Izstop iz {zone}",
   "zones_alertLeftBody": "{name} je zapustil cono {zone}.",
   "zones_alertOffTrailTitle": "Izven poti",
-  "zones_alertOffTrailBody": "{name} je {distance} od: {trail}."
+  "zones_alertOffTrailBody": "{name} je {distance} od: {trail}.",
+  "hopTie_title": "Spomin za skupne ID-je",
+  "hopTie_tileSubtitle": "Ponavljalnike s skupnim kratkim ID-jem vedno enako poimenuj",
+  "hopTie_explainer": "Pot vsebuje za vsak skok le kratek ID, ki si ga lahko deli več ponavljalnikov. Ko položaj izbere enega, si aplikacija zapomni izbiro za isto mesto v poti in jo znova uporabi, ko položaja ni ali sta dva ponavljalnika skoraj enako blizu.",
+  "hopTie_ttl": "Zapomni si za",
+  "hopTie_days": "{days} d",
+  "hopTie_ttlHelp": "Izbira, ki v tem številu dni ni znova uporabljena, se pozabi. Od 1 do 180 dni; privzeto 30.",
+  "hopTie_margin": "Meja izenačenja",
+  "hopTie_marginHelp": "Kako blizu (v %) morata biti razdalji dveh ponavljalnikov, da odloči zapomnjena izbira. 0 le natančno izenačenje; do 20; privzeto 5.",
+  "hopTie_forget": "Pozabi zapomnjene izbire ({count})",
+  "hopTie_less": "Manj",
+  "hopTie_more": "Več"
 }

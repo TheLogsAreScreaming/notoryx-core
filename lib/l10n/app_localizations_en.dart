@@ -12528,4 +12528,45 @@ class AppLocalizationsEn extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name is $distance from $trail.';
   }
+
+  @override
+  String get hopTie_title => 'Shared-ID memory';
+
+  @override
+  String get hopTie_tileSubtitle =>
+      'Name repeaters that share a short ID the same way each time';
+
+  @override
+  String get hopTie_explainer =>
+      'A path only carries a short ID for each hop, and several repeaters can share one. When position picks one of them, the app remembers that pick for the same spot in a path, and uses it again when there\'s no position to go on or two repeaters are about equally close.';
+
+  @override
+  String get hopTie_ttl => 'Remember for';
+
+  @override
+  String hopTie_days(int days) {
+    return '$days d';
+  }
+
+  @override
+  String get hopTie_ttlHelp =>
+      'A pick that isn\'t used again within this many days is forgotten. 1 to 180 days; 30 by default.';
+
+  @override
+  String get hopTie_margin => 'Tie margin';
+
+  @override
+  String get hopTie_marginHelp =>
+      'How close two repeaters\' distances must be (in %) for the remembered pick to decide. 0 means only exact ties; up to 20; 5 by default.';
+
+  @override
+  String hopTie_forget(int count) {
+    return 'Forget remembered picks ($count)';
+  }
+
+  @override
+  String get hopTie_less => 'Less';
+
+  @override
+  String get hopTie_more => 'More';
 }

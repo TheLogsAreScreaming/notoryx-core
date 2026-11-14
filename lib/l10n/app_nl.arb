@@ -4898,5 +4898,16 @@
   "zones_alertLeftTitle": "{zone} verlaten",
   "zones_alertLeftBody": "{name} heeft {zone} verlaten.",
   "zones_alertOffTrailTitle": "Van de route af",
-  "zones_alertOffTrailBody": "{name} is {distance} van {trail}."
+  "zones_alertOffTrailBody": "{name} is {distance} van {trail}.",
+  "hopTie_title": "Geheugen voor gedeelde ID's",
+  "hopTie_tileSubtitle": "Repeaters met dezelfde korte ID steeds hetzelfde benoemen",
+  "hopTie_explainer": "Een pad bevat per hop alleen een korte ID, en meerdere repeaters kunnen die delen. Als de positie er één aanwijst, onthoudt de app die keuze voor dezelfde plek in het pad en gebruikt hem opnieuw als er geen positie is of twee repeaters ongeveer even dichtbij zijn.",
+  "hopTie_ttl": "Onthouden voor",
+  "hopTie_days": "{days} d",
+  "hopTie_ttlHelp": "Een keuze die binnen zoveel dagen niet opnieuw wordt gebruikt, wordt vergeten. 1 tot 180 dagen; standaard 30.",
+  "hopTie_margin": "Gelijkspelmarge",
+  "hopTie_marginHelp": "Hoe dicht (in %) de afstanden van twee repeaters moeten liggen voordat de onthouden keuze beslist. 0 alleen exacte gelijkspel; tot 20; standaard 5.",
+  "hopTie_forget": "Onthouden keuzes vergeten ({count})",
+  "hopTie_less": "Minder",
+  "hopTie_more": "Meer"
 }

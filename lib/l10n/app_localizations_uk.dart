@@ -12708,4 +12708,45 @@ class AppLocalizationsUk extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name за $distance від: $trail.';
   }
+
+  @override
+  String get hopTie_title => 'Пам\'ять спільних ID';
+
+  @override
+  String get hopTie_tileSubtitle =>
+      'Однаково називати ретранслятори зі спільним коротким ID';
+
+  @override
+  String get hopTie_explainer =>
+      'У шляху для кожного стрибка є лише короткий ID, і його можуть ділити кілька ретрансляторів. Коли за координатами обрано один, застосунок запам\'ятовує вибір для цього місця шляху й використовує його знову, якщо координат немає або два ретранслятори майже однаково близько.';
+
+  @override
+  String get hopTie_ttl => 'Пам\'ятати';
+
+  @override
+  String hopTie_days(int days) {
+    return '$days дн.';
+  }
+
+  @override
+  String get hopTie_ttlHelp =>
+      'Вибір, не використаний повторно за цю кількість днів, забувається. Від 1 до 180 днів; типово 30.';
+
+  @override
+  String get hopTie_margin => 'Поріг рівності';
+
+  @override
+  String get hopTie_marginHelp =>
+      'Наскільки (у %) мають збігатися відстані двох ретрансляторів, щоб вирішував запам\'ятований вибір. 0 — лише точна рівність; до 20; типово 5.';
+
+  @override
+  String hopTie_forget(int count) {
+    return 'Забути запам\'ятоване ($count)';
+  }
+
+  @override
+  String get hopTie_less => 'Менше';
+
+  @override
+  String get hopTie_more => 'Більше';
 }

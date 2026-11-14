@@ -4898,5 +4898,16 @@
   "zones_alertLeftTitle": "Lämnade {zone}",
   "zones_alertLeftBody": "{name} har lämnat {zone}.",
   "zones_alertOffTrailTitle": "Utanför leden",
-  "zones_alertOffTrailBody": "{name} är {distance} från {trail}."
+  "zones_alertOffTrailBody": "{name} är {distance} från {trail}.",
+  "hopTie_title": "Minne för delade ID",
+  "hopTie_tileSubtitle": "Namnge repeatrar med samma korta ID likadant varje gång",
+  "hopTie_explainer": "En väg innehåller bara ett kort ID per hopp, och flera repeatrar kan dela det. När positionen pekar ut en av dem minns appen valet för samma plats i vägen och använder det igen när position saknas eller två repeatrar är ungefär lika nära.",
+  "hopTie_ttl": "Kom ihåg i",
+  "hopTie_days": "{days} d",
+  "hopTie_ttlHelp": "Ett val som inte används igen inom så många dagar glöms. 1 till 180 dagar; 30 som standard.",
+  "hopTie_margin": "Marginal för lika",
+  "hopTie_marginHelp": "Hur nära (i %) två repeatrars avstånd måste vara för att det sparade valet ska avgöra. 0 bara exakt lika; upp till 20; 5 som standard.",
+  "hopTie_forget": "Glöm sparade val ({count})",
+  "hopTie_less": "Mindre",
+  "hopTie_more": "Mer"
 }

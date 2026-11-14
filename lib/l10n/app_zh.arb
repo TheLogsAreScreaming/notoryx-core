@@ -4903,5 +4903,16 @@
   "zones_alertLeftTitle": "离开 {zone}",
   "zones_alertLeftBody": "{name} 已离开 {zone}。",
   "zones_alertOffTrailTitle": "偏离路线",
-  "zones_alertOffTrailBody": "{name} 距离 {trail} {distance}。"
+  "zones_alertOffTrailBody": "{name} 距离 {trail} {distance}。",
+  "hopTie_title": "共享ID记忆",
+  "hopTie_tileSubtitle": "共享短ID的中继每次都以相同名称显示",
+  "hopTie_explainer": "路径中每一跳只有一个短ID，多个中继可能共用。当位置信息确定了其中一个时，应用会记住路径中同一位置的选择，并在没有位置或两个中继距离相近时再次使用。",
+  "hopTie_ttl": "记忆时长",
+  "hopTie_days": "{days}天",
+  "hopTie_ttlHelp": "在此天数内未再次使用的选择将被遗忘。1–180天，默认30天。",
+  "hopTie_margin": "平局容差",
+  "hopTie_marginHelp": "两个中继的距离需要相差多少（%）以内才由记住的选择决定。0表示仅完全相等；最高20，默认5。",
+  "hopTie_forget": "清除记住的选择（{count}）",
+  "hopTie_less": "减少",
+  "hopTie_more": "增加"
 }

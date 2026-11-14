@@ -12661,4 +12661,45 @@ class AppLocalizationsHu extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name $distance távolságra van ettől: $trail.';
   }
+
+  @override
+  String get hopTie_title => 'Közös azonosítók memóriája';
+
+  @override
+  String get hopTie_tileSubtitle =>
+      'A közös rövid azonosítójú átjátszók mindig ugyanúgy nevezve';
+
+  @override
+  String get hopTie_explainer =>
+      'Az útvonal ugrásonként csak egy rövid azonosítót tartalmaz, és ezen több átjátszó is osztozhat. Ha a pozíció alapján az egyik kiválasztható, az alkalmazás megjegyzi ezt az útvonal azonos pontjára, és újra felhasználja, ha nincs pozíció, vagy két átjátszó nagyjából ugyanolyan közel van.';
+
+  @override
+  String get hopTie_ttl => 'Megjegyzés ideje';
+
+  @override
+  String hopTie_days(int days) {
+    return '$days nap';
+  }
+
+  @override
+  String get hopTie_ttlHelp =>
+      'Az ennyi napon belül újra nem használt választás elfelejtődik. 1–180 nap; alapból 30.';
+
+  @override
+  String get hopTie_margin => 'Döntetlen-határ';
+
+  @override
+  String get hopTie_marginHelp =>
+      'Mennyire (%-ban) legyen közel két átjátszó távolsága, hogy a megjegyzett választás döntsön. 0 csak pontos egyezés; legfeljebb 20; alapból 5.';
+
+  @override
+  String hopTie_forget(int count) {
+    return 'Megjegyzett választások törlése ($count)';
+  }
+
+  @override
+  String get hopTie_less => 'Kevesebb';
+
+  @override
+  String get hopTie_more => 'Több';
 }

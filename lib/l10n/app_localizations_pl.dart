@@ -12709,4 +12709,45 @@ class AppLocalizationsPl extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name jest $distance od: $trail.';
   }
+
+  @override
+  String get hopTie_title => 'Pamięć wspólnych ID';
+
+  @override
+  String get hopTie_tileSubtitle =>
+      'Nazywaj tak samo przekaźniki o wspólnym krótkim ID';
+
+  @override
+  String get hopTie_explainer =>
+      'Ścieżka zawiera tylko krótkie ID dla każdego skoku, a kilka przekaźników może je dzielić. Gdy pozycja wskaże jeden z nich, aplikacja zapamiętuje wybór dla tego miejsca w ścieżce i używa go ponownie, gdy brak pozycji lub dwa przekaźniki są prawie równie blisko.';
+
+  @override
+  String get hopTie_ttl => 'Pamiętaj przez';
+
+  @override
+  String hopTie_days(int days) {
+    return '$days dni';
+  }
+
+  @override
+  String get hopTie_ttlHelp =>
+      'Wybór nieużyty ponownie w tylu dniach zostaje zapomniany. Od 1 do 180 dni; domyślnie 30.';
+
+  @override
+  String get hopTie_margin => 'Margines remisu';
+
+  @override
+  String get hopTie_marginHelp =>
+      'Jak bliskie (w %) muszą być odległości dwóch przekaźników, by zdecydował zapamiętany wybór. 0 tylko dokładny remis; do 20; domyślnie 5.';
+
+  @override
+  String hopTie_forget(int count) {
+    return 'Zapomnij zapamiętane wybory ($count)';
+  }
+
+  @override
+  String get hopTie_less => 'Mniej';
+
+  @override
+  String get hopTie_more => 'Więcej';
 }

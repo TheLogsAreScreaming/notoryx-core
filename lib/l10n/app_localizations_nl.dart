@@ -12629,4 +12629,45 @@ class AppLocalizationsNl extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name is $distance van $trail.';
   }
+
+  @override
+  String get hopTie_title => 'Geheugen voor gedeelde ID\'s';
+
+  @override
+  String get hopTie_tileSubtitle =>
+      'Repeaters met dezelfde korte ID steeds hetzelfde benoemen';
+
+  @override
+  String get hopTie_explainer =>
+      'Een pad bevat per hop alleen een korte ID, en meerdere repeaters kunnen die delen. Als de positie er één aanwijst, onthoudt de app die keuze voor dezelfde plek in het pad en gebruikt hem opnieuw als er geen positie is of twee repeaters ongeveer even dichtbij zijn.';
+
+  @override
+  String get hopTie_ttl => 'Onthouden voor';
+
+  @override
+  String hopTie_days(int days) {
+    return '$days d';
+  }
+
+  @override
+  String get hopTie_ttlHelp =>
+      'Een keuze die binnen zoveel dagen niet opnieuw wordt gebruikt, wordt vergeten. 1 tot 180 dagen; standaard 30.';
+
+  @override
+  String get hopTie_margin => 'Gelijkspelmarge';
+
+  @override
+  String get hopTie_marginHelp =>
+      'Hoe dicht (in %) de afstanden van twee repeaters moeten liggen voordat de onthouden keuze beslist. 0 alleen exacte gelijkspel; tot 20; standaard 5.';
+
+  @override
+  String hopTie_forget(int count) {
+    return 'Onthouden keuzes vergeten ($count)';
+  }
+
+  @override
+  String get hopTie_less => 'Minder';
+
+  @override
+  String get hopTie_more => 'Meer';
 }

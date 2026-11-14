@@ -21042,6 +21042,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{name} is {distance} from {trail}.'**
   String zones_alertOffTrailBody(String name, String distance, String trail);
+
+  /// No description provided for @hopTie_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Shared-ID memory'**
+  String get hopTie_title;
+
+  /// No description provided for @hopTie_tileSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Name repeaters that share a short ID the same way each time'**
+  String get hopTie_tileSubtitle;
+
+  /// No description provided for @hopTie_explainer.
+  ///
+  /// In en, this message translates to:
+  /// **'A path only carries a short ID for each hop, and several repeaters can share one. When position picks one of them, the app remembers that pick for the same spot in a path, and uses it again when there's no position to go on or two repeaters are about equally close.'**
+  String get hopTie_explainer;
+
+  /// No description provided for @hopTie_ttl.
+  ///
+  /// In en, this message translates to:
+  /// **'Remember for'**
+  String get hopTie_ttl;
+
+  /// No description provided for @hopTie_days.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} d'**
+  String hopTie_days(int days);
+
+  /// No description provided for @hopTie_ttlHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'A pick that isn't used again within this many days is forgotten. 1 to 180 days; 30 by default.'**
+  String get hopTie_ttlHelp;
+
+  /// No description provided for @hopTie_margin.
+  ///
+  /// In en, this message translates to:
+  /// **'Tie margin'**
+  String get hopTie_margin;
+
+  /// No description provided for @hopTie_marginHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'How close two repeaters' distances must be (in %) for the remembered pick to decide. 0 means only exact ties; up to 20; 5 by default.'**
+  String get hopTie_marginHelp;
+
+  /// No description provided for @hopTie_forget.
+  ///
+  /// In en, this message translates to:
+  /// **'Forget remembered picks ({count})'**
+  String hopTie_forget(int count);
+
+  /// No description provided for @hopTie_less.
+  ///
+  /// In en, this message translates to:
+  /// **'Less'**
+  String get hopTie_less;
+
+  /// No description provided for @hopTie_more.
+  ///
+  /// In en, this message translates to:
+  /// **'More'**
+  String get hopTie_more;
 }
 
 class _AppLocalizationsDelegate

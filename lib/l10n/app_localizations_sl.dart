@@ -12661,4 +12661,45 @@ class AppLocalizationsSl extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name je $distance od: $trail.';
   }
+
+  @override
+  String get hopTie_title => 'Spomin za skupne ID-je';
+
+  @override
+  String get hopTie_tileSubtitle =>
+      'Ponavljalnike s skupnim kratkim ID-jem vedno enako poimenuj';
+
+  @override
+  String get hopTie_explainer =>
+      'Pot vsebuje za vsak skok le kratek ID, ki si ga lahko deli več ponavljalnikov. Ko položaj izbere enega, si aplikacija zapomni izbiro za isto mesto v poti in jo znova uporabi, ko položaja ni ali sta dva ponavljalnika skoraj enako blizu.';
+
+  @override
+  String get hopTie_ttl => 'Zapomni si za';
+
+  @override
+  String hopTie_days(int days) {
+    return '$days d';
+  }
+
+  @override
+  String get hopTie_ttlHelp =>
+      'Izbira, ki v tem številu dni ni znova uporabljena, se pozabi. Od 1 do 180 dni; privzeto 30.';
+
+  @override
+  String get hopTie_margin => 'Meja izenačenja';
+
+  @override
+  String get hopTie_marginHelp =>
+      'Kako blizu (v %) morata biti razdalji dveh ponavljalnikov, da odloči zapomnjena izbira. 0 le natančno izenačenje; do 20; privzeto 5.';
+
+  @override
+  String hopTie_forget(int count) {
+    return 'Pozabi zapomnjene izbire ($count)';
+  }
+
+  @override
+  String get hopTie_less => 'Manj';
+
+  @override
+  String get hopTie_more => 'Več';
 }

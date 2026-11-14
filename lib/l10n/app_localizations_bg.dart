@@ -12658,4 +12658,45 @@ class AppLocalizationsBg extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name е на $distance от $trail.';
   }
+
+  @override
+  String get hopTie_title => 'Памет за общи ID';
+
+  @override
+  String get hopTie_tileSubtitle =>
+      'Еднакво именуване на ретранслатори с общ кратък ID';
+
+  @override
+  String get hopTie_explainer =>
+      'Пътят съдържа само кратък ID за всеки скок и няколко ретранслатора може да го делят. Когато позицията избере един, приложението запомня избора за това място в пътя и го ползва отново, ако няма позиция или два ретранслатора са почти еднакво близо.';
+
+  @override
+  String get hopTie_ttl => 'Помни за';
+
+  @override
+  String hopTie_days(int days) {
+    return '$days дни';
+  }
+
+  @override
+  String get hopTie_ttlHelp =>
+      'Избор, неизползван отново в тези дни, се забравя. От 1 до 180 дни; по подразбиране 30.';
+
+  @override
+  String get hopTie_margin => 'Праг на равенство';
+
+  @override
+  String get hopTie_marginHelp =>
+      'Колко близки (в %) трябва да са разстоянията на два ретранслатора, за да реши запомненият избор. 0 само точно равенство; до 20; по подразбиране 5.';
+
+  @override
+  String hopTie_forget(int count) {
+    return 'Забрави запомненото ($count)';
+  }
+
+  @override
+  String get hopTie_less => 'По-малко';
+
+  @override
+  String get hopTie_more => 'Повече';
 }

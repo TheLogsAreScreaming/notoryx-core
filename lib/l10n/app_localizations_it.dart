@@ -12687,4 +12687,45 @@ class AppLocalizationsIt extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name è a $distance da $trail.';
   }
+
+  @override
+  String get hopTie_title => 'Memoria ID condivisi';
+
+  @override
+  String get hopTie_tileSubtitle =>
+      'Dai sempre lo stesso nome ai ripetitori che condividono un ID corto';
+
+  @override
+  String get hopTie_explainer =>
+      'Un percorso contiene solo un ID corto per salto e più ripetitori possono condividerlo. Quando la posizione ne sceglie uno, l\'app ricorda la scelta per quel punto del percorso e la riusa se manca la posizione o se due ripetitori sono quasi alla stessa distanza.';
+
+  @override
+  String get hopTie_ttl => 'Ricorda per';
+
+  @override
+  String hopTie_days(int days) {
+    return '$days g';
+  }
+
+  @override
+  String get hopTie_ttlHelp =>
+      'Una scelta non riusata entro questi giorni viene dimenticata. Da 1 a 180 giorni; 30 predefinito.';
+
+  @override
+  String get hopTie_margin => 'Margine di parità';
+
+  @override
+  String get hopTie_marginHelp =>
+      'Quanto (in %) devono essere vicine le distanze di due ripetitori perché decida la scelta ricordata. 0 solo parità esatte; fino a 20; 5 predefinito.';
+
+  @override
+  String hopTie_forget(int count) {
+    return 'Dimentica le scelte ricordate ($count)';
+  }
+
+  @override
+  String get hopTie_less => 'Meno';
+
+  @override
+  String get hopTie_more => 'Più';
 }

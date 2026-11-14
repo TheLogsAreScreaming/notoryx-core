@@ -5032,5 +5032,16 @@
   "zones_alertLeftTitle": "Sortie de {zone}",
   "zones_alertLeftBody": "{name} a quitté {zone}.",
   "zones_alertOffTrailTitle": "Hors du sentier",
-  "zones_alertOffTrailBody": "{name} est à {distance} de {trail}."
+  "zones_alertOffTrailBody": "{name} est à {distance} de {trail}.",
+  "hopTie_title": "Mémoire des ID partagés",
+  "hopTie_tileSubtitle": "Nommer toujours de la même façon les répéteurs qui partagent un ID court",
+  "hopTie_explainer": "Un chemin ne contient qu'un ID court par saut, et plusieurs répéteurs peuvent le partager. Quand la position en désigne un, l'app retient ce choix pour cet endroit du chemin et le réutilise s'il n'y a pas de position ou si deux répéteurs sont presque aussi proches.",
+  "hopTie_ttl": "Retenir pendant",
+  "hopTie_days": "{days} j",
+  "hopTie_ttlHelp": "Un choix non réutilisé pendant ce nombre de jours est oublié. De 1 à 180 jours ; 30 par défaut.",
+  "hopTie_margin": "Marge d'égalité",
+  "hopTie_marginHelp": "À quel point (en %) les distances de deux répéteurs doivent être proches pour que le choix retenu décide. 0 = égalité exacte seulement ; jusqu'à 20 ; 5 par défaut.",
+  "hopTie_forget": "Oublier les choix retenus ({count})",
+  "hopTie_less": "Moins",
+  "hopTie_more": "Plus"
 }

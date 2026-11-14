@@ -30,6 +30,7 @@ import '../widgets/radio_stats_entry.dart';
 import '../widgets/sync_progress_overlay.dart';
 import '../widgets/radio_overview_card.dart';
 import 'companion_cli_screen.dart';
+import 'hop_tie_memory_screen.dart';
 import '../widgets/radio_buzzer_switch.dart';
 import 'wifi_settings_screen.dart';
 import 'region_management_screen.dart';
@@ -574,6 +575,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
           onTap: connector.isConnected
               ? () => _editPathHashMode(context, connector)
               : null,
+        ),
+        const Divider(height: 1, indent: 16),
+        _tappableTile(
+          context,
+          icon: Icons.alt_route_rounded,
+          title: l10n.hopTie_title,
+          subtitle: l10n.hopTie_tileSubtitle,
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const HopTieMemoryScreen()),
+          ),
         ),
       ],
     );
