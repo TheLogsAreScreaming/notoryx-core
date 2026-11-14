@@ -5064,5 +5064,7 @@
   "hopTie_forget": "Zabudnúť zapamätané výbery ({count})",
   "hopTie_less": "Menej",
   "hopTie_more": "Viac",
-  "bk_rolledBack": "Obnovenie zlyhalo, preto sa všetky nastavenia vrátili do pôvodného stavu. Nič sa nezmenilo."
+  "bk_rolledBack": "Obnovenie zlyhalo, preto sa všetky nastavenia vrátili do pôvodného stavu. Nič sa nezmenilo.",
+  "outbox_maybeSent": "Odosielanie bolo prerušené, takže správa už možno odišla. Vrátila sa do poľa správy: skontrolujte to pred opätovným odoslaním.",
+  "outbox_tooLong": "Príliš dlhé pre rádio, preto sa vrátilo do poľa správy na skrátenie."
 }

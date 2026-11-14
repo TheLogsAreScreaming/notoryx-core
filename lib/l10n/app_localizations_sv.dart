@@ -13173,4 +13173,12 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Återställningen misslyckades, så alla inställningar sattes tillbaka som de var. Inget ändrades.';
+
+  @override
+  String get outbox_maybeSent =>
+      'Sändningen avbröts, så meddelandet kan redan ha gått iväg. Det ligger i meddelanderutan igen: kontrollera innan du skickar det igen.';
+
+  @override
+  String get outbox_tooLong =>
+      'För långt för radion, så det ligger i meddelanderutan igen för att kortas.';
 }

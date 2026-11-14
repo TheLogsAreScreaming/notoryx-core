@@ -13124,4 +13124,12 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Restore failed, so every setting was put back as it was. Nothing changed.';
+
+  @override
+  String get outbox_maybeSent =>
+      'Sending was interrupted, so this may already have gone out. It\'s back in the message box: check before sending it again.';
+
+  @override
+  String get outbox_tooLong =>
+      'Too long for the radio, so it\'s back in the message box to shorten.';
 }

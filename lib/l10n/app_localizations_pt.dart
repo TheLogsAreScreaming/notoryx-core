@@ -13257,4 +13257,12 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'A restauração falhou, por isso todas as definições voltaram ao que eram. Nada mudou.';
+
+  @override
+  String get outbox_maybeSent =>
+      'O envio foi interrompido, por isso a mensagem pode já ter saído. Voltou para a caixa de texto: verifique antes de enviá-la novamente.';
+
+  @override
+  String get outbox_tooLong =>
+      'Longo demais para o rádio, por isso voltou para a caixa de texto para ser encurtado.';
 }

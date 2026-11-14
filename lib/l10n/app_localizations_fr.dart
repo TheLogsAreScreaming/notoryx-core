@@ -13327,4 +13327,12 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'La restauration a échoué, tous les réglages ont donc été remis comme avant. Rien n\'a changé.';
+
+  @override
+  String get outbox_maybeSent =>
+      'L\'envoi a été interrompu, le message est donc peut-être déjà parti. Il est revenu dans la zone de saisie : vérifiez avant de le renvoyer.';
+
+  @override
+  String get outbox_tooLong =>
+      'Trop long pour la radio : il est revenu dans la zone de saisie pour être raccourci.';
 }

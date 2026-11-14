@@ -13232,4 +13232,12 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Obnovenie zlyhalo, preto sa všetky nastavenia vrátili do pôvodného stavu. Nič sa nezmenilo.';
+
+  @override
+  String get outbox_maybeSent =>
+      'Odosielanie bolo prerušené, takže správa už možno odišla. Vrátila sa do poľa správy: skontrolujte to pred opätovným odoslaním.';
+
+  @override
+  String get outbox_tooLong =>
+      'Príliš dlhé pre rádio, preto sa vrátilo do poľa správy na skrátenie.';
 }

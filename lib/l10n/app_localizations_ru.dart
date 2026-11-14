@@ -13302,4 +13302,12 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Восстановление не удалось, поэтому все настройки возвращены как были. Ничего не изменилось.';
+
+  @override
+  String get outbox_maybeSent =>
+      'Отправка была прервана, поэтому сообщение, возможно, уже ушло. Оно возвращено в поле ввода: проверьте, прежде чем отправлять снова.';
+
+  @override
+  String get outbox_tooLong =>
+      'Слишком длинно для радио, поэтому возвращено в поле ввода, чтобы сократить.';
 }
