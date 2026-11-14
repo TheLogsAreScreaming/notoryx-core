@@ -1559,6 +1559,18 @@ class AppLocalizationsSk extends AppLocalizations {
   String get channels_unmuteChannel => 'Zrušiť stlmenie kanála';
 
   @override
+  String get channels_notifyMode => 'Upozornenia';
+
+  @override
+  String get channels_notifyAll => 'Všetky správy';
+
+  @override
+  String get channels_notifyMentions => 'Len keď ma niekto spomenie';
+
+  @override
+  String get channels_notifyMuted => 'Stlmené';
+
+  @override
   String get channels_deleteChannel => 'Odstrániť kanál';
 
   @override

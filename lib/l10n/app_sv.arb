@@ -361,6 +361,10 @@
   "channels_editChannel": "Redigera kanal",
   "channels_muteChannel": "Tysta kanal",
   "channels_unmuteChannel": "Slå på ljud för kanal",
+  "channels_notifyMode": "Aviseringar",
+  "channels_notifyAll": "Alla meddelanden",
+  "channels_notifyMentions": "Bara när jag nämns",
+  "channels_notifyMuted": "Tystad",
   "channels_deleteChannel": "Ta bort kanal",
   "channels_deleteChannelConfirm": "Radera \"{name}\"? Detta kan inte ångras.",
   "@channels_deleteChannelConfirm": {

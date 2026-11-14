@@ -9,6 +9,7 @@ import '../storage/prefs_manager.dart';
 import '../utils/app_logger.dart';
 import '../helpers/cyr2lat.dart';
 import '../utils/grid_coords.dart';
+import '../models/channel_notify_mode.dart';
 
 class AppSettingsService extends ChangeNotifier {
   static const String _settingsKey = 'app_settings';
@@ -294,6 +295,38 @@ class AppSettingsService extends ChangeNotifier {
     final updated = Set<String>.from(_settings.mutedChannels)
       ..remove(channelName);
     await updateSettings(_settings.copyWith(mutedChannels: updated));
+  }
+
+  /// How [channelName] alerts you. Muted wins over mentions only.
+  ChannelNotifyMode channelNotifyMode(String channelName) {
+    if (_settings.mutedChannels.contains(channelName)) {
+      return ChannelNotifyMode.muted;
+    }
+    if (_settings.mentionsOnlyChannels.contains(channelName)) {
+      return ChannelNotifyMode.mentionsOnly;
+    }
+    return ChannelNotifyMode.all;
+  }
+
+  Future<void> setChannelNotifyMode(
+    String channelName,
+    ChannelNotifyMode mode,
+  ) async {
+    final muted = Set<String>.from(_settings.mutedChannels)
+      ..remove(channelName);
+    final mentions = Set<String>.from(_settings.mentionsOnlyChannels)
+      ..remove(channelName);
+    switch (mode) {
+      case ChannelNotifyMode.all:
+        break;
+      case ChannelNotifyMode.mentionsOnly:
+        mentions.add(channelName);
+      case ChannelNotifyMode.muted:
+        muted.add(channelName);
+    }
+    await updateSettings(
+      _settings.copyWith(mutedChannels: muted, mentionsOnlyChannels: mentions),
+    );
   }
 
   /// Whether channel messages from [senderName] are blocked.

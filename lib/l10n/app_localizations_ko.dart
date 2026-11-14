@@ -1497,6 +1497,18 @@ class AppLocalizationsKo extends AppLocalizations {
   String get channels_unmuteChannel => '채널 음소거 해제';
 
   @override
+  String get channels_notifyMode => '알림';
+
+  @override
+  String get channels_notifyAll => '모든 메시지';
+
+  @override
+  String get channels_notifyMentions => '나를 언급할 때만';
+
+  @override
+  String get channels_notifyMuted => '음소거';
+
+  @override
   String get channels_deleteChannel => '채널 삭제';
 
   @override

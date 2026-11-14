@@ -1576,6 +1576,18 @@ class AppLocalizationsDe extends AppLocalizations {
   String get channels_unmuteChannel => 'Kanal Stummschaltung aufheben';
 
   @override
+  String get channels_notifyMode => 'Benachrichtigungen';
+
+  @override
+  String get channels_notifyAll => 'Alle Nachrichten';
+
+  @override
+  String get channels_notifyMentions => 'Nur wenn ich erwähnt werde';
+
+  @override
+  String get channels_notifyMuted => 'Stumm';
+
+  @override
   String get channels_deleteChannel => 'Kanal löschen';
 
   @override

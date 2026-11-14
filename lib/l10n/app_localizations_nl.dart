@@ -1563,6 +1563,18 @@ class AppLocalizationsNl extends AppLocalizations {
   String get channels_unmuteChannel => 'Kanaal dempen opheffen';
 
   @override
+  String get channels_notifyMode => 'Meldingen';
+
+  @override
+  String get channels_notifyAll => 'Alle berichten';
+
+  @override
+  String get channels_notifyMentions => 'Alleen als ik genoemd word';
+
+  @override
+  String get channels_notifyMuted => 'Gedempt';
+
+  @override
   String get channels_deleteChannel => 'Kanaal verwijderen';
 
   @override

@@ -376,6 +376,10 @@
   "channels_editChannel": "编辑频道",
   "channels_muteChannel": "静音频道",
   "channels_unmuteChannel": "取消静音频道",
+  "channels_notifyMode": "通知",
+  "channels_notifyAll": "所有消息",
+  "channels_notifyMentions": "仅在提到我时",
+  "channels_notifyMuted": "静音",
   "channels_deleteChannel": "删除频道",
   "channels_deleteChannelConfirm": "删除频道 \"{name}\"？此操作不可撤销。",
   "@channels_deleteChannelConfirm": {

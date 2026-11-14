@@ -361,6 +361,10 @@
   "channels_editChannel": "Uredi kanal",
   "channels_muteChannel": "Utišaj kanal",
   "channels_unmuteChannel": "Vklopi obvestila kanala",
+  "channels_notifyMode": "Obvestila",
+  "channels_notifyAll": "Vsa sporočila",
+  "channels_notifyMentions": "Samo ko me kdo omeni",
+  "channels_notifyMuted": "Utišano",
   "channels_deleteChannel": "Pošlji kanal",
   "channels_deleteChannelConfirm": "Izbrišem \"{name}\"? To se ne da povrniti.",
   "@channels_deleteChannelConfirm": {

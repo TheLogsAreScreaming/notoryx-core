@@ -1495,6 +1495,18 @@ class AppLocalizationsJa extends AppLocalizations {
   String get channels_unmuteChannel => 'チャンネルのミュートを解除';
 
   @override
+  String get channels_notifyMode => '通知';
+
+  @override
+  String get channels_notifyAll => 'すべてのメッセージ';
+
+  @override
+  String get channels_notifyMentions => 'メンションされたときのみ';
+
+  @override
+  String get channels_notifyMuted => 'ミュート';
+
+  @override
   String get channels_deleteChannel => 'チャンネルを削除';
 
   @override

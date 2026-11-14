@@ -371,6 +371,10 @@
   "channels_editChannel": "Kanal bearbeiten",
   "channels_muteChannel": "Kanal stummschalten",
   "channels_unmuteChannel": "Kanal Stummschaltung aufheben",
+  "channels_notifyMode": "Benachrichtigungen",
+  "channels_notifyAll": "Alle Nachrichten",
+  "channels_notifyMentions": "Nur wenn ich erwähnt werde",
+  "channels_notifyMuted": "Stumm",
   "channels_deleteChannel": "Kanal löschen",
   "channels_deleteChannelConfirm": "Kanal \"{name}\" löschen? Dies kann nicht rückgängig gemacht werden.",
   "@channels_deleteChannelConfirm": {

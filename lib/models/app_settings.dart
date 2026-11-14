@@ -136,6 +136,10 @@ class AppSettings {
   final UnitSystem unitSystem;
   final Set<String> mutedChannels;
 
+  /// Channels that notify only when a message mentions this radio's name.
+  /// Messages still arrive and count as unread.
+  final Set<String> mentionsOnlyChannels;
+
   /// Channel sender names whose messages are hidden and never notify.
   final Set<String> blockedSenders;
   final bool mapShowDiscoveryContacts;
@@ -295,6 +299,7 @@ class AppSettings {
     Map<String, String>? batteryChemistryByRepeaterId,
     this.unitSystem = UnitSystem.metric,
     Set<String>? mutedChannels,
+    Set<String>? mentionsOnlyChannels,
     Set<String>? blockedSenders,
     this.mapShowDiscoveryContacts = true,
     this.tcpServerAddress = '',
@@ -334,6 +339,7 @@ class AppSettings {
   }) : batteryChemistryByDeviceId = batteryChemistryByDeviceId ?? {},
        batteryChemistryByRepeaterId = batteryChemistryByRepeaterId ?? {},
        mutedChannels = mutedChannels ?? {},
+       mentionsOnlyChannels = mentionsOnlyChannels ?? {},
        blockedSenders = blockedSenders ?? {},
        imageCodecDownloadedModels = imageCodecDownloadedModels ?? const [],
        translationDownloadedModels = translationDownloadedModels ?? const [],
@@ -393,6 +399,7 @@ class AppSettings {
       'battery_chemistry_by_repeater_id': batteryChemistryByRepeaterId,
       'unit_system': unitSystem.value,
       'muted_channels': mutedChannels.toList(),
+      'mentions_only_channels': mentionsOnlyChannels.toList(),
       'blocked_senders': blockedSenders.toList(),
       'map_show_discovery_contacts': mapShowDiscoveryContacts,
       'tcp_server_address': tcpServerAddress,
@@ -512,6 +519,11 @@ class AppSettings {
       unitSystem: parseUnitSystem(json['unit_system']),
       mutedChannels:
           ((json['muted_channels'] as List?)
+              ?.map((e) => e.toString())
+              .toSet()) ??
+          {},
+      mentionsOnlyChannels:
+          ((json['mentions_only_channels'] as List?)
               ?.map((e) => e.toString())
               .toSet()) ??
           {},
@@ -669,6 +681,7 @@ class AppSettings {
     Map<String, String>? batteryChemistryByRepeaterId,
     UnitSystem? unitSystem,
     Set<String>? mutedChannels,
+    Set<String>? mentionsOnlyChannels,
     Set<String>? blockedSenders,
     bool? mapShowDiscoveryContacts,
     String? tcpServerAddress,
@@ -764,6 +777,7 @@ class AppSettings {
           batteryChemistryByRepeaterId ?? this.batteryChemistryByRepeaterId,
       unitSystem: unitSystem ?? this.unitSystem,
       mutedChannels: mutedChannels ?? this.mutedChannels,
+      mentionsOnlyChannels: mentionsOnlyChannels ?? this.mentionsOnlyChannels,
       blockedSenders: blockedSenders ?? this.blockedSenders,
       mapShowDiscoveryContacts:
           mapShowDiscoveryContacts ?? this.mapShowDiscoveryContacts,

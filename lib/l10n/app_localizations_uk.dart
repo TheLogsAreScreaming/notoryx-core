@@ -1566,6 +1566,18 @@ class AppLocalizationsUk extends AppLocalizations {
   String get channels_unmuteChannel => 'Увімкнути сповіщення каналу';
 
   @override
+  String get channels_notifyMode => 'Сповіщення';
+
+  @override
+  String get channels_notifyAll => 'Усі повідомлення';
+
+  @override
+  String get channels_notifyMentions => 'Лише коли мене згадують';
+
+  @override
+  String get channels_notifyMuted => 'Вимкнено';
+
+  @override
   String get channels_deleteChannel => 'Видалити канал';
 
   @override

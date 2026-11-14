@@ -1548,6 +1548,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get channels_unmuteChannel => 'Unmute channel';
 
   @override
+  String get channels_notifyMode => 'Notifications';
+
+  @override
+  String get channels_notifyAll => 'All messages';
+
+  @override
+  String get channels_notifyMentions => 'Only when I\'m mentioned';
+
+  @override
+  String get channels_notifyMuted => 'Muted';
+
+  @override
   String get channels_deleteChannel => 'Delete channel';
 
   @override

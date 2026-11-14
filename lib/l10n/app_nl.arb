@@ -361,6 +361,10 @@
   "channels_editChannel": "Kanaal bewerken",
   "channels_muteChannel": "Kanaal dempen",
   "channels_unmuteChannel": "Kanaal dempen opheffen",
+  "channels_notifyMode": "Meldingen",
+  "channels_notifyAll": "Alle berichten",
+  "channels_notifyMentions": "Alleen als ik genoemd word",
+  "channels_notifyMuted": "Gedempt",
   "channels_deleteChannel": "Kanaal verwijderen",
   "channels_deleteChannelConfirm": "Verwijderen \"{name}\"? Dit kan niet worden teruggedraaid.",
   "@channels_deleteChannelConfirm": {

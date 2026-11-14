@@ -513,6 +513,10 @@
   "channels_editChannel": "채널 편집",
   "channels_muteChannel": "음소거 채널",
   "channels_unmuteChannel": "채널 음소거 해제",
+  "channels_notifyMode": "알림",
+  "channels_notifyAll": "모든 메시지",
+  "channels_notifyMentions": "나를 언급할 때만",
+  "channels_notifyMuted": "음소거",
   "channels_deleteChannel": "채널 삭제",
   "channels_deleteChannelConfirm": "{name} 삭제하시겠습니까? 이 작업은 취소할 수 없습니다.",
   "@channels_deleteChannelConfirm": {
