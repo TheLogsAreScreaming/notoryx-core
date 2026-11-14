@@ -1709,6 +1709,11 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
+  String chat_airtimeEstimate(String seconds) {
+    return '空中时间约 $seconds 秒';
+  }
+
+  @override
   String get chat_messageCopied => '消息已复制';
 
   @override

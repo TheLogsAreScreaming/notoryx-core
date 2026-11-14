@@ -1801,6 +1801,11 @@ class AppLocalizationsSl extends AppLocalizations {
   }
 
   @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds s oddajanja';
+  }
+
+  @override
   String get chat_messageCopied => 'Sporočilo poslano';
 
   @override

@@ -1825,6 +1825,11 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds s nadawania';
+  }
+
+  @override
   String get chat_messageCopied => 'Wiadomość skopiowana';
 
   @override

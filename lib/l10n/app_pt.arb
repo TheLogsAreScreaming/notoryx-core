@@ -468,6 +468,7 @@
   },
   "chat_typeMessage": "Digite uma mensagem...",
   "chat_messageTooLong": "Mensagem muito longa (máximo {maxBytes} bytes).",
+  "chat_airtimeEstimate": "≈{seconds} s no ar",
   "@chat_messageTooLong": {
     "placeholders": {
       "maxBytes": {

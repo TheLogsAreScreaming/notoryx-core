@@ -490,6 +490,7 @@
   },
   "chat_typeMessage": "Nachricht eingeben...",
   "chat_messageTooLong": "Nachricht zu lang (max. {maxBytes} Bytes).",
+  "chat_airtimeEstimate": "≈{seconds} s Sendezeit",
   "@chat_messageTooLong": {
     "placeholders": {
       "maxBytes": {

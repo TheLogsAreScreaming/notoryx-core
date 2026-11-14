@@ -468,6 +468,7 @@
   },
   "chat_typeMessage": "Type een bericht...",
   "chat_messageTooLong": "Bericht is te lang (max {maxBytes} bytes).",
+  "chat_airtimeEstimate": "≈{seconds} s zendtijd",
   "@chat_messageTooLong": {
     "placeholders": {
       "maxBytes": {

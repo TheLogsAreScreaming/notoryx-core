@@ -1822,6 +1822,11 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds s Sendezeit';
+  }
+
+  @override
   String get chat_messageCopied => 'Nachricht kopiert';
 
   @override

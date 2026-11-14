@@ -640,6 +640,7 @@
   },
   "chat_typeMessage": "Írjon be egy üzenetet...",
   "chat_messageTooLong": "Az üzenet túl hosszú (max. {maxBytes} bájt).",
+  "chat_airtimeEstimate": "≈{seconds} mp adásidő",
   "@chat_messageTooLong": {
     "placeholders": {
       "maxBytes": {

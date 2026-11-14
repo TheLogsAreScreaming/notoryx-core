@@ -54,6 +54,10 @@ class ByteCountedTextField extends StatelessWidget {
   /// If provided, byte limits and counters will use the encoded text length.
   final String Function(String)? encoder;
 
+  /// Optional extra text shown after the byte counter, given the bytes
+  /// used, such as an airtime estimate. Return null to show nothing.
+  final String? Function(int usedBytes)? counterSuffix;
+
   const ByteCountedTextField({
     super.key,
     required this.maxBytes,
@@ -69,6 +73,7 @@ class ByteCountedTextField extends StatelessWidget {
     this.errorThreshold = 0.9,
     this.hideCounterWhenEmpty = true,
     this.encoder,
+    this.counterSuffix,
   });
 
   @override
@@ -82,6 +87,7 @@ class ByteCountedTextField extends StatelessWidget {
         final usedBytes = utf8.encode(effectiveText).length;
         final ratio = maxBytes > 0 ? usedBytes / maxBytes : 0.0;
         final showCounter = !(hideCounterWhenEmpty && value.text.isEmpty);
+        final suffix = counterSuffix?.call(usedBytes);
 
         final counterColor = ratio > errorThreshold
             ? Theme.of(context).colorScheme.error
@@ -125,7 +131,9 @@ class ByteCountedTextField extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.centerRight,
                   child: Text(
-                    '$usedBytes / $maxBytes',
+                    suffix == null
+                        ? '$usedBytes / $maxBytes'
+                        : '$usedBytes / $maxBytes · $suffix',
                     style: TextStyle(fontSize: 11, color: counterColor),
                   ),
                 ),

@@ -316,6 +316,7 @@
   "chat_sendMessageTo": "Отправить сообщение {contactName}",
   "chat_typeMessage": "Напишите сообщение...",
   "chat_messageTooLong": "Сообщение слишком длинное (макс. {maxBytes} байт).",
+  "chat_airtimeEstimate": "≈{seconds} с в эфире",
   "chat_messageCopied": "Сообщение скопировано",
   "chat_messageDeleted": "Сообщение удалено",
   "chat_retryingMessage": "Повтор отправки сообщения",

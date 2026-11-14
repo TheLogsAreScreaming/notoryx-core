@@ -490,6 +490,7 @@
   },
   "chat_typeMessage": "Escribe un mensaje...",
   "chat_messageTooLong": "Mensaje demasiado largo (máximo {maxBytes} bytes).",
+  "chat_airtimeEstimate": "≈{seconds} s en el aire",
   "@chat_messageTooLong": {
     "placeholders": {
       "maxBytes": {

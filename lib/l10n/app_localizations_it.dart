@@ -1819,6 +1819,11 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds s in onda';
+  }
+
+  @override
   String get chat_messageCopied => 'Messaggio copiato';
 
   @override

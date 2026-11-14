@@ -1730,6 +1730,11 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String chat_airtimeEstimate(String seconds) {
+    return '송신 시간 약 $seconds초';
+  }
+
+  @override
   String get chat_messageCopied => '메시지가 복사되었습니다';
 
   @override

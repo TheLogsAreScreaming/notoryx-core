@@ -471,6 +471,7 @@
   },
   "chat_typeMessage": "Введіть повідомлення...",
   "chat_messageTooLong": "Повідомлення занадто довге (макс. {maxBytes} байт).",
+  "chat_airtimeEstimate": "≈{seconds} с в ефірі",
   "@chat_messageTooLong": {
     "placeholders": {
       "maxBytes": {

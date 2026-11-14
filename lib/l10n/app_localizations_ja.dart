@@ -1728,6 +1728,11 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
+  String chat_airtimeEstimate(String seconds) {
+    return '送信時間 約$seconds秒';
+  }
+
+  @override
   String get chat_messageCopied => 'メッセージがコピーされました';
 
   @override

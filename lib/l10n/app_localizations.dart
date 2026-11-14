@@ -3304,6 +3304,12 @@ abstract class AppLocalizations {
   /// **'Message too long (max {maxBytes} bytes).'**
   String chat_messageTooLong(int maxBytes);
 
+  /// Estimated radio transmit time for the message being typed, shown beside the byte counter.
+  ///
+  /// In en, this message translates to:
+  /// **'≈{seconds} s on air'**
+  String chat_airtimeEstimate(String seconds);
+
   /// No description provided for @chat_messageCopied.
   ///
   /// In en, this message translates to:

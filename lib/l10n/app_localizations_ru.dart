@@ -1816,6 +1816,11 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds с в эфире';
+  }
+
+  @override
   String get chat_messageCopied => 'Сообщение скопировано';
 
   @override
