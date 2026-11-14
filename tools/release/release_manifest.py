@@ -15,12 +15,14 @@ It refuses (exit 1) when:
   signature (checked by comparing every non-signature entry);
 - the signing certificate isn't the expected release certificate.
 
-Needs `gh` (signed in) and `keytool` (any JDK). Prints nothing secret.
+Needs `gh` (signed in). Reads the v2/v3 signing certificate itself; falls
+back to `keytool` for v1-only APKs. Prints nothing secret.
 """
 import argparse
 import hashlib
 import json
 import re
+import struct
 import subprocess
 import sys
 import zipfile
@@ -50,7 +52,50 @@ def unsigned_entries(apk):
         }
 
 
+def _lp(buf, off):
+    """Read one uint32-length-prefixed item; return (item, next offset)."""
+    n = struct.unpack_from('<I', buf, off)[0]
+    return buf[off + 4:off + 4 + n], off + 4 + n
+
+
+def _signing_block_cert(apk):
+    """SHA-256 of the first signer's certificate in the APK Signature Scheme
+    v3 or v2 block, or None. keytool only reads v1 (JAR) signatures, and
+    release APKs here are signed with v2/v3 only."""
+    data = open(apk, 'rb').read()
+    eocd = data.rfind(b'PK\x05\x06')
+    if eocd < 0:
+        return None
+    cd_offset = struct.unpack_from('<I', data, eocd + 16)[0]
+    if data[cd_offset - 16:cd_offset] != b'APK Sig Block 42':
+        return None
+    size = struct.unpack_from('<Q', data, cd_offset - 24)[0]
+    pairs_start = cd_offset - size - 8 + 8
+    pairs_end = cd_offset - 24
+    blocks = {}
+    off = pairs_start
+    while off < pairs_end:
+        length = struct.unpack_from('<Q', data, off)[0]
+        pid = struct.unpack_from('<I', data, off + 8)[0]
+        blocks[pid] = data[off + 12:off + 8 + length]
+        off += 8 + length
+    for pid in (0xf05368c0, 0x7109871a):  # v3, then v2
+        if pid not in blocks:
+            continue
+        signers, _ = _lp(blocks[pid], 0)
+        signer, _ = _lp(signers, 0)
+        signed_data, _ = _lp(signer, 0)
+        _digests, o = _lp(signed_data, 0)
+        certs, _ = _lp(signed_data, o)
+        cert, _ = _lp(certs, 0)
+        return hashlib.sha256(cert).hexdigest()
+    return None
+
+
 def cert_sha256(apk):
+    found = _signing_block_cert(apk)
+    if found:
+        return found
     out = subprocess.run(['keytool', '-printcert', '-jarfile', apk],
                          capture_output=True, text=True).stdout
     m = re.search(r'SHA256:\s*([0-9A-F:]+)', out)
