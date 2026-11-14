@@ -7676,6 +7676,108 @@ abstract class AppLocalizations {
   /// **'New group'**
   String get listFilter_newGroup;
 
+  /// No description provided for @traceCard_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Trace card'**
+  String get traceCard_title;
+
+  /// No description provided for @traceCard_open.
+  ///
+  /// In en, this message translates to:
+  /// **'Share trace card'**
+  String get traceCard_open;
+
+  /// No description provided for @traceCard_from.
+  ///
+  /// In en, this message translates to:
+  /// **'From {name}'**
+  String traceCard_from(String name);
+
+  /// No description provided for @traceCard_to.
+  ///
+  /// In en, this message translates to:
+  /// **'To {name}'**
+  String traceCard_to(String name);
+
+  /// No description provided for @traceCard_sentAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Sent {time}'**
+  String traceCard_sentAt(String time);
+
+  /// No description provided for @traceCard_roundTrip.
+  ///
+  /// In en, this message translates to:
+  /// **'Round trip {seconds} s'**
+  String traceCard_roundTrip(String seconds);
+
+  /// No description provided for @traceCard_hops.
+  ///
+  /// In en, this message translates to:
+  /// **'Hops: {count}'**
+  String traceCard_hops(int count);
+
+  /// No description provided for @traceCard_backToYou.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to you'**
+  String get traceCard_backToYou;
+
+  /// No description provided for @traceCard_distance.
+  ///
+  /// In en, this message translates to:
+  /// **'Route {distance}'**
+  String traceCard_distance(String distance);
+
+  /// No description provided for @traceCard_weakest.
+  ///
+  /// In en, this message translates to:
+  /// **'Weakest link {snr}'**
+  String traceCard_weakest(String snr);
+
+  /// No description provided for @traceCard_noMap.
+  ///
+  /// In en, this message translates to:
+  /// **'No positions known for this route, so there is no map.'**
+  String get traceCard_noMap;
+
+  /// No description provided for @traceCard_guessed.
+  ///
+  /// In en, this message translates to:
+  /// **'estimated position'**
+  String get traceCard_guessed;
+
+  /// No description provided for @traceCard_mapLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Map of the round trip'**
+  String get traceCard_mapLabel;
+
+  /// No description provided for @traceCard_shareImage.
+  ///
+  /// In en, this message translates to:
+  /// **'Share image'**
+  String get traceCard_shareImage;
+
+  /// No description provided for @traceCard_shareText.
+  ///
+  /// In en, this message translates to:
+  /// **'Share text'**
+  String get traceCard_shareText;
+
+  /// No description provided for @traceCard_shareFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not share the trace card.'**
+  String get traceCard_shareFailed;
+
+  /// No description provided for @traceCard_snrUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'no SNR'**
+  String get traceCard_snrUnknown;
+
   /// No description provided for @pathTrace_you.
   ///
   /// In en, this message translates to:
@@ -11893,6 +11995,102 @@ abstract class AppLocalizations {
   /// **'No repeaters discovered yet. Connect a radio and discover the mesh first.'**
   String get repeaterTools_empty;
 
+  /// No description provided for @rptTest_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Nearby repeater test'**
+  String get rptTest_title;
+
+  /// No description provided for @rptTest_subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'One tap: which repeaters hear you directly'**
+  String get rptTest_subtitle;
+
+  /// No description provided for @rptTest_start.
+  ///
+  /// In en, this message translates to:
+  /// **'Test now'**
+  String get rptTest_start;
+
+  /// No description provided for @rptTest_listening.
+  ///
+  /// In en, this message translates to:
+  /// **'Listening for answers…'**
+  String get rptTest_listening;
+
+  /// No description provided for @rptTest_wait.
+  ///
+  /// In en, this message translates to:
+  /// **'Next test in {seconds} s'**
+  String rptTest_wait(int seconds);
+
+  /// No description provided for @rptTest_found.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeaters that answered: {count}'**
+  String rptTest_found(int count);
+
+  /// No description provided for @rptTest_none.
+  ///
+  /// In en, this message translates to:
+  /// **'No repeater in direct range answered. Try from higher ground, or again in a minute. Repeaters on older firmware don\'t answer this test.'**
+  String get rptTest_none;
+
+  /// No description provided for @rptTest_strong.
+  ///
+  /// In en, this message translates to:
+  /// **'Strong'**
+  String get rptTest_strong;
+
+  /// No description provided for @rptTest_usable.
+  ///
+  /// In en, this message translates to:
+  /// **'Usable'**
+  String get rptTest_usable;
+
+  /// No description provided for @rptTest_weak.
+  ///
+  /// In en, this message translates to:
+  /// **'Weak'**
+  String get rptTest_weak;
+
+  /// No description provided for @rptTest_unknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeater {prefix}'**
+  String rptTest_unknown(String prefix);
+
+  /// No description provided for @rptTest_line.
+  ///
+  /// In en, this message translates to:
+  /// **'Heard you at {there} dB · you heard it at {here} dB, {rssi} dBm'**
+  String rptTest_line(String there, String here, String rssi);
+
+  /// No description provided for @rptTest_rowLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'{name}, {quality}. It heard you at {there} decibels. You heard it at {here} decibels, {rssi} dBm.'**
+  String rptTest_rowLabel(
+    String name,
+    String quality,
+    String there,
+    String here,
+    String rssi,
+  );
+
+  /// No description provided for @rptTest_notConnected.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect your radio to run the test.'**
+  String get rptTest_notConnected;
+
+  /// No description provided for @rptTest_explainer.
+  ///
+  /// In en, this message translates to:
+  /// **'Sends one discover request with no hops, so only repeaters that hear your radio directly answer. The first number is how well each repeater heard you, the second how well you heard it. Tests are 30 seconds apart because repeaters limit how often they answer.'**
+  String get rptTest_explainer;
+
   /// No description provided for @notification_fieldAlertTitle.
   ///
   /// In en, this message translates to:
@@ -14047,6 +14245,108 @@ abstract class AppLocalizations {
   /// **'Repeater {id}'**
   String routes_repeaterWithId(String id);
 
+  /// No description provided for @signedCov_section.
+  ///
+  /// In en, this message translates to:
+  /// **'Signed reports'**
+  String get signedCov_section;
+
+  /// No description provided for @signedCov_share.
+  ///
+  /// In en, this message translates to:
+  /// **'Share signed report'**
+  String get signedCov_share;
+
+  /// No description provided for @signedCov_shareHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Every hexagon is signed with this phone\'s coverage key, so edited or invented ones can be spotted. Nothing leaves the phone unless you share it.'**
+  String get signedCov_shareHint;
+
+  /// No description provided for @signedCov_check.
+  ///
+  /// In en, this message translates to:
+  /// **'Check a report'**
+  String get signedCov_check;
+
+  /// No description provided for @signedCov_checkHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Paste a signed report to see which observations are genuine'**
+  String get signedCov_checkHint;
+
+  /// No description provided for @signedCov_paste.
+  ///
+  /// In en, this message translates to:
+  /// **'Signed report (JSON)'**
+  String get signedCov_paste;
+
+  /// No description provided for @signedCov_verify.
+  ///
+  /// In en, this message translates to:
+  /// **'Check'**
+  String get signedCov_verify;
+
+  /// No description provided for @signedCov_yourKey.
+  ///
+  /// In en, this message translates to:
+  /// **'Your coverage key: {fingerprint}'**
+  String signedCov_yourKey(String fingerprint);
+
+  /// No description provided for @signedCov_result.
+  ///
+  /// In en, this message translates to:
+  /// **'{accepted} observations verified, {rejected} rejected'**
+  String signedCov_result(int accepted, int rejected);
+
+  /// No description provided for @signedCov_signer.
+  ///
+  /// In en, this message translates to:
+  /// **'Signed by key {fingerprint}'**
+  String signedCov_signer(String fingerprint);
+
+  /// No description provided for @signedCov_unreadable.
+  ///
+  /// In en, this message translates to:
+  /// **'This isn\'t a signed coverage report.'**
+  String get signedCov_unreadable;
+
+  /// No description provided for @signedCov_rBadSignature.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} with a missing or wrong signature'**
+  String signedCov_rBadSignature(int count);
+
+  /// No description provided for @signedCov_rMalformed.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} damaged'**
+  String signedCov_rMalformed(int count);
+
+  /// No description provided for @signedCov_rImpossible.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} with impossible signal values'**
+  String signedCov_rImpossible(int count);
+
+  /// No description provided for @signedCov_rFuture.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} dated in the future'**
+  String signedCov_rFuture(int count);
+
+  /// No description provided for @signedCov_empty.
+  ///
+  /// In en, this message translates to:
+  /// **'No coverage samples to share yet.'**
+  String get signedCov_empty;
+
+  /// No description provided for @signedCov_shareFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not share the report.'**
+  String get signedCov_shareFailed;
+
   /// No description provided for @coverageHex_title.
   ///
   /// In en, this message translates to:
@@ -15234,6 +15534,96 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sent to a region this app doesn’t know'**
   String get channels_regionUnknownSemantics;
+
+  /// No description provided for @timeline_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Timeline'**
+  String get timeline_title;
+
+  /// No description provided for @timeline_toolSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Messages, new nodes, signal changes and places in one feed'**
+  String get timeline_toolSubtitle;
+
+  /// No description provided for @timeline_refresh.
+  ///
+  /// In en, this message translates to:
+  /// **'Reload'**
+  String get timeline_refresh;
+
+  /// No description provided for @timeline_search.
+  ///
+  /// In en, this message translates to:
+  /// **'Search the timeline'**
+  String get timeline_search;
+
+  /// No description provided for @timeline_kindMessages.
+  ///
+  /// In en, this message translates to:
+  /// **'Messages'**
+  String get timeline_kindMessages;
+
+  /// No description provided for @timeline_kindNodes.
+  ///
+  /// In en, this message translates to:
+  /// **'New nodes'**
+  String get timeline_kindNodes;
+
+  /// No description provided for @timeline_kindSignal.
+  ///
+  /// In en, this message translates to:
+  /// **'Signal'**
+  String get timeline_kindSignal;
+
+  /// No description provided for @timeline_kindPlaces.
+  ///
+  /// In en, this message translates to:
+  /// **'Places'**
+  String get timeline_kindPlaces;
+
+  /// No description provided for @timeline_messageFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'{sender} in {where}'**
+  String timeline_messageFrom(String sender, String where);
+
+  /// No description provided for @timeline_nodeJoined.
+  ///
+  /// In en, this message translates to:
+  /// **'First heard: {name}'**
+  String timeline_nodeJoined(String name);
+
+  /// No description provided for @timeline_signalUp.
+  ///
+  /// In en, this message translates to:
+  /// **'{name}: signal up from {from} to {to} dB'**
+  String timeline_signalUp(String name, String from, String to);
+
+  /// No description provided for @timeline_signalDown.
+  ///
+  /// In en, this message translates to:
+  /// **'{name}: signal down from {from} to {to} dB'**
+  String timeline_signalDown(String name, String from, String to);
+
+  /// No description provided for @timeline_placeSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Place saved: {name}'**
+  String timeline_placeSaved(String name);
+
+  /// No description provided for @timeline_placeShared.
+  ///
+  /// In en, this message translates to:
+  /// **'{sender} shared a place in {where}'**
+  String timeline_placeShared(String sender, String where);
+
+  /// No description provided for @timeline_empty.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing yet. Messages, newly heard nodes, signal changes and places show up here.'**
+  String get timeline_empty;
 
   /// No description provided for @wardrive_title.
   ///
@@ -17347,6 +17737,240 @@ abstract class AppLocalizations {
   /// **'Waiting for a position from the radio'**
   String get team_waitingGps;
 
+  /// No description provided for @checklist_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Checklists'**
+  String get checklist_title;
+
+  /// No description provided for @checklist_toolSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Reusable pre-trip and deployment checklists that work offline'**
+  String get checklist_toolSubtitle;
+
+  /// No description provided for @checklist_empty.
+  ///
+  /// In en, this message translates to:
+  /// **'No checklists. Add one with the button below.'**
+  String get checklist_empty;
+
+  /// No description provided for @checklist_add.
+  ///
+  /// In en, this message translates to:
+  /// **'New checklist'**
+  String get checklist_add;
+
+  /// No description provided for @checklist_edit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit checklist'**
+  String get checklist_edit;
+
+  /// No description provided for @checklist_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get checklist_name;
+
+  /// No description provided for @checklist_items.
+  ///
+  /// In en, this message translates to:
+  /// **'Items, one per line'**
+  String get checklist_items;
+
+  /// No description provided for @checklist_itemCount.
+  ///
+  /// In en, this message translates to:
+  /// **'Items: {count}'**
+  String checklist_itemCount(int count);
+
+  /// No description provided for @checklist_history.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed runs'**
+  String get checklist_history;
+
+  /// No description provided for @checklist_noRuns.
+  ///
+  /// In en, this message translates to:
+  /// **'No completed runs yet.'**
+  String get checklist_noRuns;
+
+  /// No description provided for @checklist_inProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'In progress'**
+  String get checklist_inProgress;
+
+  /// No description provided for @checklist_progress.
+  ///
+  /// In en, this message translates to:
+  /// **'{done} of {total} done'**
+  String checklist_progress(int done, int total);
+
+  /// No description provided for @checklist_startedAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Started {time}'**
+  String checklist_startedAt(String time);
+
+  /// No description provided for @checklist_finishedAt.
+  ///
+  /// In en, this message translates to:
+  /// **'Finished {time}'**
+  String checklist_finishedAt(String time);
+
+  /// No description provided for @checklist_note.
+  ///
+  /// In en, this message translates to:
+  /// **'Note'**
+  String get checklist_note;
+
+  /// No description provided for @checklist_finish.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish and save'**
+  String get checklist_finish;
+
+  /// No description provided for @checklist_unfinished.
+  ///
+  /// In en, this message translates to:
+  /// **'Some items aren\'t ticked. Save the record anyway?'**
+  String get checklist_unfinished;
+
+  /// No description provided for @checklist_saveAnyway.
+  ///
+  /// In en, this message translates to:
+  /// **'Save anyway'**
+  String get checklist_saveAnyway;
+
+  /// No description provided for @checklist_export.
+  ///
+  /// In en, this message translates to:
+  /// **'Export or delete'**
+  String get checklist_export;
+
+  /// No description provided for @checklist_exportText.
+  ///
+  /// In en, this message translates to:
+  /// **'Share as text'**
+  String get checklist_exportText;
+
+  /// No description provided for @checklist_exportJson.
+  ///
+  /// In en, this message translates to:
+  /// **'Share as JSON'**
+  String get checklist_exportJson;
+
+  /// No description provided for @checklist_exportFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not share the record.'**
+  String get checklist_exportFailed;
+
+  /// No description provided for @checklist_deleteRun.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete record'**
+  String get checklist_deleteRun;
+
+  /// No description provided for @checklist_deleteRunConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this record? It can\'t be undone.'**
+  String get checklist_deleteRunConfirm;
+
+  /// No description provided for @checklist_deleteConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete {name}? Its completed records are kept.'**
+  String checklist_deleteConfirm(String name);
+
+  /// No description provided for @checklist_preTrip.
+  ///
+  /// In en, this message translates to:
+  /// **'Before a trip'**
+  String get checklist_preTrip;
+
+  /// No description provided for @checklist_preTrip1.
+  ///
+  /// In en, this message translates to:
+  /// **'Radio charged and a spare battery packed'**
+  String get checklist_preTrip1;
+
+  /// No description provided for @checklist_preTrip2.
+  ///
+  /// In en, this message translates to:
+  /// **'Radio paired with the phone and a test message sent'**
+  String get checklist_preTrip2;
+
+  /// No description provided for @checklist_preTrip3.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline maps saved for the area'**
+  String get checklist_preTrip3;
+
+  /// No description provided for @checklist_preTrip4.
+  ///
+  /// In en, this message translates to:
+  /// **'Route and return time left with someone at home'**
+  String get checklist_preTrip4;
+
+  /// No description provided for @checklist_preTrip5.
+  ///
+  /// In en, this message translates to:
+  /// **'Group channel and team contacts checked'**
+  String get checklist_preTrip5;
+
+  /// No description provided for @checklist_preTrip6.
+  ///
+  /// In en, this message translates to:
+  /// **'SOS and check-in tried once'**
+  String get checklist_preTrip6;
+
+  /// No description provided for @checklist_deploy.
+  ///
+  /// In en, this message translates to:
+  /// **'Putting up a node'**
+  String get checklist_deploy;
+
+  /// No description provided for @checklist_deploy1.
+  ///
+  /// In en, this message translates to:
+  /// **'Site and permission confirmed'**
+  String get checklist_deploy1;
+
+  /// No description provided for @checklist_deploy2.
+  ///
+  /// In en, this message translates to:
+  /// **'Antenna mounted and connectors sealed'**
+  String get checklist_deploy2;
+
+  /// No description provided for @checklist_deploy3.
+  ///
+  /// In en, this message translates to:
+  /// **'Power and solar checked'**
+  String get checklist_deploy3;
+
+  /// No description provided for @checklist_deploy4.
+  ///
+  /// In en, this message translates to:
+  /// **'Radio settings and region confirmed'**
+  String get checklist_deploy4;
+
+  /// No description provided for @checklist_deploy5.
+  ///
+  /// In en, this message translates to:
+  /// **'Test message heard through the node'**
+  String get checklist_deploy5;
+
+  /// No description provided for @checklist_deploy6.
+  ///
+  /// In en, this message translates to:
+  /// **'Location, photos and notes recorded'**
+  String get checklist_deploy6;
+
   /// No description provided for @waypoints_title.
   ///
   /// In en, this message translates to:
@@ -17550,6 +18174,192 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Network change'**
   String get netChange_notifTitle;
+
+  /// No description provided for @journal_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Node journal'**
+  String get journal_title;
+
+  /// No description provided for @journal_toolSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Every node ever heard, with behaviour labels, tags and notes'**
+  String get journal_toolSubtitle;
+
+  /// No description provided for @journal_empty.
+  ///
+  /// In en, this message translates to:
+  /// **'No nodes yet. Every node your radio hears is added here automatically.'**
+  String get journal_empty;
+
+  /// No description provided for @journal_search.
+  ///
+  /// In en, this message translates to:
+  /// **'Search names, IDs, tags and notes'**
+  String get journal_search;
+
+  /// No description provided for @journal_filterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get journal_filterAll;
+
+  /// No description provided for @journal_bSteadyRelay.
+  ///
+  /// In en, this message translates to:
+  /// **'Always-on relay'**
+  String get journal_bSteadyRelay;
+
+  /// No description provided for @journal_bRegular.
+  ///
+  /// In en, this message translates to:
+  /// **'Regular'**
+  String get journal_bRegular;
+
+  /// No description provided for @journal_bRoamer.
+  ///
+  /// In en, this message translates to:
+  /// **'Roamer'**
+  String get journal_bRoamer;
+
+  /// No description provided for @journal_bRarelyHeard.
+  ///
+  /// In en, this message translates to:
+  /// **'Rarely heard'**
+  String get journal_bRarelyHeard;
+
+  /// No description provided for @journal_bNewcomer.
+  ///
+  /// In en, this message translates to:
+  /// **'Newcomer'**
+  String get journal_bNewcomer;
+
+  /// No description provided for @journal_bGoneQuiet.
+  ///
+  /// In en, this message translates to:
+  /// **'Gone quiet'**
+  String get journal_bGoneQuiet;
+
+  /// No description provided for @journal_confidence.
+  ///
+  /// In en, this message translates to:
+  /// **'{percent}% sure'**
+  String journal_confidence(int percent);
+
+  /// No description provided for @journal_eDaysHeard.
+  ///
+  /// In en, this message translates to:
+  /// **'Heard on {heard} of {days} days'**
+  String journal_eDaysHeard(int heard, int days);
+
+  /// No description provided for @journal_eFirstHeard.
+  ///
+  /// In en, this message translates to:
+  /// **'First heard {hours} h ago'**
+  String journal_eFirstHeard(int hours);
+
+  /// No description provided for @journal_eSilent.
+  ///
+  /// In en, this message translates to:
+  /// **'Not heard for {days} days'**
+  String journal_eSilent(int days);
+
+  /// No description provided for @journal_ePlaces.
+  ///
+  /// In en, this message translates to:
+  /// **'Seen at {places} places up to {km} km apart'**
+  String journal_ePlaces(int places, int km);
+
+  /// No description provided for @journal_eSightings.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} fresh adverts in all'**
+  String journal_eSightings(int count);
+
+  /// No description provided for @journal_noLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Not enough seen yet for a label.'**
+  String get journal_noLabel;
+
+  /// No description provided for @journal_firstSeen.
+  ///
+  /// In en, this message translates to:
+  /// **'First heard: {time}'**
+  String journal_firstSeen(String time);
+
+  /// No description provided for @journal_lastSeen.
+  ///
+  /// In en, this message translates to:
+  /// **'Last heard: {time}'**
+  String journal_lastSeen(String time);
+
+  /// No description provided for @journal_hops.
+  ///
+  /// In en, this message translates to:
+  /// **'Hops seen: {min} to {max}'**
+  String journal_hops(int min, int max);
+
+  /// No description provided for @journal_tags.
+  ///
+  /// In en, this message translates to:
+  /// **'Tags'**
+  String get journal_tags;
+
+  /// No description provided for @journal_addTag.
+  ///
+  /// In en, this message translates to:
+  /// **'Add tag'**
+  String get journal_addTag;
+
+  /// No description provided for @journal_tagHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. trailhead, club, mine'**
+  String get journal_tagHint;
+
+  /// No description provided for @journal_removeTag.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove tag {tag}'**
+  String journal_removeTag(String tag);
+
+  /// No description provided for @journal_note.
+  ///
+  /// In en, this message translates to:
+  /// **'Note'**
+  String get journal_note;
+
+  /// No description provided for @journal_saveNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Save note'**
+  String get journal_saveNote;
+
+  /// No description provided for @journal_forget.
+  ///
+  /// In en, this message translates to:
+  /// **'Forget this node'**
+  String get journal_forget;
+
+  /// No description provided for @journal_forgetConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove {name} from the journal, with its tags and note? It starts fresh if heard again.'**
+  String journal_forgetConfirm(String name);
+
+  /// No description provided for @journal_forgotten.
+  ///
+  /// In en, this message translates to:
+  /// **'Node removed from the journal.'**
+  String get journal_forgotten;
+
+  /// No description provided for @journal_markLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Generated mark for {name}'**
+  String journal_markLabel(String name);
 
   /// No description provided for @trouble_title.
   ///
@@ -20076,6 +20886,264 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Moderation: only if you turn on community moderation. The ban list, and any reports or appeals you send, go to NOTORYX moderators through sentinel-relay.meshmayhem.org.'**
   String get privacy_netSentinel;
+
+  /// No description provided for @mapTrust_favoritesOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites only'**
+  String get mapTrust_favoritesOnly;
+
+  /// No description provided for @mapTrust_favoritesOnlyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Hide every node you haven\'t starred'**
+  String get mapTrust_favoritesOnlyHint;
+
+  /// No description provided for @topology_flows.
+  ///
+  /// In en, this message translates to:
+  /// **'Flows'**
+  String get topology_flows;
+
+  /// No description provided for @topology_network.
+  ///
+  /// In en, this message translates to:
+  /// **'Network'**
+  String get topology_network;
+
+  /// No description provided for @topology_hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Rings show hops away from you, in the middle. Thicker lines carried more messages; bigger dots relayed more. Tap a dot to see that repeater.'**
+  String get topology_hint;
+
+  /// No description provided for @topology_semantics.
+  ///
+  /// In en, this message translates to:
+  /// **'Network diagram. {repeaters} repeaters on {rings} rings around you.'**
+  String topology_semantics(int repeaters, int rings);
+
+  /// No description provided for @zones_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Zone & trail alerts'**
+  String get zones_title;
+
+  /// No description provided for @zones_toolSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Alerts when someone enters or leaves a zone, or wanders off a trail'**
+  String get zones_toolSubtitle;
+
+  /// No description provided for @zones_enabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Alerts on'**
+  String get zones_enabled;
+
+  /// No description provided for @zones_enabledHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Uses positions from adverts your radio hears, so an alert is only as fresh as the last advert.'**
+  String get zones_enabledHint;
+
+  /// No description provided for @zones_watch.
+  ///
+  /// In en, this message translates to:
+  /// **'Watch'**
+  String get zones_watch;
+
+  /// No description provided for @zones_scopeFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Favorites'**
+  String get zones_scopeFavorites;
+
+  /// No description provided for @zones_scopeEveryone.
+  ///
+  /// In en, this message translates to:
+  /// **'Everyone'**
+  String get zones_scopeEveryone;
+
+  /// No description provided for @zones_includeSelf.
+  ///
+  /// In en, this message translates to:
+  /// **'My radio too'**
+  String get zones_includeSelf;
+
+  /// No description provided for @zones_zones.
+  ///
+  /// In en, this message translates to:
+  /// **'Zones'**
+  String get zones_zones;
+
+  /// No description provided for @zones_none.
+  ///
+  /// In en, this message translates to:
+  /// **'No zones yet. Add one around camp, a trailhead or a meeting point.'**
+  String get zones_none;
+
+  /// No description provided for @zones_add.
+  ///
+  /// In en, this message translates to:
+  /// **'Add zone'**
+  String get zones_add;
+
+  /// No description provided for @zones_edit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit zone'**
+  String get zones_edit;
+
+  /// No description provided for @zones_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get zones_name;
+
+  /// No description provided for @zones_defaultName.
+  ///
+  /// In en, this message translates to:
+  /// **'Zone'**
+  String get zones_defaultName;
+
+  /// No description provided for @zones_center.
+  ///
+  /// In en, this message translates to:
+  /// **'Center'**
+  String get zones_center;
+
+  /// No description provided for @zones_centerMyRadio.
+  ///
+  /// In en, this message translates to:
+  /// **'My radio\'s position'**
+  String get zones_centerMyRadio;
+
+  /// No description provided for @zones_centerWaypoint.
+  ///
+  /// In en, this message translates to:
+  /// **'Waypoint: {name}'**
+  String zones_centerWaypoint(String name);
+
+  /// No description provided for @zones_noCenter.
+  ///
+  /// In en, this message translates to:
+  /// **'Your radio has no position and there are no waypoints. Set a position or save a waypoint first.'**
+  String get zones_noCenter;
+
+  /// No description provided for @zones_radius.
+  ///
+  /// In en, this message translates to:
+  /// **'Radius: {distance}'**
+  String zones_radius(String distance);
+
+  /// No description provided for @zones_alertOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Alert when'**
+  String get zones_alertOn;
+
+  /// No description provided for @zones_onEnter.
+  ///
+  /// In en, this message translates to:
+  /// **'Entering'**
+  String get zones_onEnter;
+
+  /// No description provided for @zones_onLeave.
+  ///
+  /// In en, this message translates to:
+  /// **'Leaving'**
+  String get zones_onLeave;
+
+  /// No description provided for @zones_onBoth.
+  ///
+  /// In en, this message translates to:
+  /// **'Both'**
+  String get zones_onBoth;
+
+  /// No description provided for @zones_delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete zone'**
+  String get zones_delete;
+
+  /// No description provided for @zones_full.
+  ///
+  /// In en, this message translates to:
+  /// **'You can keep up to {count} zones.'**
+  String zones_full(int count);
+
+  /// No description provided for @zones_trail.
+  ///
+  /// In en, this message translates to:
+  /// **'Trail'**
+  String get zones_trail;
+
+  /// No description provided for @zones_trailNone.
+  ///
+  /// In en, this message translates to:
+  /// **'No trail watched'**
+  String get zones_trailNone;
+
+  /// No description provided for @zones_trailHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick a waypoint route or a recorded track. Anyone watched who goes farther from it than the limit gets an alert.'**
+  String get zones_trailHint;
+
+  /// No description provided for @zones_offTrailLimit.
+  ///
+  /// In en, this message translates to:
+  /// **'Off the trail after {distance}'**
+  String zones_offTrailLimit(String distance);
+
+  /// No description provided for @zones_you.
+  ///
+  /// In en, this message translates to:
+  /// **'You'**
+  String get zones_you;
+
+  /// No description provided for @zones_trackName.
+  ///
+  /// In en, this message translates to:
+  /// **'Track {date} · {km} km'**
+  String zones_trackName(String date, String km);
+
+  /// No description provided for @zones_alertEnteredTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Entered {zone}'**
+  String zones_alertEnteredTitle(String zone);
+
+  /// No description provided for @zones_alertEnteredBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} is inside {zone}.'**
+  String zones_alertEnteredBody(String name, String zone);
+
+  /// No description provided for @zones_alertLeftTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Left {zone}'**
+  String zones_alertLeftTitle(String zone);
+
+  /// No description provided for @zones_alertLeftBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} has left {zone}.'**
+  String zones_alertLeftBody(String name, String zone);
+
+  /// No description provided for @zones_alertOffTrailTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Off the trail'**
+  String get zones_alertOffTrailTitle;
+
+  /// No description provided for @zones_alertOffTrailBody.
+  ///
+  /// In en, this message translates to:
+  /// **'{name} is {distance} from {trail}.'**
+  String zones_alertOffTrailBody(String name, String distance, String trail);
 }
 
 class _AppLocalizationsDelegate

@@ -17,6 +17,8 @@ import 'utils/platform_info.dart';
 import 'connector/meshcore_connector.dart';
 import 'connector/meshcore_protocol.dart';
 import 'connector/radio_manager.dart';
+import 'package:intl/intl.dart';
+import 'package:latlong2/latlong.dart';
 import 'models/app_settings.dart';
 import 'models/image_codec_support.dart';
 import 'models/mqtt_mesh_packet.dart';
@@ -51,6 +53,7 @@ import 'services/path_history_service.dart';
 import 'services/app_settings_service.dart';
 import 'services/team_tracking_service.dart';
 import 'services/waypoint_store.dart';
+import 'services/node_journal_service.dart';
 import 'services/network_change_service.dart';
 import 'screens/network_changes_screen.dart' show networkChangeText;
 import 'services/battery_check_service.dart';
@@ -73,6 +76,7 @@ import 'utils/app_logger.dart';
 import 'widgets/image_send_codec_binding.dart';
 import 'services/direct_repeater_service.dart';
 import 'services/mqtt_uploaders_service.dart';
+import 'services/checklist_store.dart';
 import 'services/coverage_hex_service.dart';
 import 'services/channel_discovery_service.dart';
 import 'services/corescope.dart';
@@ -80,7 +84,10 @@ import 'services/my_sensors_service.dart';
 import 'services/network_scan_service.dart';
 import 'services/rx_log_service.dart';
 import 'services/wardrive_service.dart';
+import 'services/timeline_service.dart';
 import 'services/track_log_service.dart';
+import 'services/position_watch_service.dart';
+import 'screens/zone_alerts_screen.dart';
 import 'services/weather_service.dart';
 
 void main() async {
@@ -366,7 +373,9 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   late final SentinelService _sentinel;
   late final DirectRepeaterService _directRepeaters;
   late final WaypointStore _waypoints;
+  late final TimelineService _timeline;
   late final AppLockService _appLock;
+  late final ChecklistStore _checklists;
   late final TrackLogService _trackLog;
   late final ChannelDiscoveryService _channelDiscovery;
   late final AnalyzerService _analyzer;
@@ -378,7 +387,9 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   late final NetworkScanService _networkScan;
   late final RxLogService _rxLog;
   late final FavoriteReturnService _favoriteReturn;
+  late final PositionWatchService _positionWatch;
   late final NetworkChangeService _networkChanges;
+  late final NodeJournalService _nodeJournal;
   late final SosRelayService _sosRelay;
   late final TeamTrackingService _teamTracking;
   late final CoverageHexService _coverageHex;
@@ -413,7 +424,13 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     unawaited(_sentinel.start());
     _directRepeaters = DirectRepeaterService(widget.connector);
     _waypoints = WaypointStore(PrefsManager.instance);
+    _timeline = TimelineService(
+      widget.connector,
+      prefs: PrefsManager.instance,
+      waypoints: _waypoints,
+    );
     _appLock = widget.appLock;
+    _checklists = ChecklistStore(PrefsManager.instance);
     _outbox = widget.outbox;
     _trackLog = TrackLogService(widget.connector);
     _channelDiscovery = ChannelDiscoveryService(widget.connector);
@@ -459,6 +476,47 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         );
       },
     );
+    _positionWatch = PositionWatchService(
+      widget.connector,
+      prefs: PrefsManager.instance,
+      selfName: () =>
+          widget.connector.selfName ?? NotificationService().l10n.zones_you,
+      trails: () => [
+        for (final r in _waypoints.routes)
+          if (r.points.length >= 2)
+            TrailOption(
+              ref: 'route:${r.id}',
+              name: r.name,
+              points: [for (final p in r.points) LatLng(p.lat, p.lon)],
+            ),
+        for (final t in _trackLog.tracks.reversed)
+          if (t.points.length >= 2)
+            TrailOption(
+              ref: 'track:${t.id}',
+              name: NotificationService().l10n.zones_trackName(
+                DateFormat.yMMMd().add_Hm().format(t.started.toLocal()),
+                t.distanceKm.toStringAsFixed(1),
+              ),
+              points: [for (final p in t.points) p.latLng],
+            ),
+      ],
+      notify: (alert) async {
+        final settings = widget.appSettingsService.settings;
+        if (!settings.notificationsEnabled) return;
+        final notifications = NotificationService();
+        final text = positionAlertText(
+          notifications.l10n,
+          alert,
+          trailName: _positionWatch.trail?.name,
+          imperial: settings.unitSystem == UnitSystem.imperial,
+        );
+        await notifications.showPositionAlert(
+          id: '${alert.kind.name}:${alert.key}:${alert.zone?.id ?? ''}',
+          title: text.title,
+          body: text.body,
+        );
+      },
+    );
     _networkChanges = NetworkChangeService(
       widget.connector,
       prefs: PrefsManager.instance,
@@ -473,6 +531,10 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
           body: networkChangeText(l10n, change),
         );
       },
+    );
+    _nodeJournal = NodeJournalService(
+      widget.connector,
+      prefs: PrefsManager.instance,
     );
     _coverageHex = CoverageHexService(widget.connector);
     unawaited(_coverageHex.load());
@@ -578,7 +640,9 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   void dispose() {
     _rxLog.dispose();
     _favoriteReturn.dispose();
+    _positionWatch.dispose();
     _networkChanges.dispose();
+    _nodeJournal.dispose();
     _botService.dispose();
     _automation.dispose();
     _weather.dispose();
@@ -587,6 +651,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _regionalPresets.dispose();
     _sentinel.dispose();
     _directRepeaters.dispose();
+    _timeline.dispose();
     _waypoints.dispose();
     _trackLog.dispose();
     _channelDiscovery.dispose();
@@ -604,6 +669,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _sosRelay.dispose();
     _teamTracking.dispose();
     _coverageHex.dispose();
+    _checklists.dispose();
     _readAloud.dispose();
     _sensorSubscriptions.dispose();
     unawaited(_notificationTaps?.cancel());
@@ -798,7 +864,9 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         ChangeNotifierProvider<WeatherService?>.value(value: _weather),
         ChangeNotifierProvider.value(value: _fieldOps),
         ChangeNotifierProvider<WaypointStore>.value(value: _waypoints),
+        ChangeNotifierProvider<TimelineService?>.value(value: _timeline),
         ChangeNotifierProvider<AppLockService>.value(value: _appLock),
+        ChangeNotifierProvider.value(value: _checklists),
         ChangeNotifierProvider<OfflineOutbox?>.value(value: _outbox),
         ChangeNotifierProvider<NetworkChangeService?>.value(
           value: _networkChanges,
@@ -807,6 +875,9 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
           value: _directRepeaters,
         ),
         ChangeNotifierProvider.value(value: _trackLog),
+        ChangeNotifierProvider<PositionWatchService?>.value(
+          value: _positionWatch,
+        ),
         ChangeNotifierProvider<ChannelDiscoveryService?>.value(
           value: _channelDiscovery,
         ),
@@ -825,6 +896,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         ChangeNotifierProvider.value(value: _sosRelay),
         ChangeNotifierProvider.value(value: _teamTracking),
         ChangeNotifierProvider.value(value: _coverageHex),
+        ChangeNotifierProvider<NodeJournalService?>.value(value: _nodeJournal),
         ChangeNotifierProvider<RegionalPresetService?>.value(
           value: _regionalPresets,
         ),

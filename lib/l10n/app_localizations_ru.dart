@@ -4441,6 +4441,73 @@ class AppLocalizationsRu extends AppLocalizations {
   String get listFilter_newGroup => 'Новая группа';
 
   @override
+  String get traceCard_title => 'Карточка трассировки';
+
+  @override
+  String get traceCard_open => 'Поделиться карточкой трассировки';
+
+  @override
+  String traceCard_from(String name) {
+    return 'От $name';
+  }
+
+  @override
+  String traceCard_to(String name) {
+    return 'К $name';
+  }
+
+  @override
+  String traceCard_sentAt(String time) {
+    return 'Отправлено $time';
+  }
+
+  @override
+  String traceCard_roundTrip(String seconds) {
+    return 'Туда и обратно $seconds с';
+  }
+
+  @override
+  String traceCard_hops(int count) {
+    return 'Хопов: $count';
+  }
+
+  @override
+  String get traceCard_backToYou => 'Обратно к вам';
+
+  @override
+  String traceCard_distance(String distance) {
+    return 'Маршрут $distance';
+  }
+
+  @override
+  String traceCard_weakest(String snr) {
+    return 'Самое слабое звено $snr';
+  }
+
+  @override
+  String get traceCard_noMap =>
+      'Позиции на этом маршруте неизвестны, поэтому карты нет.';
+
+  @override
+  String get traceCard_guessed => 'примерная позиция';
+
+  @override
+  String get traceCard_mapLabel => 'Карта пути туда и обратно';
+
+  @override
+  String get traceCard_shareImage => 'Поделиться изображением';
+
+  @override
+  String get traceCard_shareText => 'Поделиться текстом';
+
+  @override
+  String get traceCard_shareFailed =>
+      'Не удалось поделиться карточкой трассировки.';
+
+  @override
+  String get traceCard_snrUnknown => 'нет SNR';
+
+  @override
   String get pathTrace_you => 'Вы';
 
   @override
@@ -7116,6 +7183,71 @@ class AppLocalizationsRu extends AppLocalizations {
       'Ретрансляторы ещё не обнаружены. Подключите радиостанцию и сначала изучите сеть.';
 
   @override
+  String get rptTest_title => 'Проверка ближних ретрансляторов';
+
+  @override
+  String get rptTest_subtitle =>
+      'Одно касание: какие ретрансляторы слышат вас напрямую';
+
+  @override
+  String get rptTest_start => 'Проверить';
+
+  @override
+  String get rptTest_listening => 'Ожидание ответов…';
+
+  @override
+  String rptTest_wait(int seconds) {
+    return 'Следующая проверка через $seconds с';
+  }
+
+  @override
+  String rptTest_found(int count) {
+    return 'Ответили ретрансляторов: $count';
+  }
+
+  @override
+  String get rptTest_none =>
+      'Ни один ретранслятор в прямой досягаемости не ответил. Попробуйте с возвышенности или через минуту. Ретрансляторы со старой прошивкой не отвечают на эту проверку.';
+
+  @override
+  String get rptTest_strong => 'Сильный';
+
+  @override
+  String get rptTest_usable => 'Рабочий';
+
+  @override
+  String get rptTest_weak => 'Слабый';
+
+  @override
+  String rptTest_unknown(String prefix) {
+    return 'Ретранслятор $prefix';
+  }
+
+  @override
+  String rptTest_line(String there, String here, String rssi) {
+    return 'Слышит вас: $there дБ · вы слышите: $here дБ, $rssi дБм';
+  }
+
+  @override
+  String rptTest_rowLabel(
+    String name,
+    String quality,
+    String there,
+    String here,
+    String rssi,
+  ) {
+    return '$name, $quality. Слышит вас: $there децибел. Вы слышите его: $here децибел, $rssi дБм.';
+  }
+
+  @override
+  String get rptTest_notConnected =>
+      'Подключите радио, чтобы выполнить проверку.';
+
+  @override
+  String get rptTest_explainer =>
+      'Отправляет один запрос обнаружения без прыжков, поэтому отвечают только ретрансляторы, которые слышат ваше радио напрямую. Первое число — как ретранслятор слышит вас, второе — как вы слышите его. Между проверками 30 секунд, потому что ретрансляторы ограничивают частоту ответов.';
+
+  @override
   String get notification_fieldAlertTitle => 'Полевое оповещение NOTORYX';
 
   @override
@@ -8448,6 +8580,73 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
+  String get signedCov_section => 'Подписанные отчёты';
+
+  @override
+  String get signedCov_share => 'Поделиться подписанным отчётом';
+
+  @override
+  String get signedCov_shareHint =>
+      'Каждый шестиугольник подписан ключом покрытия этого телефона, поэтому изменённые или выдуманные можно распознать. Ничего не покидает телефон, пока вы не поделитесь.';
+
+  @override
+  String get signedCov_check => 'Проверить отчёт';
+
+  @override
+  String get signedCov_checkHint =>
+      'Вставьте подписанный отчёт, чтобы увидеть подлинные наблюдения';
+
+  @override
+  String get signedCov_paste => 'Подписанный отчёт (JSON)';
+
+  @override
+  String get signedCov_verify => 'Проверить';
+
+  @override
+  String signedCov_yourKey(String fingerprint) {
+    return 'Ваш ключ покрытия: $fingerprint';
+  }
+
+  @override
+  String signedCov_result(int accepted, int rejected) {
+    return 'Подтверждено наблюдений: $accepted, отклонено: $rejected';
+  }
+
+  @override
+  String signedCov_signer(String fingerprint) {
+    return 'Подписано ключом $fingerprint';
+  }
+
+  @override
+  String get signedCov_unreadable => 'Это не подписанный отчёт о покрытии.';
+
+  @override
+  String signedCov_rBadSignature(int count) {
+    return '$count без подписи или с неверной подписью';
+  }
+
+  @override
+  String signedCov_rMalformed(int count) {
+    return '$count повреждённых';
+  }
+
+  @override
+  String signedCov_rImpossible(int count) {
+    return '$count с невозможными значениями сигнала';
+  }
+
+  @override
+  String signedCov_rFuture(int count) {
+    return '$count датированы будущим';
+  }
+
+  @override
+  String get signedCov_empty => 'Пока нет данных покрытия для отправки.';
+
+  @override
+  String get signedCov_shareFailed => 'Не удалось поделиться отчётом.';
+
+  @override
   String get coverageHex_title => 'Шестиугольники покрытия';
 
   @override
@@ -9142,6 +9341,65 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get channels_regionUnknownSemantics =>
       'Отправлено в регион, неизвестный приложению';
+
+  @override
+  String get timeline_title => 'Хроника';
+
+  @override
+  String get timeline_toolSubtitle =>
+      'Сообщения, новые узлы, изменения сигнала и места в одной ленте';
+
+  @override
+  String get timeline_refresh => 'Обновить';
+
+  @override
+  String get timeline_search => 'Поиск по хронике';
+
+  @override
+  String get timeline_kindMessages => 'Сообщения';
+
+  @override
+  String get timeline_kindNodes => 'Новые узлы';
+
+  @override
+  String get timeline_kindSignal => 'Сигнал';
+
+  @override
+  String get timeline_kindPlaces => 'Места';
+
+  @override
+  String timeline_messageFrom(String sender, String where) {
+    return '$sender в $where';
+  }
+
+  @override
+  String timeline_nodeJoined(String name) {
+    return 'Впервые услышан: $name';
+  }
+
+  @override
+  String timeline_signalUp(String name, String from, String to) {
+    return '$name: сигнал вырос с $from до $to дБ';
+  }
+
+  @override
+  String timeline_signalDown(String name, String from, String to) {
+    return '$name: сигнал упал с $from до $to дБ';
+  }
+
+  @override
+  String timeline_placeSaved(String name) {
+    return 'Место сохранено: $name';
+  }
+
+  @override
+  String timeline_placeShared(String sender, String where) {
+    return '$sender поделился местом в $where';
+  }
+
+  @override
+  String get timeline_empty =>
+      'Пока пусто. Здесь появятся сообщения, новые узлы, изменения сигнала и места.';
 
   @override
   String get wardrive_title => 'Вардрайв';
@@ -10493,6 +10751,139 @@ class AppLocalizationsRu extends AppLocalizations {
   String get team_waitingGps => 'Ожидание позиции от радио';
 
   @override
+  String get checklist_title => 'Чек-листы';
+
+  @override
+  String get checklist_toolSubtitle =>
+      'Многоразовые чек-листы перед выходом и для установки, работают офлайн';
+
+  @override
+  String get checklist_empty => 'Чек-листов нет. Добавьте кнопкой ниже.';
+
+  @override
+  String get checklist_add => 'Новый чек-лист';
+
+  @override
+  String get checklist_edit => 'Изменить чек-лист';
+
+  @override
+  String get checklist_name => 'Название';
+
+  @override
+  String get checklist_items => 'Пункты, по одному в строке';
+
+  @override
+  String checklist_itemCount(int count) {
+    return 'Пунктов: $count';
+  }
+
+  @override
+  String get checklist_history => 'Завершённые проверки';
+
+  @override
+  String get checklist_noRuns => 'Завершённых проверок пока нет.';
+
+  @override
+  String get checklist_inProgress => 'В процессе';
+
+  @override
+  String checklist_progress(int done, int total) {
+    return 'Готово $done из $total';
+  }
+
+  @override
+  String checklist_startedAt(String time) {
+    return 'Начато $time';
+  }
+
+  @override
+  String checklist_finishedAt(String time) {
+    return 'Завершено $time';
+  }
+
+  @override
+  String get checklist_note => 'Заметка';
+
+  @override
+  String get checklist_finish => 'Завершить и сохранить';
+
+  @override
+  String get checklist_unfinished =>
+      'Отмечены не все пункты. Всё равно сохранить?';
+
+  @override
+  String get checklist_saveAnyway => 'Всё равно сохранить';
+
+  @override
+  String get checklist_export => 'Экспорт или удаление';
+
+  @override
+  String get checklist_exportText => 'Поделиться текстом';
+
+  @override
+  String get checklist_exportJson => 'Поделиться в JSON';
+
+  @override
+  String get checklist_exportFailed => 'Не удалось поделиться записью.';
+
+  @override
+  String get checklist_deleteRun => 'Удалить запись';
+
+  @override
+  String get checklist_deleteRunConfirm =>
+      'Удалить эту запись? Отменить нельзя.';
+
+  @override
+  String checklist_deleteConfirm(String name) {
+    return 'Удалить $name? Завершённые записи сохранятся.';
+  }
+
+  @override
+  String get checklist_preTrip => 'Перед выходом';
+
+  @override
+  String get checklist_preTrip1 => 'Радио заряжено, запасной аккумулятор взят';
+
+  @override
+  String get checklist_preTrip2 =>
+      'Радио сопряжено с телефоном, тестовое сообщение отправлено';
+
+  @override
+  String get checklist_preTrip3 => 'Офлайн-карты района сохранены';
+
+  @override
+  String get checklist_preTrip4 =>
+      'Маршрут и время возвращения оставлены близким';
+
+  @override
+  String get checklist_preTrip5 => 'Канал группы и контакты команды проверены';
+
+  @override
+  String get checklist_preTrip6 => 'SOS и отметка опробованы';
+
+  @override
+  String get checklist_deploy => 'Установка узла';
+
+  @override
+  String get checklist_deploy1 => 'Место и разрешение подтверждены';
+
+  @override
+  String get checklist_deploy2 =>
+      'Антенна закреплена, разъёмы загерметизированы';
+
+  @override
+  String get checklist_deploy3 => 'Питание и солнечная панель проверены';
+
+  @override
+  String get checklist_deploy4 => 'Настройки радио и регион подтверждены';
+
+  @override
+  String get checklist_deploy5 => 'Тестовое сообщение прошло через узел';
+
+  @override
+  String get checklist_deploy6 => 'Место, фото и заметки записаны';
+
+  @override
   String get waypoints_title => 'Путевые точки';
 
   @override
@@ -10616,6 +11007,125 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get netChange_notifTitle => 'Изменение в сети';
+
+  @override
+  String get journal_title => 'Журнал узлов';
+
+  @override
+  String get journal_toolSubtitle =>
+      'Каждый услышанный узел с метками поведения, тегами и заметками';
+
+  @override
+  String get journal_empty =>
+      'Узлов пока нет. Каждый узел, услышанный радио, добавляется сюда автоматически.';
+
+  @override
+  String get journal_search => 'Поиск по именам, ID, тегам и заметкам';
+
+  @override
+  String get journal_filterAll => 'Все';
+
+  @override
+  String get journal_bSteadyRelay => 'Постоянный ретранслятор';
+
+  @override
+  String get journal_bRegular => 'Постоянный';
+
+  @override
+  String get journal_bRoamer => 'Кочевник';
+
+  @override
+  String get journal_bRarelyHeard => 'Слышен редко';
+
+  @override
+  String get journal_bNewcomer => 'Новичок';
+
+  @override
+  String get journal_bGoneQuiet => 'Замолчал';
+
+  @override
+  String journal_confidence(int percent) {
+    return 'Уверенность $percent%';
+  }
+
+  @override
+  String journal_eDaysHeard(int heard, int days) {
+    return 'Слышен $heard из $days дней';
+  }
+
+  @override
+  String journal_eFirstHeard(int hours) {
+    return 'Впервые услышан $hours ч назад';
+  }
+
+  @override
+  String journal_eSilent(int days) {
+    return 'Не слышен $days дней';
+  }
+
+  @override
+  String journal_ePlaces(int places, int km) {
+    return 'Замечен в $places местах на расстоянии до $km км';
+  }
+
+  @override
+  String journal_eSightings(int count) {
+    return 'Всего $count новых объявлений';
+  }
+
+  @override
+  String get journal_noLabel => 'Пока недостаточно данных для метки.';
+
+  @override
+  String journal_firstSeen(String time) {
+    return 'Впервые: $time';
+  }
+
+  @override
+  String journal_lastSeen(String time) {
+    return 'Последний раз: $time';
+  }
+
+  @override
+  String journal_hops(int min, int max) {
+    return 'Хопов: от $min до $max';
+  }
+
+  @override
+  String get journal_tags => 'Теги';
+
+  @override
+  String get journal_addTag => 'Добавить тег';
+
+  @override
+  String get journal_tagHint => 'напр. тропа, клуб, мой';
+
+  @override
+  String journal_removeTag(String tag) {
+    return 'Удалить тег $tag';
+  }
+
+  @override
+  String get journal_note => 'Заметка';
+
+  @override
+  String get journal_saveNote => 'Сохранить заметку';
+
+  @override
+  String get journal_forget => 'Забыть этот узел';
+
+  @override
+  String journal_forgetConfirm(String name) {
+    return 'Удалить $name из журнала вместе с тегами и заметкой? Если он снова будет услышан, запись начнётся заново.';
+  }
+
+  @override
+  String get journal_forgotten => 'Узел удалён из журнала.';
+
+  @override
+  String journal_markLabel(String name) {
+    return 'Сгенерированный знак для $name';
+  }
 
   @override
   String get trouble_title => 'Устранение неполадок';
@@ -12107,4 +12617,161 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       'Модерация: только если вы включите модерацию сообщества. Список блокировок и отправленные вами жалобы или апелляции идут модераторам NOTORYX через sentinel-relay.meshmayhem.org.';
+
+  @override
+  String get mapTrust_favoritesOnly => 'Только избранные';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => 'Скрыть узлы без звёздочки';
+
+  @override
+  String get topology_flows => 'Потоки';
+
+  @override
+  String get topology_network => 'Сеть';
+
+  @override
+  String get topology_hint =>
+      'Кольца показывают число переходов от вас (в центре). Более толстые линии передали больше сообщений, более крупные точки ретранслировали больше. Нажмите на точку, чтобы открыть ретранслятор.';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return 'Схема сети. $repeaters ретрансляторов на $rings кольцах вокруг вас.';
+  }
+
+  @override
+  String get zones_title => 'Оповещения о зонах и тропе';
+
+  @override
+  String get zones_toolSubtitle =>
+      'Оповещение, когда кто-то входит в зону, покидает её или сходит с тропы';
+
+  @override
+  String get zones_enabled => 'Оповещения включены';
+
+  @override
+  String get zones_enabledHint =>
+      'Использует координаты из объявлений, которые слышит радио, поэтому оповещение свежо настолько, насколько свежо последнее объявление.';
+
+  @override
+  String get zones_watch => 'Следить';
+
+  @override
+  String get zones_scopeFavorites => 'Избранные';
+
+  @override
+  String get zones_scopeEveryone => 'Все';
+
+  @override
+  String get zones_includeSelf => 'И моё радио';
+
+  @override
+  String get zones_zones => 'Зоны';
+
+  @override
+  String get zones_none =>
+      'Зон пока нет. Добавьте зону вокруг лагеря, начала тропы или места сбора.';
+
+  @override
+  String get zones_add => 'Добавить зону';
+
+  @override
+  String get zones_edit => 'Изменить зону';
+
+  @override
+  String get zones_name => 'Название';
+
+  @override
+  String get zones_defaultName => 'Зона';
+
+  @override
+  String get zones_center => 'Центр';
+
+  @override
+  String get zones_centerMyRadio => 'Положение моего радио';
+
+  @override
+  String zones_centerWaypoint(String name) {
+    return 'Точка: $name';
+  }
+
+  @override
+  String get zones_noCenter =>
+      'У радио нет координат и нет сохранённых точек. Сначала задайте координаты или сохраните точку.';
+
+  @override
+  String zones_radius(String distance) {
+    return 'Радиус: $distance';
+  }
+
+  @override
+  String get zones_alertOn => 'Оповещать при';
+
+  @override
+  String get zones_onEnter => 'Входе';
+
+  @override
+  String get zones_onLeave => 'Выходе';
+
+  @override
+  String get zones_onBoth => 'Обоих';
+
+  @override
+  String get zones_delete => 'Удалить зону';
+
+  @override
+  String zones_full(int count) {
+    return 'Можно хранить до $count зон.';
+  }
+
+  @override
+  String get zones_trail => 'Тропа';
+
+  @override
+  String get zones_trailNone => 'Тропа не выбрана';
+
+  @override
+  String get zones_trailHint =>
+      'Выберите маршрут из точек или записанный трек. Любой, за кем вы следите, отойдя дальше предела, вызовет оповещение.';
+
+  @override
+  String zones_offTrailLimit(String distance) {
+    return 'Сход с тропы после $distance';
+  }
+
+  @override
+  String get zones_you => 'Вы';
+
+  @override
+  String zones_trackName(String date, String km) {
+    return 'Трек $date · $km км';
+  }
+
+  @override
+  String zones_alertEnteredTitle(String zone) {
+    return 'Вход в зону $zone';
+  }
+
+  @override
+  String zones_alertEnteredBody(String name, String zone) {
+    return '$name в зоне $zone.';
+  }
+
+  @override
+  String zones_alertLeftTitle(String zone) {
+    return 'Выход из зоны $zone';
+  }
+
+  @override
+  String zones_alertLeftBody(String name, String zone) {
+    return '$name покинул зону $zone.';
+  }
+
+  @override
+  String get zones_alertOffTrailTitle => 'Сход с тропы';
+
+  @override
+  String zones_alertOffTrailBody(String name, String distance, String trail) {
+    return '$name в $distance от: $trail.';
+  }
 }

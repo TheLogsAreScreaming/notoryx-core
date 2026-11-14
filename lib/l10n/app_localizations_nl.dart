@@ -4412,6 +4412,72 @@ class AppLocalizationsNl extends AppLocalizations {
   String get listFilter_newGroup => 'Nieuwe groep';
 
   @override
+  String get traceCard_title => 'Tracekaart';
+
+  @override
+  String get traceCard_open => 'Tracekaart delen';
+
+  @override
+  String traceCard_from(String name) {
+    return 'Van $name';
+  }
+
+  @override
+  String traceCard_to(String name) {
+    return 'Naar $name';
+  }
+
+  @override
+  String traceCard_sentAt(String time) {
+    return 'Verzonden $time';
+  }
+
+  @override
+  String traceCard_roundTrip(String seconds) {
+    return 'Heen en terug $seconds s';
+  }
+
+  @override
+  String traceCard_hops(int count) {
+    return 'Hops: $count';
+  }
+
+  @override
+  String get traceCard_backToYou => 'Terug bij jou';
+
+  @override
+  String traceCard_distance(String distance) {
+    return 'Route $distance';
+  }
+
+  @override
+  String traceCard_weakest(String snr) {
+    return 'Zwakste schakel $snr';
+  }
+
+  @override
+  String get traceCard_noMap =>
+      'Geen posities bekend voor deze route, dus geen kaart.';
+
+  @override
+  String get traceCard_guessed => 'geschatte positie';
+
+  @override
+  String get traceCard_mapLabel => 'Kaart van de heen- en terugweg';
+
+  @override
+  String get traceCard_shareImage => 'Afbeelding delen';
+
+  @override
+  String get traceCard_shareText => 'Tekst delen';
+
+  @override
+  String get traceCard_shareFailed => 'Kon de tracekaart niet delen.';
+
+  @override
+  String get traceCard_snrUnknown => 'geen SNR';
+
+  @override
   String get pathTrace_you => 'Jij';
 
   @override
@@ -7049,6 +7115,69 @@ class AppLocalizationsNl extends AppLocalizations {
       'Nog geen repeaters gevonden. Verbind een radio en verken eerst het mesh.';
 
   @override
+  String get rptTest_title => 'Test repeaters in de buurt';
+
+  @override
+  String get rptTest_subtitle => 'Eén tik: welke repeaters je direct horen';
+
+  @override
+  String get rptTest_start => 'Nu testen';
+
+  @override
+  String get rptTest_listening => 'Luisteren naar antwoorden…';
+
+  @override
+  String rptTest_wait(int seconds) {
+    return 'Volgende test over $seconds s';
+  }
+
+  @override
+  String rptTest_found(int count) {
+    return 'Repeaters die antwoordden: $count';
+  }
+
+  @override
+  String get rptTest_none =>
+      'Geen repeater binnen direct bereik antwoordde. Probeer het vanaf een hogere plek of over een minuut opnieuw. Repeaters met oudere firmware antwoorden niet op deze test.';
+
+  @override
+  String get rptTest_strong => 'Sterk';
+
+  @override
+  String get rptTest_usable => 'Bruikbaar';
+
+  @override
+  String get rptTest_weak => 'Zwak';
+
+  @override
+  String rptTest_unknown(String prefix) {
+    return 'Repeater $prefix';
+  }
+
+  @override
+  String rptTest_line(String there, String here, String rssi) {
+    return 'Hoorde jou op $there dB · jij hoorde hem op $here dB, $rssi dBm';
+  }
+
+  @override
+  String rptTest_rowLabel(
+    String name,
+    String quality,
+    String there,
+    String here,
+    String rssi,
+  ) {
+    return '$name, $quality. Hoorde jou op $there decibel. Jij hoorde hem op $here decibel, $rssi dBm.';
+  }
+
+  @override
+  String get rptTest_notConnected => 'Verbind je radio om de test te doen.';
+
+  @override
+  String get rptTest_explainer =>
+      'Stuurt één ontdekkingsverzoek zonder hops, dus alleen repeaters die je radio direct horen antwoorden. Het eerste getal is hoe goed de repeater jou hoorde, het tweede hoe goed jij hem hoorde. Tests liggen 30 seconden uit elkaar omdat repeaters beperken hoe vaak ze antwoorden.';
+
+  @override
   String get notification_fieldAlertTitle => 'NOTORYX-veldwaarschuwing';
 
   @override
@@ -8382,6 +8511,73 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
+  String get signedCov_section => 'Ondertekende rapporten';
+
+  @override
+  String get signedCov_share => 'Ondertekend rapport delen';
+
+  @override
+  String get signedCov_shareHint =>
+      'Elke zeshoek wordt ondertekend met de dekkingssleutel van deze telefoon, zodat gewijzigde of verzonnen exemplaren opvallen. Niets verlaat de telefoon tenzij je het deelt.';
+
+  @override
+  String get signedCov_check => 'Rapport controleren';
+
+  @override
+  String get signedCov_checkHint =>
+      'Plak een ondertekend rapport om te zien welke waarnemingen echt zijn';
+
+  @override
+  String get signedCov_paste => 'Ondertekend rapport (JSON)';
+
+  @override
+  String get signedCov_verify => 'Controleren';
+
+  @override
+  String signedCov_yourKey(String fingerprint) {
+    return 'Jouw dekkingssleutel: $fingerprint';
+  }
+
+  @override
+  String signedCov_result(int accepted, int rejected) {
+    return '$accepted waarnemingen bevestigd, $rejected afgewezen';
+  }
+
+  @override
+  String signedCov_signer(String fingerprint) {
+    return 'Ondertekend met sleutel $fingerprint';
+  }
+
+  @override
+  String get signedCov_unreadable => 'Dit is geen ondertekend dekkingsrapport.';
+
+  @override
+  String signedCov_rBadSignature(int count) {
+    return '$count met ontbrekende of foute handtekening';
+  }
+
+  @override
+  String signedCov_rMalformed(int count) {
+    return '$count beschadigd';
+  }
+
+  @override
+  String signedCov_rImpossible(int count) {
+    return '$count met onmogelijke signaalwaarden';
+  }
+
+  @override
+  String signedCov_rFuture(int count) {
+    return '$count gedateerd in de toekomst';
+  }
+
+  @override
+  String get signedCov_empty => 'Nog geen dekkingsmetingen om te delen.';
+
+  @override
+  String get signedCov_shareFailed => 'Kon het rapport niet delen.';
+
+  @override
   String get coverageHex_title => 'Dekkingszeshoeken';
 
   @override
@@ -9077,6 +9273,65 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get channels_regionUnknownSemantics =>
       'Verzonden naar een regio die de app niet kent';
+
+  @override
+  String get timeline_title => 'Tijdlijn';
+
+  @override
+  String get timeline_toolSubtitle =>
+      'Berichten, nieuwe knooppunten, signaalwijzigingen en plaatsen in één overzicht';
+
+  @override
+  String get timeline_refresh => 'Opnieuw laden';
+
+  @override
+  String get timeline_search => 'Zoek in de tijdlijn';
+
+  @override
+  String get timeline_kindMessages => 'Berichten';
+
+  @override
+  String get timeline_kindNodes => 'Nieuwe knooppunten';
+
+  @override
+  String get timeline_kindSignal => 'Signaal';
+
+  @override
+  String get timeline_kindPlaces => 'Plaatsen';
+
+  @override
+  String timeline_messageFrom(String sender, String where) {
+    return '$sender in $where';
+  }
+
+  @override
+  String timeline_nodeJoined(String name) {
+    return 'Voor het eerst gehoord: $name';
+  }
+
+  @override
+  String timeline_signalUp(String name, String from, String to) {
+    return '$name: signaal omhoog van $from naar $to dB';
+  }
+
+  @override
+  String timeline_signalDown(String name, String from, String to) {
+    return '$name: signaal omlaag van $from naar $to dB';
+  }
+
+  @override
+  String timeline_placeSaved(String name) {
+    return 'Plaats opgeslagen: $name';
+  }
+
+  @override
+  String timeline_placeShared(String sender, String where) {
+    return '$sender deelde een plaats in $where';
+  }
+
+  @override
+  String get timeline_empty =>
+      'Nog niets. Berichten, nieuw gehoorde knooppunten, signaalwijzigingen en plaatsen verschijnen hier.';
 
   @override
   String get wardrive_title => 'Wardrive';
@@ -10409,6 +10664,140 @@ class AppLocalizationsNl extends AppLocalizations {
   String get team_waitingGps => 'Wachten op een positie van de radio';
 
   @override
+  String get checklist_title => 'Checklists';
+
+  @override
+  String get checklist_toolSubtitle =>
+      'Herbruikbare checklists voor vertrek en plaatsing, ook offline';
+
+  @override
+  String get checklist_empty =>
+      'Geen checklists. Voeg er een toe met de knop hieronder.';
+
+  @override
+  String get checklist_add => 'Nieuwe checklist';
+
+  @override
+  String get checklist_edit => 'Checklist bewerken';
+
+  @override
+  String get checklist_name => 'Naam';
+
+  @override
+  String get checklist_items => 'Punten, één per regel';
+
+  @override
+  String checklist_itemCount(int count) {
+    return 'Punten: $count';
+  }
+
+  @override
+  String get checklist_history => 'Afgeronde rondes';
+
+  @override
+  String get checklist_noRuns => 'Nog geen afgeronde rondes.';
+
+  @override
+  String get checklist_inProgress => 'Bezig';
+
+  @override
+  String checklist_progress(int done, int total) {
+    return '$done van $total klaar';
+  }
+
+  @override
+  String checklist_startedAt(String time) {
+    return 'Gestart $time';
+  }
+
+  @override
+  String checklist_finishedAt(String time) {
+    return 'Afgerond $time';
+  }
+
+  @override
+  String get checklist_note => 'Notitie';
+
+  @override
+  String get checklist_finish => 'Afronden en opslaan';
+
+  @override
+  String get checklist_unfinished => 'Niet alles is afgevinkt. Toch opslaan?';
+
+  @override
+  String get checklist_saveAnyway => 'Toch opslaan';
+
+  @override
+  String get checklist_export => 'Exporteren of verwijderen';
+
+  @override
+  String get checklist_exportText => 'Delen als tekst';
+
+  @override
+  String get checklist_exportJson => 'Delen als JSON';
+
+  @override
+  String get checklist_exportFailed => 'Kon het verslag niet delen.';
+
+  @override
+  String get checklist_deleteRun => 'Verslag verwijderen';
+
+  @override
+  String get checklist_deleteRunConfirm =>
+      'Dit verslag verwijderen? Dit kan niet ongedaan worden.';
+
+  @override
+  String checklist_deleteConfirm(String name) {
+    return '$name verwijderen? Afgeronde verslagen blijven bewaard.';
+  }
+
+  @override
+  String get checklist_preTrip => 'Voor vertrek';
+
+  @override
+  String get checklist_preTrip1 =>
+      'Radio opgeladen en reservebatterij ingepakt';
+
+  @override
+  String get checklist_preTrip2 =>
+      'Radio gekoppeld aan de telefoon en testbericht verstuurd';
+
+  @override
+  String get checklist_preTrip3 => 'Offline kaarten van het gebied opgeslagen';
+
+  @override
+  String get checklist_preTrip4 =>
+      'Route en terugkeertijd achtergelaten bij iemand';
+
+  @override
+  String get checklist_preTrip5 =>
+      'Groepskanaal en teamcontacten gecontroleerd';
+
+  @override
+  String get checklist_preTrip6 => 'SOS en inchecken één keer geprobeerd';
+
+  @override
+  String get checklist_deploy => 'Knooppunt plaatsen';
+
+  @override
+  String get checklist_deploy1 => 'Locatie en toestemming bevestigd';
+
+  @override
+  String get checklist_deploy2 => 'Antenne gemonteerd en connectoren afgedicht';
+
+  @override
+  String get checklist_deploy3 => 'Voeding en zonnepaneel gecontroleerd';
+
+  @override
+  String get checklist_deploy4 => 'Radio-instellingen en regio bevestigd';
+
+  @override
+  String get checklist_deploy5 => 'Testbericht via het knooppunt gehoord';
+
+  @override
+  String get checklist_deploy6 => 'Locatie, foto\'s en notities vastgelegd';
+
+  @override
   String get waypoints_title => 'Waypoints';
 
   @override
@@ -10532,6 +10921,125 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get netChange_notifTitle => 'Netwerkwijziging';
+
+  @override
+  String get journal_title => 'Knooppuntlogboek';
+
+  @override
+  String get journal_toolSubtitle =>
+      'Elk ooit gehoord knooppunt, met gedragslabels, tags en notities';
+
+  @override
+  String get journal_empty =>
+      'Nog geen knooppunten. Elk knooppunt dat je radio hoort, komt hier vanzelf bij.';
+
+  @override
+  String get journal_search => 'Zoek namen, ID\'s, tags en notities';
+
+  @override
+  String get journal_filterAll => 'Alle';
+
+  @override
+  String get journal_bSteadyRelay => 'Altijd-aan relais';
+
+  @override
+  String get journal_bRegular => 'Vaste bezoeker';
+
+  @override
+  String get journal_bRoamer => 'Zwerver';
+
+  @override
+  String get journal_bRarelyHeard => 'Zelden gehoord';
+
+  @override
+  String get journal_bNewcomer => 'Nieuwkomer';
+
+  @override
+  String get journal_bGoneQuiet => 'Stil geworden';
+
+  @override
+  String journal_confidence(int percent) {
+    return '$percent% zeker';
+  }
+
+  @override
+  String journal_eDaysHeard(int heard, int days) {
+    return 'Gehoord op $heard van $days dagen';
+  }
+
+  @override
+  String journal_eFirstHeard(int hours) {
+    return 'Voor het eerst $hours u geleden gehoord';
+  }
+
+  @override
+  String journal_eSilent(int days) {
+    return '$days dagen niet gehoord';
+  }
+
+  @override
+  String journal_ePlaces(int places, int km) {
+    return 'Gezien op $places plekken tot $km km uit elkaar';
+  }
+
+  @override
+  String journal_eSightings(int count) {
+    return 'In totaal $count nieuwe adverts';
+  }
+
+  @override
+  String get journal_noLabel => 'Nog te weinig gezien voor een label.';
+
+  @override
+  String journal_firstSeen(String time) {
+    return 'Eerst gehoord: $time';
+  }
+
+  @override
+  String journal_lastSeen(String time) {
+    return 'Laatst gehoord: $time';
+  }
+
+  @override
+  String journal_hops(int min, int max) {
+    return 'Geziene hops: $min tot $max';
+  }
+
+  @override
+  String get journal_tags => 'Tags';
+
+  @override
+  String get journal_addTag => 'Tag toevoegen';
+
+  @override
+  String get journal_tagHint => 'bijv. startpunt, club, van mij';
+
+  @override
+  String journal_removeTag(String tag) {
+    return 'Tag $tag verwijderen';
+  }
+
+  @override
+  String get journal_note => 'Notitie';
+
+  @override
+  String get journal_saveNote => 'Notitie opslaan';
+
+  @override
+  String get journal_forget => 'Dit knooppunt vergeten';
+
+  @override
+  String journal_forgetConfirm(String name) {
+    return '$name met tags en notitie uit het logboek verwijderen? Wordt het weer gehoord, dan begint het opnieuw.';
+  }
+
+  @override
+  String get journal_forgotten => 'Knooppunt uit het logboek verwijderd.';
+
+  @override
+  String journal_markLabel(String name) {
+    return 'Gegenereerd teken voor $name';
+  }
 
   @override
   String get trouble_title => 'Probleemoplossing';
@@ -12030,4 +12538,161 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       'Moderatie: alleen als je communitymoderatie aanzet. De banlijst en meldingen of bezwaren die je verstuurt gaan via sentinel-relay.meshmayhem.org naar NOTORYX-moderators.';
+
+  @override
+  String get mapTrust_favoritesOnly => 'Alleen favorieten';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => 'Verberg nodes zonder ster';
+
+  @override
+  String get topology_flows => 'Stromen';
+
+  @override
+  String get topology_network => 'Netwerk';
+
+  @override
+  String get topology_hint =>
+      'Ringen tonen het aantal hops vanaf jou, in het midden. Dikkere lijnen droegen meer berichten, grotere stippen stuurden meer door. Tik op een stip om die repeater te zien.';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return 'Netwerkdiagram. $repeaters repeaters op $rings ringen om je heen.';
+  }
+
+  @override
+  String get zones_title => 'Zone- en routemeldingen';
+
+  @override
+  String get zones_toolSubtitle =>
+      'Melding wanneer iemand een zone in- of uitgaat of van een route afdwaalt';
+
+  @override
+  String get zones_enabled => 'Meldingen aan';
+
+  @override
+  String get zones_enabledHint =>
+      'Gebruikt posities uit adverts die je radio hoort, dus een melding is zo actueel als het laatste advert.';
+
+  @override
+  String get zones_watch => 'Volgen';
+
+  @override
+  String get zones_scopeFavorites => 'Favorieten';
+
+  @override
+  String get zones_scopeEveryone => 'Iedereen';
+
+  @override
+  String get zones_includeSelf => 'Ook mijn radio';
+
+  @override
+  String get zones_zones => 'Zones';
+
+  @override
+  String get zones_none =>
+      'Nog geen zones. Voeg er een toe rond het kamp, een startpunt of een ontmoetingsplek.';
+
+  @override
+  String get zones_add => 'Zone toevoegen';
+
+  @override
+  String get zones_edit => 'Zone bewerken';
+
+  @override
+  String get zones_name => 'Naam';
+
+  @override
+  String get zones_defaultName => 'Zone';
+
+  @override
+  String get zones_center => 'Middelpunt';
+
+  @override
+  String get zones_centerMyRadio => 'Positie van mijn radio';
+
+  @override
+  String zones_centerWaypoint(String name) {
+    return 'Waypoint: $name';
+  }
+
+  @override
+  String get zones_noCenter =>
+      'Je radio heeft geen positie en er zijn geen waypoints. Stel eerst een positie in of bewaar een waypoint.';
+
+  @override
+  String zones_radius(String distance) {
+    return 'Straal: $distance';
+  }
+
+  @override
+  String get zones_alertOn => 'Melden bij';
+
+  @override
+  String get zones_onEnter => 'Binnengaan';
+
+  @override
+  String get zones_onLeave => 'Verlaten';
+
+  @override
+  String get zones_onBoth => 'Beide';
+
+  @override
+  String get zones_delete => 'Zone verwijderen';
+
+  @override
+  String zones_full(int count) {
+    return 'Je kunt tot $count zones bewaren.';
+  }
+
+  @override
+  String get zones_trail => 'Route';
+
+  @override
+  String get zones_trailNone => 'Geen route gevolgd';
+
+  @override
+  String get zones_trailHint =>
+      'Kies een waypointroute of een opgenomen track. Iedereen die je volgt en verder dan de limiet afwijkt, geeft een melding.';
+
+  @override
+  String zones_offTrailLimit(String distance) {
+    return 'Van de route na $distance';
+  }
+
+  @override
+  String get zones_you => 'Jij';
+
+  @override
+  String zones_trackName(String date, String km) {
+    return 'Track $date · $km km';
+  }
+
+  @override
+  String zones_alertEnteredTitle(String zone) {
+    return '$zone binnengegaan';
+  }
+
+  @override
+  String zones_alertEnteredBody(String name, String zone) {
+    return '$name is in $zone.';
+  }
+
+  @override
+  String zones_alertLeftTitle(String zone) {
+    return '$zone verlaten';
+  }
+
+  @override
+  String zones_alertLeftBody(String name, String zone) {
+    return '$name heeft $zone verlaten.';
+  }
+
+  @override
+  String get zones_alertOffTrailTitle => 'Van de route af';
+
+  @override
+  String zones_alertOffTrailBody(String name, String distance, String trail) {
+    return '$name is $distance van $trail.';
+  }
 }

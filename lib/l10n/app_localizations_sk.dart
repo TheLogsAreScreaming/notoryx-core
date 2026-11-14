@@ -4411,6 +4411,72 @@ class AppLocalizationsSk extends AppLocalizations {
   String get listFilter_newGroup => 'Nová skupina';
 
   @override
+  String get traceCard_title => 'Karta trasovania';
+
+  @override
+  String get traceCard_open => 'Zdieľať kartu trasovania';
+
+  @override
+  String traceCard_from(String name) {
+    return 'Od $name';
+  }
+
+  @override
+  String traceCard_to(String name) {
+    return 'Pre $name';
+  }
+
+  @override
+  String traceCard_sentAt(String time) {
+    return 'Odoslané $time';
+  }
+
+  @override
+  String traceCard_roundTrip(String seconds) {
+    return 'Tam a späť $seconds s';
+  }
+
+  @override
+  String traceCard_hops(int count) {
+    return 'Skoky: $count';
+  }
+
+  @override
+  String get traceCard_backToYou => 'Späť k tebe';
+
+  @override
+  String traceCard_distance(String distance) {
+    return 'Trasa $distance';
+  }
+
+  @override
+  String traceCard_weakest(String snr) {
+    return 'Najslabšie spojenie $snr';
+  }
+
+  @override
+  String get traceCard_noMap =>
+      'Pre túto trasu nie sú známe polohy, preto nie je mapa.';
+
+  @override
+  String get traceCard_guessed => 'odhadovaná poloha';
+
+  @override
+  String get traceCard_mapLabel => 'Mapa cesty tam a späť';
+
+  @override
+  String get traceCard_shareImage => 'Zdieľať obrázok';
+
+  @override
+  String get traceCard_shareText => 'Zdieľať text';
+
+  @override
+  String get traceCard_shareFailed => 'Kartu trasovania sa nepodarilo zdieľať.';
+
+  @override
+  String get traceCard_snrUnknown => 'bez SNR';
+
+  @override
   String get pathTrace_you => 'Vy';
 
   @override
@@ -7068,6 +7134,70 @@ class AppLocalizationsSk extends AppLocalizations {
       'Zatiaľ neboli objavené žiadne opakovače. Pripojte rádio a najprv preskúmajte sieť.';
 
   @override
+  String get rptTest_title => 'Test blízkych opakovačov';
+
+  @override
+  String get rptTest_subtitle =>
+      'Jedno ťuknutie: ktoré opakovače vás počujú priamo';
+
+  @override
+  String get rptTest_start => 'Testovať teraz';
+
+  @override
+  String get rptTest_listening => 'Čakám na odpovede…';
+
+  @override
+  String rptTest_wait(int seconds) {
+    return 'Ďalší test o $seconds s';
+  }
+
+  @override
+  String rptTest_found(int count) {
+    return 'Opakovače, ktoré odpovedali: $count';
+  }
+
+  @override
+  String get rptTest_none =>
+      'Žiadny opakovač v priamom dosahu neodpovedal. Skúste z vyššieho miesta alebo znova o minútu. Opakovače so starším firmvérom na tento test neodpovedajú.';
+
+  @override
+  String get rptTest_strong => 'Silný';
+
+  @override
+  String get rptTest_usable => 'Použiteľný';
+
+  @override
+  String get rptTest_weak => 'Slabý';
+
+  @override
+  String rptTest_unknown(String prefix) {
+    return 'Opakovač $prefix';
+  }
+
+  @override
+  String rptTest_line(String there, String here, String rssi) {
+    return 'Počul vás pri $there dB · vy ho pri $here dB, $rssi dBm';
+  }
+
+  @override
+  String rptTest_rowLabel(
+    String name,
+    String quality,
+    String there,
+    String here,
+    String rssi,
+  ) {
+    return '$name, $quality. Počul vás pri $there decibeloch. Vy ho pri $here decibeloch, $rssi dBm.';
+  }
+
+  @override
+  String get rptTest_notConnected => 'Pripojte rádio, aby ste spustili test.';
+
+  @override
+  String get rptTest_explainer =>
+      'Odošle jednu požiadavku na objavenie bez skokov, takže odpovedajú len opakovače, ktoré počujú vaše rádio priamo. Prvé číslo ukazuje, ako dobre vás opakovač počul, druhé, ako dobre ste ho počuli vy. Medzi testami je 30 sekúnd, lebo opakovače obmedzujú počet odpovedí.';
+
+  @override
   String get notification_fieldAlertTitle => 'Terénne upozornenie NOTORYX';
 
   @override
@@ -8401,6 +8531,73 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
+  String get signedCov_section => 'Podpísané správy';
+
+  @override
+  String get signedCov_share => 'Zdieľať podpísanú správu';
+
+  @override
+  String get signedCov_shareHint =>
+      'Každý šesťuholník je podpísaný kľúčom pokrytia tohto telefónu, takže upravené či vymyslené sa dajú odhaliť. Nič neopustí telefón, kým to nezdieľaš.';
+
+  @override
+  String get signedCov_check => 'Overiť správu';
+
+  @override
+  String get signedCov_checkHint =>
+      'Vlož podpísanú správu a uvidíš, ktoré pozorovania sú pravé';
+
+  @override
+  String get signedCov_paste => 'Podpísaná správa (JSON)';
+
+  @override
+  String get signedCov_verify => 'Overiť';
+
+  @override
+  String signedCov_yourKey(String fingerprint) {
+    return 'Tvoj kľúč pokrytia: $fingerprint';
+  }
+
+  @override
+  String signedCov_result(int accepted, int rejected) {
+    return 'Overené pozorovania: $accepted, zamietnuté: $rejected';
+  }
+
+  @override
+  String signedCov_signer(String fingerprint) {
+    return 'Podpísané kľúčom $fingerprint';
+  }
+
+  @override
+  String get signedCov_unreadable => 'Toto nie je podpísaná správa o pokrytí.';
+
+  @override
+  String signedCov_rBadSignature(int count) {
+    return '$count bez podpisu alebo s chybným podpisom';
+  }
+
+  @override
+  String signedCov_rMalformed(int count) {
+    return '$count poškodených';
+  }
+
+  @override
+  String signedCov_rImpossible(int count) {
+    return '$count s nemožnými hodnotami signálu';
+  }
+
+  @override
+  String signedCov_rFuture(int count) {
+    return '$count s dátumom v budúcnosti';
+  }
+
+  @override
+  String get signedCov_empty => 'Zatiaľ nie sú vzorky pokrytia na zdieľanie.';
+
+  @override
+  String get signedCov_shareFailed => 'Správu sa nepodarilo zdieľať.';
+
+  @override
   String get coverageHex_title => 'Šesťuholníky pokrytia';
 
   @override
@@ -9092,6 +9289,65 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get channels_regionUnknownSemantics =>
       'Odoslané do regiónu, ktorý aplikácia nepozná';
+
+  @override
+  String get timeline_title => 'Časová os';
+
+  @override
+  String get timeline_toolSubtitle =>
+      'Správy, nové uzly, zmeny signálu a miesta v jednom prehľade';
+
+  @override
+  String get timeline_refresh => 'Znova načítať';
+
+  @override
+  String get timeline_search => 'Hľadať na časovej osi';
+
+  @override
+  String get timeline_kindMessages => 'Správy';
+
+  @override
+  String get timeline_kindNodes => 'Nové uzly';
+
+  @override
+  String get timeline_kindSignal => 'Signál';
+
+  @override
+  String get timeline_kindPlaces => 'Miesta';
+
+  @override
+  String timeline_messageFrom(String sender, String where) {
+    return '$sender v $where';
+  }
+
+  @override
+  String timeline_nodeJoined(String name) {
+    return 'Prvýkrát počuť: $name';
+  }
+
+  @override
+  String timeline_signalUp(String name, String from, String to) {
+    return '$name: signál stúpol z $from na $to dB';
+  }
+
+  @override
+  String timeline_signalDown(String name, String from, String to) {
+    return '$name: signál klesol z $from na $to dB';
+  }
+
+  @override
+  String timeline_placeSaved(String name) {
+    return 'Miesto uložené: $name';
+  }
+
+  @override
+  String timeline_placeShared(String sender, String where) {
+    return '$sender zdieľal miesto v $where';
+  }
+
+  @override
+  String get timeline_empty =>
+      'Zatiaľ nič. Tu sa zobrazia správy, novo počuté uzly, zmeny signálu a miesta.';
 
   @override
   String get wardrive_title => 'Wardrive';
@@ -10430,6 +10686,138 @@ class AppLocalizationsSk extends AppLocalizations {
   String get team_waitingGps => 'Čaká sa na polohu z rádia';
 
   @override
+  String get checklist_title => 'Kontrolné zoznamy';
+
+  @override
+  String get checklist_toolSubtitle =>
+      'Opakovane použiteľné zoznamy pred túrou a na nasadenie, fungujú offline';
+
+  @override
+  String get checklist_empty => 'Žiadne zoznamy. Pridaj tlačidlom nižšie.';
+
+  @override
+  String get checklist_add => 'Nový zoznam';
+
+  @override
+  String get checklist_edit => 'Upraviť zoznam';
+
+  @override
+  String get checklist_name => 'Názov';
+
+  @override
+  String get checklist_items => 'Položky, jedna na riadok';
+
+  @override
+  String checklist_itemCount(int count) {
+    return 'Položky: $count';
+  }
+
+  @override
+  String get checklist_history => 'Dokončené kontroly';
+
+  @override
+  String get checklist_noRuns => 'Zatiaľ žiadne dokončené kontroly.';
+
+  @override
+  String get checklist_inProgress => 'Prebieha';
+
+  @override
+  String checklist_progress(int done, int total) {
+    return 'Hotovo $done z $total';
+  }
+
+  @override
+  String checklist_startedAt(String time) {
+    return 'Začaté $time';
+  }
+
+  @override
+  String checklist_finishedAt(String time) {
+    return 'Dokončené $time';
+  }
+
+  @override
+  String get checklist_note => 'Poznámka';
+
+  @override
+  String get checklist_finish => 'Dokončiť a uložiť';
+
+  @override
+  String get checklist_unfinished =>
+      'Niektoré položky nie sú odškrtnuté. Uložiť aj tak?';
+
+  @override
+  String get checklist_saveAnyway => 'Uložiť aj tak';
+
+  @override
+  String get checklist_export => 'Exportovať alebo odstrániť';
+
+  @override
+  String get checklist_exportText => 'Zdieľať ako text';
+
+  @override
+  String get checklist_exportJson => 'Zdieľať ako JSON';
+
+  @override
+  String get checklist_exportFailed => 'Záznam sa nepodarilo zdieľať.';
+
+  @override
+  String get checklist_deleteRun => 'Odstrániť záznam';
+
+  @override
+  String get checklist_deleteRunConfirm =>
+      'Odstrániť tento záznam? Nedá sa to vrátiť.';
+
+  @override
+  String checklist_deleteConfirm(String name) {
+    return 'Odstrániť $name? Dokončené záznamy zostanú.';
+  }
+
+  @override
+  String get checklist_preTrip => 'Pred túrou';
+
+  @override
+  String get checklist_preTrip1 => 'Rádio nabité, náhradná batéria zbalená';
+
+  @override
+  String get checklist_preTrip2 =>
+      'Rádio spárované s telefónom, testovacia správa odoslaná';
+
+  @override
+  String get checklist_preTrip3 => 'Offline mapy oblasti uložené';
+
+  @override
+  String get checklist_preTrip4 => 'Trasa a čas návratu nechané niekomu doma';
+
+  @override
+  String get checklist_preTrip5 =>
+      'Skupinový kanál a kontakty tímu skontrolované';
+
+  @override
+  String get checklist_preTrip6 => 'SOS a prihlásenie raz vyskúšané';
+
+  @override
+  String get checklist_deploy => 'Inštalácia uzla';
+
+  @override
+  String get checklist_deploy1 => 'Miesto a povolenie potvrdené';
+
+  @override
+  String get checklist_deploy2 => 'Anténa namontovaná, konektory utesnené';
+
+  @override
+  String get checklist_deploy3 => 'Napájanie a solár skontrolované';
+
+  @override
+  String get checklist_deploy4 => 'Nastavenia rádia a región potvrdené';
+
+  @override
+  String get checklist_deploy5 => 'Testovacia správa prešla cez uzol';
+
+  @override
+  String get checklist_deploy6 => 'Poloha, fotky a poznámky zaznamenané';
+
+  @override
   String get waypoints_title => 'Body trasy';
 
   @override
@@ -10553,6 +10941,125 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get netChange_notifTitle => 'Zmena v sieti';
+
+  @override
+  String get journal_title => 'Denník uzlov';
+
+  @override
+  String get journal_toolSubtitle =>
+      'Každý počutý uzol so štítkami správania, značkami a poznámkami';
+
+  @override
+  String get journal_empty =>
+      'Zatiaľ žiadne uzly. Každý uzol, ktorý rádio začuje, sa sem pridá automaticky.';
+
+  @override
+  String get journal_search => 'Hľadať mená, ID, značky a poznámky';
+
+  @override
+  String get journal_filterAll => 'Všetky';
+
+  @override
+  String get journal_bSteadyRelay => 'Stále zapnutý prenos';
+
+  @override
+  String get journal_bRegular => 'Pravidelný';
+
+  @override
+  String get journal_bRoamer => 'Tulák';
+
+  @override
+  String get journal_bRarelyHeard => 'Zriedka počuť';
+
+  @override
+  String get journal_bNewcomer => 'Nováčik';
+
+  @override
+  String get journal_bGoneQuiet => 'Utíchol';
+
+  @override
+  String journal_confidence(int percent) {
+    return 'Istota $percent %';
+  }
+
+  @override
+  String journal_eDaysHeard(int heard, int days) {
+    return 'Počuť $heard z $days dní';
+  }
+
+  @override
+  String journal_eFirstHeard(int hours) {
+    return 'Prvýkrát počuť pred $hours h';
+  }
+
+  @override
+  String journal_eSilent(int days) {
+    return 'Nepočuť $days dní';
+  }
+
+  @override
+  String journal_ePlaces(int places, int km) {
+    return 'Videný na $places miestach vzdialených až $km km';
+  }
+
+  @override
+  String journal_eSightings(int count) {
+    return 'Spolu $count nových oznámení';
+  }
+
+  @override
+  String get journal_noLabel => 'Zatiaľ málo údajov na štítok.';
+
+  @override
+  String journal_firstSeen(String time) {
+    return 'Prvýkrát: $time';
+  }
+
+  @override
+  String journal_lastSeen(String time) {
+    return 'Naposledy: $time';
+  }
+
+  @override
+  String journal_hops(int min, int max) {
+    return 'Skoky: $min až $max';
+  }
+
+  @override
+  String get journal_tags => 'Značky';
+
+  @override
+  String get journal_addTag => 'Pridať značku';
+
+  @override
+  String get journal_tagHint => 'napr. chodník, klub, môj';
+
+  @override
+  String journal_removeTag(String tag) {
+    return 'Odstrániť značku $tag';
+  }
+
+  @override
+  String get journal_note => 'Poznámka';
+
+  @override
+  String get journal_saveNote => 'Uložiť poznámku';
+
+  @override
+  String get journal_forget => 'Zabudnúť tento uzol';
+
+  @override
+  String journal_forgetConfirm(String name) {
+    return 'Odstrániť $name z denníka aj so značkami a poznámkou? Ak ho znova začuješ, začne sa odznova.';
+  }
+
+  @override
+  String get journal_forgotten => 'Uzol odstránený z denníka.';
+
+  @override
+  String journal_markLabel(String name) {
+    return 'Vygenerovaná značka pre $name';
+  }
 
   @override
   String get trouble_title => 'Riešenie problémov';
@@ -12039,4 +12546,161 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       'Moderovanie: iba ak zapnete moderovanie komunity. Zoznam zákazov a vaše nahlásenia či odvolania idú moderátorom NOTORYX cez sentinel-relay.meshmayhem.org.';
+
+  @override
+  String get mapTrust_favoritesOnly => 'Iba obľúbené';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => 'Skryť uzly bez hviezdičky';
+
+  @override
+  String get topology_flows => 'Toky';
+
+  @override
+  String get topology_network => 'Sieť';
+
+  @override
+  String get topology_hint =>
+      'Kruhy ukazujú počet skokov od vás v strede. Hrubšie čiary preniesli viac správ, väčšie body preposlali viac. Ťuknutím na bod zobrazíte daný opakovač.';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return 'Diagram siete. $repeaters opakovačov na $rings kruhoch okolo vás.';
+  }
+
+  @override
+  String get zones_title => 'Upozornenia na zóny a trasu';
+
+  @override
+  String get zones_toolSubtitle =>
+      'Upozorní, keď niekto vstúpi do zóny, opustí ju alebo zíde z trasy';
+
+  @override
+  String get zones_enabled => 'Upozornenia zapnuté';
+
+  @override
+  String get zones_enabledHint =>
+      'Používa polohy z oznámení, ktoré rádio počuje, takže upozornenie je len také aktuálne ako posledné oznámenie.';
+
+  @override
+  String get zones_watch => 'Sledovať';
+
+  @override
+  String get zones_scopeFavorites => 'Obľúbené';
+
+  @override
+  String get zones_scopeEveryone => 'Všetci';
+
+  @override
+  String get zones_includeSelf => 'Aj moje rádio';
+
+  @override
+  String get zones_zones => 'Zóny';
+
+  @override
+  String get zones_none =>
+      'Zatiaľ žiadne zóny. Pridajte jednu okolo tábora, začiatku trasy alebo miesta stretnutia.';
+
+  @override
+  String get zones_add => 'Pridať zónu';
+
+  @override
+  String get zones_edit => 'Upraviť zónu';
+
+  @override
+  String get zones_name => 'Názov';
+
+  @override
+  String get zones_defaultName => 'Zóna';
+
+  @override
+  String get zones_center => 'Stred';
+
+  @override
+  String get zones_centerMyRadio => 'Poloha môjho rádia';
+
+  @override
+  String zones_centerWaypoint(String name) {
+    return 'Bod: $name';
+  }
+
+  @override
+  String get zones_noCenter =>
+      'Rádio nemá polohu a nie sú žiadne body. Najprv nastavte polohu alebo uložte bod.';
+
+  @override
+  String zones_radius(String distance) {
+    return 'Polomer: $distance';
+  }
+
+  @override
+  String get zones_alertOn => 'Upozorniť pri';
+
+  @override
+  String get zones_onEnter => 'Vstupe';
+
+  @override
+  String get zones_onLeave => 'Odchode';
+
+  @override
+  String get zones_onBoth => 'Oboch';
+
+  @override
+  String get zones_delete => 'Odstrániť zónu';
+
+  @override
+  String zones_full(int count) {
+    return 'Môžete mať najviac $count zón.';
+  }
+
+  @override
+  String get zones_trail => 'Trasa';
+
+  @override
+  String get zones_trailNone => 'Žiadna sledovaná trasa';
+
+  @override
+  String get zones_trailHint =>
+      'Vyberte trasu z bodov alebo nahratú stopu. Každý sledovaný, kto sa od nej vzdiali viac ako je limit, spustí upozornenie.';
+
+  @override
+  String zones_offTrailLimit(String distance) {
+    return 'Mimo trasy po $distance';
+  }
+
+  @override
+  String get zones_you => 'Vy';
+
+  @override
+  String zones_trackName(String date, String km) {
+    return 'Stopa $date · $km km';
+  }
+
+  @override
+  String zones_alertEnteredTitle(String zone) {
+    return 'Vstup do $zone';
+  }
+
+  @override
+  String zones_alertEnteredBody(String name, String zone) {
+    return '$name je v zóne $zone.';
+  }
+
+  @override
+  String zones_alertLeftTitle(String zone) {
+    return 'Odchod zo $zone';
+  }
+
+  @override
+  String zones_alertLeftBody(String name, String zone) {
+    return '$name opustil zónu $zone.';
+  }
+
+  @override
+  String get zones_alertOffTrailTitle => 'Mimo trasy';
+
+  @override
+  String zones_alertOffTrailBody(String name, String distance, String trail) {
+    return '$name je $distance od: $trail.';
+  }
 }

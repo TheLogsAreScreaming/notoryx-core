@@ -2426,6 +2426,30 @@
   "listFilter_roomServers": "Room servers",
   "listFilter_unreadOnly": "Unread only",
   "listFilter_newGroup": "New group",
+  "traceCard_title": "Trace card",
+  "traceCard_open": "Share trace card",
+  "traceCard_from": "From {name}",
+  "@traceCard_from": {"placeholders": {"name": {"type": "String"}}},
+  "traceCard_to": "To {name}",
+  "@traceCard_to": {"placeholders": {"name": {"type": "String"}}},
+  "traceCard_sentAt": "Sent {time}",
+  "@traceCard_sentAt": {"placeholders": {"time": {"type": "String"}}},
+  "traceCard_roundTrip": "Round trip {seconds} s",
+  "@traceCard_roundTrip": {"placeholders": {"seconds": {"type": "String"}}},
+  "traceCard_hops": "Hops: {count}",
+  "@traceCard_hops": {"placeholders": {"count": {"type": "int"}}},
+  "traceCard_backToYou": "Back to you",
+  "traceCard_distance": "Route {distance}",
+  "@traceCard_distance": {"placeholders": {"distance": {"type": "String"}}},
+  "traceCard_weakest": "Weakest link {snr}",
+  "@traceCard_weakest": {"placeholders": {"snr": {"type": "String"}}},
+  "traceCard_noMap": "No positions known for this route, so there is no map.",
+  "traceCard_guessed": "estimated position",
+  "traceCard_mapLabel": "Map of the round trip",
+  "traceCard_shareImage": "Share image",
+  "traceCard_shareText": "Share text",
+  "traceCard_shareFailed": "Could not share the trace card.",
+  "traceCard_snrUnknown": "no SNR",
   "pathTrace_you": "You",
   "pathTrace_failed": "Path trace failed.",
   "pathTrace_notAvailable": "Path trace not available.",
@@ -4072,6 +4096,74 @@
   },
   "repeaterTools_unnamed": "Unnamed repeater",
   "repeaterTools_empty": "No repeaters discovered yet. Connect a radio and discover the mesh first.",
+  "rptTest_title": "Nearby repeater test",
+  "rptTest_subtitle": "One tap: which repeaters hear you directly",
+  "rptTest_start": "Test now",
+  "rptTest_listening": "Listening for answers…",
+  "rptTest_wait": "Next test in {seconds} s",
+  "@rptTest_wait": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "rptTest_found": "Repeaters that answered: {count}",
+  "@rptTest_found": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "rptTest_none": "No repeater in direct range answered. Try from higher ground, or again in a minute. Repeaters on older firmware don't answer this test.",
+  "rptTest_strong": "Strong",
+  "rptTest_usable": "Usable",
+  "rptTest_weak": "Weak",
+  "rptTest_unknown": "Repeater {prefix}",
+  "@rptTest_unknown": {
+    "placeholders": {
+      "prefix": {
+        "type": "String"
+      }
+    }
+  },
+  "rptTest_line": "Heard you at {there} dB · you heard it at {here} dB, {rssi} dBm",
+  "@rptTest_line": {
+    "placeholders": {
+      "there": {
+        "type": "String"
+      },
+      "here": {
+        "type": "String"
+      },
+      "rssi": {
+        "type": "String"
+      }
+    }
+  },
+  "rptTest_rowLabel": "{name}, {quality}. It heard you at {there} decibels. You heard it at {here} decibels, {rssi} dBm.",
+  "@rptTest_rowLabel": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "quality": {
+        "type": "String"
+      },
+      "there": {
+        "type": "String"
+      },
+      "here": {
+        "type": "String"
+      },
+      "rssi": {
+        "type": "String"
+      }
+    }
+  },
+  "rptTest_notConnected": "Connect your radio to run the test.",
+  "rptTest_explainer": "Sends one discover request with no hops, so only repeaters that hear your radio directly answer. The first number is how well each repeater heard you, the second how well you heard it. Tests are 30 seconds apart because repeaters limit how often they answer.",
   "notification_fieldAlertTitle": "NOTORYX Field Alert",
   "notification_checkInReminderTitle": "NOTORYX Core check-in reminder",
   "notification_checkInReminderBody": "No check-in for {minutes} minutes on {trip}. Open NOTORYX Core to check in.",
@@ -4927,6 +5019,30 @@
       }
     }
   },
+  "signedCov_section": "Signed reports",
+  "signedCov_share": "Share signed report",
+  "signedCov_shareHint": "Every hexagon is signed with this phone's coverage key, so edited or invented ones can be spotted. Nothing leaves the phone unless you share it.",
+  "signedCov_check": "Check a report",
+  "signedCov_checkHint": "Paste a signed report to see which observations are genuine",
+  "signedCov_paste": "Signed report (JSON)",
+  "signedCov_verify": "Check",
+  "signedCov_yourKey": "Your coverage key: {fingerprint}",
+  "@signedCov_yourKey": {"placeholders": {"fingerprint": {"type": "String"}}},
+  "signedCov_result": "{accepted} observations verified, {rejected} rejected",
+  "@signedCov_result": {"placeholders": {"accepted": {"type": "int"}, "rejected": {"type": "int"}}},
+  "signedCov_signer": "Signed by key {fingerprint}",
+  "@signedCov_signer": {"placeholders": {"fingerprint": {"type": "String"}}},
+  "signedCov_unreadable": "This isn't a signed coverage report.",
+  "signedCov_rBadSignature": "{count} with a missing or wrong signature",
+  "@signedCov_rBadSignature": {"placeholders": {"count": {"type": "int"}}},
+  "signedCov_rMalformed": "{count} damaged",
+  "@signedCov_rMalformed": {"placeholders": {"count": {"type": "int"}}},
+  "signedCov_rImpossible": "{count} with impossible signal values",
+  "@signedCov_rImpossible": {"placeholders": {"count": {"type": "int"}}},
+  "signedCov_rFuture": "{count} dated in the future",
+  "@signedCov_rFuture": {"placeholders": {"count": {"type": "int"}}},
+  "signedCov_empty": "No coverage samples to share yet.",
+  "signedCov_shareFailed": "Could not share the report.",
   "coverageHex_title": "Coverage hexagons",
   "coverageHex_toolSubtitle": "Map where your radio hears the mesh and share it",
   "coverageHex_mapCoverage": "Map coverage",
@@ -5284,6 +5400,27 @@
     }
   },
   "channels_regionUnknownSemantics": "Sent to a region this app doesn’t know",
+  "timeline_title": "Timeline",
+  "timeline_toolSubtitle": "Messages, new nodes, signal changes and places in one feed",
+  "timeline_refresh": "Reload",
+  "timeline_search": "Search the timeline",
+  "timeline_kindMessages": "Messages",
+  "timeline_kindNodes": "New nodes",
+  "timeline_kindSignal": "Signal",
+  "timeline_kindPlaces": "Places",
+  "timeline_messageFrom": "{sender} in {where}",
+  "@timeline_messageFrom": {"placeholders": {"sender": {"type": "String"}, "where": {"type": "String"}}},
+  "timeline_nodeJoined": "First heard: {name}",
+  "@timeline_nodeJoined": {"placeholders": {"name": {"type": "String"}}},
+  "timeline_signalUp": "{name}: signal up from {from} to {to} dB",
+  "@timeline_signalUp": {"placeholders": {"name": {"type": "String"}, "from": {"type": "String"}, "to": {"type": "String"}}},
+  "timeline_signalDown": "{name}: signal down from {from} to {to} dB",
+  "@timeline_signalDown": {"placeholders": {"name": {"type": "String"}, "from": {"type": "String"}, "to": {"type": "String"}}},
+  "timeline_placeSaved": "Place saved: {name}",
+  "@timeline_placeSaved": {"placeholders": {"name": {"type": "String"}}},
+  "timeline_placeShared": "{sender} shared a place in {where}",
+  "@timeline_placeShared": {"placeholders": {"sender": {"type": "String"}, "where": {"type": "String"}}},
+  "timeline_empty": "Nothing yet. Messages, newly heard nodes, signal changes and places show up here.",
   "wardrive_title": "Wardrive",
   "wardrive_hint": "Ping from where you are and map which repeaters hear you",
   "wardrive_start": "Start",
@@ -5723,6 +5860,50 @@
   "team_lastShared": "Last shared {age}",
   "@team_lastShared": {"placeholders": {"age": {"type": "String"}}},
   "team_waitingGps": "Waiting for a position from the radio",
+  "checklist_title": "Checklists",
+  "checklist_toolSubtitle": "Reusable pre-trip and deployment checklists that work offline",
+  "checklist_empty": "No checklists. Add one with the button below.",
+  "checklist_add": "New checklist",
+  "checklist_edit": "Edit checklist",
+  "checklist_name": "Name",
+  "checklist_items": "Items, one per line",
+  "checklist_itemCount": "Items: {count}",
+  "@checklist_itemCount": {"placeholders": {"count": {"type": "int"}}},
+  "checklist_history": "Completed runs",
+  "checklist_noRuns": "No completed runs yet.",
+  "checklist_inProgress": "In progress",
+  "checklist_progress": "{done} of {total} done",
+  "@checklist_progress": {"placeholders": {"done": {"type": "int"}, "total": {"type": "int"}}},
+  "checklist_startedAt": "Started {time}",
+  "@checklist_startedAt": {"placeholders": {"time": {"type": "String"}}},
+  "checklist_finishedAt": "Finished {time}",
+  "@checklist_finishedAt": {"placeholders": {"time": {"type": "String"}}},
+  "checklist_note": "Note",
+  "checklist_finish": "Finish and save",
+  "checklist_unfinished": "Some items aren't ticked. Save the record anyway?",
+  "checklist_saveAnyway": "Save anyway",
+  "checklist_export": "Export or delete",
+  "checklist_exportText": "Share as text",
+  "checklist_exportJson": "Share as JSON",
+  "checklist_exportFailed": "Could not share the record.",
+  "checklist_deleteRun": "Delete record",
+  "checklist_deleteRunConfirm": "Delete this record? It can't be undone.",
+  "checklist_deleteConfirm": "Delete {name}? Its completed records are kept.",
+  "@checklist_deleteConfirm": {"placeholders": {"name": {"type": "String"}}},
+  "checklist_preTrip": "Before a trip",
+  "checklist_preTrip1": "Radio charged and a spare battery packed",
+  "checklist_preTrip2": "Radio paired with the phone and a test message sent",
+  "checklist_preTrip3": "Offline maps saved for the area",
+  "checklist_preTrip4": "Route and return time left with someone at home",
+  "checklist_preTrip5": "Group channel and team contacts checked",
+  "checklist_preTrip6": "SOS and check-in tried once",
+  "checklist_deploy": "Putting up a node",
+  "checklist_deploy1": "Site and permission confirmed",
+  "checklist_deploy2": "Antenna mounted and connectors sealed",
+  "checklist_deploy3": "Power and solar checked",
+  "checklist_deploy4": "Radio settings and region confirmed",
+  "checklist_deploy5": "Test message heard through the node",
+  "checklist_deploy6": "Location, photos and notes recorded",
   "waypoints_title": "Waypoints",
   "waypoints_toolSubtitle": "Saved places and routes; import or export GPX",
   "waypoints_importFile": "Import GPX file",
@@ -5765,6 +5946,49 @@
   "netChange_newHint": "Notify when a repeater not seen before is heard within one hop",
   "netChange_clear": "Clear",
   "netChange_notifTitle": "Network change",
+  "journal_title": "Node journal",
+  "journal_toolSubtitle": "Every node ever heard, with behaviour labels, tags and notes",
+  "journal_empty": "No nodes yet. Every node your radio hears is added here automatically.",
+  "journal_search": "Search names, IDs, tags and notes",
+  "journal_filterAll": "All",
+  "journal_bSteadyRelay": "Always-on relay",
+  "journal_bRegular": "Regular",
+  "journal_bRoamer": "Roamer",
+  "journal_bRarelyHeard": "Rarely heard",
+  "journal_bNewcomer": "Newcomer",
+  "journal_bGoneQuiet": "Gone quiet",
+  "journal_confidence": "{percent}% sure",
+  "@journal_confidence": {"placeholders": {"percent": {"type": "int"}}},
+  "journal_eDaysHeard": "Heard on {heard} of {days} days",
+  "@journal_eDaysHeard": {"placeholders": {"heard": {"type": "int"}, "days": {"type": "int"}}},
+  "journal_eFirstHeard": "First heard {hours} h ago",
+  "@journal_eFirstHeard": {"placeholders": {"hours": {"type": "int"}}},
+  "journal_eSilent": "Not heard for {days} days",
+  "@journal_eSilent": {"placeholders": {"days": {"type": "int"}}},
+  "journal_ePlaces": "Seen at {places} places up to {km} km apart",
+  "@journal_ePlaces": {"placeholders": {"places": {"type": "int"}, "km": {"type": "int"}}},
+  "journal_eSightings": "{count} fresh adverts in all",
+  "@journal_eSightings": {"placeholders": {"count": {"type": "int"}}},
+  "journal_noLabel": "Not enough seen yet for a label.",
+  "journal_firstSeen": "First heard: {time}",
+  "@journal_firstSeen": {"placeholders": {"time": {"type": "String"}}},
+  "journal_lastSeen": "Last heard: {time}",
+  "@journal_lastSeen": {"placeholders": {"time": {"type": "String"}}},
+  "journal_hops": "Hops seen: {min} to {max}",
+  "@journal_hops": {"placeholders": {"min": {"type": "int"}, "max": {"type": "int"}}},
+  "journal_tags": "Tags",
+  "journal_addTag": "Add tag",
+  "journal_tagHint": "e.g. trailhead, club, mine",
+  "journal_removeTag": "Remove tag {tag}",
+  "@journal_removeTag": {"placeholders": {"tag": {"type": "String"}}},
+  "journal_note": "Note",
+  "journal_saveNote": "Save note",
+  "journal_forget": "Forget this node",
+  "journal_forgetConfirm": "Remove {name} from the journal, with its tags and note? It starts fresh if heard again.",
+  "@journal_forgetConfirm": {"placeholders": {"name": {"type": "String"}}},
+  "journal_forgotten": "Node removed from the journal.",
+  "journal_markLabel": "Generated mark for {name}",
+  "@journal_markLabel": {"placeholders": {"name": {"type": "String"}}},
   "trouble_title": "Troubleshooting",
   "trouble_toolSubtitle": "Step-by-step help when something doesn't work",
   "trouble_pick": "What's wrong?",
@@ -6256,5 +6480,143 @@
   "sentinel_appealNotOpen": "That case has no active ban, or an appeal is already waiting.",
   "sentinel_appealTooMany": "Too many appeals. Try again in a minute.",
   "sentinel_failed": "Couldn't reach the moderation service. Try again later.",
-  "privacy_netSentinel": "Moderation: only if you turn on community moderation. The ban list, and any reports or appeals you send, go to NOTORYX moderators through sentinel-relay.meshmayhem.org."
+  "privacy_netSentinel": "Moderation: only if you turn on community moderation. The ban list, and any reports or appeals you send, go to NOTORYX moderators through sentinel-relay.meshmayhem.org.",
+  "mapTrust_favoritesOnly": "Favorites only",
+  "mapTrust_favoritesOnlyHint": "Hide every node you haven't starred",
+  "topology_flows": "Flows",
+  "topology_network": "Network",
+  "topology_hint": "Rings show hops away from you, in the middle. Thicker lines carried more messages; bigger dots relayed more. Tap a dot to see that repeater.",
+  "topology_semantics": "Network diagram. {repeaters} repeaters on {rings} rings around you.",
+  "@topology_semantics": {
+    "placeholders": {
+      "repeaters": {
+        "type": "int"
+      },
+      "rings": {
+        "type": "int"
+      }
+    }
+  },
+  "zones_title": "Zone & trail alerts",
+  "zones_toolSubtitle": "Alerts when someone enters or leaves a zone, or wanders off a trail",
+  "zones_enabled": "Alerts on",
+  "zones_enabledHint": "Uses positions from adverts your radio hears, so an alert is only as fresh as the last advert.",
+  "zones_watch": "Watch",
+  "zones_scopeFavorites": "Favorites",
+  "zones_scopeEveryone": "Everyone",
+  "zones_includeSelf": "My radio too",
+  "zones_zones": "Zones",
+  "zones_none": "No zones yet. Add one around camp, a trailhead or a meeting point.",
+  "zones_add": "Add zone",
+  "zones_edit": "Edit zone",
+  "zones_name": "Name",
+  "zones_defaultName": "Zone",
+  "zones_center": "Center",
+  "zones_centerMyRadio": "My radio's position",
+  "zones_centerWaypoint": "Waypoint: {name}",
+  "@zones_centerWaypoint": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "zones_noCenter": "Your radio has no position and there are no waypoints. Set a position or save a waypoint first.",
+  "zones_radius": "Radius: {distance}",
+  "@zones_radius": {
+    "placeholders": {
+      "distance": {
+        "type": "String"
+      }
+    }
+  },
+  "zones_alertOn": "Alert when",
+  "zones_onEnter": "Entering",
+  "zones_onLeave": "Leaving",
+  "zones_onBoth": "Both",
+  "zones_delete": "Delete zone",
+  "zones_full": "You can keep up to {count} zones.",
+  "@zones_full": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "zones_trail": "Trail",
+  "zones_trailNone": "No trail watched",
+  "zones_trailHint": "Pick a waypoint route or a recorded track. Anyone watched who goes farther from it than the limit gets an alert.",
+  "zones_offTrailLimit": "Off the trail after {distance}",
+  "@zones_offTrailLimit": {
+    "placeholders": {
+      "distance": {
+        "type": "String"
+      }
+    }
+  },
+  "zones_you": "You",
+  "zones_trackName": "Track {date} · {km} km",
+  "@zones_trackName": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      },
+      "km": {
+        "type": "String"
+      }
+    }
+  },
+  "zones_alertEnteredTitle": "Entered {zone}",
+  "@zones_alertEnteredTitle": {
+    "placeholders": {
+      "zone": {
+        "type": "String"
+      }
+    }
+  },
+  "zones_alertEnteredBody": "{name} is inside {zone}.",
+  "@zones_alertEnteredBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "zone": {
+        "type": "String"
+      }
+    }
+  },
+  "zones_alertLeftTitle": "Left {zone}",
+  "@zones_alertLeftTitle": {
+    "placeholders": {
+      "zone": {
+        "type": "String"
+      }
+    }
+  },
+  "zones_alertLeftBody": "{name} has left {zone}.",
+  "@zones_alertLeftBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "zone": {
+        "type": "String"
+      }
+    }
+  },
+  "zones_alertOffTrailTitle": "Off the trail",
+  "zones_alertOffTrailBody": "{name} is {distance} from {trail}.",
+  "@zones_alertOffTrailBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "distance": {
+        "type": "String"
+      },
+      "trail": {
+        "type": "String"
+      }
+    }
+  }
 }

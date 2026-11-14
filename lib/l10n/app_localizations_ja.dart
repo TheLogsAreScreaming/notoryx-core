@@ -4206,6 +4206,71 @@ class AppLocalizationsJa extends AppLocalizations {
   String get listFilter_newGroup => '新しいグループ';
 
   @override
+  String get traceCard_title => 'トレースカード';
+
+  @override
+  String get traceCard_open => 'トレースカードを共有';
+
+  @override
+  String traceCard_from(String name) {
+    return '送信元: $name';
+  }
+
+  @override
+  String traceCard_to(String name) {
+    return '宛先: $name';
+  }
+
+  @override
+  String traceCard_sentAt(String time) {
+    return '送信日時 $time';
+  }
+
+  @override
+  String traceCard_roundTrip(String seconds) {
+    return '往復 $seconds 秒';
+  }
+
+  @override
+  String traceCard_hops(int count) {
+    return 'ホップ数: $count';
+  }
+
+  @override
+  String get traceCard_backToYou => 'あなたに戻る';
+
+  @override
+  String traceCard_distance(String distance) {
+    return '経路 $distance';
+  }
+
+  @override
+  String traceCard_weakest(String snr) {
+    return '最も弱いリンク $snr';
+  }
+
+  @override
+  String get traceCard_noMap => 'この経路の位置情報がないため、地図はありません。';
+
+  @override
+  String get traceCard_guessed => '推定位置';
+
+  @override
+  String get traceCard_mapLabel => '往復経路の地図';
+
+  @override
+  String get traceCard_shareImage => '画像を共有';
+
+  @override
+  String get traceCard_shareText => 'テキストを共有';
+
+  @override
+  String get traceCard_shareFailed => 'トレースカードを共有できませんでした。';
+
+  @override
+  String get traceCard_snrUnknown => 'SNRなし';
+
+  @override
   String get pathTrace_you => 'あなた';
 
   @override
@@ -6727,6 +6792,69 @@ class AppLocalizationsJa extends AppLocalizations {
       'リピーターはまだ検出されていません。無線機を接続して、まずメッシュを探索してください。';
 
   @override
+  String get rptTest_title => '近くのリピーターをテスト';
+
+  @override
+  String get rptTest_subtitle => 'ワンタップで直接届くリピーターを確認';
+
+  @override
+  String get rptTest_start => '今すぐテスト';
+
+  @override
+  String get rptTest_listening => '応答を待っています…';
+
+  @override
+  String rptTest_wait(int seconds) {
+    return '次のテストまで $seconds 秒';
+  }
+
+  @override
+  String rptTest_found(int count) {
+    return '応答したリピーター: $count';
+  }
+
+  @override
+  String get rptTest_none =>
+      '直接届く範囲のリピーターから応答がありません。高い場所から、または1分後に再試行してください。古いファームウェアのリピーターはこのテストに応答しません。';
+
+  @override
+  String get rptTest_strong => '強い';
+
+  @override
+  String get rptTest_usable => '使用可';
+
+  @override
+  String get rptTest_weak => '弱い';
+
+  @override
+  String rptTest_unknown(String prefix) {
+    return 'リピーター $prefix';
+  }
+
+  @override
+  String rptTest_line(String there, String here, String rssi) {
+    return '相手の受信 $there dB · 自分の受信 $here dB, $rssi dBm';
+  }
+
+  @override
+  String rptTest_rowLabel(
+    String name,
+    String quality,
+    String there,
+    String here,
+    String rssi,
+  ) {
+    return '$name、$quality。相手の受信 $there デシベル。自分の受信 $here デシベル、$rssi dBm。';
+  }
+
+  @override
+  String get rptTest_notConnected => 'テストするには無線機を接続してください。';
+
+  @override
+  String get rptTest_explainer =>
+      'ホップなしの探索要求を1回送るため、あなたの無線機を直接受信できるリピーターだけが応答します。最初の数値はリピーターがあなたを受信した強さ、2番目はあなたが受信した強さです。リピーターは応答回数を制限するため、テストは30秒間隔です。';
+
+  @override
   String get notification_fieldAlertTitle => 'NOTORYX フィールドアラート';
 
   @override
@@ -8009,6 +8137,72 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
+  String get signedCov_section => '署名付きレポート';
+
+  @override
+  String get signedCov_share => '署名付きレポートを共有';
+
+  @override
+  String get signedCov_shareHint =>
+      '各六角形はこの電話のカバレッジ鍵で署名されるため、改ざんや捏造を見分けられます。共有しない限り電話の外には出ません。';
+
+  @override
+  String get signedCov_check => 'レポートを確認';
+
+  @override
+  String get signedCov_checkHint => '署名付きレポートを貼り付けて、本物の観測を確認';
+
+  @override
+  String get signedCov_paste => '署名付きレポート (JSON)';
+
+  @override
+  String get signedCov_verify => '確認';
+
+  @override
+  String signedCov_yourKey(String fingerprint) {
+    return 'あなたのカバレッジ鍵: $fingerprint';
+  }
+
+  @override
+  String signedCov_result(int accepted, int rejected) {
+    return '$accepted 件の観測を確認、$rejected 件を拒否';
+  }
+
+  @override
+  String signedCov_signer(String fingerprint) {
+    return '署名鍵 $fingerprint';
+  }
+
+  @override
+  String get signedCov_unreadable => 'これは署名付きカバレッジレポートではありません。';
+
+  @override
+  String signedCov_rBadSignature(int count) {
+    return '署名なしまたは不正: $count 件';
+  }
+
+  @override
+  String signedCov_rMalformed(int count) {
+    return '破損: $count 件';
+  }
+
+  @override
+  String signedCov_rImpossible(int count) {
+    return 'ありえない信号値: $count 件';
+  }
+
+  @override
+  String signedCov_rFuture(int count) {
+    return '未来の日付: $count 件';
+  }
+
+  @override
+  String get signedCov_empty => '共有できるカバレッジのサンプルはまだありません。';
+
+  @override
+  String get signedCov_shareFailed => 'レポートを共有できませんでした。';
+
+  @override
   String get coverageHex_title => 'カバレッジ六角形';
 
   @override
@@ -8674,6 +8868,63 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get channels_regionUnknownSemantics => 'アプリが知らない地域宛てに送信';
+
+  @override
+  String get timeline_title => 'タイムライン';
+
+  @override
+  String get timeline_toolSubtitle => 'メッセージ、新しいノード、信号の変化、場所をひとつのフィードに';
+
+  @override
+  String get timeline_refresh => '再読み込み';
+
+  @override
+  String get timeline_search => 'タイムラインを検索';
+
+  @override
+  String get timeline_kindMessages => 'メッセージ';
+
+  @override
+  String get timeline_kindNodes => '新しいノード';
+
+  @override
+  String get timeline_kindSignal => '信号';
+
+  @override
+  String get timeline_kindPlaces => '場所';
+
+  @override
+  String timeline_messageFrom(String sender, String where) {
+    return '$where の $sender';
+  }
+
+  @override
+  String timeline_nodeJoined(String name) {
+    return '初めて受信: $name';
+  }
+
+  @override
+  String timeline_signalUp(String name, String from, String to) {
+    return '$name: 信号が $from から $to dB に上昇';
+  }
+
+  @override
+  String timeline_signalDown(String name, String from, String to) {
+    return '$name: 信号が $from から $to dB に低下';
+  }
+
+  @override
+  String timeline_placeSaved(String name) {
+    return '場所を保存: $name';
+  }
+
+  @override
+  String timeline_placeShared(String sender, String where) {
+    return '$sender が $where で場所を共有';
+  }
+
+  @override
+  String get timeline_empty => 'まだ何もありません。メッセージ、新しく受信したノード、信号の変化、場所がここに表示されます。';
 
   @override
   String get wardrive_title => 'ウォードライブ';
@@ -9955,6 +10206,133 @@ class AppLocalizationsJa extends AppLocalizations {
   String get team_waitingGps => '無線機からの位置を待っています';
 
   @override
+  String get checklist_title => 'チェックリスト';
+
+  @override
+  String get checklist_toolSubtitle => '出発前・設置用の再利用できるチェックリスト（オフライン対応）';
+
+  @override
+  String get checklist_empty => 'チェックリストはありません。下のボタンで追加できます。';
+
+  @override
+  String get checklist_add => '新しいチェックリスト';
+
+  @override
+  String get checklist_edit => 'チェックリストを編集';
+
+  @override
+  String get checklist_name => '名前';
+
+  @override
+  String get checklist_items => '項目（1 行に 1 つ）';
+
+  @override
+  String checklist_itemCount(int count) {
+    return '項目数: $count';
+  }
+
+  @override
+  String get checklist_history => '完了した記録';
+
+  @override
+  String get checklist_noRuns => '完了した記録はまだありません。';
+
+  @override
+  String get checklist_inProgress => '進行中';
+
+  @override
+  String checklist_progress(int done, int total) {
+    return '$total 件中 $done 件完了';
+  }
+
+  @override
+  String checklist_startedAt(String time) {
+    return '開始 $time';
+  }
+
+  @override
+  String checklist_finishedAt(String time) {
+    return '完了 $time';
+  }
+
+  @override
+  String get checklist_note => 'メモ';
+
+  @override
+  String get checklist_finish => '完了して保存';
+
+  @override
+  String get checklist_unfinished => 'チェックされていない項目があります。それでも保存しますか？';
+
+  @override
+  String get checklist_saveAnyway => '保存する';
+
+  @override
+  String get checklist_export => '書き出しまたは削除';
+
+  @override
+  String get checklist_exportText => 'テキストで共有';
+
+  @override
+  String get checklist_exportJson => 'JSON で共有';
+
+  @override
+  String get checklist_exportFailed => '記録を共有できませんでした。';
+
+  @override
+  String get checklist_deleteRun => '記録を削除';
+
+  @override
+  String get checklist_deleteRunConfirm => 'この記録を削除しますか？元に戻せません。';
+
+  @override
+  String checklist_deleteConfirm(String name) {
+    return '$name を削除しますか？完了した記録は残ります。';
+  }
+
+  @override
+  String get checklist_preTrip => '出発前';
+
+  @override
+  String get checklist_preTrip1 => '無線機を充電し、予備バッテリーを持った';
+
+  @override
+  String get checklist_preTrip2 => '無線機を電話とペアリングし、テスト送信した';
+
+  @override
+  String get checklist_preTrip3 => 'エリアのオフライン地図を保存した';
+
+  @override
+  String get checklist_preTrip4 => 'ルートと帰着予定を誰かに伝えた';
+
+  @override
+  String get checklist_preTrip5 => 'グループのチャンネルとチームの連絡先を確認した';
+
+  @override
+  String get checklist_preTrip6 => 'SOS とチェックインを一度試した';
+
+  @override
+  String get checklist_deploy => 'ノードの設置';
+
+  @override
+  String get checklist_deploy1 => '場所と許可を確認した';
+
+  @override
+  String get checklist_deploy2 => 'アンテナを取り付け、コネクタを防水した';
+
+  @override
+  String get checklist_deploy3 => '電源とソーラーを確認した';
+
+  @override
+  String get checklist_deploy4 => '無線設定と地域を確認した';
+
+  @override
+  String get checklist_deploy5 => 'テスト送信がノード経由で届いた';
+
+  @override
+  String get checklist_deploy6 => '位置・写真・メモを記録した';
+
+  @override
   String get waypoints_title => 'ウェイポイント';
 
   @override
@@ -10073,6 +10451,123 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get netChange_notifTitle => 'ネットワークの変化';
+
+  @override
+  String get journal_title => 'ノード日誌';
+
+  @override
+  String get journal_toolSubtitle => 'これまでに受信したすべてのノード。行動ラベル、タグ、メモ付き';
+
+  @override
+  String get journal_empty => 'まだノードはありません。無線機が受信したノードは自動でここに追加されます。';
+
+  @override
+  String get journal_search => '名前、ID、タグ、メモを検索';
+
+  @override
+  String get journal_filterAll => 'すべて';
+
+  @override
+  String get journal_bSteadyRelay => '常時稼働の中継';
+
+  @override
+  String get journal_bRegular => '常連';
+
+  @override
+  String get journal_bRoamer => '移動型';
+
+  @override
+  String get journal_bRarelyHeard => 'めったに受信しない';
+
+  @override
+  String get journal_bNewcomer => '新顔';
+
+  @override
+  String get journal_bGoneQuiet => '沈黙中';
+
+  @override
+  String journal_confidence(int percent) {
+    return '確度 $percent%';
+  }
+
+  @override
+  String journal_eDaysHeard(int heard, int days) {
+    return '$days 日中 $heard 日受信';
+  }
+
+  @override
+  String journal_eFirstHeard(int hours) {
+    return '$hours 時間前に初受信';
+  }
+
+  @override
+  String journal_eSilent(int days) {
+    return '$days 日間受信なし';
+  }
+
+  @override
+  String journal_ePlaces(int places, int km) {
+    return '$places か所で確認、最大 $km km 離れている';
+  }
+
+  @override
+  String journal_eSightings(int count) {
+    return '新しいアドバート計 $count 件';
+  }
+
+  @override
+  String get journal_noLabel => 'ラベルを付けるにはまだデータが足りません。';
+
+  @override
+  String journal_firstSeen(String time) {
+    return '初受信: $time';
+  }
+
+  @override
+  String journal_lastSeen(String time) {
+    return '最終受信: $time';
+  }
+
+  @override
+  String journal_hops(int min, int max) {
+    return 'ホップ数: $min〜$max';
+  }
+
+  @override
+  String get journal_tags => 'タグ';
+
+  @override
+  String get journal_addTag => 'タグを追加';
+
+  @override
+  String get journal_tagHint => '例: 登山口、クラブ、自分の';
+
+  @override
+  String journal_removeTag(String tag) {
+    return 'タグ $tag を削除';
+  }
+
+  @override
+  String get journal_note => 'メモ';
+
+  @override
+  String get journal_saveNote => 'メモを保存';
+
+  @override
+  String get journal_forget => 'このノードを削除';
+
+  @override
+  String journal_forgetConfirm(String name) {
+    return '$name をタグとメモごと日誌から削除しますか？再び受信すると最初から記録されます。';
+  }
+
+  @override
+  String get journal_forgotten => 'ノードを日誌から削除しました。';
+
+  @override
+  String journal_markLabel(String name) {
+    return '$name の生成マーク';
+  }
 
   @override
   String get trouble_title => 'トラブルシューティング';
@@ -11513,4 +12008,157 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get privacy_netSentinel =>
       'モデレーション: コミュニティモデレーションをオンにした場合のみ。禁止リストと、送信した報告や異議はsentinel-relay.meshmayhem.orgを経由してNOTORYXモデレーターに届きます。';
+
+  @override
+  String get mapTrust_favoritesOnly => 'お気に入りのみ';
+
+  @override
+  String get mapTrust_favoritesOnlyHint => '星を付けていないノードを隠す';
+
+  @override
+  String get topology_flows => 'フロー';
+
+  @override
+  String get topology_network => 'ネットワーク';
+
+  @override
+  String get topology_hint =>
+      'リングは中央のあなたからのホップ数を示します。太い線ほど多くのメッセージを運び、大きな点ほど多く中継しました。点をタップするとそのリピーターを表示します。';
+
+  @override
+  String topology_semantics(int repeaters, int rings) {
+    return 'ネットワーク図。あなたの周りの$ringsつのリングに$repeaters台のリピーター。';
+  }
+
+  @override
+  String get zones_title => 'ゾーン・トレイル通知';
+
+  @override
+  String get zones_toolSubtitle => '誰かがゾーンに出入りしたり、トレイルから外れたりすると通知';
+
+  @override
+  String get zones_enabled => '通知オン';
+
+  @override
+  String get zones_enabledHint => '無線機が受信したアドバートの位置を使うため、通知は最後のアドバートの時点の情報です。';
+
+  @override
+  String get zones_watch => '対象';
+
+  @override
+  String get zones_scopeFavorites => 'お気に入り';
+
+  @override
+  String get zones_scopeEveryone => '全員';
+
+  @override
+  String get zones_includeSelf => '自分の無線機も';
+
+  @override
+  String get zones_zones => 'ゾーン';
+
+  @override
+  String get zones_none => 'ゾーンはまだありません。キャンプ地、登山口、集合場所の周りに追加しましょう。';
+
+  @override
+  String get zones_add => 'ゾーンを追加';
+
+  @override
+  String get zones_edit => 'ゾーンを編集';
+
+  @override
+  String get zones_name => '名前';
+
+  @override
+  String get zones_defaultName => 'ゾーン';
+
+  @override
+  String get zones_center => '中心';
+
+  @override
+  String get zones_centerMyRadio => '自分の無線機の位置';
+
+  @override
+  String zones_centerWaypoint(String name) {
+    return 'ウェイポイント: $name';
+  }
+
+  @override
+  String get zones_noCenter =>
+      '無線機に位置がなく、ウェイポイントもありません。先に位置を設定するかウェイポイントを保存してください。';
+
+  @override
+  String zones_radius(String distance) {
+    return '半径: $distance';
+  }
+
+  @override
+  String get zones_alertOn => '通知するタイミング';
+
+  @override
+  String get zones_onEnter => '入る';
+
+  @override
+  String get zones_onLeave => '出る';
+
+  @override
+  String get zones_onBoth => '両方';
+
+  @override
+  String get zones_delete => 'ゾーンを削除';
+
+  @override
+  String zones_full(int count) {
+    return 'ゾーンは$count個まで保存できます。';
+  }
+
+  @override
+  String get zones_trail => 'トレイル';
+
+  @override
+  String get zones_trailNone => '監視するトレイルなし';
+
+  @override
+  String get zones_trailHint => 'ウェイポイントのルートか記録したトラックを選びます。監視対象が上限より離れると通知します。';
+
+  @override
+  String zones_offTrailLimit(String distance) {
+    return '$distance以上離れたら外れたと判断';
+  }
+
+  @override
+  String get zones_you => 'あなた';
+
+  @override
+  String zones_trackName(String date, String km) {
+    return 'トラック $date · $km km';
+  }
+
+  @override
+  String zones_alertEnteredTitle(String zone) {
+    return '$zoneに入りました';
+  }
+
+  @override
+  String zones_alertEnteredBody(String name, String zone) {
+    return '$nameが$zone内にいます。';
+  }
+
+  @override
+  String zones_alertLeftTitle(String zone) {
+    return '$zoneから出ました';
+  }
+
+  @override
+  String zones_alertLeftBody(String name, String zone) {
+    return '$nameが$zoneから出ました。';
+  }
+
+  @override
+  String get zones_alertOffTrailTitle => 'トレイルから外れました';
+
+  @override
+  String zones_alertOffTrailBody(String name, String distance, String trail) {
+    return '$nameは$trailから$distance離れています。';
+  }
 }
