@@ -8,6 +8,7 @@ import 'package:meshcore_open/models/contact.dart';
 import 'package:meshcore_open/services/offline_outbox.dart';
 import 'package:meshcore_open/storage/draft_store.dart';
 import 'package:meshcore_open/storage/prefs_manager.dart';
+import 'package:meshcore_open/storage/secure_prefs.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 final _sam = Contact(
@@ -25,6 +26,8 @@ final _hiking = Channel(
 );
 
 class _Radio extends MeshCoreConnector {
+  _Radio({super.slot});
+
   bool connected = false;
   bool loaded = true;
   String self = 'aabbccddeeff';
@@ -90,6 +93,18 @@ void main() {
     await outbox.flush();
     expect(radio.sent, ['Sam:one', '#hiking:two']);
     expect(outbox.entriesFor(samTarget), isEmpty);
+  });
+
+  test('each radio keeps its own outbox, encrypted like the first', () async {
+    await make().add(samTarget, 'from one');
+    final other = _Radio(slot: 'r2')..self = '112233445566';
+    OfflineOutbox second() =>
+        OfflineOutbox(other, clock: () => now, spacing: Duration.zero);
+    await second().add(samTarget, 'from two');
+    expect(make().entriesFor(samTarget).single.text, 'from one');
+    expect(second().entriesFor(samTarget).single.text, 'from two');
+    expect(SecurePrefs.isSensitive('offline_outbox_v1_r2'), isTrue);
+    expect(SecurePrefs.isSensitive('offline_outbox_v1_x'), isFalse);
   });
 
   test('survives an app restart', () async {

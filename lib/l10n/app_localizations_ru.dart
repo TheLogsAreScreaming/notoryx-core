@@ -8098,6 +8098,72 @@ class AppLocalizationsRu extends AppLocalizations {
   String get connections_viewDashboard => 'Открыть панель подключений';
 
   @override
+  String get radios_title => 'Радио';
+
+  @override
+  String radios_number(int number) {
+    return 'Радио $number';
+  }
+
+  @override
+  String get radios_active => 'Используется';
+
+  @override
+  String get radios_switch => 'Использовать это радио';
+
+  @override
+  String get radios_add => 'Добавить радио';
+
+  @override
+  String get radios_switcher => 'Сменить радио';
+
+  @override
+  String get radios_hint =>
+      'Можно оставаться подключённым к нескольким радио, например к портативному и базовой станции. Приложение показывает и отправляет через используемое радио. Остальные остаются подключёнными, а их сообщения сохраняются до переключения.';
+
+  @override
+  String get radios_switchNote =>
+      'При смене радио вы вернётесь на главный экран. Боты, автоматизация, оповещения, отслеживание и ретрансляция SOS работают на используемом радио.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return 'Удалить $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Радио будет отключено и забыто. Его сообщения и контакты останутся сохранены.';
+
+  @override
+  String radios_unread(int count) {
+    return 'Непрочитанных: $count';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return 'Непрочитанных на других радио: $count';
+  }
+
+  @override
+  String get radios_continueOn => 'Продолжить на другом радио';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Продолжить на $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Напрямую';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Переходов: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Маршрут неизвестен';
+
+  @override
   String get channelDirectory_title => 'Каталог каналов';
 
   @override

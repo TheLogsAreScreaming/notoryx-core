@@ -7991,6 +7991,72 @@ class AppLocalizationsSv extends AppLocalizations {
   String get connections_viewDashboard => 'Visa anslutningsöversikt';
 
   @override
+  String get radios_title => 'Radioenheter';
+
+  @override
+  String radios_number(int number) {
+    return 'Radio $number';
+  }
+
+  @override
+  String get radios_active => 'Används';
+
+  @override
+  String get radios_switch => 'Använd den här radion';
+
+  @override
+  String get radios_add => 'Lägg till en radio';
+
+  @override
+  String get radios_switcher => 'Byt radio';
+
+  @override
+  String get radios_hint =>
+      'Du kan vara ansluten till mer än en radio, till exempel en handenhet och en basstation. Appen visar och skickar via radion som används. De andra förblir anslutna och deras meddelanden sparas tills du byter.';
+
+  @override
+  String get radios_switchNote =>
+      'När du byter radio kommer du tillbaka till startskärmen. Bottar, automatisering, aviseringar, spårning och SOS-vidarebefordran körs på radion som används.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return 'Ta bort $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Radion kopplas från och glöms. Dess meddelanden och kontakter förblir sparade.';
+
+  @override
+  String radios_unread(int count) {
+    return '$count olästa';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count olästa på andra radioenheter';
+  }
+
+  @override
+  String get radios_continueOn => 'Fortsätt på en annan radio';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Fortsätt på $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Direkt';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Hopp: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Ingen känd rutt';
+
+  @override
   String get channelDirectory_title => 'Kanalkatalog';
 
   @override

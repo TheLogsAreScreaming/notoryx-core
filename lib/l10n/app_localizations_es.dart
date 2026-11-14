@@ -8066,6 +8066,72 @@ class AppLocalizationsEs extends AppLocalizations {
   String get connections_viewDashboard => 'Ver panel de conexiones';
 
   @override
+  String get radios_title => 'Radios';
+
+  @override
+  String radios_number(int number) {
+    return 'Radio $number';
+  }
+
+  @override
+  String get radios_active => 'En uso';
+
+  @override
+  String get radios_switch => 'Usar esta radio';
+
+  @override
+  String get radios_add => 'Añadir una radio';
+
+  @override
+  String get radios_switcher => 'Cambiar de radio';
+
+  @override
+  String get radios_hint =>
+      'Puedes seguir conectado a más de una radio, como una portátil y una estación base. La app muestra y envía a través de la radio en uso. Las demás siguen conectadas y sus mensajes se guardan para cuando cambies.';
+
+  @override
+  String get radios_switchNote =>
+      'Al cambiar de radio vuelves a la pantalla de inicio. Los bots, la automatización, los avisos, el seguimiento y el reenvío de SOS funcionan con la radio en uso.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return '¿Quitar $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Esto desconecta la radio y la olvida. Sus mensajes y contactos siguen guardados.';
+
+  @override
+  String radios_unread(int count) {
+    return '$count sin leer';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count sin leer en otras radios';
+  }
+
+  @override
+  String get radios_continueOn => 'Continuar con otra radio';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Continuar con $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Directo';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Saltos: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Sin ruta conocida';
+
+  @override
   String get channelDirectory_title => 'Directorio de canales';
 
   @override

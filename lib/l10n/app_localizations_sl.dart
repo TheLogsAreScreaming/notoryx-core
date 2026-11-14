@@ -8053,6 +8053,72 @@ class AppLocalizationsSl extends AppLocalizations {
   String get connections_viewDashboard => 'Prikaži pregled povezav';
 
   @override
+  String get radios_title => 'Radii';
+
+  @override
+  String radios_number(int number) {
+    return 'Radio $number';
+  }
+
+  @override
+  String get radios_active => 'V uporabi';
+
+  @override
+  String get radios_switch => 'Uporabi ta radio';
+
+  @override
+  String get radios_add => 'Dodaj radio';
+
+  @override
+  String get radios_switcher => 'Zamenjaj radio';
+
+  @override
+  String get radios_hint =>
+      'Povezani ste lahko z več radii, na primer ročnim in bazno postajo. Aplikacija prikazuje in pošilja prek radia v uporabi. Drugi ostanejo povezani, njihova sporočila pa se shranijo za takrat, ko preklopite.';
+
+  @override
+  String get radios_switchNote =>
+      'Ob zamenjavi radia se vrnete na začetni zaslon. Boti, avtomatizacija, opozorila, sledenje in posredovanje SOS delujejo na radiu v uporabi.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return 'Odstranim $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Radio se prekine in pozabi. Njegova sporočila in stiki ostanejo shranjeni.';
+
+  @override
+  String radios_unread(int count) {
+    return 'Neprebrano: $count';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return 'Neprebrano na drugih radiih: $count';
+  }
+
+  @override
+  String get radios_continueOn => 'Nadaljuj na drugem radiu';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Nadaljuj na $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Neposredno';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Skoki: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Ni znane poti';
+
+  @override
   String get channelDirectory_title => 'Imenik kanalov';
 
   @override

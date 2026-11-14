@@ -8050,6 +8050,72 @@ class AppLocalizationsBg extends AppLocalizations {
   String get connections_viewDashboard => 'Преглед на връзките';
 
   @override
+  String get radios_title => 'Радиа';
+
+  @override
+  String radios_number(int number) {
+    return 'Радио $number';
+  }
+
+  @override
+  String get radios_active => 'Използва се';
+
+  @override
+  String get radios_switch => 'Използвай това радио';
+
+  @override
+  String get radios_add => 'Добави радио';
+
+  @override
+  String get radios_switcher => 'Смени радиото';
+
+  @override
+  String get radios_hint =>
+      'Можете да сте свързани с повече от едно радио, например ръчно и базова станция. Приложението показва и изпраща чрез радиото в употреба. Другите остават свързани и съобщенията им се запазват за когато превключите.';
+
+  @override
+  String get radios_switchNote =>
+      'Смяната на радиото ви връща на началния екран. Ботовете, автоматизацията, известията, проследяването и SOS ретранслацията работят с радиото в употреба.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return 'Да се премахне ли $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Така радиото се изключва и забравя. Съобщенията и контактите му остават запазени.';
+
+  @override
+  String radios_unread(int count) {
+    return '$count непрочетени';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count непрочетени на други радиа';
+  }
+
+  @override
+  String get radios_continueOn => 'Продължи с друго радио';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Продължи с $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Директно';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Скокове: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Няма известен маршрут';
+
+  @override
   String get channelDirectory_title => 'Каталог на канали';
 
   @override

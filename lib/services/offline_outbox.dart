@@ -71,8 +71,16 @@ class OfflineOutbox extends ChangeNotifier {
   }
 
   static const maxAge = Duration(hours: 24);
-  static const _entriesKey = 'offline_outbox_v1';
-  static const _radioKey = 'offline_outbox_last_radio';
+  static const _entriesBase = 'offline_outbox_v1';
+  static const _radioBase = 'offline_outbox_last_radio';
+
+  /// Each radio keeps its own outbox, so several can run at once. The
+  /// first radio (slot '') keeps the keys earlier builds used.
+  String get _entriesKey => connector.slot.isEmpty
+      ? _entriesBase
+      : '${_entriesBase}_${connector.slot}';
+  String get _radioKey =>
+      connector.slot.isEmpty ? _radioBase : '${_radioBase}_${connector.slot}';
 
   final MeshCoreConnector connector;
   final DateTime Function() _clock;

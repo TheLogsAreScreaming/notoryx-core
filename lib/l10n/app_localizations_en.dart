@@ -7943,6 +7943,72 @@ class AppLocalizationsEn extends AppLocalizations {
   String get connections_viewDashboard => 'View connection dashboard';
 
   @override
+  String get radios_title => 'Radios';
+
+  @override
+  String radios_number(int number) {
+    return 'Radio $number';
+  }
+
+  @override
+  String get radios_active => 'In use';
+
+  @override
+  String get radios_switch => 'Use this radio';
+
+  @override
+  String get radios_add => 'Add a radio';
+
+  @override
+  String get radios_switcher => 'Switch radio';
+
+  @override
+  String get radios_hint =>
+      'You can stay connected to more than one radio, such as a handheld and a base station. The app shows and sends through the radio in use. The others stay connected, and their messages are saved for when you switch.';
+
+  @override
+  String get radios_switchNote =>
+      'Switching radios takes you back to the home screen. Bots, automation, alerts, tracking and the SOS relay run on the radio in use.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return 'Remove $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'This disconnects the radio and forgets it. Its messages and contacts stay saved.';
+
+  @override
+  String radios_unread(int count) {
+    return '$count unread';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count unread on other radios';
+  }
+
+  @override
+  String get radios_continueOn => 'Continue on another radio';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Continue on $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Direct';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Hops: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'No known route';
+
+  @override
   String get channelDirectory_title => 'Channel directory';
 
   @override

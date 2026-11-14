@@ -605,6 +605,7 @@ extension _ConnectorFrameHandlers on MeshCoreConnector {
         final settings = _appSettingsService!.settings;
         if (settings.notificationsEnabled && settings.notifyOnNewAdvert) {
           _notificationService.showAdvertNotification(
+            radio: slot,
             contactName: contact.name,
             contactType: contact.typeLabelRaw,
             contactId: contact.publicKeyHex,
@@ -687,6 +688,7 @@ extension _ConnectorFrameHandlers on MeshCoreConnector {
       final settings = _appSettingsService!.settings;
       if (settings.notificationsEnabled && settings.notifyOnNewAdvert) {
         _notificationService.showAdvertNotification(
+          radio: slot,
           contactName: contact.name,
           contactType: contact.typeLabelRaw,
           contactId: contact.publicKeyHex,
@@ -806,7 +808,8 @@ extension _ConnectorFrameHandlers on MeshCoreConnector {
                   ? translationResult.translatedText.trim()
                   : msg.text.trim();
               await _notificationService.showMessageNotification(
-                contactName: c?.name ?? 'Unknown',
+                radio: slot,
+                contactName: notificationTitle(c?.name ?? 'Unknown'),
                 message: resolvedText,
                 urlImagesEnabled:
                     c != null && isContactUrlImagesEnabled(c.publicKeyHex),
@@ -822,7 +825,8 @@ extension _ConnectorFrameHandlers on MeshCoreConnector {
                   ? translationResult.translatedText.trim()
                   : msg.text.trim();
               await _notificationService.showMessageNotification(
-                contactName: c?.name ?? 'Unknown Room',
+                radio: slot,
+                contactName: notificationTitle(c?.name ?? 'Unknown Room'),
                 message: resolvedText,
                 urlImagesEnabled:
                     c != null && isContactUrlImagesEnabled(c.publicKeyHex),
@@ -1320,6 +1324,7 @@ extension _ConnectorFrameHandlers on MeshCoreConnector {
       final settings = _appSettingsService!.settings;
       if (settings.notificationsEnabled && settings.notifyOnNewAdvert) {
         _notificationService.showAdvertNotification(
+          radio: slot,
           contactName: contact.name,
           contactType: contact.typeLabelRaw,
           contactId: contact.publicKeyHex,

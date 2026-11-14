@@ -7672,6 +7672,71 @@ class AppLocalizationsJa extends AppLocalizations {
   String get connections_viewDashboard => '接続ダッシュボードを表示';
 
   @override
+  String get radios_title => '無線機';
+
+  @override
+  String radios_number(int number) {
+    return '無線機 $number';
+  }
+
+  @override
+  String get radios_active => '使用中';
+
+  @override
+  String get radios_switch => 'この無線機を使う';
+
+  @override
+  String get radios_add => '無線機を追加';
+
+  @override
+  String get radios_switcher => '無線機を切り替え';
+
+  @override
+  String get radios_hint =>
+      'ハンディ機と基地局など、複数の無線機に接続したままにできます。アプリは使用中の無線機で表示・送信します。他の無線機は接続を保ち、メッセージは切り替えたときのために保存されます。';
+
+  @override
+  String get radios_switchNote =>
+      '無線機を切り替えるとホーム画面に戻ります。ボット、自動化、通知、追跡、SOS中継は使用中の無線機で動作します。';
+
+  @override
+  String radios_removeTitle(String name) {
+    return '$nameを削除しますか？';
+  }
+
+  @override
+  String get radios_removeBody => '無線機を切断して登録を解除します。メッセージと連絡先は保存されたままです。';
+
+  @override
+  String radios_unread(int count) {
+    return '未読 $count件';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '他の無線機に未読 $count件';
+  }
+
+  @override
+  String get radios_continueOn => '別の無線機で続ける';
+
+  @override
+  String radios_continueOnName(String name) {
+    return '$nameで続ける';
+  }
+
+  @override
+  String get radios_routeDirect => '直接';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'ホップ数: $count';
+  }
+
+  @override
+  String get radios_routeFlood => '既知の経路なし';
+
+  @override
   String get channelDirectory_title => 'チャンネル一覧';
 
   @override

@@ -8025,6 +8025,72 @@ class AppLocalizationsNl extends AppLocalizations {
   String get connections_viewDashboard => 'Verbindingsoverzicht bekijken';
 
   @override
+  String get radios_title => 'Radio\'s';
+
+  @override
+  String radios_number(int number) {
+    return 'Radio $number';
+  }
+
+  @override
+  String get radios_active => 'In gebruik';
+
+  @override
+  String get radios_switch => 'Deze radio gebruiken';
+
+  @override
+  String get radios_add => 'Radio toevoegen';
+
+  @override
+  String get radios_switcher => 'Andere radio';
+
+  @override
+  String get radios_hint =>
+      'Je kunt met meer dan één radio verbonden blijven, zoals een handheld en een basisstation. De app toont en verstuurt via de radio die in gebruik is. De andere blijven verbonden en hun berichten worden bewaard voor als je wisselt.';
+
+  @override
+  String get radios_switchNote =>
+      'Wisselen van radio brengt je terug naar het startscherm. Bots, automatisering, meldingen, tracking en SOS-doorgifte draaien op de radio die in gebruik is.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return '$name verwijderen?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Hiermee wordt de radio losgekoppeld en vergeten. Berichten en contacten blijven bewaard.';
+
+  @override
+  String radios_unread(int count) {
+    return '$count ongelezen';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count ongelezen op andere radio\'s';
+  }
+
+  @override
+  String get radios_continueOn => 'Doorgaan op een andere radio';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Doorgaan op $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Direct';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Hops: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Geen bekende route';
+
+  @override
   String get channelDirectory_title => 'Kanalengids';
 
   @override

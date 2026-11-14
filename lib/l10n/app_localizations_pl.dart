@@ -8098,6 +8098,72 @@ class AppLocalizationsPl extends AppLocalizations {
   String get connections_viewDashboard => 'Pokaż panel połączeń';
 
   @override
+  String get radios_title => 'Radia';
+
+  @override
+  String radios_number(int number) {
+    return 'Radio $number';
+  }
+
+  @override
+  String get radios_active => 'W użyciu';
+
+  @override
+  String get radios_switch => 'Użyj tego radia';
+
+  @override
+  String get radios_add => 'Dodaj radio';
+
+  @override
+  String get radios_switcher => 'Przełącz radio';
+
+  @override
+  String get radios_hint =>
+      'Możesz pozostać połączony z więcej niż jednym radiem, np. ręcznym i stacją bazową. Aplikacja pokazuje i wysyła przez radio w użyciu. Pozostałe są nadal połączone, a ich wiadomości są zapisywane na czas przełączenia.';
+
+  @override
+  String get radios_switchNote =>
+      'Przełączenie radia przenosi na ekran główny. Boty, automatyzacja, alerty, śledzenie i przekazywanie SOS działają na radiu w użyciu.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return 'Usunąć $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Radio zostanie rozłączone i zapomniane. Jego wiadomości i kontakty pozostaną zapisane.';
+
+  @override
+  String radios_unread(int count) {
+    return 'Nieprzeczytane: $count';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return 'Nieprzeczytane na innych radiach: $count';
+  }
+
+  @override
+  String get radios_continueOn => 'Kontynuuj na innym radiu';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Kontynuuj na $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Bezpośrednio';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Przeskoki: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Brak znanej trasy';
+
+  @override
   String get channelDirectory_title => 'Katalog kanałów';
 
   @override

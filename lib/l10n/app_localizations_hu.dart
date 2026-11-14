@@ -8050,6 +8050,72 @@ class AppLocalizationsHu extends AppLocalizations {
   String get connections_viewDashboard => 'Kapcsolatok áttekintése';
 
   @override
+  String get radios_title => 'Rádiók';
+
+  @override
+  String radios_number(int number) {
+    return '$number. rádió';
+  }
+
+  @override
+  String get radios_active => 'Használatban';
+
+  @override
+  String get radios_switch => 'Ennek a rádiónak a használata';
+
+  @override
+  String get radios_add => 'Rádió hozzáadása';
+
+  @override
+  String get radios_switcher => 'Rádió váltása';
+
+  @override
+  String get radios_hint =>
+      'Több rádióhoz is kapcsolódva maradhat, például egy kézi és egy bázisállomáshoz. Az alkalmazás a használatban lévő rádión keresztül mutat és küld. A többi kapcsolódva marad, üzeneteik pedig megmaradnak váltáskor.';
+
+  @override
+  String get radios_switchNote =>
+      'Rádióváltáskor visszakerül a kezdőképernyőre. A botok, az automatizálás, a riasztások, a követés és az SOS-továbbítás a használatban lévő rádión fut.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return 'Eltávolítja: $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Ez bontja a rádió kapcsolatát és elfelejti. Üzenetei és névjegyei mentve maradnak.';
+
+  @override
+  String radios_unread(int count) {
+    return '$count olvasatlan';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count olvasatlan más rádiókon';
+  }
+
+  @override
+  String get radios_continueOn => 'Folytatás másik rádión';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Folytatás ezen: $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Közvetlen';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Ugrások: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Nincs ismert útvonal';
+
+  @override
   String get channelDirectory_title => 'Csatornakönyvtár';
 
   @override
