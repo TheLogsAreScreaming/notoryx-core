@@ -10,13 +10,17 @@ AutomationRule _rule(
 }) => AutomationRule(
   id: id,
   name: id,
-  trigger: trigger,
   enabled: enabled,
-  action: action,
-  minuteOfDay: minuteOfDay,
-  latitude: 40,
-  longitude: -74,
-  nodeKey: 'n',
+  conditions: [
+    AutomationCondition(
+      trigger: trigger,
+      minuteOfDay: minuteOfDay,
+      latitude: 40,
+      longitude: -74,
+      nodeKey: 'n',
+    ),
+  ],
+  steps: [AutomationStep(action: action, text: 'hi')],
 );
 
 final _t0 = DateTime(2026, 11, 8, 12);
@@ -143,8 +147,8 @@ void main() {
   test('rules survive a save and load', () {
     final rule = _rule('j', AutomationTrigger.leaveArea);
     final back = AutomationRule.fromJson(rule.toJson());
-    expect(back.trigger, AutomationTrigger.leaveArea);
-    expect(back.latitude, 40);
+    expect(back.conditions.single.trigger, AutomationTrigger.leaveArea);
+    expect(back.conditions.single.latitude, 40);
     expect(back.enabled, isTrue);
   });
 }

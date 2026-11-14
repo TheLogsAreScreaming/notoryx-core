@@ -11225,7 +11225,140 @@ class AppLocalizationsJa extends AppLocalizations {
   String get auto_entry => '自動化ルール';
 
   @override
-  String get auto_entrySub => 'バッテリー、時刻、エリア、ノードで実行';
+  String get auto_entrySub => 'バッテリー、時刻、エリア、ノード、メッセージのトリガー、AND/OR';
+
+  @override
+  String get auto_trigMessage => 'メッセージを受信';
+
+  @override
+  String get auto_actJoin => 'ハッシュタグチャンネルに参加';
+
+  @override
+  String get auto_actSound => '音を鳴らす';
+
+  @override
+  String get auto_actWebhook => 'Webhookを呼び出す';
+
+  @override
+  String get auto_outDone => '完了';
+
+  @override
+  String get auto_outNotConnected => '無線機が未接続';
+
+  @override
+  String get auto_outNoTarget => '宛先またはアドレスがありません';
+
+  @override
+  String get auto_outWebOff => 'Webリクエストはオフです';
+
+  @override
+  String get auto_outWebFailed => 'Webリクエストに失敗';
+
+  @override
+  String get auto_outNoSlot => '空きチャンネル枠がありません';
+
+  @override
+  String get auto_outFailed => '失敗';
+
+  @override
+  String get auto_anyone => '誰でも';
+
+  @override
+  String get auto_webSwitch => 'Webリクエストを許可（Webhook）';
+
+  @override
+  String get auto_webSwitchSub =>
+      '既定ではオフ。Webhook操作にはインターネットが必要で、オフの間はスキップされます。それ以外は無線だけで動作します。';
+
+  @override
+  String get auto_andJoin => '、かつ';
+
+  @override
+  String get auto_orJoin => '、または';
+
+  @override
+  String get auto_needsInternet => 'インターネットが必要';
+
+  @override
+  String get auto_recent => '最近の実行';
+
+  @override
+  String get auto_needCondition => '条件を1つ以上追加してください。';
+
+  @override
+  String get auto_needAction => '操作を1つ以上追加してください。';
+
+  @override
+  String get auto_conditions => '条件';
+
+  @override
+  String get auto_actions => '操作';
+
+  @override
+  String get auto_addCondition => '条件を追加';
+
+  @override
+  String get auto_addAction => '操作を追加';
+
+  @override
+  String auto_remove(String item) {
+    return '$itemを削除';
+  }
+
+  @override
+  String get auto_combine => 'ルールを実行する条件';
+
+  @override
+  String get auto_combineAny => 'いずれか（OR）';
+
+  @override
+  String get auto_combineAll => 'すべて（AND）';
+
+  @override
+  String get auto_combineAnyHint => 'いずれかの条件が起きたときに実行します。';
+
+  @override
+  String get auto_combineAllHint =>
+      '1つの条件が起き、その時点で他のすべてが成り立つときに実行します（例:「18:00 かつ バッテリー30%未満」）。';
+
+  @override
+  String get auto_editCondition => '条件';
+
+  @override
+  String get auto_editAction => '操作';
+
+  @override
+  String get auto_done => '完了';
+
+  @override
+  String get auto_contains => 'メッセージに含む語（任意）';
+
+  @override
+  String get auto_from => '送信者';
+
+  @override
+  String get auto_do => '実行';
+
+  @override
+  String get auto_webhookHint =>
+      'インターネットが必要です。ルール名、時刻、バッテリー、ノード、テキストをJSONで送ります。Webリクエストが許可されている間だけ動作します。';
+
+  @override
+  String get auto_webhookUrl => 'Webhookのアドレス（https://…）';
+
+  @override
+  String get auto_channelName => 'ハッシュタグチャンネル（例: #hikers）';
+
+  @override
+  String get auto_needChannel => 'チャンネル名を入力してください。';
+
+  @override
+  String get auto_needUrl => 'https:// で始まるアドレスを入力してください';
+
+  @override
+  String auto_placeholders(String list) {
+    return '使用できる語: $list';
+  }
 
   @override
   String get teamSetup_title => 'チーム設定';

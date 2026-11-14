@@ -11806,7 +11806,142 @@ class AppLocalizationsRu extends AppLocalizations {
   String get auto_entry => 'Правила автоматизации';
 
   @override
-  String get auto_entrySub => 'Батарея, время, зона и узлы';
+  String get auto_entrySub =>
+      'Триггеры: батарея, время, зона, узел и сообщения; И/ИЛИ';
+
+  @override
+  String get auto_trigMessage => 'Приходит сообщение';
+
+  @override
+  String get auto_actJoin => 'Войти в хештег-канал';
+
+  @override
+  String get auto_actSound => 'Воспроизвести звук';
+
+  @override
+  String get auto_actWebhook => 'Вызвать вебхук';
+
+  @override
+  String get auto_outDone => 'Готово';
+
+  @override
+  String get auto_outNotConnected => 'Радио не подключено';
+
+  @override
+  String get auto_outNoTarget => 'Нет получателя или адреса';
+
+  @override
+  String get auto_outWebOff => 'Веб-запросы выключены';
+
+  @override
+  String get auto_outWebFailed => 'Ошибка веб-запроса';
+
+  @override
+  String get auto_outNoSlot => 'Нет свободного слота канала';
+
+  @override
+  String get auto_outFailed => 'Ошибка';
+
+  @override
+  String get auto_anyone => 'Кто угодно';
+
+  @override
+  String get auto_webSwitch => 'Разрешить веб-запросы (вебхуки)';
+
+  @override
+  String get auto_webSwitchSub =>
+      'По умолчанию выключено. Вебхукам нужен интернет, и пока это выключено, они пропускаются. Всё остальное работает только по радио.';
+
+  @override
+  String get auto_andJoin => ' и ';
+
+  @override
+  String get auto_orJoin => ' или ';
+
+  @override
+  String get auto_needsInternet => 'Нужен интернет';
+
+  @override
+  String get auto_recent => 'Последние запуски';
+
+  @override
+  String get auto_needCondition => 'Добавьте хотя бы одно условие.';
+
+  @override
+  String get auto_needAction => 'Добавьте хотя бы одно действие.';
+
+  @override
+  String get auto_conditions => 'Условия';
+
+  @override
+  String get auto_actions => 'Действия';
+
+  @override
+  String get auto_addCondition => 'Добавить условие';
+
+  @override
+  String get auto_addAction => 'Добавить действие';
+
+  @override
+  String auto_remove(String item) {
+    return 'Удалить: $item';
+  }
+
+  @override
+  String get auto_combine => 'Выполнять правило, когда';
+
+  @override
+  String get auto_combineAny => 'Любое (ИЛИ)';
+
+  @override
+  String get auto_combineAll => 'Все (И)';
+
+  @override
+  String get auto_combineAnyHint =>
+      'Срабатывает, когда выполняется любое из условий.';
+
+  @override
+  String get auto_combineAllHint =>
+      'Срабатывает, когда выполняется одно условие и все остальные верны в этот момент, например «в 18:00 И батарея ниже 30%».';
+
+  @override
+  String get auto_editCondition => 'Условие';
+
+  @override
+  String get auto_editAction => 'Действие';
+
+  @override
+  String get auto_done => 'Готово';
+
+  @override
+  String get auto_contains => 'Сообщение содержит (необязательно)';
+
+  @override
+  String get auto_from => 'От';
+
+  @override
+  String get auto_do => 'Сделать';
+
+  @override
+  String get auto_webhookHint =>
+      'Нужен интернет. Отправляет имя правила, время, батарею, узел и текст в JSON. Работает, только пока веб-запросы разрешены.';
+
+  @override
+  String get auto_webhookUrl => 'Адрес вебхука (https://…)';
+
+  @override
+  String get auto_channelName => 'Хештег-канал, например #походы';
+
+  @override
+  String get auto_needChannel => 'Введите название канала.';
+
+  @override
+  String get auto_needUrl => 'Введите веб-адрес, начинающийся с https://';
+
+  @override
+  String auto_placeholders(String list) {
+    return 'Можно использовать $list';
+  }
 
   @override
   String get teamSetup_title => 'Настройка команды';

@@ -19504,8 +19504,260 @@ abstract class AppLocalizations {
   /// No description provided for @auto_entrySub.
   ///
   /// In en, this message translates to:
-  /// **'Battery, time, area and node triggers'**
+  /// **'Battery, time, area, node and message triggers; AND/OR'**
   String get auto_entrySub;
+
+  /// No description provided for @auto_trigMessage.
+  ///
+  /// In en, this message translates to:
+  /// **'A message arrives'**
+  String get auto_trigMessage;
+
+  /// No description provided for @auto_actJoin.
+  ///
+  /// In en, this message translates to:
+  /// **'Join a hashtag channel'**
+  String get auto_actJoin;
+
+  /// No description provided for @auto_actSound.
+  ///
+  /// In en, this message translates to:
+  /// **'Play a sound'**
+  String get auto_actSound;
+
+  /// No description provided for @auto_actWebhook.
+  ///
+  /// In en, this message translates to:
+  /// **'Call a webhook'**
+  String get auto_actWebhook;
+
+  /// No description provided for @auto_outDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get auto_outDone;
+
+  /// No description provided for @auto_outNotConnected.
+  ///
+  /// In en, this message translates to:
+  /// **'Radio not connected'**
+  String get auto_outNotConnected;
+
+  /// No description provided for @auto_outNoTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'Recipient or address missing'**
+  String get auto_outNoTarget;
+
+  /// No description provided for @auto_outWebOff.
+  ///
+  /// In en, this message translates to:
+  /// **'Web requests are off'**
+  String get auto_outWebOff;
+
+  /// No description provided for @auto_outWebFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Web request failed'**
+  String get auto_outWebFailed;
+
+  /// No description provided for @auto_outNoSlot.
+  ///
+  /// In en, this message translates to:
+  /// **'No free channel slot'**
+  String get auto_outNoSlot;
+
+  /// No description provided for @auto_outFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed'**
+  String get auto_outFailed;
+
+  /// No description provided for @auto_anyone.
+  ///
+  /// In en, this message translates to:
+  /// **'Anyone'**
+  String get auto_anyone;
+
+  /// No description provided for @auto_webSwitch.
+  ///
+  /// In en, this message translates to:
+  /// **'Allow web requests (webhooks)'**
+  String get auto_webSwitch;
+
+  /// No description provided for @auto_webSwitchSub.
+  ///
+  /// In en, this message translates to:
+  /// **'Off by default. Webhook actions need internet and are skipped while this is off. Everything else works over radio alone.'**
+  String get auto_webSwitchSub;
+
+  /// No description provided for @auto_andJoin.
+  ///
+  /// In en, this message translates to:
+  /// **' and '**
+  String get auto_andJoin;
+
+  /// No description provided for @auto_orJoin.
+  ///
+  /// In en, this message translates to:
+  /// **' or '**
+  String get auto_orJoin;
+
+  /// No description provided for @auto_needsInternet.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs internet'**
+  String get auto_needsInternet;
+
+  /// No description provided for @auto_recent.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent runs'**
+  String get auto_recent;
+
+  /// No description provided for @auto_needCondition.
+  ///
+  /// In en, this message translates to:
+  /// **'Add at least one condition.'**
+  String get auto_needCondition;
+
+  /// No description provided for @auto_needAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add at least one action.'**
+  String get auto_needAction;
+
+  /// No description provided for @auto_conditions.
+  ///
+  /// In en, this message translates to:
+  /// **'Conditions'**
+  String get auto_conditions;
+
+  /// No description provided for @auto_actions.
+  ///
+  /// In en, this message translates to:
+  /// **'Actions'**
+  String get auto_actions;
+
+  /// No description provided for @auto_addCondition.
+  ///
+  /// In en, this message translates to:
+  /// **'Add condition'**
+  String get auto_addCondition;
+
+  /// No description provided for @auto_addAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Add action'**
+  String get auto_addAction;
+
+  /// No description provided for @auto_remove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove {item}'**
+  String auto_remove(String item);
+
+  /// No description provided for @auto_combine.
+  ///
+  /// In en, this message translates to:
+  /// **'Run the rule when'**
+  String get auto_combine;
+
+  /// No description provided for @auto_combineAny.
+  ///
+  /// In en, this message translates to:
+  /// **'Any (OR)'**
+  String get auto_combineAny;
+
+  /// No description provided for @auto_combineAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All (AND)'**
+  String get auto_combineAll;
+
+  /// No description provided for @auto_combineAnyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Runs when any one of the conditions happens.'**
+  String get auto_combineAnyHint;
+
+  /// No description provided for @auto_combineAllHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Runs when one condition happens and all the others hold at that moment, like “at 18:00 AND battery below 30%”.'**
+  String get auto_combineAllHint;
+
+  /// No description provided for @auto_editCondition.
+  ///
+  /// In en, this message translates to:
+  /// **'Condition'**
+  String get auto_editCondition;
+
+  /// No description provided for @auto_editAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Action'**
+  String get auto_editAction;
+
+  /// No description provided for @auto_done.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get auto_done;
+
+  /// No description provided for @auto_contains.
+  ///
+  /// In en, this message translates to:
+  /// **'Message contains (optional)'**
+  String get auto_contains;
+
+  /// No description provided for @auto_from.
+  ///
+  /// In en, this message translates to:
+  /// **'From'**
+  String get auto_from;
+
+  /// No description provided for @auto_do.
+  ///
+  /// In en, this message translates to:
+  /// **'Do'**
+  String get auto_do;
+
+  /// No description provided for @auto_webhookHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs internet. Sends the rule name, time, battery, node and text as JSON. Works only while web requests are allowed.'**
+  String get auto_webhookHint;
+
+  /// No description provided for @auto_webhookUrl.
+  ///
+  /// In en, this message translates to:
+  /// **'Webhook address (https://…)'**
+  String get auto_webhookUrl;
+
+  /// No description provided for @auto_channelName.
+  ///
+  /// In en, this message translates to:
+  /// **'Hashtag channel, like #hikers'**
+  String get auto_channelName;
+
+  /// No description provided for @auto_needChannel.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the channel name.'**
+  String get auto_needChannel;
+
+  /// No description provided for @auto_needUrl.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a web address starting with https://'**
+  String get auto_needUrl;
+
+  /// No description provided for @auto_placeholders.
+  ///
+  /// In en, this message translates to:
+  /// **'You can use {list}'**
+  String auto_placeholders(String list);
 
   /// No description provided for @teamSetup_title.
   ///

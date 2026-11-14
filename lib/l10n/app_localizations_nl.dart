@@ -11721,7 +11721,142 @@ class AppLocalizationsNl extends AppLocalizations {
   String get auto_entry => 'Automatiseringsregels';
 
   @override
-  String get auto_entrySub => 'Triggers voor batterij, tijd, gebied en node';
+  String get auto_entrySub =>
+      'Triggers voor batterij, tijd, gebied, node en berichten; EN/OF';
+
+  @override
+  String get auto_trigMessage => 'Er komt een bericht binnen';
+
+  @override
+  String get auto_actJoin => 'Lid worden van hashtagkanaal';
+
+  @override
+  String get auto_actSound => 'Geluid afspelen';
+
+  @override
+  String get auto_actWebhook => 'Webhook aanroepen';
+
+  @override
+  String get auto_outDone => 'Gedaan';
+
+  @override
+  String get auto_outNotConnected => 'Radio niet verbonden';
+
+  @override
+  String get auto_outNoTarget => 'Ontvanger of adres ontbreekt';
+
+  @override
+  String get auto_outWebOff => 'Webverzoeken staan uit';
+
+  @override
+  String get auto_outWebFailed => 'Webverzoek mislukt';
+
+  @override
+  String get auto_outNoSlot => 'Geen vrije kanaalplek';
+
+  @override
+  String get auto_outFailed => 'Mislukt';
+
+  @override
+  String get auto_anyone => 'Iedereen';
+
+  @override
+  String get auto_webSwitch => 'Webverzoeken toestaan (webhooks)';
+
+  @override
+  String get auto_webSwitchSub =>
+      'Standaard uit. Webhook-acties hebben internet nodig en worden overgeslagen zolang dit uit staat. Al het andere werkt alleen via radio.';
+
+  @override
+  String get auto_andJoin => ' en ';
+
+  @override
+  String get auto_orJoin => ' of ';
+
+  @override
+  String get auto_needsInternet => 'Heeft internet nodig';
+
+  @override
+  String get auto_recent => 'Recente uitvoeringen';
+
+  @override
+  String get auto_needCondition => 'Voeg minstens één voorwaarde toe.';
+
+  @override
+  String get auto_needAction => 'Voeg minstens één actie toe.';
+
+  @override
+  String get auto_conditions => 'Voorwaarden';
+
+  @override
+  String get auto_actions => 'Acties';
+
+  @override
+  String get auto_addCondition => 'Voorwaarde toevoegen';
+
+  @override
+  String get auto_addAction => 'Actie toevoegen';
+
+  @override
+  String auto_remove(String item) {
+    return '$item verwijderen';
+  }
+
+  @override
+  String get auto_combine => 'Regel uitvoeren wanneer';
+
+  @override
+  String get auto_combineAny => 'Eén (OF)';
+
+  @override
+  String get auto_combineAll => 'Alle (EN)';
+
+  @override
+  String get auto_combineAnyHint =>
+      'Wordt uitgevoerd wanneer een van de voorwaarden optreedt.';
+
+  @override
+  String get auto_combineAllHint =>
+      'Wordt uitgevoerd wanneer één voorwaarde optreedt en alle andere op dat moment gelden, zoals ‘om 18:00 EN batterij onder 30%’.';
+
+  @override
+  String get auto_editCondition => 'Voorwaarde';
+
+  @override
+  String get auto_editAction => 'Actie';
+
+  @override
+  String get auto_done => 'Klaar';
+
+  @override
+  String get auto_contains => 'Bericht bevat (optioneel)';
+
+  @override
+  String get auto_from => 'Van';
+
+  @override
+  String get auto_do => 'Doe';
+
+  @override
+  String get auto_webhookHint =>
+      'Heeft internet nodig. Stuurt regelnaam, tijd, batterij, node en tekst als JSON. Werkt alleen zolang webverzoeken zijn toegestaan.';
+
+  @override
+  String get auto_webhookUrl => 'Webhookadres (https://…)';
+
+  @override
+  String get auto_channelName => 'Hashtagkanaal, bijv. #wandelaars';
+
+  @override
+  String get auto_needChannel => 'Voer de kanaalnaam in.';
+
+  @override
+  String get auto_needUrl => 'Voer een webadres in dat begint met https://';
+
+  @override
+  String auto_placeholders(String list) {
+    return 'Je kunt $list gebruiken';
+  }
 
   @override
   String get teamSetup_title => 'Teaminstelling';

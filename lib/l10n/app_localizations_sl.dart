@@ -11760,7 +11760,142 @@ class AppLocalizationsSl extends AppLocalizations {
   String get auto_entry => 'Pravila avtomatizacije';
 
   @override
-  String get auto_entrySub => 'Sprožilci baterije, časa, območja in vozlišča';
+  String get auto_entrySub =>
+      'Sprožilci: baterija, čas, območje, vozlišče in sporočila; IN/ALI';
+
+  @override
+  String get auto_trigMessage => 'Prispe sporočilo';
+
+  @override
+  String get auto_actJoin => 'Pridruži se kanalu hashtag';
+
+  @override
+  String get auto_actSound => 'Predvajaj zvok';
+
+  @override
+  String get auto_actWebhook => 'Pokliči webhook';
+
+  @override
+  String get auto_outDone => 'Opravljeno';
+
+  @override
+  String get auto_outNotConnected => 'Radio ni povezan';
+
+  @override
+  String get auto_outNoTarget => 'Manjka prejemnik ali naslov';
+
+  @override
+  String get auto_outWebOff => 'Spletne zahteve so izklopljene';
+
+  @override
+  String get auto_outWebFailed => 'Spletna zahteva ni uspela';
+
+  @override
+  String get auto_outNoSlot => 'Ni prostega mesta za kanal';
+
+  @override
+  String get auto_outFailed => 'Ni uspelo';
+
+  @override
+  String get auto_anyone => 'Kdorkoli';
+
+  @override
+  String get auto_webSwitch => 'Dovoli spletne zahteve (webhooki)';
+
+  @override
+  String get auto_webSwitchSub =>
+      'Privzeto izklopljeno. Dejanja webhook potrebujejo internet in se preskočijo, dokler je to izklopljeno. Vse drugo deluje samo prek radia.';
+
+  @override
+  String get auto_andJoin => ' in ';
+
+  @override
+  String get auto_orJoin => ' ali ';
+
+  @override
+  String get auto_needsInternet => 'Potrebuje internet';
+
+  @override
+  String get auto_recent => 'Nedavni zagoni';
+
+  @override
+  String get auto_needCondition => 'Dodajte vsaj en pogoj.';
+
+  @override
+  String get auto_needAction => 'Dodajte vsaj eno dejanje.';
+
+  @override
+  String get auto_conditions => 'Pogoji';
+
+  @override
+  String get auto_actions => 'Dejanja';
+
+  @override
+  String get auto_addCondition => 'Dodaj pogoj';
+
+  @override
+  String get auto_addAction => 'Dodaj dejanje';
+
+  @override
+  String auto_remove(String item) {
+    return 'Odstrani: $item';
+  }
+
+  @override
+  String get auto_combine => 'Zaženi pravilo, ko';
+
+  @override
+  String get auto_combineAny => 'Katerikoli (ALI)';
+
+  @override
+  String get auto_combineAll => 'Vsi (IN)';
+
+  @override
+  String get auto_combineAnyHint =>
+      'Zažene se, ko se zgodi katerikoli od pogojev.';
+
+  @override
+  String get auto_combineAllHint =>
+      'Zažene se, ko se zgodi en pogoj in vsi drugi v tistem trenutku veljajo, npr. »ob 18:00 IN baterija pod 30 %«.';
+
+  @override
+  String get auto_editCondition => 'Pogoj';
+
+  @override
+  String get auto_editAction => 'Dejanje';
+
+  @override
+  String get auto_done => 'Končano';
+
+  @override
+  String get auto_contains => 'Sporočilo vsebuje (neobvezno)';
+
+  @override
+  String get auto_from => 'Od';
+
+  @override
+  String get auto_do => 'Naredi';
+
+  @override
+  String get auto_webhookHint =>
+      'Potrebuje internet. Pošlje ime pravila, čas, baterijo, vozlišče in besedilo kot JSON. Deluje le, dokler so spletne zahteve dovoljene.';
+
+  @override
+  String get auto_webhookUrl => 'Naslov webhooka (https://…)';
+
+  @override
+  String get auto_channelName => 'Kanal hashtag, npr. #pohodniki';
+
+  @override
+  String get auto_needChannel => 'Vnesite ime kanala.';
+
+  @override
+  String get auto_needUrl => 'Vnesite spletni naslov, ki se začne s https://';
+
+  @override
+  String auto_placeholders(String list) {
+    return 'Uporabite lahko $list';
+  }
 
   @override
   String get teamSetup_title => 'Nastavitev ekipe';
