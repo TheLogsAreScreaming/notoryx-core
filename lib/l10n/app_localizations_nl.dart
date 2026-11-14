@@ -1563,6 +1563,18 @@ class AppLocalizationsNl extends AppLocalizations {
   String get channels_unmuteChannel => 'Kanaal dempen opheffen';
 
   @override
+  String get channels_notifyMode => 'Meldingen';
+
+  @override
+  String get channels_notifyAll => 'Alle berichten';
+
+  @override
+  String get channels_notifyMentions => 'Alleen als ik genoemd word';
+
+  @override
+  String get channels_notifyMuted => 'Gedempt';
+
+  @override
   String get channels_deleteChannel => 'Kanaal verwijderen';
 
   @override
@@ -1789,6 +1801,11 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return 'Bericht is te lang (max $maxBytes bytes).';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds s zendtijd';
   }
 
   @override
@@ -2031,6 +2048,136 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get routing_noPathYet =>
       'Er is nog geen route gevonden. De berichten blijven binnenkomen totdat een route is ontdekt.';
+
+  @override
+  String get routePick_open => 'Routeweergave en -keuze';
+
+  @override
+  String get routePick_openHint =>
+      'Linkkwaliteit per hop bekijken en een betrouwbaardere route kiezen';
+
+  @override
+  String routePick_title(String name) {
+    return 'Route naar $name';
+  }
+
+  @override
+  String get routePick_current => 'Huidige route';
+
+  @override
+  String get routePick_flooding =>
+      'Geen vaste route: berichten overspoelen het mesh tot er een route geleerd is.';
+
+  @override
+  String get routePick_direct => 'Direct';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return 'Repeater $id';
+  }
+
+  @override
+  String get routePick_notMeasured => 'Nog niet gemeten';
+
+  @override
+  String get routePick_measure => 'Deze route meten';
+
+  @override
+  String get routePick_measuring => 'Traceren…';
+
+  @override
+  String get routePick_measured => 'Zojuist gemeten.';
+
+  @override
+  String get routePick_noAnswer =>
+      'Geen antwoord op de trace. Een repeater op de route is mogelijk buiten bereik.';
+
+  @override
+  String get routePick_floodDone =>
+      'Route gewist. Het volgende bericht overspoelt het mesh om een nieuwe te vinden.';
+
+  @override
+  String get routePick_suggested => 'Aanbevolen';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return 'Een betrouwbaardere route: $route (score $score).';
+  }
+
+  @override
+  String get routePick_use => 'Gebruiken';
+
+  @override
+  String routePick_useLabel(String route) {
+    return 'Route $route gebruiken';
+  }
+
+  @override
+  String get routePick_options => 'Routes om uit te kiezen';
+
+  @override
+  String get routePick_optionsHint =>
+      'Elke gehoorde route naar dit contact, gescoord 0–100 op linksignaal, afleverhistorie, lengte en actualiteit.';
+
+  @override
+  String get routePick_none =>
+      'Nog geen routes. Stuur een bericht om er een te vinden.';
+
+  @override
+  String get routePick_other => 'Andere keuzes';
+
+  @override
+  String get routePick_build => 'Route samenstellen';
+
+  @override
+  String get routePick_flood => 'Laat het mesh een route vinden';
+
+  @override
+  String get routePick_explainer =>
+      'Meten stuurt een trace langs de route en terug, zodat elke link tussen repeaters in beide richtingen gemeten wordt. De laatste link naar het contact kan niet getraced worden. Metingen blijven 30 dagen en tellen voor elke route met dezelfde link.';
+
+  @override
+  String routePick_score(int score) {
+    return 'Score $score van 100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return 'Hop $number: $name. Link $quality, heen $out decibel, terug $back decibel.';
+  }
+
+  @override
+  String get routePick_lastLink =>
+      'Laatste link naar het contact: niet meetbaar met trace';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return 'Heen $out dB · terug $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return 'Score $score · hops: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return '$ok van $tries afgeleverd';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return 'zwakste link $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => 'In gebruik';
 
   @override
   String get routing_floodBroadcast => 'Uitgestoten via elke zender.';
@@ -7025,6 +7172,68 @@ class AppLocalizationsNl extends AppLocalizations {
       'Regionale meshdefinities beheren en ophalen';
 
   @override
+  String get replay_title => 'Een dag afspelen';
+
+  @override
+  String get replay_entryHint => 'Bekijk waar het team op een dag was';
+
+  @override
+  String get replay_badge => 'Geschiedenis';
+
+  @override
+  String get replay_day => 'Dag';
+
+  @override
+  String get replay_team => 'Team';
+
+  @override
+  String get replay_everyone => 'Iedereen';
+
+  @override
+  String get replay_emptyTeam =>
+      'Geen teamposities op deze dag. Teamleden verschijnen als ze gevolgde posities in een kanaal delen. Kies Iedereen voor node-adverts.';
+
+  @override
+  String get replay_emptyEveryone =>
+      'Geen posities vastgelegd op deze dag. Deze telefoon legt vanaf nu de door nodes geadverteerde posities vast zolang de app open is.';
+
+  @override
+  String replay_mapSummary(String time, int count) {
+    return 'Kaart om $time: $count getoond';
+  }
+
+  @override
+  String get replay_play => 'Afspelen';
+
+  @override
+  String get replay_pause => 'Pauzeren';
+
+  @override
+  String get replay_speed => 'Snelheid';
+
+  @override
+  String replay_speedValue(int minutes) {
+    return '$minutes min per seconde';
+  }
+
+  @override
+  String replay_showNode(String name) {
+    return '$name tonen of verbergen';
+  }
+
+  @override
+  String get replay_notYet => 'Op dit tijdstip nog niet gezien';
+
+  @override
+  String replay_lastSeen(String time, String lat, String lon) {
+    return 'Laatst gezien om $time op $lat, $lon';
+  }
+
+  @override
+  String get replay_explainer =>
+      'Teamposities komen uit gevolgde posities die teamleden in kanalen delen. Iedereen voegt de door nodes geadverteerde posities toe, die deze telefoon vastlegt terwijl de app open is en 30 dagen bewaart. Er wordt niets verzonden.';
+
+  @override
   String get mapHub_badgeRegions => 'REGIO\'S';
 
   @override
@@ -8023,6 +8232,72 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => 'Verbindingsoverzicht bekijken';
+
+  @override
+  String get radios_title => 'Radio\'s';
+
+  @override
+  String radios_number(int number) {
+    return 'Radio $number';
+  }
+
+  @override
+  String get radios_active => 'In gebruik';
+
+  @override
+  String get radios_switch => 'Deze radio gebruiken';
+
+  @override
+  String get radios_add => 'Radio toevoegen';
+
+  @override
+  String get radios_switcher => 'Andere radio';
+
+  @override
+  String get radios_hint =>
+      'Je kunt met meer dan één radio verbonden blijven, zoals een handheld en een basisstation. De app toont en verstuurt via de radio die in gebruik is. De andere blijven verbonden en hun berichten worden bewaard voor als je wisselt.';
+
+  @override
+  String get radios_switchNote =>
+      'Wisselen van radio brengt je terug naar het startscherm. Bots, automatisering, meldingen, tracking en SOS-doorgifte draaien op de radio die in gebruik is.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return '$name verwijderen?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Hiermee wordt de radio losgekoppeld en vergeten. Berichten en contacten blijven bewaard.';
+
+  @override
+  String radios_unread(int count) {
+    return '$count ongelezen';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count ongelezen op andere radio\'s';
+  }
+
+  @override
+  String get radios_continueOn => 'Doorgaan op een andere radio';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Doorgaan op $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Direct';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Hops: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Geen bekende route';
 
   @override
   String get channelDirectory_title => 'Kanalengids';
@@ -10739,10 +11014,11 @@ class AppLocalizationsNl extends AppLocalizations {
       'Opgeslagen plaatsen en routes; GPX importeren of exporteren';
 
   @override
-  String get waypoints_importFile => 'GPX-bestand importeren';
+  String get waypoints_importFile =>
+      'Kaartbestand importeren (GPX, KML, GeoJSON)';
 
   @override
-  String get waypoints_importPaste => 'GPX plakken';
+  String get waypoints_importPaste => 'GPX, KML of GeoJSON plakken';
 
   @override
   String get waypoints_export => 'GPX exporteren';
@@ -10785,7 +11061,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get waypoints_importFailed =>
-      'Dit is geen GPX-bestand dat de app kan lezen.';
+      'Dit is geen GPX-, KML- of GeoJSON-bestand dat de app kan lezen.';
 
   @override
   String get waypoints_pasteHint => 'Plak hier de GPX-tekst';
@@ -11591,7 +11867,142 @@ class AppLocalizationsNl extends AppLocalizations {
   String get auto_entry => 'Automatiseringsregels';
 
   @override
-  String get auto_entrySub => 'Triggers voor batterij, tijd, gebied en node';
+  String get auto_entrySub =>
+      'Triggers voor batterij, tijd, gebied, node en berichten; EN/OF';
+
+  @override
+  String get auto_trigMessage => 'Er komt een bericht binnen';
+
+  @override
+  String get auto_actJoin => 'Lid worden van hashtagkanaal';
+
+  @override
+  String get auto_actSound => 'Geluid afspelen';
+
+  @override
+  String get auto_actWebhook => 'Webhook aanroepen';
+
+  @override
+  String get auto_outDone => 'Gedaan';
+
+  @override
+  String get auto_outNotConnected => 'Radio niet verbonden';
+
+  @override
+  String get auto_outNoTarget => 'Ontvanger of adres ontbreekt';
+
+  @override
+  String get auto_outWebOff => 'Webverzoeken staan uit';
+
+  @override
+  String get auto_outWebFailed => 'Webverzoek mislukt';
+
+  @override
+  String get auto_outNoSlot => 'Geen vrije kanaalplek';
+
+  @override
+  String get auto_outFailed => 'Mislukt';
+
+  @override
+  String get auto_anyone => 'Iedereen';
+
+  @override
+  String get auto_webSwitch => 'Webverzoeken toestaan (webhooks)';
+
+  @override
+  String get auto_webSwitchSub =>
+      'Standaard uit. Webhook-acties hebben internet nodig en worden overgeslagen zolang dit uit staat. Al het andere werkt alleen via radio.';
+
+  @override
+  String get auto_andJoin => ' en ';
+
+  @override
+  String get auto_orJoin => ' of ';
+
+  @override
+  String get auto_needsInternet => 'Heeft internet nodig';
+
+  @override
+  String get auto_recent => 'Recente uitvoeringen';
+
+  @override
+  String get auto_needCondition => 'Voeg minstens één voorwaarde toe.';
+
+  @override
+  String get auto_needAction => 'Voeg minstens één actie toe.';
+
+  @override
+  String get auto_conditions => 'Voorwaarden';
+
+  @override
+  String get auto_actions => 'Acties';
+
+  @override
+  String get auto_addCondition => 'Voorwaarde toevoegen';
+
+  @override
+  String get auto_addAction => 'Actie toevoegen';
+
+  @override
+  String auto_remove(String item) {
+    return '$item verwijderen';
+  }
+
+  @override
+  String get auto_combine => 'Regel uitvoeren wanneer';
+
+  @override
+  String get auto_combineAny => 'Eén (OF)';
+
+  @override
+  String get auto_combineAll => 'Alle (EN)';
+
+  @override
+  String get auto_combineAnyHint =>
+      'Wordt uitgevoerd wanneer een van de voorwaarden optreedt.';
+
+  @override
+  String get auto_combineAllHint =>
+      'Wordt uitgevoerd wanneer één voorwaarde optreedt en alle andere op dat moment gelden, zoals ‘om 18:00 EN batterij onder 30%’.';
+
+  @override
+  String get auto_editCondition => 'Voorwaarde';
+
+  @override
+  String get auto_editAction => 'Actie';
+
+  @override
+  String get auto_done => 'Klaar';
+
+  @override
+  String get auto_contains => 'Bericht bevat (optioneel)';
+
+  @override
+  String get auto_from => 'Van';
+
+  @override
+  String get auto_do => 'Doe';
+
+  @override
+  String get auto_webhookHint =>
+      'Heeft internet nodig. Stuurt regelnaam, tijd, batterij, node en tekst als JSON. Werkt alleen zolang webverzoeken zijn toegestaan.';
+
+  @override
+  String get auto_webhookUrl => 'Webhookadres (https://…)';
+
+  @override
+  String get auto_channelName => 'Hashtagkanaal, bijv. #wandelaars';
+
+  @override
+  String get auto_needChannel => 'Voer de kanaalnaam in.';
+
+  @override
+  String get auto_needUrl => 'Voer een webadres in dat begint met https://';
+
+  @override
+  String auto_placeholders(String list) {
+    return 'Je kunt $list gebruiken';
+  }
 
   @override
   String get teamSetup_title => 'Teaminstelling';
@@ -12629,6 +13040,71 @@ class AppLocalizationsNl extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name is $distance van $trail.';
   }
+
+  @override
+  String get fw_title => 'Firmware bijwerken';
+
+  @override
+  String get fw_unknownVersion => 'Firmwareversie nog niet gemeld';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'Nieuwere companion-firmware beschikbaar: $version';
+  }
+
+  @override
+  String get fw_upToDate => 'Deze radio heeft de nieuwste companion-firmware.';
+
+  @override
+  String get fw_checkFailed => 'Controle mislukt. Misschien ben je offline.';
+
+  @override
+  String get fw_checkLatest => 'Nieuwste versie controleren';
+
+  @override
+  String get fw_checkPrivacy =>
+      'De controle vraagt GitHub om de MeshCore-versielijst. Er wordt niets over je radio verstuurd.';
+
+  @override
+  String get fw_stepsTitle => 'Zo werk je bij';
+
+  @override
+  String get fw_step1 =>
+      'Maak eerst een back-up. Bijwerken kan instellingen en contacten wissen.';
+
+  @override
+  String get fw_backup => 'Versleutelde back-up';
+
+  @override
+  String get fw_step2 =>
+      'Open op een computer met Chrome of Edge de officiële MeshCore-webflasher en sluit de radio via USB aan.';
+
+  @override
+  String get fw_openFlasher => 'Webflasher openen';
+
+  @override
+  String get fw_copyLink => 'Link kopiëren';
+
+  @override
+  String get fw_linkCopied => 'Link gekopieerd';
+
+  @override
+  String get fw_step3 =>
+      'Kies je exacte board en dan de Companion-firmware voor je verbinding (Bluetooth, USB of wifi). Repeater- en roomserverfirmware werken niet met deze app.';
+
+  @override
+  String get fw_step4 =>
+      'Verbind daarna hier opnieuw. Zijn instellingen gewist, zet dan je back-up terug.';
+
+  @override
+  String get fw_cautionTitle => 'Voordat je begint';
+
+  @override
+  String get fw_caution =>
+      'Laad de radio op en laat de kabel aangesloten tot het klaar is. Mislukt een update, dan is de radio meestal te herstellen door opnieuw via USB te flashen. Deze app flasht nooit zelf firmware.';
+
+  @override
+  String get fw_open => 'Hoe je firmware bijwerkt';
 
   @override
   String get idKey_title => 'Back-up identiteitssleutel';

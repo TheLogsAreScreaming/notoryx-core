@@ -1548,6 +1548,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get channels_unmuteChannel => 'Unmute channel';
 
   @override
+  String get channels_notifyMode => 'Notifications';
+
+  @override
+  String get channels_notifyAll => 'All messages';
+
+  @override
+  String get channels_notifyMentions => 'Only when I\'m mentioned';
+
+  @override
+  String get channels_notifyMuted => 'Muted';
+
+  @override
   String get channels_deleteChannel => 'Delete channel';
 
   @override
@@ -1769,6 +1781,11 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return 'Message too long (max $maxBytes bytes).';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds s on air';
   }
 
   @override
@@ -2011,6 +2028,136 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get routing_noPathYet =>
       'No path yet. The next message floods until a route is discovered.';
+
+  @override
+  String get routePick_open => 'Route view and picker';
+
+  @override
+  String get routePick_openHint =>
+      'Chart each hop\'s link quality and pick a more reliable route';
+
+  @override
+  String routePick_title(String name) {
+    return 'Route to $name';
+  }
+
+  @override
+  String get routePick_current => 'Current route';
+
+  @override
+  String get routePick_flooding =>
+      'No fixed route: messages flood the mesh until a route is learned.';
+
+  @override
+  String get routePick_direct => 'Direct';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return 'Repeater $id';
+  }
+
+  @override
+  String get routePick_notMeasured => 'Not measured yet';
+
+  @override
+  String get routePick_measure => 'Measure this route';
+
+  @override
+  String get routePick_measuring => 'Tracing…';
+
+  @override
+  String get routePick_measured => 'Measured just now.';
+
+  @override
+  String get routePick_noAnswer =>
+      'No answer to the trace. A repeater on the route may be out of range.';
+
+  @override
+  String get routePick_floodDone =>
+      'Route cleared. The next message floods to find a new one.';
+
+  @override
+  String get routePick_suggested => 'Suggested';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return 'A more reliable route: $route (score $score).';
+  }
+
+  @override
+  String get routePick_use => 'Use';
+
+  @override
+  String routePick_useLabel(String route) {
+    return 'Use route $route';
+  }
+
+  @override
+  String get routePick_options => 'Routes to choose from';
+
+  @override
+  String get routePick_optionsHint =>
+      'Every route heard for this contact, scored 0–100 from link signal, delivery record, length and how recent it is.';
+
+  @override
+  String get routePick_none =>
+      'No routes heard yet. Send a message to discover one.';
+
+  @override
+  String get routePick_other => 'Other choices';
+
+  @override
+  String get routePick_build => 'Build a route';
+
+  @override
+  String get routePick_flood => 'Let the mesh find a route';
+
+  @override
+  String get routePick_explainer =>
+      'Measuring sends a trace out along the route and back, so every link between repeaters is measured both ways. The last link to the contact can\'t be traced. Readings are kept for 30 days and count for every route that uses the same link.';
+
+  @override
+  String routePick_score(int score) {
+    return 'Score $score of 100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return 'Hop $number: $name. Link $quality, $out decibels out, $back decibels back.';
+  }
+
+  @override
+  String get routePick_lastLink =>
+      'Last link to the contact: not measurable by trace';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return 'Out $out dB · back $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return 'Score $score · hops: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return 'delivered $ok of $tries';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return 'weakest link $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => 'In use';
 
   @override
   String get routing_floodBroadcast => 'Broadcast through every repeater';
@@ -6948,6 +7095,69 @@ class AppLocalizationsEn extends AppLocalizations {
   String get mapHub_regionsHint => 'Manage and fetch regional mesh definitions';
 
   @override
+  String get replay_title => 'Replay a day';
+
+  @override
+  String get replay_entryHint =>
+      'Play back where the team went on a chosen day';
+
+  @override
+  String get replay_badge => 'History';
+
+  @override
+  String get replay_day => 'Day';
+
+  @override
+  String get replay_team => 'Team';
+
+  @override
+  String get replay_everyone => 'Everyone';
+
+  @override
+  String get replay_emptyTeam =>
+      'No team positions on this day. Teammates show up when they share tracked positions on a channel. Try Everyone for node adverts.';
+
+  @override
+  String get replay_emptyEveryone =>
+      'No positions recorded on this day. This phone records the positions nodes advertise from now on, while the app is open.';
+
+  @override
+  String replay_mapSummary(String time, int count) {
+    return 'Map at $time: $count shown';
+  }
+
+  @override
+  String get replay_play => 'Play';
+
+  @override
+  String get replay_pause => 'Pause';
+
+  @override
+  String get replay_speed => 'Speed';
+
+  @override
+  String replay_speedValue(int minutes) {
+    return '$minutes min per second';
+  }
+
+  @override
+  String replay_showNode(String name) {
+    return 'Show or hide $name';
+  }
+
+  @override
+  String get replay_notYet => 'Not seen yet at this time';
+
+  @override
+  String replay_lastSeen(String time, String lat, String lon) {
+    return 'Last seen $time at $lat, $lon';
+  }
+
+  @override
+  String get replay_explainer =>
+      'Team positions come from the tracked positions teammates share on channels. Everyone adds the positions nodes advertise, which this phone records while the app is open and keeps for 30 days. Nothing is sent.';
+
+  @override
   String get mapHub_badgeRegions => 'REGIONS';
 
   @override
@@ -7941,6 +8151,72 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => 'View connection dashboard';
+
+  @override
+  String get radios_title => 'Radios';
+
+  @override
+  String radios_number(int number) {
+    return 'Radio $number';
+  }
+
+  @override
+  String get radios_active => 'In use';
+
+  @override
+  String get radios_switch => 'Use this radio';
+
+  @override
+  String get radios_add => 'Add a radio';
+
+  @override
+  String get radios_switcher => 'Switch radio';
+
+  @override
+  String get radios_hint =>
+      'You can stay connected to more than one radio, such as a handheld and a base station. The app shows and sends through the radio in use. The others stay connected, and their messages are saved for when you switch.';
+
+  @override
+  String get radios_switchNote =>
+      'Switching radios takes you back to the home screen. Bots, automation, alerts, tracking and the SOS relay run on the radio in use.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return 'Remove $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'This disconnects the radio and forgets it. Its messages and contacts stay saved.';
+
+  @override
+  String radios_unread(int count) {
+    return '$count unread';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count unread on other radios';
+  }
+
+  @override
+  String get radios_continueOn => 'Continue on another radio';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Continue on $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Direct';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Hops: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'No known route';
 
   @override
   String get channelDirectory_title => 'Channel directory';
@@ -10649,10 +10925,10 @@ class AppLocalizationsEn extends AppLocalizations {
       'Saved places and routes; import or export GPX';
 
   @override
-  String get waypoints_importFile => 'Import GPX file';
+  String get waypoints_importFile => 'Import map file (GPX, KML, GeoJSON)';
 
   @override
-  String get waypoints_importPaste => 'Paste GPX';
+  String get waypoints_importPaste => 'Paste GPX, KML or GeoJSON';
 
   @override
   String get waypoints_export => 'Export GPX';
@@ -10695,7 +10971,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get waypoints_importFailed =>
-      'That isn\'t a GPX file the app can read.';
+      'That isn\'t a GPX, KML or GeoJSON file the app can read.';
 
   @override
   String get waypoints_pasteHint => 'Paste the GPX text here';
@@ -11497,7 +11773,142 @@ class AppLocalizationsEn extends AppLocalizations {
   String get auto_entry => 'Automation rules';
 
   @override
-  String get auto_entrySub => 'Battery, time, area and node triggers';
+  String get auto_entrySub =>
+      'Battery, time, area, node and message triggers; AND/OR';
+
+  @override
+  String get auto_trigMessage => 'A message arrives';
+
+  @override
+  String get auto_actJoin => 'Join a hashtag channel';
+
+  @override
+  String get auto_actSound => 'Play a sound';
+
+  @override
+  String get auto_actWebhook => 'Call a webhook';
+
+  @override
+  String get auto_outDone => 'Done';
+
+  @override
+  String get auto_outNotConnected => 'Radio not connected';
+
+  @override
+  String get auto_outNoTarget => 'Recipient or address missing';
+
+  @override
+  String get auto_outWebOff => 'Web requests are off';
+
+  @override
+  String get auto_outWebFailed => 'Web request failed';
+
+  @override
+  String get auto_outNoSlot => 'No free channel slot';
+
+  @override
+  String get auto_outFailed => 'Failed';
+
+  @override
+  String get auto_anyone => 'Anyone';
+
+  @override
+  String get auto_webSwitch => 'Allow web requests (webhooks)';
+
+  @override
+  String get auto_webSwitchSub =>
+      'Off by default. Webhook actions need internet and are skipped while this is off. Everything else works over radio alone.';
+
+  @override
+  String get auto_andJoin => ' and ';
+
+  @override
+  String get auto_orJoin => ' or ';
+
+  @override
+  String get auto_needsInternet => 'Needs internet';
+
+  @override
+  String get auto_recent => 'Recent runs';
+
+  @override
+  String get auto_needCondition => 'Add at least one condition.';
+
+  @override
+  String get auto_needAction => 'Add at least one action.';
+
+  @override
+  String get auto_conditions => 'Conditions';
+
+  @override
+  String get auto_actions => 'Actions';
+
+  @override
+  String get auto_addCondition => 'Add condition';
+
+  @override
+  String get auto_addAction => 'Add action';
+
+  @override
+  String auto_remove(String item) {
+    return 'Remove $item';
+  }
+
+  @override
+  String get auto_combine => 'Run the rule when';
+
+  @override
+  String get auto_combineAny => 'Any (OR)';
+
+  @override
+  String get auto_combineAll => 'All (AND)';
+
+  @override
+  String get auto_combineAnyHint =>
+      'Runs when any one of the conditions happens.';
+
+  @override
+  String get auto_combineAllHint =>
+      'Runs when one condition happens and all the others hold at that moment, like “at 18:00 AND battery below 30%”.';
+
+  @override
+  String get auto_editCondition => 'Condition';
+
+  @override
+  String get auto_editAction => 'Action';
+
+  @override
+  String get auto_done => 'Done';
+
+  @override
+  String get auto_contains => 'Message contains (optional)';
+
+  @override
+  String get auto_from => 'From';
+
+  @override
+  String get auto_do => 'Do';
+
+  @override
+  String get auto_webhookHint =>
+      'Needs internet. Sends the rule name, time, battery, node and text as JSON. Works only while web requests are allowed.';
+
+  @override
+  String get auto_webhookUrl => 'Webhook address (https://…)';
+
+  @override
+  String get auto_channelName => 'Hashtag channel, like #hikers';
+
+  @override
+  String get auto_needChannel => 'Enter the channel name.';
+
+  @override
+  String get auto_needUrl => 'Enter a web address starting with https://';
+
+  @override
+  String auto_placeholders(String list) {
+    return 'You can use $list';
+  }
 
   @override
   String get teamSetup_title => 'Team setup';
@@ -12528,6 +12939,71 @@ class AppLocalizationsEn extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name is $distance from $trail.';
   }
+
+  @override
+  String get fw_title => 'Update firmware';
+
+  @override
+  String get fw_unknownVersion => 'Firmware version not reported yet';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'Newer companion firmware available: $version';
+  }
+
+  @override
+  String get fw_upToDate => 'This radio has the latest companion firmware.';
+
+  @override
+  String get fw_checkFailed => 'Couldn\'t check. You may be offline.';
+
+  @override
+  String get fw_checkLatest => 'Check for the latest release';
+
+  @override
+  String get fw_checkPrivacy =>
+      'Checking asks GitHub for the MeshCore release list. Nothing about your radio is sent.';
+
+  @override
+  String get fw_stepsTitle => 'How to update';
+
+  @override
+  String get fw_step1 =>
+      'Back up first. Updating can reset the radio\'s settings and contacts.';
+
+  @override
+  String get fw_backup => 'Encrypted backup';
+
+  @override
+  String get fw_step2 =>
+      'On a computer with Chrome or Edge, open the official MeshCore web flasher and connect the radio by USB.';
+
+  @override
+  String get fw_openFlasher => 'Open web flasher';
+
+  @override
+  String get fw_copyLink => 'Copy link';
+
+  @override
+  String get fw_linkCopied => 'Link copied';
+
+  @override
+  String get fw_step3 =>
+      'Pick your exact board, then the Companion firmware for how you connect (Bluetooth, USB or Wi-Fi). Repeater and room-server firmware won\'t work with this app.';
+
+  @override
+  String get fw_step4 =>
+      'When it finishes, reconnect here. If settings were reset, restore your backup.';
+
+  @override
+  String get fw_cautionTitle => 'Before you start';
+
+  @override
+  String get fw_caution =>
+      'Charge the radio first and keep the cable connected until it finishes. If an update fails, the radio can usually be recovered by flashing again over USB. This app never flashes firmware itself.';
+
+  @override
+  String get fw_open => 'How to update firmware';
 
   @override
   String get idKey_title => 'Identity key backup';

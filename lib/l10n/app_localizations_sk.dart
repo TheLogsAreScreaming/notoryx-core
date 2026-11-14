@@ -1559,6 +1559,18 @@ class AppLocalizationsSk extends AppLocalizations {
   String get channels_unmuteChannel => 'Zrušiť stlmenie kanála';
 
   @override
+  String get channels_notifyMode => 'Upozornenia';
+
+  @override
+  String get channels_notifyAll => 'Všetky správy';
+
+  @override
+  String get channels_notifyMentions => 'Len keď ma niekto spomenie';
+
+  @override
+  String get channels_notifyMuted => 'Stlmené';
+
+  @override
   String get channels_deleteChannel => 'Odstrániť kanál';
 
   @override
@@ -1785,6 +1797,11 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return 'Správa je príliš dlhá (max $maxBytes bytov).';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds s vysielania';
   }
 
   @override
@@ -2028,6 +2045,136 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get routing_noPathYet =>
       'Zatiaľ neexistuje žiadna cesta. Nasledujúce správy budú pokračovať, kým sa nenájde trasa.';
+
+  @override
+  String get routePick_open => 'Zobrazenie a výber trasy';
+
+  @override
+  String get routePick_openHint =>
+      'Kvalita spojenia na každom skoku a výber spoľahlivejšej trasy';
+
+  @override
+  String routePick_title(String name) {
+    return 'Trasa k $name';
+  }
+
+  @override
+  String get routePick_current => 'Aktuálna trasa';
+
+  @override
+  String get routePick_flooding =>
+      'Bez pevnej trasy: správy zaplavujú sieť, kým sa trasa nenaučí.';
+
+  @override
+  String get routePick_direct => 'Priamo';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return 'Opakovač $id';
+  }
+
+  @override
+  String get routePick_notMeasured => 'Zatiaľ nemerané';
+
+  @override
+  String get routePick_measure => 'Zmerať túto trasu';
+
+  @override
+  String get routePick_measuring => 'Trasovanie…';
+
+  @override
+  String get routePick_measured => 'Práve zmerané.';
+
+  @override
+  String get routePick_noAnswer =>
+      'Žiadna odpoveď na trasovanie. Opakovač na trase môže byť mimo dosahu.';
+
+  @override
+  String get routePick_floodDone =>
+      'Trasa vymazaná. Ďalšia správa zaplaví sieť a nájde novú.';
+
+  @override
+  String get routePick_suggested => 'Odporúčaná';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return 'Spoľahlivejšia trasa: $route (skóre $score).';
+  }
+
+  @override
+  String get routePick_use => 'Použiť';
+
+  @override
+  String routePick_useLabel(String route) {
+    return 'Použiť trasu $route';
+  }
+
+  @override
+  String get routePick_options => 'Trasy na výber';
+
+  @override
+  String get routePick_optionsHint =>
+      'Každá počutá trasa k tomuto kontaktu, hodnotená 0–100 podľa signálu spojení, doručení, dĺžky a aktuálnosti.';
+
+  @override
+  String get routePick_none =>
+      'Zatiaľ žiadne trasy. Pošlite správu a nájdite jednu.';
+
+  @override
+  String get routePick_other => 'Ďalšie možnosti';
+
+  @override
+  String get routePick_build => 'Zostaviť trasu';
+
+  @override
+  String get routePick_flood => 'Nechať sieť nájsť trasu';
+
+  @override
+  String get routePick_explainer =>
+      'Meranie pošle trasovanie po trase a späť, takže každé spojenie medzi opakovačmi sa zmeria oboma smermi. Posledné spojenie ku kontaktu sa trasovať nedá. Údaje sa uchovávajú 30 dní a platia pre každú trasu s rovnakým spojením.';
+
+  @override
+  String routePick_score(int score) {
+    return 'Skóre $score zo 100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return 'Skok $number: $name. Spojenie $quality, tam $out decibelov, späť $back decibelov.';
+  }
+
+  @override
+  String get routePick_lastLink =>
+      'Posledné spojenie ku kontaktu: trasovaním nemerateľné';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return 'Tam $out dB · späť $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return 'Skóre $score · skoky: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return 'doručené $ok z $tries';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return 'najslabšie spojenie $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => 'Používa sa';
 
   @override
   String get routing_floodBroadcast =>
@@ -7042,6 +7189,68 @@ class AppLocalizationsSk extends AppLocalizations {
       'Spravujte a sťahujte regionálne definície siete';
 
   @override
+  String get replay_title => 'Prehrať deň';
+
+  @override
+  String get replay_entryHint => 'Kde bol tím vo vybraný deň';
+
+  @override
+  String get replay_badge => 'História';
+
+  @override
+  String get replay_day => 'Deň';
+
+  @override
+  String get replay_team => 'Tím';
+
+  @override
+  String get replay_everyone => 'Všetci';
+
+  @override
+  String get replay_emptyTeam =>
+      'V tento deň žiadne pozície tímu. Členovia sa zobrazia, keď zdieľajú sledované pozície v kanáli. Pre oznámenia uzlov skúste Všetci.';
+
+  @override
+  String get replay_emptyEveryone =>
+      'V tento deň nie sú zaznamenané žiadne pozície. Telefón odteraz zaznamenáva pozície oznamované uzlami, kým je aplikácia otvorená.';
+
+  @override
+  String replay_mapSummary(String time, int count) {
+    return 'Mapa o $time: zobrazené $count';
+  }
+
+  @override
+  String get replay_play => 'Prehrať';
+
+  @override
+  String get replay_pause => 'Pozastaviť';
+
+  @override
+  String get replay_speed => 'Rýchlosť';
+
+  @override
+  String replay_speedValue(int minutes) {
+    return '$minutes min za sekundu';
+  }
+
+  @override
+  String replay_showNode(String name) {
+    return 'Zobraziť alebo skryť $name';
+  }
+
+  @override
+  String get replay_notYet => 'V tomto čase ešte nevidený';
+
+  @override
+  String replay_lastSeen(String time, String lat, String lon) {
+    return 'Naposledy o $time na $lat, $lon';
+  }
+
+  @override
+  String get replay_explainer =>
+      'Pozície tímu pochádzajú zo sledovaných pozícií zdieľaných v kanáloch. Všetci pridá pozície oznamované uzlami, ktoré telefón zaznamenáva pri otvorenej aplikácii a uchováva 30 dní. Nič sa neodosiela.';
+
+  @override
   String get mapHub_badgeRegions => 'REGIÓNY';
 
   @override
@@ -8045,6 +8254,72 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => 'Zobraziť prehľad pripojení';
+
+  @override
+  String get radios_title => 'Rádiá';
+
+  @override
+  String radios_number(int number) {
+    return 'Rádio $number';
+  }
+
+  @override
+  String get radios_active => 'Používa sa';
+
+  @override
+  String get radios_switch => 'Použiť toto rádio';
+
+  @override
+  String get radios_add => 'Pridať rádio';
+
+  @override
+  String get radios_switcher => 'Prepnúť rádio';
+
+  @override
+  String get radios_hint =>
+      'Môžete zostať pripojení k viacerým rádiám, napríklad ručnému a základňovej stanici. Aplikácia zobrazuje a odosiela cez používané rádio. Ostatné zostávajú pripojené a ich správy sa ukladajú na prepnutie.';
+
+  @override
+  String get radios_switchNote =>
+      'Prepnutím rádia sa vrátite na domovskú obrazovku. Boty, automatizácia, upozornenia, sledovanie a preposielanie SOS bežia na používanom rádiu.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return 'Odstrániť $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Rádio sa odpojí a zabudne. Jeho správy a kontakty zostanú uložené.';
+
+  @override
+  String radios_unread(int count) {
+    return 'Neprečítané: $count';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return 'Neprečítané na iných rádiách: $count';
+  }
+
+  @override
+  String get radios_continueOn => 'Pokračovať na inom rádiu';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Pokračovať na $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Priamo';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Skoky: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Žiadna známa trasa';
 
   @override
   String get channelDirectory_title => 'Adresár kanálov';
@@ -10759,10 +11034,11 @@ class AppLocalizationsSk extends AppLocalizations {
       'Uložené miesta a trasy; import a export GPX';
 
   @override
-  String get waypoints_importFile => 'Importovať súbor GPX';
+  String get waypoints_importFile =>
+      'Importovať mapový súbor (GPX, KML, GeoJSON)';
 
   @override
-  String get waypoints_importPaste => 'Vložiť GPX';
+  String get waypoints_importPaste => 'Vložiť GPX, KML alebo GeoJSON';
 
   @override
   String get waypoints_export => 'Exportovať GPX';
@@ -10805,7 +11081,7 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get waypoints_importFailed =>
-      'Toto nie je súbor GPX, ktorý aplikácia vie prečítať.';
+      'Toto nie je súbor GPX, KML ani GeoJSON, ktorý aplikácia vie prečítať.';
 
   @override
   String get waypoints_pasteHint => 'Sem vložte text GPX';
@@ -11609,7 +11885,142 @@ class AppLocalizationsSk extends AppLocalizations {
   String get auto_entry => 'Pravidlá automatizácie';
 
   @override
-  String get auto_entrySub => 'Spúšťače batérie, času, oblasti a uzla';
+  String get auto_entrySub =>
+      'Spúšťače: batéria, čas, oblasť, uzol a správy; A/ALEBO';
+
+  @override
+  String get auto_trigMessage => 'Príde správa';
+
+  @override
+  String get auto_actJoin => 'Pripojiť sa k hashtag kanálu';
+
+  @override
+  String get auto_actSound => 'Prehrať zvuk';
+
+  @override
+  String get auto_actWebhook => 'Zavolať webhook';
+
+  @override
+  String get auto_outDone => 'Hotovo';
+
+  @override
+  String get auto_outNotConnected => 'Rádio nie je pripojené';
+
+  @override
+  String get auto_outNoTarget => 'Chýba príjemca alebo adresa';
+
+  @override
+  String get auto_outWebOff => 'Webové požiadavky sú vypnuté';
+
+  @override
+  String get auto_outWebFailed => 'Webová požiadavka zlyhala';
+
+  @override
+  String get auto_outNoSlot => 'Žiadne voľné miesto pre kanál';
+
+  @override
+  String get auto_outFailed => 'Zlyhalo';
+
+  @override
+  String get auto_anyone => 'Ktokoľvek';
+
+  @override
+  String get auto_webSwitch => 'Povoliť webové požiadavky (webhooky)';
+
+  @override
+  String get auto_webSwitchSub =>
+      'Predvolene vypnuté. Akcie webhook potrebujú internet a kým je toto vypnuté, preskakujú sa. Všetko ostatné funguje len cez rádio.';
+
+  @override
+  String get auto_andJoin => ' a ';
+
+  @override
+  String get auto_orJoin => ' alebo ';
+
+  @override
+  String get auto_needsInternet => 'Vyžaduje internet';
+
+  @override
+  String get auto_recent => 'Posledné spustenia';
+
+  @override
+  String get auto_needCondition => 'Pridajte aspoň jednu podmienku.';
+
+  @override
+  String get auto_needAction => 'Pridajte aspoň jednu akciu.';
+
+  @override
+  String get auto_conditions => 'Podmienky';
+
+  @override
+  String get auto_actions => 'Akcie';
+
+  @override
+  String get auto_addCondition => 'Pridať podmienku';
+
+  @override
+  String get auto_addAction => 'Pridať akciu';
+
+  @override
+  String auto_remove(String item) {
+    return 'Odstrániť: $item';
+  }
+
+  @override
+  String get auto_combine => 'Spustiť pravidlo, keď';
+
+  @override
+  String get auto_combineAny => 'Ktorákoľvek (ALEBO)';
+
+  @override
+  String get auto_combineAll => 'Všetky (A)';
+
+  @override
+  String get auto_combineAnyHint =>
+      'Spustí sa, keď nastane ktorákoľvek z podmienok.';
+
+  @override
+  String get auto_combineAllHint =>
+      'Spustí sa, keď nastane jedna podmienka a všetky ostatné v tej chvíli platia, napr. „o 18:00 A batéria pod 30 %“.';
+
+  @override
+  String get auto_editCondition => 'Podmienka';
+
+  @override
+  String get auto_editAction => 'Akcia';
+
+  @override
+  String get auto_done => 'Hotovo';
+
+  @override
+  String get auto_contains => 'Správa obsahuje (voliteľné)';
+
+  @override
+  String get auto_from => 'Od';
+
+  @override
+  String get auto_do => 'Urobiť';
+
+  @override
+  String get auto_webhookHint =>
+      'Vyžaduje internet. Posiela názov pravidla, čas, batériu, uzol a text ako JSON. Funguje len, kým sú webové požiadavky povolené.';
+
+  @override
+  String get auto_webhookUrl => 'Adresa webhooku (https://…)';
+
+  @override
+  String get auto_channelName => 'Hashtag kanál, napr. #turisti';
+
+  @override
+  String get auto_needChannel => 'Zadajte názov kanála.';
+
+  @override
+  String get auto_needUrl => 'Zadajte webovú adresu začínajúcu https://';
+
+  @override
+  String auto_placeholders(String list) {
+    return 'Môžete použiť $list';
+  }
 
   @override
   String get teamSetup_title => 'Nastavenie tímu';
@@ -12637,6 +13048,71 @@ class AppLocalizationsSk extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name je $distance od: $trail.';
   }
+
+  @override
+  String get fw_title => 'Aktualizovať firmvér';
+
+  @override
+  String get fw_unknownVersion => 'Verzia firmvéru zatiaľ nebola hlásená';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'K dispozícii je novší firmvér companion: $version';
+  }
+
+  @override
+  String get fw_upToDate => 'Toto rádio má najnovší firmvér companion.';
+
+  @override
+  String get fw_checkFailed => 'Kontrola zlyhala. Možno ste offline.';
+
+  @override
+  String get fw_checkLatest => 'Skontrolovať najnovšiu verziu';
+
+  @override
+  String get fw_checkPrivacy =>
+      'Kontrola sa pýta GitHubu na zoznam verzií MeshCore. O vašom rádiu sa nič neodosiela.';
+
+  @override
+  String get fw_stepsTitle => 'Ako aktualizovať';
+
+  @override
+  String get fw_step1 =>
+      'Najprv zálohujte. Aktualizácia môže vynulovať nastavenia a kontakty.';
+
+  @override
+  String get fw_backup => 'Šifrovaná záloha';
+
+  @override
+  String get fw_step2 =>
+      'Na počítači s Chrome alebo Edge otvorte oficiálny webový flasher MeshCore a pripojte rádio cez USB.';
+
+  @override
+  String get fw_openFlasher => 'Otvoriť webový flasher';
+
+  @override
+  String get fw_copyLink => 'Kopírovať odkaz';
+
+  @override
+  String get fw_linkCopied => 'Odkaz skopírovaný';
+
+  @override
+  String get fw_step3 =>
+      'Vyberte presne svoju dosku a potom firmvér Companion podľa pripojenia (Bluetooth, USB alebo Wi-Fi). Firmvér repeatera a room servera s touto aplikáciou nefunguje.';
+
+  @override
+  String get fw_step4 =>
+      'Po dokončení sa sem znova pripojte. Ak sa nastavenia vynulovali, obnovte zálohu.';
+
+  @override
+  String get fw_cautionTitle => 'Skôr než začnete';
+
+  @override
+  String get fw_caution =>
+      'Nabite rádio a nechajte kábel pripojený až do konca. Ak aktualizácia zlyhá, rádio sa zvyčajne dá obnoviť opätovným flashnutím cez USB. Táto aplikácia nikdy sama neflashuje firmvér.';
+
+  @override
+  String get fw_open => 'Ako aktualizovať firmvér';
 
   @override
   String get idKey_title => 'Záloha kľúča identity';

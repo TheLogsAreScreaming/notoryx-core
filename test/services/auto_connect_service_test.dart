@@ -114,4 +114,16 @@ void main() {
     await auto.run();
     expect(radio.attempts, 0);
   });
+
+  test('extra radios wait their turn before the first attempt', () {
+    expect(AutoConnectService.staggered(0).first, Duration.zero);
+    expect(AutoConnectService.staggered(1).first, const Duration(seconds: 3));
+    expect(AutoConnectService.staggered(2).first, const Duration(seconds: 6));
+    expect(AutoConnectService.staggered(-1).first, Duration.zero);
+    expect(AutoConnectService.staggered(2).skip(1), const [
+      Duration(seconds: 5),
+      Duration(seconds: 15),
+      Duration(seconds: 30),
+    ]);
+  });
 }

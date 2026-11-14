@@ -10,6 +10,7 @@ import '../connector/meshcore_connector.dart';
 import '../helpers/snack_bar_builder.dart';
 import '../l10n/l10n.dart';
 import '../models/channel.dart';
+import '../models/map_file_import.dart';
 import '../models/waypoint.dart';
 import '../services/waypoint_store.dart';
 import '../theme/mesh_theme.dart';
@@ -220,9 +221,15 @@ class WaypointsScreen extends StatelessWidget {
       final file = await openFile(
         acceptedTypeGroups: const [
           XTypeGroup(
-            label: 'GPX',
-            extensions: ['gpx'],
-            uniformTypeIdentifiers: ['com.topografix.gpx', 'public.xml'],
+            label: 'GPX, KML, GeoJSON',
+            extensions: ['gpx', 'kml', 'geojson', 'json'],
+            uniformTypeIdentifiers: [
+              'com.topografix.gpx',
+              'com.google.earth.kml',
+              'public.geojson',
+              'public.json',
+              'public.xml',
+            ],
           ),
         ],
       );
@@ -254,7 +261,7 @@ class WaypointsScreen extends StatelessWidget {
     final l10n = context.l10n;
     final store = context.read<WaypointStore>();
     try {
-      final parsed = parseGpx(xml);
+      final parsed = parseMapFile(xml);
       final added = await store.addImport(parsed);
       if (!context.mounted) return;
       showDismissibleSnackBar(

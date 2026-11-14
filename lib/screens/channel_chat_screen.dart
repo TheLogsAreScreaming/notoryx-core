@@ -25,6 +25,7 @@ import '../helpers/path_helper.dart';
 import '../helpers/reaction_helper.dart';
 import '../helpers/snack_bar_builder.dart';
 import '../l10n/l10n.dart';
+import '../helpers/airtime_label.dart';
 import '../models/channel.dart';
 import '../models/channel_message.dart';
 import '../models/flood_corridor.dart';
@@ -72,6 +73,7 @@ import '../theme/mesh_theme.dart';
 import '../widgets/link_preview_card.dart';
 import '../services/link_preview.dart';
 import '../widgets/observer_reach_sheet.dart';
+import '../widgets/continue_on_radio.dart';
 import '../widgets/mesh_ui.dart';
 import 'app_settings_screen.dart';
 import 'channel_message_path_screen.dart';
@@ -396,6 +398,7 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
               icon: const Icon(Icons.landscape),
               onPressed: () => openRegionSelectDialog(widget.channel),
             ),
+            ContinueOnRadioButton.channel(widget.channel.psk),
             const RadioStatsIconButton(),
             PopupMenuButton<String>(
               icon: const Icon(Icons.more_vert),
@@ -2113,6 +2116,8 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
                         }
                         return ByteCountedTextField(
                           maxBytes: maxBytes,
+                          counterSuffix: (bytes) =>
+                              airtimeEstimateLabel(context, connector, bytes),
                           controller: _textController,
                           focusNode: _textFieldFocusNode,
                           hintText: context.l10n.chat_typeMessage,

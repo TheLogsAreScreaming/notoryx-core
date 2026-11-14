@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../connector/meshcore_connector.dart';
+import '../connector/radio_manager.dart';
 import '../l10n/app_localizations.dart';
 import '../l10n/l10n.dart';
 import '../models/saved_radio.dart';
@@ -13,6 +14,7 @@ import '../theme/mesh_theme.dart';
 import '../widgets/connect_ui.dart';
 import '../widgets/mesh_ui.dart';
 import '../widgets/mqtt_connection_card.dart';
+import '../widgets/radio_list.dart';
 import '../widgets/radio_overview_card.dart';
 import 'scanner_screen.dart';
 import 'tcp_screen.dart';
@@ -39,6 +41,10 @@ class ConnectionDashboardScreen extends StatelessWidget {
             children: [
               ConsoleKicker(l10n.connections_radioTitle),
               const RadioConnectionCard(),
+              if (_hasRadioManager(context)) ...[
+                const SizedBox(height: 22),
+                const RadioListSection(),
+              ],
               const SizedBox(height: 22),
               ConsoleKicker(l10n.connections_internetBridge),
               const MqttConnectionCard(),
@@ -51,6 +57,16 @@ class ConnectionDashboardScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+/// Whether the app provides a [RadioManager]; screen tests may not.
+bool _hasRadioManager(BuildContext context) {
+  try {
+    Provider.of<RadioManager>(context, listen: false);
+    return true;
+  } on ProviderNotFoundException {
+    return false;
   }
 }
 

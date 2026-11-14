@@ -1497,6 +1497,18 @@ class AppLocalizationsKo extends AppLocalizations {
   String get channels_unmuteChannel => '채널 음소거 해제';
 
   @override
+  String get channels_notifyMode => '알림';
+
+  @override
+  String get channels_notifyAll => '모든 메시지';
+
+  @override
+  String get channels_notifyMentions => '나를 언급할 때만';
+
+  @override
+  String get channels_notifyMuted => '음소거';
+
+  @override
   String get channels_deleteChannel => '채널 삭제';
 
   @override
@@ -1715,6 +1727,11 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return '메시지가 너무 길어서 (최대 $maxBytes 바이트).';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '송신 시간 약 $seconds초';
   }
 
   @override
@@ -1951,6 +1968,130 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get routing_noPathYet => '아직 경로가 없습니다. 다음 메시지가 도착할 때까지 계속 탐색합니다.';
+
+  @override
+  String get routePick_open => '경로 보기 및 선택';
+
+  @override
+  String get routePick_openHint => '각 홉의 링크 품질을 보고 더 안정적인 경로 선택';
+
+  @override
+  String routePick_title(String name) {
+    return '$name까지의 경로';
+  }
+
+  @override
+  String get routePick_current => '현재 경로';
+
+  @override
+  String get routePick_flooding => '고정 경로 없음: 경로를 학습할 때까지 메시지가 메시 전체로 플러딩됩니다.';
+
+  @override
+  String get routePick_direct => '직접';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return '리피터 $id';
+  }
+
+  @override
+  String get routePick_notMeasured => '아직 측정 안 됨';
+
+  @override
+  String get routePick_measure => '이 경로 측정';
+
+  @override
+  String get routePick_measuring => '추적 중…';
+
+  @override
+  String get routePick_measured => '방금 측정했습니다.';
+
+  @override
+  String get routePick_noAnswer => '추적 응답이 없습니다. 경로의 리피터가 범위 밖일 수 있습니다.';
+
+  @override
+  String get routePick_floodDone => '경로를 지웠습니다. 다음 메시지가 플러딩으로 새 경로를 찾습니다.';
+
+  @override
+  String get routePick_suggested => '추천';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return '더 안정적인 경로: $route (점수 $score)';
+  }
+
+  @override
+  String get routePick_use => '사용';
+
+  @override
+  String routePick_useLabel(String route) {
+    return '경로 $route 사용';
+  }
+
+  @override
+  String get routePick_options => '선택 가능한 경로';
+
+  @override
+  String get routePick_optionsHint =>
+      '이 연락처에 대해 들린 모든 경로를 링크 신호, 전달 기록, 길이, 최신성으로 0–100점 평가.';
+
+  @override
+  String get routePick_none => '아직 경로가 없습니다. 메시지를 보내 경로를 찾으세요.';
+
+  @override
+  String get routePick_other => '기타 선택';
+
+  @override
+  String get routePick_build => '경로 만들기';
+
+  @override
+  String get routePick_flood => '메시가 경로를 찾도록 하기';
+
+  @override
+  String get routePick_explainer =>
+      '측정은 경로를 따라 왕복 추적을 보내 리피터 간 각 링크를 양방향으로 측정합니다. 연락처까지의 마지막 링크는 추적할 수 없습니다. 결과는 30일간 보관되며 같은 링크를 쓰는 모든 경로에 반영됩니다.';
+
+  @override
+  String routePick_score(int score) {
+    return '점수 $score/100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return '홉 $number: $name. 링크 $quality, 가는 쪽 $out 데시벨, 오는 쪽 $back 데시벨.';
+  }
+
+  @override
+  String get routePick_lastLink => '연락처까지 마지막 링크: 추적으로 측정 불가';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return '가는 쪽 $out dB · 오는 쪽 $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return '점수 $score · 홉: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return '$tries개 중 $ok개 전달';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return '가장 약한 링크 $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => '사용 중';
 
   @override
   String get routing_floodBroadcast => '모든 중계기를 통해 방송';
@@ -6713,6 +6854,68 @@ class AppLocalizationsKo extends AppLocalizations {
   String get mapHub_regionsHint => '지역 메시 정의 관리 및 가져오기';
 
   @override
+  String get replay_title => '하루 다시 보기';
+
+  @override
+  String get replay_entryHint => '선택한 날 팀이 이동한 곳 재생';
+
+  @override
+  String get replay_badge => '기록';
+
+  @override
+  String get replay_day => '날짜';
+
+  @override
+  String get replay_team => '팀';
+
+  @override
+  String get replay_everyone => '모두';
+
+  @override
+  String get replay_emptyTeam =>
+      '이날 팀 위치가 없습니다. 팀원이 채널에 추적 위치를 공유하면 표시됩니다. 노드 광고는 모두를 선택하세요.';
+
+  @override
+  String get replay_emptyEveryone =>
+      '이날 기록된 위치가 없습니다. 지금부터 앱이 열려 있는 동안 노드가 광고하는 위치를 기록합니다.';
+
+  @override
+  String replay_mapSummary(String time, int count) {
+    return '$time 지도: $count개 표시';
+  }
+
+  @override
+  String get replay_play => '재생';
+
+  @override
+  String get replay_pause => '일시정지';
+
+  @override
+  String get replay_speed => '속도';
+
+  @override
+  String replay_speedValue(int minutes) {
+    return '초당 $minutes분';
+  }
+
+  @override
+  String replay_showNode(String name) {
+    return '$name 표시 또는 숨기기';
+  }
+
+  @override
+  String get replay_notYet => '이 시간에는 아직 보이지 않음';
+
+  @override
+  String replay_lastSeen(String time, String lat, String lon) {
+    return '마지막 확인 $time, $lat, $lon';
+  }
+
+  @override
+  String get replay_explainer =>
+      '팀 위치는 팀원이 채널에 공유하는 추적 위치에서 가져옵니다. 모두를 선택하면 노드가 광고하는 위치도 표시되며, 앱이 열려 있는 동안 기록되어 30일간 보관됩니다. 아무것도 전송하지 않습니다.';
+
+  @override
   String get mapHub_badgeRegions => '지역';
 
   @override
@@ -7679,6 +7882,71 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => '연결 대시보드 보기';
+
+  @override
+  String get radios_title => '무전기';
+
+  @override
+  String radios_number(int number) {
+    return '무전기 $number';
+  }
+
+  @override
+  String get radios_active => '사용 중';
+
+  @override
+  String get radios_switch => '이 무전기 사용';
+
+  @override
+  String get radios_add => '무전기 추가';
+
+  @override
+  String get radios_switcher => '무전기 전환';
+
+  @override
+  String get radios_hint =>
+      '휴대용 무전기와 기지국처럼 여러 무전기에 계속 연결할 수 있습니다. 앱은 사용 중인 무전기로 표시하고 보냅니다. 다른 무전기는 연결을 유지하며, 전환할 때를 위해 메시지가 저장됩니다.';
+
+  @override
+  String get radios_switchNote =>
+      '무전기를 전환하면 홈 화면으로 돌아갑니다. 봇, 자동화, 알림, 추적, SOS 중계는 사용 중인 무전기에서 실행됩니다.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return '$name을(를) 제거할까요?';
+  }
+
+  @override
+  String get radios_removeBody => '무전기 연결을 끊고 등록을 해제합니다. 메시지와 연락처는 계속 저장됩니다.';
+
+  @override
+  String radios_unread(int count) {
+    return '읽지 않음 $count개';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '다른 무전기에 읽지 않음 $count개';
+  }
+
+  @override
+  String get radios_continueOn => '다른 무전기로 계속';
+
+  @override
+  String radios_continueOnName(String name) {
+    return '$name(으)로 계속';
+  }
+
+  @override
+  String get radios_routeDirect => '직접';
+
+  @override
+  String radios_routeHops(int count) {
+    return '홉: $count';
+  }
+
+  @override
+  String get radios_routeFlood => '알려진 경로 없음';
 
   @override
   String get channelDirectory_title => '채널 목록';
@@ -10288,10 +10556,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get waypoints_toolSubtitle => '저장된 장소와 경로; GPX 가져오기 및 내보내기';
 
   @override
-  String get waypoints_importFile => 'GPX 파일 가져오기';
+  String get waypoints_importFile => '지도 파일 가져오기 (GPX, KML, GeoJSON)';
 
   @override
-  String get waypoints_importPaste => 'GPX 붙여넣기';
+  String get waypoints_importPaste => 'GPX, KML 또는 GeoJSON 붙여넣기';
 
   @override
   String get waypoints_export => 'GPX 내보내기';
@@ -10333,7 +10601,7 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get waypoints_importFailed => '앱이 읽을 수 있는 GPX 파일이 아닙니다.';
+  String get waypoints_importFailed => '앱이 읽을 수 있는 GPX, KML, GeoJSON 파일이 아닙니다.';
 
   @override
   String get waypoints_pasteHint => '여기에 GPX 텍스트를 붙여넣으세요';
@@ -11116,7 +11384,140 @@ class AppLocalizationsKo extends AppLocalizations {
   String get auto_entry => '자동화 규칙';
 
   @override
-  String get auto_entrySub => '배터리, 시간, 구역, 노드 조건';
+  String get auto_entrySub => '배터리, 시간, 구역, 노드, 메시지 트리거, AND/OR';
+
+  @override
+  String get auto_trigMessage => '메시지 수신';
+
+  @override
+  String get auto_actJoin => '해시태그 채널 참여';
+
+  @override
+  String get auto_actSound => '소리 재생';
+
+  @override
+  String get auto_actWebhook => '웹훅 호출';
+
+  @override
+  String get auto_outDone => '완료';
+
+  @override
+  String get auto_outNotConnected => '무전기 연결 안 됨';
+
+  @override
+  String get auto_outNoTarget => '받는 사람 또는 주소 없음';
+
+  @override
+  String get auto_outWebOff => '웹 요청 꺼짐';
+
+  @override
+  String get auto_outWebFailed => '웹 요청 실패';
+
+  @override
+  String get auto_outNoSlot => '빈 채널 슬롯 없음';
+
+  @override
+  String get auto_outFailed => '실패';
+
+  @override
+  String get auto_anyone => '누구나';
+
+  @override
+  String get auto_webSwitch => '웹 요청 허용(웹훅)';
+
+  @override
+  String get auto_webSwitchSub =>
+      '기본값은 꺼짐. 웹훅 동작은 인터넷이 필요하며 꺼져 있는 동안 건너뜁니다. 나머지는 무선만으로 작동합니다.';
+
+  @override
+  String get auto_andJoin => ' 그리고 ';
+
+  @override
+  String get auto_orJoin => ' 또는 ';
+
+  @override
+  String get auto_needsInternet => '인터넷 필요';
+
+  @override
+  String get auto_recent => '최근 실행';
+
+  @override
+  String get auto_needCondition => '조건을 하나 이상 추가하세요.';
+
+  @override
+  String get auto_needAction => '동작을 하나 이상 추가하세요.';
+
+  @override
+  String get auto_conditions => '조건';
+
+  @override
+  String get auto_actions => '동작';
+
+  @override
+  String get auto_addCondition => '조건 추가';
+
+  @override
+  String get auto_addAction => '동작 추가';
+
+  @override
+  String auto_remove(String item) {
+    return '$item 삭제';
+  }
+
+  @override
+  String get auto_combine => '규칙 실행 시점';
+
+  @override
+  String get auto_combineAny => '하나라도(OR)';
+
+  @override
+  String get auto_combineAll => '모두(AND)';
+
+  @override
+  String get auto_combineAnyHint => '조건 중 하나라도 발생하면 실행합니다.';
+
+  @override
+  String get auto_combineAllHint =>
+      '하나의 조건이 발생하고 그 순간 나머지가 모두 충족될 때 실행합니다(예: “18:00 그리고 배터리 30% 미만”).';
+
+  @override
+  String get auto_editCondition => '조건';
+
+  @override
+  String get auto_editAction => '동작';
+
+  @override
+  String get auto_done => '완료';
+
+  @override
+  String get auto_contains => '메시지 포함 내용(선택)';
+
+  @override
+  String get auto_from => '보낸 사람';
+
+  @override
+  String get auto_do => '실행';
+
+  @override
+  String get auto_webhookHint =>
+      '인터넷이 필요합니다. 규칙 이름, 시간, 배터리, 노드, 텍스트를 JSON으로 보냅니다. 웹 요청이 허용된 동안에만 작동합니다.';
+
+  @override
+  String get auto_webhookUrl => '웹훅 주소(https://…)';
+
+  @override
+  String get auto_channelName => '해시태그 채널(예: #hikers)';
+
+  @override
+  String get auto_needChannel => '채널 이름을 입력하세요.';
+
+  @override
+  String get auto_needUrl => 'https://로 시작하는 주소를 입력하세요';
+
+  @override
+  String auto_placeholders(String list) {
+    return '사용 가능: $list';
+  }
 
   @override
   String get teamSetup_title => '팀 설정';
@@ -12113,6 +12514,69 @@ class AppLocalizationsKo extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name님이 $trail에서 $distance 떨어져 있습니다.';
   }
+
+  @override
+  String get fw_title => '펌웨어 업데이트';
+
+  @override
+  String get fw_unknownVersion => '펌웨어 버전이 아직 보고되지 않았습니다';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return '더 새로운 컴패니언 펌웨어가 있습니다: $version';
+  }
+
+  @override
+  String get fw_upToDate => '이 무전기는 최신 컴패니언 펌웨어입니다.';
+
+  @override
+  String get fw_checkFailed => '확인하지 못했습니다. 오프라인일 수 있습니다.';
+
+  @override
+  String get fw_checkLatest => '최신 릴리스 확인';
+
+  @override
+  String get fw_checkPrivacy =>
+      '확인 시 GitHub에서 MeshCore 릴리스 목록을 가져옵니다. 무전기 정보는 보내지 않습니다.';
+
+  @override
+  String get fw_stepsTitle => '업데이트 방법';
+
+  @override
+  String get fw_step1 => '먼저 백업하세요. 업데이트하면 설정과 연락처가 초기화될 수 있습니다.';
+
+  @override
+  String get fw_backup => '암호화 백업';
+
+  @override
+  String get fw_step2 =>
+      'Chrome 또는 Edge가 있는 컴퓨터에서 MeshCore 공식 웹 플래셔를 열고 무전기를 USB로 연결하세요.';
+
+  @override
+  String get fw_openFlasher => '웹 플래셔 열기';
+
+  @override
+  String get fw_copyLink => '링크 복사';
+
+  @override
+  String get fw_linkCopied => '링크를 복사했습니다';
+
+  @override
+  String get fw_step3 =>
+      '정확한 보드를 고른 뒤, 연결 방식(블루투스, USB, Wi-Fi)에 맞는 Companion 펌웨어를 선택하세요. 리피터나 룸 서버 펌웨어는 이 앱에서 동작하지 않습니다.';
+
+  @override
+  String get fw_step4 => '끝나면 여기서 다시 연결하세요. 설정이 초기화되었다면 백업을 복원하세요.';
+
+  @override
+  String get fw_cautionTitle => '시작하기 전에';
+
+  @override
+  String get fw_caution =>
+      '무전기를 충전하고 끝날 때까지 케이블을 연결해 두세요. 업데이트가 실패해도 보통 USB로 다시 플래시하면 복구됩니다. 이 앱은 펌웨어를 직접 플래시하지 않습니다.';
+
+  @override
+  String get fw_open => '펌웨어 업데이트 방법';
 
   @override
   String get idKey_title => '신원 키 백업';

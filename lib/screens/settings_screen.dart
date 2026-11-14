@@ -34,6 +34,7 @@ import 'identity_key_screen.dart';
 import '../widgets/radio_buzzer_switch.dart';
 import 'wifi_settings_screen.dart';
 import 'region_management_screen.dart';
+import 'firmware_update_screen.dart';
 
 /// Convert device coding-rate value (1-4 on some firmware, 5-8 on others)
 /// to the UI enum range (always 5-8).
@@ -339,6 +340,18 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           label: l10n.settings_infoFirmware,
                           value: connector.firmwareVersionString!,
                         ),
+                      Align(
+                        alignment: AlignmentDirectional.centerStart,
+                        child: TextButton.icon(
+                          onPressed: () => Navigator.of(context).push(
+                            MaterialPageRoute<void>(
+                              builder: (_) => const FirmwareUpdateScreen(),
+                            ),
+                          ),
+                          icon: const Icon(Icons.system_update_alt),
+                          label: Text(l10n.fw_open),
+                        ),
+                      ),
                       if (connector.selfName != null)
                         _infoRow(
                           context,

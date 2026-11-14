@@ -1495,6 +1495,18 @@ class AppLocalizationsJa extends AppLocalizations {
   String get channels_unmuteChannel => 'チャンネルのミュートを解除';
 
   @override
+  String get channels_notifyMode => '通知';
+
+  @override
+  String get channels_notifyAll => 'すべてのメッセージ';
+
+  @override
+  String get channels_notifyMentions => 'メンションされたときのみ';
+
+  @override
+  String get channels_notifyMuted => 'ミュート';
+
+  @override
   String get channels_deleteChannel => 'チャンネルを削除';
 
   @override
@@ -1713,6 +1725,11 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return 'メッセージが長すぎます（$maxBytes バイトを超えています）';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '送信時間 約$seconds秒';
   }
 
   @override
@@ -1949,6 +1966,130 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get routing_noPathYet => 'まだ経路はありません。次のメッセージは経路が見つかるまでフラッドされます。';
+
+  @override
+  String get routePick_open => '経路ビューと選択';
+
+  @override
+  String get routePick_openHint => '各ホップのリンク品質を表示し、より確実な経路を選択';
+
+  @override
+  String routePick_title(String name) {
+    return '$name への経路';
+  }
+
+  @override
+  String get routePick_current => '現在の経路';
+
+  @override
+  String get routePick_flooding => '固定経路なし: 経路を学習するまでメッセージはメッシュ全体にフラッドされます。';
+
+  @override
+  String get routePick_direct => '直接';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return 'リピーター $id';
+  }
+
+  @override
+  String get routePick_notMeasured => '未測定';
+
+  @override
+  String get routePick_measure => 'この経路を測定';
+
+  @override
+  String get routePick_measuring => 'トレース中…';
+
+  @override
+  String get routePick_measured => '測定しました。';
+
+  @override
+  String get routePick_noAnswer => 'トレースに応答がありません。経路上のリピーターが圏外かもしれません。';
+
+  @override
+  String get routePick_floodDone => '経路を消去しました。次のメッセージはフラッドして新しい経路を探します。';
+
+  @override
+  String get routePick_suggested => 'おすすめ';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return 'より確実な経路: $route（スコア $score）';
+  }
+
+  @override
+  String get routePick_use => '使用';
+
+  @override
+  String routePick_useLabel(String route) {
+    return '経路 $route を使用';
+  }
+
+  @override
+  String get routePick_options => '選べる経路';
+
+  @override
+  String get routePick_optionsHint =>
+      'この連絡先で聞こえたすべての経路を、リンク信号・配信実績・長さ・新しさから0〜100で採点。';
+
+  @override
+  String get routePick_none => 'まだ経路がありません。メッセージを送って探してください。';
+
+  @override
+  String get routePick_other => 'その他';
+
+  @override
+  String get routePick_build => '経路を作成';
+
+  @override
+  String get routePick_flood => 'メッシュに経路を探させる';
+
+  @override
+  String get routePick_explainer =>
+      '測定では経路に沿って往復のトレースを送り、リピーター間の各リンクを双方向で測ります。連絡先までの最後のリンクはトレースできません。結果は30日間保存され、同じリンクを使うすべての経路に反映されます。';
+
+  @override
+  String routePick_score(int score) {
+    return 'スコア $score/100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return 'ホップ $number: $name。リンク $quality、往路 $out デシベル、復路 $back デシベル。';
+  }
+
+  @override
+  String get routePick_lastLink => '連絡先への最後のリンク: トレースでは測定不可';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return '往路 $out dB · 復路 $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return 'スコア $score · ホップ数: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return '$tries 件中 $ok 件配信';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return '最弱リンク $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => '使用中';
 
   @override
   String get routing_floodBroadcast => 'すべてのリピータにブロードキャスト';
@@ -6703,6 +6844,68 @@ class AppLocalizationsJa extends AppLocalizations {
   String get mapHub_regionsHint => '地域のメッシュ定義を管理・取得';
 
   @override
+  String get replay_title => '1日を再生';
+
+  @override
+  String get replay_entryHint => '選んだ日にチームが移動した場所を再生';
+
+  @override
+  String get replay_badge => '履歴';
+
+  @override
+  String get replay_day => '日付';
+
+  @override
+  String get replay_team => 'チーム';
+
+  @override
+  String get replay_everyone => '全員';
+
+  @override
+  String get replay_emptyTeam =>
+      'この日のチーム位置はありません。メンバーがチャンネルで追跡位置を共有すると表示されます。ノードのアドバートは「全員」で確認できます。';
+
+  @override
+  String get replay_emptyEveryone =>
+      'この日の位置記録はありません。今後、アプリを開いている間にノードがアドバートする位置を記録します。';
+
+  @override
+  String replay_mapSummary(String time, int count) {
+    return '$time の地図: $count 件表示';
+  }
+
+  @override
+  String get replay_play => '再生';
+
+  @override
+  String get replay_pause => '一時停止';
+
+  @override
+  String get replay_speed => '速度';
+
+  @override
+  String replay_speedValue(int minutes) {
+    return '1秒あたり$minutes分';
+  }
+
+  @override
+  String replay_showNode(String name) {
+    return '$name を表示/非表示';
+  }
+
+  @override
+  String get replay_notYet => 'この時刻にはまだ未確認';
+
+  @override
+  String replay_lastSeen(String time, String lat, String lon) {
+    return '最終確認 $time、$lat, $lon';
+  }
+
+  @override
+  String get replay_explainer =>
+      'チーム位置はメンバーがチャンネルで共有する追跡位置から取得します。「全員」ではノードがアドバートする位置も表示します。これはアプリを開いている間に記録され、30日間保存されます。何も送信しません。';
+
+  @override
   String get mapHub_badgeRegions => '地域';
 
   @override
@@ -7670,6 +7873,71 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => '接続ダッシュボードを表示';
+
+  @override
+  String get radios_title => '無線機';
+
+  @override
+  String radios_number(int number) {
+    return '無線機 $number';
+  }
+
+  @override
+  String get radios_active => '使用中';
+
+  @override
+  String get radios_switch => 'この無線機を使う';
+
+  @override
+  String get radios_add => '無線機を追加';
+
+  @override
+  String get radios_switcher => '無線機を切り替え';
+
+  @override
+  String get radios_hint =>
+      'ハンディ機と基地局など、複数の無線機に接続したままにできます。アプリは使用中の無線機で表示・送信します。他の無線機は接続を保ち、メッセージは切り替えたときのために保存されます。';
+
+  @override
+  String get radios_switchNote =>
+      '無線機を切り替えるとホーム画面に戻ります。ボット、自動化、通知、追跡、SOS中継は使用中の無線機で動作します。';
+
+  @override
+  String radios_removeTitle(String name) {
+    return '$nameを削除しますか？';
+  }
+
+  @override
+  String get radios_removeBody => '無線機を切断して登録を解除します。メッセージと連絡先は保存されたままです。';
+
+  @override
+  String radios_unread(int count) {
+    return '未読 $count件';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '他の無線機に未読 $count件';
+  }
+
+  @override
+  String get radios_continueOn => '別の無線機で続ける';
+
+  @override
+  String radios_continueOnName(String name) {
+    return '$nameで続ける';
+  }
+
+  @override
+  String get radios_routeDirect => '直接';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'ホップ数: $count';
+  }
+
+  @override
+  String get radios_routeFlood => '既知の経路なし';
 
   @override
   String get channelDirectory_title => 'チャンネル一覧';
@@ -10274,10 +10542,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get waypoints_toolSubtitle => '保存した場所とルート。GPXの読み込み・書き出し';
 
   @override
-  String get waypoints_importFile => 'GPXファイルを読み込む';
+  String get waypoints_importFile => '地図ファイルを読み込む (GPX、KML、GeoJSON)';
 
   @override
-  String get waypoints_importPaste => 'GPXを貼り付け';
+  String get waypoints_importPaste => 'GPX、KML、GeoJSON を貼り付け';
 
   @override
   String get waypoints_export => 'GPXを書き出す';
@@ -10319,7 +10587,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get waypoints_importFailed => 'アプリで読めるGPXファイルではありません。';
+  String get waypoints_importFailed => '読み込める GPX、KML、GeoJSON ファイルではありません。';
 
   @override
   String get waypoints_pasteHint => 'GPXのテキストをここに貼り付け';
@@ -11101,7 +11369,140 @@ class AppLocalizationsJa extends AppLocalizations {
   String get auto_entry => '自動化ルール';
 
   @override
-  String get auto_entrySub => 'バッテリー、時刻、エリア、ノードで実行';
+  String get auto_entrySub => 'バッテリー、時刻、エリア、ノード、メッセージのトリガー、AND/OR';
+
+  @override
+  String get auto_trigMessage => 'メッセージを受信';
+
+  @override
+  String get auto_actJoin => 'ハッシュタグチャンネルに参加';
+
+  @override
+  String get auto_actSound => '音を鳴らす';
+
+  @override
+  String get auto_actWebhook => 'Webhookを呼び出す';
+
+  @override
+  String get auto_outDone => '完了';
+
+  @override
+  String get auto_outNotConnected => '無線機が未接続';
+
+  @override
+  String get auto_outNoTarget => '宛先またはアドレスがありません';
+
+  @override
+  String get auto_outWebOff => 'Webリクエストはオフです';
+
+  @override
+  String get auto_outWebFailed => 'Webリクエストに失敗';
+
+  @override
+  String get auto_outNoSlot => '空きチャンネル枠がありません';
+
+  @override
+  String get auto_outFailed => '失敗';
+
+  @override
+  String get auto_anyone => '誰でも';
+
+  @override
+  String get auto_webSwitch => 'Webリクエストを許可（Webhook）';
+
+  @override
+  String get auto_webSwitchSub =>
+      '既定ではオフ。Webhook操作にはインターネットが必要で、オフの間はスキップされます。それ以外は無線だけで動作します。';
+
+  @override
+  String get auto_andJoin => '、かつ';
+
+  @override
+  String get auto_orJoin => '、または';
+
+  @override
+  String get auto_needsInternet => 'インターネットが必要';
+
+  @override
+  String get auto_recent => '最近の実行';
+
+  @override
+  String get auto_needCondition => '条件を1つ以上追加してください。';
+
+  @override
+  String get auto_needAction => '操作を1つ以上追加してください。';
+
+  @override
+  String get auto_conditions => '条件';
+
+  @override
+  String get auto_actions => '操作';
+
+  @override
+  String get auto_addCondition => '条件を追加';
+
+  @override
+  String get auto_addAction => '操作を追加';
+
+  @override
+  String auto_remove(String item) {
+    return '$itemを削除';
+  }
+
+  @override
+  String get auto_combine => 'ルールを実行する条件';
+
+  @override
+  String get auto_combineAny => 'いずれか（OR）';
+
+  @override
+  String get auto_combineAll => 'すべて（AND）';
+
+  @override
+  String get auto_combineAnyHint => 'いずれかの条件が起きたときに実行します。';
+
+  @override
+  String get auto_combineAllHint =>
+      '1つの条件が起き、その時点で他のすべてが成り立つときに実行します（例:「18:00 かつ バッテリー30%未満」）。';
+
+  @override
+  String get auto_editCondition => '条件';
+
+  @override
+  String get auto_editAction => '操作';
+
+  @override
+  String get auto_done => '完了';
+
+  @override
+  String get auto_contains => 'メッセージに含む語（任意）';
+
+  @override
+  String get auto_from => '送信者';
+
+  @override
+  String get auto_do => '実行';
+
+  @override
+  String get auto_webhookHint =>
+      'インターネットが必要です。ルール名、時刻、バッテリー、ノード、テキストをJSONで送ります。Webリクエストが許可されている間だけ動作します。';
+
+  @override
+  String get auto_webhookUrl => 'Webhookのアドレス（https://…）';
+
+  @override
+  String get auto_channelName => 'ハッシュタグチャンネル（例: #hikers）';
+
+  @override
+  String get auto_needChannel => 'チャンネル名を入力してください。';
+
+  @override
+  String get auto_needUrl => 'https:// で始まるアドレスを入力してください';
+
+  @override
+  String auto_placeholders(String list) {
+    return '使用できる語: $list';
+  }
 
   @override
   String get teamSetup_title => 'チーム設定';
@@ -12096,6 +12497,69 @@ class AppLocalizationsJa extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$nameは$trailから$distance離れています。';
   }
+
+  @override
+  String get fw_title => 'ファームウェアを更新';
+
+  @override
+  String get fw_unknownVersion => 'ファームウェアのバージョンはまだ不明です';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return '新しいコンパニオンファームウェアがあります: $version';
+  }
+
+  @override
+  String get fw_upToDate => 'この無線機は最新のコンパニオンファームウェアです。';
+
+  @override
+  String get fw_checkFailed => '確認できませんでした。オフラインかもしれません。';
+
+  @override
+  String get fw_checkLatest => '最新リリースを確認';
+
+  @override
+  String get fw_checkPrivacy =>
+      '確認では GitHub に MeshCore のリリース一覧を問い合わせます。無線機の情報は送信しません。';
+
+  @override
+  String get fw_stepsTitle => '更新の手順';
+
+  @override
+  String get fw_step1 => '先にバックアップしてください。更新で設定や連絡先がリセットされることがあります。';
+
+  @override
+  String get fw_backup => '暗号化バックアップ';
+
+  @override
+  String get fw_step2 =>
+      'Chrome か Edge のあるパソコンで MeshCore 公式ウェブフラッシャーを開き、無線機を USB で接続します。';
+
+  @override
+  String get fw_openFlasher => 'ウェブフラッシャーを開く';
+
+  @override
+  String get fw_copyLink => 'リンクをコピー';
+
+  @override
+  String get fw_linkCopied => 'リンクをコピーしました';
+
+  @override
+  String get fw_step3 =>
+      'お使いのボードを正確に選び、接続方法 (Bluetooth、USB、Wi-Fi) に合った Companion ファームウェアを選びます。リピーターやルームサーバーのファームウェアはこのアプリでは使えません。';
+
+  @override
+  String get fw_step4 => '完了したらここで再接続します。設定がリセットされた場合はバックアップを復元してください。';
+
+  @override
+  String get fw_cautionTitle => '始める前に';
+
+  @override
+  String get fw_caution =>
+      '無線機を充電し、完了までケーブルを抜かないでください。更新に失敗しても、通常は USB で書き込み直せば復旧できます。このアプリが自分でファームウェアを書き込むことはありません。';
+
+  @override
+  String get fw_open => 'ファームウェアの更新方法';
 
   @override
   String get idKey_title => 'ID鍵のバックアップ';
