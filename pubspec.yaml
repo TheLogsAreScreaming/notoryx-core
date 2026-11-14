@@ -1,7 +1,7 @@
 name: meshcore_open
 description: "NOTORYX Core: an independent MeshCore LoRa companion app"
 publish_to: 'none'
-version: 10.1.0-rc.1+102
+version: 10.1.0-rc.2+103
 
 environment:
   sdk: ^3.9.2
