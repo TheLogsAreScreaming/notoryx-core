@@ -14,7 +14,12 @@ import 'notification_service.dart';
 
 class FieldOpsService extends ChangeNotifier {
   final MeshCoreConnector connector;
-  FieldOpsService(this.connector);
+
+  /// [clock] is for tests that move time forward; the app uses the real one.
+  FieldOpsService(this.connector, {DateTime Function()? clock})
+    : _now = clock ?? DateTime.now;
+
+  final DateTime Function() _now;
   static const _key = 'bastion_field_ops_v1';
 
   /// [error] values, which the app shows in the user's language.
@@ -133,7 +138,7 @@ class FieldOpsService extends ChangeNotifier {
     final reason = sosUnavailable;
     if (reason != null) throw StateError(reason);
     if (sos.active) return;
-    sos = SosState(active: true, startedAt: DateTime.now());
+    sos = SosState(active: true, startedAt: _now());
     await record('sos', 'SOS started.');
     _sosTimer?.cancel();
     _sosTimer = Timer.periodic(
@@ -155,7 +160,7 @@ class FieldOpsService extends ChangeNotifier {
       allClear ? 'SOS stopped; all clear sent.' : 'SOS stopped.',
     );
     if (allClear && connector.isConnected) {
-      await _sendSosText(sosAllClearText(DateTime.now()), 'All clear');
+      await _sendSosText(sosAllClearText(_now()), 'All clear');
     }
     _notify();
   }
@@ -164,7 +169,7 @@ class FieldOpsService extends ChangeNotifier {
   @visibleForTesting
   Future<void> sosTick() async {
     if (_disposed || !sos.active || _sosSending) return;
-    final now = DateTime.now();
+    final now = _now();
     // A disconnected radio retries on the next tick instead of using a send.
     if (!sos.dueAt(now) || !connector.isConnected) return;
     _sosSending = true;
