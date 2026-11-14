@@ -13260,6 +13260,65 @@ class AppLocalizationsSl extends AppLocalizations {
       'Obnovitev ni uspela, zato so bile vse nastavitve vrnjene, kot so bile. Nič se ni spremenilo.';
 
   @override
+  String get outbox_maybeSent =>
+      'Pošiljanje je bilo prekinjeno, zato je sporočilo morda že odšlo. Vrnjeno je v polje za sporočilo: preverite, preden ga znova pošljete.';
+
+  @override
+  String get outbox_tooLong =>
+      'Predolgo za radio, zato je vrnjeno v polje za sporočilo, da ga skrajšate.';
+
+  @override
+  String get rf_title => 'Funkcije radia';
+
+  @override
+  String get rf_radioStats => 'Statistika radia v živo';
+
+  @override
+  String get rf_textCli => 'Besedilna ukazna vrstica';
+
+  @override
+  String get rf_channelData => 'Podatki kanala';
+
+  @override
+  String get rf_signedPosts => 'Podpisane objave v kanalu';
+
+  @override
+  String get rf_rawPackets => 'Surovi paketi';
+
+  @override
+  String get rf_floodCorridor =>
+      'Poplavni koridor (lastna strojna programska oprema)';
+
+  @override
+  String get rf_supported => 'Podprto';
+
+  @override
+  String get rf_unsupported => 'Ni podprto';
+
+  @override
+  String get rf_unknown => 'Neznano';
+
+  @override
+  String get rf_evNotConnected => 'Povežite radio za preverjanje.';
+
+  @override
+  String get rf_evNotChecked => 'Še ni preverjeno.';
+
+  @override
+  String get rf_evProbeAnswered => 'Radio je odgovoril na preverjanje.';
+
+  @override
+  String get rf_evProbeRejected => 'Radio je sporočil, da tega ne podpira.';
+
+  @override
+  String get rf_evDerived => 'Potrebuje podatke kanala in ključ radia.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return 'Radio sporoča protokol v$have; potreben je v$need.';
+  }
+
+  @override
   String fieldOps_regionDamaged(int count) {
     return 'Odstranjenih je bilo $count poškodovanih datotek ploščic (nepopolne ali niso slike). Znova prenesite območje, da jih nadomestite.';
   }

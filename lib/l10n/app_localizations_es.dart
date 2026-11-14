@@ -13284,6 +13284,65 @@ class AppLocalizationsEs extends AppLocalizations {
       'La restauración falló, así que todos los ajustes volvieron a como estaban. No cambió nada.';
 
   @override
+  String get outbox_maybeSent =>
+      'El envío se interrumpió, así que puede que ya haya salido. Ha vuelto al cuadro de mensaje: compruébalo antes de enviarlo de nuevo.';
+
+  @override
+  String get outbox_tooLong =>
+      'Demasiado largo para la radio; ha vuelto al cuadro de mensaje para acortarlo.';
+
+  @override
+  String get rf_title => 'Funciones de la radio';
+
+  @override
+  String get rf_radioStats => 'Estadísticas de la radio en vivo';
+
+  @override
+  String get rf_textCli => 'Línea de comandos de texto';
+
+  @override
+  String get rf_channelData => 'Datos de canal';
+
+  @override
+  String get rf_signedPosts => 'Publicaciones de canal firmadas';
+
+  @override
+  String get rf_rawPackets => 'Paquetes sin procesar';
+
+  @override
+  String get rf_floodCorridor =>
+      'Corredor de inundación (firmware personalizado)';
+
+  @override
+  String get rf_supported => 'Compatible';
+
+  @override
+  String get rf_unsupported => 'No compatible';
+
+  @override
+  String get rf_unknown => 'Desconocido';
+
+  @override
+  String get rf_evNotConnected => 'Conecta una radio para comprobarlo.';
+
+  @override
+  String get rf_evNotChecked => 'Aún no comprobado.';
+
+  @override
+  String get rf_evProbeAnswered => 'La radio respondió a la comprobación.';
+
+  @override
+  String get rf_evProbeRejected => 'La radio indicó que no lo admite.';
+
+  @override
+  String get rf_evDerived => 'Necesita datos de canal y la clave de la radio.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return 'La radio indica el protocolo v$have; se necesita v$need.';
+  }
+
+  @override
   String fieldOps_regionDamaged(int count) {
     return 'Se eliminaron $count archivos de teselas dañados (incompletos o que no son imágenes). Descarga la zona de nuevo para reemplazarlos.';
   }

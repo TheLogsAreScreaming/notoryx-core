@@ -13304,6 +13304,64 @@ class AppLocalizationsRu extends AppLocalizations {
       'Восстановление не удалось, поэтому все настройки возвращены как были. Ничего не изменилось.';
 
   @override
+  String get outbox_maybeSent =>
+      'Отправка была прервана, поэтому сообщение, возможно, уже ушло. Оно возвращено в поле ввода: проверьте, прежде чем отправлять снова.';
+
+  @override
+  String get outbox_tooLong =>
+      'Слишком длинно для радио, поэтому возвращено в поле ввода, чтобы сократить.';
+
+  @override
+  String get rf_title => 'Функции радио';
+
+  @override
+  String get rf_radioStats => 'Статистика радио в реальном времени';
+
+  @override
+  String get rf_textCli => 'Текстовая командная строка';
+
+  @override
+  String get rf_channelData => 'Данные канала';
+
+  @override
+  String get rf_signedPosts => 'Подписанные сообщения канала';
+
+  @override
+  String get rf_rawPackets => 'Сырые пакеты';
+
+  @override
+  String get rf_floodCorridor => 'Коридор рассылки (своя прошивка)';
+
+  @override
+  String get rf_supported => 'Поддерживается';
+
+  @override
+  String get rf_unsupported => 'Не поддерживается';
+
+  @override
+  String get rf_unknown => 'Неизвестно';
+
+  @override
+  String get rf_evNotConnected => 'Подключите радио, чтобы проверить.';
+
+  @override
+  String get rf_evNotChecked => 'Ещё не проверено.';
+
+  @override
+  String get rf_evProbeAnswered => 'Радио ответило на проверку.';
+
+  @override
+  String get rf_evProbeRejected => 'Радио сообщило, что не поддерживает это.';
+
+  @override
+  String get rf_evDerived => 'Нужны данные канала и ключ радио.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return 'Радио сообщает протокол v$have; нужен v$need.';
+  }
+
+  @override
   String fieldOps_regionDamaged(int count) {
     return 'Удалено повреждённых файлов плиток: $count (обрезаны или не изображения). Загрузите область заново, чтобы заменить их.';
   }

@@ -13175,6 +13175,64 @@ class AppLocalizationsSv extends AppLocalizations {
       'Återställningen misslyckades, så alla inställningar sattes tillbaka som de var. Inget ändrades.';
 
   @override
+  String get outbox_maybeSent =>
+      'Sändningen avbröts, så meddelandet kan redan ha gått iväg. Det ligger i meddelanderutan igen: kontrollera innan du skickar det igen.';
+
+  @override
+  String get outbox_tooLong =>
+      'För långt för radion, så det ligger i meddelanderutan igen för att kortas.';
+
+  @override
+  String get rf_title => 'Radiofunktioner';
+
+  @override
+  String get rf_radioStats => 'Live-radiostatistik';
+
+  @override
+  String get rf_textCli => 'Textkommandorad';
+
+  @override
+  String get rf_channelData => 'Kanaldata';
+
+  @override
+  String get rf_signedPosts => 'Signerade kanalinlägg';
+
+  @override
+  String get rf_rawPackets => 'Råpaket';
+
+  @override
+  String get rf_floodCorridor => 'Floodkorridor (egen firmware)';
+
+  @override
+  String get rf_supported => 'Stöds';
+
+  @override
+  String get rf_unsupported => 'Stöds inte';
+
+  @override
+  String get rf_unknown => 'Okänt';
+
+  @override
+  String get rf_evNotConnected => 'Anslut en radio för att kontrollera.';
+
+  @override
+  String get rf_evNotChecked => 'Inte kontrollerat än.';
+
+  @override
+  String get rf_evProbeAnswered => 'Radion svarade på kontrollen.';
+
+  @override
+  String get rf_evProbeRejected => 'Radion svarade att den inte stöder detta.';
+
+  @override
+  String get rf_evDerived => 'Kräver kanaldata och radions nyckel.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return 'Radion anger protokoll v$have; kräver v$need.';
+  }
+
+  @override
   String fieldOps_regionDamaged(int count) {
     return '$count skadade kartrutefiler togs bort (avbrutna eller inte bilder). Ladda ner området igen för att ersätta dem.';
   }
