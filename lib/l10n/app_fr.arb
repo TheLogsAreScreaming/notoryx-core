@@ -5199,6 +5199,8 @@
   "hopTie_less": "Moins",
   "hopTie_more": "Plus",
   "bk_rolledBack": "La restauration a échoué, tous les réglages ont donc été remis comme avant. Rien n'a changé.",
+  "outbox_maybeSent": "L'envoi a été interrompu, le message est donc peut-être déjà parti. Il est revenu dans la zone de saisie : vérifiez avant de le renvoyer.",
+  "outbox_tooLong": "Trop long pour la radio : il est revenu dans la zone de saisie pour être raccourci.",
   "rf_title": "Fonctions de la radio",
   "rf_radioStats": "Statistiques radio en direct",
   "rf_textCli": "Ligne de commande texte",

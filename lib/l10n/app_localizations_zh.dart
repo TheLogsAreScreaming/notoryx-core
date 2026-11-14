@@ -12435,6 +12435,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get bk_rolledBack => '恢复失败，所有设置已还原为原样。没有任何更改。';
 
   @override
+  String get outbox_maybeSent => '发送被中断，此消息可能已经发出。它已放回输入框：再次发送前请先确认。';
+
+  @override
+  String get outbox_tooLong => '对电台来说太长，已放回输入框以便缩短。';
+
+  @override
   String get rf_title => '电台功能';
 
   @override

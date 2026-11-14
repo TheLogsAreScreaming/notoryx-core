@@ -13228,6 +13228,14 @@ class AppLocalizationsNl extends AppLocalizations {
       'Herstellen is mislukt, dus alle instellingen zijn teruggezet zoals ze waren. Er is niets veranderd.';
 
   @override
+  String get outbox_maybeSent =>
+      'Het verzenden werd onderbroken, dus dit bericht is misschien al verstuurd. Het staat weer in het invoerveld: controleer dit voordat je het opnieuw verstuurt.';
+
+  @override
+  String get outbox_tooLong =>
+      'Te lang voor de radio, dus het staat weer in het invoerveld om in te korten.';
+
+  @override
   String get rf_title => 'Radiofuncties';
 
   @override

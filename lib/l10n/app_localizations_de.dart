@@ -13291,6 +13291,14 @@ class AppLocalizationsDe extends AppLocalizations {
       'Wiederherstellen ist fehlgeschlagen, daher wurden alle Einstellungen zurückgesetzt. Nichts wurde geändert.';
 
   @override
+  String get outbox_maybeSent =>
+      'Das Senden wurde unterbrochen, die Nachricht ist also vielleicht schon raus. Sie steht wieder im Eingabefeld: Prüfe das, bevor du sie erneut sendest.';
+
+  @override
+  String get outbox_tooLong =>
+      'Zu lang für das Funkgerät, daher wieder im Eingabefeld zum Kürzen.';
+
+  @override
   String get rf_title => 'Funkgerät-Funktionen';
 
   @override

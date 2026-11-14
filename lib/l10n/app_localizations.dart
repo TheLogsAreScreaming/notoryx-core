@@ -22045,6 +22045,18 @@ abstract class AppLocalizations {
   /// **'Restore failed, so every setting was put back as it was. Nothing changed.'**
   String get bk_rolledBack;
 
+  /// No description provided for @outbox_maybeSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Sending was interrupted, so this may already have gone out. It\'s back in the message box: check before sending it again.'**
+  String get outbox_maybeSent;
+
+  /// No description provided for @outbox_tooLong.
+  ///
+  /// In en, this message translates to:
+  /// **'Too long for the radio, so it\'s back in the message box to shorten.'**
+  String get outbox_tooLong;
+
   /// No description provided for @rf_title.
   ///
   /// In en, this message translates to:

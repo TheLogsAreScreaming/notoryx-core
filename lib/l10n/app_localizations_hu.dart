@@ -13261,6 +13261,14 @@ class AppLocalizationsHu extends AppLocalizations {
       'A visszaállítás nem sikerült, ezért minden beállítás visszakerült az eredeti állapotába. Semmi sem változott.';
 
   @override
+  String get outbox_maybeSent =>
+      'A küldés megszakadt, így lehet, hogy az üzenet már elment. Visszakerült az üzenetmezőbe: ellenőrizd, mielőtt újra elküldöd.';
+
+  @override
+  String get outbox_tooLong =>
+      'Túl hosszú a rádiónak, ezért visszakerült az üzenetmezőbe rövidítésre.';
+
+  @override
   String get rf_title => 'Rádió funkciói';
 
   @override

@@ -5199,6 +5199,8 @@
   "hopTie_less": "Menos",
   "hopTie_more": "Más",
   "bk_rolledBack": "La restauración falló, así que todos los ajustes volvieron a como estaban. No cambió nada.",
+  "outbox_maybeSent": "El envío se interrumpió, así que puede que ya haya salido. Ha vuelto al cuadro de mensaje: compruébalo antes de enviarlo de nuevo.",
+  "outbox_tooLong": "Demasiado largo para la radio; ha vuelto al cuadro de mensaje para acortarlo.",
   "rf_title": "Funciones de la radio",
   "rf_radioStats": "Estadísticas de la radio en vivo",
   "rf_textCli": "Línea de comandos de texto",

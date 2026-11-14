@@ -12691,6 +12691,13 @@ class AppLocalizationsKo extends AppLocalizations {
   String get bk_rolledBack => '복원에 실패하여 모든 설정을 원래대로 되돌렸습니다. 변경된 것은 없습니다.';
 
   @override
+  String get outbox_maybeSent =>
+      '전송이 중단되어 이 메시지가 이미 전송되었을 수 있습니다. 입력란으로 되돌렸습니다. 다시 보내기 전에 확인하세요.';
+
+  @override
+  String get outbox_tooLong => '무전기에 너무 길어서 줄일 수 있도록 입력란으로 되돌렸습니다.';
+
+  @override
   String get rf_title => '무전기 기능';
 
   @override

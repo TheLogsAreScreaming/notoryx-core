@@ -13260,6 +13260,14 @@ class AppLocalizationsSl extends AppLocalizations {
       'Obnovitev ni uspela, zato so bile vse nastavitve vrnjene, kot so bile. Nič se ni spremenilo.';
 
   @override
+  String get outbox_maybeSent =>
+      'Pošiljanje je bilo prekinjeno, zato je sporočilo morda že odšlo. Vrnjeno je v polje za sporočilo: preverite, preden ga znova pošljete.';
+
+  @override
+  String get outbox_tooLong =>
+      'Predolgo za radio, zato je vrnjeno v polje za sporočilo, da ga skrajšate.';
+
+  @override
   String get rf_title => 'Funkcije radia';
 
   @override

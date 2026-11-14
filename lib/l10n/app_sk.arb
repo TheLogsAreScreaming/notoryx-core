@@ -5065,6 +5065,8 @@
   "hopTie_less": "Menej",
   "hopTie_more": "Viac",
   "bk_rolledBack": "Obnovenie zlyhalo, preto sa všetky nastavenia vrátili do pôvodného stavu. Nič sa nezmenilo.",
+  "outbox_maybeSent": "Odosielanie bolo prerušené, takže správa už možno odišla. Vrátila sa do poľa správy: skontrolujte to pred opätovným odoslaním.",
+  "outbox_tooLong": "Príliš dlhé pre rádio, preto sa vrátilo do poľa správy na skrátenie.",
   "rf_title": "Funkcie rádia",
   "rf_radioStats": "Živé štatistiky rádia",
   "rf_textCli": "Textový príkazový riadok",

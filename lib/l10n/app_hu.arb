@@ -5103,6 +5103,8 @@
   "hopTie_less": "Kevesebb",
   "hopTie_more": "Több",
   "bk_rolledBack": "A visszaállítás nem sikerült, ezért minden beállítás visszakerült az eredeti állapotába. Semmi sem változott.",
+  "outbox_maybeSent": "A küldés megszakadt, így lehet, hogy az üzenet már elment. Visszakerült az üzenetmezőbe: ellenőrizd, mielőtt újra elküldöd.",
+  "outbox_tooLong": "Túl hosszú a rádiónak, ezért visszakerült az üzenetmezőbe rövidítésre.",
   "rf_title": "Rádió funkciói",
   "rf_radioStats": "Élő rádióstatisztika",
   "rf_textCli": "Szöveges parancssor",

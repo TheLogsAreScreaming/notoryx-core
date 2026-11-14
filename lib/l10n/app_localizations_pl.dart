@@ -13304,6 +13304,14 @@ class AppLocalizationsPl extends AppLocalizations {
       'Przywracanie nie powiodło się, więc wszystkie ustawienia wróciły do poprzedniego stanu. Nic się nie zmieniło.';
 
   @override
+  String get outbox_maybeSent =>
+      'Wysyłanie zostało przerwane, więc ta wiadomość mogła już zostać wysłana. Wróciła do pola wiadomości: sprawdź, zanim wyślesz ją ponownie.';
+
+  @override
+  String get outbox_tooLong =>
+      'Za długie dla radia, więc wróciło do pola wiadomości do skrócenia.';
+
+  @override
   String get rf_title => 'Funkcje radia';
 
   @override

@@ -13303,6 +13303,14 @@ class AppLocalizationsUk extends AppLocalizations {
       'Відновлення не вдалося, тому всі налаштування повернуто як були. Нічого не змінилося.';
 
   @override
+  String get outbox_maybeSent =>
+      'Надсилання було перервано, тож повідомлення, можливо, вже пішло. Його повернуто в поле введення: перевірте, перш ніж надсилати знову.';
+
+  @override
+  String get outbox_tooLong =>
+      'Задовге для радіо, тому повернуто в поле введення, щоб скоротити.';
+
+  @override
   String get rf_title => 'Функції радіо';
 
   @override
