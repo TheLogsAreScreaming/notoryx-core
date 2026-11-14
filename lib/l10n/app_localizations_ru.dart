@@ -13432,4 +13432,18 @@ class AppLocalizationsRu extends AppLocalizations {
     });
     return '$distance, направление: $_temp0';
   }
+
+  @override
+  String get deliv_failedMarker => 'Не доставлено';
+
+  @override
+  String deliv_failedMarkerHint(String name) {
+    return 'Последнее сообщение для $name не доставлено. Показывает причину и как исправить.';
+  }
+
+  @override
+  String get deliv_retryFlood => 'Повторить флудом';
+
+  @override
+  String get deliv_pickRoute => 'Выбрать маршрут и повторить';
 }

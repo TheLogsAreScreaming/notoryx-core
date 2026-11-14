@@ -5231,5 +5231,9 @@
   "ml_none": "Ninguno",
   "ml_noOwnPosition": "Distancia desconocida: tu radio no tiene posición",
   "ml_heard": "escuchado {ago}",
-  "ml_distanceDir": "{distance} al {dir, select, n{norte} ne{noreste} e{este} se{sureste} s{sur} sw{suroeste} w{oeste} nw{noroeste} other{}}"
+  "ml_distanceDir": "{distance} al {dir, select, n{norte} ne{noreste} e{este} se{sureste} s{sur} sw{suroeste} w{oeste} nw{noroeste} other{}}",
+  "deliv_failedMarker": "No entregado",
+  "deliv_failedMarkerHint": "Tu último mensaje a {name} no se entregó. Muestra por qué y cómo arreglarlo.",
+  "deliv_retryFlood": "Reintentar por inundación",
+  "deliv_pickRoute": "Elegir una ruta y reintentar"
 }

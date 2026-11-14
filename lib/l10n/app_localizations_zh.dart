@@ -12558,4 +12558,18 @@ class AppLocalizationsZh extends AppLocalizations {
     });
     return '$_temp0方向 $distance';
   }
+
+  @override
+  String get deliv_failedMarker => '未送达';
+
+  @override
+  String deliv_failedMarkerHint(String name) {
+    return '你发给 $name 的最后一条消息未送达。显示原因和解决办法。';
+  }
+
+  @override
+  String get deliv_retryFlood => '通过泛洪重试';
+
+  @override
+  String get deliv_pickRoute => '选择路由后重试';
 }

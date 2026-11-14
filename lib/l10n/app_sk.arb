@@ -5097,5 +5097,9 @@
   "ml_none": "Žiadne",
   "ml_noOwnPosition": "Vzdialenosť neznáma: vaše rádio nemá polohu",
   "ml_heard": "počutý {ago}",
-  "ml_distanceDir": "{distance}, smer: {dir, select, n{sever} ne{severovýchod} e{východ} se{juhovýchod} s{juh} sw{juhozápad} w{západ} nw{severozápad} other{}}"
+  "ml_distanceDir": "{distance}, smer: {dir, select, n{sever} ne{severovýchod} e{východ} se{juhovýchod} s{juh} sw{juhozápad} w{západ} nw{severozápad} other{}}",
+  "deliv_failedMarker": "Nedoručené",
+  "deliv_failedMarkerHint": "Tvoja posledná správa pre {name} nebola doručená. Ukáže prečo a ako to opraviť.",
+  "deliv_retryFlood": "Skúsiť znova zaplavením",
+  "deliv_pickRoute": "Vybrať trasu a skúsiť znova"
 }

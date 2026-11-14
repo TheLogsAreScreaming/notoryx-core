@@ -13386,4 +13386,18 @@ class AppLocalizationsSl extends AppLocalizations {
     });
     return '$distance, smer: $_temp0';
   }
+
+  @override
+  String get deliv_failedMarker => 'Ni dostavljeno';
+
+  @override
+  String deliv_failedMarkerHint(String name) {
+    return 'Tvoje zadnje sporočilo za $name ni bilo dostavljeno. Pokaže, zakaj in kako to popraviti.';
+  }
+
+  @override
+  String get deliv_retryFlood => 'Poskusi znova s poplavljanjem';
+
+  @override
+  String get deliv_pickRoute => 'Izberi pot in poskusi znova';
 }

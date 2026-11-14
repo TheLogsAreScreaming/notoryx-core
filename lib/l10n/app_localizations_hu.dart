@@ -13389,4 +13389,18 @@ class AppLocalizationsHu extends AppLocalizations {
     });
     return '$distance, $_temp0';
   }
+
+  @override
+  String get deliv_failedMarker => 'Nem kézbesítve';
+
+  @override
+  String deliv_failedMarkerHint(String name) {
+    return 'Az utolsó üzeneted $name részére nem lett kézbesítve. Megmutatja, miért, és hogyan javítható.';
+  }
+
+  @override
+  String get deliv_retryFlood => 'Újra elárasztással';
+
+  @override
+  String get deliv_pickRoute => 'Útvonal választása, majd újra';
 }

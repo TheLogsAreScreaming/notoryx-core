@@ -4400,5 +4400,9 @@
   "ml_none": "Нет",
   "ml_noOwnPosition": "Расстояние неизвестно: у вашего радио нет позиции",
   "ml_heard": "слышен {ago}",
-  "ml_distanceDir": "{distance}, направление: {dir, select, n{север} ne{северо-восток} e{восток} se{юго-восток} s{юг} sw{юго-запад} w{запад} nw{северо-запад} other{}}"
+  "ml_distanceDir": "{distance}, направление: {dir, select, n{север} ne{северо-восток} e{восток} se{юго-восток} s{юг} sw{юго-запад} w{запад} nw{северо-запад} other{}}",
+  "deliv_failedMarker": "Не доставлено",
+  "deliv_failedMarkerHint": "Последнее сообщение для {name} не доставлено. Показывает причину и как исправить.",
+  "deliv_retryFlood": "Повторить флудом",
+  "deliv_pickRoute": "Выбрать маршрут и повторить"
 }

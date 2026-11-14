@@ -5135,5 +5135,9 @@
   "ml_none": "Nincs",
   "ml_noOwnPosition": "Ismeretlen távolság: a rádiódnak nincs pozíciója",
   "ml_heard": "hallva {ago}",
-  "ml_distanceDir": "{distance}, {dir, select, n{észak} ne{északkelet} e{kelet} se{délkelet} s{dél} sw{délnyugat} w{nyugat} nw{északnyugat} other{}}"
+  "ml_distanceDir": "{distance}, {dir, select, n{észak} ne{északkelet} e{kelet} se{délkelet} s{dél} sw{délnyugat} w{nyugat} nw{északnyugat} other{}}",
+  "deliv_failedMarker": "Nem kézbesítve",
+  "deliv_failedMarkerHint": "Az utolsó üzeneted {name} részére nem lett kézbesítve. Megmutatja, miért, és hogyan javítható.",
+  "deliv_retryFlood": "Újra elárasztással",
+  "deliv_pickRoute": "Útvonal választása, majd újra"
 }

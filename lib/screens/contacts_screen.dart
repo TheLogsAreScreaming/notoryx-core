@@ -15,6 +15,7 @@ import '../connector/meshcore_protocol.dart';
 import '../models/contact.dart';
 import '../l10n/contact_localization.dart';
 import '../models/contact_group.dart';
+import '../models/message.dart';
 import '../services/ui_view_state_service.dart';
 import '../theme/mesh_theme.dart';
 import '../utils/contact_search.dart';
@@ -25,6 +26,7 @@ import '../utils/emoji_utils.dart';
 import '../utils/main_tab_navigation.dart';
 import '../widgets/path_hash_badge.dart';
 import '../widgets/contact_table_banner.dart';
+import '../widgets/delivery_fix.dart';
 import '../widgets/ember_backdrop.dart';
 import '../widgets/list_filter_widget.dart';
 import '../widgets/empty_state.dart';
@@ -981,6 +983,7 @@ class _ContactsScreenState extends State<ContactsScreen>
                             pathHashByteWidth: connector.pathHashByteWidth,
                             lastSeen: _resolveLastSeen(contact),
                             unreadCount: unreadCount,
+                            failedMessage: connector.lastFailedMessage(contact),
                             isFavorite: contact.isFavorite,
                             onTap: () => _openChat(context, contact),
                             onLongPress: () => _showContactOptions(
@@ -1631,6 +1634,9 @@ class _ContactTile extends StatelessWidget {
   final int pathHashByteWidth;
   final DateTime lastSeen;
   final int unreadCount;
+
+  /// The last message sent to this contact, when it failed.
+  final Message? failedMessage;
   final bool isFavorite;
   final VoidCallback onTap;
   final VoidCallback onLongPress;
@@ -1640,6 +1646,7 @@ class _ContactTile extends StatelessWidget {
     required this.pathHashByteWidth,
     required this.lastSeen,
     required this.unreadCount,
+    this.failedMessage,
     required this.isFavorite,
     required this.onTap,
     required this.onLongPress,
@@ -1776,6 +1783,8 @@ class _ContactTile extends StatelessWidget {
                           ),
                         ],
                       ),
+                      if (failedMessage case final failed?)
+                        _FailedSendMarker(contact: contact, message: failed),
                       if (hasUnread)
                         Text(
                           '$unreadCount',
@@ -1819,6 +1828,57 @@ class _ContactTile extends StatelessWidget {
   }
 }
 
+/// Says the last message to [contact] wasn't delivered; a tap shows why,
+/// with the fixes.
+class _FailedSendMarker extends StatelessWidget {
+  const _FailedSendMarker({required this.contact, required this.message});
+
+  final Contact contact;
+  final Message message;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    void open() => unawaited(
+      showDeliveryFixSheet(context, message: message, contact: contact),
+    );
+    // The label replaces the visible text, so the tap is given here too.
+    return Semantics(
+      key: ValueKey('failed-send-${contact.publicKeyHex}'),
+      container: true,
+      button: true,
+      label: l10n.deliv_failedMarkerHint(contact.name),
+      excludeSemantics: true,
+      onTap: open,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(8),
+        onTap: open,
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(minHeight: 44, minWidth: 44),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 4),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.error_outline, size: 16, color: MeshPalette.alert),
+                const SizedBox(width: 4),
+                Text(
+                  l10n.deliv_failedMarker,
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    color: MeshPalette.alert,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 // Wrap each contact tile with staggered entrance.
 class _ContactTileEntrance extends StatelessWidget {
   final int index;
@@ -1826,6 +1886,9 @@ class _ContactTileEntrance extends StatelessWidget {
   final int pathHashByteWidth;
   final DateTime lastSeen;
   final int unreadCount;
+
+  /// The last message sent to this contact, when it failed.
+  final Message? failedMessage;
   final bool isFavorite;
   final VoidCallback onTap;
   final VoidCallback onLongPress;
@@ -1836,6 +1899,7 @@ class _ContactTileEntrance extends StatelessWidget {
     required this.pathHashByteWidth,
     required this.lastSeen,
     required this.unreadCount,
+    this.failedMessage,
     required this.isFavorite,
     required this.onTap,
     required this.onLongPress,
@@ -1850,6 +1914,7 @@ class _ContactTileEntrance extends StatelessWidget {
         pathHashByteWidth: pathHashByteWidth,
         lastSeen: lastSeen,
         unreadCount: unreadCount,
+        failedMessage: failedMessage,
         isFavorite: isFavorite,
         onTap: onTap,
         onLongPress: onLongPress,

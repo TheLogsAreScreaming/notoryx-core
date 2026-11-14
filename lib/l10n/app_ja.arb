@@ -5231,5 +5231,9 @@
   "ml_none": "なし",
   "ml_noOwnPosition": "距離不明: 無線機に位置情報がありません",
   "ml_heard": "受信 {ago}",
-  "ml_distanceDir": "{dir, select, n{北} ne{北東} e{東} se{南東} s{南} sw{南西} w{西} nw{北西} other{}}へ{distance}"
+  "ml_distanceDir": "{dir, select, n{北} ne{北東} e{東} se{南東} s{南} sw{南西} w{西} nw{北西} other{}}へ{distance}",
+  "deliv_failedMarker": "未配信",
+  "deliv_failedMarkerHint": "{name} への最後のメッセージは配信されませんでした。理由と直し方を表示します。",
+  "deliv_retryFlood": "フラッドで再送",
+  "deliv_pickRoute": "経路を選んで再送"
 }

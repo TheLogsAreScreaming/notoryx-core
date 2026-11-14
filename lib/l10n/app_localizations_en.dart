@@ -13252,4 +13252,18 @@ class AppLocalizationsEn extends AppLocalizations {
     });
     return '$distance $_temp0';
   }
+
+  @override
+  String get deliv_failedMarker => 'Not delivered';
+
+  @override
+  String deliv_failedMarkerHint(String name) {
+    return 'Your last message to $name wasn\'t delivered. Shows why and how to fix it.';
+  }
+
+  @override
+  String get deliv_retryFlood => 'Retry by flood';
+
+  @override
+  String get deliv_pickRoute => 'Choose a route, then retry';
 }
