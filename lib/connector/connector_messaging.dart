@@ -589,6 +589,13 @@ extension _ConnectorMessaging on MeshCoreConnector {
         urlImagesEnabled: isChannelUrlImagesEnabled(channelIndex),
         channelIndex: message.channelIndex,
         badgeCount: getTotalUnreadCount(),
+        dedupeKey: NotificationDeduper.channelKey(
+          radio: slot,
+          channelIndex: channelIndex,
+          senderName: message.senderName,
+          sentAt: message.timestamp,
+          text: message.text,
+        ),
       );
     }());
   }

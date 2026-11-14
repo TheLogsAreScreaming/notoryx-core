@@ -11,6 +11,7 @@ import '../helpers/message_url_image_helper.dart';
 import '../helpers/reaction_helper.dart';
 import '../l10n/app_localizations.dart';
 import '../utils/platform_info.dart';
+import 'notification_deduper.dart';
 
 /// Text typed into a notification's reply box, and what it answers.
 class NotificationReply {
@@ -104,6 +105,9 @@ class NotificationService {
   final List<_PendingNotification> _pendingNotifications = [];
   bool _isBatchingActive = false;
   bool _suppressNotifications = false;
+
+  /// Messages that have already alerted, so a repeat copy doesn't.
+  final NotificationDeduper _deduper = NotificationDeduper();
 
   /// Temporarily suppress all notifications (e.g., during sync)
   void suppressNotifications(bool suppress) {
@@ -878,8 +882,9 @@ class NotificationService {
     String? contactId,
     int? badgeCount,
     String radio = '',
+    String? dedupeKey,
   }) async {
-    if (_suppressNotifications) return;
+    if (!_isFirstSighting(dedupeKey) || _suppressNotifications) return;
 
     _queueNotification(
       _PendingNotification(
@@ -921,8 +926,9 @@ class NotificationService {
     int? channelIndex,
     int? badgeCount,
     String radio = '',
+    String? dedupeKey,
   }) async {
-    if (_suppressNotifications) return;
+    if (!_isFirstSighting(dedupeKey) || _suppressNotifications) return;
 
     _queueNotification(
       _PendingNotification(
@@ -936,6 +942,12 @@ class NotificationService {
       ),
     );
   }
+
+  /// Whether the message [dedupeKey] names hasn't alerted yet. It's
+  /// recorded even while notifications are suppressed, so a copy that
+  /// arrives later doesn't alert either. A null key always alerts.
+  bool _isFirstSighting(String? dedupeKey) =>
+      dedupeKey == null || _deduper.firstSighting(dedupeKey);
 
   void _queueNotification(_PendingNotification notification) {
     final now = DateTime.now();
