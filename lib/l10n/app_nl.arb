@@ -5064,6 +5064,7 @@
   "hopTie_forget": "Onthouden keuzes vergeten ({count})",
   "hopTie_less": "Minder",
   "hopTie_more": "Meer",
+  "bk_rolledBack": "Herstellen is mislukt, dus alle instellingen zijn teruggezet zoals ze waren. Er is niets veranderd.",
   "outbox_maybeSent": "Het verzenden werd onderbroken, dus dit bericht is misschien al verstuurd. Het staat weer in het invoerveld: controleer dit voordat je het opnieuw verstuurt.",
   "outbox_tooLong": "Te lang voor de radio, dus het staat weer in het invoerveld om in te korten."
 }

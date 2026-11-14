@@ -5064,6 +5064,7 @@
   "hopTie_forget": "Pozabi zapomnjene izbire ({count})",
   "hopTie_less": "Manj",
   "hopTie_more": "Več",
+  "bk_rolledBack": "Obnovitev ni uspela, zato so bile vse nastavitve vrnjene, kot so bile. Nič se ni spremenilo.",
   "outbox_maybeSent": "Pošiljanje je bilo prekinjeno, zato je sporočilo morda že odšlo. Vrnjeno je v polje za sporočilo: preverite, preden ga znova pošljete.",
   "outbox_tooLong": "Predolgo za radio, zato je vrnjeno v polje za sporočilo, da ga skrajšate."
 }

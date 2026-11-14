@@ -13299,6 +13299,10 @@ class AppLocalizationsUk extends AppLocalizations {
   String get hopTie_more => 'Більше';
 
   @override
+  String get bk_rolledBack =>
+      'Відновлення не вдалося, тому всі налаштування повернуто як були. Нічого не змінилося.';
+
+  @override
   String get outbox_maybeSent =>
       'Надсилання було перервано, тож повідомлення, можливо, вже пішло. Його повернуто в поле введення: перевірте, перш ніж надсилати знову.';
 

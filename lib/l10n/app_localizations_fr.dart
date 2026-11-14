@@ -13325,6 +13325,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get hopTie_more => 'Plus';
 
   @override
+  String get bk_rolledBack =>
+      'La restauration a échoué, tous les réglages ont donc été remis comme avant. Rien n\'a changé.';
+
+  @override
   String get outbox_maybeSent =>
       'L\'envoi a été interrompu, le message est donc peut-être déjà parti. Il est revenu dans la zone de saisie : vérifiez avant de le renvoyer.';
 

@@ -5198,6 +5198,7 @@
   "hopTie_forget": "Gemerkte Wahl vergessen ({count})",
   "hopTie_less": "Weniger",
   "hopTie_more": "Mehr",
+  "bk_rolledBack": "Wiederherstellen ist fehlgeschlagen, daher wurden alle Einstellungen zurückgesetzt. Nichts wurde geändert.",
   "outbox_maybeSent": "Das Senden wurde unterbrochen, die Nachricht ist also vielleicht schon raus. Sie steht wieder im Eingabefeld: Prüfe das, bevor du sie erneut sendest.",
   "outbox_tooLong": "Zu lang für das Funkgerät, daher wieder im Eingabefeld zum Kürzen."
 }

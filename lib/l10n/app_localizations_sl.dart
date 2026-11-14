@@ -13256,6 +13256,10 @@ class AppLocalizationsSl extends AppLocalizations {
   String get hopTie_more => 'Več';
 
   @override
+  String get bk_rolledBack =>
+      'Obnovitev ni uspela, zato so bile vse nastavitve vrnjene, kot so bile. Nič se ni spremenilo.';
+
+  @override
   String get outbox_maybeSent =>
       'Pošiljanje je bilo prekinjeno, zato je sporočilo morda že odšlo. Vrnjeno je v polje za sporočilo: preverite, preden ga znova pošljete.';
 

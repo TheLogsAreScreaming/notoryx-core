@@ -13252,6 +13252,10 @@ class AppLocalizationsBg extends AppLocalizations {
   String get hopTie_more => 'Повече';
 
   @override
+  String get bk_rolledBack =>
+      'Възстановяването не успя, затова всички настройки бяха върнати както бяха. Нищо не е променено.';
+
+  @override
   String get outbox_maybeSent =>
       'Изпращането беше прекъснато, така че съобщението може вече да е изпратено. То е върнато в полето за писане: проверете, преди да го изпратите отново.';
 

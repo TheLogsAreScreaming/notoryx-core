@@ -13300,6 +13300,10 @@ class AppLocalizationsPl extends AppLocalizations {
   String get hopTie_more => 'Więcej';
 
   @override
+  String get bk_rolledBack =>
+      'Przywracanie nie powiodło się, więc wszystkie ustawienia wróciły do poprzedniego stanu. Nic się nie zmieniło.';
+
+  @override
   String get outbox_maybeSent =>
       'Wysyłanie zostało przerwane, więc ta wiadomość mogła już zostać wysłana. Wróciła do pola wiadomości: sprawdź, zanim wyślesz ją ponownie.';
 

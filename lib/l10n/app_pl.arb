@@ -5102,6 +5102,7 @@
   "hopTie_forget": "Zapomnij zapamiętane wybory ({count})",
   "hopTie_less": "Mniej",
   "hopTie_more": "Więcej",
+  "bk_rolledBack": "Przywracanie nie powiodło się, więc wszystkie ustawienia wróciły do poprzedniego stanu. Nic się nie zmieniło.",
   "outbox_maybeSent": "Wysyłanie zostało przerwane, więc ta wiadomość mogła już zostać wysłana. Wróciła do pola wiadomości: sprawdź, zanim wyślesz ją ponownie.",
   "outbox_tooLong": "Za długie dla radia, więc wróciło do pola wiadomości do skrócenia."
 }

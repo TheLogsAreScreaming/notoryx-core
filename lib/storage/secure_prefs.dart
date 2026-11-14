@@ -16,7 +16,7 @@ class SecurePrefs {
 
   static final _sensitive = RegExp(
     r'^(contacts[0-9a-fA-F]{0,10}|channels[0-9a-fA-F]{0,10}|waypoints_v1|'
-    r'offline_outbox_v1(_r[2-9])?|draft_.*)$',
+    r'offline_outbox_v1(_r[2-9])?|draft_.*|restore_journal_v1)$',
   );
 
   static MessageDb? _db;

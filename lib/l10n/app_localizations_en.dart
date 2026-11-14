@@ -13122,6 +13122,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get hopTie_more => 'More';
 
   @override
+  String get bk_rolledBack =>
+      'Restore failed, so every setting was put back as it was. Nothing changed.';
+
+  @override
   String get outbox_maybeSent =>
       'Sending was interrupted, so this may already have gone out. It\'s back in the message box: check before sending it again.';
 

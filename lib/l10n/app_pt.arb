@@ -5064,6 +5064,7 @@
   "hopTie_forget": "Esquecer escolhas lembradas ({count})",
   "hopTie_less": "Menos",
   "hopTie_more": "Mais",
+  "bk_rolledBack": "A restauração falhou, por isso todas as definições voltaram ao que eram. Nada mudou.",
   "outbox_maybeSent": "O envio foi interrompido, por isso a mensagem pode já ter saído. Voltou para a caixa de texto: verifique antes de enviá-la novamente.",
   "outbox_tooLong": "Longo demais para o rádio, por isso voltou para a caixa de texto para ser encurtado."
 }

@@ -13257,6 +13257,10 @@ class AppLocalizationsHu extends AppLocalizations {
   String get hopTie_more => 'Több';
 
   @override
+  String get bk_rolledBack =>
+      'A visszaállítás nem sikerült, ezért minden beállítás visszakerült az eredeti állapotába. Semmi sem változott.';
+
+  @override
   String get outbox_maybeSent =>
       'A küldés megszakadt, így lehet, hogy az üzenet már elment. Visszakerült az üzenetmezőbe: ellenőrizd, mielőtt újra elküldöd.';
 

@@ -13171,6 +13171,10 @@ class AppLocalizationsSv extends AppLocalizations {
   String get hopTie_more => 'Mer';
 
   @override
+  String get bk_rolledBack =>
+      'Återställningen misslyckades, så alla inställningar sattes tillbaka som de var. Inget ändrades.';
+
+  @override
   String get outbox_maybeSent =>
       'Sändningen avbröts, så meddelandet kan redan ha gått iväg. Det ligger i meddelanderutan igen: kontrollera innan du skickar det igen.';
 

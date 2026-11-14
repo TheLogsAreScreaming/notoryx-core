@@ -12671,6 +12671,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get hopTie_more => '増やす';
 
   @override
+  String get bk_rolledBack => '復元に失敗したため、すべての設定を元に戻しました。何も変更されていません。';
+
+  @override
   String get outbox_maybeSent =>
       '送信が中断されたため、このメッセージはすでに送信済みかもしれません。入力欄に戻しました。再送信する前に確認してください。';
 

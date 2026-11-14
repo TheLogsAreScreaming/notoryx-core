@@ -13280,6 +13280,10 @@ class AppLocalizationsEs extends AppLocalizations {
   String get hopTie_more => 'Más';
 
   @override
+  String get bk_rolledBack =>
+      'La restauración falló, así que todos los ajustes volvieron a como estaban. No cambió nada.';
+
+  @override
   String get outbox_maybeSent =>
       'El envío se interrumpió, así que puede que ya haya salido. Ha vuelto al cuadro de mensaje: compruébalo antes de enviarlo de nuevo.';
 
