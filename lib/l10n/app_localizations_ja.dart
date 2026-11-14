@@ -12630,4 +12630,43 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get idKey_errRejected => '無線機が拒否しました。鍵を確認してもう一度お試しください。';
+
+  @override
+  String get hopTie_title => '共有IDの記憶';
+
+  @override
+  String get hopTie_tileSubtitle => '短いIDが同じ中継器を毎回同じ名前で表示';
+
+  @override
+  String get hopTie_explainer =>
+      '経路にはホップごとに短いIDしかなく、複数の中継器が同じIDを持つことがあります。位置情報で1台に決まったとき、アプリは経路上の同じ位置での選択を記憶し、位置がない場合や2台がほぼ同じ距離の場合に再利用します。';
+
+  @override
+  String get hopTie_ttl => '記憶期間';
+
+  @override
+  String hopTie_days(int days) {
+    return '$days日';
+  }
+
+  @override
+  String get hopTie_ttlHelp => 'この日数内に再利用されなかった選択は忘れられます。1〜180日、既定は30日。';
+
+  @override
+  String get hopTie_margin => '同点の許容幅';
+
+  @override
+  String get hopTie_marginHelp =>
+      '記憶した選択で決めるために、2台の距離がどれだけ近い必要があるか（%）。0は完全一致のみ、最大20、既定は5。';
+
+  @override
+  String hopTie_forget(int count) {
+    return '記憶した選択を消去（$count）';
+  }
+
+  @override
+  String get hopTie_less => '減らす';
+
+  @override
+  String get hopTie_more => '増やす';
 }

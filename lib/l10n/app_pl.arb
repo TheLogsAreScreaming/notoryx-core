@@ -5090,5 +5090,16 @@
   "idKey_errNotConnected": "Najpierw połącz radio.",
   "idKey_errTimeout": "Radio nie odpowiedziało. Spróbuj ponownie.",
   "idKey_errDisabled": "Oprogramowanie tego radia ma wyłączoną kopię klucza.",
-  "idKey_errRejected": "Radio odmówiło. Sprawdź klucz i spróbuj ponownie."
+  "idKey_errRejected": "Radio odmówiło. Sprawdź klucz i spróbuj ponownie.",
+  "hopTie_title": "Pamięć wspólnych ID",
+  "hopTie_tileSubtitle": "Nazywaj tak samo przekaźniki o wspólnym krótkim ID",
+  "hopTie_explainer": "Ścieżka zawiera tylko krótkie ID dla każdego skoku, a kilka przekaźników może je dzielić. Gdy pozycja wskaże jeden z nich, aplikacja zapamiętuje wybór dla tego miejsca w ścieżce i używa go ponownie, gdy brak pozycji lub dwa przekaźniki są prawie równie blisko.",
+  "hopTie_ttl": "Pamiętaj przez",
+  "hopTie_days": "{days} dni",
+  "hopTie_ttlHelp": "Wybór nieużyty ponownie w tylu dniach zostaje zapomniany. Od 1 do 180 dni; domyślnie 30.",
+  "hopTie_margin": "Margines remisu",
+  "hopTie_marginHelp": "Jak bliskie (w %) muszą być odległości dwóch przekaźników, by zdecydował zapamiętany wybór. 0 tylko dokładny remis; do 20; domyślnie 5.",
+  "hopTie_forget": "Zapomnij zapamiętane wybory ({count})",
+  "hopTie_less": "Mniej",
+  "hopTie_more": "Więcej"
 }

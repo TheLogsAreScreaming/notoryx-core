@@ -13257,4 +13257,45 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get idKey_errRejected =>
       'Радио отказало. Проверьте ключ и попробуйте снова.';
+
+  @override
+  String get hopTie_title => 'Память общих ID';
+
+  @override
+  String get hopTie_tileSubtitle =>
+      'Одинаково называть ретрансляторы с общим коротким ID';
+
+  @override
+  String get hopTie_explainer =>
+      'В пути для каждого прыжка есть только короткий ID, и его могут делить несколько ретрансляторов. Когда по координатам выбран один из них, приложение запоминает выбор для этого места в пути и использует его снова, если координат нет или два ретранслятора почти одинаково близко.';
+
+  @override
+  String get hopTie_ttl => 'Помнить';
+
+  @override
+  String hopTie_days(int days) {
+    return '$days дн.';
+  }
+
+  @override
+  String get hopTie_ttlHelp =>
+      'Выбор, не использованный повторно за это число дней, забывается. От 1 до 180 дней; по умолчанию 30.';
+
+  @override
+  String get hopTie_margin => 'Порог равенства';
+
+  @override
+  String get hopTie_marginHelp =>
+      'Насколько (в %) должны совпадать расстояния двух ретрансляторов, чтобы решал запомненный выбор. 0 — только точное равенство; до 20; по умолчанию 5.';
+
+  @override
+  String hopTie_forget(int count) {
+    return 'Забыть запомненное ($count)';
+  }
+
+  @override
+  String get hopTie_less => 'Меньше';
+
+  @override
+  String get hopTie_more => 'Больше';
 }

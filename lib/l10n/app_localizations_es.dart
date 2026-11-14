@@ -13237,4 +13237,45 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get idKey_errRejected =>
       'La radio lo rechazó. Revisa la clave e inténtalo de nuevo.';
+
+  @override
+  String get hopTie_title => 'Memoria de ID compartidos';
+
+  @override
+  String get hopTie_tileSubtitle =>
+      'Nombra igual cada vez a los repetidores que comparten un ID corto';
+
+  @override
+  String get hopTie_explainer =>
+      'Una ruta solo lleva un ID corto por salto, y varios repetidores pueden compartirlo. Cuando la posición elige uno, la app recuerda esa elección para ese punto de la ruta y la vuelve a usar si no hay posición o si dos repetidores están casi igual de cerca.';
+
+  @override
+  String get hopTie_ttl => 'Recordar durante';
+
+  @override
+  String hopTie_days(int days) {
+    return '$days d';
+  }
+
+  @override
+  String get hopTie_ttlHelp =>
+      'Una elección que no se vuelve a usar en estos días se olvida. De 1 a 180 días; 30 por defecto.';
+
+  @override
+  String get hopTie_margin => 'Margen de empate';
+
+  @override
+  String get hopTie_marginHelp =>
+      'Cuánto deben parecerse (en %) las distancias de dos repetidores para que decida la elección recordada. 0 solo empates exactos; hasta 20; 5 por defecto.';
+
+  @override
+  String hopTie_forget(int count) {
+    return 'Olvidar elecciones recordadas ($count)';
+  }
+
+  @override
+  String get hopTie_less => 'Menos';
+
+  @override
+  String get hopTie_more => 'Más';
 }

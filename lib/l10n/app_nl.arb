@@ -5052,5 +5052,16 @@
   "idKey_errNotConnected": "Verbind eerst een radio.",
   "idKey_errTimeout": "De radio antwoordde niet. Probeer het opnieuw.",
   "idKey_errDisabled": "De firmware van deze radio heeft sleutelback-up uitgeschakeld.",
-  "idKey_errRejected": "De radio weigerde. Controleer de sleutel en probeer opnieuw."
+  "idKey_errRejected": "De radio weigerde. Controleer de sleutel en probeer opnieuw.",
+  "hopTie_title": "Geheugen voor gedeelde ID's",
+  "hopTie_tileSubtitle": "Repeaters met dezelfde korte ID steeds hetzelfde benoemen",
+  "hopTie_explainer": "Een pad bevat per hop alleen een korte ID, en meerdere repeaters kunnen die delen. Als de positie er één aanwijst, onthoudt de app die keuze voor dezelfde plek in het pad en gebruikt hem opnieuw als er geen positie is of twee repeaters ongeveer even dichtbij zijn.",
+  "hopTie_ttl": "Onthouden voor",
+  "hopTie_days": "{days} d",
+  "hopTie_ttlHelp": "Een keuze die binnen zoveel dagen niet opnieuw wordt gebruikt, wordt vergeten. 1 tot 180 dagen; standaard 30.",
+  "hopTie_margin": "Gelijkspelmarge",
+  "hopTie_marginHelp": "Hoe dicht (in %) de afstanden van twee repeaters moeten liggen voordat de onthouden keuze beslist. 0 alleen exacte gelijkspel; tot 20; standaard 5.",
+  "hopTie_forget": "Onthouden keuzes vergeten ({count})",
+  "hopTie_less": "Minder",
+  "hopTie_more": "Meer"
 }

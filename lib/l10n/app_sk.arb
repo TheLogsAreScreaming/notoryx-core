@@ -5052,5 +5052,16 @@
   "idKey_errNotConnected": "Najprv pripoj rádio.",
   "idKey_errTimeout": "Rádio neodpovedalo. Skús to znova.",
   "idKey_errDisabled": "Firmvér tohto rádia má zálohu kľúča vypnutú.",
-  "idKey_errRejected": "Rádio odmietlo. Skontroluj kľúč a skús znova."
+  "idKey_errRejected": "Rádio odmietlo. Skontroluj kľúč a skús znova.",
+  "hopTie_title": "Pamäť zdieľaných ID",
+  "hopTie_tileSubtitle": "Rovnako pomenúvať opakovače so zdieľaným krátkym ID",
+  "hopTie_explainer": "Cesta obsahuje pre každý skok len krátke ID a môže ho zdieľať viac opakovačov. Keď poloha jeden z nich určí, aplikácia si výber zapamätá pre to isté miesto v ceste a použije ho znova, keď poloha chýba alebo sú dva opakovače takmer rovnako blízko.",
+  "hopTie_ttl": "Pamätať",
+  "hopTie_days": "{days} d",
+  "hopTie_ttlHelp": "Výber, ktorý sa v tomto počte dní znova nepoužije, sa zabudne. 1 až 180 dní; predvolene 30.",
+  "hopTie_margin": "Rozpätie remízy",
+  "hopTie_marginHelp": "Ako blízko (v %) musia byť vzdialenosti dvoch opakovačov, aby rozhodol zapamätaný výber. 0 len presná zhoda; do 20; predvolene 5.",
+  "hopTie_forget": "Zabudnúť zapamätané výbery ({count})",
+  "hopTie_less": "Menej",
+  "hopTie_more": "Viac"
 }

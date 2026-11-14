@@ -5186,5 +5186,16 @@
   "idKey_errNotConnected": "Conecta primero una radio.",
   "idKey_errTimeout": "La radio no respondió. Inténtalo de nuevo.",
   "idKey_errDisabled": "El firmware de esta radio tiene desactivada la copia de la clave.",
-  "idKey_errRejected": "La radio lo rechazó. Revisa la clave e inténtalo de nuevo."
+  "idKey_errRejected": "La radio lo rechazó. Revisa la clave e inténtalo de nuevo.",
+  "hopTie_title": "Memoria de ID compartidos",
+  "hopTie_tileSubtitle": "Nombra igual cada vez a los repetidores que comparten un ID corto",
+  "hopTie_explainer": "Una ruta solo lleva un ID corto por salto, y varios repetidores pueden compartirlo. Cuando la posición elige uno, la app recuerda esa elección para ese punto de la ruta y la vuelve a usar si no hay posición o si dos repetidores están casi igual de cerca.",
+  "hopTie_ttl": "Recordar durante",
+  "hopTie_days": "{days} d",
+  "hopTie_ttlHelp": "Una elección que no se vuelve a usar en estos días se olvida. De 1 a 180 días; 30 por defecto.",
+  "hopTie_margin": "Margen de empate",
+  "hopTie_marginHelp": "Cuánto deben parecerse (en %) las distancias de dos repetidores para que decida la elección recordada. 0 solo empates exactos; hasta 20; 5 por defecto.",
+  "hopTie_forget": "Olvidar elecciones recordadas ({count})",
+  "hopTie_less": "Menos",
+  "hopTie_more": "Más"
 }

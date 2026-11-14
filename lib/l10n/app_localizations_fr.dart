@@ -13282,4 +13282,45 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get idKey_errRejected =>
       'La radio a refusé. Vérifiez la clé et réessayez.';
+
+  @override
+  String get hopTie_title => 'Mémoire des ID partagés';
+
+  @override
+  String get hopTie_tileSubtitle =>
+      'Nommer toujours de la même façon les répéteurs qui partagent un ID court';
+
+  @override
+  String get hopTie_explainer =>
+      'Un chemin ne contient qu\'un ID court par saut, et plusieurs répéteurs peuvent le partager. Quand la position en désigne un, l\'app retient ce choix pour cet endroit du chemin et le réutilise s\'il n\'y a pas de position ou si deux répéteurs sont presque aussi proches.';
+
+  @override
+  String get hopTie_ttl => 'Retenir pendant';
+
+  @override
+  String hopTie_days(int days) {
+    return '$days j';
+  }
+
+  @override
+  String get hopTie_ttlHelp =>
+      'Un choix non réutilisé pendant ce nombre de jours est oublié. De 1 à 180 jours ; 30 par défaut.';
+
+  @override
+  String get hopTie_margin => 'Marge d\'égalité';
+
+  @override
+  String get hopTie_marginHelp =>
+      'À quel point (en %) les distances de deux répéteurs doivent être proches pour que le choix retenu décide. 0 = égalité exacte seulement ; jusqu\'à 20 ; 5 par défaut.';
+
+  @override
+  String hopTie_forget(int count) {
+    return 'Oublier les choix retenus ($count)';
+  }
+
+  @override
+  String get hopTie_less => 'Moins';
+
+  @override
+  String get hopTie_more => 'Plus';
 }

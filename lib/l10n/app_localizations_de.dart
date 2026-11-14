@@ -13244,4 +13244,45 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get idKey_errRejected =>
       'Das Funkgerät hat abgelehnt. Prüfe den Schlüssel und versuche es erneut.';
+
+  @override
+  String get hopTie_title => 'Gedächtnis für gleiche IDs';
+
+  @override
+  String get hopTie_tileSubtitle =>
+      'Repeater mit gleicher Kurz-ID jedes Mal gleich benennen';
+
+  @override
+  String get hopTie_explainer =>
+      'Ein Pfad enthält pro Hop nur eine Kurz-ID, und mehrere Repeater können sich eine teilen. Wenn die Position einen davon auswählt, merkt sich die App diese Wahl für dieselbe Stelle im Pfad und nutzt sie erneut, wenn keine Position vorliegt oder zwei Repeater etwa gleich nah sind.';
+
+  @override
+  String get hopTie_ttl => 'Merken für';
+
+  @override
+  String hopTie_days(int days) {
+    return '$days T';
+  }
+
+  @override
+  String get hopTie_ttlHelp =>
+      'Eine Wahl, die so viele Tage nicht erneut genutzt wird, wird vergessen. 1 bis 180 Tage; Standard 30.';
+
+  @override
+  String get hopTie_margin => 'Gleichstand-Spanne';
+
+  @override
+  String get hopTie_marginHelp =>
+      'Wie nah die Entfernungen zweier Repeater beieinander liegen müssen (in %), damit die gemerkte Wahl entscheidet. 0 heißt nur exakter Gleichstand; bis 20; Standard 5.';
+
+  @override
+  String hopTie_forget(int count) {
+    return 'Gemerkte Wahl vergessen ($count)';
+  }
+
+  @override
+  String get hopTie_less => 'Weniger';
+
+  @override
+  String get hopTie_more => 'Mehr';
 }

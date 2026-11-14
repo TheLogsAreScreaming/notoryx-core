@@ -5186,5 +5186,16 @@
   "idKey_errNotConnected": "Collega prima una radio.",
   "idKey_errTimeout": "La radio non ha risposto. Riprova.",
   "idKey_errDisabled": "Il firmware di questa radio ha il backup della chiave disattivato.",
-  "idKey_errRejected": "La radio ha rifiutato. Controlla la chiave e riprova."
+  "idKey_errRejected": "La radio ha rifiutato. Controlla la chiave e riprova.",
+  "hopTie_title": "Memoria ID condivisi",
+  "hopTie_tileSubtitle": "Dai sempre lo stesso nome ai ripetitori che condividono un ID corto",
+  "hopTie_explainer": "Un percorso contiene solo un ID corto per salto e più ripetitori possono condividerlo. Quando la posizione ne sceglie uno, l'app ricorda la scelta per quel punto del percorso e la riusa se manca la posizione o se due ripetitori sono quasi alla stessa distanza.",
+  "hopTie_ttl": "Ricorda per",
+  "hopTie_days": "{days} g",
+  "hopTie_ttlHelp": "Una scelta non riusata entro questi giorni viene dimenticata. Da 1 a 180 giorni; 30 predefinito.",
+  "hopTie_margin": "Margine di parità",
+  "hopTie_marginHelp": "Quanto (in %) devono essere vicine le distanze di due ripetitori perché decida la scelta ricordata. 0 solo parità esatte; fino a 20; 5 predefinito.",
+  "hopTie_forget": "Dimentica le scelte ricordate ({count})",
+  "hopTie_less": "Meno",
+  "hopTie_more": "Più"
 }

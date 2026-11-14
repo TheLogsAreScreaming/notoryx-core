@@ -23,6 +23,7 @@ import '../theme/mesh_theme.dart';
 import '../widgets/adaptive_app_bar_title.dart';
 import '../widgets/mesh_ui.dart';
 import '../widgets/path_map_ui.dart';
+import '../services/hop_tie_memory.dart';
 
 class ChannelMessagePathScreen extends StatelessWidget {
   final ChannelMessage message;
@@ -1906,6 +1907,7 @@ List<_PathHop> _buildPathHops(
       ? LatLng(connector.selfLatitude!, connector.selfLongitude!)
       : null;
   final resolvedContacts = PathHopResolver.resolve(
+    memory: HopTieMemory.shared,
     pathBytes: pathBytes,
     contacts: connector.allContacts,
     endpoint: endpoint,

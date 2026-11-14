@@ -3,6 +3,7 @@ import 'package:latlong2/latlong.dart';
 import '../connector/meshcore_protocol.dart';
 import 'path_helper.dart';
 import '../models/contact.dart';
+import '../services/hop_tie_memory.dart';
 
 class PathHopResolver {
   const PathHopResolver._();
@@ -18,6 +19,7 @@ class PathHopResolver {
     bool resolveFromEnd = false,
     int pathHashByteWidth = 1,
     double maxHopKm = defaultMaxHopKm,
+    HopTieMemory? memory,
   }) {
     final width = pathHashByteWidth.clamp(1, 4).toInt();
     final candidatesByPrefix = <String, List<Contact>>{};
@@ -42,16 +44,38 @@ class PathHopResolver {
         : List<int>.generate(hops.length, (i) => i);
     final distance = Distance();
     var previousPosition = endpoint;
+    var neighbour = 'self';
 
     for (final index in indexes) {
-      final candidates =
-          candidatesByPrefix[PathHelper.formatHopHex(hops[index])];
+      final hopHex = PathHelper.formatHopHex(hops[index]);
+      final after = neighbour;
+      neighbour = hopHex;
+      final candidates = candidatesByPrefix[hopHex];
       if (candidates == null || candidates.isEmpty) continue;
+
+      // The repeater picked last time this ID came after the same hop.
+      int? remembered() {
+        final key = memory?.winner(after, hopHex);
+        if (key == null) return null;
+        final i = candidates.indexWhere(
+          (c) => c.publicKeyHex.toLowerCase() == key,
+        );
+        return i < 0 ? null : i;
+      }
 
       // A short path hash is not a unique repeater identity. When multiple
       // contacts share the same prefix and no location evidence is available,
-      // leave the hop unresolved rather than showing an arbitrary name.
-      if (candidates.length > 1 && previousPosition == null) continue;
+      // leave the hop unresolved rather than showing an arbitrary name,
+      // unless an earlier, located pick for this spot is remembered.
+      if (candidates.length > 1 && previousPosition == null) {
+        final i = remembered();
+        if (i == null) continue;
+        final contact = candidates.removeAt(i);
+        memory!.remember(after, hopHex, contact.publicKeyHex.toLowerCase());
+        resolved[index] = contact;
+        previousPosition = _positionOf(contact);
+        continue;
+      }
 
       var bestIndex = 0;
       if (previousPosition != null && candidates.length == 1) {
@@ -65,18 +89,43 @@ class PathHopResolver {
       }
       if (previousPosition != null && candidates.length > 1) {
         double? nearestDistance;
+        double? nextDistance;
+        final distances = List<double?>.filled(candidates.length, null);
         for (var i = 0; i < candidates.length; i++) {
           final position = _positionOf(candidates[i]);
           if (position == null) continue;
           final candidateDistance = distance(previousPosition, position);
+          distances[i] = candidateDistance;
           if (nearestDistance == null || candidateDistance < nearestDistance) {
+            nextDistance = nearestDistance;
             nearestDistance = candidateDistance;
             bestIndex = i;
+          } else if (nextDistance == null || candidateDistance < nextDistance) {
+            nextDistance = candidateDistance;
           }
         }
         // Without a located candidate, recency is not identity evidence.
-        if (nearestDistance == null) continue;
-        if (nearestDistance > maxHopKm * 1000) continue;
+        if (nearestDistance == null) {
+          final i = remembered();
+          if (i == null) continue;
+          bestIndex = i;
+        } else {
+          if (nearestDistance > maxHopKm * 1000) continue;
+          // About equally close: the remembered pick breaks the tie, as
+          // long as it's one of the close ones.
+          if (memory != null &&
+              nextDistance != null &&
+              memory.isTie(nearestDistance, nextDistance)) {
+            final i = remembered();
+            final d = i == null ? null : distances[i];
+            if (d != null && memory.isTie(nearestDistance, d)) bestIndex = i!;
+          }
+        }
+        memory?.remember(
+          after,
+          hopHex,
+          candidates[bestIndex].publicKeyHex.toLowerCase(),
+        );
       }
 
       final contact = candidates.removeAt(bestIndex);

@@ -20,6 +20,7 @@ import '../widgets/mesh_ui.dart';
 import '../widgets/node_sheet.dart';
 import 'discovery_screen.dart';
 import 'map_screen.dart';
+import '../services/hop_tie_memory.dart';
 
 class BastionPathHubScreen extends StatefulWidget {
   const BastionPathHubScreen({super.key});
@@ -254,6 +255,7 @@ class _ContactRouteCard extends StatelessWidget {
     if (path.pathBytes.isEmpty) return null;
     final lat = connector.selfLatitude, lon = connector.selfLongitude;
     final hops = PathHopResolver.resolve(
+      memory: HopTieMemory.shared,
       pathBytes: path.pathBytes,
       contacts: connector.allContactsUnfiltered,
       endpoint: lat == null || lon == null || (lat == 0 && lon == 0)

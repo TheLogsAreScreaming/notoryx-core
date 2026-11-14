@@ -5052,5 +5052,16 @@
   "idKey_errNotConnected": "Ligue primeiro um rádio.",
   "idKey_errTimeout": "O rádio não respondeu. Tente novamente.",
   "idKey_errDisabled": "O firmware deste rádio tem a cópia da chave desativada.",
-  "idKey_errRejected": "O rádio recusou. Verifique a chave e tente novamente."
+  "idKey_errRejected": "O rádio recusou. Verifique a chave e tente novamente.",
+  "hopTie_title": "Memória de IDs partilhados",
+  "hopTie_tileSubtitle": "Dar sempre o mesmo nome a repetidores que partilham um ID curto",
+  "hopTie_explainer": "Um caminho só leva um ID curto por salto, e vários repetidores podem partilhá-lo. Quando a posição escolhe um, a app lembra essa escolha para esse ponto do caminho e volta a usá-la quando não há posição ou dois repetidores estão quase à mesma distância.",
+  "hopTie_ttl": "Lembrar durante",
+  "hopTie_days": "{days} d",
+  "hopTie_ttlHelp": "Uma escolha não reutilizada dentro destes dias é esquecida. De 1 a 180 dias; 30 por omissão.",
+  "hopTie_margin": "Margem de empate",
+  "hopTie_marginHelp": "Quão próximas (em %) têm de estar as distâncias de dois repetidores para a escolha lembrada decidir. 0 só empates exatos; até 20; 5 por omissão.",
+  "hopTie_forget": "Esquecer escolhas lembradas ({count})",
+  "hopTie_less": "Menos",
+  "hopTie_more": "Mais"
 }

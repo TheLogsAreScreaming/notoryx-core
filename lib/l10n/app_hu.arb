@@ -5090,5 +5090,16 @@
   "idKey_errNotConnected": "Előbb csatlakoztass egy rádiót.",
   "idKey_errTimeout": "A rádió nem válaszolt. Próbáld újra.",
   "idKey_errDisabled": "A rádió firmware-jében ki van kapcsolva a kulcsmentés.",
-  "idKey_errRejected": "A rádió elutasította. Ellenőrizd a kulcsot, és próbáld újra."
+  "idKey_errRejected": "A rádió elutasította. Ellenőrizd a kulcsot, és próbáld újra.",
+  "hopTie_title": "Közös azonosítók memóriája",
+  "hopTie_tileSubtitle": "A közös rövid azonosítójú átjátszók mindig ugyanúgy nevezve",
+  "hopTie_explainer": "Az útvonal ugrásonként csak egy rövid azonosítót tartalmaz, és ezen több átjátszó is osztozhat. Ha a pozíció alapján az egyik kiválasztható, az alkalmazás megjegyzi ezt az útvonal azonos pontjára, és újra felhasználja, ha nincs pozíció, vagy két átjátszó nagyjából ugyanolyan közel van.",
+  "hopTie_ttl": "Megjegyzés ideje",
+  "hopTie_days": "{days} nap",
+  "hopTie_ttlHelp": "Az ennyi napon belül újra nem használt választás elfelejtődik. 1–180 nap; alapból 30.",
+  "hopTie_margin": "Döntetlen-határ",
+  "hopTie_marginHelp": "Mennyire (%-ban) legyen közel két átjátszó távolsága, hogy a megjegyzett választás döntsön. 0 csak pontos egyezés; legfeljebb 20; alapból 5.",
+  "hopTie_forget": "Megjegyzett választások törlése ({count})",
+  "hopTie_less": "Kevesebb",
+  "hopTie_more": "Több"
 }

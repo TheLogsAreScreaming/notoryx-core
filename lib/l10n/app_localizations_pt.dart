@@ -13212,4 +13212,45 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get idKey_errRejected =>
       'O rádio recusou. Verifique a chave e tente novamente.';
+
+  @override
+  String get hopTie_title => 'Memória de IDs partilhados';
+
+  @override
+  String get hopTie_tileSubtitle =>
+      'Dar sempre o mesmo nome a repetidores que partilham um ID curto';
+
+  @override
+  String get hopTie_explainer =>
+      'Um caminho só leva um ID curto por salto, e vários repetidores podem partilhá-lo. Quando a posição escolhe um, a app lembra essa escolha para esse ponto do caminho e volta a usá-la quando não há posição ou dois repetidores estão quase à mesma distância.';
+
+  @override
+  String get hopTie_ttl => 'Lembrar durante';
+
+  @override
+  String hopTie_days(int days) {
+    return '$days d';
+  }
+
+  @override
+  String get hopTie_ttlHelp =>
+      'Uma escolha não reutilizada dentro destes dias é esquecida. De 1 a 180 dias; 30 por omissão.';
+
+  @override
+  String get hopTie_margin => 'Margem de empate';
+
+  @override
+  String get hopTie_marginHelp =>
+      'Quão próximas (em %) têm de estar as distâncias de dois repetidores para a escolha lembrada decidir. 0 só empates exatos; até 20; 5 por omissão.';
+
+  @override
+  String hopTie_forget(int count) {
+    return 'Esquecer escolhas lembradas ($count)';
+  }
+
+  @override
+  String get hopTie_less => 'Menos';
+
+  @override
+  String get hopTie_more => 'Mais';
 }
