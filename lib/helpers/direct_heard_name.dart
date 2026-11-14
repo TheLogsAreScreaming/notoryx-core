@@ -46,7 +46,13 @@ String? heardNameWithOnline(
 ) {
   final local = directHeardName(connector, id);
   if (local != null) return local;
-  final online = analyzer?.hopName(directHeardShortId(id));
+  final lat = connector.selfLatitude, lon = connector.selfLongitude;
+  final online = analyzer?.hopName(
+    directHeardShortId(id),
+    near: lat == null || lon == null || (lat == 0 && lon == 0)
+        ? null
+        : LatLng(lat, lon),
+  );
   if (online == null) return null;
   return online.ambiguous ? '${online.name}?' : online.name;
 }

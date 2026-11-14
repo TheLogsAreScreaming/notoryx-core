@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
+import 'package:latlong2/latlong.dart';
 
 import '../storage/prefs_manager.dart';
 
@@ -93,7 +94,32 @@ List<ActiveChannel> parseActiveChannels(Map<String, dynamic> json) {
 class OnlineHop {
   final String name;
   final bool ambiguous;
-  const OnlineHop(this.name, this.ambiguous);
+
+  /// Every repeater the server knows with this ID that has a position.
+  final List<({String name, LatLng at})> candidates;
+
+  const OnlineHop(this.name, this.ambiguous, [this.candidates = const []]);
+
+  /// Farther than this from you, a repeater can't be one you heard.
+  static const rangeMetres = 150000.0;
+
+  /// This answer as seen from [near]: the nearest candidate within range,
+  /// or null when none is. The analyzer may be on another continent, so a
+  /// short ID's best-guess name is often someone else's repeater. Without
+  /// a position, or when the server sent no candidates, it's unchanged.
+  OnlineHop? from(LatLng? near) {
+    if (near == null || candidates.isEmpty) return this;
+    ({String name, LatLng at})? best;
+    var bestMetres = rangeMetres;
+    for (final c in candidates) {
+      final m = const Distance()(near, c.at);
+      if (m <= bestMetres) {
+        best = c;
+        bestMetres = m;
+      }
+    }
+    return best == null ? null : OnlineHop(best.name, false);
+  }
 }
 
 /// CoreScope's `resolve-hops` answer, by upper-case ID.
@@ -103,10 +129,16 @@ Map<String, OnlineHop> parseResolvedHops(Map<String, dynamic> json) {
   if (resolved is! Map) return out;
   resolved.forEach((id, v) {
     if (v is Map && v['name'] is String && (v['name'] as String).isNotEmpty) {
-      out[(id as String).toUpperCase()] = OnlineHop(
-        (v['name'] as String).trim(),
-        v['ambiguous'] == true,
-      );
+      out[(id as String).toUpperCase()] =
+          OnlineHop((v['name'] as String).trim(), v['ambiguous'] == true, [
+            for (final c in v['candidates'] as List? ?? const [])
+              if (c case {
+                'name': final String name,
+                'lat': final num lat,
+                'lon': final num lon,
+              } when name.trim().isNotEmpty)
+                (name: name.trim(), at: LatLng(lat.toDouble(), lon.toDouble())),
+          ]);
     }
   });
   return out;
@@ -195,10 +227,12 @@ class AnalyzerService extends ChangeNotifier {
 
   /// The online name for repeater [id] when hop lookup is on: the cached
   /// answer now, and a batched lookup in the background the first time.
-  OnlineHop? hopName(String id) {
+  /// With [near] (your radio's position), only a repeater within range of
+  /// it is named.
+  OnlineHop? hopName(String id, {LatLng? near}) {
     if (!_hopLookup || id.isEmpty) return null;
     final key = id.toUpperCase();
-    if (_hops.containsKey(key)) return _hops[key];
+    if (_hops.containsKey(key)) return _hops[key]?.from(near);
     if (_pending.add(key)) {
       _batch ??= Timer(const Duration(milliseconds: 400), _resolvePending);
     }
