@@ -3,8 +3,11 @@ name: Flutter and Dart
 on:
   pull_request:
   push:
+    # dev is where releases are built from, so its merge commits must be
+    # tested themselves, not only the pull request heads before merging.
     branches:
       - main
+      - dev
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
