@@ -544,6 +544,7 @@ class NotificationService {
     required bool urlImagesEnabled,
     String? contactId,
     int? badgeCount,
+    String radio = '',
   }) async {
     if (!await _ensureCanNotify()) return;
 
@@ -603,11 +604,11 @@ class NotificationService {
 
     try {
       await _notifications.show(
-        id: contactId?.hashCode ?? 0,
+        id: contactId == null ? 0 : _idFor(radio, contactId),
         title: contactName,
         body: formatNotificationText(message),
         notificationDetails: notificationDetails,
-        payload: 'message:$contactId',
+        payload: 'message:${tagged(radio, contactId)}',
       );
     } catch (e) {
       debugPrint('Failed to show message notification: $e');
@@ -618,6 +619,7 @@ class NotificationService {
     required String contactName,
     required String contactType,
     String? contactId,
+    String radio = '',
   }) async {
     if (!await _ensureCanNotify()) return;
 
@@ -651,12 +653,12 @@ class NotificationService {
     try {
       await _notifications.show(
         id: contactId != null
-            ? 'advert:$contactId'.hashCode
+            ? 'advert:${tagged(radio, contactId)}'.hashCode
             : DateTime.now().millisecondsSinceEpoch & 0x7FFFFFFF,
         title: _l10n.notification_newTypeDiscovered(contactType),
         body: contactName,
         notificationDetails: notificationDetails,
-        payload: 'advert:$contactId',
+        payload: 'advert:${tagged(radio, contactId)}',
       );
     } catch (e) {
       debugPrint('Failed to show advert notification: $e');
@@ -669,6 +671,7 @@ class NotificationService {
     required bool urlImagesEnabled,
     int? channelIndex,
     int? badgeCount,
+    String radio = '',
   }) async {
     if (!await _ensureCanNotify()) return;
 
@@ -733,13 +736,13 @@ class NotificationService {
 
     try {
       await _notifications.show(
-        id:
-            channelIndex?.hashCode ??
-            DateTime.now().millisecondsSinceEpoch & 0x7FFFFFFF,
+        id: channelIndex == null
+            ? DateTime.now().millisecondsSinceEpoch & 0x7FFFFFFF
+            : _idFor(radio, channelIndex),
         title: channelName,
         body: body,
         notificationDetails: notificationDetails,
-        payload: 'channel:$channelIndex',
+        payload: 'channel:${tagged(radio, channelIndex)}',
       );
     } catch (e) {
       debugPrint('Failed to show channel notification: $e');
@@ -775,6 +778,34 @@ class NotificationService {
     await _notifications.cancelAll();
   }
 
+  /// [id] as it appears in a payload for [radio]: unchanged for the first
+  /// radio (''), and `r2/<id>` for others, so a tap can find its radio.
+  static String tagged(String radio, Object? id) =>
+      radio.isEmpty ? '$id' : '$radio/$id';
+
+  /// Splits a payload such as `message:r2/<key>` into its radio slot and
+  /// the payload the first radio would have had (`message:<key>`). The
+  /// radio is '' for the first radio, and null for a payload that isn't
+  /// about one radio, such as the activity summary.
+  static ({String? radio, String payload}) untag(String payload) {
+    final colon = payload.indexOf(':');
+    if (colon < 0) return (radio: null, payload: payload);
+    final rest = payload.substring(colon + 1);
+    final slash = rest.indexOf('/');
+    if (slash <= 0 || !RegExp(r'^r[2-9]$').hasMatch(rest.substring(0, slash))) {
+      return (radio: '', payload: payload);
+    }
+    return (
+      radio: rest.substring(0, slash),
+      payload: '${payload.substring(0, colon + 1)}${rest.substring(slash + 1)}',
+    );
+  }
+
+  /// A notification id that differs per radio but is unchanged for the
+  /// first radio.
+  static int _idFor(String radio, Object id) =>
+      radio.isEmpty ? id.hashCode : tagged(radio, id).hashCode;
+
   Future<void> cancel(int id) async {
     await _notifications.cancel(id: id);
   }
@@ -782,20 +813,22 @@ class NotificationService {
   /// Cancel the notification for a specific contact and update the app badge.
   Future<void> clearContactNotification(
     String contactId,
-    int totalUnreadCount,
-  ) async {
+    int totalUnreadCount, {
+    String radio = '',
+  }) async {
     if (!await _ensureInitialized()) return;
-    await _notifications.cancel(id: contactId.hashCode);
+    await _notifications.cancel(id: _idFor(radio, contactId));
     await _updateBadge(totalUnreadCount);
   }
 
   /// Cancel the notification for a specific channel and update the app badge.
   Future<void> clearChannelNotification(
     int channelIndex,
-    int totalUnreadCount,
-  ) async {
+    int totalUnreadCount, {
+    String radio = '',
+  }) async {
     if (!await _ensureInitialized()) return;
-    await _notifications.cancel(id: channelIndex.hashCode);
+    await _notifications.cancel(id: _idFor(radio, channelIndex));
     await _updateBadge(totalUnreadCount);
   }
 
@@ -844,6 +877,7 @@ class NotificationService {
     required bool urlImagesEnabled,
     String? contactId,
     int? badgeCount,
+    String radio = '',
   }) async {
     if (_suppressNotifications) return;
 
@@ -855,6 +889,7 @@ class NotificationService {
         urlImagesEnabled: urlImagesEnabled,
         id: contactId,
         badgeCount: badgeCount,
+        radio: radio,
       ),
     );
   }
@@ -863,6 +898,7 @@ class NotificationService {
     required String contactName,
     required String contactType,
     String? contactId,
+    String radio = '',
   }) async {
     if (_suppressNotifications) return;
 
@@ -872,6 +908,7 @@ class NotificationService {
         title: contactType,
         body: contactName,
         id: contactId,
+        radio: radio,
       ),
     );
   }
@@ -883,6 +920,7 @@ class NotificationService {
     required bool urlImagesEnabled,
     int? channelIndex,
     int? badgeCount,
+    String radio = '',
   }) async {
     if (_suppressNotifications) return;
 
@@ -894,6 +932,7 @@ class NotificationService {
         urlImagesEnabled: urlImagesEnabled,
         id: channelIndex?.toString(),
         badgeCount: badgeCount,
+        radio: radio,
       ),
     );
   }
@@ -956,6 +995,7 @@ class NotificationService {
             urlImagesEnabled: notification.urlImagesEnabled,
             contactId: notification.id,
             badgeCount: notification.badgeCount,
+            radio: notification.radio,
           );
           break;
         case _NotificationType.advert:
@@ -963,6 +1003,7 @@ class NotificationService {
             contactName: notification.body,
             contactType: notification.title,
             contactId: notification.id,
+            radio: notification.radio,
           );
           break;
         case _NotificationType.channelMessage:
@@ -972,6 +1013,7 @@ class NotificationService {
             urlImagesEnabled: notification.urlImagesEnabled,
             channelIndex: int.tryParse(notification.id ?? ''),
             badgeCount: notification.badgeCount,
+            radio: notification.radio,
           );
           break;
       }
@@ -1049,6 +1091,7 @@ class _PendingNotification {
   final bool urlImagesEnabled;
   final String? id;
   final int? badgeCount;
+  final String radio;
 
   _PendingNotification({
     required this.type,
@@ -1057,5 +1100,6 @@ class _PendingNotification {
     this.urlImagesEnabled = false,
     this.id,
     this.badgeCount,
+    this.radio = '',
   });
 }

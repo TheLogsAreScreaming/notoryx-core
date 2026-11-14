@@ -6,6 +6,16 @@ import '../utils/platform_info.dart';
 
 class BackgroundService {
   bool _initialized = false;
+  final Set<Object> _holders = {};
+
+  /// This service as seen by the radio [owner]; see
+  /// [RadioBackgroundService].
+  BackgroundService forRadio(Object owner) =>
+      RadioBackgroundService(this, _holders, owner);
+
+  /// The radios currently keeping the service running.
+  @visibleForTesting
+  Set<Object> get holders => Set.unmodifiable(_holders);
   String? Function()? _languageOverrideProvider;
 
   /// Allows the app to expose its current language override (e.g. from
@@ -75,6 +85,36 @@ class BackgroundService {
     final running = await FlutterForegroundTask.isRunningService;
     if (!running) return;
     await FlutterForegroundTask.stopService();
+  }
+}
+
+/// The background service as one radio sees it. Several radios share one
+/// foreground service: it starts when the first radio connects and stops
+/// only when the last one lets go.
+class RadioBackgroundService extends BackgroundService {
+  RadioBackgroundService(this._shared, this._radioHolders, this._owner);
+
+  final BackgroundService _shared;
+  final Set<Object> _radioHolders;
+  final Object _owner;
+
+  @override
+  void setLanguageOverrideProvider(String? Function()? provider) =>
+      _shared.setLanguageOverrideProvider(provider);
+
+  @override
+  Future<void> initialize() => _shared.initialize();
+
+  @override
+  Future<void> start() {
+    _radioHolders.add(_owner);
+    return _shared.start();
+  }
+
+  @override
+  Future<void> stop() {
+    _radioHolders.remove(_owner);
+    return _radioHolders.isEmpty ? _shared.stop() : Future.value();
   }
 }
 

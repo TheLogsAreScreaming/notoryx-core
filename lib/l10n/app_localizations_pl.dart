@@ -1581,6 +1581,18 @@ class AppLocalizationsPl extends AppLocalizations {
   String get channels_unmuteChannel => 'Wyłącz wyciszenie kanału';
 
   @override
+  String get channels_notifyMode => 'Powiadomienia';
+
+  @override
+  String get channels_notifyAll => 'Wszystkie wiadomości';
+
+  @override
+  String get channels_notifyMentions => 'Tylko gdy ktoś mnie oznaczy';
+
+  @override
+  String get channels_notifyMuted => 'Wyciszony';
+
+  @override
   String get channels_deleteChannel => 'Usuń kanał';
 
   @override
@@ -1810,6 +1822,11 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return 'Wiadomość jest za długa (maksymalnie $maxBytes bajtów).';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds s nadawania';
   }
 
   @override
@@ -2055,6 +2072,135 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get routing_noPathYet =>
       'Na razie nie ma żadnej ścieżki. Komunikacja trwa do momentu, gdy zostanie odkryta trasa.';
+
+  @override
+  String get routePick_open => 'Widok i wybór trasy';
+
+  @override
+  String get routePick_openHint =>
+      'Jakość łącza na każdym przeskoku i wybór pewniejszej trasy';
+
+  @override
+  String routePick_title(String name) {
+    return 'Trasa do $name';
+  }
+
+  @override
+  String get routePick_current => 'Bieżąca trasa';
+
+  @override
+  String get routePick_flooding =>
+      'Brak stałej trasy: wiadomości zalewają sieć, dopóki trasa nie zostanie poznana.';
+
+  @override
+  String get routePick_direct => 'Bezpośrednio';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return 'Przemiennik $id';
+  }
+
+  @override
+  String get routePick_notMeasured => 'Jeszcze nie zmierzono';
+
+  @override
+  String get routePick_measure => 'Zmierz tę trasę';
+
+  @override
+  String get routePick_measuring => 'Śledzenie…';
+
+  @override
+  String get routePick_measured => 'Właśnie zmierzono.';
+
+  @override
+  String get routePick_noAnswer =>
+      'Brak odpowiedzi na śledzenie. Przemiennik na trasie może być poza zasięgiem.';
+
+  @override
+  String get routePick_floodDone =>
+      'Trasa wyczyszczona. Następna wiadomość zaleje sieć, aby znaleźć nową.';
+
+  @override
+  String get routePick_suggested => 'Sugerowana';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return 'Pewniejsza trasa: $route (wynik $score).';
+  }
+
+  @override
+  String get routePick_use => 'Użyj';
+
+  @override
+  String routePick_useLabel(String route) {
+    return 'Użyj trasy $route';
+  }
+
+  @override
+  String get routePick_options => 'Trasy do wyboru';
+
+  @override
+  String get routePick_optionsHint =>
+      'Każda usłyszana trasa do tego kontaktu, oceniona 0–100 według sygnału łączy, dostarczeń, długości i świeżości.';
+
+  @override
+  String get routePick_none => 'Brak tras. Wyślij wiadomość, aby jakąś odkryć.';
+
+  @override
+  String get routePick_other => 'Inne możliwości';
+
+  @override
+  String get routePick_build => 'Utwórz trasę';
+
+  @override
+  String get routePick_flood => 'Niech sieć znajdzie trasę';
+
+  @override
+  String get routePick_explainer =>
+      'Pomiar wysyła śledzenie wzdłuż trasy i z powrotem, więc każde łącze między przemiennikami jest mierzone w obie strony. Ostatniego łącza do kontaktu nie da się prześledzić. Odczyty są przechowywane 30 dni i liczą się dla każdej trasy z tym samym łączem.';
+
+  @override
+  String routePick_score(int score) {
+    return 'Wynik $score na 100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return 'Przeskok $number: $name. Łącze $quality, tam $out decybeli, z powrotem $back decybeli.';
+  }
+
+  @override
+  String get routePick_lastLink =>
+      'Ostatnie łącze do kontaktu: niemierzalne śledzeniem';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return 'Tam $out dB · z powrotem $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return 'Wynik $score · przeskoki: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return 'dostarczono $ok z $tries';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return 'najsłabsze łącze $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => 'W użyciu';
 
   @override
   String get routing_floodBroadcast =>
@@ -8158,6 +8304,72 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => 'Pokaż panel połączeń';
+
+  @override
+  String get radios_title => 'Radia';
+
+  @override
+  String radios_number(int number) {
+    return 'Radio $number';
+  }
+
+  @override
+  String get radios_active => 'W użyciu';
+
+  @override
+  String get radios_switch => 'Użyj tego radia';
+
+  @override
+  String get radios_add => 'Dodaj radio';
+
+  @override
+  String get radios_switcher => 'Przełącz radio';
+
+  @override
+  String get radios_hint =>
+      'Możesz pozostać połączony z więcej niż jednym radiem, np. ręcznym i stacją bazową. Aplikacja pokazuje i wysyła przez radio w użyciu. Pozostałe są nadal połączone, a ich wiadomości są zapisywane na czas przełączenia.';
+
+  @override
+  String get radios_switchNote =>
+      'Przełączenie radia przenosi na ekran główny. Boty, automatyzacja, alerty, śledzenie i przekazywanie SOS działają na radiu w użyciu.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return 'Usunąć $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Radio zostanie rozłączone i zapomniane. Jego wiadomości i kontakty pozostaną zapisane.';
+
+  @override
+  String radios_unread(int count) {
+    return 'Nieprzeczytane: $count';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return 'Nieprzeczytane na innych radiach: $count';
+  }
+
+  @override
+  String get radios_continueOn => 'Kontynuuj na innym radiu';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Kontynuuj na $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Bezpośrednio';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Przeskoki: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Brak znanej trasy';
 
   @override
   String get channelDirectory_title => 'Katalog kanałów';

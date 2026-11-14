@@ -1559,6 +1559,18 @@ class AppLocalizationsSl extends AppLocalizations {
   String get channels_unmuteChannel => 'Vklopi obvestila kanala';
 
   @override
+  String get channels_notifyMode => 'Obvestila';
+
+  @override
+  String get channels_notifyAll => 'Vsa sporočila';
+
+  @override
+  String get channels_notifyMentions => 'Samo ko me kdo omeni';
+
+  @override
+  String get channels_notifyMuted => 'Utišano';
+
+  @override
   String get channels_deleteChannel => 'Pošlji kanal';
 
   @override
@@ -1786,6 +1798,11 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return 'Pošiljanje sporočila je onemogočeno, saj je preveliko (maksimalno $maxBytes byte-ov).';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds s oddajanja';
   }
 
   @override
@@ -2028,6 +2045,136 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String get routing_noPathYet =>
       'Žep trenutno ni mogoče najti. Naslednje sporočilo bo posredovano, dokler ne bo ugotovljeno, kje je pot.';
+
+  @override
+  String get routePick_open => 'Pogled in izbira poti';
+
+  @override
+  String get routePick_openHint =>
+      'Kakovost povezave na vsakem skoku in izbira zanesljivejše poti';
+
+  @override
+  String routePick_title(String name) {
+    return 'Pot do $name';
+  }
+
+  @override
+  String get routePick_current => 'Trenutna pot';
+
+  @override
+  String get routePick_flooding =>
+      'Ni stalne poti: sporočila preplavljajo omrežje, dokler se pot ne nauči.';
+
+  @override
+  String get routePick_direct => 'Neposredno';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return 'Repetitor $id';
+  }
+
+  @override
+  String get routePick_notMeasured => 'Še ni izmerjeno';
+
+  @override
+  String get routePick_measure => 'Izmeri to pot';
+
+  @override
+  String get routePick_measuring => 'Sledenje…';
+
+  @override
+  String get routePick_measured => 'Pravkar izmerjeno.';
+
+  @override
+  String get routePick_noAnswer =>
+      'Ni odgovora na sledenje. Repetitor na poti je morda izven dosega.';
+
+  @override
+  String get routePick_floodDone =>
+      'Pot izbrisana. Naslednje sporočilo bo preplavilo omrežje in našlo novo.';
+
+  @override
+  String get routePick_suggested => 'Predlagana';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return 'Zanesljivejša pot: $route (ocena $score).';
+  }
+
+  @override
+  String get routePick_use => 'Uporabi';
+
+  @override
+  String routePick_useLabel(String route) {
+    return 'Uporabi pot $route';
+  }
+
+  @override
+  String get routePick_options => 'Poti za izbiro';
+
+  @override
+  String get routePick_optionsHint =>
+      'Vsaka slišana pot do tega stika, ocenjena 0–100 po signalu povezav, dostavi, dolžini in svežini.';
+
+  @override
+  String get routePick_none =>
+      'Še ni poti. Pošljite sporočilo, da jo odkrijete.';
+
+  @override
+  String get routePick_other => 'Druge možnosti';
+
+  @override
+  String get routePick_build => 'Sestavi pot';
+
+  @override
+  String get routePick_flood => 'Naj omrežje najde pot';
+
+  @override
+  String get routePick_explainer =>
+      'Merjenje pošlje sledenje po poti in nazaj, zato se vsaka povezava med repetitorji izmeri v obe smeri. Zadnje povezave do stika ni mogoče slediti. Meritve se hranijo 30 dni in veljajo za vsako pot z isto povezavo.';
+
+  @override
+  String routePick_score(int score) {
+    return 'Ocena $score od 100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return 'Skok $number: $name. Povezava $quality, tja $out decibelov, nazaj $back decibelov.';
+  }
+
+  @override
+  String get routePick_lastLink =>
+      'Zadnja povezava do stika: s sledenjem ni merljiva';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return 'Tja $out dB · nazaj $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return 'Ocena $score · skoki: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return 'dostavljeno $ok od $tries';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return 'najšibkejša povezava $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => 'V uporabi';
 
   @override
   String get routing_floodBroadcast => 'Prenos preko vseh repetitiv';
@@ -8113,6 +8260,72 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => 'Prikaži pregled povezav';
+
+  @override
+  String get radios_title => 'Radii';
+
+  @override
+  String radios_number(int number) {
+    return 'Radio $number';
+  }
+
+  @override
+  String get radios_active => 'V uporabi';
+
+  @override
+  String get radios_switch => 'Uporabi ta radio';
+
+  @override
+  String get radios_add => 'Dodaj radio';
+
+  @override
+  String get radios_switcher => 'Zamenjaj radio';
+
+  @override
+  String get radios_hint =>
+      'Povezani ste lahko z več radii, na primer ročnim in bazno postajo. Aplikacija prikazuje in pošilja prek radia v uporabi. Drugi ostanejo povezani, njihova sporočila pa se shranijo za takrat, ko preklopite.';
+
+  @override
+  String get radios_switchNote =>
+      'Ob zamenjavi radia se vrnete na začetni zaslon. Boti, avtomatizacija, opozorila, sledenje in posredovanje SOS delujejo na radiu v uporabi.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return 'Odstranim $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Radio se prekine in pozabi. Njegova sporočila in stiki ostanejo shranjeni.';
+
+  @override
+  String radios_unread(int count) {
+    return 'Neprebrano: $count';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return 'Neprebrano na drugih radiih: $count';
+  }
+
+  @override
+  String get radios_continueOn => 'Nadaljuj na drugem radiu';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Nadaljuj na $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Neposredno';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Skoki: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Ni znane poti';
 
   @override
   String get channelDirectory_title => 'Imenik kanalov';

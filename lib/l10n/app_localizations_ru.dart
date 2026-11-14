@@ -1575,6 +1575,18 @@ class AppLocalizationsRu extends AppLocalizations {
   String get channels_unmuteChannel => 'Включить уведомления канала';
 
   @override
+  String get channels_notifyMode => 'Уведомления';
+
+  @override
+  String get channels_notifyAll => 'Все сообщения';
+
+  @override
+  String get channels_notifyMentions => 'Только когда меня упоминают';
+
+  @override
+  String get channels_notifyMuted => 'Без звука';
+
+  @override
   String get channels_deleteChannel => 'Удалить канал';
 
   @override
@@ -1801,6 +1813,11 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return 'Сообщение слишком длинное (макс. $maxBytes байт).';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds с в эфире';
   }
 
   @override
@@ -2046,6 +2063,136 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get routing_noPathYet =>
       'Пока нет пути. Следующее сообщение будет отправлено до тех пор, пока не будет обнаружен маршрут.';
+
+  @override
+  String get routePick_open => 'Обзор и выбор маршрута';
+
+  @override
+  String get routePick_openHint =>
+      'Качество связи на каждом прыжке и выбор надёжного маршрута';
+
+  @override
+  String routePick_title(String name) {
+    return 'Маршрут к $name';
+  }
+
+  @override
+  String get routePick_current => 'Текущий маршрут';
+
+  @override
+  String get routePick_flooding =>
+      'Нет постоянного маршрута: сообщения рассылаются по всей сети, пока маршрут не найден.';
+
+  @override
+  String get routePick_direct => 'Напрямую';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return 'Ретранслятор $id';
+  }
+
+  @override
+  String get routePick_notMeasured => 'Ещё не измерено';
+
+  @override
+  String get routePick_measure => 'Измерить маршрут';
+
+  @override
+  String get routePick_measuring => 'Трассировка…';
+
+  @override
+  String get routePick_measured => 'Только что измерено.';
+
+  @override
+  String get routePick_noAnswer =>
+      'Нет ответа на трассировку. Ретранслятор на маршруте может быть вне досягаемости.';
+
+  @override
+  String get routePick_floodDone =>
+      'Маршрут сброшен. Следующее сообщение разошлётся по сети, чтобы найти новый.';
+
+  @override
+  String get routePick_suggested => 'Рекомендуется';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return 'Более надёжный маршрут: $route (оценка $score).';
+  }
+
+  @override
+  String get routePick_use => 'Выбрать';
+
+  @override
+  String routePick_useLabel(String route) {
+    return 'Выбрать маршрут $route';
+  }
+
+  @override
+  String get routePick_options => 'Маршруты на выбор';
+
+  @override
+  String get routePick_optionsHint =>
+      'Все маршруты к этому контакту с оценкой 0–100 по сигналу связей, доставке, длине и свежести.';
+
+  @override
+  String get routePick_none =>
+      'Маршрутов пока нет. Отправьте сообщение, чтобы найти маршрут.';
+
+  @override
+  String get routePick_other => 'Другие варианты';
+
+  @override
+  String get routePick_build => 'Составить маршрут';
+
+  @override
+  String get routePick_flood => 'Пусть сеть найдёт маршрут';
+
+  @override
+  String get routePick_explainer =>
+      'Измерение отправляет трассировку по маршруту туда и обратно, поэтому каждая связь между ретрансляторами измеряется в обе стороны. Последнюю связь до контакта трассировать нельзя. Данные хранятся 30 дней и учитываются для всех маршрутов с той же связью.';
+
+  @override
+  String routePick_score(int score) {
+    return 'Оценка $score из 100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return 'Прыжок $number: $name. Связь: $quality, туда $out децибел, обратно $back децибел.';
+  }
+
+  @override
+  String get routePick_lastLink =>
+      'Последняя связь до контакта: не измеряется трассировкой';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return 'Туда $out дБ · обратно $back дБ';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return 'Оценка $score · прыжков: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return 'доставлено $ok из $tries';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return 'слабейшая связь $snr дБ';
+  }
+
+  @override
+  String get routePick_inUse => 'Используется';
 
   @override
   String get routing_floodBroadcast => 'Транслируется через все ретрансляторы';
@@ -8158,6 +8305,72 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => 'Открыть панель подключений';
+
+  @override
+  String get radios_title => 'Радио';
+
+  @override
+  String radios_number(int number) {
+    return 'Радио $number';
+  }
+
+  @override
+  String get radios_active => 'Используется';
+
+  @override
+  String get radios_switch => 'Использовать это радио';
+
+  @override
+  String get radios_add => 'Добавить радио';
+
+  @override
+  String get radios_switcher => 'Сменить радио';
+
+  @override
+  String get radios_hint =>
+      'Можно оставаться подключённым к нескольким радио, например к портативному и базовой станции. Приложение показывает и отправляет через используемое радио. Остальные остаются подключёнными, а их сообщения сохраняются до переключения.';
+
+  @override
+  String get radios_switchNote =>
+      'При смене радио вы вернётесь на главный экран. Боты, автоматизация, оповещения, отслеживание и ретрансляция SOS работают на используемом радио.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return 'Удалить $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Радио будет отключено и забыто. Его сообщения и контакты останутся сохранены.';
+
+  @override
+  String radios_unread(int count) {
+    return 'Непрочитанных: $count';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return 'Непрочитанных на других радио: $count';
+  }
+
+  @override
+  String get radios_continueOn => 'Продолжить на другом радио';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Продолжить на $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Напрямую';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Переходов: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Маршрут неизвестен';
 
   @override
   String get channelDirectory_title => 'Каталог каналов';

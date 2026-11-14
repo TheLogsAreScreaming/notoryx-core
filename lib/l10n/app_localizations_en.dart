@@ -1548,6 +1548,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get channels_unmuteChannel => 'Unmute channel';
 
   @override
+  String get channels_notifyMode => 'Notifications';
+
+  @override
+  String get channels_notifyAll => 'All messages';
+
+  @override
+  String get channels_notifyMentions => 'Only when I\'m mentioned';
+
+  @override
+  String get channels_notifyMuted => 'Muted';
+
+  @override
   String get channels_deleteChannel => 'Delete channel';
 
   @override
@@ -1769,6 +1781,11 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return 'Message too long (max $maxBytes bytes).';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds s on air';
   }
 
   @override
@@ -2011,6 +2028,136 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get routing_noPathYet =>
       'No path yet. The next message floods until a route is discovered.';
+
+  @override
+  String get routePick_open => 'Route view and picker';
+
+  @override
+  String get routePick_openHint =>
+      'Chart each hop\'s link quality and pick a more reliable route';
+
+  @override
+  String routePick_title(String name) {
+    return 'Route to $name';
+  }
+
+  @override
+  String get routePick_current => 'Current route';
+
+  @override
+  String get routePick_flooding =>
+      'No fixed route: messages flood the mesh until a route is learned.';
+
+  @override
+  String get routePick_direct => 'Direct';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return 'Repeater $id';
+  }
+
+  @override
+  String get routePick_notMeasured => 'Not measured yet';
+
+  @override
+  String get routePick_measure => 'Measure this route';
+
+  @override
+  String get routePick_measuring => 'Tracing…';
+
+  @override
+  String get routePick_measured => 'Measured just now.';
+
+  @override
+  String get routePick_noAnswer =>
+      'No answer to the trace. A repeater on the route may be out of range.';
+
+  @override
+  String get routePick_floodDone =>
+      'Route cleared. The next message floods to find a new one.';
+
+  @override
+  String get routePick_suggested => 'Suggested';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return 'A more reliable route: $route (score $score).';
+  }
+
+  @override
+  String get routePick_use => 'Use';
+
+  @override
+  String routePick_useLabel(String route) {
+    return 'Use route $route';
+  }
+
+  @override
+  String get routePick_options => 'Routes to choose from';
+
+  @override
+  String get routePick_optionsHint =>
+      'Every route heard for this contact, scored 0–100 from link signal, delivery record, length and how recent it is.';
+
+  @override
+  String get routePick_none =>
+      'No routes heard yet. Send a message to discover one.';
+
+  @override
+  String get routePick_other => 'Other choices';
+
+  @override
+  String get routePick_build => 'Build a route';
+
+  @override
+  String get routePick_flood => 'Let the mesh find a route';
+
+  @override
+  String get routePick_explainer =>
+      'Measuring sends a trace out along the route and back, so every link between repeaters is measured both ways. The last link to the contact can\'t be traced. Readings are kept for 30 days and count for every route that uses the same link.';
+
+  @override
+  String routePick_score(int score) {
+    return 'Score $score of 100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return 'Hop $number: $name. Link $quality, $out decibels out, $back decibels back.';
+  }
+
+  @override
+  String get routePick_lastLink =>
+      'Last link to the contact: not measurable by trace';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return 'Out $out dB · back $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return 'Score $score · hops: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return 'delivered $ok of $tries';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return 'weakest link $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => 'In use';
 
   @override
   String get routing_floodBroadcast => 'Broadcast through every repeater';
@@ -8004,6 +8151,72 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => 'View connection dashboard';
+
+  @override
+  String get radios_title => 'Radios';
+
+  @override
+  String radios_number(int number) {
+    return 'Radio $number';
+  }
+
+  @override
+  String get radios_active => 'In use';
+
+  @override
+  String get radios_switch => 'Use this radio';
+
+  @override
+  String get radios_add => 'Add a radio';
+
+  @override
+  String get radios_switcher => 'Switch radio';
+
+  @override
+  String get radios_hint =>
+      'You can stay connected to more than one radio, such as a handheld and a base station. The app shows and sends through the radio in use. The others stay connected, and their messages are saved for when you switch.';
+
+  @override
+  String get radios_switchNote =>
+      'Switching radios takes you back to the home screen. Bots, automation, alerts, tracking and the SOS relay run on the radio in use.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return 'Remove $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'This disconnects the radio and forgets it. Its messages and contacts stay saved.';
+
+  @override
+  String radios_unread(int count) {
+    return '$count unread';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count unread on other radios';
+  }
+
+  @override
+  String get radios_continueOn => 'Continue on another radio';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Continue on $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Direct';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Hops: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'No known route';
 
   @override
   String get channelDirectory_title => 'Channel directory';

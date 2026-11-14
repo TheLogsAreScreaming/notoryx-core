@@ -1573,6 +1573,18 @@ class AppLocalizationsEs extends AppLocalizations {
   String get channels_unmuteChannel => 'Activar canal';
 
   @override
+  String get channels_notifyMode => 'Notificaciones';
+
+  @override
+  String get channels_notifyAll => 'Todos los mensajes';
+
+  @override
+  String get channels_notifyMentions => 'Solo cuando me mencionan';
+
+  @override
+  String get channels_notifyMuted => 'Silenciado';
+
+  @override
   String get channels_deleteChannel => 'Eliminar canal';
 
   @override
@@ -1801,6 +1813,11 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return 'Mensaje demasiado largo (máximo $maxBytes bytes).';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds s en el aire';
   }
 
   @override
@@ -2043,6 +2060,136 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get routing_noPathYet =>
       'Aún no hay una ruta. El siguiente mensaje se enviará por inundación hasta que se descubra una ruta.';
+
+  @override
+  String get routePick_open => 'Vista y selector de rutas';
+
+  @override
+  String get routePick_openHint =>
+      'Ver la calidad de enlace de cada salto y elegir una ruta más fiable';
+
+  @override
+  String routePick_title(String name) {
+    return 'Ruta a $name';
+  }
+
+  @override
+  String get routePick_current => 'Ruta actual';
+
+  @override
+  String get routePick_flooding =>
+      'Sin ruta fija: los mensajes inundan la malla hasta aprender una ruta.';
+
+  @override
+  String get routePick_direct => 'Directa';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return 'Repetidor $id';
+  }
+
+  @override
+  String get routePick_notMeasured => 'Aún no medido';
+
+  @override
+  String get routePick_measure => 'Medir esta ruta';
+
+  @override
+  String get routePick_measuring => 'Trazando…';
+
+  @override
+  String get routePick_measured => 'Medido ahora mismo.';
+
+  @override
+  String get routePick_noAnswer =>
+      'Sin respuesta al trazado. Puede que un repetidor de la ruta esté fuera de alcance.';
+
+  @override
+  String get routePick_floodDone =>
+      'Ruta borrada. El próximo mensaje inundará para encontrar otra.';
+
+  @override
+  String get routePick_suggested => 'Sugerida';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return 'Una ruta más fiable: $route (puntuación $score).';
+  }
+
+  @override
+  String get routePick_use => 'Usar';
+
+  @override
+  String routePick_useLabel(String route) {
+    return 'Usar la ruta $route';
+  }
+
+  @override
+  String get routePick_options => 'Rutas para elegir';
+
+  @override
+  String get routePick_optionsHint =>
+      'Cada ruta oída para este contacto, puntuada de 0 a 100 según señal de enlace, historial de entrega, longitud y antigüedad.';
+
+  @override
+  String get routePick_none =>
+      'Aún no hay rutas. Envía un mensaje para descubrir una.';
+
+  @override
+  String get routePick_other => 'Otras opciones';
+
+  @override
+  String get routePick_build => 'Crear una ruta';
+
+  @override
+  String get routePick_flood => 'Dejar que la malla encuentre una ruta';
+
+  @override
+  String get routePick_explainer =>
+      'Medir envía un trazado por la ruta y de vuelta, así cada enlace entre repetidores se mide en ambos sentidos. El último enlace al contacto no se puede trazar. Las lecturas se guardan 30 días y cuentan para toda ruta que use el mismo enlace.';
+
+  @override
+  String routePick_score(int score) {
+    return 'Puntuación $score de 100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return 'Salto $number: $name. Enlace $quality, ida $out decibelios, vuelta $back decibelios.';
+  }
+
+  @override
+  String get routePick_lastLink =>
+      'Último enlace al contacto: no medible por trazado';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return 'Ida $out dB · vuelta $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return 'Puntuación $score · saltos: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return 'entregados $ok de $tries';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return 'enlace más débil $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => 'En uso';
 
   @override
   String get routing_floodBroadcast => 'Transmisión por todos los repetidores';
@@ -8126,6 +8273,72 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => 'Ver panel de conexiones';
+
+  @override
+  String get radios_title => 'Radios';
+
+  @override
+  String radios_number(int number) {
+    return 'Radio $number';
+  }
+
+  @override
+  String get radios_active => 'En uso';
+
+  @override
+  String get radios_switch => 'Usar esta radio';
+
+  @override
+  String get radios_add => 'Añadir una radio';
+
+  @override
+  String get radios_switcher => 'Cambiar de radio';
+
+  @override
+  String get radios_hint =>
+      'Puedes seguir conectado a más de una radio, como una portátil y una estación base. La app muestra y envía a través de la radio en uso. Las demás siguen conectadas y sus mensajes se guardan para cuando cambies.';
+
+  @override
+  String get radios_switchNote =>
+      'Al cambiar de radio vuelves a la pantalla de inicio. Los bots, la automatización, los avisos, el seguimiento y el reenvío de SOS funcionan con la radio en uso.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return '¿Quitar $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Esto desconecta la radio y la olvida. Sus mensajes y contactos siguen guardados.';
+
+  @override
+  String radios_unread(int count) {
+    return '$count sin leer';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count sin leer en otras radios';
+  }
+
+  @override
+  String get radios_continueOn => 'Continuar con otra radio';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Continuar con $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Directo';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Saltos: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Sin ruta conocida';
 
   @override
   String get channelDirectory_title => 'Directorio de canales';

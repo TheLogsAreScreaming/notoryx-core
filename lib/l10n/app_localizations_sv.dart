@@ -1551,6 +1551,18 @@ class AppLocalizationsSv extends AppLocalizations {
   String get channels_unmuteChannel => 'Slå på ljud för kanal';
 
   @override
+  String get channels_notifyMode => 'Aviseringar';
+
+  @override
+  String get channels_notifyAll => 'Alla meddelanden';
+
+  @override
+  String get channels_notifyMentions => 'Bara när jag nämns';
+
+  @override
+  String get channels_notifyMuted => 'Tystad';
+
+  @override
   String get channels_deleteChannel => 'Ta bort kanal';
 
   @override
@@ -1777,6 +1789,11 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return 'Meddelandet är för långt (max $maxBytes byte).';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds s sändtid';
   }
 
   @override
@@ -2019,6 +2036,136 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get routing_noPathYet =>
       'Ingen rutt ännu. Nästa meddelande floodas tills en rutt hittas.';
+
+  @override
+  String get routePick_open => 'Ruttvy och ruttval';
+
+  @override
+  String get routePick_openHint =>
+      'Länkkvalitet per hopp och val av en pålitligare rutt';
+
+  @override
+  String routePick_title(String name) {
+    return 'Rutt till $name';
+  }
+
+  @override
+  String get routePick_current => 'Nuvarande rutt';
+
+  @override
+  String get routePick_flooding =>
+      'Ingen fast rutt: meddelanden översvämmar meshen tills en rutt lärts in.';
+
+  @override
+  String get routePick_direct => 'Direkt';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return 'Repeater $id';
+  }
+
+  @override
+  String get routePick_notMeasured => 'Inte mätt än';
+
+  @override
+  String get routePick_measure => 'Mät den här rutten';
+
+  @override
+  String get routePick_measuring => 'Spårar…';
+
+  @override
+  String get routePick_measured => 'Uppmätt nyss.';
+
+  @override
+  String get routePick_noAnswer =>
+      'Inget svar på spårningen. En repeater på rutten kan vara utom räckhåll.';
+
+  @override
+  String get routePick_floodDone =>
+      'Rutten rensad. Nästa meddelande översvämmar för att hitta en ny.';
+
+  @override
+  String get routePick_suggested => 'Föreslagen';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return 'En pålitligare rutt: $route (poäng $score).';
+  }
+
+  @override
+  String get routePick_use => 'Använd';
+
+  @override
+  String routePick_useLabel(String route) {
+    return 'Använd rutten $route';
+  }
+
+  @override
+  String get routePick_options => 'Rutter att välja bland';
+
+  @override
+  String get routePick_optionsHint =>
+      'Varje hörd rutt till kontakten, poängsatt 0–100 efter länksignal, leveranser, längd och hur ny den är.';
+
+  @override
+  String get routePick_none =>
+      'Inga rutter ännu. Skicka ett meddelande för att hitta en.';
+
+  @override
+  String get routePick_other => 'Andra val';
+
+  @override
+  String get routePick_build => 'Bygg en rutt';
+
+  @override
+  String get routePick_flood => 'Låt meshen hitta en rutt';
+
+  @override
+  String get routePick_explainer =>
+      'Mätningen skickar en spårning längs rutten och tillbaka, så varje länk mellan repeatrar mäts åt båda hållen. Sista länken till kontakten kan inte spåras. Mätvärden sparas i 30 dagar och gäller för varje rutt som använder samma länk.';
+
+  @override
+  String routePick_score(int score) {
+    return 'Poäng $score av 100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return 'Hopp $number: $name. Länk $quality, ut $out decibel, tillbaka $back decibel.';
+  }
+
+  @override
+  String get routePick_lastLink =>
+      'Sista länken till kontakten: kan inte mätas med spårning';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return 'Ut $out dB · tillbaka $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return 'Poäng $score · hopp: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return 'levererade $ok av $tries';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return 'svagaste länk $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => 'Används';
 
   @override
   String get routing_floodBroadcast => 'Sänd via varje repeater';
@@ -8051,6 +8198,72 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => 'Visa anslutningsöversikt';
+
+  @override
+  String get radios_title => 'Radioenheter';
+
+  @override
+  String radios_number(int number) {
+    return 'Radio $number';
+  }
+
+  @override
+  String get radios_active => 'Används';
+
+  @override
+  String get radios_switch => 'Använd den här radion';
+
+  @override
+  String get radios_add => 'Lägg till en radio';
+
+  @override
+  String get radios_switcher => 'Byt radio';
+
+  @override
+  String get radios_hint =>
+      'Du kan vara ansluten till mer än en radio, till exempel en handenhet och en basstation. Appen visar och skickar via radion som används. De andra förblir anslutna och deras meddelanden sparas tills du byter.';
+
+  @override
+  String get radios_switchNote =>
+      'När du byter radio kommer du tillbaka till startskärmen. Bottar, automatisering, aviseringar, spårning och SOS-vidarebefordran körs på radion som används.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return 'Ta bort $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Radion kopplas från och glöms. Dess meddelanden och kontakter förblir sparade.';
+
+  @override
+  String radios_unread(int count) {
+    return '$count olästa';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count olästa på andra radioenheter';
+  }
+
+  @override
+  String get radios_continueOn => 'Fortsätt på en annan radio';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Fortsätt på $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Direkt';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Hopp: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Ingen känd rutt';
 
   @override
   String get channelDirectory_title => 'Kanalkatalog';

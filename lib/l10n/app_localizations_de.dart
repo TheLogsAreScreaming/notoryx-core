@@ -1576,6 +1576,18 @@ class AppLocalizationsDe extends AppLocalizations {
   String get channels_unmuteChannel => 'Kanal Stummschaltung aufheben';
 
   @override
+  String get channels_notifyMode => 'Benachrichtigungen';
+
+  @override
+  String get channels_notifyAll => 'Alle Nachrichten';
+
+  @override
+  String get channels_notifyMentions => 'Nur wenn ich erwähnt werde';
+
+  @override
+  String get channels_notifyMuted => 'Stumm';
+
+  @override
   String get channels_deleteChannel => 'Kanal löschen';
 
   @override
@@ -1807,6 +1819,11 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return 'Nachricht zu lang (max. $maxBytes Bytes).';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds s Sendezeit';
   }
 
   @override
@@ -2049,6 +2066,136 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get routing_noPathYet =>
       'Noch kein Pfad gefunden. Die nächste Nachricht wird geflutet, bis eine Route entdeckt ist.';
+
+  @override
+  String get routePick_open => 'Routenansicht und -auswahl';
+
+  @override
+  String get routePick_openHint =>
+      'Linkqualität jedes Hops anzeigen und eine zuverlässigere Route wählen';
+
+  @override
+  String routePick_title(String name) {
+    return 'Route zu $name';
+  }
+
+  @override
+  String get routePick_current => 'Aktuelle Route';
+
+  @override
+  String get routePick_flooding =>
+      'Keine feste Route: Nachrichten fluten das Mesh, bis eine Route gelernt ist.';
+
+  @override
+  String get routePick_direct => 'Direkt';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return 'Repeater $id';
+  }
+
+  @override
+  String get routePick_notMeasured => 'Noch nicht gemessen';
+
+  @override
+  String get routePick_measure => 'Diese Route messen';
+
+  @override
+  String get routePick_measuring => 'Trace läuft…';
+
+  @override
+  String get routePick_measured => 'Gerade gemessen.';
+
+  @override
+  String get routePick_noAnswer =>
+      'Keine Antwort auf den Trace. Ein Repeater auf der Route ist eventuell außer Reichweite.';
+
+  @override
+  String get routePick_floodDone =>
+      'Route gelöscht. Die nächste Nachricht flutet, um eine neue zu finden.';
+
+  @override
+  String get routePick_suggested => 'Empfohlen';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return 'Eine zuverlässigere Route: $route (Wert $score).';
+  }
+
+  @override
+  String get routePick_use => 'Verwenden';
+
+  @override
+  String routePick_useLabel(String route) {
+    return 'Route $route verwenden';
+  }
+
+  @override
+  String get routePick_options => 'Wählbare Routen';
+
+  @override
+  String get routePick_optionsHint =>
+      'Jede für diesen Kontakt gehörte Route, bewertet von 0–100 nach Linksignal, Zustellbilanz, Länge und Aktualität.';
+
+  @override
+  String get routePick_none =>
+      'Noch keine Routen gehört. Sende eine Nachricht, um eine zu finden.';
+
+  @override
+  String get routePick_other => 'Weitere Möglichkeiten';
+
+  @override
+  String get routePick_build => 'Route zusammenstellen';
+
+  @override
+  String get routePick_flood => 'Das Mesh eine Route finden lassen';
+
+  @override
+  String get routePick_explainer =>
+      'Beim Messen geht ein Trace die Route entlang und zurück, so wird jede Verbindung zwischen Repeatern in beide Richtungen gemessen. Die letzte Verbindung zum Kontakt kann nicht getraced werden. Messwerte bleiben 30 Tage und zählen für jede Route mit derselben Verbindung.';
+
+  @override
+  String routePick_score(int score) {
+    return 'Wert $score von 100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return 'Hop $number: $name. Verbindung $quality, hin $out Dezibel, zurück $back Dezibel.';
+  }
+
+  @override
+  String get routePick_lastLink =>
+      'Letzte Verbindung zum Kontakt: per Trace nicht messbar';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return 'Hin $out dB · zurück $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return 'Wert $score · Hops: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return '$ok von $tries zugestellt';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return 'schwächste Verbindung $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => 'In Verwendung';
 
   @override
   String get routing_floodBroadcast => 'Über alle Repeater senden';
@@ -8132,6 +8279,72 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => 'Verbindungsübersicht anzeigen';
+
+  @override
+  String get radios_title => 'Funkgeräte';
+
+  @override
+  String radios_number(int number) {
+    return 'Funkgerät $number';
+  }
+
+  @override
+  String get radios_active => 'In Verwendung';
+
+  @override
+  String get radios_switch => 'Dieses Funkgerät verwenden';
+
+  @override
+  String get radios_add => 'Funkgerät hinzufügen';
+
+  @override
+  String get radios_switcher => 'Funkgerät wechseln';
+
+  @override
+  String get radios_hint =>
+      'Du kannst mit mehreren Funkgeräten verbunden bleiben, etwa einem Handgerät und einer Basisstation. Die App zeigt und sendet über das Funkgerät in Verwendung. Die anderen bleiben verbunden, und ihre Nachrichten werden für den Wechsel gespeichert.';
+
+  @override
+  String get radios_switchNote =>
+      'Beim Wechsel des Funkgeräts kehrst du zum Startbildschirm zurück. Bots, Automatisierung, Hinweise, Tracking und SOS-Weiterleitung laufen auf dem Funkgerät in Verwendung.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return '$name entfernen?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Damit wird das Funkgerät getrennt und vergessen. Seine Nachrichten und Kontakte bleiben gespeichert.';
+
+  @override
+  String radios_unread(int count) {
+    return '$count ungelesen';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count ungelesen auf anderen Funkgeräten';
+  }
+
+  @override
+  String get radios_continueOn => 'Mit anderem Funkgerät fortsetzen';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Mit $name fortsetzen';
+  }
+
+  @override
+  String get radios_routeDirect => 'Direkt';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Sprünge: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Keine bekannte Route';
 
   @override
   String get channelDirectory_title => 'Kanalverzeichnis';

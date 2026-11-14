@@ -1559,6 +1559,18 @@ class AppLocalizationsSk extends AppLocalizations {
   String get channels_unmuteChannel => 'Zrušiť stlmenie kanála';
 
   @override
+  String get channels_notifyMode => 'Upozornenia';
+
+  @override
+  String get channels_notifyAll => 'Všetky správy';
+
+  @override
+  String get channels_notifyMentions => 'Len keď ma niekto spomenie';
+
+  @override
+  String get channels_notifyMuted => 'Stlmené';
+
+  @override
   String get channels_deleteChannel => 'Odstrániť kanál';
 
   @override
@@ -1785,6 +1797,11 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return 'Správa je príliš dlhá (max $maxBytes bytov).';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds s vysielania';
   }
 
   @override
@@ -2028,6 +2045,136 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get routing_noPathYet =>
       'Zatiaľ neexistuje žiadna cesta. Nasledujúce správy budú pokračovať, kým sa nenájde trasa.';
+
+  @override
+  String get routePick_open => 'Zobrazenie a výber trasy';
+
+  @override
+  String get routePick_openHint =>
+      'Kvalita spojenia na každom skoku a výber spoľahlivejšej trasy';
+
+  @override
+  String routePick_title(String name) {
+    return 'Trasa k $name';
+  }
+
+  @override
+  String get routePick_current => 'Aktuálna trasa';
+
+  @override
+  String get routePick_flooding =>
+      'Bez pevnej trasy: správy zaplavujú sieť, kým sa trasa nenaučí.';
+
+  @override
+  String get routePick_direct => 'Priamo';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return 'Opakovač $id';
+  }
+
+  @override
+  String get routePick_notMeasured => 'Zatiaľ nemerané';
+
+  @override
+  String get routePick_measure => 'Zmerať túto trasu';
+
+  @override
+  String get routePick_measuring => 'Trasovanie…';
+
+  @override
+  String get routePick_measured => 'Práve zmerané.';
+
+  @override
+  String get routePick_noAnswer =>
+      'Žiadna odpoveď na trasovanie. Opakovač na trase môže byť mimo dosahu.';
+
+  @override
+  String get routePick_floodDone =>
+      'Trasa vymazaná. Ďalšia správa zaplaví sieť a nájde novú.';
+
+  @override
+  String get routePick_suggested => 'Odporúčaná';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return 'Spoľahlivejšia trasa: $route (skóre $score).';
+  }
+
+  @override
+  String get routePick_use => 'Použiť';
+
+  @override
+  String routePick_useLabel(String route) {
+    return 'Použiť trasu $route';
+  }
+
+  @override
+  String get routePick_options => 'Trasy na výber';
+
+  @override
+  String get routePick_optionsHint =>
+      'Každá počutá trasa k tomuto kontaktu, hodnotená 0–100 podľa signálu spojení, doručení, dĺžky a aktuálnosti.';
+
+  @override
+  String get routePick_none =>
+      'Zatiaľ žiadne trasy. Pošlite správu a nájdite jednu.';
+
+  @override
+  String get routePick_other => 'Ďalšie možnosti';
+
+  @override
+  String get routePick_build => 'Zostaviť trasu';
+
+  @override
+  String get routePick_flood => 'Nechať sieť nájsť trasu';
+
+  @override
+  String get routePick_explainer =>
+      'Meranie pošle trasovanie po trase a späť, takže každé spojenie medzi opakovačmi sa zmeria oboma smermi. Posledné spojenie ku kontaktu sa trasovať nedá. Údaje sa uchovávajú 30 dní a platia pre každú trasu s rovnakým spojením.';
+
+  @override
+  String routePick_score(int score) {
+    return 'Skóre $score zo 100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return 'Skok $number: $name. Spojenie $quality, tam $out decibelov, späť $back decibelov.';
+  }
+
+  @override
+  String get routePick_lastLink =>
+      'Posledné spojenie ku kontaktu: trasovaním nemerateľné';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return 'Tam $out dB · späť $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return 'Skóre $score · skoky: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return 'doručené $ok z $tries';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return 'najslabšie spojenie $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => 'Používa sa';
 
   @override
   String get routing_floodBroadcast =>
@@ -8107,6 +8254,72 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => 'Zobraziť prehľad pripojení';
+
+  @override
+  String get radios_title => 'Rádiá';
+
+  @override
+  String radios_number(int number) {
+    return 'Rádio $number';
+  }
+
+  @override
+  String get radios_active => 'Používa sa';
+
+  @override
+  String get radios_switch => 'Použiť toto rádio';
+
+  @override
+  String get radios_add => 'Pridať rádio';
+
+  @override
+  String get radios_switcher => 'Prepnúť rádio';
+
+  @override
+  String get radios_hint =>
+      'Môžete zostať pripojení k viacerým rádiám, napríklad ručnému a základňovej stanici. Aplikácia zobrazuje a odosiela cez používané rádio. Ostatné zostávajú pripojené a ich správy sa ukladajú na prepnutie.';
+
+  @override
+  String get radios_switchNote =>
+      'Prepnutím rádia sa vrátite na domovskú obrazovku. Boty, automatizácia, upozornenia, sledovanie a preposielanie SOS bežia na používanom rádiu.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return 'Odstrániť $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Rádio sa odpojí a zabudne. Jeho správy a kontakty zostanú uložené.';
+
+  @override
+  String radios_unread(int count) {
+    return 'Neprečítané: $count';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return 'Neprečítané na iných rádiách: $count';
+  }
+
+  @override
+  String get radios_continueOn => 'Pokračovať na inom rádiu';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Pokračovať na $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Priamo';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Skoky: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Žiadna známa trasa';
 
   @override
   String get channelDirectory_title => 'Adresár kanálov';

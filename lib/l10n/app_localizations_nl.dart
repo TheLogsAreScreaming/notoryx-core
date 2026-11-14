@@ -1563,6 +1563,18 @@ class AppLocalizationsNl extends AppLocalizations {
   String get channels_unmuteChannel => 'Kanaal dempen opheffen';
 
   @override
+  String get channels_notifyMode => 'Meldingen';
+
+  @override
+  String get channels_notifyAll => 'Alle berichten';
+
+  @override
+  String get channels_notifyMentions => 'Alleen als ik genoemd word';
+
+  @override
+  String get channels_notifyMuted => 'Gedempt';
+
+  @override
   String get channels_deleteChannel => 'Kanaal verwijderen';
 
   @override
@@ -1789,6 +1801,11 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return 'Bericht is te lang (max $maxBytes bytes).';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds s zendtijd';
   }
 
   @override
@@ -2031,6 +2048,136 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get routing_noPathYet =>
       'Er is nog geen route gevonden. De berichten blijven binnenkomen totdat een route is ontdekt.';
+
+  @override
+  String get routePick_open => 'Routeweergave en -keuze';
+
+  @override
+  String get routePick_openHint =>
+      'Linkkwaliteit per hop bekijken en een betrouwbaardere route kiezen';
+
+  @override
+  String routePick_title(String name) {
+    return 'Route naar $name';
+  }
+
+  @override
+  String get routePick_current => 'Huidige route';
+
+  @override
+  String get routePick_flooding =>
+      'Geen vaste route: berichten overspoelen het mesh tot er een route geleerd is.';
+
+  @override
+  String get routePick_direct => 'Direct';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return 'Repeater $id';
+  }
+
+  @override
+  String get routePick_notMeasured => 'Nog niet gemeten';
+
+  @override
+  String get routePick_measure => 'Deze route meten';
+
+  @override
+  String get routePick_measuring => 'Traceren…';
+
+  @override
+  String get routePick_measured => 'Zojuist gemeten.';
+
+  @override
+  String get routePick_noAnswer =>
+      'Geen antwoord op de trace. Een repeater op de route is mogelijk buiten bereik.';
+
+  @override
+  String get routePick_floodDone =>
+      'Route gewist. Het volgende bericht overspoelt het mesh om een nieuwe te vinden.';
+
+  @override
+  String get routePick_suggested => 'Aanbevolen';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return 'Een betrouwbaardere route: $route (score $score).';
+  }
+
+  @override
+  String get routePick_use => 'Gebruiken';
+
+  @override
+  String routePick_useLabel(String route) {
+    return 'Route $route gebruiken';
+  }
+
+  @override
+  String get routePick_options => 'Routes om uit te kiezen';
+
+  @override
+  String get routePick_optionsHint =>
+      'Elke gehoorde route naar dit contact, gescoord 0–100 op linksignaal, afleverhistorie, lengte en actualiteit.';
+
+  @override
+  String get routePick_none =>
+      'Nog geen routes. Stuur een bericht om er een te vinden.';
+
+  @override
+  String get routePick_other => 'Andere keuzes';
+
+  @override
+  String get routePick_build => 'Route samenstellen';
+
+  @override
+  String get routePick_flood => 'Laat het mesh een route vinden';
+
+  @override
+  String get routePick_explainer =>
+      'Meten stuurt een trace langs de route en terug, zodat elke link tussen repeaters in beide richtingen gemeten wordt. De laatste link naar het contact kan niet getraced worden. Metingen blijven 30 dagen en tellen voor elke route met dezelfde link.';
+
+  @override
+  String routePick_score(int score) {
+    return 'Score $score van 100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return 'Hop $number: $name. Link $quality, heen $out decibel, terug $back decibel.';
+  }
+
+  @override
+  String get routePick_lastLink =>
+      'Laatste link naar het contact: niet meetbaar met trace';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return 'Heen $out dB · terug $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return 'Score $score · hops: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return '$ok van $tries afgeleverd';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return 'zwakste link $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => 'In gebruik';
 
   @override
   String get routing_floodBroadcast => 'Uitgestoten via elke zender.';
@@ -8085,6 +8232,72 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => 'Verbindingsoverzicht bekijken';
+
+  @override
+  String get radios_title => 'Radio\'s';
+
+  @override
+  String radios_number(int number) {
+    return 'Radio $number';
+  }
+
+  @override
+  String get radios_active => 'In gebruik';
+
+  @override
+  String get radios_switch => 'Deze radio gebruiken';
+
+  @override
+  String get radios_add => 'Radio toevoegen';
+
+  @override
+  String get radios_switcher => 'Andere radio';
+
+  @override
+  String get radios_hint =>
+      'Je kunt met meer dan één radio verbonden blijven, zoals een handheld en een basisstation. De app toont en verstuurt via de radio die in gebruik is. De andere blijven verbonden en hun berichten worden bewaard voor als je wisselt.';
+
+  @override
+  String get radios_switchNote =>
+      'Wisselen van radio brengt je terug naar het startscherm. Bots, automatisering, meldingen, tracking en SOS-doorgifte draaien op de radio die in gebruik is.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return '$name verwijderen?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Hiermee wordt de radio losgekoppeld en vergeten. Berichten en contacten blijven bewaard.';
+
+  @override
+  String radios_unread(int count) {
+    return '$count ongelezen';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count ongelezen op andere radio\'s';
+  }
+
+  @override
+  String get radios_continueOn => 'Doorgaan op een andere radio';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Doorgaan op $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Direct';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Hops: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Geen bekende route';
 
   @override
   String get channelDirectory_title => 'Kanalengids';

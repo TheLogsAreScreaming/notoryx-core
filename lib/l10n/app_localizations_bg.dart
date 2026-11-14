@@ -1578,6 +1578,18 @@ class AppLocalizationsBg extends AppLocalizations {
   String get channels_unmuteChannel => 'Включи известията на канала';
 
   @override
+  String get channels_notifyMode => 'Известия';
+
+  @override
+  String get channels_notifyAll => 'Всички съобщения';
+
+  @override
+  String get channels_notifyMentions => 'Само когато ме споменат';
+
+  @override
+  String get channels_notifyMuted => 'Заглушен';
+
+  @override
   String get channels_deleteChannel => 'Изтрий канала';
 
   @override
@@ -1804,6 +1816,11 @@ class AppLocalizationsBg extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return 'Съобщението е твърде дълго (макс $maxBytes байта).';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds с ефирно време';
   }
 
   @override
@@ -2047,6 +2064,136 @@ class AppLocalizationsBg extends AppLocalizations {
   @override
   String get routing_noPathYet =>
       'Все още няма път. Съобщението продължава да се изпраща, докато не бъде открит маршрут.';
+
+  @override
+  String get routePick_open => 'Изглед и избор на маршрут';
+
+  @override
+  String get routePick_openHint =>
+      'Качество на връзката при всеки скок и избор на по-надежден маршрут';
+
+  @override
+  String routePick_title(String name) {
+    return 'Маршрут до $name';
+  }
+
+  @override
+  String get routePick_current => 'Текущ маршрут';
+
+  @override
+  String get routePick_flooding =>
+      'Няма фиксиран маршрут: съобщенията заливат мрежата, докато се научи маршрут.';
+
+  @override
+  String get routePick_direct => 'Директно';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return 'Ретранслатор $id';
+  }
+
+  @override
+  String get routePick_notMeasured => 'Още не е измерено';
+
+  @override
+  String get routePick_measure => 'Измери маршрута';
+
+  @override
+  String get routePick_measuring => 'Трасиране…';
+
+  @override
+  String get routePick_measured => 'Току-що измерено.';
+
+  @override
+  String get routePick_noAnswer =>
+      'Няма отговор на трасирането. Ретранслатор по маршрута може да е извън обхват.';
+
+  @override
+  String get routePick_floodDone =>
+      'Маршрутът е изчистен. Следващото съобщение ще залее мрежата, за да намери нов.';
+
+  @override
+  String get routePick_suggested => 'Препоръчан';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return 'По-надежден маршрут: $route (оценка $score).';
+  }
+
+  @override
+  String get routePick_use => 'Използвай';
+
+  @override
+  String routePick_useLabel(String route) {
+    return 'Използвай маршрут $route';
+  }
+
+  @override
+  String get routePick_options => 'Маршрути за избор';
+
+  @override
+  String get routePick_optionsHint =>
+      'Всеки чут маршрут за този контакт, с оценка 0–100 по сигнал на връзките, доставка, дължина и актуалност.';
+
+  @override
+  String get routePick_none =>
+      'Още няма маршрути. Изпратете съобщение, за да откриете.';
+
+  @override
+  String get routePick_other => 'Други възможности';
+
+  @override
+  String get routePick_build => 'Състави маршрут';
+
+  @override
+  String get routePick_flood => 'Нека мрежата намери маршрут';
+
+  @override
+  String get routePick_explainer =>
+      'Измерването изпраща трасиране по маршрута и обратно, така всяка връзка между ретранслатори се измерва в двете посоки. Последната връзка до контакта не може да се трасира. Данните се пазят 30 дни и важат за всеки маршрут със същата връзка.';
+
+  @override
+  String routePick_score(int score) {
+    return 'Оценка $score от 100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return 'Скок $number: $name. Връзка $quality, натам $out децибела, обратно $back децибела.';
+  }
+
+  @override
+  String get routePick_lastLink =>
+      'Последна връзка до контакта: не се измерва с трасиране';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return 'Натам $out dB · обратно $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return 'Оценка $score · скокове: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return 'доставени $ok от $tries';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return 'най-слаба връзка $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => 'Използва се';
 
   @override
   String get routing_floodBroadcast => 'Предаване през всички повторители';
@@ -8110,6 +8257,72 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => 'Преглед на връзките';
+
+  @override
+  String get radios_title => 'Радиа';
+
+  @override
+  String radios_number(int number) {
+    return 'Радио $number';
+  }
+
+  @override
+  String get radios_active => 'Използва се';
+
+  @override
+  String get radios_switch => 'Използвай това радио';
+
+  @override
+  String get radios_add => 'Добави радио';
+
+  @override
+  String get radios_switcher => 'Смени радиото';
+
+  @override
+  String get radios_hint =>
+      'Можете да сте свързани с повече от едно радио, например ръчно и базова станция. Приложението показва и изпраща чрез радиото в употреба. Другите остават свързани и съобщенията им се запазват за когато превключите.';
+
+  @override
+  String get radios_switchNote =>
+      'Смяната на радиото ви връща на началния екран. Ботовете, автоматизацията, известията, проследяването и SOS ретранслацията работят с радиото в употреба.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return 'Да се премахне ли $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Така радиото се изключва и забравя. Съобщенията и контактите му остават запазени.';
+
+  @override
+  String radios_unread(int count) {
+    return '$count непрочетени';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count непрочетени на други радиа';
+  }
+
+  @override
+  String get radios_continueOn => 'Продължи с друго радио';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Продължи с $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Директно';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Скокове: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Няма известен маршрут';
 
   @override
   String get channelDirectory_title => 'Каталог на канали';
