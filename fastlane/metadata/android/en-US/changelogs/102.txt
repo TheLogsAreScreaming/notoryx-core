@@ -1,0 +1,3 @@
+• Back up and restore your radio's identity key
+• Repeaters that share a short ID are named the same way each time
+• Online repeater names only for repeaters within range of you
