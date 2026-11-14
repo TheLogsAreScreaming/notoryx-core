@@ -13226,4 +13226,45 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Herstellen is mislukt, dus alle instellingen zijn teruggezet zoals ze waren. Er is niets veranderd.';
+
+  @override
+  String get ml_title => 'Kaart als lijst';
+
+  @override
+  String get ml_intro =>
+      'Alles op de kaart in woorden, het dichtstbij eerst. Afstanden zijn hemelsbreed vanaf je radio. Een route is hoe berichten via de radio reizen, geen pad in het terrein.';
+
+  @override
+  String get ml_nodes => 'Knooppunten';
+
+  @override
+  String get ml_waypoints => 'Waypoints';
+
+  @override
+  String get ml_none => 'Geen';
+
+  @override
+  String get ml_noOwnPosition =>
+      'Afstand onbekend: je radio heeft geen positie';
+
+  @override
+  String ml_heard(String ago) {
+    return 'gehoord $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': 'noord',
+      'ne': 'noordoost',
+      'e': 'oost',
+      'se': 'zuidoost',
+      's': 'zuid',
+      'sw': 'zuidwest',
+      'w': 'west',
+      'nw': 'noordwest',
+      'other': '',
+    });
+    return '$distance naar het $_temp0';
+  }
 }

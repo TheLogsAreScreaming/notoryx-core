@@ -5064,5 +5064,13 @@
   "hopTie_forget": "Pozabi zapomnjene izbire ({count})",
   "hopTie_less": "Manj",
   "hopTie_more": "Več",
-  "bk_rolledBack": "Obnovitev ni uspela, zato so bile vse nastavitve vrnjene, kot so bile. Nič se ni spremenilo."
+  "bk_rolledBack": "Obnovitev ni uspela, zato so bile vse nastavitve vrnjene, kot so bile. Nič se ni spremenilo.",
+  "ml_title": "Zemljevid kot seznam",
+  "ml_intro": "Vse na zemljevidu z besedami, najbližje najprej. Razdalje so zračne od vašega radia. Pot je to, kako sporočila potujejo po radiu, ne steza na terenu.",
+  "ml_nodes": "Vozlišča",
+  "ml_waypoints": "Točke poti",
+  "ml_none": "Nič",
+  "ml_noOwnPosition": "Razdalja neznana: vaš radio nima položaja",
+  "ml_heard": "slišan {ago}",
+  "ml_distanceDir": "{distance}, smer: {dir, select, n{sever} ne{severovzhod} e{vzhod} se{jugovzhod} s{jug} sw{jugozahod} w{zahod} nw{severozahod} other{}}"
 }

@@ -5198,5 +5198,13 @@
   "hopTie_forget": "記憶した選択を消去（{count}）",
   "hopTie_less": "減らす",
   "hopTie_more": "増やす",
-  "bk_rolledBack": "復元に失敗したため、すべての設定を元に戻しました。何も変更されていません。"
+  "bk_rolledBack": "復元に失敗したため、すべての設定を元に戻しました。何も変更されていません。",
+  "ml_title": "リスト表示の地図",
+  "ml_intro": "地図上のすべてを言葉で、近い順に表示します。距離は無線機からの直線距離です。経路は無線でのメッセージの伝わり方であり、地上の道ではありません。",
+  "ml_nodes": "ノード",
+  "ml_waypoints": "ウェイポイント",
+  "ml_none": "なし",
+  "ml_noOwnPosition": "距離不明: 無線機に位置情報がありません",
+  "ml_heard": "受信 {ago}",
+  "ml_distanceDir": "{dir, select, n{北} ne{北東} e{東} se{南東} s{南} sw{南西} w{西} nw{北西} other{}}へ{distance}"
 }

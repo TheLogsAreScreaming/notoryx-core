@@ -5102,5 +5102,13 @@
   "hopTie_forget": "Megjegyzett választások törlése ({count})",
   "hopTie_less": "Kevesebb",
   "hopTie_more": "Több",
-  "bk_rolledBack": "A visszaállítás nem sikerült, ezért minden beállítás visszakerült az eredeti állapotába. Semmi sem változott."
+  "bk_rolledBack": "A visszaállítás nem sikerült, ezért minden beállítás visszakerült az eredeti állapotába. Semmi sem változott.",
+  "ml_title": "Térkép listaként",
+  "ml_intro": "Minden a térképről szavakban, a legközelebbi elöl. A távolság légvonalban értendő a rádiódtól. Az útvonal az üzenetek rádiós útja, nem terepi ösvény.",
+  "ml_nodes": "Csomópontok",
+  "ml_waypoints": "Útpontok",
+  "ml_none": "Nincs",
+  "ml_noOwnPosition": "Ismeretlen távolság: a rádiódnak nincs pozíciója",
+  "ml_heard": "hallva {ago}",
+  "ml_distanceDir": "{distance}, {dir, select, n{észak} ne{északkelet} e{kelet} se{délkelet} s{dél} sw{délnyugat} w{nyugat} nw{északnyugat} other{}}"
 }

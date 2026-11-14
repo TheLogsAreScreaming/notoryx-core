@@ -22044,6 +22044,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Restore failed, so every setting was put back as it was. Nothing changed.'**
   String get bk_rolledBack;
+
+  /// No description provided for @ml_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Map as a list'**
+  String get ml_title;
+
+  /// No description provided for @ml_intro.
+  ///
+  /// In en, this message translates to:
+  /// **'Everything on the map in words, nearest first. Distances are in a straight line from your radio. A route is how messages travel over the radio, not a path on the ground.'**
+  String get ml_intro;
+
+  /// No description provided for @ml_nodes.
+  ///
+  /// In en, this message translates to:
+  /// **'Nodes'**
+  String get ml_nodes;
+
+  /// No description provided for @ml_waypoints.
+  ///
+  /// In en, this message translates to:
+  /// **'Waypoints'**
+  String get ml_waypoints;
+
+  /// No description provided for @ml_none.
+  ///
+  /// In en, this message translates to:
+  /// **'None'**
+  String get ml_none;
+
+  /// No description provided for @ml_noOwnPosition.
+  ///
+  /// In en, this message translates to:
+  /// **'Distance unknown: your radio has no position'**
+  String get ml_noOwnPosition;
+
+  /// No description provided for @ml_heard.
+  ///
+  /// In en, this message translates to:
+  /// **'heard {ago}'**
+  String ml_heard(String ago);
+
+  /// No description provided for @ml_distanceDir.
+  ///
+  /// In en, this message translates to:
+  /// **'{distance} {dir, select, n{north} ne{north-east} e{east} se{south-east} s{south} sw{south-west} w{west} nw{north-west} other{}}'**
+  String ml_distanceDir(String distance, String dir);
 }
 
 class _AppLocalizationsDelegate

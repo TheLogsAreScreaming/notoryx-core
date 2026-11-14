@@ -13254,4 +13254,45 @@ class AppLocalizationsBg extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Възстановяването не успя, затова всички настройки бяха върнати както бяха. Нищо не е променено.';
+
+  @override
+  String get ml_title => 'Картата като списък';
+
+  @override
+  String get ml_intro =>
+      'Всичко от картата с думи, първо най-близкото. Разстоянията са по права линия от вашето радио. Маршрутът е как съобщенията пътуват по радиото, а не път на терена.';
+
+  @override
+  String get ml_nodes => 'Възли';
+
+  @override
+  String get ml_waypoints => 'Точки';
+
+  @override
+  String get ml_none => 'Няма';
+
+  @override
+  String get ml_noOwnPosition =>
+      'Разстоянието е неизвестно: радиото ви няма позиция';
+
+  @override
+  String ml_heard(String ago) {
+    return 'чут $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': 'север',
+      'ne': 'североизток',
+      'e': 'изток',
+      'se': 'югоизток',
+      's': 'юг',
+      'sw': 'югозапад',
+      'w': 'запад',
+      'nw': 'северозапад',
+      'other': '',
+    });
+    return '$distance на $_temp0';
+  }
 }

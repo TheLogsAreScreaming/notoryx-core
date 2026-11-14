@@ -12689,4 +12689,44 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get bk_rolledBack => '복원에 실패하여 모든 설정을 원래대로 되돌렸습니다. 변경된 것은 없습니다.';
+
+  @override
+  String get ml_title => '목록으로 보는 지도';
+
+  @override
+  String get ml_intro =>
+      '지도의 모든 것을 가까운 순서대로 글로 보여 줍니다. 거리는 무전기로부터의 직선거리입니다. 경로는 메시지가 무선으로 전달되는 방식이며 지상의 길이 아닙니다.';
+
+  @override
+  String get ml_nodes => '노드';
+
+  @override
+  String get ml_waypoints => '경유지';
+
+  @override
+  String get ml_none => '없음';
+
+  @override
+  String get ml_noOwnPosition => '거리 알 수 없음: 무전기에 위치가 없습니다';
+
+  @override
+  String ml_heard(String ago) {
+    return '수신 $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': '북',
+      'ne': '북동',
+      'e': '동',
+      'se': '남동',
+      's': '남',
+      'sw': '남서',
+      'w': '서',
+      'nw': '북서',
+      'other': '',
+    });
+    return '$_temp0쪽 $distance';
+  }
 }

@@ -13173,4 +13173,44 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Återställningen misslyckades, så alla inställningar sattes tillbaka som de var. Inget ändrades.';
+
+  @override
+  String get ml_title => 'Karta som lista';
+
+  @override
+  String get ml_intro =>
+      'Allt på kartan i ord, närmast först. Avstånd är fågelvägen från din radio. En rutt är hur meddelanden färdas via radio, inte en stig i terrängen.';
+
+  @override
+  String get ml_nodes => 'Noder';
+
+  @override
+  String get ml_waypoints => 'Vägpunkter';
+
+  @override
+  String get ml_none => 'Inga';
+
+  @override
+  String get ml_noOwnPosition => 'Okänt avstånd: din radio har ingen position';
+
+  @override
+  String ml_heard(String ago) {
+    return 'hörd $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': 'norr',
+      'ne': 'nordost',
+      'e': 'öster',
+      'se': 'sydost',
+      's': 'söder',
+      'sw': 'sydväst',
+      'w': 'väster',
+      'nw': 'nordväst',
+      'other': '',
+    });
+    return '$distance åt $_temp0';
+  }
 }

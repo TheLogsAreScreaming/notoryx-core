@@ -13287,4 +13287,45 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Il ripristino non è riuscito, quindi tutte le impostazioni sono tornate com\'erano. Non è cambiato nulla.';
+
+  @override
+  String get ml_title => 'Mappa come elenco';
+
+  @override
+  String get ml_intro =>
+      'Tutto ciò che è sulla mappa a parole, prima il più vicino. Le distanze sono in linea d\'aria dalla tua radio. Un percorso è come viaggiano i messaggi via radio, non un sentiero sul terreno.';
+
+  @override
+  String get ml_nodes => 'Nodi';
+
+  @override
+  String get ml_waypoints => 'Waypoint';
+
+  @override
+  String get ml_none => 'Nessuno';
+
+  @override
+  String get ml_noOwnPosition =>
+      'Distanza sconosciuta: la tua radio non ha una posizione';
+
+  @override
+  String ml_heard(String ago) {
+    return 'sentito $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': 'nord',
+      'ne': 'nord-est',
+      'e': 'est',
+      'se': 'sud-est',
+      's': 'sud',
+      'sw': 'sud-ovest',
+      'w': 'ovest',
+      'nw': 'nord-ovest',
+      'other': '',
+    });
+    return '$distance a $_temp0';
+  }
 }

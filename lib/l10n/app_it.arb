@@ -5198,5 +5198,13 @@
   "hopTie_forget": "Dimentica le scelte ricordate ({count})",
   "hopTie_less": "Meno",
   "hopTie_more": "Più",
-  "bk_rolledBack": "Il ripristino non è riuscito, quindi tutte le impostazioni sono tornate com'erano. Non è cambiato nulla."
+  "bk_rolledBack": "Il ripristino non è riuscito, quindi tutte le impostazioni sono tornate com'erano. Non è cambiato nulla.",
+  "ml_title": "Mappa come elenco",
+  "ml_intro": "Tutto ciò che è sulla mappa a parole, prima il più vicino. Le distanze sono in linea d'aria dalla tua radio. Un percorso è come viaggiano i messaggi via radio, non un sentiero sul terreno.",
+  "ml_nodes": "Nodi",
+  "ml_waypoints": "Waypoint",
+  "ml_none": "Nessuno",
+  "ml_noOwnPosition": "Distanza sconosciuta: la tua radio non ha una posizione",
+  "ml_heard": "sentito {ago}",
+  "ml_distanceDir": "{distance} a {dir, select, n{nord} ne{nord-est} e{est} se{sud-est} s{sud} sw{sud-ovest} w{ovest} nw{nord-ovest} other{}}"
 }

@@ -5198,5 +5198,13 @@
   "hopTie_forget": "Olvidar elecciones recordadas ({count})",
   "hopTie_less": "Menos",
   "hopTie_more": "Más",
-  "bk_rolledBack": "La restauración falló, así que todos los ajustes volvieron a como estaban. No cambió nada."
+  "bk_rolledBack": "La restauración falló, así que todos los ajustes volvieron a como estaban. No cambió nada.",
+  "ml_title": "Mapa como lista",
+  "ml_intro": "Todo lo del mapa en palabras, lo más cercano primero. Las distancias son en línea recta desde tu radio. Una ruta es cómo viajan los mensajes por radio, no un camino en el terreno.",
+  "ml_nodes": "Nodos",
+  "ml_waypoints": "Puntos de ruta",
+  "ml_none": "Ninguno",
+  "ml_noOwnPosition": "Distancia desconocida: tu radio no tiene posición",
+  "ml_heard": "escuchado {ago}",
+  "ml_distanceDir": "{distance} al {dir, select, n{norte} ne{noreste} e{este} se{sureste} s{sur} sw{suroeste} w{oeste} nw{noroeste} other{}}"
 }

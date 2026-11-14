@@ -6939,5 +6939,15 @@
   },
   "hopTie_less": "Less",
   "hopTie_more": "More",
-  "bk_rolledBack": "Restore failed, so every setting was put back as it was. Nothing changed."
+  "bk_rolledBack": "Restore failed, so every setting was put back as it was. Nothing changed.",
+  "ml_title": "Map as a list",
+  "ml_intro": "Everything on the map in words, nearest first. Distances are in a straight line from your radio. A route is how messages travel over the radio, not a path on the ground.",
+  "ml_nodes": "Nodes",
+  "ml_waypoints": "Waypoints",
+  "ml_none": "None",
+  "ml_noOwnPosition": "Distance unknown: your radio has no position",
+  "ml_heard": "heard {ago}",
+  "ml_distanceDir": "{distance} {dir, select, n{north} ne{north-east} e{east} se{south-east} s{south} sw{south-west} w{west} nw{north-west} other{}}",
+  "@ml_distanceDir": {"placeholders": {"distance": {"type": "String"}, "dir": {"type": "String"}}},
+  "@ml_heard": {"placeholders": {"ago": {"type": "String"}}}
 }

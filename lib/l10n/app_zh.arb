@@ -5069,5 +5069,13 @@
   "hopTie_forget": "清除记住的选择（{count}）",
   "hopTie_less": "减少",
   "hopTie_more": "增加",
-  "bk_rolledBack": "恢复失败，所有设置已还原为原样。没有任何更改。"
+  "bk_rolledBack": "恢复失败，所有设置已还原为原样。没有任何更改。",
+  "ml_title": "列表形式的地图",
+  "ml_intro": "用文字列出地图上的所有内容，最近的在前。距离为从你的电台出发的直线距离。路由是消息在无线电中的传输方式，而不是地面上的路径。",
+  "ml_nodes": "节点",
+  "ml_waypoints": "航点",
+  "ml_none": "无",
+  "ml_noOwnPosition": "距离未知:你的电台没有位置",
+  "ml_heard": "收到于 {ago}",
+  "ml_distanceDir": "{dir, select, n{北} ne{东北} e{东} se{东南} s{南} sw{西南} w{西} nw{西北} other{}}方向 {distance}"
 }

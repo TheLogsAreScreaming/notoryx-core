@@ -12672,4 +12672,44 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get bk_rolledBack => '復元に失敗したため、すべての設定を元に戻しました。何も変更されていません。';
+
+  @override
+  String get ml_title => 'リスト表示の地図';
+
+  @override
+  String get ml_intro =>
+      '地図上のすべてを言葉で、近い順に表示します。距離は無線機からの直線距離です。経路は無線でのメッセージの伝わり方であり、地上の道ではありません。';
+
+  @override
+  String get ml_nodes => 'ノード';
+
+  @override
+  String get ml_waypoints => 'ウェイポイント';
+
+  @override
+  String get ml_none => 'なし';
+
+  @override
+  String get ml_noOwnPosition => '距離不明: 無線機に位置情報がありません';
+
+  @override
+  String ml_heard(String ago) {
+    return '受信 $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': '北',
+      'ne': '北東',
+      'e': '東',
+      'se': '南東',
+      's': '南',
+      'sw': '南西',
+      'w': '西',
+      'nw': '北西',
+      'other': '',
+    });
+    return '$_temp0へ$distance';
+  }
 }

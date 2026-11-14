@@ -5064,5 +5064,13 @@
   "hopTie_forget": "Esquecer escolhas lembradas ({count})",
   "hopTie_less": "Menos",
   "hopTie_more": "Mais",
-  "bk_rolledBack": "A restauração falhou, por isso todas as definições voltaram ao que eram. Nada mudou."
+  "bk_rolledBack": "A restauração falhou, por isso todas as definições voltaram ao que eram. Nada mudou.",
+  "ml_title": "Mapa em lista",
+  "ml_intro": "Tudo o que está no mapa em palavras, o mais próximo primeiro. As distâncias são em linha reta a partir do seu rádio. Uma rota é como as mensagens viajam pelo rádio, não um caminho no terreno.",
+  "ml_nodes": "Nós",
+  "ml_waypoints": "Pontos de passagem",
+  "ml_none": "Nenhum",
+  "ml_noOwnPosition": "Distância desconhecida: o seu rádio não tem posição",
+  "ml_heard": "ouvido {ago}",
+  "ml_distanceDir": "{distance} a {dir, select, n{norte} ne{nordeste} e{este} se{sudeste} s{sul} sw{sudoeste} w{oeste} nw{noroeste} other{}}"
 }

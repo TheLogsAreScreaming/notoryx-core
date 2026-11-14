@@ -5198,5 +5198,13 @@
   "hopTie_forget": "Gemerkte Wahl vergessen ({count})",
   "hopTie_less": "Weniger",
   "hopTie_more": "Mehr",
-  "bk_rolledBack": "Wiederherstellen ist fehlgeschlagen, daher wurden alle Einstellungen zurückgesetzt. Nichts wurde geändert."
+  "bk_rolledBack": "Wiederherstellen ist fehlgeschlagen, daher wurden alle Einstellungen zurückgesetzt. Nichts wurde geändert.",
+  "ml_title": "Karte als Liste",
+  "ml_intro": "Alles auf der Karte in Worten, das Nächste zuerst. Entfernungen gelten in Luftlinie ab deinem Funkgerät. Eine Route ist der Funkweg der Nachrichten, kein Weg im Gelände.",
+  "ml_nodes": "Knoten",
+  "ml_waypoints": "Wegpunkte",
+  "ml_none": "Keine",
+  "ml_noOwnPosition": "Entfernung unbekannt: dein Funkgerät hat keine Position",
+  "ml_heard": "gehört {ago}",
+  "ml_distanceDir": "{distance} Richtung {dir, select, n{Norden} ne{Nordosten} e{Osten} se{Südosten} s{Süden} sw{Südwesten} w{Westen} nw{Nordwesten} other{}}"
 }

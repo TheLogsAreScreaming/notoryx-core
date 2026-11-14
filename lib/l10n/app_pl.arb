@@ -5102,5 +5102,13 @@
   "hopTie_forget": "Zapomnij zapamiętane wybory ({count})",
   "hopTie_less": "Mniej",
   "hopTie_more": "Więcej",
-  "bk_rolledBack": "Przywracanie nie powiodło się, więc wszystkie ustawienia wróciły do poprzedniego stanu. Nic się nie zmieniło."
+  "bk_rolledBack": "Przywracanie nie powiodło się, więc wszystkie ustawienia wróciły do poprzedniego stanu. Nic się nie zmieniło.",
+  "ml_title": "Mapa jako lista",
+  "ml_intro": "Wszystko z mapy słowami, najbliższe najpierw. Odległości w linii prostej od twojego radia. Trasa to droga wiadomości przez radio, a nie ścieżka w terenie.",
+  "ml_nodes": "Węzły",
+  "ml_waypoints": "Punkty trasy",
+  "ml_none": "Brak",
+  "ml_noOwnPosition": "Odległość nieznana: twoje radio nie ma pozycji",
+  "ml_heard": "słyszany {ago}",
+  "ml_distanceDir": "{distance}, kierunek: {dir, select, n{północ} ne{północny wschód} e{wschód} se{południowy wschód} s{południe} sw{południowy zachód} w{zachód} nw{północny zachód} other{}}"
 }
