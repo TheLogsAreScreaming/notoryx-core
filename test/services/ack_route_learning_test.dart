@@ -23,8 +23,12 @@ Contact _contact({int pathLength = -1, List<int> path = const []}) => Contact(
 void main() {
   final selfKey = Uint8List(32);
 
-  /// Runs [body] with a retry service whose sends, deliveries and route
-  /// credits are recorded.
+  /// Routes the radio was told to use, one per attempt: hop count, or -1 for
+  /// flood.
+  final routes = <int>[];
+
+  /// Runs [body] with a retry service whose sends, routes, deliveries and
+  /// route credits are recorded.
   void withService(
     void Function(
       FakeAsync time,
@@ -36,6 +40,7 @@ void main() {
     )
     body,
   ) {
+    routes.clear();
     fakeAsync((time) {
       final service = MessageRetryService();
       final sends = <({int attempt, int timestamp})>[];
@@ -51,6 +56,8 @@ void main() {
           addMessage: (_, m) => latest[m.messageId] = m,
           updateMessage: (m) => latest[m.messageId] = m,
           getSelfPublicKey: () => selfKey,
+          clearContactPath: (_) => routes.add(-1),
+          setContactPath: (_, _, hops) => routes.add(hops),
           calculateTimeout:
               (_, _, {String? contactKey, int? deviceTimeoutMs}) => 20,
           onDeliveryObserved: (_, hops, _, _) => observedHops.add(hops),
@@ -99,7 +106,7 @@ void main() {
       service.updatePendingContact(_contact());
       sentThenTimeOut(time, service, sends, 0);
       expect(sends.map((s) => s.attempt), [0, 1]);
-      expect(latest.values.single.pathLength, -1);
+      expect(routes, [2, -1], reason: 'first try direct, retry by flood');
 
       // The ACK for the first, direct attempt arrives late.
       service.handleAckReceived(ackHash(sends, 0), 700);
