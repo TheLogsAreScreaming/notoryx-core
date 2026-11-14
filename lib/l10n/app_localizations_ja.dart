@@ -12672,4 +12672,130 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get bk_rolledBack => '復元に失敗したため、すべての設定を元に戻しました。何も変更されていません。';
+
+  @override
+  String get outbox_maybeSent =>
+      '送信が中断されたため、このメッセージはすでに送信済みかもしれません。入力欄に戻しました。再送信する前に確認してください。';
+
+  @override
+  String get outbox_tooLong => '無線機には長すぎるため、短くできるよう入力欄に戻しました。';
+
+  @override
+  String get rf_title => '無線機の機能';
+
+  @override
+  String get rf_radioStats => 'ライブ無線統計';
+
+  @override
+  String get rf_textCli => 'テキストコマンドライン';
+
+  @override
+  String get rf_channelData => 'チャンネルデータ';
+
+  @override
+  String get rf_signedPosts => '署名付きチャンネル投稿';
+
+  @override
+  String get rf_rawPackets => '生パケット';
+
+  @override
+  String get rf_floodCorridor => 'フラッドコリドー(カスタムファームウェア)';
+
+  @override
+  String get rf_supported => '対応';
+
+  @override
+  String get rf_unsupported => '非対応';
+
+  @override
+  String get rf_unknown => '不明';
+
+  @override
+  String get rf_evNotConnected => '確認するには無線機を接続してください。';
+
+  @override
+  String get rf_evNotChecked => 'まだ確認していません。';
+
+  @override
+  String get rf_evProbeAnswered => '無線機が確認に応答しました。';
+
+  @override
+  String get rf_evProbeRejected => '無線機はこれに非対応と応答しました。';
+
+  @override
+  String get rf_evDerived => 'チャンネルデータと無線機の鍵が必要です。';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return '無線機のプロトコルはv$have、必要なのはv$needです。';
+  }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '破損したタイルファイル$count件を削除しました(途中で切れているか画像ではありません)。置き換えるにはエリアを再ダウンロードしてください。';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'ズームレベル別の欠落: $list';
+  }
+
+  @override
+  String batteryWatch_basis(int count, String days, String confidence) {
+    return '$days日間の$count件の測定に基づく: $confidence。';
+  }
+
+  @override
+  String get batteryWatch_confGood => '明確な傾向';
+
+  @override
+  String get batteryWatch_confLow => '確実とは言えないほど少ないかばらついています';
+
+  @override
+  String get batteryWatch_maybeFalling => '低下しているかもしれませんが、まだ測定が足りません。';
+
+  @override
+  String batteryWatch_gap(String days) {
+    return '測定のない最長期間: $days日。';
+  }
+
+  @override
+  String get ml_title => 'リスト表示の地図';
+
+  @override
+  String get ml_intro =>
+      '地図上のすべてを言葉で、近い順に表示します。距離は無線機からの直線距離です。経路は無線でのメッセージの伝わり方であり、地上の道ではありません。';
+
+  @override
+  String get ml_nodes => 'ノード';
+
+  @override
+  String get ml_waypoints => 'ウェイポイント';
+
+  @override
+  String get ml_none => 'なし';
+
+  @override
+  String get ml_noOwnPosition => '距離不明: 無線機に位置情報がありません';
+
+  @override
+  String ml_heard(String ago) {
+    return '受信 $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': '北',
+      'ne': '北東',
+      'e': '東',
+      'se': '南東',
+      's': '南',
+      'sw': '南西',
+      'w': '西',
+      'nw': '北西',
+      'other': '',
+    });
+    return '$_temp0へ$distance';
+  }
 }

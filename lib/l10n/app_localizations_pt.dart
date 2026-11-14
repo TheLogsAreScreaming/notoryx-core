@@ -13257,4 +13257,135 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'A restauração falhou, por isso todas as definições voltaram ao que eram. Nada mudou.';
+
+  @override
+  String get outbox_maybeSent =>
+      'O envio foi interrompido, por isso a mensagem pode já ter saído. Voltou para a caixa de texto: verifique antes de enviá-la novamente.';
+
+  @override
+  String get outbox_tooLong =>
+      'Longo demais para o rádio, por isso voltou para a caixa de texto para ser encurtado.';
+
+  @override
+  String get rf_title => 'Funções do rádio';
+
+  @override
+  String get rf_radioStats => 'Estatísticas do rádio ao vivo';
+
+  @override
+  String get rf_textCli => 'Linha de comandos de texto';
+
+  @override
+  String get rf_channelData => 'Dados do canal';
+
+  @override
+  String get rf_signedPosts => 'Publicações de canal assinadas';
+
+  @override
+  String get rf_rawPackets => 'Pacotes brutos';
+
+  @override
+  String get rf_floodCorridor =>
+      'Corredor de inundação (firmware personalizado)';
+
+  @override
+  String get rf_supported => 'Suportado';
+
+  @override
+  String get rf_unsupported => 'Não suportado';
+
+  @override
+  String get rf_unknown => 'Desconhecido';
+
+  @override
+  String get rf_evNotConnected => 'Ligue um rádio para verificar.';
+
+  @override
+  String get rf_evNotChecked => 'Ainda não verificado.';
+
+  @override
+  String get rf_evProbeAnswered => 'O rádio respondeu à verificação.';
+
+  @override
+  String get rf_evProbeRejected => 'O rádio indicou que não suporta isto.';
+
+  @override
+  String get rf_evDerived => 'Requer dados do canal e a chave do rádio.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return 'O rádio indica o protocolo v$have; é necessário v$need.';
+  }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return 'Foram removidos $count ficheiros de mosaicos danificados (incompletos ou que não são imagens). Transfira a área novamente para os substituir.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Em falta por nível de zoom: $list';
+  }
+
+  @override
+  String batteryWatch_basis(int count, String days, String confidence) {
+    return 'Com base em $count leituras ao longo de $days dias: $confidence.';
+  }
+
+  @override
+  String get batteryWatch_confGood => 'uma tendência clara';
+
+  @override
+  String get batteryWatch_confLow =>
+      'poucas ou dispersas demais para ter certeza';
+
+  @override
+  String get batteryWatch_maybeFalling =>
+      'Pode estar a descer, mas ainda não há leituras suficientes.';
+
+  @override
+  String batteryWatch_gap(String days) {
+    return 'Maior intervalo sem leitura: $days dias.';
+  }
+
+  @override
+  String get ml_title => 'Mapa em lista';
+
+  @override
+  String get ml_intro =>
+      'Tudo o que está no mapa em palavras, o mais próximo primeiro. As distâncias são em linha reta a partir do seu rádio. Uma rota é como as mensagens viajam pelo rádio, não um caminho no terreno.';
+
+  @override
+  String get ml_nodes => 'Nós';
+
+  @override
+  String get ml_waypoints => 'Pontos de passagem';
+
+  @override
+  String get ml_none => 'Nenhum';
+
+  @override
+  String get ml_noOwnPosition =>
+      'Distância desconhecida: o seu rádio não tem posição';
+
+  @override
+  String ml_heard(String ago) {
+    return 'ouvido $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': 'norte',
+      'ne': 'nordeste',
+      'e': 'este',
+      'se': 'sudeste',
+      's': 'sul',
+      'sw': 'sudoeste',
+      'w': 'oeste',
+      'nw': 'noroeste',
+      'other': '',
+    });
+    return '$distance a $_temp0';
+  }
 }

@@ -12689,4 +12689,130 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get bk_rolledBack => '복원에 실패하여 모든 설정을 원래대로 되돌렸습니다. 변경된 것은 없습니다.';
+
+  @override
+  String get outbox_maybeSent =>
+      '전송이 중단되어 이 메시지가 이미 전송되었을 수 있습니다. 입력란으로 되돌렸습니다. 다시 보내기 전에 확인하세요.';
+
+  @override
+  String get outbox_tooLong => '무전기에 너무 길어서 줄일 수 있도록 입력란으로 되돌렸습니다.';
+
+  @override
+  String get rf_title => '무전기 기능';
+
+  @override
+  String get rf_radioStats => '실시간 무전기 통계';
+
+  @override
+  String get rf_textCli => '텍스트 명령줄';
+
+  @override
+  String get rf_channelData => '채널 데이터';
+
+  @override
+  String get rf_signedPosts => '서명된 채널 게시물';
+
+  @override
+  String get rf_rawPackets => '원시 패킷';
+
+  @override
+  String get rf_floodCorridor => '플러드 회랑(사용자 지정 펌웨어)';
+
+  @override
+  String get rf_supported => '지원됨';
+
+  @override
+  String get rf_unsupported => '지원 안 됨';
+
+  @override
+  String get rf_unknown => '알 수 없음';
+
+  @override
+  String get rf_evNotConnected => '확인하려면 무전기를 연결하세요.';
+
+  @override
+  String get rf_evNotChecked => '아직 확인하지 않았습니다.';
+
+  @override
+  String get rf_evProbeAnswered => '무전기가 확인에 응답했습니다.';
+
+  @override
+  String get rf_evProbeRejected => '무전기가 이 기능을 지원하지 않는다고 응답했습니다.';
+
+  @override
+  String get rf_evDerived => '채널 데이터와 무전기 키가 필요합니다.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return '무전기 프로토콜 v$have, 필요 버전 v$need.';
+  }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '손상된 타일 파일 $count개를 삭제했습니다(잘렸거나 이미지가 아님). 교체하려면 지역을 다시 다운로드하세요.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return '확대 수준별 누락: $list';
+  }
+
+  @override
+  String batteryWatch_basis(int count, String days, String confidence) {
+    return '$days일 동안 $count개 측정값 기준: $confidence.';
+  }
+
+  @override
+  String get batteryWatch_confGood => '뚜렷한 추세';
+
+  @override
+  String get batteryWatch_confLow => '확신하기엔 너무 적거나 흩어져 있음';
+
+  @override
+  String get batteryWatch_maybeFalling => '떨어지고 있을 수 있지만 아직 측정값이 부족합니다.';
+
+  @override
+  String batteryWatch_gap(String days) {
+    return '측정 없는 가장 긴 공백: $days일.';
+  }
+
+  @override
+  String get ml_title => '목록으로 보는 지도';
+
+  @override
+  String get ml_intro =>
+      '지도의 모든 것을 가까운 순서대로 글로 보여 줍니다. 거리는 무전기로부터의 직선거리입니다. 경로는 메시지가 무선으로 전달되는 방식이며 지상의 길이 아닙니다.';
+
+  @override
+  String get ml_nodes => '노드';
+
+  @override
+  String get ml_waypoints => '경유지';
+
+  @override
+  String get ml_none => '없음';
+
+  @override
+  String get ml_noOwnPosition => '거리 알 수 없음: 무전기에 위치가 없습니다';
+
+  @override
+  String ml_heard(String ago) {
+    return '수신 $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': '북',
+      'ne': '북동',
+      'e': '동',
+      'se': '남동',
+      's': '남',
+      'sw': '남서',
+      'w': '서',
+      'nw': '북서',
+      'other': '',
+    });
+    return '$_temp0쪽 $distance';
+  }
 }

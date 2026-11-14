@@ -38,6 +38,15 @@ enum BatteryWatchStatus {
   unknown,
 }
 
+/// How much to trust a fitted trend.
+enum TrendConfidence {
+  /// Too few readings, too short a span, or too scattered to call a trend.
+  low,
+
+  /// Enough readings over enough time, and they line up.
+  good,
+}
+
 /// What a repeater's battery history says: the latest level, which way
 /// it's heading, and whether that needs attention.
 class BatteryTrend {
@@ -47,9 +56,23 @@ class BatteryTrend {
     this.percent,
     this.millivoltsPerDay,
     this.daysToEmpty,
+    this.sampleCount = 0,
+    this.span = Duration.zero,
+    this.fit,
+    this.confidence = TrendConfidence.low,
+    this.longestGap,
   });
 
   static const lowPercent = 20;
+
+  /// A trend needs this many readings in [slopeWindow]...
+  static const goodSamples = 5;
+
+  /// ...spread over at least this long...
+  static const goodSpan = Duration(days: 1);
+
+  /// ...and a line through them that explains this much of the change (R²).
+  static const goodFit = 0.5;
   static const fallingDays = 7;
   static const quietAfter = Duration(days: 3);
 
@@ -72,6 +95,29 @@ class BatteryTrend {
   /// it is falling; null otherwise.
   final double? daysToEmpty;
 
+  /// Readings the slope was fitted to, and the time they span.
+  final int sampleCount;
+  final Duration span;
+
+  /// R² of the fit, 0 to 1; null without a fit. Solar repeaters swing
+  /// daily, so a low value means the line says little.
+  final double? fit;
+
+  /// Whether the slope is backed by enough readings to act on. "Falling"
+  /// is only declared with [TrendConfidence.good].
+  final TrendConfidence confidence;
+
+  /// The longest stretch with no reading inside the window; missing
+  /// readings are gaps, never treated as values.
+  final Duration? longestGap;
+
+  /// The slope says falling within [fallingDays], but there's too little
+  /// data to be sure.
+  bool get maybeFalling =>
+      confidence == TrendConfidence.low &&
+      daysToEmpty != null &&
+      daysToEmpty! <= fallingDays;
+
   static const empty = BatteryTrend(status: BatteryWatchStatus.unknown);
 }
 
@@ -93,9 +139,24 @@ BatteryTrend analyzeBattery(
       .where((s) => latest.at.difference(s.at) <= BatteryTrend.slopeWindow)
       .toList();
   double? slope;
-  if (recent.length >= 3 &&
-      latest.at.difference(recent.first.at) >= BatteryTrend.minSpan) {
-    slope = _slopePerDay(recent);
+  double? fit;
+  final span = latest.at.difference(recent.first.at);
+  if (recent.length >= 3 && span >= BatteryTrend.minSpan) {
+    final line = _fitPerDay(recent);
+    slope = line?.slope;
+    fit = line?.r2;
+  }
+  final confidence =
+      slope != null &&
+          recent.length >= BatteryTrend.goodSamples &&
+          span >= BatteryTrend.goodSpan &&
+          (fit ?? 0) >= BatteryTrend.goodFit
+      ? TrendConfidence.good
+      : TrendConfidence.low;
+  Duration? longestGap;
+  for (var i = 1; i < recent.length; i++) {
+    final gap = recent[i].at.difference(recent[i - 1].at);
+    if (longestGap == null || gap > longestGap) longestGap = gap;
   }
 
   double? daysToEmpty;
@@ -110,7 +171,9 @@ BatteryTrend analyzeBattery(
     status = BatteryWatchStatus.quiet;
   } else if (percent <= BatteryTrend.lowPercent) {
     status = BatteryWatchStatus.low;
-  } else if (daysToEmpty != null && daysToEmpty <= BatteryTrend.fallingDays) {
+  } else if (daysToEmpty != null &&
+      daysToEmpty <= BatteryTrend.fallingDays &&
+      confidence == TrendConfidence.good) {
     status = BatteryWatchStatus.falling;
   } else {
     status = BatteryWatchStatus.ok;
@@ -121,11 +184,17 @@ BatteryTrend analyzeBattery(
     percent: percent,
     millivoltsPerDay: slope,
     daysToEmpty: daysToEmpty,
+    sampleCount: recent.length,
+    span: span,
+    fit: fit,
+    confidence: confidence,
+    longestGap: longestGap,
   );
 }
 
-/// Least-squares slope of millivolts against time, in millivolts per day.
-double? _slopePerDay(List<BatterySample> samples) {
+/// Least-squares line of millivolts against time: slope in millivolts per
+/// day, and R², how much of the change the line explains.
+({double slope, double r2})? _fitPerDay(List<BatterySample> samples) {
   final t0 = samples.first.at.millisecondsSinceEpoch;
   const msPerDay = 86400000.0;
   final xs = [
@@ -135,11 +204,20 @@ double? _slopePerDay(List<BatterySample> samples) {
   final n = xs.length;
   final mx = xs.reduce((a, b) => a + b) / n;
   final my = ys.reduce((a, b) => a + b) / n;
-  var num = 0.0, den = 0.0;
+  var num = 0.0, den = 0.0, total = 0.0;
   for (var i = 0; i < n; i++) {
     num += (xs[i] - mx) * (ys[i] - my);
     den += (xs[i] - mx) * (xs[i] - mx);
+    total += (ys[i] - my) * (ys[i] - my);
   }
   if (den == 0) return null;
-  return num / den;
+  final slope = num / den;
+  var residual = 0.0;
+  for (var i = 0; i < n; i++) {
+    final e = ys[i] - (my + slope * (xs[i] - mx));
+    residual += e * e;
+  }
+  // A flat line through identical readings explains everything there is.
+  final r2 = total == 0 ? 1.0 : (1 - residual / total).clamp(0.0, 1.0);
+  return (slope: slope, r2: r2);
 }

@@ -13301,4 +13301,133 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Відновлення не вдалося, тому всі налаштування повернуто як були. Нічого не змінилося.';
+
+  @override
+  String get outbox_maybeSent =>
+      'Надсилання було перервано, тож повідомлення, можливо, вже пішло. Його повернуто в поле введення: перевірте, перш ніж надсилати знову.';
+
+  @override
+  String get outbox_tooLong =>
+      'Задовге для радіо, тому повернуто в поле введення, щоб скоротити.';
+
+  @override
+  String get rf_title => 'Функції радіо';
+
+  @override
+  String get rf_radioStats => 'Статистика радіо наживо';
+
+  @override
+  String get rf_textCli => 'Текстовий командний рядок';
+
+  @override
+  String get rf_channelData => 'Дані каналу';
+
+  @override
+  String get rf_signedPosts => 'Підписані дописи каналу';
+
+  @override
+  String get rf_rawPackets => 'Сирі пакети';
+
+  @override
+  String get rf_floodCorridor => 'Коридор розсилки (власна прошивка)';
+
+  @override
+  String get rf_supported => 'Підтримується';
+
+  @override
+  String get rf_unsupported => 'Не підтримується';
+
+  @override
+  String get rf_unknown => 'Невідомо';
+
+  @override
+  String get rf_evNotConnected => 'Під\'єднайте радіо, щоб перевірити.';
+
+  @override
+  String get rf_evNotChecked => 'Ще не перевірено.';
+
+  @override
+  String get rf_evProbeAnswered => 'Радіо відповіло на перевірку.';
+
+  @override
+  String get rf_evProbeRejected => 'Радіо повідомило, що не підтримує це.';
+
+  @override
+  String get rf_evDerived => 'Потрібні дані каналу й ключ радіо.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return 'Радіо повідомляє протокол v$have; потрібен v$need.';
+  }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return 'Видалено пошкоджених файлів плиток: $count (обрізані або не зображення). Завантажте область знову, щоб замінити їх.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Бракує за рівнем масштабу: $list';
+  }
+
+  @override
+  String batteryWatch_basis(int count, String days, String confidence) {
+    return 'За $count вимірюваннями за $days дн.: $confidence.';
+  }
+
+  @override
+  String get batteryWatch_confGood => 'чітка тенденція';
+
+  @override
+  String get batteryWatch_confLow =>
+      'замало або надто розкидані, щоб бути певним';
+
+  @override
+  String get batteryWatch_maybeFalling =>
+      'Можливо, падає, але вимірювань поки замало.';
+
+  @override
+  String batteryWatch_gap(String days) {
+    return 'Найдовша перерва без вимірювань: $days дн.';
+  }
+
+  @override
+  String get ml_title => 'Карта списком';
+
+  @override
+  String get ml_intro =>
+      'Усе на карті словами, спершу найближче. Відстані — по прямій від вашого радіо. Маршрут — це шлях повідомлень радіо, а не стежка на місцевості.';
+
+  @override
+  String get ml_nodes => 'Вузли';
+
+  @override
+  String get ml_waypoints => 'Точки';
+
+  @override
+  String get ml_none => 'Немає';
+
+  @override
+  String get ml_noOwnPosition => 'Відстань невідома: ваше радіо не має позиції';
+
+  @override
+  String ml_heard(String ago) {
+    return 'чути $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': 'північ',
+      'ne': 'північний схід',
+      'e': 'схід',
+      'se': 'південний схід',
+      's': 'південь',
+      'sw': 'південний захід',
+      'w': 'захід',
+      'nw': 'північний захід',
+      'other': '',
+    });
+    return '$distance, напрямок: $_temp0';
+  }
 }
