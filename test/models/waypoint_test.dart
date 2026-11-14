@@ -159,7 +159,10 @@ void main() {
       await tester.enterText(find.byKey(const ValueKey('gpx-paste')), 'nope');
       await tester.tap(find.text('Import'));
       await tester.pumpAndSettle();
-      expect(find.textContaining("isn't a GPX, KML or GeoJSON file"), findsOneWidget);
+      expect(
+        find.textContaining("isn't a GPX, KML or GeoJSON file"),
+        findsOneWidget,
+      );
     });
 
     testWidgets('a shared marker can be saved once', (tester) async {
