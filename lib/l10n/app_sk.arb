@@ -464,6 +464,7 @@
   },
   "chat_typeMessage": "Napište správu...",
   "chat_messageTooLong": "Správa je príliš dlhá (max {maxBytes} bytov).",
+  "chat_airtimeEstimate": "≈{seconds} s vysielania",
   "@chat_messageTooLong": {
     "placeholders": {
       "maxBytes": {

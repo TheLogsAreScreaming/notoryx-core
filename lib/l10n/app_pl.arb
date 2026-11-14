@@ -474,6 +474,7 @@
   },
   "chat_typeMessage": "Wpisz wiadomość...",
   "chat_messageTooLong": "Wiadomość jest za długa (maksymalnie {maxBytes} bajtów).",
+  "chat_airtimeEstimate": "≈{seconds} s nadawania",
   "@chat_messageTooLong": {
     "placeholders": {
       "maxBytes": {

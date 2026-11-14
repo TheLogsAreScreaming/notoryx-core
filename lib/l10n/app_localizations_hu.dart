@@ -1798,6 +1798,11 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds mp adásidő';
+  }
+
+  @override
   String get chat_messageCopied => 'Üzenet másolva';
 
   @override

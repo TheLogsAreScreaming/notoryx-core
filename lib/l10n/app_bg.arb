@@ -464,6 +464,7 @@
   },
   "chat_typeMessage": "Въведете съобщение...",
   "chat_messageTooLong": "Съобщението е твърде дълго (макс {maxBytes} байта).",
+  "chat_airtimeEstimate": "≈{seconds} с ефирно време",
   "@chat_messageTooLong": {
     "placeholders": {
       "maxBytes": {

@@ -530,6 +530,7 @@
   },
   "chat_typeMessage": "Digita un messaggio...",
   "chat_messageTooLong": "Messaggio troppo lungo (massimo {maxBytes} byte).",
+  "chat_airtimeEstimate": "≈{seconds} s in onda",
   "@chat_messageTooLong": {
     "placeholders": {
       "maxBytes": {

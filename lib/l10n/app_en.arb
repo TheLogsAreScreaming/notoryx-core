@@ -894,6 +894,13 @@
   "chat_location": "Location",
   "chat_typeMessage": "Type a message...",
   "chat_messageTooLong": "Message too long (max {maxBytes} bytes).",
+  "chat_airtimeEstimate": "≈{seconds} s on air",
+  "@chat_airtimeEstimate": {
+    "description": "Estimated radio transmit time for the message being typed, shown beside the byte counter.",
+    "placeholders": {
+      "seconds": {"type": "String"}
+    }
+  },
   "@chat_messageTooLong": {
     "placeholders": {
       "maxBytes": {

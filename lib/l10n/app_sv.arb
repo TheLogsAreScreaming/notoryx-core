@@ -464,6 +464,7 @@
   },
   "chat_typeMessage": "Skriv ett meddelande...",
   "chat_messageTooLong": "Meddelandet är för långt (max {maxBytes} byte).",
+  "chat_airtimeEstimate": "≈{seconds} s sändtid",
   "@chat_messageTooLong": {
     "placeholders": {
       "maxBytes": {

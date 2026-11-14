@@ -654,6 +654,7 @@
   },
   "chat_typeMessage": "メッセージを入力してください…",
   "chat_messageTooLong": "メッセージが長すぎます（{maxBytes} バイトを超えています）",
+  "chat_airtimeEstimate": "送信時間 約{seconds}秒",
   "@chat_messageTooLong": {
     "placeholders": {
       "maxBytes": {

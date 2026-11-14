@@ -636,6 +636,7 @@
   },
   "chat_typeMessage": "메시지를 입력하세요...",
   "chat_messageTooLong": "메시지가 너무 길어서 (최대 {maxBytes} 바이트).",
+  "chat_airtimeEstimate": "송신 시간 약 {seconds}초",
   "@chat_messageTooLong": {
     "placeholders": {
       "maxBytes": {

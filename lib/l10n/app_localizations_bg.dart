@@ -1807,6 +1807,11 @@ class AppLocalizationsBg extends AppLocalizations {
   }
 
   @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds с ефирно време';
+  }
+
+  @override
   String get chat_messageCopied => 'Съобщението е копирано';
 
   @override

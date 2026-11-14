@@ -464,6 +464,7 @@
   },
   "chat_typeMessage": "Vnesi sporočilo...",
   "chat_messageTooLong": "Pošiljanje sporočila je onemogočeno, saj je preveliko (maksimalno {maxBytes} byte-ov).",
+  "chat_airtimeEstimate": "≈{seconds} s oddajanja",
   "@chat_messageTooLong": {
     "placeholders": {
       "maxBytes": {

@@ -59,6 +59,7 @@ import '../widgets/radio_stats_entry.dart';
 import '../widgets/sync_progress_overlay.dart';
 import '../widgets/translated_message_content.dart';
 import '../l10n/l10n.dart';
+import '../helpers/airtime_label.dart';
 import '../helpers/snack_bar_builder.dart';
 import '../widgets/unread_divider.dart';
 import '../theme/mesh_theme.dart';
@@ -770,6 +771,8 @@ class _ChatScreenState extends State<ChatScreen> {
                     }
                     return ByteCountedTextField(
                       maxBytes: maxBytes,
+                      counterSuffix: (bytes) =>
+                          airtimeEstimateLabel(context, connector, bytes),
                       controller: _textController,
                       focusNode: _textFieldFocusNode,
                       hintText: context.l10n.chat_typeMessage,

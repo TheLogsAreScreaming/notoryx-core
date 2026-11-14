@@ -1788,6 +1788,11 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds s vysielania';
+  }
+
+  @override
   String get chat_messageCopied => 'Správa skopírovaná';
 
   @override
