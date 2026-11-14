@@ -13317,4 +13317,14 @@ class AppLocalizationsHu extends AppLocalizations {
   String rf_evVersion(int have, int need) {
     return 'A rádió v$have protokollt jelez; v$need szükséges.';
   }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '$count sérült csempefájl törölve (hiányos vagy nem kép). Töltsd le újra a területet a pótlásukhoz.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Hiányzó zoomszintenként: $list';
+  }
 }

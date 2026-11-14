@@ -5120,5 +5120,7 @@
   "rf_evProbeAnswered": "Radio odpowiedziało na sprawdzenie.",
   "rf_evProbeRejected": "Radio zgłosiło, że tego nie obsługuje.",
   "rf_evDerived": "Wymaga danych kanału i klucza radia.",
-  "rf_evVersion": "Radio zgłasza protokół v{have}; potrzebny v{need}."
+  "rf_evVersion": "Radio zgłasza protokół v{have}; potrzebny v{need}.",
+  "fieldOps_regionDamaged": "Usunięto {count} uszkodzonych plików kafelków (niepełne lub nie są obrazami). Pobierz obszar ponownie, aby je zastąpić.",
+  "fieldOps_regionMissingByZoom": "Brakujące według poziomu powiększenia: {list}"
 }

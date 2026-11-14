@@ -13290,4 +13290,14 @@ class AppLocalizationsSk extends AppLocalizations {
   String rf_evVersion(int have, int need) {
     return 'Rádio hlási protokol v$have; potrebný je v$need.';
   }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return 'Odstránených $count poškodených súborov dlaždíc (neúplné alebo nie sú obrázky). Stiahnite oblasť znova, aby ste ich nahradili.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Chýbajúce podľa úrovne priblíženia: $list';
+  }
 }

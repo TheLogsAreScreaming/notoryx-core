@@ -5216,5 +5216,7 @@
   "rf_evProbeAnswered": "Das Funkgerät hat auf die Prüfung geantwortet.",
   "rf_evProbeRejected": "Das Funkgerät meldet, dass es das nicht unterstützt.",
   "rf_evDerived": "Braucht Kanaldaten und den Schlüssel des Funkgeräts.",
-  "rf_evVersion": "Funkgerät meldet Protokoll v{have}; nötig ist v{need}."
+  "rf_evVersion": "Funkgerät meldet Protokoll v{have}; nötig ist v{need}.",
+  "fieldOps_regionDamaged": "{count} beschädigte Kacheldateien wurden entfernt (abgebrochen oder keine Bilder). Lade das Gebiet erneut herunter, um sie zu ersetzen.",
+  "fieldOps_regionMissingByZoom": "Fehlend je Zoomstufe: {list}"
 }

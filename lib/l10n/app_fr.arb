@@ -5216,5 +5216,7 @@
   "rf_evProbeAnswered": "La radio a répondu à la vérification.",
   "rf_evProbeRejected": "La radio a indiqué ne pas le prendre en charge.",
   "rf_evDerived": "Nécessite les données de canal et la clé de la radio.",
-  "rf_evVersion": "La radio indique le protocole v{have} ; il faut v{need}."
+  "rf_evVersion": "La radio indique le protocole v{have} ; il faut v{need}.",
+  "fieldOps_regionDamaged": "{count} fichiers de tuiles endommagés ont été supprimés (incomplets ou pas des images). Téléchargez à nouveau la zone pour les remplacer.",
+  "fieldOps_regionMissingByZoom": "Manquantes par niveau de zoom : {list}"
 }

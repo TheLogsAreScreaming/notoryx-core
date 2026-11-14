@@ -12729,4 +12729,14 @@ class AppLocalizationsJa extends AppLocalizations {
   String rf_evVersion(int have, int need) {
     return '無線機のプロトコルはv$have、必要なのはv$needです。';
   }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '破損したタイルファイル$count件を削除しました(途中で切れているか画像ではありません)。置き換えるにはエリアを再ダウンロードしてください。';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'ズームレベル別の欠落: $list';
+  }
 }

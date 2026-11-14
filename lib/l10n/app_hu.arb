@@ -5120,5 +5120,7 @@
   "rf_evProbeAnswered": "A rádió válaszolt az ellenőrzésre.",
   "rf_evProbeRejected": "A rádió jelezte, hogy ezt nem támogatja.",
   "rf_evDerived": "Csatornaadatok és a rádió kulcsa szükséges.",
-  "rf_evVersion": "A rádió v{have} protokollt jelez; v{need} szükséges."
+  "rf_evVersion": "A rádió v{have} protokollt jelez; v{need} szükséges.",
+  "fieldOps_regionDamaged": "{count} sérült csempefájl törölve (hiányos vagy nem kép). Töltsd le újra a területet a pótlásukhoz.",
+  "fieldOps_regionMissingByZoom": "Hiányzó zoomszintenként: {list}"
 }

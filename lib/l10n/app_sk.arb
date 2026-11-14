@@ -5082,5 +5082,7 @@
   "rf_evProbeAnswered": "Rádio odpovedalo na overenie.",
   "rf_evProbeRejected": "Rádio oznámilo, že to nepodporuje.",
   "rf_evDerived": "Vyžaduje dáta kanála a kľúč rádia.",
-  "rf_evVersion": "Rádio hlási protokol v{have}; potrebný je v{need}."
+  "rf_evVersion": "Rádio hlási protokol v{have}; potrebný je v{need}.",
+  "fieldOps_regionDamaged": "Odstránených {count} poškodených súborov dlaždíc (neúplné alebo nie sú obrázky). Stiahnite oblasť znova, aby ste ich nahradili.",
+  "fieldOps_regionMissingByZoom": "Chýbajúce podľa úrovne priblíženia: {list}"
 }

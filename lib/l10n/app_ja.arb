@@ -5216,5 +5216,7 @@
   "rf_evProbeAnswered": "無線機が確認に応答しました。",
   "rf_evProbeRejected": "無線機はこれに非対応と応答しました。",
   "rf_evDerived": "チャンネルデータと無線機の鍵が必要です。",
-  "rf_evVersion": "無線機のプロトコルはv{have}、必要なのはv{need}です。"
+  "rf_evVersion": "無線機のプロトコルはv{have}、必要なのはv{need}です。",
+  "fieldOps_regionDamaged": "破損したタイルファイル{count}件を削除しました(途中で切れているか画像ではありません)。置き換えるにはエリアを再ダウンロードしてください。",
+  "fieldOps_regionMissingByZoom": "ズームレベル別の欠落: {list}"
 }

@@ -5087,5 +5087,7 @@
   "rf_evProbeAnswered": "电台已响应检查。",
   "rf_evProbeRejected": "电台表示不支持此功能。",
   "rf_evDerived": "需要频道数据和电台密钥。",
-  "rf_evVersion": "电台报告协议 v{have}；需要 v{need}。"
+  "rf_evVersion": "电台报告协议 v{have}；需要 v{need}。",
+  "fieldOps_regionDamaged": "已删除 {count} 个损坏的瓦片文件(不完整或不是图像)。请重新下载该区域以替换。",
+  "fieldOps_regionMissingByZoom": "按缩放级别缺失:{list}"
 }

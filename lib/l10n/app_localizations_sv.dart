@@ -13231,4 +13231,14 @@ class AppLocalizationsSv extends AppLocalizations {
   String rf_evVersion(int have, int need) {
     return 'Radion anger protokoll v$have; kräver v$need.';
   }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '$count skadade kartrutefiler togs bort (avbrutna eller inte bilder). Ladda ner området igen för att ersätta dem.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Saknas per zoomnivå: $list';
+  }
 }

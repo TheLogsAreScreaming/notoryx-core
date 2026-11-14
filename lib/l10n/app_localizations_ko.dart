@@ -12746,4 +12746,14 @@ class AppLocalizationsKo extends AppLocalizations {
   String rf_evVersion(int have, int need) {
     return '무전기 프로토콜 v$have, 필요 버전 v$need.';
   }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '손상된 타일 파일 $count개를 삭제했습니다(잘렸거나 이미지가 아님). 교체하려면 지역을 다시 다운로드하세요.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return '확대 수준별 누락: $list';
+  }
 }

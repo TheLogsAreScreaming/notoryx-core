@@ -13317,4 +13317,14 @@ class AppLocalizationsSl extends AppLocalizations {
   String rf_evVersion(int have, int need) {
     return 'Radio sporoča protokol v$have; potreben je v$need.';
   }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return 'Odstranjenih je bilo $count poškodovanih datotek ploščic (nepopolne ali niso slike). Znova prenesite območje, da jih nadomestite.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Manjkajoče po ravni povečave: $list';
+  }
 }

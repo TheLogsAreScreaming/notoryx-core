@@ -5216,5 +5216,7 @@
   "rf_evProbeAnswered": "La radio ha risposto alla verifica.",
   "rf_evProbeRejected": "La radio ha indicato che non lo supporta.",
   "rf_evDerived": "Richiede i dati del canale e la chiave della radio.",
-  "rf_evVersion": "La radio indica il protocollo v{have}; serve v{need}."
+  "rf_evVersion": "La radio indica il protocollo v{have}; serve v{need}.",
+  "fieldOps_regionDamaged": "Sono stati rimossi {count} file di tasselli danneggiati (incompleti o non immagini). Scarica di nuovo l'area per sostituirli.",
+  "fieldOps_regionMissingByZoom": "Mancanti per livello di zoom: {list}"
 }

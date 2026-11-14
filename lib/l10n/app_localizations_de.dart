@@ -13350,4 +13350,14 @@ class AppLocalizationsDe extends AppLocalizations {
   String rf_evVersion(int have, int need) {
     return 'Funkgerät meldet Protokoll v$have; nötig ist v$need.';
   }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '$count beschädigte Kacheldateien wurden entfernt (abgebrochen oder keine Bilder). Lade das Gebiet erneut herunter, um sie zu ersetzen.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Fehlend je Zoomstufe: $list';
+  }
 }

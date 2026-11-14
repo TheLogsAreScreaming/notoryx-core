@@ -12489,4 +12489,14 @@ class AppLocalizationsZh extends AppLocalizations {
   String rf_evVersion(int have, int need) {
     return '电台报告协议 v$have；需要 v$need。';
   }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '已删除 $count 个损坏的瓦片文件(不完整或不是图像)。请重新下载该区域以替换。';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return '按缩放级别缺失:$list';
+  }
 }

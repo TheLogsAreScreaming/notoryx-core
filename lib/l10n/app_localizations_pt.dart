@@ -13316,4 +13316,14 @@ class AppLocalizationsPt extends AppLocalizations {
   String rf_evVersion(int have, int need) {
     return 'O rádio indica o protocolo v$have; é necessário v$need.';
   }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return 'Foram removidos $count ficheiros de mosaicos danificados (incompletos ou que não são imagens). Transfira a área novamente para os substituir.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Em falta por nível de zoom: $list';
+  }
 }

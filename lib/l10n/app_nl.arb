@@ -5082,5 +5082,7 @@
   "rf_evProbeAnswered": "De radio heeft op de controle geantwoord.",
   "rf_evProbeRejected": "De radio meldt dat dit niet wordt ondersteund.",
   "rf_evDerived": "Vereist kanaalgegevens en de sleutel van de radio.",
-  "rf_evVersion": "Radio meldt protocol v{have}; nodig is v{need}."
+  "rf_evVersion": "Radio meldt protocol v{have}; nodig is v{need}.",
+  "fieldOps_regionDamaged": "{count} beschadigde tegelbestanden zijn verwijderd (afgebroken of geen afbeelding). Download het gebied opnieuw om ze te vervangen.",
+  "fieldOps_regionMissingByZoom": "Ontbrekend per zoomniveau: {list}"
 }

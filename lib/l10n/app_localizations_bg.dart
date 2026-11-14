@@ -13312,4 +13312,14 @@ class AppLocalizationsBg extends AppLocalizations {
   String rf_evVersion(int have, int need) {
     return 'Радиото съобщава протокол v$have; нужен е v$need.';
   }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '$count повредени файла с плочки бяха премахнати (непълни или не са изображения). Изтеглете района отново, за да ги замените.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Липсващи по ниво на мащаб: $list';
+  }
 }

@@ -5082,5 +5082,7 @@
   "rf_evProbeAnswered": "Radio je odgovoril na preverjanje.",
   "rf_evProbeRejected": "Radio je sporočil, da tega ne podpira.",
   "rf_evDerived": "Potrebuje podatke kanala in ključ radia.",
-  "rf_evVersion": "Radio sporoča protokol v{have}; potreben je v{need}."
+  "rf_evVersion": "Radio sporoča protokol v{have}; potreben je v{need}.",
+  "fieldOps_regionDamaged": "Odstranjenih je bilo {count} poškodovanih datotek ploščic (nepopolne ali niso slike). Znova prenesite območje, da jih nadomestite.",
+  "fieldOps_regionMissingByZoom": "Manjkajoče po ravni povečave: {list}"
 }

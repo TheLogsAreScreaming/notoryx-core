@@ -13286,4 +13286,14 @@ class AppLocalizationsNl extends AppLocalizations {
   String rf_evVersion(int have, int need) {
     return 'Radio meldt protocol v$have; nodig is v$need.';
   }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '$count beschadigde tegelbestanden zijn verwijderd (afgebroken of geen afbeelding). Download het gebied opnieuw om ze te vervangen.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Ontbrekend per zoomniveau: $list';
+  }
 }

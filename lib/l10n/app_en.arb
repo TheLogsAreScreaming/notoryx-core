@@ -6958,5 +6958,9 @@
   "rf_evProbeRejected": "The radio said it doesn't support this.",
   "rf_evDerived": "Needs channel data and the radio's key.",
   "rf_evVersion": "Radio reports protocol v{have}; needs v{need}.",
-  "@rf_evVersion": {"placeholders": {"have": {"type": "int"}, "need": {"type": "int"}}}
+  "@rf_evVersion": {"placeholders": {"have": {"type": "int"}, "need": {"type": "int"}}},
+  "fieldOps_regionDamaged": "{count} damaged tile files were removed (cut short or not images). Download the area again to replace them.",
+  "fieldOps_regionMissingByZoom": "Missing by zoom level: {list}",
+  "@fieldOps_regionDamaged": {"placeholders": {"count": {"type": "int"}}},
+  "@fieldOps_regionMissingByZoom": {"placeholders": {"list": {"type": "String"}}}
 }

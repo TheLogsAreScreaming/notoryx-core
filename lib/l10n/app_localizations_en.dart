@@ -13182,4 +13182,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String rf_evVersion(int have, int need) {
     return 'Radio reports protocol v$have; needs v$need.';
   }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '$count damaged tile files were removed (cut short or not images). Download the area again to replace them.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Missing by zoom level: $list';
+  }
 }

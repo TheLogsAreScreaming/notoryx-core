@@ -22152,6 +22152,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Radio reports protocol v{have}; needs v{need}.'**
   String rf_evVersion(int have, int need);
+
+  /// No description provided for @fieldOps_regionDamaged.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} damaged tile files were removed (cut short or not images). Download the area again to replace them.'**
+  String fieldOps_regionDamaged(int count);
+
+  /// No description provided for @fieldOps_regionMissingByZoom.
+  ///
+  /// In en, this message translates to:
+  /// **'Missing by zoom level: {list}'**
+  String fieldOps_regionMissingByZoom(String list);
 }
 
 class _AppLocalizationsDelegate

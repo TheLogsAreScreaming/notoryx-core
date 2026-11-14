@@ -5082,5 +5082,7 @@
   "rf_evProbeAnswered": "O rádio respondeu à verificação.",
   "rf_evProbeRejected": "O rádio indicou que não suporta isto.",
   "rf_evDerived": "Requer dados do canal e a chave do rádio.",
-  "rf_evVersion": "O rádio indica o protocolo v{have}; é necessário v{need}."
+  "rf_evVersion": "O rádio indica o protocolo v{have}; é necessário v{need}.",
+  "fieldOps_regionDamaged": "Foram removidos {count} ficheiros de mosaicos danificados (incompletos ou que não são imagens). Transfira a área novamente para os substituir.",
+  "fieldOps_regionMissingByZoom": "Em falta por nível de zoom: {list}"
 }

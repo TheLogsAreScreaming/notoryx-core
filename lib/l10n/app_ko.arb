@@ -5216,5 +5216,7 @@
   "rf_evProbeAnswered": "무전기가 확인에 응답했습니다.",
   "rf_evProbeRejected": "무전기가 이 기능을 지원하지 않는다고 응답했습니다.",
   "rf_evDerived": "채널 데이터와 무전기 키가 필요합니다.",
-  "rf_evVersion": "무전기 프로토콜 v{have}, 필요 버전 v{need}."
+  "rf_evVersion": "무전기 프로토콜 v{have}, 필요 버전 v{need}.",
+  "fieldOps_regionDamaged": "손상된 타일 파일 {count}개를 삭제했습니다(잘렸거나 이미지가 아님). 교체하려면 지역을 다시 다운로드하세요.",
+  "fieldOps_regionMissingByZoom": "확대 수준별 누락: {list}"
 }

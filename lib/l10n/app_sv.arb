@@ -5082,5 +5082,7 @@
   "rf_evProbeAnswered": "Radion svarade på kontrollen.",
   "rf_evProbeRejected": "Radion svarade att den inte stöder detta.",
   "rf_evDerived": "Kräver kanaldata och radions nyckel.",
-  "rf_evVersion": "Radion anger protokoll v{have}; kräver v{need}."
+  "rf_evVersion": "Radion anger protokoll v{have}; kräver v{need}.",
+  "fieldOps_regionDamaged": "{count} skadade kartrutefiler togs bort (avbrutna eller inte bilder). Ladda ner området igen för att ersätta dem.",
+  "fieldOps_regionMissingByZoom": "Saknas per zoomnivå: {list}"
 }

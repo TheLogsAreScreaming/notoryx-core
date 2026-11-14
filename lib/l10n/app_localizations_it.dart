@@ -13346,4 +13346,14 @@ class AppLocalizationsIt extends AppLocalizations {
   String rf_evVersion(int have, int need) {
     return 'La radio indica il protocollo v$have; serve v$need.';
   }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return 'Sono stati rimossi $count file di tasselli danneggiati (incompleti o non immagini). Scarica di nuovo l\'area per sostituirli.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Mancanti per livello di zoom: $list';
+  }
 }

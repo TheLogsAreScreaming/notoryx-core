@@ -13359,4 +13359,14 @@ class AppLocalizationsUk extends AppLocalizations {
   String rf_evVersion(int have, int need) {
     return 'Радіо повідомляє протокол v$have; потрібен v$need.';
   }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return 'Видалено пошкоджених файлів плиток: $count (обрізані або не зображення). Завантажте область знову, щоб замінити їх.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Бракує за рівнем масштабу: $list';
+  }
 }
