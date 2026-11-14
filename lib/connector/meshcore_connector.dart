@@ -243,12 +243,6 @@ class MeshCoreConnector extends ChangeNotifier {
   ImageChunkTransport? _imageTransport;
   void Function(ImageChunkOutcome outcome)? _onImageChunk;
   void Function(int senderPrefix)? _onImageSenderPrefix;
-  // Intentionally global (not per-contact): tracks overall network activity.
-  // Frequent RX from any source indicates a busy network with more collisions.
-  DateTime _lastRxTime = DateTime.now();
-  // Snapshot of _lastRxTime taken before the ACK frame updates it, so that
-  // onDeliveryObserved records the pre-ACK elapsed time (matching prediction).
-  DateTime _lastRxBeforeFrame = DateTime.fromMillisecondsSinceEpoch(0);
   DateTime _lastRadioRxTime = DateTime.fromMillisecondsSinceEpoch(0);
   DateTime _lastContactMsgRxTime = DateTime.fromMillisecondsSinceEpoch(0);
   DateTime _lastChannelMsgRxTime = DateTime.fromMillisecondsSinceEpoch(0);
@@ -1300,15 +1294,11 @@ class MeshCoreConnector extends ChangeNotifier {
                   recentSelections: recentSelections,
                 ),
         onDeliveryObserved: (contactKey, pathLength, messageBytes, tripTimeMs) {
-          final secSinceRx = DateTime.now()
-              .difference(_lastRxBeforeFrame)
-              .inSeconds;
           _timeoutPredictionService?.recordObservation(
             contactKey: contactKey,
             pathLength: pathLength,
             messageBytes: messageBytes,
             tripTimeMs: tripTimeMs,
-            secondsSinceLastRx: secSinceRx,
           );
         },
       ),
@@ -3935,12 +3925,10 @@ class MeshCoreConnector extends ChangeNotifier {
     final physicsMax = _physicsMaxTimeout(pathLength, airtime);
 
     // Try ML-based prediction
-    final secSinceRx = DateTime.now().difference(_lastRxTime).inSeconds;
     final mlTimeout = _timeoutPredictionService?.predictTimeout(
       contactKey: contactKey,
       pathLength: pathLength,
       messageBytes: messageBytes,
-      secondsSinceLastRx: secSinceRx,
     );
     if (mlTimeout != null) {
       // Use device est_timeout as a baseline floor when available —
@@ -4710,86 +4698,6 @@ class MeshCoreConnector extends ChangeNotifier {
     _unreadStore.flush();
 
     super.dispose();
-  }
-
-  void importContact(Uint8List frame) {
-    final packet = BufferReader(frame);
-    int payloadType = 0;
-    Uint8List pathBytes = Uint8List(0);
-    int pathHashWidth = 1;
-    try {
-      packet.skipBytes(1); // Skip frame type byte
-      packet.skipBytes(1); // Skip SNR byte
-      packet.skipBytes(1); // Skip RSSI byte
-      final header = packet.readByte();
-      final routeType = header & 0x03;
-      payloadType = (header >> 2) & 0x0F;
-      if (routeType == _routeTransportFlood ||
-          routeType == _routeTransportDirect) {
-        packet.skipBytes(4); // Skip transport-specific bytes
-      }
-      //final payloadVer = (header >> 6) & 0x03;
-      final pathLenRaw = packet.readByte();
-      final pathByteLen = _decodePathByteLen(pathLenRaw);
-      pathHashWidth = _decodePathHashWidth(pathLenRaw);
-      pathBytes = packet.readBytes(pathByteLen);
-    } catch (e) {
-      appLogger.warn('Malformed RX frame: $e', tag: 'Connector');
-      return;
-    }
-    double? latitude;
-    double? longitude;
-    String name = '';
-    Uint8List publicKey = Uint8List(0);
-    int type = 0;
-    int timestamp = 0;
-    bool hasLocation = false;
-    bool hasName = false;
-    if (payloadType != payloadTypeADVERT) {
-      appLogger.warn('Unexpected payload type: $payloadType', tag: 'Connector');
-      return;
-    }
-    try {
-      publicKey = packet.readBytes(32);
-      timestamp = packet.readInt32LE();
-      //TODO add signature verification
-      packet.skipBytes(64); // Skip signature for now
-      final flags = packet.readByte();
-      type = flags & 0x0F;
-      hasLocation = (flags & 0x10) != 0;
-      // For future use:
-      //final hasFeature1 = (flags & 0x20) != 0;
-      //final hasFeature2 = (flags & 0x40) != 0;
-      hasName = (flags & 0x80) != 0;
-      if (hasLocation && packet.remaining >= 8) {
-        latitude = packet.readInt32LE() / 1e6;
-        longitude = packet.readInt32LE() / 1e6;
-      }
-      if (hasName && packet.remaining > 0) {
-        name = packet.readCString();
-      }
-    } catch (e) {
-      appLogger.warn('Malformed advert frame: $e', tag: 'Connector');
-      return;
-    }
-
-    importDiscoveredContact(
-      Contact(
-        rawPacket: frame,
-        publicKey: publicKey,
-        name: name,
-        type: type,
-        pathLength: pathBytes.isEmpty
-            ? -1
-            : (pathBytes.length ~/ pathHashWidth),
-        // Store hop order reversed for easier outgoing messages; keep bytes
-        // inside each multi-byte hop in their original order.
-        path: _reversePathByHop(pathBytes, pathHashWidth),
-        latitude: latitude,
-        longitude: longitude,
-        lastSeen: DateTime.fromMillisecondsSinceEpoch(timestamp * 1000),
-      ),
-    );
   }
 
   bool hasValidLocation(double? latitude, double? longitude) {

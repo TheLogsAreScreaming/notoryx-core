@@ -61,7 +61,6 @@ class TimeoutPredictionService extends ChangeNotifier {
     required int pathLength,
     required int messageBytes,
     required int tripTimeMs,
-    int secondsSinceLastRx = 0,
   }) {
     final isFlood = pathLength < 0;
     final observation = DeliveryObservation(
@@ -70,7 +69,6 @@ class TimeoutPredictionService extends ChangeNotifier {
       // only; isFlood carries the flood signal as a separate feature.
       pathLength: isFlood ? 0 : pathLength,
       messageBytes: messageBytes,
-      secondsSinceLastRx: secondsSinceLastRx,
       isFlood: isFlood,
       deliveryMs: tripTimeMs,
       timestamp: DateTime.now(),
@@ -105,7 +103,6 @@ class TimeoutPredictionService extends ChangeNotifier {
     String? contactKey,
     required int pathLength,
     required int messageBytes,
-    int secondsSinceLastRx = 0,
   }) {
     if (_model == null) return null;
 
@@ -118,7 +115,6 @@ class TimeoutPredictionService extends ChangeNotifier {
         // prediction see the same pathLength values; isFlood carries the signal.
         'pathLength': flood ? 0.0 : pathLength.toDouble(),
         'messageBytes': messageBytes.toDouble(),
-        'secSinceRx': secondsSinceLastRx.toDouble(),
         'isFlood': flood ? 1.0 : 0.0,
       };
       final row = _activeFeatures.map((f) => allFeatures[f]!).toList();
@@ -169,13 +165,12 @@ class TimeoutPredictionService extends ChangeNotifier {
     try {
       // Build feature columns, then exclude any with zero variance
       // (ml_algo's OLS produces all-zero coefficients for singular matrices)
-      final allNames = ['pathLength', 'messageBytes', 'secSinceRx', 'isFlood'];
+      final allNames = ['pathLength', 'messageBytes', 'isFlood'];
       final allExtractors = <double Function(DeliveryObservation)>[
         // pathLength is already clamped to >=0 in recordObservation, but guard
         // here as well for any observations loaded from older persisted data.
         (o) => o.pathLength < 0 ? 0.0 : o.pathLength.toDouble(),
         (o) => o.messageBytes.toDouble(),
-        (o) => o.secondsSinceLastRx.toDouble(),
         (o) => o.isFlood ? 1.0 : 0.0,
       ];
 
