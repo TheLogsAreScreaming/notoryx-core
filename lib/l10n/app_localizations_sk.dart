@@ -13230,6 +13230,10 @@ class AppLocalizationsSk extends AppLocalizations {
   String get hopTie_more => 'Viac';
 
   @override
+  String get bk_rolledBack =>
+      'Obnovenie zlyhalo, preto sa všetky nastavenia vrátili do pôvodného stavu. Nič sa nezmenilo.';
+
+  @override
   String get rf_title => 'Funkcie rádia';
 
   @override

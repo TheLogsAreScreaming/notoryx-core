@@ -5198,6 +5198,7 @@
   "hopTie_forget": "Dimentica le scelte ricordate ({count})",
   "hopTie_less": "Meno",
   "hopTie_more": "Più",
+  "bk_rolledBack": "Il ripristino non è riuscito, quindi tutte le impostazioni sono tornate com'erano. Non è cambiato nulla.",
   "rf_title": "Funzioni della radio",
   "rf_radioStats": "Statistiche radio in tempo reale",
   "rf_textCli": "Riga di comando testuale",

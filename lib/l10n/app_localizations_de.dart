@@ -13287,6 +13287,10 @@ class AppLocalizationsDe extends AppLocalizations {
   String get hopTie_more => 'Mehr';
 
   @override
+  String get bk_rolledBack =>
+      'Wiederherstellen ist fehlgeschlagen, daher wurden alle Einstellungen zurückgesetzt. Nichts wurde geändert.';
+
+  @override
   String get rf_title => 'Funkgerät-Funktionen';
 
   @override

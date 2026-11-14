@@ -5198,6 +5198,7 @@
   "hopTie_forget": "記憶した選択を消去（{count}）",
   "hopTie_less": "減らす",
   "hopTie_more": "増やす",
+  "bk_rolledBack": "復元に失敗したため、すべての設定を元に戻しました。何も変更されていません。",
   "rf_title": "無線機の機能",
   "rf_radioStats": "ライブ無線統計",
   "rf_textCli": "テキストコマンドライン",

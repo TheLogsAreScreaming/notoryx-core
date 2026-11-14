@@ -13285,6 +13285,10 @@ class AppLocalizationsIt extends AppLocalizations {
   String get hopTie_more => 'Più';
 
   @override
+  String get bk_rolledBack =>
+      'Il ripristino non è riuscito, quindi tutte le impostazioni sono tornate com\'erano. Non è cambiato nulla.';
+
+  @override
   String get rf_title => 'Funzioni della radio';
 
   @override

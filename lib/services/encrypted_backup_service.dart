@@ -12,6 +12,14 @@ class BackupTooLargeException implements Exception {
   const BackupTooLargeException();
 }
 
+/// A settings restore failed and every setting was put back as it was.
+class RestoreRolledBackException implements Exception {
+  const RestoreRolledBackException(this.cause);
+  final Object cause;
+  @override
+  String toString() => 'Restore rolled back: $cause';
+}
+
 /// Portable authenticated backup. Never sends settings to a server or radio.
 class EncryptedBackupService {
   static const _iterations = 310000;
@@ -117,39 +125,114 @@ class EncryptedBackupService {
   /// restored by [restoreHistory].
   static bool isRestorable(String key) =>
       key != HistoryBackup.key &&
+      key != journalKey &&
       key != MessageDb.encryptPrefKey &&
       key != 'app_lock_enabled' &&
       !key.startsWith('messages_') &&
       !key.startsWith('channel_messages');
 
+  /// Holds the settings as they were before a restore, until it finishes.
+  /// Kept in the encrypted store, because it can hold contacts and keys.
+  static const journalKey = 'restore_journal_v1';
+
   /// Writes [values] back and returns how many were restored. Settings not
   /// in the backup are left alone. The app must restart to use them.
+  ///
+  /// All or nothing: the current value of every setting it will touch is
+  /// saved first. If any write fails, they are all put back and
+  /// [RestoreRolledBackException] is thrown. If the app stops part way,
+  /// [recoverInterruptedRestore] puts them back at the next start.
   Future<int> restore(Map<String, Object> values) async {
     _validate(values);
-    final prefs = PrefsManager.instance;
-    var restored = 0;
-    for (final entry in values.entries) {
-      final key = entry.key;
-      if (!isRestorable(key)) continue;
-      switch (entry.value) {
-        case final String v when SecurePrefs.isSensitive(key):
-          await SecurePrefs.setString(key, v);
-        case final String v:
-          await prefs.setString(key, v);
-        case final bool v:
-          await prefs.setBool(key, v);
-        case final int v:
-          await prefs.setInt(key, v);
-        case final double v:
-          await prefs.setDouble(key, v);
-        case final List<dynamic> v:
-          await prefs.setStringList(key, v.cast<String>());
-        default:
-          continue;
+    final writes = {
+      for (final e in values.entries)
+        if (isRestorable(e.key)) e.key: e.value,
+    };
+    final before = <String, Object?>{
+      for (final key in writes.keys) key: _current(key),
+    };
+    await SecurePrefs.setString(journalKey, jsonEncode(before));
+    try {
+      for (final entry in writes.entries) {
+        await _write(entry.key, entry.value);
       }
-      restored++;
+    } catch (e) {
+      await _rollBack(before);
+      throw RestoreRolledBackException(e);
     }
-    return restored;
+    await SecurePrefs.remove(journalKey);
+    return writes.length;
+  }
+
+  /// Puts settings back after a restore the app didn't finish. Call once
+  /// at startup, after [SecurePrefs.initialize]. Returns whether anything
+  /// was put back.
+  static Future<bool> recoverInterruptedRestore() async {
+    final String? raw;
+    try {
+      raw = SecurePrefs.getString(journalKey);
+    } on StateError {
+      return false;
+    }
+    if (raw == null) return false;
+    try {
+      final before = (jsonDecode(raw) as Map<String, dynamic>)
+          .cast<String, Object?>();
+      await _rollBack(before);
+      return true;
+    } on FormatException {
+      // Unreadable journal: nothing safe to put back.
+      await SecurePrefs.remove(journalKey);
+      return false;
+    }
+  }
+
+  static Object? _current(String key) {
+    if (SecurePrefs.isSensitive(key)) return SecurePrefs.getString(key);
+    return PrefsManager.instance.get(key);
+  }
+
+  static Future<void> _write(String key, Object value) async {
+    final prefs = PrefsManager.instance;
+    switch (value) {
+      case final String v when SecurePrefs.isSensitive(key):
+        await SecurePrefs.setString(key, v);
+      case final String v:
+        await prefs.setString(key, v);
+      case final bool v:
+        await prefs.setBool(key, v);
+      case final int v:
+        await prefs.setInt(key, v);
+      case final double v:
+        await prefs.setDouble(key, v);
+      case final List<dynamic> v:
+        await prefs.setStringList(key, v.cast<String>());
+    }
+  }
+
+  /// Writes every saved value back (removing settings that didn't exist),
+  /// then drops the journal. Keeps going past single failures so as much
+  /// as possible is put back; the journal stays if anything failed, so the
+  /// next start tries again.
+  static Future<void> _rollBack(Map<String, Object?> before) async {
+    var failed = false;
+    for (final entry in before.entries) {
+      try {
+        final value = entry.value;
+        if (value == null) {
+          if (SecurePrefs.isSensitive(entry.key)) {
+            await SecurePrefs.remove(entry.key);
+          } else {
+            await PrefsManager.instance.remove(entry.key);
+          }
+        } else {
+          await _write(entry.key, value);
+        }
+      } catch (_) {
+        failed = true;
+      }
+    }
+    if (!failed) await SecurePrefs.remove(journalKey);
   }
 
   Map<String, Object> snapshot({required bool includeChats}) {

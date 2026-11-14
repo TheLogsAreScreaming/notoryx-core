@@ -5064,6 +5064,7 @@
   "hopTie_forget": "Esquecer escolhas lembradas ({count})",
   "hopTie_less": "Menos",
   "hopTie_more": "Mais",
+  "bk_rolledBack": "A restauração falhou, por isso todas as definições voltaram ao que eram. Nada mudou.",
   "rf_title": "Funções do rádio",
   "rf_radioStats": "Estatísticas do rádio ao vivo",
   "rf_textCli": "Linha de comandos de texto",

@@ -5198,6 +5198,7 @@
   "hopTie_forget": "Gemerkte Wahl vergessen ({count})",
   "hopTie_less": "Weniger",
   "hopTie_more": "Mehr",
+  "bk_rolledBack": "Wiederherstellen ist fehlgeschlagen, daher wurden alle Einstellungen zurückgesetzt. Nichts wurde geändert.",
   "rf_title": "Funkgerät-Funktionen",
   "rf_radioStats": "Live-Funkstatistik",
   "rf_textCli": "Textbefehlszeile",

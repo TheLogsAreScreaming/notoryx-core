@@ -12671,6 +12671,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get hopTie_more => '増やす';
 
   @override
+  String get bk_rolledBack => '復元に失敗したため、すべての設定を元に戻しました。何も変更されていません。';
+
+  @override
   String get rf_title => '無線機の機能';
 
   @override

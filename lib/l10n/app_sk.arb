@@ -5064,6 +5064,7 @@
   "hopTie_forget": "Zabudnúť zapamätané výbery ({count})",
   "hopTie_less": "Menej",
   "hopTie_more": "Viac",
+  "bk_rolledBack": "Obnovenie zlyhalo, preto sa všetky nastavenia vrátili do pôvodného stavu. Nič sa nezmenilo.",
   "rf_title": "Funkcie rádia",
   "rf_radioStats": "Živé štatistiky rádia",
   "rf_textCli": "Textový príkazový riadok",

@@ -5198,6 +5198,7 @@
   "hopTie_forget": "Oublier les choix retenus ({count})",
   "hopTie_less": "Moins",
   "hopTie_more": "Plus",
+  "bk_rolledBack": "La restauration a échoué, tous les réglages ont donc été remis comme avant. Rien n'a changé.",
   "rf_title": "Fonctions de la radio",
   "rf_radioStats": "Statistiques radio en direct",
   "rf_textCli": "Ligne de commande texte",

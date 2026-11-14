@@ -22039,6 +22039,12 @@ abstract class AppLocalizations {
   /// **'More'**
   String get hopTie_more;
 
+  /// No description provided for @bk_rolledBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore failed, so every setting was put back as it was. Nothing changed.'**
+  String get bk_rolledBack;
+
   /// No description provided for @rf_title.
   ///
   /// In en, this message translates to:

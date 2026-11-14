@@ -13171,6 +13171,10 @@ class AppLocalizationsSv extends AppLocalizations {
   String get hopTie_more => 'Mer';
 
   @override
+  String get bk_rolledBack =>
+      'Återställningen misslyckades, så alla inställningar sattes tillbaka som de var. Inget ändrades.';
+
+  @override
   String get rf_title => 'Radiofunktioner';
 
   @override

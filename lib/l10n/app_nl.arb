@@ -5064,6 +5064,7 @@
   "hopTie_forget": "Onthouden keuzes vergeten ({count})",
   "hopTie_less": "Minder",
   "hopTie_more": "Meer",
+  "bk_rolledBack": "Herstellen is mislukt, dus alle instellingen zijn teruggezet zoals ze waren. Er is niets veranderd.",
   "rf_title": "Radiofuncties",
   "rf_radioStats": "Live radiostatistieken",
   "rf_textCli": "Tekstopdrachtregel",

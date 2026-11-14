@@ -5064,6 +5064,7 @@
   "hopTie_forget": "Pozabi zapomnjene izbire ({count})",
   "hopTie_less": "Manj",
   "hopTie_more": "Več",
+  "bk_rolledBack": "Obnovitev ni uspela, zato so bile vse nastavitve vrnjene, kot so bile. Nič se ni spremenilo.",
   "rf_title": "Funkcije radia",
   "rf_radioStats": "Statistika radia v živo",
   "rf_textCli": "Besedilna ukazna vrstica",

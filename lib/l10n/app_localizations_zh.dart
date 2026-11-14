@@ -12432,6 +12432,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get hopTie_more => '增加';
 
   @override
+  String get bk_rolledBack => '恢复失败，所有设置已还原为原样。没有任何更改。';
+
+  @override
   String get rf_title => '电台功能';
 
   @override

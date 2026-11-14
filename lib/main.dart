@@ -87,6 +87,7 @@ import 'services/rx_log_service.dart';
 import 'services/wardrive_service.dart';
 import 'services/timeline_service.dart';
 import 'services/track_log_service.dart';
+import 'services/encrypted_backup_service.dart';
 import 'services/position_watch_service.dart';
 import 'screens/zone_alerts_screen.dart';
 import 'services/weather_service.dart';
@@ -98,6 +99,8 @@ void main() async {
   }
   await PrefsManager.initialize();
   await SecurePrefs.initialize();
+  // A settings restore the app didn't finish is undone, not left half-way.
+  await EncryptedBackupService.recoverInterruptedRestore();
   final storage = StorageService();
   final connector = MeshCoreConnector();
   // Assigned once the shared services exist; see below.

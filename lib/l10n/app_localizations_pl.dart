@@ -13300,6 +13300,10 @@ class AppLocalizationsPl extends AppLocalizations {
   String get hopTie_more => 'Więcej';
 
   @override
+  String get bk_rolledBack =>
+      'Przywracanie nie powiodło się, więc wszystkie ustawienia wróciły do poprzedniego stanu. Nic się nie zmieniło.';
+
+  @override
   String get rf_title => 'Funkcje radia';
 
   @override

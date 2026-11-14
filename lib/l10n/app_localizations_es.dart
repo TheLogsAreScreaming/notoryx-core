@@ -13280,6 +13280,10 @@ class AppLocalizationsEs extends AppLocalizations {
   String get hopTie_more => 'Más';
 
   @override
+  String get bk_rolledBack =>
+      'La restauración falló, así que todos los ajustes volvieron a como estaban. No cambió nada.';
+
+  @override
   String get rf_title => 'Funciones de la radio';
 
   @override

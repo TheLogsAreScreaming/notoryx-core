@@ -6939,6 +6939,7 @@
   },
   "hopTie_less": "Less",
   "hopTie_more": "More",
+  "bk_rolledBack": "Restore failed, so every setting was put back as it was. Nothing changed.",
   "rf_title": "Radio features",
   "rf_radioStats": "Live radio stats",
   "rf_textCli": "Text command line",

@@ -13300,6 +13300,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get hopTie_more => 'Больше';
 
   @override
+  String get bk_rolledBack =>
+      'Восстановление не удалось, поэтому все настройки возвращены как были. Ничего не изменилось.';
+
+  @override
   String get rf_title => 'Функции радио';
 
   @override

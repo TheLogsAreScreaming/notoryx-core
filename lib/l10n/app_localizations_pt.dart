@@ -13255,6 +13255,10 @@ class AppLocalizationsPt extends AppLocalizations {
   String get hopTie_more => 'Mais';
 
   @override
+  String get bk_rolledBack =>
+      'A restauração falhou, por isso todas as definições voltaram ao que eram. Nada mudou.';
+
+  @override
   String get rf_title => 'Funções do rádio';
 
   @override
