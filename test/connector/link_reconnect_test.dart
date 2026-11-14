@@ -4,6 +4,7 @@ import 'package:fake_async/fake_async.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:meshcore_open/connector/meshcore_connector.dart';
 import 'package:meshcore_open/storage/prefs_manager.dart';
+import 'package:meshcore_open/utils/disconnect_navigation_mixin.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
@@ -124,6 +125,45 @@ void main() {
     expect(const TcpLinkTarget('a', 1) == const TcpLinkTarget('a', 2), isFalse);
     expect(
       const UsbLinkTarget('p', 9600) == const UsbLinkTarget('p', 115200),
+      isFalse,
+    );
+  });
+
+  test('chats may stay open while a dropped link is being recovered', () {
+    fakeAsync((async) {
+      connector.debugRememberLink(const TcpLinkTarget('radio.local', 5000));
+      drop(async);
+      expect(connector.isRecoveringLink, isTrue);
+      expect(
+        shouldLeaveForDisconnect(
+          connected: connector.isConnected,
+          recoveringLink: connector.isRecoveringLink,
+        ),
+        isFalse,
+      );
+
+      // A manual disconnect ends recovery, so the screens close.
+      unawaited(connector.disconnect());
+      async.flushMicrotasks();
+      expect(connector.isRecoveringLink, isFalse);
+      expect(
+        shouldLeaveForDisconnect(
+          connected: connector.isConnected,
+          recoveringLink: connector.isRecoveringLink,
+        ),
+        isTrue,
+      );
+    });
+  });
+
+  test('screens leave when no radio is being recovered', () {
+    expect(connector.isRecoveringLink, isFalse);
+    expect(
+      shouldLeaveForDisconnect(connected: false, recoveringLink: false),
+      isTrue,
+    );
+    expect(
+      shouldLeaveForDisconnect(connected: true, recoveringLink: false),
       isFalse,
     );
   });

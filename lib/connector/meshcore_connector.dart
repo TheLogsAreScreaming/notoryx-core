@@ -428,6 +428,10 @@ class MeshCoreConnector extends ChangeNotifier {
   bool get isAutoReconnectScheduled =>
       _shouldAutoReconnect && (_reconnectTimer?.isActive ?? false);
 
+  /// The link dropped and Core is getting it back by itself (waiting to retry
+  /// or retrying). Chats stay open meanwhile, so messages can be queued.
+  bool get isRecoveringLink => !isConnected && _shouldAutoReconnect;
+
   /// Whether the Bluetooth adapter is known to be off (or turning off).
   /// False while the adapter state is unknown, e.g. on web or before the
   /// first platform report.
