@@ -1,0 +1,3 @@
+• The radio stays connected when you press Back on Home
+• Routes are learned from the delivery reply that matches each attempt
+• An SOS still running when the app closed resumes when it reopens
