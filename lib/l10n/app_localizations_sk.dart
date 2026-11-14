@@ -13232,4 +13232,133 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Obnovenie zlyhalo, preto sa všetky nastavenia vrátili do pôvodného stavu. Nič sa nezmenilo.';
+
+  @override
+  String get outbox_maybeSent =>
+      'Odosielanie bolo prerušené, takže správa už možno odišla. Vrátila sa do poľa správy: skontrolujte to pred opätovným odoslaním.';
+
+  @override
+  String get outbox_tooLong =>
+      'Príliš dlhé pre rádio, preto sa vrátilo do poľa správy na skrátenie.';
+
+  @override
+  String get rf_title => 'Funkcie rádia';
+
+  @override
+  String get rf_radioStats => 'Živé štatistiky rádia';
+
+  @override
+  String get rf_textCli => 'Textový príkazový riadok';
+
+  @override
+  String get rf_channelData => 'Dáta kanála';
+
+  @override
+  String get rf_signedPosts => 'Podpísané príspevky v kanáli';
+
+  @override
+  String get rf_rawPackets => 'Surové pakety';
+
+  @override
+  String get rf_floodCorridor => 'Záplavový koridor (vlastný firmvér)';
+
+  @override
+  String get rf_supported => 'Podporované';
+
+  @override
+  String get rf_unsupported => 'Nepodporované';
+
+  @override
+  String get rf_unknown => 'Neznáme';
+
+  @override
+  String get rf_evNotConnected => 'Pripojte rádio na overenie.';
+
+  @override
+  String get rf_evNotChecked => 'Ešte neoverené.';
+
+  @override
+  String get rf_evProbeAnswered => 'Rádio odpovedalo na overenie.';
+
+  @override
+  String get rf_evProbeRejected => 'Rádio oznámilo, že to nepodporuje.';
+
+  @override
+  String get rf_evDerived => 'Vyžaduje dáta kanála a kľúč rádia.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return 'Rádio hlási protokol v$have; potrebný je v$need.';
+  }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return 'Odstránených $count poškodených súborov dlaždíc (neúplné alebo nie sú obrázky). Stiahnite oblasť znova, aby ste ich nahradili.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Chýbajúce podľa úrovne priblíženia: $list';
+  }
+
+  @override
+  String batteryWatch_basis(int count, String days, String confidence) {
+    return 'Na základe $count meraní za $days dní: $confidence.';
+  }
+
+  @override
+  String get batteryWatch_confGood => 'jasný trend';
+
+  @override
+  String get batteryWatch_confLow =>
+      'príliš málo alebo príliš rozptýlené na istotu';
+
+  @override
+  String get batteryWatch_maybeFalling =>
+      'Možno klesá, ale ešte nie je dosť meraní.';
+
+  @override
+  String batteryWatch_gap(String days) {
+    return 'Najdlhšia medzera bez merania: $days dní.';
+  }
+
+  @override
+  String get ml_title => 'Mapa ako zoznam';
+
+  @override
+  String get ml_intro =>
+      'Všetko z mapy slovami, najbližšie najprv. Vzdialenosti sú vzdušnou čiarou od vášho rádia. Trasa je cesta správ cez rádio, nie chodník v teréne.';
+
+  @override
+  String get ml_nodes => 'Uzly';
+
+  @override
+  String get ml_waypoints => 'Body trasy';
+
+  @override
+  String get ml_none => 'Žiadne';
+
+  @override
+  String get ml_noOwnPosition => 'Vzdialenosť neznáma: vaše rádio nemá polohu';
+
+  @override
+  String ml_heard(String ago) {
+    return 'počutý $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': 'sever',
+      'ne': 'severovýchod',
+      'e': 'východ',
+      'se': 'juhovýchod',
+      's': 'juh',
+      'sw': 'juhozápad',
+      'w': 'západ',
+      'nw': 'severozápad',
+      'other': '',
+    });
+    return '$distance, smer: $_temp0';
+  }
 }

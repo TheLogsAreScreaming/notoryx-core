@@ -13289,4 +13289,137 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Wiederherstellen ist fehlgeschlagen, daher wurden alle Einstellungen zurückgesetzt. Nichts wurde geändert.';
+
+  @override
+  String get outbox_maybeSent =>
+      'Das Senden wurde unterbrochen, die Nachricht ist also vielleicht schon raus. Sie steht wieder im Eingabefeld: Prüfe das, bevor du sie erneut sendest.';
+
+  @override
+  String get outbox_tooLong =>
+      'Zu lang für das Funkgerät, daher wieder im Eingabefeld zum Kürzen.';
+
+  @override
+  String get rf_title => 'Funkgerät-Funktionen';
+
+  @override
+  String get rf_radioStats => 'Live-Funkstatistik';
+
+  @override
+  String get rf_textCli => 'Textbefehlszeile';
+
+  @override
+  String get rf_channelData => 'Kanaldaten';
+
+  @override
+  String get rf_signedPosts => 'Signierte Kanalbeiträge';
+
+  @override
+  String get rf_rawPackets => 'Rohpakete';
+
+  @override
+  String get rf_floodCorridor => 'Flood-Korridor (eigene Firmware)';
+
+  @override
+  String get rf_supported => 'Unterstützt';
+
+  @override
+  String get rf_unsupported => 'Nicht unterstützt';
+
+  @override
+  String get rf_unknown => 'Unbekannt';
+
+  @override
+  String get rf_evNotConnected => 'Verbinde ein Funkgerät, um das zu prüfen.';
+
+  @override
+  String get rf_evNotChecked => 'Noch nicht geprüft.';
+
+  @override
+  String get rf_evProbeAnswered =>
+      'Das Funkgerät hat auf die Prüfung geantwortet.';
+
+  @override
+  String get rf_evProbeRejected =>
+      'Das Funkgerät meldet, dass es das nicht unterstützt.';
+
+  @override
+  String get rf_evDerived =>
+      'Braucht Kanaldaten und den Schlüssel des Funkgeräts.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return 'Funkgerät meldet Protokoll v$have; nötig ist v$need.';
+  }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '$count beschädigte Kacheldateien wurden entfernt (abgebrochen oder keine Bilder). Lade das Gebiet erneut herunter, um sie zu ersetzen.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Fehlend je Zoomstufe: $list';
+  }
+
+  @override
+  String batteryWatch_basis(int count, String days, String confidence) {
+    return 'Basierend auf $count Messungen über $days Tage: $confidence.';
+  }
+
+  @override
+  String get batteryWatch_confGood => 'ein klarer Trend';
+
+  @override
+  String get batteryWatch_confLow =>
+      'zu wenige oder zu verstreut, um sicher zu sein';
+
+  @override
+  String get batteryWatch_maybeFalling =>
+      'Könnte fallen, aber es gibt noch zu wenige Messungen.';
+
+  @override
+  String batteryWatch_gap(String days) {
+    return 'Längste Lücke ohne Messung: $days Tage.';
+  }
+
+  @override
+  String get ml_title => 'Karte als Liste';
+
+  @override
+  String get ml_intro =>
+      'Alles auf der Karte in Worten, das Nächste zuerst. Entfernungen gelten in Luftlinie ab deinem Funkgerät. Eine Route ist der Funkweg der Nachrichten, kein Weg im Gelände.';
+
+  @override
+  String get ml_nodes => 'Knoten';
+
+  @override
+  String get ml_waypoints => 'Wegpunkte';
+
+  @override
+  String get ml_none => 'Keine';
+
+  @override
+  String get ml_noOwnPosition =>
+      'Entfernung unbekannt: dein Funkgerät hat keine Position';
+
+  @override
+  String ml_heard(String ago) {
+    return 'gehört $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': 'Norden',
+      'ne': 'Nordosten',
+      'e': 'Osten',
+      'se': 'Südosten',
+      's': 'Süden',
+      'sw': 'Südwesten',
+      'w': 'Westen',
+      'nw': 'Nordwesten',
+      'other': '',
+    });
+    return '$distance Richtung $_temp0';
+  }
 }

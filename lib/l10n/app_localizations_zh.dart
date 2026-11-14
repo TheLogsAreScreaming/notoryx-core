@@ -12433,4 +12433,129 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get bk_rolledBack => '恢复失败，所有设置已还原为原样。没有任何更改。';
+
+  @override
+  String get outbox_maybeSent => '发送被中断，此消息可能已经发出。它已放回输入框：再次发送前请先确认。';
+
+  @override
+  String get outbox_tooLong => '对电台来说太长，已放回输入框以便缩短。';
+
+  @override
+  String get rf_title => '电台功能';
+
+  @override
+  String get rf_radioStats => '实时电台统计';
+
+  @override
+  String get rf_textCli => '文本命令行';
+
+  @override
+  String get rf_channelData => '频道数据';
+
+  @override
+  String get rf_signedPosts => '签名频道帖子';
+
+  @override
+  String get rf_rawPackets => '原始数据包';
+
+  @override
+  String get rf_floodCorridor => '泛洪走廊(定制固件)';
+
+  @override
+  String get rf_supported => '支持';
+
+  @override
+  String get rf_unsupported => '不支持';
+
+  @override
+  String get rf_unknown => '未知';
+
+  @override
+  String get rf_evNotConnected => '连接电台以检查。';
+
+  @override
+  String get rf_evNotChecked => '尚未检查。';
+
+  @override
+  String get rf_evProbeAnswered => '电台已响应检查。';
+
+  @override
+  String get rf_evProbeRejected => '电台表示不支持此功能。';
+
+  @override
+  String get rf_evDerived => '需要频道数据和电台密钥。';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return '电台报告协议 v$have；需要 v$need。';
+  }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '已删除 $count 个损坏的瓦片文件(不完整或不是图像)。请重新下载该区域以替换。';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return '按缩放级别缺失:$list';
+  }
+
+  @override
+  String batteryWatch_basis(int count, String days, String confidence) {
+    return '基于 $days 天内的 $count 次读数:$confidence。';
+  }
+
+  @override
+  String get batteryWatch_confGood => '趋势明确';
+
+  @override
+  String get batteryWatch_confLow => '太少或太分散，无法确定';
+
+  @override
+  String get batteryWatch_maybeFalling => '可能在下降，但读数还不够，无法判断。';
+
+  @override
+  String batteryWatch_gap(String days) {
+    return '最长无读数间隔:$days 天。';
+  }
+
+  @override
+  String get ml_title => '列表形式的地图';
+
+  @override
+  String get ml_intro =>
+      '用文字列出地图上的所有内容，最近的在前。距离为从你的电台出发的直线距离。路由是消息在无线电中的传输方式，而不是地面上的路径。';
+
+  @override
+  String get ml_nodes => '节点';
+
+  @override
+  String get ml_waypoints => '航点';
+
+  @override
+  String get ml_none => '无';
+
+  @override
+  String get ml_noOwnPosition => '距离未知:你的电台没有位置';
+
+  @override
+  String ml_heard(String ago) {
+    return '收到于 $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': '北',
+      'ne': '东北',
+      'e': '东',
+      'se': '东南',
+      's': '南',
+      'sw': '西南',
+      'w': '西',
+      'nw': '西北',
+      'other': '',
+    });
+    return '$_temp0方向 $distance';
+  }
 }

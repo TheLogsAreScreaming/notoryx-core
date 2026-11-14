@@ -13327,4 +13327,137 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'La restauration a échoué, tous les réglages ont donc été remis comme avant. Rien n\'a changé.';
+
+  @override
+  String get outbox_maybeSent =>
+      'L\'envoi a été interrompu, le message est donc peut-être déjà parti. Il est revenu dans la zone de saisie : vérifiez avant de le renvoyer.';
+
+  @override
+  String get outbox_tooLong =>
+      'Trop long pour la radio : il est revenu dans la zone de saisie pour être raccourci.';
+
+  @override
+  String get rf_title => 'Fonctions de la radio';
+
+  @override
+  String get rf_radioStats => 'Statistiques radio en direct';
+
+  @override
+  String get rf_textCli => 'Ligne de commande texte';
+
+  @override
+  String get rf_channelData => 'Données de canal';
+
+  @override
+  String get rf_signedPosts => 'Messages de canal signés';
+
+  @override
+  String get rf_rawPackets => 'Paquets bruts';
+
+  @override
+  String get rf_floodCorridor =>
+      'Couloir d\'inondation (firmware personnalisé)';
+
+  @override
+  String get rf_supported => 'Pris en charge';
+
+  @override
+  String get rf_unsupported => 'Non pris en charge';
+
+  @override
+  String get rf_unknown => 'Inconnu';
+
+  @override
+  String get rf_evNotConnected => 'Connectez une radio pour vérifier.';
+
+  @override
+  String get rf_evNotChecked => 'Pas encore vérifié.';
+
+  @override
+  String get rf_evProbeAnswered => 'La radio a répondu à la vérification.';
+
+  @override
+  String get rf_evProbeRejected =>
+      'La radio a indiqué ne pas le prendre en charge.';
+
+  @override
+  String get rf_evDerived =>
+      'Nécessite les données de canal et la clé de la radio.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return 'La radio indique le protocole v$have ; il faut v$need.';
+  }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '$count fichiers de tuiles endommagés ont été supprimés (incomplets ou pas des images). Téléchargez à nouveau la zone pour les remplacer.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Manquantes par niveau de zoom : $list';
+  }
+
+  @override
+  String batteryWatch_basis(int count, String days, String confidence) {
+    return 'D\'après $count relevés sur $days jours : $confidence.';
+  }
+
+  @override
+  String get batteryWatch_confGood => 'une tendance nette';
+
+  @override
+  String get batteryWatch_confLow =>
+      'trop peu nombreux ou trop dispersés pour être sûr';
+
+  @override
+  String get batteryWatch_maybeFalling =>
+      'Pourrait baisser, mais il n\'y a pas encore assez de relevés.';
+
+  @override
+  String batteryWatch_gap(String days) {
+    return 'Plus long intervalle sans relevé : $days jours.';
+  }
+
+  @override
+  String get ml_title => 'Carte sous forme de liste';
+
+  @override
+  String get ml_intro =>
+      'Tout ce qui est sur la carte en mots, le plus proche d\'abord. Les distances sont à vol d\'oiseau depuis votre radio. Une route est le trajet radio des messages, pas un chemin sur le terrain.';
+
+  @override
+  String get ml_nodes => 'Nœuds';
+
+  @override
+  String get ml_waypoints => 'Points de passage';
+
+  @override
+  String get ml_none => 'Aucun';
+
+  @override
+  String get ml_noOwnPosition =>
+      'Distance inconnue : votre radio n\'a pas de position';
+
+  @override
+  String ml_heard(String ago) {
+    return 'entendu $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': 'nord',
+      'ne': 'nord-est',
+      'e': 'est',
+      'se': 'sud-est',
+      's': 'sud',
+      'sw': 'sud-ouest',
+      'w': 'ouest',
+      'nw': 'nord-ouest',
+      'other': '',
+    });
+    return '$distance au $_temp0';
+  }
 }

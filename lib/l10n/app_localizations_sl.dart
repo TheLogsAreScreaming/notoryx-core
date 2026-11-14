@@ -13258,4 +13258,132 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Obnovitev ni uspela, zato so bile vse nastavitve vrnjene, kot so bile. Nič se ni spremenilo.';
+
+  @override
+  String get outbox_maybeSent =>
+      'Pošiljanje je bilo prekinjeno, zato je sporočilo morda že odšlo. Vrnjeno je v polje za sporočilo: preverite, preden ga znova pošljete.';
+
+  @override
+  String get outbox_tooLong =>
+      'Predolgo za radio, zato je vrnjeno v polje za sporočilo, da ga skrajšate.';
+
+  @override
+  String get rf_title => 'Funkcije radia';
+
+  @override
+  String get rf_radioStats => 'Statistika radia v živo';
+
+  @override
+  String get rf_textCli => 'Besedilna ukazna vrstica';
+
+  @override
+  String get rf_channelData => 'Podatki kanala';
+
+  @override
+  String get rf_signedPosts => 'Podpisane objave v kanalu';
+
+  @override
+  String get rf_rawPackets => 'Surovi paketi';
+
+  @override
+  String get rf_floodCorridor =>
+      'Poplavni koridor (lastna strojna programska oprema)';
+
+  @override
+  String get rf_supported => 'Podprto';
+
+  @override
+  String get rf_unsupported => 'Ni podprto';
+
+  @override
+  String get rf_unknown => 'Neznano';
+
+  @override
+  String get rf_evNotConnected => 'Povežite radio za preverjanje.';
+
+  @override
+  String get rf_evNotChecked => 'Še ni preverjeno.';
+
+  @override
+  String get rf_evProbeAnswered => 'Radio je odgovoril na preverjanje.';
+
+  @override
+  String get rf_evProbeRejected => 'Radio je sporočil, da tega ne podpira.';
+
+  @override
+  String get rf_evDerived => 'Potrebuje podatke kanala in ključ radia.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return 'Radio sporoča protokol v$have; potreben je v$need.';
+  }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return 'Odstranjenih je bilo $count poškodovanih datotek ploščic (nepopolne ali niso slike). Znova prenesite območje, da jih nadomestite.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Manjkajoče po ravni povečave: $list';
+  }
+
+  @override
+  String batteryWatch_basis(int count, String days, String confidence) {
+    return 'Na podlagi $count meritev v $days dneh: $confidence.';
+  }
+
+  @override
+  String get batteryWatch_confGood => 'jasen trend';
+
+  @override
+  String get batteryWatch_confLow => 'premalo ali preveč razpršeno za gotovost';
+
+  @override
+  String get batteryWatch_maybeFalling => 'Morda pada, a meritev še ni dovolj.';
+
+  @override
+  String batteryWatch_gap(String days) {
+    return 'Najdaljša vrzel brez meritve: $days dni.';
+  }
+
+  @override
+  String get ml_title => 'Zemljevid kot seznam';
+
+  @override
+  String get ml_intro =>
+      'Vse na zemljevidu z besedami, najbližje najprej. Razdalje so zračne od vašega radia. Pot je to, kako sporočila potujejo po radiu, ne steza na terenu.';
+
+  @override
+  String get ml_nodes => 'Vozlišča';
+
+  @override
+  String get ml_waypoints => 'Točke poti';
+
+  @override
+  String get ml_none => 'Nič';
+
+  @override
+  String get ml_noOwnPosition => 'Razdalja neznana: vaš radio nima položaja';
+
+  @override
+  String ml_heard(String ago) {
+    return 'slišan $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': 'sever',
+      'ne': 'severovzhod',
+      'e': 'vzhod',
+      'se': 'jugovzhod',
+      's': 'jug',
+      'sw': 'jugozahod',
+      'w': 'zahod',
+      'nw': 'severozahod',
+      'other': '',
+    });
+    return '$distance, smer: $_temp0';
+  }
 }

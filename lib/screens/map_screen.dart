@@ -45,6 +45,7 @@ import '../helpers/snack_bar_builder.dart';
 import 'repeater_hub_screen.dart';
 import 'settings_screen.dart';
 import 'line_of_sight_map_screen.dart';
+import 'map_list_screen.dart';
 
 class MapScreen extends StatefulWidget {
   final LatLng? highlightPosition;
@@ -658,6 +659,24 @@ class _MapScreenState extends State<MapScreen> {
               actions: [
                 PopupMenuButton(
                   itemBuilder: (context) => [
+                    PopupMenuItem(
+                      key: const ValueKey('map-as-list'),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.format_list_bulleted),
+                          const SizedBox(width: 8),
+                          Text(context.l10n.ml_title),
+                        ],
+                      ),
+                      onTap: () => Navigator.of(context).push(
+                        MaterialPageRoute<void>(
+                          builder: (_) => MapListScreen(
+                            waypoints:
+                                waypointStore?.waypoints.toList() ?? const [],
+                          ),
+                        ),
+                      ),
+                    ),
                     if (!_isBuildingPathTrace &&
                         connector.selfLatitude != null &&
                         connector.selfLongitude != null)

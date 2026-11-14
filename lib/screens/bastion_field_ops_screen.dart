@@ -55,6 +55,7 @@ class _FieldOpsState extends State<BastionFieldOpsScreen> {
   CachedTileInventory? _inventory;
   String? _cacheError;
   ({int expected, int available})? _region;
+  OfflineRegionCheck? _regionCheck;
   String? _regionLabel;
   bool _loadingMaps = false;
   bool? _notificationsAllowed;
@@ -127,11 +128,15 @@ class _FieldOpsState extends State<BastionFieldOpsScreen> {
           '${settings.mapCacheMinZoom}',
           '${settings.mapCacheMaxZoom}',
         );
-        _region = await cache.verifyOfflineRegion(
+        // Damaged files are dropped so the next download replaces them.
+        final check = await cache.checkOfflineRegion(
           bounds: bounds,
           minZoom: settings.mapCacheMinZoom,
           maxZoom: settings.mapCacheMaxZoom,
+          removeDamaged: true,
         );
+        _regionCheck = check;
+        _region = (expected: check.expected, available: check.available);
       } else {
         _regionLabel = null;
       }
@@ -874,7 +879,23 @@ class _FieldOpsState extends State<BastionFieldOpsScreen> {
             ? _l10n.fieldOps_checkingFiles
             : _region == null
             ? _regionLabel ?? _l10n.fieldOps_regionHint
-            : '${_regionLabel ?? _l10n.fieldOps_regionHint}\n${_l10n.fieldOps_regionStatus('${_region!.available}', '${_region!.expected}', '${_region!.expected - _region!.available}')}',
+            : [
+                _regionLabel ?? _l10n.fieldOps_regionHint,
+                _l10n.fieldOps_regionStatus(
+                  '${_region!.available}',
+                  '${_region!.expected}',
+                  '${_region!.expected - _region!.available}',
+                ),
+                if ((_regionCheck?.damaged ?? 0) > 0)
+                  _l10n.fieldOps_regionDamaged(_regionCheck!.damaged),
+                if (_regionCheck case final c? when c.missingByZoom.isNotEmpty)
+                  _l10n.fieldOps_regionMissingByZoom(
+                    [
+                      for (final e in c.missingByZoom.entries)
+                        '${e.key}: ${e.value}',
+                    ].join(', '),
+                  ),
+              ].join('\n'),
       ReadinessCheck.location =>
         ops.trip.shareLocation
             ? _l10n.fieldOps_locationOptedIn

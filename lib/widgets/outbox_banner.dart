@@ -46,8 +46,21 @@ class OutboxBanner extends StatelessWidget {
   Widget build(BuildContext context) {
     final outbox = context.watch<OfflineOutbox?>();
     final entries = outbox?.entriesFor(target) ?? const <OutboxEntry>[];
-    if (outbox == null || entries.isEmpty) return const SizedBox.shrink();
+    final notes = outbox == null
+        ? const <OutboxReturn>[]
+        : outbox.returned
+              .where(
+                (r) =>
+                    r.entry.target == target &&
+                    (r.reason == OutboxReturnReason.unknown ||
+                        r.reason == OutboxReturnReason.tooLong),
+              )
+              .toList();
+    if (outbox == null || (entries.isEmpty && notes.isEmpty)) {
+      return const SizedBox.shrink();
+    }
     final scheme = Theme.of(context).colorScheme;
+    if (entries.isEmpty) return _ReturnedNotes(target: target, notes: notes);
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.fromLTRB(12, 8, 4, 4),
@@ -56,6 +69,7 @@ class OutboxBanner extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
+          if (notes.isNotEmpty) _ReturnedNotes(target: target, notes: notes),
           Row(
             children: [
               Icon(Icons.schedule, size: 16, color: scheme.primary),
@@ -104,6 +118,50 @@ class OutboxBanner extends StatelessWidget {
                   ),
               ],
             ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+/// Says why a queued message is back in the message box. "May already have
+/// gone out" is the one that matters: sending it again could repeat it.
+class _ReturnedNotes extends StatelessWidget {
+  const _ReturnedNotes({required this.target, required this.notes});
+
+  final String target;
+  final List<OutboxReturn> notes;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final uncertain = notes.any((n) => n.reason == OutboxReturnReason.unknown);
+    final text = uncertain
+        ? context.l10n.outbox_maybeSent
+        : context.l10n.outbox_tooLong;
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.fromLTRB(12, 6, 4, 6),
+      color: scheme.errorContainer,
+      child: Row(
+        children: [
+          Icon(
+            uncertain ? Icons.help_outline : Icons.short_text,
+            size: 18,
+            color: scheme.onErrorContainer,
+          ),
+          const SizedBox(width: 8),
+          Expanded(
+            child: Text(text, style: TextStyle(color: scheme.onErrorContainer)),
+          ),
+          IconButton(
+            tooltip: MaterialLocalizations.of(context).closeButtonTooltip,
+            icon: const Icon(Icons.close, size: 18),
+            constraints: const BoxConstraints(minWidth: 44, minHeight: 44),
+            color: scheme.onErrorContainer,
+            onPressed: () =>
+                context.read<OfflineOutbox?>()?.dismissReturned(target),
           ),
         ],
       ),
