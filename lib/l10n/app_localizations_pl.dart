@@ -7192,9 +7192,6 @@ class AppLocalizationsPl extends AppLocalizations {
   String get fieldStats_direct => 'Bezpośrednie';
 
   @override
-  String get mapHub_title => 'Mapa terenowa NOTORYX';
-
-  @override
   String get mapHub_captureHint =>
       'Rozpocznij i zatrzymaj terenową sesję zasięgu';
 

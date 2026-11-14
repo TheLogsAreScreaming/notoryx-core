@@ -3273,7 +3273,6 @@
   "fieldStats_rooms": "房间",
   "fieldStats_sensors": "传感器",
   "fieldStats_direct": "直连",
-  "mapHub_title": "NOTORYX 野外地图",
   "mapHub_captureHint": "开始和停止野外覆盖会话",
   "mapHub_badgeNew": "新",
   "mapHub_liveMap": "实时网络地图",

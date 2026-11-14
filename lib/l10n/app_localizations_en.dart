@@ -7052,9 +7052,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get fieldStats_direct => 'Direct';
 
   @override
-  String get mapHub_title => 'NOTORYX field map';
-
-  @override
   String get mapHub_captureHint => 'Start and stop a field coverage session';
 
   @override

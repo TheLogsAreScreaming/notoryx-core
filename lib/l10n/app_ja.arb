@@ -3402,7 +3402,6 @@
   "fieldStats_rooms": "ルーム",
   "fieldStats_sensors": "センサー",
   "fieldStats_direct": "直接",
-  "mapHub_title": "NOTORYX フィールドマップ",
   "mapHub_captureHint": "フィールドカバレッジセッションを開始・停止",
   "mapHub_badgeNew": "新機能",
   "mapHub_liveMap": "ライブメッシュマップ",

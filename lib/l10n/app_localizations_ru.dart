@@ -7193,9 +7193,6 @@ class AppLocalizationsRu extends AppLocalizations {
   String get fieldStats_direct => 'Напрямую';
 
   @override
-  String get mapHub_title => 'Полевая карта NOTORYX';
-
-  @override
   String get mapHub_captureHint =>
       'Начать и остановить полевую сессию покрытия';
 

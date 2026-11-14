@@ -7128,9 +7128,6 @@ class AppLocalizationsNl extends AppLocalizations {
   String get fieldStats_direct => 'Direct';
 
   @override
-  String get mapHub_title => 'NOTORYX-veldkaart';
-
-  @override
   String get mapHub_captureHint => 'Een velddekkingssessie starten en stoppen';
 
   @override

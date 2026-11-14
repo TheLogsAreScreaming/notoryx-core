@@ -6814,9 +6814,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get fieldStats_direct => '직접';
 
   @override
-  String get mapHub_title => 'NOTORYX 현장 지도';
-
-  @override
   String get mapHub_captureHint => '현장 커버리지 세션 시작 및 중지';
 
   @override

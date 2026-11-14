@@ -29,7 +29,7 @@ class BastionMapHubScreen extends StatelessWidget {
         scrolledUnderElevation: 0,
         foregroundColor: MeshPalette.ink,
         surfaceTintColor: Colors.transparent,
-        title: Text(context.l10n.mapHub_title),
+        title: Text(context.l10n.bastion_mapCoverage),
       ),
       body: SafeArea(
         top: false,

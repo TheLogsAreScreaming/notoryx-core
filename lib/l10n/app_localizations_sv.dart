@@ -7098,9 +7098,6 @@ class AppLocalizationsSv extends AppLocalizations {
   String get fieldStats_direct => 'Direkta';
 
   @override
-  String get mapHub_title => 'NOTORYX fältkarta';
-
-  @override
   String get mapHub_captureHint => 'Starta och stoppa en fälttäckningssession';
 
   @override

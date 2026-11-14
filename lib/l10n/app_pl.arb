@@ -3306,7 +3306,6 @@
   "fieldStats_rooms": "Pokoje",
   "fieldStats_sensors": "Czujniki",
   "fieldStats_direct": "Bezpośrednie",
-  "mapHub_title": "Mapa terenowa NOTORYX",
   "mapHub_captureHint": "Rozpocznij i zatrzymaj terenową sesję zasięgu",
   "mapHub_badgeNew": "NOWE",
   "mapHub_liveMap": "Mapa sieci mesh na żywo",

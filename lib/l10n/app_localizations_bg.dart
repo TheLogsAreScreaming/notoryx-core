@@ -7153,9 +7153,6 @@ class AppLocalizationsBg extends AppLocalizations {
   String get fieldStats_direct => 'Директни';
 
   @override
-  String get mapHub_title => 'Теренна карта NOTORYX';
-
-  @override
   String get mapHub_captureHint =>
       'Започване и спиране на теренна сесия за покритие';
 

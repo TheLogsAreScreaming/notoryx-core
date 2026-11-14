@@ -7151,9 +7151,6 @@ class AppLocalizationsPt extends AppLocalizations {
   String get fieldStats_direct => 'Diretos';
 
   @override
-  String get mapHub_title => 'Mapa de campo NOTORYX';
-
-  @override
   String get mapHub_captureHint =>
       'Inicie e pare uma sessão de cobertura de campo';
 

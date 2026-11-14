@@ -3402,7 +3402,6 @@
   "fieldStats_rooms": "Stanze",
   "fieldStats_sensors": "Sensori",
   "fieldStats_direct": "Diretti",
-  "mapHub_title": "Mappa da campo NOTORYX",
   "mapHub_captureHint": "Avvia e ferma una sessione di copertura sul campo",
   "mapHub_badgeNew": "NUOVO",
   "mapHub_liveMap": "Mappa mesh in tempo reale",

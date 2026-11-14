@@ -6,6 +6,7 @@ import 'package:meshcore_open/l10n/app_localizations.dart';
 import 'package:meshcore_open/screens/bastion_map_hub_screen.dart';
 import 'package:meshcore_open/screens/bastion_tools_screen.dart';
 import 'package:meshcore_open/storage/prefs_manager.dart';
+import 'package:meshcore_open/widgets/glass_action_row.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 const _moved = [
@@ -15,13 +16,24 @@ const _moved = [
   'Antenna hunt',
 ];
 
-Future<void> _pump(WidgetTester tester, Widget home) async {
-  await tester.binding.setSurfaceSize(const Size(420, 2400));
+Future<void> _pump(
+  WidgetTester tester,
+  Widget home, {
+  Size size = const Size(420, 2400),
+  double textScale = 1,
+}) async {
+  await tester.binding.setSurfaceSize(size);
   addTearDown(() => tester.binding.setSurfaceSize(null));
   await tester.pumpWidget(
     MaterialApp(
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
+      builder: (context, child) => MediaQuery(
+        data: MediaQuery.of(
+          context,
+        ).copyWith(textScaler: TextScaler.linear(textScale)),
+        child: child!,
+      ),
       home: home,
     ),
   );
@@ -90,6 +102,49 @@ void main() {
       await _pump(tester, const BastionToolsScreen());
       expect(note, findsNothing);
     });
+  });
+
+  testWidgets('the note lines up with the rows below it', (tester) async {
+    SharedPreferences.setMockInitialValues({});
+    await PrefsManager.initialize();
+    await _pump(tester, const BastionToolsScreen());
+    final note = find.byKey(const ValueKey('tools-moved-note'));
+    final row = find.ancestor(
+      of: _row('Settings'),
+      matching: find.byType(GlassActionRow),
+    );
+    expect(tester.getTopLeft(note).dx, tester.getTopLeft(row).dx);
+    expect(tester.getTopRight(note).dx, tester.getTopRight(row).dx);
+  });
+
+  testWidgets('large text on a narrow phone fits without overflow', (
+    tester,
+  ) async {
+    SharedPreferences.setMockInitialValues({});
+    await PrefsManager.initialize();
+    for (final screen in const [BastionToolsScreen(), BastionMapHubScreen()]) {
+      await _pump(tester, screen, size: const Size(320, 1400), textScale: 2);
+      expect(tester.takeException(), isNull, reason: '$screen');
+    }
+    // The note's text is all there at that size.
+    await _pump(
+      tester,
+      const BastionToolsScreen(),
+      size: const Size(320, 1400),
+      textScale: 2,
+    );
+    expect(find.textContaining('Searching here still finds'), findsOneWidget);
+  });
+
+  testWidgets('the hub is called Map + coverage everywhere', (tester) async {
+    await _pump(tester, const BastionMapHubScreen());
+    expect(
+      find.descendant(
+        of: find.byType(AppBar),
+        matching: find.text('Map + coverage'),
+      ),
+      findsOneWidget,
+    );
   });
 
   testWidgets('Map + coverage holds every coverage tool and the map tools', (

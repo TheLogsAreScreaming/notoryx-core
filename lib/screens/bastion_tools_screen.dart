@@ -462,54 +462,48 @@ class _WhatMovedNote extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
-    return Padding(
+    // The card's own side margin lines it up with the rows below.
+    return MeshCard(
       key: const ValueKey('tools-moved-note'),
-      padding: const EdgeInsets.fromLTRB(
-        MeshSpace.lg,
-        0,
-        MeshSpace.lg,
-        MeshSpace.sm,
-      ),
-      child: MeshCard(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Icon(Icons.moving_rounded, color: MeshPalette.accent),
-                const SizedBox(width: MeshSpace.sm),
-                Expanded(
-                  child: Semantics(
-                    header: true,
-                    child: Text(
-                      l10n.toolsMoved_title,
-                      style: TextStyle(
-                        color: MeshPalette.ink,
-                        fontWeight: FontWeight.w700,
-                      ),
+      margin: const EdgeInsets.fromLTRB(16, 0, 16, MeshSpace.sm),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Icon(Icons.moving_rounded, color: MeshPalette.accent),
+              const SizedBox(width: MeshSpace.sm),
+              Expanded(
+                child: Semantics(
+                  header: true,
+                  child: Text(
+                    l10n.toolsMoved_title,
+                    style: TextStyle(
+                      color: MeshPalette.ink,
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
-              ],
-            ),
-            const SizedBox(height: MeshSpace.xs),
-            Text(
-              l10n.toolsMoved_body(
-                l10n.bastion_mapCoverage,
-                l10n.bastion_repeaterTools,
               ),
-              style: TextStyle(color: MeshPalette.ink2, height: 1.35),
+            ],
+          ),
+          const SizedBox(height: MeshSpace.xs),
+          Text(
+            l10n.toolsMoved_body(
+              l10n.bastion_mapCoverage,
+              l10n.bastion_repeaterTools,
             ),
-            Align(
-              alignment: AlignmentDirectional.centerEnd,
-              child: TextButton(
-                key: const ValueKey('tools-moved-ok'),
-                onPressed: onDismiss,
-                child: Text(l10n.toolsMoved_ok),
-              ),
+            style: TextStyle(color: MeshPalette.ink2, height: 1.35),
+          ),
+          Align(
+            alignment: AlignmentDirectional.centerEnd,
+            child: TextButton(
+              key: const ValueKey('tools-moved-ok'),
+              onPressed: onDismiss,
+              child: Text(l10n.toolsMoved_ok),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

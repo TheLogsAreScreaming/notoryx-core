@@ -7168,9 +7168,6 @@ class AppLocalizationsDe extends AppLocalizations {
   String get fieldStats_direct => 'Direkt';
 
   @override
-  String get mapHub_title => 'NOTORYX-Feldkarte';
-
-  @override
   String get mapHub_captureHint =>
       'Eine Feld-Abdeckungssitzung starten und beenden';
 

@@ -3306,7 +3306,6 @@
   "fieldStats_rooms": "Szobák",
   "fieldStats_sensors": "Érzékelők",
   "fieldStats_direct": "Közvetlen",
-  "mapHub_title": "NOTORYX terepi térkép",
   "mapHub_captureHint": "Terepi lefedettségi munkamenet indítása és leállítása",
   "mapHub_badgeNew": "ÚJ",
   "mapHub_liveMap": "Élő hálózati térkép",

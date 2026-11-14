@@ -7187,9 +7187,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get fieldStats_direct => 'Directs';
 
   @override
-  String get mapHub_title => 'Carte de terrain NOTORYX';
-
-  @override
   String get mapHub_captureHint =>
       'Démarrez et arrêtez une session de couverture terrain';
 

@@ -3402,7 +3402,6 @@
   "fieldStats_rooms": "Salons",
   "fieldStats_sensors": "Capteurs",
   "fieldStats_direct": "Directs",
-  "mapHub_title": "Carte de terrain NOTORYX",
   "mapHub_captureHint": "Démarrez et arrêtez une session de couverture terrain",
   "mapHub_badgeNew": "NOUVEAU",
   "mapHub_liveMap": "Carte du maillage en direct",

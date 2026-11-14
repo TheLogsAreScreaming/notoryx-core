@@ -3402,7 +3402,6 @@
   "fieldStats_rooms": "룸",
   "fieldStats_sensors": "센서",
   "fieldStats_direct": "직접",
-  "mapHub_title": "NOTORYX 현장 지도",
   "mapHub_captureHint": "현장 커버리지 세션 시작 및 중지",
   "mapHub_badgeNew": "새 기능",
   "mapHub_liveMap": "실시간 메시 지도",

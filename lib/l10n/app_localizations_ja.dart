@@ -6804,9 +6804,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get fieldStats_direct => '直接';
 
   @override
-  String get mapHub_title => 'NOTORYX フィールドマップ';
-
-  @override
   String get mapHub_captureHint => 'フィールドカバレッジセッションを開始・停止';
 
   @override

@@ -6665,9 +6665,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get fieldStats_direct => '直连';
 
   @override
-  String get mapHub_title => 'NOTORYX 野外地图';
-
-  @override
   String get mapHub_captureHint => '开始和停止野外覆盖会话';
 
   @override

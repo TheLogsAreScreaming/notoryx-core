@@ -3404,7 +3404,6 @@
   "fieldStats_rooms": "Räume",
   "fieldStats_sensors": "Sensoren",
   "fieldStats_direct": "Direkt",
-  "mapHub_title": "NOTORYX-Feldkarte",
   "mapHub_captureHint": "Eine Feld-Abdeckungssitzung starten und beenden",
   "mapHub_badgeNew": "NEU",
   "mapHub_liveMap": "Live-Mesh-Karte",

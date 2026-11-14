@@ -7148,9 +7148,6 @@ class AppLocalizationsSl extends AppLocalizations {
   String get fieldStats_direct => 'Neposredno';
 
   @override
-  String get mapHub_title => 'Terenski zemljevid NOTORYX';
-
-  @override
   String get mapHub_captureHint =>
       'Začnite in ustavite terensko sejo pokritosti';
 

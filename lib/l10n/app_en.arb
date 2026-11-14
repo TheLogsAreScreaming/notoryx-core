@@ -4151,7 +4151,6 @@
   "fieldStats_rooms": "Rooms",
   "fieldStats_sensors": "Sensors",
   "fieldStats_direct": "Direct",
-  "mapHub_title": "NOTORYX field map",
   "mapHub_captureHint": "Start and stop a field coverage session",
   "mapHub_badgeNew": "NEW",
   "mapHub_liveMap": "Live mesh map",

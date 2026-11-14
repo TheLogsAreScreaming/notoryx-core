@@ -7146,9 +7146,6 @@ class AppLocalizationsHu extends AppLocalizations {
   String get fieldStats_direct => 'Közvetlen';
 
   @override
-  String get mapHub_title => 'NOTORYX terepi térkép';
-
-  @override
   String get mapHub_captureHint =>
       'Terepi lefedettségi munkamenet indítása és leállítása';
 

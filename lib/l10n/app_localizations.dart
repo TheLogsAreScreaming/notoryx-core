@@ -12008,12 +12008,6 @@ abstract class AppLocalizations {
   /// **'Direct'**
   String get fieldStats_direct;
 
-  /// No description provided for @mapHub_title.
-  ///
-  /// In en, this message translates to:
-  /// **'NOTORYX field map'**
-  String get mapHub_title;
-
   /// No description provided for @mapHub_captureHint.
   ///
   /// In en, this message translates to:

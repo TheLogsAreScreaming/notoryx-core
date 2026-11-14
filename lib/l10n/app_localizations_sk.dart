@@ -7144,9 +7144,6 @@ class AppLocalizationsSk extends AppLocalizations {
   String get fieldStats_direct => 'Priame';
 
   @override
-  String get mapHub_title => 'Terénna mapa NOTORYX';
-
-  @override
   String get mapHub_captureHint =>
       'Spustiť a zastaviť terénnu reláciu pokrytia';
 

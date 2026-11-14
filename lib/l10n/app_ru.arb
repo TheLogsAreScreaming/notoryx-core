@@ -2571,7 +2571,6 @@
   "fieldStats_rooms": "Комнаты",
   "fieldStats_sensors": "Датчики",
   "fieldStats_direct": "Напрямую",
-  "mapHub_title": "Полевая карта NOTORYX",
   "mapHub_captureHint": "Начать и остановить полевую сессию покрытия",
   "mapHub_badgeNew": "НОВОЕ",
   "mapHub_liveMap": "Карта сети в реальном времени",
