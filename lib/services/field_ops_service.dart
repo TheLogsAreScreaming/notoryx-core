@@ -14,7 +14,12 @@ import 'notification_service.dart';
 
 class FieldOpsService extends ChangeNotifier {
   final MeshCoreConnector connector;
-  FieldOpsService(this.connector);
+
+  /// [clock] is for tests that move time forward; the app uses the real one.
+  FieldOpsService(this.connector, {DateTime Function()? clock})
+    : _now = clock ?? DateTime.now;
+
+  final DateTime Function() _now;
   static const _key = 'bastion_field_ops_v1';
 
   /// [error] values, which the app shows in the user's language.
@@ -133,7 +138,7 @@ class FieldOpsService extends ChangeNotifier {
     final reason = sosUnavailable;
     if (reason != null) throw StateError(reason);
     if (sos.active) return;
-    sos = SosState(active: true, startedAt: DateTime.now());
+    sos = SosState(active: true, startedAt: _now());
     await record('sos', 'SOS started.');
     _sosTimer?.cancel();
     _sosTimer = Timer.periodic(
@@ -155,7 +160,7 @@ class FieldOpsService extends ChangeNotifier {
       allClear ? 'SOS stopped; all clear sent.' : 'SOS stopped.',
     );
     if (allClear && connector.isConnected) {
-      await _sendSosText(sosAllClearText(DateTime.now()), 'All clear');
+      await _sendSosText(sosAllClearText(_now()), 'All clear');
     }
     _notify();
   }
@@ -164,13 +169,15 @@ class FieldOpsService extends ChangeNotifier {
   @visibleForTesting
   Future<void> sosTick() async {
     if (_disposed || !sos.active || _sosSending) return;
-    final now = DateTime.now();
+    final now = _now();
     // A disconnected radio retries on the next tick instead of using a send.
     if (!sos.dueAt(now) || !connector.isConnected) return;
     _sosSending = true;
     sos = sos.sent(now);
     _notify();
     try {
+      // Saved before sending, so a crash mid-send can't repeat this one early.
+      await _save();
       final text = sosText(
         now,
         latitude: connector.selfLatitude,
@@ -257,6 +264,7 @@ class FieldOpsService extends ChangeNotifier {
           );
         }
         _lastAutoSend = DateTime.tryParse(j['lastAutoSend'] as String? ?? '');
+        sos = SosState.fromJson(j['sos']);
       }
     } catch (_) {
       error = loadErrorText;
@@ -270,7 +278,31 @@ class FieldOpsService extends ChangeNotifier {
     connector.addListener(_changed);
     _messages = connector.receivedDirectMessages.listen(_incoming);
     _timer = Timer.periodic(tickInterval, (_) => unawaited(tick()));
+    if (sos.active) await _resumeSos();
     _notify();
+  }
+
+  /// An SOS that was running when the app closed carries on: it stays shown
+  /// and its remaining repeats go out once the radio is connected. One that
+  /// began longer ago than its whole repeat schedule stays shown but sends
+  /// nothing more, so a dead phone revived days later doesn't re-alert.
+  Future<void> _resumeSos() async {
+    final startedAt = sos.startedAt!;
+    final stale =
+        _now().difference(startedAt) >= sosRepeatInterval * sosMaxSends;
+    if (stale && sos.nextSendAt != null) sos = sos.finished();
+    await record(
+      'sos',
+      sos.nextSendAt == null
+          ? 'App restarted during an SOS. It stays shown; no more repeats are due.'
+          : 'App restarted during an SOS. Repeats resume when the radio is connected.',
+    );
+    _sosTimer?.cancel();
+    _sosTimer = Timer.periodic(
+      const Duration(seconds: 15),
+      (_) => unawaited(sosTick()),
+    );
+    await sosTick();
   }
 
   void _primeNodes() {
@@ -285,6 +317,8 @@ class FieldOpsService extends ChangeNotifier {
       'rules': rules.map((r) => r.toJson()).toList(),
       'entries': _entries.map((e) => e.toJson()).toList(),
       'lastAutoSend': _lastAutoSend?.toIso8601String(),
+      // Saved so an SOS survives the app being closed or killed.
+      if (sos.active) 'sos': sos.toJson(),
     });
     final write = _writes.then((_) async {
       final prefs = await SharedPreferences.getInstance();
