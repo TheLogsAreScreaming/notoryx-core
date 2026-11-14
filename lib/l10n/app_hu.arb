@@ -5102,5 +5102,7 @@
   "hopTie_forget": "Megjegyzett választások törlése ({count})",
   "hopTie_less": "Kevesebb",
   "hopTie_more": "Több",
-  "bk_rolledBack": "A visszaállítás nem sikerült, ezért minden beállítás visszakerült az eredeti állapotába. Semmi sem változott."
+  "bk_rolledBack": "A visszaállítás nem sikerült, ezért minden beállítás visszakerült az eredeti állapotába. Semmi sem változott.",
+  "fieldOps_regionDamaged": "{count} sérült csempefájl törölve (hiányos vagy nem kép). Töltsd le újra a területet a pótlásukhoz.",
+  "fieldOps_regionMissingByZoom": "Hiányzó zoomszintenként: {list}"
 }

@@ -13124,4 +13124,14 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Restore failed, so every setting was put back as it was. Nothing changed.';
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '$count damaged tile files were removed (cut short or not images). Download the area again to replace them.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Missing by zoom level: $list';
+  }
 }

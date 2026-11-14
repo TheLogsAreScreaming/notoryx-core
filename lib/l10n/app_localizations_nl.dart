@@ -13226,4 +13226,14 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Herstellen is mislukt, dus alle instellingen zijn teruggezet zoals ze waren. Er is niets veranderd.';
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '$count beschadigde tegelbestanden zijn verwijderd (afgebroken of geen afbeelding). Download het gebied opnieuw om ze te vervangen.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Ontbrekend per zoomniveau: $list';
+  }
 }

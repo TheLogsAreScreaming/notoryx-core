@@ -5064,5 +5064,7 @@
   "hopTie_forget": "Pozabi zapomnjene izbire ({count})",
   "hopTie_less": "Manj",
   "hopTie_more": "Več",
-  "bk_rolledBack": "Obnovitev ni uspela, zato so bile vse nastavitve vrnjene, kot so bile. Nič se ni spremenilo."
+  "bk_rolledBack": "Obnovitev ni uspela, zato so bile vse nastavitve vrnjene, kot so bile. Nič se ni spremenilo.",
+  "fieldOps_regionDamaged": "Odstranjenih je bilo {count} poškodovanih datotek ploščic (nepopolne ali niso slike). Znova prenesite območje, da jih nadomestite.",
+  "fieldOps_regionMissingByZoom": "Manjkajoče po ravni povečave: {list}"
 }

@@ -5198,5 +5198,7 @@
   "hopTie_forget": "記憶した選択を消去（{count}）",
   "hopTie_less": "減らす",
   "hopTie_more": "増やす",
-  "bk_rolledBack": "復元に失敗したため、すべての設定を元に戻しました。何も変更されていません。"
+  "bk_rolledBack": "復元に失敗したため、すべての設定を元に戻しました。何も変更されていません。",
+  "fieldOps_regionDamaged": "破損したタイルファイル{count}件を削除しました(途中で切れているか画像ではありません)。置き換えるにはエリアを再ダウンロードしてください。",
+  "fieldOps_regionMissingByZoom": "ズームレベル別の欠落: {list}"
 }

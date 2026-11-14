@@ -13302,4 +13302,14 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Przywracanie nie powiodło się, więc wszystkie ustawienia wróciły do poprzedniego stanu. Nic się nie zmieniło.';
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return 'Usunięto $count uszkodzonych plików kafelków (niepełne lub nie są obrazami). Pobierz obszar ponownie, aby je zastąpić.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Brakujące według poziomu powiększenia: $list';
+  }
 }

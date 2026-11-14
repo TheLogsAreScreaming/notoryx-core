@@ -5102,5 +5102,7 @@
   "hopTie_forget": "Zapomnij zapamiętane wybory ({count})",
   "hopTie_less": "Mniej",
   "hopTie_more": "Więcej",
-  "bk_rolledBack": "Przywracanie nie powiodło się, więc wszystkie ustawienia wróciły do poprzedniego stanu. Nic się nie zmieniło."
+  "bk_rolledBack": "Przywracanie nie powiodło się, więc wszystkie ustawienia wróciły do poprzedniego stanu. Nic się nie zmieniło.",
+  "fieldOps_regionDamaged": "Usunięto {count} uszkodzonych plików kafelków (niepełne lub nie są obrazami). Pobierz obszar ponownie, aby je zastąpić.",
+  "fieldOps_regionMissingByZoom": "Brakujące według poziomu powiększenia: {list}"
 }

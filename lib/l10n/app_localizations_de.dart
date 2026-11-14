@@ -13289,4 +13289,14 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Wiederherstellen ist fehlgeschlagen, daher wurden alle Einstellungen zurückgesetzt. Nichts wurde geändert.';
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '$count beschädigte Kacheldateien wurden entfernt (abgebrochen oder keine Bilder). Lade das Gebiet erneut herunter, um sie zu ersetzen.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Fehlend je Zoomstufe: $list';
+  }
 }

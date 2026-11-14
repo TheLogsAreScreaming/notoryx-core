@@ -13327,4 +13327,14 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'La restauration a échoué, tous les réglages ont donc été remis comme avant. Rien n\'a changé.';
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '$count fichiers de tuiles endommagés ont été supprimés (incomplets ou pas des images). Téléchargez à nouveau la zone pour les remplacer.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Manquantes par niveau de zoom : $list';
+  }
 }

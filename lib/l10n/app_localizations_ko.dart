@@ -12689,4 +12689,14 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get bk_rolledBack => '복원에 실패하여 모든 설정을 원래대로 되돌렸습니다. 변경된 것은 없습니다.';
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '손상된 타일 파일 $count개를 삭제했습니다(잘렸거나 이미지가 아님). 교체하려면 지역을 다시 다운로드하세요.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return '확대 수준별 누락: $list';
+  }
 }

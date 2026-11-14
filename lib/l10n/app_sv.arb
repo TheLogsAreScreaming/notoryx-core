@@ -5064,5 +5064,7 @@
   "hopTie_forget": "Glöm sparade val ({count})",
   "hopTie_less": "Mindre",
   "hopTie_more": "Mer",
-  "bk_rolledBack": "Återställningen misslyckades, så alla inställningar sattes tillbaka som de var. Inget ändrades."
+  "bk_rolledBack": "Återställningen misslyckades, så alla inställningar sattes tillbaka som de var. Inget ändrades.",
+  "fieldOps_regionDamaged": "{count} skadade kartrutefiler togs bort (avbrutna eller inte bilder). Ladda ner området igen för att ersätta dem.",
+  "fieldOps_regionMissingByZoom": "Saknas per zoomnivå: {list}"
 }

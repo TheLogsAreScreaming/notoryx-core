@@ -13232,4 +13232,14 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Obnovenie zlyhalo, preto sa všetky nastavenia vrátili do pôvodného stavu. Nič sa nezmenilo.';
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return 'Odstránených $count poškodených súborov dlaždíc (neúplné alebo nie sú obrázky). Stiahnite oblasť znova, aby ste ich nahradili.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Chýbajúce podľa úrovne priblíženia: $list';
+  }
 }

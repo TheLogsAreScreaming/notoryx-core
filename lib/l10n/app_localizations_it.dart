@@ -13287,4 +13287,14 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Il ripristino non è riuscito, quindi tutte le impostazioni sono tornate com\'erano. Non è cambiato nulla.';
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return 'Sono stati rimossi $count file di tasselli danneggiati (incompleti o non immagini). Scarica di nuovo l\'area per sostituirli.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Mancanti per livello di zoom: $list';
+  }
 }

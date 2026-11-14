@@ -5198,5 +5198,7 @@
   "hopTie_forget": "Gemerkte Wahl vergessen ({count})",
   "hopTie_less": "Weniger",
   "hopTie_more": "Mehr",
-  "bk_rolledBack": "Wiederherstellen ist fehlgeschlagen, daher wurden alle Einstellungen zurückgesetzt. Nichts wurde geändert."
+  "bk_rolledBack": "Wiederherstellen ist fehlgeschlagen, daher wurden alle Einstellungen zurückgesetzt. Nichts wurde geändert.",
+  "fieldOps_regionDamaged": "{count} beschädigte Kacheldateien wurden entfernt (abgebrochen oder keine Bilder). Lade das Gebiet erneut herunter, um sie zu ersetzen.",
+  "fieldOps_regionMissingByZoom": "Fehlend je Zoomstufe: {list}"
 }

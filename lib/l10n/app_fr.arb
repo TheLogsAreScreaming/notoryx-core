@@ -5198,5 +5198,7 @@
   "hopTie_forget": "Oublier les choix retenus ({count})",
   "hopTie_less": "Moins",
   "hopTie_more": "Plus",
-  "bk_rolledBack": "La restauration a échoué, tous les réglages ont donc été remis comme avant. Rien n'a changé."
+  "bk_rolledBack": "La restauration a échoué, tous les réglages ont donc été remis comme avant. Rien n'a changé.",
+  "fieldOps_regionDamaged": "{count} fichiers de tuiles endommagés ont été supprimés (incomplets ou pas des images). Téléchargez à nouveau la zone pour les remplacer.",
+  "fieldOps_regionMissingByZoom": "Manquantes par niveau de zoom : {list}"
 }

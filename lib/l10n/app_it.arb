@@ -5198,5 +5198,7 @@
   "hopTie_forget": "Dimentica le scelte ricordate ({count})",
   "hopTie_less": "Meno",
   "hopTie_more": "Più",
-  "bk_rolledBack": "Il ripristino non è riuscito, quindi tutte le impostazioni sono tornate com'erano. Non è cambiato nulla."
+  "bk_rolledBack": "Il ripristino non è riuscito, quindi tutte le impostazioni sono tornate com'erano. Non è cambiato nulla.",
+  "fieldOps_regionDamaged": "Sono stati rimossi {count} file di tasselli danneggiati (incompleti o non immagini). Scarica di nuovo l'area per sostituirli.",
+  "fieldOps_regionMissingByZoom": "Mancanti per livello di zoom: {list}"
 }

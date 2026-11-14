@@ -5064,5 +5064,7 @@
   "hopTie_forget": "Zabudnúť zapamätané výbery ({count})",
   "hopTie_less": "Menej",
   "hopTie_more": "Viac",
-  "bk_rolledBack": "Obnovenie zlyhalo, preto sa všetky nastavenia vrátili do pôvodného stavu. Nič sa nezmenilo."
+  "bk_rolledBack": "Obnovenie zlyhalo, preto sa všetky nastavenia vrátili do pôvodného stavu. Nič sa nezmenilo.",
+  "fieldOps_regionDamaged": "Odstránených {count} poškodených súborov dlaždíc (neúplné alebo nie sú obrázky). Stiahnite oblasť znova, aby ste ich nahradili.",
+  "fieldOps_regionMissingByZoom": "Chýbajúce podľa úrovne priblíženia: {list}"
 }

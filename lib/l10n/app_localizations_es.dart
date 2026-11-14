@@ -13282,4 +13282,14 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'La restauración falló, así que todos los ajustes volvieron a como estaban. No cambió nada.';
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return 'Se eliminaron $count archivos de teselas dañados (incompletos o que no son imágenes). Descarga la zona de nuevo para reemplazarlos.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Faltan por nivel de zoom: $list';
+  }
 }

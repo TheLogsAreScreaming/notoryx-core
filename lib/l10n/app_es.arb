@@ -5198,5 +5198,7 @@
   "hopTie_forget": "Olvidar elecciones recordadas ({count})",
   "hopTie_less": "Menos",
   "hopTie_more": "Más",
-  "bk_rolledBack": "La restauración falló, así que todos los ajustes volvieron a como estaban. No cambió nada."
+  "bk_rolledBack": "La restauración falló, así que todos los ajustes volvieron a como estaban. No cambió nada.",
+  "fieldOps_regionDamaged": "Se eliminaron {count} archivos de teselas dañados (incompletos o que no son imágenes). Descarga la zona de nuevo para reemplazarlos.",
+  "fieldOps_regionMissingByZoom": "Faltan por nivel de zoom: {list}"
 }

@@ -13254,4 +13254,14 @@ class AppLocalizationsBg extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Възстановяването не успя, затова всички настройки бяха върнати както бяха. Нищо не е променено.';
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '$count повредени файла с плочки бяха премахнати (непълни или не са изображения). Изтеглете района отново, за да ги замените.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Липсващи по ниво на мащаб: $list';
+  }
 }

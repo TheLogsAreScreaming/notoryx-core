@@ -12672,4 +12672,14 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get bk_rolledBack => '復元に失敗したため、すべての設定を元に戻しました。何も変更されていません。';
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '破損したタイルファイル$count件を削除しました(途中で切れているか画像ではありません)。置き換えるにはエリアを再ダウンロードしてください。';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'ズームレベル別の欠落: $list';
+  }
 }

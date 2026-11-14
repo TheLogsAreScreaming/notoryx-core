@@ -13173,4 +13173,14 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Återställningen misslyckades, så alla inställningar sattes tillbaka som de var. Inget ändrades.';
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '$count skadade kartrutefiler togs bort (avbrutna eller inte bilder). Ladda ner området igen för att ersätta dem.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Saknas per zoomnivå: $list';
+  }
 }

@@ -13259,4 +13259,14 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'A visszaállítás nem sikerült, ezért minden beállítás visszakerült az eredeti állapotába. Semmi sem változott.';
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '$count sérült csempefájl törölve (hiányos vagy nem kép). Töltsd le újra a területet a pótlásukhoz.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Hiányzó zoomszintenként: $list';
+  }
 }

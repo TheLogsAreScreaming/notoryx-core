@@ -12433,4 +12433,14 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get bk_rolledBack => '恢复失败，所有设置已还原为原样。没有任何更改。';
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '已删除 $count 个损坏的瓦片文件(不完整或不是图像)。请重新下载该区域以替换。';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return '按缩放级别缺失:$list';
+  }
 }

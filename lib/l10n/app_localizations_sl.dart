@@ -13258,4 +13258,14 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Obnovitev ni uspela, zato so bile vse nastavitve vrnjene, kot so bile. Nič se ni spremenilo.';
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return 'Odstranjenih je bilo $count poškodovanih datotek ploščic (nepopolne ali niso slike). Znova prenesite območje, da jih nadomestite.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Manjkajoče po ravni povečave: $list';
+  }
 }

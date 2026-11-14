@@ -13301,4 +13301,14 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Відновлення не вдалося, тому всі налаштування повернуто як були. Нічого не змінилося.';
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return 'Видалено пошкоджених файлів плиток: $count (обрізані або не зображення). Завантажте область знову, щоб замінити їх.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Бракує за рівнем масштабу: $list';
+  }
 }
