@@ -5218,5 +5218,10 @@
   "rf_evDerived": "チャンネルデータと無線機の鍵が必要です。",
   "rf_evVersion": "無線機のプロトコルはv{have}、必要なのはv{need}です。",
   "fieldOps_regionDamaged": "破損したタイルファイル{count}件を削除しました(途中で切れているか画像ではありません)。置き換えるにはエリアを再ダウンロードしてください。",
-  "fieldOps_regionMissingByZoom": "ズームレベル別の欠落: {list}"
+  "fieldOps_regionMissingByZoom": "ズームレベル別の欠落: {list}",
+  "batteryWatch_basis": "{days}日間の{count}件の測定に基づく: {confidence}。",
+  "batteryWatch_confGood": "明確な傾向",
+  "batteryWatch_confLow": "確実とは言えないほど少ないかばらついています",
+  "batteryWatch_maybeFalling": "低下しているかもしれませんが、まだ測定が足りません。",
+  "batteryWatch_gap": "測定のない最長期間: {days}日。"
 }

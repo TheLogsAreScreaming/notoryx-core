@@ -12499,4 +12499,23 @@ class AppLocalizationsZh extends AppLocalizations {
   String fieldOps_regionMissingByZoom(String list) {
     return '按缩放级别缺失:$list';
   }
+
+  @override
+  String batteryWatch_basis(int count, String days, String confidence) {
+    return '基于 $days 天内的 $count 次读数:$confidence。';
+  }
+
+  @override
+  String get batteryWatch_confGood => '趋势明确';
+
+  @override
+  String get batteryWatch_confLow => '太少或太分散，无法确定';
+
+  @override
+  String get batteryWatch_maybeFalling => '可能在下降，但读数还不够，无法判断。';
+
+  @override
+  String batteryWatch_gap(String days) {
+    return '最长无读数间隔:$days 天。';
+  }
 }

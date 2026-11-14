@@ -13351,4 +13351,25 @@ class AppLocalizationsEs extends AppLocalizations {
   String fieldOps_regionMissingByZoom(String list) {
     return 'Faltan por nivel de zoom: $list';
   }
+
+  @override
+  String batteryWatch_basis(int count, String days, String confidence) {
+    return 'Basado en $count lecturas en $days días: $confidence.';
+  }
+
+  @override
+  String get batteryWatch_confGood => 'una tendencia clara';
+
+  @override
+  String get batteryWatch_confLow =>
+      'demasiado pocas o dispersas para estar seguros';
+
+  @override
+  String get batteryWatch_maybeFalling =>
+      'Podría estar bajando, pero aún no hay suficientes lecturas.';
+
+  @override
+  String batteryWatch_gap(String days) {
+    return 'Mayor intervalo sin lectura: $days días.';
+  }
 }

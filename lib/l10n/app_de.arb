@@ -5218,5 +5218,10 @@
   "rf_evDerived": "Braucht Kanaldaten und den Schlüssel des Funkgeräts.",
   "rf_evVersion": "Funkgerät meldet Protokoll v{have}; nötig ist v{need}.",
   "fieldOps_regionDamaged": "{count} beschädigte Kacheldateien wurden entfernt (abgebrochen oder keine Bilder). Lade das Gebiet erneut herunter, um sie zu ersetzen.",
-  "fieldOps_regionMissingByZoom": "Fehlend je Zoomstufe: {list}"
+  "fieldOps_regionMissingByZoom": "Fehlend je Zoomstufe: {list}",
+  "batteryWatch_basis": "Basierend auf {count} Messungen über {days} Tage: {confidence}.",
+  "batteryWatch_confGood": "ein klarer Trend",
+  "batteryWatch_confLow": "zu wenige oder zu verstreut, um sicher zu sein",
+  "batteryWatch_maybeFalling": "Könnte fallen, aber es gibt noch zu wenige Messungen.",
+  "batteryWatch_gap": "Längste Lücke ohne Messung: {days} Tage."
 }

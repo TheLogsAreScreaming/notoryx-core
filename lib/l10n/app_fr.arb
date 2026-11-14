@@ -5218,5 +5218,10 @@
   "rf_evDerived": "Nécessite les données de canal et la clé de la radio.",
   "rf_evVersion": "La radio indique le protocole v{have} ; il faut v{need}.",
   "fieldOps_regionDamaged": "{count} fichiers de tuiles endommagés ont été supprimés (incomplets ou pas des images). Téléchargez à nouveau la zone pour les remplacer.",
-  "fieldOps_regionMissingByZoom": "Manquantes par niveau de zoom : {list}"
+  "fieldOps_regionMissingByZoom": "Manquantes par niveau de zoom : {list}",
+  "batteryWatch_basis": "D'après {count} relevés sur {days} jours : {confidence}.",
+  "batteryWatch_confGood": "une tendance nette",
+  "batteryWatch_confLow": "trop peu nombreux ou trop dispersés pour être sûr",
+  "batteryWatch_maybeFalling": "Pourrait baisser, mais il n'y a pas encore assez de relevés.",
+  "batteryWatch_gap": "Plus long intervalle sans relevé : {days} jours."
 }

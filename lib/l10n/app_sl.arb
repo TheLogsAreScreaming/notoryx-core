@@ -5084,5 +5084,10 @@
   "rf_evDerived": "Potrebuje podatke kanala in ključ radia.",
   "rf_evVersion": "Radio sporoča protokol v{have}; potreben je v{need}.",
   "fieldOps_regionDamaged": "Odstranjenih je bilo {count} poškodovanih datotek ploščic (nepopolne ali niso slike). Znova prenesite območje, da jih nadomestite.",
-  "fieldOps_regionMissingByZoom": "Manjkajoče po ravni povečave: {list}"
+  "fieldOps_regionMissingByZoom": "Manjkajoče po ravni povečave: {list}",
+  "batteryWatch_basis": "Na podlagi {count} meritev v {days} dneh: {confidence}.",
+  "batteryWatch_confGood": "jasen trend",
+  "batteryWatch_confLow": "premalo ali preveč razpršeno za gotovost",
+  "batteryWatch_maybeFalling": "Morda pada, a meritev še ni dovolj.",
+  "batteryWatch_gap": "Najdaljša vrzel brez meritve: {days} dni."
 }

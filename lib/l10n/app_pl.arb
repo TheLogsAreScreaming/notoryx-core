@@ -5122,5 +5122,10 @@
   "rf_evDerived": "Wymaga danych kanału i klucza radia.",
   "rf_evVersion": "Radio zgłasza protokół v{have}; potrzebny v{need}.",
   "fieldOps_regionDamaged": "Usunięto {count} uszkodzonych plików kafelków (niepełne lub nie są obrazami). Pobierz obszar ponownie, aby je zastąpić.",
-  "fieldOps_regionMissingByZoom": "Brakujące według poziomu powiększenia: {list}"
+  "fieldOps_regionMissingByZoom": "Brakujące według poziomu powiększenia: {list}",
+  "batteryWatch_basis": "Na podstawie {count} odczytów z {days} dni: {confidence}.",
+  "batteryWatch_confGood": "wyraźny trend",
+  "batteryWatch_confLow": "za mało lub zbyt rozproszone, by mieć pewność",
+  "batteryWatch_maybeFalling": "Może spadać, ale jest jeszcze za mało odczytów.",
+  "batteryWatch_gap": "Najdłuższa przerwa bez odczytu: {days} dni."
 }

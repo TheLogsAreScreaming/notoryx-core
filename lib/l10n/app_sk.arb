@@ -5084,5 +5084,10 @@
   "rf_evDerived": "Vyžaduje dáta kanála a kľúč rádia.",
   "rf_evVersion": "Rádio hlási protokol v{have}; potrebný je v{need}.",
   "fieldOps_regionDamaged": "Odstránených {count} poškodených súborov dlaždíc (neúplné alebo nie sú obrázky). Stiahnite oblasť znova, aby ste ich nahradili.",
-  "fieldOps_regionMissingByZoom": "Chýbajúce podľa úrovne priblíženia: {list}"
+  "fieldOps_regionMissingByZoom": "Chýbajúce podľa úrovne priblíženia: {list}",
+  "batteryWatch_basis": "Na základe {count} meraní za {days} dní: {confidence}.",
+  "batteryWatch_confGood": "jasný trend",
+  "batteryWatch_confLow": "príliš málo alebo príliš rozptýlené na istotu",
+  "batteryWatch_maybeFalling": "Možno klesá, ale ešte nie je dosť meraní.",
+  "batteryWatch_gap": "Najdlhšia medzera bez merania: {days} dní."
 }

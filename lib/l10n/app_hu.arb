@@ -5122,5 +5122,10 @@
   "rf_evDerived": "Csatornaadatok és a rádió kulcsa szükséges.",
   "rf_evVersion": "A rádió v{have} protokollt jelez; v{need} szükséges.",
   "fieldOps_regionDamaged": "{count} sérült csempefájl törölve (hiányos vagy nem kép). Töltsd le újra a területet a pótlásukhoz.",
-  "fieldOps_regionMissingByZoom": "Hiányzó zoomszintenként: {list}"
+  "fieldOps_regionMissingByZoom": "Hiányzó zoomszintenként: {list}",
+  "batteryWatch_basis": "{count} mérés alapján, {days} nap alatt: {confidence}.",
+  "batteryWatch_confGood": "egyértelmű trend",
+  "batteryWatch_confLow": "túl kevés vagy túl szórt a biztos megállapításhoz",
+  "batteryWatch_maybeFalling": "Lehet, hogy csökken, de még nincs elég mérés.",
+  "batteryWatch_gap": "Leghosszabb szünet mérés nélkül: {days} nap."
 }

@@ -13327,4 +13327,23 @@ class AppLocalizationsSl extends AppLocalizations {
   String fieldOps_regionMissingByZoom(String list) {
     return 'Manjkajoče po ravni povečave: $list';
   }
+
+  @override
+  String batteryWatch_basis(int count, String days, String confidence) {
+    return 'Na podlagi $count meritev v $days dneh: $confidence.';
+  }
+
+  @override
+  String get batteryWatch_confGood => 'jasen trend';
+
+  @override
+  String get batteryWatch_confLow => 'premalo ali preveč razpršeno za gotovost';
+
+  @override
+  String get batteryWatch_maybeFalling => 'Morda pada, a meritev še ni dovolj.';
+
+  @override
+  String batteryWatch_gap(String days) {
+    return 'Najdaljša vrzel brez meritve: $days dni.';
+  }
 }

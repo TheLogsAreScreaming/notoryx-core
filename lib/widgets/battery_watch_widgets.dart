@@ -68,6 +68,18 @@ List<String> batteryTrendLines(BuildContext context, BatteryTrend trend) {
         when trend.status == BatteryWatchStatus.falling ||
             trend.status == BatteryWatchStatus.low)
       l10n.batteryWatch_emptyIn(days < 1 ? '<1' : days.round().toString()),
+    if (trend.maybeFalling) l10n.batteryWatch_maybeFalling,
+    // What the trend rests on, so a guess never reads like a measurement.
+    if (trend.millivoltsPerDay != null)
+      l10n.batteryWatch_basis(
+        trend.sampleCount,
+        (trend.span.inHours / 24).toStringAsFixed(1),
+        trend.confidence == TrendConfidence.good
+            ? l10n.batteryWatch_confGood
+            : l10n.batteryWatch_confLow,
+      ),
+    if (trend.longestGap case final gap? when gap >= const Duration(days: 1))
+      l10n.batteryWatch_gap((gap.inHours / 24).toStringAsFixed(1)),
     if (trend.latest case final latest?)
       l10n.batteryWatch_lastReading(lastHeardText(context, latest.at)),
   ];

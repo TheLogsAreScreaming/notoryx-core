@@ -5084,5 +5084,10 @@
   "rf_evDerived": "Kräver kanaldata och radions nyckel.",
   "rf_evVersion": "Radion anger protokoll v{have}; kräver v{need}.",
   "fieldOps_regionDamaged": "{count} skadade kartrutefiler togs bort (avbrutna eller inte bilder). Ladda ner området igen för att ersätta dem.",
-  "fieldOps_regionMissingByZoom": "Saknas per zoomnivå: {list}"
+  "fieldOps_regionMissingByZoom": "Saknas per zoomnivå: {list}",
+  "batteryWatch_basis": "Baserat på {count} avläsningar under {days} dagar: {confidence}.",
+  "batteryWatch_confGood": "en tydlig trend",
+  "batteryWatch_confLow": "för få eller för spridda för att vara säker",
+  "batteryWatch_maybeFalling": "Kan vara på väg ner, men det finns inte tillräckligt med avläsningar än.",
+  "batteryWatch_gap": "Längsta uppehåll utan avläsning: {days} dagar."
 }

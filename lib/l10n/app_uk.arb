@@ -5064,5 +5064,10 @@
   "rf_evDerived": "Потрібні дані каналу й ключ радіо.",
   "rf_evVersion": "Радіо повідомляє протокол v{have}; потрібен v{need}.",
   "fieldOps_regionDamaged": "Видалено пошкоджених файлів плиток: {count} (обрізані або не зображення). Завантажте область знову, щоб замінити їх.",
-  "fieldOps_regionMissingByZoom": "Бракує за рівнем масштабу: {list}"
+  "fieldOps_regionMissingByZoom": "Бракує за рівнем масштабу: {list}",
+  "batteryWatch_basis": "За {count} вимірюваннями за {days} дн.: {confidence}.",
+  "batteryWatch_confGood": "чітка тенденція",
+  "batteryWatch_confLow": "замало або надто розкидані, щоб бути певним",
+  "batteryWatch_maybeFalling": "Можливо, падає, але вимірювань поки замало.",
+  "batteryWatch_gap": "Найдовша перерва без вимірювань: {days} дн."
 }

@@ -13300,4 +13300,25 @@ class AppLocalizationsSk extends AppLocalizations {
   String fieldOps_regionMissingByZoom(String list) {
     return 'Chýbajúce podľa úrovne priblíženia: $list';
   }
+
+  @override
+  String batteryWatch_basis(int count, String days, String confidence) {
+    return 'Na základe $count meraní za $days dní: $confidence.';
+  }
+
+  @override
+  String get batteryWatch_confGood => 'jasný trend';
+
+  @override
+  String get batteryWatch_confLow =>
+      'príliš málo alebo príliš rozptýlené na istotu';
+
+  @override
+  String get batteryWatch_maybeFalling =>
+      'Možno klesá, ale ešte nie je dosť meraní.';
+
+  @override
+  String batteryWatch_gap(String days) {
+    return 'Najdlhšia medzera bez merania: $days dní.';
+  }
 }

@@ -5089,5 +5089,10 @@
   "rf_evDerived": "需要频道数据和电台密钥。",
   "rf_evVersion": "电台报告协议 v{have}；需要 v{need}。",
   "fieldOps_regionDamaged": "已删除 {count} 个损坏的瓦片文件(不完整或不是图像)。请重新下载该区域以替换。",
-  "fieldOps_regionMissingByZoom": "按缩放级别缺失:{list}"
+  "fieldOps_regionMissingByZoom": "按缩放级别缺失:{list}",
+  "batteryWatch_basis": "基于 {days} 天内的 {count} 次读数:{confidence}。",
+  "batteryWatch_confGood": "趋势明确",
+  "batteryWatch_confLow": "太少或太分散，无法确定",
+  "batteryWatch_maybeFalling": "可能在下降，但读数还不够，无法判断。",
+  "batteryWatch_gap": "最长无读数间隔:{days} 天。"
 }

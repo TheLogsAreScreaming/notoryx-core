@@ -5084,5 +5084,10 @@
   "rf_evDerived": "Requer dados do canal e a chave do rádio.",
   "rf_evVersion": "O rádio indica o protocolo v{have}; é necessário v{need}.",
   "fieldOps_regionDamaged": "Foram removidos {count} ficheiros de mosaicos danificados (incompletos ou que não são imagens). Transfira a área novamente para os substituir.",
-  "fieldOps_regionMissingByZoom": "Em falta por nível de zoom: {list}"
+  "fieldOps_regionMissingByZoom": "Em falta por nível de zoom: {list}",
+  "batteryWatch_basis": "Com base em {count} leituras ao longo de {days} dias: {confidence}.",
+  "batteryWatch_confGood": "uma tendência clara",
+  "batteryWatch_confLow": "poucas ou dispersas demais para ter certeza",
+  "batteryWatch_maybeFalling": "Pode estar a descer, mas ainda não há leituras suficientes.",
+  "batteryWatch_gap": "Maior intervalo sem leitura: {days} dias."
 }

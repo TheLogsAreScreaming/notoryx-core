@@ -5084,5 +5084,10 @@
   "rf_evDerived": "Изисква данни в канала и ключа на радиото.",
   "rf_evVersion": "Радиото съобщава протокол v{have}; нужен е v{need}.",
   "fieldOps_regionDamaged": "{count} повредени файла с плочки бяха премахнати (непълни или не са изображения). Изтеглете района отново, за да ги замените.",
-  "fieldOps_regionMissingByZoom": "Липсващи по ниво на мащаб: {list}"
+  "fieldOps_regionMissingByZoom": "Липсващи по ниво на мащаб: {list}",
+  "batteryWatch_basis": "Въз основа на {count} измервания за {days} дни: {confidence}.",
+  "batteryWatch_confGood": "ясна тенденция",
+  "batteryWatch_confLow": "твърде малко или разпръснати, за да е сигурно",
+  "batteryWatch_maybeFalling": "Може да спада, но още няма достатъчно измервания.",
+  "batteryWatch_gap": "Най-дълга пауза без измерване: {days} дни."
 }

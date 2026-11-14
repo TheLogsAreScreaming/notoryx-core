@@ -5084,5 +5084,10 @@
   "rf_evDerived": "Vereist kanaalgegevens en de sleutel van de radio.",
   "rf_evVersion": "Radio meldt protocol v{have}; nodig is v{need}.",
   "fieldOps_regionDamaged": "{count} beschadigde tegelbestanden zijn verwijderd (afgebroken of geen afbeelding). Download het gebied opnieuw om ze te vervangen.",
-  "fieldOps_regionMissingByZoom": "Ontbrekend per zoomniveau: {list}"
+  "fieldOps_regionMissingByZoom": "Ontbrekend per zoomniveau: {list}",
+  "batteryWatch_basis": "Op basis van {count} metingen over {days} dagen: {confidence}.",
+  "batteryWatch_confGood": "een duidelijke trend",
+  "batteryWatch_confLow": "te weinig of te verspreid om zeker te zijn",
+  "batteryWatch_maybeFalling": "Daalt misschien, maar er zijn nog te weinig metingen.",
+  "batteryWatch_gap": "Langste periode zonder meting: {days} dagen."
 }
