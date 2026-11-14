@@ -6679,10 +6679,6 @@ class AppLocalizationsSv extends AppLocalizations {
       'Incheckningar, beredskap, fältlogg, automatiseringar och jämförelser';
 
   @override
-  String get bastionTools_mapHint =>
-      'Livekarta, insamlingssessioner, offlinekartverktyg och regioner';
-
-  @override
   String get bastionTools_pathAnalysis => 'Väganalys';
 
   @override
@@ -7100,13 +7096,6 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get fieldStats_direct => 'Direkta';
-
-  @override
-  String get mapHub_title => 'NOTORYX fältkarta';
-
-  @override
-  String get mapHub_intro =>
-      'Livekartor, offlineområden, regionala profiler och NOTORYX Cores fälttäckningssessioner.';
 
   @override
   String get mapHub_captureHint => 'Starta och stoppa en fälttäckningssession';
@@ -13302,6 +13291,31 @@ class AppLocalizationsSv extends AppLocalizations {
     });
     return '$distance åt $_temp0';
   }
+
+  @override
+  String get mapHub_introAll =>
+      'Alla verktyg för täckning och kartor på ett ställe: se hur långt din radio når och ha kartor och regioner redo för när du är offline.';
+
+  @override
+  String get mapHub_coverageSection => 'Täckning';
+
+  @override
+  String get mapHub_mapsSection => 'Kartor';
+
+  @override
+  String get bastionTools_mapHintAll =>
+      'Täckningsinspelning, wardrive, täckningshexagoner, antenntäckning och antennsök, offlinekartor och regioner';
+
+  @override
+  String get toolsMoved_title => 'Några verktyg har flyttat';
+
+  @override
+  String toolsMoved_body(String mapHub, String repeaterTools) {
+    return 'Wardrive, täckningshexagoner, antenntäckning och antennsök finns nu tillsammans under $mapHub. Repeaterverktyg som fanns på två ställen finns nu bara under $repeaterTools. Sökningen här hittar dem fortfarande.';
+  }
+
+  @override
+  String get toolsMoved_ok => 'Uppfattat';
 
   @override
   String get deliv_failedMarker => 'Inte levererat';

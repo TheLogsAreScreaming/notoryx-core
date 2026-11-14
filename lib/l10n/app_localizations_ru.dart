@@ -6771,10 +6771,6 @@ class AppLocalizationsRu extends AppLocalizations {
       'Отметки, готовность, полевой журнал, автоматизации и сравнения';
 
   @override
-  String get bastionTools_mapHint =>
-      'Карта в реальном времени, сессии записи, инструменты офлайн-карт и регионы';
-
-  @override
   String get bastionTools_pathAnalysis => 'Анализ путей';
 
   @override
@@ -7195,13 +7191,6 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get fieldStats_direct => 'Напрямую';
-
-  @override
-  String get mapHub_title => 'Полевая карта NOTORYX';
-
-  @override
-  String get mapHub_intro =>
-      'Карты в реальном времени, офлайн-области, региональные профили и полевые сессии покрытия NOTORYX Core.';
 
   @override
   String get mapHub_captureHint =>
@@ -13432,6 +13421,31 @@ class AppLocalizationsRu extends AppLocalizations {
     });
     return '$distance, направление: $_temp0';
   }
+
+  @override
+  String get mapHub_introAll =>
+      'Все инструменты покрытия и карт в одном месте: посмотрите, куда достаёт ваша рация, и подготовьте карты и регионы для работы без сети.';
+
+  @override
+  String get mapHub_coverageSection => 'Покрытие';
+
+  @override
+  String get mapHub_mapsSection => 'Карты';
+
+  @override
+  String get bastionTools_mapHintAll =>
+      'Запись покрытия, вардрайв, шестиугольники покрытия, покрытие и поиск антенны, офлайн-карты и регионы';
+
+  @override
+  String get toolsMoved_title => 'Некоторые инструменты переехали';
+
+  @override
+  String toolsMoved_body(String mapHub, String repeaterTools) {
+    return 'Вардрайв, шестиугольники покрытия, покрытие антенны и поиск антенны теперь вместе в разделе «$mapHub». Инструменты ретрансляторов, которые были указаны дважды, теперь только в разделе «$repeaterTools». Поиск здесь по-прежнему их находит.';
+  }
+
+  @override
+  String get toolsMoved_ok => 'Понятно';
 
   @override
   String get deliv_failedMarker => 'Не доставлено';

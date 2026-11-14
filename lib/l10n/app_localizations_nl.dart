@@ -6708,10 +6708,6 @@ class AppLocalizationsNl extends AppLocalizations {
       'Check-ins, gereedheid, veldlogboek, automatiseringen en vergelijkingen';
 
   @override
-  String get bastionTools_mapHint =>
-      'Live kaart, opnamesessies, offline kaarttools en regio\'s';
-
-  @override
   String get bastionTools_pathAnalysis => 'Padanalyse';
 
   @override
@@ -7130,13 +7126,6 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get fieldStats_direct => 'Direct';
-
-  @override
-  String get mapHub_title => 'NOTORYX-veldkaart';
-
-  @override
-  String get mapHub_intro =>
-      'Live kaarten, offline gebieden, regionale profielen en NOTORYX-Core-velddekkingssessies.';
 
   @override
   String get mapHub_captureHint => 'Een velddekkingssessie starten en stoppen';
@@ -13358,6 +13347,31 @@ class AppLocalizationsNl extends AppLocalizations {
     });
     return '$distance naar het $_temp0';
   }
+
+  @override
+  String get mapHub_introAll =>
+      'Alle dekkings- en kaarttools op één plek: zie hoe ver je radio reikt en houd kaarten en regio\'s klaar voor als je offline bent.';
+
+  @override
+  String get mapHub_coverageSection => 'Dekking';
+
+  @override
+  String get mapHub_mapsSection => 'Kaarten';
+
+  @override
+  String get bastionTools_mapHintAll =>
+      'Dekking vastleggen, wardrive, dekkingszeshoeken, antennedekking en -zoeken, offline kaarten en regio\'s';
+
+  @override
+  String get toolsMoved_title => 'Sommige tools zijn verplaatst';
+
+  @override
+  String toolsMoved_body(String mapHub, String repeaterTools) {
+    return 'Wardrive, dekkingszeshoeken, antennedekking en antenne zoeken staan nu samen onder $mapHub. Repeater-tools die dubbel stonden, staan nu alleen bij $repeaterTools. Zoeken hier vindt ze nog steeds allemaal.';
+  }
+
+  @override
+  String get toolsMoved_ok => 'Begrepen';
 
   @override
   String get deliv_failedMarker => 'Niet afgeleverd';

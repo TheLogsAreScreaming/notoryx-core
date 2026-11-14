@@ -6763,10 +6763,6 @@ class AppLocalizationsFr extends AppLocalizations {
       'Pointages, préparation, journal de terrain, automatisations et comparaisons';
 
   @override
-  String get bastionTools_mapHint =>
-      'Carte en direct, sessions de capture, outils de cartes hors ligne et régions';
-
-  @override
   String get bastionTools_pathAnalysis => 'Analyse des chemins';
 
   @override
@@ -7189,13 +7185,6 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get fieldStats_direct => 'Directs';
-
-  @override
-  String get mapHub_title => 'Carte de terrain NOTORYX';
-
-  @override
-  String get mapHub_intro =>
-      'Cartes en direct, zones hors ligne, profils régionaux et sessions de couverture terrain NOTORYX Core.';
 
   @override
   String get mapHub_captureHint =>
@@ -13460,6 +13449,31 @@ class AppLocalizationsFr extends AppLocalizations {
     });
     return '$distance au $_temp0';
   }
+
+  @override
+  String get mapHub_introAll =>
+      'Tous les outils de couverture et de carte au même endroit : vois jusqu\'où porte ta radio, puis garde cartes et régions prêtes hors ligne.';
+
+  @override
+  String get mapHub_coverageSection => 'Couverture';
+
+  @override
+  String get mapHub_mapsSection => 'Cartes';
+
+  @override
+  String get bastionTools_mapHintAll =>
+      'Relevé de couverture, wardrive, hexagones de couverture, couverture et recherche d\'antenne, cartes hors ligne et régions';
+
+  @override
+  String get toolsMoved_title => 'Certains outils ont bougé';
+
+  @override
+  String toolsMoved_body(String mapHub, String repeaterTools) {
+    return 'Wardrive, hexagones de couverture, couverture d\'antenne et recherche d\'antenne sont maintenant réunis dans $mapHub. Les outils répéteurs qui apparaissaient deux fois sont maintenant seulement dans $repeaterTools. La recherche ici les trouve toujours.';
+  }
+
+  @override
+  String get toolsMoved_ok => 'Compris';
 
   @override
   String get deliv_failedMarker => 'Non remis';

@@ -6722,10 +6722,6 @@ class AppLocalizationsSk extends AppLocalizations {
       'Hlásenia, pripravenosť, terénny denník, automatizácie a porovnania';
 
   @override
-  String get bastionTools_mapHint =>
-      'Živá mapa, relácie záznamu, nástroje offline máp a regióny';
-
-  @override
   String get bastionTools_pathAnalysis => 'Analýza ciest';
 
   @override
@@ -7146,13 +7142,6 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get fieldStats_direct => 'Priame';
-
-  @override
-  String get mapHub_title => 'Terénna mapa NOTORYX';
-
-  @override
-  String get mapHub_intro =>
-      'Živé mapy, offline oblasti, regionálne profily a terénne relácie pokrytia NOTORYX Core.';
 
   @override
   String get mapHub_captureHint =>
@@ -13361,6 +13350,31 @@ class AppLocalizationsSk extends AppLocalizations {
     });
     return '$distance, smer: $_temp0';
   }
+
+  @override
+  String get mapHub_introAll =>
+      'Všetky nástroje pokrytia a máp na jednom mieste: pozri, kam dosiahne tvoje rádio, a priprav si mapy a regióny na offline použitie.';
+
+  @override
+  String get mapHub_coverageSection => 'Pokrytie';
+
+  @override
+  String get mapHub_mapsSection => 'Mapy';
+
+  @override
+  String get bastionTools_mapHintAll =>
+      'Záznam pokrytia, wardrive, šesťuholníky pokrytia, pokrytie a hľadanie antény, offline mapy a regióny';
+
+  @override
+  String get toolsMoved_title => 'Niektoré nástroje sa presunuli';
+
+  @override
+  String toolsMoved_body(String mapHub, String repeaterTools) {
+    return 'Wardrive, šesťuholníky pokrytia, pokrytie antény a hľadanie antény sú teraz spolu v sekcii „$mapHub“. Nástroje opakovačov, ktoré boli uvedené dvakrát, sú teraz len v sekcii „$repeaterTools“. Vyhľadávanie tu ich stále nájde.';
+  }
+
+  @override
+  String get toolsMoved_ok => 'Rozumiem';
 
   @override
   String get deliv_failedMarker => 'Nedoručené';

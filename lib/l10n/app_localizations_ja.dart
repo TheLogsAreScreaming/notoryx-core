@@ -6396,9 +6396,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get bastionTools_fieldOpsHint => 'チェックイン、準備、フィールドログ、自動化、比較';
 
   @override
-  String get bastionTools_mapHint => 'ライブマップ、記録セッション、オフライン地図ツール、地域';
-
-  @override
   String get bastionTools_pathAnalysis => '経路分析';
 
   @override
@@ -6805,13 +6802,6 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get fieldStats_direct => '直接';
-
-  @override
-  String get mapHub_title => 'NOTORYX フィールドマップ';
-
-  @override
-  String get mapHub_intro =>
-      'ライブマップ、オフラインエリア、地域プロファイル、NOTORYX Core のフィールドカバレッジセッション。';
 
   @override
   String get mapHub_captureHint => 'フィールドカバレッジセッションを開始・停止';
@@ -12798,6 +12788,31 @@ class AppLocalizationsJa extends AppLocalizations {
     });
     return '$_temp0へ$distance';
   }
+
+  @override
+  String get mapHub_introAll =>
+      'カバレッジと地図のツールを一か所に。無線の届く範囲を確かめ、オフライン用に地図と地域を準備できます。';
+
+  @override
+  String get mapHub_coverageSection => 'カバレッジ';
+
+  @override
+  String get mapHub_mapsSection => '地図';
+
+  @override
+  String get bastionTools_mapHintAll =>
+      'カバレッジ記録、ウォードライブ、カバレッジ六角形、アンテナのカバレッジと探索、オフライン地図と地域';
+
+  @override
+  String get toolsMoved_title => '一部のツールが移動しました';
+
+  @override
+  String toolsMoved_body(String mapHub, String repeaterTools) {
+    return 'ウォードライブ、カバレッジ六角形、アンテナのカバレッジ、アンテナ探索は「$mapHub」にまとめました。二か所に表示されていたリピーター用ツールは「$repeaterTools」だけになりました。ここで検索すれば引き続き見つかります。';
+  }
+
+  @override
+  String get toolsMoved_ok => '了解';
 
   @override
   String get deliv_failedMarker => '未配信';

@@ -6733,10 +6733,6 @@ class AppLocalizationsBg extends AppLocalizations {
       'Отметки, готовност, теренен дневник, автоматизации и сравнения';
 
   @override
-  String get bastionTools_mapHint =>
-      'Карта на живо, сесии за запис, инструменти за офлайн карти и региони';
-
-  @override
   String get bastionTools_pathAnalysis => 'Анализ на пътища';
 
   @override
@@ -7155,13 +7151,6 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get fieldStats_direct => 'Директни';
-
-  @override
-  String get mapHub_title => 'Теренна карта NOTORYX';
-
-  @override
-  String get mapHub_intro =>
-      'Карти на живо, офлайн области, регионални профили и теренни сесии за покритие на NOTORYX Core.';
 
   @override
   String get mapHub_captureHint =>
@@ -13384,6 +13373,31 @@ class AppLocalizationsBg extends AppLocalizations {
     });
     return '$distance на $_temp0';
   }
+
+  @override
+  String get mapHub_introAll =>
+      'Всички инструменти за покритие и карти на едно място: виж докъде стига радиото ти, после подготви карти и региони за без интернет.';
+
+  @override
+  String get mapHub_coverageSection => 'Покритие';
+
+  @override
+  String get mapHub_mapsSection => 'Карти';
+
+  @override
+  String get bastionTools_mapHintAll =>
+      'Запис на покритие, wardrive, шестоъгълници на покритие, покритие и търсене с антена, офлайн карти и региони';
+
+  @override
+  String get toolsMoved_title => 'Някои инструменти са преместени';
+
+  @override
+  String toolsMoved_body(String mapHub, String repeaterTools) {
+    return 'Wardrive, шестоъгълниците на покритие, покритието на антена и търсенето с антена вече са заедно в раздела „$mapHub“. Инструментите за ретранслатори, които бяха показани два пъти, вече са само в раздела „$repeaterTools“. Търсенето тук пак ги намира.';
+  }
+
+  @override
+  String get toolsMoved_ok => 'Разбрах';
 
   @override
   String get deliv_failedMarker => 'Не е доставено';
