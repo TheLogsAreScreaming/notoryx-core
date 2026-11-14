@@ -13009,4 +13009,70 @@ class AppLocalizationsPt extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name está a $distance de $trail.';
   }
+
+  @override
+  String get fw_title => 'Atualizar firmware';
+
+  @override
+  String get fw_unknownVersion => 'Versão do firmware ainda não indicada';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'Há firmware companion mais recente: $version';
+  }
+
+  @override
+  String get fw_upToDate => 'Este rádio tem o firmware companion mais recente.';
+
+  @override
+  String get fw_checkFailed =>
+      'Não foi possível verificar. Talvez esteja offline.';
+
+  @override
+  String get fw_checkLatest => 'Verificar a versão mais recente';
+
+  @override
+  String get fw_checkPrivacy =>
+      'A verificação pede ao GitHub a lista de versões do MeshCore. Nada sobre o seu rádio é enviado.';
+
+  @override
+  String get fw_stepsTitle => 'Como atualizar';
+
+  @override
+  String get fw_step1 =>
+      'Faça primeiro uma cópia de segurança. Atualizar pode repor as definições e contactos.';
+
+  @override
+  String get fw_backup => 'Cópia cifrada';
+
+  @override
+  String get fw_step2 =>
+      'Num computador com Chrome ou Edge, abra o flasher web oficial do MeshCore e ligue o rádio por USB.';
+
+  @override
+  String get fw_openFlasher => 'Abrir flasher web';
+
+  @override
+  String get fw_copyLink => 'Copiar ligação';
+
+  @override
+  String get fw_linkCopied => 'Ligação copiada';
+
+  @override
+  String get fw_step3 =>
+      'Escolha a sua placa exata e depois o firmware Companion para a sua ligação (Bluetooth, USB ou Wi-Fi). Firmware de repetidor ou room server não funciona com esta app.';
+
+  @override
+  String get fw_step4 =>
+      'No fim, volte a ligar aqui. Se as definições foram repostas, restaure a cópia.';
+
+  @override
+  String get fw_cautionTitle => 'Antes de começar';
+
+  @override
+  String get fw_caution =>
+      'Carregue o rádio e mantenha o cabo ligado até terminar. Se uma atualização falhar, o rádio normalmente recupera-se voltando a gravar por USB. Esta app nunca grava firmware sozinha.';
+
+  @override
+  String get fw_open => 'Como atualizar o firmware';
 }

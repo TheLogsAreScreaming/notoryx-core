@@ -13032,4 +13032,71 @@ class AppLocalizationsEs extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name está a $distance de $trail.';
   }
+
+  @override
+  String get fw_title => 'Actualizar firmware';
+
+  @override
+  String get fw_unknownVersion => 'Versión de firmware aún no informada';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'Hay un firmware companion más reciente: $version';
+  }
+
+  @override
+  String get fw_upToDate =>
+      'Esta radio tiene el firmware companion más reciente.';
+
+  @override
+  String get fw_checkFailed =>
+      'No se pudo comprobar. Quizá no tengas conexión.';
+
+  @override
+  String get fw_checkLatest => 'Buscar la última versión';
+
+  @override
+  String get fw_checkPrivacy =>
+      'La comprobación pide a GitHub la lista de versiones de MeshCore. No se envía nada sobre tu radio.';
+
+  @override
+  String get fw_stepsTitle => 'Cómo actualizar';
+
+  @override
+  String get fw_step1 =>
+      'Haz una copia primero. Actualizar puede restablecer los ajustes y contactos de la radio.';
+
+  @override
+  String get fw_backup => 'Copia cifrada';
+
+  @override
+  String get fw_step2 =>
+      'En un ordenador con Chrome o Edge, abre el flasheador web oficial de MeshCore y conecta la radio por USB.';
+
+  @override
+  String get fw_openFlasher => 'Abrir flasheador web';
+
+  @override
+  String get fw_copyLink => 'Copiar enlace';
+
+  @override
+  String get fw_linkCopied => 'Enlace copiado';
+
+  @override
+  String get fw_step3 =>
+      'Elige tu placa exacta y el firmware Companion según cómo conectes (Bluetooth, USB o Wi-Fi). El firmware de repetidor o room server no funciona con esta app.';
+
+  @override
+  String get fw_step4 =>
+      'Al terminar, vuelve a conectar aquí. Si se restablecieron los ajustes, restaura tu copia.';
+
+  @override
+  String get fw_cautionTitle => 'Antes de empezar';
+
+  @override
+  String get fw_caution =>
+      'Carga la radio y deja el cable conectado hasta que termine. Si una actualización falla, normalmente se recupera volviendo a flashear por USB. Esta app nunca flashea firmware por sí misma.';
+
+  @override
+  String get fw_open => 'Cómo actualizar el firmware';
 }

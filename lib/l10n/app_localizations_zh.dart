@@ -12202,4 +12202,66 @@ class AppLocalizationsZh extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name 距离 $trail $distance。';
   }
+
+  @override
+  String get fw_title => '更新固件';
+
+  @override
+  String get fw_unknownVersion => '尚未报告固件版本';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return '有更新的配套固件：$version';
+  }
+
+  @override
+  String get fw_upToDate => '这台电台已是最新的配套固件。';
+
+  @override
+  String get fw_checkFailed => '无法检查，可能处于离线状态。';
+
+  @override
+  String get fw_checkLatest => '检查最新版本';
+
+  @override
+  String get fw_checkPrivacy => '检查时会向 GitHub 获取 MeshCore 版本列表，不会发送任何关于你电台的信息。';
+
+  @override
+  String get fw_stepsTitle => '更新步骤';
+
+  @override
+  String get fw_step1 => '请先备份。更新可能会重置电台的设置和联系人。';
+
+  @override
+  String get fw_backup => '加密备份';
+
+  @override
+  String get fw_step2 =>
+      '在装有 Chrome 或 Edge 的电脑上打开 MeshCore 官方网页刷写工具，并用 USB 连接电台。';
+
+  @override
+  String get fw_openFlasher => '打开网页刷写工具';
+
+  @override
+  String get fw_copyLink => '复制链接';
+
+  @override
+  String get fw_linkCopied => '已复制链接';
+
+  @override
+  String get fw_step3 =>
+      '准确选择你的主板，然后按连接方式（蓝牙、USB 或 Wi-Fi）选择 Companion 固件。中继器和房间服务器固件无法用于本应用。';
+
+  @override
+  String get fw_step4 => '完成后在这里重新连接。如果设置被重置，请恢复备份。';
+
+  @override
+  String get fw_cautionTitle => '开始之前';
+
+  @override
+  String get fw_caution =>
+      '请先给电台充电，完成前不要拔线。如果更新失败，通常可以通过 USB 重新刷写恢复。本应用从不自行刷写固件。';
+
+  @override
+  String get fw_open => '如何更新固件';
 }

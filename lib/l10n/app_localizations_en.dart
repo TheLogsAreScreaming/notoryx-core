@@ -12876,4 +12876,69 @@ class AppLocalizationsEn extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name is $distance from $trail.';
   }
+
+  @override
+  String get fw_title => 'Update firmware';
+
+  @override
+  String get fw_unknownVersion => 'Firmware version not reported yet';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'Newer companion firmware available: $version';
+  }
+
+  @override
+  String get fw_upToDate => 'This radio has the latest companion firmware.';
+
+  @override
+  String get fw_checkFailed => 'Couldn\'t check. You may be offline.';
+
+  @override
+  String get fw_checkLatest => 'Check for the latest release';
+
+  @override
+  String get fw_checkPrivacy =>
+      'Checking asks GitHub for the MeshCore release list. Nothing about your radio is sent.';
+
+  @override
+  String get fw_stepsTitle => 'How to update';
+
+  @override
+  String get fw_step1 =>
+      'Back up first. Updating can reset the radio\'s settings and contacts.';
+
+  @override
+  String get fw_backup => 'Encrypted backup';
+
+  @override
+  String get fw_step2 =>
+      'On a computer with Chrome or Edge, open the official MeshCore web flasher and connect the radio by USB.';
+
+  @override
+  String get fw_openFlasher => 'Open web flasher';
+
+  @override
+  String get fw_copyLink => 'Copy link';
+
+  @override
+  String get fw_linkCopied => 'Link copied';
+
+  @override
+  String get fw_step3 =>
+      'Pick your exact board, then the Companion firmware for how you connect (Bluetooth, USB or Wi-Fi). Repeater and room-server firmware won\'t work with this app.';
+
+  @override
+  String get fw_step4 =>
+      'When it finishes, reconnect here. If settings were reset, restore your backup.';
+
+  @override
+  String get fw_cautionTitle => 'Before you start';
+
+  @override
+  String get fw_caution =>
+      'Charge the radio first and keep the cable connected until it finishes. If an update fails, the radio can usually be recovered by flashing again over USB. This app never flashes firmware itself.';
+
+  @override
+  String get fw_open => 'How to update firmware';
 }

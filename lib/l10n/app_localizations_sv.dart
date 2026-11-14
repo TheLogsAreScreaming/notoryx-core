@@ -12926,4 +12926,69 @@ class AppLocalizationsSv extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name är $distance från $trail.';
   }
+
+  @override
+  String get fw_title => 'Uppdatera firmware';
+
+  @override
+  String get fw_unknownVersion => 'Firmwareversion inte rapporterad än';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'Nyare companion-firmware finns: $version';
+  }
+
+  @override
+  String get fw_upToDate => 'Den här radion har senaste companion-firmware.';
+
+  @override
+  String get fw_checkFailed => 'Kunde inte kontrollera. Du kanske är offline.';
+
+  @override
+  String get fw_checkLatest => 'Sök efter senaste versionen';
+
+  @override
+  String get fw_checkPrivacy =>
+      'Kontrollen frågar GitHub efter MeshCores versionslista. Inget om din radio skickas.';
+
+  @override
+  String get fw_stepsTitle => 'Så uppdaterar du';
+
+  @override
+  String get fw_step1 =>
+      'Säkerhetskopiera först. En uppdatering kan återställa inställningar och kontakter.';
+
+  @override
+  String get fw_backup => 'Krypterad säkerhetskopia';
+
+  @override
+  String get fw_step2 =>
+      'Öppna MeshCores officiella webbflasher på en dator med Chrome eller Edge och anslut radion via USB.';
+
+  @override
+  String get fw_openFlasher => 'Öppna webbflasher';
+
+  @override
+  String get fw_copyLink => 'Kopiera länk';
+
+  @override
+  String get fw_linkCopied => 'Länken kopierad';
+
+  @override
+  String get fw_step3 =>
+      'Välj exakt ditt kort och sedan Companion-firmware för hur du ansluter (Bluetooth, USB eller wifi). Repeater- och room server-firmware fungerar inte med appen.';
+
+  @override
+  String get fw_step4 =>
+      'När det är klart, anslut här igen. Om inställningarna återställdes, återställ din säkerhetskopia.';
+
+  @override
+  String get fw_cautionTitle => 'Innan du börjar';
+
+  @override
+  String get fw_caution =>
+      'Ladda radion och låt kabeln sitta kvar tills det är klart. Om en uppdatering misslyckas kan radion oftast räddas genom att flasha igen via USB. Appen flashar aldrig firmware själv.';
+
+  @override
+  String get fw_open => 'Så uppdaterar du firmware';
 }

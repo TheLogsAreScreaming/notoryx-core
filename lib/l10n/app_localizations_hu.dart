@@ -13010,4 +13010,70 @@ class AppLocalizationsHu extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name $distance távolságra van ettől: $trail.';
   }
+
+  @override
+  String get fw_title => 'Firmware frissítése';
+
+  @override
+  String get fw_unknownVersion => 'A firmware verziója még ismeretlen';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'Újabb companion firmware érhető el: $version';
+  }
+
+  @override
+  String get fw_upToDate => 'Ezen a rádión a legújabb companion firmware van.';
+
+  @override
+  String get fw_checkFailed =>
+      'Az ellenőrzés nem sikerült. Lehet, hogy offline vagy.';
+
+  @override
+  String get fw_checkLatest => 'Legújabb kiadás keresése';
+
+  @override
+  String get fw_checkPrivacy =>
+      'Az ellenőrzés a GitHubtól kéri le a MeshCore kiadáslistát. A rádiódról semmi nem kerül elküldésre.';
+
+  @override
+  String get fw_stepsTitle => 'A frissítés lépései';
+
+  @override
+  String get fw_step1 =>
+      'Előbb készíts mentést. A frissítés visszaállíthatja a beállításokat és névjegyeket.';
+
+  @override
+  String get fw_backup => 'Titkosított mentés';
+
+  @override
+  String get fw_step2 =>
+      'Chrome-os vagy Edge-es számítógépen nyisd meg a hivatalos MeshCore webes flashert, és csatlakoztasd a rádiót USB-n.';
+
+  @override
+  String get fw_openFlasher => 'Webes flasher megnyitása';
+
+  @override
+  String get fw_copyLink => 'Link másolása';
+
+  @override
+  String get fw_linkCopied => 'Link másolva';
+
+  @override
+  String get fw_step3 =>
+      'Válaszd ki pontosan a lapkádat, majd a kapcsolatodnak megfelelő Companion firmware-t (Bluetooth, USB vagy Wi-Fi). Repeater és room server firmware nem működik ezzel az alkalmazással.';
+
+  @override
+  String get fw_step4 =>
+      'Ha kész, csatlakozz újra itt. Ha a beállítások visszaálltak, állítsd vissza a mentést.';
+
+  @override
+  String get fw_cautionTitle => 'Mielőtt elkezded';
+
+  @override
+  String get fw_caution =>
+      'Töltsd fel a rádiót, és a végéig hagyd csatlakoztatva a kábelt. Ha egy frissítés nem sikerül, a rádió általában USB-n újraflashelve helyreállítható. Ez az alkalmazás soha nem flashel firmware-t magától.';
+
+  @override
+  String get fw_open => 'A firmware frissítése';
 }

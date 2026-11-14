@@ -21624,6 +21624,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{name} is {distance} from {trail}.'**
   String zones_alertOffTrailBody(String name, String distance, String trail);
+
+  /// No description provided for @fw_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Update firmware'**
+  String get fw_title;
+
+  /// No description provided for @fw_unknownVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'Firmware version not reported yet'**
+  String get fw_unknownVersion;
+
+  /// No description provided for @fw_updateAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Newer companion firmware available: {version}'**
+  String fw_updateAvailable(String version);
+
+  /// No description provided for @fw_upToDate.
+  ///
+  /// In en, this message translates to:
+  /// **'This radio has the latest companion firmware.'**
+  String get fw_upToDate;
+
+  /// No description provided for @fw_checkFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t check. You may be offline.'**
+  String get fw_checkFailed;
+
+  /// No description provided for @fw_checkLatest.
+  ///
+  /// In en, this message translates to:
+  /// **'Check for the latest release'**
+  String get fw_checkLatest;
+
+  /// No description provided for @fw_checkPrivacy.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking asks GitHub for the MeshCore release list. Nothing about your radio is sent.'**
+  String get fw_checkPrivacy;
+
+  /// No description provided for @fw_stepsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How to update'**
+  String get fw_stepsTitle;
+
+  /// No description provided for @fw_step1.
+  ///
+  /// In en, this message translates to:
+  /// **'Back up first. Updating can reset the radio\'s settings and contacts.'**
+  String get fw_step1;
+
+  /// No description provided for @fw_backup.
+  ///
+  /// In en, this message translates to:
+  /// **'Encrypted backup'**
+  String get fw_backup;
+
+  /// No description provided for @fw_step2.
+  ///
+  /// In en, this message translates to:
+  /// **'On a computer with Chrome or Edge, open the official MeshCore web flasher and connect the radio by USB.'**
+  String get fw_step2;
+
+  /// No description provided for @fw_openFlasher.
+  ///
+  /// In en, this message translates to:
+  /// **'Open web flasher'**
+  String get fw_openFlasher;
+
+  /// No description provided for @fw_copyLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy link'**
+  String get fw_copyLink;
+
+  /// No description provided for @fw_linkCopied.
+  ///
+  /// In en, this message translates to:
+  /// **'Link copied'**
+  String get fw_linkCopied;
+
+  /// No description provided for @fw_step3.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick your exact board, then the Companion firmware for how you connect (Bluetooth, USB or Wi-Fi). Repeater and room-server firmware won\'t work with this app.'**
+  String get fw_step3;
+
+  /// No description provided for @fw_step4.
+  ///
+  /// In en, this message translates to:
+  /// **'When it finishes, reconnect here. If settings were reset, restore your backup.'**
+  String get fw_step4;
+
+  /// No description provided for @fw_cautionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Before you start'**
+  String get fw_cautionTitle;
+
+  /// No description provided for @fw_caution.
+  ///
+  /// In en, this message translates to:
+  /// **'Charge the radio first and keep the cable connected until it finishes. If an update fails, the radio can usually be recovered by flashing again over USB. This app never flashes firmware itself.'**
+  String get fw_caution;
+
+  /// No description provided for @fw_open.
+  ///
+  /// In en, this message translates to:
+  /// **'How to update firmware'**
+  String get fw_open;
 }
 
 class _AppLocalizationsDelegate

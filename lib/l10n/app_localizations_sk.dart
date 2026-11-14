@@ -12986,4 +12986,69 @@ class AppLocalizationsSk extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name je $distance od: $trail.';
   }
+
+  @override
+  String get fw_title => 'Aktualizovať firmvér';
+
+  @override
+  String get fw_unknownVersion => 'Verzia firmvéru zatiaľ nebola hlásená';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'K dispozícii je novší firmvér companion: $version';
+  }
+
+  @override
+  String get fw_upToDate => 'Toto rádio má najnovší firmvér companion.';
+
+  @override
+  String get fw_checkFailed => 'Kontrola zlyhala. Možno ste offline.';
+
+  @override
+  String get fw_checkLatest => 'Skontrolovať najnovšiu verziu';
+
+  @override
+  String get fw_checkPrivacy =>
+      'Kontrola sa pýta GitHubu na zoznam verzií MeshCore. O vašom rádiu sa nič neodosiela.';
+
+  @override
+  String get fw_stepsTitle => 'Ako aktualizovať';
+
+  @override
+  String get fw_step1 =>
+      'Najprv zálohujte. Aktualizácia môže vynulovať nastavenia a kontakty.';
+
+  @override
+  String get fw_backup => 'Šifrovaná záloha';
+
+  @override
+  String get fw_step2 =>
+      'Na počítači s Chrome alebo Edge otvorte oficiálny webový flasher MeshCore a pripojte rádio cez USB.';
+
+  @override
+  String get fw_openFlasher => 'Otvoriť webový flasher';
+
+  @override
+  String get fw_copyLink => 'Kopírovať odkaz';
+
+  @override
+  String get fw_linkCopied => 'Odkaz skopírovaný';
+
+  @override
+  String get fw_step3 =>
+      'Vyberte presne svoju dosku a potom firmvér Companion podľa pripojenia (Bluetooth, USB alebo Wi-Fi). Firmvér repeatera a room servera s touto aplikáciou nefunguje.';
+
+  @override
+  String get fw_step4 =>
+      'Po dokončení sa sem znova pripojte. Ak sa nastavenia vynulovali, obnovte zálohu.';
+
+  @override
+  String get fw_cautionTitle => 'Skôr než začnete';
+
+  @override
+  String get fw_caution =>
+      'Nabite rádio a nechajte kábel pripojený až do konca. Ak aktualizácia zlyhá, rádio sa zvyčajne dá obnoviť opätovným flashnutím cez USB. Táto aplikácia nikdy sama neflashuje firmvér.';
+
+  @override
+  String get fw_open => 'Ako aktualizovať firmvér';
 }

@@ -13007,4 +13007,69 @@ class AppLocalizationsBg extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name е на $distance от $trail.';
   }
+
+  @override
+  String get fw_title => 'Обнови фърмуера';
+
+  @override
+  String get fw_unknownVersion => 'Версията на фърмуера още не е съобщена';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'Има по-нов companion фърмуер: $version';
+  }
+
+  @override
+  String get fw_upToDate => 'Това радио е с най-новия companion фърмуер.';
+
+  @override
+  String get fw_checkFailed => 'Проверката не успя. Може би сте офлайн.';
+
+  @override
+  String get fw_checkLatest => 'Провери за последна версия';
+
+  @override
+  String get fw_checkPrivacy =>
+      'Проверката пита GitHub за списъка с версии на MeshCore. Нищо за радиото ви не се изпраща.';
+
+  @override
+  String get fw_stepsTitle => 'Как да обновите';
+
+  @override
+  String get fw_step1 =>
+      'Първо направете резервно копие. Обновяването може да нулира настройките и контактите.';
+
+  @override
+  String get fw_backup => 'Шифровано копие';
+
+  @override
+  String get fw_step2 =>
+      'На компютър с Chrome или Edge отворете официалния уеб флашър на MeshCore и свържете радиото през USB.';
+
+  @override
+  String get fw_openFlasher => 'Отвори уеб флашъра';
+
+  @override
+  String get fw_copyLink => 'Копирай връзката';
+
+  @override
+  String get fw_linkCopied => 'Връзката е копирана';
+
+  @override
+  String get fw_step3 =>
+      'Изберете точната си платка, после Companion фърмуер според връзката (Bluetooth, USB или Wi-Fi). Фърмуер за ретранслатор или room server не работи с това приложение.';
+
+  @override
+  String get fw_step4 =>
+      'След края се свържете отново тук. Ако настройките са нулирани, възстановете копието.';
+
+  @override
+  String get fw_cautionTitle => 'Преди да започнете';
+
+  @override
+  String get fw_caution =>
+      'Заредете радиото и не изключвайте кабела до края. Ако обновяването се провали, радиото обикновено се възстановява с повторно флашване през USB. Това приложение никога не флашва фърмуер само.';
+
+  @override
+  String get fw_open => 'Как да обновите фърмуера';
 }

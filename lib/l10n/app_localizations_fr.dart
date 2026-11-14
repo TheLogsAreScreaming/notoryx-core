@@ -13077,4 +13077,70 @@ class AppLocalizationsFr extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name est à $distance de $trail.';
   }
+
+  @override
+  String get fw_title => 'Mettre à jour le firmware';
+
+  @override
+  String get fw_unknownVersion => 'Version du firmware pas encore indiquée';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'Firmware compagnon plus récent disponible : $version';
+  }
+
+  @override
+  String get fw_upToDate => 'Cette radio a le dernier firmware compagnon.';
+
+  @override
+  String get fw_checkFailed =>
+      'Vérification impossible. Vous êtes peut-être hors ligne.';
+
+  @override
+  String get fw_checkLatest => 'Vérifier la dernière version';
+
+  @override
+  String get fw_checkPrivacy =>
+      'La vérification demande à GitHub la liste des versions MeshCore. Rien sur votre radio n\'est envoyé.';
+
+  @override
+  String get fw_stepsTitle => 'Comment mettre à jour';
+
+  @override
+  String get fw_step1 =>
+      'Sauvegardez d\'abord. Une mise à jour peut réinitialiser les réglages et contacts de la radio.';
+
+  @override
+  String get fw_backup => 'Sauvegarde chiffrée';
+
+  @override
+  String get fw_step2 =>
+      'Sur un ordinateur avec Chrome ou Edge, ouvrez le flasheur web officiel MeshCore et branchez la radio en USB.';
+
+  @override
+  String get fw_openFlasher => 'Ouvrir le flasheur web';
+
+  @override
+  String get fw_copyLink => 'Copier le lien';
+
+  @override
+  String get fw_linkCopied => 'Lien copié';
+
+  @override
+  String get fw_step3 =>
+      'Choisissez exactement votre carte, puis le firmware Companion selon votre connexion (Bluetooth, USB ou Wi-Fi). Les firmwares répéteur et room server ne fonctionnent pas avec cette app.';
+
+  @override
+  String get fw_step4 =>
+      'Une fois terminé, reconnectez-vous ici. Si les réglages ont été réinitialisés, restaurez votre sauvegarde.';
+
+  @override
+  String get fw_cautionTitle => 'Avant de commencer';
+
+  @override
+  String get fw_caution =>
+      'Chargez la radio et gardez le câble branché jusqu\'à la fin. Si une mise à jour échoue, la radio peut en général être récupérée en reflashant en USB. Cette app ne flashe jamais de firmware elle-même.';
+
+  @override
+  String get fw_open => 'Comment mettre à jour le firmware';
 }
