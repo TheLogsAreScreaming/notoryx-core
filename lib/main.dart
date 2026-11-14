@@ -59,6 +59,7 @@ import 'screens/network_changes_screen.dart' show networkChangeText;
 import 'services/battery_check_service.dart';
 import 'services/repeater_battery_history.dart';
 import 'services/automation_service.dart';
+import 'services/position_history_service.dart';
 import 'services/notification_service.dart';
 import 'services/offline_outbox.dart';
 import 'services/ble_debug_log_service.dart';
@@ -367,6 +368,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   Timer? _channelPruneTimer;
   late final BotService _botService;
   late final AutomationService _automation;
+  late final PositionHistoryService _positionHistory;
   late final WeatherService _weather;
   late final FieldOpsService _fieldOps;
   late final RegionalPresetService _regionalPresets;
@@ -416,6 +418,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _botService = BotService(widget.connector, weather: _weather);
     unawaited(_botService.load());
     _automation = AutomationService(widget.connector);
+    _positionHistory = PositionHistoryService(widget.connector);
     _fieldOps = FieldOpsService(widget.connector);
     unawaited(_fieldOps.load());
     _regionalPresets = RegionalPresetService(widget.connector);
@@ -645,6 +648,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _nodeJournal.dispose();
     _botService.dispose();
     _automation.dispose();
+    _positionHistory.dispose();
     _weather.dispose();
     widget.appSettingsService.removeListener(_applyBatterySaver);
     _fieldOps.dispose();
@@ -861,6 +865,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         ChangeNotifierProvider.value(value: _botService),
         ChangeNotifierProvider.value(value: _sentinel),
         ChangeNotifierProvider.value(value: _automation),
+        ChangeNotifierProvider.value(value: _positionHistory),
         ChangeNotifierProvider<WeatherService?>.value(value: _weather),
         ChangeNotifierProvider.value(value: _fieldOps),
         ChangeNotifierProvider<WaypointStore>.value(value: _waypoints),
