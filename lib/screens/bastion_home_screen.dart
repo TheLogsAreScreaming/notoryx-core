@@ -32,6 +32,7 @@ import 'bastion_setup_screen.dart';
 import '../widgets/sos_panel.dart';
 import '../widgets/quick_trip_setup.dart';
 import '../widgets/quick_switch_bar.dart';
+import '../widgets/radio_list.dart';
 import '../utils/main_tab_navigation.dart';
 
 class BastionHomeScreen extends StatelessWidget {
@@ -125,6 +126,7 @@ class BastionHomeScreen extends StatelessWidget {
                         color: online ? MeshPalette.signal : MeshPalette.ink4,
                       ),
                     ),
+                    const RadioSwitcherButton(),
                     IconButton(
                       tooltip: l10n.bastionHome_aboutTooltip,
                       onPressed: () => open(const BastionAboutScreen()),

@@ -746,6 +746,10 @@
   "channels_editChannel": "Edit channel",
   "channels_muteChannel": "Mute channel",
   "channels_unmuteChannel": "Unmute channel",
+  "channels_notifyMode": "Notifications",
+  "channels_notifyAll": "All messages",
+  "channels_notifyMentions": "Only when I'm mentioned",
+  "channels_notifyMuted": "Muted",
   "channels_deleteChannel": "Delete channel",
   "channels_deleteChannelConfirm": "Delete \"{name}\"? This cannot be undone.",
   "@channels_deleteChannelConfirm": {
@@ -894,6 +898,13 @@
   "chat_location": "Location",
   "chat_typeMessage": "Type a message...",
   "chat_messageTooLong": "Message too long (max {maxBytes} bytes).",
+  "chat_airtimeEstimate": "≈{seconds} s on air",
+  "@chat_airtimeEstimate": {
+    "description": "Estimated radio transmit time for the message being typed, shown beside the byte counter.",
+    "placeholders": {
+      "seconds": {"type": "String"}
+    }
+  },
   "@chat_messageTooLong": {
     "placeholders": {
       "maxBytes": {
@@ -1055,6 +1066,132 @@
   "routing_currentRoute": "Current route",
   "routing_directNoHops": "Direct — no repeater hops",
   "routing_noPathYet": "No path yet. The next message floods until a route is discovered.",
+  "routePick_open": "Route view and picker",
+  "routePick_openHint": "Chart each hop's link quality and pick a more reliable route",
+  "routePick_title": "Route to {name}",
+  "@routePick_title": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "routePick_current": "Current route",
+  "routePick_flooding": "No fixed route: messages flood the mesh until a route is learned.",
+  "routePick_direct": "Direct",
+  "routePick_hopUnknown": "Repeater {id}",
+  "@routePick_hopUnknown": {
+    "placeholders": {
+      "id": {
+        "type": "String"
+      }
+    }
+  },
+  "routePick_notMeasured": "Not measured yet",
+  "routePick_measure": "Measure this route",
+  "routePick_measuring": "Tracing…",
+  "routePick_measured": "Measured just now.",
+  "routePick_noAnswer": "No answer to the trace. A repeater on the route may be out of range.",
+  "routePick_floodDone": "Route cleared. The next message floods to find a new one.",
+  "routePick_suggested": "Suggested",
+  "routePick_suggestBody": "A more reliable route: {route} (score {score}).",
+  "@routePick_suggestBody": {
+    "placeholders": {
+      "route": {
+        "type": "String"
+      },
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "routePick_use": "Use",
+  "routePick_useLabel": "Use route {route}",
+  "@routePick_useLabel": {
+    "placeholders": {
+      "route": {
+        "type": "String"
+      }
+    }
+  },
+  "routePick_options": "Routes to choose from",
+  "routePick_optionsHint": "Every route heard for this contact, scored 0–100 from link signal, delivery record, length and how recent it is.",
+  "routePick_none": "No routes heard yet. Send a message to discover one.",
+  "routePick_other": "Other choices",
+  "routePick_build": "Build a route",
+  "routePick_flood": "Let the mesh find a route",
+  "routePick_explainer": "Measuring sends a trace out along the route and back, so every link between repeaters is measured both ways. The last link to the contact can't be traced. Readings are kept for 30 days and count for every route that uses the same link.",
+  "routePick_score": "Score {score} of 100",
+  "@routePick_score": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      }
+    }
+  },
+  "routePick_hopLabel": "Hop {number}: {name}. Link {quality}, {out} decibels out, {back} decibels back.",
+  "@routePick_hopLabel": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      },
+      "name": {
+        "type": "String"
+      },
+      "quality": {
+        "type": "String"
+      },
+      "out": {
+        "type": "String"
+      },
+      "back": {
+        "type": "String"
+      }
+    }
+  },
+  "routePick_lastLink": "Last link to the contact: not measurable by trace",
+  "routePick_linkLine": "Out {out} dB · back {back} dB",
+  "@routePick_linkLine": {
+    "placeholders": {
+      "out": {
+        "type": "String"
+      },
+      "back": {
+        "type": "String"
+      }
+    }
+  },
+  "routePick_optionLine": "Score {score} · hops: {hops}",
+  "@routePick_optionLine": {
+    "placeholders": {
+      "score": {
+        "type": "int"
+      },
+      "hops": {
+        "type": "int"
+      }
+    }
+  },
+  "routePick_record": "delivered {ok} of {tries}",
+  "@routePick_record": {
+    "placeholders": {
+      "ok": {
+        "type": "int"
+      },
+      "tries": {
+        "type": "int"
+      }
+    }
+  },
+  "routePick_weakest": "weakest link {snr} dB",
+  "@routePick_weakest": {
+    "placeholders": {
+      "snr": {
+        "type": "String"
+      }
+    }
+  },
+  "routePick_inUse": "In use",
   "routing_floodBroadcast": "Broadcast through every repeater",
   "routing_editPath": "Edit path",
   "routing_forgetPath": "Forget path",
@@ -4027,6 +4164,60 @@
   "mapHub_badgeOffline": "OFFLINE",
   "mapHub_regions": "Region profiles",
   "mapHub_regionsHint": "Manage and fetch regional mesh definitions",
+  "replay_title": "Replay a day",
+  "replay_entryHint": "Play back where the team went on a chosen day",
+  "replay_badge": "History",
+  "replay_day": "Day",
+  "replay_team": "Team",
+  "replay_everyone": "Everyone",
+  "replay_emptyTeam": "No team positions on this day. Teammates show up when they share tracked positions on a channel. Try Everyone for node adverts.",
+  "replay_emptyEveryone": "No positions recorded on this day. This phone records the positions nodes advertise from now on, while the app is open.",
+  "replay_mapSummary": "Map at {time}: {count} shown",
+  "@replay_mapSummary": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "replay_play": "Play",
+  "replay_pause": "Pause",
+  "replay_speed": "Speed",
+  "replay_speedValue": "{minutes} min per second",
+  "@replay_speedValue": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "replay_showNode": "Show or hide {name}",
+  "@replay_showNode": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "replay_notYet": "Not seen yet at this time",
+  "replay_lastSeen": "Last seen {time} at {lat}, {lon}",
+  "@replay_lastSeen": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      },
+      "lat": {
+        "type": "String"
+      },
+      "lon": {
+        "type": "String"
+      }
+    }
+  },
+  "replay_explainer": "Team positions come from the tracked positions teammates share on channels. Everyone adds the positions nodes advertise, which this phone records while the app is open and keeps for 30 days. Nothing is sent.",
   "mapHub_badgeRegions": "REGIONS",
   "routes_title": "Route Intelligence",
   "routes_headline": "See how traffic moves through the mesh.",
@@ -4718,6 +4909,29 @@
   "connections_noRadio": "No radio",
   "connections_radioSettings": "Radio settings",
   "connections_viewDashboard": "View connection dashboard",
+  "radios_title": "Radios",
+  "radios_number": "Radio {number}",
+  "@radios_number": {"placeholders": {"number": {"type": "int"}}},
+  "radios_active": "In use",
+  "radios_switch": "Use this radio",
+  "radios_add": "Add a radio",
+  "radios_switcher": "Switch radio",
+  "radios_hint": "You can stay connected to more than one radio, such as a handheld and a base station. The app shows and sends through the radio in use. The others stay connected, and their messages are saved for when you switch.",
+  "radios_switchNote": "Switching radios takes you back to the home screen. Bots, automation, alerts, tracking and the SOS relay run on the radio in use.",
+  "radios_removeTitle": "Remove {name}?",
+  "@radios_removeTitle": {"placeholders": {"name": {"type": "String"}}},
+  "radios_removeBody": "This disconnects the radio and forgets it. Its messages and contacts stay saved.",
+  "radios_unread": "{count} unread",
+  "@radios_unread": {"placeholders": {"count": {"type": "int"}}},
+  "radios_backgroundUnread": "{count} unread on other radios",
+  "radios_continueOn": "Continue on another radio",
+  "radios_continueOnName": "Continue on {name}",
+  "@radios_continueOnName": {"placeholders": {"name": {"type": "String"}}},
+  "radios_routeDirect": "Direct",
+  "radios_routeHops": "Hops: {count}",
+  "@radios_routeHops": {"placeholders": {"count": {"type": "int"}}},
+  "radios_routeFlood": "No known route",
+  "@radios_backgroundUnread": {"placeholders": {"count": {"type": "int"}}},
   "channelDirectory_title": "Channel directory",
   "channelDirectory_subtitle": "Find public hashtag channels near you",
   "channelDirectory_search": "Search channels or places",
@@ -5883,8 +6097,8 @@
   "checklist_deploy6": "Location, photos and notes recorded",
   "waypoints_title": "Waypoints",
   "waypoints_toolSubtitle": "Saved places and routes; import or export GPX",
-  "waypoints_importFile": "Import GPX file",
-  "waypoints_importPaste": "Paste GPX",
+  "waypoints_importFile": "Import map file (GPX, KML, GeoJSON)",
+  "waypoints_importPaste": "Paste GPX, KML or GeoJSON",
   "waypoints_export": "Export GPX",
   "waypoints_empty": "No waypoints yet. Import a GPX file, or save a place someone shared in a chat.",
   "waypoints_waypoints": "Waypoints ({count})",
@@ -5899,7 +6113,7 @@
   "waypoints_pickChannel": "Send to which channel?",
   "waypoints_sent": "Sent to {channel}",
   "@waypoints_sent": {"placeholders": {"channel": {"type": "String"}}},
-  "waypoints_importFailed": "That isn't a GPX file the app can read.",
+  "waypoints_importFailed": "That isn't a GPX, KML or GeoJSON file the app can read.",
   "waypoints_pasteHint": "Paste the GPX text here",
   "waypoints_import": "Import",
   "waypoints_imported": "Added {waypoints} waypoints and {routes} routes",
@@ -6167,7 +6381,63 @@
   "auto_message": "Message",
   "auto_save": "Save",
   "auto_entry": "Automation rules",
-  "auto_entrySub": "Battery, time, area and node triggers",
+  "auto_entrySub": "Battery, time, area, node and message triggers; AND/OR",
+  "auto_trigMessage": "A message arrives",
+  "auto_actJoin": "Join a hashtag channel",
+  "auto_actSound": "Play a sound",
+  "auto_actWebhook": "Call a webhook",
+  "auto_outDone": "Done",
+  "auto_outNotConnected": "Radio not connected",
+  "auto_outNoTarget": "Recipient or address missing",
+  "auto_outWebOff": "Web requests are off",
+  "auto_outWebFailed": "Web request failed",
+  "auto_outNoSlot": "No free channel slot",
+  "auto_outFailed": "Failed",
+  "auto_anyone": "Anyone",
+  "auto_webSwitch": "Allow web requests (webhooks)",
+  "auto_webSwitchSub": "Off by default. Webhook actions need internet and are skipped while this is off. Everything else works over radio alone.",
+  "auto_andJoin": " and ",
+  "auto_orJoin": " or ",
+  "auto_needsInternet": "Needs internet",
+  "auto_recent": "Recent runs",
+  "auto_needCondition": "Add at least one condition.",
+  "auto_needAction": "Add at least one action.",
+  "auto_conditions": "Conditions",
+  "auto_actions": "Actions",
+  "auto_addCondition": "Add condition",
+  "auto_addAction": "Add action",
+  "auto_remove": "Remove {item}",
+  "@auto_remove": {
+    "placeholders": {
+      "item": {
+        "type": "String"
+      }
+    }
+  },
+  "auto_combine": "Run the rule when",
+  "auto_combineAny": "Any (OR)",
+  "auto_combineAll": "All (AND)",
+  "auto_combineAnyHint": "Runs when any one of the conditions happens.",
+  "auto_combineAllHint": "Runs when one condition happens and all the others hold at that moment, like “at 18:00 AND battery below 30%”.",
+  "auto_editCondition": "Condition",
+  "auto_editAction": "Action",
+  "auto_done": "Done",
+  "auto_contains": "Message contains (optional)",
+  "auto_from": "From",
+  "auto_do": "Do",
+  "auto_webhookHint": "Needs internet. Sends the rule name, time, battery, node and text as JSON. Works only while web requests are allowed.",
+  "auto_webhookUrl": "Webhook address (https://…)",
+  "auto_channelName": "Hashtag channel, like #hikers",
+  "auto_needChannel": "Enter the channel name.",
+  "auto_needUrl": "Enter a web address starting with https://",
+  "auto_placeholders": "You can use {list}",
+  "@auto_placeholders": {
+    "placeholders": {
+      "list": {
+        "type": "String"
+      }
+    }
+  },
   "teamSetup_title": "Team setup",
   "teamSetup_toolSub": "Share radio settings, channels and routes",
   "teamSetup_share": "Share",
@@ -6596,6 +6866,54 @@
       }
     }
   },
+  "fw_title": "Update firmware",
+  "fw_unknownVersion": "Firmware version not reported yet",
+  "fw_updateAvailable": "Newer companion firmware available: {version}",
+  "@fw_updateAvailable": {
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "fw_upToDate": "This radio has the latest companion firmware.",
+  "fw_checkFailed": "Couldn't check. You may be offline.",
+  "fw_checkLatest": "Check for the latest release",
+  "fw_checkPrivacy": "Checking asks GitHub for the MeshCore release list. Nothing about your radio is sent.",
+  "fw_stepsTitle": "How to update",
+  "fw_step1": "Back up first. Updating can reset the radio's settings and contacts.",
+  "fw_backup": "Encrypted backup",
+  "fw_step2": "On a computer with Chrome or Edge, open the official MeshCore web flasher and connect the radio by USB.",
+  "fw_openFlasher": "Open web flasher",
+  "fw_copyLink": "Copy link",
+  "fw_linkCopied": "Link copied",
+  "fw_step3": "Pick your exact board, then the Companion firmware for how you connect (Bluetooth, USB or Wi-Fi). Repeater and room-server firmware won't work with this app.",
+  "fw_step4": "When it finishes, reconnect here. If settings were reset, restore your backup.",
+  "fw_cautionTitle": "Before you start",
+  "fw_caution": "Charge the radio first and keep the cable connected until it finishes. If an update fails, the radio can usually be recovered by flashing again over USB. This app never flashes firmware itself.",
+  "fw_open": "How to update firmware",
+  "idKey_title": "Identity key backup",
+  "idKey_tileSubtitle": "Back up or restore this radio's private key",
+  "idKey_explainer": "Your radio's identity is its private key. Keep a copy to move this identity to another radio, or to get it back after a reset. Your contacts keep recognising you.",
+  "idKey_backupLabel": "Back up",
+  "idKey_showKey": "Show private key",
+  "idKey_showConfirmTitle": "Show private key?",
+  "idKey_showConfirmBody": "Anyone who sees this key can read your direct messages and send as you. Only show it somewhere private.",
+  "idKey_show": "Show",
+  "idKey_copy": "Copy key",
+  "idKey_copied": "Key copied. Store it somewhere safe, then clear your clipboard.",
+  "idKey_importLabel": "Restore",
+  "idKey_importHint": "Paste a 128-character hex private key",
+  "idKey_importInvalid": "A key is exactly 128 hex characters (0–9, a–f).",
+  "idKey_importButton": "Replace identity",
+  "idKey_importConfirmTitle": "Replace this radio's identity?",
+  "idKey_importConfirmBody": "The radio takes on the identity in this key. Its current key is gone for good unless you backed it up.",
+  "idKey_importDone": "Identity replaced.",
+  "idKey_warning": "Never share this key. Anyone who has it can read your direct messages and pretend to be you.",
+  "idKey_errNotConnected": "Connect a radio first.",
+  "idKey_errTimeout": "The radio didn't answer. Try again.",
+  "idKey_errDisabled": "This radio's firmware has key backup turned off.",
+  "idKey_errRejected": "The radio refused. Check the key and try again.",
   "hopTie_title": "Shared-ID memory",
   "hopTie_tileSubtitle": "Name repeaters that share a short ID the same way each time",
   "hopTie_explainer": "A path only carries a short ID for each hop, and several repeaters can share one. When position picks one of them, the app remembers that pick for the same spot in a path, and uses it again when there's no position to go on or two repeaters are about equally close.",

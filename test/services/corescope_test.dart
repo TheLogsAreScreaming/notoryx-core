@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
+import 'package:latlong2/latlong.dart';
 import 'package:meshcore_open/connector/meshcore_connector.dart';
 import 'package:meshcore_open/helpers/direct_heard_name.dart';
 import 'package:meshcore_open/services/corescope.dart';
@@ -60,6 +61,29 @@ void main() {
     expect(hops['5A']!.name, 'Ridge');
     expect(hops['5A']!.ambiguous, isTrue);
     expect(hops['94']!.ambiguous, isFalse);
+  });
+
+  test('with a position, only a candidate in range is named', () {
+    final hop = parseResolvedHops({
+      'resolved': {
+        '3D': {
+          'name': 'Far Away',
+          'ambiguous': true,
+          'candidates': [
+            {'name': 'Far Away', 'lat': 51.4, 'lon': 6.9},
+            {'name': 'Close By', 'lat': 47.62, 'lon': -122.31},
+            {'name': 'No Position'},
+          ],
+        },
+      },
+    })['3D']!;
+    expect(hop.candidates, hasLength(2));
+    final seattle = hop.from(const LatLng(47.6, -122.3));
+    expect(seattle?.name, 'Close By');
+    expect(seattle?.ambiguous, isFalse);
+    expect(hop.from(const LatLng(-33.9, 151.2)), isNull);
+    expect(hop.from(null), same(hop));
+    expect(const OnlineHop('Tower', false).from(const LatLng(0, 1)), isNotNull);
   });
 
   test('isValidUrl wants https and a host', () {

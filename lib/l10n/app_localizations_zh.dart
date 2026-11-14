@@ -1476,6 +1476,18 @@ class AppLocalizationsZh extends AppLocalizations {
   String get channels_unmuteChannel => '取消静音频道';
 
   @override
+  String get channels_notifyMode => '通知';
+
+  @override
+  String get channels_notifyAll => '所有消息';
+
+  @override
+  String get channels_notifyMentions => '仅在提到我时';
+
+  @override
+  String get channels_notifyMuted => '静音';
+
+  @override
   String get channels_deleteChannel => '删除频道';
 
   @override
@@ -1694,6 +1706,11 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return '消息过长（最多 $maxBytes 字节）';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '空中时间约 $seconds 秒';
   }
 
   @override
@@ -1922,6 +1939,130 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get routing_noPathYet => '目前还没有找到路径。直到找到路径，才会收到后续消息。';
+
+  @override
+  String get routePick_open => '路由视图与选择';
+
+  @override
+  String get routePick_openHint => '查看每一跳的链路质量并选择更可靠的路由';
+
+  @override
+  String routePick_title(String name) {
+    return '到 $name 的路由';
+  }
+
+  @override
+  String get routePick_current => '当前路由';
+
+  @override
+  String get routePick_flooding => '没有固定路由：在学到路由前，消息会泛洪整个网络。';
+
+  @override
+  String get routePick_direct => '直连';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return '中继 $id';
+  }
+
+  @override
+  String get routePick_notMeasured => '尚未测量';
+
+  @override
+  String get routePick_measure => '测量此路由';
+
+  @override
+  String get routePick_measuring => '追踪中…';
+
+  @override
+  String get routePick_measured => '刚刚测量完成。';
+
+  @override
+  String get routePick_noAnswer => '追踪无应答。路由上的某个中继可能超出范围。';
+
+  @override
+  String get routePick_floodDone => '路由已清除。下一条消息将泛洪以寻找新路由。';
+
+  @override
+  String get routePick_suggested => '推荐';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return '更可靠的路由：$route（得分 $score）。';
+  }
+
+  @override
+  String get routePick_use => '使用';
+
+  @override
+  String routePick_useLabel(String route) {
+    return '使用路由 $route';
+  }
+
+  @override
+  String get routePick_options => '可选路由';
+
+  @override
+  String get routePick_optionsHint =>
+      '该联系人的所有已知路由，按链路信号、送达记录、长度和新近程度评为 0–100 分。';
+
+  @override
+  String get routePick_none => '尚无路由。发送消息以发现路由。';
+
+  @override
+  String get routePick_other => '其他选择';
+
+  @override
+  String get routePick_build => '自建路由';
+
+  @override
+  String get routePick_flood => '让网络自行寻找路由';
+
+  @override
+  String get routePick_explainer =>
+      '测量会沿路由往返发送一次追踪，因此中继之间的每条链路都会双向测量。到联系人的最后一段无法追踪。读数保留 30 天，并用于所有使用同一链路的路由。';
+
+  @override
+  String routePick_score(int score) {
+    return '得分 $score/100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return '第 $number 跳：$name。链路$quality，去程 $out 分贝，回程 $back 分贝。';
+  }
+
+  @override
+  String get routePick_lastLink => '到联系人的最后一段：无法通过追踪测量';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return '去程 $out dB · 回程 $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return '得分 $score · 跳数：$hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return '送达 $ok/$tries';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return '最弱链路 $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => '使用中';
 
   @override
   String get routing_floodBroadcast => '通过所有中继器进行广播';
@@ -6563,6 +6704,66 @@ class AppLocalizationsZh extends AppLocalizations {
   String get mapHub_regionsHint => '管理和获取区域网络定义';
 
   @override
+  String get replay_title => '回放一天';
+
+  @override
+  String get replay_entryHint => '回放团队在某天的位置';
+
+  @override
+  String get replay_badge => '历史';
+
+  @override
+  String get replay_day => '日期';
+
+  @override
+  String get replay_team => '团队';
+
+  @override
+  String get replay_everyone => '所有人';
+
+  @override
+  String get replay_emptyTeam => '这一天没有团队位置。队员在频道中共享跟踪位置后才会显示。选择“所有人”可查看节点广播。';
+
+  @override
+  String get replay_emptyEveryone => '这一天没有记录位置。从现在起，应用打开期间本机会记录节点广播的位置。';
+
+  @override
+  String replay_mapSummary(String time, int count) {
+    return '$time 的地图：显示 $count 个';
+  }
+
+  @override
+  String get replay_play => '播放';
+
+  @override
+  String get replay_pause => '暂停';
+
+  @override
+  String get replay_speed => '速度';
+
+  @override
+  String replay_speedValue(int minutes) {
+    return '每秒 $minutes 分钟';
+  }
+
+  @override
+  String replay_showNode(String name) {
+    return '显示或隐藏 $name';
+  }
+
+  @override
+  String get replay_notYet => '此时尚未出现';
+
+  @override
+  String replay_lastSeen(String time, String lat, String lon) {
+    return '最后出现于 $time，位置 $lat, $lon';
+  }
+
+  @override
+  String get replay_explainer =>
+      '团队位置来自队员在频道中共享的跟踪位置。“所有人”还会加入节点广播的位置，本机在应用打开期间记录并保留 30 天。不会发送任何内容。';
+
+  @override
   String get mapHub_badgeRegions => '区域';
 
   @override
@@ -7510,6 +7711,71 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => '查看连接面板';
+
+  @override
+  String get radios_title => '电台';
+
+  @override
+  String radios_number(int number) {
+    return '电台 $number';
+  }
+
+  @override
+  String get radios_active => '使用中';
+
+  @override
+  String get radios_switch => '使用此电台';
+
+  @override
+  String get radios_add => '添加电台';
+
+  @override
+  String get radios_switcher => '切换电台';
+
+  @override
+  String get radios_hint =>
+      '您可以同时连接多台电台，例如手持台和基地台。应用通过正在使用的电台显示和发送。其他电台保持连接，其消息会保存，等您切换时查看。';
+
+  @override
+  String get radios_switchNote =>
+      '切换电台会回到主屏幕。机器人、自动化、提醒、追踪和 SOS 中继在正在使用的电台上运行。';
+
+  @override
+  String radios_removeTitle(String name) {
+    return '移除 $name？';
+  }
+
+  @override
+  String get radios_removeBody => '这会断开并移除该电台。其消息和联系人仍会保存。';
+
+  @override
+  String radios_unread(int count) {
+    return '$count 条未读';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '其他电台有 $count 条未读';
+  }
+
+  @override
+  String get radios_continueOn => '在另一台电台上继续';
+
+  @override
+  String radios_continueOnName(String name) {
+    return '在 $name 上继续';
+  }
+
+  @override
+  String get radios_routeDirect => '直连';
+
+  @override
+  String radios_routeHops(int count) {
+    return '跳数：$count';
+  }
+
+  @override
+  String get radios_routeFlood => '无已知路由';
 
   @override
   String get channelDirectory_title => '频道目录';
@@ -10066,10 +10332,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get waypoints_toolSubtitle => '已保存的地点和路线；导入或导出 GPX';
 
   @override
-  String get waypoints_importFile => '导入 GPX 文件';
+  String get waypoints_importFile => '导入地图文件 (GPX、KML、GeoJSON)';
 
   @override
-  String get waypoints_importPaste => '粘贴 GPX';
+  String get waypoints_importPaste => '粘贴 GPX、KML 或 GeoJSON';
 
   @override
   String get waypoints_export => '导出 GPX';
@@ -10110,7 +10376,7 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get waypoints_importFailed => '这不是应用能读取的 GPX 文件。';
+  String get waypoints_importFailed => '这不是应用能读取的 GPX、KML 或 GeoJSON 文件。';
 
   @override
   String get waypoints_pasteHint => '在此粘贴 GPX 文本';
@@ -10882,7 +11148,137 @@ class AppLocalizationsZh extends AppLocalizations {
   String get auto_entry => '自动化规则';
 
   @override
-  String get auto_entrySub => '电量、时间、区域和节点触发';
+  String get auto_entrySub => '电量、时间、区域、节点和消息触发；且/或';
+
+  @override
+  String get auto_trigMessage => '收到消息';
+
+  @override
+  String get auto_actJoin => '加入话题频道';
+
+  @override
+  String get auto_actSound => '播放声音';
+
+  @override
+  String get auto_actWebhook => '调用 Webhook';
+
+  @override
+  String get auto_outDone => '完成';
+
+  @override
+  String get auto_outNotConnected => '电台未连接';
+
+  @override
+  String get auto_outNoTarget => '缺少收件人或地址';
+
+  @override
+  String get auto_outWebOff => '网络请求已关闭';
+
+  @override
+  String get auto_outWebFailed => '网络请求失败';
+
+  @override
+  String get auto_outNoSlot => '没有空闲频道位置';
+
+  @override
+  String get auto_outFailed => '失败';
+
+  @override
+  String get auto_anyone => '任何人';
+
+  @override
+  String get auto_webSwitch => '允许网络请求（Webhook）';
+
+  @override
+  String get auto_webSwitchSub => '默认关闭。Webhook 操作需要互联网，关闭时会被跳过。其他功能仅靠电台即可工作。';
+
+  @override
+  String get auto_andJoin => ' 且 ';
+
+  @override
+  String get auto_orJoin => ' 或 ';
+
+  @override
+  String get auto_needsInternet => '需要互联网';
+
+  @override
+  String get auto_recent => '最近运行';
+
+  @override
+  String get auto_needCondition => '请至少添加一个条件。';
+
+  @override
+  String get auto_needAction => '请至少添加一个操作。';
+
+  @override
+  String get auto_conditions => '条件';
+
+  @override
+  String get auto_actions => '操作';
+
+  @override
+  String get auto_addCondition => '添加条件';
+
+  @override
+  String get auto_addAction => '添加操作';
+
+  @override
+  String auto_remove(String item) {
+    return '移除 $item';
+  }
+
+  @override
+  String get auto_combine => '规则运行时机';
+
+  @override
+  String get auto_combineAny => '任一（或）';
+
+  @override
+  String get auto_combineAll => '全部（且）';
+
+  @override
+  String get auto_combineAnyHint => '任一条件发生时运行。';
+
+  @override
+  String get auto_combineAllHint => '某一条件发生且其他条件在当时都成立时运行，例如“18:00 且电量低于 30%”。';
+
+  @override
+  String get auto_editCondition => '条件';
+
+  @override
+  String get auto_editAction => '操作';
+
+  @override
+  String get auto_done => '完成';
+
+  @override
+  String get auto_contains => '消息包含（可选）';
+
+  @override
+  String get auto_from => '来自';
+
+  @override
+  String get auto_do => '执行';
+
+  @override
+  String get auto_webhookHint => '需要互联网。以 JSON 发送规则名、时间、电量、节点和文本。仅在允许网络请求时工作。';
+
+  @override
+  String get auto_webhookUrl => 'Webhook 地址（https://…）';
+
+  @override
+  String get auto_channelName => '话题频道，例如 #hikers';
+
+  @override
+  String get auto_needChannel => '请输入频道名称。';
+
+  @override
+  String get auto_needUrl => '请输入以 https:// 开头的网址';
+
+  @override
+  String auto_placeholders(String list) {
+    return '可使用 $list';
+  }
 
   @override
   String get teamSetup_title => '团队设置';
@@ -11866,6 +12262,135 @@ class AppLocalizationsZh extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name 距离 $trail $distance。';
   }
+
+  @override
+  String get fw_title => '更新固件';
+
+  @override
+  String get fw_unknownVersion => '尚未报告固件版本';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return '有更新的配套固件：$version';
+  }
+
+  @override
+  String get fw_upToDate => '这台电台已是最新的配套固件。';
+
+  @override
+  String get fw_checkFailed => '无法检查，可能处于离线状态。';
+
+  @override
+  String get fw_checkLatest => '检查最新版本';
+
+  @override
+  String get fw_checkPrivacy => '检查时会向 GitHub 获取 MeshCore 版本列表，不会发送任何关于你电台的信息。';
+
+  @override
+  String get fw_stepsTitle => '更新步骤';
+
+  @override
+  String get fw_step1 => '请先备份。更新可能会重置电台的设置和联系人。';
+
+  @override
+  String get fw_backup => '加密备份';
+
+  @override
+  String get fw_step2 =>
+      '在装有 Chrome 或 Edge 的电脑上打开 MeshCore 官方网页刷写工具，并用 USB 连接电台。';
+
+  @override
+  String get fw_openFlasher => '打开网页刷写工具';
+
+  @override
+  String get fw_copyLink => '复制链接';
+
+  @override
+  String get fw_linkCopied => '已复制链接';
+
+  @override
+  String get fw_step3 =>
+      '准确选择你的主板，然后按连接方式（蓝牙、USB 或 Wi-Fi）选择 Companion 固件。中继器和房间服务器固件无法用于本应用。';
+
+  @override
+  String get fw_step4 => '完成后在这里重新连接。如果设置被重置，请恢复备份。';
+
+  @override
+  String get fw_cautionTitle => '开始之前';
+
+  @override
+  String get fw_caution =>
+      '请先给电台充电，完成前不要拔线。如果更新失败，通常可以通过 USB 重新刷写恢复。本应用从不自行刷写固件。';
+
+  @override
+  String get fw_open => '如何更新固件';
+
+  @override
+  String get idKey_title => '身份密钥备份';
+
+  @override
+  String get idKey_tileSubtitle => '备份或恢复此电台的私钥';
+
+  @override
+  String get idKey_explainer =>
+      '电台的身份就是它的私钥。保存一份副本，以便把身份迁移到另一台电台，或在重置后恢复。联系人仍能认出你。';
+
+  @override
+  String get idKey_backupLabel => '备份';
+
+  @override
+  String get idKey_showKey => '显示私钥';
+
+  @override
+  String get idKey_showConfirmTitle => '显示私钥？';
+
+  @override
+  String get idKey_showConfirmBody => '看到此密钥的任何人都能读取你的私信并以你的名义发送。请仅在私密场合显示。';
+
+  @override
+  String get idKey_show => '显示';
+
+  @override
+  String get idKey_copy => '复制密钥';
+
+  @override
+  String get idKey_copied => '密钥已复制。请妥善保存，然后清空剪贴板。';
+
+  @override
+  String get idKey_importLabel => '恢复';
+
+  @override
+  String get idKey_importHint => '粘贴128位十六进制私钥';
+
+  @override
+  String get idKey_importInvalid => '密钥必须正好是128个十六进制字符（0–9、a–f）。';
+
+  @override
+  String get idKey_importButton => '替换身份';
+
+  @override
+  String get idKey_importConfirmTitle => '替换此电台的身份？';
+
+  @override
+  String get idKey_importConfirmBody => '电台将采用此密钥中的身份。若未备份，当前密钥将永久丢失。';
+
+  @override
+  String get idKey_importDone => '身份已替换。';
+
+  @override
+  String get idKey_warning => '切勿分享此密钥。持有者可读取你的私信并冒充你。';
+
+  @override
+  String get idKey_errNotConnected => '请先连接电台。';
+
+  @override
+  String get idKey_errTimeout => '电台未响应，请重试。';
+
+  @override
+  String get idKey_errDisabled => '此电台的固件已关闭密钥备份功能。';
+
+  @override
+  String get idKey_errRejected => '电台拒绝了。请检查密钥后重试。';
 
   @override
   String get hopTie_title => '共享ID记忆';

@@ -66,3 +66,11 @@ Bastion also uses third-party Flutter and Dart packages. Their notices are avail
 
 Used for the optional encrypted message history, through `package:sqlite3`.
 MIT License. Copyright (c) Ulrich Telle. <https://github.com/utelle/SQLite3MultipleCiphers>
+
+## flserial
+
+`third_party/flserial` is a bundled copy of [flserial](https://github.com/MeshEnvy/flserial)
+(MIT License, Copyright (c) 2024 Grzegorz Leśniak; see `third_party/flserial/LICENSE`),
+taken from the MIT-licensed MeshCore Open project with two fixes: an idle USB serial
+port no longer keeps a CPU core busy on macOS and Linux, and on Linux data waits until
+the read callback is installed.

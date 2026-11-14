@@ -1576,6 +1576,18 @@ class AppLocalizationsDe extends AppLocalizations {
   String get channels_unmuteChannel => 'Kanal Stummschaltung aufheben';
 
   @override
+  String get channels_notifyMode => 'Benachrichtigungen';
+
+  @override
+  String get channels_notifyAll => 'Alle Nachrichten';
+
+  @override
+  String get channels_notifyMentions => 'Nur wenn ich erwähnt werde';
+
+  @override
+  String get channels_notifyMuted => 'Stumm';
+
+  @override
   String get channels_deleteChannel => 'Kanal löschen';
 
   @override
@@ -1807,6 +1819,11 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return 'Nachricht zu lang (max. $maxBytes Bytes).';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds s Sendezeit';
   }
 
   @override
@@ -2049,6 +2066,136 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get routing_noPathYet =>
       'Noch kein Pfad gefunden. Die nächste Nachricht wird geflutet, bis eine Route entdeckt ist.';
+
+  @override
+  String get routePick_open => 'Routenansicht und -auswahl';
+
+  @override
+  String get routePick_openHint =>
+      'Linkqualität jedes Hops anzeigen und eine zuverlässigere Route wählen';
+
+  @override
+  String routePick_title(String name) {
+    return 'Route zu $name';
+  }
+
+  @override
+  String get routePick_current => 'Aktuelle Route';
+
+  @override
+  String get routePick_flooding =>
+      'Keine feste Route: Nachrichten fluten das Mesh, bis eine Route gelernt ist.';
+
+  @override
+  String get routePick_direct => 'Direkt';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return 'Repeater $id';
+  }
+
+  @override
+  String get routePick_notMeasured => 'Noch nicht gemessen';
+
+  @override
+  String get routePick_measure => 'Diese Route messen';
+
+  @override
+  String get routePick_measuring => 'Trace läuft…';
+
+  @override
+  String get routePick_measured => 'Gerade gemessen.';
+
+  @override
+  String get routePick_noAnswer =>
+      'Keine Antwort auf den Trace. Ein Repeater auf der Route ist eventuell außer Reichweite.';
+
+  @override
+  String get routePick_floodDone =>
+      'Route gelöscht. Die nächste Nachricht flutet, um eine neue zu finden.';
+
+  @override
+  String get routePick_suggested => 'Empfohlen';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return 'Eine zuverlässigere Route: $route (Wert $score).';
+  }
+
+  @override
+  String get routePick_use => 'Verwenden';
+
+  @override
+  String routePick_useLabel(String route) {
+    return 'Route $route verwenden';
+  }
+
+  @override
+  String get routePick_options => 'Wählbare Routen';
+
+  @override
+  String get routePick_optionsHint =>
+      'Jede für diesen Kontakt gehörte Route, bewertet von 0–100 nach Linksignal, Zustellbilanz, Länge und Aktualität.';
+
+  @override
+  String get routePick_none =>
+      'Noch keine Routen gehört. Sende eine Nachricht, um eine zu finden.';
+
+  @override
+  String get routePick_other => 'Weitere Möglichkeiten';
+
+  @override
+  String get routePick_build => 'Route zusammenstellen';
+
+  @override
+  String get routePick_flood => 'Das Mesh eine Route finden lassen';
+
+  @override
+  String get routePick_explainer =>
+      'Beim Messen geht ein Trace die Route entlang und zurück, so wird jede Verbindung zwischen Repeatern in beide Richtungen gemessen. Die letzte Verbindung zum Kontakt kann nicht getraced werden. Messwerte bleiben 30 Tage und zählen für jede Route mit derselben Verbindung.';
+
+  @override
+  String routePick_score(int score) {
+    return 'Wert $score von 100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return 'Hop $number: $name. Verbindung $quality, hin $out Dezibel, zurück $back Dezibel.';
+  }
+
+  @override
+  String get routePick_lastLink =>
+      'Letzte Verbindung zum Kontakt: per Trace nicht messbar';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return 'Hin $out dB · zurück $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return 'Wert $score · Hops: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return '$ok von $tries zugestellt';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return 'schwächste Verbindung $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => 'In Verwendung';
 
   @override
   String get routing_floodBroadcast => 'Über alle Repeater senden';
@@ -7066,6 +7213,69 @@ class AppLocalizationsDe extends AppLocalizations {
       'Regionale Mesh-Definitionen verwalten und abrufen';
 
   @override
+  String get replay_title => 'Tag abspielen';
+
+  @override
+  String get replay_entryHint =>
+      'Zeigt, wo das Team an einem Tag unterwegs war';
+
+  @override
+  String get replay_badge => 'Verlauf';
+
+  @override
+  String get replay_day => 'Tag';
+
+  @override
+  String get replay_team => 'Team';
+
+  @override
+  String get replay_everyone => 'Alle';
+
+  @override
+  String get replay_emptyTeam =>
+      'An diesem Tag keine Teampositionen. Teammitglieder erscheinen, wenn sie verfolgte Positionen in einem Kanal teilen. Probiere Alle für Knoten-Adverts.';
+
+  @override
+  String get replay_emptyEveryone =>
+      'An diesem Tag keine Positionen aufgezeichnet. Dieses Telefon zeichnet ab jetzt die von Knoten gesendeten Positionen auf, solange die App offen ist.';
+
+  @override
+  String replay_mapSummary(String time, int count) {
+    return 'Karte um $time: $count angezeigt';
+  }
+
+  @override
+  String get replay_play => 'Abspielen';
+
+  @override
+  String get replay_pause => 'Pause';
+
+  @override
+  String get replay_speed => 'Geschwindigkeit';
+
+  @override
+  String replay_speedValue(int minutes) {
+    return '$minutes Min. pro Sekunde';
+  }
+
+  @override
+  String replay_showNode(String name) {
+    return '$name ein- oder ausblenden';
+  }
+
+  @override
+  String get replay_notYet => 'Zu dieser Zeit noch nicht gesehen';
+
+  @override
+  String replay_lastSeen(String time, String lat, String lon) {
+    return 'Zuletzt gesehen $time bei $lat, $lon';
+  }
+
+  @override
+  String get replay_explainer =>
+      'Teampositionen stammen aus verfolgten Positionen, die Teammitglieder in Kanälen teilen. Alle ergänzt die von Knoten gesendeten Positionen, die dieses Telefon bei offener App aufzeichnet und 30 Tage behält. Es wird nichts gesendet.';
+
+  @override
   String get mapHub_badgeRegions => 'REGIONEN';
 
   @override
@@ -8069,6 +8279,72 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => 'Verbindungsübersicht anzeigen';
+
+  @override
+  String get radios_title => 'Funkgeräte';
+
+  @override
+  String radios_number(int number) {
+    return 'Funkgerät $number';
+  }
+
+  @override
+  String get radios_active => 'In Verwendung';
+
+  @override
+  String get radios_switch => 'Dieses Funkgerät verwenden';
+
+  @override
+  String get radios_add => 'Funkgerät hinzufügen';
+
+  @override
+  String get radios_switcher => 'Funkgerät wechseln';
+
+  @override
+  String get radios_hint =>
+      'Du kannst mit mehreren Funkgeräten verbunden bleiben, etwa einem Handgerät und einer Basisstation. Die App zeigt und sendet über das Funkgerät in Verwendung. Die anderen bleiben verbunden, und ihre Nachrichten werden für den Wechsel gespeichert.';
+
+  @override
+  String get radios_switchNote =>
+      'Beim Wechsel des Funkgeräts kehrst du zum Startbildschirm zurück. Bots, Automatisierung, Hinweise, Tracking und SOS-Weiterleitung laufen auf dem Funkgerät in Verwendung.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return '$name entfernen?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Damit wird das Funkgerät getrennt und vergessen. Seine Nachrichten und Kontakte bleiben gespeichert.';
+
+  @override
+  String radios_unread(int count) {
+    return '$count ungelesen';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count ungelesen auf anderen Funkgeräten';
+  }
+
+  @override
+  String get radios_continueOn => 'Mit anderem Funkgerät fortsetzen';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Mit $name fortsetzen';
+  }
+
+  @override
+  String get radios_routeDirect => 'Direkt';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Sprünge: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Keine bekannte Route';
 
   @override
   String get channelDirectory_title => 'Kanalverzeichnis';
@@ -10792,10 +11068,11 @@ class AppLocalizationsDe extends AppLocalizations {
       'Gespeicherte Orte und Routen; GPX importieren oder exportieren';
 
   @override
-  String get waypoints_importFile => 'GPX-Datei importieren';
+  String get waypoints_importFile =>
+      'Kartendatei importieren (GPX, KML, GeoJSON)';
 
   @override
-  String get waypoints_importPaste => 'GPX einfügen';
+  String get waypoints_importPaste => 'GPX, KML oder GeoJSON einfügen';
 
   @override
   String get waypoints_export => 'GPX exportieren';
@@ -10838,7 +11115,7 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get waypoints_importFailed =>
-      'Das ist keine GPX-Datei, die die App lesen kann.';
+      'Das ist keine lesbare GPX-, KML- oder GeoJSON-Datei.';
 
   @override
   String get waypoints_pasteHint => 'GPX-Text hier einfügen';
@@ -11646,7 +11923,143 @@ class AppLocalizationsDe extends AppLocalizations {
   String get auto_entry => 'Automatisierungsregeln';
 
   @override
-  String get auto_entrySub => 'Auslöser für Akku, Zeit, Gebiet und Knoten';
+  String get auto_entrySub =>
+      'Auslöser für Akku, Zeit, Gebiet, Knoten und Nachrichten; UND/ODER';
+
+  @override
+  String get auto_trigMessage => 'Eine Nachricht kommt an';
+
+  @override
+  String get auto_actJoin => 'Hashtag-Kanal beitreten';
+
+  @override
+  String get auto_actSound => 'Ton abspielen';
+
+  @override
+  String get auto_actWebhook => 'Webhook aufrufen';
+
+  @override
+  String get auto_outDone => 'Erledigt';
+
+  @override
+  String get auto_outNotConnected => 'Funkgerät nicht verbunden';
+
+  @override
+  String get auto_outNoTarget => 'Empfänger oder Adresse fehlt';
+
+  @override
+  String get auto_outWebOff => 'Webanfragen sind aus';
+
+  @override
+  String get auto_outWebFailed => 'Webanfrage fehlgeschlagen';
+
+  @override
+  String get auto_outNoSlot => 'Kein freier Kanalplatz';
+
+  @override
+  String get auto_outFailed => 'Fehlgeschlagen';
+
+  @override
+  String get auto_anyone => 'Jeder';
+
+  @override
+  String get auto_webSwitch => 'Webanfragen erlauben (Webhooks)';
+
+  @override
+  String get auto_webSwitchSub =>
+      'Standardmäßig aus. Webhook-Aktionen brauchen Internet und werden übersprungen, solange dies aus ist. Alles andere funktioniert nur über Funk.';
+
+  @override
+  String get auto_andJoin => ' und ';
+
+  @override
+  String get auto_orJoin => ' oder ';
+
+  @override
+  String get auto_needsInternet => 'Braucht Internet';
+
+  @override
+  String get auto_recent => 'Letzte Ausführungen';
+
+  @override
+  String get auto_needCondition => 'Füge mindestens eine Bedingung hinzu.';
+
+  @override
+  String get auto_needAction => 'Füge mindestens eine Aktion hinzu.';
+
+  @override
+  String get auto_conditions => 'Bedingungen';
+
+  @override
+  String get auto_actions => 'Aktionen';
+
+  @override
+  String get auto_addCondition => 'Bedingung hinzufügen';
+
+  @override
+  String get auto_addAction => 'Aktion hinzufügen';
+
+  @override
+  String auto_remove(String item) {
+    return '$item entfernen';
+  }
+
+  @override
+  String get auto_combine => 'Regel ausführen, wenn';
+
+  @override
+  String get auto_combineAny => 'Eine (ODER)';
+
+  @override
+  String get auto_combineAll => 'Alle (UND)';
+
+  @override
+  String get auto_combineAnyHint =>
+      'Läuft, wenn irgendeine der Bedingungen eintritt.';
+
+  @override
+  String get auto_combineAllHint =>
+      'Läuft, wenn eine Bedingung eintritt und alle anderen in dem Moment gelten, z. B. „um 18:00 UND Akku unter 30 %“.';
+
+  @override
+  String get auto_editCondition => 'Bedingung';
+
+  @override
+  String get auto_editAction => 'Aktion';
+
+  @override
+  String get auto_done => 'Fertig';
+
+  @override
+  String get auto_contains => 'Nachricht enthält (optional)';
+
+  @override
+  String get auto_from => 'Von';
+
+  @override
+  String get auto_do => 'Aktion';
+
+  @override
+  String get auto_webhookHint =>
+      'Braucht Internet. Sendet Regelname, Zeit, Akku, Knoten und Text als JSON. Funktioniert nur, solange Webanfragen erlaubt sind.';
+
+  @override
+  String get auto_webhookUrl => 'Webhook-Adresse (https://…)';
+
+  @override
+  String get auto_channelName => 'Hashtag-Kanal, z. B. #wandern';
+
+  @override
+  String get auto_needChannel => 'Gib den Kanalnamen ein.';
+
+  @override
+  String get auto_needUrl =>
+      'Gib eine Webadresse ein, die mit https:// beginnt';
+
+  @override
+  String auto_placeholders(String list) {
+    return 'Verwendbar: $list';
+  }
 
   @override
   String get teamSetup_title => 'Team-Einrichtung';
@@ -12687,6 +13100,150 @@ class AppLocalizationsDe extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name ist $distance von $trail entfernt.';
   }
+
+  @override
+  String get fw_title => 'Firmware aktualisieren';
+
+  @override
+  String get fw_unknownVersion => 'Firmware-Version noch nicht gemeldet';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'Neuere Companion-Firmware verfügbar: $version';
+  }
+
+  @override
+  String get fw_upToDate =>
+      'Dieses Funkgerät hat die neueste Companion-Firmware.';
+
+  @override
+  String get fw_checkFailed =>
+      'Prüfung fehlgeschlagen. Vielleicht bist du offline.';
+
+  @override
+  String get fw_checkLatest => 'Neueste Version prüfen';
+
+  @override
+  String get fw_checkPrivacy =>
+      'Die Prüfung fragt GitHub nach der MeshCore-Versionsliste. Über dein Funkgerät wird nichts gesendet.';
+
+  @override
+  String get fw_stepsTitle => 'So aktualisierst du';
+
+  @override
+  String get fw_step1 =>
+      'Sichere zuerst. Ein Update kann Einstellungen und Kontakte zurücksetzen.';
+
+  @override
+  String get fw_backup => 'Verschlüsselte Sicherung';
+
+  @override
+  String get fw_step2 =>
+      'Öffne auf einem Computer mit Chrome oder Edge den offiziellen MeshCore-Web-Flasher und verbinde das Funkgerät per USB.';
+
+  @override
+  String get fw_openFlasher => 'Web-Flasher öffnen';
+
+  @override
+  String get fw_copyLink => 'Link kopieren';
+
+  @override
+  String get fw_linkCopied => 'Link kopiert';
+
+  @override
+  String get fw_step3 =>
+      'Wähle genau dein Board und dann die Companion-Firmware für deine Verbindungsart (Bluetooth, USB oder WLAN). Repeater- und Room-Server-Firmware funktionieren mit dieser App nicht.';
+
+  @override
+  String get fw_step4 =>
+      'Danach hier wieder verbinden. Falls Einstellungen zurückgesetzt wurden, stelle die Sicherung wieder her.';
+
+  @override
+  String get fw_cautionTitle => 'Bevor du beginnst';
+
+  @override
+  String get fw_caution =>
+      'Lade das Funkgerät vorher auf und lass das Kabel bis zum Ende stecken. Schlägt ein Update fehl, lässt sich das Gerät meist per USB neu flashen. Diese App flasht nie selbst Firmware.';
+
+  @override
+  String get fw_open => 'Firmware aktualisieren – Anleitung';
+
+  @override
+  String get idKey_title => 'Schlüssel-Backup';
+
+  @override
+  String get idKey_tileSubtitle =>
+      'Privaten Schlüssel des Funkgeräts sichern oder wiederherstellen';
+
+  @override
+  String get idKey_explainer =>
+      'Die Identität deines Funkgeräts ist sein privater Schlüssel. Bewahre eine Kopie auf, um die Identität auf ein anderes Gerät zu übertragen oder nach einem Zurücksetzen wiederherzustellen. Deine Kontakte erkennen dich weiterhin.';
+
+  @override
+  String get idKey_backupLabel => 'Sichern';
+
+  @override
+  String get idKey_showKey => 'Privaten Schlüssel anzeigen';
+
+  @override
+  String get idKey_showConfirmTitle => 'Privaten Schlüssel anzeigen?';
+
+  @override
+  String get idKey_showConfirmBody =>
+      'Wer diesen Schlüssel sieht, kann deine Direktnachrichten lesen und in deinem Namen senden. Zeige ihn nur ungestört an.';
+
+  @override
+  String get idKey_show => 'Anzeigen';
+
+  @override
+  String get idKey_copy => 'Schlüssel kopieren';
+
+  @override
+  String get idKey_copied =>
+      'Schlüssel kopiert. Bewahre ihn sicher auf und leere danach die Zwischenablage.';
+
+  @override
+  String get idKey_importLabel => 'Wiederherstellen';
+
+  @override
+  String get idKey_importHint => '128-stelligen Hex-Schlüssel einfügen';
+
+  @override
+  String get idKey_importInvalid =>
+      'Ein Schlüssel hat genau 128 Hex-Zeichen (0–9, a–f).';
+
+  @override
+  String get idKey_importButton => 'Identität ersetzen';
+
+  @override
+  String get idKey_importConfirmTitle =>
+      'Identität dieses Funkgeräts ersetzen?';
+
+  @override
+  String get idKey_importConfirmBody =>
+      'Das Funkgerät übernimmt die Identität aus diesem Schlüssel. Der bisherige Schlüssel ist endgültig weg, wenn du ihn nicht gesichert hast.';
+
+  @override
+  String get idKey_importDone => 'Identität ersetzt.';
+
+  @override
+  String get idKey_warning =>
+      'Gib diesen Schlüssel niemals weiter. Wer ihn hat, kann deine Direktnachrichten lesen und sich als du ausgeben.';
+
+  @override
+  String get idKey_errNotConnected => 'Verbinde zuerst ein Funkgerät.';
+
+  @override
+  String get idKey_errTimeout =>
+      'Das Funkgerät hat nicht geantwortet. Versuche es erneut.';
+
+  @override
+  String get idKey_errDisabled =>
+      'Die Firmware dieses Funkgeräts hat die Schlüsselsicherung deaktiviert.';
+
+  @override
+  String get idKey_errRejected =>
+      'Das Funkgerät hat abgelehnt. Prüfe den Schlüssel und versuche es erneut.';
 
   @override
   String get hopTie_title => 'Gedächtnis für gleiche IDs';

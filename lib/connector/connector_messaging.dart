@@ -565,6 +565,13 @@ extension _ConnectorMessaging on MeshCoreConnector {
     if (!settings.notificationsEnabled || !settings.notifyOnNewChannelMessage) {
       return;
     }
+    if (!shouldNotifyForChannelMode(
+      _appSettingsService!.channelNotifyMode(label),
+      text: message.text,
+      selfName: _selfName,
+    )) {
+      return;
+    }
 
     // Reuse translation result only if completed and non-empty; else use original text
     final resolvedText =
@@ -575,7 +582,8 @@ extension _ConnectorMessaging on MeshCoreConnector {
         : message.text.trim();
     unawaited(() async {
       await _notificationService.showChannelMessageNotification(
-        channelName: label,
+        radio: slot,
+        channelName: notificationTitle(label),
         senderName: message.senderName,
         message: resolvedText,
         urlImagesEnabled: isChannelUrlImagesEnabled(channelIndex),

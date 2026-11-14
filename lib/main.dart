@@ -16,6 +16,7 @@ import 'utils/platform_info.dart';
 
 import 'connector/meshcore_connector.dart';
 import 'connector/meshcore_protocol.dart';
+import 'connector/radio_manager.dart';
 import 'package:intl/intl.dart';
 import 'package:latlong2/latlong.dart';
 import 'models/app_settings.dart';
@@ -58,6 +59,7 @@ import 'screens/network_changes_screen.dart' show networkChangeText;
 import 'services/battery_check_service.dart';
 import 'services/repeater_battery_history.dart';
 import 'services/automation_service.dart';
+import 'services/position_history_service.dart';
 import 'services/notification_service.dart';
 import 'services/offline_outbox.dart';
 import 'services/ble_debug_log_service.dart';
@@ -98,6 +100,8 @@ void main() async {
   await SecurePrefs.initialize();
   final storage = StorageService();
   final connector = MeshCoreConnector();
+  // Assigned once the shared services exist; see below.
+  late final RadioManager radios;
   final pathHistoryService = PathHistoryService(storage);
   final retryService = MessageRetryService();
   final appSettingsService = AppSettingsService();
@@ -129,7 +133,7 @@ void main() async {
   final imageReassembler = ImageStreamReassembler(store: receivedImageStore);
   final imageTransport = ImageChunkTransport(
     reassembler: imageReassembler,
-    send: (blob, channelIndex) => connector.sendImageChunks(
+    send: (blob, channelIndex) => radios.active.sendImageChunks(
       <Uint8List>[blob],
       channelIndex: channelIndex,
       interChunkDelay: Duration.zero,
@@ -153,41 +157,98 @@ void main() async {
   await receivedImageStore.load();
   await uiViewStateService.initialize();
   await timeoutPredictionService.initialize();
-  connector.initialize(
-    retryService: retryService,
-    pathHistoryService: pathHistoryService,
-    appSettingsService: appSettingsService,
-    translationService: translationService,
-    bleDebugLogService: bleDebugLogService,
-    appDebugLogService: appDebugLogService,
-    backgroundService: backgroundService,
-    timeoutPredictionService: timeoutPredictionService,
-    imageCodecService: imageCodecService,
-    imageTransport: imageTransport,
-    onImageSenderPrefix: (prefix) => imageReassembler.selfPrefix = prefix,
+  // Each radio gets its own retry service, since it calls back into one
+  // connection, and its own hold on the shared background service.
+  MeshCoreConnector setUpRadio(
+    MeshCoreConnector radio,
+    MessageRetryService radioRetries,
+  ) {
+    radio.initialize(
+      retryService: radioRetries,
+      pathHistoryService: pathHistoryService,
+      appSettingsService: appSettingsService,
+      translationService: translationService,
+      bleDebugLogService: bleDebugLogService,
+      appDebugLogService: appDebugLogService,
+      backgroundService: backgroundService.forRadio(radio.slot),
+      timeoutPredictionService: timeoutPredictionService,
+      imageCodecService: imageCodecService,
+      imageTransport: imageTransport,
+      onImageSenderPrefix: (prefix) => imageReassembler.selfPrefix = prefix,
+    );
+    return radio;
+  }
+
+  setUpRadio(connector, retryService);
+  radios = RadioManager(
+    connector,
+    create: (slot) =>
+        setUpRadio(MeshCoreConnector(slot: slot), MessageRetryService()),
+    prefs: PrefsManager.instance,
   );
+  final appLock = AppLockService(PrefsManager.instance);
+  // One outbox per radio for the app's whole life, so messages queued on a
+  // radio still go out while another radio is in use.
+  final outboxes = <MeshCoreConnector, OfflineOutbox>{};
+  OfflineOutbox outboxFor(MeshCoreConnector radio) =>
+      outboxes.putIfAbsent(radio, () => OfflineOutbox(radio));
+  // "Connect to my radio automatically", for every radio, when it's on.
+  // Extra radios start a few seconds apart so the phone isn't opening
+  // several Bluetooth links at once.
+  final autoConnects = <MeshCoreConnector, AutoConnectService>{};
+  void autoConnectFor(MeshCoreConnector radio) => autoConnects.putIfAbsent(
+    radio,
+    () => AutoConnectService(
+      radio,
+      appSettingsService,
+      delays: AutoConnectService.staggered(radios.numberOf(radio) - 1),
+    )..start(),
+  );
+  void syncRadioServices() {
+    for (final radio in radios.radios) {
+      outboxFor(radio);
+      autoConnectFor(radio);
+    }
+    final gone = outboxes.keys.where((r) => !radios.radios.contains(r));
+    for (final radio in gone.toList()) {
+      outboxes.remove(radio)?.dispose();
+      autoConnects.remove(radio)?.dispose();
+    }
+  }
+
+  syncRadioServices();
+  radios.addListener(syncRadioServices);
   await connector.loadContactCache();
   await connector.loadChannelSettings();
   await connector.loadCachedChannels();
   await connector.loadAllChannelMessages();
   await connector.loadUnreadState();
   runApp(
-    MeshCoreApp(
-      connector: connector,
-      retryService: retryService,
-      pathHistoryService: pathHistoryService,
-      storage: storage,
-      appSettingsService: appSettingsService,
-      bleDebugLogService: bleDebugLogService,
-      appDebugLogService: appDebugLogService,
-      mapTileCacheService: mapTileCacheService,
-      chatTextScaleService: chatTextScaleService,
-      translationService: translationService,
-      uiViewStateService: uiViewStateService,
-      timeoutPredictionService: timeoutPredictionService,
-      imageCodecService: imageCodecService,
-      receivedImageStore: receivedImageStore,
-      imageReassembler: imageReassembler,
+    // The app's services follow the active radio: switching radios rebuilds
+    // them for the new one, while the others stay connected.
+    ListenableBuilder(
+      listenable: radios,
+      builder: (context, _) => MeshCoreApp(
+        key: ValueKey(radios.active.slot),
+        connector: radios.active,
+        radios: radios,
+        appLock: appLock,
+        outbox: outboxFor(radios.active),
+        retryService: radios.active.retryService ?? retryService,
+        pathHistoryService: pathHistoryService,
+        storage: storage,
+        appSettingsService: appSettingsService,
+        bleDebugLogService: bleDebugLogService,
+        appDebugLogService: appDebugLogService,
+        mapTileCacheService: mapTileCacheService,
+        chatTextScaleService: chatTextScaleService,
+        translationService: translationService,
+        uiViewStateService: uiViewStateService,
+        timeoutPredictionService: timeoutPredictionService,
+        imageCodecService: imageCodecService,
+        receivedImageStore: receivedImageStore,
+        imageReassembler: imageReassembler,
+      ),
     ),
   );
 }
@@ -256,6 +317,11 @@ void _registerThirdPartyLicenses() {
 
 class MeshCoreApp extends StatefulWidget {
   final MeshCoreConnector connector;
+  final RadioManager radios;
+  final AppLockService appLock;
+
+  /// The active radio's outbox; it outlives switching radios.
+  final OfflineOutbox outbox;
   final MessageRetryService retryService;
   final PathHistoryService pathHistoryService;
   final StorageService storage;
@@ -273,6 +339,9 @@ class MeshCoreApp extends StatefulWidget {
   const MeshCoreApp({
     super.key,
     required this.connector,
+    required this.radios,
+    required this.appLock,
+    required this.outbox,
     required this.retryService,
     required this.pathHistoryService,
     required this.storage,
@@ -299,6 +368,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   Timer? _channelPruneTimer;
   late final BotService _botService;
   late final AutomationService _automation;
+  late final PositionHistoryService _positionHistory;
   late final WeatherService _weather;
   late final FieldOpsService _fieldOps;
   late final RegionalPresetService _regionalPresets;
@@ -329,7 +399,6 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   final _navigatorKey = GlobalKey<NavigatorState>();
   AppShortcuts? _shortcuts;
   HomeWidgetSync? _homeWidget;
-  late final AutoConnectService _autoConnect;
   late final OfflineOutbox _outbox;
   late final NotificationRouter _notificationRouter;
   late final LinkRouter _linkRouter;
@@ -349,6 +418,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _botService = BotService(widget.connector, weather: _weather);
     unawaited(_botService.load());
     _automation = AutomationService(widget.connector);
+    _positionHistory = PositionHistoryService(widget.connector);
     _fieldOps = FieldOpsService(widget.connector);
     unawaited(_fieldOps.load());
     _regionalPresets = RegionalPresetService(widget.connector);
@@ -362,9 +432,9 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
       prefs: PrefsManager.instance,
       waypoints: _waypoints,
     );
-    _appLock = AppLockService(PrefsManager.instance);
+    _appLock = widget.appLock;
     _checklists = ChecklistStore(PrefsManager.instance);
-    _outbox = OfflineOutbox(widget.connector);
+    _outbox = widget.outbox;
     _trackLog = TrackLogService(widget.connector);
     _channelDiscovery = ChannelDiscoveryService(widget.connector);
     unawaited(_channelDiscovery.load());
@@ -494,11 +564,6 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         }),
       );
     }
-    // "Connect to my radio automatically", when it's on.
-    _autoConnect = AutoConnectService(
-      widget.connector,
-      widget.appSettingsService,
-    )..start();
     // Clicking a notification opens what it's about.
     _notificationRouter = NotificationRouter(
       _navigatorKey,
@@ -508,14 +573,22 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _syncQuickReply();
     _appLock.addListener(_syncQuickReply);
     _linkRouter = LinkRouter(_navigatorKey, widget.connector)..start();
-    _notificationTaps = NotificationService().taps.listen(
-      _notificationRouter.open,
-    );
+    _notificationTaps = NotificationService().taps.listen(_openNotification);
     final launchPayload = NotificationService().takeLaunchPayload();
-    if (launchPayload != null) _notificationRouter.open(launchPayload);
+    if (launchPayload != null) _openNotification(launchPayload);
     _notificationReplies = NotificationService().replies.listen(_sendReply);
     final launchReply = NotificationService().takeLaunchReply();
     if (launchReply != null) _sendReply(launchReply);
+    // A notification from another radio switched to this one; finish it.
+    final handOff = widget.radios.takeHandOff();
+    if (handOff != null) {
+      final reply = handOff.reply;
+      if (reply == null) {
+        _openNotification(handOff.payload);
+      } else {
+        _sendReply(NotificationReply(handOff.payload, reply));
+      }
+    }
     _sensorSubscriptions = SensorSubscriptionService(widget.connector);
     _mqtt = MqttBrokerService(
       prefs: PrefsManager.instance,
@@ -575,6 +648,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _nodeJournal.dispose();
     _botService.dispose();
     _automation.dispose();
+    _positionHistory.dispose();
     _weather.dispose();
     widget.appSettingsService.removeListener(_applyBatterySaver);
     _fieldOps.dispose();
@@ -605,8 +679,6 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     unawaited(_notificationTaps?.cancel());
     unawaited(_notificationReplies?.cancel());
     _appLock.removeListener(_syncQuickReply);
-    _autoConnect.dispose();
-    _outbox.dispose();
     unawaited(_mqttPackets?.cancel());
     unawaited(_radioRxPackets?.cancel());
     widget.connector.removeListener(_syncMqttObserverIdentity);
@@ -662,11 +734,32 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     NotificationService().quickReplyEnabled = !_appLock.enabled;
   }
 
+  /// The radio a notification [payload] belongs to, if it's a radio in
+  /// the background; null when it's for the radio in use or for none.
+  MeshCoreConnector? _backgroundRadioFor(String payload) {
+    final slot = NotificationService.untag(payload).radio;
+    if (slot == null || slot == widget.connector.slot) return null;
+    return widget.radios.radioIn(slot);
+  }
+
+  void _openNotification(String payload) {
+    final radio = _backgroundRadioFor(payload);
+    if (radio != null) {
+      widget.radios.switchFor(radio, payload);
+      return;
+    }
+    _notificationRouter.open(NotificationService.untag(payload).payload);
+  }
+
   void _sendReply(NotificationReply reply) {
+    final radio = _backgroundRadioFor(reply.payload);
+    if (radio != null) {
+      widget.radios.switchFor(radio, reply.payload, reply: reply.text);
+      return;
+    }
+    final payload = NotificationService.untag(reply.payload).payload;
     unawaited(
-      _notificationRouter.reply(reply.payload, reply.text).catchError((
-        Object e,
-      ) {
+      _notificationRouter.reply(payload, reply.text).catchError((Object e) {
         debugPrint('Quick reply failed: $e');
       }),
     );
@@ -772,6 +865,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         ChangeNotifierProvider.value(value: _botService),
         ChangeNotifierProvider.value(value: _sentinel),
         ChangeNotifierProvider.value(value: _automation),
+        ChangeNotifierProvider.value(value: _positionHistory),
         ChangeNotifierProvider<WeatherService?>.value(value: _weather),
         ChangeNotifierProvider.value(value: _fieldOps),
         ChangeNotifierProvider<WaypointStore>.value(value: _waypoints),
@@ -816,6 +910,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         ChangeNotifierProvider.value(value: _mqtt),
         ChangeNotifierProvider<MqttUploadersService?>.value(value: _uploaders),
         ChangeNotifierProvider.value(value: connector),
+        ChangeNotifierProvider.value(value: widget.radios),
         ChangeNotifierProvider.value(value: widget.retryService),
         ChangeNotifierProvider.value(value: widget.pathHistoryService),
         ChangeNotifierProvider.value(value: widget.appSettingsService),

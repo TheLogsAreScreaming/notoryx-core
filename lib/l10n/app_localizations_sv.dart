@@ -1551,6 +1551,18 @@ class AppLocalizationsSv extends AppLocalizations {
   String get channels_unmuteChannel => 'Slå på ljud för kanal';
 
   @override
+  String get channels_notifyMode => 'Aviseringar';
+
+  @override
+  String get channels_notifyAll => 'Alla meddelanden';
+
+  @override
+  String get channels_notifyMentions => 'Bara när jag nämns';
+
+  @override
+  String get channels_notifyMuted => 'Tystad';
+
+  @override
   String get channels_deleteChannel => 'Ta bort kanal';
 
   @override
@@ -1777,6 +1789,11 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return 'Meddelandet är för långt (max $maxBytes byte).';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds s sändtid';
   }
 
   @override
@@ -2019,6 +2036,136 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get routing_noPathYet =>
       'Ingen rutt ännu. Nästa meddelande floodas tills en rutt hittas.';
+
+  @override
+  String get routePick_open => 'Ruttvy och ruttval';
+
+  @override
+  String get routePick_openHint =>
+      'Länkkvalitet per hopp och val av en pålitligare rutt';
+
+  @override
+  String routePick_title(String name) {
+    return 'Rutt till $name';
+  }
+
+  @override
+  String get routePick_current => 'Nuvarande rutt';
+
+  @override
+  String get routePick_flooding =>
+      'Ingen fast rutt: meddelanden översvämmar meshen tills en rutt lärts in.';
+
+  @override
+  String get routePick_direct => 'Direkt';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return 'Repeater $id';
+  }
+
+  @override
+  String get routePick_notMeasured => 'Inte mätt än';
+
+  @override
+  String get routePick_measure => 'Mät den här rutten';
+
+  @override
+  String get routePick_measuring => 'Spårar…';
+
+  @override
+  String get routePick_measured => 'Uppmätt nyss.';
+
+  @override
+  String get routePick_noAnswer =>
+      'Inget svar på spårningen. En repeater på rutten kan vara utom räckhåll.';
+
+  @override
+  String get routePick_floodDone =>
+      'Rutten rensad. Nästa meddelande översvämmar för att hitta en ny.';
+
+  @override
+  String get routePick_suggested => 'Föreslagen';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return 'En pålitligare rutt: $route (poäng $score).';
+  }
+
+  @override
+  String get routePick_use => 'Använd';
+
+  @override
+  String routePick_useLabel(String route) {
+    return 'Använd rutten $route';
+  }
+
+  @override
+  String get routePick_options => 'Rutter att välja bland';
+
+  @override
+  String get routePick_optionsHint =>
+      'Varje hörd rutt till kontakten, poängsatt 0–100 efter länksignal, leveranser, längd och hur ny den är.';
+
+  @override
+  String get routePick_none =>
+      'Inga rutter ännu. Skicka ett meddelande för att hitta en.';
+
+  @override
+  String get routePick_other => 'Andra val';
+
+  @override
+  String get routePick_build => 'Bygg en rutt';
+
+  @override
+  String get routePick_flood => 'Låt meshen hitta en rutt';
+
+  @override
+  String get routePick_explainer =>
+      'Mätningen skickar en spårning längs rutten och tillbaka, så varje länk mellan repeatrar mäts åt båda hållen. Sista länken till kontakten kan inte spåras. Mätvärden sparas i 30 dagar och gäller för varje rutt som använder samma länk.';
+
+  @override
+  String routePick_score(int score) {
+    return 'Poäng $score av 100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return 'Hopp $number: $name. Länk $quality, ut $out decibel, tillbaka $back decibel.';
+  }
+
+  @override
+  String get routePick_lastLink =>
+      'Sista länken till kontakten: kan inte mätas med spårning';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return 'Ut $out dB · tillbaka $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return 'Poäng $score · hopp: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return 'levererade $ok av $tries';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return 'svagaste länk $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => 'Används';
 
   @override
   String get routing_floodBroadcast => 'Sänd via varje repeater';
@@ -6995,6 +7142,68 @@ class AppLocalizationsSv extends AppLocalizations {
       'Hantera och hämta regionala meshdefinitioner';
 
   @override
+  String get replay_title => 'Spela upp en dag';
+
+  @override
+  String get replay_entryHint => 'Se var laget var en vald dag';
+
+  @override
+  String get replay_badge => 'Historik';
+
+  @override
+  String get replay_day => 'Dag';
+
+  @override
+  String get replay_team => 'Lag';
+
+  @override
+  String get replay_everyone => 'Alla';
+
+  @override
+  String get replay_emptyTeam =>
+      'Inga lagpositioner den här dagen. Lagkamrater syns när de delar spårade positioner i en kanal. Välj Alla för nodernas annonser.';
+
+  @override
+  String get replay_emptyEveryone =>
+      'Inga positioner sparade den här dagen. Telefonen sparar från och med nu positioner som noder annonserar medan appen är öppen.';
+
+  @override
+  String replay_mapSummary(String time, int count) {
+    return 'Karta kl. $time: $count visas';
+  }
+
+  @override
+  String get replay_play => 'Spela';
+
+  @override
+  String get replay_pause => 'Pausa';
+
+  @override
+  String get replay_speed => 'Hastighet';
+
+  @override
+  String replay_speedValue(int minutes) {
+    return '$minutes min per sekund';
+  }
+
+  @override
+  String replay_showNode(String name) {
+    return 'Visa eller dölj $name';
+  }
+
+  @override
+  String get replay_notYet => 'Inte sedd ännu vid den här tiden';
+
+  @override
+  String replay_lastSeen(String time, String lat, String lon) {
+    return 'Senast sedd $time vid $lat, $lon';
+  }
+
+  @override
+  String get replay_explainer =>
+      'Lagpositioner kommer från spårade positioner som lagkamrater delar i kanaler. Alla lägger till positioner som noder annonserar, vilka telefonen sparar medan appen är öppen och behåller i 30 dagar. Inget skickas.';
+
+  @override
   String get mapHub_badgeRegions => 'REGIONER';
 
   @override
@@ -7989,6 +8198,72 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => 'Visa anslutningsöversikt';
+
+  @override
+  String get radios_title => 'Radioenheter';
+
+  @override
+  String radios_number(int number) {
+    return 'Radio $number';
+  }
+
+  @override
+  String get radios_active => 'Används';
+
+  @override
+  String get radios_switch => 'Använd den här radion';
+
+  @override
+  String get radios_add => 'Lägg till en radio';
+
+  @override
+  String get radios_switcher => 'Byt radio';
+
+  @override
+  String get radios_hint =>
+      'Du kan vara ansluten till mer än en radio, till exempel en handenhet och en basstation. Appen visar och skickar via radion som används. De andra förblir anslutna och deras meddelanden sparas tills du byter.';
+
+  @override
+  String get radios_switchNote =>
+      'När du byter radio kommer du tillbaka till startskärmen. Bottar, automatisering, aviseringar, spårning och SOS-vidarebefordran körs på radion som används.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return 'Ta bort $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Radion kopplas från och glöms. Dess meddelanden och kontakter förblir sparade.';
+
+  @override
+  String radios_unread(int count) {
+    return '$count olästa';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return '$count olästa på andra radioenheter';
+  }
+
+  @override
+  String get radios_continueOn => 'Fortsätt på en annan radio';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Fortsätt på $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Direkt';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Hopp: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Ingen känd rutt';
 
   @override
   String get channelDirectory_title => 'Kanalkatalog';
@@ -10697,10 +10972,10 @@ class AppLocalizationsSv extends AppLocalizations {
       'Sparade platser och rutter; importera eller exportera GPX';
 
   @override
-  String get waypoints_importFile => 'Importera GPX-fil';
+  String get waypoints_importFile => 'Importera kartfil (GPX, KML, GeoJSON)';
 
   @override
-  String get waypoints_importPaste => 'Klistra in GPX';
+  String get waypoints_importPaste => 'Klistra in GPX, KML eller GeoJSON';
 
   @override
   String get waypoints_export => 'Exportera GPX';
@@ -10743,7 +11018,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get waypoints_importFailed =>
-      'Det är ingen GPX-fil som appen kan läsa.';
+      'Det är ingen GPX-, KML- eller GeoJSON-fil som appen kan läsa.';
 
   @override
   String get waypoints_pasteHint => 'Klistra in GPX-texten här';
@@ -11545,7 +11820,141 @@ class AppLocalizationsSv extends AppLocalizations {
   String get auto_entry => 'Automatiseringsregler';
 
   @override
-  String get auto_entrySub => 'Utlösare för batteri, tid, område och nod';
+  String get auto_entrySub =>
+      'Utlösare för batteri, tid, område, nod och meddelanden; OCH/ELLER';
+
+  @override
+  String get auto_trigMessage => 'Ett meddelande kommer';
+
+  @override
+  String get auto_actJoin => 'Gå med i hashtaggkanal';
+
+  @override
+  String get auto_actSound => 'Spela ett ljud';
+
+  @override
+  String get auto_actWebhook => 'Anropa en webhook';
+
+  @override
+  String get auto_outDone => 'Klart';
+
+  @override
+  String get auto_outNotConnected => 'Radion är inte ansluten';
+
+  @override
+  String get auto_outNoTarget => 'Mottagare eller adress saknas';
+
+  @override
+  String get auto_outWebOff => 'Webbförfrågningar är av';
+
+  @override
+  String get auto_outWebFailed => 'Webbförfrågan misslyckades';
+
+  @override
+  String get auto_outNoSlot => 'Ingen ledig kanalplats';
+
+  @override
+  String get auto_outFailed => 'Misslyckades';
+
+  @override
+  String get auto_anyone => 'Vem som helst';
+
+  @override
+  String get auto_webSwitch => 'Tillåt webbförfrågningar (webhooks)';
+
+  @override
+  String get auto_webSwitchSub =>
+      'Av som standard. Webhook-åtgärder behöver internet och hoppas över medan detta är av. Allt annat fungerar bara via radio.';
+
+  @override
+  String get auto_andJoin => ' och ';
+
+  @override
+  String get auto_orJoin => ' eller ';
+
+  @override
+  String get auto_needsInternet => 'Kräver internet';
+
+  @override
+  String get auto_recent => 'Senaste körningar';
+
+  @override
+  String get auto_needCondition => 'Lägg till minst ett villkor.';
+
+  @override
+  String get auto_needAction => 'Lägg till minst en åtgärd.';
+
+  @override
+  String get auto_conditions => 'Villkor';
+
+  @override
+  String get auto_actions => 'Åtgärder';
+
+  @override
+  String get auto_addCondition => 'Lägg till villkor';
+
+  @override
+  String get auto_addAction => 'Lägg till åtgärd';
+
+  @override
+  String auto_remove(String item) {
+    return 'Ta bort $item';
+  }
+
+  @override
+  String get auto_combine => 'Kör regeln när';
+
+  @override
+  String get auto_combineAny => 'Något (ELLER)';
+
+  @override
+  String get auto_combineAll => 'Alla (OCH)';
+
+  @override
+  String get auto_combineAnyHint => 'Körs när något av villkoren inträffar.';
+
+  @override
+  String get auto_combineAllHint =>
+      'Körs när ett villkor inträffar och alla andra gäller just då, som ”kl. 18:00 OCH batteri under 30 %”.';
+
+  @override
+  String get auto_editCondition => 'Villkor';
+
+  @override
+  String get auto_editAction => 'Åtgärd';
+
+  @override
+  String get auto_done => 'Klar';
+
+  @override
+  String get auto_contains => 'Meddelandet innehåller (valfritt)';
+
+  @override
+  String get auto_from => 'Från';
+
+  @override
+  String get auto_do => 'Gör';
+
+  @override
+  String get auto_webhookHint =>
+      'Kräver internet. Skickar regelnamn, tid, batteri, nod och text som JSON. Fungerar bara när webbförfrågningar är tillåtna.';
+
+  @override
+  String get auto_webhookUrl => 'Webhook-adress (https://…)';
+
+  @override
+  String get auto_channelName => 'Hashtaggkanal, t.ex. #vandrare';
+
+  @override
+  String get auto_needChannel => 'Ange kanalens namn.';
+
+  @override
+  String get auto_needUrl => 'Ange en webbadress som börjar med https://';
+
+  @override
+  String auto_placeholders(String list) {
+    return 'Du kan använda $list';
+  }
 
   @override
   String get teamSetup_title => 'Teaminställning';
@@ -12579,6 +12988,146 @@ class AppLocalizationsSv extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name är $distance från $trail.';
   }
+
+  @override
+  String get fw_title => 'Uppdatera firmware';
+
+  @override
+  String get fw_unknownVersion => 'Firmwareversion inte rapporterad än';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'Nyare companion-firmware finns: $version';
+  }
+
+  @override
+  String get fw_upToDate => 'Den här radion har senaste companion-firmware.';
+
+  @override
+  String get fw_checkFailed => 'Kunde inte kontrollera. Du kanske är offline.';
+
+  @override
+  String get fw_checkLatest => 'Sök efter senaste versionen';
+
+  @override
+  String get fw_checkPrivacy =>
+      'Kontrollen frågar GitHub efter MeshCores versionslista. Inget om din radio skickas.';
+
+  @override
+  String get fw_stepsTitle => 'Så uppdaterar du';
+
+  @override
+  String get fw_step1 =>
+      'Säkerhetskopiera först. En uppdatering kan återställa inställningar och kontakter.';
+
+  @override
+  String get fw_backup => 'Krypterad säkerhetskopia';
+
+  @override
+  String get fw_step2 =>
+      'Öppna MeshCores officiella webbflasher på en dator med Chrome eller Edge och anslut radion via USB.';
+
+  @override
+  String get fw_openFlasher => 'Öppna webbflasher';
+
+  @override
+  String get fw_copyLink => 'Kopiera länk';
+
+  @override
+  String get fw_linkCopied => 'Länken kopierad';
+
+  @override
+  String get fw_step3 =>
+      'Välj exakt ditt kort och sedan Companion-firmware för hur du ansluter (Bluetooth, USB eller wifi). Repeater- och room server-firmware fungerar inte med appen.';
+
+  @override
+  String get fw_step4 =>
+      'När det är klart, anslut här igen. Om inställningarna återställdes, återställ din säkerhetskopia.';
+
+  @override
+  String get fw_cautionTitle => 'Innan du börjar';
+
+  @override
+  String get fw_caution =>
+      'Ladda radion och låt kabeln sitta kvar tills det är klart. Om en uppdatering misslyckas kan radion oftast räddas genom att flasha igen via USB. Appen flashar aldrig firmware själv.';
+
+  @override
+  String get fw_open => 'Så uppdaterar du firmware';
+
+  @override
+  String get idKey_title => 'Säkerhetskopia av identitetsnyckel';
+
+  @override
+  String get idKey_tileSubtitle =>
+      'Spara eller återställ radions privata nyckel';
+
+  @override
+  String get idKey_explainer =>
+      'Radions identitet är dess privata nyckel. Spara en kopia för att flytta identiteten till en annan radio eller få tillbaka den efter en återställning. Dina kontakter känner fortfarande igen dig.';
+
+  @override
+  String get idKey_backupLabel => 'Spara';
+
+  @override
+  String get idKey_showKey => 'Visa privat nyckel';
+
+  @override
+  String get idKey_showConfirmTitle => 'Visa privat nyckel?';
+
+  @override
+  String get idKey_showConfirmBody =>
+      'Den som ser nyckeln kan läsa dina direktmeddelanden och skicka som dig. Visa den bara där ingen ser.';
+
+  @override
+  String get idKey_show => 'Visa';
+
+  @override
+  String get idKey_copy => 'Kopiera nyckel';
+
+  @override
+  String get idKey_copied =>
+      'Nyckeln kopierad. Förvara den säkert och töm sedan urklipp.';
+
+  @override
+  String get idKey_importLabel => 'Återställ';
+
+  @override
+  String get idKey_importHint => 'Klistra in en hex-nyckel på 128 tecken';
+
+  @override
+  String get idKey_importInvalid =>
+      'En nyckel är exakt 128 hex-tecken (0–9, a–f).';
+
+  @override
+  String get idKey_importButton => 'Ersätt identitet';
+
+  @override
+  String get idKey_importConfirmTitle => 'Ersätta radions identitet?';
+
+  @override
+  String get idKey_importConfirmBody =>
+      'Radion tar över identiteten i nyckeln. Den nuvarande nyckeln försvinner för gott om du inte sparat den.';
+
+  @override
+  String get idKey_importDone => 'Identiteten ersatt.';
+
+  @override
+  String get idKey_warning =>
+      'Dela aldrig nyckeln. Den som har den kan läsa dina direktmeddelanden och utge sig för att vara du.';
+
+  @override
+  String get idKey_errNotConnected => 'Anslut en radio först.';
+
+  @override
+  String get idKey_errTimeout => 'Radion svarade inte. Försök igen.';
+
+  @override
+  String get idKey_errDisabled =>
+      'Radions firmware har nyckelsäkerhetskopiering avstängd.';
+
+  @override
+  String get idKey_errRejected =>
+      'Radion vägrade. Kontrollera nyckeln och försök igen.';
 
   @override
   String get hopTie_title => 'Minne för delade ID';

@@ -1559,6 +1559,18 @@ class AppLocalizationsSl extends AppLocalizations {
   String get channels_unmuteChannel => 'Vklopi obvestila kanala';
 
   @override
+  String get channels_notifyMode => 'Obvestila';
+
+  @override
+  String get channels_notifyAll => 'Vsa sporočila';
+
+  @override
+  String get channels_notifyMentions => 'Samo ko me kdo omeni';
+
+  @override
+  String get channels_notifyMuted => 'Utišano';
+
+  @override
   String get channels_deleteChannel => 'Pošlji kanal';
 
   @override
@@ -1786,6 +1798,11 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return 'Pošiljanje sporočila je onemogočeno, saj je preveliko (maksimalno $maxBytes byte-ov).';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds s oddajanja';
   }
 
   @override
@@ -2028,6 +2045,136 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String get routing_noPathYet =>
       'Žep trenutno ni mogoče najti. Naslednje sporočilo bo posredovano, dokler ne bo ugotovljeno, kje je pot.';
+
+  @override
+  String get routePick_open => 'Pogled in izbira poti';
+
+  @override
+  String get routePick_openHint =>
+      'Kakovost povezave na vsakem skoku in izbira zanesljivejše poti';
+
+  @override
+  String routePick_title(String name) {
+    return 'Pot do $name';
+  }
+
+  @override
+  String get routePick_current => 'Trenutna pot';
+
+  @override
+  String get routePick_flooding =>
+      'Ni stalne poti: sporočila preplavljajo omrežje, dokler se pot ne nauči.';
+
+  @override
+  String get routePick_direct => 'Neposredno';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return 'Repetitor $id';
+  }
+
+  @override
+  String get routePick_notMeasured => 'Še ni izmerjeno';
+
+  @override
+  String get routePick_measure => 'Izmeri to pot';
+
+  @override
+  String get routePick_measuring => 'Sledenje…';
+
+  @override
+  String get routePick_measured => 'Pravkar izmerjeno.';
+
+  @override
+  String get routePick_noAnswer =>
+      'Ni odgovora na sledenje. Repetitor na poti je morda izven dosega.';
+
+  @override
+  String get routePick_floodDone =>
+      'Pot izbrisana. Naslednje sporočilo bo preplavilo omrežje in našlo novo.';
+
+  @override
+  String get routePick_suggested => 'Predlagana';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return 'Zanesljivejša pot: $route (ocena $score).';
+  }
+
+  @override
+  String get routePick_use => 'Uporabi';
+
+  @override
+  String routePick_useLabel(String route) {
+    return 'Uporabi pot $route';
+  }
+
+  @override
+  String get routePick_options => 'Poti za izbiro';
+
+  @override
+  String get routePick_optionsHint =>
+      'Vsaka slišana pot do tega stika, ocenjena 0–100 po signalu povezav, dostavi, dolžini in svežini.';
+
+  @override
+  String get routePick_none =>
+      'Še ni poti. Pošljite sporočilo, da jo odkrijete.';
+
+  @override
+  String get routePick_other => 'Druge možnosti';
+
+  @override
+  String get routePick_build => 'Sestavi pot';
+
+  @override
+  String get routePick_flood => 'Naj omrežje najde pot';
+
+  @override
+  String get routePick_explainer =>
+      'Merjenje pošlje sledenje po poti in nazaj, zato se vsaka povezava med repetitorji izmeri v obe smeri. Zadnje povezave do stika ni mogoče slediti. Meritve se hranijo 30 dni in veljajo za vsako pot z isto povezavo.';
+
+  @override
+  String routePick_score(int score) {
+    return 'Ocena $score od 100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return 'Skok $number: $name. Povezava $quality, tja $out decibelov, nazaj $back decibelov.';
+  }
+
+  @override
+  String get routePick_lastLink =>
+      'Zadnja povezava do stika: s sledenjem ni merljiva';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return 'Tja $out dB · nazaj $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return 'Ocena $score · skoki: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return 'dostavljeno $ok od $tries';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return 'najšibkejša povezava $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => 'V uporabi';
 
   @override
   String get routing_floodBroadcast => 'Prenos preko vseh repetitiv';
@@ -7046,6 +7193,68 @@ class AppLocalizationsSl extends AppLocalizations {
       'Upravljajte in pridobite regionalne definicije omrežja';
 
   @override
+  String get replay_title => 'Predvajaj dan';
+
+  @override
+  String get replay_entryHint => 'Kje je bila ekipa na izbrani dan';
+
+  @override
+  String get replay_badge => 'Zgodovina';
+
+  @override
+  String get replay_day => 'Dan';
+
+  @override
+  String get replay_team => 'Ekipa';
+
+  @override
+  String get replay_everyone => 'Vsi';
+
+  @override
+  String get replay_emptyTeam =>
+      'Na ta dan ni položajev ekipe. Člani se prikažejo, ko delijo sledene položaje v kanalu. Za oglase vozlišč izberite Vsi.';
+
+  @override
+  String get replay_emptyEveryone =>
+      'Na ta dan ni zabeleženih položajev. Telefon odslej beleži položaje, ki jih oglašujejo vozlišča, dokler je aplikacija odprta.';
+
+  @override
+  String replay_mapSummary(String time, int count) {
+    return 'Zemljevid ob $time: prikazanih $count';
+  }
+
+  @override
+  String get replay_play => 'Predvajaj';
+
+  @override
+  String get replay_pause => 'Premor';
+
+  @override
+  String get replay_speed => 'Hitrost';
+
+  @override
+  String replay_speedValue(int minutes) {
+    return '$minutes min na sekundo';
+  }
+
+  @override
+  String replay_showNode(String name) {
+    return 'Prikaži ali skrij $name';
+  }
+
+  @override
+  String get replay_notYet => 'Ob tem času še ni viden';
+
+  @override
+  String replay_lastSeen(String time, String lat, String lon) {
+    return 'Nazadnje ob $time na $lat, $lon';
+  }
+
+  @override
+  String get replay_explainer =>
+      'Položaji ekipe izvirajo iz sledenih položajev, deljenih v kanalih. Vsi doda položaje, ki jih oglašujejo vozlišča; telefon jih beleži, ko je aplikacija odprta, in hrani 30 dni. Nič se ne pošlje.';
+
+  @override
   String get mapHub_badgeRegions => 'REGIJE';
 
   @override
@@ -8051,6 +8260,72 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get connections_viewDashboard => 'Prikaži pregled povezav';
+
+  @override
+  String get radios_title => 'Radii';
+
+  @override
+  String radios_number(int number) {
+    return 'Radio $number';
+  }
+
+  @override
+  String get radios_active => 'V uporabi';
+
+  @override
+  String get radios_switch => 'Uporabi ta radio';
+
+  @override
+  String get radios_add => 'Dodaj radio';
+
+  @override
+  String get radios_switcher => 'Zamenjaj radio';
+
+  @override
+  String get radios_hint =>
+      'Povezani ste lahko z več radii, na primer ročnim in bazno postajo. Aplikacija prikazuje in pošilja prek radia v uporabi. Drugi ostanejo povezani, njihova sporočila pa se shranijo za takrat, ko preklopite.';
+
+  @override
+  String get radios_switchNote =>
+      'Ob zamenjavi radia se vrnete na začetni zaslon. Boti, avtomatizacija, opozorila, sledenje in posredovanje SOS delujejo na radiu v uporabi.';
+
+  @override
+  String radios_removeTitle(String name) {
+    return 'Odstranim $name?';
+  }
+
+  @override
+  String get radios_removeBody =>
+      'Radio se prekine in pozabi. Njegova sporočila in stiki ostanejo shranjeni.';
+
+  @override
+  String radios_unread(int count) {
+    return 'Neprebrano: $count';
+  }
+
+  @override
+  String radios_backgroundUnread(int count) {
+    return 'Neprebrano na drugih radiih: $count';
+  }
+
+  @override
+  String get radios_continueOn => 'Nadaljuj na drugem radiu';
+
+  @override
+  String radios_continueOnName(String name) {
+    return 'Nadaljuj na $name';
+  }
+
+  @override
+  String get radios_routeDirect => 'Neposredno';
+
+  @override
+  String radios_routeHops(int count) {
+    return 'Skoki: $count';
+  }
+
+  @override
+  String get radios_routeFlood => 'Ni znane poti';
 
   @override
   String get channelDirectory_title => 'Imenik kanalov';
@@ -10780,10 +11055,11 @@ class AppLocalizationsSl extends AppLocalizations {
       'Shranjena mesta in poti; uvoz in izvoz GPX';
 
   @override
-  String get waypoints_importFile => 'Uvozi datoteko GPX';
+  String get waypoints_importFile =>
+      'Uvozi datoteko zemljevida (GPX, KML, GeoJSON)';
 
   @override
-  String get waypoints_importPaste => 'Prilepi GPX';
+  String get waypoints_importPaste => 'Prilepi GPX, KML ali GeoJSON';
 
   @override
   String get waypoints_export => 'Izvozi GPX';
@@ -10826,7 +11102,7 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get waypoints_importFailed =>
-      'To ni datoteka GPX, ki jo aplikacija zna prebrati.';
+      'To ni datoteka GPX, KML ali GeoJSON, ki jo aplikacija zna prebrati.';
 
   @override
   String get waypoints_pasteHint => 'Sem prilepite besedilo GPX';
@@ -11630,7 +11906,142 @@ class AppLocalizationsSl extends AppLocalizations {
   String get auto_entry => 'Pravila avtomatizacije';
 
   @override
-  String get auto_entrySub => 'Sprožilci baterije, časa, območja in vozlišča';
+  String get auto_entrySub =>
+      'Sprožilci: baterija, čas, območje, vozlišče in sporočila; IN/ALI';
+
+  @override
+  String get auto_trigMessage => 'Prispe sporočilo';
+
+  @override
+  String get auto_actJoin => 'Pridruži se kanalu hashtag';
+
+  @override
+  String get auto_actSound => 'Predvajaj zvok';
+
+  @override
+  String get auto_actWebhook => 'Pokliči webhook';
+
+  @override
+  String get auto_outDone => 'Opravljeno';
+
+  @override
+  String get auto_outNotConnected => 'Radio ni povezan';
+
+  @override
+  String get auto_outNoTarget => 'Manjka prejemnik ali naslov';
+
+  @override
+  String get auto_outWebOff => 'Spletne zahteve so izklopljene';
+
+  @override
+  String get auto_outWebFailed => 'Spletna zahteva ni uspela';
+
+  @override
+  String get auto_outNoSlot => 'Ni prostega mesta za kanal';
+
+  @override
+  String get auto_outFailed => 'Ni uspelo';
+
+  @override
+  String get auto_anyone => 'Kdorkoli';
+
+  @override
+  String get auto_webSwitch => 'Dovoli spletne zahteve (webhooki)';
+
+  @override
+  String get auto_webSwitchSub =>
+      'Privzeto izklopljeno. Dejanja webhook potrebujejo internet in se preskočijo, dokler je to izklopljeno. Vse drugo deluje samo prek radia.';
+
+  @override
+  String get auto_andJoin => ' in ';
+
+  @override
+  String get auto_orJoin => ' ali ';
+
+  @override
+  String get auto_needsInternet => 'Potrebuje internet';
+
+  @override
+  String get auto_recent => 'Nedavni zagoni';
+
+  @override
+  String get auto_needCondition => 'Dodajte vsaj en pogoj.';
+
+  @override
+  String get auto_needAction => 'Dodajte vsaj eno dejanje.';
+
+  @override
+  String get auto_conditions => 'Pogoji';
+
+  @override
+  String get auto_actions => 'Dejanja';
+
+  @override
+  String get auto_addCondition => 'Dodaj pogoj';
+
+  @override
+  String get auto_addAction => 'Dodaj dejanje';
+
+  @override
+  String auto_remove(String item) {
+    return 'Odstrani: $item';
+  }
+
+  @override
+  String get auto_combine => 'Zaženi pravilo, ko';
+
+  @override
+  String get auto_combineAny => 'Katerikoli (ALI)';
+
+  @override
+  String get auto_combineAll => 'Vsi (IN)';
+
+  @override
+  String get auto_combineAnyHint =>
+      'Zažene se, ko se zgodi katerikoli od pogojev.';
+
+  @override
+  String get auto_combineAllHint =>
+      'Zažene se, ko se zgodi en pogoj in vsi drugi v tistem trenutku veljajo, npr. »ob 18:00 IN baterija pod 30 %«.';
+
+  @override
+  String get auto_editCondition => 'Pogoj';
+
+  @override
+  String get auto_editAction => 'Dejanje';
+
+  @override
+  String get auto_done => 'Končano';
+
+  @override
+  String get auto_contains => 'Sporočilo vsebuje (neobvezno)';
+
+  @override
+  String get auto_from => 'Od';
+
+  @override
+  String get auto_do => 'Naredi';
+
+  @override
+  String get auto_webhookHint =>
+      'Potrebuje internet. Pošlje ime pravila, čas, baterijo, vozlišče in besedilo kot JSON. Deluje le, dokler so spletne zahteve dovoljene.';
+
+  @override
+  String get auto_webhookUrl => 'Naslov webhooka (https://…)';
+
+  @override
+  String get auto_channelName => 'Kanal hashtag, npr. #pohodniki';
+
+  @override
+  String get auto_needChannel => 'Vnesite ime kanala.';
+
+  @override
+  String get auto_needUrl => 'Vnesite spletni naslov, ki se začne s https://';
+
+  @override
+  String auto_placeholders(String list) {
+    return 'Uporabite lahko $list';
+  }
 
   @override
   String get teamSetup_title => 'Nastavitev ekipe';
@@ -12661,6 +13072,147 @@ class AppLocalizationsSl extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name je $distance od: $trail.';
   }
+
+  @override
+  String get fw_title => 'Posodobi strojno programsko opremo';
+
+  @override
+  String get fw_unknownVersion => 'Različica še ni sporočena';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'Na voljo je novejša programska oprema companion: $version';
+  }
+
+  @override
+  String get fw_upToDate =>
+      'Ta radio ima najnovejšo programsko opremo companion.';
+
+  @override
+  String get fw_checkFailed => 'Preverjanje ni uspelo. Morda niste povezani.';
+
+  @override
+  String get fw_checkLatest => 'Preveri najnovejšo izdajo';
+
+  @override
+  String get fw_checkPrivacy =>
+      'Preverjanje vpraša GitHub za seznam izdaj MeshCore. O vašem radiu se ne pošlje nič.';
+
+  @override
+  String get fw_stepsTitle => 'Kako posodobiti';
+
+  @override
+  String get fw_step1 =>
+      'Najprej naredite varnostno kopijo. Posodobitev lahko ponastavi nastavitve in stike.';
+
+  @override
+  String get fw_backup => 'Šifrirana varnostna kopija';
+
+  @override
+  String get fw_step2 =>
+      'Na računalniku s Chrome ali Edge odprite uradni spletni flasher MeshCore in radio povežite prek USB.';
+
+  @override
+  String get fw_openFlasher => 'Odpri spletni flasher';
+
+  @override
+  String get fw_copyLink => 'Kopiraj povezavo';
+
+  @override
+  String get fw_linkCopied => 'Povezava kopirana';
+
+  @override
+  String get fw_step3 =>
+      'Izberite točno svojo ploščo, nato programsko opremo Companion glede na povezavo (Bluetooth, USB ali Wi-Fi). Programska oprema za repetitor ali room server s to aplikacijo ne deluje.';
+
+  @override
+  String get fw_step4 =>
+      'Ko končate, se tukaj znova povežite. Če so se nastavitve ponastavile, obnovite varnostno kopijo.';
+
+  @override
+  String get fw_cautionTitle => 'Preden začnete';
+
+  @override
+  String get fw_caution =>
+      'Napolnite radio in pustite kabel priključen do konca. Če posodobitev ne uspe, se radio običajno da obnoviti s ponovnim nalaganjem prek USB. Ta aplikacija nikoli sama ne nalaga programske opreme.';
+
+  @override
+  String get fw_open => 'Kako posodobiti programsko opremo';
+
+  @override
+  String get idKey_title => 'Varnostna kopija ključa';
+
+  @override
+  String get idKey_tileSubtitle => 'Shrani ali obnovi zasebni ključ radia';
+
+  @override
+  String get idKey_explainer =>
+      'Identiteta radia je njegov zasebni ključ. Shrani kopijo, da jo preneseš na drug radio ali obnoviš po ponastavitvi. Stiki te bodo še naprej prepoznali.';
+
+  @override
+  String get idKey_backupLabel => 'Shrani';
+
+  @override
+  String get idKey_showKey => 'Pokaži zasebni ključ';
+
+  @override
+  String get idKey_showConfirmTitle => 'Pokažem zasebni ključ?';
+
+  @override
+  String get idKey_showConfirmBody =>
+      'Kdor vidi ta ključ, lahko bere tvoja neposredna sporočila in pošilja v tvojem imenu. Pokaži ga le na zasebnem mestu.';
+
+  @override
+  String get idKey_show => 'Pokaži';
+
+  @override
+  String get idKey_copy => 'Kopiraj ključ';
+
+  @override
+  String get idKey_copied =>
+      'Ključ kopiran. Shrani ga na varno in nato počisti odložišče.';
+
+  @override
+  String get idKey_importLabel => 'Obnovi';
+
+  @override
+  String get idKey_importHint =>
+      'Prilepi 128-mestni šestnajstiški zasebni ključ';
+
+  @override
+  String get idKey_importInvalid =>
+      'Ključ ima natanko 128 šestnajstiških znakov (0–9, a–f).';
+
+  @override
+  String get idKey_importButton => 'Zamenjaj identiteto';
+
+  @override
+  String get idKey_importConfirmTitle => 'Zamenjam identiteto tega radia?';
+
+  @override
+  String get idKey_importConfirmBody =>
+      'Radio prevzame identiteto iz tega ključa. Trenutni ključ se trajno izgubi, če ga nisi shranil.';
+
+  @override
+  String get idKey_importDone => 'Identiteta zamenjana.';
+
+  @override
+  String get idKey_warning =>
+      'Tega ključa nikoli ne deli. Kdor ga ima, lahko bere tvoja neposredna sporočila in se izdaja zate.';
+
+  @override
+  String get idKey_errNotConnected => 'Najprej poveži radio.';
+
+  @override
+  String get idKey_errTimeout => 'Radio ni odgovoril. Poskusi znova.';
+
+  @override
+  String get idKey_errDisabled =>
+      'Strojna programska oprema tega radia ima varnostno kopijo ključa izklopljeno.';
+
+  @override
+  String get idKey_errRejected =>
+      'Radio je zavrnil. Preveri ključ in poskusi znova.';
 
   @override
   String get hopTie_title => 'Spomin za skupne ID-je';

@@ -17,6 +17,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models/region_setup.dart' show parseRegionTrees;
 import '../models/region_scope.dart';
 import '../models/advert_signature.dart';
+import '../models/channel_notify_mode.dart';
 import '../models/channel.dart';
 import '../models/channel_message.dart';
 import '../models/companion_radio_stats.dart';
@@ -89,6 +90,28 @@ part 'connector_sync.dart';
 part 'connector_connection.dart';
 
 class MeshCoreConnector extends ChangeNotifier {
+  /// Creates one radio connection. [slot] keeps this connection's saved
+  /// radio apart from other connections; the first radio uses '' so it
+  /// reads the same saved radio as earlier builds.
+  MeshCoreConnector({this.slot = ''});
+
+  /// Which saved-radio slot this connection uses: '' for the first radio.
+  final String slot;
+
+  /// The radio's name to add to notification titles, or null. Set by the
+  /// app when it has more than one radio, so you can tell which one a
+  /// message came in on.
+  String? Function()? notificationRadioName;
+
+  /// [title] with the radio's name after it, when there is one.
+  String notificationTitle(String title) {
+    final radio = notificationRadioName?.call();
+    return radio == null || radio.isEmpty ? title : '$title · $radio';
+  }
+
+  /// This connection's retry service, once [initialize] has run.
+  MessageRetryService? get retryService => _retryService;
+
   /// Lets the part files notify, since extensions can't call protected
   /// members directly.
   void _notifyFromPart() => notifyListeners();
@@ -438,7 +461,7 @@ class MeshCoreConnector extends ChangeNotifier {
   /// transport and its address.
   SavedRadio? get savedRadio {
     final prefs = _prefsOrNull;
-    return prefs == null ? null : SavedRadio.load(prefs);
+    return prefs == null ? null : SavedRadio.load(prefs, slot: slot);
   }
 
   /// Replaces the platform BLE link steps (connect, MTU, discovery, notify)
@@ -972,6 +995,7 @@ class MeshCoreConnector extends ChangeNotifier {
       _notificationService.clearContactNotification(
         contactKeyHex,
         getTotalUnreadCount(),
+        radio: slot,
       );
       notifyListeners();
     }
@@ -1017,6 +1041,7 @@ class MeshCoreConnector extends ChangeNotifier {
       _notificationService.clearChannelNotification(
         channelIndex,
         getTotalUnreadCount(),
+        radio: slot,
       );
       notifyListeners();
     }
@@ -2216,7 +2241,7 @@ class MeshCoreConnector extends ChangeNotifier {
       transport: transport,
       address: address.trim(),
       name: name,
-    ).save(prefs).catchError((Object error) {
+    ).save(prefs, slot: slot).catchError((Object error) {
       _appDebugLogService?.warn(
         'Saving last radio failed: $error',
         tag: 'Connection',
@@ -2228,7 +2253,7 @@ class MeshCoreConnector extends ChangeNotifier {
   Future<void> forgetSavedRadio() async {
     final prefs = _prefsOrNull;
     if (prefs == null) return;
-    await SavedRadio.clear(prefs);
+    await SavedRadio.clear(prefs, slot: slot);
     notifyListeners();
   }
 
@@ -3485,6 +3510,81 @@ class MeshCoreConnector extends ChangeNotifier {
     } finally {
       await subscription.cancel();
       done.complete();
+    }
+  }
+
+  /// Reads the radio's identity private key (CMD_EXPORT_PRIVATE_KEY), for
+  /// a backup. Throws [IdentityKeyException]; firmware built without key
+  /// export answers [IdentityKeyFailure.disabled].
+  Future<Uint8List> exportIdentityKey({
+    Duration timeout = const Duration(seconds: 5),
+  }) async {
+    final reply = await _identityKeyRequest(
+      buildExportPrivateKeyFrame(),
+      const {respCodePrivateKey, respCodeDisabled, respCodeErr},
+      timeout,
+    );
+    final key = parsePrivateKeyFrame(reply);
+    if (key == null) {
+      throw const IdentityKeyException(IdentityKeyFailure.rejected);
+    }
+    return key;
+  }
+
+  /// Gives the radio the identity in [key] (CMD_IMPORT_PRIVATE_KEY), then
+  /// asks for its self info again so the new public key shows. Throws
+  /// [IdentityKeyException].
+  Future<void> importIdentityKey(
+    Uint8List key, {
+    Duration timeout = const Duration(seconds: 5),
+  }) async {
+    final reply = await _identityKeyRequest(
+      buildImportPrivateKeyFrame(key),
+      const {respCodeOk, respCodeDisabled, respCodeErr},
+      timeout,
+    );
+    if (reply[0] != respCodeOk) {
+      throw const IdentityKeyException(IdentityKeyFailure.rejected);
+    }
+    await sendFrame(buildAppStartFrame());
+  }
+
+  Future<Uint8List> _identityKeyRequest(
+    Uint8List frame,
+    Set<int> answers,
+    Duration timeout,
+  ) async {
+    if (!isConnected) {
+      throw const IdentityKeyException(IdentityKeyFailure.notConnected);
+    }
+    final reply = Completer<Uint8List>();
+    final subscription = receivedFrames.listen((f) {
+      if (f.isNotEmpty && answers.contains(f[0]) && !reply.isCompleted) {
+        reply.complete(f);
+      }
+    });
+    try {
+      try {
+        await sendFrame(frame);
+      } on Exception {
+        throw const IdentityKeyException(IdentityKeyFailure.notConnected);
+      }
+      final f = await reply.future.timeout(
+        timeout,
+        onTimeout: () =>
+            throw const IdentityKeyException(IdentityKeyFailure.timeout),
+      );
+      // Firmware too old for the command says "unsupported"; to the user
+      // that's the same as a build with the feature turned off.
+      if (f[0] == respCodeDisabled ||
+          (f[0] == respCodeErr &&
+              f.length > 1 &&
+              f[1] == errCodeUnsupportedCmd)) {
+        throw const IdentityKeyException(IdentityKeyFailure.disabled);
+      }
+      return f;
+    } finally {
+      await subscription.cancel();
     }
   }
 
