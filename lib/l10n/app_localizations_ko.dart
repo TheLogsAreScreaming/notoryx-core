@@ -12833,4 +12833,18 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get toolsMoved_ok => '확인';
+
+  @override
+  String get deliv_failedMarker => '전달 안 됨';
+
+  @override
+  String deliv_failedMarkerHint(String name) {
+    return '$name에게 보낸 마지막 메시지가 전달되지 않았습니다. 이유와 해결 방법을 보여 줍니다.';
+  }
+
+  @override
+  String get deliv_retryFlood => '플러드로 다시 보내기';
+
+  @override
+  String get deliv_pickRoute => '경로를 고른 뒤 다시 보내기';
 }

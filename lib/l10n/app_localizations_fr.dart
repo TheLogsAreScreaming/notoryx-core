@@ -13477,4 +13477,18 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get toolsMoved_ok => 'Compris';
+
+  @override
+  String get deliv_failedMarker => 'Non remis';
+
+  @override
+  String deliv_failedMarkerHint(String name) {
+    return 'Ton dernier message à $name n\'a pas été remis. Montre pourquoi et comment corriger.';
+  }
+
+  @override
+  String get deliv_retryFlood => 'Réessayer par inondation';
+
+  @override
+  String get deliv_pickRoute => 'Choisir une route, puis réessayer';
 }

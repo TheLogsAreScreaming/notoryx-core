@@ -13406,4 +13406,18 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get toolsMoved_ok => 'Értem';
+
+  @override
+  String get deliv_failedMarker => 'Nem kézbesítve';
+
+  @override
+  String deliv_failedMarkerHint(String name) {
+    return 'Az utolsó üzeneted $name részére nem lett kézbesítve. Megmutatja, miért, és hogyan javítható.';
+  }
+
+  @override
+  String get deliv_retryFlood => 'Újra elárasztással';
+
+  @override
+  String get deliv_pickRoute => 'Útvonal választása, majd újra';
 }

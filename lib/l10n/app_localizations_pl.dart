@@ -13449,4 +13449,18 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get toolsMoved_ok => 'Rozumiem';
+
+  @override
+  String get deliv_failedMarker => 'Nie dostarczono';
+
+  @override
+  String deliv_failedMarkerHint(String name) {
+    return 'Twoja ostatnia wiadomość do $name nie została dostarczona. Pokazuje dlaczego i jak to naprawić.';
+  }
+
+  @override
+  String get deliv_retryFlood => 'Ponów przez zalewanie';
+
+  @override
+  String get deliv_pickRoute => 'Wybierz trasę i ponów';
 }

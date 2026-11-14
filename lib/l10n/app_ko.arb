@@ -5236,5 +5236,9 @@
   "bastionTools_mapHintAll": "커버리지 기록, 워드라이브, 커버리지 육각형, 안테나 커버리지와 찾기, 오프라인 지도와 지역",
   "toolsMoved_title": "일부 도구가 옮겨졌습니다",
   "toolsMoved_body": "워드라이브, 커버리지 육각형, 안테나 커버리지, 안테나 찾기가 이제 {mapHub}에 함께 있습니다. 두 번 표시되던 리피터 도구는 이제 {repeaterTools}에만 있습니다. 여기서 검색하면 계속 찾을 수 있습니다.",
-  "toolsMoved_ok": "확인"
+  "toolsMoved_ok": "확인",
+  "deliv_failedMarker": "전달 안 됨",
+  "deliv_failedMarkerHint": "{name}에게 보낸 마지막 메시지가 전달되지 않았습니다. 이유와 해결 방법을 보여 줍니다.",
+  "deliv_retryFlood": "플러드로 다시 보내기",
+  "deliv_pickRoute": "경로를 고른 뒤 다시 보내기"
 }

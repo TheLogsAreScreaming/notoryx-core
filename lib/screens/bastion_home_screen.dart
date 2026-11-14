@@ -3,6 +3,7 @@ import 'dart:async';
 import '../theme/mesh_theme.dart';
 import '../widgets/back_keeps_running.dart';
 import '../widgets/my_sensors_panel.dart';
+import '../widgets/radio_stats_while_visible.dart';
 import '../widgets/ember_backdrop.dart';
 import '../widgets/notoryx_logo.dart';
 import '../widgets/tactical_glass_panel.dart';
@@ -87,227 +88,240 @@ class BastionHomeScreen extends StatelessWidget {
     // Back on this first screen would close the app and drop the radio.
     return BackKeepsRunning(
       connected: online,
-      child: EmberBackdrop(
-        scene: EmberScene.home,
-        child: Scaffold(
-          backgroundColor: Colors.transparent,
-          bottomNavigationBar: const QuickSwitchBar(current: MainTab.home),
-          body: SafeArea(
-            child: ListView(
-              padding: const EdgeInsets.only(bottom: MeshSpace.xxl),
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(
-                    MeshSpace.lg,
-                    MeshSpace.md,
-                    MeshSpace.xs,
-                    MeshSpace.md,
-                  ),
-                  child: Row(
-                    children: [
-                      const NotoryxLogo(size: 26),
-                      const SizedBox(width: MeshSpace.sm),
-                      Expanded(
-                        child: Text(
-                          online
-                              ? c.deviceDisplayName
-                              : l10n.scanner_notConnected,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            color: MeshPalette.ink,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ),
-                      Text(
-                        online
-                            ? '● ${_transport(c.activeTransport)}'
-                            : '○ offline',
-                        style: MeshTheme.mono(
-                          fontSize: 12.5,
-                          color: online ? MeshPalette.signal : MeshPalette.ink4,
-                        ),
-                      ),
-                      const RadioSwitcherButton(),
-                      IconButton(
-                        tooltip: l10n.bastionHome_aboutTooltip,
-                        onPressed: () => open(const BastionAboutScreen()),
-                        icon: Icon(
-                          Icons.info_outline_rounded,
-                          size: 20,
-                          color: MeshPalette.ink4,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                const RegionalPresetBanner(),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: MeshSpace.lg),
-                  child: TacticalGlassPanel(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 8,
-                      horizontal: 4,
-                    ),
-                    child: ReadoutStrip([
-                      Readout(volts, l10n.radioOverview_battery),
-                      Readout(
-                        snr == null ? '—' : snr.toStringAsFixed(1),
-                        'SNR',
-                        color: snr == null
-                            ? null
-                            : MeshTheme.snrColor(snr, blocked: false),
-                      ),
-                      Readout(
-                        stats == null || !online ? '—' : '${stats.lastRssiDbm}',
-                        'RSSI',
-                      ),
-                      Readout(
-                        '${c.contacts.length}',
-                        l10n.bastion_nodes,
-                        color: MeshPalette.secondary,
-                      ),
-                    ]),
-                  ),
-                ),
-                if (!online)
-                  GlassActionRow(
-                    icon: Icons.bluetooth_searching_rounded,
-                    title: l10n.bastionHome_connectRadio,
-                    subtitle: l10n.bastionHome_connectRadioHint,
-                    titleColor: MeshPalette.accent,
-                    onTap: () => openConnectionSetup(context),
-                  ),
-                if (online) const MySensorsPanel(),
-                InstrumentLabel(l10n.routes_nearbyTitle),
-                if (heard.isEmpty)
-                  GlassActionRow(
-                    title: l10n.routes_nearbyEmptyTitle,
-                    titleColor: MeshPalette.ink3,
-                  )
-                else
-                  for (final h in heard.take(3))
-                    GlassActionRow(
-                      title:
-                          heardNameWithOnline(
-                            c,
-                            context.watch<AnalyzerService?>(),
-                            h.id,
-                          ) ??
-                          l10n.routes_repeaterWithId(directHeardShortId(h.id)),
-                      trailing: SignalReadout(h.snrAverage),
-                      onTap: () => open(const BastionPathHubScreen()),
-                    ),
-                InstrumentLabel(l10n.fieldOps_tabTrip),
-                GlassActionRow(
-                  title: ops.trip.active
-                      ? ops.trip.name
-                      : l10n.bastionHome_planYourTrip,
-                  subtitle: [
-                    l10n.bastionHome_tripSummary(
-                      ops.trip.active
-                          ? l10n.bastionHome_tripActive
-                          : l10n.bastionHome_tripStopped,
-                      '${ops.members.length}',
-                      '${c.getTotalUnreadCount()}',
-                    ),
-                    if (ops.overdueNames.isNotEmpty)
-                      l10n.fieldOps_quietTooLong(ops.overdueNames.join(', ')),
-                  ].join(' • '),
-                  onTap: () => open(const BastionFieldOpsScreen()),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(
-                    MeshSpace.lg,
-                    MeshSpace.md,
-                    MeshSpace.lg,
-                    0,
-                  ),
-                  child: ops.sos.active
-                      ? const SosPanel()
-                      : Row(
-                          children: [
-                            Expanded(
-                              child: InstrumentButton(
-                                key: const ValueKey('home-check-in'),
-                                label: l10n.shortcuts_checkIn,
-                                icon: Icons.check_circle_outline,
-                                // Only a missing radio or loading blocks this;
-                                // missing contacts or a stopped trip are sorted
-                                // out on tap.
-                                onPressed: hardBlockReason(ops) == null
-                                    ? () {
-                                        HapticFeedback.selectionClick();
-                                        unawaited(_checkIn(context, ops));
-                                      }
-                                    : null,
-                              ),
-                            ),
-                            const SizedBox(width: MeshSpace.sm),
-                            const Expanded(child: SosPanel(compact: true)),
-                          ],
-                        ),
-                ),
-                if (!ops.sos.active)
+      child: RadioStatsWhileVisible(
+        child: EmberBackdrop(
+          scene: EmberScene.home,
+          child: Scaffold(
+            backgroundColor: Colors.transparent,
+            bottomNavigationBar: const QuickSwitchBar(current: MainTab.home),
+            body: SafeArea(
+              child: ListView(
+                padding: const EdgeInsets.only(bottom: MeshSpace.xxl),
+                children: [
                   Padding(
                     padding: const EdgeInsets.fromLTRB(
                       MeshSpace.lg,
-                      MeshSpace.sm,
+                      MeshSpace.md,
+                      MeshSpace.xs,
+                      MeshSpace.md,
+                    ),
+                    child: Row(
+                      children: [
+                        const NotoryxLogo(size: 26),
+                        const SizedBox(width: MeshSpace.sm),
+                        Expanded(
+                          child: Text(
+                            online
+                                ? c.deviceDisplayName
+                                : l10n.scanner_notConnected,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              color: MeshPalette.ink,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ),
+                        Text(
+                          online
+                              ? '● ${_transport(c.activeTransport)}'
+                              : '○ offline',
+                          style: MeshTheme.mono(
+                            fontSize: 12.5,
+                            color: online
+                                ? MeshPalette.signal
+                                : MeshPalette.ink4,
+                          ),
+                        ),
+                        const RadioSwitcherButton(),
+                        IconButton(
+                          tooltip: l10n.bastionHome_aboutTooltip,
+                          onPressed: () => open(const BastionAboutScreen()),
+                          icon: Icon(
+                            Icons.info_outline_rounded,
+                            size: 20,
+                            color: MeshPalette.ink4,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const RegionalPresetBanner(),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: MeshSpace.lg,
+                    ),
+                    child: TacticalGlassPanel(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 8,
+                        horizontal: 4,
+                      ),
+                      child: ReadoutStrip([
+                        Readout(volts, l10n.radioOverview_battery),
+                        Readout(
+                          snr == null ? '—' : snr.toStringAsFixed(1),
+                          'SNR',
+                          color: snr == null
+                              ? null
+                              : MeshTheme.snrColor(snr, blocked: false),
+                        ),
+                        Readout(
+                          stats == null || !online
+                              ? '—'
+                              : '${stats.lastRssiDbm}',
+                          'RSSI',
+                        ),
+                        Readout(
+                          '${c.contacts.length}',
+                          l10n.bastion_nodes,
+                          color: MeshPalette.secondary,
+                        ),
+                      ]),
+                    ),
+                  ),
+                  if (!online)
+                    GlassActionRow(
+                      icon: Icons.bluetooth_searching_rounded,
+                      title: l10n.bastionHome_connectRadio,
+                      subtitle: l10n.bastionHome_connectRadioHint,
+                      titleColor: MeshPalette.accent,
+                      onTap: () => openConnectionSetup(context),
+                    ),
+                  if (online) const MySensorsPanel(),
+                  InstrumentLabel(l10n.routes_nearbyTitle),
+                  if (heard.isEmpty)
+                    GlassActionRow(
+                      title: l10n.routes_nearbyEmptyTitle,
+                      titleColor: MeshPalette.ink3,
+                    )
+                  else
+                    for (final h in heard.take(3))
+                      GlassActionRow(
+                        title:
+                            heardNameWithOnline(
+                              c,
+                              context.watch<AnalyzerService?>(),
+                              h.id,
+                            ) ??
+                            l10n.routes_repeaterWithId(
+                              directHeardShortId(h.id),
+                            ),
+                        trailing: SignalReadout(h.snrAverage),
+                        onTap: () => open(const BastionPathHubScreen()),
+                      ),
+                  InstrumentLabel(l10n.fieldOps_tabTrip),
+                  GlassActionRow(
+                    title: ops.trip.active
+                        ? ops.trip.name
+                        : l10n.bastionHome_planYourTrip,
+                    subtitle: [
+                      l10n.bastionHome_tripSummary(
+                        ops.trip.active
+                            ? l10n.bastionHome_tripActive
+                            : l10n.bastionHome_tripStopped,
+                        '${ops.members.length}',
+                        '${c.getTotalUnreadCount()}',
+                      ),
+                      if (ops.overdueNames.isNotEmpty)
+                        l10n.fieldOps_quietTooLong(ops.overdueNames.join(', ')),
+                    ].join(' • '),
+                    onTap: () => open(const BastionFieldOpsScreen()),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(
+                      MeshSpace.lg,
+                      MeshSpace.md,
                       MeshSpace.lg,
                       0,
                     ),
-                    child: Text(
-                      '$checkInHint ${sosHint(context, ops)}',
-                      style: TextStyle(color: MeshPalette.ink3, fontSize: 12.5),
+                    child: ops.sos.active
+                        ? const SosPanel()
+                        : Row(
+                            children: [
+                              Expanded(
+                                child: InstrumentButton(
+                                  key: const ValueKey('home-check-in'),
+                                  label: l10n.shortcuts_checkIn,
+                                  icon: Icons.check_circle_outline,
+                                  // Only a missing radio or loading blocks this;
+                                  // missing contacts or a stopped trip are sorted
+                                  // out on tap.
+                                  onPressed: hardBlockReason(ops) == null
+                                      ? () {
+                                          HapticFeedback.selectionClick();
+                                          unawaited(_checkIn(context, ops));
+                                        }
+                                      : null,
+                                ),
+                              ),
+                              const SizedBox(width: MeshSpace.sm),
+                              const Expanded(child: SosPanel(compact: true)),
+                            ],
+                          ),
+                  ),
+                  if (!ops.sos.active)
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(
+                        MeshSpace.lg,
+                        MeshSpace.sm,
+                        MeshSpace.lg,
+                        0,
+                      ),
+                      child: Text(
+                        joinHomeHints(checkInHint, sosHint(context, ops)),
+                        style: TextStyle(
+                          color: MeshPalette.ink3,
+                          fontSize: 12.5,
+                        ),
+                      ),
                     ),
-                  ),
-                InstrumentLabel(l10n.bastionHome_fieldTools),
-                if (online)
+                  InstrumentLabel(l10n.bastionHome_fieldTools),
+                  if (online)
+                    GlassActionRow(
+                      icon: Icons.monitor_heart_outlined,
+                      iconColor: MeshPalette.hue(0),
+                      title: l10n.bastionHome_liveDiagnostics,
+                      onTap: () => open(const BastionDiagnosticsScreen()),
+                    ),
                   GlassActionRow(
-                    icon: Icons.monitor_heart_outlined,
-                    iconColor: MeshPalette.hue(0),
-                    title: l10n.bastionHome_liveDiagnostics,
-                    onTap: () => open(const BastionDiagnosticsScreen()),
+                    icon: Icons.radar_rounded,
+                    iconColor: MeshPalette.hue(1),
+                    title: l10n.bastionHome_meshDiscovery,
+                    onTap: () => open(const DiscoveryScreen()),
                   ),
-                GlassActionRow(
-                  icon: Icons.radar_rounded,
-                  iconColor: MeshPalette.hue(1),
-                  title: l10n.bastionHome_meshDiscovery,
-                  onTap: () => open(const DiscoveryScreen()),
-                ),
-                GlassActionRow(
-                  icon: Icons.map_outlined,
-                  iconColor: MeshPalette.hue(2),
-                  title: l10n.bastion_mapCoverage,
-                  onTap: () => open(const BastionMapHubScreen()),
-                ),
-                GlassActionRow(
-                  icon: Icons.route_rounded,
-                  iconColor: MeshPalette.hue(3),
-                  title: l10n.bastion_routeIntelligence,
-                  onTap: () => open(const BastionPathHubScreen()),
-                ),
-                GlassActionRow(
-                  icon: Icons.cell_tower_rounded,
-                  iconColor: MeshPalette.hue(4),
-                  title: l10n.bastion_repeaterTools,
-                  onTap: () => open(const BastionRepeaterToolsScreen()),
-                ),
-                GlassActionRow(
-                  icon: Icons.analytics_outlined,
-                  iconColor: MeshPalette.hue(5),
-                  title: l10n.bastion_fieldStats,
-                  onTap: () => open(const BastionFieldStatsScreen()),
-                ),
-                GlassActionRow(
-                  icon: Icons.explore_outlined,
-                  iconColor: MeshPalette.hue(6),
-                  title: l10n.bastionHome_getStarted,
-                  onTap: () => open(const BastionSetupScreen()),
-                ),
-              ],
+                  GlassActionRow(
+                    icon: Icons.map_outlined,
+                    iconColor: MeshPalette.hue(2),
+                    title: l10n.bastion_mapCoverage,
+                    onTap: () => open(const BastionMapHubScreen()),
+                  ),
+                  GlassActionRow(
+                    icon: Icons.route_rounded,
+                    iconColor: MeshPalette.hue(3),
+                    title: l10n.bastion_routeIntelligence,
+                    onTap: () => open(const BastionPathHubScreen()),
+                  ),
+                  GlassActionRow(
+                    icon: Icons.cell_tower_rounded,
+                    iconColor: MeshPalette.hue(4),
+                    title: l10n.bastion_repeaterTools,
+                    onTap: () => open(const BastionRepeaterToolsScreen()),
+                  ),
+                  GlassActionRow(
+                    icon: Icons.analytics_outlined,
+                    iconColor: MeshPalette.hue(5),
+                    title: l10n.bastion_fieldStats,
+                    onTap: () => open(const BastionFieldStatsScreen()),
+                  ),
+                  GlassActionRow(
+                    icon: Icons.explore_outlined,
+                    iconColor: MeshPalette.hue(6),
+                    title: l10n.bastionHome_getStarted,
+                    onTap: () => open(const BastionSetupScreen()),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -338,3 +352,9 @@ class BastionHomeScreen extends StatelessWidget {
     );
   }
 }
+
+/// The line under Check in and SOS: both hints, or one when they're the
+/// same (with no radio both say "Connect your radio first.").
+@visibleForTesting
+String joinHomeHints(String checkIn, String sos) =>
+    checkIn == sos ? checkIn : '$checkIn $sos';

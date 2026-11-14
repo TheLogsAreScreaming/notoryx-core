@@ -22272,6 +22272,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Got it'**
   String get toolsMoved_ok;
+
+  /// No description provided for @deliv_failedMarker.
+  ///
+  /// In en, this message translates to:
+  /// **'Not delivered'**
+  String get deliv_failedMarker;
+
+  /// No description provided for @deliv_failedMarkerHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Your last message to {name} wasn\'t delivered. Shows why and how to fix it.'**
+  String deliv_failedMarkerHint(String name);
+
+  /// No description provided for @deliv_retryFlood.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry by flood'**
+  String get deliv_retryFlood;
+
+  /// No description provided for @deliv_pickRoute.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose a route, then retry'**
+  String get deliv_pickRoute;
 }
 
 class _AppLocalizationsDelegate

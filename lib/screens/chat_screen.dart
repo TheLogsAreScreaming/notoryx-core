@@ -24,7 +24,7 @@ import '../widgets/add_first_banner.dart';
 import '../widgets/quick_messages.dart';
 import '../widgets/share_in_chat.dart';
 import '../widgets/message_status_icon.dart';
-import '../widgets/delivery_sheet.dart';
+import '../widgets/delivery_fix.dart';
 import '../widgets/empty_state.dart';
 import '../helpers/chat_scroll_controller.dart';
 import '../helpers/gif_helper.dart';
@@ -1520,11 +1520,10 @@ class _ChatScreenState extends State<ChatScreen> {
                 onTap: () {
                   Navigator.pop(sheetContext);
                   unawaited(
-                    showDeliverySheet(
+                    showDeliveryFixSheet(
                       context,
                       message: message,
                       contact: contact,
-                      onRetry: () => unawaited(_retryMessage(message)),
                     ),
                   );
                 },

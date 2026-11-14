@@ -13435,4 +13435,18 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get toolsMoved_ok => 'Ho capito';
+
+  @override
+  String get deliv_failedMarker => 'Non consegnato';
+
+  @override
+  String deliv_failedMarkerHint(String name) {
+    return 'Il tuo ultimo messaggio a $name non è stato consegnato. Mostra perché e come risolvere.';
+  }
+
+  @override
+  String get deliv_retryFlood => 'Riprova via flood';
+
+  @override
+  String get deliv_pickRoute => 'Scegli un percorso, poi riprova';
 }

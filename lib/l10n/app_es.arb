@@ -5236,5 +5236,9 @@
   "bastionTools_mapHintAll": "Captura de cobertura, wardrive, hexágonos de cobertura, cobertura y búsqueda de antena, mapas sin conexión y regiones",
   "toolsMoved_title": "Algunas herramientas se han movido",
   "toolsMoved_body": "Wardrive, hexágonos de cobertura, cobertura de antena y búsqueda de antena están ahora juntos en {mapHub}. Las herramientas de repetidores que aparecían dos veces ahora solo están en {repeaterTools}. La búsqueda aquí los sigue encontrando.",
-  "toolsMoved_ok": "Entendido"
+  "toolsMoved_ok": "Entendido",
+  "deliv_failedMarker": "No entregado",
+  "deliv_failedMarkerHint": "Tu último mensaje a {name} no se entregó. Muestra por qué y cómo arreglarlo.",
+  "deliv_retryFlood": "Reintentar por inundación",
+  "deliv_pickRoute": "Elegir una ruta y reintentar"
 }

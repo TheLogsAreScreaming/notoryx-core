@@ -5102,5 +5102,9 @@
   "bastionTools_mapHintAll": "Dekking vastleggen, wardrive, dekkingszeshoeken, antennedekking en -zoeken, offline kaarten en regio's",
   "toolsMoved_title": "Sommige tools zijn verplaatst",
   "toolsMoved_body": "Wardrive, dekkingszeshoeken, antennedekking en antenne zoeken staan nu samen onder {mapHub}. Repeater-tools die dubbel stonden, staan nu alleen bij {repeaterTools}. Zoeken hier vindt ze nog steeds allemaal.",
-  "toolsMoved_ok": "Begrepen"
+  "toolsMoved_ok": "Begrepen",
+  "deliv_failedMarker": "Niet afgeleverd",
+  "deliv_failedMarkerHint": "Je laatste bericht aan {name} is niet afgeleverd. Toont waarom en hoe je het oplost.",
+  "deliv_retryFlood": "Opnieuw via flood",
+  "deliv_pickRoute": "Kies een route en probeer opnieuw"
 }

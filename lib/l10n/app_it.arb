@@ -5236,5 +5236,9 @@
   "bastionTools_mapHintAll": "Rilevamento copertura, wardrive, esagoni di copertura, copertura e ricerca antenna, mappe offline e regioni",
   "toolsMoved_title": "Alcuni strumenti sono stati spostati",
   "toolsMoved_body": "Wardrive, esagoni di copertura, copertura antenna e ricerca antenna ora sono insieme in {mapHub}. Gli strumenti per ripetitori elencati due volte ora sono solo in {repeaterTools}. La ricerca qui li trova ancora tutti.",
-  "toolsMoved_ok": "Ho capito"
+  "toolsMoved_ok": "Ho capito",
+  "deliv_failedMarker": "Non consegnato",
+  "deliv_failedMarkerHint": "Il tuo ultimo messaggio a {name} non è stato consegnato. Mostra perché e come risolvere.",
+  "deliv_retryFlood": "Riprova via flood",
+  "deliv_pickRoute": "Scegli un percorso, poi riprova"
 }

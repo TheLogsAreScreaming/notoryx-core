@@ -5107,5 +5107,9 @@
   "bastionTools_mapHintAll": "覆盖采集、扫街测试、覆盖六边形、天线覆盖与寻找、离线地图和区域",
   "toolsMoved_title": "部分工具已移动",
   "toolsMoved_body": "扫街测试、覆盖六边形、天线覆盖和天线寻找现在都在「{mapHub}」中。之前出现两次的中继器工具现在只在「{repeaterTools}」中。在这里搜索仍能找到它们。",
-  "toolsMoved_ok": "知道了"
+  "toolsMoved_ok": "知道了",
+  "deliv_failedMarker": "未送达",
+  "deliv_failedMarkerHint": "你发给 {name} 的最后一条消息未送达。显示原因和解决办法。",
+  "deliv_retryFlood": "通过泛洪重试",
+  "deliv_pickRoute": "选择路由后重试"
 }

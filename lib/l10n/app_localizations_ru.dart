@@ -13449,4 +13449,18 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get toolsMoved_ok => 'Понятно';
+
+  @override
+  String get deliv_failedMarker => 'Не доставлено';
+
+  @override
+  String deliv_failedMarkerHint(String name) {
+    return 'Последнее сообщение для $name не доставлено. Показывает причину и как исправить.';
+  }
+
+  @override
+  String get deliv_retryFlood => 'Повторить флудом';
+
+  @override
+  String get deliv_pickRoute => 'Выбрать маршрут и повторить';
 }

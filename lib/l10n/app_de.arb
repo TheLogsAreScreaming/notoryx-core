@@ -5236,5 +5236,9 @@
   "bastionTools_mapHintAll": "Abdeckung aufzeichnen, Wardrive, Abdeckungs-Sechsecke, Antennenabdeckung und -suche, Offline-Karten und Regionen",
   "toolsMoved_title": "Einige Werkzeuge sind umgezogen",
   "toolsMoved_body": "Wardrive, Abdeckungs-Sechsecke, Antennenabdeckung und Antennensuche sind jetzt zusammen unter {mapHub}. Repeater-Werkzeuge, die doppelt aufgeführt waren, findest du jetzt nur noch unter {repeaterTools}. Die Suche hier findet sie alle weiterhin.",
-  "toolsMoved_ok": "Verstanden"
+  "toolsMoved_ok": "Verstanden",
+  "deliv_failedMarker": "Nicht zugestellt",
+  "deliv_failedMarkerHint": "Deine letzte Nachricht an {name} wurde nicht zugestellt. Zeigt den Grund und wie du es behebst.",
+  "deliv_retryFlood": "Per Flutung erneut senden",
+  "deliv_pickRoute": "Route wählen, dann erneut senden"
 }

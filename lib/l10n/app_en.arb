@@ -6985,5 +6985,10 @@
   "toolsMoved_title": "Some tools moved",
   "toolsMoved_body": "Wardrive, coverage hexagons, antenna coverage and antenna hunt are now together in {mapHub}. Repeater tools that were listed twice are now only in {repeaterTools}. Searching here still finds them all.",
   "@toolsMoved_body": {"placeholders": {"mapHub": {"type": "String"}, "repeaterTools": {"type": "String"}}},
-  "toolsMoved_ok": "Got it"
+  "toolsMoved_ok": "Got it",
+  "deliv_failedMarker": "Not delivered",
+  "deliv_failedMarkerHint": "Your last message to {name} wasn't delivered. Shows why and how to fix it.",
+  "@deliv_failedMarkerHint": {"placeholders": {"name": {"type": "String"}}},
+  "deliv_retryFlood": "Retry by flood",
+  "deliv_pickRoute": "Choose a route, then retry"
 }

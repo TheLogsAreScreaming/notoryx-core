@@ -13439,4 +13439,18 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get toolsMoved_ok => 'Verstanden';
+
+  @override
+  String get deliv_failedMarker => 'Nicht zugestellt';
+
+  @override
+  String deliv_failedMarkerHint(String name) {
+    return 'Deine letzte Nachricht an $name wurde nicht zugestellt. Zeigt den Grund und wie du es behebst.';
+  }
+
+  @override
+  String get deliv_retryFlood => 'Per Flutung erneut senden';
+
+  @override
+  String get deliv_pickRoute => 'Route wählen, dann erneut senden';
 }

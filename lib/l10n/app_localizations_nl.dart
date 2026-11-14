@@ -13375,4 +13375,18 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get toolsMoved_ok => 'Begrepen';
+
+  @override
+  String get deliv_failedMarker => 'Niet afgeleverd';
+
+  @override
+  String deliv_failedMarkerHint(String name) {
+    return 'Je laatste bericht aan $name is niet afgeleverd. Toont waarom en hoe je het oplost.';
+  }
+
+  @override
+  String get deliv_retryFlood => 'Opnieuw via flood';
+
+  @override
+  String get deliv_pickRoute => 'Kies een route en probeer opnieuw';
 }

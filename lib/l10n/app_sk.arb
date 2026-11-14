@@ -5102,5 +5102,9 @@
   "bastionTools_mapHintAll": "Záznam pokrytia, wardrive, šesťuholníky pokrytia, pokrytie a hľadanie antény, offline mapy a regióny",
   "toolsMoved_title": "Niektoré nástroje sa presunuli",
   "toolsMoved_body": "Wardrive, šesťuholníky pokrytia, pokrytie antény a hľadanie antény sú teraz spolu v sekcii „{mapHub}“. Nástroje opakovačov, ktoré boli uvedené dvakrát, sú teraz len v sekcii „{repeaterTools}“. Vyhľadávanie tu ich stále nájde.",
-  "toolsMoved_ok": "Rozumiem"
+  "toolsMoved_ok": "Rozumiem",
+  "deliv_failedMarker": "Nedoručené",
+  "deliv_failedMarkerHint": "Tvoja posledná správa pre {name} nebola doručená. Ukáže prečo a ako to opraviť.",
+  "deliv_retryFlood": "Skúsiť znova zaplavením",
+  "deliv_pickRoute": "Vybrať trasu a skúsiť znova"
 }

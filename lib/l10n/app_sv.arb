@@ -5102,5 +5102,9 @@
   "bastionTools_mapHintAll": "Täckningsinspelning, wardrive, täckningshexagoner, antenntäckning och antennsök, offlinekartor och regioner",
   "toolsMoved_title": "Några verktyg har flyttat",
   "toolsMoved_body": "Wardrive, täckningshexagoner, antenntäckning och antennsök finns nu tillsammans under {mapHub}. Repeaterverktyg som fanns på två ställen finns nu bara under {repeaterTools}. Sökningen här hittar dem fortfarande.",
-  "toolsMoved_ok": "Uppfattat"
+  "toolsMoved_ok": "Uppfattat",
+  "deliv_failedMarker": "Inte levererat",
+  "deliv_failedMarkerHint": "Ditt senaste meddelande till {name} levererades inte. Visar varför och hur du åtgärdar det.",
+  "deliv_retryFlood": "Försök igen med flood",
+  "deliv_pickRoute": "Välj en väg och försök igen"
 }

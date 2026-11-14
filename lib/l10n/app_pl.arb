@@ -5140,5 +5140,9 @@
   "bastionTools_mapHintAll": "Zapis zasięgu, wardrive, sześciokąty zasięgu, zasięg i szukanie anteny, mapy offline i regiony",
   "toolsMoved_title": "Niektóre narzędzia zostały przeniesione",
   "toolsMoved_body": "Wardrive, sześciokąty zasięgu, zasięg anteny i szukanie anteny są teraz razem w sekcji „{mapHub}”. Narzędzia przekaźników, które były wymienione dwa razy, są teraz tylko w sekcji „{repeaterTools}”. Wyszukiwanie tutaj nadal je znajduje.",
-  "toolsMoved_ok": "Rozumiem"
+  "toolsMoved_ok": "Rozumiem",
+  "deliv_failedMarker": "Nie dostarczono",
+  "deliv_failedMarkerHint": "Twoja ostatnia wiadomość do {name} nie została dostarczona. Pokazuje dlaczego i jak to naprawić.",
+  "deliv_retryFlood": "Ponów przez zalewanie",
+  "deliv_pickRoute": "Wybierz trasę i ponów"
 }

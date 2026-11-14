@@ -13378,4 +13378,18 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get toolsMoved_ok => 'Rozumiem';
+
+  @override
+  String get deliv_failedMarker => 'Nedoručené';
+
+  @override
+  String deliv_failedMarkerHint(String name) {
+    return 'Tvoja posledná správa pre $name nebola doručená. Ukáže prečo a ako to opraviť.';
+  }
+
+  @override
+  String get deliv_retryFlood => 'Skúsiť znova zaplavením';
+
+  @override
+  String get deliv_pickRoute => 'Vybrať trasu a skúsiť znova';
 }
