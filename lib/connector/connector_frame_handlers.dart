@@ -815,6 +815,12 @@ extension _ConnectorFrameHandlers on MeshCoreConnector {
                     c != null && isContactUrlImagesEnabled(c.publicKeyHex),
                 contactId: msg.senderKeyHex,
                 badgeCount: getTotalUnreadCount(),
+                dedupeKey: NotificationDeduper.directKey(
+                  radio: slot,
+                  senderKeyHex: msg.senderKeyHex,
+                  sentAt: msg.timestamp,
+                  text: msg.text,
+                ),
               );
             } else if (c?.type == advTypeRoom) {
               final resolvedText =
@@ -832,6 +838,12 @@ extension _ConnectorFrameHandlers on MeshCoreConnector {
                     c != null && isContactUrlImagesEnabled(c.publicKeyHex),
                 contactId: msg.senderKeyHex,
                 badgeCount: getTotalUnreadCount(),
+                dedupeKey: NotificationDeduper.directKey(
+                  radio: slot,
+                  senderKeyHex: msg.senderKeyHex,
+                  sentAt: msg.timestamp,
+                  text: msg.text,
+                ),
               );
             }
           }());

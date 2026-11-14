@@ -59,6 +59,7 @@ import '../services/app_settings_service.dart';
 import '../services/background_service.dart';
 import '../services/timeout_prediction_service.dart';
 import '../services/translation_service.dart';
+import '../services/notification_deduper.dart';
 import '../services/notification_service.dart';
 import 'meshcore_connector_usb.dart';
 import 'meshcore_connector_tcp.dart';
