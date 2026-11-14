@@ -72,6 +72,34 @@ jobs:
           cp build/app/outputs/flutter-apk/app-release.apk dist/NOTORYX-Core-arm64-v8a.apk
           cd dist
           sha256sum NOTORYX-Core-arm64-v8a.apk > SHA256SUMS.txt
+          # What this artifact was built from. This workflow builds only:
+          # tests for the same commit run in "Flutter and Dart".
+          python3 - <<'PY'
+          import hashlib, json, os, subprocess
+          def sha(path):
+              with open(path, 'rb') as f:
+                  return hashlib.sha256(f.read()).hexdigest()
+          server = os.environ['GITHUB_SERVER_URL']; repo = os.environ['GITHUB_REPOSITORY']
+          commit = os.environ['GITHUB_SHA']
+          try:
+              out = subprocess.run(['flutter', '--version', '--machine'], capture_output=True, text=True).stdout
+              version = json.loads(out[out.index('{'):])
+          except Exception:
+              version = {}
+          info = {
+              'kind': 'build-only',
+              'commit': commit,
+              'ref': os.environ['GITHUB_REF'],
+              'run': f"{server}/{repo}/actions/runs/{os.environ['GITHUB_RUN_ID']}",
+              'tests_for_commit': f"{server}/{repo}/commit/{commit}/checks",
+              'flutter': version.get('frameworkVersion'),
+              'pubspec_lock_sha256': sha('../pubspec.lock'),
+              'artifact': 'NOTORYX-Core-arm64-v8a.apk',
+              'artifact_sha256_before_signing': sha('NOTORYX-Core-arm64-v8a.apk'),
+          }
+          json.dump(info, open('BUILD-INFO.json', 'w'), indent=2)
+          print(json.dumps(info, indent=2))
+          PY
           ls -lh
 
       - name: Upload Android artifact

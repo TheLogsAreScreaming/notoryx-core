@@ -18,7 +18,7 @@ NOTORYX Core turns your phone or computer and a [MeshCore](https://meshcore.io/)
   <img src="docs/screenshots/nodes.png" width="230" alt="Nodes: repeaters, people, rooms and sensors heard on the mesh">
 </p>
 
-> NOTORYX Core is a pre-release. It is tested in automated tests and a mesh simulator but not yet on a wide range of phones and radios. MQTT bridging and LetsMesh sign-in are new and still need wider real-world testing. It is not a replacement for an emergency service or a satellite messenger. Please [report issues](../../issues).
+> NOTORYX Core 10.0 is released, with 10.1 in pre-release. It is checked by automated tests and a mesh simulator but not yet on a wide range of phones and radios: see [Known limitations](docs/KNOWN_LIMITATIONS.md). It is not a replacement for an emergency service or a satellite messenger. Please [report problems in notoryx-core-releases](https://github.com/TheLogsAreScreaming/notoryx-core-releases/issues/new/choose) (issues are off in this source repository).
 
 ## Download
 
@@ -27,6 +27,7 @@ Get the latest build from **[NOTORYX Core releases](https://github.com/TheLogsAr
 | Platform | File | Notes |
 |---|---|---|
 | Android (ARM64 phones) | `NOTORYX-Core-…-arm64-v8a.apk` | Signed with the existing release key |
+| Android, Lite | `NOTORYX-Core-Lite-…-arm64-v8a.apk` | Smaller, with no closed-source parts: no on-device translation, picture messages, camera QR scanner or phone GPS. Signed with the same key |
 | macOS (Intel and Apple silicon, macOS 14+) | `NOTORYX-Core-…-macOS-universal.zip` | Not notarized by Apple (see below) |
 
 iOS, Windows, Linux and web builds compile in CI but aren't released yet.
@@ -55,7 +56,7 @@ Or install the APK yourself:
    - You do this once for each new version.
 4. Allow Bluetooth when asked.
 
-Each release includes `SHA256SUMS-Android.txt` and `SHA256SUMS-macOS.txt` if you want to check your download (`shasum -a 256 <file>`).
+Each release includes `SHA256SUMS-Android.txt` and `SHA256SUMS-macOS.txt` if you want to check your download (`shasum -a 256 <file>`). How each published file is tied to its source commit, its test run and the signing certificate is described in [Release provenance](docs/RELEASE_PROVENANCE.md).
 
 ## Getting started
 
@@ -221,7 +222,7 @@ flutter test
 
 ## Contributing
 
-Bug reports, feature requests and pull requests are welcome. Use the **[Issues](../../issues)** tab, and see [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a pull request.
+Bug reports and feature requests go to **[notoryx-core-releases issues](https://github.com/TheLogsAreScreaming/notoryx-core-releases/issues/new/choose)**, because issues are off in this repository. Pull requests are welcome here; see [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a pull request.
 
 ## Independence and attribution
 
