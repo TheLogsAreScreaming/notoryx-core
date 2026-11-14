@@ -5063,5 +5063,7 @@
   "hopTie_marginHelp": "Kako blizu (v %) morata biti razdalji dveh ponavljalnikov, da odloči zapomnjena izbira. 0 le natančno izenačenje; do 20; privzeto 5.",
   "hopTie_forget": "Pozabi zapomnjene izbire ({count})",
   "hopTie_less": "Manj",
-  "hopTie_more": "Več"
+  "hopTie_more": "Več",
+  "outbox_maybeSent": "Pošiljanje je bilo prekinjeno, zato je sporočilo morda že odšlo. Vrnjeno je v polje za sporočilo: preverite, preden ga znova pošljete.",
+  "outbox_tooLong": "Predolgo za radio, zato je vrnjeno v polje za sporočilo, da ga skrajšate."
 }

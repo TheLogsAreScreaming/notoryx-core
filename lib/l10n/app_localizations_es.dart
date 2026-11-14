@@ -13278,4 +13278,12 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get hopTie_more => 'Más';
+
+  @override
+  String get outbox_maybeSent =>
+      'El envío se interrumpió, así que puede que ya haya salido. Ha vuelto al cuadro de mensaje: compruébalo antes de enviarlo de nuevo.';
+
+  @override
+  String get outbox_tooLong =>
+      'Demasiado largo para la radio; ha vuelto al cuadro de mensaje para acortarlo.';
 }

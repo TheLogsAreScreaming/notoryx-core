@@ -5063,5 +5063,7 @@
   "hopTie_marginHelp": "Ako blízko (v %) musia byť vzdialenosti dvoch opakovačov, aby rozhodol zapamätaný výber. 0 len presná zhoda; do 20; predvolene 5.",
   "hopTie_forget": "Zabudnúť zapamätané výbery ({count})",
   "hopTie_less": "Menej",
-  "hopTie_more": "Viac"
+  "hopTie_more": "Viac",
+  "outbox_maybeSent": "Odosielanie bolo prerušené, takže správa už možno odišla. Vrátila sa do poľa správy: skontrolujte to pred opätovným odoslaním.",
+  "outbox_tooLong": "Príliš dlhé pre rádio, preto sa vrátilo do poľa správy na skrátenie."
 }

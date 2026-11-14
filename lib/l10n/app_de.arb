@@ -5197,5 +5197,7 @@
   "hopTie_marginHelp": "Wie nah die Entfernungen zweier Repeater beieinander liegen müssen (in %), damit die gemerkte Wahl entscheidet. 0 heißt nur exakter Gleichstand; bis 20; Standard 5.",
   "hopTie_forget": "Gemerkte Wahl vergessen ({count})",
   "hopTie_less": "Weniger",
-  "hopTie_more": "Mehr"
+  "hopTie_more": "Mehr",
+  "outbox_maybeSent": "Das Senden wurde unterbrochen, die Nachricht ist also vielleicht schon raus. Sie steht wieder im Eingabefeld: Prüfe das, bevor du sie erneut sendest.",
+  "outbox_tooLong": "Zu lang für das Funkgerät, daher wieder im Eingabefeld zum Kürzen."
 }

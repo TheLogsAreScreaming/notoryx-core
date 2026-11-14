@@ -5101,5 +5101,7 @@
   "hopTie_marginHelp": "Mennyire (%-ban) legyen közel két átjátszó távolsága, hogy a megjegyzett választás döntsön. 0 csak pontos egyezés; legfeljebb 20; alapból 5.",
   "hopTie_forget": "Megjegyzett választások törlése ({count})",
   "hopTie_less": "Kevesebb",
-  "hopTie_more": "Több"
+  "hopTie_more": "Több",
+  "outbox_maybeSent": "A küldés megszakadt, így lehet, hogy az üzenet már elment. Visszakerült az üzenetmezőbe: ellenőrizd, mielőtt újra elküldöd.",
+  "outbox_tooLong": "Túl hosszú a rádiónak, ezért visszakerült az üzenetmezőbe rövidítésre."
 }

@@ -13222,4 +13222,12 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get hopTie_more => 'Meer';
+
+  @override
+  String get outbox_maybeSent =>
+      'Het verzenden werd onderbroken, dus dit bericht is misschien al verstuurd. Het staat weer in het invoerveld: controleer dit voordat je het opnieuw verstuurt.';
+
+  @override
+  String get outbox_tooLong =>
+      'Te lang voor de radio, dus het staat weer in het invoerveld om in te korten.';
 }

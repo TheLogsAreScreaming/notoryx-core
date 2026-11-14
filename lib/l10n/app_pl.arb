@@ -5101,5 +5101,7 @@
   "hopTie_marginHelp": "Jak bliskie (w %) muszą być odległości dwóch przekaźników, by zdecydował zapamiętany wybór. 0 tylko dokładny remis; do 20; domyślnie 5.",
   "hopTie_forget": "Zapomnij zapamiętane wybory ({count})",
   "hopTie_less": "Mniej",
-  "hopTie_more": "Więcej"
+  "hopTie_more": "Więcej",
+  "outbox_maybeSent": "Wysyłanie zostało przerwane, więc ta wiadomość mogła już zostać wysłana. Wróciła do pola wiadomości: sprawdź, zanim wyślesz ją ponownie.",
+  "outbox_tooLong": "Za długie dla radia, więc wróciło do pola wiadomości do skrócenia."
 }

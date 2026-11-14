@@ -13283,4 +13283,12 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get hopTie_more => 'Più';
+
+  @override
+  String get outbox_maybeSent =>
+      'L\'invio è stato interrotto, quindi il messaggio potrebbe essere già partito. È tornato nella casella di testo: controlla prima di inviarlo di nuovo.';
+
+  @override
+  String get outbox_tooLong =>
+      'Troppo lungo per la radio, quindi è tornato nella casella di testo per accorciarlo.';
 }

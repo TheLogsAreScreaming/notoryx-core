@@ -12669,4 +12669,11 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get hopTie_more => '増やす';
+
+  @override
+  String get outbox_maybeSent =>
+      '送信が中断されたため、このメッセージはすでに送信済みかもしれません。入力欄に戻しました。再送信する前に確認してください。';
+
+  @override
+  String get outbox_tooLong => '無線機には長すぎるため、短くできるよう入力欄に戻しました。';
 }

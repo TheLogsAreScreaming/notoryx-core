@@ -13255,4 +13255,12 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get hopTie_more => 'Több';
+
+  @override
+  String get outbox_maybeSent =>
+      'A küldés megszakadt, így lehet, hogy az üzenet már elment. Visszakerült az üzenetmezőbe: ellenőrizd, mielőtt újra elküldöd.';
+
+  @override
+  String get outbox_tooLong =>
+      'Túl hosszú a rádiónak, ezért visszakerült az üzenetmezőbe rövidítésre.';
 }

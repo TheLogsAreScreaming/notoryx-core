@@ -13250,4 +13250,12 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get hopTie_more => 'Повече';
+
+  @override
+  String get outbox_maybeSent =>
+      'Изпращането беше прекъснато, така че съобщението може вече да е изпратено. То е върнато в полето за писане: проверете, преди да го изпратите отново.';
+
+  @override
+  String get outbox_tooLong =>
+      'Твърде дълго за радиото, затова е върнато в полето за писане, за да го съкратите.';
 }

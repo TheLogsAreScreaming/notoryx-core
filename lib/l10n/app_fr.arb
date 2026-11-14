@@ -5197,5 +5197,7 @@
   "hopTie_marginHelp": "À quel point (en %) les distances de deux répéteurs doivent être proches pour que le choix retenu décide. 0 = égalité exacte seulement ; jusqu'à 20 ; 5 par défaut.",
   "hopTie_forget": "Oublier les choix retenus ({count})",
   "hopTie_less": "Moins",
-  "hopTie_more": "Plus"
+  "hopTie_more": "Plus",
+  "outbox_maybeSent": "L'envoi a été interrompu, le message est donc peut-être déjà parti. Il est revenu dans la zone de saisie : vérifiez avant de le renvoyer.",
+  "outbox_tooLong": "Trop long pour la radio : il est revenu dans la zone de saisie pour être raccourci."
 }

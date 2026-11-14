@@ -21850,13 +21850,13 @@ abstract class AppLocalizations {
   /// No description provided for @idKey_tileSubtitle.
   ///
   /// In en, this message translates to:
-  /// **'Back up or restore this radio's private key'**
+  /// **'Back up or restore this radio\'s private key'**
   String get idKey_tileSubtitle;
 
   /// No description provided for @idKey_explainer.
   ///
   /// In en, this message translates to:
-  /// **'Your radio's identity is its private key. Keep a copy to move this identity to another radio, or to get it back after a reset. Your contacts keep recognising you.'**
+  /// **'Your radio\'s identity is its private key. Keep a copy to move this identity to another radio, or to get it back after a reset. Your contacts keep recognising you.'**
   String get idKey_explainer;
 
   /// No description provided for @idKey_backupLabel.
@@ -21928,7 +21928,7 @@ abstract class AppLocalizations {
   /// No description provided for @idKey_importConfirmTitle.
   ///
   /// In en, this message translates to:
-  /// **'Replace this radio's identity?'**
+  /// **'Replace this radio\'s identity?'**
   String get idKey_importConfirmTitle;
 
   /// No description provided for @idKey_importConfirmBody.
@@ -21958,13 +21958,13 @@ abstract class AppLocalizations {
   /// No description provided for @idKey_errTimeout.
   ///
   /// In en, this message translates to:
-  /// **'The radio didn't answer. Try again.'**
+  /// **'The radio didn\'t answer. Try again.'**
   String get idKey_errTimeout;
 
   /// No description provided for @idKey_errDisabled.
   ///
   /// In en, this message translates to:
-  /// **'This radio's firmware has key backup turned off.'**
+  /// **'This radio\'s firmware has key backup turned off.'**
   String get idKey_errDisabled;
 
   /// No description provided for @idKey_errRejected.
@@ -21988,7 +21988,7 @@ abstract class AppLocalizations {
   /// No description provided for @hopTie_explainer.
   ///
   /// In en, this message translates to:
-  /// **'A path only carries a short ID for each hop, and several repeaters can share one. When position picks one of them, the app remembers that pick for the same spot in a path, and uses it again when there's no position to go on or two repeaters are about equally close.'**
+  /// **'A path only carries a short ID for each hop, and several repeaters can share one. When position picks one of them, the app remembers that pick for the same spot in a path, and uses it again when there\'s no position to go on or two repeaters are about equally close.'**
   String get hopTie_explainer;
 
   /// No description provided for @hopTie_ttl.
@@ -22006,7 +22006,7 @@ abstract class AppLocalizations {
   /// No description provided for @hopTie_ttlHelp.
   ///
   /// In en, this message translates to:
-  /// **'A pick that isn't used again within this many days is forgotten. 1 to 180 days; 30 by default.'**
+  /// **'A pick that isn\'t used again within this many days is forgotten. 1 to 180 days; 30 by default.'**
   String get hopTie_ttlHelp;
 
   /// No description provided for @hopTie_margin.
@@ -22018,7 +22018,7 @@ abstract class AppLocalizations {
   /// No description provided for @hopTie_marginHelp.
   ///
   /// In en, this message translates to:
-  /// **'How close two repeaters' distances must be (in %) for the remembered pick to decide. 0 means only exact ties; up to 20; 5 by default.'**
+  /// **'How close two repeaters\' distances must be (in %) for the remembered pick to decide. 0 means only exact ties; up to 20; 5 by default.'**
   String get hopTie_marginHelp;
 
   /// No description provided for @hopTie_forget.
@@ -22038,6 +22038,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'More'**
   String get hopTie_more;
+
+  /// No description provided for @outbox_maybeSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Sending was interrupted, so this may already have gone out. It\'s back in the message box: check before sending it again.'**
+  String get outbox_maybeSent;
+
+  /// No description provided for @outbox_tooLong.
+  ///
+  /// In en, this message translates to:
+  /// **'Too long for the radio, so it\'s back in the message box to shorten.'**
+  String get outbox_tooLong;
 }
 
 class _AppLocalizationsDelegate

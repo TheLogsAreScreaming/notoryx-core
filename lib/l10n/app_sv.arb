@@ -5063,5 +5063,7 @@
   "hopTie_marginHelp": "Hur nära (i %) två repeatrars avstånd måste vara för att det sparade valet ska avgöra. 0 bara exakt lika; upp till 20; 5 som standard.",
   "hopTie_forget": "Glöm sparade val ({count})",
   "hopTie_less": "Mindre",
-  "hopTie_more": "Mer"
+  "hopTie_more": "Mer",
+  "outbox_maybeSent": "Sändningen avbröts, så meddelandet kan redan ha gått iväg. Det ligger i meddelanderutan igen: kontrollera innan du skickar det igen.",
+  "outbox_tooLong": "För långt för radion, så det ligger i meddelanderutan igen för att kortas."
 }

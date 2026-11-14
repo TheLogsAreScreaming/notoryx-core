@@ -6938,5 +6938,7 @@
     }
   },
   "hopTie_less": "Less",
-  "hopTie_more": "More"
+  "hopTie_more": "More",
+  "outbox_maybeSent": "Sending was interrupted, so this may already have gone out. It's back in the message box: check before sending it again.",
+  "outbox_tooLong": "Too long for the radio, so it's back in the message box to shorten."
 }

@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:typed_data';
 
 import 'package:flutter_test/flutter_test.dart';
@@ -33,6 +34,22 @@ class _Radio extends MeshCoreConnector {
   String self = 'aabbccddeeff';
   final sent = <String>[];
 
+  /// Thrown by the next send, after nothing was recorded as sent.
+  Object? failNext;
+
+  /// When set, sends wait on it, like a radio that never answers.
+  Completer<void>? hang;
+
+  Future<void> _out(String line) async {
+    final error = failNext;
+    if (error != null) {
+      failNext = null;
+      throw error;
+    }
+    if (hang != null) await hang!.future;
+    sent.add(line);
+  }
+
   @override
   bool get isConnected => connected;
   @override
@@ -55,7 +72,7 @@ class _Radio extends MeshCoreConnector {
     String? originalText,
     String? translatedLanguageCode,
     String? translationModelId,
-  }) async => sent.add('${contact.name}:$text');
+  }) => _out('${contact.name}:$text');
   @override
   Future<void> sendChannelMessage(
     Channel channel,
@@ -64,7 +81,7 @@ class _Radio extends MeshCoreConnector {
     String? translatedLanguageCode,
     String? translationModelId,
     bool sign = false,
-  }) async => sent.add('${channel.name}:$text');
+  }) => _out('${channel.name}:$text');
 }
 
 void main() {
@@ -216,5 +233,110 @@ void main() {
     await outbox.flush();
     expect(radio.sent, isEmpty);
     expect(DraftStore.load(draft), 'missed');
+  });
+
+  group('send handoff', () {
+    test(
+      'a send that throws goes back to the draft, flagged, not resent',
+      () async {
+        final outbox = make();
+        await outbox.add(samTarget, 'maybe');
+        radio
+          ..connected = true
+          ..failNext = TimeoutException('no ack');
+        await outbox.flush();
+        expect(radio.sent, isEmpty);
+        expect(outbox.entriesFor(samTarget), isEmpty);
+        expect(DraftStore.load(draft), 'maybe');
+        expect(outbox.uncertainFor(samTarget).single.entry.text, 'maybe');
+        await outbox.flush();
+        expect(radio.sent, isEmpty, reason: 'never retried by itself');
+      },
+    );
+
+    test('one failure does not stop the rest of the queue', () async {
+      final outbox = make();
+      await outbox.add(samTarget, 'first');
+      await outbox.add('channel:2', 'second');
+      radio
+        ..connected = true
+        ..failNext = StateError('Connect your radio first.');
+      await outbox.flush();
+      expect(radio.sent, ['#hiking:second']);
+      expect(DraftStore.load(draft), 'first');
+    });
+
+    test('an app stop mid-send returns it to the draft on restart', () async {
+      final outbox = make();
+      await outbox.add(samTarget, 'in the air');
+      radio
+        ..connected = true
+        ..hang = Completer<void>();
+      unawaited(outbox.flush());
+      await pumpEventQueue();
+      // The app is killed here: the radio never answered.
+      radio
+        ..hang = null
+        ..connected = false;
+      final restarted = make();
+      await pumpEventQueue();
+      expect(restarted.entriesFor(samTarget), isEmpty);
+      expect(DraftStore.load(draft), 'in the air');
+      expect(restarted.uncertainFor(samTarget), hasLength(1));
+      radio.connected = true;
+      await restarted.flush();
+      expect(radio.sent, isEmpty, reason: 'may already be out');
+    });
+
+    test('too long for the radio goes back to the draft unsent', () async {
+      final outbox = make();
+      final long = 'x' * 200;
+      await outbox.add(samTarget, long);
+      await outbox.add('channel:2', long);
+      radio.connected = true;
+      await outbox.flush();
+      expect(radio.sent, isEmpty);
+      expect(DraftStore.load(draft), long);
+      expect(
+        outbox.returned.map((r) => r.reason),
+        everyElement(OutboxReturnReason.tooLong),
+      );
+      expect(outbox.uncertainFor(samTarget), isEmpty);
+    });
+
+    test('a channel that is gone goes back to the draft', () async {
+      final outbox = make();
+      await outbox.add('channel:7', 'where');
+      radio.connected = true;
+      await outbox.flush();
+      expect(radio.sent, isEmpty);
+      expect(
+        DraftStore.load(DraftStore.channelKey('aabbccddeeff', 7)),
+        'where',
+      );
+    });
+
+    test('a finished send is not left half-done after a restart', () async {
+      final outbox = make();
+      await outbox.add(samTarget, 'done');
+      radio.connected = true;
+      await outbox.flush();
+      final restarted = make();
+      await pumpEventQueue();
+      expect(restarted.entriesFor(samTarget), isEmpty);
+      expect(DraftStore.load(draft), isNull);
+      expect(radio.sent, ['Sam:done']);
+    });
+
+    test('dismissing clears the note', () async {
+      final outbox = make();
+      await outbox.add(samTarget, 'x');
+      radio
+        ..connected = true
+        ..failNext = StateError('drop');
+      await outbox.flush();
+      outbox.dismissReturned(samTarget);
+      expect(outbox.uncertainFor(samTarget), isEmpty);
+    });
   });
 }

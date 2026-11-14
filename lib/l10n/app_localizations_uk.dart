@@ -13297,4 +13297,12 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get hopTie_more => 'Більше';
+
+  @override
+  String get outbox_maybeSent =>
+      'Надсилання було перервано, тож повідомлення, можливо, вже пішло. Його повернуто в поле введення: перевірте, перш ніж надсилати знову.';
+
+  @override
+  String get outbox_tooLong =>
+      'Задовге для радіо, тому повернуто в поле введення, щоб скоротити.';
 }

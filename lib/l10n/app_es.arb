@@ -5197,5 +5197,7 @@
   "hopTie_marginHelp": "Cuánto deben parecerse (en %) las distancias de dos repetidores para que decida la elección recordada. 0 solo empates exactos; hasta 20; 5 por defecto.",
   "hopTie_forget": "Olvidar elecciones recordadas ({count})",
   "hopTie_less": "Menos",
-  "hopTie_more": "Más"
+  "hopTie_more": "Más",
+  "outbox_maybeSent": "El envío se interrumpió, así que puede que ya haya salido. Ha vuelto al cuadro de mensaje: compruébalo antes de enviarlo de nuevo.",
+  "outbox_tooLong": "Demasiado largo para la radio; ha vuelto al cuadro de mensaje para acortarlo."
 }

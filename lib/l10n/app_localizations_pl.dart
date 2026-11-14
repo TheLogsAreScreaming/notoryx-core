@@ -13298,4 +13298,12 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get hopTie_more => 'Więcej';
+
+  @override
+  String get outbox_maybeSent =>
+      'Wysyłanie zostało przerwane, więc ta wiadomość mogła już zostać wysłana. Wróciła do pola wiadomości: sprawdź, zanim wyślesz ją ponownie.';
+
+  @override
+  String get outbox_tooLong =>
+      'Za długie dla radia, więc wróciło do pola wiadomości do skrócenia.';
 }
