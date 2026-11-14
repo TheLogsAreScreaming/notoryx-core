@@ -516,6 +516,39 @@ class SosState {
     sends: sends,
     acknowledgedBy: by,
   );
+
+  /// The same SOS with its repeats used up, so it stays shown but sends
+  /// nothing more.
+  SosState finished() => SosState(
+    active: active,
+    startedAt: startedAt,
+    lastSentAt: lastSentAt,
+    sends: sosMaxSends,
+    acknowledgedBy: acknowledgedBy,
+  );
+
+  Map<String, dynamic> toJson() => {
+    'active': active,
+    'startedAt': startedAt?.toUtc().toIso8601String(),
+    'lastSentAt': lastSentAt?.toUtc().toIso8601String(),
+    'sends': sends,
+    'acknowledgedBy': acknowledgedBy,
+  };
+
+  /// Reads a saved SOS; anything unreadable is treated as no SOS.
+  static SosState fromJson(Object? json) {
+    if (json is! Map || json['active'] != true) return idle;
+    final startedAt = DateTime.tryParse(json['startedAt'] as String? ?? '');
+    if (startedAt == null) return idle;
+    final sends = json['sends'];
+    return SosState(
+      active: true,
+      startedAt: startedAt,
+      lastSentAt: DateTime.tryParse(json['lastSentAt'] as String? ?? ''),
+      sends: sends is int ? sends.clamp(0, sosMaxSends) : 0,
+      acknowledgedBy: json['acknowledgedBy'] as String?,
+    );
+  }
 }
 
 /// Check-in reminder choices in minutes; 0 is off.
