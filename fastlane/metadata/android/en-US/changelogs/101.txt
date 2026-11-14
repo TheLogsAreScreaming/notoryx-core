@@ -1,3 +1,7 @@
 • First stable release of NOTORYX Core
 • Multiple radios: add several, switch between them, and keep chats, unread counts and outboxes for each
-• Includes everything from the 10.0.0 test builds
+• Per-channel notifications: all, mentions only or muted
+• Estimated airtime shown while you type
+• Import KML and GeoJSON as well as GPX
+• Guide to updating your radio's firmware
+• USB no longer uses a full CPU core on Mac and Linux
