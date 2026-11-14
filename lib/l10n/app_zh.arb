@@ -5068,5 +5068,21 @@
   "hopTie_marginHelp": "两个中继的距离需要相差多少（%）以内才由记住的选择决定。0表示仅完全相等；最高20，默认5。",
   "hopTie_forget": "清除记住的选择（{count}）",
   "hopTie_less": "减少",
-  "hopTie_more": "增加"
+  "hopTie_more": "增加",
+  "rf_title": "电台功能",
+  "rf_radioStats": "实时电台统计",
+  "rf_textCli": "文本命令行",
+  "rf_channelData": "频道数据",
+  "rf_signedPosts": "签名频道帖子",
+  "rf_rawPackets": "原始数据包",
+  "rf_floodCorridor": "泛洪走廊(定制固件)",
+  "rf_supported": "支持",
+  "rf_unsupported": "不支持",
+  "rf_unknown": "未知",
+  "rf_evNotConnected": "连接电台以检查。",
+  "rf_evNotChecked": "尚未检查。",
+  "rf_evProbeAnswered": "电台已响应检查。",
+  "rf_evProbeRejected": "电台表示不支持此功能。",
+  "rf_evDerived": "需要频道数据和电台密钥。",
+  "rf_evVersion": "电台报告协议 v{have}；需要 v{need}。"
 }

@@ -13297,4 +13297,54 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get hopTie_more => 'Більше';
+
+  @override
+  String get rf_title => 'Функції радіо';
+
+  @override
+  String get rf_radioStats => 'Статистика радіо наживо';
+
+  @override
+  String get rf_textCli => 'Текстовий командний рядок';
+
+  @override
+  String get rf_channelData => 'Дані каналу';
+
+  @override
+  String get rf_signedPosts => 'Підписані дописи каналу';
+
+  @override
+  String get rf_rawPackets => 'Сирі пакети';
+
+  @override
+  String get rf_floodCorridor => 'Коридор розсилки (власна прошивка)';
+
+  @override
+  String get rf_supported => 'Підтримується';
+
+  @override
+  String get rf_unsupported => 'Не підтримується';
+
+  @override
+  String get rf_unknown => 'Невідомо';
+
+  @override
+  String get rf_evNotConnected => 'Під\'єднайте радіо, щоб перевірити.';
+
+  @override
+  String get rf_evNotChecked => 'Ще не перевірено.';
+
+  @override
+  String get rf_evProbeAnswered => 'Радіо відповіло на перевірку.';
+
+  @override
+  String get rf_evProbeRejected => 'Радіо повідомило, що не підтримує це.';
+
+  @override
+  String get rf_evDerived => 'Потрібні дані каналу й ключ радіо.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return 'Радіо повідомляє протокол v$have; потрібен v$need.';
+  }
 }

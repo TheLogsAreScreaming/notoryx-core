@@ -5063,5 +5063,21 @@
   "hopTie_marginHelp": "Hoe dicht (in %) de afstanden van twee repeaters moeten liggen voordat de onthouden keuze beslist. 0 alleen exacte gelijkspel; tot 20; standaard 5.",
   "hopTie_forget": "Onthouden keuzes vergeten ({count})",
   "hopTie_less": "Minder",
-  "hopTie_more": "Meer"
+  "hopTie_more": "Meer",
+  "rf_title": "Radiofuncties",
+  "rf_radioStats": "Live radiostatistieken",
+  "rf_textCli": "Tekstopdrachtregel",
+  "rf_channelData": "Kanaalgegevens",
+  "rf_signedPosts": "Ondertekende kanaalberichten",
+  "rf_rawPackets": "Ruwe pakketten",
+  "rf_floodCorridor": "Floodcorridor (aangepaste firmware)",
+  "rf_supported": "Ondersteund",
+  "rf_unsupported": "Niet ondersteund",
+  "rf_unknown": "Onbekend",
+  "rf_evNotConnected": "Verbind een radio om dit te controleren.",
+  "rf_evNotChecked": "Nog niet gecontroleerd.",
+  "rf_evProbeAnswered": "De radio heeft op de controle geantwoord.",
+  "rf_evProbeRejected": "De radio meldt dat dit niet wordt ondersteund.",
+  "rf_evDerived": "Vereist kanaalgegevens en de sleutel van de radio.",
+  "rf_evVersion": "Radio meldt protocol v{have}; nodig is v{need}."
 }

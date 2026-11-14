@@ -14,6 +14,7 @@ import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'package:flutter_blue_plus_platform_interface/flutter_blue_plus_platform_interface.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../models/radio_features.dart';
 import '../models/region_setup.dart' show parseRegionTrees;
 import '../models/region_scope.dart';
 import '../models/advert_signature.dart';
@@ -618,7 +619,18 @@ class MeshCoreConnector extends ChangeNotifier {
     return (delivered: delivered, failed: failed);
   }
 
-  bool get supportsCompanionRadioStats => (_firmwareVerCode ?? 0) >= 8;
+  /// Every optional feature, whether the radio supports it, and the
+  /// evidence: its reported protocol version, or its answer to a probe.
+  List<RadioFeatureCheck> get radioFeatures => radioFeatureChecks(
+    connected: isConnected,
+    verCode: _firmwareVerCode,
+    corridorProbe: _floodCorridorSupported,
+    hasSelfKey: selfPublicKey?.length == 32,
+  );
+
+  bool get supportsCompanionRadioStats =>
+      (_firmwareVerCode ?? 0) >=
+      radioFeatureMinVersion[RadioFeature.radioStats]!;
 
   /// True when the connected companion has a text CLI (firmware v14+).
   bool get supportsCompanionCli =>
@@ -3191,7 +3203,8 @@ class MeshCoreConnector extends ChangeNotifier {
 
   /// Minimum companion firmware version code that implements
   /// CMD_SEND_CHANNEL_DATA (62) / RESP_CODE_CHANNEL_DATA_RECV (27).
-  static const int _minFirmwareVerCodeForChannelData = 13;
+  static final int _minFirmwareVerCodeForChannelData =
+      radioFeatureMinVersion[RadioFeature.channelData]!;
 
   /// True when the connected device can send/receive GRP_DATA blobs.
   bool get supportsChannelData =>

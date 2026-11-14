@@ -5197,5 +5197,21 @@
   "hopTie_marginHelp": "Quanto (in %) devono essere vicine le distanze di due ripetitori perché decida la scelta ricordata. 0 solo parità esatte; fino a 20; 5 predefinito.",
   "hopTie_forget": "Dimentica le scelte ricordate ({count})",
   "hopTie_less": "Meno",
-  "hopTie_more": "Più"
+  "hopTie_more": "Più",
+  "rf_title": "Funzioni della radio",
+  "rf_radioStats": "Statistiche radio in tempo reale",
+  "rf_textCli": "Riga di comando testuale",
+  "rf_channelData": "Dati del canale",
+  "rf_signedPosts": "Messaggi di canale firmati",
+  "rf_rawPackets": "Pacchetti grezzi",
+  "rf_floodCorridor": "Corridoio flood (firmware personalizzato)",
+  "rf_supported": "Supportato",
+  "rf_unsupported": "Non supportato",
+  "rf_unknown": "Sconosciuto",
+  "rf_evNotConnected": "Collega una radio per verificare.",
+  "rf_evNotChecked": "Non ancora verificato.",
+  "rf_evProbeAnswered": "La radio ha risposto alla verifica.",
+  "rf_evProbeRejected": "La radio ha indicato che non lo supporta.",
+  "rf_evDerived": "Richiede i dati del canale e la chiave della radio.",
+  "rf_evVersion": "La radio indica il protocollo v{have}; serve v{need}."
 }

@@ -13120,4 +13120,54 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get hopTie_more => 'More';
+
+  @override
+  String get rf_title => 'Radio features';
+
+  @override
+  String get rf_radioStats => 'Live radio stats';
+
+  @override
+  String get rf_textCli => 'Text command line';
+
+  @override
+  String get rf_channelData => 'Channel data';
+
+  @override
+  String get rf_signedPosts => 'Signed channel posts';
+
+  @override
+  String get rf_rawPackets => 'Raw packets';
+
+  @override
+  String get rf_floodCorridor => 'Flood corridor (custom firmware)';
+
+  @override
+  String get rf_supported => 'Supported';
+
+  @override
+  String get rf_unsupported => 'Not supported';
+
+  @override
+  String get rf_unknown => 'Unknown';
+
+  @override
+  String get rf_evNotConnected => 'Connect a radio to check.';
+
+  @override
+  String get rf_evNotChecked => 'Not checked yet.';
+
+  @override
+  String get rf_evProbeAnswered => 'The radio answered the check.';
+
+  @override
+  String get rf_evProbeRejected => 'The radio said it doesn\'t support this.';
+
+  @override
+  String get rf_evDerived => 'Needs channel data and the radio\'s key.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return 'Radio reports protocol v$have; needs v$need.';
+  }
 }

@@ -5063,5 +5063,21 @@
   "hopTie_marginHelp": "Kako blizu (v %) morata biti razdalji dveh ponavljalnikov, da odloči zapomnjena izbira. 0 le natančno izenačenje; do 20; privzeto 5.",
   "hopTie_forget": "Pozabi zapomnjene izbire ({count})",
   "hopTie_less": "Manj",
-  "hopTie_more": "Več"
+  "hopTie_more": "Več",
+  "rf_title": "Funkcije radia",
+  "rf_radioStats": "Statistika radia v živo",
+  "rf_textCli": "Besedilna ukazna vrstica",
+  "rf_channelData": "Podatki kanala",
+  "rf_signedPosts": "Podpisane objave v kanalu",
+  "rf_rawPackets": "Surovi paketi",
+  "rf_floodCorridor": "Poplavni koridor (lastna strojna programska oprema)",
+  "rf_supported": "Podprto",
+  "rf_unsupported": "Ni podprto",
+  "rf_unknown": "Neznano",
+  "rf_evNotConnected": "Povežite radio za preverjanje.",
+  "rf_evNotChecked": "Še ni preverjeno.",
+  "rf_evProbeAnswered": "Radio je odgovoril na preverjanje.",
+  "rf_evProbeRejected": "Radio je sporočil, da tega ne podpira.",
+  "rf_evDerived": "Potrebuje podatke kanala in ključ radia.",
+  "rf_evVersion": "Radio sporoča protokol v{have}; potreben je v{need}."
 }

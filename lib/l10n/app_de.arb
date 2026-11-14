@@ -5197,5 +5197,21 @@
   "hopTie_marginHelp": "Wie nah die Entfernungen zweier Repeater beieinander liegen müssen (in %), damit die gemerkte Wahl entscheidet. 0 heißt nur exakter Gleichstand; bis 20; Standard 5.",
   "hopTie_forget": "Gemerkte Wahl vergessen ({count})",
   "hopTie_less": "Weniger",
-  "hopTie_more": "Mehr"
+  "hopTie_more": "Mehr",
+  "rf_title": "Funkgerät-Funktionen",
+  "rf_radioStats": "Live-Funkstatistik",
+  "rf_textCli": "Textbefehlszeile",
+  "rf_channelData": "Kanaldaten",
+  "rf_signedPosts": "Signierte Kanalbeiträge",
+  "rf_rawPackets": "Rohpakete",
+  "rf_floodCorridor": "Flood-Korridor (eigene Firmware)",
+  "rf_supported": "Unterstützt",
+  "rf_unsupported": "Nicht unterstützt",
+  "rf_unknown": "Unbekannt",
+  "rf_evNotConnected": "Verbinde ein Funkgerät, um das zu prüfen.",
+  "rf_evNotChecked": "Noch nicht geprüft.",
+  "rf_evProbeAnswered": "Das Funkgerät hat auf die Prüfung geantwortet.",
+  "rf_evProbeRejected": "Das Funkgerät meldet, dass es das nicht unterstützt.",
+  "rf_evDerived": "Braucht Kanaldaten und den Schlüssel des Funkgeräts.",
+  "rf_evVersion": "Funkgerät meldet Protokoll v{have}; nötig ist v{need}."
 }

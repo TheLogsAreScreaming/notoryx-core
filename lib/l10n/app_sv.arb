@@ -5063,5 +5063,21 @@
   "hopTie_marginHelp": "Hur nära (i %) två repeatrars avstånd måste vara för att det sparade valet ska avgöra. 0 bara exakt lika; upp till 20; 5 som standard.",
   "hopTie_forget": "Glöm sparade val ({count})",
   "hopTie_less": "Mindre",
-  "hopTie_more": "Mer"
+  "hopTie_more": "Mer",
+  "rf_title": "Radiofunktioner",
+  "rf_radioStats": "Live-radiostatistik",
+  "rf_textCli": "Textkommandorad",
+  "rf_channelData": "Kanaldata",
+  "rf_signedPosts": "Signerade kanalinlägg",
+  "rf_rawPackets": "Råpaket",
+  "rf_floodCorridor": "Floodkorridor (egen firmware)",
+  "rf_supported": "Stöds",
+  "rf_unsupported": "Stöds inte",
+  "rf_unknown": "Okänt",
+  "rf_evNotConnected": "Anslut en radio för att kontrollera.",
+  "rf_evNotChecked": "Inte kontrollerat än.",
+  "rf_evProbeAnswered": "Radion svarade på kontrollen.",
+  "rf_evProbeRejected": "Radion svarade att den inte stöder detta.",
+  "rf_evDerived": "Kräver kanaldata och radions nyckel.",
+  "rf_evVersion": "Radion anger protokoll v{have}; kräver v{need}."
 }

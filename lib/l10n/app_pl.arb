@@ -5101,5 +5101,21 @@
   "hopTie_marginHelp": "Jak bliskie (w %) muszą być odległości dwóch przekaźników, by zdecydował zapamiętany wybór. 0 tylko dokładny remis; do 20; domyślnie 5.",
   "hopTie_forget": "Zapomnij zapamiętane wybory ({count})",
   "hopTie_less": "Mniej",
-  "hopTie_more": "Więcej"
+  "hopTie_more": "Więcej",
+  "rf_title": "Funkcje radia",
+  "rf_radioStats": "Statystyki radia na żywo",
+  "rf_textCli": "Tekstowy wiersz poleceń",
+  "rf_channelData": "Dane kanału",
+  "rf_signedPosts": "Podpisane wpisy na kanale",
+  "rf_rawPackets": "Surowe pakiety",
+  "rf_floodCorridor": "Korytarz zalewowy (własne oprogramowanie)",
+  "rf_supported": "Obsługiwane",
+  "rf_unsupported": "Nieobsługiwane",
+  "rf_unknown": "Nieznane",
+  "rf_evNotConnected": "Podłącz radio, aby sprawdzić.",
+  "rf_evNotChecked": "Jeszcze nie sprawdzono.",
+  "rf_evProbeAnswered": "Radio odpowiedziało na sprawdzenie.",
+  "rf_evProbeRejected": "Radio zgłosiło, że tego nie obsługuje.",
+  "rf_evDerived": "Wymaga danych kanału i klucza radia.",
+  "rf_evVersion": "Radio zgłasza protokół v{have}; potrzebny v{need}."
 }
