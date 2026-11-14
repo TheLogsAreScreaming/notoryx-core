@@ -10972,10 +10972,11 @@ class AppLocalizationsSk extends AppLocalizations {
       'Uložené miesta a trasy; import a export GPX';
 
   @override
-  String get waypoints_importFile => 'Importovať súbor GPX';
+  String get waypoints_importFile =>
+      'Importovať mapový súbor (GPX, KML, GeoJSON)';
 
   @override
-  String get waypoints_importPaste => 'Vložiť GPX';
+  String get waypoints_importPaste => 'Vložiť GPX, KML alebo GeoJSON';
 
   @override
   String get waypoints_export => 'Exportovať GPX';
@@ -11018,7 +11019,7 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get waypoints_importFailed =>
-      'Toto nie je súbor GPX, ktorý aplikácia vie prečítať.';
+      'Toto nie je súbor GPX, KML ani GeoJSON, ktorý aplikácia vie prečítať.';
 
   @override
   String get waypoints_pasteHint => 'Sem vložte text GPX';

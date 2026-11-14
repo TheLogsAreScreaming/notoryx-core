@@ -10480,10 +10480,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get waypoints_toolSubtitle => '保存した場所とルート。GPXの読み込み・書き出し';
 
   @override
-  String get waypoints_importFile => 'GPXファイルを読み込む';
+  String get waypoints_importFile => '地図ファイルを読み込む (GPX、KML、GeoJSON)';
 
   @override
-  String get waypoints_importPaste => 'GPXを貼り付け';
+  String get waypoints_importPaste => 'GPX、KML、GeoJSON を貼り付け';
 
   @override
   String get waypoints_export => 'GPXを書き出す';
@@ -10525,7 +10525,7 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get waypoints_importFailed => 'アプリで読めるGPXファイルではありません。';
+  String get waypoints_importFailed => '読み込める GPX、KML、GeoJSON ファイルではありません。';
 
   @override
   String get waypoints_pasteHint => 'GPXのテキストをここに貼り付け';

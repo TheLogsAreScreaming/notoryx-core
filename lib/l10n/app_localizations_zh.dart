@@ -10272,10 +10272,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get waypoints_toolSubtitle => '已保存的地点和路线；导入或导出 GPX';
 
   @override
-  String get waypoints_importFile => '导入 GPX 文件';
+  String get waypoints_importFile => '导入地图文件 (GPX、KML、GeoJSON)';
 
   @override
-  String get waypoints_importPaste => '粘贴 GPX';
+  String get waypoints_importPaste => '粘贴 GPX、KML 或 GeoJSON';
 
   @override
   String get waypoints_export => '导出 GPX';
@@ -10316,7 +10316,7 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get waypoints_importFailed => '这不是应用能读取的 GPX 文件。';
+  String get waypoints_importFailed => '这不是应用能读取的 GPX、KML 或 GeoJSON 文件。';
 
   @override
   String get waypoints_pasteHint => '在此粘贴 GPX 文本';

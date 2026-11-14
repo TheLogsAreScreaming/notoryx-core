@@ -10993,10 +10993,11 @@ class AppLocalizationsSl extends AppLocalizations {
       'Shranjena mesta in poti; uvoz in izvoz GPX';
 
   @override
-  String get waypoints_importFile => 'Uvozi datoteko GPX';
+  String get waypoints_importFile =>
+      'Uvozi datoteko zemljevida (GPX, KML, GeoJSON)';
 
   @override
-  String get waypoints_importPaste => 'Prilepi GPX';
+  String get waypoints_importPaste => 'Prilepi GPX, KML ali GeoJSON';
 
   @override
   String get waypoints_export => 'Izvozi GPX';
@@ -11039,7 +11040,7 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get waypoints_importFailed =>
-      'To ni datoteka GPX, ki jo aplikacija zna prebrati.';
+      'To ni datoteka GPX, KML ali GeoJSON, ki jo aplikacija zna prebrati.';
 
   @override
   String get waypoints_pasteHint => 'Sem prilepite besedilo GPX';

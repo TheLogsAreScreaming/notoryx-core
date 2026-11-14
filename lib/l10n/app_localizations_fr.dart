@@ -11035,10 +11035,11 @@ class AppLocalizationsFr extends AppLocalizations {
       'Lieux et itinéraires enregistrés ; importer ou exporter du GPX';
 
   @override
-  String get waypoints_importFile => 'Importer un fichier GPX';
+  String get waypoints_importFile =>
+      'Importer un fichier carte (GPX, KML, GeoJSON)';
 
   @override
-  String get waypoints_importPaste => 'Coller du GPX';
+  String get waypoints_importPaste => 'Coller du GPX, KML ou GeoJSON';
 
   @override
   String get waypoints_export => 'Exporter en GPX';
@@ -11081,7 +11082,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get waypoints_importFailed =>
-      'Ce n\'est pas un fichier GPX lisible par l\'app.';
+      'Ce n\'est pas un fichier GPX, KML ou GeoJSON lisible par l\'app.';
 
   @override
   String get waypoints_pasteHint => 'Collez le texte GPX ici';

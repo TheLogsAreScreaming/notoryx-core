@@ -10910,10 +10910,10 @@ class AppLocalizationsSv extends AppLocalizations {
       'Sparade platser och rutter; importera eller exportera GPX';
 
   @override
-  String get waypoints_importFile => 'Importera GPX-fil';
+  String get waypoints_importFile => 'Importera kartfil (GPX, KML, GeoJSON)';
 
   @override
-  String get waypoints_importPaste => 'Klistra in GPX';
+  String get waypoints_importPaste => 'Klistra in GPX, KML eller GeoJSON';
 
   @override
   String get waypoints_export => 'Exportera GPX';
@@ -10956,7 +10956,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get waypoints_importFailed =>
-      'Det är ingen GPX-fil som appen kan läsa.';
+      'Det är ingen GPX-, KML- eller GeoJSON-fil som appen kan läsa.';
 
   @override
   String get waypoints_pasteHint => 'Klistra in GPX-texten här';

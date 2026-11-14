@@ -10494,10 +10494,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get waypoints_toolSubtitle => '저장된 장소와 경로; GPX 가져오기 및 내보내기';
 
   @override
-  String get waypoints_importFile => 'GPX 파일 가져오기';
+  String get waypoints_importFile => '지도 파일 가져오기 (GPX, KML, GeoJSON)';
 
   @override
-  String get waypoints_importPaste => 'GPX 붙여넣기';
+  String get waypoints_importPaste => 'GPX, KML 또는 GeoJSON 붙여넣기';
 
   @override
   String get waypoints_export => 'GPX 내보내기';
@@ -10539,7 +10539,7 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get waypoints_importFailed => '앱이 읽을 수 있는 GPX 파일이 아닙니다.';
+  String get waypoints_importFailed => '앱이 읽을 수 있는 GPX, KML, GeoJSON 파일이 아닙니다.';
 
   @override
   String get waypoints_pasteHint => '여기에 GPX 텍스트를 붙여넣으세요';
