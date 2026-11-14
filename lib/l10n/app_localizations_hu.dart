@@ -13259,4 +13259,25 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'A visszaállítás nem sikerült, ezért minden beállítás visszakerült az eredeti állapotába. Semmi sem változott.';
+
+  @override
+  String batteryWatch_basis(int count, String days, String confidence) {
+    return '$count mérés alapján, $days nap alatt: $confidence.';
+  }
+
+  @override
+  String get batteryWatch_confGood => 'egyértelmű trend';
+
+  @override
+  String get batteryWatch_confLow =>
+      'túl kevés vagy túl szórt a biztos megállapításhoz';
+
+  @override
+  String get batteryWatch_maybeFalling =>
+      'Lehet, hogy csökken, de még nincs elég mérés.';
+
+  @override
+  String batteryWatch_gap(String days) {
+    return 'Leghosszabb szünet mérés nélkül: $days nap.';
+  }
 }

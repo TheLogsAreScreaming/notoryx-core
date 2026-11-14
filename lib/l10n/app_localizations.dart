@@ -22044,6 +22044,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Restore failed, so every setting was put back as it was. Nothing changed.'**
   String get bk_rolledBack;
+
+  /// No description provided for @batteryWatch_basis.
+  ///
+  /// In en, this message translates to:
+  /// **'Based on {count} readings over {days} days: {confidence}.'**
+  String batteryWatch_basis(int count, String days, String confidence);
+
+  /// No description provided for @batteryWatch_confGood.
+  ///
+  /// In en, this message translates to:
+  /// **'a clear trend'**
+  String get batteryWatch_confGood;
+
+  /// No description provided for @batteryWatch_confLow.
+  ///
+  /// In en, this message translates to:
+  /// **'too few or too scattered to be sure'**
+  String get batteryWatch_confLow;
+
+  /// No description provided for @batteryWatch_maybeFalling.
+  ///
+  /// In en, this message translates to:
+  /// **'Might be falling, but there aren\'t enough readings yet to say.'**
+  String get batteryWatch_maybeFalling;
+
+  /// No description provided for @batteryWatch_gap.
+  ///
+  /// In en, this message translates to:
+  /// **'Longest gap without a reading: {days} days.'**
+  String batteryWatch_gap(String days);
 }
 
 class _AppLocalizationsDelegate

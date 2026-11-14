@@ -6939,5 +6939,12 @@
   },
   "hopTie_less": "Less",
   "hopTie_more": "More",
-  "bk_rolledBack": "Restore failed, so every setting was put back as it was. Nothing changed."
+  "bk_rolledBack": "Restore failed, so every setting was put back as it was. Nothing changed.",
+  "batteryWatch_basis": "Based on {count} readings over {days} days: {confidence}.",
+  "batteryWatch_confGood": "a clear trend",
+  "batteryWatch_confLow": "too few or too scattered to be sure",
+  "batteryWatch_maybeFalling": "Might be falling, but there aren't enough readings yet to say.",
+  "batteryWatch_gap": "Longest gap without a reading: {days} days.",
+  "@batteryWatch_basis": {"placeholders": {"count": {"type": "int"}, "days": {"type": "String"}, "confidence": {"type": "String"}}},
+  "@batteryWatch_gap": {"placeholders": {"days": {"type": "String"}}}
 }

@@ -5198,5 +5198,10 @@
   "hopTie_forget": "Gemerkte Wahl vergessen ({count})",
   "hopTie_less": "Weniger",
   "hopTie_more": "Mehr",
-  "bk_rolledBack": "Wiederherstellen ist fehlgeschlagen, daher wurden alle Einstellungen zurückgesetzt. Nichts wurde geändert."
+  "bk_rolledBack": "Wiederherstellen ist fehlgeschlagen, daher wurden alle Einstellungen zurückgesetzt. Nichts wurde geändert.",
+  "batteryWatch_basis": "Basierend auf {count} Messungen über {days} Tage: {confidence}.",
+  "batteryWatch_confGood": "ein klarer Trend",
+  "batteryWatch_confLow": "zu wenige oder zu verstreut, um sicher zu sein",
+  "batteryWatch_maybeFalling": "Könnte fallen, aber es gibt noch zu wenige Messungen.",
+  "batteryWatch_gap": "Längste Lücke ohne Messung: {days} Tage."
 }

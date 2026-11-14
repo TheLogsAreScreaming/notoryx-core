@@ -5064,5 +5064,10 @@
   "hopTie_forget": "Esquecer escolhas lembradas ({count})",
   "hopTie_less": "Menos",
   "hopTie_more": "Mais",
-  "bk_rolledBack": "A restauração falhou, por isso todas as definições voltaram ao que eram. Nada mudou."
+  "bk_rolledBack": "A restauração falhou, por isso todas as definições voltaram ao que eram. Nada mudou.",
+  "batteryWatch_basis": "Com base em {count} leituras ao longo de {days} dias: {confidence}.",
+  "batteryWatch_confGood": "uma tendência clara",
+  "batteryWatch_confLow": "poucas ou dispersas demais para ter certeza",
+  "batteryWatch_maybeFalling": "Pode estar a descer, mas ainda não há leituras suficientes.",
+  "batteryWatch_gap": "Maior intervalo sem leitura: {days} dias."
 }

@@ -5198,5 +5198,10 @@
   "hopTie_forget": "記憶した選択を消去（{count}）",
   "hopTie_less": "減らす",
   "hopTie_more": "増やす",
-  "bk_rolledBack": "復元に失敗したため、すべての設定を元に戻しました。何も変更されていません。"
+  "bk_rolledBack": "復元に失敗したため、すべての設定を元に戻しました。何も変更されていません。",
+  "batteryWatch_basis": "{days}日間の{count}件の測定に基づく: {confidence}。",
+  "batteryWatch_confGood": "明確な傾向",
+  "batteryWatch_confLow": "確実とは言えないほど少ないかばらついています",
+  "batteryWatch_maybeFalling": "低下しているかもしれませんが、まだ測定が足りません。",
+  "batteryWatch_gap": "測定のない最長期間: {days}日。"
 }

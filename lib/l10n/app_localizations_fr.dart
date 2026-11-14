@@ -13327,4 +13327,25 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'La restauration a échoué, tous les réglages ont donc été remis comme avant. Rien n\'a changé.';
+
+  @override
+  String batteryWatch_basis(int count, String days, String confidence) {
+    return 'D\'après $count relevés sur $days jours : $confidence.';
+  }
+
+  @override
+  String get batteryWatch_confGood => 'une tendance nette';
+
+  @override
+  String get batteryWatch_confLow =>
+      'trop peu nombreux ou trop dispersés pour être sûr';
+
+  @override
+  String get batteryWatch_maybeFalling =>
+      'Pourrait baisser, mais il n\'y a pas encore assez de relevés.';
+
+  @override
+  String batteryWatch_gap(String days) {
+    return 'Plus long intervalle sans relevé : $days jours.';
+  }
 }

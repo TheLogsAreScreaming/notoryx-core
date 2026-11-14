@@ -13226,4 +13226,25 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Herstellen is mislukt, dus alle instellingen zijn teruggezet zoals ze waren. Er is niets veranderd.';
+
+  @override
+  String batteryWatch_basis(int count, String days, String confidence) {
+    return 'Op basis van $count metingen over $days dagen: $confidence.';
+  }
+
+  @override
+  String get batteryWatch_confGood => 'een duidelijke trend';
+
+  @override
+  String get batteryWatch_confLow =>
+      'te weinig of te verspreid om zeker te zijn';
+
+  @override
+  String get batteryWatch_maybeFalling =>
+      'Daalt misschien, maar er zijn nog te weinig metingen.';
+
+  @override
+  String batteryWatch_gap(String days) {
+    return 'Langste periode zonder meting: $days dagen.';
+  }
 }

@@ -5064,5 +5064,10 @@
   "hopTie_forget": "Zabudnúť zapamätané výbery ({count})",
   "hopTie_less": "Menej",
   "hopTie_more": "Viac",
-  "bk_rolledBack": "Obnovenie zlyhalo, preto sa všetky nastavenia vrátili do pôvodného stavu. Nič sa nezmenilo."
+  "bk_rolledBack": "Obnovenie zlyhalo, preto sa všetky nastavenia vrátili do pôvodného stavu. Nič sa nezmenilo.",
+  "batteryWatch_basis": "Na základe {count} meraní za {days} dní: {confidence}.",
+  "batteryWatch_confGood": "jasný trend",
+  "batteryWatch_confLow": "príliš málo alebo príliš rozptýlené na istotu",
+  "batteryWatch_maybeFalling": "Možno klesá, ale ešte nie je dosť meraní.",
+  "batteryWatch_gap": "Najdlhšia medzera bez merania: {days} dní."
 }

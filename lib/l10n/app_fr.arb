@@ -5198,5 +5198,10 @@
   "hopTie_forget": "Oublier les choix retenus ({count})",
   "hopTie_less": "Moins",
   "hopTie_more": "Plus",
-  "bk_rolledBack": "La restauration a échoué, tous les réglages ont donc été remis comme avant. Rien n'a changé."
+  "bk_rolledBack": "La restauration a échoué, tous les réglages ont donc été remis comme avant. Rien n'a changé.",
+  "batteryWatch_basis": "D'après {count} relevés sur {days} jours : {confidence}.",
+  "batteryWatch_confGood": "une tendance nette",
+  "batteryWatch_confLow": "trop peu nombreux ou trop dispersés pour être sûr",
+  "batteryWatch_maybeFalling": "Pourrait baisser, mais il n'y a pas encore assez de relevés.",
+  "batteryWatch_gap": "Plus long intervalle sans relevé : {days} jours."
 }

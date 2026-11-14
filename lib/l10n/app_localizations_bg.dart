@@ -13254,4 +13254,25 @@ class AppLocalizationsBg extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Възстановяването не успя, затова всички настройки бяха върнати както бяха. Нищо не е променено.';
+
+  @override
+  String batteryWatch_basis(int count, String days, String confidence) {
+    return 'Въз основа на $count измервания за $days дни: $confidence.';
+  }
+
+  @override
+  String get batteryWatch_confGood => 'ясна тенденция';
+
+  @override
+  String get batteryWatch_confLow =>
+      'твърде малко или разпръснати, за да е сигурно';
+
+  @override
+  String get batteryWatch_maybeFalling =>
+      'Може да спада, но още няма достатъчно измервания.';
+
+  @override
+  String batteryWatch_gap(String days) {
+    return 'Най-дълга пауза без измерване: $days дни.';
+  }
 }

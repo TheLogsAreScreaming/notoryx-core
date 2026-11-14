@@ -5064,5 +5064,10 @@
   "hopTie_forget": "Glöm sparade val ({count})",
   "hopTie_less": "Mindre",
   "hopTie_more": "Mer",
-  "bk_rolledBack": "Återställningen misslyckades, så alla inställningar sattes tillbaka som de var. Inget ändrades."
+  "bk_rolledBack": "Återställningen misslyckades, så alla inställningar sattes tillbaka som de var. Inget ändrades.",
+  "batteryWatch_basis": "Baserat på {count} avläsningar under {days} dagar: {confidence}.",
+  "batteryWatch_confGood": "en tydlig trend",
+  "batteryWatch_confLow": "för få eller för spridda för att vara säker",
+  "batteryWatch_maybeFalling": "Kan vara på väg ner, men det finns inte tillräckligt med avläsningar än.",
+  "batteryWatch_gap": "Längsta uppehåll utan avläsning: {days} dagar."
 }

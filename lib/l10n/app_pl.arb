@@ -5102,5 +5102,10 @@
   "hopTie_forget": "Zapomnij zapamiętane wybory ({count})",
   "hopTie_less": "Mniej",
   "hopTie_more": "Więcej",
-  "bk_rolledBack": "Przywracanie nie powiodło się, więc wszystkie ustawienia wróciły do poprzedniego stanu. Nic się nie zmieniło."
+  "bk_rolledBack": "Przywracanie nie powiodło się, więc wszystkie ustawienia wróciły do poprzedniego stanu. Nic się nie zmieniło.",
+  "batteryWatch_basis": "Na podstawie {count} odczytów z {days} dni: {confidence}.",
+  "batteryWatch_confGood": "wyraźny trend",
+  "batteryWatch_confLow": "za mało lub zbyt rozproszone, by mieć pewność",
+  "batteryWatch_maybeFalling": "Może spadać, ale jest jeszcze za mało odczytów.",
+  "batteryWatch_gap": "Najdłuższa przerwa bez odczytu: {days} dni."
 }

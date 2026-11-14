@@ -13173,4 +13173,25 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Återställningen misslyckades, så alla inställningar sattes tillbaka som de var. Inget ändrades.';
+
+  @override
+  String batteryWatch_basis(int count, String days, String confidence) {
+    return 'Baserat på $count avläsningar under $days dagar: $confidence.';
+  }
+
+  @override
+  String get batteryWatch_confGood => 'en tydlig trend';
+
+  @override
+  String get batteryWatch_confLow =>
+      'för få eller för spridda för att vara säker';
+
+  @override
+  String get batteryWatch_maybeFalling =>
+      'Kan vara på väg ner, men det finns inte tillräckligt med avläsningar än.';
+
+  @override
+  String batteryWatch_gap(String days) {
+    return 'Längsta uppehåll utan avläsning: $days dagar.';
+  }
 }

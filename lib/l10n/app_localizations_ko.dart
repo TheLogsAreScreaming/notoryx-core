@@ -12689,4 +12689,23 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get bk_rolledBack => '복원에 실패하여 모든 설정을 원래대로 되돌렸습니다. 변경된 것은 없습니다.';
+
+  @override
+  String batteryWatch_basis(int count, String days, String confidence) {
+    return '$days일 동안 $count개 측정값 기준: $confidence.';
+  }
+
+  @override
+  String get batteryWatch_confGood => '뚜렷한 추세';
+
+  @override
+  String get batteryWatch_confLow => '확신하기엔 너무 적거나 흩어져 있음';
+
+  @override
+  String get batteryWatch_maybeFalling => '떨어지고 있을 수 있지만 아직 측정값이 부족합니다.';
+
+  @override
+  String batteryWatch_gap(String days) {
+    return '측정 없는 가장 긴 공백: $days일.';
+  }
 }

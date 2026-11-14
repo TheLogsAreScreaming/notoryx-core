@@ -13302,4 +13302,25 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get bk_rolledBack =>
       'Восстановление не удалось, поэтому все настройки возвращены как были. Ничего не изменилось.';
+
+  @override
+  String batteryWatch_basis(int count, String days, String confidence) {
+    return 'По $count измерениям за $days дн.: $confidence.';
+  }
+
+  @override
+  String get batteryWatch_confGood => 'явная тенденция';
+
+  @override
+  String get batteryWatch_confLow =>
+      'слишком мало или слишком разброс, чтобы быть уверенным';
+
+  @override
+  String get batteryWatch_maybeFalling =>
+      'Возможно, падает, но измерений пока мало.';
+
+  @override
+  String batteryWatch_gap(String days) {
+    return 'Самый долгий перерыв без измерений: $days дн.';
+  }
 }

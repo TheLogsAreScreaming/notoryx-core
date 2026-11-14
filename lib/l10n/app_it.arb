@@ -5198,5 +5198,10 @@
   "hopTie_forget": "Dimentica le scelte ricordate ({count})",
   "hopTie_less": "Meno",
   "hopTie_more": "Più",
-  "bk_rolledBack": "Il ripristino non è riuscito, quindi tutte le impostazioni sono tornate com'erano. Non è cambiato nulla."
+  "bk_rolledBack": "Il ripristino non è riuscito, quindi tutte le impostazioni sono tornate com'erano. Non è cambiato nulla.",
+  "batteryWatch_basis": "Basato su {count} letture in {days} giorni: {confidence}.",
+  "batteryWatch_confGood": "una tendenza chiara",
+  "batteryWatch_confLow": "troppo poche o troppo sparse per esserne certi",
+  "batteryWatch_maybeFalling": "Potrebbe scendere, ma non ci sono ancora abbastanza letture.",
+  "batteryWatch_gap": "Intervallo più lungo senza letture: {days} giorni."
 }

@@ -5064,5 +5064,10 @@
   "hopTie_forget": "Pozabi zapomnjene izbire ({count})",
   "hopTie_less": "Manj",
   "hopTie_more": "Več",
-  "bk_rolledBack": "Obnovitev ni uspela, zato so bile vse nastavitve vrnjene, kot so bile. Nič se ni spremenilo."
+  "bk_rolledBack": "Obnovitev ni uspela, zato so bile vse nastavitve vrnjene, kot so bile. Nič se ni spremenilo.",
+  "batteryWatch_basis": "Na podlagi {count} meritev v {days} dneh: {confidence}.",
+  "batteryWatch_confGood": "jasen trend",
+  "batteryWatch_confLow": "premalo ali preveč razpršeno za gotovost",
+  "batteryWatch_maybeFalling": "Morda pada, a meritev še ni dovolj.",
+  "batteryWatch_gap": "Najdaljša vrzel brez meritve: {days} dni."
 }

@@ -5198,5 +5198,10 @@
   "hopTie_forget": "Olvidar elecciones recordadas ({count})",
   "hopTie_less": "Menos",
   "hopTie_more": "Más",
-  "bk_rolledBack": "La restauración falló, así que todos los ajustes volvieron a como estaban. No cambió nada."
+  "bk_rolledBack": "La restauración falló, así que todos los ajustes volvieron a como estaban. No cambió nada.",
+  "batteryWatch_basis": "Basado en {count} lecturas en {days} días: {confidence}.",
+  "batteryWatch_confGood": "una tendencia clara",
+  "batteryWatch_confLow": "demasiado pocas o dispersas para estar seguros",
+  "batteryWatch_maybeFalling": "Podría estar bajando, pero aún no hay suficientes lecturas.",
+  "batteryWatch_gap": "Mayor intervalo sin lectura: {days} días."
 }
