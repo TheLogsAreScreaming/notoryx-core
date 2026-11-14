@@ -5,8 +5,6 @@ part of 'meshcore_connector.dart';
 extension _ConnectorFrameHandlers on MeshCoreConnector {
   void _handleFrame(List<int> data) {
     if (data.isEmpty) return;
-    _lastRxBeforeFrame = _lastRxTime;
-    _lastRxTime = DateTime.now();
 
     final frame = Uint8List.fromList(data);
     _receivedFramesController.add(frame);

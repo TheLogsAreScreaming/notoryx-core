@@ -135,6 +135,26 @@ void main() {
     });
   });
 
+  test('a contact the radio dropped shows in Discovery again', () {
+    fakeAsync((async) {
+      String alex() => _contact(2, 'Alex').publicKeyHex;
+      sync(async);
+      radio.handleFrameForTest([respCodeContactsStart, 2, 0, 0, 0]);
+      radio.handleFrameForTest(_contactFrame(1, 'Sam'));
+      radio.handleFrameForTest(_contactFrame(2, 'Alex'));
+      radio.handleFrameForTest([respCodeEndOfContacts]);
+      expect(radio.knownContactKeys, contains(alex()));
+
+      // The radio forgets Alex; the next full sync must too.
+      sync(async);
+      radio.handleFrameForTest([respCodeContactsStart, 1, 0, 0, 0]);
+      radio.handleFrameForTest(_contactFrame(1, 'Sam'));
+      radio.handleFrameForTest([respCodeEndOfContacts]);
+      expect(radio.contacts.map((c) => c.name), ['Sam']);
+      expect(radio.knownContactKeys, isNot(contains(alex())));
+    });
+  });
+
   test('a partial (refresh) sync keeps contacts it did not mention', () {
     fakeAsync((async) {
       sync(async, preserveExisting: true);
