@@ -336,7 +336,11 @@ class CachedTileInventory {
 
 class MapTileCacheService extends ChangeNotifier {
   static const String cacheKey = 'map_tile_cache';
-  static const String userAgentPackageName = 'com.meshcore.open';
+
+  /// This app's own ID, sent in every tile request's User-Agent. Tile
+  /// servers such as OpenStreetMap's ask each app to identify itself, so
+  /// it must name this app rather than any other.
+  static const String userAgentPackageName = 'com.bastionmesh.bastion';
   static const int defaultMinZoom = 10;
   static const int defaultMaxZoom = 15;
 

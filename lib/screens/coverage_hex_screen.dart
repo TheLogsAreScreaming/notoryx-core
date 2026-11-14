@@ -12,6 +12,7 @@ import '../l10n/l10n.dart';
 import '../models/coverage_hex.dart';
 import '../models/signed_coverage.dart';
 import '../services/coverage_hex_service.dart';
+import '../services/map_tile_cache_service.dart';
 import '../theme/mesh_theme.dart';
 import '../widgets/mesh_ui.dart';
 import '../widgets/ember_backdrop.dart';
@@ -238,7 +239,7 @@ class _HexMap extends StatelessWidget {
           children: [
             TileLayer(
               urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-              userAgentPackageName: 'com.bastionmesh.bastion',
+              userAgentPackageName: MapTileCacheService.userAgentPackageName,
             ),
             PolygonLayer(
               polygons: [

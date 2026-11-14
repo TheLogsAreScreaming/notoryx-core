@@ -5,6 +5,7 @@ import 'package:latlong2/latlong.dart';
 import 'package:share_plus/share_plus.dart';
 import '../l10n/l10n.dart';
 import '../services/coverage_capture_service.dart';
+import '../services/map_tile_cache_service.dart';
 
 class BastionCoverageHistoryScreen extends StatefulWidget {
   final CoverageCaptureService capture;
@@ -228,7 +229,7 @@ class CoverageSessionMap extends StatelessWidget {
         children: [
           TileLayer(
             urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-            userAgentPackageName: 'com.bastionmesh.bastion',
+            userAgentPackageName: MapTileCacheService.userAgentPackageName,
           ),
           MarkerLayer(markers: markers),
           SimpleAttributionWidget(

@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 import '../connector/meshcore_connector.dart';
 import '../l10n/l10n.dart';
 import '../models/wardrive.dart';
+import '../services/map_tile_cache_service.dart';
 import '../services/wardrive_service.dart';
 import '../theme/mesh_theme.dart';
 import '../widgets/ember_backdrop.dart';
@@ -327,7 +328,8 @@ class _WardriveScreenState extends State<WardriveScreen> {
                           TileLayer(
                             urlTemplate:
                                 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-                            userAgentPackageName: 'com.bastionmesh.bastion',
+                            userAgentPackageName:
+                                MapTileCacheService.userAgentPackageName,
                           ),
                           MarkerLayer(
                             markers: [
