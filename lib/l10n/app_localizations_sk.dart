@@ -13228,4 +13228,8 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get hopTie_more => 'Viac';
+
+  @override
+  String get bk_rolledBack =>
+      'Obnovenie zlyhalo, preto sa všetky nastavenia vrátili do pôvodného stavu. Nič sa nezmenilo.';
 }

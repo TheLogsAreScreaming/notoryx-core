@@ -12686,4 +12686,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get hopTie_more => '늘리기';
+
+  @override
+  String get bk_rolledBack => '복원에 실패하여 모든 설정을 원래대로 되돌렸습니다. 변경된 것은 없습니다.';
 }

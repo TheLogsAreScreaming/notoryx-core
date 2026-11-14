@@ -5101,5 +5101,6 @@
   "hopTie_marginHelp": "Jak bliskie (w %) muszą być odległości dwóch przekaźników, by zdecydował zapamiętany wybór. 0 tylko dokładny remis; do 20; domyślnie 5.",
   "hopTie_forget": "Zapomnij zapamiętane wybory ({count})",
   "hopTie_less": "Mniej",
-  "hopTie_more": "Więcej"
+  "hopTie_more": "Więcej",
+  "bk_rolledBack": "Przywracanie nie powiodło się, więc wszystkie ustawienia wróciły do poprzedniego stanu. Nic się nie zmieniło."
 }

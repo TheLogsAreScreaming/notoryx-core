@@ -5063,5 +5063,6 @@
   "hopTie_marginHelp": "Hur nära (i %) två repeatrars avstånd måste vara för att det sparade valet ska avgöra. 0 bara exakt lika; upp till 20; 5 som standard.",
   "hopTie_forget": "Glöm sparade val ({count})",
   "hopTie_less": "Mindre",
-  "hopTie_more": "Mer"
+  "hopTie_more": "Mer",
+  "bk_rolledBack": "Återställningen misslyckades, så alla inställningar sattes tillbaka som de var. Inget ändrades."
 }

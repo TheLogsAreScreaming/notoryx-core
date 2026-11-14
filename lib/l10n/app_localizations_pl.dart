@@ -13298,4 +13298,8 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get hopTie_more => 'Więcej';
+
+  @override
+  String get bk_rolledBack =>
+      'Przywracanie nie powiodło się, więc wszystkie ustawienia wróciły do poprzedniego stanu. Nic się nie zmieniło.';
 }

@@ -5197,5 +5197,6 @@
   "hopTie_marginHelp": "Quanto (in %) devono essere vicine le distanze di due ripetitori perché decida la scelta ricordata. 0 solo parità esatte; fino a 20; 5 predefinito.",
   "hopTie_forget": "Dimentica le scelte ricordate ({count})",
   "hopTie_less": "Meno",
-  "hopTie_more": "Più"
+  "hopTie_more": "Più",
+  "bk_rolledBack": "Il ripristino non è riuscito, quindi tutte le impostazioni sono tornate com'erano. Non è cambiato nulla."
 }

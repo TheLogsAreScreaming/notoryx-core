@@ -13222,4 +13222,8 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get hopTie_more => 'Meer';
+
+  @override
+  String get bk_rolledBack =>
+      'Herstellen is mislukt, dus alle instellingen zijn teruggezet zoals ze waren. Er is niets veranderd.';
 }

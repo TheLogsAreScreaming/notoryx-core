@@ -13255,4 +13255,8 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get hopTie_more => 'Több';
+
+  @override
+  String get bk_rolledBack =>
+      'A visszaállítás nem sikerült, ezért minden beállítás visszakerült az eredeti állapotába. Semmi sem változott.';
 }

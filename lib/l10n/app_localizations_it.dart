@@ -13283,4 +13283,8 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get hopTie_more => 'Più';
+
+  @override
+  String get bk_rolledBack =>
+      'Il ripristino non è riuscito, quindi tutte le impostazioni sono tornate com\'erano. Non è cambiato nulla.';
 }

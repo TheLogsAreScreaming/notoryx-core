@@ -153,6 +153,10 @@ class _EncryptedBackupScreenState extends State<EncryptedBackupScreen> {
               : l10n.bk_restored(restored),
         );
       }
+    } on RestoreRolledBackException {
+      if (mounted) {
+        setState(() => _status = context.l10n.bk_rolledBack);
+      }
     } catch (_) {
       if (mounted) {
         setState(() => _status = context.l10n.bk_partial);

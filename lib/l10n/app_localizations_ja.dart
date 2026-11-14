@@ -12669,4 +12669,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get hopTie_more => '増やす';
+
+  @override
+  String get bk_rolledBack => '復元に失敗したため、すべての設定を元に戻しました。何も変更されていません。';
 }

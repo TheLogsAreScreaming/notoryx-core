@@ -13323,4 +13323,8 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get hopTie_more => 'Plus';
+
+  @override
+  String get bk_rolledBack =>
+      'La restauration a échoué, tous les réglages ont donc été remis comme avant. Rien n\'a changé.';
 }

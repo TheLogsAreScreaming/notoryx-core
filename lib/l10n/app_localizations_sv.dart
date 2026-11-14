@@ -13169,4 +13169,8 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get hopTie_more => 'Mer';
+
+  @override
+  String get bk_rolledBack =>
+      'Återställningen misslyckades, så alla inställningar sattes tillbaka som de var. Inget ändrades.';
 }

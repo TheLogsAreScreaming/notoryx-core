@@ -5068,5 +5068,6 @@
   "hopTie_marginHelp": "两个中继的距离需要相差多少（%）以内才由记住的选择决定。0表示仅完全相等；最高20，默认5。",
   "hopTie_forget": "清除记住的选择（{count}）",
   "hopTie_less": "减少",
-  "hopTie_more": "增加"
+  "hopTie_more": "增加",
+  "bk_rolledBack": "恢复失败，所有设置已还原为原样。没有任何更改。"
 }

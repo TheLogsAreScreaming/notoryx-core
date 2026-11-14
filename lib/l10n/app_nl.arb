@@ -5063,5 +5063,6 @@
   "hopTie_marginHelp": "Hoe dicht (in %) de afstanden van twee repeaters moeten liggen voordat de onthouden keuze beslist. 0 alleen exacte gelijkspel; tot 20; standaard 5.",
   "hopTie_forget": "Onthouden keuzes vergeten ({count})",
   "hopTie_less": "Minder",
-  "hopTie_more": "Meer"
+  "hopTie_more": "Meer",
+  "bk_rolledBack": "Herstellen is mislukt, dus alle instellingen zijn teruggezet zoals ze waren. Er is niets veranderd."
 }

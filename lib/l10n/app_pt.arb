@@ -5063,5 +5063,6 @@
   "hopTie_marginHelp": "Quão próximas (em %) têm de estar as distâncias de dois repetidores para a escolha lembrada decidir. 0 só empates exatos; até 20; 5 por omissão.",
   "hopTie_forget": "Esquecer escolhas lembradas ({count})",
   "hopTie_less": "Menos",
-  "hopTie_more": "Mais"
+  "hopTie_more": "Mais",
+  "bk_rolledBack": "A restauração falhou, por isso todas as definições voltaram ao que eram. Nada mudou."
 }
