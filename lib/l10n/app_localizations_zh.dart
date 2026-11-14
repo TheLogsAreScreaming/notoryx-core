@@ -12439,4 +12439,54 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get outbox_tooLong => '对电台来说太长，已放回输入框以便缩短。';
+
+  @override
+  String get rf_title => '电台功能';
+
+  @override
+  String get rf_radioStats => '实时电台统计';
+
+  @override
+  String get rf_textCli => '文本命令行';
+
+  @override
+  String get rf_channelData => '频道数据';
+
+  @override
+  String get rf_signedPosts => '签名频道帖子';
+
+  @override
+  String get rf_rawPackets => '原始数据包';
+
+  @override
+  String get rf_floodCorridor => '泛洪走廊(定制固件)';
+
+  @override
+  String get rf_supported => '支持';
+
+  @override
+  String get rf_unsupported => '不支持';
+
+  @override
+  String get rf_unknown => '未知';
+
+  @override
+  String get rf_evNotConnected => '连接电台以检查。';
+
+  @override
+  String get rf_evNotChecked => '尚未检查。';
+
+  @override
+  String get rf_evProbeAnswered => '电台已响应检查。';
+
+  @override
+  String get rf_evProbeRejected => '电台表示不支持此功能。';
+
+  @override
+  String get rf_evDerived => '需要频道数据和电台密钥。';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return '电台报告协议 v$have；需要 v$need。';
+  }
 }

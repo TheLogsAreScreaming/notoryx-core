@@ -13262,4 +13262,54 @@ class AppLocalizationsBg extends AppLocalizations {
   @override
   String get outbox_tooLong =>
       'Твърде дълго за радиото, затова е върнато в полето за писане, за да го съкратите.';
+
+  @override
+  String get rf_title => 'Функции на радиото';
+
+  @override
+  String get rf_radioStats => 'Статистика на радиото';
+
+  @override
+  String get rf_textCli => 'Текстов команден ред';
+
+  @override
+  String get rf_channelData => 'Данни в канала';
+
+  @override
+  String get rf_signedPosts => 'Подписани публикации в канала';
+
+  @override
+  String get rf_rawPackets => 'Сурови пакети';
+
+  @override
+  String get rf_floodCorridor => 'Коридор за препращане (специален фърмуер)';
+
+  @override
+  String get rf_supported => 'Поддържа се';
+
+  @override
+  String get rf_unsupported => 'Не се поддържа';
+
+  @override
+  String get rf_unknown => 'Неизвестно';
+
+  @override
+  String get rf_evNotConnected => 'Свържете радио, за да проверите.';
+
+  @override
+  String get rf_evNotChecked => 'Още не е проверено.';
+
+  @override
+  String get rf_evProbeAnswered => 'Радиото отговори на проверката.';
+
+  @override
+  String get rf_evProbeRejected => 'Радиото отговори, че не поддържа това.';
+
+  @override
+  String get rf_evDerived => 'Изисква данни в канала и ключа на радиото.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return 'Радиото съобщава протокол v$have; нужен е v$need.';
+  }
 }

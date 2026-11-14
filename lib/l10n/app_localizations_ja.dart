@@ -12679,4 +12679,54 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get outbox_tooLong => '無線機には長すぎるため、短くできるよう入力欄に戻しました。';
+
+  @override
+  String get rf_title => '無線機の機能';
+
+  @override
+  String get rf_radioStats => 'ライブ無線統計';
+
+  @override
+  String get rf_textCli => 'テキストコマンドライン';
+
+  @override
+  String get rf_channelData => 'チャンネルデータ';
+
+  @override
+  String get rf_signedPosts => '署名付きチャンネル投稿';
+
+  @override
+  String get rf_rawPackets => '生パケット';
+
+  @override
+  String get rf_floodCorridor => 'フラッドコリドー(カスタムファームウェア)';
+
+  @override
+  String get rf_supported => '対応';
+
+  @override
+  String get rf_unsupported => '非対応';
+
+  @override
+  String get rf_unknown => '不明';
+
+  @override
+  String get rf_evNotConnected => '確認するには無線機を接続してください。';
+
+  @override
+  String get rf_evNotChecked => 'まだ確認していません。';
+
+  @override
+  String get rf_evProbeAnswered => '無線機が確認に応答しました。';
+
+  @override
+  String get rf_evProbeRejected => '無線機はこれに非対応と応答しました。';
+
+  @override
+  String get rf_evDerived => 'チャンネルデータと無線機の鍵が必要です。';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return '無線機のプロトコルはv$have、必要なのはv$needです。';
+  }
 }

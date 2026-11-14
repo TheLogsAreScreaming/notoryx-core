@@ -6941,5 +6941,22 @@
   "hopTie_more": "More",
   "bk_rolledBack": "Restore failed, so every setting was put back as it was. Nothing changed.",
   "outbox_maybeSent": "Sending was interrupted, so this may already have gone out. It's back in the message box: check before sending it again.",
-  "outbox_tooLong": "Too long for the radio, so it's back in the message box to shorten."
+  "outbox_tooLong": "Too long for the radio, so it's back in the message box to shorten.",
+  "rf_title": "Radio features",
+  "rf_radioStats": "Live radio stats",
+  "rf_textCli": "Text command line",
+  "rf_channelData": "Channel data",
+  "rf_signedPosts": "Signed channel posts",
+  "rf_rawPackets": "Raw packets",
+  "rf_floodCorridor": "Flood corridor (custom firmware)",
+  "rf_supported": "Supported",
+  "rf_unsupported": "Not supported",
+  "rf_unknown": "Unknown",
+  "rf_evNotConnected": "Connect a radio to check.",
+  "rf_evNotChecked": "Not checked yet.",
+  "rf_evProbeAnswered": "The radio answered the check.",
+  "rf_evProbeRejected": "The radio said it doesn't support this.",
+  "rf_evDerived": "Needs channel data and the radio's key.",
+  "rf_evVersion": "Radio reports protocol v{have}; needs v{need}.",
+  "@rf_evVersion": {"placeholders": {"have": {"type": "int"}, "need": {"type": "int"}}}
 }

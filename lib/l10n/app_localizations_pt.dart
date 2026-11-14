@@ -13265,4 +13265,55 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get outbox_tooLong =>
       'Longo demais para o rádio, por isso voltou para a caixa de texto para ser encurtado.';
+
+  @override
+  String get rf_title => 'Funções do rádio';
+
+  @override
+  String get rf_radioStats => 'Estatísticas do rádio ao vivo';
+
+  @override
+  String get rf_textCli => 'Linha de comandos de texto';
+
+  @override
+  String get rf_channelData => 'Dados do canal';
+
+  @override
+  String get rf_signedPosts => 'Publicações de canal assinadas';
+
+  @override
+  String get rf_rawPackets => 'Pacotes brutos';
+
+  @override
+  String get rf_floodCorridor =>
+      'Corredor de inundação (firmware personalizado)';
+
+  @override
+  String get rf_supported => 'Suportado';
+
+  @override
+  String get rf_unsupported => 'Não suportado';
+
+  @override
+  String get rf_unknown => 'Desconhecido';
+
+  @override
+  String get rf_evNotConnected => 'Ligue um rádio para verificar.';
+
+  @override
+  String get rf_evNotChecked => 'Ainda não verificado.';
+
+  @override
+  String get rf_evProbeAnswered => 'O rádio respondeu à verificação.';
+
+  @override
+  String get rf_evProbeRejected => 'O rádio indicou que não suporta isto.';
+
+  @override
+  String get rf_evDerived => 'Requer dados do canal e a chave do rádio.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return 'O rádio indica o protocolo v$have; é necessário v$need.';
+  }
 }

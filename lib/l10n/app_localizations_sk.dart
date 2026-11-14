@@ -13240,4 +13240,54 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get outbox_tooLong =>
       'Príliš dlhé pre rádio, preto sa vrátilo do poľa správy na skrátenie.';
+
+  @override
+  String get rf_title => 'Funkcie rádia';
+
+  @override
+  String get rf_radioStats => 'Živé štatistiky rádia';
+
+  @override
+  String get rf_textCli => 'Textový príkazový riadok';
+
+  @override
+  String get rf_channelData => 'Dáta kanála';
+
+  @override
+  String get rf_signedPosts => 'Podpísané príspevky v kanáli';
+
+  @override
+  String get rf_rawPackets => 'Surové pakety';
+
+  @override
+  String get rf_floodCorridor => 'Záplavový koridor (vlastný firmvér)';
+
+  @override
+  String get rf_supported => 'Podporované';
+
+  @override
+  String get rf_unsupported => 'Nepodporované';
+
+  @override
+  String get rf_unknown => 'Neznáme';
+
+  @override
+  String get rf_evNotConnected => 'Pripojte rádio na overenie.';
+
+  @override
+  String get rf_evNotChecked => 'Ešte neoverené.';
+
+  @override
+  String get rf_evProbeAnswered => 'Rádio odpovedalo na overenie.';
+
+  @override
+  String get rf_evProbeRejected => 'Rádio oznámilo, že to nepodporuje.';
+
+  @override
+  String get rf_evDerived => 'Vyžaduje dáta kanála a kľúč rádia.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return 'Rádio hlási protokol v$have; potrebný je v$need.';
+  }
 }

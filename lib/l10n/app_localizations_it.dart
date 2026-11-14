@@ -13295,4 +13295,55 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get outbox_tooLong =>
       'Troppo lungo per la radio, quindi è tornato nella casella di testo per accorciarlo.';
+
+  @override
+  String get rf_title => 'Funzioni della radio';
+
+  @override
+  String get rf_radioStats => 'Statistiche radio in tempo reale';
+
+  @override
+  String get rf_textCli => 'Riga di comando testuale';
+
+  @override
+  String get rf_channelData => 'Dati del canale';
+
+  @override
+  String get rf_signedPosts => 'Messaggi di canale firmati';
+
+  @override
+  String get rf_rawPackets => 'Pacchetti grezzi';
+
+  @override
+  String get rf_floodCorridor => 'Corridoio flood (firmware personalizzato)';
+
+  @override
+  String get rf_supported => 'Supportato';
+
+  @override
+  String get rf_unsupported => 'Non supportato';
+
+  @override
+  String get rf_unknown => 'Sconosciuto';
+
+  @override
+  String get rf_evNotConnected => 'Collega una radio per verificare.';
+
+  @override
+  String get rf_evNotChecked => 'Non ancora verificato.';
+
+  @override
+  String get rf_evProbeAnswered => 'La radio ha risposto alla verifica.';
+
+  @override
+  String get rf_evProbeRejected => 'La radio ha indicato che non lo supporta.';
+
+  @override
+  String get rf_evDerived =>
+      'Richiede i dati del canale e la chiave della radio.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return 'La radio indica il protocollo v$have; serve v$need.';
+  }
 }

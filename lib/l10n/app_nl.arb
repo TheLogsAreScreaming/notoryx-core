@@ -5066,5 +5066,21 @@
   "hopTie_more": "Meer",
   "bk_rolledBack": "Herstellen is mislukt, dus alle instellingen zijn teruggezet zoals ze waren. Er is niets veranderd.",
   "outbox_maybeSent": "Het verzenden werd onderbroken, dus dit bericht is misschien al verstuurd. Het staat weer in het invoerveld: controleer dit voordat je het opnieuw verstuurt.",
-  "outbox_tooLong": "Te lang voor de radio, dus het staat weer in het invoerveld om in te korten."
+  "outbox_tooLong": "Te lang voor de radio, dus het staat weer in het invoerveld om in te korten.",
+  "rf_title": "Radiofuncties",
+  "rf_radioStats": "Live radiostatistieken",
+  "rf_textCli": "Tekstopdrachtregel",
+  "rf_channelData": "Kanaalgegevens",
+  "rf_signedPosts": "Ondertekende kanaalberichten",
+  "rf_rawPackets": "Ruwe pakketten",
+  "rf_floodCorridor": "Floodcorridor (aangepaste firmware)",
+  "rf_supported": "Ondersteund",
+  "rf_unsupported": "Niet ondersteund",
+  "rf_unknown": "Onbekend",
+  "rf_evNotConnected": "Verbind een radio om dit te controleren.",
+  "rf_evNotChecked": "Nog niet gecontroleerd.",
+  "rf_evProbeAnswered": "De radio heeft op de controle geantwoord.",
+  "rf_evProbeRejected": "De radio meldt dat dit niet wordt ondersteund.",
+  "rf_evDerived": "Vereist kanaalgegevens en de sleutel van de radio.",
+  "rf_evVersion": "Radio meldt protocol v{have}; nodig is v{need}."
 }

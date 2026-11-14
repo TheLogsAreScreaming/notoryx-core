@@ -13297,4 +13297,57 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get outbox_tooLong =>
       'Zu lang für das Funkgerät, daher wieder im Eingabefeld zum Kürzen.';
+
+  @override
+  String get rf_title => 'Funkgerät-Funktionen';
+
+  @override
+  String get rf_radioStats => 'Live-Funkstatistik';
+
+  @override
+  String get rf_textCli => 'Textbefehlszeile';
+
+  @override
+  String get rf_channelData => 'Kanaldaten';
+
+  @override
+  String get rf_signedPosts => 'Signierte Kanalbeiträge';
+
+  @override
+  String get rf_rawPackets => 'Rohpakete';
+
+  @override
+  String get rf_floodCorridor => 'Flood-Korridor (eigene Firmware)';
+
+  @override
+  String get rf_supported => 'Unterstützt';
+
+  @override
+  String get rf_unsupported => 'Nicht unterstützt';
+
+  @override
+  String get rf_unknown => 'Unbekannt';
+
+  @override
+  String get rf_evNotConnected => 'Verbinde ein Funkgerät, um das zu prüfen.';
+
+  @override
+  String get rf_evNotChecked => 'Noch nicht geprüft.';
+
+  @override
+  String get rf_evProbeAnswered =>
+      'Das Funkgerät hat auf die Prüfung geantwortet.';
+
+  @override
+  String get rf_evProbeRejected =>
+      'Das Funkgerät meldet, dass es das nicht unterstützt.';
+
+  @override
+  String get rf_evDerived =>
+      'Braucht Kanaldaten und den Schlüssel des Funkgeräts.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return 'Funkgerät meldet Protokoll v$have; nötig ist v$need.';
+  }
 }

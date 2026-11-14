@@ -5104,5 +5104,21 @@
   "hopTie_more": "Több",
   "bk_rolledBack": "A visszaállítás nem sikerült, ezért minden beállítás visszakerült az eredeti állapotába. Semmi sem változott.",
   "outbox_maybeSent": "A küldés megszakadt, így lehet, hogy az üzenet már elment. Visszakerült az üzenetmezőbe: ellenőrizd, mielőtt újra elküldöd.",
-  "outbox_tooLong": "Túl hosszú a rádiónak, ezért visszakerült az üzenetmezőbe rövidítésre."
+  "outbox_tooLong": "Túl hosszú a rádiónak, ezért visszakerült az üzenetmezőbe rövidítésre.",
+  "rf_title": "Rádió funkciói",
+  "rf_radioStats": "Élő rádióstatisztika",
+  "rf_textCli": "Szöveges parancssor",
+  "rf_channelData": "Csatornaadatok",
+  "rf_signedPosts": "Aláírt csatornabejegyzések",
+  "rf_rawPackets": "Nyers csomagok",
+  "rf_floodCorridor": "Elárasztási folyosó (egyedi firmware)",
+  "rf_supported": "Támogatott",
+  "rf_unsupported": "Nem támogatott",
+  "rf_unknown": "Ismeretlen",
+  "rf_evNotConnected": "Csatlakoztass egy rádiót az ellenőrzéshez.",
+  "rf_evNotChecked": "Még nincs ellenőrizve.",
+  "rf_evProbeAnswered": "A rádió válaszolt az ellenőrzésre.",
+  "rf_evProbeRejected": "A rádió jelezte, hogy ezt nem támogatja.",
+  "rf_evDerived": "Csatornaadatok és a rádió kulcsa szükséges.",
+  "rf_evVersion": "A rádió v{have} protokollt jelez; v{need} szükséges."
 }

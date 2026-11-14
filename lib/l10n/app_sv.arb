@@ -5066,5 +5066,21 @@
   "hopTie_more": "Mer",
   "bk_rolledBack": "Återställningen misslyckades, så alla inställningar sattes tillbaka som de var. Inget ändrades.",
   "outbox_maybeSent": "Sändningen avbröts, så meddelandet kan redan ha gått iväg. Det ligger i meddelanderutan igen: kontrollera innan du skickar det igen.",
-  "outbox_tooLong": "För långt för radion, så det ligger i meddelanderutan igen för att kortas."
+  "outbox_tooLong": "För långt för radion, så det ligger i meddelanderutan igen för att kortas.",
+  "rf_title": "Radiofunktioner",
+  "rf_radioStats": "Live-radiostatistik",
+  "rf_textCli": "Textkommandorad",
+  "rf_channelData": "Kanaldata",
+  "rf_signedPosts": "Signerade kanalinlägg",
+  "rf_rawPackets": "Råpaket",
+  "rf_floodCorridor": "Floodkorridor (egen firmware)",
+  "rf_supported": "Stöds",
+  "rf_unsupported": "Stöds inte",
+  "rf_unknown": "Okänt",
+  "rf_evNotConnected": "Anslut en radio för att kontrollera.",
+  "rf_evNotChecked": "Inte kontrollerat än.",
+  "rf_evProbeAnswered": "Radion svarade på kontrollen.",
+  "rf_evProbeRejected": "Radion svarade att den inte stöder detta.",
+  "rf_evDerived": "Kräver kanaldata och radions nyckel.",
+  "rf_evVersion": "Radion anger protokoll v{have}; kräver v{need}."
 }
