@@ -13205,4 +13205,81 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get fw_open => 'Comment mettre à jour le firmware';
+
+  @override
+  String get idKey_title => 'Sauvegarde de la clé d\'identité';
+
+  @override
+  String get idKey_tileSubtitle =>
+      'Sauvegarder ou restaurer la clé privée de cette radio';
+
+  @override
+  String get idKey_explainer =>
+      'L\'identité de votre radio est sa clé privée. Gardez-en une copie pour transférer cette identité vers une autre radio ou la retrouver après une réinitialisation. Vos contacts vous reconnaîtront toujours.';
+
+  @override
+  String get idKey_backupLabel => 'Sauvegarder';
+
+  @override
+  String get idKey_showKey => 'Afficher la clé privée';
+
+  @override
+  String get idKey_showConfirmTitle => 'Afficher la clé privée ?';
+
+  @override
+  String get idKey_showConfirmBody =>
+      'Quiconque voit cette clé peut lire vos messages directs et envoyer en votre nom. Affichez-la uniquement en privé.';
+
+  @override
+  String get idKey_show => 'Afficher';
+
+  @override
+  String get idKey_copy => 'Copier la clé';
+
+  @override
+  String get idKey_copied =>
+      'Clé copiée. Rangez-la en lieu sûr, puis videz le presse-papiers.';
+
+  @override
+  String get idKey_importLabel => 'Restaurer';
+
+  @override
+  String get idKey_importHint =>
+      'Collez une clé privée hexadécimale de 128 caractères';
+
+  @override
+  String get idKey_importInvalid =>
+      'Une clé compte exactement 128 caractères hexadécimaux (0–9, a–f).';
+
+  @override
+  String get idKey_importButton => 'Remplacer l\'identité';
+
+  @override
+  String get idKey_importConfirmTitle =>
+      'Remplacer l\'identité de cette radio ?';
+
+  @override
+  String get idKey_importConfirmBody =>
+      'La radio prend l\'identité de cette clé. Sa clé actuelle est perdue définitivement si vous ne l\'avez pas sauvegardée.';
+
+  @override
+  String get idKey_importDone => 'Identité remplacée.';
+
+  @override
+  String get idKey_warning =>
+      'Ne partagez jamais cette clé. Quiconque la possède peut lire vos messages directs et se faire passer pour vous.';
+
+  @override
+  String get idKey_errNotConnected => 'Connectez d\'abord une radio.';
+
+  @override
+  String get idKey_errTimeout => 'La radio n\'a pas répondu. Réessayez.';
+
+  @override
+  String get idKey_errDisabled =>
+      'Le firmware de cette radio désactive la sauvegarde de clé.';
+
+  @override
+  String get idKey_errRejected =>
+      'La radio a refusé. Vérifiez la clé et réessayez.';
 }

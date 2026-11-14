@@ -3513,6 +3513,81 @@ class MeshCoreConnector extends ChangeNotifier {
     }
   }
 
+  /// Reads the radio's identity private key (CMD_EXPORT_PRIVATE_KEY), for
+  /// a backup. Throws [IdentityKeyException]; firmware built without key
+  /// export answers [IdentityKeyFailure.disabled].
+  Future<Uint8List> exportIdentityKey({
+    Duration timeout = const Duration(seconds: 5),
+  }) async {
+    final reply = await _identityKeyRequest(
+      buildExportPrivateKeyFrame(),
+      const {respCodePrivateKey, respCodeDisabled, respCodeErr},
+      timeout,
+    );
+    final key = parsePrivateKeyFrame(reply);
+    if (key == null) {
+      throw const IdentityKeyException(IdentityKeyFailure.rejected);
+    }
+    return key;
+  }
+
+  /// Gives the radio the identity in [key] (CMD_IMPORT_PRIVATE_KEY), then
+  /// asks for its self info again so the new public key shows. Throws
+  /// [IdentityKeyException].
+  Future<void> importIdentityKey(
+    Uint8List key, {
+    Duration timeout = const Duration(seconds: 5),
+  }) async {
+    final reply = await _identityKeyRequest(
+      buildImportPrivateKeyFrame(key),
+      const {respCodeOk, respCodeDisabled, respCodeErr},
+      timeout,
+    );
+    if (reply[0] != respCodeOk) {
+      throw const IdentityKeyException(IdentityKeyFailure.rejected);
+    }
+    await sendFrame(buildAppStartFrame());
+  }
+
+  Future<Uint8List> _identityKeyRequest(
+    Uint8List frame,
+    Set<int> answers,
+    Duration timeout,
+  ) async {
+    if (!isConnected) {
+      throw const IdentityKeyException(IdentityKeyFailure.notConnected);
+    }
+    final reply = Completer<Uint8List>();
+    final subscription = receivedFrames.listen((f) {
+      if (f.isNotEmpty && answers.contains(f[0]) && !reply.isCompleted) {
+        reply.complete(f);
+      }
+    });
+    try {
+      try {
+        await sendFrame(frame);
+      } on Exception {
+        throw const IdentityKeyException(IdentityKeyFailure.notConnected);
+      }
+      final f = await reply.future.timeout(
+        timeout,
+        onTimeout: () =>
+            throw const IdentityKeyException(IdentityKeyFailure.timeout),
+      );
+      // Firmware too old for the command says "unsupported"; to the user
+      // that's the same as a build with the feature turned off.
+      if (f[0] == respCodeDisabled ||
+          (f[0] == respCodeErr &&
+              f.length > 1 &&
+              f[1] == errCodeUnsupportedCmd)) {
+        throw const IdentityKeyException(IdentityKeyFailure.disabled);
+      }
+      return f;
+    } finally {
+      await subscription.cancel();
+    }
+  }
+
   /// Signs [data] with the radio's own Ed25519 key via CMD_SIGN_START,
   /// CMD_SIGN_DATA and CMD_SIGN_FINISH, and returns the 64-byte signature.
   /// The private key never leaves the radio. Each reply must arrive within

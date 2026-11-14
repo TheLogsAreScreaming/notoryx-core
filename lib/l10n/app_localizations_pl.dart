@@ -13183,4 +13183,78 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get fw_open => 'Jak zaktualizować firmware';
+
+  @override
+  String get idKey_title => 'Kopia klucza tożsamości';
+
+  @override
+  String get idKey_tileSubtitle => 'Zapisz lub przywróć klucz prywatny radia';
+
+  @override
+  String get idKey_explainer =>
+      'Tożsamość radia to jego klucz prywatny. Zachowaj kopię, aby przenieść ją na inne radio lub odzyskać po resecie. Kontakty nadal będą cię rozpoznawać.';
+
+  @override
+  String get idKey_backupLabel => 'Zapisz';
+
+  @override
+  String get idKey_showKey => 'Pokaż klucz prywatny';
+
+  @override
+  String get idKey_showConfirmTitle => 'Pokazać klucz prywatny?';
+
+  @override
+  String get idKey_showConfirmBody =>
+      'Każdy, kto zobaczy ten klucz, może czytać twoje wiadomości prywatne i wysyłać jako ty. Pokazuj go tylko w ustronnym miejscu.';
+
+  @override
+  String get idKey_show => 'Pokaż';
+
+  @override
+  String get idKey_copy => 'Kopiuj klucz';
+
+  @override
+  String get idKey_copied =>
+      'Klucz skopiowany. Zapisz go w bezpiecznym miejscu i wyczyść schowek.';
+
+  @override
+  String get idKey_importLabel => 'Przywróć';
+
+  @override
+  String get idKey_importHint => 'Wklej 128-znakowy klucz prywatny hex';
+
+  @override
+  String get idKey_importInvalid =>
+      'Klucz ma dokładnie 128 znaków hex (0–9, a–f).';
+
+  @override
+  String get idKey_importButton => 'Zastąp tożsamość';
+
+  @override
+  String get idKey_importConfirmTitle => 'Zastąpić tożsamość tego radia?';
+
+  @override
+  String get idKey_importConfirmBody =>
+      'Radio przyjmie tożsamość z tego klucza. Obecny klucz przepadnie na zawsze, jeśli go nie zapisano.';
+
+  @override
+  String get idKey_importDone => 'Tożsamość zastąpiona.';
+
+  @override
+  String get idKey_warning =>
+      'Nigdy nie udostępniaj tego klucza. Kto go ma, może czytać twoje wiadomości prywatne i podszywać się pod ciebie.';
+
+  @override
+  String get idKey_errNotConnected => 'Najpierw połącz radio.';
+
+  @override
+  String get idKey_errTimeout => 'Radio nie odpowiedziało. Spróbuj ponownie.';
+
+  @override
+  String get idKey_errDisabled =>
+      'Oprogramowanie tego radia ma wyłączoną kopię klucza.';
+
+  @override
+  String get idKey_errRejected =>
+      'Radio odmówiło. Sprawdź klucz i spróbuj ponownie.';
 }

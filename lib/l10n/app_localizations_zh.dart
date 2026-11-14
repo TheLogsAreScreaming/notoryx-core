@@ -12324,4 +12324,71 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get fw_open => '如何更新固件';
+
+  @override
+  String get idKey_title => '身份密钥备份';
+
+  @override
+  String get idKey_tileSubtitle => '备份或恢复此电台的私钥';
+
+  @override
+  String get idKey_explainer =>
+      '电台的身份就是它的私钥。保存一份副本，以便把身份迁移到另一台电台，或在重置后恢复。联系人仍能认出你。';
+
+  @override
+  String get idKey_backupLabel => '备份';
+
+  @override
+  String get idKey_showKey => '显示私钥';
+
+  @override
+  String get idKey_showConfirmTitle => '显示私钥？';
+
+  @override
+  String get idKey_showConfirmBody => '看到此密钥的任何人都能读取你的私信并以你的名义发送。请仅在私密场合显示。';
+
+  @override
+  String get idKey_show => '显示';
+
+  @override
+  String get idKey_copy => '复制密钥';
+
+  @override
+  String get idKey_copied => '密钥已复制。请妥善保存，然后清空剪贴板。';
+
+  @override
+  String get idKey_importLabel => '恢复';
+
+  @override
+  String get idKey_importHint => '粘贴128位十六进制私钥';
+
+  @override
+  String get idKey_importInvalid => '密钥必须正好是128个十六进制字符（0–9、a–f）。';
+
+  @override
+  String get idKey_importButton => '替换身份';
+
+  @override
+  String get idKey_importConfirmTitle => '替换此电台的身份？';
+
+  @override
+  String get idKey_importConfirmBody => '电台将采用此密钥中的身份。若未备份，当前密钥将永久丢失。';
+
+  @override
+  String get idKey_importDone => '身份已替换。';
+
+  @override
+  String get idKey_warning => '切勿分享此密钥。持有者可读取你的私信并冒充你。';
+
+  @override
+  String get idKey_errNotConnected => '请先连接电台。';
+
+  @override
+  String get idKey_errTimeout => '电台未响应，请重试。';
+
+  @override
+  String get idKey_errDisabled => '此电台的固件已关闭密钥备份功能。';
+
+  @override
+  String get idKey_errRejected => '电台拒绝了。请检查密钥后重试。';
 }

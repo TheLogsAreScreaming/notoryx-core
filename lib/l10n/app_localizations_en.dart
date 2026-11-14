@@ -13004,4 +13004,79 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get fw_open => 'How to update firmware';
+
+  @override
+  String get idKey_title => 'Identity key backup';
+
+  @override
+  String get idKey_tileSubtitle =>
+      'Back up or restore this radio\'s private key';
+
+  @override
+  String get idKey_explainer =>
+      'Your radio\'s identity is its private key. Keep a copy to move this identity to another radio, or to get it back after a reset. Your contacts keep recognising you.';
+
+  @override
+  String get idKey_backupLabel => 'Back up';
+
+  @override
+  String get idKey_showKey => 'Show private key';
+
+  @override
+  String get idKey_showConfirmTitle => 'Show private key?';
+
+  @override
+  String get idKey_showConfirmBody =>
+      'Anyone who sees this key can read your direct messages and send as you. Only show it somewhere private.';
+
+  @override
+  String get idKey_show => 'Show';
+
+  @override
+  String get idKey_copy => 'Copy key';
+
+  @override
+  String get idKey_copied =>
+      'Key copied. Store it somewhere safe, then clear your clipboard.';
+
+  @override
+  String get idKey_importLabel => 'Restore';
+
+  @override
+  String get idKey_importHint => 'Paste a 128-character hex private key';
+
+  @override
+  String get idKey_importInvalid =>
+      'A key is exactly 128 hex characters (0–9, a–f).';
+
+  @override
+  String get idKey_importButton => 'Replace identity';
+
+  @override
+  String get idKey_importConfirmTitle => 'Replace this radio\'s identity?';
+
+  @override
+  String get idKey_importConfirmBody =>
+      'The radio takes on the identity in this key. Its current key is gone for good unless you backed it up.';
+
+  @override
+  String get idKey_importDone => 'Identity replaced.';
+
+  @override
+  String get idKey_warning =>
+      'Never share this key. Anyone who has it can read your direct messages and pretend to be you.';
+
+  @override
+  String get idKey_errNotConnected => 'Connect a radio first.';
+
+  @override
+  String get idKey_errTimeout => 'The radio didn\'t answer. Try again.';
+
+  @override
+  String get idKey_errDisabled =>
+      'This radio\'s firmware has key backup turned off.';
+
+  @override
+  String get idKey_errRejected =>
+      'The radio refused. Check the key and try again.';
 }

@@ -13137,4 +13137,79 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get fw_open => 'Como atualizar o firmware';
+
+  @override
+  String get idKey_title => 'Cópia da chave de identidade';
+
+  @override
+  String get idKey_tileSubtitle =>
+      'Guarde ou restaure a chave privada deste rádio';
+
+  @override
+  String get idKey_explainer =>
+      'A identidade do rádio é a sua chave privada. Guarde uma cópia para passar esta identidade para outro rádio ou recuperá-la após um reset. Os seus contactos continuam a reconhecê-lo.';
+
+  @override
+  String get idKey_backupLabel => 'Guardar';
+
+  @override
+  String get idKey_showKey => 'Mostrar chave privada';
+
+  @override
+  String get idKey_showConfirmTitle => 'Mostrar a chave privada?';
+
+  @override
+  String get idKey_showConfirmBody =>
+      'Quem vir esta chave pode ler as suas mensagens diretas e enviar em seu nome. Mostre-a só em privado.';
+
+  @override
+  String get idKey_show => 'Mostrar';
+
+  @override
+  String get idKey_copy => 'Copiar chave';
+
+  @override
+  String get idKey_copied =>
+      'Chave copiada. Guarde-a num local seguro e depois limpe a área de transferência.';
+
+  @override
+  String get idKey_importLabel => 'Restaurar';
+
+  @override
+  String get idKey_importHint => 'Cole uma chave privada hex de 128 caracteres';
+
+  @override
+  String get idKey_importInvalid =>
+      'Uma chave tem exatamente 128 caracteres hex (0–9, a–f).';
+
+  @override
+  String get idKey_importButton => 'Substituir identidade';
+
+  @override
+  String get idKey_importConfirmTitle => 'Substituir a identidade deste rádio?';
+
+  @override
+  String get idKey_importConfirmBody =>
+      'O rádio assume a identidade desta chave. A chave atual perde-se para sempre se não a guardou.';
+
+  @override
+  String get idKey_importDone => 'Identidade substituída.';
+
+  @override
+  String get idKey_warning =>
+      'Nunca partilhe esta chave. Quem a tiver pode ler as suas mensagens diretas e fazer-se passar por si.';
+
+  @override
+  String get idKey_errNotConnected => 'Ligue primeiro um rádio.';
+
+  @override
+  String get idKey_errTimeout => 'O rádio não respondeu. Tente novamente.';
+
+  @override
+  String get idKey_errDisabled =>
+      'O firmware deste rádio tem a cópia da chave desativada.';
+
+  @override
+  String get idKey_errRejected =>
+      'O rádio recusou. Verifique a chave e tente novamente.';
 }

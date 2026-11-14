@@ -21840,6 +21840,138 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'How to update firmware'**
   String get fw_open;
+
+  /// No description provided for @idKey_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Identity key backup'**
+  String get idKey_title;
+
+  /// No description provided for @idKey_tileSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Back up or restore this radio's private key'**
+  String get idKey_tileSubtitle;
+
+  /// No description provided for @idKey_explainer.
+  ///
+  /// In en, this message translates to:
+  /// **'Your radio's identity is its private key. Keep a copy to move this identity to another radio, or to get it back after a reset. Your contacts keep recognising you.'**
+  String get idKey_explainer;
+
+  /// No description provided for @idKey_backupLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Back up'**
+  String get idKey_backupLabel;
+
+  /// No description provided for @idKey_showKey.
+  ///
+  /// In en, this message translates to:
+  /// **'Show private key'**
+  String get idKey_showKey;
+
+  /// No description provided for @idKey_showConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Show private key?'**
+  String get idKey_showConfirmTitle;
+
+  /// No description provided for @idKey_showConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Anyone who sees this key can read your direct messages and send as you. Only show it somewhere private.'**
+  String get idKey_showConfirmBody;
+
+  /// No description provided for @idKey_show.
+  ///
+  /// In en, this message translates to:
+  /// **'Show'**
+  String get idKey_show;
+
+  /// No description provided for @idKey_copy.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy key'**
+  String get idKey_copy;
+
+  /// No description provided for @idKey_copied.
+  ///
+  /// In en, this message translates to:
+  /// **'Key copied. Store it somewhere safe, then clear your clipboard.'**
+  String get idKey_copied;
+
+  /// No description provided for @idKey_importLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Restore'**
+  String get idKey_importLabel;
+
+  /// No description provided for @idKey_importHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Paste a 128-character hex private key'**
+  String get idKey_importHint;
+
+  /// No description provided for @idKey_importInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'A key is exactly 128 hex characters (0–9, a–f).'**
+  String get idKey_importInvalid;
+
+  /// No description provided for @idKey_importButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Replace identity'**
+  String get idKey_importButton;
+
+  /// No description provided for @idKey_importConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Replace this radio's identity?'**
+  String get idKey_importConfirmTitle;
+
+  /// No description provided for @idKey_importConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The radio takes on the identity in this key. Its current key is gone for good unless you backed it up.'**
+  String get idKey_importConfirmBody;
+
+  /// No description provided for @idKey_importDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Identity replaced.'**
+  String get idKey_importDone;
+
+  /// No description provided for @idKey_warning.
+  ///
+  /// In en, this message translates to:
+  /// **'Never share this key. Anyone who has it can read your direct messages and pretend to be you.'**
+  String get idKey_warning;
+
+  /// No description provided for @idKey_errNotConnected.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect a radio first.'**
+  String get idKey_errNotConnected;
+
+  /// No description provided for @idKey_errTimeout.
+  ///
+  /// In en, this message translates to:
+  /// **'The radio didn't answer. Try again.'**
+  String get idKey_errTimeout;
+
+  /// No description provided for @idKey_errDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'This radio's firmware has key backup turned off.'**
+  String get idKey_errDisabled;
+
+  /// No description provided for @idKey_errRejected.
+  ///
+  /// In en, this message translates to:
+  /// **'The radio refused. Check the key and try again.'**
+  String get idKey_errRejected;
 }
 
 class _AppLocalizationsDelegate

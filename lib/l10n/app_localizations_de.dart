@@ -13167,4 +13167,81 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get fw_open => 'Firmware aktualisieren – Anleitung';
+
+  @override
+  String get idKey_title => 'Schlüssel-Backup';
+
+  @override
+  String get idKey_tileSubtitle =>
+      'Privaten Schlüssel des Funkgeräts sichern oder wiederherstellen';
+
+  @override
+  String get idKey_explainer =>
+      'Die Identität deines Funkgeräts ist sein privater Schlüssel. Bewahre eine Kopie auf, um die Identität auf ein anderes Gerät zu übertragen oder nach einem Zurücksetzen wiederherzustellen. Deine Kontakte erkennen dich weiterhin.';
+
+  @override
+  String get idKey_backupLabel => 'Sichern';
+
+  @override
+  String get idKey_showKey => 'Privaten Schlüssel anzeigen';
+
+  @override
+  String get idKey_showConfirmTitle => 'Privaten Schlüssel anzeigen?';
+
+  @override
+  String get idKey_showConfirmBody =>
+      'Wer diesen Schlüssel sieht, kann deine Direktnachrichten lesen und in deinem Namen senden. Zeige ihn nur ungestört an.';
+
+  @override
+  String get idKey_show => 'Anzeigen';
+
+  @override
+  String get idKey_copy => 'Schlüssel kopieren';
+
+  @override
+  String get idKey_copied =>
+      'Schlüssel kopiert. Bewahre ihn sicher auf und leere danach die Zwischenablage.';
+
+  @override
+  String get idKey_importLabel => 'Wiederherstellen';
+
+  @override
+  String get idKey_importHint => '128-stelligen Hex-Schlüssel einfügen';
+
+  @override
+  String get idKey_importInvalid =>
+      'Ein Schlüssel hat genau 128 Hex-Zeichen (0–9, a–f).';
+
+  @override
+  String get idKey_importButton => 'Identität ersetzen';
+
+  @override
+  String get idKey_importConfirmTitle =>
+      'Identität dieses Funkgeräts ersetzen?';
+
+  @override
+  String get idKey_importConfirmBody =>
+      'Das Funkgerät übernimmt die Identität aus diesem Schlüssel. Der bisherige Schlüssel ist endgültig weg, wenn du ihn nicht gesichert hast.';
+
+  @override
+  String get idKey_importDone => 'Identität ersetzt.';
+
+  @override
+  String get idKey_warning =>
+      'Gib diesen Schlüssel niemals weiter. Wer ihn hat, kann deine Direktnachrichten lesen und sich als du ausgeben.';
+
+  @override
+  String get idKey_errNotConnected => 'Verbinde zuerst ein Funkgerät.';
+
+  @override
+  String get idKey_errTimeout =>
+      'Das Funkgerät hat nicht geantwortet. Versuche es erneut.';
+
+  @override
+  String get idKey_errDisabled =>
+      'Die Firmware dieses Funkgeräts hat die Schlüsselsicherung deaktiviert.';
+
+  @override
+  String get idKey_errRejected =>
+      'Das Funkgerät hat abgelehnt. Prüfe den Schlüssel und versuche es erneut.';
 }

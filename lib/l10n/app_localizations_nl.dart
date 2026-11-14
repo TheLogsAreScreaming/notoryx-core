@@ -13105,4 +13105,80 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get fw_open => 'Hoe je firmware bijwerkt';
+
+  @override
+  String get idKey_title => 'Back-up identiteitssleutel';
+
+  @override
+  String get idKey_tileSubtitle =>
+      'Privésleutel van deze radio bewaren of terugzetten';
+
+  @override
+  String get idKey_explainer =>
+      'De identiteit van je radio is zijn privésleutel. Bewaar een kopie om deze identiteit naar een andere radio te verhuizen of na een reset terug te zetten. Je contacten blijven je herkennen.';
+
+  @override
+  String get idKey_backupLabel => 'Bewaren';
+
+  @override
+  String get idKey_showKey => 'Privésleutel tonen';
+
+  @override
+  String get idKey_showConfirmTitle => 'Privésleutel tonen?';
+
+  @override
+  String get idKey_showConfirmBody =>
+      'Wie deze sleutel ziet, kan je directe berichten lezen en namens jou versturen. Toon hem alleen als niemand meekijkt.';
+
+  @override
+  String get idKey_show => 'Tonen';
+
+  @override
+  String get idKey_copy => 'Sleutel kopiëren';
+
+  @override
+  String get idKey_copied =>
+      'Sleutel gekopieerd. Bewaar hem veilig en wis daarna je klembord.';
+
+  @override
+  String get idKey_importLabel => 'Terugzetten';
+
+  @override
+  String get idKey_importHint => 'Plak een hex-privésleutel van 128 tekens';
+
+  @override
+  String get idKey_importInvalid =>
+      'Een sleutel is precies 128 hex-tekens (0–9, a–f).';
+
+  @override
+  String get idKey_importButton => 'Identiteit vervangen';
+
+  @override
+  String get idKey_importConfirmTitle => 'Identiteit van deze radio vervangen?';
+
+  @override
+  String get idKey_importConfirmBody =>
+      'De radio neemt de identiteit uit deze sleutel over. De huidige sleutel is voorgoed weg als je hem niet hebt bewaard.';
+
+  @override
+  String get idKey_importDone => 'Identiteit vervangen.';
+
+  @override
+  String get idKey_warning =>
+      'Deel deze sleutel nooit. Wie hem heeft, kan je directe berichten lezen en zich als jou voordoen.';
+
+  @override
+  String get idKey_errNotConnected => 'Verbind eerst een radio.';
+
+  @override
+  String get idKey_errTimeout =>
+      'De radio antwoordde niet. Probeer het opnieuw.';
+
+  @override
+  String get idKey_errDisabled =>
+      'De firmware van deze radio heeft sleutelback-up uitgeschakeld.';
+
+  @override
+  String get idKey_errRejected =>
+      'De radio weigerde. Controleer de sleutel en probeer opnieuw.';
 }

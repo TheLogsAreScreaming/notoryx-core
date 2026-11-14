@@ -13165,4 +13165,81 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get fw_open => 'Come aggiornare il firmware';
+
+  @override
+  String get idKey_title => 'Backup chiave d\'identità';
+
+  @override
+  String get idKey_tileSubtitle =>
+      'Salva o ripristina la chiave privata di questa radio';
+
+  @override
+  String get idKey_explainer =>
+      'L\'identità della radio è la sua chiave privata. Conservane una copia per spostarla su un\'altra radio o recuperarla dopo un reset. I tuoi contatti continueranno a riconoscerti.';
+
+  @override
+  String get idKey_backupLabel => 'Salva';
+
+  @override
+  String get idKey_showKey => 'Mostra chiave privata';
+
+  @override
+  String get idKey_showConfirmTitle => 'Mostrare la chiave privata?';
+
+  @override
+  String get idKey_showConfirmBody =>
+      'Chi vede questa chiave può leggere i tuoi messaggi diretti e inviare a tuo nome. Mostrala solo in privato.';
+
+  @override
+  String get idKey_show => 'Mostra';
+
+  @override
+  String get idKey_copy => 'Copia chiave';
+
+  @override
+  String get idKey_copied =>
+      'Chiave copiata. Conservala in un posto sicuro, poi svuota gli appunti.';
+
+  @override
+  String get idKey_importLabel => 'Ripristina';
+
+  @override
+  String get idKey_importHint =>
+      'Incolla una chiave privata esadecimale di 128 caratteri';
+
+  @override
+  String get idKey_importInvalid =>
+      'Una chiave ha esattamente 128 caratteri esadecimali (0–9, a–f).';
+
+  @override
+  String get idKey_importButton => 'Sostituisci identità';
+
+  @override
+  String get idKey_importConfirmTitle =>
+      'Sostituire l\'identità di questa radio?';
+
+  @override
+  String get idKey_importConfirmBody =>
+      'La radio assume l\'identità di questa chiave. La chiave attuale va persa per sempre se non l\'hai salvata.';
+
+  @override
+  String get idKey_importDone => 'Identità sostituita.';
+
+  @override
+  String get idKey_warning =>
+      'Non condividere mai questa chiave. Chi la possiede può leggere i tuoi messaggi diretti e fingersi te.';
+
+  @override
+  String get idKey_errNotConnected => 'Collega prima una radio.';
+
+  @override
+  String get idKey_errTimeout => 'La radio non ha risposto. Riprova.';
+
+  @override
+  String get idKey_errDisabled =>
+      'Il firmware di questa radio ha il backup della chiave disattivato.';
+
+  @override
+  String get idKey_errRejected =>
+      'La radio ha rifiutato. Controlla la chiave e riprova.';
 }

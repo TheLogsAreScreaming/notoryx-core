@@ -199,6 +199,8 @@ const int cmdImportContact = 18;
 const int cmdReboot = 19;
 const int cmdGetBattAndStorage = 20;
 const int cmdDeviceQuery = 22;
+const int cmdExportPrivateKey = 23;
+const int cmdImportPrivateKey = 24;
 const int cmdSendLogin = 26;
 const int cmdSendStatusReq = 27;
 const int cmdGetContactByKey = 30;
@@ -280,6 +282,8 @@ const int respCodeNoMoreMessages = 10;
 const int respCodeExportContact = 11;
 const int respCodeBattAndStorage = 12;
 const int respCodeDeviceInfo = 13;
+const int respCodePrivateKey = 14; // reply to cmdExportPrivateKey
+const int respCodeDisabled = 15; // feature compiled out of the firmware
 const int respCodeContactMsgRecvV3 = 16;
 const int respCodeChannelMsgRecvV3 = 17;
 const int respCodeChannelInfo = 18;
@@ -1348,4 +1352,53 @@ String? parseCorridorRegionFrame(Uint8List frame) {
 double? radioFrequencyMHz(int? reported) {
   if (reported == null || reported <= 0) return null;
   return reported >= 10000000 ? reported / 1e6 : reported / 1e3;
+}
+
+/// Length of a MeshCore identity private key (Ed25519, expanded form).
+const int identityKeySize = 64;
+
+Uint8List buildExportPrivateKeyFrame() =>
+    Uint8List.fromList([cmdExportPrivateKey]);
+
+/// [key] must be [identityKeySize] bytes.
+Uint8List buildImportPrivateKeyFrame(Uint8List key) {
+  if (key.length != identityKeySize) {
+    throw ArgumentError.value(key.length, 'key', 'must be 64 bytes');
+  }
+  return Uint8List.fromList([cmdImportPrivateKey, ...key]);
+}
+
+/// The identity key in a [respCodePrivateKey] frame, or null if [frame] is
+/// not one.
+Uint8List? parsePrivateKeyFrame(Uint8List frame) {
+  if (frame.length < 1 + identityKeySize || frame[0] != respCodePrivateKey) {
+    return null;
+  }
+  return Uint8List.fromList(frame.sublist(1, 1 + identityKeySize));
+}
+
+/// The key in [text] (128 hex digits; spaces, line breaks and a 0x prefix
+/// are ignored), or null if it isn't one.
+Uint8List? parseIdentityKeyHex(String text) {
+  var hex = text.replaceAll(RegExp(r'\s'), '').toLowerCase();
+  if (hex.startsWith('0x')) hex = hex.substring(2);
+  if (hex.length != identityKeySize * 2 ||
+      !RegExp(r'^[0-9a-f]+$').hasMatch(hex)) {
+    return null;
+  }
+  return Uint8List.fromList([
+    for (var i = 0; i < hex.length; i += 2)
+      int.parse(hex.substring(i, i + 2), radix: 16),
+  ]);
+}
+
+/// Why the radio didn't export or import its identity key.
+enum IdentityKeyFailure { notConnected, timeout, disabled, rejected }
+
+class IdentityKeyException implements Exception {
+  final IdentityKeyFailure failure;
+  const IdentityKeyException(this.failure);
+
+  @override
+  String toString() => 'IdentityKeyException(${failure.name})';
 }

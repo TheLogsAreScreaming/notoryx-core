@@ -13183,4 +13183,77 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get fw_open => 'Як оновити прошивку';
+
+  @override
+  String get idKey_title => 'Резервна копія ключа';
+
+  @override
+  String get idKey_tileSubtitle => 'Зберегти або відновити закритий ключ радіо';
+
+  @override
+  String get idKey_explainer =>
+      'Особа радіо — це його закритий ключ. Збережіть копію, щоб перенести її на інше радіо або повернути після скидання. Контакти й далі вас впізнаватимуть.';
+
+  @override
+  String get idKey_backupLabel => 'Зберегти';
+
+  @override
+  String get idKey_showKey => 'Показати закритий ключ';
+
+  @override
+  String get idKey_showConfirmTitle => 'Показати закритий ключ?';
+
+  @override
+  String get idKey_showConfirmBody =>
+      'Будь-хто, хто побачить цей ключ, зможе читати ваші особисті повідомлення й писати від вашого імені. Показуйте його лише наодинці.';
+
+  @override
+  String get idKey_show => 'Показати';
+
+  @override
+  String get idKey_copy => 'Скопіювати ключ';
+
+  @override
+  String get idKey_copied =>
+      'Ключ скопійовано. Збережіть його в надійному місці й очистьте буфер обміну.';
+
+  @override
+  String get idKey_importLabel => 'Відновити';
+
+  @override
+  String get idKey_importHint => 'Вставте закритий ключ із 128 hex-символів';
+
+  @override
+  String get idKey_importInvalid => 'Ключ — рівно 128 hex-символів (0–9, a–f).';
+
+  @override
+  String get idKey_importButton => 'Замінити особу';
+
+  @override
+  String get idKey_importConfirmTitle => 'Замінити особу цього радіо?';
+
+  @override
+  String get idKey_importConfirmBody =>
+      'Радіо прийме особу з цього ключа. Поточний ключ буде втрачено назавжди, якщо ви його не зберегли.';
+
+  @override
+  String get idKey_importDone => 'Особу замінено.';
+
+  @override
+  String get idKey_warning =>
+      'Ніколи не передавайте цей ключ. Власник зможе читати ваші особисті повідомлення й видавати себе за вас.';
+
+  @override
+  String get idKey_errNotConnected => 'Спершу під\'єднайте радіо.';
+
+  @override
+  String get idKey_errTimeout => 'Радіо не відповіло. Спробуйте ще раз.';
+
+  @override
+  String get idKey_errDisabled =>
+      'У прошивці цього радіо резервне копіювання ключа вимкнено.';
+
+  @override
+  String get idKey_errRejected =>
+      'Радіо відмовило. Перевірте ключ і спробуйте знову.';
 }

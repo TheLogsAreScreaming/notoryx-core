@@ -30,6 +30,7 @@ import '../widgets/radio_stats_entry.dart';
 import '../widgets/sync_progress_overlay.dart';
 import '../widgets/radio_overview_card.dart';
 import 'companion_cli_screen.dart';
+import 'identity_key_screen.dart';
 import '../widgets/radio_buzzer_switch.dart';
 import 'wifi_settings_screen.dart';
 import 'region_management_screen.dart';
@@ -579,6 +580,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
           const Divider(height: 1, indent: 16),
         ],
+        _tappableTile(
+          context,
+          icon: Icons.key_rounded,
+          title: l10n.idKey_title,
+          subtitle: l10n.idKey_tileSubtitle,
+          onTap: connector.isConnected
+              ? () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const IdentityKeyScreen()),
+                )
+              : null,
+        ),
+        const Divider(height: 1, indent: 16),
         _tappableTile(
           context,
           icon: Icons.route_outlined,
