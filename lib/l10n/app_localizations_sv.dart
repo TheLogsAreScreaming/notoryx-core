@@ -12579,4 +12579,79 @@ class AppLocalizationsSv extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name är $distance från $trail.';
   }
+
+  @override
+  String get idKey_title => 'Säkerhetskopia av identitetsnyckel';
+
+  @override
+  String get idKey_tileSubtitle =>
+      'Spara eller återställ radions privata nyckel';
+
+  @override
+  String get idKey_explainer =>
+      'Radions identitet är dess privata nyckel. Spara en kopia för att flytta identiteten till en annan radio eller få tillbaka den efter en återställning. Dina kontakter känner fortfarande igen dig.';
+
+  @override
+  String get idKey_backupLabel => 'Spara';
+
+  @override
+  String get idKey_showKey => 'Visa privat nyckel';
+
+  @override
+  String get idKey_showConfirmTitle => 'Visa privat nyckel?';
+
+  @override
+  String get idKey_showConfirmBody =>
+      'Den som ser nyckeln kan läsa dina direktmeddelanden och skicka som dig. Visa den bara där ingen ser.';
+
+  @override
+  String get idKey_show => 'Visa';
+
+  @override
+  String get idKey_copy => 'Kopiera nyckel';
+
+  @override
+  String get idKey_copied =>
+      'Nyckeln kopierad. Förvara den säkert och töm sedan urklipp.';
+
+  @override
+  String get idKey_importLabel => 'Återställ';
+
+  @override
+  String get idKey_importHint => 'Klistra in en hex-nyckel på 128 tecken';
+
+  @override
+  String get idKey_importInvalid =>
+      'En nyckel är exakt 128 hex-tecken (0–9, a–f).';
+
+  @override
+  String get idKey_importButton => 'Ersätt identitet';
+
+  @override
+  String get idKey_importConfirmTitle => 'Ersätta radions identitet?';
+
+  @override
+  String get idKey_importConfirmBody =>
+      'Radion tar över identiteten i nyckeln. Den nuvarande nyckeln försvinner för gott om du inte sparat den.';
+
+  @override
+  String get idKey_importDone => 'Identiteten ersatt.';
+
+  @override
+  String get idKey_warning =>
+      'Dela aldrig nyckeln. Den som har den kan läsa dina direktmeddelanden och utge sig för att vara du.';
+
+  @override
+  String get idKey_errNotConnected => 'Anslut en radio först.';
+
+  @override
+  String get idKey_errTimeout => 'Radion svarade inte. Försök igen.';
+
+  @override
+  String get idKey_errDisabled =>
+      'Radions firmware har nyckelsäkerhetskopiering avstängd.';
+
+  @override
+  String get idKey_errRejected =>
+      'Radion vägrade. Kontrollera nyckeln och försök igen.';
 }

@@ -12661,4 +12661,80 @@ class AppLocalizationsHu extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name $distance távolságra van ettől: $trail.';
   }
+
+  @override
+  String get idKey_title => 'Azonosító kulcs mentése';
+
+  @override
+  String get idKey_tileSubtitle =>
+      'A rádió privát kulcsának mentése vagy visszaállítása';
+
+  @override
+  String get idKey_explainer =>
+      'A rádió azonosítója a privát kulcsa. Őrizz meg róla másolatot, hogy átvihesd egy másik rádióra, vagy visszaállíthasd egy alaphelyzetbe állítás után. A partnereid továbbra is felismernek.';
+
+  @override
+  String get idKey_backupLabel => 'Mentés';
+
+  @override
+  String get idKey_showKey => 'Privát kulcs megjelenítése';
+
+  @override
+  String get idKey_showConfirmTitle => 'Megjeleníted a privát kulcsot?';
+
+  @override
+  String get idKey_showConfirmBody =>
+      'Aki látja ezt a kulcsot, olvashatja a közvetlen üzeneteidet és a nevedben küldhet. Csak magánterületen jelenítsd meg.';
+
+  @override
+  String get idKey_show => 'Megjelenítés';
+
+  @override
+  String get idKey_copy => 'Kulcs másolása';
+
+  @override
+  String get idKey_copied =>
+      'Kulcs másolva. Tárold biztonságos helyen, majd ürítsd a vágólapot.';
+
+  @override
+  String get idKey_importLabel => 'Visszaállítás';
+
+  @override
+  String get idKey_importHint =>
+      'Illessz be egy 128 karakteres hex privát kulcsot';
+
+  @override
+  String get idKey_importInvalid =>
+      'A kulcs pontosan 128 hex karakter (0–9, a–f).';
+
+  @override
+  String get idKey_importButton => 'Azonosító cseréje';
+
+  @override
+  String get idKey_importConfirmTitle => 'Lecseréled a rádió azonosítóját?';
+
+  @override
+  String get idKey_importConfirmBody =>
+      'A rádió átveszi a kulcsban lévő azonosítót. A jelenlegi kulcs végleg elvész, ha nem mentetted el.';
+
+  @override
+  String get idKey_importDone => 'Azonosító lecserélve.';
+
+  @override
+  String get idKey_warning =>
+      'Soha ne oszd meg ezt a kulcsot. Aki birtokolja, olvashatja a közvetlen üzeneteidet és kiadhatja magát érted.';
+
+  @override
+  String get idKey_errNotConnected => 'Előbb csatlakoztass egy rádiót.';
+
+  @override
+  String get idKey_errTimeout => 'A rádió nem válaszolt. Próbáld újra.';
+
+  @override
+  String get idKey_errDisabled =>
+      'A rádió firmware-jében ki van kapcsolva a kulcsmentés.';
+
+  @override
+  String get idKey_errRejected =>
+      'A rádió elutasította. Ellenőrizd a kulcsot, és próbáld újra.';
 }

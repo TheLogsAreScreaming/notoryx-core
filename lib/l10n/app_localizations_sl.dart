@@ -12661,4 +12661,79 @@ class AppLocalizationsSl extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name je $distance od: $trail.';
   }
+
+  @override
+  String get idKey_title => 'Varnostna kopija ključa';
+
+  @override
+  String get idKey_tileSubtitle => 'Shrani ali obnovi zasebni ključ radia';
+
+  @override
+  String get idKey_explainer =>
+      'Identiteta radia je njegov zasebni ključ. Shrani kopijo, da jo preneseš na drug radio ali obnoviš po ponastavitvi. Stiki te bodo še naprej prepoznali.';
+
+  @override
+  String get idKey_backupLabel => 'Shrani';
+
+  @override
+  String get idKey_showKey => 'Pokaži zasebni ključ';
+
+  @override
+  String get idKey_showConfirmTitle => 'Pokažem zasebni ključ?';
+
+  @override
+  String get idKey_showConfirmBody =>
+      'Kdor vidi ta ključ, lahko bere tvoja neposredna sporočila in pošilja v tvojem imenu. Pokaži ga le na zasebnem mestu.';
+
+  @override
+  String get idKey_show => 'Pokaži';
+
+  @override
+  String get idKey_copy => 'Kopiraj ključ';
+
+  @override
+  String get idKey_copied =>
+      'Ključ kopiran. Shrani ga na varno in nato počisti odložišče.';
+
+  @override
+  String get idKey_importLabel => 'Obnovi';
+
+  @override
+  String get idKey_importHint =>
+      'Prilepi 128-mestni šestnajstiški zasebni ključ';
+
+  @override
+  String get idKey_importInvalid =>
+      'Ključ ima natanko 128 šestnajstiških znakov (0–9, a–f).';
+
+  @override
+  String get idKey_importButton => 'Zamenjaj identiteto';
+
+  @override
+  String get idKey_importConfirmTitle => 'Zamenjam identiteto tega radia?';
+
+  @override
+  String get idKey_importConfirmBody =>
+      'Radio prevzame identiteto iz tega ključa. Trenutni ključ se trajno izgubi, če ga nisi shranil.';
+
+  @override
+  String get idKey_importDone => 'Identiteta zamenjana.';
+
+  @override
+  String get idKey_warning =>
+      'Tega ključa nikoli ne deli. Kdor ga ima, lahko bere tvoja neposredna sporočila in se izdaja zate.';
+
+  @override
+  String get idKey_errNotConnected => 'Najprej poveži radio.';
+
+  @override
+  String get idKey_errTimeout => 'Radio ni odgovoril. Poskusi znova.';
+
+  @override
+  String get idKey_errDisabled =>
+      'Strojna programska oprema tega radia ima varnostno kopijo ključa izklopljeno.';
+
+  @override
+  String get idKey_errRejected =>
+      'Radio je zavrnil. Preveri ključ in poskusi znova.';
 }

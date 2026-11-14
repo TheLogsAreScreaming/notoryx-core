@@ -12096,4 +12096,74 @@ class AppLocalizationsJa extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$nameは$trailから$distance離れています。';
   }
+
+  @override
+  String get idKey_title => 'ID鍵のバックアップ';
+
+  @override
+  String get idKey_tileSubtitle => 'この無線機の秘密鍵を保存・復元';
+
+  @override
+  String get idKey_explainer =>
+      '無線機のIDは秘密鍵です。別の無線機へ移すときやリセット後に戻すため、コピーを保管してください。連絡先は引き続きあなたを認識します。';
+
+  @override
+  String get idKey_backupLabel => 'バックアップ';
+
+  @override
+  String get idKey_showKey => '秘密鍵を表示';
+
+  @override
+  String get idKey_showConfirmTitle => '秘密鍵を表示しますか？';
+
+  @override
+  String get idKey_showConfirmBody =>
+      'この鍵を見た人は、あなたのダイレクトメッセージを読み、あなたとして送信できます。人目のない場所でのみ表示してください。';
+
+  @override
+  String get idKey_show => '表示';
+
+  @override
+  String get idKey_copy => '鍵をコピー';
+
+  @override
+  String get idKey_copied => '鍵をコピーしました。安全な場所に保管し、クリップボードを消去してください。';
+
+  @override
+  String get idKey_importLabel => '復元';
+
+  @override
+  String get idKey_importHint => '128文字の16進秘密鍵を貼り付け';
+
+  @override
+  String get idKey_importInvalid => '鍵はちょうど128文字の16進数（0–9、a–f）です。';
+
+  @override
+  String get idKey_importButton => 'IDを置き換え';
+
+  @override
+  String get idKey_importConfirmTitle => 'この無線機のIDを置き換えますか？';
+
+  @override
+  String get idKey_importConfirmBody =>
+      '無線機はこの鍵のIDになります。現在の鍵はバックアップしていなければ完全に失われます。';
+
+  @override
+  String get idKey_importDone => 'IDを置き換えました。';
+
+  @override
+  String get idKey_warning =>
+      'この鍵は絶対に共有しないでください。持っている人はあなたのダイレクトメッセージを読み、あなたになりすませます。';
+
+  @override
+  String get idKey_errNotConnected => '先に無線機を接続してください。';
+
+  @override
+  String get idKey_errTimeout => '無線機が応答しません。もう一度お試しください。';
+
+  @override
+  String get idKey_errDisabled => 'この無線機のファームウェアでは鍵のバックアップが無効です。';
+
+  @override
+  String get idKey_errRejected => '無線機が拒否しました。鍵を確認してもう一度お試しください。';
 }

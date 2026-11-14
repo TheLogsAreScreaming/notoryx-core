@@ -12658,4 +12658,79 @@ class AppLocalizationsBg extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name е на $distance от $trail.';
   }
+
+  @override
+  String get idKey_title => 'Резервно копие на ключа';
+
+  @override
+  String get idKey_tileSubtitle =>
+      'Запазване или възстановяване на частния ключ';
+
+  @override
+  String get idKey_explainer =>
+      'Самоличността на радиото е неговият частен ключ. Пазете копие, за да я пренесете на друго радио или да я върнете след нулиране. Контактите ви ще продължат да ви разпознават.';
+
+  @override
+  String get idKey_backupLabel => 'Запазване';
+
+  @override
+  String get idKey_showKey => 'Покажи частния ключ';
+
+  @override
+  String get idKey_showConfirmTitle => 'Да се покаже ли частният ключ?';
+
+  @override
+  String get idKey_showConfirmBody =>
+      'Всеки, който види ключа, може да чете личните ви съобщения и да пише от ваше име. Показвайте го само насаме.';
+
+  @override
+  String get idKey_show => 'Покажи';
+
+  @override
+  String get idKey_copy => 'Копирай ключа';
+
+  @override
+  String get idKey_copied =>
+      'Ключът е копиран. Пазете го на сигурно място и изчистете клипборда.';
+
+  @override
+  String get idKey_importLabel => 'Възстановяване';
+
+  @override
+  String get idKey_importHint => 'Поставете частен ключ от 128 hex знака';
+
+  @override
+  String get idKey_importInvalid => 'Ключът е точно 128 hex знака (0–9, a–f).';
+
+  @override
+  String get idKey_importButton => 'Замени самоличността';
+
+  @override
+  String get idKey_importConfirmTitle =>
+      'Да се замени ли самоличността на радиото?';
+
+  @override
+  String get idKey_importConfirmBody =>
+      'Радиото приема самоличността от този ключ. Текущият ключ се губи завинаги, ако не сте го запазили.';
+
+  @override
+  String get idKey_importDone => 'Самоличността е заменена.';
+
+  @override
+  String get idKey_warning =>
+      'Никога не споделяйте този ключ. Който го има, може да чете личните ви съобщения и да се представя за вас.';
+
+  @override
+  String get idKey_errNotConnected => 'Първо свържете радио.';
+
+  @override
+  String get idKey_errTimeout => 'Радиото не отговори. Опитайте отново.';
+
+  @override
+  String get idKey_errDisabled =>
+      'Фърмуерът на това радио е с изключено копиране на ключа.';
+
+  @override
+  String get idKey_errRejected =>
+      'Радиото отказа. Проверете ключа и опитайте отново.';
 }

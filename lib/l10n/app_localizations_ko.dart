@@ -12113,4 +12113,74 @@ class AppLocalizationsKo extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name님이 $trail에서 $distance 떨어져 있습니다.';
   }
+
+  @override
+  String get idKey_title => '신원 키 백업';
+
+  @override
+  String get idKey_tileSubtitle => '이 무전기의 개인 키 백업 또는 복원';
+
+  @override
+  String get idKey_explainer =>
+      '무전기의 신원은 개인 키입니다. 다른 무전기로 옮기거나 초기화 후 되찾으려면 사본을 보관하세요. 연락처는 계속 당신을 알아봅니다.';
+
+  @override
+  String get idKey_backupLabel => '백업';
+
+  @override
+  String get idKey_showKey => '개인 키 보기';
+
+  @override
+  String get idKey_showConfirmTitle => '개인 키를 표시할까요?';
+
+  @override
+  String get idKey_showConfirmBody =>
+      '이 키를 본 사람은 누구나 당신의 개인 메시지를 읽고 당신으로 보낼 수 있습니다. 혼자 있는 곳에서만 표시하세요.';
+
+  @override
+  String get idKey_show => '표시';
+
+  @override
+  String get idKey_copy => '키 복사';
+
+  @override
+  String get idKey_copied => '키를 복사했습니다. 안전한 곳에 보관한 뒤 클립보드를 비우세요.';
+
+  @override
+  String get idKey_importLabel => '복원';
+
+  @override
+  String get idKey_importHint => '128자 16진수 개인 키를 붙여넣기';
+
+  @override
+  String get idKey_importInvalid => '키는 정확히 128자의 16진수(0–9, a–f)입니다.';
+
+  @override
+  String get idKey_importButton => '신원 교체';
+
+  @override
+  String get idKey_importConfirmTitle => '이 무전기의 신원을 교체할까요?';
+
+  @override
+  String get idKey_importConfirmBody =>
+      '무전기가 이 키의 신원을 갖게 됩니다. 현재 키는 백업하지 않았다면 영구히 사라집니다.';
+
+  @override
+  String get idKey_importDone => '신원을 교체했습니다.';
+
+  @override
+  String get idKey_warning =>
+      '이 키는 절대 공유하지 마세요. 키를 가진 사람은 당신의 개인 메시지를 읽고 당신인 척할 수 있습니다.';
+
+  @override
+  String get idKey_errNotConnected => '먼저 무전기를 연결하세요.';
+
+  @override
+  String get idKey_errTimeout => '무전기가 응답하지 않았습니다. 다시 시도하세요.';
+
+  @override
+  String get idKey_errDisabled => '이 무전기의 펌웨어는 키 백업이 꺼져 있습니다.';
+
+  @override
+  String get idKey_errRejected => '무전기가 거부했습니다. 키를 확인하고 다시 시도하세요.';
 }

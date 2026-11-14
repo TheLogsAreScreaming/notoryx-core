@@ -12682,4 +12682,80 @@ class AppLocalizationsEs extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name está a $distance de $trail.';
   }
+
+  @override
+  String get idKey_title => 'Copia de la clave de identidad';
+
+  @override
+  String get idKey_tileSubtitle =>
+      'Guarda o restaura la clave privada de esta radio';
+
+  @override
+  String get idKey_explainer =>
+      'La identidad de tu radio es su clave privada. Guarda una copia para pasar esta identidad a otra radio o recuperarla tras un reinicio. Tus contactos te seguirán reconociendo.';
+
+  @override
+  String get idKey_backupLabel => 'Guardar';
+
+  @override
+  String get idKey_showKey => 'Mostrar clave privada';
+
+  @override
+  String get idKey_showConfirmTitle => '¿Mostrar la clave privada?';
+
+  @override
+  String get idKey_showConfirmBody =>
+      'Quien vea esta clave puede leer tus mensajes directos y enviar en tu nombre. Muéstrala solo en un lugar privado.';
+
+  @override
+  String get idKey_show => 'Mostrar';
+
+  @override
+  String get idKey_copy => 'Copiar clave';
+
+  @override
+  String get idKey_copied =>
+      'Clave copiada. Guárdala en un lugar seguro y luego vacía el portapapeles.';
+
+  @override
+  String get idKey_importLabel => 'Restaurar';
+
+  @override
+  String get idKey_importHint => 'Pega una clave privada hex de 128 caracteres';
+
+  @override
+  String get idKey_importInvalid =>
+      'Una clave tiene exactamente 128 caracteres hex (0–9, a–f).';
+
+  @override
+  String get idKey_importButton => 'Reemplazar identidad';
+
+  @override
+  String get idKey_importConfirmTitle =>
+      '¿Reemplazar la identidad de esta radio?';
+
+  @override
+  String get idKey_importConfirmBody =>
+      'La radio adopta la identidad de esta clave. Su clave actual se pierde para siempre si no la guardaste.';
+
+  @override
+  String get idKey_importDone => 'Identidad reemplazada.';
+
+  @override
+  String get idKey_warning =>
+      'No compartas nunca esta clave. Quien la tenga puede leer tus mensajes directos y hacerse pasar por ti.';
+
+  @override
+  String get idKey_errNotConnected => 'Conecta primero una radio.';
+
+  @override
+  String get idKey_errTimeout => 'La radio no respondió. Inténtalo de nuevo.';
+
+  @override
+  String get idKey_errDisabled =>
+      'El firmware de esta radio tiene desactivada la copia de la clave.';
+
+  @override
+  String get idKey_errRejected =>
+      'La radio lo rechazó. Revisa la clave e inténtalo de nuevo.';
 }

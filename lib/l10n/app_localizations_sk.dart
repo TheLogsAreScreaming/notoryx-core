@@ -12637,4 +12637,78 @@ class AppLocalizationsSk extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name je $distance od: $trail.';
   }
+
+  @override
+  String get idKey_title => 'Záloha kľúča identity';
+
+  @override
+  String get idKey_tileSubtitle =>
+      'Zálohovať alebo obnoviť súkromný kľúč rádia';
+
+  @override
+  String get idKey_explainer =>
+      'Identita rádia je jeho súkromný kľúč. Uschovaj si kópiu, aby si ju mohol preniesť na iné rádio alebo obnoviť po resete. Kontakty ťa budú stále poznať.';
+
+  @override
+  String get idKey_backupLabel => 'Zálohovať';
+
+  @override
+  String get idKey_showKey => 'Zobraziť súkromný kľúč';
+
+  @override
+  String get idKey_showConfirmTitle => 'Zobraziť súkromný kľúč?';
+
+  @override
+  String get idKey_showConfirmBody =>
+      'Ktokoľvek uvidí tento kľúč, môže čítať tvoje priame správy a posielať za teba. Zobraz ho len v súkromí.';
+
+  @override
+  String get idKey_show => 'Zobraziť';
+
+  @override
+  String get idKey_copy => 'Kopírovať kľúč';
+
+  @override
+  String get idKey_copied =>
+      'Kľúč skopírovaný. Ulož ho na bezpečné miesto a potom vymaž schránku.';
+
+  @override
+  String get idKey_importLabel => 'Obnoviť';
+
+  @override
+  String get idKey_importHint => 'Vlož 128-znakový hex súkromný kľúč';
+
+  @override
+  String get idKey_importInvalid => 'Kľúč má presne 128 hex znakov (0–9, a–f).';
+
+  @override
+  String get idKey_importButton => 'Nahradiť identitu';
+
+  @override
+  String get idKey_importConfirmTitle => 'Nahradiť identitu tohto rádia?';
+
+  @override
+  String get idKey_importConfirmBody =>
+      'Rádio prevezme identitu z tohto kľúča. Súčasný kľúč sa natrvalo stratí, ak si ho nezálohoval.';
+
+  @override
+  String get idKey_importDone => 'Identita nahradená.';
+
+  @override
+  String get idKey_warning =>
+      'Tento kľúč nikdy nezdieľaj. Kto ho má, môže čítať tvoje priame správy a vydávať sa za teba.';
+
+  @override
+  String get idKey_errNotConnected => 'Najprv pripoj rádio.';
+
+  @override
+  String get idKey_errTimeout => 'Rádio neodpovedalo. Skús to znova.';
+
+  @override
+  String get idKey_errDisabled =>
+      'Firmvér tohto rádia má zálohu kľúča vypnutú.';
+
+  @override
+  String get idKey_errRejected =>
+      'Rádio odmietlo. Skontroluj kľúč a skús znova.';
 }
