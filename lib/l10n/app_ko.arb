@@ -5231,5 +5231,9 @@
   "ml_none": "없음",
   "ml_noOwnPosition": "거리 알 수 없음: 무전기에 위치가 없습니다",
   "ml_heard": "수신 {ago}",
-  "ml_distanceDir": "{dir, select, n{북} ne{북동} e{동} se{남동} s{남} sw{남서} w{서} nw{북서} other{}}쪽 {distance}"
+  "ml_distanceDir": "{dir, select, n{북} ne{북동} e{동} se{남동} s{남} sw{남서} w{서} nw{북서} other{}}쪽 {distance}",
+  "deliv_failedMarker": "전달 안 됨",
+  "deliv_failedMarkerHint": "{name}에게 보낸 마지막 메시지가 전달되지 않았습니다. 이유와 해결 방법을 보여 줍니다.",
+  "deliv_retryFlood": "플러드로 다시 보내기",
+  "deliv_pickRoute": "경로를 고른 뒤 다시 보내기"
 }

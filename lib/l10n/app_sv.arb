@@ -5097,5 +5097,9 @@
   "ml_none": "Inga",
   "ml_noOwnPosition": "Okänt avstånd: din radio har ingen position",
   "ml_heard": "hörd {ago}",
-  "ml_distanceDir": "{distance} åt {dir, select, n{norr} ne{nordost} e{öster} se{sydost} s{söder} sw{sydväst} w{väster} nw{nordväst} other{}}"
+  "ml_distanceDir": "{distance} åt {dir, select, n{norr} ne{nordost} e{öster} se{sydost} s{söder} sw{sydväst} w{väster} nw{nordväst} other{}}",
+  "deliv_failedMarker": "Inte levererat",
+  "deliv_failedMarkerHint": "Ditt senaste meddelande till {name} levererades inte. Visar varför och hur du åtgärdar det.",
+  "deliv_retryFlood": "Försök igen med flood",
+  "deliv_pickRoute": "Välj en väg och försök igen"
 }

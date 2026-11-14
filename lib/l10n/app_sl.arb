@@ -5097,5 +5097,9 @@
   "ml_none": "Nič",
   "ml_noOwnPosition": "Razdalja neznana: vaš radio nima položaja",
   "ml_heard": "slišan {ago}",
-  "ml_distanceDir": "{distance}, smer: {dir, select, n{sever} ne{severovzhod} e{vzhod} se{jugovzhod} s{jug} sw{jugozahod} w{zahod} nw{severozahod} other{}}"
+  "ml_distanceDir": "{distance}, smer: {dir, select, n{sever} ne{severovzhod} e{vzhod} se{jugovzhod} s{jug} sw{jugozahod} w{zahod} nw{severozahod} other{}}",
+  "deliv_failedMarker": "Ni dostavljeno",
+  "deliv_failedMarkerHint": "Tvoje zadnje sporočilo za {name} ni bilo dostavljeno. Pokaže, zakaj in kako to popraviti.",
+  "deliv_retryFlood": "Poskusi znova s poplavljanjem",
+  "deliv_pickRoute": "Izberi pot in poskusi znova"
 }

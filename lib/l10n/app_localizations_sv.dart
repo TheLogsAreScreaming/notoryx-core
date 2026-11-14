@@ -13302,4 +13302,18 @@ class AppLocalizationsSv extends AppLocalizations {
     });
     return '$distance åt $_temp0';
   }
+
+  @override
+  String get deliv_failedMarker => 'Inte levererat';
+
+  @override
+  String deliv_failedMarkerHint(String name) {
+    return 'Ditt senaste meddelande till $name levererades inte. Visar varför och hur du åtgärdar det.';
+  }
+
+  @override
+  String get deliv_retryFlood => 'Försök igen med flood';
+
+  @override
+  String get deliv_pickRoute => 'Välj en väg och försök igen';
 }

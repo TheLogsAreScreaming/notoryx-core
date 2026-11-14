@@ -5231,5 +5231,9 @@
   "ml_none": "Keine",
   "ml_noOwnPosition": "Entfernung unbekannt: dein Funkgerät hat keine Position",
   "ml_heard": "gehört {ago}",
-  "ml_distanceDir": "{distance} Richtung {dir, select, n{Norden} ne{Nordosten} e{Osten} se{Südosten} s{Süden} sw{Südwesten} w{Westen} nw{Nordwesten} other{}}"
+  "ml_distanceDir": "{distance} Richtung {dir, select, n{Norden} ne{Nordosten} e{Osten} se{Südosten} s{Süden} sw{Südwesten} w{Westen} nw{Nordwesten} other{}}",
+  "deliv_failedMarker": "Nicht zugestellt",
+  "deliv_failedMarkerHint": "Deine letzte Nachricht an {name} wurde nicht zugestellt. Zeigt den Grund und wie du es behebst.",
+  "deliv_retryFlood": "Per Flutung erneut senden",
+  "deliv_pickRoute": "Route wählen, dann erneut senden"
 }

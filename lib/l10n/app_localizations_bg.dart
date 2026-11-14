@@ -13384,4 +13384,18 @@ class AppLocalizationsBg extends AppLocalizations {
     });
     return '$distance на $_temp0';
   }
+
+  @override
+  String get deliv_failedMarker => 'Не е доставено';
+
+  @override
+  String deliv_failedMarkerHint(String name) {
+    return 'Последното ти съобщение до $name не е доставено. Показва защо и как да се поправи.';
+  }
+
+  @override
+  String get deliv_retryFlood => 'Повтори чрез наводняване';
+
+  @override
+  String get deliv_pickRoute => 'Избери маршрут и повтори';
 }

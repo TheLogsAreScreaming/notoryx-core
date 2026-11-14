@@ -5135,5 +5135,9 @@
   "ml_none": "Brak",
   "ml_noOwnPosition": "Odległość nieznana: twoje radio nie ma pozycji",
   "ml_heard": "słyszany {ago}",
-  "ml_distanceDir": "{distance}, kierunek: {dir, select, n{północ} ne{północny wschód} e{wschód} se{południowy wschód} s{południe} sw{południowy zachód} w{zachód} nw{północny zachód} other{}}"
+  "ml_distanceDir": "{distance}, kierunek: {dir, select, n{północ} ne{północny wschód} e{wschód} se{południowy wschód} s{południe} sw{południowy zachód} w{zachód} nw{północny zachód} other{}}",
+  "deliv_failedMarker": "Nie dostarczono",
+  "deliv_failedMarkerHint": "Twoja ostatnia wiadomość do {name} nie została dostarczona. Pokazuje dlaczego i jak to naprawić.",
+  "deliv_retryFlood": "Ponów przez zalewanie",
+  "deliv_pickRoute": "Wybierz trasę i ponów"
 }

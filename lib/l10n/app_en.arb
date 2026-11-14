@@ -6979,5 +6979,10 @@
   "ml_heard": "heard {ago}",
   "ml_distanceDir": "{distance} {dir, select, n{north} ne{north-east} e{east} se{south-east} s{south} sw{south-west} w{west} nw{north-west} other{}}",
   "@ml_distanceDir": {"placeholders": {"distance": {"type": "String"}, "dir": {"type": "String"}}},
-  "@ml_heard": {"placeholders": {"ago": {"type": "String"}}}
+  "@ml_heard": {"placeholders": {"ago": {"type": "String"}}},
+  "deliv_failedMarker": "Not delivered",
+  "deliv_failedMarkerHint": "Your last message to {name} wasn't delivered. Shows why and how to fix it.",
+  "@deliv_failedMarkerHint": {"placeholders": {"name": {"type": "String"}}},
+  "deliv_retryFlood": "Retry by flood",
+  "deliv_pickRoute": "Choose a route, then retry"
 }

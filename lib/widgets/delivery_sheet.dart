@@ -33,6 +33,45 @@ String deliveryVerdictText(
   DeliveryVerdict.failedNoAck => l10n.deliv_vNoAck,
 };
 
+/// A fix offered for a message that didn't get through.
+enum DeliveryFix {
+  /// Send it again the usual way.
+  retry,
+
+  /// Send it again by flood, this once, without changing the saved route.
+  retryByFlood,
+
+  /// Choose the route to this contact, then send it again.
+  pickRoute,
+}
+
+/// The fixes worth offering for [d], most likely first; empty unless it
+/// failed.
+List<DeliveryFix> deliveryFixesFor(DeliveryDiagnosis d) {
+  final flood = d.lastRouteFlood ? null : DeliveryFix.retryByFlood;
+  return switch (d.verdict) {
+    // The radio never took it: nothing about the route to change yet.
+    DeliveryVerdict.notSent => [DeliveryFix.retry],
+    // Only the saved route was tried.
+    DeliveryVerdict.failedNoFlood => [
+      ?flood,
+      DeliveryFix.retry,
+      DeliveryFix.pickRoute,
+    ],
+    // They're probably out of range; a flood reaches furthest.
+    DeliveryVerdict.failedQuiet => [?flood, DeliveryFix.retry],
+    // Every route was tried: try again, or pick a different one.
+    DeliveryVerdict.failedNoAck => [
+      DeliveryFix.retry,
+      ?flood,
+      DeliveryFix.pickRoute,
+    ],
+    DeliveryVerdict.delivered ||
+    DeliveryVerdict.deliveredByFlood ||
+    DeliveryVerdict.pending => const [],
+  };
+}
+
 /// Shows how an outgoing direct message got on: queued, sent, attempts,
 /// last route and confirmation, with a plain-words verdict.
 Future<void> showDeliverySheet(
@@ -40,6 +79,8 @@ Future<void> showDeliverySheet(
   required Message message,
   required Contact contact,
   VoidCallback? onRetry,
+  VoidCallback? onRetryByFlood,
+  VoidCallback? onPickRoute,
 }) {
   final settings = context.read<AppSettingsService>().settings;
   final d = diagnoseDelivery(
@@ -48,17 +89,23 @@ Future<void> showDeliverySheet(
     floodAttempts: settings.messageFloodAttempts,
     contact: contact,
   );
+  VoidCallback? closing(BuildContext sheet, VoidCallback? action) =>
+      action == null
+      ? null
+      : () {
+          Navigator.pop(sheet);
+          action();
+        };
   return showMeshSheet<void>(
     context,
     builder: (sheet) => _DeliverySheet(
       diagnosis: d,
       contact: contact,
-      onRetry: onRetry == null
-          ? null
-          : () {
-              Navigator.pop(sheet);
-              onRetry();
-            },
+      fixes: {
+        DeliveryFix.retry: ?closing(sheet, onRetry),
+        DeliveryFix.retryByFlood: ?closing(sheet, onRetryByFlood),
+        DeliveryFix.pickRoute: ?closing(sheet, onPickRoute),
+      },
     ),
   );
 }
@@ -67,11 +114,13 @@ class _DeliverySheet extends StatelessWidget {
   const _DeliverySheet({
     required this.diagnosis,
     required this.contact,
-    this.onRetry,
+    required this.fixes,
   });
   final DeliveryDiagnosis diagnosis;
   final Contact contact;
-  final VoidCallback? onRetry;
+
+  /// What each offered fix does; a fix with no action isn't shown.
+  final Map<DeliveryFix, VoidCallback> fixes;
 
   @override
   Widget build(BuildContext context) {
@@ -88,13 +137,10 @@ class _DeliverySheet extends StatelessWidget {
       DeliveryVerdict.pending => (Icons.schedule, MeshPalette.warn),
       _ => (Icons.error_outline, MeshPalette.alert),
     };
-    final failed = switch (d.verdict) {
-      DeliveryVerdict.notSent ||
-      DeliveryVerdict.failedQuiet ||
-      DeliveryVerdict.failedNoFlood ||
-      DeliveryVerdict.failedNoAck => true,
-      _ => false,
-    };
+    final offered = [
+      for (final fix in deliveryFixesFor(d))
+        if (fixes[fix] case final action?) (fix, action),
+    ];
     final route = d.lastRouteFlood
         ? l10n.deliv_routeFlood
         : d.lastRouteHashes.isEmpty
@@ -218,14 +264,33 @@ class _DeliverySheet extends StatelessWidget {
                 ],
               ),
             ),
-            if (failed && onRetry != null)
+            if (offered.isNotEmpty)
               Padding(
                 padding: const EdgeInsets.all(MeshSpace.lg),
-                child: InstrumentButton(
-                  key: const ValueKey('delivery-retry'),
-                  label: l10n.common_retry,
-                  icon: Icons.refresh,
-                  onPressed: onRetry,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  spacing: MeshSpace.sm,
+                  children: [
+                    for (final (fix, action) in offered)
+                      InstrumentButton(
+                        key: ValueKey(switch (fix) {
+                          DeliveryFix.retry => 'delivery-retry',
+                          DeliveryFix.retryByFlood => 'delivery-retry-flood',
+                          DeliveryFix.pickRoute => 'delivery-pick-route',
+                        }),
+                        label: switch (fix) {
+                          DeliveryFix.retry => l10n.common_retry,
+                          DeliveryFix.retryByFlood => l10n.deliv_retryFlood,
+                          DeliveryFix.pickRoute => l10n.deliv_pickRoute,
+                        },
+                        icon: switch (fix) {
+                          DeliveryFix.retry => Icons.refresh,
+                          DeliveryFix.retryByFlood => Icons.cell_tower,
+                          DeliveryFix.pickRoute => Icons.alt_route,
+                        },
+                        onPressed: action,
+                      ),
+                  ],
                 ),
               )
             else

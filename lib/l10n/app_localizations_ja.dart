@@ -12798,4 +12798,18 @@ class AppLocalizationsJa extends AppLocalizations {
     });
     return '$_temp0へ$distance';
   }
+
+  @override
+  String get deliv_failedMarker => '未配信';
+
+  @override
+  String deliv_failedMarkerHint(String name) {
+    return '$name への最後のメッセージは配信されませんでした。理由と直し方を表示します。';
+  }
+
+  @override
+  String get deliv_retryFlood => 'フラッドで再送';
+
+  @override
+  String get deliv_pickRoute => '経路を選んで再送';
 }

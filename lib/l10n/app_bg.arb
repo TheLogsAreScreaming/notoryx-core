@@ -5097,5 +5097,9 @@
   "ml_none": "Няма",
   "ml_noOwnPosition": "Разстоянието е неизвестно: радиото ви няма позиция",
   "ml_heard": "чут {ago}",
-  "ml_distanceDir": "{distance} на {dir, select, n{север} ne{североизток} e{изток} se{югоизток} s{юг} sw{югозапад} w{запад} nw{северозапад} other{}}"
+  "ml_distanceDir": "{distance} на {dir, select, n{север} ne{североизток} e{изток} se{югоизток} s{юг} sw{югозапад} w{запад} nw{северозапад} other{}}",
+  "deliv_failedMarker": "Не е доставено",
+  "deliv_failedMarkerHint": "Последното ти съобщение до {name} не е доставено. Показва защо и как да се поправи.",
+  "deliv_retryFlood": "Повтори чрез наводняване",
+  "deliv_pickRoute": "Избери маршрут и повтори"
 }

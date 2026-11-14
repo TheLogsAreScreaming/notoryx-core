@@ -5102,5 +5102,9 @@
   "ml_none": "无",
   "ml_noOwnPosition": "距离未知:你的电台没有位置",
   "ml_heard": "收到于 {ago}",
-  "ml_distanceDir": "{dir, select, n{北} ne{东北} e{东} se{东南} s{南} sw{西南} w{西} nw{西北} other{}}方向 {distance}"
+  "ml_distanceDir": "{dir, select, n{北} ne{东北} e{东} se{东南} s{南} sw{西南} w{西} nw{西北} other{}}方向 {distance}",
+  "deliv_failedMarker": "未送达",
+  "deliv_failedMarkerHint": "你发给 {name} 的最后一条消息未送达。显示原因和解决办法。",
+  "deliv_retryFlood": "通过泛洪重试",
+  "deliv_pickRoute": "选择路由后重试"
 }

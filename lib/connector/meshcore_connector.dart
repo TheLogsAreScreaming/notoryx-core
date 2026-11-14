@@ -781,6 +781,19 @@ class MeshCoreConnector extends ChangeNotifier {
     return _conversations[contact.publicKeyHex] ?? [];
   }
 
+  /// The last message you sent [contact], when it failed; null otherwise.
+  /// A later message that's still going or got through clears it.
+  Message? lastFailedMessage(Contact contact) {
+    final messages = _conversations[contact.publicKeyHex];
+    if (messages == null) return null;
+    for (var i = messages.length - 1; i >= 0; i--) {
+      final m = messages[i];
+      if (!m.isOutgoing || m.isCli) continue;
+      return m.status == MessageStatus.failed ? m : null;
+    }
+    return null;
+  }
+
   /// Puts [message] in its conversation, for tests.
   @visibleForTesting
   void debugAddMessage(Message message) {
