@@ -3146,7 +3146,6 @@
   "bastionTools_backup": "Šifrovaná záloha",
   "bastionTools_backupHint": "Uložte nastavenia, kontakty a kľúče, voliteľne s históriou četu",
   "bastionTools_fieldOpsHint": "Hlásenia, pripravenosť, terénny denník, automatizácie a porovnania",
-  "bastionTools_mapHint": "Živá mapa, relácie záznamu, nástroje offline máp a regióny",
   "bastionTools_pathAnalysis": "Analýza ciest",
   "bastionTools_pathHint": "Trasy, objavovanie a analýza ciest",
   "bastionTools_repeaterHint": "Stav, prihlásenie, telemetria, susedia a správa",
@@ -3270,7 +3269,6 @@
   "fieldStats_sensors": "Senzory",
   "fieldStats_direct": "Priame",
   "mapHub_title": "Terénna mapa NOTORYX",
-  "mapHub_intro": "Živé mapy, offline oblasti, regionálne profily a terénne relácie pokrytia NOTORYX Core.",
   "mapHub_captureHint": "Spustiť a zastaviť terénnu reláciu pokrytia",
   "mapHub_badgeNew": "NOVÉ",
   "mapHub_liveMap": "Živá mapa siete",
@@ -5097,5 +5095,12 @@
   "ml_none": "Žiadne",
   "ml_noOwnPosition": "Vzdialenosť neznáma: vaše rádio nemá polohu",
   "ml_heard": "počutý {ago}",
-  "ml_distanceDir": "{distance}, smer: {dir, select, n{sever} ne{severovýchod} e{východ} se{juhovýchod} s{juh} sw{juhozápad} w{západ} nw{severozápad} other{}}"
+  "ml_distanceDir": "{distance}, smer: {dir, select, n{sever} ne{severovýchod} e{východ} se{juhovýchod} s{juh} sw{juhozápad} w{západ} nw{severozápad} other{}}",
+  "mapHub_introAll": "Všetky nástroje pokrytia a máp na jednom mieste: pozri, kam dosiahne tvoje rádio, a priprav si mapy a regióny na offline použitie.",
+  "mapHub_coverageSection": "Pokrytie",
+  "mapHub_mapsSection": "Mapy",
+  "bastionTools_mapHintAll": "Záznam pokrytia, wardrive, šesťuholníky pokrytia, pokrytie a hľadanie antény, offline mapy a regióny",
+  "toolsMoved_title": "Niektoré nástroje sa presunuli",
+  "toolsMoved_body": "Wardrive, šesťuholníky pokrytia, pokrytie antény a hľadanie antény sú teraz spolu v sekcii „{mapHub}“. Nástroje opakovačov, ktoré boli uvedené dvakrát, sú teraz len v sekcii „{repeaterTools}“. Vyhľadávanie tu ich stále nájde.",
+  "toolsMoved_ok": "Rozumiem"
 }

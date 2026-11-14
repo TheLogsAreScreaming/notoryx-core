@@ -6770,10 +6770,6 @@ class AppLocalizationsPl extends AppLocalizations {
       'Meldunki, gotowość, dziennik terenowy, automatyzacje i porównania';
 
   @override
-  String get bastionTools_mapHint =>
-      'Mapa na żywo, sesje rejestracji, narzędzia map offline i regiony';
-
-  @override
   String get bastionTools_pathAnalysis => 'Analiza ścieżek';
 
   @override
@@ -7197,10 +7193,6 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get mapHub_title => 'Mapa terenowa NOTORYX';
-
-  @override
-  String get mapHub_intro =>
-      'Mapy na żywo, obszary offline, profile regionalne i terenowe sesje zasięgu NOTORYX Core.';
 
   @override
   String get mapHub_captureHint =>
@@ -13432,4 +13424,29 @@ class AppLocalizationsPl extends AppLocalizations {
     });
     return '$distance, kierunek: $_temp0';
   }
+
+  @override
+  String get mapHub_introAll =>
+      'Wszystkie narzędzia zasięgu i map w jednym miejscu: sprawdź, dokąd sięga twoje radio, a potem przygotuj mapy i regiony na brak sieci.';
+
+  @override
+  String get mapHub_coverageSection => 'Zasięg';
+
+  @override
+  String get mapHub_mapsSection => 'Mapy';
+
+  @override
+  String get bastionTools_mapHintAll =>
+      'Zapis zasięgu, wardrive, sześciokąty zasięgu, zasięg i szukanie anteny, mapy offline i regiony';
+
+  @override
+  String get toolsMoved_title => 'Niektóre narzędzia zostały przeniesione';
+
+  @override
+  String toolsMoved_body(String mapHub, String repeaterTools) {
+    return 'Wardrive, sześciokąty zasięgu, zasięg anteny i szukanie anteny są teraz razem w sekcji „$mapHub”. Narzędzia przekaźników, które były wymienione dwa razy, są teraz tylko w sekcji „$repeaterTools”. Wyszukiwanie tutaj nadal je znajduje.';
+  }
+
+  @override
+  String get toolsMoved_ok => 'Rozumiem';
 }

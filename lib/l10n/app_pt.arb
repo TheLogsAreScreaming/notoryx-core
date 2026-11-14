@@ -3146,7 +3146,6 @@
   "bastionTools_backup": "Cópia de segurança cifrada",
   "bastionTools_backupHint": "Guarde definições, contactos e chaves, com histórico de chat opcional",
   "bastionTools_fieldOpsHint": "Check-ins, preparação, registo de campo, automatizações e comparações",
-  "bastionTools_mapHint": "Mapa em direto, sessões de captura, ferramentas de mapas offline e regiões",
   "bastionTools_pathAnalysis": "Análise de caminhos",
   "bastionTools_pathHint": "Rotas, descoberta e inteligência de caminhos",
   "bastionTools_repeaterHint": "Estado, início de sessão, telemetria, vizinhos e administração",
@@ -3270,7 +3269,6 @@
   "fieldStats_sensors": "Sensores",
   "fieldStats_direct": "Diretos",
   "mapHub_title": "Mapa de campo NOTORYX",
-  "mapHub_intro": "Mapas em direto, áreas offline, perfis regionais e sessões de cobertura de campo do NOTORYX Core.",
   "mapHub_captureHint": "Inicie e pare uma sessão de cobertura de campo",
   "mapHub_badgeNew": "NOVO",
   "mapHub_liveMap": "Mapa da malha em direto",
@@ -5097,5 +5095,12 @@
   "ml_none": "Nenhum",
   "ml_noOwnPosition": "Distância desconhecida: o seu rádio não tem posição",
   "ml_heard": "ouvido {ago}",
-  "ml_distanceDir": "{distance} a {dir, select, n{norte} ne{nordeste} e{este} se{sudeste} s{sul} sw{sudoeste} w{oeste} nw{noroeste} other{}}"
+  "ml_distanceDir": "{distance} a {dir, select, n{norte} ne{nordeste} e{este} se{sudeste} s{sul} sw{sudoeste} w{oeste} nw{noroeste} other{}}",
+  "mapHub_introAll": "Todas as ferramentas de cobertura e mapas num só lugar: veja até onde o seu rádio chega e deixe mapas e regiões prontos para quando estiver offline.",
+  "mapHub_coverageSection": "Cobertura",
+  "mapHub_mapsSection": "Mapas",
+  "bastionTools_mapHintAll": "Registo de cobertura, wardrive, hexágonos de cobertura, cobertura e busca de antena, mapas offline e regiões",
+  "toolsMoved_title": "Algumas ferramentas mudaram de lugar",
+  "toolsMoved_body": "Wardrive, hexágonos de cobertura, cobertura de antena e busca de antena estão agora juntos em {mapHub}. As ferramentas de repetidores que apareciam duas vezes estão agora só em {repeaterTools}. A pesquisa aqui continua a encontrá-los.",
+  "toolsMoved_ok": "Entendi"
 }

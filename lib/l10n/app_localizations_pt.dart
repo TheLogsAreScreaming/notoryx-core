@@ -6729,10 +6729,6 @@ class AppLocalizationsPt extends AppLocalizations {
       'Check-ins, preparação, registo de campo, automatizações e comparações';
 
   @override
-  String get bastionTools_mapHint =>
-      'Mapa em direto, sessões de captura, ferramentas de mapas offline e regiões';
-
-  @override
   String get bastionTools_pathAnalysis => 'Análise de caminhos';
 
   @override
@@ -7156,10 +7152,6 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get mapHub_title => 'Mapa de campo NOTORYX';
-
-  @override
-  String get mapHub_intro =>
-      'Mapas em direto, áreas offline, perfis regionais e sessões de cobertura de campo do NOTORYX Core.';
 
   @override
   String get mapHub_captureHint =>
@@ -13388,4 +13380,29 @@ class AppLocalizationsPt extends AppLocalizations {
     });
     return '$distance a $_temp0';
   }
+
+  @override
+  String get mapHub_introAll =>
+      'Todas as ferramentas de cobertura e mapas num só lugar: veja até onde o seu rádio chega e deixe mapas e regiões prontos para quando estiver offline.';
+
+  @override
+  String get mapHub_coverageSection => 'Cobertura';
+
+  @override
+  String get mapHub_mapsSection => 'Mapas';
+
+  @override
+  String get bastionTools_mapHintAll =>
+      'Registo de cobertura, wardrive, hexágonos de cobertura, cobertura e busca de antena, mapas offline e regiões';
+
+  @override
+  String get toolsMoved_title => 'Algumas ferramentas mudaram de lugar';
+
+  @override
+  String toolsMoved_body(String mapHub, String repeaterTools) {
+    return 'Wardrive, hexágonos de cobertura, cobertura de antena e busca de antena estão agora juntos em $mapHub. As ferramentas de repetidores que apareciam duas vezes estão agora só em $repeaterTools. A pesquisa aqui continua a encontrá-los.';
+  }
+
+  @override
+  String get toolsMoved_ok => 'Entendi';
 }

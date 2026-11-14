@@ -6634,10 +6634,6 @@ class AppLocalizationsEn extends AppLocalizations {
       'Check-ins, readiness, Field Log, automations and comparisons';
 
   @override
-  String get bastionTools_mapHint =>
-      'Live map, capture sessions, offline map tools and regions';
-
-  @override
   String get bastionTools_pathAnalysis => 'Path analysis';
 
   @override
@@ -7057,10 +7053,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get mapHub_title => 'NOTORYX field map';
-
-  @override
-  String get mapHub_intro =>
-      'Live maps, offline areas, regional profiles and NOTORYX Core field coverage sessions.';
 
   @override
   String get mapHub_captureHint => 'Start and stop a field coverage session';
@@ -13252,4 +13244,29 @@ class AppLocalizationsEn extends AppLocalizations {
     });
     return '$distance $_temp0';
   }
+
+  @override
+  String get mapHub_introAll =>
+      'Every coverage and map tool in one place: see where your radio reaches, then keep maps and regions ready for when you\'re offline.';
+
+  @override
+  String get mapHub_coverageSection => 'Coverage';
+
+  @override
+  String get mapHub_mapsSection => 'Maps';
+
+  @override
+  String get bastionTools_mapHintAll =>
+      'Coverage capture, wardrive, coverage hexagons, antenna coverage and hunt, offline maps and regions';
+
+  @override
+  String get toolsMoved_title => 'Some tools moved';
+
+  @override
+  String toolsMoved_body(String mapHub, String repeaterTools) {
+    return 'Wardrive, coverage hexagons, antenna coverage and antenna hunt are now together in $mapHub. Repeater tools that were listed twice are now only in $repeaterTools. Searching here still finds them all.';
+  }
+
+  @override
+  String get toolsMoved_ok => 'Got it';
 }

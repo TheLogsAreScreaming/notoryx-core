@@ -8,7 +8,13 @@ import 'map_screen.dart';
 import 'map_cache_screen.dart';
 import 'region_management_screen.dart';
 import 'bastion_coverage_capture_screen.dart';
+import 'antenna_coverage_screen.dart';
+import 'antenna_hunt_screen.dart';
+import 'coverage_hex_screen.dart';
+import 'wardrive_screen.dart';
+import '../utils/platform_info.dart';
 
+/// Every coverage tool and map tool in one place.
 class BastionMapHubScreen extends StatelessWidget {
   const BastionMapHubScreen({super.key});
   static Color get _cyan => MeshPalette.accent;
@@ -55,13 +61,13 @@ class BastionMapHubScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    context.l10n.mapHub_intro,
+                    context.l10n.mapHub_introAll,
                     style: TextStyle(color: _muted, height: 1.45),
                   ),
                 ],
               ),
             ),
-            const SizedBox(height: 18),
+            _SectionLabel(context.l10n.mapHub_coverageSection),
             _MapAction(
               icon: Icons.radio_button_checked,
               title: context.l10n.bastion_coverageCapture,
@@ -73,7 +79,44 @@ class BastionMapHubScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 12),
+            for (final (icon, title, subtitle, page) in [
+              (
+                Icons.route_outlined,
+                context.l10n.wardrive_title,
+                context.l10n.wardrive_hint,
+                const WardriveScreen() as Widget,
+              ),
+              if (!PlatformInfo.isWeb)
+                (
+                  Icons.hexagon_outlined,
+                  context.l10n.coverageHex_title,
+                  context.l10n.coverageHex_toolSubtitle,
+                  const CoverageHexScreen(),
+                ),
+              (
+                Icons.cell_tower,
+                context.l10n.tools_antenna,
+                context.l10n.tools_antennaHint,
+                const AntennaCoverageScreen(),
+              ),
+              (
+                Icons.track_changes,
+                context.l10n.hunt_title,
+                context.l10n.hunt_toolSubtitle,
+                const AntennaHuntScreen(),
+              ),
+            ]) ...[
+              const SizedBox(height: 12),
+              _MapAction(
+                icon: icon,
+                title: title,
+                subtitle: subtitle,
+                onTap: () => Navigator.of(
+                  context,
+                ).push(MaterialPageRoute<void>(builder: (_) => page)),
+              ),
+            ],
+            _SectionLabel(context.l10n.mapHub_mapsSection),
             _MapAction(
               icon: Icons.public_rounded,
               title: context.l10n.mapHub_liveMap,
@@ -122,15 +165,39 @@ class BastionMapHubScreen extends StatelessWidget {
   );
 }
 
+/// A section heading, read out as a heading.
+class _SectionLabel extends StatelessWidget {
+  const _SectionLabel(this.text);
+  final String text;
+
+  @override
+  Widget build(BuildContext context) => Padding(
+    padding: const EdgeInsets.fromLTRB(4, 22, 4, 10),
+    child: Semantics(
+      header: true,
+      child: Text(
+        text.toUpperCase(),
+        style: TextStyle(
+          color: BastionMapHubScreen._muted,
+          fontSize: 12,
+          fontWeight: FontWeight.w800,
+          letterSpacing: 1.1,
+        ),
+      ),
+    ),
+  );
+}
+
 class _MapAction extends StatelessWidget {
   final IconData icon;
-  final String title, subtitle, badge;
+  final String title, subtitle;
+  final String? badge;
   final VoidCallback onTap;
   const _MapAction({
     required this.icon,
     required this.title,
     required this.subtitle,
-    required this.badge,
+    this.badge,
     required this.onTap,
   });
   @override
@@ -170,27 +237,28 @@ class _MapAction extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 7,
-                          vertical: 3,
-                        ),
-                        decoration: BoxDecoration(
-                          color: BastionMapHubScreen._cyan.withValues(
-                            alpha: .12,
+                      if (badge case final badge?)
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 7,
+                            vertical: 3,
                           ),
-                          borderRadius: BorderRadius.circular(999),
-                        ),
-                        child: Text(
-                          badge,
-                          style: TextStyle(
-                            color: BastionMapHubScreen._cyan,
-                            fontSize: 9,
-                            fontWeight: FontWeight.w900,
-                            letterSpacing: .7,
+                          decoration: BoxDecoration(
+                            color: BastionMapHubScreen._cyan.withValues(
+                              alpha: .12,
+                            ),
+                            borderRadius: BorderRadius.circular(999),
+                          ),
+                          child: Text(
+                            badge,
+                            style: TextStyle(
+                              color: BastionMapHubScreen._cyan,
+                              fontSize: 9,
+                              fontWeight: FontWeight.w900,
+                              letterSpacing: .7,
+                            ),
                           ),
                         ),
-                      ),
                     ],
                   ),
                   const SizedBox(height: 4),

@@ -3951,7 +3951,6 @@
   "bastionTools_backup": "Encrypted backup",
   "bastionTools_backupHint": "Save settings, contacts and keys with optional chat history",
   "bastionTools_fieldOpsHint": "Check-ins, readiness, Field Log, automations and comparisons",
-  "bastionTools_mapHint": "Live map, capture sessions, offline map tools and regions",
   "bastionTools_pathAnalysis": "Path analysis",
   "bastionTools_pathHint": "Routes, discovery and path intelligence",
   "bastionTools_repeaterHint": "Status, login, telemetry, neighbors and administration",
@@ -4153,7 +4152,6 @@
   "fieldStats_sensors": "Sensors",
   "fieldStats_direct": "Direct",
   "mapHub_title": "NOTORYX field map",
-  "mapHub_intro": "Live maps, offline areas, regional profiles and NOTORYX Core field coverage sessions.",
   "mapHub_captureHint": "Start and stop a field coverage session",
   "mapHub_badgeNew": "NEW",
   "mapHub_liveMap": "Live mesh map",
@@ -6979,5 +6977,13 @@
   "ml_heard": "heard {ago}",
   "ml_distanceDir": "{distance} {dir, select, n{north} ne{north-east} e{east} se{south-east} s{south} sw{south-west} w{west} nw{north-west} other{}}",
   "@ml_distanceDir": {"placeholders": {"distance": {"type": "String"}, "dir": {"type": "String"}}},
-  "@ml_heard": {"placeholders": {"ago": {"type": "String"}}}
+  "@ml_heard": {"placeholders": {"ago": {"type": "String"}}},
+  "mapHub_introAll": "Every coverage and map tool in one place: see where your radio reaches, then keep maps and regions ready for when you're offline.",
+  "mapHub_coverageSection": "Coverage",
+  "mapHub_mapsSection": "Maps",
+  "bastionTools_mapHintAll": "Coverage capture, wardrive, coverage hexagons, antenna coverage and hunt, offline maps and regions",
+  "toolsMoved_title": "Some tools moved",
+  "toolsMoved_body": "Wardrive, coverage hexagons, antenna coverage and antenna hunt are now together in {mapHub}. Repeater tools that were listed twice are now only in {repeaterTools}. Searching here still finds them all.",
+  "@toolsMoved_body": {"placeholders": {"mapHub": {"type": "String"}, "repeaterTools": {"type": "String"}}},
+  "toolsMoved_ok": "Got it"
 }

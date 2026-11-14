@@ -6726,10 +6726,6 @@ class AppLocalizationsHu extends AppLocalizations {
       'Bejelentkezések, felkészültség, terepnapló, automatizálások és összehasonlítások';
 
   @override
-  String get bastionTools_mapHint =>
-      'Élő térkép, rögzítési munkamenetek, offline térképeszközök és régiók';
-
-  @override
   String get bastionTools_pathAnalysis => 'Útelemzés';
 
   @override
@@ -7151,10 +7147,6 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get mapHub_title => 'NOTORYX terepi térkép';
-
-  @override
-  String get mapHub_intro =>
-      'Élő térképek, offline területek, regionális profilok és NOTORYX Core terepi lefedettségi munkamenetek.';
 
   @override
   String get mapHub_captureHint =>
@@ -13389,4 +13381,29 @@ class AppLocalizationsHu extends AppLocalizations {
     });
     return '$distance, $_temp0';
   }
+
+  @override
+  String get mapHub_introAll =>
+      'Minden lefedettségi és térképes eszköz egy helyen: nézd meg, meddig ér el a rádiód, aztán készítsd elő a térképeket és régiókat offline használatra.';
+
+  @override
+  String get mapHub_coverageSection => 'Lefedettség';
+
+  @override
+  String get mapHub_mapsSection => 'Térképek';
+
+  @override
+  String get bastionTools_mapHintAll =>
+      'Lefedettség rögzítése, wardrive, lefedettségi hatszögek, antenna-lefedettség és -keresés, offline térképek és régiók';
+
+  @override
+  String get toolsMoved_title => 'Néhány eszköz máshová került';
+
+  @override
+  String toolsMoved_body(String mapHub, String repeaterTools) {
+    return 'A wardrive, a lefedettségi hatszögek, az antenna-lefedettség és az antennakeresés most együtt van itt: $mapHub. A kétszer felsorolt átjátszó-eszközök most csak itt találhatók: $repeaterTools. Az itteni keresés továbbra is megtalálja őket.';
+  }
+
+  @override
+  String get toolsMoved_ok => 'Értem';
 }

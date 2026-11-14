@@ -6265,9 +6265,6 @@ class AppLocalizationsZh extends AppLocalizations {
   String get bastionTools_fieldOpsHint => '报到、准备、野外日志、自动化和对比';
 
   @override
-  String get bastionTools_mapHint => '实时地图、记录会话、离线地图工具和区域';
-
-  @override
   String get bastionTools_pathAnalysis => '路径分析';
 
   @override
@@ -6669,9 +6666,6 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get mapHub_title => 'NOTORYX 野外地图';
-
-  @override
-  String get mapHub_intro => '实时地图、离线区域、区域配置和 NOTORYX Core 野外覆盖会话。';
 
   @override
   String get mapHub_captureHint => '开始和停止野外覆盖会话';
@@ -12558,4 +12552,27 @@ class AppLocalizationsZh extends AppLocalizations {
     });
     return '$_temp0方向 $distance';
   }
+
+  @override
+  String get mapHub_introAll => '所有覆盖和地图工具都在这里：看看你的电台能覆盖多远，再为离线使用准备好地图和区域。';
+
+  @override
+  String get mapHub_coverageSection => '覆盖';
+
+  @override
+  String get mapHub_mapsSection => '地图';
+
+  @override
+  String get bastionTools_mapHintAll => '覆盖采集、扫街测试、覆盖六边形、天线覆盖与寻找、离线地图和区域';
+
+  @override
+  String get toolsMoved_title => '部分工具已移动';
+
+  @override
+  String toolsMoved_body(String mapHub, String repeaterTools) {
+    return '扫街测试、覆盖六边形、天线覆盖和天线寻找现在都在「$mapHub」中。之前出现两次的中继器工具现在只在「$repeaterTools」中。在这里搜索仍能找到它们。';
+  }
+
+  @override
+  String get toolsMoved_ok => '知道了';
 }

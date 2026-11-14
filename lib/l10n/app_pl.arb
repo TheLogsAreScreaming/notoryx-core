@@ -3184,7 +3184,6 @@
   "bastionTools_backup": "Szyfrowana kopia zapasowa",
   "bastionTools_backupHint": "Zapisz ustawienia, kontakty i klucze, opcjonalnie z historią czatów",
   "bastionTools_fieldOpsHint": "Meldunki, gotowość, dziennik terenowy, automatyzacje i porównania",
-  "bastionTools_mapHint": "Mapa na żywo, sesje rejestracji, narzędzia map offline i regiony",
   "bastionTools_pathAnalysis": "Analiza ścieżek",
   "bastionTools_pathHint": "Trasy, wykrywanie i analiza ścieżek",
   "bastionTools_repeaterHint": "Stan, logowanie, telemetria, sąsiedzi i administracja",
@@ -3308,7 +3307,6 @@
   "fieldStats_sensors": "Czujniki",
   "fieldStats_direct": "Bezpośrednie",
   "mapHub_title": "Mapa terenowa NOTORYX",
-  "mapHub_intro": "Mapy na żywo, obszary offline, profile regionalne i terenowe sesje zasięgu NOTORYX Core.",
   "mapHub_captureHint": "Rozpocznij i zatrzymaj terenową sesję zasięgu",
   "mapHub_badgeNew": "NOWE",
   "mapHub_liveMap": "Mapa sieci mesh na żywo",
@@ -5135,5 +5133,12 @@
   "ml_none": "Brak",
   "ml_noOwnPosition": "Odległość nieznana: twoje radio nie ma pozycji",
   "ml_heard": "słyszany {ago}",
-  "ml_distanceDir": "{distance}, kierunek: {dir, select, n{północ} ne{północny wschód} e{wschód} se{południowy wschód} s{południe} sw{południowy zachód} w{zachód} nw{północny zachód} other{}}"
+  "ml_distanceDir": "{distance}, kierunek: {dir, select, n{północ} ne{północny wschód} e{wschód} se{południowy wschód} s{południe} sw{południowy zachód} w{zachód} nw{północny zachód} other{}}",
+  "mapHub_introAll": "Wszystkie narzędzia zasięgu i map w jednym miejscu: sprawdź, dokąd sięga twoje radio, a potem przygotuj mapy i regiony na brak sieci.",
+  "mapHub_coverageSection": "Zasięg",
+  "mapHub_mapsSection": "Mapy",
+  "bastionTools_mapHintAll": "Zapis zasięgu, wardrive, sześciokąty zasięgu, zasięg i szukanie anteny, mapy offline i regiony",
+  "toolsMoved_title": "Niektóre narzędzia zostały przeniesione",
+  "toolsMoved_body": "Wardrive, sześciokąty zasięgu, zasięg anteny i szukanie anteny są teraz razem w sekcji „{mapHub}”. Narzędzia przekaźników, które były wymienione dwa razy, są teraz tylko w sekcji „{repeaterTools}”. Wyszukiwanie tutaj nadal je znajduje.",
+  "toolsMoved_ok": "Rozumiem"
 }

@@ -6408,9 +6408,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get bastionTools_fieldOpsHint => '체크인, 준비, 현장 로그, 자동화, 비교';
 
   @override
-  String get bastionTools_mapHint => '실시간 지도, 기록 세션, 오프라인 지도 도구, 지역';
-
-  @override
   String get bastionTools_pathAnalysis => '경로 분석';
 
   @override
@@ -6818,10 +6815,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get mapHub_title => 'NOTORYX 현장 지도';
-
-  @override
-  String get mapHub_intro =>
-      '실시간 지도, 오프라인 지역, 지역 프로필, NOTORYX Core 현장 커버리지 세션.';
 
   @override
   String get mapHub_captureHint => '현장 커버리지 세션 시작 및 중지';
@@ -12815,4 +12808,29 @@ class AppLocalizationsKo extends AppLocalizations {
     });
     return '$_temp0쪽 $distance';
   }
+
+  @override
+  String get mapHub_introAll =>
+      '커버리지와 지도 도구를 한곳에: 무전기가 어디까지 닿는지 확인하고, 오프라인에 대비해 지도와 지역을 준비하세요.';
+
+  @override
+  String get mapHub_coverageSection => '커버리지';
+
+  @override
+  String get mapHub_mapsSection => '지도';
+
+  @override
+  String get bastionTools_mapHintAll =>
+      '커버리지 기록, 워드라이브, 커버리지 육각형, 안테나 커버리지와 찾기, 오프라인 지도와 지역';
+
+  @override
+  String get toolsMoved_title => '일부 도구가 옮겨졌습니다';
+
+  @override
+  String toolsMoved_body(String mapHub, String repeaterTools) {
+    return '워드라이브, 커버리지 육각형, 안테나 커버리지, 안테나 찾기가 이제 $mapHub에 함께 있습니다. 두 번 표시되던 리피터 도구는 이제 $repeaterTools에만 있습니다. 여기서 검색하면 계속 찾을 수 있습니다.';
+  }
+
+  @override
+  String get toolsMoved_ok => '확인';
 }

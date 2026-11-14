@@ -6727,10 +6727,6 @@ class AppLocalizationsSl extends AppLocalizations {
       'Javljanja, pripravljenost, terenski dnevnik, avtomatizacije in primerjave';
 
   @override
-  String get bastionTools_mapHint =>
-      'Zemljevid v živo, seje zajema, orodja za zemljevide brez povezave in regije';
-
-  @override
   String get bastionTools_pathAnalysis => 'Analiza poti';
 
   @override
@@ -7153,10 +7149,6 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get mapHub_title => 'Terenski zemljevid NOTORYX';
-
-  @override
-  String get mapHub_intro =>
-      'Zemljevidi v živo, območja brez povezave, regionalni profili in terenske seje pokritosti NOTORYX Core.';
 
   @override
   String get mapHub_captureHint =>
@@ -13386,4 +13378,29 @@ class AppLocalizationsSl extends AppLocalizations {
     });
     return '$distance, smer: $_temp0';
   }
+
+  @override
+  String get mapHub_introAll =>
+      'Vsa orodja za pokritost in zemljevide na enem mestu: poglej, kam seže tvoj radio, nato pripravi zemljevide in regije za brez povezave.';
+
+  @override
+  String get mapHub_coverageSection => 'Pokritost';
+
+  @override
+  String get mapHub_mapsSection => 'Zemljevidi';
+
+  @override
+  String get bastionTools_mapHintAll =>
+      'Zajem pokritosti, wardrive, šesterokotniki pokritosti, pokritost in iskanje antene, zemljevidi brez povezave in regije';
+
+  @override
+  String get toolsMoved_title => 'Nekatera orodja so premaknjena';
+
+  @override
+  String toolsMoved_body(String mapHub, String repeaterTools) {
+    return 'Wardrive, šesterokotniki pokritosti, pokritost antene in iskanje antene so zdaj skupaj v razdelku »$mapHub«. Orodja za repetitorje, ki so bila navedena dvakrat, so zdaj samo v razdelku »$repeaterTools«. Iskanje tukaj jih še vedno najde.';
+  }
+
+  @override
+  String get toolsMoved_ok => 'Razumem';
 }

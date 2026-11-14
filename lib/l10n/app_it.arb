@@ -3280,7 +3280,6 @@
   "bastionTools_backup": "Backup crittografato",
   "bastionTools_backupHint": "Salva impostazioni, contatti e chiavi, con cronologia chat facoltativa",
   "bastionTools_fieldOpsHint": "Check-in, preparazione, registro di campo, automazioni e confronti",
-  "bastionTools_mapHint": "Mappa in tempo reale, sessioni di rilevamento, strumenti mappe offline e regioni",
   "bastionTools_pathAnalysis": "Analisi dei cammini",
   "bastionTools_pathHint": "Percorsi, scoperta e analisi dei cammini",
   "bastionTools_repeaterHint": "Stato, accesso, telemetria, vicini e amministrazione",
@@ -3404,7 +3403,6 @@
   "fieldStats_sensors": "Sensori",
   "fieldStats_direct": "Diretti",
   "mapHub_title": "Mappa da campo NOTORYX",
-  "mapHub_intro": "Mappe in tempo reale, aree offline, profili regionali e sessioni di copertura sul campo di NOTORYX Core.",
   "mapHub_captureHint": "Avvia e ferma una sessione di copertura sul campo",
   "mapHub_badgeNew": "NUOVO",
   "mapHub_liveMap": "Mappa mesh in tempo reale",
@@ -5231,5 +5229,12 @@
   "ml_none": "Nessuno",
   "ml_noOwnPosition": "Distanza sconosciuta: la tua radio non ha una posizione",
   "ml_heard": "sentito {ago}",
-  "ml_distanceDir": "{distance} a {dir, select, n{nord} ne{nord-est} e{est} se{sud-est} s{sud} sw{sud-ovest} w{ovest} nw{nord-ovest} other{}}"
+  "ml_distanceDir": "{distance} a {dir, select, n{nord} ne{nord-est} e{est} se{sud-est} s{sud} sw{sud-ovest} w{ovest} nw{nord-ovest} other{}}",
+  "mapHub_introAll": "Tutti gli strumenti di copertura e mappe in un unico posto: guarda fin dove arriva la tua radio, poi tieni pronte mappe e regioni per quando sei offline.",
+  "mapHub_coverageSection": "Copertura",
+  "mapHub_mapsSection": "Mappe",
+  "bastionTools_mapHintAll": "Rilevamento copertura, wardrive, esagoni di copertura, copertura e ricerca antenna, mappe offline e regioni",
+  "toolsMoved_title": "Alcuni strumenti sono stati spostati",
+  "toolsMoved_body": "Wardrive, esagoni di copertura, copertura antenna e ricerca antenna ora sono insieme in {mapHub}. Gli strumenti per ripetitori elencati due volte ora sono solo in {repeaterTools}. La ricerca qui li trova ancora tutti.",
+  "toolsMoved_ok": "Ho capito"
 }

@@ -6749,10 +6749,6 @@ class AppLocalizationsDe extends AppLocalizations {
       'Check-ins, Bereitschaft, Feldprotokoll, Automatisierungen und Vergleiche';
 
   @override
-  String get bastionTools_mapHint =>
-      'Live-Karte, Erfassungssitzungen, Offline-Kartenwerkzeuge und Regionen';
-
-  @override
   String get bastionTools_pathAnalysis => 'Pfadanalyse';
 
   @override
@@ -7173,10 +7169,6 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get mapHub_title => 'NOTORYX-Feldkarte';
-
-  @override
-  String get mapHub_intro =>
-      'Live-Karten, Offline-Gebiete, regionale Profile und NOTORYX-Core-Abdeckungssitzungen.';
 
   @override
   String get mapHub_captureHint =>
@@ -13422,4 +13414,29 @@ class AppLocalizationsDe extends AppLocalizations {
     });
     return '$distance Richtung $_temp0';
   }
+
+  @override
+  String get mapHub_introAll =>
+      'Alle Abdeckungs- und Kartenwerkzeuge an einem Ort: sieh, wie weit dein Funkgerät reicht, und halte Karten und Regionen für unterwegs ohne Netz bereit.';
+
+  @override
+  String get mapHub_coverageSection => 'Abdeckung';
+
+  @override
+  String get mapHub_mapsSection => 'Karten';
+
+  @override
+  String get bastionTools_mapHintAll =>
+      'Abdeckung aufzeichnen, Wardrive, Abdeckungs-Sechsecke, Antennenabdeckung und -suche, Offline-Karten und Regionen';
+
+  @override
+  String get toolsMoved_title => 'Einige Werkzeuge sind umgezogen';
+
+  @override
+  String toolsMoved_body(String mapHub, String repeaterTools) {
+    return 'Wardrive, Abdeckungs-Sechsecke, Antennenabdeckung und Antennensuche sind jetzt zusammen unter $mapHub. Repeater-Werkzeuge, die doppelt aufgeführt waren, findest du jetzt nur noch unter $repeaterTools. Die Suche hier findet sie alle weiterhin.';
+  }
+
+  @override
+  String get toolsMoved_ok => 'Verstanden';
 }

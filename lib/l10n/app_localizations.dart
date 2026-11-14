@@ -11276,12 +11276,6 @@ abstract class AppLocalizations {
   /// **'Check-ins, readiness, Field Log, automations and comparisons'**
   String get bastionTools_fieldOpsHint;
 
-  /// No description provided for @bastionTools_mapHint.
-  ///
-  /// In en, this message translates to:
-  /// **'Live map, capture sessions, offline map tools and regions'**
-  String get bastionTools_mapHint;
-
   /// No description provided for @bastionTools_pathAnalysis.
   ///
   /// In en, this message translates to:
@@ -12019,12 +12013,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'NOTORYX field map'**
   String get mapHub_title;
-
-  /// No description provided for @mapHub_intro.
-  ///
-  /// In en, this message translates to:
-  /// **'Live maps, offline areas, regional profiles and NOTORYX Core field coverage sessions.'**
-  String get mapHub_intro;
 
   /// No description provided for @mapHub_captureHint.
   ///
@@ -22242,6 +22230,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{distance} {dir, select, n{north} ne{north-east} e{east} se{south-east} s{south} sw{south-west} w{west} nw{north-west} other{}}'**
   String ml_distanceDir(String distance, String dir);
+
+  /// No description provided for @mapHub_introAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Every coverage and map tool in one place: see where your radio reaches, then keep maps and regions ready for when you\'re offline.'**
+  String get mapHub_introAll;
+
+  /// No description provided for @mapHub_coverageSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Coverage'**
+  String get mapHub_coverageSection;
+
+  /// No description provided for @mapHub_mapsSection.
+  ///
+  /// In en, this message translates to:
+  /// **'Maps'**
+  String get mapHub_mapsSection;
+
+  /// No description provided for @bastionTools_mapHintAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Coverage capture, wardrive, coverage hexagons, antenna coverage and hunt, offline maps and regions'**
+  String get bastionTools_mapHintAll;
+
+  /// No description provided for @toolsMoved_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Some tools moved'**
+  String get toolsMoved_title;
+
+  /// No description provided for @toolsMoved_body.
+  ///
+  /// In en, this message translates to:
+  /// **'Wardrive, coverage hexagons, antenna coverage and antenna hunt are now together in {mapHub}. Repeater tools that were listed twice are now only in {repeaterTools}. Searching here still finds them all.'**
+  String toolsMoved_body(String mapHub, String repeaterTools);
+
+  /// No description provided for @toolsMoved_ok.
+  ///
+  /// In en, this message translates to:
+  /// **'Got it'**
+  String get toolsMoved_ok;
 }
 
 class _AppLocalizationsDelegate

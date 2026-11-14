@@ -1,5 +1,7 @@
 import 'zone_alerts_screen.dart';
 import '../theme/mesh_theme.dart';
+import 'dart:async';
+
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 
@@ -8,6 +10,7 @@ import 'trail_routing_screen.dart';
 import '../l10n/l10n.dart';
 import '../widgets/ember_backdrop.dart';
 import '../widgets/instrument.dart';
+import '../widgets/mesh_ui.dart';
 import '../widgets/glass_action_row.dart';
 
 import 'antenna_coverage_screen.dart';
@@ -42,6 +45,7 @@ import 'timeline_screen.dart';
 import 'track_log_screen.dart';
 import 'wardrive_screen.dart';
 import '../utils/platform_info.dart';
+import '../storage/prefs_manager.dart';
 
 /// Searchable, grouped entry points for app settings and field tools.
 class BastionToolsScreen extends StatefulWidget {
@@ -54,6 +58,28 @@ class BastionToolsScreen extends StatefulWidget {
 class _BastionToolsScreenState extends State<BastionToolsScreen> {
   final _searchController = TextEditingController();
   String _query = '';
+
+  /// Remembers that the note about moved tools was read.
+  static const movedNoteKey = 'tools_moved_note_coverage_v1';
+  late bool _showMoved = _readShowMoved();
+
+  static bool _readShowMoved() {
+    try {
+      return !(PrefsManager.instance.getBool(movedNoteKey) ?? false);
+    } on StateError {
+      // No saved settings (tests, or very early start): don't nag.
+      return false;
+    }
+  }
+
+  void _dismissMoved() {
+    setState(() => _showMoved = false);
+    try {
+      unawaited(PrefsManager.instance.setBool(movedNoteKey, true));
+    } on StateError {
+      // Nothing to remember it in; it stays hidden for this visit.
+    }
+  }
 
   @override
   void dispose() {
@@ -96,11 +122,13 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
       (
         title: l10n.tools_groupField,
         actions: <_ToolAction>[
+          // Now in Map + coverage; still found by search here.
           _ToolAction(
             icon: Icons.route_outlined,
             title: l10n.wardrive_title,
             subtitle: l10n.wardrive_hint,
             builder: (_) => const WardriveScreen(),
+            searchOnly: true,
           ),
           _ToolAction(
             icon: Icons.radar,
@@ -158,7 +186,7 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
           _ToolAction(
             icon: Icons.map_outlined,
             title: l10n.bastion_mapCoverage,
-            subtitle: l10n.bastionTools_mapHint,
+            subtitle: l10n.bastionTools_mapHintAll,
             builder: (_) => const BastionMapHubScreen(),
           ),
           _ToolAction(
@@ -178,6 +206,7 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
             title: l10n.tools_antenna,
             subtitle: l10n.tools_antennaHint,
             builder: (_) => const AntennaCoverageScreen(),
+            searchOnly: true,
           ),
           if (!PlatformInfo.isWeb)
             _ToolAction(
@@ -192,6 +221,7 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
               title: l10n.coverageHex_title,
               subtitle: l10n.coverageHex_toolSubtitle,
               builder: (_) => const CoverageHexScreen(),
+              searchOnly: true,
             ),
         ],
       ),
@@ -245,18 +275,21 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
             title: l10n.ping_title,
             subtitle: l10n.ping_toolSubtitle,
             builder: (_) => const RepeaterPingScreen(),
+            searchOnly: true,
           ),
           _ToolAction(
             icon: Icons.track_changes,
             title: l10n.hunt_title,
             subtitle: l10n.hunt_toolSubtitle,
             builder: (_) => const AntennaHuntScreen(),
+            searchOnly: true,
           ),
           _ToolAction(
             icon: Icons.fingerprint,
             title: l10n.prefixTool_title,
             subtitle: l10n.prefixTool_subtitle,
             builder: (_) => const PrefixToolScreen(),
+            searchOnly: true,
           ),
         ],
       ),
@@ -304,7 +337,11 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
           title: group.title,
           hue: index,
           actions: group.actions
-              .where((action) => action.matches(_query))
+              .where(
+                (action) =>
+                    action.matches(_query) &&
+                    (_query.isNotEmpty || !action.searchOnly),
+              )
               .toList(),
         ),
     ].where((group) => group.actions.isNotEmpty).toList();
@@ -363,6 +400,8 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
                             ScrollViewKeyboardDismissBehavior.onDrag,
                         padding: const EdgeInsets.only(bottom: MeshSpace.xxl),
                         children: [
+                          if (_showMoved && _query.isEmpty)
+                            _WhatMovedNote(onDismiss: _dismissMoved),
                           for (final group in visibleGroups) ...[
                             if (group.title case final title?)
                               InstrumentLabel(title)
@@ -398,7 +437,12 @@ class _ToolAction {
     required this.title,
     this.subtitle,
     required this.builder,
+    this.searchOnly = false,
   });
+
+  /// Listed only while searching: it lives in a hub now, and search still
+  /// finds it here.
+  final bool searchOnly;
 
   final IconData icon;
   final String title;
@@ -407,4 +451,66 @@ class _ToolAction {
 
   bool matches(String query) =>
       '$title ${subtitle ?? ''}'.toLowerCase().contains(query);
+}
+
+/// Says once where the coverage and repeater tools went.
+class _WhatMovedNote extends StatelessWidget {
+  const _WhatMovedNote({required this.onDismiss});
+
+  final VoidCallback onDismiss;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    return Padding(
+      key: const ValueKey('tools-moved-note'),
+      padding: const EdgeInsets.fromLTRB(
+        MeshSpace.lg,
+        0,
+        MeshSpace.lg,
+        MeshSpace.sm,
+      ),
+      child: MeshCard(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(Icons.moving_rounded, color: MeshPalette.accent),
+                const SizedBox(width: MeshSpace.sm),
+                Expanded(
+                  child: Semantics(
+                    header: true,
+                    child: Text(
+                      l10n.toolsMoved_title,
+                      style: TextStyle(
+                        color: MeshPalette.ink,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: MeshSpace.xs),
+            Text(
+              l10n.toolsMoved_body(
+                l10n.bastion_mapCoverage,
+                l10n.bastion_repeaterTools,
+              ),
+              style: TextStyle(color: MeshPalette.ink2, height: 1.35),
+            ),
+            Align(
+              alignment: AlignmentDirectional.centerEnd,
+              child: TextButton(
+                key: const ValueKey('tools-moved-ok'),
+                onPressed: onDismiss,
+                child: Text(l10n.toolsMoved_ok),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
