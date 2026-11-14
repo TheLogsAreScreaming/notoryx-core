@@ -1551,6 +1551,18 @@ class AppLocalizationsSv extends AppLocalizations {
   String get channels_unmuteChannel => 'Slå på ljud för kanal';
 
   @override
+  String get channels_notifyMode => 'Aviseringar';
+
+  @override
+  String get channels_notifyAll => 'Alla meddelanden';
+
+  @override
+  String get channels_notifyMentions => 'Bara när jag nämns';
+
+  @override
+  String get channels_notifyMuted => 'Tystad';
+
+  @override
   String get channels_deleteChannel => 'Ta bort kanal';
 
   @override
@@ -1777,6 +1789,11 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return 'Meddelandet är för långt (max $maxBytes byte).';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds s sändtid';
   }
 
   @override
@@ -2019,6 +2036,136 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get routing_noPathYet =>
       'Ingen rutt ännu. Nästa meddelande floodas tills en rutt hittas.';
+
+  @override
+  String get routePick_open => 'Ruttvy och ruttval';
+
+  @override
+  String get routePick_openHint =>
+      'Länkkvalitet per hopp och val av en pålitligare rutt';
+
+  @override
+  String routePick_title(String name) {
+    return 'Rutt till $name';
+  }
+
+  @override
+  String get routePick_current => 'Nuvarande rutt';
+
+  @override
+  String get routePick_flooding =>
+      'Ingen fast rutt: meddelanden översvämmar meshen tills en rutt lärts in.';
+
+  @override
+  String get routePick_direct => 'Direkt';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return 'Repeater $id';
+  }
+
+  @override
+  String get routePick_notMeasured => 'Inte mätt än';
+
+  @override
+  String get routePick_measure => 'Mät den här rutten';
+
+  @override
+  String get routePick_measuring => 'Spårar…';
+
+  @override
+  String get routePick_measured => 'Uppmätt nyss.';
+
+  @override
+  String get routePick_noAnswer =>
+      'Inget svar på spårningen. En repeater på rutten kan vara utom räckhåll.';
+
+  @override
+  String get routePick_floodDone =>
+      'Rutten rensad. Nästa meddelande översvämmar för att hitta en ny.';
+
+  @override
+  String get routePick_suggested => 'Föreslagen';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return 'En pålitligare rutt: $route (poäng $score).';
+  }
+
+  @override
+  String get routePick_use => 'Använd';
+
+  @override
+  String routePick_useLabel(String route) {
+    return 'Använd rutten $route';
+  }
+
+  @override
+  String get routePick_options => 'Rutter att välja bland';
+
+  @override
+  String get routePick_optionsHint =>
+      'Varje hörd rutt till kontakten, poängsatt 0–100 efter länksignal, leveranser, längd och hur ny den är.';
+
+  @override
+  String get routePick_none =>
+      'Inga rutter ännu. Skicka ett meddelande för att hitta en.';
+
+  @override
+  String get routePick_other => 'Andra val';
+
+  @override
+  String get routePick_build => 'Bygg en rutt';
+
+  @override
+  String get routePick_flood => 'Låt meshen hitta en rutt';
+
+  @override
+  String get routePick_explainer =>
+      'Mätningen skickar en spårning längs rutten och tillbaka, så varje länk mellan repeatrar mäts åt båda hållen. Sista länken till kontakten kan inte spåras. Mätvärden sparas i 30 dagar och gäller för varje rutt som använder samma länk.';
+
+  @override
+  String routePick_score(int score) {
+    return 'Poäng $score av 100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return 'Hopp $number: $name. Länk $quality, ut $out decibel, tillbaka $back decibel.';
+  }
+
+  @override
+  String get routePick_lastLink =>
+      'Sista länken till kontakten: kan inte mätas med spårning';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return 'Ut $out dB · tillbaka $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return 'Poäng $score · hopp: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return 'levererade $ok av $tries';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return 'svagaste länk $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => 'Används';
 
   @override
   String get routing_floodBroadcast => 'Sänd via varje repeater';
@@ -10763,10 +10910,10 @@ class AppLocalizationsSv extends AppLocalizations {
       'Sparade platser och rutter; importera eller exportera GPX';
 
   @override
-  String get waypoints_importFile => 'Importera GPX-fil';
+  String get waypoints_importFile => 'Importera kartfil (GPX, KML, GeoJSON)';
 
   @override
-  String get waypoints_importPaste => 'Klistra in GPX';
+  String get waypoints_importPaste => 'Klistra in GPX, KML eller GeoJSON';
 
   @override
   String get waypoints_export => 'Exportera GPX';
@@ -10809,7 +10956,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get waypoints_importFailed =>
-      'Det är ingen GPX-fil som appen kan läsa.';
+      'Det är ingen GPX-, KML- eller GeoJSON-fil som appen kan läsa.';
 
   @override
   String get waypoints_pasteHint => 'Klistra in GPX-texten här';
@@ -12779,4 +12926,69 @@ class AppLocalizationsSv extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name är $distance från $trail.';
   }
+
+  @override
+  String get fw_title => 'Uppdatera firmware';
+
+  @override
+  String get fw_unknownVersion => 'Firmwareversion inte rapporterad än';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'Nyare companion-firmware finns: $version';
+  }
+
+  @override
+  String get fw_upToDate => 'Den här radion har senaste companion-firmware.';
+
+  @override
+  String get fw_checkFailed => 'Kunde inte kontrollera. Du kanske är offline.';
+
+  @override
+  String get fw_checkLatest => 'Sök efter senaste versionen';
+
+  @override
+  String get fw_checkPrivacy =>
+      'Kontrollen frågar GitHub efter MeshCores versionslista. Inget om din radio skickas.';
+
+  @override
+  String get fw_stepsTitle => 'Så uppdaterar du';
+
+  @override
+  String get fw_step1 =>
+      'Säkerhetskopiera först. En uppdatering kan återställa inställningar och kontakter.';
+
+  @override
+  String get fw_backup => 'Krypterad säkerhetskopia';
+
+  @override
+  String get fw_step2 =>
+      'Öppna MeshCores officiella webbflasher på en dator med Chrome eller Edge och anslut radion via USB.';
+
+  @override
+  String get fw_openFlasher => 'Öppna webbflasher';
+
+  @override
+  String get fw_copyLink => 'Kopiera länk';
+
+  @override
+  String get fw_linkCopied => 'Länken kopierad';
+
+  @override
+  String get fw_step3 =>
+      'Välj exakt ditt kort och sedan Companion-firmware för hur du ansluter (Bluetooth, USB eller wifi). Repeater- och room server-firmware fungerar inte med appen.';
+
+  @override
+  String get fw_step4 =>
+      'När det är klart, anslut här igen. Om inställningarna återställdes, återställ din säkerhetskopia.';
+
+  @override
+  String get fw_cautionTitle => 'Innan du börjar';
+
+  @override
+  String get fw_caution =>
+      'Ladda radion och låt kabeln sitta kvar tills det är klart. Om en uppdatering misslyckas kan radion oftast räddas genom att flasha igen via USB. Appen flashar aldrig firmware själv.';
+
+  @override
+  String get fw_open => 'Så uppdaterar du firmware';
 }

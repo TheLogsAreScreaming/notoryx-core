@@ -25,6 +25,7 @@ import '../helpers/path_helper.dart';
 import '../helpers/reaction_helper.dart';
 import '../helpers/snack_bar_builder.dart';
 import '../l10n/l10n.dart';
+import '../helpers/airtime_label.dart';
 import '../models/channel.dart';
 import '../models/channel_message.dart';
 import '../models/flood_corridor.dart';
@@ -2115,6 +2116,8 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
                         }
                         return ByteCountedTextField(
                           maxBytes: maxBytes,
+                          counterSuffix: (bytes) =>
+                              airtimeEstimateLabel(context, connector, bytes),
                           controller: _textController,
                           focusNode: _textFieldFocusNode,
                           hintText: context.l10n.chat_typeMessage,

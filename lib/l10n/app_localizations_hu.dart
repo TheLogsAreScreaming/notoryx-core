@@ -1568,6 +1568,18 @@ class AppLocalizationsHu extends AppLocalizations {
   String get channels_unmuteChannel => 'Csatorna némításának feloldása';
 
   @override
+  String get channels_notifyMode => 'Értesítések';
+
+  @override
+  String get channels_notifyAll => 'Minden üzenet';
+
+  @override
+  String get channels_notifyMentions => 'Csak ha megemlítenek';
+
+  @override
+  String get channels_notifyMuted => 'Némítva';
+
+  @override
   String get channels_deleteChannel => 'Csatorna törlése';
 
   @override
@@ -1795,6 +1807,11 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return 'Az üzenet túl hosszú (max. $maxBytes bájt).';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds mp adásidő';
   }
 
   @override
@@ -2037,6 +2054,136 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get routing_noPathYet =>
       'Még nincs út. A következő üzenet elárasztja az útvonalat.';
+
+  @override
+  String get routePick_open => 'Útvonal nézet és választó';
+
+  @override
+  String get routePick_openHint =>
+      'Az ugrások kapcsolatminősége és megbízhatóbb útvonal választása';
+
+  @override
+  String routePick_title(String name) {
+    return 'Útvonal: $name';
+  }
+
+  @override
+  String get routePick_current => 'Jelenlegi útvonal';
+
+  @override
+  String get routePick_flooding =>
+      'Nincs rögzített útvonal: az üzenetek elárasztják a hálót, amíg útvonal nem lesz.';
+
+  @override
+  String get routePick_direct => 'Közvetlen';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return 'Átjátszó $id';
+  }
+
+  @override
+  String get routePick_notMeasured => 'Még nincs mérve';
+
+  @override
+  String get routePick_measure => 'Útvonal mérése';
+
+  @override
+  String get routePick_measuring => 'Nyomkövetés…';
+
+  @override
+  String get routePick_measured => 'Épp most mérve.';
+
+  @override
+  String get routePick_noAnswer =>
+      'Nincs válasz. Egy átjátszó az útvonalon hatótávon kívül lehet.';
+
+  @override
+  String get routePick_floodDone =>
+      'Útvonal törölve. A következő üzenet elárasztással keres újat.';
+
+  @override
+  String get routePick_suggested => 'Javasolt';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return 'Megbízhatóbb útvonal: $route (pontszám $score).';
+  }
+
+  @override
+  String get routePick_use => 'Használat';
+
+  @override
+  String routePick_useLabel(String route) {
+    return '$route útvonal használata';
+  }
+
+  @override
+  String get routePick_options => 'Választható útvonalak';
+
+  @override
+  String get routePick_optionsHint =>
+      'Minden útvonal ehhez a kapcsolathoz, 0–100 pontozva a jel, a kézbesítés, a hossz és a frissesség alapján.';
+
+  @override
+  String get routePick_none =>
+      'Még nincs útvonal. Küldj üzenetet, hogy találj egyet.';
+
+  @override
+  String get routePick_other => 'Egyéb lehetőségek';
+
+  @override
+  String get routePick_build => 'Útvonal összeállítása';
+
+  @override
+  String get routePick_flood => 'A háló keressen útvonalat';
+
+  @override
+  String get routePick_explainer =>
+      'A mérés oda-vissza nyomkövetést küld az útvonalon, így minden átjátszók közti kapcsolat mindkét irányban mérve lesz. A kapcsolathoz vezető utolsó szakasz nem követhető. Az adatok 30 napig maradnak, és minden ugyanazt a kapcsolatot használó útvonalra érvényesek.';
+
+  @override
+  String routePick_score(int score) {
+    return 'Pontszám: $score/100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return '$number. ugrás: $name. Kapcsolat: $quality, oda $out decibel, vissza $back decibel.';
+  }
+
+  @override
+  String get routePick_lastLink =>
+      'Utolsó szakasz a kapcsolatig: nyomkövetéssel nem mérhető';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return 'Oda $out dB · vissza $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return 'Pontszám $score · ugrások: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return 'kézbesítve $ok/$tries';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return 'leggyengébb szakasz $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => 'Használatban';
 
   @override
   String get routing_floodBroadcast => 'Minden átjátszón keresztül sugározd';
@@ -10833,10 +10980,11 @@ class AppLocalizationsHu extends AppLocalizations {
       'Mentett helyek és útvonalak; GPX be- és kivitel';
 
   @override
-  String get waypoints_importFile => 'GPX fájl importálása';
+  String get waypoints_importFile =>
+      'Térképfájl importálása (GPX, KML, GeoJSON)';
 
   @override
-  String get waypoints_importPaste => 'GPX beillesztése';
+  String get waypoints_importPaste => 'GPX, KML vagy GeoJSON beillesztése';
 
   @override
   String get waypoints_export => 'GPX exportálása';
@@ -10879,7 +11027,7 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get waypoints_importFailed =>
-      'Ez nem olyan GPX fájl, amit az alkalmazás be tud olvasni.';
+      'Ez nem olvasható GPX-, KML- vagy GeoJSON-fájl.';
 
   @override
   String get waypoints_pasteHint => 'Illeszd be ide a GPX szöveget';
@@ -12862,4 +13010,70 @@ class AppLocalizationsHu extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name $distance távolságra van ettől: $trail.';
   }
+
+  @override
+  String get fw_title => 'Firmware frissítése';
+
+  @override
+  String get fw_unknownVersion => 'A firmware verziója még ismeretlen';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'Újabb companion firmware érhető el: $version';
+  }
+
+  @override
+  String get fw_upToDate => 'Ezen a rádión a legújabb companion firmware van.';
+
+  @override
+  String get fw_checkFailed =>
+      'Az ellenőrzés nem sikerült. Lehet, hogy offline vagy.';
+
+  @override
+  String get fw_checkLatest => 'Legújabb kiadás keresése';
+
+  @override
+  String get fw_checkPrivacy =>
+      'Az ellenőrzés a GitHubtól kéri le a MeshCore kiadáslistát. A rádiódról semmi nem kerül elküldésre.';
+
+  @override
+  String get fw_stepsTitle => 'A frissítés lépései';
+
+  @override
+  String get fw_step1 =>
+      'Előbb készíts mentést. A frissítés visszaállíthatja a beállításokat és névjegyeket.';
+
+  @override
+  String get fw_backup => 'Titkosított mentés';
+
+  @override
+  String get fw_step2 =>
+      'Chrome-os vagy Edge-es számítógépen nyisd meg a hivatalos MeshCore webes flashert, és csatlakoztasd a rádiót USB-n.';
+
+  @override
+  String get fw_openFlasher => 'Webes flasher megnyitása';
+
+  @override
+  String get fw_copyLink => 'Link másolása';
+
+  @override
+  String get fw_linkCopied => 'Link másolva';
+
+  @override
+  String get fw_step3 =>
+      'Válaszd ki pontosan a lapkádat, majd a kapcsolatodnak megfelelő Companion firmware-t (Bluetooth, USB vagy Wi-Fi). Repeater és room server firmware nem működik ezzel az alkalmazással.';
+
+  @override
+  String get fw_step4 =>
+      'Ha kész, csatlakozz újra itt. Ha a beállítások visszaálltak, állítsd vissza a mentést.';
+
+  @override
+  String get fw_cautionTitle => 'Mielőtt elkezded';
+
+  @override
+  String get fw_caution =>
+      'Töltsd fel a rádiót, és a végéig hagyd csatlakoztatva a kábelt. Ha egy frissítés nem sikerül, a rádió általában USB-n újraflashelve helyreállítható. Ez az alkalmazás soha nem flashel firmware-t magától.';
+
+  @override
+  String get fw_open => 'A firmware frissítése';
 }

@@ -2890,6 +2890,30 @@ abstract class AppLocalizations {
   /// **'Unmute channel'**
   String get channels_unmuteChannel;
 
+  /// No description provided for @channels_notifyMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get channels_notifyMode;
+
+  /// No description provided for @channels_notifyAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All messages'**
+  String get channels_notifyAll;
+
+  /// No description provided for @channels_notifyMentions.
+  ///
+  /// In en, this message translates to:
+  /// **'Only when I\'m mentioned'**
+  String get channels_notifyMentions;
+
+  /// No description provided for @channels_notifyMuted.
+  ///
+  /// In en, this message translates to:
+  /// **'Muted'**
+  String get channels_notifyMuted;
+
   /// No description provided for @channels_deleteChannel.
   ///
   /// In en, this message translates to:
@@ -3279,6 +3303,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Message too long (max {maxBytes} bytes).'**
   String chat_messageTooLong(int maxBytes);
+
+  /// Estimated radio transmit time for the message being typed, shown beside the byte counter.
+  ///
+  /// In en, this message translates to:
+  /// **'≈{seconds} s on air'**
+  String chat_airtimeEstimate(String seconds);
 
   /// No description provided for @chat_messageCopied.
   ///
@@ -3687,6 +3717,204 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No path yet. The next message floods until a route is discovered.'**
   String get routing_noPathYet;
+
+  /// No description provided for @routePick_open.
+  ///
+  /// In en, this message translates to:
+  /// **'Route view and picker'**
+  String get routePick_open;
+
+  /// No description provided for @routePick_openHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Chart each hop\'s link quality and pick a more reliable route'**
+  String get routePick_openHint;
+
+  /// No description provided for @routePick_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Route to {name}'**
+  String routePick_title(String name);
+
+  /// No description provided for @routePick_current.
+  ///
+  /// In en, this message translates to:
+  /// **'Current route'**
+  String get routePick_current;
+
+  /// No description provided for @routePick_flooding.
+  ///
+  /// In en, this message translates to:
+  /// **'No fixed route: messages flood the mesh until a route is learned.'**
+  String get routePick_flooding;
+
+  /// No description provided for @routePick_direct.
+  ///
+  /// In en, this message translates to:
+  /// **'Direct'**
+  String get routePick_direct;
+
+  /// No description provided for @routePick_hopUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeater {id}'**
+  String routePick_hopUnknown(String id);
+
+  /// No description provided for @routePick_notMeasured.
+  ///
+  /// In en, this message translates to:
+  /// **'Not measured yet'**
+  String get routePick_notMeasured;
+
+  /// No description provided for @routePick_measure.
+  ///
+  /// In en, this message translates to:
+  /// **'Measure this route'**
+  String get routePick_measure;
+
+  /// No description provided for @routePick_measuring.
+  ///
+  /// In en, this message translates to:
+  /// **'Tracing…'**
+  String get routePick_measuring;
+
+  /// No description provided for @routePick_measured.
+  ///
+  /// In en, this message translates to:
+  /// **'Measured just now.'**
+  String get routePick_measured;
+
+  /// No description provided for @routePick_noAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'No answer to the trace. A repeater on the route may be out of range.'**
+  String get routePick_noAnswer;
+
+  /// No description provided for @routePick_floodDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Route cleared. The next message floods to find a new one.'**
+  String get routePick_floodDone;
+
+  /// No description provided for @routePick_suggested.
+  ///
+  /// In en, this message translates to:
+  /// **'Suggested'**
+  String get routePick_suggested;
+
+  /// No description provided for @routePick_suggestBody.
+  ///
+  /// In en, this message translates to:
+  /// **'A more reliable route: {route} (score {score}).'**
+  String routePick_suggestBody(String route, int score);
+
+  /// No description provided for @routePick_use.
+  ///
+  /// In en, this message translates to:
+  /// **'Use'**
+  String get routePick_use;
+
+  /// No description provided for @routePick_useLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Use route {route}'**
+  String routePick_useLabel(String route);
+
+  /// No description provided for @routePick_options.
+  ///
+  /// In en, this message translates to:
+  /// **'Routes to choose from'**
+  String get routePick_options;
+
+  /// No description provided for @routePick_optionsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Every route heard for this contact, scored 0–100 from link signal, delivery record, length and how recent it is.'**
+  String get routePick_optionsHint;
+
+  /// No description provided for @routePick_none.
+  ///
+  /// In en, this message translates to:
+  /// **'No routes heard yet. Send a message to discover one.'**
+  String get routePick_none;
+
+  /// No description provided for @routePick_other.
+  ///
+  /// In en, this message translates to:
+  /// **'Other choices'**
+  String get routePick_other;
+
+  /// No description provided for @routePick_build.
+  ///
+  /// In en, this message translates to:
+  /// **'Build a route'**
+  String get routePick_build;
+
+  /// No description provided for @routePick_flood.
+  ///
+  /// In en, this message translates to:
+  /// **'Let the mesh find a route'**
+  String get routePick_flood;
+
+  /// No description provided for @routePick_explainer.
+  ///
+  /// In en, this message translates to:
+  /// **'Measuring sends a trace out along the route and back, so every link between repeaters is measured both ways. The last link to the contact can\'t be traced. Readings are kept for 30 days and count for every route that uses the same link.'**
+  String get routePick_explainer;
+
+  /// No description provided for @routePick_score.
+  ///
+  /// In en, this message translates to:
+  /// **'Score {score} of 100'**
+  String routePick_score(int score);
+
+  /// No description provided for @routePick_hopLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Hop {number}: {name}. Link {quality}, {out} decibels out, {back} decibels back.'**
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  );
+
+  /// No description provided for @routePick_lastLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Last link to the contact: not measurable by trace'**
+  String get routePick_lastLink;
+
+  /// No description provided for @routePick_linkLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Out {out} dB · back {back} dB'**
+  String routePick_linkLine(String out, String back);
+
+  /// No description provided for @routePick_optionLine.
+  ///
+  /// In en, this message translates to:
+  /// **'Score {score} · hops: {hops}'**
+  String routePick_optionLine(int score, int hops);
+
+  /// No description provided for @routePick_record.
+  ///
+  /// In en, this message translates to:
+  /// **'delivered {ok} of {tries}'**
+  String routePick_record(int ok, int tries);
+
+  /// No description provided for @routePick_weakest.
+  ///
+  /// In en, this message translates to:
+  /// **'weakest link {snr} dB'**
+  String routePick_weakest(String snr);
+
+  /// No description provided for @routePick_inUse.
+  ///
+  /// In en, this message translates to:
+  /// **'In use'**
+  String get routePick_inUse;
 
   /// No description provided for @routing_floodBroadcast.
   ///
@@ -17986,13 +18214,13 @@ abstract class AppLocalizations {
   /// No description provided for @waypoints_importFile.
   ///
   /// In en, this message translates to:
-  /// **'Import GPX file'**
+  /// **'Import map file (GPX, KML, GeoJSON)'**
   String get waypoints_importFile;
 
   /// No description provided for @waypoints_importPaste.
   ///
   /// In en, this message translates to:
-  /// **'Paste GPX'**
+  /// **'Paste GPX, KML or GeoJSON'**
   String get waypoints_importPaste;
 
   /// No description provided for @waypoints_export.
@@ -18058,7 +18286,7 @@ abstract class AppLocalizations {
   /// No description provided for @waypoints_importFailed.
   ///
   /// In en, this message translates to:
-  /// **'That isn\'t a GPX file the app can read.'**
+  /// **'That isn\'t a GPX, KML or GeoJSON file the app can read.'**
   String get waypoints_importFailed;
 
   /// No description provided for @waypoints_pasteHint.
@@ -21396,6 +21624,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{name} is {distance} from {trail}.'**
   String zones_alertOffTrailBody(String name, String distance, String trail);
+
+  /// No description provided for @fw_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Update firmware'**
+  String get fw_title;
+
+  /// No description provided for @fw_unknownVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'Firmware version not reported yet'**
+  String get fw_unknownVersion;
+
+  /// No description provided for @fw_updateAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Newer companion firmware available: {version}'**
+  String fw_updateAvailable(String version);
+
+  /// No description provided for @fw_upToDate.
+  ///
+  /// In en, this message translates to:
+  /// **'This radio has the latest companion firmware.'**
+  String get fw_upToDate;
+
+  /// No description provided for @fw_checkFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t check. You may be offline.'**
+  String get fw_checkFailed;
+
+  /// No description provided for @fw_checkLatest.
+  ///
+  /// In en, this message translates to:
+  /// **'Check for the latest release'**
+  String get fw_checkLatest;
+
+  /// No description provided for @fw_checkPrivacy.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking asks GitHub for the MeshCore release list. Nothing about your radio is sent.'**
+  String get fw_checkPrivacy;
+
+  /// No description provided for @fw_stepsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'How to update'**
+  String get fw_stepsTitle;
+
+  /// No description provided for @fw_step1.
+  ///
+  /// In en, this message translates to:
+  /// **'Back up first. Updating can reset the radio\'s settings and contacts.'**
+  String get fw_step1;
+
+  /// No description provided for @fw_backup.
+  ///
+  /// In en, this message translates to:
+  /// **'Encrypted backup'**
+  String get fw_backup;
+
+  /// No description provided for @fw_step2.
+  ///
+  /// In en, this message translates to:
+  /// **'On a computer with Chrome or Edge, open the official MeshCore web flasher and connect the radio by USB.'**
+  String get fw_step2;
+
+  /// No description provided for @fw_openFlasher.
+  ///
+  /// In en, this message translates to:
+  /// **'Open web flasher'**
+  String get fw_openFlasher;
+
+  /// No description provided for @fw_copyLink.
+  ///
+  /// In en, this message translates to:
+  /// **'Copy link'**
+  String get fw_copyLink;
+
+  /// No description provided for @fw_linkCopied.
+  ///
+  /// In en, this message translates to:
+  /// **'Link copied'**
+  String get fw_linkCopied;
+
+  /// No description provided for @fw_step3.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick your exact board, then the Companion firmware for how you connect (Bluetooth, USB or Wi-Fi). Repeater and room-server firmware won\'t work with this app.'**
+  String get fw_step3;
+
+  /// No description provided for @fw_step4.
+  ///
+  /// In en, this message translates to:
+  /// **'When it finishes, reconnect here. If settings were reset, restore your backup.'**
+  String get fw_step4;
+
+  /// No description provided for @fw_cautionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Before you start'**
+  String get fw_cautionTitle;
+
+  /// No description provided for @fw_caution.
+  ///
+  /// In en, this message translates to:
+  /// **'Charge the radio first and keep the cable connected until it finishes. If an update fails, the radio can usually be recovered by flashing again over USB. This app never flashes firmware itself.'**
+  String get fw_caution;
+
+  /// No description provided for @fw_open.
+  ///
+  /// In en, this message translates to:
+  /// **'How to update firmware'**
+  String get fw_open;
 }
 
 class _AppLocalizationsDelegate

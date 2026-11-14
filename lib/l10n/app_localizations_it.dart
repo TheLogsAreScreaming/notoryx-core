@@ -1576,6 +1576,18 @@ class AppLocalizationsIt extends AppLocalizations {
   String get channels_unmuteChannel => 'Attiva notifiche canale';
 
   @override
+  String get channels_notifyMode => 'Notifiche';
+
+  @override
+  String get channels_notifyAll => 'Tutti i messaggi';
+
+  @override
+  String get channels_notifyMentions => 'Solo quando vengo menzionato';
+
+  @override
+  String get channels_notifyMuted => 'Silenziato';
+
+  @override
   String get channels_deleteChannel => 'Elimina canale';
 
   @override
@@ -1804,6 +1816,11 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return 'Messaggio troppo lungo (massimo $maxBytes byte).';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds s in onda';
   }
 
   @override
@@ -2048,6 +2065,136 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get routing_noPathYet =>
       'Nessun percorso ancora. Il prossimo messaggio userà il flood finché non viene scoperto un percorso.';
+
+  @override
+  String get routePick_open => 'Vista e scelta del percorso';
+
+  @override
+  String get routePick_openHint =>
+      'Mostra la qualità di ogni salto e scegli un percorso più affidabile';
+
+  @override
+  String routePick_title(String name) {
+    return 'Percorso verso $name';
+  }
+
+  @override
+  String get routePick_current => 'Percorso attuale';
+
+  @override
+  String get routePick_flooding =>
+      'Nessun percorso fisso: i messaggi inondano la rete finché non si impara un percorso.';
+
+  @override
+  String get routePick_direct => 'Diretto';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return 'Ripetitore $id';
+  }
+
+  @override
+  String get routePick_notMeasured => 'Non ancora misurato';
+
+  @override
+  String get routePick_measure => 'Misura questo percorso';
+
+  @override
+  String get routePick_measuring => 'Tracciamento…';
+
+  @override
+  String get routePick_measured => 'Misurato ora.';
+
+  @override
+  String get routePick_noAnswer =>
+      'Nessuna risposta alla traccia. Un ripetitore sul percorso potrebbe essere fuori portata.';
+
+  @override
+  String get routePick_floodDone =>
+      'Percorso cancellato. Il prossimo messaggio inonderà per trovarne uno nuovo.';
+
+  @override
+  String get routePick_suggested => 'Suggerito';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return 'Un percorso più affidabile: $route (punteggio $score).';
+  }
+
+  @override
+  String get routePick_use => 'Usa';
+
+  @override
+  String routePick_useLabel(String route) {
+    return 'Usa il percorso $route';
+  }
+
+  @override
+  String get routePick_options => 'Percorsi tra cui scegliere';
+
+  @override
+  String get routePick_optionsHint =>
+      'Ogni percorso sentito per questo contatto, con punteggio 0–100 da segnale dei collegamenti, consegne, lunghezza e recentezza.';
+
+  @override
+  String get routePick_none =>
+      'Nessun percorso ancora. Invia un messaggio per scoprirne uno.';
+
+  @override
+  String get routePick_other => 'Altre scelte';
+
+  @override
+  String get routePick_build => 'Costruisci un percorso';
+
+  @override
+  String get routePick_flood => 'Lascia che la rete trovi un percorso';
+
+  @override
+  String get routePick_explainer =>
+      'La misura invia una traccia lungo il percorso e ritorno, così ogni collegamento tra ripetitori è misurato in entrambe le direzioni. L’ultimo collegamento verso il contatto non si può tracciare. Le letture restano 30 giorni e valgono per ogni percorso con lo stesso collegamento.';
+
+  @override
+  String routePick_score(int score) {
+    return 'Punteggio $score su 100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return 'Salto $number: $name. Collegamento $quality, andata $out decibel, ritorno $back decibel.';
+  }
+
+  @override
+  String get routePick_lastLink =>
+      'Ultimo collegamento al contatto: non misurabile con traccia';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return 'Andata $out dB · ritorno $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return 'Punteggio $score · salti: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return 'consegnati $ok su $tries';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return 'collegamento più debole $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => 'In uso';
 
   @override
   String get routing_floodBroadcast => 'Trasmissione tramite ogni ripetitore';
@@ -10863,10 +11010,10 @@ class AppLocalizationsIt extends AppLocalizations {
       'Luoghi e percorsi salvati; importa o esporta GPX';
 
   @override
-  String get waypoints_importFile => 'Importa file GPX';
+  String get waypoints_importFile => 'Importa file mappa (GPX, KML, GeoJSON)';
 
   @override
-  String get waypoints_importPaste => 'Incolla GPX';
+  String get waypoints_importPaste => 'Incolla GPX, KML o GeoJSON';
 
   @override
   String get waypoints_export => 'Esporta GPX';
@@ -10908,7 +11055,8 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
-  String get waypoints_importFailed => 'Non è un file GPX leggibile dall\'app.';
+  String get waypoints_importFailed =>
+      'Non è un file GPX, KML o GeoJSON leggibile dall\'app.';
 
   @override
   String get waypoints_pasteHint => 'Incolla qui il testo GPX';
@@ -12889,4 +13037,70 @@ class AppLocalizationsIt extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name è a $distance da $trail.';
   }
+
+  @override
+  String get fw_title => 'Aggiorna firmware';
+
+  @override
+  String get fw_unknownVersion => 'Versione firmware non ancora segnalata';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'È disponibile un firmware companion più recente: $version';
+  }
+
+  @override
+  String get fw_upToDate =>
+      'Questa radio ha il firmware companion più recente.';
+
+  @override
+  String get fw_checkFailed => 'Controllo non riuscito. Forse sei offline.';
+
+  @override
+  String get fw_checkLatest => 'Controlla l\'ultima versione';
+
+  @override
+  String get fw_checkPrivacy =>
+      'Il controllo chiede a GitHub l\'elenco delle versioni MeshCore. Nulla sulla tua radio viene inviato.';
+
+  @override
+  String get fw_stepsTitle => 'Come aggiornare';
+
+  @override
+  String get fw_step1 =>
+      'Fai prima un backup. L\'aggiornamento può azzerare impostazioni e contatti.';
+
+  @override
+  String get fw_backup => 'Backup cifrato';
+
+  @override
+  String get fw_step2 =>
+      'Su un computer con Chrome o Edge, apri il flasher web ufficiale di MeshCore e collega la radio via USB.';
+
+  @override
+  String get fw_openFlasher => 'Apri flasher web';
+
+  @override
+  String get fw_copyLink => 'Copia link';
+
+  @override
+  String get fw_linkCopied => 'Link copiato';
+
+  @override
+  String get fw_step3 =>
+      'Scegli la tua scheda esatta, poi il firmware Companion per il tuo collegamento (Bluetooth, USB o Wi-Fi). Il firmware repeater o room server non funziona con questa app.';
+
+  @override
+  String get fw_step4 =>
+      'Al termine, ricollegati qui. Se le impostazioni sono state azzerate, ripristina il backup.';
+
+  @override
+  String get fw_cautionTitle => 'Prima di iniziare';
+
+  @override
+  String get fw_caution =>
+      'Carica la radio e lascia il cavo collegato fino alla fine. Se un aggiornamento fallisce, di solito la radio si recupera riflashando via USB. Questa app non flasha mai firmware da sola.';
+
+  @override
+  String get fw_open => 'Come aggiornare il firmware';
 }

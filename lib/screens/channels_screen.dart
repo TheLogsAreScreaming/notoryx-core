@@ -40,6 +40,7 @@ import 'channel_directory_screen.dart';
 import 'message_search_screen.dart';
 import 'community_qr_scanner_screen.dart';
 import 'settings_screen.dart';
+import '../models/channel_notify_mode.dart';
 
 class ChannelsScreen extends StatefulWidget {
   /// Shown as the CHATS tab: no back button, and the bottom bar below.
@@ -384,7 +385,7 @@ class _ChannelsScreenState extends State<ChannelsScreen>
     int listIndex = 0,
   }) {
     final unreadCount = connector.getUnreadCountForChannel(channel);
-    final isMuted = context.watch<AppSettingsService>().isChannelMuted(
+    final notifyMode = context.watch<AppSettingsService>().channelNotifyMode(
       channel.name,
     );
     final scheme = Theme.of(context).colorScheme;
@@ -594,11 +595,17 @@ class _ChannelsScreenState extends State<ChannelsScreen>
                       Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          if (isMuted) ...[
+                          if (notifyMode != ChannelNotifyMode.all) ...[
                             Icon(
-                              Icons.notifications_off,
+                              notifyMode == ChannelNotifyMode.muted
+                                  ? Icons.notifications_off
+                                  : Icons.alternate_email,
                               size: 14,
                               color: scheme.onSurfaceVariant,
+                              semanticLabel: _notifyModeLabel(
+                                context,
+                                notifyMode,
+                              ),
                             ),
                             const SizedBox(width: 4),
                           ],
@@ -649,7 +656,7 @@ class _ChannelsScreenState extends State<ChannelsScreen>
   ) {
     final parentContext = context;
     final settingsService = context.read<AppSettingsService>();
-    final isMuted = settingsService.isChannelMuted(channel.name);
+    final notifyMode = settingsService.channelNotifyMode(channel.name);
 
     showModalBottomSheet(
       context: parentContext,
@@ -669,22 +676,37 @@ class _ChannelsScreenState extends State<ChannelsScreen>
               },
             ),
             ListTile(
-              leading: Icon(
-                isMuted
-                    ? Icons.notifications_outlined
-                    : Icons.notifications_off_outlined,
-              ),
-              title: Text(
-                isMuted
-                    ? sheetContext.l10n.channels_unmuteChannel
-                    : sheetContext.l10n.channels_muteChannel,
-              ),
+              leading: Icon(_notifyModeIcon(notifyMode)),
+              title: Text(sheetContext.l10n.channels_notifyMode),
+              subtitle: Text(_notifyModeLabel(sheetContext, notifyMode)),
               onTap: () async {
                 Navigator.pop(sheetContext);
-                if (isMuted) {
-                  await settingsService.unmuteChannel(channel.name);
-                } else {
-                  await settingsService.muteChannel(channel.name);
+                await Future.delayed(const Duration(milliseconds: 100));
+                if (!parentContext.mounted) return;
+                final picked = await showDialog<ChannelNotifyMode>(
+                  context: parentContext,
+                  builder: (dialogContext) => SimpleDialog(
+                    title: Text(dialogContext.l10n.channels_notifyMode),
+                    children: [
+                      for (final mode in ChannelNotifyMode.values)
+                        ListTile(
+                          leading: Icon(
+                            mode == notifyMode
+                                ? Icons.radio_button_checked
+                                : Icons.radio_button_unchecked,
+                          ),
+                          title: Text(_notifyModeLabel(dialogContext, mode)),
+                          selected: mode == notifyMode,
+                          onTap: () => Navigator.pop(dialogContext, mode),
+                        ),
+                    ],
+                  ),
+                );
+                if (picked != null && picked != notifyMode) {
+                  await settingsService.setChannelNotifyMode(
+                    channel.name,
+                    picked,
+                  );
                 }
               },
             ),
@@ -2332,5 +2354,27 @@ class _DiscoveredSheet extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+IconData _notifyModeIcon(ChannelNotifyMode mode) {
+  switch (mode) {
+    case ChannelNotifyMode.all:
+      return Icons.notifications_outlined;
+    case ChannelNotifyMode.mentionsOnly:
+      return Icons.alternate_email;
+    case ChannelNotifyMode.muted:
+      return Icons.notifications_off_outlined;
+  }
+}
+
+String _notifyModeLabel(BuildContext context, ChannelNotifyMode mode) {
+  switch (mode) {
+    case ChannelNotifyMode.all:
+      return context.l10n.channels_notifyAll;
+    case ChannelNotifyMode.mentionsOnly:
+      return context.l10n.channels_notifyMentions;
+    case ChannelNotifyMode.muted:
+      return context.l10n.channels_notifyMuted;
   }
 }

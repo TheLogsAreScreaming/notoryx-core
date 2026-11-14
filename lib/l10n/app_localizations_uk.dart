@@ -1566,6 +1566,18 @@ class AppLocalizationsUk extends AppLocalizations {
   String get channels_unmuteChannel => 'Увімкнути сповіщення каналу';
 
   @override
+  String get channels_notifyMode => 'Сповіщення';
+
+  @override
+  String get channels_notifyAll => 'Усі повідомлення';
+
+  @override
+  String get channels_notifyMentions => 'Лише коли мене згадують';
+
+  @override
+  String get channels_notifyMuted => 'Вимкнено';
+
+  @override
   String get channels_deleteChannel => 'Видалити канал';
 
   @override
@@ -1791,6 +1803,11 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return 'Повідомлення занадто довге (макс. $maxBytes байт).';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds с в ефірі';
   }
 
   @override
@@ -2037,6 +2054,136 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get routing_noPathYet =>
       'Поки що немає жодного шляху. Повідомлення продовжуються надходити, поки не буде знайдено маршрут.';
+
+  @override
+  String get routePick_open => 'Огляд і вибір маршруту';
+
+  @override
+  String get routePick_openHint =>
+      'Якість зв’язку на кожному стрибку і вибір надійнішого маршруту';
+
+  @override
+  String routePick_title(String name) {
+    return 'Маршрут до $name';
+  }
+
+  @override
+  String get routePick_current => 'Поточний маршрут';
+
+  @override
+  String get routePick_flooding =>
+      'Немає сталого маршруту: повідомлення розсилаються по всій мережі, доки маршрут не знайдено.';
+
+  @override
+  String get routePick_direct => 'Напряму';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return 'Ретранслятор $id';
+  }
+
+  @override
+  String get routePick_notMeasured => 'Ще не виміряно';
+
+  @override
+  String get routePick_measure => 'Виміряти маршрут';
+
+  @override
+  String get routePick_measuring => 'Трасування…';
+
+  @override
+  String get routePick_measured => 'Щойно виміряно.';
+
+  @override
+  String get routePick_noAnswer =>
+      'Немає відповіді на трасування. Ретранслятор на маршруті може бути поза досяжністю.';
+
+  @override
+  String get routePick_floodDone =>
+      'Маршрут скинуто. Наступне повідомлення розійдеться мережею, щоб знайти новий.';
+
+  @override
+  String get routePick_suggested => 'Рекомендовано';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return 'Надійніший маршрут: $route (оцінка $score).';
+  }
+
+  @override
+  String get routePick_use => 'Обрати';
+
+  @override
+  String routePick_useLabel(String route) {
+    return 'Обрати маршрут $route';
+  }
+
+  @override
+  String get routePick_options => 'Маршрути на вибір';
+
+  @override
+  String get routePick_optionsHint =>
+      'Усі маршрути до цього контакту з оцінкою 0–100 за сигналом зв’язків, доставкою, довжиною і свіжістю.';
+
+  @override
+  String get routePick_none =>
+      'Маршрутів ще немає. Надішліть повідомлення, щоб знайти маршрут.';
+
+  @override
+  String get routePick_other => 'Інші варіанти';
+
+  @override
+  String get routePick_build => 'Скласти маршрут';
+
+  @override
+  String get routePick_flood => 'Нехай мережа знайде маршрут';
+
+  @override
+  String get routePick_explainer =>
+      'Вимірювання надсилає трасування маршрутом туди й назад, тож кожен зв’язок між ретрансляторами вимірюється в обидва боки. Останній зв’язок до контакту трасувати неможливо. Дані зберігаються 30 днів і враховуються для всіх маршрутів з тим самим зв’язком.';
+
+  @override
+  String routePick_score(int score) {
+    return 'Оцінка $score зі 100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return 'Стрибок $number: $name. Зв’язок: $quality, туди $out децибел, назад $back децибел.';
+  }
+
+  @override
+  String get routePick_lastLink =>
+      'Останній зв’язок до контакту: не вимірюється трасуванням';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return 'Туди $out дБ · назад $back дБ';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return 'Оцінка $score · стрибків: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return 'доставлено $ok з $tries';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return 'найслабший зв’язок $snr дБ';
+  }
+
+  @override
+  String get routePick_inUse => 'Використовується';
 
   @override
   String get routing_floodBroadcast => 'Поширення через усі ретранслятори';
@@ -10887,10 +11034,10 @@ class AppLocalizationsUk extends AppLocalizations {
       'Збережені місця й маршрути; імпорт та експорт GPX';
 
   @override
-  String get waypoints_importFile => 'Імпорт файлу GPX';
+  String get waypoints_importFile => 'Імпорт файлу мапи (GPX, KML, GeoJSON)';
 
   @override
-  String get waypoints_importPaste => 'Вставити GPX';
+  String get waypoints_importPaste => 'Вставити GPX, KML або GeoJSON';
 
   @override
   String get waypoints_export => 'Експорт GPX';
@@ -10933,7 +11080,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get waypoints_importFailed =>
-      'Це не файл GPX, який застосунок може прочитати.';
+      'Це не файл GPX, KML чи GeoJSON, який застосунок може прочитати.';
 
   @override
   String get waypoints_pasteHint => 'Вставте сюди текст GPX';
@@ -12909,4 +13056,69 @@ class AppLocalizationsUk extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name за $distance від: $trail.';
   }
+
+  @override
+  String get fw_title => 'Оновити прошивку';
+
+  @override
+  String get fw_unknownVersion => 'Версію прошивки ще не отримано';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'Доступна новіша прошивка companion: $version';
+  }
+
+  @override
+  String get fw_upToDate => 'На цьому радіо найновіша прошивка companion.';
+
+  @override
+  String get fw_checkFailed => 'Не вдалося перевірити. Можливо, немає мережі.';
+
+  @override
+  String get fw_checkLatest => 'Перевірити останню версію';
+
+  @override
+  String get fw_checkPrivacy =>
+      'Перевірка запитує в GitHub список версій MeshCore. Про ваше радіо нічого не надсилається.';
+
+  @override
+  String get fw_stepsTitle => 'Як оновити';
+
+  @override
+  String get fw_step1 =>
+      'Спершу зробіть резервну копію. Оновлення може скинути налаштування й контакти.';
+
+  @override
+  String get fw_backup => 'Зашифрована копія';
+
+  @override
+  String get fw_step2 =>
+      'На комп\'ютері з Chrome або Edge відкрийте офіційний веб-прошивальник MeshCore і під\'єднайте радіо через USB.';
+
+  @override
+  String get fw_openFlasher => 'Відкрити веб-прошивальник';
+
+  @override
+  String get fw_copyLink => 'Копіювати посилання';
+
+  @override
+  String get fw_linkCopied => 'Посилання скопійовано';
+
+  @override
+  String get fw_step3 =>
+      'Виберіть точну плату, потім прошивку Companion для вашого з\'єднання (Bluetooth, USB або Wi-Fi). Прошивки ретранслятора й room server із цим застосунком не працюють.';
+
+  @override
+  String get fw_step4 =>
+      'Після завершення під\'єднайтеся тут знову. Якщо налаштування скинулися, відновіть копію.';
+
+  @override
+  String get fw_cautionTitle => 'Перед початком';
+
+  @override
+  String get fw_caution =>
+      'Зарядіть радіо й не від\'єднуйте кабель до кінця. Якщо оновлення не вдалося, радіо зазвичай можна відновити повторною прошивкою через USB. Застосунок ніколи не прошиває сам.';
+
+  @override
+  String get fw_open => 'Як оновити прошивку';
 }

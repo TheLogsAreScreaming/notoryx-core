@@ -1548,6 +1548,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get channels_unmuteChannel => 'Unmute channel';
 
   @override
+  String get channels_notifyMode => 'Notifications';
+
+  @override
+  String get channels_notifyAll => 'All messages';
+
+  @override
+  String get channels_notifyMentions => 'Only when I\'m mentioned';
+
+  @override
+  String get channels_notifyMuted => 'Muted';
+
+  @override
   String get channels_deleteChannel => 'Delete channel';
 
   @override
@@ -1769,6 +1781,11 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return 'Message too long (max $maxBytes bytes).';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '≈$seconds s on air';
   }
 
   @override
@@ -2011,6 +2028,136 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get routing_noPathYet =>
       'No path yet. The next message floods until a route is discovered.';
+
+  @override
+  String get routePick_open => 'Route view and picker';
+
+  @override
+  String get routePick_openHint =>
+      'Chart each hop\'s link quality and pick a more reliable route';
+
+  @override
+  String routePick_title(String name) {
+    return 'Route to $name';
+  }
+
+  @override
+  String get routePick_current => 'Current route';
+
+  @override
+  String get routePick_flooding =>
+      'No fixed route: messages flood the mesh until a route is learned.';
+
+  @override
+  String get routePick_direct => 'Direct';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return 'Repeater $id';
+  }
+
+  @override
+  String get routePick_notMeasured => 'Not measured yet';
+
+  @override
+  String get routePick_measure => 'Measure this route';
+
+  @override
+  String get routePick_measuring => 'Tracing…';
+
+  @override
+  String get routePick_measured => 'Measured just now.';
+
+  @override
+  String get routePick_noAnswer =>
+      'No answer to the trace. A repeater on the route may be out of range.';
+
+  @override
+  String get routePick_floodDone =>
+      'Route cleared. The next message floods to find a new one.';
+
+  @override
+  String get routePick_suggested => 'Suggested';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return 'A more reliable route: $route (score $score).';
+  }
+
+  @override
+  String get routePick_use => 'Use';
+
+  @override
+  String routePick_useLabel(String route) {
+    return 'Use route $route';
+  }
+
+  @override
+  String get routePick_options => 'Routes to choose from';
+
+  @override
+  String get routePick_optionsHint =>
+      'Every route heard for this contact, scored 0–100 from link signal, delivery record, length and how recent it is.';
+
+  @override
+  String get routePick_none =>
+      'No routes heard yet. Send a message to discover one.';
+
+  @override
+  String get routePick_other => 'Other choices';
+
+  @override
+  String get routePick_build => 'Build a route';
+
+  @override
+  String get routePick_flood => 'Let the mesh find a route';
+
+  @override
+  String get routePick_explainer =>
+      'Measuring sends a trace out along the route and back, so every link between repeaters is measured both ways. The last link to the contact can\'t be traced. Readings are kept for 30 days and count for every route that uses the same link.';
+
+  @override
+  String routePick_score(int score) {
+    return 'Score $score of 100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return 'Hop $number: $name. Link $quality, $out decibels out, $back decibels back.';
+  }
+
+  @override
+  String get routePick_lastLink =>
+      'Last link to the contact: not measurable by trace';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return 'Out $out dB · back $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return 'Score $score · hops: $hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return 'delivered $ok of $tries';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return 'weakest link $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => 'In use';
 
   @override
   String get routing_floodBroadcast => 'Broadcast through every repeater';
@@ -10715,10 +10862,10 @@ class AppLocalizationsEn extends AppLocalizations {
       'Saved places and routes; import or export GPX';
 
   @override
-  String get waypoints_importFile => 'Import GPX file';
+  String get waypoints_importFile => 'Import map file (GPX, KML, GeoJSON)';
 
   @override
-  String get waypoints_importPaste => 'Paste GPX';
+  String get waypoints_importPaste => 'Paste GPX, KML or GeoJSON';
 
   @override
   String get waypoints_export => 'Export GPX';
@@ -10761,7 +10908,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get waypoints_importFailed =>
-      'That isn\'t a GPX file the app can read.';
+      'That isn\'t a GPX, KML or GeoJSON file the app can read.';
 
   @override
   String get waypoints_pasteHint => 'Paste the GPX text here';
@@ -12729,4 +12876,69 @@ class AppLocalizationsEn extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name is $distance from $trail.';
   }
+
+  @override
+  String get fw_title => 'Update firmware';
+
+  @override
+  String get fw_unknownVersion => 'Firmware version not reported yet';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return 'Newer companion firmware available: $version';
+  }
+
+  @override
+  String get fw_upToDate => 'This radio has the latest companion firmware.';
+
+  @override
+  String get fw_checkFailed => 'Couldn\'t check. You may be offline.';
+
+  @override
+  String get fw_checkLatest => 'Check for the latest release';
+
+  @override
+  String get fw_checkPrivacy =>
+      'Checking asks GitHub for the MeshCore release list. Nothing about your radio is sent.';
+
+  @override
+  String get fw_stepsTitle => 'How to update';
+
+  @override
+  String get fw_step1 =>
+      'Back up first. Updating can reset the radio\'s settings and contacts.';
+
+  @override
+  String get fw_backup => 'Encrypted backup';
+
+  @override
+  String get fw_step2 =>
+      'On a computer with Chrome or Edge, open the official MeshCore web flasher and connect the radio by USB.';
+
+  @override
+  String get fw_openFlasher => 'Open web flasher';
+
+  @override
+  String get fw_copyLink => 'Copy link';
+
+  @override
+  String get fw_linkCopied => 'Link copied';
+
+  @override
+  String get fw_step3 =>
+      'Pick your exact board, then the Companion firmware for how you connect (Bluetooth, USB or Wi-Fi). Repeater and room-server firmware won\'t work with this app.';
+
+  @override
+  String get fw_step4 =>
+      'When it finishes, reconnect here. If settings were reset, restore your backup.';
+
+  @override
+  String get fw_cautionTitle => 'Before you start';
+
+  @override
+  String get fw_caution =>
+      'Charge the radio first and keep the cable connected until it finishes. If an update fails, the radio can usually be recovered by flashing again over USB. This app never flashes firmware itself.';
+
+  @override
+  String get fw_open => 'How to update firmware';
 }

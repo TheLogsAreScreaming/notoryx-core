@@ -409,3 +409,33 @@ SendEstimate estimateSendFromRadioParams({
     includesParity: withParity,
   );
 }
+
+/// Bytes a text message adds on air beyond its text: header, path,
+/// addressing, MAC and timestamp. An estimate, so airtime shown from it
+/// is approximate.
+const int kTextMessageOverheadBytes = 20;
+
+/// Approximate airtime for one text message of [textBytes], or null when
+/// the radio's settings aren't known yet. [codingRate] may be in the
+/// firmware's 1..4 or the 5..8 form.
+Duration? estimateTextMessageAirtime({
+  required int textBytes,
+  int? spreadingFactor,
+  int? bandwidthHz,
+  int? codingRate,
+}) {
+  if (spreadingFactor == null || bandwidthHz == null || codingRate == null) {
+    return null;
+  }
+  if (spreadingFactor < 5 || spreadingFactor > 12 || bandwidthHz <= 0) {
+    return null;
+  }
+  final cr = codingRate <= 4 ? codingRate + 4 : codingRate;
+  if (cr < 5 || cr > 8) return null;
+  return loraTimeOnAir(
+    payloadBytes: textBytes + kTextMessageOverheadBytes,
+    spreadingFactor: spreadingFactor,
+    bandwidthHz: bandwidthHz,
+    codingRate: cr,
+  );
+}

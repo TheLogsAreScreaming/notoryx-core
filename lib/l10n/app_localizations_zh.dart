@@ -1476,6 +1476,18 @@ class AppLocalizationsZh extends AppLocalizations {
   String get channels_unmuteChannel => '取消静音频道';
 
   @override
+  String get channels_notifyMode => '通知';
+
+  @override
+  String get channels_notifyAll => '所有消息';
+
+  @override
+  String get channels_notifyMentions => '仅在提到我时';
+
+  @override
+  String get channels_notifyMuted => '静音';
+
+  @override
   String get channels_deleteChannel => '删除频道';
 
   @override
@@ -1694,6 +1706,11 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String chat_messageTooLong(int maxBytes) {
     return '消息过长（最多 $maxBytes 字节）';
+  }
+
+  @override
+  String chat_airtimeEstimate(String seconds) {
+    return '空中时间约 $seconds 秒';
   }
 
   @override
@@ -1922,6 +1939,130 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get routing_noPathYet => '目前还没有找到路径。直到找到路径，才会收到后续消息。';
+
+  @override
+  String get routePick_open => '路由视图与选择';
+
+  @override
+  String get routePick_openHint => '查看每一跳的链路质量并选择更可靠的路由';
+
+  @override
+  String routePick_title(String name) {
+    return '到 $name 的路由';
+  }
+
+  @override
+  String get routePick_current => '当前路由';
+
+  @override
+  String get routePick_flooding => '没有固定路由：在学到路由前，消息会泛洪整个网络。';
+
+  @override
+  String get routePick_direct => '直连';
+
+  @override
+  String routePick_hopUnknown(String id) {
+    return '中继 $id';
+  }
+
+  @override
+  String get routePick_notMeasured => '尚未测量';
+
+  @override
+  String get routePick_measure => '测量此路由';
+
+  @override
+  String get routePick_measuring => '追踪中…';
+
+  @override
+  String get routePick_measured => '刚刚测量完成。';
+
+  @override
+  String get routePick_noAnswer => '追踪无应答。路由上的某个中继可能超出范围。';
+
+  @override
+  String get routePick_floodDone => '路由已清除。下一条消息将泛洪以寻找新路由。';
+
+  @override
+  String get routePick_suggested => '推荐';
+
+  @override
+  String routePick_suggestBody(String route, int score) {
+    return '更可靠的路由：$route（得分 $score）。';
+  }
+
+  @override
+  String get routePick_use => '使用';
+
+  @override
+  String routePick_useLabel(String route) {
+    return '使用路由 $route';
+  }
+
+  @override
+  String get routePick_options => '可选路由';
+
+  @override
+  String get routePick_optionsHint =>
+      '该联系人的所有已知路由，按链路信号、送达记录、长度和新近程度评为 0–100 分。';
+
+  @override
+  String get routePick_none => '尚无路由。发送消息以发现路由。';
+
+  @override
+  String get routePick_other => '其他选择';
+
+  @override
+  String get routePick_build => '自建路由';
+
+  @override
+  String get routePick_flood => '让网络自行寻找路由';
+
+  @override
+  String get routePick_explainer =>
+      '测量会沿路由往返发送一次追踪，因此中继之间的每条链路都会双向测量。到联系人的最后一段无法追踪。读数保留 30 天，并用于所有使用同一链路的路由。';
+
+  @override
+  String routePick_score(int score) {
+    return '得分 $score/100';
+  }
+
+  @override
+  String routePick_hopLabel(
+    int number,
+    String name,
+    String quality,
+    String out,
+    String back,
+  ) {
+    return '第 $number 跳：$name。链路$quality，去程 $out 分贝，回程 $back 分贝。';
+  }
+
+  @override
+  String get routePick_lastLink => '到联系人的最后一段：无法通过追踪测量';
+
+  @override
+  String routePick_linkLine(String out, String back) {
+    return '去程 $out dB · 回程 $back dB';
+  }
+
+  @override
+  String routePick_optionLine(int score, int hops) {
+    return '得分 $score · 跳数：$hops';
+  }
+
+  @override
+  String routePick_record(int ok, int tries) {
+    return '送达 $ok/$tries';
+  }
+
+  @override
+  String routePick_weakest(String snr) {
+    return '最弱链路 $snr dB';
+  }
+
+  @override
+  String get routePick_inUse => '使用中';
 
   @override
   String get routing_floodBroadcast => '通过所有中继器进行广播';
@@ -10131,10 +10272,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get waypoints_toolSubtitle => '已保存的地点和路线；导入或导出 GPX';
 
   @override
-  String get waypoints_importFile => '导入 GPX 文件';
+  String get waypoints_importFile => '导入地图文件 (GPX、KML、GeoJSON)';
 
   @override
-  String get waypoints_importPaste => '粘贴 GPX';
+  String get waypoints_importPaste => '粘贴 GPX、KML 或 GeoJSON';
 
   @override
   String get waypoints_export => '导出 GPX';
@@ -10175,7 +10316,7 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get waypoints_importFailed => '这不是应用能读取的 GPX 文件。';
+  String get waypoints_importFailed => '这不是应用能读取的 GPX、KML 或 GeoJSON 文件。';
 
   @override
   String get waypoints_pasteHint => '在此粘贴 GPX 文本';
@@ -12061,4 +12202,66 @@ class AppLocalizationsZh extends AppLocalizations {
   String zones_alertOffTrailBody(String name, String distance, String trail) {
     return '$name 距离 $trail $distance。';
   }
+
+  @override
+  String get fw_title => '更新固件';
+
+  @override
+  String get fw_unknownVersion => '尚未报告固件版本';
+
+  @override
+  String fw_updateAvailable(String version) {
+    return '有更新的配套固件：$version';
+  }
+
+  @override
+  String get fw_upToDate => '这台电台已是最新的配套固件。';
+
+  @override
+  String get fw_checkFailed => '无法检查，可能处于离线状态。';
+
+  @override
+  String get fw_checkLatest => '检查最新版本';
+
+  @override
+  String get fw_checkPrivacy => '检查时会向 GitHub 获取 MeshCore 版本列表，不会发送任何关于你电台的信息。';
+
+  @override
+  String get fw_stepsTitle => '更新步骤';
+
+  @override
+  String get fw_step1 => '请先备份。更新可能会重置电台的设置和联系人。';
+
+  @override
+  String get fw_backup => '加密备份';
+
+  @override
+  String get fw_step2 =>
+      '在装有 Chrome 或 Edge 的电脑上打开 MeshCore 官方网页刷写工具，并用 USB 连接电台。';
+
+  @override
+  String get fw_openFlasher => '打开网页刷写工具';
+
+  @override
+  String get fw_copyLink => '复制链接';
+
+  @override
+  String get fw_linkCopied => '已复制链接';
+
+  @override
+  String get fw_step3 =>
+      '准确选择你的主板，然后按连接方式（蓝牙、USB 或 Wi-Fi）选择 Companion 固件。中继器和房间服务器固件无法用于本应用。';
+
+  @override
+  String get fw_step4 => '完成后在这里重新连接。如果设置被重置，请恢复备份。';
+
+  @override
+  String get fw_cautionTitle => '开始之前';
+
+  @override
+  String get fw_caution =>
+      '请先给电台充电，完成前不要拔线。如果更新失败，通常可以通过 USB 重新刷写恢复。本应用从不自行刷写固件。';
+
+  @override
+  String get fw_open => '如何更新固件';
 }
