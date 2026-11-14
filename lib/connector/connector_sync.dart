@@ -48,6 +48,11 @@ extension _ConnectorSync on MeshCoreConnector {
         !_contactSyncUsesSinceFilter &&
         _contactSyncSeen.isNotEmpty) {
       _contacts.removeWhere((c) => !_contactSyncSeen.contains(c.publicKeyHex));
+      // Forget the removed ones too, or Discovery keeps hiding them as if
+      // they were still saved on the radio.
+      _knownContactKeys
+        ..clear()
+        ..addAll(_contacts.map((c) => c.publicKeyHex));
     }
     _contactSyncSeen.clear();
     _contactSyncStalled = stalled;

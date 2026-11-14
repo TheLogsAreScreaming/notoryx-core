@@ -31,6 +31,10 @@ typedef AckHashMapping = ({
   DateTime timestamp,
   int attemptIndex,
   PathSelection? pathSelection,
+
+  /// True when attempts on different routes produced this ACK hash, so the
+  /// route that delivered it is unknown and must not be credited or learned.
+  bool ambiguous,
 });
 
 class RetryServiceConfig {
@@ -465,11 +469,18 @@ class MessageRetryService extends ChangeNotifier {
     }
 
     final message = _pendingMessages[messageId]!;
+    final pathSelection = _selectionFromMessage(message);
+    final earlier = _ackHashToMessageId[ackHashHex];
     _ackHashToMessageId[ackHashHex] = (
       messageId: messageId,
       timestamp: DateTime.now(),
       attemptIndex: message.retryCount,
-      pathSelection: _selectionFromMessage(message),
+      pathSelection: pathSelection,
+      ambiguous:
+          earlier != null &&
+          (earlier.ambiguous ||
+              earlier.messageId != messageId ||
+              !_sameRoute(earlier.pathSelection, pathSelection)),
     );
 
     // Add this ACK hash to the list of expected ACKs for this message (for history)
@@ -671,6 +682,7 @@ class MessageRetryService extends ChangeNotifier {
     String? matchedMessageId;
     int? matchedAttemptIndex;
     PathSelection? matchedPathSelection;
+    var ambiguousPath = false;
     final ackHashHex = ackHash.toRadixString(16).padLeft(8, '0');
 
     // Clean up old ACK hash mappings (older than 15 minutes)
@@ -691,6 +703,7 @@ class MessageRetryService extends ChangeNotifier {
       matchedMessageId = mapping.messageId;
       matchedAttemptIndex = mapping.attemptIndex;
       matchedPathSelection = mapping.pathSelection;
+      ambiguousPath = mapping.ambiguous;
     } else {
       config?.debugLogService?.warn(
         'PUSH_CODE_SEND_CONFIRMED: ACK hash $ackHashHex not found in direct mapping, trying fallback',
@@ -745,16 +758,21 @@ class MessageRetryService extends ChangeNotifier {
       config?.updateMessage(deliveredMessage);
 
       if (contact != null) {
-        _recordPathResultFromMessage(
-          contact.publicKeyHex,
-          message,
-          selection,
-          true,
-          tripTimeMs,
-        );
+        if (!ambiguousPath) {
+          _recordPathResultFromMessage(
+            contact.publicKeyHex,
+            message,
+            selection,
+            true,
+            tripTimeMs,
+          );
+        }
+        // Learn from the attempt this ACK belongs to, not the latest one: a
+        // late ACK for a direct attempt can land after a retry went flood.
         if (config?.onDeliveryObserved != null &&
             tripTimeMs > 0 &&
-            message.pathLength != null) {
+            selection != null &&
+            !ambiguousPath) {
           final outboundTextForObserved =
               config!.prepareContactOutboundText?.call(contact, message.text) ??
               message.text;
@@ -763,7 +781,7 @@ class MessageRetryService extends ChangeNotifier {
               .length;
           config.onDeliveryObserved!(
             contact.publicKeyHex,
-            message.pathLength!,
+            selection.useFlood ? -1 : selection.hopCount,
             messageBytesForObserved,
             tripTimeMs,
           );
@@ -822,6 +840,13 @@ class MessageRetryService extends ChangeNotifier {
     final recordSelection = selection ?? _selectionFromMessage(message);
     if (recordSelection == null) return;
     callback(contactKey, recordSelection, success, tripTimeMs);
+  }
+
+  static bool _sameRoute(PathSelection? a, PathSelection? b) {
+    if (a == null || b == null) return a == b;
+    return a.useFlood == b.useFlood &&
+        a.hopCount == b.hopCount &&
+        listEquals(a.pathBytes, b.pathBytes);
   }
 
   PathSelection? _selectionFromMessage(Message message) {
