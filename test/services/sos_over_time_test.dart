@@ -315,6 +315,170 @@ void main() {
     });
   });
 
+  group('after the app restarts', () {
+    /// Opens a fresh service on the saved data, as a restart would. The
+    /// caller has already closed the old one.
+    FieldOpsService restart(
+      FakeAsync time,
+      _Radio radio,
+      FieldOpsService ops,
+      DateTime Function() clock,
+    ) {
+      final again = FieldOpsService(radio, clock: clock);
+      unawaited(again.load());
+      time.flushMicrotasks();
+      return again;
+    }
+
+    void run(
+      void Function(
+        FakeAsync time,
+        _Radio radio,
+        FieldOpsService ops,
+        FieldOpsService Function(FieldOpsService) restartFrom,
+      )
+      body,
+    ) {
+      fakeAsync((time) {
+        SharedPreferences.setMockInitialValues({});
+        final start = DateTime.utc(2026, 11, 14, 12);
+        DateTime clock() => start.add(time.elapsed);
+        final radio = _Radio();
+        final ops = FieldOpsService(radio, clock: clock);
+        unawaited(ops.load());
+        time.flushMicrotasks();
+        unawaited(
+          ops.configureTrip(
+            TripPlan(members: [radio.person.publicKeyHex], sosChannel: 2),
+          ),
+        );
+        time.flushMicrotasks();
+        late FieldOpsService last;
+        last = ops;
+        body(time, radio, ops, (from) {
+          last = restart(time, radio, from, clock);
+          return last;
+        });
+        last.dispose();
+        unawaited(radio.stream.close());
+        radio.dispose();
+        time.flushMicrotasks();
+      });
+    }
+
+    test('an SOS keeps its count and repeat schedule', () {
+      run((time, radio, ops, restartFrom) {
+        _start(time, ops);
+        time.elapse(const Duration(minutes: 7)); // sent at 0 and 5
+        ops.dispose();
+        final again = restartFrom(ops);
+        expect(again.sos.active, true);
+        expect(again.sos.sends, 2);
+        expect(radio.sent, hasLength(2), reason: 'nothing due at 7 minutes');
+        expect(
+          again.entries.first.text,
+          contains('Repeats resume when the radio is connected'),
+        );
+
+        time.elapse(const Duration(minutes: 3, seconds: 15));
+        expect(again.sos.sends, 3);
+      });
+    });
+
+    test('an overdue repeat goes out as soon as the app is back', () {
+      run((time, radio, ops, restartFrom) {
+        _start(time, ops);
+        ops.dispose();
+        time.elapse(const Duration(minutes: 6));
+        final again = restartFrom(ops);
+        expect(again.sos.sends, 2);
+        expect(radio.sent, hasLength(2));
+      });
+    });
+
+    test('waits for the radio if it is not connected yet', () {
+      run((time, radio, ops, restartFrom) {
+        _start(time, ops);
+        ops.dispose();
+        time.elapse(const Duration(minutes: 6));
+        radio.connected = false;
+        final again = restartFrom(ops);
+        expect(again.sos.active, true);
+        expect(again.sos.sends, 1);
+
+        radio.connected = true;
+        time.elapse(const Duration(seconds: 15));
+        expect(again.sos.sends, 2);
+      });
+    });
+
+    test('never sends more than twelve in all', () {
+      run((time, radio, ops, restartFrom) {
+        _start(time, ops);
+        time.elapse(const Duration(minutes: 31)); // 7 sends
+        ops.dispose();
+        final again = restartFrom(ops);
+        time.elapse(const Duration(hours: 2));
+        expect(again.sos.sends, sosMaxSends);
+        expect(radio.sent, hasLength(sosMaxSends));
+      });
+    });
+
+    test('an acknowledged SOS stays acknowledged', () {
+      run((time, radio, ops, restartFrom) {
+        _start(time, ops);
+        radio.reply(radio.person, 'Coming');
+        time.flushMicrotasks();
+        ops.dispose();
+        final again = restartFrom(ops);
+        expect(again.sos.active, true);
+        expect(again.sos.acknowledgedBy, 'Trail partner');
+        time.elapse(const Duration(hours: 1));
+        expect(radio.sent, hasLength(1));
+      });
+    });
+
+    test('a stopped SOS does not come back', () {
+      run((time, radio, ops, restartFrom) {
+        _start(time, ops);
+        unawaited(ops.stopSos());
+        time.flushMicrotasks();
+        ops.dispose();
+        final again = restartFrom(ops);
+        expect(again.sos.active, false);
+        time.elapse(const Duration(hours: 1));
+        expect(radio.sent, hasLength(1));
+      });
+    });
+
+    test('an SOS older than its repeat schedule is shown, not resent', () {
+      run((time, radio, ops, restartFrom) {
+        _start(time, ops);
+        ops.dispose();
+        time.elapse(const Duration(days: 2));
+        final again = restartFrom(ops);
+        expect(again.sos.active, true, reason: 'only the sender ends it');
+        expect(again.sos.nextSendAt, isNull);
+        time.elapse(const Duration(hours: 1));
+        expect(radio.sent, hasLength(1));
+        expect(again.entries.first.text, contains('no more repeats are due'));
+      });
+    });
+
+    test('unreadable saved SOS data means no SOS', () {
+      expect(SosState.fromJson(null).active, false);
+      expect(SosState.fromJson('x').active, false);
+      expect(SosState.fromJson({'active': true}).active, false);
+      final s = SosState.fromJson({
+        'active': true,
+        'startedAt': '2026-11-14T12:00:00.000Z',
+        'sends': 99,
+      });
+      expect(s.active, true);
+      expect(s.sends, sosMaxSends);
+    });
+  });
+
   test('the SOS this app sends is one the relay recognises', () {
     final at = DateTime.utc(2026, 11, 14, 12);
     for (final text in [
