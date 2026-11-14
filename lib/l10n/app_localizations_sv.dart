@@ -11545,7 +11545,141 @@ class AppLocalizationsSv extends AppLocalizations {
   String get auto_entry => 'Automatiseringsregler';
 
   @override
-  String get auto_entrySub => 'Utlösare för batteri, tid, område och nod';
+  String get auto_entrySub =>
+      'Utlösare för batteri, tid, område, nod och meddelanden; OCH/ELLER';
+
+  @override
+  String get auto_trigMessage => 'Ett meddelande kommer';
+
+  @override
+  String get auto_actJoin => 'Gå med i hashtaggkanal';
+
+  @override
+  String get auto_actSound => 'Spela ett ljud';
+
+  @override
+  String get auto_actWebhook => 'Anropa en webhook';
+
+  @override
+  String get auto_outDone => 'Klart';
+
+  @override
+  String get auto_outNotConnected => 'Radion är inte ansluten';
+
+  @override
+  String get auto_outNoTarget => 'Mottagare eller adress saknas';
+
+  @override
+  String get auto_outWebOff => 'Webbförfrågningar är av';
+
+  @override
+  String get auto_outWebFailed => 'Webbförfrågan misslyckades';
+
+  @override
+  String get auto_outNoSlot => 'Ingen ledig kanalplats';
+
+  @override
+  String get auto_outFailed => 'Misslyckades';
+
+  @override
+  String get auto_anyone => 'Vem som helst';
+
+  @override
+  String get auto_webSwitch => 'Tillåt webbförfrågningar (webhooks)';
+
+  @override
+  String get auto_webSwitchSub =>
+      'Av som standard. Webhook-åtgärder behöver internet och hoppas över medan detta är av. Allt annat fungerar bara via radio.';
+
+  @override
+  String get auto_andJoin => ' och ';
+
+  @override
+  String get auto_orJoin => ' eller ';
+
+  @override
+  String get auto_needsInternet => 'Kräver internet';
+
+  @override
+  String get auto_recent => 'Senaste körningar';
+
+  @override
+  String get auto_needCondition => 'Lägg till minst ett villkor.';
+
+  @override
+  String get auto_needAction => 'Lägg till minst en åtgärd.';
+
+  @override
+  String get auto_conditions => 'Villkor';
+
+  @override
+  String get auto_actions => 'Åtgärder';
+
+  @override
+  String get auto_addCondition => 'Lägg till villkor';
+
+  @override
+  String get auto_addAction => 'Lägg till åtgärd';
+
+  @override
+  String auto_remove(String item) {
+    return 'Ta bort $item';
+  }
+
+  @override
+  String get auto_combine => 'Kör regeln när';
+
+  @override
+  String get auto_combineAny => 'Något (ELLER)';
+
+  @override
+  String get auto_combineAll => 'Alla (OCH)';
+
+  @override
+  String get auto_combineAnyHint => 'Körs när något av villkoren inträffar.';
+
+  @override
+  String get auto_combineAllHint =>
+      'Körs när ett villkor inträffar och alla andra gäller just då, som ”kl. 18:00 OCH batteri under 30 %”.';
+
+  @override
+  String get auto_editCondition => 'Villkor';
+
+  @override
+  String get auto_editAction => 'Åtgärd';
+
+  @override
+  String get auto_done => 'Klar';
+
+  @override
+  String get auto_contains => 'Meddelandet innehåller (valfritt)';
+
+  @override
+  String get auto_from => 'Från';
+
+  @override
+  String get auto_do => 'Gör';
+
+  @override
+  String get auto_webhookHint =>
+      'Kräver internet. Skickar regelnamn, tid, batteri, nod och text som JSON. Fungerar bara när webbförfrågningar är tillåtna.';
+
+  @override
+  String get auto_webhookUrl => 'Webhook-adress (https://…)';
+
+  @override
+  String get auto_channelName => 'Hashtaggkanal, t.ex. #vandrare';
+
+  @override
+  String get auto_needChannel => 'Ange kanalens namn.';
+
+  @override
+  String get auto_needUrl => 'Ange en webbadress som börjar med https://';
+
+  @override
+  String auto_placeholders(String list) {
+    return 'Du kan använda $list';
+  }
 
   @override
   String get teamSetup_title => 'Teaminställning';

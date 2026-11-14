@@ -11116,7 +11116,140 @@ class AppLocalizationsKo extends AppLocalizations {
   String get auto_entry => '자동화 규칙';
 
   @override
-  String get auto_entrySub => '배터리, 시간, 구역, 노드 조건';
+  String get auto_entrySub => '배터리, 시간, 구역, 노드, 메시지 트리거, AND/OR';
+
+  @override
+  String get auto_trigMessage => '메시지 수신';
+
+  @override
+  String get auto_actJoin => '해시태그 채널 참여';
+
+  @override
+  String get auto_actSound => '소리 재생';
+
+  @override
+  String get auto_actWebhook => '웹훅 호출';
+
+  @override
+  String get auto_outDone => '완료';
+
+  @override
+  String get auto_outNotConnected => '무전기 연결 안 됨';
+
+  @override
+  String get auto_outNoTarget => '받는 사람 또는 주소 없음';
+
+  @override
+  String get auto_outWebOff => '웹 요청 꺼짐';
+
+  @override
+  String get auto_outWebFailed => '웹 요청 실패';
+
+  @override
+  String get auto_outNoSlot => '빈 채널 슬롯 없음';
+
+  @override
+  String get auto_outFailed => '실패';
+
+  @override
+  String get auto_anyone => '누구나';
+
+  @override
+  String get auto_webSwitch => '웹 요청 허용(웹훅)';
+
+  @override
+  String get auto_webSwitchSub =>
+      '기본값은 꺼짐. 웹훅 동작은 인터넷이 필요하며 꺼져 있는 동안 건너뜁니다. 나머지는 무선만으로 작동합니다.';
+
+  @override
+  String get auto_andJoin => ' 그리고 ';
+
+  @override
+  String get auto_orJoin => ' 또는 ';
+
+  @override
+  String get auto_needsInternet => '인터넷 필요';
+
+  @override
+  String get auto_recent => '최근 실행';
+
+  @override
+  String get auto_needCondition => '조건을 하나 이상 추가하세요.';
+
+  @override
+  String get auto_needAction => '동작을 하나 이상 추가하세요.';
+
+  @override
+  String get auto_conditions => '조건';
+
+  @override
+  String get auto_actions => '동작';
+
+  @override
+  String get auto_addCondition => '조건 추가';
+
+  @override
+  String get auto_addAction => '동작 추가';
+
+  @override
+  String auto_remove(String item) {
+    return '$item 삭제';
+  }
+
+  @override
+  String get auto_combine => '규칙 실행 시점';
+
+  @override
+  String get auto_combineAny => '하나라도(OR)';
+
+  @override
+  String get auto_combineAll => '모두(AND)';
+
+  @override
+  String get auto_combineAnyHint => '조건 중 하나라도 발생하면 실행합니다.';
+
+  @override
+  String get auto_combineAllHint =>
+      '하나의 조건이 발생하고 그 순간 나머지가 모두 충족될 때 실행합니다(예: “18:00 그리고 배터리 30% 미만”).';
+
+  @override
+  String get auto_editCondition => '조건';
+
+  @override
+  String get auto_editAction => '동작';
+
+  @override
+  String get auto_done => '완료';
+
+  @override
+  String get auto_contains => '메시지 포함 내용(선택)';
+
+  @override
+  String get auto_from => '보낸 사람';
+
+  @override
+  String get auto_do => '실행';
+
+  @override
+  String get auto_webhookHint =>
+      '인터넷이 필요합니다. 규칙 이름, 시간, 배터리, 노드, 텍스트를 JSON으로 보냅니다. 웹 요청이 허용된 동안에만 작동합니다.';
+
+  @override
+  String get auto_webhookUrl => '웹훅 주소(https://…)';
+
+  @override
+  String get auto_channelName => '해시태그 채널(예: #hikers)';
+
+  @override
+  String get auto_needChannel => '채널 이름을 입력하세요.';
+
+  @override
+  String get auto_needUrl => 'https://로 시작하는 주소를 입력하세요';
+
+  @override
+  String auto_placeholders(String list) {
+    return '사용 가능: $list';
+  }
 
   @override
   String get teamSetup_title => '팀 설정';

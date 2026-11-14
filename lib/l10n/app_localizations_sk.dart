@@ -11609,7 +11609,142 @@ class AppLocalizationsSk extends AppLocalizations {
   String get auto_entry => 'Pravidlá automatizácie';
 
   @override
-  String get auto_entrySub => 'Spúšťače batérie, času, oblasti a uzla';
+  String get auto_entrySub =>
+      'Spúšťače: batéria, čas, oblasť, uzol a správy; A/ALEBO';
+
+  @override
+  String get auto_trigMessage => 'Príde správa';
+
+  @override
+  String get auto_actJoin => 'Pripojiť sa k hashtag kanálu';
+
+  @override
+  String get auto_actSound => 'Prehrať zvuk';
+
+  @override
+  String get auto_actWebhook => 'Zavolať webhook';
+
+  @override
+  String get auto_outDone => 'Hotovo';
+
+  @override
+  String get auto_outNotConnected => 'Rádio nie je pripojené';
+
+  @override
+  String get auto_outNoTarget => 'Chýba príjemca alebo adresa';
+
+  @override
+  String get auto_outWebOff => 'Webové požiadavky sú vypnuté';
+
+  @override
+  String get auto_outWebFailed => 'Webová požiadavka zlyhala';
+
+  @override
+  String get auto_outNoSlot => 'Žiadne voľné miesto pre kanál';
+
+  @override
+  String get auto_outFailed => 'Zlyhalo';
+
+  @override
+  String get auto_anyone => 'Ktokoľvek';
+
+  @override
+  String get auto_webSwitch => 'Povoliť webové požiadavky (webhooky)';
+
+  @override
+  String get auto_webSwitchSub =>
+      'Predvolene vypnuté. Akcie webhook potrebujú internet a kým je toto vypnuté, preskakujú sa. Všetko ostatné funguje len cez rádio.';
+
+  @override
+  String get auto_andJoin => ' a ';
+
+  @override
+  String get auto_orJoin => ' alebo ';
+
+  @override
+  String get auto_needsInternet => 'Vyžaduje internet';
+
+  @override
+  String get auto_recent => 'Posledné spustenia';
+
+  @override
+  String get auto_needCondition => 'Pridajte aspoň jednu podmienku.';
+
+  @override
+  String get auto_needAction => 'Pridajte aspoň jednu akciu.';
+
+  @override
+  String get auto_conditions => 'Podmienky';
+
+  @override
+  String get auto_actions => 'Akcie';
+
+  @override
+  String get auto_addCondition => 'Pridať podmienku';
+
+  @override
+  String get auto_addAction => 'Pridať akciu';
+
+  @override
+  String auto_remove(String item) {
+    return 'Odstrániť: $item';
+  }
+
+  @override
+  String get auto_combine => 'Spustiť pravidlo, keď';
+
+  @override
+  String get auto_combineAny => 'Ktorákoľvek (ALEBO)';
+
+  @override
+  String get auto_combineAll => 'Všetky (A)';
+
+  @override
+  String get auto_combineAnyHint =>
+      'Spustí sa, keď nastane ktorákoľvek z podmienok.';
+
+  @override
+  String get auto_combineAllHint =>
+      'Spustí sa, keď nastane jedna podmienka a všetky ostatné v tej chvíli platia, napr. „o 18:00 A batéria pod 30 %“.';
+
+  @override
+  String get auto_editCondition => 'Podmienka';
+
+  @override
+  String get auto_editAction => 'Akcia';
+
+  @override
+  String get auto_done => 'Hotovo';
+
+  @override
+  String get auto_contains => 'Správa obsahuje (voliteľné)';
+
+  @override
+  String get auto_from => 'Od';
+
+  @override
+  String get auto_do => 'Urobiť';
+
+  @override
+  String get auto_webhookHint =>
+      'Vyžaduje internet. Posiela názov pravidla, čas, batériu, uzol a text ako JSON. Funguje len, kým sú webové požiadavky povolené.';
+
+  @override
+  String get auto_webhookUrl => 'Adresa webhooku (https://…)';
+
+  @override
+  String get auto_channelName => 'Hashtag kanál, napr. #turisti';
+
+  @override
+  String get auto_needChannel => 'Zadajte názov kanála.';
+
+  @override
+  String get auto_needUrl => 'Zadajte webovú adresu začínajúcu https://';
+
+  @override
+  String auto_placeholders(String list) {
+    return 'Môžete použiť $list';
+  }
 
   @override
   String get teamSetup_title => 'Nastavenie tímu';

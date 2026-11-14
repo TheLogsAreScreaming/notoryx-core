@@ -11675,7 +11675,142 @@ class AppLocalizationsPl extends AppLocalizations {
   String get auto_entry => 'Reguły automatyzacji';
 
   @override
-  String get auto_entrySub => 'Wyzwalacze baterii, czasu, obszaru i węzła';
+  String get auto_entrySub =>
+      'Wyzwalacze: bateria, czas, obszar, węzeł i wiadomości; I/LUB';
+
+  @override
+  String get auto_trigMessage => 'Przychodzi wiadomość';
+
+  @override
+  String get auto_actJoin => 'Dołącz do kanału hashtag';
+
+  @override
+  String get auto_actSound => 'Odtwórz dźwięk';
+
+  @override
+  String get auto_actWebhook => 'Wywołaj webhook';
+
+  @override
+  String get auto_outDone => 'Wykonano';
+
+  @override
+  String get auto_outNotConnected => 'Radio niepołączone';
+
+  @override
+  String get auto_outNoTarget => 'Brak odbiorcy lub adresu';
+
+  @override
+  String get auto_outWebOff => 'Żądania sieciowe są wyłączone';
+
+  @override
+  String get auto_outWebFailed => 'Żądanie sieciowe nie powiodło się';
+
+  @override
+  String get auto_outNoSlot => 'Brak wolnego miejsca na kanał';
+
+  @override
+  String get auto_outFailed => 'Niepowodzenie';
+
+  @override
+  String get auto_anyone => 'Ktokolwiek';
+
+  @override
+  String get auto_webSwitch => 'Zezwalaj na żądania sieciowe (webhooki)';
+
+  @override
+  String get auto_webSwitchSub =>
+      'Domyślnie wyłączone. Akcje webhook wymagają internetu i są pomijane, gdy to jest wyłączone. Wszystko inne działa tylko przez radio.';
+
+  @override
+  String get auto_andJoin => ' i ';
+
+  @override
+  String get auto_orJoin => ' lub ';
+
+  @override
+  String get auto_needsInternet => 'Wymaga internetu';
+
+  @override
+  String get auto_recent => 'Ostatnie uruchomienia';
+
+  @override
+  String get auto_needCondition => 'Dodaj co najmniej jeden warunek.';
+
+  @override
+  String get auto_needAction => 'Dodaj co najmniej jedną akcję.';
+
+  @override
+  String get auto_conditions => 'Warunki';
+
+  @override
+  String get auto_actions => 'Akcje';
+
+  @override
+  String get auto_addCondition => 'Dodaj warunek';
+
+  @override
+  String get auto_addAction => 'Dodaj akcję';
+
+  @override
+  String auto_remove(String item) {
+    return 'Usuń: $item';
+  }
+
+  @override
+  String get auto_combine => 'Uruchom regułę, gdy';
+
+  @override
+  String get auto_combineAny => 'Dowolny (LUB)';
+
+  @override
+  String get auto_combineAll => 'Wszystkie (I)';
+
+  @override
+  String get auto_combineAnyHint =>
+      'Uruchamia się, gdy wystąpi dowolny z warunków.';
+
+  @override
+  String get auto_combineAllHint =>
+      'Uruchamia się, gdy wystąpi jeden warunek, a wszystkie pozostałe są w tej chwili spełnione, np. „o 18:00 I bateria poniżej 30%”.';
+
+  @override
+  String get auto_editCondition => 'Warunek';
+
+  @override
+  String get auto_editAction => 'Akcja';
+
+  @override
+  String get auto_done => 'Gotowe';
+
+  @override
+  String get auto_contains => 'Wiadomość zawiera (opcjonalnie)';
+
+  @override
+  String get auto_from => 'Od';
+
+  @override
+  String get auto_do => 'Wykonaj';
+
+  @override
+  String get auto_webhookHint =>
+      'Wymaga internetu. Wysyła nazwę reguły, czas, baterię, węzeł i tekst jako JSON. Działa tylko, gdy żądania sieciowe są dozwolone.';
+
+  @override
+  String get auto_webhookUrl => 'Adres webhooka (https://…)';
+
+  @override
+  String get auto_channelName => 'Kanał hashtag, np. #turysci';
+
+  @override
+  String get auto_needChannel => 'Wpisz nazwę kanału.';
+
+  @override
+  String get auto_needUrl => 'Wpisz adres zaczynający się od https://';
+
+  @override
+  String auto_placeholders(String list) {
+    return 'Możesz użyć $list';
+  }
 
   @override
   String get teamSetup_title => 'Ustawienia zespołu';

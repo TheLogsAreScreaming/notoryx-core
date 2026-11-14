@@ -11621,7 +11621,142 @@ class AppLocalizationsBg extends AppLocalizations {
   String get auto_entry => 'Правила за автоматизация';
 
   @override
-  String get auto_entrySub => 'Задействане по батерия, час, зона и възел';
+  String get auto_entrySub =>
+      'Задействане по батерия, час, зона, възел и съобщения; И/ИЛИ';
+
+  @override
+  String get auto_trigMessage => 'Пристига съобщение';
+
+  @override
+  String get auto_actJoin => 'Присъединяване към хаштаг канал';
+
+  @override
+  String get auto_actSound => 'Пусни звук';
+
+  @override
+  String get auto_actWebhook => 'Извикай webhook';
+
+  @override
+  String get auto_outDone => 'Готово';
+
+  @override
+  String get auto_outNotConnected => 'Радиото не е свързано';
+
+  @override
+  String get auto_outNoTarget => 'Липсва получател или адрес';
+
+  @override
+  String get auto_outWebOff => 'Уеб заявките са изключени';
+
+  @override
+  String get auto_outWebFailed => 'Уеб заявката е неуспешна';
+
+  @override
+  String get auto_outNoSlot => 'Няма свободно място за канал';
+
+  @override
+  String get auto_outFailed => 'Неуспех';
+
+  @override
+  String get auto_anyone => 'Всеки';
+
+  @override
+  String get auto_webSwitch => 'Разреши уеб заявки (webhooks)';
+
+  @override
+  String get auto_webSwitchSub =>
+      'Изключено по подразбиране. Webhook действията изискват интернет и се пропускат, докато това е изключено. Всичко останало работи само по радио.';
+
+  @override
+  String get auto_andJoin => ' и ';
+
+  @override
+  String get auto_orJoin => ' или ';
+
+  @override
+  String get auto_needsInternet => 'Изисква интернет';
+
+  @override
+  String get auto_recent => 'Последни изпълнения';
+
+  @override
+  String get auto_needCondition => 'Добавете поне едно условие.';
+
+  @override
+  String get auto_needAction => 'Добавете поне едно действие.';
+
+  @override
+  String get auto_conditions => 'Условия';
+
+  @override
+  String get auto_actions => 'Действия';
+
+  @override
+  String get auto_addCondition => 'Добави условие';
+
+  @override
+  String get auto_addAction => 'Добави действие';
+
+  @override
+  String auto_remove(String item) {
+    return 'Премахни $item';
+  }
+
+  @override
+  String get auto_combine => 'Изпълни правилото, когато';
+
+  @override
+  String get auto_combineAny => 'Някое (ИЛИ)';
+
+  @override
+  String get auto_combineAll => 'Всички (И)';
+
+  @override
+  String get auto_combineAnyHint =>
+      'Изпълнява се, когато настъпи някое от условията.';
+
+  @override
+  String get auto_combineAllHint =>
+      'Изпълнява се, когато настъпи едно условие и всички останали са в сила в този момент, напр. „в 18:00 И батерия под 30%“.';
+
+  @override
+  String get auto_editCondition => 'Условие';
+
+  @override
+  String get auto_editAction => 'Действие';
+
+  @override
+  String get auto_done => 'Готово';
+
+  @override
+  String get auto_contains => 'Съобщението съдържа (по избор)';
+
+  @override
+  String get auto_from => 'От';
+
+  @override
+  String get auto_do => 'Направи';
+
+  @override
+  String get auto_webhookHint =>
+      'Изисква интернет. Изпраща името на правилото, час, батерия, възел и текст като JSON. Работи само докато уеб заявките са разрешени.';
+
+  @override
+  String get auto_webhookUrl => 'Адрес на webhook (https://…)';
+
+  @override
+  String get auto_channelName => 'Хаштаг канал, напр. #туризъм';
+
+  @override
+  String get auto_needChannel => 'Въведете името на канала.';
+
+  @override
+  String get auto_needUrl => 'Въведете уеб адрес, започващ с https://';
+
+  @override
+  String auto_placeholders(String list) {
+    return 'Можете да използвате $list';
+  }
 
   @override
   String get teamSetup_title => 'Настройка на екип';

@@ -6167,7 +6167,63 @@
   "auto_message": "Message",
   "auto_save": "Save",
   "auto_entry": "Automation rules",
-  "auto_entrySub": "Battery, time, area and node triggers",
+  "auto_entrySub": "Battery, time, area, node and message triggers; AND/OR",
+  "auto_trigMessage": "A message arrives",
+  "auto_actJoin": "Join a hashtag channel",
+  "auto_actSound": "Play a sound",
+  "auto_actWebhook": "Call a webhook",
+  "auto_outDone": "Done",
+  "auto_outNotConnected": "Radio not connected",
+  "auto_outNoTarget": "Recipient or address missing",
+  "auto_outWebOff": "Web requests are off",
+  "auto_outWebFailed": "Web request failed",
+  "auto_outNoSlot": "No free channel slot",
+  "auto_outFailed": "Failed",
+  "auto_anyone": "Anyone",
+  "auto_webSwitch": "Allow web requests (webhooks)",
+  "auto_webSwitchSub": "Off by default. Webhook actions need internet and are skipped while this is off. Everything else works over radio alone.",
+  "auto_andJoin": " and ",
+  "auto_orJoin": " or ",
+  "auto_needsInternet": "Needs internet",
+  "auto_recent": "Recent runs",
+  "auto_needCondition": "Add at least one condition.",
+  "auto_needAction": "Add at least one action.",
+  "auto_conditions": "Conditions",
+  "auto_actions": "Actions",
+  "auto_addCondition": "Add condition",
+  "auto_addAction": "Add action",
+  "auto_remove": "Remove {item}",
+  "@auto_remove": {
+    "placeholders": {
+      "item": {
+        "type": "String"
+      }
+    }
+  },
+  "auto_combine": "Run the rule when",
+  "auto_combineAny": "Any (OR)",
+  "auto_combineAll": "All (AND)",
+  "auto_combineAnyHint": "Runs when any one of the conditions happens.",
+  "auto_combineAllHint": "Runs when one condition happens and all the others hold at that moment, like “at 18:00 AND battery below 30%”.",
+  "auto_editCondition": "Condition",
+  "auto_editAction": "Action",
+  "auto_done": "Done",
+  "auto_contains": "Message contains (optional)",
+  "auto_from": "From",
+  "auto_do": "Do",
+  "auto_webhookHint": "Needs internet. Sends the rule name, time, battery, node and text as JSON. Works only while web requests are allowed.",
+  "auto_webhookUrl": "Webhook address (https://…)",
+  "auto_channelName": "Hashtag channel, like #hikers",
+  "auto_needChannel": "Enter the channel name.",
+  "auto_needUrl": "Enter a web address starting with https://",
+  "auto_placeholders": "You can use {list}",
+  "@auto_placeholders": {
+    "placeholders": {
+      "list": {
+        "type": "String"
+      }
+    }
+  },
   "teamSetup_title": "Team setup",
   "teamSetup_toolSub": "Share radio settings, channels and routes",
   "teamSetup_share": "Share",
