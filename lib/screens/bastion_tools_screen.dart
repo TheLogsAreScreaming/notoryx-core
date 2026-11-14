@@ -1,3 +1,4 @@
+import 'zone_alerts_screen.dart';
 import '../theme/mesh_theme.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ import 'sentinel_screen.dart';
 import 'privacy_screen.dart';
 import 'waypoints_screen.dart';
 import 'network_changes_screen.dart';
+import 'node_journal_screen.dart';
 import 'troubleshooting_screen.dart';
 import 'battery_watch_screen.dart';
 import 'bastion_about_screen.dart';
@@ -26,6 +28,7 @@ import 'path_graph_screen.dart';
 import 'encrypted_backup_screen.dart';
 import 'field_guide_screen.dart';
 import 'bastion_field_ops_screen.dart';
+import 'checklists_screen.dart';
 import 'bastion_diagnostics_screen.dart';
 import 'bastion_field_stats_screen.dart';
 import 'bastion_map_hub_screen.dart';
@@ -35,6 +38,7 @@ import 'coverage_hex_screen.dart';
 import 'prefix_tool_screen.dart';
 import 'repeater_ping_screen.dart';
 import 'settings_screen.dart';
+import 'timeline_screen.dart';
 import 'track_log_screen.dart';
 import 'wardrive_screen.dart';
 import '../utils/platform_info.dart';
@@ -111,10 +115,22 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
             builder: (_) => const BastionFieldOpsScreen(),
           ),
           _ToolAction(
+            icon: Icons.checklist,
+            title: l10n.checklist_title,
+            subtitle: l10n.checklist_toolSubtitle,
+            builder: (_) => const ChecklistsScreen(),
+          ),
+          _ToolAction(
             icon: Icons.analytics_outlined,
             title: l10n.bastion_fieldStats,
             subtitle: l10n.bastionTools_statsHint,
             builder: (_) => const BastionFieldStatsScreen(),
+          ),
+          _ToolAction(
+            icon: Icons.view_timeline_outlined,
+            title: l10n.timeline_title,
+            subtitle: l10n.timeline_toolSubtitle,
+            builder: (_) => const TimelineScreen(),
           ),
           _ToolAction(
             icon: Icons.timeline,
@@ -150,6 +166,12 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
             title: l10n.waypoints_title,
             subtitle: l10n.waypoints_toolSubtitle,
             builder: (_) => const WaypointsScreen(),
+          ),
+          _ToolAction(
+            icon: Icons.radar,
+            title: l10n.zones_title,
+            subtitle: l10n.zones_toolSubtitle,
+            builder: (_) => const ZoneAlertsScreen(),
           ),
           _ToolAction(
             icon: Icons.cell_tower,
@@ -193,6 +215,12 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
             title: l10n.bastion_repeaterTools,
             subtitle: l10n.bastionTools_repeaterHint,
             builder: (_) => const BastionRepeaterToolsScreen(),
+          ),
+          _ToolAction(
+            icon: Icons.auto_stories_outlined,
+            title: l10n.journal_title,
+            subtitle: l10n.journal_toolSubtitle,
+            builder: (_) => const NodeJournalScreen(),
           ),
           _ToolAction(
             icon: Icons.notifications_active_outlined,

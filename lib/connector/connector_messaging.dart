@@ -575,7 +575,8 @@ extension _ConnectorMessaging on MeshCoreConnector {
         : message.text.trim();
     unawaited(() async {
       await _notificationService.showChannelMessageNotification(
-        channelName: label,
+        radio: slot,
+        channelName: notificationTitle(label),
         senderName: message.senderName,
         message: resolvedText,
         urlImagesEnabled: isChannelUrlImagesEnabled(channelIndex),

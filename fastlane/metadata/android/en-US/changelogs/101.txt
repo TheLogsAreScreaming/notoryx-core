@@ -1,0 +1,3 @@
+• First stable release of NOTORYX Core
+• Multiple radios: add several, switch between them, and keep chats, unread counts and outboxes for each
+• Includes everything from the 10.0.0 test builds

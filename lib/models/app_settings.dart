@@ -162,6 +162,9 @@ class AppSettings {
   final bool mapShowTelemetry;
   final String mapTelemetryMetric;
 
+  /// Map shows only favourite (trusted) nodes.
+  final bool mapFavoritesOnly;
+
   /// Signs every channel post, not only SOS. Each signature is one extra
   /// packet on air.
   final bool signChannelPosts;
@@ -303,6 +306,7 @@ class AppSettings {
     this.autoConnectRadio = false,
     this.mapShowTelemetry = false,
     this.mapTelemetryMetric = 'battery',
+    this.mapFavoritesOnly = false,
     this.signChannelPosts = false,
     this.reactionsOverRadio = 'auto',
     this.appTheme = 'blaze',
@@ -400,6 +404,7 @@ class AppSettings {
       'auto_connect_radio': autoConnectRadio,
       'map_show_telemetry': mapShowTelemetry,
       'map_telemetry_metric': mapTelemetryMetric,
+      'map_favorites_only': mapFavoritesOnly,
       'sign_channel_posts': signChannelPosts,
       'reactions_over_radio': reactionsOverRadio,
       'app_theme': appTheme,
@@ -526,6 +531,7 @@ class AppSettings {
       autoConnectRadio: json['auto_connect_radio'] as bool? ?? false,
       mapShowTelemetry: json['map_show_telemetry'] as bool? ?? false,
       mapTelemetryMetric: json['map_telemetry_metric'] as String? ?? 'battery',
+      mapFavoritesOnly: json['map_favorites_only'] as bool? ?? false,
       signChannelPosts: json['sign_channel_posts'] as bool? ?? false,
       reactionsOverRadio: switch (json['reactions_over_radio']) {
         final String v when const {'auto', 'on', 'off'}.contains(v) => v,
@@ -674,6 +680,7 @@ class AppSettings {
     bool? autoConnectRadio,
     bool? mapShowTelemetry,
     String? mapTelemetryMetric,
+    bool? mapFavoritesOnly,
     bool? signChannelPosts,
     String? reactionsOverRadio,
     String? appTheme,
@@ -769,6 +776,7 @@ class AppSettings {
       autoConnectRadio: autoConnectRadio ?? this.autoConnectRadio,
       mapShowTelemetry: mapShowTelemetry ?? this.mapShowTelemetry,
       mapTelemetryMetric: mapTelemetryMetric ?? this.mapTelemetryMetric,
+      mapFavoritesOnly: mapFavoritesOnly ?? this.mapFavoritesOnly,
       signChannelPosts: signChannelPosts ?? this.signChannelPosts,
       reactionsOverRadio: reactionsOverRadio ?? this.reactionsOverRadio,
       appTheme: appTheme ?? this.appTheme,

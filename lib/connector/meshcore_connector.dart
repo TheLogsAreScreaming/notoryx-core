@@ -89,6 +89,28 @@ part 'connector_sync.dart';
 part 'connector_connection.dart';
 
 class MeshCoreConnector extends ChangeNotifier {
+  /// Creates one radio connection. [slot] keeps this connection's saved
+  /// radio apart from other connections; the first radio uses '' so it
+  /// reads the same saved radio as earlier builds.
+  MeshCoreConnector({this.slot = ''});
+
+  /// Which saved-radio slot this connection uses: '' for the first radio.
+  final String slot;
+
+  /// The radio's name to add to notification titles, or null. Set by the
+  /// app when it has more than one radio, so you can tell which one a
+  /// message came in on.
+  String? Function()? notificationRadioName;
+
+  /// [title] with the radio's name after it, when there is one.
+  String notificationTitle(String title) {
+    final radio = notificationRadioName?.call();
+    return radio == null || radio.isEmpty ? title : '$title · $radio';
+  }
+
+  /// This connection's retry service, once [initialize] has run.
+  MessageRetryService? get retryService => _retryService;
+
   /// Lets the part files notify, since extensions can't call protected
   /// members directly.
   void _notifyFromPart() => notifyListeners();
@@ -438,7 +460,7 @@ class MeshCoreConnector extends ChangeNotifier {
   /// transport and its address.
   SavedRadio? get savedRadio {
     final prefs = _prefsOrNull;
-    return prefs == null ? null : SavedRadio.load(prefs);
+    return prefs == null ? null : SavedRadio.load(prefs, slot: slot);
   }
 
   /// Replaces the platform BLE link steps (connect, MTU, discovery, notify)
@@ -972,6 +994,7 @@ class MeshCoreConnector extends ChangeNotifier {
       _notificationService.clearContactNotification(
         contactKeyHex,
         getTotalUnreadCount(),
+        radio: slot,
       );
       notifyListeners();
     }
@@ -1017,6 +1040,7 @@ class MeshCoreConnector extends ChangeNotifier {
       _notificationService.clearChannelNotification(
         channelIndex,
         getTotalUnreadCount(),
+        radio: slot,
       );
       notifyListeners();
     }
@@ -2216,7 +2240,7 @@ class MeshCoreConnector extends ChangeNotifier {
       transport: transport,
       address: address.trim(),
       name: name,
-    ).save(prefs).catchError((Object error) {
+    ).save(prefs, slot: slot).catchError((Object error) {
       _appDebugLogService?.warn(
         'Saving last radio failed: $error',
         tag: 'Connection',
@@ -2228,7 +2252,7 @@ class MeshCoreConnector extends ChangeNotifier {
   Future<void> forgetSavedRadio() async {
     final prefs = _prefsOrNull;
     if (prefs == null) return;
-    await SavedRadio.clear(prefs);
+    await SavedRadio.clear(prefs, slot: slot);
     notifyListeners();
   }
 

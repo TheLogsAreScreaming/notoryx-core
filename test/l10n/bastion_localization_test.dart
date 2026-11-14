@@ -9,14 +9,19 @@ import 'package:meshcore_open/models/field_ops.dart';
 /// Key prefixes of the Bastion screens' strings.
 const _bastionPrefixes = [
   'bastion_',
+  'journal_',
   'bastionHome_',
   'bastionTools_',
   'bastionAbout_',
   'bastionSetup_',
   'bastionDiag_',
   'sos_',
+  'timeline_',
   'checkIn_',
+  'signedCov_',
   'tripBrief_',
+  'checklist_',
+  'auto_',
   'fieldOps_',
   'coverage_',
   'fieldStats_',
@@ -30,6 +35,11 @@ const _bastionPrefixes = [
   'settings_readAloud',
   'chat_readAloud',
   'sentinel_',
+  'rptTest_',
+  'mapTrust_',
+  'topology_',
+  'traceCard_',
+  'zones_',
 ];
 
 Map<String, dynamic> _arb(String locale) =>
