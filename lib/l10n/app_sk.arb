@@ -5063,5 +5063,6 @@
   "hopTie_marginHelp": "Ako blízko (v %) musia byť vzdialenosti dvoch opakovačov, aby rozhodol zapamätaný výber. 0 len presná zhoda; do 20; predvolene 5.",
   "hopTie_forget": "Zabudnúť zapamätané výbery ({count})",
   "hopTie_less": "Menej",
-  "hopTie_more": "Viac"
+  "hopTie_more": "Viac",
+  "bk_rolledBack": "Obnovenie zlyhalo, preto sa všetky nastavenia vrátili do pôvodného stavu. Nič sa nezmenilo."
 }

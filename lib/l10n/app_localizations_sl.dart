@@ -13254,4 +13254,8 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get hopTie_more => 'Več';
+
+  @override
+  String get bk_rolledBack =>
+      'Obnovitev ni uspela, zato so bile vse nastavitve vrnjene, kot so bile. Nič se ni spremenilo.';
 }

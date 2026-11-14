@@ -6938,5 +6938,6 @@
     }
   },
   "hopTie_less": "Less",
-  "hopTie_more": "More"
+  "hopTie_more": "More",
+  "bk_rolledBack": "Restore failed, so every setting was put back as it was. Nothing changed."
 }

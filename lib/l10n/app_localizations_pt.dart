@@ -13253,4 +13253,8 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get hopTie_more => 'Mais';
+
+  @override
+  String get bk_rolledBack =>
+      'A restauração falhou, por isso todas as definições voltaram ao que eram. Nada mudou.';
 }

@@ -13120,4 +13120,8 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get hopTie_more => 'More';
+
+  @override
+  String get bk_rolledBack =>
+      'Restore failed, so every setting was put back as it was. Nothing changed.';
 }

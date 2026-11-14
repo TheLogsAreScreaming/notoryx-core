@@ -13298,4 +13298,8 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get hopTie_more => 'Больше';
+
+  @override
+  String get bk_rolledBack =>
+      'Восстановление не удалось, поэтому все настройки возвращены как были. Ничего не изменилось.';
 }

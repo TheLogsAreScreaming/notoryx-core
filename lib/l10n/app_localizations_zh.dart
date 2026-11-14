@@ -12430,4 +12430,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get hopTie_more => '增加';
+
+  @override
+  String get bk_rolledBack => '恢复失败，所有设置已还原为原样。没有任何更改。';
 }
