@@ -12,6 +12,7 @@ import 'package:share_plus/share_plus.dart';
 import '../l10n/l10n.dart';
 import '../models/network_scan.dart';
 import '../models/radio_settings.dart';
+import '../services/map_tile_cache_service.dart';
 import '../services/network_scan_service.dart';
 import '../theme/mesh_theme.dart';
 import '../widgets/ember_backdrop.dart';
@@ -655,7 +656,7 @@ class _NetworkLogMap extends StatelessWidget {
         children: [
           TileLayer(
             urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
-            userAgentPackageName: 'com.bastionmesh.bastion',
+            userAgentPackageName: MapTileCacheService.userAgentPackageName,
           ),
           MarkerLayer(
             markers: [
