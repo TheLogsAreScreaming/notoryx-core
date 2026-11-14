@@ -13261,6 +13261,95 @@ class AppLocalizationsHu extends AppLocalizations {
       'A visszaállítás nem sikerült, ezért minden beállítás visszakerült az eredeti állapotába. Semmi sem változott.';
 
   @override
+  String get outbox_maybeSent =>
+      'A küldés megszakadt, így lehet, hogy az üzenet már elment. Visszakerült az üzenetmezőbe: ellenőrizd, mielőtt újra elküldöd.';
+
+  @override
+  String get outbox_tooLong =>
+      'Túl hosszú a rádiónak, ezért visszakerült az üzenetmezőbe rövidítésre.';
+
+  @override
+  String get rf_title => 'Rádió funkciói';
+
+  @override
+  String get rf_radioStats => 'Élő rádióstatisztika';
+
+  @override
+  String get rf_textCli => 'Szöveges parancssor';
+
+  @override
+  String get rf_channelData => 'Csatornaadatok';
+
+  @override
+  String get rf_signedPosts => 'Aláírt csatornabejegyzések';
+
+  @override
+  String get rf_rawPackets => 'Nyers csomagok';
+
+  @override
+  String get rf_floodCorridor => 'Elárasztási folyosó (egyedi firmware)';
+
+  @override
+  String get rf_supported => 'Támogatott';
+
+  @override
+  String get rf_unsupported => 'Nem támogatott';
+
+  @override
+  String get rf_unknown => 'Ismeretlen';
+
+  @override
+  String get rf_evNotConnected => 'Csatlakoztass egy rádiót az ellenőrzéshez.';
+
+  @override
+  String get rf_evNotChecked => 'Még nincs ellenőrizve.';
+
+  @override
+  String get rf_evProbeAnswered => 'A rádió válaszolt az ellenőrzésre.';
+
+  @override
+  String get rf_evProbeRejected => 'A rádió jelezte, hogy ezt nem támogatja.';
+
+  @override
+  String get rf_evDerived => 'Csatornaadatok és a rádió kulcsa szükséges.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return 'A rádió v$have protokollt jelez; v$need szükséges.';
+  }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '$count sérült csempefájl törölve (hiányos vagy nem kép). Töltsd le újra a területet a pótlásukhoz.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Hiányzó zoomszintenként: $list';
+  }
+
+  @override
+  String batteryWatch_basis(int count, String days, String confidence) {
+    return '$count mérés alapján, $days nap alatt: $confidence.';
+  }
+
+  @override
+  String get batteryWatch_confGood => 'egyértelmű trend';
+
+  @override
+  String get batteryWatch_confLow =>
+      'túl kevés vagy túl szórt a biztos megállapításhoz';
+
+  @override
+  String get batteryWatch_maybeFalling =>
+      'Lehet, hogy csökken, de még nincs elég mérés.';
+
+  @override
+  String batteryWatch_gap(String days) {
+    return 'Leghosszabb szünet mérés nélkül: $days nap.';
+  }
+
+  @override
   String get ml_title => 'Térkép listaként';
 
   @override
