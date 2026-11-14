@@ -13348,4 +13348,45 @@ class AppLocalizationsHu extends AppLocalizations {
   String batteryWatch_gap(String days) {
     return 'Leghosszabb szünet mérés nélkül: $days nap.';
   }
+
+  @override
+  String get ml_title => 'Térkép listaként';
+
+  @override
+  String get ml_intro =>
+      'Minden a térképről szavakban, a legközelebbi elöl. A távolság légvonalban értendő a rádiódtól. Az útvonal az üzenetek rádiós útja, nem terepi ösvény.';
+
+  @override
+  String get ml_nodes => 'Csomópontok';
+
+  @override
+  String get ml_waypoints => 'Útpontok';
+
+  @override
+  String get ml_none => 'Nincs';
+
+  @override
+  String get ml_noOwnPosition =>
+      'Ismeretlen távolság: a rádiódnak nincs pozíciója';
+
+  @override
+  String ml_heard(String ago) {
+    return 'hallva $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': 'észak',
+      'ne': 'északkelet',
+      'e': 'kelet',
+      'se': 'délkelet',
+      's': 'dél',
+      'sw': 'délnyugat',
+      'w': 'nyugat',
+      'nw': 'északnyugat',
+      'other': '',
+    });
+    return '$distance, $_temp0';
+  }
 }

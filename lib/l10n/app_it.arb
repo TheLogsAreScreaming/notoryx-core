@@ -5223,5 +5223,13 @@
   "batteryWatch_confGood": "una tendenza chiara",
   "batteryWatch_confLow": "troppo poche o troppo sparse per esserne certi",
   "batteryWatch_maybeFalling": "Potrebbe scendere, ma non ci sono ancora abbastanza letture.",
-  "batteryWatch_gap": "Intervallo più lungo senza letture: {days} giorni."
+  "batteryWatch_gap": "Intervallo più lungo senza letture: {days} giorni.",
+  "ml_title": "Mappa come elenco",
+  "ml_intro": "Tutto ciò che è sulla mappa a parole, prima il più vicino. Le distanze sono in linea d'aria dalla tua radio. Un percorso è come viaggiano i messaggi via radio, non un sentiero sul terreno.",
+  "ml_nodes": "Nodi",
+  "ml_waypoints": "Waypoint",
+  "ml_none": "Nessuno",
+  "ml_noOwnPosition": "Distanza sconosciuta: la tua radio non ha una posizione",
+  "ml_heard": "sentito {ago}",
+  "ml_distanceDir": "{distance} a {dir, select, n{nord} ne{nord-est} e{est} se{sud-est} s{sud} sw{sud-ovest} w{ovest} nw{nord-ovest} other{}}"
 }

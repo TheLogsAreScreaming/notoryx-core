@@ -5089,5 +5089,13 @@
   "batteryWatch_confGood": "en tydlig trend",
   "batteryWatch_confLow": "för få eller för spridda för att vara säker",
   "batteryWatch_maybeFalling": "Kan vara på väg ner, men det finns inte tillräckligt med avläsningar än.",
-  "batteryWatch_gap": "Längsta uppehåll utan avläsning: {days} dagar."
+  "batteryWatch_gap": "Längsta uppehåll utan avläsning: {days} dagar.",
+  "ml_title": "Karta som lista",
+  "ml_intro": "Allt på kartan i ord, närmast först. Avstånd är fågelvägen från din radio. En rutt är hur meddelanden färdas via radio, inte en stig i terrängen.",
+  "ml_nodes": "Noder",
+  "ml_waypoints": "Vägpunkter",
+  "ml_none": "Inga",
+  "ml_noOwnPosition": "Okänt avstånd: din radio har ingen position",
+  "ml_heard": "hörd {ago}",
+  "ml_distanceDir": "{distance} åt {dir, select, n{norr} ne{nordost} e{öster} se{sydost} s{söder} sw{sydväst} w{väster} nw{nordväst} other{}}"
 }

@@ -5127,5 +5127,13 @@
   "batteryWatch_confGood": "wyraźny trend",
   "batteryWatch_confLow": "za mało lub zbyt rozproszone, by mieć pewność",
   "batteryWatch_maybeFalling": "Może spadać, ale jest jeszcze za mało odczytów.",
-  "batteryWatch_gap": "Najdłuższa przerwa bez odczytu: {days} dni."
+  "batteryWatch_gap": "Najdłuższa przerwa bez odczytu: {days} dni.",
+  "ml_title": "Mapa jako lista",
+  "ml_intro": "Wszystko z mapy słowami, najbliższe najpierw. Odległości w linii prostej od twojego radia. Trasa to droga wiadomości przez radio, a nie ścieżka w terenie.",
+  "ml_nodes": "Węzły",
+  "ml_waypoints": "Punkty trasy",
+  "ml_none": "Brak",
+  "ml_noOwnPosition": "Odległość nieznana: twoje radio nie ma pozycji",
+  "ml_heard": "słyszany {ago}",
+  "ml_distanceDir": "{distance}, kierunek: {dir, select, n{północ} ne{północny wschód} e{wschód} se{południowy wschód} s{południe} sw{południowy zachód} w{zachód} nw{północny zachód} other{}}"
 }

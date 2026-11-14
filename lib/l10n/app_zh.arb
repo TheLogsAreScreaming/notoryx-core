@@ -5094,5 +5094,13 @@
   "batteryWatch_confGood": "趋势明确",
   "batteryWatch_confLow": "太少或太分散，无法确定",
   "batteryWatch_maybeFalling": "可能在下降，但读数还不够，无法判断。",
-  "batteryWatch_gap": "最长无读数间隔:{days} 天。"
+  "batteryWatch_gap": "最长无读数间隔:{days} 天。",
+  "ml_title": "列表形式的地图",
+  "ml_intro": "用文字列出地图上的所有内容，最近的在前。距离为从你的电台出发的直线距离。路由是消息在无线电中的传输方式，而不是地面上的路径。",
+  "ml_nodes": "节点",
+  "ml_waypoints": "航点",
+  "ml_none": "无",
+  "ml_noOwnPosition": "距离未知:你的电台没有位置",
+  "ml_heard": "收到于 {ago}",
+  "ml_distanceDir": "{dir, select, n{北} ne{东北} e{东} se{东南} s{南} sw{西南} w{西} nw{西北} other{}}方向 {distance}"
 }

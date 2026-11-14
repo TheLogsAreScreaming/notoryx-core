@@ -13391,4 +13391,45 @@ class AppLocalizationsRu extends AppLocalizations {
   String batteryWatch_gap(String days) {
     return 'Самый долгий перерыв без измерений: $days дн.';
   }
+
+  @override
+  String get ml_title => 'Карта списком';
+
+  @override
+  String get ml_intro =>
+      'Всё на карте словами, сначала ближайшее. Расстояния по прямой от вашего радио. Маршрут — это путь сообщений по радио, а не дорога на местности.';
+
+  @override
+  String get ml_nodes => 'Узлы';
+
+  @override
+  String get ml_waypoints => 'Точки';
+
+  @override
+  String get ml_none => 'Нет';
+
+  @override
+  String get ml_noOwnPosition =>
+      'Расстояние неизвестно: у вашего радио нет позиции';
+
+  @override
+  String ml_heard(String ago) {
+    return 'слышен $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': 'север',
+      'ne': 'северо-восток',
+      'e': 'восток',
+      'se': 'юго-восток',
+      's': 'юг',
+      'sw': 'юго-запад',
+      'w': 'запад',
+      'nw': 'северо-запад',
+      'other': '',
+    });
+    return '$distance, направление: $_temp0';
+  }
 }

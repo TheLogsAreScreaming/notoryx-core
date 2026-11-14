@@ -6969,5 +6969,15 @@
   "batteryWatch_maybeFalling": "Might be falling, but there aren't enough readings yet to say.",
   "batteryWatch_gap": "Longest gap without a reading: {days} days.",
   "@batteryWatch_basis": {"placeholders": {"count": {"type": "int"}, "days": {"type": "String"}, "confidence": {"type": "String"}}},
-  "@batteryWatch_gap": {"placeholders": {"days": {"type": "String"}}}
+  "@batteryWatch_gap": {"placeholders": {"days": {"type": "String"}}},
+  "ml_title": "Map as a list",
+  "ml_intro": "Everything on the map in words, nearest first. Distances are in a straight line from your radio. A route is how messages travel over the radio, not a path on the ground.",
+  "ml_nodes": "Nodes",
+  "ml_waypoints": "Waypoints",
+  "ml_none": "None",
+  "ml_noOwnPosition": "Distance unknown: your radio has no position",
+  "ml_heard": "heard {ago}",
+  "ml_distanceDir": "{distance} {dir, select, n{north} ne{north-east} e{east} se{south-east} s{south} sw{south-west} w{west} nw{north-west} other{}}",
+  "@ml_distanceDir": {"placeholders": {"distance": {"type": "String"}, "dir": {"type": "String"}}},
+  "@ml_heard": {"placeholders": {"ago": {"type": "String"}}}
 }

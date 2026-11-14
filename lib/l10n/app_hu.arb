@@ -5127,5 +5127,13 @@
   "batteryWatch_confGood": "egyértelmű trend",
   "batteryWatch_confLow": "túl kevés vagy túl szórt a biztos megállapításhoz",
   "batteryWatch_maybeFalling": "Lehet, hogy csökken, de még nincs elég mérés.",
-  "batteryWatch_gap": "Leghosszabb szünet mérés nélkül: {days} nap."
+  "batteryWatch_gap": "Leghosszabb szünet mérés nélkül: {days} nap.",
+  "ml_title": "Térkép listaként",
+  "ml_intro": "Minden a térképről szavakban, a legközelebbi elöl. A távolság légvonalban értendő a rádiódtól. Az útvonal az üzenetek rádiós útja, nem terepi ösvény.",
+  "ml_nodes": "Csomópontok",
+  "ml_waypoints": "Útpontok",
+  "ml_none": "Nincs",
+  "ml_noOwnPosition": "Ismeretlen távolság: a rádiódnak nincs pozíciója",
+  "ml_heard": "hallva {ago}",
+  "ml_distanceDir": "{distance}, {dir, select, n{észak} ne{északkelet} e{kelet} se{délkelet} s{dél} sw{délnyugat} w{nyugat} nw{északnyugat} other{}}"
 }

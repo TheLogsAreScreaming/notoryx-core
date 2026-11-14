@@ -13390,4 +13390,44 @@ class AppLocalizationsUk extends AppLocalizations {
   String batteryWatch_gap(String days) {
     return 'Найдовша перерва без вимірювань: $days дн.';
   }
+
+  @override
+  String get ml_title => 'Карта списком';
+
+  @override
+  String get ml_intro =>
+      'Усе на карті словами, спершу найближче. Відстані — по прямій від вашого радіо. Маршрут — це шлях повідомлень радіо, а не стежка на місцевості.';
+
+  @override
+  String get ml_nodes => 'Вузли';
+
+  @override
+  String get ml_waypoints => 'Точки';
+
+  @override
+  String get ml_none => 'Немає';
+
+  @override
+  String get ml_noOwnPosition => 'Відстань невідома: ваше радіо не має позиції';
+
+  @override
+  String ml_heard(String ago) {
+    return 'чути $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': 'північ',
+      'ne': 'північний схід',
+      'e': 'схід',
+      'se': 'південний схід',
+      's': 'південь',
+      'sw': 'південний захід',
+      'w': 'захід',
+      'nw': 'північний захід',
+      'other': '',
+    });
+    return '$distance, напрямок: $_temp0';
+  }
 }

@@ -13321,4 +13321,44 @@ class AppLocalizationsSk extends AppLocalizations {
   String batteryWatch_gap(String days) {
     return 'Najdlhšia medzera bez merania: $days dní.';
   }
+
+  @override
+  String get ml_title => 'Mapa ako zoznam';
+
+  @override
+  String get ml_intro =>
+      'Všetko z mapy slovami, najbližšie najprv. Vzdialenosti sú vzdušnou čiarou od vášho rádia. Trasa je cesta správ cez rádio, nie chodník v teréne.';
+
+  @override
+  String get ml_nodes => 'Uzly';
+
+  @override
+  String get ml_waypoints => 'Body trasy';
+
+  @override
+  String get ml_none => 'Žiadne';
+
+  @override
+  String get ml_noOwnPosition => 'Vzdialenosť neznáma: vaše rádio nemá polohu';
+
+  @override
+  String ml_heard(String ago) {
+    return 'počutý $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': 'sever',
+      'ne': 'severovýchod',
+      'e': 'východ',
+      'se': 'juhovýchod',
+      's': 'juh',
+      'sw': 'juhozápad',
+      'w': 'západ',
+      'nw': 'severozápad',
+      'other': '',
+    });
+    return '$distance, smer: $_temp0';
+  }
 }

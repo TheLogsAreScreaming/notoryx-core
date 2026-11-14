@@ -13346,4 +13346,44 @@ class AppLocalizationsSl extends AppLocalizations {
   String batteryWatch_gap(String days) {
     return 'Najdaljša vrzel brez meritve: $days dni.';
   }
+
+  @override
+  String get ml_title => 'Zemljevid kot seznam';
+
+  @override
+  String get ml_intro =>
+      'Vse na zemljevidu z besedami, najbližje najprej. Razdalje so zračne od vašega radia. Pot je to, kako sporočila potujejo po radiu, ne steza na terenu.';
+
+  @override
+  String get ml_nodes => 'Vozlišča';
+
+  @override
+  String get ml_waypoints => 'Točke poti';
+
+  @override
+  String get ml_none => 'Nič';
+
+  @override
+  String get ml_noOwnPosition => 'Razdalja neznana: vaš radio nima položaja';
+
+  @override
+  String ml_heard(String ago) {
+    return 'slišan $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': 'sever',
+      'ne': 'severovzhod',
+      'e': 'vzhod',
+      'se': 'jugovzhod',
+      's': 'jug',
+      'sw': 'jugozahod',
+      'w': 'zahod',
+      'nw': 'severozahod',
+      'other': '',
+    });
+    return '$distance, smer: $_temp0';
+  }
 }

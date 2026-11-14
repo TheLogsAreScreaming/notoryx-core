@@ -13381,4 +13381,45 @@ class AppLocalizationsDe extends AppLocalizations {
   String batteryWatch_gap(String days) {
     return 'Längste Lücke ohne Messung: $days Tage.';
   }
+
+  @override
+  String get ml_title => 'Karte als Liste';
+
+  @override
+  String get ml_intro =>
+      'Alles auf der Karte in Worten, das Nächste zuerst. Entfernungen gelten in Luftlinie ab deinem Funkgerät. Eine Route ist der Funkweg der Nachrichten, kein Weg im Gelände.';
+
+  @override
+  String get ml_nodes => 'Knoten';
+
+  @override
+  String get ml_waypoints => 'Wegpunkte';
+
+  @override
+  String get ml_none => 'Keine';
+
+  @override
+  String get ml_noOwnPosition =>
+      'Entfernung unbekannt: dein Funkgerät hat keine Position';
+
+  @override
+  String ml_heard(String ago) {
+    return 'gehört $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': 'Norden',
+      'ne': 'Nordosten',
+      'e': 'Osten',
+      'se': 'Südosten',
+      's': 'Süden',
+      'sw': 'Südwesten',
+      'w': 'Westen',
+      'nw': 'Nordwesten',
+      'other': '',
+    });
+    return '$distance Richtung $_temp0';
+  }
 }

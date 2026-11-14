@@ -12518,4 +12518,44 @@ class AppLocalizationsZh extends AppLocalizations {
   String batteryWatch_gap(String days) {
     return '最长无读数间隔:$days 天。';
   }
+
+  @override
+  String get ml_title => '列表形式的地图';
+
+  @override
+  String get ml_intro =>
+      '用文字列出地图上的所有内容，最近的在前。距离为从你的电台出发的直线距离。路由是消息在无线电中的传输方式，而不是地面上的路径。';
+
+  @override
+  String get ml_nodes => '节点';
+
+  @override
+  String get ml_waypoints => '航点';
+
+  @override
+  String get ml_none => '无';
+
+  @override
+  String get ml_noOwnPosition => '距离未知:你的电台没有位置';
+
+  @override
+  String ml_heard(String ago) {
+    return '收到于 $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': '北',
+      'ne': '东北',
+      'e': '东',
+      'se': '东南',
+      's': '南',
+      'sw': '西南',
+      'w': '西',
+      'nw': '西北',
+      'other': '',
+    });
+    return '$_temp0方向 $distance';
+  }
 }

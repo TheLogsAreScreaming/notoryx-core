@@ -5089,5 +5089,13 @@
   "batteryWatch_confGood": "een duidelijke trend",
   "batteryWatch_confLow": "te weinig of te verspreid om zeker te zijn",
   "batteryWatch_maybeFalling": "Daalt misschien, maar er zijn nog te weinig metingen.",
-  "batteryWatch_gap": "Langste periode zonder meting: {days} dagen."
+  "batteryWatch_gap": "Langste periode zonder meting: {days} dagen.",
+  "ml_title": "Kaart als lijst",
+  "ml_intro": "Alles op de kaart in woorden, het dichtstbij eerst. Afstanden zijn hemelsbreed vanaf je radio. Een route is hoe berichten via de radio reizen, geen pad in het terrein.",
+  "ml_nodes": "Knooppunten",
+  "ml_waypoints": "Waypoints",
+  "ml_none": "Geen",
+  "ml_noOwnPosition": "Afstand onbekend: je radio heeft geen positie",
+  "ml_heard": "gehoord {ago}",
+  "ml_distanceDir": "{distance} naar het {dir, select, n{noord} ne{noordoost} e{oost} se{zuidoost} s{zuid} sw{zuidwest} w{west} nw{noordwest} other{}}"
 }

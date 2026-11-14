@@ -5223,5 +5223,13 @@
   "batteryWatch_confGood": "una tendencia clara",
   "batteryWatch_confLow": "demasiado pocas o dispersas para estar seguros",
   "batteryWatch_maybeFalling": "Podría estar bajando, pero aún no hay suficientes lecturas.",
-  "batteryWatch_gap": "Mayor intervalo sin lectura: {days} días."
+  "batteryWatch_gap": "Mayor intervalo sin lectura: {days} días.",
+  "ml_title": "Mapa como lista",
+  "ml_intro": "Todo lo del mapa en palabras, lo más cercano primero. Las distancias son en línea recta desde tu radio. Una ruta es cómo viajan los mensajes por radio, no un camino en el terreno.",
+  "ml_nodes": "Nodos",
+  "ml_waypoints": "Puntos de ruta",
+  "ml_none": "Ninguno",
+  "ml_noOwnPosition": "Distancia desconocida: tu radio no tiene posición",
+  "ml_heard": "escuchado {ago}",
+  "ml_distanceDir": "{distance} al {dir, select, n{norte} ne{noreste} e{este} se{sureste} s{sur} sw{suroeste} w{oeste} nw{noroeste} other{}}"
 }

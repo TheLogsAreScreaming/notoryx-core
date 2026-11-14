@@ -13372,4 +13372,45 @@ class AppLocalizationsEs extends AppLocalizations {
   String batteryWatch_gap(String days) {
     return 'Mayor intervalo sin lectura: $days días.';
   }
+
+  @override
+  String get ml_title => 'Mapa como lista';
+
+  @override
+  String get ml_intro =>
+      'Todo lo del mapa en palabras, lo más cercano primero. Las distancias son en línea recta desde tu radio. Una ruta es cómo viajan los mensajes por radio, no un camino en el terreno.';
+
+  @override
+  String get ml_nodes => 'Nodos';
+
+  @override
+  String get ml_waypoints => 'Puntos de ruta';
+
+  @override
+  String get ml_none => 'Ninguno';
+
+  @override
+  String get ml_noOwnPosition =>
+      'Distancia desconocida: tu radio no tiene posición';
+
+  @override
+  String ml_heard(String ago) {
+    return 'escuchado $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': 'norte',
+      'ne': 'noreste',
+      'e': 'este',
+      'se': 'sureste',
+      's': 'sur',
+      'sw': 'suroeste',
+      'w': 'oeste',
+      'nw': 'noroeste',
+      'other': '',
+    });
+    return '$distance al $_temp0';
+  }
 }

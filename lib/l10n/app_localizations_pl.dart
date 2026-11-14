@@ -13391,4 +13391,45 @@ class AppLocalizationsPl extends AppLocalizations {
   String batteryWatch_gap(String days) {
     return 'Najdłuższa przerwa bez odczytu: $days dni.';
   }
+
+  @override
+  String get ml_title => 'Mapa jako lista';
+
+  @override
+  String get ml_intro =>
+      'Wszystko z mapy słowami, najbliższe najpierw. Odległości w linii prostej od twojego radia. Trasa to droga wiadomości przez radio, a nie ścieżka w terenie.';
+
+  @override
+  String get ml_nodes => 'Węzły';
+
+  @override
+  String get ml_waypoints => 'Punkty trasy';
+
+  @override
+  String get ml_none => 'Brak';
+
+  @override
+  String get ml_noOwnPosition =>
+      'Odległość nieznana: twoje radio nie ma pozycji';
+
+  @override
+  String ml_heard(String ago) {
+    return 'słyszany $ago';
+  }
+
+  @override
+  String ml_distanceDir(String distance, String dir) {
+    String _temp0 = intl.Intl.selectLogic(dir, {
+      'n': 'północ',
+      'ne': 'północny wschód',
+      'e': 'wschód',
+      'se': 'południowy wschód',
+      's': 'południe',
+      'sw': 'południowy zachód',
+      'w': 'zachód',
+      'nw': 'północny zachód',
+      'other': '',
+    });
+    return '$distance, kierunek: $_temp0';
+  }
 }
