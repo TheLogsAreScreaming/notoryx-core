@@ -1,0 +1,5 @@
+• Queued messages are kept until the radio takes them, and never sent twice
+• Diagnostics shows which radio features are on, and why
+• Offline maps count only whole tiles and remove damaged ones
+• Repeater battery trends say how sure they are
+• Map as a list, for screen readers
