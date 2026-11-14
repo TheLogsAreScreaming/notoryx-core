@@ -9,7 +9,9 @@ import 'package:share_plus/share_plus.dart';
 
 import '../connector/meshcore_connector.dart';
 import '../connector/meshcore_protocol.dart';
+import '../l10n/app_localizations.dart';
 import '../l10n/l10n.dart';
+import '../models/radio_features.dart';
 import '../theme/mesh_theme.dart';
 import '../widgets/ember_backdrop.dart';
 import '../widgets/instrument.dart';
@@ -371,6 +373,13 @@ class BastionDiagnosticsScreen extends StatelessWidget {
                       : null,
                 ),
               ]),
+              section(l10n.rf_title, [
+                for (final check in c.radioFeatures)
+                  row(
+                    radioFeatureName(l10n, check.feature),
+                    radioFeatureSummary(l10n, check),
+                  ),
+              ]),
               InstrumentLabel(l10n.bastionDiag_deepTools),
               for (final (icon, title, subtitle, page) in [
                 (
@@ -459,4 +468,36 @@ class BastionDiagnosticsScreen extends StatelessWidget {
       ],
     ),
   );
+}
+
+/// The feature's name for people.
+String radioFeatureName(AppLocalizations l10n, RadioFeature f) => switch (f) {
+  RadioFeature.radioStats => l10n.rf_radioStats,
+  RadioFeature.textCli => l10n.rf_textCli,
+  RadioFeature.channelData => l10n.rf_channelData,
+  RadioFeature.signedPosts => l10n.rf_signedPosts,
+  RadioFeature.rawPackets => l10n.rf_rawPackets,
+  RadioFeature.floodCorridor => l10n.rf_floodCorridor,
+};
+
+/// "Supported. Radio reports protocol v14; needs v13." and the like:
+/// whether it's on, and the evidence for it.
+String radioFeatureSummary(AppLocalizations l10n, RadioFeatureCheck c) {
+  final status = switch (c.status) {
+    RadioFeatureStatus.supported => l10n.rf_supported,
+    RadioFeatureStatus.unsupported => l10n.rf_unsupported,
+    RadioFeatureStatus.unknown => l10n.rf_unknown,
+  };
+  final why = switch (c.evidence) {
+    RadioFeatureEvidence.notConnected => l10n.rf_evNotConnected,
+    RadioFeatureEvidence.notChecked => l10n.rf_evNotChecked,
+    RadioFeatureEvidence.probeAnswered => l10n.rf_evProbeAnswered,
+    RadioFeatureEvidence.probeRejected => l10n.rf_evProbeRejected,
+    RadioFeatureEvidence.derived => l10n.rf_evDerived,
+    RadioFeatureEvidence.protocolVersion => l10n.rf_evVersion(
+      c.reportedVersion ?? 0,
+      c.requiredVersion ?? 0,
+    ),
+  };
+  return '$status. $why';
 }

@@ -12691,6 +12691,73 @@ class AppLocalizationsKo extends AppLocalizations {
   String get bk_rolledBack => '복원에 실패하여 모든 설정을 원래대로 되돌렸습니다. 변경된 것은 없습니다.';
 
   @override
+  String get outbox_maybeSent =>
+      '전송이 중단되어 이 메시지가 이미 전송되었을 수 있습니다. 입력란으로 되돌렸습니다. 다시 보내기 전에 확인하세요.';
+
+  @override
+  String get outbox_tooLong => '무전기에 너무 길어서 줄일 수 있도록 입력란으로 되돌렸습니다.';
+
+  @override
+  String get rf_title => '무전기 기능';
+
+  @override
+  String get rf_radioStats => '실시간 무전기 통계';
+
+  @override
+  String get rf_textCli => '텍스트 명령줄';
+
+  @override
+  String get rf_channelData => '채널 데이터';
+
+  @override
+  String get rf_signedPosts => '서명된 채널 게시물';
+
+  @override
+  String get rf_rawPackets => '원시 패킷';
+
+  @override
+  String get rf_floodCorridor => '플러드 회랑(사용자 지정 펌웨어)';
+
+  @override
+  String get rf_supported => '지원됨';
+
+  @override
+  String get rf_unsupported => '지원 안 됨';
+
+  @override
+  String get rf_unknown => '알 수 없음';
+
+  @override
+  String get rf_evNotConnected => '확인하려면 무전기를 연결하세요.';
+
+  @override
+  String get rf_evNotChecked => '아직 확인하지 않았습니다.';
+
+  @override
+  String get rf_evProbeAnswered => '무전기가 확인에 응답했습니다.';
+
+  @override
+  String get rf_evProbeRejected => '무전기가 이 기능을 지원하지 않는다고 응답했습니다.';
+
+  @override
+  String get rf_evDerived => '채널 데이터와 무전기 키가 필요합니다.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return '무전기 프로토콜 v$have, 필요 버전 v$need.';
+  }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '손상된 타일 파일 $count개를 삭제했습니다(잘렸거나 이미지가 아님). 교체하려면 지역을 다시 다운로드하세요.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return '확대 수준별 누락: $list';
+  }
+
+  @override
   String batteryWatch_basis(int count, String days, String confidence) {
     return '$days일 동안 $count개 측정값 기준: $confidence.';
   }

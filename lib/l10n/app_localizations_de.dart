@@ -13291,6 +13291,77 @@ class AppLocalizationsDe extends AppLocalizations {
       'Wiederherstellen ist fehlgeschlagen, daher wurden alle Einstellungen zurückgesetzt. Nichts wurde geändert.';
 
   @override
+  String get outbox_maybeSent =>
+      'Das Senden wurde unterbrochen, die Nachricht ist also vielleicht schon raus. Sie steht wieder im Eingabefeld: Prüfe das, bevor du sie erneut sendest.';
+
+  @override
+  String get outbox_tooLong =>
+      'Zu lang für das Funkgerät, daher wieder im Eingabefeld zum Kürzen.';
+
+  @override
+  String get rf_title => 'Funkgerät-Funktionen';
+
+  @override
+  String get rf_radioStats => 'Live-Funkstatistik';
+
+  @override
+  String get rf_textCli => 'Textbefehlszeile';
+
+  @override
+  String get rf_channelData => 'Kanaldaten';
+
+  @override
+  String get rf_signedPosts => 'Signierte Kanalbeiträge';
+
+  @override
+  String get rf_rawPackets => 'Rohpakete';
+
+  @override
+  String get rf_floodCorridor => 'Flood-Korridor (eigene Firmware)';
+
+  @override
+  String get rf_supported => 'Unterstützt';
+
+  @override
+  String get rf_unsupported => 'Nicht unterstützt';
+
+  @override
+  String get rf_unknown => 'Unbekannt';
+
+  @override
+  String get rf_evNotConnected => 'Verbinde ein Funkgerät, um das zu prüfen.';
+
+  @override
+  String get rf_evNotChecked => 'Noch nicht geprüft.';
+
+  @override
+  String get rf_evProbeAnswered =>
+      'Das Funkgerät hat auf die Prüfung geantwortet.';
+
+  @override
+  String get rf_evProbeRejected =>
+      'Das Funkgerät meldet, dass es das nicht unterstützt.';
+
+  @override
+  String get rf_evDerived =>
+      'Braucht Kanaldaten und den Schlüssel des Funkgeräts.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return 'Funkgerät meldet Protokoll v$have; nötig ist v$need.';
+  }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '$count beschädigte Kacheldateien wurden entfernt (abgebrochen oder keine Bilder). Lade das Gebiet erneut herunter, um sie zu ersetzen.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Fehlend je Zoomstufe: $list';
+  }
+
+  @override
   String batteryWatch_basis(int count, String days, String confidence) {
     return 'Basierend auf $count Messungen über $days Tage: $confidence.';
   }

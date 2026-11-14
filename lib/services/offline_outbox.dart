@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 
 import '../connector/meshcore_connector.dart';
+import '../connector/meshcore_protocol.dart';
 import '../storage/draft_store.dart';
 import '../storage/prefs_manager.dart';
 import '../storage/secure_prefs.dart';
@@ -17,6 +18,7 @@ class OutboxEntry {
     required this.text,
     required this.at,
     this.sendAt,
+    this.handoff = false,
   });
 
   factory OutboxEntry.fromJson(Map<String, dynamic> json) => OutboxEntry(
@@ -28,6 +30,7 @@ class OutboxEntry {
     sendAt: json['sendAt'] == null
         ? null
         : DateTime.fromMillisecondsSinceEpoch(json['sendAt'] as int),
+    handoff: json['handoff'] == true,
   );
 
   final String id;
@@ -43,6 +46,21 @@ class OutboxEntry {
   /// When the user asked for it to go out; null means as soon as possible.
   final DateTime? sendAt;
 
+  /// True once it has been handed to the radio and before the radio has
+  /// taken it. If the app stops in that gap nobody knows whether it went,
+  /// so it is never sent again by itself: it goes back to the draft.
+  final bool handoff;
+
+  OutboxEntry inHandoff() => OutboxEntry(
+    id: id,
+    radio: radio,
+    target: target,
+    text: text,
+    at: at,
+    sendAt: sendAt,
+    handoff: true,
+  );
+
   Map<String, dynamic> toJson() => {
     'id': id,
     'radio': radio,
@@ -50,7 +68,31 @@ class OutboxEntry {
     'text': text,
     'at': at.millisecondsSinceEpoch,
     if (sendAt != null) 'sendAt': sendAt!.millisecondsSinceEpoch,
+    if (handoff) 'handoff': true,
   };
+}
+
+/// Why a queued message went back to its draft instead of out.
+enum OutboxReturnReason {
+  /// Older than [OfflineOutbox.maxAge].
+  stale,
+
+  /// The contact or channel is no longer on the radio.
+  missingTarget,
+
+  /// Longer than the radio accepts.
+  tooLong,
+
+  /// The send failed or the app stopped while sending, so it may or may
+  /// not have gone out. Check before sending it again.
+  unknown,
+}
+
+/// A message that went back to its draft, and why.
+class OutboxReturn {
+  const OutboxReturn(this.entry, this.reason);
+  final OutboxEntry entry;
+  final OutboxReturnReason reason;
 }
 
 /// Holds messages written while disconnected and sends them, oldest first,
@@ -68,6 +110,7 @@ class OfflineOutbox extends ChangeNotifier {
     _load();
     connector.addListener(check);
     check();
+    unawaited(_recoverInterrupted());
   }
 
   static const maxAge = Duration(hours: 24);
@@ -89,6 +132,7 @@ class OfflineOutbox extends ChangeNotifier {
   final Duration spacing;
 
   final List<OutboxEntry> _entries = [];
+  final List<OutboxReturn> _returned = [];
   String _lastRadio = '';
   var _seq = 0;
   var _flushing = false;
@@ -97,6 +141,25 @@ class OfflineOutbox extends ChangeNotifier {
   /// What is waiting for [target], oldest first.
   List<OutboxEntry> entriesFor(String target) =>
       _entries.where((e) => e.target == target).toList(growable: false);
+
+  /// Messages for [target] whose send may or may not have gone out, so the
+  /// chat can say so next to the draft they went back to.
+  List<OutboxReturn> uncertainFor(String target) => _returned
+      .where(
+        (r) =>
+            r.entry.target == target && r.reason == OutboxReturnReason.unknown,
+      )
+      .toList(growable: false);
+
+  /// Everything that went back to a draft since the app started.
+  List<OutboxReturn> get returned => List.unmodifiable(_returned);
+
+  /// Clears the notes for [target] once the user has seen them.
+  void dismissReturned(String target) {
+    final before = _returned.length;
+    _returned.removeWhere((r) => r.entry.target == target);
+    if (_returned.length != before) notifyListeners();
+  }
 
   /// Saves [text] to send later. False when no radio has ever been seen,
   /// because there is then no identity to send it from.
@@ -145,8 +208,9 @@ class OfflineOutbox extends ChangeNotifier {
     );
   }
 
+  /// A message mid-handoff is never due: it may already be out.
   bool _isDue(OutboxEntry e, String radio) =>
-      e.radio == radio && !(e.sendAt?.isAfter(_clock()) ?? false);
+      e.radio == radio && !e.handoff && !(e.sendAt?.isAfter(_clock()) ?? false);
 
   /// Wakes [check] when the next scheduled message comes due.
   void _armTimer() {
@@ -170,6 +234,11 @@ class OfflineOutbox extends ChangeNotifier {
       !connector.isSyncingChannels;
 
   /// Sends what's waiting for the connected radio, stopping if it drops.
+  ///
+  /// Each message stays saved until the radio has taken it. Just before
+  /// the handoff it is saved as "handing off"; if the send throws, or the
+  /// app stops before it finishes, nobody knows whether it went out, so it
+  /// goes back to the draft with a note rather than being sent again.
   @visibleForTesting
   Future<void> flush() async {
     final self = connector.selfPublicKeyHex;
@@ -177,38 +246,103 @@ class OfflineOutbox extends ChangeNotifier {
     for (var i = 0; i < due.length; i++) {
       if (!_ready || connector.selfPublicKeyHex != self) return;
       final entry = due[i];
-      // Removed first: a crash mid-send must not repeat it over the air.
-      _entries.remove(entry);
+      if (!_entries.contains(entry)) continue; // removed meanwhile
+      final problem = _problem(entry);
+      if (problem != null) {
+        await _return(entry, problem);
+        continue;
+      }
+      final pending = entry.inHandoff();
+      _replace(entry, pending);
+      await _save();
+      // Re-checked after the save: the link can drop during it.
+      if (!_ready || connector.selfPublicKeyHex != self) {
+        _replace(pending, entry);
+        await _save();
+        return;
+      }
+      try {
+        await _send(pending);
+      } catch (e) {
+        debugPrint('Outbox send failed, returned to draft: $e');
+        await _return(pending, OutboxReturnReason.unknown);
+        continue;
+      }
+      _entries.remove(pending);
       await _save();
       notifyListeners();
-      final sent =
-          _clock().difference(entry.sendAt ?? entry.at) <= maxAge &&
-          await _send(entry);
-      if (!sent) {
-        await _toDraft(entry);
-      } else if (i < due.length - 1 && spacing > Duration.zero) {
+      if (i < due.length - 1 && spacing > Duration.zero) {
         await Future<void>.delayed(spacing);
       }
     }
   }
 
-  Future<bool> _send(OutboxEntry entry) async {
+  /// Why [entry] can't go out now, or null when it can.
+  OutboxReturnReason? _problem(OutboxEntry entry) {
+    if (_clock().difference(entry.sendAt ?? entry.at) > maxAge) {
+      return OutboxReturnReason.stale;
+    }
     final split = entry.target.indexOf(':');
     final id = entry.target.substring(split + 1);
     if (entry.target.startsWith('message:')) {
       final contact = connector.getContactByPubKeyHex(id);
-      if (contact == null) return false;
-      await connector.sendMessage(contact, entry.text);
-      return true;
+      if (contact == null) return OutboxReturnReason.missingTarget;
+      final bytes = utf8
+          .encode(connector.prepareContactOutboundText(contact, entry.text))
+          .length;
+      if (bytes > maxContactMessageBytes()) return OutboxReturnReason.tooLong;
+      return null;
     }
     final index = int.tryParse(id);
-    for (final channel in connector.channels) {
-      if (channel.index == index) {
-        await connector.sendChannelMessage(channel, entry.text);
-        return true;
-      }
+    if (!connector.channels.any((c) => c.index == index)) {
+      return OutboxReturnReason.missingTarget;
     }
-    return false;
+    final bytes = utf8
+        .encode(connector.prepareChannelOutboundText(index!, entry.text))
+        .length;
+    if (bytes > maxChannelMessageBytes(connector.selfName)) {
+      return OutboxReturnReason.tooLong;
+    }
+    return null;
+  }
+
+  Future<void> _send(OutboxEntry entry) async {
+    final split = entry.target.indexOf(':');
+    final id = entry.target.substring(split + 1);
+    if (entry.target.startsWith('message:')) {
+      final contact = connector.getContactByPubKeyHex(id);
+      if (contact == null) throw StateError('Contact is gone');
+      await connector.sendMessage(contact, entry.text);
+      return;
+    }
+    final index = int.tryParse(id);
+    final channel = connector.channels.where((c) => c.index == index);
+    if (channel.isEmpty) throw StateError('Channel is gone');
+    await connector.sendChannelMessage(channel.first, entry.text);
+  }
+
+  void _replace(OutboxEntry from, OutboxEntry to) {
+    final at = _entries.indexOf(from);
+    if (at >= 0) _entries[at] = to;
+  }
+
+  /// Takes [entry] out of the outbox and puts its text back in the draft.
+  /// The draft is written first, so the text is never only in memory.
+  Future<void> _return(OutboxEntry entry, OutboxReturnReason reason) async {
+    await _toDraft(entry);
+    _entries.remove(entry);
+    _returned.add(OutboxReturn(entry, reason));
+    await _save();
+    notifyListeners();
+  }
+
+  /// Anything left "handing off" by a crash or force-quit goes back to
+  /// its draft: it may already be out, so it must not go out again.
+  Future<void> _recoverInterrupted() async {
+    final stuck = _entries.where((e) => e.handoff).toList();
+    for (final entry in stuck) {
+      await _return(entry, OutboxReturnReason.unknown);
+    }
   }
 
   Future<void> _toDraft(OutboxEntry entry) async {

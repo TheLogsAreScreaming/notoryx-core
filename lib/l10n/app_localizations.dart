@@ -22045,6 +22045,126 @@ abstract class AppLocalizations {
   /// **'Restore failed, so every setting was put back as it was. Nothing changed.'**
   String get bk_rolledBack;
 
+  /// No description provided for @outbox_maybeSent.
+  ///
+  /// In en, this message translates to:
+  /// **'Sending was interrupted, so this may already have gone out. It\'s back in the message box: check before sending it again.'**
+  String get outbox_maybeSent;
+
+  /// No description provided for @outbox_tooLong.
+  ///
+  /// In en, this message translates to:
+  /// **'Too long for the radio, so it\'s back in the message box to shorten.'**
+  String get outbox_tooLong;
+
+  /// No description provided for @rf_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Radio features'**
+  String get rf_title;
+
+  /// No description provided for @rf_radioStats.
+  ///
+  /// In en, this message translates to:
+  /// **'Live radio stats'**
+  String get rf_radioStats;
+
+  /// No description provided for @rf_textCli.
+  ///
+  /// In en, this message translates to:
+  /// **'Text command line'**
+  String get rf_textCli;
+
+  /// No description provided for @rf_channelData.
+  ///
+  /// In en, this message translates to:
+  /// **'Channel data'**
+  String get rf_channelData;
+
+  /// No description provided for @rf_signedPosts.
+  ///
+  /// In en, this message translates to:
+  /// **'Signed channel posts'**
+  String get rf_signedPosts;
+
+  /// No description provided for @rf_rawPackets.
+  ///
+  /// In en, this message translates to:
+  /// **'Raw packets'**
+  String get rf_rawPackets;
+
+  /// No description provided for @rf_floodCorridor.
+  ///
+  /// In en, this message translates to:
+  /// **'Flood corridor (custom firmware)'**
+  String get rf_floodCorridor;
+
+  /// No description provided for @rf_supported.
+  ///
+  /// In en, this message translates to:
+  /// **'Supported'**
+  String get rf_supported;
+
+  /// No description provided for @rf_unsupported.
+  ///
+  /// In en, this message translates to:
+  /// **'Not supported'**
+  String get rf_unsupported;
+
+  /// No description provided for @rf_unknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown'**
+  String get rf_unknown;
+
+  /// No description provided for @rf_evNotConnected.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect a radio to check.'**
+  String get rf_evNotConnected;
+
+  /// No description provided for @rf_evNotChecked.
+  ///
+  /// In en, this message translates to:
+  /// **'Not checked yet.'**
+  String get rf_evNotChecked;
+
+  /// No description provided for @rf_evProbeAnswered.
+  ///
+  /// In en, this message translates to:
+  /// **'The radio answered the check.'**
+  String get rf_evProbeAnswered;
+
+  /// No description provided for @rf_evProbeRejected.
+  ///
+  /// In en, this message translates to:
+  /// **'The radio said it doesn\'t support this.'**
+  String get rf_evProbeRejected;
+
+  /// No description provided for @rf_evDerived.
+  ///
+  /// In en, this message translates to:
+  /// **'Needs channel data and the radio\'s key.'**
+  String get rf_evDerived;
+
+  /// No description provided for @rf_evVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'Radio reports protocol v{have}; needs v{need}.'**
+  String rf_evVersion(int have, int need);
+
+  /// No description provided for @fieldOps_regionDamaged.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} damaged tile files were removed (cut short or not images). Download the area again to replace them.'**
+  String fieldOps_regionDamaged(int count);
+
+  /// No description provided for @fieldOps_regionMissingByZoom.
+  ///
+  /// In en, this message translates to:
+  /// **'Missing by zoom level: {list}'**
+  String fieldOps_regionMissingByZoom(String list);
+
   /// No description provided for @batteryWatch_basis.
   ///
   /// In en, this message translates to:

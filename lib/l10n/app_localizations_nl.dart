@@ -13228,6 +13228,76 @@ class AppLocalizationsNl extends AppLocalizations {
       'Herstellen is mislukt, dus alle instellingen zijn teruggezet zoals ze waren. Er is niets veranderd.';
 
   @override
+  String get outbox_maybeSent =>
+      'Het verzenden werd onderbroken, dus dit bericht is misschien al verstuurd. Het staat weer in het invoerveld: controleer dit voordat je het opnieuw verstuurt.';
+
+  @override
+  String get outbox_tooLong =>
+      'Te lang voor de radio, dus het staat weer in het invoerveld om in te korten.';
+
+  @override
+  String get rf_title => 'Radiofuncties';
+
+  @override
+  String get rf_radioStats => 'Live radiostatistieken';
+
+  @override
+  String get rf_textCli => 'Tekstopdrachtregel';
+
+  @override
+  String get rf_channelData => 'Kanaalgegevens';
+
+  @override
+  String get rf_signedPosts => 'Ondertekende kanaalberichten';
+
+  @override
+  String get rf_rawPackets => 'Ruwe pakketten';
+
+  @override
+  String get rf_floodCorridor => 'Floodcorridor (aangepaste firmware)';
+
+  @override
+  String get rf_supported => 'Ondersteund';
+
+  @override
+  String get rf_unsupported => 'Niet ondersteund';
+
+  @override
+  String get rf_unknown => 'Onbekend';
+
+  @override
+  String get rf_evNotConnected => 'Verbind een radio om dit te controleren.';
+
+  @override
+  String get rf_evNotChecked => 'Nog niet gecontroleerd.';
+
+  @override
+  String get rf_evProbeAnswered => 'De radio heeft op de controle geantwoord.';
+
+  @override
+  String get rf_evProbeRejected =>
+      'De radio meldt dat dit niet wordt ondersteund.';
+
+  @override
+  String get rf_evDerived =>
+      'Vereist kanaalgegevens en de sleutel van de radio.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return 'Radio meldt protocol v$have; nodig is v$need.';
+  }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return '$count beschadigde tegelbestanden zijn verwijderd (afgebroken of geen afbeelding). Download het gebied opnieuw om ze te vervangen.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Ontbrekend per zoomniveau: $list';
+  }
+
+  @override
   String batteryWatch_basis(int count, String days, String confidence) {
     return 'Op basis van $count metingen over $days dagen: $confidence.';
   }

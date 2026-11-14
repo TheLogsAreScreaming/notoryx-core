@@ -259,6 +259,30 @@ class MapRasterEndpointCatalog {
   }
 }
 
+/// What an offline check found for one area and zoom range.
+class OfflineRegionCheck {
+  const OfflineRegionCheck({
+    required this.expected,
+    required this.available,
+    required this.damaged,
+    required this.missingByZoom,
+  });
+
+  final int expected;
+
+  /// Tiles present as complete images.
+  final int available;
+
+  /// Tiles present but empty, cut short or not images.
+  final int damaged;
+
+  /// Tiles not usable (missing or damaged), per zoom level.
+  final Map<int, int> missingByZoom;
+
+  int get missing => expected - available;
+  bool get complete => expected > 0 && available == expected;
+}
+
 class MapTileCacheProgress {
   final int completed;
   final int total;
@@ -597,10 +621,29 @@ class MapTileCacheService extends ChangeNotifier {
   /// Verifies the current source's exact tile URLs and actual files without
   /// requesting network downloads. A result describes this area and zoom range,
   /// not radio coverage, route safety, or permanently retained map data.
+  /// Only complete images count as available (see [checkOfflineRegion]).
   Future<({int expected, int available})> verifyOfflineRegion({
     required LatLngBounds bounds,
     required int minZoom,
     required int maxZoom,
+  }) async {
+    final check = await checkOfflineRegion(
+      bounds: bounds,
+      minZoom: minZoom,
+      maxZoom: maxZoom,
+    );
+    return (expected: check.expected, available: check.available);
+  }
+
+  /// Checks every tile of the area offline: present, missing, or damaged
+  /// (empty, cut short, or not an image at all, like a saved error page).
+  /// With [removeDamaged], damaged files are dropped from the cache so the
+  /// next download of the area fetches them again.
+  Future<OfflineRegionCheck> checkOfflineRegion({
+    required LatLngBounds bounds,
+    required int minZoom,
+    required int maxZoom,
+    bool removeDamaged = false,
   }) async {
     final safeMin = math.min(minZoom, maxZoom).clamp(3, 18);
     final safeMax = math.max(minZoom, maxZoom).clamp(3, 18);
@@ -612,21 +655,71 @@ class MapTileCacheService extends ChangeNotifier {
     }
     final template = urlTemplate;
     var available = 0;
+    var damaged = 0;
+    final missingByZoom = <int, int>{};
     for (var zoom = safeMin; zoom <= safeMax; zoom++) {
       final range = _tileBoundsForBounds(bounds, zoom);
       for (var x = range.minX; x <= range.maxX; x++) {
         for (var y = range.minY; y <= range.maxY; y++) {
           final key = _buildTileUrl(x, y, zoom, urlTemplate: template);
           final cached = await cacheManager.getFileFromCache(key);
-          if (cached != null &&
-              await cached.file.exists() &&
-              await cached.file.length() > 0) {
-            available++;
+          if (cached == null || !await cached.file.exists()) {
+            missingByZoom[zoom] = (missingByZoom[zoom] ?? 0) + 1;
+            continue;
           }
+          if (isCompleteImage(await cached.file.readAsBytes())) {
+            available++;
+            continue;
+          }
+          damaged++;
+          missingByZoom[zoom] = (missingByZoom[zoom] ?? 0) + 1;
+          if (removeDamaged) await cacheManager.removeFile(key);
         }
       }
     }
-    return (expected: expected, available: available);
+    return OfflineRegionCheck(
+      expected: expected,
+      available: available,
+      damaged: damaged,
+      missingByZoom: missingByZoom,
+    );
+  }
+
+  /// Whether [bytes] is a whole PNG, JPEG or WebP image: the right
+  /// signature at the start and the right ending, so a download cut short
+  /// or an HTML error page saved as a tile doesn't count.
+  static bool isCompleteImage(List<int> bytes) {
+    if (bytes.length < 12) return false;
+    bool startsWith(List<int> sig) {
+      for (var i = 0; i < sig.length; i++) {
+        if (bytes[i] != sig[i]) return false;
+      }
+      return true;
+    }
+
+    // PNG: signature, then must end with the IEND chunk and its CRC.
+    if (startsWith(const [0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A])) {
+      const iend = [0x49, 0x45, 0x4E, 0x44, 0xAE, 0x42, 0x60, 0x82];
+      final end = bytes.length - iend.length;
+      for (var i = 0; i < iend.length; i++) {
+        if (bytes[end + i] != iend[i]) return false;
+      }
+      return true;
+    }
+    // JPEG: SOI marker, ends with EOI.
+    if (startsWith(const [0xFF, 0xD8, 0xFF])) {
+      return bytes[bytes.length - 2] == 0xFF && bytes[bytes.length - 1] == 0xD9;
+    }
+    // WebP: RIFF size must match the file.
+    if (startsWith(const [0x52, 0x49, 0x46, 0x46]) &&
+        bytes[8] == 0x57 &&
+        bytes[9] == 0x45 &&
+        bytes[10] == 0x42 &&
+        bytes[11] == 0x50) {
+      final size = bytes[4] | bytes[5] << 8 | bytes[6] << 16 | bytes[7] << 24;
+      return size + 8 == bytes.length;
+    }
+    return false;
   }
 
   int estimateTileCount(LatLngBounds bounds, int minZoom, int maxZoom) {

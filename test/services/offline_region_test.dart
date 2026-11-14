@@ -8,9 +8,26 @@ import 'package:latlong2/latlong.dart';
 import 'package:meshcore_open/services/app_settings_service.dart';
 import 'package:meshcore_open/services/map_tile_cache_service.dart';
 
+/// The smallest complete PNG: signature, a header chunk and IEND.
+const _png = [
+  0x89, 0x50, 0x4E, 0x47, 0x0D, 0x0A, 0x1A, 0x0A, //
+  0x00, 0x00, 0x00, 0x0D, 0x49, 0x48, 0x44, 0x52, //
+  0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00, 0x01, 0x08, 0x02, 0x00, 0x00, 0x00,
+  0x90, 0x77, 0x53, 0xDE, //
+  0x00, 0x00, 0x00, 0x00, 0x49, 0x45, 0x4E, 0x44, 0xAE, 0x42, 0x60, 0x82,
+];
+
 class _LocalCache implements BaseCacheManager {
   final Map<String, File> files = {};
   final List<String> requested = [];
+  final List<String> removed = [];
+
+  @override
+  Future<void> removeFile(String key) async {
+    removed.add(key);
+    files.remove(key);
+  }
+
   @override
   Future<FileInfo?> getFileFromCache(
     String key, {
@@ -58,7 +75,7 @@ void main() {
   test('checks exact selected tiles locally without download calls', () async {
     final file = await const LocalFileSystem()
         .file('${temp.path}/tile.png')
-        .writeAsBytes([1, 2, 3]);
+        .writeAsBytes(_png);
     local.files[tile] = file;
     final result = await cache.verifyOfflineRegion(
       bounds: bounds,
@@ -100,5 +117,78 @@ void main() {
       throwsStateError,
     );
     expect(local.requested, isEmpty);
+  });
+
+  group('integrity', () {
+    Future<File> write(String name, List<int> bytes) =>
+        const LocalFileSystem().file('${temp.path}/$name').writeAsBytes(bytes);
+
+    test('a cut-short PNG is damaged, not available', () async {
+      local.files[tile] = await write('cut.png', _png.sublist(0, 30));
+      final check = await cache.checkOfflineRegion(
+        bounds: bounds,
+        minZoom: 3,
+        maxZoom: 3,
+      );
+      expect(check.available, 0);
+      expect(check.damaged, 1);
+      expect(check.missingByZoom, {3: 1});
+      expect(local.removed, isEmpty, reason: 'only removed when asked');
+    });
+
+    test(
+      'an error page saved as a tile is damaged and can be removed',
+      () async {
+        local.files[tile] = await write(
+          'error.png',
+          '<html><body>429 Too Many Requests</body></html>'.codeUnits,
+        );
+        final check = await cache.checkOfflineRegion(
+          bounds: bounds,
+          minZoom: 3,
+          maxZoom: 3,
+          removeDamaged: true,
+        );
+        expect(check.damaged, 1);
+        expect(local.removed, [tile]);
+        expect(
+          await cache.verifyOfflineRegion(
+            bounds: bounds,
+            minZoom: 3,
+            maxZoom: 3,
+          ),
+          (expected: 1, available: 0),
+        );
+      },
+    );
+
+    test('a complete area reports complete', () async {
+      local.files[tile] = await write('ok.png', _png);
+      final check = await cache.checkOfflineRegion(
+        bounds: bounds,
+        minZoom: 3,
+        maxZoom: 3,
+      );
+      expect(check.complete, isTrue);
+      expect(check.missingByZoom, isEmpty);
+    });
+
+    test('recognises whole JPEG and WebP files only', () {
+      final jpeg = [0xFF, 0xD8, 0xFF, 0xE0, ...List.filled(20, 0), 0xFF, 0xD9];
+      expect(MapTileCacheService.isCompleteImage(jpeg), isTrue);
+      expect(
+        MapTileCacheService.isCompleteImage(jpeg.sublist(0, jpeg.length - 2)),
+        isFalse,
+      );
+      final body = [0x57, 0x45, 0x42, 0x50, ...List.filled(8, 0)];
+      final size = body.length;
+      final webp = [
+        0x52, 0x49, 0x46, 0x46, //
+        size & 0xff, size >> 8 & 0xff, 0, 0, ...body,
+      ];
+      expect(MapTileCacheService.isCompleteImage(webp), isTrue);
+      expect(MapTileCacheService.isCompleteImage(webp.sublist(0, 14)), isFalse);
+      expect(MapTileCacheService.isCompleteImage(const []), isFalse);
+    });
   });
 }

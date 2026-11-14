@@ -13234,6 +13234,74 @@ class AppLocalizationsSk extends AppLocalizations {
       'Obnovenie zlyhalo, preto sa všetky nastavenia vrátili do pôvodného stavu. Nič sa nezmenilo.';
 
   @override
+  String get outbox_maybeSent =>
+      'Odosielanie bolo prerušené, takže správa už možno odišla. Vrátila sa do poľa správy: skontrolujte to pred opätovným odoslaním.';
+
+  @override
+  String get outbox_tooLong =>
+      'Príliš dlhé pre rádio, preto sa vrátilo do poľa správy na skrátenie.';
+
+  @override
+  String get rf_title => 'Funkcie rádia';
+
+  @override
+  String get rf_radioStats => 'Živé štatistiky rádia';
+
+  @override
+  String get rf_textCli => 'Textový príkazový riadok';
+
+  @override
+  String get rf_channelData => 'Dáta kanála';
+
+  @override
+  String get rf_signedPosts => 'Podpísané príspevky v kanáli';
+
+  @override
+  String get rf_rawPackets => 'Surové pakety';
+
+  @override
+  String get rf_floodCorridor => 'Záplavový koridor (vlastný firmvér)';
+
+  @override
+  String get rf_supported => 'Podporované';
+
+  @override
+  String get rf_unsupported => 'Nepodporované';
+
+  @override
+  String get rf_unknown => 'Neznáme';
+
+  @override
+  String get rf_evNotConnected => 'Pripojte rádio na overenie.';
+
+  @override
+  String get rf_evNotChecked => 'Ešte neoverené.';
+
+  @override
+  String get rf_evProbeAnswered => 'Rádio odpovedalo na overenie.';
+
+  @override
+  String get rf_evProbeRejected => 'Rádio oznámilo, že to nepodporuje.';
+
+  @override
+  String get rf_evDerived => 'Vyžaduje dáta kanála a kľúč rádia.';
+
+  @override
+  String rf_evVersion(int have, int need) {
+    return 'Rádio hlási protokol v$have; potrebný je v$need.';
+  }
+
+  @override
+  String fieldOps_regionDamaged(int count) {
+    return 'Odstránených $count poškodených súborov dlaždíc (neúplné alebo nie sú obrázky). Stiahnite oblasť znova, aby ste ich nahradili.';
+  }
+
+  @override
+  String fieldOps_regionMissingByZoom(String list) {
+    return 'Chýbajúce podľa úrovne priblíženia: $list';
+  }
+
+  @override
   String batteryWatch_basis(int count, String days, String confidence) {
     return 'Na základe $count meraní za $days dní: $confidence.';
   }
