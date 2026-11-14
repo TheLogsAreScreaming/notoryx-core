@@ -210,9 +210,7 @@ class OfflineOutbox extends ChangeNotifier {
 
   /// A message mid-handoff is never due: it may already be out.
   bool _isDue(OutboxEntry e, String radio) =>
-      e.radio == radio &&
-      !e.handoff &&
-      !(e.sendAt?.isAfter(_clock()) ?? false);
+      e.radio == radio && !e.handoff && !(e.sendAt?.isAfter(_clock()) ?? false);
 
   /// Wakes [check] when the next scheduled message comes due.
   void _armTimer() {
