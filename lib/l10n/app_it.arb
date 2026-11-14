@@ -415,6 +415,10 @@
   "channels_editChannel": "Modifica canale",
   "channels_muteChannel": "Silenzia canale",
   "channels_unmuteChannel": "Attiva notifiche canale",
+  "channels_notifyMode": "Notifiche",
+  "channels_notifyAll": "Tutti i messaggi",
+  "channels_notifyMentions": "Solo quando vengo menzionato",
+  "channels_notifyMuted": "Silenziato",
   "channels_deleteChannel": "Elimina canale",
   "channels_deleteChannelConfirm": "Eliminare \"{name}\"? Non può essere annullato.",
   "@channels_deleteChannelConfirm": {

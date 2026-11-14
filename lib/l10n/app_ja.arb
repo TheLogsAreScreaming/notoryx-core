@@ -519,6 +519,10 @@
   "channels_editChannel": "チャンネルを編集",
   "channels_muteChannel": "チャンネルをミュート",
   "channels_unmuteChannel": "チャンネルのミュートを解除",
+  "channels_notifyMode": "通知",
+  "channels_notifyAll": "すべてのメッセージ",
+  "channels_notifyMentions": "メンションされたときのみ",
+  "channels_notifyMuted": "ミュート",
   "channels_deleteChannel": "チャンネルを削除",
   "channels_deleteChannelConfirm": "{name} を削除しますか？ これは取り消すことができません。",
   "@channels_deleteChannelConfirm": {

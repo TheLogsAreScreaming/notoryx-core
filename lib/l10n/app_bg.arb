@@ -361,6 +361,10 @@
   "channels_editChannel": "Редактирай канал",
   "channels_muteChannel": "Заглуши канала",
   "channels_unmuteChannel": "Включи известията на канала",
+  "channels_notifyMode": "Известия",
+  "channels_notifyAll": "Всички съобщения",
+  "channels_notifyMentions": "Само когато ме споменат",
+  "channels_notifyMuted": "Заглушен",
   "channels_deleteChannel": "Изтрий канала",
   "channels_deleteChannelConfirm": "Изтрий \"{name}\"? Това не може да бъде отменено.",
   "@channels_deleteChannelConfirm": {

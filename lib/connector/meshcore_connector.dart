@@ -17,6 +17,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models/region_setup.dart' show parseRegionTrees;
 import '../models/region_scope.dart';
 import '../models/advert_signature.dart';
+import '../models/channel_notify_mode.dart';
 import '../models/channel.dart';
 import '../models/channel_message.dart';
 import '../models/companion_radio_stats.dart';

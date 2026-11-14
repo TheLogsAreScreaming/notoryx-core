@@ -1578,6 +1578,18 @@ class AppLocalizationsBg extends AppLocalizations {
   String get channels_unmuteChannel => 'Включи известията на канала';
 
   @override
+  String get channels_notifyMode => 'Известия';
+
+  @override
+  String get channels_notifyAll => 'Всички съобщения';
+
+  @override
+  String get channels_notifyMentions => 'Само когато ме споменат';
+
+  @override
+  String get channels_notifyMuted => 'Заглушен';
+
+  @override
   String get channels_deleteChannel => 'Изтрий канала';
 
   @override

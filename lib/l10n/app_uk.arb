@@ -364,6 +364,10 @@
   "channels_editChannel": "Редагувати канал",
   "channels_muteChannel": "Вимкнути сповіщення каналу",
   "channels_unmuteChannel": "Увімкнути сповіщення каналу",
+  "channels_notifyMode": "Сповіщення",
+  "channels_notifyAll": "Усі повідомлення",
+  "channels_notifyMentions": "Лише коли мене згадують",
+  "channels_notifyMuted": "Вимкнено",
   "channels_deleteChannel": "Видалити канал",
   "channels_deleteChannelConfirm": "Видалити {name}? Це не можна скасувати.",
   "@channels_deleteChannelConfirm": {

@@ -1568,6 +1568,18 @@ class AppLocalizationsHu extends AppLocalizations {
   String get channels_unmuteChannel => 'Csatorna némításának feloldása';
 
   @override
+  String get channels_notifyMode => 'Értesítések';
+
+  @override
+  String get channels_notifyAll => 'Minden üzenet';
+
+  @override
+  String get channels_notifyMentions => 'Csak ha megemlítenek';
+
+  @override
+  String get channels_notifyMuted => 'Némítva';
+
+  @override
   String get channels_deleteChannel => 'Csatorna törlése';
 
   @override

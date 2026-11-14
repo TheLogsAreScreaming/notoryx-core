@@ -1551,6 +1551,18 @@ class AppLocalizationsSv extends AppLocalizations {
   String get channels_unmuteChannel => 'Slå på ljud för kanal';
 
   @override
+  String get channels_notifyMode => 'Aviseringar';
+
+  @override
+  String get channels_notifyAll => 'Alla meddelanden';
+
+  @override
+  String get channels_notifyMentions => 'Bara när jag nämns';
+
+  @override
+  String get channels_notifyMuted => 'Tystad';
+
+  @override
   String get channels_deleteChannel => 'Ta bort kanal';
 
   @override

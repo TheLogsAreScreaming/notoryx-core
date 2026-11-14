@@ -1581,6 +1581,18 @@ class AppLocalizationsPl extends AppLocalizations {
   String get channels_unmuteChannel => 'Wyłącz wyciszenie kanału';
 
   @override
+  String get channels_notifyMode => 'Powiadomienia';
+
+  @override
+  String get channels_notifyAll => 'Wszystkie wiadomości';
+
+  @override
+  String get channels_notifyMentions => 'Tylko gdy ktoś mnie oznaczy';
+
+  @override
+  String get channels_notifyMuted => 'Wyciszony';
+
+  @override
   String get channels_deleteChannel => 'Usuń kanał';
 
   @override

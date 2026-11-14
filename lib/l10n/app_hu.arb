@@ -513,6 +513,10 @@
   "channels_editChannel": "Csatorna szerkesztése",
   "channels_muteChannel": "Csatorna némítása",
   "channels_unmuteChannel": "Csatorna némításának feloldása",
+  "channels_notifyMode": "Értesítések",
+  "channels_notifyAll": "Minden üzenet",
+  "channels_notifyMentions": "Csak ha megemlítenek",
+  "channels_notifyMuted": "Némítva",
   "channels_deleteChannel": "Csatorna törlése",
   "channels_deleteChannelConfirm": "Törli a következőt: \"{name}\"? Ezt nem lehet visszavonni.",
   "@channels_deleteChannelConfirm": {
