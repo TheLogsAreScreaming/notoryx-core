@@ -2463,7 +2463,6 @@
   "nodeLook_clear": "使用默认外观",
   "nodeLook_colorN": "颜色 {index}",
   "nodeLook_photoFailed": "无法使用该照片，请换一张。",
-<<<<<<< HEAD
   "bg_title": "背景",
   "bg_kindTheme": "主题光晕",
   "bg_kindSolid": "纯色",
@@ -2482,8 +2481,6 @@
   "bg_previewBody": "玻璃卡片上的文字看起来是这样。",
   "bg_photoNotBackedUp": "照片仅保存在本手机上，不包含在备份中。",
   "bg_photoFailed": "无法使用该照片，请换一张。",
-=======
->>>>>>> origin/dev
   "losBlockedSpotsTitle": "被占用区域",
   "losBlockedSpotsHint": "点击地图上的某个被遮盖的区域，以突出显示该区域。",
   "losSelectedObstructionTitle": "选择性阻碍",

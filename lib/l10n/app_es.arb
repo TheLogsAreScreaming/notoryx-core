@@ -2592,7 +2592,6 @@
   "nodeLook_clear": "Usar el aspecto predeterminado",
   "nodeLook_colorN": "Color {index}",
   "nodeLook_photoFailed": "No se pudo usar esa foto. Prueba con otra.",
-<<<<<<< HEAD
   "bg_title": "Fondo",
   "bg_kindTheme": "Brillo del tema",
   "bg_kindSolid": "Color",
@@ -2611,8 +2610,6 @@
   "bg_previewBody": "Así se ve el texto en una tarjeta de cristal.",
   "bg_photoNotBackedUp": "La foto se queda en este teléfono y no se incluye en las copias de seguridad.",
   "bg_photoFailed": "No se pudo usar esa foto. Prueba con otra.",
-=======
->>>>>>> origin/dev
   "losBlockedSpotsTitle": "Espacios ocupados",
   "losBlockedSpotsHint": "Seleccione un punto bloqueado para resaltarlo en el mapa.",
   "losSelectedObstructionTitle": "Obstrucción seleccionada",

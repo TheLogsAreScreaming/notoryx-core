@@ -8382,7 +8382,6 @@ abstract class AppLocalizations {
   /// **'Couldn\'t use that photo. Try a different one.'**
   String get nodeLook_photoFailed;
 
-<<<<<<< HEAD
   /// No description provided for @bg_title.
   ///
   /// In en, this message translates to:
@@ -8491,8 +8490,6 @@ abstract class AppLocalizations {
   /// **'Couldn\'t use that photo. Try a different one.'**
   String get bg_photoFailed;
 
-=======
->>>>>>> origin/dev
   /// No description provided for @losBlockedSpotsTitle.
   ///
   /// In en, this message translates to:

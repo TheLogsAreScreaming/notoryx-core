@@ -2460,7 +2460,6 @@
   "nodeLook_clear": "Använd standardutseendet",
   "nodeLook_colorN": "Färg {index}",
   "nodeLook_photoFailed": "Det fotot gick inte att använda. Prova ett annat.",
-<<<<<<< HEAD
   "bg_title": "Bakgrund",
   "bg_kindTheme": "Temaglöd",
   "bg_kindSolid": "Färg",
@@ -2479,8 +2478,6 @@
   "bg_previewBody": "Så här ser text på ett glaskort ut.",
   "bg_photoNotBackedUp": "Fotot stannar på den här telefonen och ingår inte i säkerhetskopior.",
   "bg_photoFailed": "Det fotot gick inte att använda. Prova ett annat.",
-=======
->>>>>>> origin/dev
   "losBlockedSpotsTitle": "Blockerade punkter",
   "losSelectedObstructionTitle": "Valt hinder",
   "losBlockedSpotsHint": "Klicka på en markerad plats för att framhäva den på kartan.",

@@ -2749,7 +2749,6 @@
   "nodeLook_colorN": "Colour {index}",
   "@nodeLook_colorN": {"placeholders": {"index": {"type": "int"}}},
   "nodeLook_photoFailed": "Couldn't use that photo. Try a different one.",
-<<<<<<< HEAD
   "bg_title": "Background",
   "bg_kindTheme": "Theme glow",
   "bg_kindSolid": "Colour",
@@ -2769,8 +2768,6 @@
   "bg_previewBody": "Text on a glass card looks like this.",
   "bg_photoNotBackedUp": "The photo stays on this phone and isn't included in backups.",
   "bg_photoFailed": "Couldn't use that photo. Try a different one.",
-=======
->>>>>>> origin/dev
   "losBlockedSpotsTitle": "Blocked spots",
   "losBlockedSpotsHint": "Tap a blocked spot to highlight it on the map.",
   "losBlockedSpotChip": "{distance} {distanceUnit} • {obstruction} {heightUnit}",

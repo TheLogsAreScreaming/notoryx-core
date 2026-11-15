@@ -2460,7 +2460,6 @@
   "nodeLook_clear": "Standaarduiterlijk gebruiken",
   "nodeLook_colorN": "Kleur {index}",
   "nodeLook_photoFailed": "Die foto kon niet worden gebruikt. Probeer een andere.",
-<<<<<<< HEAD
   "bg_title": "Achtergrond",
   "bg_kindTheme": "Themagloed",
   "bg_kindSolid": "Kleur",
@@ -2479,8 +2478,6 @@
   "bg_previewBody": "Zo ziet tekst op een glazen kaart eruit.",
   "bg_photoNotBackedUp": "De foto blijft op deze telefoon en zit niet in back-ups.",
   "bg_photoFailed": "Die foto kon niet worden gebruikt. Probeer een andere.",
-=======
->>>>>>> origin/dev
   "losBlockedSpotsTitle": "Geplande plaatsen",
   "losBlockedSpotChip": "{distance} {distanceUnit} • {obstruction} {heightUnit}",
   "losSelectedObstructionDetails": "Blocked by {obstruction} {heightUnit}, {distanceFromA} from A and {distanceFromB} from B ({distanceUnit}).",

@@ -2497,7 +2497,6 @@
   "nodeLook_clear": "Użyj domyślnego wyglądu",
   "nodeLook_colorN": "Kolor {index}",
   "nodeLook_photoFailed": "Nie można użyć tego zdjęcia. Spróbuj innego.",
-<<<<<<< HEAD
   "bg_title": "Tło",
   "bg_kindTheme": "Poświata motywu",
   "bg_kindSolid": "Kolor",
@@ -2516,8 +2515,6 @@
   "bg_previewBody": "Tak wygląda tekst na szklanej karcie.",
   "bg_photoNotBackedUp": "Zdjęcie zostaje na tym telefonie i nie trafia do kopii zapasowych.",
   "bg_photoFailed": "Nie można użyć tego zdjęcia. Spróbuj innego.",
-=======
->>>>>>> origin/dev
   "losBlockedSpotsTitle": "Zablokowane miejsca",
   "losBlockedSpotsHint": "Kliknij zablokowane miejsce, aby je zaznaczyć na mapie.",
   "losBlockedSpotChip": "{distance} {distanceUnit} • {obstruction} {heightUnit}",

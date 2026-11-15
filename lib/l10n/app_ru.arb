@@ -1557,7 +1557,6 @@
   "nodeLook_clear": "Вернуть обычный вид",
   "nodeLook_colorN": "Цвет {index}",
   "nodeLook_photoFailed": "Не удалось использовать это фото. Попробуйте другое.",
-<<<<<<< HEAD
   "bg_title": "Фон",
   "bg_kindTheme": "Свечение темы",
   "bg_kindSolid": "Цвет",
@@ -1576,8 +1575,6 @@
   "bg_previewBody": "Так выглядит текст на стеклянной карточке.",
   "bg_photoNotBackedUp": "Фото остаётся на этом телефоне и не входит в резервные копии.",
   "bg_photoFailed": "Не удалось использовать это фото. Попробуйте другое.",
-=======
->>>>>>> origin/dev
   "losBlockedSpotsTitle": "Зарезервированные места",
   "losSelectedObstructionTitle": "Выбранный объект, препятствующий движению",
   "losBlockedSpotChip": "{distance} {distanceUnit} • {obstruction} {heightUnit}",

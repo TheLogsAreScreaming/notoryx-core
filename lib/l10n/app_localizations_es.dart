@@ -4881,7 +4881,6 @@ class AppLocalizationsEs extends AppLocalizations {
       'No se pudo usar esa foto. Prueba con otra.';
 
   @override
-<<<<<<< HEAD
   String get bg_title => 'Fondo';
 
   @override
@@ -4940,8 +4939,6 @@ class AppLocalizationsEs extends AppLocalizations {
   String get bg_photoFailed => 'No se pudo usar esa foto. Prueba con otra.';
 
   @override
-=======
->>>>>>> origin/dev
   String get losBlockedSpotsTitle => 'Espacios ocupados';
 
   @override

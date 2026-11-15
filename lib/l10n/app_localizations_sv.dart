@@ -4835,7 +4835,6 @@ class AppLocalizationsSv extends AppLocalizations {
       'Det fotot gick inte att använda. Prova ett annat.';
 
   @override
-<<<<<<< HEAD
   String get bg_title => 'Bakgrund';
 
   @override
@@ -4895,8 +4894,6 @@ class AppLocalizationsSv extends AppLocalizations {
       'Det fotot gick inte att använda. Prova ett annat.';
 
   @override
-=======
->>>>>>> origin/dev
   String get losBlockedSpotsTitle => 'Blockerade punkter';
 
   @override

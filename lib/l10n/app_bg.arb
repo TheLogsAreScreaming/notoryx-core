@@ -2461,7 +2461,6 @@
   "nodeLook_clear": "Използвай стандартния вид",
   "nodeLook_colorN": "Цвят {index}",
   "nodeLook_photoFailed": "Тази снимка не може да се използва. Опитайте друга.",
-<<<<<<< HEAD
   "bg_title": "Фон",
   "bg_kindTheme": "Сияние на темата",
   "bg_kindSolid": "Цвят",
@@ -2480,8 +2479,6 @@
   "bg_previewBody": "Текстът върху стъклена карта изглежда така.",
   "bg_photoNotBackedUp": "Снимката остава на този телефон и не влиза в резервните копия.",
   "bg_photoFailed": "Тази снимка не може да се използва. Опитайте друга.",
-=======
->>>>>>> origin/dev
   "losBlockedSpotsTitle": "Ограничени места",
   "losSelectedObstructionDetails": "Блокирано от {obstruction} {heightUnit}, {distanceFromA} от A и {distanceFromB} от B ({distanceUnit}).",
   "chat_markAsUnread": "Отбелязване като непрочетено",

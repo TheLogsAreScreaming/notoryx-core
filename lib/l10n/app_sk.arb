@@ -2458,7 +2458,6 @@
   "nodeLook_clear": "Použiť predvolený vzhľad",
   "nodeLook_colorN": "Farba {index}",
   "nodeLook_photoFailed": "Túto fotku sa nepodarilo použiť. Skúste inú.",
-<<<<<<< HEAD
   "bg_title": "Pozadie",
   "bg_kindTheme": "Žiara témy",
   "bg_kindSolid": "Farba",
@@ -2477,8 +2476,6 @@
   "bg_previewBody": "Takto vyzerá text na sklenenej karte.",
   "bg_photoNotBackedUp": "Fotka zostáva v tomto telefóne a nie je súčasťou záloh.",
   "bg_photoFailed": "Túto fotku sa nepodarilo použiť. Skúste inú.",
-=======
->>>>>>> origin/dev
   "losBlockedSpotsTitle": "Zablokované miesta",
   "losBlockedSpotsHint": "Kliknite na zablokované miesto, aby ste ho zvýraznili na mape.",
   "losSelectedObstructionTitle": "Vybraná prekážka",

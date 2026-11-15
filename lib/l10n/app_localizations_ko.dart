@@ -4645,7 +4645,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get nodeLook_photoFailed => '이 사진은 사용할 수 없습니다. 다른 사진을 선택하세요.';
 
   @override
-<<<<<<< HEAD
   String get bg_title => '배경';
 
   @override
@@ -4702,8 +4701,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get bg_photoFailed => '이 사진은 사용할 수 없습니다. 다른 사진을 선택하세요.';
 
   @override
-=======
->>>>>>> origin/dev
   String get losBlockedSpotsTitle => '차단된 공간';
 
   @override

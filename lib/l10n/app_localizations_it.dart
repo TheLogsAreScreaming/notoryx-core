@@ -4889,7 +4889,6 @@ class AppLocalizationsIt extends AppLocalizations {
       'Impossibile usare questa foto. Provane un\'altra.';
 
   @override
-<<<<<<< HEAD
   String get bg_title => 'Sfondo';
 
   @override
@@ -4949,8 +4948,6 @@ class AppLocalizationsIt extends AppLocalizations {
       'Impossibile usare questa foto. Provane un\'altra.';
 
   @override
-=======
->>>>>>> origin/dev
   String get losBlockedSpotsTitle => 'Posti occupati';
 
   @override

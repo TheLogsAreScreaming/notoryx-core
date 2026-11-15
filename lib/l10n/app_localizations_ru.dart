@@ -4890,7 +4890,6 @@ class AppLocalizationsRu extends AppLocalizations {
       'Не удалось использовать это фото. Попробуйте другое.';
 
   @override
-<<<<<<< HEAD
   String get bg_title => 'Фон';
 
   @override
@@ -4950,8 +4949,6 @@ class AppLocalizationsRu extends AppLocalizations {
       'Не удалось использовать это фото. Попробуйте другое.';
 
   @override
-=======
->>>>>>> origin/dev
   String get losBlockedSpotsTitle => 'Зарезервированные места';
 
   @override

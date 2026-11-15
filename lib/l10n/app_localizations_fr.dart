@@ -4899,7 +4899,6 @@ class AppLocalizationsFr extends AppLocalizations {
       'Impossible d\'utiliser cette photo. Essayez-en une autre.';
 
   @override
-<<<<<<< HEAD
   String get bg_title => 'Arrière-plan';
 
   @override
@@ -4959,8 +4958,6 @@ class AppLocalizationsFr extends AppLocalizations {
       'Impossible d\'utiliser cette photo. Essayez-en une autre.';
 
   @override
-=======
->>>>>>> origin/dev
   String get losBlockedSpotsTitle => 'Places occupés';
 
   @override

@@ -4636,7 +4636,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get nodeLook_photoFailed => 'その写真は使えませんでした。別の写真を試してください。';
 
   @override
-<<<<<<< HEAD
   String get bg_title => '背景';
 
   @override
@@ -4693,8 +4692,6 @@ class AppLocalizationsJa extends AppLocalizations {
   String get bg_photoFailed => 'その写真は使えませんでした。別の写真を試してください。';
 
   @override
-=======
->>>>>>> origin/dev
   String get losBlockedSpotsTitle => '利用できない場所';
 
   @override
