@@ -6,6 +6,7 @@
 // PREVIEW_ONLY=home,tools renders just those screens; PREVIEW_HEIGHT=2400
 // renders taller than a phone screen, for reviewing long screens whole.
 // PREVIEW_TEXT_SCALE=1.5 renders with the system text size turned up.
+import 'dart:async';
 import 'dart:io';
 import 'dart:ui' as ui;
 
@@ -452,7 +453,13 @@ void main() {
   final out = Platform.environment['PREVIEW_OUT'];
   final screens = <String, Widget Function()>{
     'home': () => const BastionHomeScreen(),
-    'tools': () => const BastionToolsScreen(),
+    'tools': () {
+      // Hide the one-time "Some tools moved" note, as a returning user sees it.
+      unawaited(
+        PrefsManager.instance.setBool('tools_moved_note_coverage_v1', true),
+      );
+      return const BastionToolsScreen();
+    },
     'battery_watch': () {
       final history = RepeaterBatteryHistory(PrefsManager.instance)
         ..setScope('a' * 64);

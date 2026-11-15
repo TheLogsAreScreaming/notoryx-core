@@ -65,7 +65,7 @@ Each release includes `SHA256SUMS-Android.txt` and `SHA256SUMS-macOS.txt` (and, 
 1. **Connect your radio.** On the home screen, tap **Get started**, or go to **Connect radio**. NOTORYX Core connects over Bluetooth, USB or TCP to a radio running MeshCore companion firmware. Turn on **Connect to my radio automatically** and it reconnects to your last radio when the app opens.
 2. **Say hello.** Open **Chats** and send a message on a channel, or open someone in **Nodes** to message them directly.
 3. **Choose who gets your check-ins and SOS.** Tap **Check in: I'm OK** or hold **SOS**. The first time, NOTORYX Core asks who should get them. You can change this anytime in **Plan your trip**.
-4. **Add more radios (optional).** **More → Radios → Add a radio** keeps a second radio, such as a handheld and a base station, connected at the same time. The app shows and sends through the radio in use; tap **Switch radio** to change. The others stay connected and save their messages for when you switch.
+4. **Add more radios (optional).** **Add a radio** on the **Connections** screen (from **Connect radio**) keeps a second radio, such as a handheld and a base station, connected at the same time. The app shows and sends through the radio in use; the radio switcher at the top of **Home** changes it. The others stay connected and save their messages for when you switch.
 5. **Set your radio for your area.** **Settings → Radio settings → Presets** lists MeshCore's community presets (USA, Canada, EU/UK, Australia and more) with the one for your country suggested first.
 6. **Pick a look.** **Settings → Theme** offers eight themes: Blaze (default), Neon Anarchy, Tactical, Pink Overload, Bare Beauty, Okabe-Ito (color-blind safe), Night Ops (low light) and Seasonal. You can set a second theme for when your phone is in dark mode, and **Theme → Background** puts a color, gradient or your own photo behind the glass panels.
 
@@ -198,6 +198,12 @@ The tabs at the bottom are **Home**, **Chats**, **Nodes**, **Map** and **More**.
   <img src="docs/screenshots/routes.png" width="200" alt="Route Intelligence">
   <img src="docs/screenshots/path_graph.png" width="200" alt="Path graph showing how messages reach you">
   <img src="docs/screenshots/settings.png" width="200" alt="Settings">
+</p>
+
+<p align="center">
+  <img src="docs/screenshots/dm_chat.png" width="200" alt="A direct chat with delivery status">
+  <img src="docs/screenshots/battery_watch.png" width="200" alt="Battery watch: repeater battery history and trend">
+  <img src="docs/screenshots/home_light.png" width="200" alt="Home in light mode">
 </p>
 
 ## Add your area's mesh settings
