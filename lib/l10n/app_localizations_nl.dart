@@ -4832,6 +4832,36 @@ class AppLocalizationsNl extends AppLocalizations {
   String get compass_sourceRadio => 'Je positie komt van de radio.';
 
   @override
+  String get nodeLook_menu => 'Foto of kleur';
+
+  @override
+  String nodeLook_title(String name) {
+    return 'Uiterlijk van $name';
+  }
+
+  @override
+  String get nodeLook_hint =>
+      'Alleen op deze telefoon. Wordt nooit over de mesh verstuurd.';
+
+  @override
+  String get nodeLook_choosePhoto => 'Foto kiezen';
+
+  @override
+  String get nodeLook_removePhoto => 'Foto verwijderen';
+
+  @override
+  String get nodeLook_clear => 'Standaarduiterlijk gebruiken';
+
+  @override
+  String nodeLook_colorN(int index) {
+    return 'Kleur $index';
+  }
+
+  @override
+  String get nodeLook_photoFailed =>
+      'Die foto kon niet worden gebruikt. Probeer een andere.';
+
+  @override
   String get losBlockedSpotsTitle => 'Geplande plaatsen';
 
   @override

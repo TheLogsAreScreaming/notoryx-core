@@ -4848,6 +4848,35 @@ class AppLocalizationsPt extends AppLocalizations {
   String get compass_sourceRadio => 'A sua posição vem do rádio.';
 
   @override
+  String get nodeLook_menu => 'Foto ou cor';
+
+  @override
+  String nodeLook_title(String name) {
+    return 'Aspeto de $name';
+  }
+
+  @override
+  String get nodeLook_hint => 'Só neste telefone. Nunca é enviado pela malha.';
+
+  @override
+  String get nodeLook_choosePhoto => 'Escolher foto';
+
+  @override
+  String get nodeLook_removePhoto => 'Remover foto';
+
+  @override
+  String get nodeLook_clear => 'Usar o aspeto predefinido';
+
+  @override
+  String nodeLook_colorN(int index) {
+    return 'Cor $index';
+  }
+
+  @override
+  String get nodeLook_photoFailed =>
+      'Não foi possível usar essa foto. Experimente outra.';
+
+  @override
   String get losBlockedSpotsTitle => 'Locais ocupados';
 
   @override

@@ -4608,6 +4608,34 @@ class AppLocalizationsJa extends AppLocalizations {
   String get compass_sourceRadio => '現在地は無線機から取得しています。';
 
   @override
+  String get nodeLook_menu => '写真または色';
+
+  @override
+  String nodeLook_title(String name) {
+    return '$nameの表示';
+  }
+
+  @override
+  String get nodeLook_hint => 'この端末だけの設定で、メッシュには送信されません。';
+
+  @override
+  String get nodeLook_choosePhoto => '写真を選ぶ';
+
+  @override
+  String get nodeLook_removePhoto => '写真を外す';
+
+  @override
+  String get nodeLook_clear => '標準の表示に戻す';
+
+  @override
+  String nodeLook_colorN(int index) {
+    return '色 $index';
+  }
+
+  @override
+  String get nodeLook_photoFailed => 'その写真は使えませんでした。別の写真を試してください。';
+
+  @override
   String get losBlockedSpotsTitle => '利用できない場所';
 
   @override

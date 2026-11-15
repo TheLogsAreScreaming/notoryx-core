@@ -4828,6 +4828,36 @@ class AppLocalizationsSl extends AppLocalizations {
   String get compass_sourceRadio => 'Vaš položaj prihaja iz radia.';
 
   @override
+  String get nodeLook_menu => 'Fotografija ali barva';
+
+  @override
+  String nodeLook_title(String name) {
+    return 'Videz: $name';
+  }
+
+  @override
+  String get nodeLook_hint =>
+      'Samo na tem telefonu. Nikoli se ne pošlje po omrežju.';
+
+  @override
+  String get nodeLook_choosePhoto => 'Izberi fotografijo';
+
+  @override
+  String get nodeLook_removePhoto => 'Odstrani fotografijo';
+
+  @override
+  String get nodeLook_clear => 'Uporabi privzeti videz';
+
+  @override
+  String nodeLook_colorN(int index) {
+    return 'Barva $index';
+  }
+
+  @override
+  String get nodeLook_photoFailed =>
+      'Te fotografije ni bilo mogoče uporabiti. Poskusite drugo.';
+
+  @override
   String get losBlockedSpotsTitle => 'Zasedena parkirišča';
 
   @override

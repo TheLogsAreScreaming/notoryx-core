@@ -4805,6 +4805,36 @@ class AppLocalizationsSv extends AppLocalizations {
   String get compass_sourceRadio => 'Din position kommer från radion.';
 
   @override
+  String get nodeLook_menu => 'Foto eller färg';
+
+  @override
+  String nodeLook_title(String name) {
+    return 'Utseende för $name';
+  }
+
+  @override
+  String get nodeLook_hint =>
+      'Bara på den här telefonen. Skickas aldrig över meshen.';
+
+  @override
+  String get nodeLook_choosePhoto => 'Välj foto';
+
+  @override
+  String get nodeLook_removePhoto => 'Ta bort foto';
+
+  @override
+  String get nodeLook_clear => 'Använd standardutseendet';
+
+  @override
+  String nodeLook_colorN(int index) {
+    return 'Färg $index';
+  }
+
+  @override
+  String get nodeLook_photoFailed =>
+      'Det fotot gick inte att använda. Prova ett annat.';
+
+  @override
   String get losBlockedSpotsTitle => 'Blockerade punkter';
 
   @override

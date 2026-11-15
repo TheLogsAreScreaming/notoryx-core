@@ -4522,6 +4522,34 @@ class AppLocalizationsZh extends AppLocalizations {
   String get compass_sourceRadio => '您的位置来自电台。';
 
   @override
+  String get nodeLook_menu => '照片或颜色';
+
+  @override
+  String nodeLook_title(String name) {
+    return '$name 的外观';
+  }
+
+  @override
+  String get nodeLook_hint => '仅保存在本手机上，绝不会通过网状网络发送。';
+
+  @override
+  String get nodeLook_choosePhoto => '选择照片';
+
+  @override
+  String get nodeLook_removePhoto => '移除照片';
+
+  @override
+  String get nodeLook_clear => '使用默认外观';
+
+  @override
+  String nodeLook_colorN(int index) {
+    return '颜色 $index';
+  }
+
+  @override
+  String get nodeLook_photoFailed => '无法使用该照片，请换一张。';
+
+  @override
   String get losBlockedSpotsTitle => '被占用区域';
 
   @override
