@@ -1,0 +1,5 @@
+• Line of sight shades the Fresnel zone and says if it's clear
+• A compass arrow points to any node
+• Give any node its own photo or colour
+• Pick a colour, gradient or photo behind the glass cards
+• Chats stay open while a dropped radio reconnects
