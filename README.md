@@ -206,6 +206,14 @@ The tabs at the bottom are **Home**, **Chats**, **Nodes**, **Map** and **More**.
   <img src="docs/screenshots/home_light.png" width="200" alt="Home in light mode">
 </p>
 
+<p align="center">
+  <img src="docs/screenshots/background.png" width="200" alt="Background: theme glow, color, gradient, color blend or your own photo behind the glass">
+  <img src="docs/screenshots/theme_settings.png" width="200" alt="Theme settings with a different theme in dark mode">
+  <img src="docs/screenshots/checklist_run.png" width="200" alt="Before a trip checklist">
+  <img src="docs/screenshots/firmware_guide.png" width="200" alt="Guided firmware update">
+</p>
+<p align="center"><em>Captured on a phone running 10.1.0-rc.5 with the Night Ops theme.</em></p>
+
 ## Add your area's mesh settings
 
 When a local mesh agrees on new radio settings, NOTORYX Core can offer them to everyone nearby. The live list is [`regional_presets.json` in notoryx-core-releases](https://github.com/TheLogsAreScreaming/notoryx-core-releases/blob/main/regional_presets.json), which NOTORYX Core checks every 12 hours. The app also bundles a copy, [`assets/regional_presets.json`](assets/regional_presets.json), for first launch and offline use; update it to match the live list before each release.
