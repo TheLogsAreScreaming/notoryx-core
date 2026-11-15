@@ -4,8 +4,8 @@ name: Build NOTORYX Core Lite APK
 # closed-source parts. tool/lite/apply.sh turns the checkout into the lite
 # build: no on-device translation (llamadart), no picture messages
 # (onnxruntime) and no camera QR scanner (Google ML Kit), no phone GPS (Play Services). See
-# tool/lite/README.md. Debug-signed here, like build-apk.yml; re-sign with
-# the release key on the maintainer's Mac.
+# tool/lite/README.md. Debug-signed here, like build-apk.yml; the
+# signed-lite job in bastion-signed-release.yml builds it with the release key.
 on:
   push:
     branches:

@@ -99,3 +99,122 @@ jobs:
           path: dist/
           if-no-files-found: error
           retention-days: 30
+
+  # The lite build (tool/lite/README.md), signed with the same permanent
+  # key so it installs as an update over an earlier lite APK.
+  signed-lite:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Check signing configuration
+        env:
+          KEYSTORE_B64: ${{ secrets.BASTION_KEYSTORE_BASE64 }}
+          STORE_PASSWORD: ${{ secrets.BASTION_STORE_PASSWORD }}
+          KEY_PASSWORD: ${{ secrets.BASTION_KEY_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.BASTION_KEY_ALIAS }}
+        run: |
+          test -n "$KEYSTORE_B64" || { echo "Missing BASTION_KEYSTORE_BASE64"; exit 1; }
+          test -n "$STORE_PASSWORD" || { echo "Missing BASTION_STORE_PASSWORD"; exit 1; }
+          test -n "$KEY_PASSWORD" || { echo "Missing BASTION_KEY_PASSWORD"; exit 1; }
+          test -n "$KEY_ALIAS" || { echo "Missing BASTION_KEY_ALIAS"; exit 1; }
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Free Android build disk
+        run: bash ci/free-android-disk.sh
+      - name: Set up Java 17
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.47.6'
+          channel: stable
+          cache: true
+      - name: Install and verify Android CMake
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            if "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --install "cmake;3.22.1" &&
+               "$ANDROID_HOME/cmake/3.22.1/bin/cmake" --version; then
+              break
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              echo "::error::Android CMake 3.22.1 could not be installed and verified"
+              exit 1
+            fi
+            rm -rf "$ANDROID_HOME/.temp" "$ANDROID_HOME/cmake/3.22.1"
+            sleep 10
+          done
+      - name: Make the lite build
+        run: bash tool/lite/apply.sh
+      - name: Get dependencies
+        run: flutter pub get
+      - name: Analyze lib
+        run: flutter analyze --fatal-infos lib
+      - name: Configure permanent release signing
+        env:
+          KEYSTORE_B64: ${{ secrets.BASTION_KEYSTORE_BASE64 }}
+          STORE_PASSWORD: ${{ secrets.BASTION_STORE_PASSWORD }}
+          KEY_PASSWORD: ${{ secrets.BASTION_KEY_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.BASTION_KEY_ALIAS }}
+        run: |
+          printf '%s' "$KEYSTORE_B64" | base64 --decode > android/app/bastion-release.jks
+          test -s android/app/bastion-release.jks
+          {
+            printf 'storeFile=bastion-release.jks\n'
+            printf 'storePassword=%s\n' "$STORE_PASSWORD"
+            printf 'keyPassword=%s\n' "$KEY_PASSWORD"
+            printf 'keyAlias=%s\n' "$KEY_ALIAS"
+          } > android/key.properties
+          chmod 600 android/key.properties android/app/bastion-release.jks
+      - name: Build signed lite APK (ARM64)
+        shell: bash
+        run: |
+          set -euo pipefail
+          version=$(sed -n 's/^version: *\([^+]*\).*/\1/p' pubspec.yaml)
+          flutter build apk --release --target-platform android-arm64 --no-pub \
+            --build-name "${version}-lite"
+      - name: Check what's inside, verify signing and prepare artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          APK=build/app/outputs/flutter-apk/app-release.apk
+          unzip -l "$APK" > contents.txt
+          # The parts the lite build exists to leave out.
+          if grep -E 'libonnxruntime|libllama|libggml|libLiteRt|libbarhopper|libGemma' contents.txt; then
+            echo "::error::The lite APK still contains a library it should leave out"
+            exit 1
+          fi
+          unzip -p "$APK" 'classes*.dex' > classes.bin
+          strings classes.bin | grep -oE 'Lcom/google/(android/gms|mlkit|firebase)/[a-z]+' | sort -u > google.txt || true
+          if [ -s google.txt ]; then
+            cat google.txt
+            echo "::error::The lite APK still contains closed-source Google classes"
+            exit 1
+          fi
+          APKSIGNER=$(find "$ANDROID_HOME/build-tools" -maxdepth 2 -name apksigner | sort -V | tail -n 1)
+          test -x "$APKSIGNER"
+          "$APKSIGNER" verify --verbose --print-certs "$APK" | tee dist-signing.txt
+          # Refuse to publish anything signed with the Android debug key.
+          if grep -q "CN=Android Debug" dist-signing.txt; then
+            echo "APK is signed with the debug key"; exit 1
+          fi
+          mkdir -p dist
+          cp "$APK" dist/NOTORYX-Core-Lite-arm64-v8a.apk
+          mv dist-signing.txt dist/signing-certificate.txt
+          cd dist
+          sha256sum NOTORYX-Core-Lite-arm64-v8a.apk > SHA256SUMS.txt
+          cat SHA256SUMS.txt
+      - name: Remove signing material
+        if: always()
+        run: rm -f android/key.properties android/app/bastion-release.jks
+      - name: Upload signed lite APK and checksum
+        uses: actions/upload-artifact@v4
+        with:
+          name: Bastion-Signed-Android-Lite
+          path: dist/
+          if-no-files-found: error
+          retention-days: 30
