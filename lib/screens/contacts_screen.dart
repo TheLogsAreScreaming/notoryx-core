@@ -40,6 +40,8 @@ import '../widgets/sync_progress_overlay.dart';
 import '../helpers/snack_bar_builder.dart';
 import '../helpers/share_links.dart';
 import '../widgets/share_in_chat.dart';
+import '../widgets/node_avatar.dart';
+import '../widgets/node_look_sheet.dart';
 import 'chat_screen.dart';
 import 'discovery_screen.dart';
 import 'repeater_hub_screen.dart';
@@ -1519,6 +1521,20 @@ class _ContactsScreenState extends State<ContactsScreen>
                 ),
             ],
             ListTile(
+              leading: const Icon(Icons.palette_outlined),
+              title: Text(context.l10n.nodeLook_menu),
+              onTap: () {
+                Navigator.pop(sheetContext);
+                unawaited(
+                  showNodeLookSheet(
+                    context,
+                    nodeKey: contact.publicKeyHex,
+                    name: contact.name,
+                  ),
+                );
+              },
+            ),
+            ListTile(
               leading: Icon(
                 isFavorite ? Icons.star : Icons.star_border,
                 color: MeshPalette.warn,
@@ -1679,11 +1695,18 @@ class _ContactTile extends StatelessWidget {
     ].join(' · ');
 
     // A glyph, not an avatar: the node type, or the emoji it's named with.
+    // A photo or colour picked for this node replaces it.
     final Widget glyph = SizedBox(
-      width: 24,
-      child: emoji != null
-          ? Text(emoji, style: const TextStyle(fontSize: 17))
-          : Icon(_typeIcon(), size: 19, color: MeshPalette.ink3),
+      width: 28,
+      child: NodeAvatar(
+        nodeKey: contact.publicKeyHex,
+        name: contact.name,
+        size: 28,
+        icon: _typeIcon(),
+        fallback: emoji != null
+            ? Text(emoji, style: const TextStyle(fontSize: 17))
+            : Icon(_typeIcon(), size: 19, color: MeshPalette.ink3),
+      ),
     );
 
     return GestureDetector(
