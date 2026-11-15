@@ -1,0 +1,3 @@
+• Open the compass to a node from the Nodes list or the map
+• The 60% Fresnel line is dashed again on phones
+• Search in More finds the Background setting
