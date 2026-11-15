@@ -93,6 +93,39 @@ void main() {
     await sentinel.setEnabled(false);
   });
 
+  testWidgets('Send stays above the keyboard while typing a note', (
+    tester,
+  ) async {
+    // A 6.5-inch phone with the on-screen keyboard open.
+    const dpr = 2.625;
+    const keyboard = 330.0;
+    tester.view.devicePixelRatio = dpr;
+    tester.view.physicalSize = const Size(1080, 2340);
+    addTearDown(tester.view.reset);
+    await sentinel.setEnabled(true);
+    await pumpHost(tester);
+    await tester.tap(find.text('open'));
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.byKey(const ValueKey('sentinel-note')));
+    tester.view.viewInsets = const FakeViewPadding(bottom: keyboard * dpr);
+    await tester.pumpAndSettle();
+    await tester.enterText(
+      find.byKey(const ValueKey('sentinel-note')),
+      'test note',
+    );
+    await tester.pumpAndSettle();
+
+    final send = find.byKey(const ValueKey('sentinel-send-report'));
+    final screen = tester.view.physicalSize.height / dpr;
+    expect(tester.getRect(send).bottom, lessThanOrEqualTo(screen - keyboard));
+    await tester.tap(send);
+    await tester.pumpAndSettle();
+    final body = jsonDecode(reports.single.body) as Map<String, dynamic>;
+    expect(body['reason'], contains('test note'));
+    await sentinel.setEnabled(false);
+  });
+
   testWidgets('declining the opt-in sends nothing', (tester) async {
     await pumpHost(tester);
     await tester.tap(find.text('open'));

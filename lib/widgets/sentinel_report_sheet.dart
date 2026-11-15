@@ -124,83 +124,95 @@ class _ReportSheetState extends State<_ReportSheet> {
     final l10n = context.l10n;
     final excerpt = widget.messageExcerpt?.trim();
     final hasExcerpt = excerpt != null && excerpt.isNotEmpty;
+    // The send button sits below the scrolling part so it stays above
+    // the keyboard while a note is typed.
     return SafeArea(
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            BottomSheetHeader(
-              title: l10n.sentinel_reportTitle(widget.nodeName),
-              subtitle: l10n.sentinel_title,
-            ),
-            RadioGroup<SentinelReason>(
-              groupValue: _reason,
-              onChanged: (r) {
-                if (r != null && !_sending) setState(() => _reason = r);
-              },
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Flexible(
+            child: SingleChildScrollView(
               child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  for (final r in SentinelReason.values)
-                    RadioListTile<SentinelReason>(
-                      key: ValueKey('sentinel-reason-${r.name}'),
-                      value: r,
-                      dense: true,
-                      title: Text(sentinelReasonLabel(l10n, r)),
+                  BottomSheetHeader(
+                    title: l10n.sentinel_reportTitle(widget.nodeName),
+                    subtitle: l10n.sentinel_title,
+                  ),
+                  RadioGroup<SentinelReason>(
+                    groupValue: _reason,
+                    onChanged: (r) {
+                      if (r != null && !_sending) setState(() => _reason = r);
+                    },
+                    child: Column(
+                      children: [
+                        for (final r in SentinelReason.values)
+                          RadioListTile<SentinelReason>(
+                            key: ValueKey('sentinel-reason-${r.name}'),
+                            value: r,
+                            dense: true,
+                            title: Text(sentinelReasonLabel(l10n, r)),
+                          ),
+                      ],
                     ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: TextField(
+                      key: const ValueKey('sentinel-note'),
+                      controller: _note,
+                      enabled: !_sending,
+                      maxLength: SentinelService.maxNote,
+                      maxLines: 3,
+                      minLines: 1,
+                      decoration: InputDecoration(
+                        labelText: l10n.sentinel_note,
+                      ),
+                    ),
+                  ),
+                  if (hasExcerpt)
+                    CheckboxListTile(
+                      key: const ValueKey('sentinel-include-message'),
+                      value: _includeMessage,
+                      onChanged: _sending
+                          ? null
+                          : (v) => setState(() => _includeMessage = v ?? false),
+                      title: Text(l10n.sentinel_includeMessage),
+                      subtitle: Text(
+                        excerpt,
+                        maxLines: 3,
+                        overflow: TextOverflow.fade,
+                      ),
+                    ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
+                    child: Text(
+                      l10n.sentinel_sends,
+                      style: TextStyle(color: MeshPalette.ink3, fontSize: 12),
+                    ),
+                  ),
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: TextField(
-                key: const ValueKey('sentinel-note'),
-                controller: _note,
-                enabled: !_sending,
-                maxLength: SentinelService.maxNote,
-                maxLines: 3,
-                minLines: 1,
-                decoration: InputDecoration(labelText: l10n.sentinel_note),
-              ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
+            child: FilledButton.icon(
+              key: const ValueKey('sentinel-send-report'),
+              onPressed: _sending ? null : () => unawaited(_send()),
+              icon: _sending
+                  ? const SizedBox(
+                      width: 16,
+                      height: 16,
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    )
+                  : const Icon(Icons.flag_outlined),
+              label: Text(l10n.sentinel_send),
             ),
-            if (hasExcerpt)
-              CheckboxListTile(
-                key: const ValueKey('sentinel-include-message'),
-                value: _includeMessage,
-                onChanged: _sending
-                    ? null
-                    : (v) => setState(() => _includeMessage = v ?? false),
-                title: Text(l10n.sentinel_includeMessage),
-                subtitle: Text(
-                  excerpt,
-                  maxLines: 3,
-                  overflow: TextOverflow.fade,
-                ),
-              ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 4, 16, 8),
-              child: Text(
-                l10n.sentinel_sends,
-                style: TextStyle(color: MeshPalette.ink3, fontSize: 12),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
-              child: FilledButton.icon(
-                key: const ValueKey('sentinel-send-report'),
-                onPressed: _sending ? null : () => unawaited(_send()),
-                icon: _sending
-                    ? const SizedBox(
-                        width: 16,
-                        height: 16,
-                        child: CircularProgressIndicator(strokeWidth: 2),
-                      )
-                    : const Icon(Icons.flag_outlined),
-                label: Text(l10n.sentinel_send),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
