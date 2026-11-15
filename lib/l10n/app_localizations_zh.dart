@@ -4550,6 +4550,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get nodeLook_photoFailed => '无法使用该照片，请换一张。';
 
   @override
+<<<<<<< HEAD
   String get bg_title => '背景';
 
   @override
@@ -4606,6 +4607,8 @@ class AppLocalizationsZh extends AppLocalizations {
   String get bg_photoFailed => '无法使用该照片，请换一张。';
 
   @override
+=======
+>>>>>>> origin/dev
   String get losBlockedSpotsTitle => '被占用区域';
 
   @override

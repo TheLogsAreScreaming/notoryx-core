@@ -2600,6 +2600,7 @@
   "nodeLook_clear": "標準の表示に戻す",
   "nodeLook_colorN": "色 {index}",
   "nodeLook_photoFailed": "その写真は使えませんでした。別の写真を試してください。",
+<<<<<<< HEAD
   "bg_title": "背景",
   "bg_kindTheme": "テーマの光",
   "bg_kindSolid": "単色",
@@ -2618,6 +2619,8 @@
   "bg_previewBody": "ガラスカード上の文字はこのように見えます。",
   "bg_photoNotBackedUp": "写真はこの端末にだけ保存され、バックアップには含まれません。",
   "bg_photoFailed": "その写真は使えませんでした。別の写真を試してください。",
+=======
+>>>>>>> origin/dev
   "losBlockedSpotsTitle": "利用できない場所",
   "losSelectedObstructionDetails": "{obstruction} によって {heightUnit} の高さで、A地点から {distanceFromA}、B地点から {distanceFromB} ({distanceUnit}) の距離で塞がれています。",
   "losBlockedSpotChip": "{distance} {distanceUnit} • {obstruction} {heightUnit}",

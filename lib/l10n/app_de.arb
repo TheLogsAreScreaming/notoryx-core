@@ -2592,6 +2592,7 @@
   "nodeLook_clear": "Standardaussehen verwenden",
   "nodeLook_colorN": "Farbe {index}",
   "nodeLook_photoFailed": "Dieses Foto ließ sich nicht verwenden. Versuch ein anderes.",
+<<<<<<< HEAD
   "bg_title": "Hintergrund",
   "bg_kindTheme": "Themen-Glühen",
   "bg_kindSolid": "Farbe",
@@ -2610,6 +2611,8 @@
   "bg_previewBody": "So sieht Text auf einer Glaskarte aus.",
   "bg_photoNotBackedUp": "Das Foto bleibt auf diesem Handy und ist nicht in Backups enthalten.",
   "bg_photoFailed": "Dieses Foto ließ sich nicht verwenden. Versuch ein anderes.",
+=======
+>>>>>>> origin/dev
   "losBlockedSpotsTitle": "Reservierte Plätze",
   "losSelectedObstructionTitle": "Ausgewählte Behinderung",
   "losBlockedSpotChip": "{distance} • {distanceUnit} • {obstruction} {heightUnit}",

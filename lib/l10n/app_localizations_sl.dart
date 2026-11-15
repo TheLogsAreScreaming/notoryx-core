@@ -4858,6 +4858,7 @@ class AppLocalizationsSl extends AppLocalizations {
       'Te fotografije ni bilo mogoče uporabiti. Poskusite drugo.';
 
   @override
+<<<<<<< HEAD
   String get bg_title => 'Ozadje';
 
   @override
@@ -4917,6 +4918,8 @@ class AppLocalizationsSl extends AppLocalizations {
       'Te fotografije ni bilo mogoče uporabiti. Poskusite drugo.';
 
   @override
+=======
+>>>>>>> origin/dev
   String get losBlockedSpotsTitle => 'Zasedena parkirišča';
 
   @override

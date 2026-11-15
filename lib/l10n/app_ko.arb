@@ -2497,6 +2497,7 @@
   "nodeLook_clear": "기본 모양 사용",
   "nodeLook_colorN": "색상 {index}",
   "nodeLook_photoFailed": "이 사진은 사용할 수 없습니다. 다른 사진을 선택하세요.",
+<<<<<<< HEAD
   "bg_title": "배경",
   "bg_kindTheme": "테마 광채",
   "bg_kindSolid": "단색",
@@ -2515,6 +2516,8 @@
   "bg_previewBody": "유리 카드 위의 글자는 이렇게 보입니다.",
   "bg_photoNotBackedUp": "사진은 이 휴대폰에만 남고 백업에는 포함되지 않습니다.",
   "bg_photoFailed": "이 사진은 사용할 수 없습니다. 다른 사진을 선택하세요.",
+=======
+>>>>>>> origin/dev
   "losBlockedSpotsTitle": "차단된 공간",
   "losSelectedObstructionTitle": "선택된 장애물",
   "losBlockedSpotChip": "{distance} {distanceUnit} • {obstruction} {heightUnit}",

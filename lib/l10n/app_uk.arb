@@ -2439,6 +2439,7 @@
   "nodeLook_clear": "Повернути звичайний вигляд",
   "nodeLook_colorN": "Колір {index}",
   "nodeLook_photoFailed": "Не вдалося використати це фото. Спробуйте інше.",
+<<<<<<< HEAD
   "bg_title": "Фон",
   "bg_kindTheme": "Сяйво теми",
   "bg_kindSolid": "Колір",
@@ -2457,6 +2458,8 @@
   "bg_previewBody": "Так виглядає текст на скляній картці.",
   "bg_photoNotBackedUp": "Фото залишається на цьому телефоні й не входить до резервних копій.",
   "bg_photoFailed": "Не вдалося використати це фото. Спробуйте інше.",
+=======
+>>>>>>> origin/dev
   "losBlockedSpotsTitle": "Заблоковані місця",
   "losSelectedObstructionTitle": "Вибраний об'єкт перешкоди",
   "losBlockedSpotChip": "{distance} {distanceUnit} • {obstruction} {heightUnit}",

@@ -4874,6 +4874,7 @@ class AppLocalizationsHu extends AppLocalizations {
       'Ezt a fotót nem lehet használni. Próbálj egy másikat.';
 
   @override
+<<<<<<< HEAD
   String get bg_title => 'Háttér';
 
   @override
@@ -4933,6 +4934,8 @@ class AppLocalizationsHu extends AppLocalizations {
       'Ezt a fotót nem lehet használni. Próbálj egy másikat.';
 
   @override
+=======
+>>>>>>> origin/dev
   String get losBlockedSpotsTitle => 'Blokkolt helyek';
 
   @override

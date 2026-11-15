@@ -4859,6 +4859,7 @@ class AppLocalizationsSk extends AppLocalizations {
       'Túto fotku sa nepodarilo použiť. Skúste inú.';
 
   @override
+<<<<<<< HEAD
   String get bg_title => 'Pozadie';
 
   @override
@@ -4917,6 +4918,8 @@ class AppLocalizationsSk extends AppLocalizations {
   String get bg_photoFailed => 'Túto fotku sa nepodarilo použiť. Skúste inú.';
 
   @override
+=======
+>>>>>>> origin/dev
   String get losBlockedSpotsTitle => 'Zablokované miesta';
 
   @override

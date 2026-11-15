@@ -2593,6 +2593,7 @@
   "nodeLook_clear": "Utiliser l'apparence par défaut",
   "nodeLook_colorN": "Couleur {index}",
   "nodeLook_photoFailed": "Impossible d'utiliser cette photo. Essayez-en une autre.",
+<<<<<<< HEAD
   "bg_title": "Arrière-plan",
   "bg_kindTheme": "Halo du thème",
   "bg_kindSolid": "Couleur",
@@ -2611,6 +2612,8 @@
   "bg_previewBody": "Voici le texte sur une carte en verre.",
   "bg_photoNotBackedUp": "La photo reste sur ce téléphone et n'est pas incluse dans les sauvegardes.",
   "bg_photoFailed": "Impossible d'utiliser cette photo. Essayez-en une autre.",
+=======
+>>>>>>> origin/dev
   "losBlockedSpotsTitle": "Places occupés",
   "losBlockedSpotsHint": "Sélectionnez un emplacement bloqué pour le mettre en évidence sur la carte.",
   "losSelectedObstructionDetails": "Bloqué par {obstruction}, à une hauteur de {heightUnit}, à une distance de {distanceFromA} par rapport à A et à une distance de {distanceFromB} par rapport à B ({distanceUnit}).",

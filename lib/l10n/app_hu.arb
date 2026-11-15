@@ -2499,6 +2499,7 @@
   "nodeLook_clear": "Alapértelmezett megjelenés",
   "nodeLook_colorN": "{index}. szín",
   "nodeLook_photoFailed": "Ezt a fotót nem lehet használni. Próbálj egy másikat.",
+<<<<<<< HEAD
   "bg_title": "Háttér",
   "bg_kindTheme": "Téma ragyogása",
   "bg_kindSolid": "Szín",
@@ -2517,6 +2518,8 @@
   "bg_previewBody": "Így néz ki a szöveg egy üvegkártyán.",
   "bg_photoNotBackedUp": "A fotó ezen a telefonon marad, és nem kerül a biztonsági mentésekbe.",
   "bg_photoFailed": "Ezt a fotót nem lehet használni. Próbálj egy másikat.",
+=======
+>>>>>>> origin/dev
   "losBlockedSpotsTitle": "Blokkolt helyek",
   "losSelectedObstructionDetails": "Letiltja: {obstruction} {heightUnit}, {distanceFromA} A-tól és {distanceFromB} B-től ({distanceUnit}).",
   "chat_markAsUnread": "Megjelölés olvasatlanként",

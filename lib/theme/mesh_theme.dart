@@ -118,6 +118,7 @@ class MapPalette {
   static const markerShadow = Color(0xB3000000);
 }
 
+<<<<<<< HEAD
 /// Colours offered for a custom background: deep and bright tones that
 /// sit well behind frosted glass once dimmed.
 class BackdropPalette {
@@ -139,6 +140,8 @@ class BackdropPalette {
   ];
 }
 
+=======
+>>>>>>> origin/dev
 /// Colours someone can pick for a node: distinct hues that stay apart for
 /// common colour-blindness, plus neutrals. Each also has a label.
 class NodeLookPalette {

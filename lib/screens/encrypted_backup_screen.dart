@@ -142,7 +142,10 @@ class _EncryptedBackupScreenState extends State<EncryptedBackupScreen> {
       );
       if (go != true) return;
       final restored = await service.restore(values);
+<<<<<<< HEAD
       BackdropStore.instance.reload();
+=======
+>>>>>>> origin/dev
       NodeLookStore.instance.reload();
       final db = messages > 0 ? await MessageDb.ready : null;
       final added = db == null

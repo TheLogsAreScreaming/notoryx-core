@@ -4862,6 +4862,7 @@ class AppLocalizationsNl extends AppLocalizations {
       'Die foto kon niet worden gebruikt. Probeer een andere.';
 
   @override
+<<<<<<< HEAD
   String get bg_title => 'Achtergrond';
 
   @override
@@ -4921,6 +4922,8 @@ class AppLocalizationsNl extends AppLocalizations {
       'Die foto kon niet worden gebruikt. Probeer een andere.';
 
   @override
+=======
+>>>>>>> origin/dev
   String get losBlockedSpotsTitle => 'Geplande plaatsen';
 
   @override

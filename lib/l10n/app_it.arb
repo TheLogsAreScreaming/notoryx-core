@@ -2594,6 +2594,7 @@
   "nodeLook_clear": "Usa l'aspetto predefinito",
   "nodeLook_colorN": "Colore {index}",
   "nodeLook_photoFailed": "Impossibile usare questa foto. Provane un'altra.",
+<<<<<<< HEAD
   "bg_title": "Sfondo",
   "bg_kindTheme": "Bagliore del tema",
   "bg_kindSolid": "Colore",
@@ -2612,6 +2613,8 @@
   "bg_previewBody": "Ecco il testo su una scheda di vetro.",
   "bg_photoNotBackedUp": "La foto resta su questo telefono e non è inclusa nei backup.",
   "bg_photoFailed": "Impossibile usare questa foto. Provane un'altra.",
+=======
+>>>>>>> origin/dev
   "losBlockedSpotsTitle": "Posti occupati",
   "losBlockedSpotChip": "{distance} {distanceUnit} • {obstruction} {heightUnit}",
   "losSelectedObstructionDetails": "Blocked by {obstruction} {heightUnit}, {distanceFromA} from A and {distanceFromB} from B ({distanceUnit}).",

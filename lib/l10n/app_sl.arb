@@ -2460,6 +2460,7 @@
   "nodeLook_clear": "Uporabi privzeti videz",
   "nodeLook_colorN": "Barva {index}",
   "nodeLook_photoFailed": "Te fotografije ni bilo mogoče uporabiti. Poskusite drugo.",
+<<<<<<< HEAD
   "bg_title": "Ozadje",
   "bg_kindTheme": "Sij teme",
   "bg_kindSolid": "Barva",
@@ -2478,6 +2479,8 @@
   "bg_previewBody": "Tako je videti besedilo na stekleni kartici.",
   "bg_photoNotBackedUp": "Fotografija ostane na tem telefonu in ni vključena v varnostne kopije.",
   "bg_photoFailed": "Te fotografije ni bilo mogoče uporabiti. Poskusite drugo.",
+=======
+>>>>>>> origin/dev
   "losBlockedSpotsTitle": "Zasedena parkirišča",
   "losBlockedSpotChip": "{distance} {distanceUnit} • {obstruction} {heightUnit}",
   "losSelectedObstructionDetails": "Blocked by {obstruction} {heightUnit}, {distanceFromA} from A and {distanceFromB} from B ({distanceUnit}).",
