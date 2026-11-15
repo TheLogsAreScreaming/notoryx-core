@@ -4762,6 +4762,73 @@ class AppLocalizationsSk extends AppLocalizations {
   String get losLegendTerrain => 'Terén';
 
   @override
+  String get losLegendFresnel => 'Fresnelova zóna';
+
+  @override
+  String losFresnelClear(int percent) {
+    return 'Fresnelova zóna je v najužšom mieste voľná na $percent%. 60% a viac je dobré.';
+  }
+
+  @override
+  String losFresnelPartial(int percent) {
+    return 'Fresnelova zóna je v najužšom mieste voľná len na $percent%. Cieľom je 60% a viac: zdvihnite anténu alebo posuňte bod.';
+  }
+
+  @override
+  String get losFresnelBlocked =>
+      'Terén zasahuje do Fresnelovej zóny aj lúča. Zdvihnite anténu alebo posuňte bod.';
+
+  @override
+  String get compass_openHint => 'Ukáž mi smer';
+
+  @override
+  String get compass_onTarget => 'Rovno pred vami';
+
+  @override
+  String compass_turnRight(int degrees) {
+    return 'Otočte sa doprava o $degrees°';
+  }
+
+  @override
+  String compass_turnLeft(int degrees) {
+    return 'Otočte sa doľava o $degrees°';
+  }
+
+  @override
+  String compass_bearing(int degrees, String point) {
+    return 'Azimut $degrees° $point';
+  }
+
+  @override
+  String get compass_noSensor =>
+      'Toto zariadenie nemá kompas, preto je šípka zobrazená so severom hore.';
+
+  @override
+  String get compass_calibrate =>
+      'Kompas si nie je istý. Niekoľkokrát pohybujte telefónom v tvare osmičky, aby ste ho kalibrovali.';
+
+  @override
+  String get compass_magneticNote =>
+      'Kým nie je známa vaša poloha, smer sa určuje podľa magnetického severu.';
+
+  @override
+  String get compass_noPosition =>
+      'Vaša poloha zatiaľ nie je známa. Povoľte polohu telefónu alebo nastavte polohu rádia.';
+
+  @override
+  String get compass_noNodePosition =>
+      'Tento uzol nezdieľal polohu, takže nie je kam ukázať.';
+
+  @override
+  String get compass_usePhoneLocation => 'Použiť polohu telefónu';
+
+  @override
+  String get compass_sourcePhone => 'Vaša poloha pochádza z GPS telefónu.';
+
+  @override
+  String get compass_sourceRadio => 'Vaša poloha pochádza z rádia.';
+
+  @override
   String get nodeLook_menu => 'Fotka alebo farba';
 
   @override

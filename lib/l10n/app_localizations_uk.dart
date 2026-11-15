@@ -4789,6 +4789,73 @@ class AppLocalizationsUk extends AppLocalizations {
   String get losLegendTerrain => 'Рельєф';
 
   @override
+  String get losLegendFresnel => 'Зона Френеля';
+
+  @override
+  String losFresnelClear(int percent) {
+    return 'Зона Френеля вільна на $percent% у найвужчому місці. 60% і більше — добре.';
+  }
+
+  @override
+  String losFresnelPartial(int percent) {
+    return 'Зона Френеля вільна лише на $percent% у найвужчому місці. Мета — 60% і більше: підніміть антену або перемістіть точку.';
+  }
+
+  @override
+  String get losFresnelBlocked =>
+      'Рельєф перекриває зону Френеля і промінь. Підніміть антену або перемістіть точку.';
+
+  @override
+  String get compass_openHint => 'Вказати напрямок';
+
+  @override
+  String get compass_onTarget => 'Прямо попереду';
+
+  @override
+  String compass_turnRight(int degrees) {
+    return 'Поверніться праворуч на $degrees°';
+  }
+
+  @override
+  String compass_turnLeft(int degrees) {
+    return 'Поверніться ліворуч на $degrees°';
+  }
+
+  @override
+  String compass_bearing(int degrees, String point) {
+    return 'Азимут $degrees° $point';
+  }
+
+  @override
+  String get compass_noSensor =>
+      'На цьому пристрої немає компаса, тому стрілку показано з північчю вгорі.';
+
+  @override
+  String get compass_calibrate =>
+      'Компас неточний. Кілька разів проведіть телефоном вісімкою, щоб відкалібрувати його.';
+
+  @override
+  String get compass_magneticNote =>
+      'Поки ваше місце невідоме, напрямок за магнітною північчю.';
+
+  @override
+  String get compass_noPosition =>
+      'Ваше місце ще невідоме. Дозвольте геолокацію телефона або задайте положення радіо.';
+
+  @override
+  String get compass_noNodePosition =>
+      'Цей вузол не поділився місцем, тож немає куди вказувати.';
+
+  @override
+  String get compass_usePhoneLocation => 'Використати геолокацію телефона';
+
+  @override
+  String get compass_sourcePhone => 'Ваше місце береться з GPS телефона.';
+
+  @override
+  String get compass_sourceRadio => 'Ваше місце береться з радіо.';
+
+  @override
   String get nodeLook_menu => 'Фото або колір';
 
   @override

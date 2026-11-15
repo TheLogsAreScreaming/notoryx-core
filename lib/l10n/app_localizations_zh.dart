@@ -4461,6 +4461,67 @@ class AppLocalizationsZh extends AppLocalizations {
   String get losLegendTerrain => '地形';
 
   @override
+  String get losLegendFresnel => '菲涅耳区';
+
+  @override
+  String losFresnelClear(int percent) {
+    return '最窄处菲涅耳区有$percent%无遮挡。60%或以上为良好。';
+  }
+
+  @override
+  String losFresnelPartial(int percent) {
+    return '最窄处菲涅耳区仅有$percent%无遮挡。目标为60%或以上：升高天线或移动位置。';
+  }
+
+  @override
+  String get losFresnelBlocked => '地形侵入菲涅耳区并遮挡波束。请升高天线或移动位置。';
+
+  @override
+  String get compass_openHint => '指引方向';
+
+  @override
+  String get compass_onTarget => '正前方';
+
+  @override
+  String compass_turnRight(int degrees) {
+    return '向右转$degrees°';
+  }
+
+  @override
+  String compass_turnLeft(int degrees) {
+    return '向左转$degrees°';
+  }
+
+  @override
+  String compass_bearing(int degrees, String point) {
+    return '方位 $degrees° $point';
+  }
+
+  @override
+  String get compass_noSensor => '此设备没有指南针，箭头以北为上显示。';
+
+  @override
+  String get compass_calibrate => '指南针不准确。请将手机按8字形移动几次进行校准。';
+
+  @override
+  String get compass_magneticNote => '在获知您的位置前，以磁北为准。';
+
+  @override
+  String get compass_noPosition => '尚不知道您的位置。请允许手机定位或设置电台位置。';
+
+  @override
+  String get compass_noNodePosition => '该节点未共享位置，无法指向。';
+
+  @override
+  String get compass_usePhoneLocation => '使用手机定位';
+
+  @override
+  String get compass_sourcePhone => '您的位置来自手机GPS。';
+
+  @override
+  String get compass_sourceRadio => '您的位置来自电台。';
+
+  @override
   String get nodeLook_menu => '照片或颜色';
 
   @override

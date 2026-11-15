@@ -4793,6 +4793,73 @@ class AppLocalizationsRu extends AppLocalizations {
   String get losLegendTerrain => 'Рельеф';
 
   @override
+  String get losLegendFresnel => 'Зона Френеля';
+
+  @override
+  String losFresnelClear(int percent) {
+    return 'Зона Френеля свободна на $percent% в самом узком месте. 60% и больше — хорошо.';
+  }
+
+  @override
+  String losFresnelPartial(int percent) {
+    return 'Зона Френеля свободна лишь на $percent% в самом узком месте. Цель — 60% и больше: поднимите антенну или передвиньте точку.';
+  }
+
+  @override
+  String get losFresnelBlocked =>
+      'Рельеф перекрывает зону Френеля и луч. Поднимите антенну или передвиньте точку.';
+
+  @override
+  String get compass_openHint => 'Указать направление';
+
+  @override
+  String get compass_onTarget => 'Прямо впереди';
+
+  @override
+  String compass_turnRight(int degrees) {
+    return 'Повернитесь вправо на $degrees°';
+  }
+
+  @override
+  String compass_turnLeft(int degrees) {
+    return 'Повернитесь влево на $degrees°';
+  }
+
+  @override
+  String compass_bearing(int degrees, String point) {
+    return 'Азимут $degrees° $point';
+  }
+
+  @override
+  String get compass_noSensor =>
+      'На этом устройстве нет компаса, поэтому стрелка показана с севером вверху.';
+
+  @override
+  String get compass_calibrate =>
+      'Компас неточен. Несколько раз проведите телефоном восьмёркой, чтобы откалибровать его.';
+
+  @override
+  String get compass_magneticNote =>
+      'Пока ваше положение неизвестно, направление по магнитному северу.';
+
+  @override
+  String get compass_noPosition =>
+      'Ваше положение пока неизвестно. Разрешите геолокацию телефона или задайте положение радио.';
+
+  @override
+  String get compass_noNodePosition =>
+      'Этот узел не сообщил своё положение, поэтому указывать не на что.';
+
+  @override
+  String get compass_usePhoneLocation => 'Использовать геолокацию телефона';
+
+  @override
+  String get compass_sourcePhone => 'Ваше положение берётся из GPS телефона.';
+
+  @override
+  String get compass_sourceRadio => 'Ваше положение берётся с радио.';
+
+  @override
   String get nodeLook_menu => 'Фото или цвет';
 
   @override
