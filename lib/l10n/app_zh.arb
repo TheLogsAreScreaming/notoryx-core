@@ -2438,6 +2438,10 @@
       }
     }
   },
+  "losLegendFresnel": "菲涅耳区",
+  "losFresnelClear": "最窄处菲涅耳区有{percent}%无遮挡。60%或以上为良好。",
+  "losFresnelPartial": "最窄处菲涅耳区仅有{percent}%无遮挡。目标为60%或以上：升高天线或移动位置。",
+  "losFresnelBlocked": "地形侵入菲涅耳区并遮挡波束。请升高天线或移动位置。",
   "compass_openHint": "指引方向",
   "compass_onTarget": "正前方",
   "compass_turnRight": "向右转{degrees}°",

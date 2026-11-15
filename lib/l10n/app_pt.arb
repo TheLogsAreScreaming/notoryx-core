@@ -2433,6 +2433,10 @@
       }
     }
   },
+  "losLegendFresnel": "Zona de Fresnel",
+  "losFresnelClear": "Zona de Fresnel {percent}% livre no ponto mais apertado. 60% ou mais é bom.",
+  "losFresnelPartial": "Zona de Fresnel apenas {percent}% livre no ponto mais apertado. Procure 60% ou mais: suba uma antena ou mova um ponto.",
+  "losFresnelBlocked": "O terreno invade a zona de Fresnel e o feixe. Suba uma antena ou mova um ponto.",
   "compass_openHint": "Aponta-me o caminho",
   "compass_onTarget": "Em frente",
   "compass_turnRight": "Vire {degrees}° à direita",

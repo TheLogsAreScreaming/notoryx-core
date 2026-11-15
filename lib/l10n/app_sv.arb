@@ -2435,6 +2435,10 @@
     }
   },
   "losBlockedSpotChip": "{distance} {distanceUnit} • {obstruction} {heightUnit}",
+  "losLegendFresnel": "Fresnelzon",
+  "losFresnelClear": "Fresnelzonen är {percent}% fri vid den trängsta punkten. 60% eller mer är bra.",
+  "losFresnelPartial": "Fresnelzonen är bara {percent}% fri vid den trängsta punkten. Sikta på 60% eller mer: höj en antenn eller flytta en punkt.",
+  "losFresnelBlocked": "Terrängen skär in i Fresnelzonen och strålen. Höj en antenn eller flytta en punkt.",
   "compass_openHint": "Visa vägen dit",
   "compass_onTarget": "Rakt fram",
   "compass_turnRight": "Vänd {degrees}° åt höger",

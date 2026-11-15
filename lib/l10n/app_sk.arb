@@ -2433,6 +2433,10 @@
       }
     }
   },
+  "losLegendFresnel": "Fresnelova zóna",
+  "losFresnelClear": "Fresnelova zóna je v najužšom mieste voľná na {percent}%. 60% a viac je dobré.",
+  "losFresnelPartial": "Fresnelova zóna je v najužšom mieste voľná len na {percent}%. Cieľom je 60% a viac: zdvihnite anténu alebo posuňte bod.",
+  "losFresnelBlocked": "Terén zasahuje do Fresnelovej zóny aj lúča. Zdvihnite anténu alebo posuňte bod.",
   "compass_openHint": "Ukáž mi smer",
   "compass_onTarget": "Rovno pred vami",
   "compass_turnRight": "Otočte sa doprava o {degrees}°",

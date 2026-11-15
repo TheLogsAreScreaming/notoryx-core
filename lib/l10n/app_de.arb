@@ -2567,6 +2567,10 @@
       }
     }
   },
+  "losLegendFresnel": "Fresnel-Zone",
+  "losFresnelClear": "Fresnel-Zone an der engsten Stelle zu {percent}% frei. Ab 60% ist gut.",
+  "losFresnelPartial": "Fresnel-Zone an der engsten Stelle nur zu {percent}% frei. Ziel sind 60% oder mehr: Antenne höher setzen oder einen Punkt verschieben.",
+  "losFresnelBlocked": "Gelände ragt in die Fresnel-Zone und den Strahl. Antenne höher setzen oder einen Punkt verschieben.",
   "compass_openHint": "Zeig mir den Weg",
   "compass_onTarget": "Geradeaus",
   "compass_turnRight": "{degrees}° nach rechts drehen",
