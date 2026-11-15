@@ -642,6 +642,10 @@ void main() {
             ..createSync(recursive: true)
             ..writeAsBytesSync(png!.buffer.asUint8List());
         });
+        // Some screens start sync or scan timers in initState. Unmount and
+        // let them run out so the test doesn't fail after the image is saved.
+        await tester.pumpWidget(const SizedBox());
+        await tester.pump(const Duration(minutes: 10));
       }, skip: out == null);
     }
   }

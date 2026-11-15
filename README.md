@@ -18,11 +18,13 @@ NOTORYX Core turns your phone or computer and a [MeshCore](https://meshcore.io/)
   <img src="docs/screenshots/nodes.png" width="230" alt="Nodes: repeaters, people, rooms and sensors heard on the mesh">
 </p>
 
-> NOTORYX Core 10.0 is released, with 10.1 in pre-release. It is checked by automated tests and a mesh simulator but not yet on a wide range of phones and radios: see [Known limitations](docs/KNOWN_LIMITATIONS.md). It is not a replacement for an emergency service or a satellite messenger. Please [report problems in notoryx-core-releases](https://github.com/TheLogsAreScreaming/notoryx-core-releases/issues/new/choose) (issues are off in this source repository).
+> **Latest stable: [10.0.0](https://github.com/TheLogsAreScreaming/notoryx-core-releases/releases/tag/v10.0.0)** (14 November 2026). **Latest pre-release: [10.1.0-rc.5](https://github.com/TheLogsAreScreaming/notoryx-core-releases/releases/tag/v10.1.0-rc.5)** (15 November 2026), with everything below.
+>
+> NOTORYX Core is checked by automated tests and a mesh simulator but not yet on a wide range of phones and radios: see [Known limitations](docs/KNOWN_LIMITATIONS.md). It is not a replacement for an emergency service or a satellite messenger. Please [report problems in notoryx-core-releases](https://github.com/TheLogsAreScreaming/notoryx-core-releases/issues/new/choose) (issues are off in this source repository).
 
 ## Download
 
-Get the latest build from **[NOTORYX Core releases](https://github.com/TheLogsAreScreaming/notoryx-core-releases/releases)**. Each release lists what changed.
+Get the latest build from **[NOTORYX Core releases](https://github.com/TheLogsAreScreaming/notoryx-core-releases/releases)**. Each release lists what changed. Pre-releases (10.1.0-rc.*) get new features first; 10.0.0 is the latest stable build.
 
 | Platform | File | Notes |
 |---|---|---|
@@ -56,17 +58,18 @@ Or install the APK yourself:
    - You do this once for each new version.
 4. Allow Bluetooth when asked.
 
-Each release includes `SHA256SUMS-Android.txt` and `SHA256SUMS-macOS.txt` if you want to check your download (`shasum -a 256 <file>`). How each published file is tied to its source commit, its test run and the signing certificate is described in [Release provenance](docs/RELEASE_PROVENANCE.md).
+Each release includes `SHA256SUMS-Android.txt` and `SHA256SUMS-macOS.txt` (and, from 10.1.0-rc.2, `RELEASE-MANIFEST.json`) if you want to check your download (`shasum -a 256 <file>`). How each published file is tied to its source commit, its test run and the signing certificate is described in [Release provenance](docs/RELEASE_PROVENANCE.md).
 
 ## Getting started
 
 1. **Connect your radio.** On the home screen, tap **Get started**, or go to **Connect radio**. NOTORYX Core connects over Bluetooth, USB or TCP to a radio running MeshCore companion firmware. Turn on **Connect to my radio automatically** and it reconnects to your last radio when the app opens.
 2. **Say hello.** Open **Chats** and send a message on a channel, or open someone in **Nodes** to message them directly.
 3. **Choose who gets your check-ins and SOS.** Tap **Check in: I'm OK** or hold **SOS**. The first time, NOTORYX Core asks who should get them. You can change this anytime in **Plan your trip**.
-4. **Set your radio for your area.** **Settings → Radio settings → Presets** lists MeshCore's community presets (USA, Canada, EU/UK, Australia and more) with the one for your country suggested first.
-5. **Pick a look.** **Settings → Theme** offers eight themes: Blaze (default), Neon Anarchy, Tactical, Pink Overload, Bare Beauty, Okabe-Ito (color-blind safe), Night Ops (low light) and Seasonal.
+4. **Add more radios (optional).** **More → Radios → Add a radio** keeps a second radio, such as a handheld and a base station, connected at the same time. The app shows and sends through the radio in use; tap **Switch radio** to change. The others stay connected and save their messages for when you switch.
+5. **Set your radio for your area.** **Settings → Radio settings → Presets** lists MeshCore's community presets (USA, Canada, EU/UK, Australia and more) with the one for your country suggested first.
+6. **Pick a look.** **Settings → Theme** offers eight themes: Blaze (default), Neon Anarchy, Tactical, Pink Overload, Bare Beauty, Okabe-Ito (color-blind safe), Night Ops (low light) and Seasonal. You can set a second theme for when your phone is in dark mode, and **Theme → Background** puts a color, gradient or your own photo behind the glass panels.
 
-The tabs at the bottom are **Home**, **Chats**, **Nodes**, **Map** and **More**. Home is where check-in, SOS and your radio's readings live; **More** holds every tool and setting, with a search box.
+The tabs at the bottom are **Home**, **Chats**, **Nodes**, **Map** and **More**. Home is where check-in, SOS and your radio's readings live; **More** holds every tool and setting, with a search box. Every coverage and map tool is in one place, **More → Map + coverage**.
 
 ## Features
 
@@ -77,12 +80,25 @@ The tabs at the bottom are **Home**, **Chats**, **Nodes**, **Map** and **More**.
 - **Check-ins:** I'm OK, At camp, Delayed and Heading back. You see who each one reached, and can resend to anyone it missed. Check-ins can also go to a team or SAR channel, signed with your radio's key.
 - **Check-in reminders and overdue alerts:** a notification when you're due to check in, and a warning when a trip contact goes quiet for longer than you set.
 - **Trip planning:** pick up to six contacts. Trip briefs, a Field Log of everything sent and received, and optional automations.
+- **Trip readiness:** a **Ready** card before you leave checks your radio, battery, offline maps and SOS contacts, and says what's left to fix (for example *SOS can't reach anyone*).
+- **SALUTE and 9-Line reports** from the SOS panel and the check-in card, filled in with your position and the time in UTC, and split into numbered messages when they're long.
+- **Team tracking:** share your position on a private channel during a trip, every 10 to 60 minutes, only when you've moved. **Day replay** (Map + coverage) plays back where everyone went on a chosen day.
+- **Zone and off-trail alerts:** alert when someone enters or leaves an area around you or a waypoint, or strays from a route or recorded track.
+- **Checklists:** offline checklists (*Before a trip* and *Putting up a node* to start) with timestamped records you can export.
+- **SOS on the lock screen:** with app lock on, the 2-second SOS hold still works without unlocking, and an SOS keeps going after the app restarts.
 - **Android home-screen widget:** radio status, battery and unread count, with one-tap Check in and SOS.
 
 ### Messaging
 - Direct and channel messages with delivery status, reactions, GIFs and image messages. Tapping a notification opens that chat.
 - **Find channels:** a directory of public hashtag channels (local ones first), channels heard on air that you haven't joined, and **Active online**: the #channels an online analyzer has seen in use, with one-tap Join.
 - **Message search**, per-chat **drafts**, **read aloud** and on-device translation.
+- **Reply to a message** in channels and direct chats (shown as a quote), **@mentions** with name suggestions, and **block** a sender on a channel.
+- **Reply from the notification** without opening the app. A reply that can't go out yet is saved as a draft.
+- **Offline queue:** messages written while your radio is disconnected wait above the message box and go out when it reconnects. Chats stay open while a dropped link reconnects.
+- **Forward** a message to another chat, and **schedule** one: hold Send and pick a time up to 30 days ahead.
+- **Not delivered:** when your last message to someone didn't get through, their row in **Nodes** says so; tap it to see why and fix it.
+- **Airtime estimate** under the message box (for example `≈0.6 s on air`), worked out from your radio's settings.
+- **Per-channel notifications:** all messages, only when you're mentioned, or muted. A message that arrives twice alerts only once.
 - **Quick messages:** ready-made replies like "On my way" or "At camp" from the message box menu. Edit the list to make it yours.
 - **Direct messages:** stop retrying a message that's still being sent, and a note in a new chat that the other person has to add you as a contact before they can read and answer.
 - **Share your position or a contact** from the message box. Received contacts can be added in one tap, and **Add contact from clipboard** accepts links, adverts (even wrapped across lines) and bare public keys.
@@ -93,30 +109,53 @@ The tabs at the bottom are **Home**, **Chats**, **Nodes**, **Map** and **More**.
 - Optional auto-delete of old channel messages.
 
 ### Maps, paths and coverage
-- Live mesh map with offline map packs, a button to jump to your position (phone GPS, or your radio's), and a **track log** that records your trail and exports GPX.
+- Live mesh map with offline map packs, a button to jump to your position (phone GPS, or your radio's), and a **track log** that records your trail and exports GPX. **Favorites only** hides every node you haven't starred, and **Map as a list** lists nodes and waypoints nearest first for screen readers.
+- **Waypoints and routes:** save places, import GPX, KML or GeoJSON, export GPX, and see them on the map.
+- **Offline trail routing and place search:** download an area's trails and named places (peaks, huts, springs, trailheads and more) from OpenStreetMap, then plan the shortest route along trails with no signal.
+- **Compass to any node:** **Point me to it** on a node opens a compass with an arrow, distance and "Turn left 35°". It opens from the map, the Nodes list and the path tools.
+- **Coordinates** as decimal degrees, DMS, MGRS, UTM or Maidenhead locator.
 - **Map telemetry:** battery, temperature, humidity or pressure badges on the map. Readings dim after an hour and hide after a day, and the map remembers your choice.
 - **Wardrive:** ping as you drive or hike and map which repeaters heard you, and how well, both ways. Pings use your phone's GPS and the map follows you. Drives are saved.
 - **Network scan** (More → Networks): find MeshCore networks nearby. A radio only hears networks on its exact settings, so a scan switches yours to each network in turn and switches back. **Quick** (the default) sends one zero-hop discover ping on each and listens about 8 s, so a scan takes well under a minute; **Thorough** only listens, 30–90 s each, and also finds networks without a repeater in range. The first scan checks every preset in your band; after that, the networks you've found and saved plus your country's preset. Each network heard is logged with the time, place, signal and its nodes, so you can map it, export CSV or GPX, save it, or join it with one tap. You're off your own mesh while it scans, so it won't run during an SOS or a trip, and the radio's auto-add is paused so other networks' nodes don't fill your contacts.
-- **Path graph:** every path you've heard, drawn as flows from far repeaters to you. Short (1-byte) hops are matched to a specific repeater using longer paths.
-- **Route Intelligence:** learned routes and the best repeaters your radio hears directly.
+- **Path graph:** every path you've heard, drawn as flows from far repeaters to you, or as a **network** diagram with you in the middle. Short (1-byte) hops are matched to a specific repeater using longer paths, and the app remembers which repeater wins a shared short ID.
+- **Route Intelligence:** learned routes and the best repeaters your radio hears directly. **Route view** shows each link of a contact's route with the signal both ways, and lets you pick a different route.
+- **Trace card:** share a finished path trace as a card.
+- **Node journal:** every node your radio has ever heard, with first and last heard, how far away, labels, tags and your own notes. **Timeline** puts messages, new nodes, signal changes and places in one feed.
+- **Mesh health:** a plain-words grade of your local mesh, warnings when a route is getting worse, and alerts when a favorite repeater goes quiet or a new one shows up nearby.
 - **Observer reach:** check which online observers heard a message you sent, how many hops it took and the best signal. Repeaters you don't have as contacts can be named online. Both use a CoreScope analyzer you choose in Settings.
-- **Coverage hexagons:** record where your radio got through and upload to your own HTTPS endpoints, with a privacy delay.
-- **Antenna coverage** over the terrain, line-of-sight checks and coverage capture sessions.
+- **Coverage hexagons:** record where your radio got through and upload to your own HTTPS endpoints, with a privacy delay. Each observation is signed, so edited or fake reports can be rejected.
+- **Antenna coverage** over the terrain with estimated signal strength, and coverage capture sessions.
+- **Line of sight** with the **Fresnel zone** shaded, so you can see when a path is clear of the ground but still too close to it to work well.
 
 ### Your radio
 - **Sensors on Home:** your radio's own readings (battery voltage, temperatures, GPS, light and whatever else it reports).
 - **Radio presets:** MeshCore's community catalogue with search and a suggestion for your country. Choosing one keeps your transmit power. Local mesh settings (for example Phoenix's or Philadelphia's) are offered when your radio, or your phone if the radio has no position, is in that area; see [adding your area](#add-your-areas-mesh-settings).
 - **Send your advert** zero-hop (only radios that hear you directly) or flooded across the mesh.
-- Connections dashboard, live radio stats and a noise-floor chart, adjustable refresh rate and battery saver.
+- **Several radios at once:** stay connected to more than one radio and switch between them. Each keeps its own messages, queue and unread count, and each reconnects at launch.
+- **Radio features:** see which optional features your radio's firmware supports, and why a control is missing.
+- **Identity key backup:** show and copy your radio's private key, or restore one, so a replacement radio keeps your identity.
+- **Firmware update guide:** shows your radio's firmware and board and checks for a newer MeshCore release (only when you tap). The app never flashes firmware itself.
+- Connections dashboard, live radio stats and a noise-floor chart, adjustable refresh rate and battery saver. On Android, Settings shows whether battery optimization can stop the app in the background.
 - Command line and Wi-Fi setup for your own radio. With permission, you can also use a trusted contact's command line.
 
 ### Field tools
+- **Nearby repeater test:** one tap shows which repeaters hear your radio directly.
+- **Battery watch:** 30 days of each repeater's battery voltage, a trend that says how sure it is, and timed checks of the repeaters you choose with an alert when one is falling.
 - **Repeater ping:** a one-hop trace showing the signal both ways. **Antenna hunt:** clicks faster as a chosen repeater gets louder.
 - Repeater and room-server tools: login, status, neighbors, telemetry, command line and **access control**.
 - **Forget last advert** on a contact, for a node whose adverts stopped updating after its clock was reset.
 - **Repeater IDs** (who uses an ID, which are free) and **Region setup** (US and Canada region trees, or your own) for repeater owners.
 - **Bot Mode:** local auto-replies, keyword rules and commands like `!ping`, `!sun`, `!moon`, `!weather`, `!dice` and `!trace`, in direct messages and in the channels you choose. It can also post weather alerts to a channel.
-- **Field guide**, encrypted backup and app-icon shortcuts.
+- **Automation rules:** when the battery drops, at a time of day, when you enter or leave an area, when a node is heard or goes quiet, or when a message arrives (combine them with AND or OR), post a notification, send a message, or call a webhook you opt in to.
+- **Field guide** and app-icon shortcuts.
+
+### Privacy and security
+- **App lock** with your fingerprint, face or screen lock. Radio and alerts keep running while it's locked.
+- **Encrypted storage** (optional): message history, contacts, channel keys, waypoints, drafts and queued messages, with a random key in the phone's secure storage.
+- **Encrypted backup and restore**, including your message history (merged, not replaced). A restore is all or nothing.
+- **Team setup:** share radio settings, channels, waypoints and routes by QR code or file, always passphrase-encrypted.
+- **Privacy page** (More → Privacy) explains what the mesh can see and what stays on your phone.
+- **Community moderation** (off by default): report spam to human moderators. Nothing is sent until you turn it on.
 
 ### MQTT bridge (optional)
 - **Several brokers at once** over TLS or secure WebSocket, with a Wi-Fi-only option and an offline queue that sends when you're back online. Broker passwords are kept in the system keychain.
@@ -126,6 +165,9 @@ The tabs at the bottom are **Home**, **Chats**, **Nodes**, **Map** and **More**.
 
 ### Look and feel
 - **Frosted ember:** the main screens sit on a warm glow, with see-through glass panels and a floating tab bar. With reduce motion turned on, the blur is off.
+- **Your own background:** the theme's glow, a flat color, a gradient, a soft color blend or your own photo, with dim and blur controls so text stays readable.
+- **Node looks:** give any node a color or a photo. It shows in the Nodes list and on the map.
+- **Dark-mode theme:** an optional second theme for when your phone is in dark mode.
 - Eight themes: **Blaze** (charcoal and slate with high-visibility orange, the default), **Neon Anarchy** (toxic green and electric purple on black), **Tactical** (olive, gunmetal and earth tones), **Pink Overload** (hot pink, bubblegum and lavender), **Bare Beauty** (warm nude, dusty rose, cocoa and sage), **Okabe-Ito** (color-blind safe, on charcoal), **Night Ops** (dim reds on near-black for low light) and **Seasonal**, which follows the season by your device's date (spring, summer, autumn, winter, plus optional Halloween, Christmas and Valentine's Day colors) or a season you pick. Every theme meets WCAG AA contrast (4.5:1) for text, buttons, chat bubbles and SOS, and SOS stays red in all of them.
 - **Color-blind safe colors:** node types on the map and in lists (people, repeaters, rooms and sensors) use the [Okabe-Ito palette](https://jfly.uni-koeln.de/color/), whose colors stay distinct with the common forms of color blindness. The **Okabe-Ito** theme goes further: good, warning and bad signal are blue-green, yellow and vermillion instead of green and red, and every accent comes from the same palette.
 
