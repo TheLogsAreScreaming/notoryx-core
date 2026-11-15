@@ -139,6 +139,27 @@ class BackdropPalette {
   ];
 }
 
+/// Colours someone can pick for a node: distinct hues that stay apart for
+/// common colour-blindness, plus neutrals. Each also has a label.
+class NodeLookPalette {
+  NodeLookPalette._();
+
+  static const List<Color> colors = [
+    Color(0xFFE53935), // red
+    Color(0xFFFB8C00), // orange
+    Color(0xFFFDD835), // yellow
+    Color(0xFF7CB342), // green
+    Color(0xFF00897B), // teal
+    Color(0xFF29B6F6), // sky
+    Color(0xFF1E88E5), // blue
+    Color(0xFF5E35B1), // violet
+    Color(0xFFD81B60), // pink
+    Color(0xFF8D6E63), // brown
+    Color(0xFF90A4AE), // grey
+    Color(0xFFF5F5F5), // white
+  ];
+}
+
 /// High-contrast colors for line-of-sight maps and elevation profiles.
 class LosPalette {
   LosPalette._();
@@ -146,6 +167,7 @@ class LosPalette {
   static const terrain = Color(0xFFA3E635);
   static const beam = Color(0xFF38BDF8);
   static const horizon = Color(0xFFFBBF24);
+  static const fresnel = Color(0xFFC4B5FD);
   static const blocked = Color(0xFFDB8D85);
   static const marginal = Color(0xFFD6B77C);
   static const clear = Color(0xFF93B99D);

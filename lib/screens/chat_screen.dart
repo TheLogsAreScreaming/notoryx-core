@@ -29,6 +29,7 @@ import '../widgets/empty_state.dart';
 import '../helpers/chat_scroll_controller.dart';
 import '../helpers/gif_helper.dart';
 import '../models/direct_quote.dart';
+import '../services/node_look_store.dart';
 import '../services/offline_outbox.dart';
 import '../widgets/forward_sheet.dart';
 import '../widgets/outbox_banner.dart';
@@ -67,6 +68,7 @@ import '../widgets/link_preview_card.dart';
 import '../services/link_preview.dart';
 import '../widgets/continue_on_radio.dart';
 import '../widgets/mesh_ui.dart';
+import '../widgets/node_avatar.dart';
 import 'telemetry_screen.dart';
 
 // Image messages are deliberately absent from this screen, and there is no
@@ -228,7 +230,7 @@ class _ChatScreenState extends State<ChatScreen> {
               final contact = _resolveContact(connector);
               final pathLabel = _currentPathLabel(contact);
 
-              return Column(
+              final titleColumn = Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -275,6 +277,27 @@ class _ChatScreenState extends State<ChatScreen> {
                     ),
                   ),
                 ],
+              );
+              // A photo or colour picked for this node sits before the name.
+              return ListenableBuilder(
+                listenable: NodeLookStore.instance,
+                builder: (context, _) {
+                  if (NodeLookStore.instance.lookFor(contact.publicKeyHex) ==
+                      null) {
+                    return titleColumn;
+                  }
+                  return Row(
+                    children: [
+                      NodeAvatar(
+                        nodeKey: contact.publicKeyHex,
+                        name: contact.name,
+                        size: 34,
+                      ),
+                      const SizedBox(width: 10),
+                      Flexible(child: titleColumn),
+                    ],
+                  );
+                },
               );
             },
           ),

@@ -4783,6 +4783,104 @@ class AppLocalizationsBg extends AppLocalizations {
   String get losLegendTerrain => 'Терен';
 
   @override
+  String get losLegendFresnel => 'Зона на Френел';
+
+  @override
+  String losFresnelClear(int percent) {
+    return 'Зоната на Френел е $percent% свободна в най-тясната точка. 60% или повече е добре.';
+  }
+
+  @override
+  String losFresnelPartial(int percent) {
+    return 'Зоната на Френел е само $percent% свободна в най-тясната точка. Целете 60% или повече: повдигнете антена или преместете точка.';
+  }
+
+  @override
+  String get losFresnelBlocked =>
+      'Теренът навлиза в зоната на Френел и в лъча. Повдигнете антена или преместете точка.';
+
+  @override
+  String get compass_openHint => 'Насочи ме към него';
+
+  @override
+  String get compass_onTarget => 'Право напред';
+
+  @override
+  String compass_turnRight(int degrees) {
+    return 'Завийте надясно $degrees°';
+  }
+
+  @override
+  String compass_turnLeft(int degrees) {
+    return 'Завийте наляво $degrees°';
+  }
+
+  @override
+  String compass_bearing(int degrees, String point) {
+    return 'Азимут $degrees° $point';
+  }
+
+  @override
+  String get compass_noSensor =>
+      'Това устройство няма компас, затова стрелката е начертана със север нагоре.';
+
+  @override
+  String get compass_calibrate =>
+      'Компасът не е точен. Движете телефона няколко пъти във формата на осмица, за да го калибрирате.';
+
+  @override
+  String get compass_magneticNote =>
+      'Посоката е по магнитния север, докато позицията ви стане известна.';
+
+  @override
+  String get compass_noPosition =>
+      'Вашата позиция още не е известна. Разрешете местоположението на телефона или задайте позицията на радиото.';
+
+  @override
+  String get compass_noNodePosition =>
+      'Този възел не е споделил позиция, затова няма към какво да се сочи.';
+
+  @override
+  String get compass_usePhoneLocation =>
+      'Използвай местоположението на телефона';
+
+  @override
+  String get compass_sourcePhone => 'Позицията ви идва от GPS на телефона.';
+
+  @override
+  String get compass_sourceRadio => 'Позицията ви идва от радиото.';
+
+  @override
+  String get nodeLook_menu => 'Снимка или цвят';
+
+  @override
+  String nodeLook_title(String name) {
+    return 'Вид на $name';
+  }
+
+  @override
+  String get nodeLook_hint =>
+      'Само на този телефон. Никога не се изпраща по мрежата.';
+
+  @override
+  String get nodeLook_choosePhoto => 'Изберете снимка';
+
+  @override
+  String get nodeLook_removePhoto => 'Премахни снимката';
+
+  @override
+  String get nodeLook_clear => 'Използвай стандартния вид';
+
+  @override
+  String nodeLook_colorN(int index) {
+    return 'Цвят $index';
+  }
+
+  @override
+  String get nodeLook_photoFailed =>
+      'Тази снимка не може да се използва. Опитайте друга.';
+
+  @override
   String get bg_title => 'Фон';
 
   @override

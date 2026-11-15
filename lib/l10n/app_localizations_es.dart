@@ -4784,6 +4784,103 @@ class AppLocalizationsEs extends AppLocalizations {
   String get losLegendTerrain => 'Terreno';
 
   @override
+  String get losLegendFresnel => 'Zona de Fresnel';
+
+  @override
+  String losFresnelClear(int percent) {
+    return 'Zona de Fresnel despejada al $percent% en el punto más estrecho. Un 60% o más es bueno.';
+  }
+
+  @override
+  String losFresnelPartial(int percent) {
+    return 'Zona de Fresnel despejada solo al $percent% en el punto más estrecho. Busca un 60% o más: sube una antena o mueve un punto.';
+  }
+
+  @override
+  String get losFresnelBlocked =>
+      'El terreno invade la zona de Fresnel y el haz. Sube una antena o mueve un punto.';
+
+  @override
+  String get compass_openHint => 'Llévame hasta él';
+
+  @override
+  String get compass_onTarget => 'Justo delante';
+
+  @override
+  String compass_turnRight(int degrees) {
+    return 'Gira $degrees° a la derecha';
+  }
+
+  @override
+  String compass_turnLeft(int degrees) {
+    return 'Gira $degrees° a la izquierda';
+  }
+
+  @override
+  String compass_bearing(int degrees, String point) {
+    return 'Rumbo $degrees° $point';
+  }
+
+  @override
+  String get compass_noSensor =>
+      'Este dispositivo no tiene brújula, así que la flecha se dibuja con el norte arriba.';
+
+  @override
+  String get compass_calibrate =>
+      'La brújula no es precisa. Mueve el teléfono en forma de ocho unas cuantas veces para calibrarla.';
+
+  @override
+  String get compass_magneticNote =>
+      'Se orienta por el norte magnético hasta conocer tu posición.';
+
+  @override
+  String get compass_noPosition =>
+      'Aún no se conoce tu posición. Permite la ubicación del teléfono o configura la posición de la radio.';
+
+  @override
+  String get compass_noNodePosition =>
+      'Este nodo no ha compartido su posición, así que no hay hacia dónde apuntar.';
+
+  @override
+  String get compass_usePhoneLocation => 'Usar la ubicación del teléfono';
+
+  @override
+  String get compass_sourcePhone => 'Tu posición viene del GPS del teléfono.';
+
+  @override
+  String get compass_sourceRadio => 'Tu posición viene de la radio.';
+
+  @override
+  String get nodeLook_menu => 'Foto o color';
+
+  @override
+  String nodeLook_title(String name) {
+    return 'Aspecto de $name';
+  }
+
+  @override
+  String get nodeLook_hint =>
+      'Solo en este teléfono. Nunca se envía por la malla.';
+
+  @override
+  String get nodeLook_choosePhoto => 'Elegir foto';
+
+  @override
+  String get nodeLook_removePhoto => 'Quitar foto';
+
+  @override
+  String get nodeLook_clear => 'Usar el aspecto predeterminado';
+
+  @override
+  String nodeLook_colorN(int index) {
+    return 'Color $index';
+  }
+
+  @override
+  String get nodeLook_photoFailed =>
+      'No se pudo usar esa foto. Prueba con otra.';
+
+  @override
   String get bg_title => 'Fondo';
 
   @override

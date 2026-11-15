@@ -4761,6 +4761,103 @@ class AppLocalizationsSl extends AppLocalizations {
   String get losLegendTerrain => 'Teren';
 
   @override
+  String get losLegendFresnel => 'Fresnelova cona';
+
+  @override
+  String losFresnelClear(int percent) {
+    return 'Fresnelova cona je na najožji točki $percent% prosta. 60% ali več je dobro.';
+  }
+
+  @override
+  String losFresnelPartial(int percent) {
+    return 'Fresnelova cona je na najožji točki le $percent% prosta. Ciljajte na 60% ali več: dvignite anteno ali premaknite točko.';
+  }
+
+  @override
+  String get losFresnelBlocked =>
+      'Teren sega v Fresnelovo cono in žarek. Dvignite anteno ali premaknite točko.';
+
+  @override
+  String get compass_openHint => 'Pokaži mi smer';
+
+  @override
+  String get compass_onTarget => 'Naravnost naprej';
+
+  @override
+  String compass_turnRight(int degrees) {
+    return 'Obrnite se desno za $degrees°';
+  }
+
+  @override
+  String compass_turnLeft(int degrees) {
+    return 'Obrnite se levo za $degrees°';
+  }
+
+  @override
+  String compass_bearing(int degrees, String point) {
+    return 'Smer $degrees° $point';
+  }
+
+  @override
+  String get compass_noSensor =>
+      'Ta naprava nima kompasa, zato je puščica narisana s severom zgoraj.';
+
+  @override
+  String get compass_calibrate =>
+      'Kompas ni zanesljiv. Nekajkrat premaknite telefon v obliki osmice, da ga umerite.';
+
+  @override
+  String get compass_magneticNote =>
+      'Dokler vaš položaj ni znan, smer kaže po magnetnem severu.';
+
+  @override
+  String get compass_noPosition =>
+      'Vaš položaj še ni znan. Dovolite lokacijo telefona ali nastavite položaj radia.';
+
+  @override
+  String get compass_noNodePosition =>
+      'To vozlišče ni delilo položaja, zato ni ničesar, kamor bi kazali.';
+
+  @override
+  String get compass_usePhoneLocation => 'Uporabi lokacijo telefona';
+
+  @override
+  String get compass_sourcePhone => 'Vaš položaj prihaja iz GPS telefona.';
+
+  @override
+  String get compass_sourceRadio => 'Vaš položaj prihaja iz radia.';
+
+  @override
+  String get nodeLook_menu => 'Fotografija ali barva';
+
+  @override
+  String nodeLook_title(String name) {
+    return 'Videz: $name';
+  }
+
+  @override
+  String get nodeLook_hint =>
+      'Samo na tem telefonu. Nikoli se ne pošlje po omrežju.';
+
+  @override
+  String get nodeLook_choosePhoto => 'Izberi fotografijo';
+
+  @override
+  String get nodeLook_removePhoto => 'Odstrani fotografijo';
+
+  @override
+  String get nodeLook_clear => 'Uporabi privzeti videz';
+
+  @override
+  String nodeLook_colorN(int index) {
+    return 'Barva $index';
+  }
+
+  @override
+  String get nodeLook_photoFailed =>
+      'Te fotografije ni bilo mogoče uporabiti. Poskusite drugo.';
+
+  @override
   String get bg_title => 'Ozadje';
 
   @override

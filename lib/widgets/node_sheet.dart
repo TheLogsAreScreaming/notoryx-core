@@ -12,11 +12,14 @@ import '../models/contact.dart';
 import '../models/field_intel.dart';
 import '../screens/chat_screen.dart';
 import '../screens/map_screen.dart';
+import '../screens/node_compass_screen.dart';
 import '../screens/repeater_hub_screen.dart';
 import '../services/app_settings_service.dart';
 import '../theme/mesh_theme.dart';
 import 'instrument.dart';
 import 'mesh_ui.dart';
+import 'node_avatar.dart';
+import 'node_look_sheet.dart';
 import 'repeater_login_dialog.dart';
 
 /// "Direct", "1 hop", … for a node's route.
@@ -138,7 +141,16 @@ void showNodeSheet(BuildContext context, Contact c) {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            BottomSheetHeader(title: c.name, subtitle: c.typeLabelRaw),
+            BottomSheetHeader(
+              title: c.name,
+              subtitle: c.typeLabelRaw,
+              trailing: NodeAvatar(
+                nodeKey: c.publicKeyHex,
+                name: c.name,
+                size: 40,
+                icon: contactTypeIcon(c.type),
+              ),
+            ),
             InstrumentRow(
               icon: contactTypeIcon(c.type),
               title: hopLabel(l10n, hopBand(c)),
@@ -158,8 +170,37 @@ void showNodeSheet(BuildContext context, Contact c) {
                 title:
                     '${distanceLabel(distanceKm(lat, lon, c.latitude!, c.longitude!), imperial)} '
                     '${compassPoint(bearingDeg(lat, lon, c.latitude!, c.longitude!))}',
+                subtitle: l10n.compass_openHint,
+                trailing: const Icon(Icons.explore_outlined),
                 divider: false,
+                onTap: () {
+                  Navigator.pop(sheet);
+                  openNodeCompass(context, c);
+                },
               ),
+            if (!hasSelf && c.hasLocation)
+              InstrumentRow(
+                icon: Icons.explore_outlined,
+                title: l10n.compass_openHint,
+                divider: false,
+                onTap: () {
+                  Navigator.pop(sheet);
+                  openNodeCompass(context, c);
+                },
+              ),
+            InstrumentRow(
+              icon: Icons.palette_outlined,
+              title: l10n.nodeLook_menu,
+              divider: false,
+              onTap: () {
+                Navigator.pop(sheet);
+                showNodeLookSheet(
+                  context,
+                  nodeKey: c.publicKeyHex,
+                  name: c.name,
+                );
+              },
+            ),
             if (mv != null && mv > 0)
               InstrumentRow(
                 icon: Icons.battery_std,

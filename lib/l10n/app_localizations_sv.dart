@@ -4738,6 +4738,103 @@ class AppLocalizationsSv extends AppLocalizations {
   String get losLegendTerrain => 'Terräng';
 
   @override
+  String get losLegendFresnel => 'Fresnelzon';
+
+  @override
+  String losFresnelClear(int percent) {
+    return 'Fresnelzonen är $percent% fri vid den trängsta punkten. 60% eller mer är bra.';
+  }
+
+  @override
+  String losFresnelPartial(int percent) {
+    return 'Fresnelzonen är bara $percent% fri vid den trängsta punkten. Sikta på 60% eller mer: höj en antenn eller flytta en punkt.';
+  }
+
+  @override
+  String get losFresnelBlocked =>
+      'Terrängen skär in i Fresnelzonen och strålen. Höj en antenn eller flytta en punkt.';
+
+  @override
+  String get compass_openHint => 'Visa vägen dit';
+
+  @override
+  String get compass_onTarget => 'Rakt fram';
+
+  @override
+  String compass_turnRight(int degrees) {
+    return 'Vänd $degrees° åt höger';
+  }
+
+  @override
+  String compass_turnLeft(int degrees) {
+    return 'Vänd $degrees° åt vänster';
+  }
+
+  @override
+  String compass_bearing(int degrees, String point) {
+    return 'Bäring $degrees° $point';
+  }
+
+  @override
+  String get compass_noSensor =>
+      'Enheten saknar kompass, så pilen ritas med norr uppåt.';
+
+  @override
+  String get compass_calibrate =>
+      'Kompassen är osäker. Rör telefonen i en åtta några gånger för att kalibrera den.';
+
+  @override
+  String get compass_magneticNote =>
+      'Pekar mot magnetisk nord tills din position är känd.';
+
+  @override
+  String get compass_noPosition =>
+      'Din egen position är inte känd än. Tillåt telefonens plats eller ange radions position.';
+
+  @override
+  String get compass_noNodePosition =>
+      'Noden har inte delat någon position, så det finns inget att peka mot.';
+
+  @override
+  String get compass_usePhoneLocation => 'Använd telefonens plats';
+
+  @override
+  String get compass_sourcePhone => 'Din position kommer från telefonens GPS.';
+
+  @override
+  String get compass_sourceRadio => 'Din position kommer från radion.';
+
+  @override
+  String get nodeLook_menu => 'Foto eller färg';
+
+  @override
+  String nodeLook_title(String name) {
+    return 'Utseende för $name';
+  }
+
+  @override
+  String get nodeLook_hint =>
+      'Bara på den här telefonen. Skickas aldrig över meshen.';
+
+  @override
+  String get nodeLook_choosePhoto => 'Välj foto';
+
+  @override
+  String get nodeLook_removePhoto => 'Ta bort foto';
+
+  @override
+  String get nodeLook_clear => 'Använd standardutseendet';
+
+  @override
+  String nodeLook_colorN(int index) {
+    return 'Färg $index';
+  }
+
+  @override
+  String get nodeLook_photoFailed =>
+      'Det fotot gick inte att använda. Prova ett annat.';
+
+  @override
   String get bg_title => 'Bakgrund';
 
   @override

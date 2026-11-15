@@ -4714,6 +4714,104 @@ class AppLocalizationsEn extends AppLocalizations {
   String get losLegendTerrain => 'Terrain';
 
   @override
+  String get losLegendFresnel => 'Fresnel zone';
+
+  @override
+  String losFresnelClear(int percent) {
+    return 'Fresnel zone $percent% clear at the tightest point. 60% or more is good.';
+  }
+
+  @override
+  String losFresnelPartial(int percent) {
+    return 'Fresnel zone only $percent% clear at the tightest point. Aim for 60% or more: raise an antenna or move a point.';
+  }
+
+  @override
+  String get losFresnelBlocked =>
+      'Terrain cuts into the Fresnel zone and the beam. Raise an antenna or move a point.';
+
+  @override
+  String get compass_openHint => 'Point me to it';
+
+  @override
+  String get compass_onTarget => 'Straight ahead';
+
+  @override
+  String compass_turnRight(int degrees) {
+    return 'Turn right $degrees°';
+  }
+
+  @override
+  String compass_turnLeft(int degrees) {
+    return 'Turn left $degrees°';
+  }
+
+  @override
+  String compass_bearing(int degrees, String point) {
+    return 'Bearing $degrees° $point';
+  }
+
+  @override
+  String get compass_noSensor =>
+      'No compass on this device, so the arrow is drawn with north at the top.';
+
+  @override
+  String get compass_calibrate =>
+      'The compass isn\'t sure. Move the phone in a figure-eight a few times to calibrate it.';
+
+  @override
+  String get compass_magneticNote =>
+      'Pointing by magnetic north until your position is known.';
+
+  @override
+  String get compass_noPosition =>
+      'Your own position isn\'t known yet. Allow phone location or set the radio\'s position.';
+
+  @override
+  String get compass_noNodePosition =>
+      'This node hasn\'t shared a position, so there\'s nothing to point at.';
+
+  @override
+  String get compass_usePhoneLocation => 'Use phone location';
+
+  @override
+  String get compass_sourcePhone =>
+      'Your position comes from the phone\'s GPS.';
+
+  @override
+  String get compass_sourceRadio => 'Your position comes from the radio.';
+
+  @override
+  String get nodeLook_menu => 'Photo or colour';
+
+  @override
+  String nodeLook_title(String name) {
+    return 'Look for $name';
+  }
+
+  @override
+  String get nodeLook_hint =>
+      'Only on this phone. It\'s never sent over the mesh.';
+
+  @override
+  String get nodeLook_choosePhoto => 'Choose photo';
+
+  @override
+  String get nodeLook_removePhoto => 'Remove photo';
+
+  @override
+  String get nodeLook_clear => 'Use the default look';
+
+  @override
+  String nodeLook_colorN(int index) {
+    return 'Colour $index';
+  }
+
+  @override
+  String get nodeLook_photoFailed =>
+      'Couldn\'t use that photo. Try a different one.';
+
+  @override
   String get bg_title => 'Background';
 
   @override
