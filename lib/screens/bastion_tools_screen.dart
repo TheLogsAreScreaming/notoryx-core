@@ -24,6 +24,7 @@ import 'node_journal_screen.dart';
 import 'troubleshooting_screen.dart';
 import 'battery_watch_screen.dart';
 import 'bastion_about_screen.dart';
+import 'backdrop_settings_screen.dart';
 import 'bot_settings_screen.dart';
 import 'networks_screen.dart';
 import 'rx_log_screen.dart';
@@ -98,6 +99,16 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
             icon: Icons.tune_rounded,
             title: l10n.settings_title,
             builder: (_) => const SettingsScreen(),
+          ),
+          // Lives in Settings; search finds it here too.
+          _ToolAction(
+            icon: Icons.wallpaper_outlined,
+            title: l10n.bg_title,
+            subtitle:
+                '${l10n.bg_kindSolid}, ${l10n.bg_kindLinear}, '
+                '${l10n.bg_kindMesh}, ${l10n.bg_kindPhoto}',
+            builder: (_) => const BackdropSettingsScreen(),
+            searchOnly: true,
           ),
           _ToolAction(
             icon: Icons.smart_toy_outlined,
