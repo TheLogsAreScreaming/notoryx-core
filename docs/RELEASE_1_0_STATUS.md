@@ -18,7 +18,7 @@ Prepared 2026-11-13 from `dev` at `4fdb1e86` (10.0.0-rc.46), updated 2026-11-14 
 - **Builds on `4fdb1e86`:** Android APK, Lite APK and macOS all built successfully.
 - **Version code:** 10.0.0 uses **101**. rc.47 used 100 and the multiple-radios test build (rc.46.radios1) used 99, so 101 installs over all test builds.
 - **Signing:** releases are signed on the maintainer's Mac with the permanent Bastion key, using `sign-android.sh`. Certificate SHA-256: `01834f7d91916da8d22c6a5e3a2073c8d1689135e0ee351e20512708ac946787`. The release script refuses any other certificate.
-- **CI signed workflow:** *Bastion Signed Android Release* stops at "Check signing configuration" because the four `BASTION_*` secrets aren't set. This doesn't block 1.0, since local signing uses the same key. Adding the secrets is optional and only the key owner should do it.
+- **CI signed workflow:** the key owner added the four `BASTION_*` secrets on 2026-11-14. *Bastion Signed Android Release* now builds the full APK, the Play bundle and the Lite APK signed with the certificate above (artifacts only; it never publishes).
 - **Record at release time:** the release commit, the APK SHA-256 values and the certificate above.
 
 ## Gate B: physical-device tests

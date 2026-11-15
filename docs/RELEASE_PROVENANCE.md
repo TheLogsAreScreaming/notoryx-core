@@ -14,7 +14,9 @@ Every file published to [notoryx-core-releases](https://github.com/TheLogsAreScr
 
 ## Before publishing an Android release
 
-The APK is re-signed on the maintainer's Mac with the release key, because the signing key never goes to CI. Re-signing changes the file, so its hash changes. To keep the chain intact:
+The APK is re-signed on the maintainer's Mac with the release key. Re-signing changes the file, so its hash changes. To keep the chain intact:
+
+(Since 2026-11-14 the *Bastion Signed Android Release* workflow can also sign the full APK, the Play bundle and the Lite APK with the same key, from the repository secrets. Those come from a separate build run without `BUILD-INFO.json`, so the steps below still use the Mac re-sign for the published APK.)
 
 1. Download the CI artifact (it includes `BUILD-INFO.json`) and re-sign the APK as usual.
 2. Run:
