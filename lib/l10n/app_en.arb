@@ -7121,6 +7121,9 @@
     }
   },
   "traffic_filterTitle": "Packet types to show",
+  "appSettings_resetRoutingToDefault": "Reset Routing Algorithm to Default",
+  "appSettings_resetRoutingToDefaultSubtitle": "Restore routing algorithm settings to factory defaults",
+  "appSettings_routingResetToDefault": "Routing algorithm settings reset to default",
   "messageFilter_markedSpamCount": "{count, plural, =1{1 message marked as spam} other{{count} messages marked as spam}}",
   "@messageFilter_markedSpamCount": {
     "placeholders": {
