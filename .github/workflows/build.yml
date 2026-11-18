@@ -92,6 +92,22 @@ jobs:
       - name: Install Linux build deps
         run: sudo apt-get update && sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev libsecret-1-dev
       - run: flutter pub get
+      - name: Provide ONNX Runtime for Linux
+        # flutter_onnxruntime downloads ONNX Runtime from
+        # github.com/microsoft/onnxruntime releases, which returns 404 since
+        # November 2026. Put the same library, from Microsoft's NuGet
+        # package, where the plugin looks before downloading.
+        run: |
+          plugin=$(jq -r '.packages[] | select(.name=="flutter_onnxruntime") | .rootUri' .dart_tool/package_config.json | sed 's|^file://||')
+          want=$(grep -oP 'set\(ONNXRUNTIME_VERSION "\K[0-9.]+' "$plugin/linux/CMakeLists.txt" | head -1)
+          nuget=1.28.0
+          dir=build/linux/x64/release/plugins/flutter_onnxruntime/onnxruntime/onnxruntime-linux-x64-$want
+          curl -fsSL --retry 3 -o /tmp/ort.nupkg "https://api.nuget.org/v3-flatcontainer/microsoft.ml.onnxruntime/$nuget/microsoft.ml.onnxruntime.$nuget.nupkg"
+          mkdir -p /tmp/ort "$dir/lib"
+          unzip -q /tmp/ort.nupkg 'build/native/include/*' 'runtimes/linux-x64/native/*' -d /tmp/ort
+          cp -r /tmp/ort/build/native/include "$dir/include"
+          cp /tmp/ort/runtimes/linux-x64/native/*.so "$dir/lib/"
+          ls "$dir/include/onnxruntime_cxx_api.h" "$dir/lib/libonnxruntime.so"
       - run: flutter build linux --release --no-pub
 
   macos:
