@@ -92,6 +92,31 @@ jobs:
       - name: Install Linux build deps
         run: sudo apt-get update && sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev libsecret-1-dev
       - run: flutter pub get
+      - name: Provide ONNX Runtime if its GitHub download is missing
+        # flutter_onnxruntime downloads ONNX Runtime from Microsoft's GitHub
+        # releases while building. From 2026-11-18 that repository returned
+        # 404, so this fetches the same 1.x series from Microsoft's NuGet
+        # package and puts it where the plugin looks, which skips its download.
+        # It does nothing while the GitHub download works.
+        run: |
+          set -euo pipefail
+          plugin=$(python3 -c "import json; c=json.load(open('.dart_tool/package_config.json')); print(next(p['rootUri'] for p in c['packages'] if p['name']=='flutter_onnxruntime').removeprefix('file://'))")
+          ver=$(grep -oE 'set\(ONNXRUNTIME_VERSION "[0-9.]+"\)' "$plugin/linux/CMakeLists.txt" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
+          url="https://github.com/microsoft/onnxruntime/releases/download/v${ver}/onnxruntime-linux-x64-${ver}.tgz"
+          if curl -sfIL "$url" > /dev/null; then
+            echo "GitHub has ONNX Runtime ${ver}; the plugin downloads it as usual."
+            exit 0
+          fi
+          series=${ver%.*}
+          nuget=$(curl -sf https://api.nuget.org/v3-flatcontainer/microsoft.ml.onnxruntime/index.json | python3 -c "import json,sys; v=[x for x in json.load(sys.stdin)['versions'] if x.startswith('${series}.') and '-' not in x]; print(v[-1] if v else '')")
+          if [ -z "$nuget" ]; then echo "::error::No ONNX Runtime ${series}.x on GitHub or NuGet"; exit 1; fi
+          dest=build/linux/x64/release/plugins/flutter_onnxruntime/onnxruntime/onnxruntime-linux-x64-${ver}
+          mkdir -p "$dest/include" "$dest/lib"
+          curl -sfL -o "$RUNNER_TEMP/ort.nupkg" "https://api.nuget.org/v3-flatcontainer/microsoft.ml.onnxruntime/${nuget}/microsoft.ml.onnxruntime.${nuget}.nupkg"
+          unzip -q -j -o "$RUNNER_TEMP/ort.nupkg" 'build/native/include/*' -d "$dest/include"
+          unzip -q -j -o "$RUNNER_TEMP/ort.nupkg" 'runtimes/linux-x64/native/*' -d "$dest/lib"
+          test -f "$dest/include/onnxruntime_cxx_api.h" && test -f "$dest/lib/libonnxruntime.so"
+          echo "::warning::ONNX Runtime ${ver} isn't on GitHub; built with ${nuget} from NuGet instead."
       - run: flutter build linux --release --no-pub
 
   macos:
