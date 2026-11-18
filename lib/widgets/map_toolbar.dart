@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../theme/mesh_theme.dart';
 
 const double _iconSize = 20;
+const double _pillPadding = 2;
 const double _minLabelled = 48;
 
 /// Still a comfortable tap target with the labels hidden.
@@ -56,7 +57,7 @@ class MapToolbar extends StatelessWidget {
         MediaQuery.textScalerOf(context).scale(labelStyle.fontSize ?? 11) * 1.2;
     final labelledHeight =
         items.length * max(_minLabelled, 4 + _iconSize + labelHeight) +
-        2 * MeshSpace.xs;
+        2 * _pillPadding;
     return LayoutBuilder(
       builder: (context, constraints) {
         final compact = labelledHeight > constraints.maxHeight;
@@ -84,7 +85,7 @@ class MapToolbar extends StatelessWidget {
             border: Border.all(color: MapPalette.border),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: MeshSpace.xs),
+            padding: const EdgeInsets.symmetric(vertical: _pillPadding),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [

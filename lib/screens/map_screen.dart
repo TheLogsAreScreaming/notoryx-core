@@ -450,7 +450,7 @@ class _MapScreenState extends State<MapScreen> {
       right: 12,
       // Below the search bar and its two rows of filter chips, and above
       // the traffic card when it is showing.
-      top: 152,
+      top: 140,
       bottom: trafficOn ? 176 : 24,
       child: Align(
         alignment: Alignment.centerRight,
