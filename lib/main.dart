@@ -51,6 +51,7 @@ import 'services/favorite_return_service.dart';
 import 'services/field_ops_service.dart';
 import 'services/path_history_service.dart';
 import 'services/app_settings_service.dart';
+import 'services/message_filter/message_filter_service.dart';
 import 'services/team_tracking_service.dart';
 import 'services/waypoint_store.dart';
 import 'services/node_journal_service.dart';
@@ -160,6 +161,10 @@ void main() async {
   await receivedImageStore.load();
   await uiViewStateService.initialize();
   await timeoutPredictionService.initialize();
+  // One channel message filter for every radio, so a copy re-synced by a
+  // second radio is recognised as the same message, not a repeat.
+  final messageFilterService = MessageFilterService();
+  await messageFilterService.load();
   // Each radio gets its own retry service, since it calls back into one
   // connection, and its own hold on the shared background service.
   MeshCoreConnector setUpRadio(
@@ -177,6 +182,7 @@ void main() async {
       timeoutPredictionService: timeoutPredictionService,
       imageCodecService: imageCodecService,
       imageTransport: imageTransport,
+      messageFilterService: messageFilterService,
       onImageSenderPrefix: (prefix) => imageReassembler.selfPrefix = prefix,
     );
     return radio;
@@ -251,6 +257,7 @@ void main() async {
         imageCodecService: imageCodecService,
         receivedImageStore: receivedImageStore,
         imageReassembler: imageReassembler,
+        messageFilterService: messageFilterService,
       ),
     ),
   );
@@ -339,6 +346,7 @@ class MeshCoreApp extends StatefulWidget {
   final ImageCodecService imageCodecService;
   final ReceivedImageStore receivedImageStore;
   final ImageStreamReassembler imageReassembler;
+  final MessageFilterService messageFilterService;
   const MeshCoreApp({
     super.key,
     required this.connector,
@@ -359,6 +367,7 @@ class MeshCoreApp extends StatefulWidget {
     required this.imageCodecService,
     required this.receivedImageStore,
     required this.imageReassembler,
+    required this.messageFilterService,
   });
   @override
   State<MeshCoreApp> createState() => _MeshCoreAppState();
@@ -917,6 +926,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         ChangeNotifierProvider.value(value: widget.retryService),
         ChangeNotifierProvider.value(value: widget.pathHistoryService),
         ChangeNotifierProvider.value(value: widget.appSettingsService),
+        ChangeNotifierProvider.value(value: widget.messageFilterService),
         ChangeNotifierProvider.value(value: widget.bleDebugLogService),
         ChangeNotifierProvider.value(value: widget.appDebugLogService),
         ChangeNotifierProvider.value(value: widget.chatTextScaleService),

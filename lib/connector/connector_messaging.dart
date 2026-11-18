@@ -555,6 +555,7 @@ extension _ConnectorMessaging on MeshCoreConnector {
     final label = channelName ?? _channelDisplayName(channelIndex);
     if (_appSettingsService!.isChannelMuted(label)) return;
     if (_isBlockedChannelSender(message)) return;
+    if (_isHiddenByFilter(message)) return;
     if (!_receivedChannelMessagesController.isClosed) {
       _receivedChannelMessagesController.add(
         ReceivedChannelMessage(message, label),
@@ -812,6 +813,7 @@ extension _ConnectorMessaging on MeshCoreConnector {
     required bool isNew,
   }) {
     if (_isBlockedChannelSender(message)) return;
+    if (_isHiddenByFilter(message)) return;
     if (!isNew || message.isOutgoing) {
       _appDebugLogService?.info(
         'Skip unread increment: isNew=$isNew, isOutgoing=${message.isOutgoing}',
@@ -1088,6 +1090,8 @@ extension _ConnectorMessaging on MeshCoreConnector {
           replyToSenderName: originalMessage.senderName,
           replyToText: originalMessage.text,
           viaMqtt: message.viaMqtt,
+          filterReason: message.filterReason,
+          filterDetail: message.filterDetail,
         );
       }
     }
@@ -1147,7 +1151,9 @@ extension _ConnectorMessaging on MeshCoreConnector {
         _pendingChannelSentQueue.remove(existing.messageId);
       }
     } else {
-      messages.add(processedMessage);
+      final filtered = _applyMessageFilter(channelIndex, processedMessage);
+      messages.add(filtered);
+      _recordCleanChannelMessage(channelIndex, filtered);
     }
 
     // Save to persistent storage
