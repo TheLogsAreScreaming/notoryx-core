@@ -5148,5 +5148,8 @@
   "deliv_failedMarker": "Inte levererat",
   "deliv_failedMarkerHint": "Ditt senaste meddelande till {name} levererades inte. Visar varför och hur du åtgärdar det.",
   "deliv_retryFlood": "Försök igen med flood",
-  "deliv_pickRoute": "Välj en väg och försök igen"
+  "deliv_pickRoute": "Välj en väg och försök igen",
+  "appSettings_resetRoutingToDefault": "Återställ rutningsalgoritm till standard",
+  "appSettings_resetRoutingToDefaultSubtitle": "Återställ rutningsalgoritmins inställningar till fabriksstandard",
+  "appSettings_routingResetToDefault": "Rutningsalgoritmins inställningar återställda till standard"
 }

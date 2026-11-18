@@ -13606,4 +13606,16 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Route wählen, dann erneut senden';
+
+  @override
+  String get appSettings_resetRoutingToDefault =>
+      'Routing-Algorithmus auf Standard zurücksetzen';
+
+  @override
+  String get appSettings_resetRoutingToDefaultSubtitle =>
+      'Routing-Algorithmus-Einstellungen auf Werkseinstellungen zurücksetzen';
+
+  @override
+  String get appSettings_routingResetToDefault =>
+      'Routing-Algorithmus-Einstellungen auf Standard zurückgesetzt';
 }

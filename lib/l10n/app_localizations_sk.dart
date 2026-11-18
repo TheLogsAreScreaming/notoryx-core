@@ -13544,4 +13544,16 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Vybrať trasu a skúsiť znova';
+
+  @override
+  String get appSettings_resetRoutingToDefault =>
+      'Obnoviť algoritmus smerovania na predvolené';
+
+  @override
+  String get appSettings_resetRoutingToDefaultSubtitle =>
+      'Obnoviť nastavenia algoritmu smerovania na továrne predvolené hodnoty';
+
+  @override
+  String get appSettings_routingResetToDefault =>
+      'Nastavenia algoritmu smerovania obnovené na predvolené';
 }

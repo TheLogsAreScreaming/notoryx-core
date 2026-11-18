@@ -12991,4 +12991,14 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => '경로를 고른 뒤 다시 보내기';
+
+  @override
+  String get appSettings_resetRoutingToDefault => '라우팅 알고리즘 기본값으로 재설정';
+
+  @override
+  String get appSettings_resetRoutingToDefaultSubtitle =>
+      '라우팅 알고리즘 설정을 공장 기본값으로 복원';
+
+  @override
+  String get appSettings_routingResetToDefault => '라우팅 알고리즘 설정이 기본값으로 재설정되었습니다';
 }

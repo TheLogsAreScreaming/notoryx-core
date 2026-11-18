@@ -5282,5 +5282,8 @@
   "deliv_failedMarker": "Non consegnato",
   "deliv_failedMarkerHint": "Il tuo ultimo messaggio a {name} non è stato consegnato. Mostra perché e come risolvere.",
   "deliv_retryFlood": "Riprova via flood",
-  "deliv_pickRoute": "Scegli un percorso, poi riprova"
+  "deliv_pickRoute": "Scegli un percorso, poi riprova",
+  "appSettings_resetRoutingToDefault": "Reimposta algoritmo di instradamento sui valori predefiniti",
+  "appSettings_resetRoutingToDefaultSubtitle": "Ripristina le impostazioni dell'algoritmo di instradamento ai valori predefiniti di fabbrica",
+  "appSettings_routingResetToDefault": "Impostazioni algoritmo di instradamento reimpostate sui valori predefiniti"
 }

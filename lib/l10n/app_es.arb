@@ -5282,5 +5282,8 @@
   "deliv_failedMarker": "No entregado",
   "deliv_failedMarkerHint": "Tu último mensaje a {name} no se entregó. Muestra por qué y cómo arreglarlo.",
   "deliv_retryFlood": "Reintentar por inundación",
-  "deliv_pickRoute": "Elegir una ruta y reintentar"
+  "deliv_pickRoute": "Elegir una ruta y reintentar",
+  "appSettings_resetRoutingToDefault": "Restablecer algoritmo de enrutamiento a predeterminado",
+  "appSettings_resetRoutingToDefaultSubtitle": "Restaurar la configuración del algoritmo de enrutamiento a los valores predeterminados de fábrica",
+  "appSettings_routingResetToDefault": "Configuración del algoritmo de enrutamiento restablecida a predeterminado"
 }

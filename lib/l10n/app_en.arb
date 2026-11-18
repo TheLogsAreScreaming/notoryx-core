@@ -7052,5 +7052,8 @@
   "deliv_failedMarkerHint": "Your last message to {name} wasn't delivered. Shows why and how to fix it.",
   "@deliv_failedMarkerHint": {"placeholders": {"name": {"type": "String"}}},
   "deliv_retryFlood": "Retry by flood",
-  "deliv_pickRoute": "Choose a route, then retry"
+  "deliv_pickRoute": "Choose a route, then retry",
+  "appSettings_resetRoutingToDefault": "Reset Routing Algorithm to Default",
+  "appSettings_resetRoutingToDefaultSubtitle": "Restore routing algorithm settings to factory defaults",
+  "appSettings_routingResetToDefault": "Routing algorithm settings reset to default"
 }

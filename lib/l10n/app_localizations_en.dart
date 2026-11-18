@@ -13436,4 +13436,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Choose a route, then retry';
+
+  @override
+  String get appSettings_resetRoutingToDefault =>
+      'Reset Routing Algorithm to Default';
+
+  @override
+  String get appSettings_resetRoutingToDefaultSubtitle =>
+      'Restore routing algorithm settings to factory defaults';
+
+  @override
+  String get appSettings_routingResetToDefault =>
+      'Routing algorithm settings reset to default';
 }

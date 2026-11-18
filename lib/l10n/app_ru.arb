@@ -4451,5 +4451,8 @@
   "deliv_failedMarker": "Не доставлено",
   "deliv_failedMarkerHint": "Последнее сообщение для {name} не доставлено. Показывает причину и как исправить.",
   "deliv_retryFlood": "Повторить флудом",
-  "deliv_pickRoute": "Выбрать маршрут и повторить"
+  "deliv_pickRoute": "Выбрать маршрут и повторить",
+  "appSettings_resetRoutingToDefault": "Сбросить алгоритм маршрутизации к значению по умолчанию",
+  "appSettings_resetRoutingToDefaultSubtitle": "Восстановить настройки алгоритма маршрутизации к заводским значениям по умолчанию",
+  "appSettings_routingResetToDefault": "Настройки алгоритма маршрутизации сброшены к значению по умолчанию"
 }

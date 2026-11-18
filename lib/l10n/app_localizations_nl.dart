@@ -13543,4 +13543,16 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Kies een route en probeer opnieuw';
+
+  @override
+  String get appSettings_resetRoutingToDefault =>
+      'Routeringsalgoritme resetten naar standaard';
+
+  @override
+  String get appSettings_resetRoutingToDefaultSubtitle =>
+      'Routeringsalgoritme-instellingen herstellen naar fabrieksstandaardwaarden';
+
+  @override
+  String get appSettings_routingResetToDefault =>
+      'Routeringsalgoritme-instellingen gereset naar standaard';
 }

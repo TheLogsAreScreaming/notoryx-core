@@ -13486,4 +13486,16 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Välj en väg och försök igen';
+
+  @override
+  String get appSettings_resetRoutingToDefault =>
+      'Återställ rutningsalgoritm till standard';
+
+  @override
+  String get appSettings_resetRoutingToDefaultSubtitle =>
+      'Återställ rutningsalgoritmins inställningar till fabriksstandard';
+
+  @override
+  String get appSettings_routingResetToDefault =>
+      'Rutningsalgoritmins inställningar återställda till standard';
 }

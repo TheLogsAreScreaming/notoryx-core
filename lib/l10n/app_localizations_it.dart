@@ -13603,4 +13603,16 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Scegli un percorso, poi riprova';
+
+  @override
+  String get appSettings_resetRoutingToDefault =>
+      'Reimposta algoritmo di instradamento sui valori predefiniti';
+
+  @override
+  String get appSettings_resetRoutingToDefaultSubtitle =>
+      'Ripristina le impostazioni dell\'algoritmo di instradamento ai valori predefiniti di fabbrica';
+
+  @override
+  String get appSettings_routingResetToDefault =>
+      'Impostazioni algoritmo di instradamento reimpostate sui valori predefiniti';
 }

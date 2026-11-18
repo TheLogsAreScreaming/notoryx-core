@@ -5148,5 +5148,8 @@
   "deliv_failedMarker": "Niet afgeleverd",
   "deliv_failedMarkerHint": "Je laatste bericht aan {name} is niet afgeleverd. Toont waarom en hoe je het oplost.",
   "deliv_retryFlood": "Opnieuw via flood",
-  "deliv_pickRoute": "Kies een route en probeer opnieuw"
+  "deliv_pickRoute": "Kies een route en probeer opnieuw",
+  "appSettings_resetRoutingToDefault": "Routeringsalgoritme resetten naar standaard",
+  "appSettings_resetRoutingToDefaultSubtitle": "Routeringsalgoritme-instellingen herstellen naar fabrieksstandaardwaarden",
+  "appSettings_routingResetToDefault": "Routeringsalgoritme-instellingen gereset naar standaard"
 }

@@ -5153,5 +5153,8 @@
   "deliv_failedMarker": "未送达",
   "deliv_failedMarkerHint": "你发给 {name} 的最后一条消息未送达。显示原因和解决办法。",
   "deliv_retryFlood": "通过泛洪重试",
-  "deliv_pickRoute": "选择路由后重试"
+  "deliv_pickRoute": "选择路由后重试",
+  "appSettings_resetRoutingToDefault": "将路由算法重置为默认值",
+  "appSettings_resetRoutingToDefaultSubtitle": "将路由算法设置恢复为出厂默认值",
+  "appSettings_routingResetToDefault": "路由算法设置已重置为默认值"
 }

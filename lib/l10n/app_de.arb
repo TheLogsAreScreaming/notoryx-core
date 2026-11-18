@@ -5282,5 +5282,8 @@
   "deliv_failedMarker": "Nicht zugestellt",
   "deliv_failedMarkerHint": "Deine letzte Nachricht an {name} wurde nicht zugestellt. Zeigt den Grund und wie du es behebst.",
   "deliv_retryFlood": "Per Flutung erneut senden",
-  "deliv_pickRoute": "Route wählen, dann erneut senden"
+  "deliv_pickRoute": "Route wählen, dann erneut senden",
+  "appSettings_resetRoutingToDefault": "Routing-Algorithmus auf Standard zurücksetzen",
+  "appSettings_resetRoutingToDefaultSubtitle": "Routing-Algorithmus-Einstellungen auf Werkseinstellungen zurücksetzen",
+  "appSettings_routingResetToDefault": "Routing-Algorithmus-Einstellungen auf Standard zurückgesetzt"
 }

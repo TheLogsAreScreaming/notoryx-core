@@ -5282,5 +5282,8 @@
   "deliv_failedMarker": "Non remis",
   "deliv_failedMarkerHint": "Ton dernier message à {name} n'a pas été remis. Montre pourquoi et comment corriger.",
   "deliv_retryFlood": "Réessayer par inondation",
-  "deliv_pickRoute": "Choisir une route, puis réessayer"
+  "deliv_pickRoute": "Choisir une route, puis réessayer",
+  "appSettings_resetRoutingToDefault": "Réinitialiser l'algorithme de routage",
+  "appSettings_resetRoutingToDefaultSubtitle": "Restaurer les paramètres de l'algorithme de routage aux valeurs par défaut",
+  "appSettings_routingResetToDefault": "Paramètres de l'algorithme de routage réinitialisés"
 }

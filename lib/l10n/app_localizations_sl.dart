@@ -13570,4 +13570,16 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Izberi pot in poskusi znova';
+
+  @override
+  String get appSettings_resetRoutingToDefault =>
+      'Ponastavite algoritem usmerjanja na privzeto';
+
+  @override
+  String get appSettings_resetRoutingToDefaultSubtitle =>
+      'Obnovite nastavitve algoritma usmerjanja na tovarniške privzetke';
+
+  @override
+  String get appSettings_routingResetToDefault =>
+      'Nastavitve algoritma usmerjanja so ponastavljene na privzeto';
 }

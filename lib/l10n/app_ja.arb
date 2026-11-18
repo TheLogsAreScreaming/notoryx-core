@@ -5282,5 +5282,8 @@
   "deliv_failedMarker": "未配信",
   "deliv_failedMarkerHint": "{name} への最後のメッセージは配信されませんでした。理由と直し方を表示します。",
   "deliv_retryFlood": "フラッドで再送",
-  "deliv_pickRoute": "経路を選んで再送"
+  "deliv_pickRoute": "経路を選んで再送",
+  "appSettings_resetRoutingToDefault": "ルーティングアルゴリズムをデフォルトにリセット",
+  "appSettings_resetRoutingToDefaultSubtitle": "ルーティングアルゴリズムの設定を工場出荷時のデフォルトに戻す",
+  "appSettings_routingResetToDefault": "ルーティングアルゴリズムの設定がデフォルトにリセットされました"
 }

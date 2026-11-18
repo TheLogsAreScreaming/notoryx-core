@@ -13615,4 +13615,16 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Wybierz trasę i ponów';
+
+  @override
+  String get appSettings_resetRoutingToDefault =>
+      'Resetuj algorytm trasowania do domyślnych';
+
+  @override
+  String get appSettings_resetRoutingToDefaultSubtitle =>
+      'Przywróć ustawienia algorytmu trasowania do fabrycznych ustawień domyślnych';
+
+  @override
+  String get appSettings_routingResetToDefault =>
+      'Ustawienia algorytmu trasowania zresetowane do domyślnych';
 }

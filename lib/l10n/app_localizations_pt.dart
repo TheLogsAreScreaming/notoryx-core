@@ -13571,4 +13571,16 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Escolher uma rota e tentar de novo';
+
+  @override
+  String get appSettings_resetRoutingToDefault =>
+      'Redefinir algoritmo de roteamento para o padrão';
+
+  @override
+  String get appSettings_resetRoutingToDefaultSubtitle =>
+      'Restaurar as configurações do algoritmo de roteamento para os valores padrão de fábrica';
+
+  @override
+  String get appSettings_routingResetToDefault =>
+      'Configurações do algoritmo de roteamento redefinidas para o padrão';
 }

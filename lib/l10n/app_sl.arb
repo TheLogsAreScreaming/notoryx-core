@@ -5148,5 +5148,8 @@
   "deliv_failedMarker": "Ni dostavljeno",
   "deliv_failedMarkerHint": "Tvoje zadnje sporočilo za {name} ni bilo dostavljeno. Pokaže, zakaj in kako to popraviti.",
   "deliv_retryFlood": "Poskusi znova s poplavljanjem",
-  "deliv_pickRoute": "Izberi pot in poskusi znova"
+  "deliv_pickRoute": "Izberi pot in poskusi znova",
+  "appSettings_resetRoutingToDefault": "Ponastavite algoritem usmerjanja na privzeto",
+  "appSettings_resetRoutingToDefaultSubtitle": "Obnovite nastavitve algoritma usmerjanja na tovarniške privzetke",
+  "appSettings_routingResetToDefault": "Nastavitve algoritma usmerjanja so ponastavljene na privzeto"
 }

@@ -5148,5 +5148,8 @@
   "deliv_failedMarker": "Не е доставено",
   "deliv_failedMarkerHint": "Последното ти съобщение до {name} не е доставено. Показва защо и как да се поправи.",
   "deliv_retryFlood": "Повтори чрез наводняване",
-  "deliv_pickRoute": "Избери маршрут и повтори"
+  "deliv_pickRoute": "Избери маршрут и повтори",
+  "appSettings_resetRoutingToDefault": "Нулиране на алгоритъма за маршрутизация до стойност по подразбиране",
+  "appSettings_resetRoutingToDefaultSubtitle": "Възстановяване на настройките на алгоритъма за маршрутизация до заводските стойности по подразбиране",
+  "appSettings_routingResetToDefault": "Настройките на алгоритъма за маршрутизация са нулирани до стойност по подразбиране"
 }

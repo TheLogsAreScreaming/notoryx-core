@@ -5186,5 +5186,8 @@
   "deliv_failedMarker": "Nem kézbesítve",
   "deliv_failedMarkerHint": "Az utolsó üzeneted {name} részére nem lett kézbesítve. Megmutatja, miért, és hogyan javítható.",
   "deliv_retryFlood": "Újra elárasztással",
-  "deliv_pickRoute": "Útvonal választása, majd újra"
+  "deliv_pickRoute": "Útvonal választása, majd újra",
+  "appSettings_resetRoutingToDefault": "Útvonaltervezési algoritmus visszaállítása alapértelmezettre",
+  "appSettings_resetRoutingToDefaultSubtitle": "Útvonaltervezési algoritmus beállításainak visszaállítása gyári alapértelmezett értékekre",
+  "appSettings_routingResetToDefault": "Útvonaltervezési algoritmus beállításai visszaállítva alapértelmezettre"
 }

@@ -12974,4 +12974,15 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => '経路を選んで再送';
+
+  @override
+  String get appSettings_resetRoutingToDefault => 'ルーティングアルゴリズムをデフォルトにリセット';
+
+  @override
+  String get appSettings_resetRoutingToDefaultSubtitle =>
+      'ルーティングアルゴリズムの設定を工場出荷時のデフォルトに戻す';
+
+  @override
+  String get appSettings_routingResetToDefault =>
+      'ルーティングアルゴリズムの設定がデフォルトにリセットされました';
 }

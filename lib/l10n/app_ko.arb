@@ -5282,5 +5282,8 @@
   "deliv_failedMarker": "전달 안 됨",
   "deliv_failedMarkerHint": "{name}에게 보낸 마지막 메시지가 전달되지 않았습니다. 이유와 해결 방법을 보여 줍니다.",
   "deliv_retryFlood": "플러드로 다시 보내기",
-  "deliv_pickRoute": "경로를 고른 뒤 다시 보내기"
+  "deliv_pickRoute": "경로를 고른 뒤 다시 보내기",
+  "appSettings_resetRoutingToDefault": "라우팅 알고리즘 기본값으로 재설정",
+  "appSettings_resetRoutingToDefaultSubtitle": "라우팅 알고리즘 설정을 공장 기본값으로 복원",
+  "appSettings_routingResetToDefault": "라우팅 알고리즘 설정이 기본값으로 재설정되었습니다"
 }

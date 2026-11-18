@@ -5148,5 +5148,8 @@
   "deliv_failedMarker": "Nedoručené",
   "deliv_failedMarkerHint": "Tvoja posledná správa pre {name} nebola doručená. Ukáže prečo a ako to opraviť.",
   "deliv_retryFlood": "Skúsiť znova zaplavením",
-  "deliv_pickRoute": "Vybrať trasu a skúsiť znova"
+  "deliv_pickRoute": "Vybrať trasu a skúsiť znova",
+  "appSettings_resetRoutingToDefault": "Obnoviť algoritmus smerovania na predvolené",
+  "appSettings_resetRoutingToDefaultSubtitle": "Obnoviť nastavenia algoritmu smerovania na továrne predvolené hodnoty",
+  "appSettings_routingResetToDefault": "Nastavenia algoritmu smerovania obnovené na predvolené"
 }
