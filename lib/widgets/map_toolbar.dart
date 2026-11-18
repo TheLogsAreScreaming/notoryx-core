@@ -103,18 +103,19 @@ class _ToolButton extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(
                 horizontal: MeshSpace.xs,
-                vertical: MeshSpace.xs,
+                vertical: 2,
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(item.icon, color: color, size: 22),
+                  Icon(item.icon, color: color, size: 20),
                   if (item.showLabel)
                     Text(
                       item.label,
                       maxLines: 1,
                       style: labelStyle.copyWith(
+                        height: 1.2,
                         color: color,
                         fontWeight: item.selected
                             ? FontWeight.w700
