@@ -115,7 +115,10 @@ jobs:
           curl -sfL -o "$RUNNER_TEMP/ort.nupkg" "https://api.nuget.org/v3-flatcontainer/microsoft.ml.onnxruntime/${nuget}/microsoft.ml.onnxruntime.${nuget}.nupkg"
           unzip -q -j -o "$RUNNER_TEMP/ort.nupkg" 'build/native/include/*' -d "$dest/include"
           unzip -q -j -o "$RUNNER_TEMP/ort.nupkg" 'runtimes/linux-x64/native/*' -d "$dest/lib"
-          test -f "$dest/include/onnxruntime_cxx_api.h" && test -f "$dest/lib/libonnxruntime.so"
+          # Lay the library out as Microsoft's download does: the versioned
+          # file, plus the libonnxruntime.so.1 name the plugin's build links by.
+          (cd "$dest/lib" && mv libonnxruntime.so "libonnxruntime.so.${nuget}" && ln -s "libonnxruntime.so.${nuget}" libonnxruntime.so.1 && ln -s libonnxruntime.so.1 libonnxruntime.so)
+          test -f "$dest/include/onnxruntime_cxx_api.h" && test -e "$dest/lib/libonnxruntime.so"
           echo "::warning::ONNX Runtime ${ver} isn't on GitHub; built with ${nuget} from NuGet instead."
       - run: flutter build linux --release --no-pub
 
