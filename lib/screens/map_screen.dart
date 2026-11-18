@@ -448,8 +448,10 @@ class _MapScreenState extends State<MapScreen> {
     final trafficOn = _traffic != null;
     return Positioned(
       right: 12,
-      top: 72,
-      bottom: trafficOn ? 220 : 24,
+      // Below the search bar and its two rows of filter chips, and above
+      // the traffic card when it is showing.
+      top: 152,
+      bottom: trafficOn ? 176 : 24,
       child: Align(
         alignment: Alignment.centerRight,
         child: SingleChildScrollView(
