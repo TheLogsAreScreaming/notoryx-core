@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -13644,6 +13645,87 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Choisir une route, puis réessayer';
+
+  @override
+  String get map_toolLocate => 'Localiser';
+
+  @override
+  String get map_toolAdvert => 'Annonce';
+
+  @override
+  String get map_toolFilter => 'Filtre';
+
+  @override
+  String get map_toolTraffic => 'Trafic';
+
+  @override
+  String get map_toolSearch => 'Rechercher';
+
+  @override
+  String get map_toolFitAll => 'Tout voir';
+
+  @override
+  String get map_toolOptions => 'Options';
+
+  @override
+  String get traffic_kindAdvert => 'Annonce';
+
+  @override
+  String get traffic_kindDirect => 'Message direct';
+
+  @override
+  String get traffic_kindChannel => 'Message de canal';
+
+  @override
+  String get traffic_kindAck => 'Accusé de réception';
+
+  @override
+  String get traffic_kindTrace => 'Trace';
+
+  @override
+  String get traffic_kindPath => 'Chemin';
+
+  @override
+  String get traffic_listening => 'À l\'écoute des paquets…';
+
+  @override
+  String get traffic_unknownSender => 'Expéditeur inconnu';
+
+  @override
+  String traffic_heardFrom(String name, String snr) {
+    return 'Entendu via $name · $snr dB';
+  }
+
+  @override
+  String traffic_heardDirect(String snr) {
+    return 'Entendu en direct · $snr dB';
+  }
+
+  @override
+  String traffic_flood(int hops) {
+    return 'Flood $hops';
+  }
+
+  @override
+  String get traffic_direct => 'Direct';
+
+  @override
+  String traffic_notOnMapCount(int count) {
+    return '$count hors carte';
+  }
+
+  @override
+  String traffic_ageSeconds(int seconds) {
+    return '$seconds s';
+  }
+
+  @override
+  String traffic_notOnMapList(String names) {
+    return 'Hors carte : $names';
+  }
+
+  @override
+  String get traffic_filterTitle => 'Types de paquets affichés';
 
   @override
   String get appSettings_resetRoutingToDefault =>

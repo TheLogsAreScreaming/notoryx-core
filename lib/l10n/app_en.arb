@@ -7053,6 +7053,74 @@
   "@deliv_failedMarkerHint": {"placeholders": {"name": {"type": "String"}}},
   "deliv_retryFlood": "Retry by flood",
   "deliv_pickRoute": "Choose a route, then retry",
+  "map_toolLocate": "Locate",
+  "map_toolAdvert": "Advert",
+  "map_toolFilter": "Filter",
+  "map_toolTraffic": "Traffic",
+  "map_toolSearch": "Search",
+  "map_toolFitAll": "Fit all",
+  "map_toolOptions": "Options",
+  "traffic_kindAdvert": "Advert",
+  "traffic_kindDirect": "Direct message",
+  "traffic_kindChannel": "Channel message",
+  "traffic_kindAck": "Acknowledgement",
+  "traffic_kindTrace": "Trace",
+  "traffic_kindPath": "Path",
+  "traffic_listening": "Listening for packets…",
+  "traffic_unknownSender": "Unknown sender",
+  "traffic_heardFrom": "Heard from {name} · {snr} dB",
+  "@traffic_heardFrom": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "snr": {
+        "type": "String"
+      }
+    }
+  },
+  "traffic_heardDirect": "Heard directly · {snr} dB",
+  "@traffic_heardDirect": {
+    "placeholders": {
+      "snr": {
+        "type": "String"
+      }
+    }
+  },
+  "traffic_flood": "Flood {hops}",
+  "@traffic_flood": {
+    "placeholders": {
+      "hops": {
+        "type": "int"
+      }
+    }
+  },
+  "traffic_direct": "Direct",
+  "traffic_notOnMapCount": "{count} not on map",
+  "@traffic_notOnMapCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "traffic_ageSeconds": "{seconds}s",
+  "@traffic_ageSeconds": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "traffic_notOnMapList": "Not on map: {names}",
+  "@traffic_notOnMapList": {
+    "placeholders": {
+      "names": {
+        "type": "String"
+      }
+    }
+  },
+  "traffic_filterTitle": "Packet types to show",
   "appSettings_resetRoutingToDefault": "Reset Routing Algorithm to Default",
   "appSettings_resetRoutingToDefaultSubtitle": "Restore routing algorithm settings to factory defaults",
   "appSettings_routingResetToDefault": "Routing algorithm settings reset to default"

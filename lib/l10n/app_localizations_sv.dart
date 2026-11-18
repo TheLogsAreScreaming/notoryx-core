@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -13486,6 +13487,87 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Välj en väg och försök igen';
+
+  @override
+  String get map_toolLocate => 'Hitta mig';
+
+  @override
+  String get map_toolAdvert => 'Annons';
+
+  @override
+  String get map_toolFilter => 'Filter';
+
+  @override
+  String get map_toolTraffic => 'Trafik';
+
+  @override
+  String get map_toolSearch => 'Sök';
+
+  @override
+  String get map_toolFitAll => 'Visa alla';
+
+  @override
+  String get map_toolOptions => 'Alternativ';
+
+  @override
+  String get traffic_kindAdvert => 'Annons';
+
+  @override
+  String get traffic_kindDirect => 'Direktmeddelande';
+
+  @override
+  String get traffic_kindChannel => 'Kanalmeddelande';
+
+  @override
+  String get traffic_kindAck => 'Kvittens';
+
+  @override
+  String get traffic_kindTrace => 'Spårning';
+
+  @override
+  String get traffic_kindPath => 'Väg';
+
+  @override
+  String get traffic_listening => 'Lyssnar efter paket…';
+
+  @override
+  String get traffic_unknownSender => 'Okänd avsändare';
+
+  @override
+  String traffic_heardFrom(String name, String snr) {
+    return 'Hörd från $name · $snr dB';
+  }
+
+  @override
+  String traffic_heardDirect(String snr) {
+    return 'Hörd direkt · $snr dB';
+  }
+
+  @override
+  String traffic_flood(int hops) {
+    return 'Flood $hops';
+  }
+
+  @override
+  String get traffic_direct => 'Direkt';
+
+  @override
+  String traffic_notOnMapCount(int count) {
+    return '$count ej på kartan';
+  }
+
+  @override
+  String traffic_ageSeconds(int seconds) {
+    return '$seconds s';
+  }
+
+  @override
+  String traffic_notOnMapList(String names) {
+    return 'Ej på kartan: $names';
+  }
+
+  @override
+  String get traffic_filterTitle => 'Pakettyper att visa';
 
   @override
   String get appSettings_resetRoutingToDefault =>

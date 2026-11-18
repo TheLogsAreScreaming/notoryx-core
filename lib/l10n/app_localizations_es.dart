@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -13596,6 +13597,87 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Elegir una ruta y reintentar';
+
+  @override
+  String get map_toolLocate => 'Ubicar';
+
+  @override
+  String get map_toolAdvert => 'Anuncio';
+
+  @override
+  String get map_toolFilter => 'Filtro';
+
+  @override
+  String get map_toolTraffic => 'Tráfico';
+
+  @override
+  String get map_toolSearch => 'Buscar';
+
+  @override
+  String get map_toolFitAll => 'Ver todo';
+
+  @override
+  String get map_toolOptions => 'Opciones';
+
+  @override
+  String get traffic_kindAdvert => 'Anuncio';
+
+  @override
+  String get traffic_kindDirect => 'Mensaje directo';
+
+  @override
+  String get traffic_kindChannel => 'Mensaje de canal';
+
+  @override
+  String get traffic_kindAck => 'Confirmación';
+
+  @override
+  String get traffic_kindTrace => 'Traza';
+
+  @override
+  String get traffic_kindPath => 'Ruta';
+
+  @override
+  String get traffic_listening => 'Escuchando paquetes…';
+
+  @override
+  String get traffic_unknownSender => 'Remitente desconocido';
+
+  @override
+  String traffic_heardFrom(String name, String snr) {
+    return 'Oído desde $name · $snr dB';
+  }
+
+  @override
+  String traffic_heardDirect(String snr) {
+    return 'Oído directamente · $snr dB';
+  }
+
+  @override
+  String traffic_flood(int hops) {
+    return 'Flood $hops';
+  }
+
+  @override
+  String get traffic_direct => 'Directo';
+
+  @override
+  String traffic_notOnMapCount(int count) {
+    return '$count fuera del mapa';
+  }
+
+  @override
+  String traffic_ageSeconds(int seconds) {
+    return '$seconds s';
+  }
+
+  @override
+  String traffic_notOnMapList(String names) {
+    return 'Fuera del mapa: $names';
+  }
+
+  @override
+  String get traffic_filterTitle => 'Tipos de paquete a mostrar';
 
   @override
   String get appSettings_resetRoutingToDefault =>

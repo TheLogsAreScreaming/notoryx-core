@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -5640,8 +5641,7 @@ class AppLocalizationsDe extends AppLocalizations {
       locale: localeName,
       other:
           '$count Sprünge haben keinen Standort - der angezeigte Pfad ist unvollständig',
-      one:
-          '1 Sprung hat keinen Standort - der angezeigte Pfad ist unvollständig',
+      one: '1 Sprung hat keinen Standort - der angezeigte Pfad ist unvollständig',
     );
     return '$_temp0';
   }
@@ -13606,6 +13606,87 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Route wählen, dann erneut senden';
+
+  @override
+  String get map_toolLocate => 'Orten';
+
+  @override
+  String get map_toolAdvert => 'Advert';
+
+  @override
+  String get map_toolFilter => 'Filter';
+
+  @override
+  String get map_toolTraffic => 'Verkehr';
+
+  @override
+  String get map_toolSearch => 'Suchen';
+
+  @override
+  String get map_toolFitAll => 'Alle zeigen';
+
+  @override
+  String get map_toolOptions => 'Optionen';
+
+  @override
+  String get traffic_kindAdvert => 'Advert';
+
+  @override
+  String get traffic_kindDirect => 'Direktnachricht';
+
+  @override
+  String get traffic_kindChannel => 'Kanalnachricht';
+
+  @override
+  String get traffic_kindAck => 'Bestätigung';
+
+  @override
+  String get traffic_kindTrace => 'Trace';
+
+  @override
+  String get traffic_kindPath => 'Pfad';
+
+  @override
+  String get traffic_listening => 'Warte auf Pakete…';
+
+  @override
+  String get traffic_unknownSender => 'Unbekannter Absender';
+
+  @override
+  String traffic_heardFrom(String name, String snr) {
+    return 'Gehört von $name · $snr dB';
+  }
+
+  @override
+  String traffic_heardDirect(String snr) {
+    return 'Direkt gehört · $snr dB';
+  }
+
+  @override
+  String traffic_flood(int hops) {
+    return 'Flood $hops';
+  }
+
+  @override
+  String get traffic_direct => 'Direkt';
+
+  @override
+  String traffic_notOnMapCount(int count) {
+    return '$count nicht auf der Karte';
+  }
+
+  @override
+  String traffic_ageSeconds(int seconds) {
+    return '$seconds s';
+  }
+
+  @override
+  String traffic_notOnMapList(String names) {
+    return 'Nicht auf der Karte: $names';
+  }
+
+  @override
+  String get traffic_filterTitle => 'Angezeigte Pakettypen';
 
   @override
   String get appSettings_resetRoutingToDefault =>

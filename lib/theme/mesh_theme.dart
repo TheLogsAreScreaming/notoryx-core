@@ -118,6 +118,19 @@ class MapPalette {
   static const markerShadow = Color(0xB3000000);
 }
 
+/// Live traffic route colours, one per packet type. Each type also has its
+/// own label in the route card and legend, so colour is never the only cue.
+class TrafficPalette {
+  TrafficPalette._();
+
+  static const advert = Color(0xFFF472B6);
+  static const direct = Color(0xFF60A5FA);
+  static const channel = Color(0xFF4ADE80);
+  static const ack = Color(0xFF22D3EE);
+  static const trace = Color(0xFFFB923C);
+  static const path = Color(0xFFC084FC);
+}
+
 /// Colours offered for a custom background: deep and bright tones that
 /// sit well behind frosted glass once dimmed.
 class BackdropPalette {

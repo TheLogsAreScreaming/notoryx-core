@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -13614,6 +13615,87 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Вибрати маршрут і повторити';
+
+  @override
+  String get map_toolLocate => 'Де я';
+
+  @override
+  String get map_toolAdvert => 'Анонс';
+
+  @override
+  String get map_toolFilter => 'Фільтр';
+
+  @override
+  String get map_toolTraffic => 'Трафік';
+
+  @override
+  String get map_toolSearch => 'Пошук';
+
+  @override
+  String get map_toolFitAll => 'Показати все';
+
+  @override
+  String get map_toolOptions => 'Параметри';
+
+  @override
+  String get traffic_kindAdvert => 'Анонс';
+
+  @override
+  String get traffic_kindDirect => 'Особисте повідомлення';
+
+  @override
+  String get traffic_kindChannel => 'Повідомлення каналу';
+
+  @override
+  String get traffic_kindAck => 'Підтвердження';
+
+  @override
+  String get traffic_kindTrace => 'Трасування';
+
+  @override
+  String get traffic_kindPath => 'Шлях';
+
+  @override
+  String get traffic_listening => 'Очікування пакетів…';
+
+  @override
+  String get traffic_unknownSender => 'Невідомий відправник';
+
+  @override
+  String traffic_heardFrom(String name, String snr) {
+    return 'Прийнято від $name · $snr дБ';
+  }
+
+  @override
+  String traffic_heardDirect(String snr) {
+    return 'Прийнято напряму · $snr дБ';
+  }
+
+  @override
+  String traffic_flood(int hops) {
+    return 'Flood $hops';
+  }
+
+  @override
+  String get traffic_direct => 'Напряму';
+
+  @override
+  String traffic_notOnMapCount(int count) {
+    return '$count немає на карті';
+  }
+
+  @override
+  String traffic_ageSeconds(int seconds) {
+    return '$seconds с';
+  }
+
+  @override
+  String traffic_notOnMapList(String names) {
+    return 'Немає на карті: $names';
+  }
+
+  @override
+  String get traffic_filterTitle => 'Показувати типи пакетів';
 
   @override
   String get appSettings_resetRoutingToDefault =>

@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -13615,6 +13616,87 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Wybierz trasę i ponów';
+
+  @override
+  String get map_toolLocate => 'Lokalizuj';
+
+  @override
+  String get map_toolAdvert => 'Ogłoszenie';
+
+  @override
+  String get map_toolFilter => 'Filtr';
+
+  @override
+  String get map_toolTraffic => 'Ruch';
+
+  @override
+  String get map_toolSearch => 'Szukaj';
+
+  @override
+  String get map_toolFitAll => 'Pokaż wszystko';
+
+  @override
+  String get map_toolOptions => 'Opcje';
+
+  @override
+  String get traffic_kindAdvert => 'Ogłoszenie';
+
+  @override
+  String get traffic_kindDirect => 'Wiadomość prywatna';
+
+  @override
+  String get traffic_kindChannel => 'Wiadomość kanału';
+
+  @override
+  String get traffic_kindAck => 'Potwierdzenie';
+
+  @override
+  String get traffic_kindTrace => 'Śledzenie';
+
+  @override
+  String get traffic_kindPath => 'Ścieżka';
+
+  @override
+  String get traffic_listening => 'Nasłuchiwanie pakietów…';
+
+  @override
+  String get traffic_unknownSender => 'Nieznany nadawca';
+
+  @override
+  String traffic_heardFrom(String name, String snr) {
+    return 'Odebrano od $name · $snr dB';
+  }
+
+  @override
+  String traffic_heardDirect(String snr) {
+    return 'Odebrano bezpośrednio · $snr dB';
+  }
+
+  @override
+  String traffic_flood(int hops) {
+    return 'Flood $hops';
+  }
+
+  @override
+  String get traffic_direct => 'Bezpośrednio';
+
+  @override
+  String traffic_notOnMapCount(int count) {
+    return '$count poza mapą';
+  }
+
+  @override
+  String traffic_ageSeconds(int seconds) {
+    return '$seconds s';
+  }
+
+  @override
+  String traffic_notOnMapList(String names) {
+    return 'Poza mapą: $names';
+  }
+
+  @override
+  String get traffic_filterTitle => 'Pokazywane typy pakietów';
 
   @override
   String get appSettings_resetRoutingToDefault =>
