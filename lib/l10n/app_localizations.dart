@@ -22549,6 +22549,144 @@ abstract class AppLocalizations {
   /// **'Choose a route, then retry'**
   String get deliv_pickRoute;
 
+  /// No description provided for @map_toolLocate.
+  ///
+  /// In en, this message translates to:
+  /// **'Locate'**
+  String get map_toolLocate;
+
+  /// No description provided for @map_toolAdvert.
+  ///
+  /// In en, this message translates to:
+  /// **'Advert'**
+  String get map_toolAdvert;
+
+  /// No description provided for @map_toolFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Filter'**
+  String get map_toolFilter;
+
+  /// No description provided for @map_toolTraffic.
+  ///
+  /// In en, this message translates to:
+  /// **'Traffic'**
+  String get map_toolTraffic;
+
+  /// No description provided for @map_toolSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get map_toolSearch;
+
+  /// No description provided for @map_toolFitAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Fit all'**
+  String get map_toolFitAll;
+
+  /// No description provided for @map_toolOptions.
+  ///
+  /// In en, this message translates to:
+  /// **'Options'**
+  String get map_toolOptions;
+
+  /// No description provided for @traffic_kindAdvert.
+  ///
+  /// In en, this message translates to:
+  /// **'Advert'**
+  String get traffic_kindAdvert;
+
+  /// No description provided for @traffic_kindDirect.
+  ///
+  /// In en, this message translates to:
+  /// **'Direct message'**
+  String get traffic_kindDirect;
+
+  /// No description provided for @traffic_kindChannel.
+  ///
+  /// In en, this message translates to:
+  /// **'Channel message'**
+  String get traffic_kindChannel;
+
+  /// No description provided for @traffic_kindAck.
+  ///
+  /// In en, this message translates to:
+  /// **'Acknowledgement'**
+  String get traffic_kindAck;
+
+  /// No description provided for @traffic_kindTrace.
+  ///
+  /// In en, this message translates to:
+  /// **'Trace'**
+  String get traffic_kindTrace;
+
+  /// No description provided for @traffic_kindPath.
+  ///
+  /// In en, this message translates to:
+  /// **'Path'**
+  String get traffic_kindPath;
+
+  /// No description provided for @traffic_listening.
+  ///
+  /// In en, this message translates to:
+  /// **'Listening for packets…'**
+  String get traffic_listening;
+
+  /// No description provided for @traffic_unknownSender.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown sender'**
+  String get traffic_unknownSender;
+
+  /// No description provided for @traffic_heardFrom.
+  ///
+  /// In en, this message translates to:
+  /// **'Heard from {name} · {snr} dB'**
+  String traffic_heardFrom(String name, String snr);
+
+  /// No description provided for @traffic_heardDirect.
+  ///
+  /// In en, this message translates to:
+  /// **'Heard directly · {snr} dB'**
+  String traffic_heardDirect(String snr);
+
+  /// No description provided for @traffic_flood.
+  ///
+  /// In en, this message translates to:
+  /// **'Flood {hops}'**
+  String traffic_flood(int hops);
+
+  /// No description provided for @traffic_direct.
+  ///
+  /// In en, this message translates to:
+  /// **'Direct'**
+  String get traffic_direct;
+
+  /// No description provided for @traffic_notOnMapCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} not on map'**
+  String traffic_notOnMapCount(int count);
+
+  /// No description provided for @traffic_ageSeconds.
+  ///
+  /// In en, this message translates to:
+  /// **'{seconds}s'**
+  String traffic_ageSeconds(int seconds);
+
+  /// No description provided for @traffic_notOnMapList.
+  ///
+  /// In en, this message translates to:
+  /// **'Not on map: {names}'**
+  String traffic_notOnMapList(String names);
+
+  /// No description provided for @traffic_filterTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Packet types to show'**
+  String get traffic_filterTitle;
+
   /// No description provided for @messageFilter_markedSpamCount.
   ///
   /// In en, this message translates to:

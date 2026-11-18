@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -13571,6 +13572,87 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Escolher uma rota e tentar de novo';
+
+  @override
+  String get map_toolLocate => 'Localizar';
+
+  @override
+  String get map_toolAdvert => 'Anúncio';
+
+  @override
+  String get map_toolFilter => 'Filtro';
+
+  @override
+  String get map_toolTraffic => 'Tráfego';
+
+  @override
+  String get map_toolSearch => 'Pesquisar';
+
+  @override
+  String get map_toolFitAll => 'Ver tudo';
+
+  @override
+  String get map_toolOptions => 'Opções';
+
+  @override
+  String get traffic_kindAdvert => 'Anúncio';
+
+  @override
+  String get traffic_kindDirect => 'Mensagem direta';
+
+  @override
+  String get traffic_kindChannel => 'Mensagem de canal';
+
+  @override
+  String get traffic_kindAck => 'Confirmação';
+
+  @override
+  String get traffic_kindTrace => 'Rastreio';
+
+  @override
+  String get traffic_kindPath => 'Caminho';
+
+  @override
+  String get traffic_listening => 'À escuta de pacotes…';
+
+  @override
+  String get traffic_unknownSender => 'Remetente desconhecido';
+
+  @override
+  String traffic_heardFrom(String name, String snr) {
+    return 'Ouvido de $name · $snr dB';
+  }
+
+  @override
+  String traffic_heardDirect(String snr) {
+    return 'Ouvido diretamente · $snr dB';
+  }
+
+  @override
+  String traffic_flood(int hops) {
+    return 'Flood $hops';
+  }
+
+  @override
+  String get traffic_direct => 'Direto';
+
+  @override
+  String traffic_notOnMapCount(int count) {
+    return '$count fora do mapa';
+  }
+
+  @override
+  String traffic_ageSeconds(int seconds) {
+    return '$seconds s';
+  }
+
+  @override
+  String traffic_notOnMapList(String names) {
+    return 'Fora do mapa: $names';
+  }
+
+  @override
+  String get traffic_filterTitle => 'Tipos de pacote a mostrar';
 
   @override
   String messageFilter_markedSpamCount(int count) {

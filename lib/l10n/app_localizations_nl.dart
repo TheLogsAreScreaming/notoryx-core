@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -13543,6 +13544,87 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Kies een route en probeer opnieuw';
+
+  @override
+  String get map_toolLocate => 'Locatie';
+
+  @override
+  String get map_toolAdvert => 'Advert';
+
+  @override
+  String get map_toolFilter => 'Filter';
+
+  @override
+  String get map_toolTraffic => 'Verkeer';
+
+  @override
+  String get map_toolSearch => 'Zoeken';
+
+  @override
+  String get map_toolFitAll => 'Alles tonen';
+
+  @override
+  String get map_toolOptions => 'Opties';
+
+  @override
+  String get traffic_kindAdvert => 'Advert';
+
+  @override
+  String get traffic_kindDirect => 'Direct bericht';
+
+  @override
+  String get traffic_kindChannel => 'Kanaalbericht';
+
+  @override
+  String get traffic_kindAck => 'Bevestiging';
+
+  @override
+  String get traffic_kindTrace => 'Trace';
+
+  @override
+  String get traffic_kindPath => 'Pad';
+
+  @override
+  String get traffic_listening => 'Wachten op pakketten…';
+
+  @override
+  String get traffic_unknownSender => 'Onbekende afzender';
+
+  @override
+  String traffic_heardFrom(String name, String snr) {
+    return 'Gehoord van $name · $snr dB';
+  }
+
+  @override
+  String traffic_heardDirect(String snr) {
+    return 'Direct gehoord · $snr dB';
+  }
+
+  @override
+  String traffic_flood(int hops) {
+    return 'Flood $hops';
+  }
+
+  @override
+  String get traffic_direct => 'Direct';
+
+  @override
+  String traffic_notOnMapCount(int count) {
+    return '$count niet op kaart';
+  }
+
+  @override
+  String traffic_ageSeconds(int seconds) {
+    return '$seconds s';
+  }
+
+  @override
+  String traffic_notOnMapList(String names) {
+    return 'Niet op kaart: $names';
+  }
+
+  @override
+  String get traffic_filterTitle => 'Te tonen pakkettypes';
 
   @override
   String messageFilter_markedSpamCount(int count) {

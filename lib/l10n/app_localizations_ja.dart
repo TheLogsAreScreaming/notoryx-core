@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -12974,6 +12975,87 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => '経路を選んで再送';
+
+  @override
+  String get map_toolLocate => '現在地';
+
+  @override
+  String get map_toolAdvert => 'アドバート';
+
+  @override
+  String get map_toolFilter => 'フィルター';
+
+  @override
+  String get map_toolTraffic => 'トラフィック';
+
+  @override
+  String get map_toolSearch => '検索';
+
+  @override
+  String get map_toolFitAll => '全体表示';
+
+  @override
+  String get map_toolOptions => 'オプション';
+
+  @override
+  String get traffic_kindAdvert => 'アドバート';
+
+  @override
+  String get traffic_kindDirect => 'ダイレクトメッセージ';
+
+  @override
+  String get traffic_kindChannel => 'チャンネルメッセージ';
+
+  @override
+  String get traffic_kindAck => '確認応答';
+
+  @override
+  String get traffic_kindTrace => 'トレース';
+
+  @override
+  String get traffic_kindPath => 'パス';
+
+  @override
+  String get traffic_listening => 'パケットを待機中…';
+
+  @override
+  String get traffic_unknownSender => '送信者不明';
+
+  @override
+  String traffic_heardFrom(String name, String snr) {
+    return '$name から受信 · $snr dB';
+  }
+
+  @override
+  String traffic_heardDirect(String snr) {
+    return '直接受信 · $snr dB';
+  }
+
+  @override
+  String traffic_flood(int hops) {
+    return 'Flood $hops';
+  }
+
+  @override
+  String get traffic_direct => 'ダイレクト';
+
+  @override
+  String traffic_notOnMapCount(int count) {
+    return '地図外 $count';
+  }
+
+  @override
+  String traffic_ageSeconds(int seconds) {
+    return '$seconds秒';
+  }
+
+  @override
+  String traffic_notOnMapList(String names) {
+    return '地図外: $names';
+  }
+
+  @override
+  String get traffic_filterTitle => '表示するパケット種別';
 
   @override
   String messageFilter_markedSpamCount(int count) {

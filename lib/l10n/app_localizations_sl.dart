@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -13570,6 +13571,87 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Izberi pot in poskusi znova';
+
+  @override
+  String get map_toolLocate => 'Lokacija';
+
+  @override
+  String get map_toolAdvert => 'Oglas';
+
+  @override
+  String get map_toolFilter => 'Filter';
+
+  @override
+  String get map_toolTraffic => 'Promet';
+
+  @override
+  String get map_toolSearch => 'Iskanje';
+
+  @override
+  String get map_toolFitAll => 'Pokaži vse';
+
+  @override
+  String get map_toolOptions => 'Možnosti';
+
+  @override
+  String get traffic_kindAdvert => 'Oglas';
+
+  @override
+  String get traffic_kindDirect => 'Neposredno sporočilo';
+
+  @override
+  String get traffic_kindChannel => 'Sporočilo kanala';
+
+  @override
+  String get traffic_kindAck => 'Potrditev';
+
+  @override
+  String get traffic_kindTrace => 'Sledenje';
+
+  @override
+  String get traffic_kindPath => 'Pot';
+
+  @override
+  String get traffic_listening => 'Čakanje na pakete…';
+
+  @override
+  String get traffic_unknownSender => 'Neznan pošiljatelj';
+
+  @override
+  String traffic_heardFrom(String name, String snr) {
+    return 'Slišano od $name · $snr dB';
+  }
+
+  @override
+  String traffic_heardDirect(String snr) {
+    return 'Slišano neposredno · $snr dB';
+  }
+
+  @override
+  String traffic_flood(int hops) {
+    return 'Flood $hops';
+  }
+
+  @override
+  String get traffic_direct => 'Neposredno';
+
+  @override
+  String traffic_notOnMapCount(int count) {
+    return '$count ni na zemljevidu';
+  }
+
+  @override
+  String traffic_ageSeconds(int seconds) {
+    return '$seconds s';
+  }
+
+  @override
+  String traffic_notOnMapList(String names) {
+    return 'Ni na zemljevidu: $names';
+  }
+
+  @override
+  String get traffic_filterTitle => 'Prikazane vrste paketov';
 
   @override
   String messageFilter_markedSpamCount(int count) {

@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -13573,6 +13574,87 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Útvonal választása, majd újra';
+
+  @override
+  String get map_toolLocate => 'Helyzet';
+
+  @override
+  String get map_toolAdvert => 'Hirdetés';
+
+  @override
+  String get map_toolFilter => 'Szűrő';
+
+  @override
+  String get map_toolTraffic => 'Forgalom';
+
+  @override
+  String get map_toolSearch => 'Keresés';
+
+  @override
+  String get map_toolFitAll => 'Összes';
+
+  @override
+  String get map_toolOptions => 'Beállítások';
+
+  @override
+  String get traffic_kindAdvert => 'Hirdetés';
+
+  @override
+  String get traffic_kindDirect => 'Közvetlen üzenet';
+
+  @override
+  String get traffic_kindChannel => 'Csatornaüzenet';
+
+  @override
+  String get traffic_kindAck => 'Nyugtázás';
+
+  @override
+  String get traffic_kindTrace => 'Nyomkövetés';
+
+  @override
+  String get traffic_kindPath => 'Útvonal';
+
+  @override
+  String get traffic_listening => 'Csomagokra várva…';
+
+  @override
+  String get traffic_unknownSender => 'Ismeretlen feladó';
+
+  @override
+  String traffic_heardFrom(String name, String snr) {
+    return 'Hallva innen: $name · $snr dB';
+  }
+
+  @override
+  String traffic_heardDirect(String snr) {
+    return 'Közvetlenül hallva · $snr dB';
+  }
+
+  @override
+  String traffic_flood(int hops) {
+    return 'Flood $hops';
+  }
+
+  @override
+  String get traffic_direct => 'Közvetlen';
+
+  @override
+  String traffic_notOnMapCount(int count) {
+    return '$count nincs a térképen';
+  }
+
+  @override
+  String traffic_ageSeconds(int seconds) {
+    return '$seconds mp';
+  }
+
+  @override
+  String traffic_notOnMapList(String names) {
+    return 'Nincs a térképen: $names';
+  }
+
+  @override
+  String get traffic_filterTitle => 'Megjelenített csomagtípusok';
 
   @override
   String messageFilter_markedSpamCount(int count) {
