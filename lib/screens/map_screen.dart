@@ -454,61 +454,58 @@ class _MapScreenState extends State<MapScreen> {
       bottom: trafficOn ? 176 : 24,
       child: Align(
         alignment: Alignment.centerRight,
-        child: SingleChildScrollView(
-          child: MapToolbar(
-            dark: _useDarkOverlay,
-            items: [
-              MapToolbarItem(
-                key: const ValueKey('map-my-position'),
-                icon: Icons.near_me_outlined,
-                label: l10n.map_toolLocate,
-                onPressed: () => unawaited(_goToMyPosition(connector)),
-              ),
-              MapToolbarItem(
-                key: const ValueKey('map-tool-advert'),
-                icon: Icons.campaign_outlined,
-                label: l10n.map_toolAdvert,
-                onPressed: connector.isConnected
-                    ? () => unawaited(_sendAdvert(connector))
-                    : null,
-              ),
-              MapToolbarItem(
-                key: const ValueKey('map-tool-filter'),
-                icon: Icons.filter_list,
-                label: l10n.map_toolFilter,
-                onPressed: trafficOn
-                    ? () => _showTrafficFilterSheet(context)
-                    : () => _showFilterSheet(context, settingsService),
-              ),
-              MapToolbarItem(
-                key: const ValueKey('map-tool-traffic'),
-                icon: Icons.route,
-                label: l10n.map_toolTraffic,
-                selected: trafficOn,
-                onPressed: () => _toggleTraffic(connector),
-              ),
-              MapToolbarItem(
-                key: const ValueKey('map-tool-search'),
-                icon: Icons.search,
-                label: l10n.map_toolSearch,
-                onPressed: () => _searchFocus.requestFocus(),
-              ),
-              MapToolbarItem(
-                key: const ValueKey('map-tool-fit'),
-                icon: Icons.open_in_full,
-                label: l10n.map_toolFitAll,
-                showLabel: false,
-                onPressed: () =>
-                    _fitAll(fitPoints, fallbackCenter, fallbackZoom),
-              ),
-              MapToolbarItem(
-                key: const ValueKey('map-tool-options'),
-                icon: Icons.more_horiz,
-                label: l10n.map_toolOptions,
-                onPressed: () => _showFilterSheet(context, settingsService),
-              ),
-            ],
-          ),
+        child: MapToolbar(
+          dark: _useDarkOverlay,
+          items: [
+            MapToolbarItem(
+              key: const ValueKey('map-my-position'),
+              icon: Icons.near_me_outlined,
+              label: l10n.map_toolLocate,
+              onPressed: () => unawaited(_goToMyPosition(connector)),
+            ),
+            MapToolbarItem(
+              key: const ValueKey('map-tool-advert'),
+              icon: Icons.campaign_outlined,
+              label: l10n.map_toolAdvert,
+              onPressed: connector.isConnected
+                  ? () => unawaited(_sendAdvert(connector))
+                  : null,
+            ),
+            MapToolbarItem(
+              key: const ValueKey('map-tool-filter'),
+              icon: Icons.filter_list,
+              label: l10n.map_toolFilter,
+              onPressed: trafficOn
+                  ? () => _showTrafficFilterSheet(context)
+                  : () => _showFilterSheet(context, settingsService),
+            ),
+            MapToolbarItem(
+              key: const ValueKey('map-tool-traffic'),
+              icon: Icons.route,
+              label: l10n.map_toolTraffic,
+              selected: trafficOn,
+              onPressed: () => _toggleTraffic(connector),
+            ),
+            MapToolbarItem(
+              key: const ValueKey('map-tool-search'),
+              icon: Icons.search,
+              label: l10n.map_toolSearch,
+              onPressed: () => _searchFocus.requestFocus(),
+            ),
+            MapToolbarItem(
+              key: const ValueKey('map-tool-fit'),
+              icon: Icons.open_in_full,
+              label: l10n.map_toolFitAll,
+              showLabel: false,
+              onPressed: () => _fitAll(fitPoints, fallbackCenter, fallbackZoom),
+            ),
+            MapToolbarItem(
+              key: const ValueKey('map-tool-options'),
+              icon: Icons.more_horiz,
+              label: l10n.map_toolOptions,
+              onPressed: () => _showFilterSheet(context, settingsService),
+            ),
+          ],
         ),
       ),
     );

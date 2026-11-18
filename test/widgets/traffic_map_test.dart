@@ -220,4 +220,39 @@ void main() {
     d = tester.widget<Container>(body().first).decoration! as BoxDecoration;
     expect(d.shape, BoxShape.circle);
   });
+
+  testWidgets('toolbar drops labels when its height is short', (tester) async {
+    Widget bar(double height) => _app(
+      Align(
+        alignment: Alignment.topRight,
+        child: SizedBox(
+          height: height,
+          child: Align(
+            alignment: Alignment.centerRight,
+            child: MapToolbar(
+              dark: true,
+              items: [
+                for (var i = 0; i < 7; i++)
+                  MapToolbarItem(
+                    icon: Icons.route,
+                    label: 'Tool $i',
+                    onPressed: () {},
+                  ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+
+    await tester.pumpWidget(bar(600));
+    expect(find.text('Tool 6'), findsOneWidget);
+
+    await tester.pumpWidget(bar(330));
+    expect(find.text('Tool 6'), findsNothing);
+    expect(find.byTooltip('Tool 6'), findsOneWidget);
+    // Seven 44 px buttons plus padding fit in 330 px without scrolling.
+    expect(tester.getSize(find.byType(MapToolbar)).height, lessThan(330));
+    expect(find.bySemanticsLabel('Tool 6'), findsOneWidget);
+  });
 }
