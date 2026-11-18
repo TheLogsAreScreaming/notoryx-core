@@ -107,6 +107,10 @@ jobs:
           unzip -q /tmp/ort.nupkg 'build/native/include/*' 'runtimes/linux-x64/native/*' -d /tmp/ort
           cp -r /tmp/ort/build/native/include "$dir/include"
           cp /tmp/ort/runtimes/linux-x64/native/*.so "$dir/lib/"
+          # Same layout as the release tarball: the library's soname is
+          # libonnxruntime.so.1, which the linker looks for by that name.
+          mv "$dir/lib/libonnxruntime.so" "$dir/lib/libonnxruntime.so.1"
+          ln -s libonnxruntime.so.1 "$dir/lib/libonnxruntime.so"
           ls "$dir/include/onnxruntime_cxx_api.h" "$dir/lib/libonnxruntime.so"
       - run: flutter build linux --release --no-pub
 
