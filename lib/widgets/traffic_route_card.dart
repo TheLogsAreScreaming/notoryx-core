@@ -85,7 +85,7 @@ class _TrafficRouteCardState extends State<TrafficRouteCard> {
               path.isEmpty ? l10n.traffic_unknownSender : path,
               style: Theme.of(context).textTheme.titleSmall!.copyWith(
                 color: primary,
-                fontFamily: 'monospace',
+                fontFamily: MeshFonts.mono,
                 fontWeight: FontWeight.w600,
               ),
             ),

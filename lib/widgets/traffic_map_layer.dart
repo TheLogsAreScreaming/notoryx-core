@@ -77,7 +77,7 @@ class _TrafficMapLayerState extends State<TrafficMapLayer>
               color: Colors.white,
               fontSize: 10,
               fontWeight: FontWeight.w600,
-              fontFamily: 'monospace',
+              fontFamily: MeshFonts.mono,
             ),
           ),
         ),
