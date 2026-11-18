@@ -210,6 +210,21 @@ void main() {
       expect(origin.point, const LatLng(40.5, -75.5));
     });
 
+    test('an advert name that is not valid text falls back to the ID', () {
+      final key = _key(0x78);
+      final payload = _advertPayload(key, name: 'x');
+      payload
+        ..removeLast()
+        ..addAll([0xFF, 0x65, 0x21, 0x01, 0x6B]);
+      final route = buildTrafficRoute(
+        _packet(payloadType: payloadTypeADVERT, path: [0xD4], payload: payload),
+        contacts: contacts,
+        selfPosition: _self,
+      );
+      expect(route.hops.first.name, isNull);
+      expect(route.hops.first.label, route.hops.first.id);
+    });
+
     test('direct message: origin from a unique source hash, no relays', () {
       final sender = _repeater(
         0x42,

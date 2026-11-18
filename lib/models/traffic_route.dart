@@ -292,7 +292,9 @@ LatLng? _pos(Contact c) =>
   if (flags & 0x80 != 0 && i < payload.length) {
     final bytes = payload.sublist(i).takeWhile((b) => b != 0).toList();
     name = utf8.decode(bytes, allowMalformed: true).trim();
-    if (name.isEmpty) name = null;
+    // Malformed app data decodes to junk; show the short ID instead.
+    final junk = name.runes.any((r) => r == 0xFFFD || r < 0x20 || r == 0x7F);
+    if (name.isEmpty || junk) name = null;
   }
   return (name: name, point: point);
 }
