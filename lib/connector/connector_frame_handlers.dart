@@ -893,13 +893,14 @@ extension _ConnectorFrameHandlers on MeshCoreConnector {
       final isNew = _addChannelMessage(message.channelIndex!, message);
       _maybeIncrementChannelUnread(message, isNew: isNew);
       _notifyFromPart();
+      final hidden = isNew && _isHiddenByFilter(message);
       if (isNew && !message.isOutgoing) {
         unawaited(_claimHeldSignature(message));
-        if (!_radioChannelMessagesController.isClosed) {
+        if (!hidden && !_radioChannelMessagesController.isClosed) {
           _radioChannelMessagesController.add(message);
         }
       }
-      if (isNew && !message.isOutgoing) {
+      if (isNew && !message.isOutgoing && !hidden) {
         final msg = message; // capture for closure
         unawaited(() async {
           final translationResult = await translateChannelMessage(
