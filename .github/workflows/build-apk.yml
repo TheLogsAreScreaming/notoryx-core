@@ -19,7 +19,9 @@ permissions:
 
 jobs:
   android-apk:
-    runs-on: ubuntu-latest
+    # ubuntu-latest is now 26.04, where this release build gets killed
+    # mid-Gradle; 24.04 matches the linux job's pin.
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
