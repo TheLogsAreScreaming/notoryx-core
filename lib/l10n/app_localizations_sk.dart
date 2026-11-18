@@ -13544,4 +13544,85 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Vybrať trasu a skúsiť znova';
+
+  @override
+  String get map_toolLocate => 'Poloha';
+
+  @override
+  String get map_toolAdvert => 'Oznámenie';
+
+  @override
+  String get map_toolFilter => 'Filter';
+
+  @override
+  String get map_toolTraffic => 'Prevádzka';
+
+  @override
+  String get map_toolSearch => 'Hľadať';
+
+  @override
+  String get map_toolFitAll => 'Zobraziť všetko';
+
+  @override
+  String get map_toolOptions => 'Možnosti';
+
+  @override
+  String get traffic_kindAdvert => 'Oznámenie';
+
+  @override
+  String get traffic_kindDirect => 'Priama správa';
+
+  @override
+  String get traffic_kindChannel => 'Správa kanála';
+
+  @override
+  String get traffic_kindAck => 'Potvrdenie';
+
+  @override
+  String get traffic_kindTrace => 'Trasovanie';
+
+  @override
+  String get traffic_kindPath => 'Cesta';
+
+  @override
+  String get traffic_listening => 'Čaká sa na pakety…';
+
+  @override
+  String get traffic_unknownSender => 'Neznámy odosielateľ';
+
+  @override
+  String traffic_heardFrom(String name, String snr) {
+    return 'Prijaté od $name · $snr dB';
+  }
+
+  @override
+  String traffic_heardDirect(String snr) {
+    return 'Prijaté priamo · $snr dB';
+  }
+
+  @override
+  String traffic_flood(int hops) {
+    return 'Flood $hops';
+  }
+
+  @override
+  String get traffic_direct => 'Priamo';
+
+  @override
+  String traffic_notOnMapCount(int count) {
+    return '$count mimo mapy';
+  }
+
+  @override
+  String traffic_ageSeconds(int seconds) {
+    return '$seconds s';
+  }
+
+  @override
+  String traffic_notOnMapList(String names) {
+    return 'Mimo mapy: $names';
+  }
+
+  @override
+  String get traffic_filterTitle => 'Zobrazené typy paketov';
 }

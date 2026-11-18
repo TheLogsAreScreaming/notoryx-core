@@ -12731,4 +12731,85 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => '选择路由后重试';
+
+  @override
+  String get map_toolLocate => '定位';
+
+  @override
+  String get map_toolAdvert => '广播';
+
+  @override
+  String get map_toolFilter => '筛选';
+
+  @override
+  String get map_toolTraffic => '流量';
+
+  @override
+  String get map_toolSearch => '搜索';
+
+  @override
+  String get map_toolFitAll => '全部显示';
+
+  @override
+  String get map_toolOptions => '选项';
+
+  @override
+  String get traffic_kindAdvert => '广播';
+
+  @override
+  String get traffic_kindDirect => '私信';
+
+  @override
+  String get traffic_kindChannel => '频道消息';
+
+  @override
+  String get traffic_kindAck => '确认';
+
+  @override
+  String get traffic_kindTrace => '追踪';
+
+  @override
+  String get traffic_kindPath => '路径';
+
+  @override
+  String get traffic_listening => '正在监听数据包…';
+
+  @override
+  String get traffic_unknownSender => '未知发送者';
+
+  @override
+  String traffic_heardFrom(String name, String snr) {
+    return '来自 $name · $snr dB';
+  }
+
+  @override
+  String traffic_heardDirect(String snr) {
+    return '直接收到 · $snr dB';
+  }
+
+  @override
+  String traffic_flood(int hops) {
+    return 'Flood $hops';
+  }
+
+  @override
+  String get traffic_direct => '直连';
+
+  @override
+  String traffic_notOnMapCount(int count) {
+    return '$count 个不在地图上';
+  }
+
+  @override
+  String traffic_ageSeconds(int seconds) {
+    return '$seconds 秒';
+  }
+
+  @override
+  String traffic_notOnMapList(String names) {
+    return '不在地图上：$names';
+  }
+
+  @override
+  String get traffic_filterTitle => '显示的数据包类型';
 }
