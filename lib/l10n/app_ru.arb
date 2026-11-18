@@ -4474,5 +4474,8 @@
   "traffic_notOnMapCount": "{count} нет на карте",
   "traffic_ageSeconds": "{seconds} с",
   "traffic_notOnMapList": "Нет на карте: {names}",
-  "traffic_filterTitle": "Показывать типы пакетов"
+  "traffic_filterTitle": "Показывать типы пакетов",
+  "appSettings_resetRoutingToDefault": "Сбросить алгоритм маршрутизации к значению по умолчанию",
+  "appSettings_resetRoutingToDefaultSubtitle": "Восстановить настройки алгоритма маршрутизации к заводским значениям по умолчанию",
+  "appSettings_routingResetToDefault": "Настройки алгоритма маршрутизации сброшены к значению по умолчанию"
 }

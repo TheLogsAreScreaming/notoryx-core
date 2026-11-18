@@ -5171,5 +5171,8 @@
   "traffic_notOnMapCount": "{count} mimo mapy",
   "traffic_ageSeconds": "{seconds} s",
   "traffic_notOnMapList": "Mimo mapy: {names}",
-  "traffic_filterTitle": "Zobrazené typy paketov"
+  "traffic_filterTitle": "Zobrazené typy paketov",
+  "appSettings_resetRoutingToDefault": "Obnoviť algoritmus smerovania na predvolené",
+  "appSettings_resetRoutingToDefaultSubtitle": "Obnoviť nastavenia algoritmu smerovania na továrne predvolené hodnoty",
+  "appSettings_routingResetToDefault": "Nastavenia algoritmu smerovania obnovené na predvolené"
 }

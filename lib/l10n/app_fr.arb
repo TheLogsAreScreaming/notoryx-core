@@ -5305,5 +5305,8 @@
   "traffic_notOnMapCount": "{count} hors carte",
   "traffic_ageSeconds": "{seconds} s",
   "traffic_notOnMapList": "Hors carte : {names}",
-  "traffic_filterTitle": "Types de paquets affichés"
+  "traffic_filterTitle": "Types de paquets affichés",
+  "appSettings_resetRoutingToDefault": "Réinitialiser l'algorithme de routage",
+  "appSettings_resetRoutingToDefaultSubtitle": "Restaurer les paramètres de l'algorithme de routage aux valeurs par défaut",
+  "appSettings_routingResetToDefault": "Paramètres de l'algorithme de routage réinitialisés"
 }

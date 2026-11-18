@@ -5171,5 +5171,8 @@
   "traffic_notOnMapCount": "{count} fora do mapa",
   "traffic_ageSeconds": "{seconds} s",
   "traffic_notOnMapList": "Fora do mapa: {names}",
-  "traffic_filterTitle": "Tipos de pacote a mostrar"
+  "traffic_filterTitle": "Tipos de pacote a mostrar",
+  "appSettings_resetRoutingToDefault": "Redefinir algoritmo de roteamento para o padrão",
+  "appSettings_resetRoutingToDefaultSubtitle": "Restaurar as configurações do algoritmo de roteamento para os valores padrão de fábrica",
+  "appSettings_routingResetToDefault": "Configurações do algoritmo de roteamento redefinidas para o padrão"
 }

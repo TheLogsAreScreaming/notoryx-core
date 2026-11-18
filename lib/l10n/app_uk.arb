@@ -5151,5 +5151,8 @@
   "traffic_notOnMapCount": "{count} немає на карті",
   "traffic_ageSeconds": "{seconds} с",
   "traffic_notOnMapList": "Немає на карті: {names}",
-  "traffic_filterTitle": "Показувати типи пакетів"
+  "traffic_filterTitle": "Показувати типи пакетів",
+  "appSettings_resetRoutingToDefault": "Скинути алгоритм маршрутизації до типового",
+  "appSettings_resetRoutingToDefaultSubtitle": "Відновити налаштування алгоритму маршрутизації до заводських значень за замовчуванням",
+  "appSettings_routingResetToDefault": "Налаштування алгоритму маршрутизації скинуто до типових"
 }

@@ -5305,5 +5305,8 @@
   "traffic_notOnMapCount": "{count} nicht auf der Karte",
   "traffic_ageSeconds": "{seconds} s",
   "traffic_notOnMapList": "Nicht auf der Karte: {names}",
-  "traffic_filterTitle": "Angezeigte Pakettypen"
+  "traffic_filterTitle": "Angezeigte Pakettypen",
+  "appSettings_resetRoutingToDefault": "Routing-Algorithmus auf Standard zurücksetzen",
+  "appSettings_resetRoutingToDefaultSubtitle": "Routing-Algorithmus-Einstellungen auf Werkseinstellungen zurücksetzen",
+  "appSettings_routingResetToDefault": "Routing-Algorithmus-Einstellungen auf Standard zurückgesetzt"
 }

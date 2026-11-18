@@ -5171,5 +5171,8 @@
   "traffic_notOnMapCount": "{count} ni na zemljevidu",
   "traffic_ageSeconds": "{seconds} s",
   "traffic_notOnMapList": "Ni na zemljevidu: {names}",
-  "traffic_filterTitle": "Prikazane vrste paketov"
+  "traffic_filterTitle": "Prikazane vrste paketov",
+  "appSettings_resetRoutingToDefault": "Ponastavite algoritem usmerjanja na privzeto",
+  "appSettings_resetRoutingToDefaultSubtitle": "Obnovite nastavitve algoritma usmerjanja na tovarniške privzetke",
+  "appSettings_routingResetToDefault": "Nastavitve algoritma usmerjanja so ponastavljene na privzeto"
 }

@@ -5209,5 +5209,8 @@
   "traffic_notOnMapCount": "{count} poza mapą",
   "traffic_ageSeconds": "{seconds} s",
   "traffic_notOnMapList": "Poza mapą: {names}",
-  "traffic_filterTitle": "Pokazywane typy pakietów"
+  "traffic_filterTitle": "Pokazywane typy pakietów",
+  "appSettings_resetRoutingToDefault": "Resetuj algorytm trasowania do domyślnych",
+  "appSettings_resetRoutingToDefaultSubtitle": "Przywróć ustawienia algorytmu trasowania do fabrycznych ustawień domyślnych",
+  "appSettings_routingResetToDefault": "Ustawienia algorytmu trasowania zresetowane do domyślnych"
 }

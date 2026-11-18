@@ -5305,5 +5305,8 @@
   "traffic_notOnMapCount": "{count} non sulla mappa",
   "traffic_ageSeconds": "{seconds} s",
   "traffic_notOnMapList": "Non sulla mappa: {names}",
-  "traffic_filterTitle": "Tipi di pacchetto da mostrare"
+  "traffic_filterTitle": "Tipi di pacchetto da mostrare",
+  "appSettings_resetRoutingToDefault": "Reimposta algoritmo di instradamento sui valori predefiniti",
+  "appSettings_resetRoutingToDefaultSubtitle": "Ripristina le impostazioni dell'algoritmo di instradamento ai valori predefiniti di fabbrica",
+  "appSettings_routingResetToDefault": "Impostazioni algoritmo di instradamento reimpostate sui valori predefiniti"
 }

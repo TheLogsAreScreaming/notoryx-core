@@ -5305,5 +5305,8 @@
   "traffic_notOnMapCount": "지도 밖 {count}",
   "traffic_ageSeconds": "{seconds}초",
   "traffic_notOnMapList": "지도 밖: {names}",
-  "traffic_filterTitle": "표시할 패킷 유형"
+  "traffic_filterTitle": "표시할 패킷 유형",
+  "appSettings_resetRoutingToDefault": "라우팅 알고리즘 기본값으로 재설정",
+  "appSettings_resetRoutingToDefaultSubtitle": "라우팅 알고리즘 설정을 공장 기본값으로 복원",
+  "appSettings_routingResetToDefault": "라우팅 알고리즘 설정이 기본값으로 재설정되었습니다"
 }

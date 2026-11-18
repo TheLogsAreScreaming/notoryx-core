@@ -5305,5 +5305,8 @@
   "traffic_notOnMapCount": "地図外 {count}",
   "traffic_ageSeconds": "{seconds}秒",
   "traffic_notOnMapList": "地図外: {names}",
-  "traffic_filterTitle": "表示するパケット種別"
+  "traffic_filterTitle": "表示するパケット種別",
+  "appSettings_resetRoutingToDefault": "ルーティングアルゴリズムをデフォルトにリセット",
+  "appSettings_resetRoutingToDefaultSubtitle": "ルーティングアルゴリズムの設定を工場出荷時のデフォルトに戻す",
+  "appSettings_routingResetToDefault": "ルーティングアルゴリズムの設定がデフォルトにリセットされました"
 }

@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -13695,4 +13696,16 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get traffic_filterTitle => 'Показувати типи пакетів';
+
+  @override
+  String get appSettings_resetRoutingToDefault =>
+      'Скинути алгоритм маршрутизації до типового';
+
+  @override
+  String get appSettings_resetRoutingToDefaultSubtitle =>
+      'Відновити налаштування алгоритму маршрутизації до заводських значень за замовчуванням';
+
+  @override
+  String get appSettings_routingResetToDefault =>
+      'Налаштування алгоритму маршрутизації скинуто до типових';
 }

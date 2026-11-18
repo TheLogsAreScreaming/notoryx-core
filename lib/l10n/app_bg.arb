@@ -5171,5 +5171,8 @@
   "traffic_notOnMapCount": "{count} не са на картата",
   "traffic_ageSeconds": "{seconds} с",
   "traffic_notOnMapList": "Не са на картата: {names}",
-  "traffic_filterTitle": "Видове пакети за показване"
+  "traffic_filterTitle": "Видове пакети за показване",
+  "appSettings_resetRoutingToDefault": "Нулиране на алгоритъма за маршрутизация до стойност по подразбиране",
+  "appSettings_resetRoutingToDefaultSubtitle": "Възстановяване на настройките на алгоритъма за маршрутизация до заводските стойности по подразбиране",
+  "appSettings_routingResetToDefault": "Настройките на алгоритъма за маршрутизация са нулирани до стойност по подразбиране"
 }

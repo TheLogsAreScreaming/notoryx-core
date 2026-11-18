@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -13652,4 +13653,16 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get traffic_filterTitle => 'Tipos de pacote a mostrar';
+
+  @override
+  String get appSettings_resetRoutingToDefault =>
+      'Redefinir algoritmo de roteamento para o padrão';
+
+  @override
+  String get appSettings_resetRoutingToDefaultSubtitle =>
+      'Restaurar as configurações do algoritmo de roteamento para os valores padrão de fábrica';
+
+  @override
+  String get appSettings_routingResetToDefault =>
+      'Configurações do algoritmo de roteamento redefinidas para o padrão';
 }

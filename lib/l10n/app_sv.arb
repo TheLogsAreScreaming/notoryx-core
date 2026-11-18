@@ -5171,5 +5171,8 @@
   "traffic_notOnMapCount": "{count} ej på kartan",
   "traffic_ageSeconds": "{seconds} s",
   "traffic_notOnMapList": "Ej på kartan: {names}",
-  "traffic_filterTitle": "Pakettyper att visa"
+  "traffic_filterTitle": "Pakettyper att visa",
+  "appSettings_resetRoutingToDefault": "Återställ rutningsalgoritm till standard",
+  "appSettings_resetRoutingToDefaultSubtitle": "Återställ rutningsalgoritmins inställningar till fabriksstandard",
+  "appSettings_routingResetToDefault": "Rutningsalgoritmins inställningar återställda till standard"
 }

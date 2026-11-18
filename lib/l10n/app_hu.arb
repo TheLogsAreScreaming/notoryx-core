@@ -5209,5 +5209,8 @@
   "traffic_notOnMapCount": "{count} nincs a térképen",
   "traffic_ageSeconds": "{seconds} mp",
   "traffic_notOnMapList": "Nincs a térképen: {names}",
-  "traffic_filterTitle": "Megjelenített csomagtípusok"
+  "traffic_filterTitle": "Megjelenített csomagtípusok",
+  "appSettings_resetRoutingToDefault": "Útvonaltervezési algoritmus visszaállítása alapértelmezettre",
+  "appSettings_resetRoutingToDefaultSubtitle": "Útvonaltervezési algoritmus beállításainak visszaállítása gyári alapértelmezett értékekre",
+  "appSettings_routingResetToDefault": "Útvonaltervezési algoritmus beállításai visszaállítva alapértelmezettre"
 }
