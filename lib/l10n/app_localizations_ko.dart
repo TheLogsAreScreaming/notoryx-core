@@ -12991,4 +12991,85 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => '경로를 고른 뒤 다시 보내기';
+
+  @override
+  String get map_toolLocate => '내 위치';
+
+  @override
+  String get map_toolAdvert => '광고';
+
+  @override
+  String get map_toolFilter => '필터';
+
+  @override
+  String get map_toolTraffic => '트래픽';
+
+  @override
+  String get map_toolSearch => '검색';
+
+  @override
+  String get map_toolFitAll => '전체 보기';
+
+  @override
+  String get map_toolOptions => '옵션';
+
+  @override
+  String get traffic_kindAdvert => '광고';
+
+  @override
+  String get traffic_kindDirect => '개인 메시지';
+
+  @override
+  String get traffic_kindChannel => '채널 메시지';
+
+  @override
+  String get traffic_kindAck => '확인 응답';
+
+  @override
+  String get traffic_kindTrace => '추적';
+
+  @override
+  String get traffic_kindPath => '경로';
+
+  @override
+  String get traffic_listening => '패킷 수신 대기 중…';
+
+  @override
+  String get traffic_unknownSender => '알 수 없는 발신자';
+
+  @override
+  String traffic_heardFrom(String name, String snr) {
+    return '$name에서 수신 · $snr dB';
+  }
+
+  @override
+  String traffic_heardDirect(String snr) {
+    return '직접 수신 · $snr dB';
+  }
+
+  @override
+  String traffic_flood(int hops) {
+    return 'Flood $hops';
+  }
+
+  @override
+  String get traffic_direct => '직접';
+
+  @override
+  String traffic_notOnMapCount(int count) {
+    return '지도 밖 $count';
+  }
+
+  @override
+  String traffic_ageSeconds(int seconds) {
+    return '$seconds초';
+  }
+
+  @override
+  String traffic_notOnMapList(String names) {
+    return '지도 밖: $names';
+  }
+
+  @override
+  String get traffic_filterTitle => '표시할 패킷 유형';
 }

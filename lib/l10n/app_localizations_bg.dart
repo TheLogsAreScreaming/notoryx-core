@@ -13569,4 +13569,85 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Избери маршрут и повтори';
+
+  @override
+  String get map_toolLocate => 'Къде съм';
+
+  @override
+  String get map_toolAdvert => 'Обява';
+
+  @override
+  String get map_toolFilter => 'Филтър';
+
+  @override
+  String get map_toolTraffic => 'Трафик';
+
+  @override
+  String get map_toolSearch => 'Търсене';
+
+  @override
+  String get map_toolFitAll => 'Покажи всички';
+
+  @override
+  String get map_toolOptions => 'Опции';
+
+  @override
+  String get traffic_kindAdvert => 'Обява';
+
+  @override
+  String get traffic_kindDirect => 'Лично съобщение';
+
+  @override
+  String get traffic_kindChannel => 'Съобщение в канал';
+
+  @override
+  String get traffic_kindAck => 'Потвърждение';
+
+  @override
+  String get traffic_kindTrace => 'Трасиране';
+
+  @override
+  String get traffic_kindPath => 'Път';
+
+  @override
+  String get traffic_listening => 'Изчакване на пакети…';
+
+  @override
+  String get traffic_unknownSender => 'Неизвестен подател';
+
+  @override
+  String traffic_heardFrom(String name, String snr) {
+    return 'Чуто от $name · $snr dB';
+  }
+
+  @override
+  String traffic_heardDirect(String snr) {
+    return 'Чуто директно · $snr dB';
+  }
+
+  @override
+  String traffic_flood(int hops) {
+    return 'Flood $hops';
+  }
+
+  @override
+  String get traffic_direct => 'Директно';
+
+  @override
+  String traffic_notOnMapCount(int count) {
+    return '$count не са на картата';
+  }
+
+  @override
+  String traffic_ageSeconds(int seconds) {
+    return '$seconds с';
+  }
+
+  @override
+  String traffic_notOnMapList(String names) {
+    return 'Не са на картата: $names';
+  }
+
+  @override
+  String get traffic_filterTitle => 'Видове пакети за показване';
 }

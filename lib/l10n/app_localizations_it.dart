@@ -13603,4 +13603,85 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Scegli un percorso, poi riprova';
+
+  @override
+  String get map_toolLocate => 'Posizione';
+
+  @override
+  String get map_toolAdvert => 'Annuncio';
+
+  @override
+  String get map_toolFilter => 'Filtro';
+
+  @override
+  String get map_toolTraffic => 'Traffico';
+
+  @override
+  String get map_toolSearch => 'Cerca';
+
+  @override
+  String get map_toolFitAll => 'Mostra tutto';
+
+  @override
+  String get map_toolOptions => 'Opzioni';
+
+  @override
+  String get traffic_kindAdvert => 'Annuncio';
+
+  @override
+  String get traffic_kindDirect => 'Messaggio diretto';
+
+  @override
+  String get traffic_kindChannel => 'Messaggio di canale';
+
+  @override
+  String get traffic_kindAck => 'Conferma';
+
+  @override
+  String get traffic_kindTrace => 'Traccia';
+
+  @override
+  String get traffic_kindPath => 'Percorso';
+
+  @override
+  String get traffic_listening => 'In ascolto dei pacchetti…';
+
+  @override
+  String get traffic_unknownSender => 'Mittente sconosciuto';
+
+  @override
+  String traffic_heardFrom(String name, String snr) {
+    return 'Ricevuto da $name · $snr dB';
+  }
+
+  @override
+  String traffic_heardDirect(String snr) {
+    return 'Ricevuto direttamente · $snr dB';
+  }
+
+  @override
+  String traffic_flood(int hops) {
+    return 'Flood $hops';
+  }
+
+  @override
+  String get traffic_direct => 'Diretto';
+
+  @override
+  String traffic_notOnMapCount(int count) {
+    return '$count non sulla mappa';
+  }
+
+  @override
+  String traffic_ageSeconds(int seconds) {
+    return '$seconds s';
+  }
+
+  @override
+  String traffic_notOnMapList(String names) {
+    return 'Non sulla mappa: $names';
+  }
+
+  @override
+  String get traffic_filterTitle => 'Tipi di pacchetto da mostrare';
 }

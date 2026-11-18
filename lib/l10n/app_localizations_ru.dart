@@ -13616,4 +13616,85 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get deliv_pickRoute => 'Выбрать маршрут и повторить';
+
+  @override
+  String get map_toolLocate => 'Где я';
+
+  @override
+  String get map_toolAdvert => 'Анонс';
+
+  @override
+  String get map_toolFilter => 'Фильтр';
+
+  @override
+  String get map_toolTraffic => 'Трафик';
+
+  @override
+  String get map_toolSearch => 'Поиск';
+
+  @override
+  String get map_toolFitAll => 'Показать всё';
+
+  @override
+  String get map_toolOptions => 'Параметры';
+
+  @override
+  String get traffic_kindAdvert => 'Анонс';
+
+  @override
+  String get traffic_kindDirect => 'Личное сообщение';
+
+  @override
+  String get traffic_kindChannel => 'Сообщение канала';
+
+  @override
+  String get traffic_kindAck => 'Подтверждение';
+
+  @override
+  String get traffic_kindTrace => 'Трассировка';
+
+  @override
+  String get traffic_kindPath => 'Путь';
+
+  @override
+  String get traffic_listening => 'Ожидание пакетов…';
+
+  @override
+  String get traffic_unknownSender => 'Неизвестный отправитель';
+
+  @override
+  String traffic_heardFrom(String name, String snr) {
+    return 'Принято от $name · $snr дБ';
+  }
+
+  @override
+  String traffic_heardDirect(String snr) {
+    return 'Принято напрямую · $snr дБ';
+  }
+
+  @override
+  String traffic_flood(int hops) {
+    return 'Flood $hops';
+  }
+
+  @override
+  String get traffic_direct => 'Напрямую';
+
+  @override
+  String traffic_notOnMapCount(int count) {
+    return '$count нет на карте';
+  }
+
+  @override
+  String traffic_ageSeconds(int seconds) {
+    return '$seconds с';
+  }
+
+  @override
+  String traffic_notOnMapList(String names) {
+    return 'Нет на карте: $names';
+  }
+
+  @override
+  String get traffic_filterTitle => 'Показывать типы пакетов';
 }
