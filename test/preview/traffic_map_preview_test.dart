@@ -18,6 +18,7 @@ import 'package:meshcore_open/models/radio_rx_packet.dart';
 import 'package:meshcore_open/services/traffic_controller.dart';
 import 'package:meshcore_open/theme/mesh_theme.dart';
 import 'package:meshcore_open/widgets/map_toolbar.dart';
+import 'package:meshcore_open/widgets/node_map_pin.dart';
 import 'package:meshcore_open/widgets/traffic_map_layer.dart';
 import 'package:meshcore_open/widgets/traffic_route_card.dart';
 
@@ -119,16 +120,13 @@ void main() {
       point: p,
       width: 40,
       height: 40,
-      child: Container(
-        decoration: BoxDecoration(
-          color: const Color(0xFF4F46E5),
-          borderRadius: BorderRadius.circular(MeshRadii.sm),
-          border: Border.all(
-            color: fresh ? MapPalette.online : MapPalette.markerOutline,
-            width: 3,
-          ),
-        ),
-        child: const Icon(Icons.cell_tower, color: Colors.white, size: 20),
+      child: NodeMapPin(
+        color: MapPalette.repeater,
+        icon: Icons.cell_tower,
+        dotBorderColor: MapPalette.panelDark,
+        repeater: true,
+        online: fresh,
+        stale: !fresh,
       ),
     );
 

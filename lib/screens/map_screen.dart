@@ -51,6 +51,7 @@ import '../widgets/node_avatar.dart';
 import '../models/traffic_route.dart';
 import '../services/traffic_controller.dart';
 import '../widgets/map_toolbar.dart';
+import '../widgets/node_map_pin.dart';
 import '../widgets/traffic_map_layer.dart';
 import '../widgets/traffic_route_card.dart';
 import 'rx_log_screen.dart';
@@ -523,9 +524,16 @@ class _MapScreenState extends State<MapScreen> {
           key: const ValueKey('traffic-route-card'),
           route: traffic.latest,
           dark: _useDarkOverlay,
-          onTap: () => Navigator.of(
-            context,
-          ).push(MaterialPageRoute<void>(builder: (_) => const RxLogScreen())),
+          onTap: () {
+            final entry = traffic.latestEntry;
+            if (entry == null) {
+              Navigator.of(context).push(
+                MaterialPageRoute<void>(builder: (_) => const RxLogScreen()),
+              );
+            } else {
+              unawaited(showRxPacketSheet(context, entry));
+            }
+          },
         ),
       ),
     );
@@ -1783,9 +1791,11 @@ class _MapScreenState extends State<MapScreen> {
                       ],
                     ),
                   )
-                : _buildNodeMarkerWidget(
+                : NodeMapPin(
                     color: baseColor,
                     icon: _getNodeIcon(contact.type),
+                    repeater: contact.type == advTypeRepeater,
+                    dotBorderColor: _overlayPanelColor,
                     selected: selected,
                     stale: stale,
                     online: online,
@@ -1977,7 +1987,7 @@ class _MapScreenState extends State<MapScreen> {
       case advTypeChat:
         return Icons.person;
       case advTypeRepeater:
-        return Icons.router;
+        return Icons.cell_tower;
       case advTypeRoom:
         return Icons.meeting_room;
       case advTypeSensor:
@@ -1985,73 +1995,6 @@ class _MapScreenState extends State<MapScreen> {
       default:
         return Icons.device_unknown;
     }
-  }
-
-  Widget _buildNodeMarkerWidget({
-    required Color color,
-    required IconData icon,
-    bool selected = false,
-    bool stale = false,
-    bool online = false,
-    bool batteryLow = false,
-  }) {
-    final statusColor = batteryLow
-        ? MapPalette.batteryLow
-        : online
-        ? MapPalette.online
-        : stale
-        ? MapPalette.offline
-        : MapPalette.stale;
-    return Stack(
-      clipBehavior: Clip.none,
-      alignment: Alignment.center,
-      children: [
-        Container(
-          width: selected ? 44 : 36,
-          height: selected ? 44 : 36,
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: selected ? MapPalette.selected : color,
-            border: Border.all(
-              color: MapPalette.markerOutline,
-              width: selected ? 3 : 2.5,
-            ),
-            boxShadow: [
-              const BoxShadow(
-                color: MapPalette.markerShadow,
-                blurRadius: 8,
-                offset: Offset(0, 3),
-              ),
-              if (selected)
-                BoxShadow(
-                  color: MapPalette.selected.withValues(alpha: 0.75),
-                  blurRadius: 14,
-                  spreadRadius: 3,
-                ),
-            ],
-          ),
-          alignment: Alignment.center,
-          child: Icon(icon, color: Colors.white, size: selected ? 22 : 19),
-        ),
-        Positioned(
-          right: selected ? -1 : -2,
-          bottom: selected ? 0 : -2,
-          child: Container(
-            width: batteryLow ? 16 : (selected ? 13 : 12),
-            height: batteryLow ? 16 : (selected ? 13 : 12),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: statusColor,
-              border: Border.all(color: _overlayPanelColor, width: 2),
-            ),
-            alignment: Alignment.center,
-            child: batteryLow
-                ? const Icon(Icons.battery_alert, size: 10, color: Colors.white)
-                : null,
-          ),
-        ),
-      ],
-    );
   }
 
   Widget _buildLegendItem(IconData icon, String label, Color color) {
@@ -2579,7 +2522,7 @@ class _MapScreenState extends State<MapScreen> {
             MapPalette.selected,
           ),
           _buildLegendItem(
-            Icons.router,
+            Icons.cell_tower,
             context.l10n.map_repeater,
             MapPalette.repeater,
           ),

@@ -10,7 +10,9 @@ import 'package:meshcore_open/models/contact.dart';
 import 'package:meshcore_open/models/radio_rx_packet.dart';
 import 'package:meshcore_open/models/traffic_route.dart';
 import 'package:meshcore_open/services/traffic_controller.dart';
+import 'package:meshcore_open/theme/mesh_theme.dart';
 import 'package:meshcore_open/widgets/map_toolbar.dart';
+import 'package:meshcore_open/widgets/node_map_pin.dart';
 import 'package:meshcore_open/widgets/traffic_route_card.dart';
 
 final _t0 = DateTime.now();
@@ -70,6 +72,7 @@ void main() {
     expect(c.latest!.kind, TrafficKind.channel);
     expect(c.latest!.pathHops.map((h) => h.label), ['Alpha', 'Bravo', 'Delta']);
     expect(c.queue.active, hasLength(1));
+    expect(c.latestEntry!.info.hash, c.latest!.packetHash);
 
     // The same flood heard again through another repeater.
     c.add(_channelPacket([0xA1, 0xD4]));
@@ -77,6 +80,7 @@ void main() {
 
     c.shown = {TrafficKind.advert};
     expect(c.latest, isNull);
+    expect(c.latestEntry, isNull);
     c.add(_channelPacket([0xA1], salt: 9));
     expect(c.latest, isNull);
     await packets.close();
@@ -179,5 +183,41 @@ void main() {
         isEnabled: true,
       ),
     );
+  });
+
+  testWidgets('repeater pins are rounded squares, green-ringed when heard', (
+    tester,
+  ) async {
+    Widget pin({required bool repeater, required bool online}) => _app(
+      Center(
+        child: NodeMapPin(
+          key: const ValueKey('wrap'),
+          color: MapPalette.repeater,
+          icon: Icons.cell_tower,
+          dotBorderColor: MapPalette.panelDark,
+          repeater: repeater,
+          online: online,
+        ),
+      ),
+    );
+    Finder body() => find.descendant(
+      of: find.byKey(const ValueKey('wrap')),
+      matching: find.byType(Container),
+    );
+
+    await tester.pumpWidget(pin(repeater: true, online: true));
+    var d = tester.widget<Container>(body().first).decoration! as BoxDecoration;
+    expect(d.shape, BoxShape.rectangle);
+    expect(d.borderRadius, isNotNull);
+    expect((d.border! as Border).top.color, MapPalette.online);
+    expect(find.byIcon(Icons.cell_tower), findsOneWidget);
+
+    await tester.pumpWidget(pin(repeater: true, online: false));
+    d = tester.widget<Container>(body().first).decoration! as BoxDecoration;
+    expect((d.border! as Border).top.color, MapPalette.markerOutline);
+
+    await tester.pumpWidget(pin(repeater: false, online: true));
+    d = tester.widget<Container>(body().first).decoration! as BoxDecoration;
+    expect(d.shape, BoxShape.circle);
   });
 }

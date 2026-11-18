@@ -30,6 +30,7 @@ class TrafficController extends ChangeNotifier {
   final TrafficQueue queue = TrafficQueue();
   Set<TrafficKind> _shown = TrafficKind.values.toSet();
   TrafficRoute? _latest;
+  RxLogEntry? _latestEntry;
 
   /// With reduce motion on, routes are drawn at once and fade.
   bool reduceMotion = false;
@@ -37,13 +38,19 @@ class TrafficController extends ChangeNotifier {
   /// The newest packet shown, for the route card.
   TrafficRoute? get latest => _latest;
 
+  /// The raw packet behind [latest], for the packet details sheet.
+  RxLogEntry? get latestEntry => _latestEntry;
+
   /// Packet types drawn on the map.
   Set<TrafficKind> get shown => Set.unmodifiable(_shown);
 
   set shown(Set<TrafficKind> kinds) {
     if (setEquals(kinds, _shown)) return;
     _shown = kinds.toSet();
-    if (_latest != null && !_shown.contains(_latest!.kind)) _latest = null;
+    if (_latest != null && !_shown.contains(_latest!.kind)) {
+      _latest = null;
+      _latestEntry = null;
+    }
     notifyListeners();
   }
 
@@ -64,6 +71,7 @@ class TrafficController extends ChangeNotifier {
       selfLabel: selfLabel(),
     );
     _latest = route;
+    _latestEntry = entry;
     queue.add(route, _clock(), reduceMotion: reduceMotion);
     notifyListeners();
   }
