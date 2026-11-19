@@ -5272,5 +5272,14 @@
   "messageFilter_filterSenderConfirm": "Elrejti a(z) „{name}” összes üzenetét?",
   "messageFilter_filterLikeThis": "Ehhez hasonló üzenetek szűrése…",
   "messageFilter_channelToggle": "Üzenetek szűrése ezen a csatornán",
-  "messageFilter_ghostIconTooltip": "Az üzenetszűrő elrejtette"
+  "messageFilter_ghostIconTooltip": "Az üzenetszűrő elrejtette",
+  "stale_setting": "Csomópontok elavultnak jelölése ennyi után",
+  "stale_settingHint": "Az ennyi ideje nem hallott kontaktok és átjátszók elavultként jelennek meg a listában, és halványan a térképen.",
+  "stale_off": "Ki",
+  "stale_hours": "{count, plural, other{{count} ó}}",
+  "stale_days": "{count, plural, other{{count} nap}}",
+  "stale_badge": "elavult · {age}",
+  "rangeRings_toggle": "Távolsággyűrűk",
+  "rangeRings_hint": "Távolsággyűrűk a pozíciód körül, a nézethez igazítva",
+  "rangeRings_noPosition": "A pozíciód még nem ismert, ezért a távolsággyűrűk nem rajzolhatók meg."
 }

@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -13880,4 +13881,50 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get messageFilter_ghostIconTooltip => 'Skryté vaším filtrom správ';
+
+  @override
+  String get stale_setting => 'Označiť uzly ako neaktuálne po';
+
+  @override
+  String get stale_settingHint =>
+      'Kontakty a opakovače, ktoré neboli tak dlho počuť, sa v zozname označia ako neaktuálne a na mape zoslabnú.';
+
+  @override
+  String get stale_off => 'Vyp.';
+
+  @override
+  String stale_hours(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count h',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String stale_days(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count d',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String stale_badge(String age) {
+    return 'neaktuálny · $age';
+  }
+
+  @override
+  String get rangeRings_toggle => 'Kruhy vzdialenosti';
+
+  @override
+  String get rangeRings_hint =>
+      'Kruhy vzdialenosti okolo vašej polohy, podľa zobrazenia';
+
+  @override
+  String get rangeRings_noPosition =>
+      'Vaša poloha ešte nie je známa, preto nie je možné nakresliť kruhy vzdialenosti.';
 }

@@ -5234,5 +5234,14 @@
   "messageFilter_filterSenderConfirm": "Alle berichten van „{name}” verbergen?",
   "messageFilter_filterLikeThis": "Berichten zoals dit filteren…",
   "messageFilter_channelToggle": "Berichten in dit kanaal filteren",
-  "messageFilter_ghostIconTooltip": "Verborgen door je berichtenfilter"
+  "messageFilter_ghostIconTooltip": "Verborgen door je berichtenfilter",
+  "stale_setting": "Nodes als verouderd markeren na",
+  "stale_settingHint": "Contacten en repeaters die zo lang niet gehoord zijn, worden in de lijst als verouderd gemarkeerd en op de kaart vervaagd.",
+  "stale_off": "Uit",
+  "stale_hours": "{count, plural, other{{count} u}}",
+  "stale_days": "{count, plural, =1{1 dag} other{{count} dagen}}",
+  "stale_badge": "verouderd · {age}",
+  "rangeRings_toggle": "Afstandsringen",
+  "rangeRings_hint": "Afstandsringen rond je positie, passend bij het beeld",
+  "rangeRings_noPosition": "Je positie is nog niet bekend, dus afstandsringen kunnen niet getekend worden."
 }

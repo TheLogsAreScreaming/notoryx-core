@@ -5239,5 +5239,14 @@
   "messageFilter_filterSenderConfirm": "要隐藏来自“{name}”的所有消息吗？",
   "messageFilter_filterLikeThis": "过滤类似的消息…",
   "messageFilter_channelToggle": "过滤此频道中的消息",
-  "messageFilter_ghostIconTooltip": "已被你的消息过滤隐藏"
+  "messageFilter_ghostIconTooltip": "已被你的消息过滤隐藏",
+  "stale_setting": "节点标记为过时的时间",
+  "stale_settingHint": "超过此时间未收到的联系人和中继器会在列表中标记为过时，并在地图上淡化显示。",
+  "stale_off": "关闭",
+  "stale_hours": "{count, plural, other{{count} 小时}}",
+  "stale_days": "{count, plural, other{{count} 天}}",
+  "stale_badge": "过时 · {age}",
+  "rangeRings_toggle": "距离圈",
+  "rangeRings_hint": "以你的位置为中心、按视图大小绘制的距离圈",
+  "rangeRings_noPosition": "你的位置尚未知，无法绘制距离圈。"
 }
