@@ -42,6 +42,8 @@ import 'coverage_hex_screen.dart';
 import 'prefix_tool_screen.dart';
 import 'repeater_ping_screen.dart';
 import 'settings_screen.dart';
+import 'app_settings_screen.dart';
+import 'message_filter_settings_screen.dart';
 import 'timeline_screen.dart';
 import 'track_log_screen.dart';
 import 'wardrive_screen.dart';
@@ -108,6 +110,22 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
                 '${l10n.bg_kindSolid}, ${l10n.bg_kindLinear}, '
                 '${l10n.bg_kindMesh}, ${l10n.bg_kindPhoto}',
             builder: (_) => const BackdropSettingsScreen(),
+            searchOnly: true,
+          ),
+          // App Settings and the message filter live in Settings, two
+          // screens deep; search finds them here too.
+          _ToolAction(
+            icon: Icons.settings_outlined,
+            title: l10n.settings_appSettings,
+            subtitle: l10n.settings_appSettingsSubtitle,
+            builder: (_) => const AppSettingsScreen(),
+            searchOnly: true,
+          ),
+          _ToolAction(
+            icon: Icons.filter_alt_outlined,
+            title: l10n.messageFilter_title,
+            subtitle: l10n.messageFilter_settingsSubtitle,
+            builder: (_) => const MessageFilterSettingsScreen(),
             searchOnly: true,
           ),
           _ToolAction(

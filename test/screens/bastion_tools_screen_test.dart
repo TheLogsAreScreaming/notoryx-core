@@ -22,6 +22,22 @@ Future<void> _pump(WidgetTester tester, {double textScale = 1}) async {
 }
 
 void main() {
+  testWidgets('search finds the message filter and App Settings', (
+    tester,
+  ) async {
+    await _pump(tester);
+    expect(find.text('Message filter'), findsNothing);
+    await tester.enterText(find.byType(TextField), 'filter');
+    await tester.pumpAndSettle();
+    expect(find.text('Message filter'), findsOneWidget);
+    await tester.enterText(find.byType(TextField), 'spam');
+    await tester.pumpAndSettle();
+    expect(find.text('Message filter'), findsOneWidget);
+    await tester.enterText(find.byType(TextField), 'notifications');
+    await tester.pumpAndSettle();
+    expect(find.text('App Settings'), findsOneWidget);
+  });
+
   testWidgets('search ignores case and edge whitespace and clears', (
     tester,
   ) async {
