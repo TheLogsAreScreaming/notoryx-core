@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -13043,4 +13044,47 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get messageFilter_ghostIconTooltip => '已被你的消息过滤隐藏';
+
+  @override
+  String get stale_setting => '节点标记为过时的时间';
+
+  @override
+  String get stale_settingHint => '超过此时间未收到的联系人和中继器会在列表中标记为过时，并在地图上淡化显示。';
+
+  @override
+  String get stale_off => '关闭';
+
+  @override
+  String stale_hours(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 小时',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String stale_days(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 天',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String stale_badge(String age) {
+    return '过时 · $age';
+  }
+
+  @override
+  String get rangeRings_toggle => '距离圈';
+
+  @override
+  String get rangeRings_hint => '以你的位置为中心、按视图大小绘制的距离圈';
+
+  @override
+  String get rangeRings_noPosition => '你的位置尚未知，无法绘制距离圈。';
 }

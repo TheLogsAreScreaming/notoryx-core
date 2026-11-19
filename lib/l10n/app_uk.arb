@@ -5214,5 +5214,14 @@
   "messageFilter_filterSenderConfirm": "Приховати всі повідомлення від «{name}»?",
   "messageFilter_filterLikeThis": "Фільтрувати повідомлення, схожі на це…",
   "messageFilter_channelToggle": "Фільтрувати повідомлення в цьому каналі",
-  "messageFilter_ghostIconTooltip": "Приховано вашим фільтром повідомлень"
+  "messageFilter_ghostIconTooltip": "Приховано вашим фільтром повідомлень",
+  "stale_setting": "Позначати вузли застарілими через",
+  "stale_settingHint": "Контакти й ретранслятори, яких не було чути стільки часу, позначаються у списку як застарілі й бліднуть на мапі.",
+  "stale_off": "Вимк.",
+  "stale_hours": "{count, plural, other{{count} год}}",
+  "stale_days": "{count, plural, other{{count} дн.}}",
+  "stale_badge": "застарілий · {age}",
+  "rangeRings_toggle": "Кільця відстані",
+  "rangeRings_hint": "Кільця відстані навколо вашої позиції, за розміром огляду",
+  "rangeRings_noPosition": "Ваша позиція ще невідома, тому кільця відстані не можна намалювати."
 }

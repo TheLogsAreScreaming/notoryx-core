@@ -5368,5 +5368,14 @@
   "messageFilter_filterSenderConfirm": "「{name}」からのメッセージをすべて隠しますか？",
   "messageFilter_filterLikeThis": "このようなメッセージをフィルター…",
   "messageFilter_channelToggle": "このチャンネルでメッセージをフィルター",
-  "messageFilter_ghostIconTooltip": "メッセージフィルターで隠されました"
+  "messageFilter_ghostIconTooltip": "メッセージフィルターで隠されました",
+  "stale_setting": "ノードを古いとみなすまで",
+  "stale_settingHint": "この期間受信がない連絡先とリピーターは、リストで古いと表示され、地図では薄く表示されます。",
+  "stale_off": "オフ",
+  "stale_hours": "{count, plural, other{{count}時間}}",
+  "stale_days": "{count, plural, other{{count}日}}",
+  "stale_badge": "古い · {age}",
+  "rangeRings_toggle": "距離リング",
+  "rangeRings_hint": "表示範囲に合わせた、現在地を中心とする距離リング",
+  "rangeRings_noPosition": "現在地がまだ不明なため、距離リングを描けません。"
 }

@@ -4537,5 +4537,14 @@
   "messageFilter_filterSenderConfirm": "Скрывать все сообщения от «{name}»?",
   "messageFilter_filterLikeThis": "Фильтровать похожие сообщения…",
   "messageFilter_channelToggle": "Фильтровать сообщения в этом канале",
-  "messageFilter_ghostIconTooltip": "Скрыто вашим фильтром сообщений"
+  "messageFilter_ghostIconTooltip": "Скрыто вашим фильтром сообщений",
+  "stale_setting": "Отмечать узлы устаревшими через",
+  "stale_settingHint": "Контакты и ретрансляторы, которых не было слышно столько времени, отмечаются в списке как устаревшие и бледнеют на карте.",
+  "stale_off": "Выкл.",
+  "stale_hours": "{count, plural, other{{count} ч}}",
+  "stale_days": "{count, plural, other{{count} дн.}}",
+  "stale_badge": "устарел · {age}",
+  "rangeRings_toggle": "Кольца дальности",
+  "rangeRings_hint": "Кольца дальности вокруг вашей позиции, по размеру вида",
+  "rangeRings_noPosition": "Ваша позиция пока неизвестна, поэтому кольца дальности нельзя нарисовать."
 }

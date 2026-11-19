@@ -178,6 +178,13 @@ class AppSettings {
   /// Map shows only favourite (trusted) nodes.
   final bool mapFavoritesOnly;
 
+  /// Hours a node may go unheard (no advert) before it's shown as stale in
+  /// the contacts list and faded on the map. 0 turns it off.
+  final int staleAfterHours;
+
+  /// Whether the map draws distance rings around your own position.
+  final bool mapShowRangeRings;
+
   /// Signs every channel post, not only SOS. Each signature is one extra
   /// packet on air.
   final bool signChannelPosts;
@@ -321,6 +328,8 @@ class AppSettings {
     this.mapShowTelemetry = false,
     this.mapTelemetryMetric = 'battery',
     this.mapFavoritesOnly = false,
+    this.staleAfterHours = 24,
+    this.mapShowRangeRings = false,
     this.signChannelPosts = false,
     this.reactionsOverRadio = 'auto',
     this.appTheme = 'blaze',
@@ -421,6 +430,8 @@ class AppSettings {
       'map_show_telemetry': mapShowTelemetry,
       'map_telemetry_metric': mapTelemetryMetric,
       'map_favorites_only': mapFavoritesOnly,
+      'stale_after_hours': staleAfterHours,
+      'map_show_range_rings': mapShowRangeRings,
       'sign_channel_posts': signChannelPosts,
       'reactions_over_radio': reactionsOverRadio,
       'app_theme': appTheme,
@@ -560,6 +571,8 @@ class AppSettings {
       mapShowTelemetry: json['map_show_telemetry'] as bool? ?? false,
       mapTelemetryMetric: json['map_telemetry_metric'] as String? ?? 'battery',
       mapFavoritesOnly: json['map_favorites_only'] as bool? ?? false,
+      staleAfterHours: json['stale_after_hours'] as int? ?? 24,
+      mapShowRangeRings: json['map_show_range_rings'] as bool? ?? false,
       signChannelPosts: json['sign_channel_posts'] as bool? ?? false,
       reactionsOverRadio: switch (json['reactions_over_radio']) {
         final String v when const {'auto', 'on', 'off'}.contains(v) => v,
@@ -710,6 +723,8 @@ class AppSettings {
     bool? mapShowTelemetry,
     String? mapTelemetryMetric,
     bool? mapFavoritesOnly,
+    int? staleAfterHours,
+    bool? mapShowRangeRings,
     bool? signChannelPosts,
     String? reactionsOverRadio,
     String? appTheme,
@@ -807,6 +822,8 @@ class AppSettings {
       mapShowTelemetry: mapShowTelemetry ?? this.mapShowTelemetry,
       mapTelemetryMetric: mapTelemetryMetric ?? this.mapTelemetryMetric,
       mapFavoritesOnly: mapFavoritesOnly ?? this.mapFavoritesOnly,
+      staleAfterHours: staleAfterHours ?? this.staleAfterHours,
+      mapShowRangeRings: mapShowRangeRings ?? this.mapShowRangeRings,
       signChannelPosts: signChannelPosts ?? this.signChannelPosts,
       reactionsOverRadio: reactionsOverRadio ?? this.reactionsOverRadio,
       appTheme: appTheme ?? this.appTheme,

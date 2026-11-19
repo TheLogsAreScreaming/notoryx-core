@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -13936,4 +13937,51 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get messageFilter_ghostIconTooltip =>
       'Nascosto dal tuo filtro messaggi';
+
+  @override
+  String get stale_setting => 'Segna i nodi come inattivi dopo';
+
+  @override
+  String get stale_settingHint =>
+      'Contatti e ripetitori non sentiti da così tanto sono segnati come inattivi nell\'elenco e sbiaditi sulla mappa.';
+
+  @override
+  String get stale_off => 'Disattivato';
+
+  @override
+  String stale_hours(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count h',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String stale_days(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count giorni',
+      one: '1 giorno',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String stale_badge(String age) {
+    return 'inattivo · $age';
+  }
+
+  @override
+  String get rangeRings_toggle => 'Anelli di distanza';
+
+  @override
+  String get rangeRings_hint =>
+      'Anelli di distanza attorno alla tua posizione, adattati alla vista';
+
+  @override
+  String get rangeRings_noPosition =>
+      'La tua posizione non è ancora nota, quindi gli anelli di distanza non possono essere disegnati.';
 }

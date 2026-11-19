@@ -414,6 +414,14 @@ class AppSettingsService extends ChangeNotifier {
     await updateSettings(_settings.copyWith(mapFavoritesOnly: value));
   }
 
+  Future<void> setStaleAfterHours(int value) async {
+    await updateSettings(_settings.copyWith(staleAfterHours: value));
+  }
+
+  Future<void> setMapShowRangeRings(bool value) async {
+    await updateSettings(_settings.copyWith(mapShowRangeRings: value));
+  }
+
   Future<void> setMapTelemetryMetric(String value) async {
     await updateSettings(_settings.copyWith(mapTelemetryMetric: value));
   }
