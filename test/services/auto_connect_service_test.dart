@@ -10,7 +10,7 @@ class _Radio extends MeshCoreConnector {
   SavedRadio? saved = const SavedRadio(
     transport: SavedRadioTransport.bluetooth,
     address: 'AA:BB',
-    name: 'DirtyDanFullSend',
+    name: 'Test Radio',
   );
   MeshCoreConnectionState current = MeshCoreConnectionState.disconnected;
   int attempts = 0;
