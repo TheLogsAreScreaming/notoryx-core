@@ -1,0 +1,2 @@
+• Fixes the app hanging on the start screen on Android
+• Stale-node ages and range-ring label fixes
