@@ -41,7 +41,7 @@ jobs:
       - name: Test
         run: flutter test
       - name: Build universal macOS app
-        run: flutter build macos --release
+        run: flutter build macos --dart-define=GIPHY_API_KEY=${{ secrets.GIPHY_API_KEY }} --release
       - name: Check the app runs on Intel and Apple silicon
         run: |
           APP="build/macos/Build/Products/Release/NOTORYX Core.app"

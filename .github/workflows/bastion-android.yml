@@ -69,7 +69,7 @@ jobs:
       - name: Test
         run: flutter test --timeout 2m
       - name: Build Bastion RC1 APK
-        run: flutter build apk --release --target-platform android-arm64 --target lib/main.dart
+        run: flutter build apk --dart-define=GIPHY_API_KEY=${{ secrets.GIPHY_API_KEY }} --release --target-platform android-arm64 --target lib/main.dart
       - name: Verify packaged Bastion icon resources
         run: |
           APK=build/app/outputs/flutter-apk/app-release.apk

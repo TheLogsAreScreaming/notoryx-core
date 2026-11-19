@@ -82,7 +82,7 @@ jobs:
         run: |
           set -euo pipefail
           version=$(sed -n 's/^version: *\([^+]*\).*/\1/p' pubspec.yaml)
-          flutter build apk --release --target-platform android-arm64 --no-pub \
+          flutter build apk --dart-define=GIPHY_API_KEY=${{ secrets.GIPHY_API_KEY }} --release --target-platform android-arm64 --no-pub \
             --build-name "${version}-lite"
 
       - name: Check what's inside
