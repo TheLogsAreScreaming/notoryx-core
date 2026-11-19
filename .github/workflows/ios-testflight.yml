@@ -44,7 +44,7 @@ jobs:
       - run: flutter pub get
       - name: Prepare the Flutter build
         run: |
-          flutter build ios --release --no-codesign --no-pub \
+          flutter build ios --dart-define=GIPHY_API_KEY=${{ secrets.GIPHY_API_KEY }} --release --no-codesign --no-pub \
             --build-name="$VERSION" --build-number="$((1000 + GITHUB_RUN_NUMBER))"
       - name: Write the API key
         run: |

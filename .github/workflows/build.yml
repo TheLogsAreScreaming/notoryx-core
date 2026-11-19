@@ -56,7 +56,7 @@ jobs:
             sleep 10
           done
       - run: flutter pub get
-      - run: flutter build apk --release --no-pub
+      - run: flutter build apk --dart-define=GIPHY_API_KEY=${{ secrets.GIPHY_API_KEY }} --release --no-pub
 
   ios:
     if: github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main' || startsWith(github.head_ref, 'release/')
@@ -75,7 +75,7 @@ jobs:
           channel: "stable"
           cache: true
       - run: flutter pub get
-      - run: flutter build ios --release --no-codesign --no-pub
+      - run: flutter build ios --dart-define=GIPHY_API_KEY=${{ secrets.GIPHY_API_KEY }} --release --no-codesign --no-pub
 
   linux:
     # Pinned: ubuntu-latest moved to 26.04 in November 2026, and its newer
@@ -112,7 +112,7 @@ jobs:
           mv "$dir/lib/libonnxruntime.so" "$dir/lib/libonnxruntime.so.1"
           ln -s libonnxruntime.so.1 "$dir/lib/libonnxruntime.so"
           ls "$dir/include/onnxruntime_cxx_api.h" "$dir/lib/libonnxruntime.so"
-      - run: flutter build linux --release --no-pub
+      - run: flutter build linux --dart-define=GIPHY_API_KEY=${{ secrets.GIPHY_API_KEY }} --release --no-pub
 
   macos:
     if: github.event_name == 'workflow_dispatch' || github.ref == 'refs/heads/main' || startsWith(github.head_ref, 'release/')
@@ -131,7 +131,7 @@ jobs:
           channel: "stable"
           cache: true
       - run: flutter pub get
-      - run: flutter build macos --release --no-pub --obfuscate --split-debug-info=build/symbols/macos
+      - run: flutter build macos --dart-define=GIPHY_API_KEY=${{ secrets.GIPHY_API_KEY }} --release --no-pub --obfuscate --split-debug-info=build/symbols/macos
       - name: Verify and package universal Mac candidate
         run: |
           set -euo pipefail
@@ -166,4 +166,4 @@ jobs:
           channel: "stable"
           cache: true
       - run: flutter pub get
-      - run: flutter build web --release --no-pub
+      - run: flutter build web --dart-define=GIPHY_API_KEY=${{ secrets.GIPHY_API_KEY }} --release --no-pub
