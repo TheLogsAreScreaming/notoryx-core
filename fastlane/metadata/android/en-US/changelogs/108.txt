@@ -1,0 +1,4 @@
+• Live traffic map with animated packet routes
+• Stale-node badge and map range rings
+• On-device spam and repeat filter for channels
+• Reset routing settings to defaults
