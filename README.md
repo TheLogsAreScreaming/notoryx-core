@@ -18,7 +18,7 @@ NOTORYX Core turns your phone or computer and a [MeshCore](https://meshcore.io/)
   <img src="docs/screenshots/nodes.png" width="230" alt="Nodes: repeaters, people, rooms and sensors heard on the mesh">
 </p>
 
-> **Latest stable: [10.0.0](https://github.com/TheLogsAreScreaming/notoryx-core-releases/releases/tag/v10.0.0)** (14 November 2026). **Latest pre-release: [10.1.0-rc.5](https://github.com/TheLogsAreScreaming/notoryx-core-releases/releases/tag/v10.1.0-rc.5)** (15 November 2026), with everything below.
+> **Latest stable: [10.0.0](https://github.com/TheLogsAreScreaming/notoryx-core-releases/releases/tag/v10.0.0)** (14 November 2026). **Latest pre-release: [10.1.0-rc.10](https://github.com/TheLogsAreScreaming/notoryx-core-releases/releases/tag/v10.1.0-rc.10)** (19 November 2026), with everything below, including the live traffic map, stale-node badge, range rings and on-device spam filter.
 >
 > NOTORYX Core is checked by automated tests and a mesh simulator but not yet on a wide range of phones and radios: see [Known limitations](docs/KNOWN_LIMITATIONS.md). It is not a replacement for an emergency service or a satellite messenger. Please [report problems in notoryx-core-releases](https://github.com/TheLogsAreScreaming/notoryx-core-releases/issues/new/choose) (issues are off in this source repository).
 
@@ -92,6 +92,7 @@ The tabs at the bottom are **Home**, **Chats**, **Nodes**, **Map** and **More**.
 - Direct and channel messages with delivery status, reactions, GIFs and image messages. Tapping a notification opens that chat.
 - **Find channels:** a directory of public hashtag channels (local ones first), channels heard on air that you haven't joined, and **Active online**: the #channels an online analyzer has seen in use, with one-tap Join.
 - **Message search**, per-chat **drafts**, **read aloud** and on-device translation.
+- **Spam filter** for channel chats, on the device: hides likely spam, and you can mark a post as spam or not spam. SOS and emergency posts are never filtered. **Reset routing** puts the radio's routing settings back to their defaults.
 - **Reply to a message** in channels and direct chats (shown as a quote), **@mentions** with name suggestions, and **block** a sender on a channel.
 - **Reply from the notification** without opening the app. A reply that can't go out yet is saved as a draft.
 - **Offline queue:** messages written while your radio is disconnected wait above the message box and go out when it reconnects. Chats stay open while a dropped link reconnects.
@@ -112,6 +113,8 @@ The tabs at the bottom are **Home**, **Chats**, **Nodes**, **Map** and **More**.
 - Live mesh map with offline map packs, a button to jump to your position (phone GPS, or your radio's), and a **track log** that records your trail and exports GPX. **Favorites only** hides every node you haven't starred, and **Map as a list** lists nodes and waypoints nearest first for screen readers.
 - **Waypoints and routes:** save places, import GPX, KML or GeoJSON, export GPX, and see them on the map.
 - **Offline trail routing and place search:** download an area's trails and named places (peaks, huts, springs, trailheads and more) from OpenStreetMap, then plan the shortest route along trails with no signal.
+- **Live traffic map:** turn on **Traffic** to see each packet your radio hears drawn hop by hop, from where it started through each repeater to you, coloured by type.
+- **Stale nodes and range rings:** nodes not heard for a time you choose get a stale badge and fade on the map, and the map can draw distance rings around your position.
 - **Compass to any node:** **Point me to it** on a node opens a compass with an arrow, distance and "Turn left 35°". It opens from the map, the Nodes list and the path tools.
 - **Coordinates** as decimal degrees, DMS, MGRS, UTM or Maidenhead locator.
 - **Map telemetry:** battery, temperature, humidity or pressure badges on the map. Readings dim after an hour and hide after a day, and the map remembers your choice.
