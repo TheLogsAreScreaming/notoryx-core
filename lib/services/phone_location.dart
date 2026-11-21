@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:geolocator/geolocator.dart';
 
 /// One phone GPS reading.
@@ -54,8 +55,17 @@ Future<PhoneFix> freshPhoneFix(DateTime now, Duration maxAge) async {
   );
 }
 
-/// High-accuracy fixes every 20 m. Throws without permission.
-Stream<PhoneFix> phoneFixStream() async* {
+/// Text for the notification Android shows while [phoneFixStream] runs
+/// with the screen off. The app sets it in its own language.
+({String title, String text}) backgroundFixNotice = (
+  title: 'Wardrive running',
+  text: 'Tracking your position for the coverage map',
+);
+
+/// High-accuracy fixes every 20 m. Throws without permission. With
+/// [background] on Android, fixes keep coming with the screen off, behind a
+/// notification ([backgroundFixNotice]).
+Stream<PhoneFix> phoneFixStream({bool background = false}) async* {
   var permission = await Geolocator.checkPermission();
   if (permission == LocationPermission.denied) {
     permission = await Geolocator.requestPermission();
@@ -64,12 +74,22 @@ Stream<PhoneFix> phoneFixStream() async* {
       permission == LocationPermission.deniedForever) {
     throw StateError('Location permission was not granted.');
   }
-  yield* Geolocator.getPositionStream(
-    locationSettings: const LocationSettings(
-      accuracy: LocationAccuracy.high,
-      distanceFilter: 20,
-    ),
-  ).map(_fix);
+  final LocationSettings settings =
+      background && defaultTargetPlatform == TargetPlatform.android
+      ? AndroidSettings(
+          accuracy: LocationAccuracy.high,
+          distanceFilter: 20,
+          foregroundNotificationConfig: ForegroundNotificationConfig(
+            notificationTitle: backgroundFixNotice.title,
+            notificationText: backgroundFixNotice.text,
+            enableWakeLock: true,
+          ),
+        )
+      : const LocationSettings(
+          accuracy: LocationAccuracy.high,
+          distanceFilter: 20,
+        );
+  yield* Geolocator.getPositionStream(locationSettings: settings).map(_fix);
 }
 
 /// The last known fix, only if permission was already granted; never asks.

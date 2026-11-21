@@ -14269,4 +14269,150 @@ class AppLocalizationsFr extends AppLocalizations {
   String home_radioHolds(int count, int max) {
     return 'La radio contient $count contacts sur $max';
   }
+
+  @override
+  String get wardrive_modeDiscovery => 'Découverte';
+
+  @override
+  String get wardrive_modeTrace => 'Trace';
+
+  @override
+  String get wardrive_modeChannel => 'Canal';
+
+  @override
+  String get wardrive_modeHybrid => 'Hybride';
+
+  @override
+  String get wardrive_repeaters => 'relais';
+
+  @override
+  String get wardrive_skipped => 'ignorés';
+
+  @override
+  String get wardrive_pingNow => 'Pinger';
+
+  @override
+  String get wardrive_settings => 'Réglages du wardrive';
+
+  @override
+  String wardrive_gpsAccuracy(int metres) {
+    return 'GPS ±$metres m';
+  }
+
+  @override
+  String get wardrive_noGps => 'Pas de GPS du téléphone';
+
+  @override
+  String wardrive_noise(int dbm) {
+    return 'Bruit $dbm dBm';
+  }
+
+  @override
+  String get wardrive_passiveOn => 'Trafic entendu enregistré';
+
+  @override
+  String get wardrive_waitChannel =>
+      'Ajoutez le canal #wardriving pour les pings de canal.';
+
+  @override
+  String get wardrive_waitTraceTarget =>
+      'Choisissez un relais à tracer dans les réglages du wardrive.';
+
+  @override
+  String get wardrive_waitMove => 'En attente d\'un déplacement de 25 m.';
+
+  @override
+  String get wardrive_waitCovered => 'Zone déjà couverte, ping ignoré.';
+
+  @override
+  String get wardrive_interval => 'Ping toutes les';
+
+  @override
+  String get wardrive_waitForMove => 'Seulement après 25 m';
+
+  @override
+  String get wardrive_skipCovered => 'Ignorer les carrés déjà couverts';
+
+  @override
+  String wardrive_skipDays(int days) {
+    return 'Couvert : un relais vous y a entendu dans les $days derniers jours';
+  }
+
+  @override
+  String get wardrive_passive => 'Enregistrer le trafic entendu';
+
+  @override
+  String get wardrive_passiveHint =>
+      'Couverture gratuite grâce aux paquets que votre radio entend déjà. Aucun temps d\'antenne.';
+
+  @override
+  String get wardrive_traceTarget => 'Relais à tracer';
+
+  @override
+  String get wardrive_none => 'Aucun';
+
+  @override
+  String get wardrive_carRepeater => 'Mon relais de voiture';
+
+  @override
+  String get wardrive_carRepeaterHint =>
+      'Toujours ignoré : il est juste à côté de vous';
+
+  @override
+  String get wardrive_ignoreStrong => 'Ignorer les signaux de −30 dBm ou plus';
+
+  @override
+  String get wardrive_background => 'Continuer écran éteint';
+
+  @override
+  String get wardrive_backgroundHint =>
+      'Android affiche une notification pendant un trajet.';
+
+  @override
+  String get wardrive_recordNoise => 'Enregistrer le bruit de fond';
+
+  @override
+  String get wardrive_pickRepeater => 'Choisir un relais';
+
+  @override
+  String get wardrive_noRepeaters =>
+      'Aucun relais avec une clé connue. Ajoutez-en un comme contact d\'abord.';
+
+  @override
+  String get wardrive_kindPassive => 'Trafic entendu seul';
+
+  @override
+  String get wardrive_kindSkipped => 'Ignoré : déjà couvert';
+
+  @override
+  String get wardrive_notifTitle => 'Wardrive en cours';
+
+  @override
+  String get wardrive_notifText =>
+      'Suivi de votre position pour la carte de couverture';
+
+  @override
+  String wardrive_replyHere(String here) {
+    return 'Vous l\'avez entendu à $here dB';
+  }
+
+  @override
+  String wardrive_replyThere(String there) {
+    return 'Vous a entendu à $there dB';
+  }
+
+  @override
+  String get wardrive_replyRelayed => 'A relayé votre ping';
+
+  @override
+  String get wardrive_explainTrace =>
+      'Chaque ping est une trace sans saut vers le relais choisi : il mesure la qualité de liaison dans les deux sens.';
+
+  @override
+  String get wardrive_explainChannel =>
+      'Chaque ping est un message sur #wardriving. Les relais qui le transmettent montrent que vous atteignez le maillage, mais chaque ping inonde tout le maillage : utilisez un intervalle long.';
+
+  @override
+  String get wardrive_explainHybrid =>
+      'Pings de découverte et de canal en alternance : relais proches à l\'un, maillage étendu au suivant.';
 }

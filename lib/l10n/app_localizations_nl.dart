@@ -14164,4 +14164,150 @@ class AppLocalizationsNl extends AppLocalizations {
   String home_radioHolds(int count, int max) {
     return 'Radio bewaart $count van $max contacten';
   }
+
+  @override
+  String get wardrive_modeDiscovery => 'Ontdekken';
+
+  @override
+  String get wardrive_modeTrace => 'Trace';
+
+  @override
+  String get wardrive_modeChannel => 'Kanaal';
+
+  @override
+  String get wardrive_modeHybrid => 'Hybride';
+
+  @override
+  String get wardrive_repeaters => 'repeaters';
+
+  @override
+  String get wardrive_skipped => 'overgeslagen';
+
+  @override
+  String get wardrive_pingNow => 'Nu pingen';
+
+  @override
+  String get wardrive_settings => 'Wardrive-instellingen';
+
+  @override
+  String wardrive_gpsAccuracy(int metres) {
+    return 'GPS ±$metres m';
+  }
+
+  @override
+  String get wardrive_noGps => 'Geen telefoon-GPS';
+
+  @override
+  String wardrive_noise(int dbm) {
+    return 'Ruis $dbm dBm';
+  }
+
+  @override
+  String get wardrive_passiveOn => 'Gehoord verkeer wordt gelogd';
+
+  @override
+  String get wardrive_waitChannel =>
+      'Voeg het kanaal #wardriving toe voor kanaalpings.';
+
+  @override
+  String get wardrive_waitTraceTarget =>
+      'Kies een repeater voor trace in de wardrive-instellingen.';
+
+  @override
+  String get wardrive_waitMove => 'Wachten tot je 25 m verplaatst bent.';
+
+  @override
+  String get wardrive_waitCovered => 'Hier al gedekt, ping overgeslagen.';
+
+  @override
+  String get wardrive_interval => 'Ping elke';
+
+  @override
+  String get wardrive_waitForMove => 'Pas na 25 m verplaatsen';
+
+  @override
+  String get wardrive_skipCovered => 'Al gedekte vakken overslaan';
+
+  @override
+  String wardrive_skipDays(int days) {
+    return 'Gedekt betekent: een repeater hoorde je daar in de laatste $days dagen';
+  }
+
+  @override
+  String get wardrive_passive => 'Gehoord verkeer loggen';
+
+  @override
+  String get wardrive_passiveHint =>
+      'Gratis dekking uit pakketten die je radio toch al hoort. Geen zendtijd.';
+
+  @override
+  String get wardrive_traceTarget => 'Repeater voor trace';
+
+  @override
+  String get wardrive_none => 'Geen';
+
+  @override
+  String get wardrive_carRepeater => 'Mijn auto-repeater';
+
+  @override
+  String get wardrive_carRepeaterHint =>
+      'Altijd genegeerd: hij staat vlak naast je';
+
+  @override
+  String get wardrive_ignoreStrong => 'Signalen van −30 dBm of sterker negeren';
+
+  @override
+  String get wardrive_background => 'Doorgaan met scherm uit';
+
+  @override
+  String get wardrive_backgroundHint =>
+      'Android toont een melding tijdens een rit.';
+
+  @override
+  String get wardrive_recordNoise => 'Ruisvloer opnemen';
+
+  @override
+  String get wardrive_pickRepeater => 'Kies een repeater';
+
+  @override
+  String get wardrive_noRepeaters =>
+      'Nog geen repeaters met bekende sleutel. Voeg er eerst een toe als contact.';
+
+  @override
+  String get wardrive_kindPassive => 'Zelf gehoord verkeer';
+
+  @override
+  String get wardrive_kindSkipped => 'Overgeslagen: al gedekt';
+
+  @override
+  String get wardrive_notifTitle => 'Wardrive actief';
+
+  @override
+  String get wardrive_notifText =>
+      'Je positie wordt gevolgd voor de dekkingskaart';
+
+  @override
+  String wardrive_replyHere(String here) {
+    return 'Jij hoorde hem op $here dB';
+  }
+
+  @override
+  String wardrive_replyThere(String there) {
+    return 'Hoorde jou op $there dB';
+  }
+
+  @override
+  String get wardrive_replyRelayed => 'Gaf je ping door';
+
+  @override
+  String get wardrive_explainTrace =>
+      'Elke ping is een zero-hop-trace naar de gekozen repeater: hij meet hoe goed jullie elkaar horen, in beide richtingen.';
+
+  @override
+  String get wardrive_explainChannel =>
+      'Elke ping is een bericht op #wardriving. Repeaters die het doorgeven tonen dat je het bredere mesh bereikt, maar elke ping wordt door het hele mesh gestuurd: gebruik een lange interval.';
+
+  @override
+  String get wardrive_explainHybrid =>
+      'Ontdek- en kanaalpings wisselen elkaar af: nabije repeaters bij de ene, het bredere mesh bij de volgende.';
 }

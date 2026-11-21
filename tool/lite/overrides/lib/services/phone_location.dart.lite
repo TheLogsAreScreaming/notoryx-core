@@ -12,7 +12,9 @@ Future<PhoneFix?> askForPhoneFix() async => null;
 Future<PhoneFix> freshPhoneFix(DateTime now, Duration maxAge) async =>
     throw UnsupportedError('The lite build has no phone GPS.');
 
-Stream<PhoneFix> phoneFixStream() =>
+({String title, String text}) backgroundFixNotice = (title: '', text: '');
+
+Stream<PhoneFix> phoneFixStream({bool background = false}) =>
     Stream.error(StateError('The lite build has no phone GPS.'));
 
 Future<PhoneFix?> lastKnownPhoneFix() async => null;

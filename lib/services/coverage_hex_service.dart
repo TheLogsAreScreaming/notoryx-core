@@ -112,10 +112,12 @@ class FileCoverageStore implements CoverageStore {
   }
 }
 
-/// Phone GPS while mapping is on: high accuracy, a reading every 20 m.
-Stream<PositionFix> geolocatorFixes() => phoneFixStream().map(
-  (p) => PositionFix(p.lat, p.lon, p.accuracyMeters, p.time),
-);
+/// Phone GPS while mapping is on: high accuracy, a reading every 20 m. With
+/// [background], it keeps going with the screen off (Android).
+Stream<PositionFix> geolocatorFixes({bool background = false}) =>
+    phoneFixStream(
+      background: background,
+    ).map((p) => PositionFix(p.lat, p.lon, p.accuracyMeters, p.time));
 
 /// Coverage mapping: while on, every packet the radio hears is credited to
 /// the hexagon the phone is in, and finished samples are uploaded to the

@@ -14104,4 +14104,150 @@ class AppLocalizationsSv extends AppLocalizations {
   String home_radioHolds(int count, int max) {
     return 'Radion har $count av $max kontakter';
   }
+
+  @override
+  String get wardrive_modeDiscovery => 'Upptäck';
+
+  @override
+  String get wardrive_modeTrace => 'Spåra';
+
+  @override
+  String get wardrive_modeChannel => 'Kanal';
+
+  @override
+  String get wardrive_modeHybrid => 'Hybrid';
+
+  @override
+  String get wardrive_repeaters => 'repeatrar';
+
+  @override
+  String get wardrive_skipped => 'hoppade över';
+
+  @override
+  String get wardrive_pingNow => 'Pinga nu';
+
+  @override
+  String get wardrive_settings => 'Wardrive-inställningar';
+
+  @override
+  String wardrive_gpsAccuracy(int metres) {
+    return 'GPS ±$metres m';
+  }
+
+  @override
+  String get wardrive_noGps => 'Ingen GPS i telefonen';
+
+  @override
+  String wardrive_noise(int dbm) {
+    return 'Brus $dbm dBm';
+  }
+
+  @override
+  String get wardrive_passiveOn => 'Loggar hörd trafik';
+
+  @override
+  String get wardrive_waitChannel =>
+      'Lägg till kanalen #wardriving för kanalpingar.';
+
+  @override
+  String get wardrive_waitTraceTarget =>
+      'Välj en repeater att spåra i wardrive-inställningarna.';
+
+  @override
+  String get wardrive_waitMove => 'Väntar tills du flyttat dig 25 m.';
+
+  @override
+  String get wardrive_waitCovered => 'Redan täckt här, pingen hoppas över.';
+
+  @override
+  String get wardrive_interval => 'Pinga var';
+
+  @override
+  String get wardrive_waitForMove => 'Först efter 25 m förflyttning';
+
+  @override
+  String get wardrive_skipCovered => 'Hoppa över redan täckta rutor';
+
+  @override
+  String wardrive_skipDays(int days) {
+    return 'Täckt betyder att en repeater hörde dig där de senaste $days dagarna';
+  }
+
+  @override
+  String get wardrive_passive => 'Logga trafik du hör';
+
+  @override
+  String get wardrive_passiveHint =>
+      'Gratis täckning från paket radion ändå hör. Ingen sändningstid.';
+
+  @override
+  String get wardrive_traceTarget => 'Repeater att spåra';
+
+  @override
+  String get wardrive_none => 'Ingen';
+
+  @override
+  String get wardrive_carRepeater => 'Min bil-repeater';
+
+  @override
+  String get wardrive_carRepeaterHint =>
+      'Ignoreras alltid: den sitter precis bredvid dig';
+
+  @override
+  String get wardrive_ignoreStrong =>
+      'Ignorera signaler på −30 dBm eller starkare';
+
+  @override
+  String get wardrive_background => 'Fortsätt med skärmen avstängd';
+
+  @override
+  String get wardrive_backgroundHint =>
+      'Android visar en avisering under en körning.';
+
+  @override
+  String get wardrive_recordNoise => 'Spela in brusgolvet';
+
+  @override
+  String get wardrive_pickRepeater => 'Välj en repeater';
+
+  @override
+  String get wardrive_noRepeaters =>
+      'Inga repeatrar med känd nyckel än. Lägg till en som kontakt först.';
+
+  @override
+  String get wardrive_kindPassive => 'Trafik hörd på egen hand';
+
+  @override
+  String get wardrive_kindSkipped => 'Hoppades över: redan täckt';
+
+  @override
+  String get wardrive_notifTitle => 'Wardrive pågår';
+
+  @override
+  String get wardrive_notifText => 'Följer din position för täckningskartan';
+
+  @override
+  String wardrive_replyHere(String here) {
+    return 'Du hörde den på $here dB';
+  }
+
+  @override
+  String wardrive_replyThere(String there) {
+    return 'Hörde dig på $there dB';
+  }
+
+  @override
+  String get wardrive_replyRelayed => 'Skickade vidare din ping';
+
+  @override
+  String get wardrive_explainTrace =>
+      'Varje ping är en spårning utan hopp till repeatern du valt: den mäter hur väl ni hör varandra, åt båda hållen.';
+
+  @override
+  String get wardrive_explainChannel =>
+      'Varje ping är ett meddelande till #wardriving. Repeatrar som skickar det vidare visar att du når det större nätet, men varje ping sprids över hela nätet, så använd ett långt intervall.';
+
+  @override
+  String get wardrive_explainHybrid =>
+      'Upptäckts- och kanalpingar turas om: närliggande repeatrar på den ena, det större nätet på nästa.';
 }

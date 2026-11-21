@@ -14189,4 +14189,151 @@ class AppLocalizationsPt extends AppLocalizations {
   String home_radioHolds(int count, int max) {
     return 'O rádio guarda $count de $max contactos';
   }
+
+  @override
+  String get wardrive_modeDiscovery => 'Descoberta';
+
+  @override
+  String get wardrive_modeTrace => 'Traço';
+
+  @override
+  String get wardrive_modeChannel => 'Canal';
+
+  @override
+  String get wardrive_modeHybrid => 'Híbrido';
+
+  @override
+  String get wardrive_repeaters => 'repetidores';
+
+  @override
+  String get wardrive_skipped => 'ignorados';
+
+  @override
+  String get wardrive_pingNow => 'Fazer ping';
+
+  @override
+  String get wardrive_settings => 'Definições de wardrive';
+
+  @override
+  String wardrive_gpsAccuracy(int metres) {
+    return 'GPS ±$metres m';
+  }
+
+  @override
+  String get wardrive_noGps => 'Sem GPS do telemóvel';
+
+  @override
+  String wardrive_noise(int dbm) {
+    return 'Ruído $dbm dBm';
+  }
+
+  @override
+  String get wardrive_passiveOn => 'A registar tráfego ouvido';
+
+  @override
+  String get wardrive_waitChannel =>
+      'Adicione o canal #wardriving para usar pings de canal.';
+
+  @override
+  String get wardrive_waitTraceTarget =>
+      'Escolha um repetidor para o traço nas definições de wardrive.';
+
+  @override
+  String get wardrive_waitMove => 'À espera que se mova 25 m.';
+
+  @override
+  String get wardrive_waitCovered => 'Zona já coberta, ping ignorado.';
+
+  @override
+  String get wardrive_interval => 'Ping a cada';
+
+  @override
+  String get wardrive_waitForMove => 'Só depois de mover 25 m';
+
+  @override
+  String get wardrive_skipCovered => 'Ignorar quadrados já cobertos';
+
+  @override
+  String wardrive_skipDays(int days) {
+    return 'Coberto: um repetidor ouviu-o ali nos últimos $days dias';
+  }
+
+  @override
+  String get wardrive_passive => 'Registar o tráfego que ouve';
+
+  @override
+  String get wardrive_passiveHint =>
+      'Cobertura gratuita com pacotes que o rádio já ouve. Sem tempo de antena.';
+
+  @override
+  String get wardrive_traceTarget => 'Repetidor para o traço';
+
+  @override
+  String get wardrive_none => 'Nenhum';
+
+  @override
+  String get wardrive_carRepeater => 'O meu repetidor do carro';
+
+  @override
+  String get wardrive_carRepeaterHint =>
+      'Sempre ignorado: está mesmo ao seu lado';
+
+  @override
+  String get wardrive_ignoreStrong =>
+      'Ignorar sinais de −30 dBm ou mais fortes';
+
+  @override
+  String get wardrive_background => 'Continuar com o ecrã desligado';
+
+  @override
+  String get wardrive_backgroundHint =>
+      'O Android mostra uma notificação durante o percurso.';
+
+  @override
+  String get wardrive_recordNoise => 'Registar o ruído de fundo';
+
+  @override
+  String get wardrive_pickRepeater => 'Escolher um repetidor';
+
+  @override
+  String get wardrive_noRepeaters =>
+      'Ainda não há repetidores com chave conhecida. Adicione um como contacto primeiro.';
+
+  @override
+  String get wardrive_kindPassive => 'Tráfego ouvido sozinho';
+
+  @override
+  String get wardrive_kindSkipped => 'Ignorado: já coberto';
+
+  @override
+  String get wardrive_notifTitle => 'Wardrive em curso';
+
+  @override
+  String get wardrive_notifText =>
+      'A seguir a sua posição para o mapa de cobertura';
+
+  @override
+  String wardrive_replyHere(String here) {
+    return 'Ouviu-o a $here dB';
+  }
+
+  @override
+  String wardrive_replyThere(String there) {
+    return 'Ouviu-o a $there dB';
+  }
+
+  @override
+  String get wardrive_replyRelayed => 'Retransmitiu o seu ping';
+
+  @override
+  String get wardrive_explainTrace =>
+      'Cada ping é um traço sem saltos ao repetidor escolhido: mede quão bem se ouvem, nos dois sentidos.';
+
+  @override
+  String get wardrive_explainChannel =>
+      'Cada ping é uma mensagem para #wardriving. Os repetidores que a retransmitem mostram que chega à malha mais ampla, mas cada ping inunda toda a malha: use um intervalo longo.';
+
+  @override
+  String get wardrive_explainHybrid =>
+      'Pings de descoberta e de canal alternam: repetidores próximos num, a malha mais ampla no seguinte.';
 }

@@ -14224,4 +14224,150 @@ class AppLocalizationsIt extends AppLocalizations {
   String home_radioHolds(int count, int max) {
     return 'La radio contiene $count contatti su $max';
   }
+
+  @override
+  String get wardrive_modeDiscovery => 'Scoperta';
+
+  @override
+  String get wardrive_modeTrace => 'Traccia';
+
+  @override
+  String get wardrive_modeChannel => 'Canale';
+
+  @override
+  String get wardrive_modeHybrid => 'Ibrido';
+
+  @override
+  String get wardrive_repeaters => 'ripetitori';
+
+  @override
+  String get wardrive_skipped => 'saltati';
+
+  @override
+  String get wardrive_pingNow => 'Ping ora';
+
+  @override
+  String get wardrive_settings => 'Impostazioni wardrive';
+
+  @override
+  String wardrive_gpsAccuracy(int metres) {
+    return 'GPS ±$metres m';
+  }
+
+  @override
+  String get wardrive_noGps => 'Nessun GPS del telefono';
+
+  @override
+  String wardrive_noise(int dbm) {
+    return 'Rumore $dbm dBm';
+  }
+
+  @override
+  String get wardrive_passiveOn => 'Registrazione del traffico udito';
+
+  @override
+  String get wardrive_waitChannel =>
+      'Aggiungi il canale #wardriving per i ping di canale.';
+
+  @override
+  String get wardrive_waitTraceTarget =>
+      'Scegli un ripetitore da tracciare nelle impostazioni wardrive.';
+
+  @override
+  String get wardrive_waitMove => 'In attesa che ti sposti di 25 m.';
+
+  @override
+  String get wardrive_waitCovered => 'Zona già coperta, ping saltato.';
+
+  @override
+  String get wardrive_interval => 'Ping ogni';
+
+  @override
+  String get wardrive_waitForMove => 'Solo dopo 25 m';
+
+  @override
+  String get wardrive_skipCovered => 'Salta i quadrati già coperti';
+
+  @override
+  String wardrive_skipDays(int days) {
+    return 'Coperto: un ripetitore ti ha sentito lì negli ultimi $days giorni';
+  }
+
+  @override
+  String get wardrive_passive => 'Registra il traffico che senti';
+
+  @override
+  String get wardrive_passiveHint =>
+      'Copertura gratuita dai pacchetti che la radio sente comunque. Nessun tempo di trasmissione.';
+
+  @override
+  String get wardrive_traceTarget => 'Ripetitore da tracciare';
+
+  @override
+  String get wardrive_none => 'Nessuno';
+
+  @override
+  String get wardrive_carRepeater => 'Il mio ripetitore in auto';
+
+  @override
+  String get wardrive_carRepeaterHint =>
+      'Sempre ignorato: è proprio accanto a te';
+
+  @override
+  String get wardrive_ignoreStrong => 'Ignora segnali da −30 dBm in su';
+
+  @override
+  String get wardrive_background => 'Continua a schermo spento';
+
+  @override
+  String get wardrive_backgroundHint =>
+      'Android mostra una notifica durante il percorso.';
+
+  @override
+  String get wardrive_recordNoise => 'Registra il rumore di fondo';
+
+  @override
+  String get wardrive_pickRepeater => 'Scegli un ripetitore';
+
+  @override
+  String get wardrive_noRepeaters =>
+      'Nessun ripetitore con chiave nota. Aggiungine uno come contatto.';
+
+  @override
+  String get wardrive_kindPassive => 'Traffico sentito da solo';
+
+  @override
+  String get wardrive_kindSkipped => 'Saltato: già coperto';
+
+  @override
+  String get wardrive_notifTitle => 'Wardrive in corso';
+
+  @override
+  String get wardrive_notifText =>
+      'Tracciamento della posizione per la mappa di copertura';
+
+  @override
+  String wardrive_replyHere(String here) {
+    return 'L\'hai sentito a $here dB';
+  }
+
+  @override
+  String wardrive_replyThere(String there) {
+    return 'Ti ha sentito a $there dB';
+  }
+
+  @override
+  String get wardrive_replyRelayed => 'Ha inoltrato il tuo ping';
+
+  @override
+  String get wardrive_explainTrace =>
+      'Ogni ping è una traccia a zero salti verso il ripetitore scelto: misura quanto bene vi sentite, in entrambe le direzioni.';
+
+  @override
+  String get wardrive_explainChannel =>
+      'Ogni ping è un messaggio su #wardriving. I ripetitori che lo inoltrano mostrano che raggiungi la rete più ampia, ma ogni ping viene diffuso ovunque: usa un intervallo lungo.';
+
+  @override
+  String get wardrive_explainHybrid =>
+      'Ping di scoperta e di canale si alternano: ripetitori vicini in uno, rete più ampia nel successivo.';
 }

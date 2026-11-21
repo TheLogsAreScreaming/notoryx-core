@@ -146,9 +146,9 @@ class _NearbyRepeaterTestScreenState extends State<NearbyRepeaterTestScreen> {
   Widget _row(AppLocalizations l10n, NearbyRepeater r) {
     final name = r.name ?? l10n.rptTest_unknown(r.prefix.toUpperCase());
     final quality = _quality(l10n, r.link);
-    final there = r.reply.snrThere.toStringAsFixed(1);
-    final here = r.reply.snrHere.toStringAsFixed(1);
-    final rssi = '${r.reply.rssiHere}';
+    final there = r.reply.snrThere?.toStringAsFixed(1) ?? '—';
+    final here = r.reply.snrHere?.toStringAsFixed(1) ?? '—';
+    final rssi = '${r.reply.rssiHere ?? '—'}';
     return Semantics(
       container: true,
       label: l10n.rptTest_rowLabel(name, quality, there, here, rssi),
