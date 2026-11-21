@@ -14157,4 +14157,7 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get sarneg_decodeA11y => 'Dekodiraj števila SARNEG';
+
+  @override
+  String get sarneg_wordHidden => 'Kodna beseda skrita';
 }

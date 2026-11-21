@@ -13279,4 +13279,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get sarneg_decodeA11y => '解码 SARNEG 数字';
+
+  @override
+  String get sarneg_wordHidden => '代码词已隐藏';
 }

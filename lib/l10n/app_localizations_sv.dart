@@ -14064,4 +14064,7 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get sarneg_decodeA11y => 'Avkoda SARNEG-siffror';
+
+  @override
+  String get sarneg_wordHidden => 'Kodordet är dolt';
 }

@@ -14124,4 +14124,7 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get sarneg_decodeA11y => 'SARNEG-getallen decoderen';
+
+  @override
+  String get sarneg_wordHidden => 'Codewoord verborgen';
 }
