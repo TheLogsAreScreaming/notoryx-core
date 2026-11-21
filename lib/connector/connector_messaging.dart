@@ -412,6 +412,8 @@ extension _ConnectorMessaging on MeshCoreConnector {
     final evicted = oldest;
     _contacts.removeWhere((c) => c.publicKeyHex == evicted.publicKeyHex);
     _knownContactKeys.remove(evicted.publicKeyHex);
+    // The radio forgets it; this app keeps it in the heard-node list.
+    _keepDroppedContact(evicted);
     appLogger.info(
       'Contact table full; radio replaced ${evicted.name} with ${contact.name}',
       tag: 'Connector',

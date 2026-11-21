@@ -7528,5 +7528,9 @@
   "discoveredContacts_importNone": "No nodes found",
   "discoveredContacts_importNotConnected": "Connect to your radio first",
   "discoveredContacts_importResult": "{added} new, {updated} updated, {skipped} skipped",
-  "@discoveredContacts_importResult": {"placeholders": {"added": {"type": "int"}, "updated": {"type": "int"}, "skipped": {"type": "int"}}}
+  "@discoveredContacts_importResult": {"placeholders": {"added": {"type": "int"}, "updated": {"type": "int"}, "skipped": {"type": "int"}}},
+  "home_knownNodes": "Chats {chats} · Repeaters {repeaters} · Rooms {rooms}",
+  "@home_knownNodes": {"placeholders": {"chats": {"type": "int"}, "repeaters": {"type": "int"}, "rooms": {"type": "int"}}},
+  "home_radioHolds": "Radio holds {count} of {max} contacts",
+  "@home_radioHolds": {"placeholders": {"count": {"type": "int"}, "max": {"type": "int"}}}
 }
