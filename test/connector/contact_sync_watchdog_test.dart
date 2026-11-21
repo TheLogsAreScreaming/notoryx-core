@@ -152,6 +152,12 @@ void main() {
       radio.handleFrameForTest([respCodeEndOfContacts]);
       expect(radio.contacts.map((c) => c.name), ['Sam']);
       expect(radio.knownContactKeys, isNot(contains(alex())));
+      expect(
+        radio.discoveredContacts.map((c) => c.name),
+        contains('Alex'),
+        reason: 'the app keeps a contact the radio forgot as a heard node',
+      );
+      expect(radio.knownNodeCounts.total, 2, reason: 'Sam and Alex, once each');
     });
   });
 

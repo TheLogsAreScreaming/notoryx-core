@@ -47,6 +47,11 @@ extension _ConnectorSync on MeshCoreConnector {
         !_preserveContactsOnRefresh &&
         !_contactSyncUsesSinceFilter &&
         _contactSyncSeen.isNotEmpty) {
+      // The radio no longer has these (it replaced them when its table was
+      // full, or they were deleted elsewhere); keep them as heard nodes.
+      for (final c in _contacts) {
+        if (!_contactSyncSeen.contains(c.publicKeyHex)) _keepDroppedContact(c);
+      }
       _contacts.removeWhere((c) => !_contactSyncSeen.contains(c.publicKeyHex));
       // Forget the removed ones too, or Discovery keeps hiding them as if
       // they were still saved on the radio.
@@ -702,5 +707,16 @@ extension _ConnectorSync on MeshCoreConnector {
 
   bool _isReactionSendQueueId(String queueId) {
     return queueId.startsWith(MeshCoreConnector._reactionSendQueuePrefix);
+  }
+
+  /// Moves a contact the radio dropped into the heard-node list, so the app
+  /// still remembers it (name, type, position, last heard) after the radio's
+  /// contact table forgets it.
+  void _keepDroppedContact(Contact contact) {
+    _handleDiscovery(
+      contact,
+      contact.rawPacket ?? Uint8List(0),
+      noNotify: true,
+    );
   }
 }
