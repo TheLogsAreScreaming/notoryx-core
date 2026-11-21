@@ -9,11 +9,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 import '../../l10n/app_localizations.dart';
+import '../../services/phone_location.dart';
+import '../../widgets/qr_scanner_widget.dart';
 import 'sarneg.dart';
 
 AppLocalizations _t(BuildContext context) => AppLocalizations.of(context);
@@ -670,25 +670,17 @@ class _SarnegImportScreenState extends State<SarnegImportScreen> {
               height: 320,
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
-                child: MobileScanner(
-                  onDetect: (capture) {
-                    for (final b in capture.barcodes) {
-                      final raw = b.rawValue ?? '';
-                      if (raw.trim().toUpperCase().startsWith(
-                        kSarnegSharePrefix,
-                      )) {
-                        setState(() => _scanning = false);
-                        _use(raw);
-                        return;
-                      }
-                    }
+                // The shared scanner widget: the lite build swaps it for a
+                // text field, since it has no camera scanner.
+                child: QrScannerWidget(
+                  showFlashButton: false,
+                  showCameraSwitchButton: false,
+                  validator: (raw) =>
+                      raw.trim().toUpperCase().startsWith(kSarnegSharePrefix),
+                  onScanned: (raw) {
+                    setState(() => _scanning = false);
+                    _use(raw);
                   },
-                  errorBuilder: (context, error) => Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(16),
-                      child: Text(t.sarneg_cameraOff),
-                    ),
-                  ),
                 ),
               ),
             )
@@ -733,16 +725,14 @@ class _SarnegImportScreenState extends State<SarnegImportScreen> {
 Future<(double, double)?> Function() sarnegPositionSource = _phonePosition;
 
 Future<(double, double)?> _phonePosition() async {
-  if (!await Geolocator.isLocationServiceEnabled()) return null;
-  var p = await Geolocator.checkPermission();
-  if (p == LocationPermission.denied) p = await Geolocator.requestPermission();
-  if (p != LocationPermission.whileInUse && p != LocationPermission.always) {
-    return null;
+  // phone_location.dart is the one file that talks to GPS; the lite build
+  // replaces it with one that always returns null.
+  try {
+    final fix = await askForPhoneFix();
+    return fix == null ? null : (fix.lat, fix.lon);
+  } on Object {
+    return null; // location off or timed out
   }
-  final pos = await Geolocator.getCurrentPosition(
-    locationSettings: const LocationSettings(timeLimit: Duration(seconds: 20)),
-  );
-  return (pos.latitude, pos.longitude);
 }
 
 /// Asks for the numbers to send, encodes them with today's word, and returns
