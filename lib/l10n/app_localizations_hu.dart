@@ -14148,4 +14148,7 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get sarneg_decodeA11y => 'SARNEG számok dekódolása';
+
+  @override
+  String get sarneg_wordHidden => 'Kódszó elrejtve';
 }

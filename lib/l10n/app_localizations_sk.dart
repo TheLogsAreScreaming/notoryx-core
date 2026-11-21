@@ -14128,4 +14128,7 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get sarneg_decodeA11y => 'Dekódovať čísla SARNEG';
+
+  @override
+  String get sarneg_wordHidden => 'Kódové slovo skryté';
 }

@@ -14207,4 +14207,7 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get sarneg_decodeA11y => 'Розкодувати числа SARNEG';
+
+  @override
+  String get sarneg_wordHidden => 'Кодове слово приховано';
 }

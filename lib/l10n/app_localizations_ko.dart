@@ -13546,4 +13546,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get sarneg_decodeA11y => 'SARNEG 숫자 디코딩';
+
+  @override
+  String get sarneg_wordHidden => '코드 단어 숨겨짐';
 }

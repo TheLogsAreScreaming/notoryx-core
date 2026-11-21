@@ -14010,4 +14010,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get sarneg_decodeA11y => 'Decode SARNEG numbers';
+
+  @override
+  String get sarneg_wordHidden => 'Code word hidden';
 }

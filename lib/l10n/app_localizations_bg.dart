@@ -14153,4 +14153,7 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get sarneg_decodeA11y => 'Декодиране на SARNEG числа';
+
+  @override
+  String get sarneg_wordHidden => 'Кодовата дума е скрита';
 }

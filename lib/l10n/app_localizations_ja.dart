@@ -13529,4 +13529,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get sarneg_decodeA11y => 'SARNEGの数字をデコード';
+
+  @override
+  String get sarneg_wordHidden => 'コードワードは非表示';
 }

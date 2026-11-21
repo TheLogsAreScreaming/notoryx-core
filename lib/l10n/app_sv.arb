@@ -5304,5 +5304,6 @@
   "sarneg_tapToDecode": "SARNEG · tryck för att avkoda",
   "sarneg_noWordSet": "SARNEG · inget kodord angivet",
   "sarneg_decoded": "Avkodat: {text}",
-  "sarneg_decodeA11y": "Avkoda SARNEG-siffror"
+  "sarneg_decodeA11y": "Avkoda SARNEG-siffror",
+  "sarneg_wordHidden": "Kodordet är dolt"
 }

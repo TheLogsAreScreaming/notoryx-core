@@ -23484,6 +23484,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Decode SARNEG numbers'**
   String get sarneg_decodeA11y;
+
+  /// No description provided for @sarneg_wordHidden.
+  ///
+  /// In en, this message translates to:
+  /// **'Code word hidden'**
+  String get sarneg_wordHidden;
 }
 
 class _AppLocalizationsDelegate
