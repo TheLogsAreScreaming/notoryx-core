@@ -856,6 +856,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         state == AppLifecycleState.hidden) {
       unawaited(_telemetry.flush());
       unawaited(_batteryHistory.flush());
+      unawaited(widget.connector.flushDiscoveredContacts());
       unawaited(widget.imageCodecService.handleMemoryPressure());
       unawaited(widget.receivedImageStore.handleMemoryPressure());
     }
