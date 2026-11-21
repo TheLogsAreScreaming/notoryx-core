@@ -18,7 +18,7 @@ NOTORYX Core turns your phone or computer and a [MeshCore](https://meshcore.io/)
   <img src="docs/screenshots/nodes.png" width="230" alt="Nodes: repeaters, people, rooms and sensors heard on the mesh">
 </p>
 
-> **Latest stable: [10.0.0](https://github.com/TheLogsAreScreaming/notoryx-core-releases/releases/tag/v10.0.0)** (14 November 2026). **Latest pre-release: [10.1.0-rc.10](https://github.com/TheLogsAreScreaming/notoryx-core-releases/releases/tag/v10.1.0-rc.10)** (19 November 2026), with everything below, including the live traffic map, stale-node badge, range rings and on-device spam filter.
+> **Latest stable: [10.0.0](https://github.com/TheLogsAreScreaming/notoryx-core-releases/releases/tag/v10.0.0)** (14 November 2026). **Latest pre-release: [10.1.0-rc.10](https://github.com/TheLogsAreScreaming/notoryx-core-releases/releases/tag/v10.1.0-rc.10)** (19 November 2026), with everything below except SARNEG code words (next build), including the live traffic map, stale-node badge, range rings and on-device spam filter.
 >
 > NOTORYX Core is checked by automated tests and a mesh simulator but not yet on a wide range of phones and radios: see [Known limitations](docs/KNOWN_LIMITATIONS.md). It is not a replacement for an emergency service or a satellite messenger. Please [report problems in notoryx-core-releases](https://github.com/TheLogsAreScreaming/notoryx-core-releases/issues/new/choose) (issues are off in this source repository).
 
@@ -101,6 +101,7 @@ The tabs at the bottom are **Home**, **Chats**, **Nodes**, **Map** and **More**.
 - **Airtime estimate** under the message box (for example `≈0.6 s on air`), worked out from your radio's settings.
 - **Per-channel notifications:** all messages, only when you're mentioned, or muted. A message that arrives twice alerts only once.
 - **Quick messages:** ready-made replies like "On my way" or "At camp" from the message box menu. Edit the list to make it yours.
+- **SARNEG code words** (Tools → SARNEG code word): send grid references, frequencies and times as letters instead of digits. Your team agrees on a 10-letter word with no repeated letter (with BLACKHORSE, `[SARNEG] LRs KSAC` reads as 17S 4823). A SARNEG button in the message box codes the numbers before you press Send, and a received `[SARNEG]` message gets a tap-to-decode line. Share the word by QR code or text, and set a different word for given days. The same format works in every NOTORYX app. It keeps numbers away from a casual listener; it is **not encryption**. Merged after the latest release, so it arrives in the next test build; not yet tried on a phone.
 - **Direct messages:** stop retrying a message that's still being sent, and a note in a new chat that the other person has to add you as a contact before they can read and answer.
 - **Share your position or a contact** from the message box. Received contacts can be added in one tap, and **Add contact from clipboard** accepts links, adverts (even wrapped across lines) and bare public keys.
 - **Discovered contacts:** add one with a tap, or long-press to pick several (or **Add all shown**) and add them together, up to the room left on your radio.
