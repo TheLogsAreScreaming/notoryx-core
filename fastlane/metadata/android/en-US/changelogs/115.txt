@@ -1,0 +1,1 @@
+• Keeps contacts the radio drops; Home counts every known node
