@@ -600,8 +600,14 @@ extension _ConnectorSync on MeshCoreConnector {
     await _contactStore.saveContacts(_contacts);
   }
 
+  /// Marks the heard-node list changed; one save follows a few seconds later
+  /// (see [MeshCoreConnector.flushDiscoveredContacts]).
   Future<void> _persistDiscoveredContacts() async {
-    await _discoveryContactStore.saveContacts(_discoveredContacts);
+    _discoveredDirty = true;
+    _discoveredSaveTimer ??= Timer(
+      MeshCoreConnector._discoveredSaveDelay,
+      () => unawaited(flushDiscoveredContacts()),
+    );
   }
 
   void _ensureContactSmazSettingLoaded(String contactKeyHex) {

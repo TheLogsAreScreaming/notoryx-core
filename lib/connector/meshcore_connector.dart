@@ -1,6 +1,7 @@
 import '../services/node_telemetry_store.dart';
 import '../services/repeater_battery_history.dart';
 import '../helpers/cayenne_lpp.dart';
+
 import 'dart:async';
 import 'dart:convert';
 import 'dart:math' as math;
@@ -125,11 +126,18 @@ class MeshCoreConnector extends ChangeNotifier {
   // Message windowing to limit memory usage
   static const int _messageWindowSize = 200;
 
-  // Cap on discovered (non-contact) nodes retained in memory. Adverts arrive
+  // Cap on discovered (non-contact) nodes remembered. Adverts arrive
   // continuously from the whole mesh, so without a bound this list grows for
   // as long as the app stays connected. When full, the stalest node (oldest
-  // lastSeen) is evicted to make room for a newly heard one.
-  static const int _maxDiscoveredContacts = 500;
+  // lastSeen) is evicted to make room for a newly heard one. A busy mesh can
+  // have a couple of thousand nodes; 500 forgot most of them.
+  static const int _maxDiscoveredContacts = 5000;
+
+  // Saving rewrites the whole list, so adverts only mark it dirty and one save
+  // runs this long after the first change.
+  static const Duration _discoveredSaveDelay = Duration(seconds: 15);
+  Timer? _discoveredSaveTimer;
+  bool _discoveredDirty = false;
 
   MeshCoreConnectionState _state = MeshCoreConnectionState.disconnected;
   BluetoothDevice? _device;
@@ -4861,6 +4869,7 @@ class MeshCoreConnector extends ChangeNotifier {
 
     // Flush pending unread writes before disposal
     _unreadStore.flush();
+    unawaited(flushDiscoveredContacts());
 
     super.dispose();
   }
@@ -4881,7 +4890,18 @@ class MeshCoreConnector extends ChangeNotifier {
   void removeAllDiscoveredContacts() {
     _discoveredContacts.clear();
     unawaited(_persistDiscoveredContacts());
+    unawaited(flushDiscoveredContacts());
     notifyListeners();
+  }
+
+  /// Saves the heard-node list now if a save is waiting. Called when the app
+  /// goes to the background and before the list is cleared on disconnect.
+  Future<void> flushDiscoveredContacts() async {
+    _discoveredSaveTimer?.cancel();
+    _discoveredSaveTimer = null;
+    if (!_discoveredDirty) return;
+    _discoveredDirty = false;
+    await _discoveryContactStore.saveContacts(List.of(_discoveredContacts));
   }
 
   void clearMessagesForContact(Contact contact) {

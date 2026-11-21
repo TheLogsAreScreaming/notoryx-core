@@ -814,6 +814,9 @@ extension _ConnectorConnection on MeshCoreConnector {
     _deviceDisplayName = null;
     _deviceId = null;
     _contacts.clear();
+    // Save waiting changes first: a save after the clear would write an
+    // empty list and lose every remembered node.
+    await flushDiscoveredContacts();
     _discoveredContacts.clear();
     _conversations.clear();
     _loadedConversationKeys.clear();
