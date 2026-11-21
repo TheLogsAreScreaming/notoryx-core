@@ -13282,4 +13282,31 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get sarneg_wordHidden => '代码词已隐藏';
+
+  @override
+  String get discoveredContacts_importNodes => '导入节点';
+
+  @override
+  String get discoveredContacts_importHint =>
+      '读取联系人链接、公钥，或 JSON / CSV 节点列表。它们会添加到此列表，而不是你的电台。';
+
+  @override
+  String get discoveredContacts_importFromFile => '从文件';
+
+  @override
+  String get discoveredContacts_importFromClipboard => '从剪贴板';
+
+  @override
+  String get discoveredContacts_importFailed => '无法读取';
+
+  @override
+  String get discoveredContacts_importNone => '未找到节点';
+
+  @override
+  String get discoveredContacts_importNotConnected => '请先连接电台';
+
+  @override
+  String discoveredContacts_importResult(int added, int updated, int skipped) {
+    return '新增 $added，更新 $updated，跳过 $skipped';
+  }
 }

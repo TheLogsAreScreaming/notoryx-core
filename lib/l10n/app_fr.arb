@@ -5439,5 +5439,13 @@
   "sarneg_noWordSet": "SARNEG · aucun mot de code",
   "sarneg_decoded": "Décodé : {text}",
   "sarneg_decodeA11y": "Décoder les nombres SARNEG",
-  "sarneg_wordHidden": "Mot de code masqué"
+  "sarneg_wordHidden": "Mot de code masqué",
+  "discoveredContacts_importNodes": "Importer des nœuds",
+  "discoveredContacts_importHint": "Lit des liens de contact, des clés publiques ou une liste de nœuds en JSON ou CSV. Ils sont ajoutés à cette liste, pas à votre radio.",
+  "discoveredContacts_importFromFile": "Depuis un fichier",
+  "discoveredContacts_importFromClipboard": "Depuis le presse-papiers",
+  "discoveredContacts_importFailed": "Lecture impossible",
+  "discoveredContacts_importNone": "Aucun nœud trouvé",
+  "discoveredContacts_importNotConnected": "Connectez d'abord votre radio",
+  "discoveredContacts_importResult": "{added} nouveaux, {updated} mis à jour, {skipped} ignorés"
 }

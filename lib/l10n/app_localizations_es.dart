@@ -14177,4 +14177,32 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get sarneg_wordHidden => 'Palabra clave oculta';
+
+  @override
+  String get discoveredContacts_importNodes => 'Importar nodos';
+
+  @override
+  String get discoveredContacts_importHint =>
+      'Lee enlaces de contacto, claves públicas o una lista de nodos en JSON o CSV. Se añaden a esta lista, no a tu radio.';
+
+  @override
+  String get discoveredContacts_importFromFile => 'Desde un archivo';
+
+  @override
+  String get discoveredContacts_importFromClipboard => 'Desde el portapapeles';
+
+  @override
+  String get discoveredContacts_importFailed => 'No se pudo leer';
+
+  @override
+  String get discoveredContacts_importNone => 'No se encontraron nodos';
+
+  @override
+  String get discoveredContacts_importNotConnected =>
+      'Conecta primero tu radio';
+
+  @override
+  String discoveredContacts_importResult(int added, int updated, int skipped) {
+    return '$added nuevos, $updated actualizados, $skipped omitidos';
+  }
 }

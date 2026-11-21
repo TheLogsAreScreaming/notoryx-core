@@ -199,7 +199,10 @@ extension _ConnectorSync on MeshCoreConnector {
     }
   }
 
-  Future<void> _loadDiscoveredContactCache() async {
+  Future<void> _loadDiscoveredContactCache() =>
+      _discoveredCacheLoad = _readDiscoveredContactCache();
+
+  Future<void> _readDiscoveredContactCache() async {
     final cached = await _discoveryContactStore.loadContacts();
     // Trim a previously-saved oversized list down to the freshest entries so a
     // device that grew unbounded before the cap existed recovers on load.

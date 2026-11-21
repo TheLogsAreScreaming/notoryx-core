@@ -13532,4 +13532,31 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get sarneg_wordHidden => 'コードワードは非表示';
+
+  @override
+  String get discoveredContacts_importNodes => 'ノードをインポート';
+
+  @override
+  String get discoveredContacts_importHint =>
+      '連絡先リンク、公開鍵、またはJSON/CSVのノード一覧を読み込みます。無線機ではなく、この一覧に追加されます。';
+
+  @override
+  String get discoveredContacts_importFromFile => 'ファイルから';
+
+  @override
+  String get discoveredContacts_importFromClipboard => 'クリップボードから';
+
+  @override
+  String get discoveredContacts_importFailed => '読み込めませんでした';
+
+  @override
+  String get discoveredContacts_importNone => 'ノードが見つかりません';
+
+  @override
+  String get discoveredContacts_importNotConnected => '先に無線機を接続してください';
+
+  @override
+  String discoveredContacts_importResult(int added, int updated, int skipped) {
+    return '新規 $added、更新 $updated、スキップ $skipped';
+  }
 }

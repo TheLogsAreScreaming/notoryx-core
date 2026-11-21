@@ -5305,5 +5305,13 @@
   "sarneg_noWordSet": "SARNEG · geen codewoord ingesteld",
   "sarneg_decoded": "Gedecodeerd: {text}",
   "sarneg_decodeA11y": "SARNEG-getallen decoderen",
-  "sarneg_wordHidden": "Codewoord verborgen"
+  "sarneg_wordHidden": "Codewoord verborgen",
+  "discoveredContacts_importNodes": "Nodes importeren",
+  "discoveredContacts_importHint": "Leest contactlinks, openbare sleutels of een JSON- of CSV-lijst met nodes. Ze worden aan deze lijst toegevoegd, niet aan je radio.",
+  "discoveredContacts_importFromFile": "Uit een bestand",
+  "discoveredContacts_importFromClipboard": "Van het klembord",
+  "discoveredContacts_importFailed": "Kon niet worden gelezen",
+  "discoveredContacts_importNone": "Geen nodes gevonden",
+  "discoveredContacts_importNotConnected": "Verbind eerst je radio",
+  "discoveredContacts_importResult": "{added} nieuw, {updated} bijgewerkt, {skipped} overgeslagen"
 }

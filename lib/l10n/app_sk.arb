@@ -5305,5 +5305,13 @@
   "sarneg_noWordSet": "SARNEG · kódové slovo nie je nastavené",
   "sarneg_decoded": "Dekódované: {text}",
   "sarneg_decodeA11y": "Dekódovať čísla SARNEG",
-  "sarneg_wordHidden": "Kódové slovo skryté"
+  "sarneg_wordHidden": "Kódové slovo skryté",
+  "discoveredContacts_importNodes": "Importovať uzly",
+  "discoveredContacts_importHint": "Načíta odkazy na kontakty, verejné kľúče alebo zoznam uzlov v JSON či CSV. Pridajú sa do tohto zoznamu, nie do rádia.",
+  "discoveredContacts_importFromFile": "Zo súboru",
+  "discoveredContacts_importFromClipboard": "Zo schránky",
+  "discoveredContacts_importFailed": "Nepodarilo sa načítať",
+  "discoveredContacts_importNone": "Nenašli sa žiadne uzly",
+  "discoveredContacts_importNotConnected": "Najprv pripoj rádio",
+  "discoveredContacts_importResult": "Nové: {added}, aktualizované: {updated}, preskočené: {skipped}"
 }

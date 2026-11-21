@@ -5305,5 +5305,13 @@
   "sarneg_noWordSet": "SARNEG · inget kodord angivet",
   "sarneg_decoded": "Avkodat: {text}",
   "sarneg_decodeA11y": "Avkoda SARNEG-siffror",
-  "sarneg_wordHidden": "Kodordet är dolt"
+  "sarneg_wordHidden": "Kodordet är dolt",
+  "discoveredContacts_importNodes": "Importera noder",
+  "discoveredContacts_importHint": "Läser kontaktlänkar, publika nycklar eller en JSON- eller CSV-lista med noder. De läggs till i den här listan, inte i din radio.",
+  "discoveredContacts_importFromFile": "Från en fil",
+  "discoveredContacts_importFromClipboard": "Från urklipp",
+  "discoveredContacts_importFailed": "Kunde inte läsas",
+  "discoveredContacts_importNone": "Inga noder hittades",
+  "discoveredContacts_importNotConnected": "Anslut din radio först",
+  "discoveredContacts_importResult": "{added} nya, {updated} uppdaterade, {skipped} överhoppade"
 }
