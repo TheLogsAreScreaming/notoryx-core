@@ -5439,5 +5439,13 @@
   "sarneg_noWordSet": "SARNEG · nessuna parola in codice",
   "sarneg_decoded": "Decodificato: {text}",
   "sarneg_decodeA11y": "Decodifica numeri SARNEG",
-  "sarneg_wordHidden": "Parola in codice nascosta"
+  "sarneg_wordHidden": "Parola in codice nascosta",
+  "discoveredContacts_importNodes": "Importa nodi",
+  "discoveredContacts_importHint": "Legge link di contatto, chiavi pubbliche o un elenco di nodi JSON o CSV. Vengono aggiunti a questo elenco, non alla radio.",
+  "discoveredContacts_importFromFile": "Da un file",
+  "discoveredContacts_importFromClipboard": "Dagli appunti",
+  "discoveredContacts_importFailed": "Impossibile leggere",
+  "discoveredContacts_importNone": "Nessun nodo trovato",
+  "discoveredContacts_importNotConnected": "Prima collega la radio",
+  "discoveredContacts_importResult": "{added} nuovi, {updated} aggiornati, {skipped} saltati"
 }

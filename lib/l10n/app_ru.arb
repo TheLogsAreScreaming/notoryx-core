@@ -4608,5 +4608,13 @@
   "sarneg_noWordSet": "SARNEG · кодовое слово не задано",
   "sarneg_decoded": "Раскодировано: {text}",
   "sarneg_decodeA11y": "Раскодировать числа SARNEG",
-  "sarneg_wordHidden": "Кодовое слово скрыто"
+  "sarneg_wordHidden": "Кодовое слово скрыто",
+  "discoveredContacts_importNodes": "Импорт узлов",
+  "discoveredContacts_importHint": "Читает ссылки на контакты, открытые ключи или список узлов в JSON или CSV. Они добавляются в этот список, а не в радио.",
+  "discoveredContacts_importFromFile": "Из файла",
+  "discoveredContacts_importFromClipboard": "Из буфера обмена",
+  "discoveredContacts_importFailed": "Не удалось прочитать",
+  "discoveredContacts_importNone": "Узлы не найдены",
+  "discoveredContacts_importNotConnected": "Сначала подключите радио",
+  "discoveredContacts_importResult": "Новых: {added}, обновлено: {updated}, пропущено: {skipped}"
 }

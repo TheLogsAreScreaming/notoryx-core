@@ -817,6 +817,7 @@ extension _ConnectorConnection on MeshCoreConnector {
     // Save waiting changes first: a save after the clear would write an
     // empty list and lose every remembered node.
     await flushDiscoveredContacts();
+    _discoveredCacheLoad = null;
     _discoveredContacts.clear();
     _conversations.clear();
     _loadedConversationKeys.clear();

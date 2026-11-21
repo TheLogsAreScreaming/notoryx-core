@@ -5305,5 +5305,13 @@
   "sarneg_noWordSet": "SARNEG · nenhuma palavra-código",
   "sarneg_decoded": "Decodificado: {text}",
   "sarneg_decodeA11y": "Decodificar números SARNEG",
-  "sarneg_wordHidden": "Palavra-código oculta"
+  "sarneg_wordHidden": "Palavra-código oculta",
+  "discoveredContacts_importNodes": "Importar nós",
+  "discoveredContacts_importHint": "Lê links de contacto, chaves públicas ou uma lista de nós em JSON ou CSV. São adicionados a esta lista, não ao seu rádio.",
+  "discoveredContacts_importFromFile": "De um ficheiro",
+  "discoveredContacts_importFromClipboard": "Da área de transferência",
+  "discoveredContacts_importFailed": "Não foi possível ler",
+  "discoveredContacts_importNone": "Nenhum nó encontrado",
+  "discoveredContacts_importNotConnected": "Ligue primeiro o seu rádio",
+  "discoveredContacts_importResult": "{added} novos, {updated} atualizados, {skipped} ignorados"
 }

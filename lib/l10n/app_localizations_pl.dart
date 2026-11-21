@@ -14207,4 +14207,31 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get sarneg_wordHidden => 'Słowo kodowe ukryte';
+
+  @override
+  String get discoveredContacts_importNodes => 'Importuj węzły';
+
+  @override
+  String get discoveredContacts_importHint =>
+      'Odczytuje linki kontaktów, klucze publiczne lub listę węzłów w JSON albo CSV. Trafiają na tę listę, nie do radia.';
+
+  @override
+  String get discoveredContacts_importFromFile => 'Z pliku';
+
+  @override
+  String get discoveredContacts_importFromClipboard => 'Ze schowka';
+
+  @override
+  String get discoveredContacts_importFailed => 'Nie udało się odczytać';
+
+  @override
+  String get discoveredContacts_importNone => 'Nie znaleziono węzłów';
+
+  @override
+  String get discoveredContacts_importNotConnected => 'Najpierw połącz radio';
+
+  @override
+  String discoveredContacts_importResult(int added, int updated, int skipped) {
+    return 'Nowe: $added, zaktualizowane: $updated, pominięte: $skipped';
+  }
 }

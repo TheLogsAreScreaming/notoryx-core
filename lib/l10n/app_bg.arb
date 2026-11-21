@@ -5305,5 +5305,13 @@
   "sarneg_noWordSet": "SARNEG · няма зададена кодова дума",
   "sarneg_decoded": "Декодирано: {text}",
   "sarneg_decodeA11y": "Декодиране на SARNEG числа",
-  "sarneg_wordHidden": "Кодовата дума е скрита"
+  "sarneg_wordHidden": "Кодовата дума е скрита",
+  "discoveredContacts_importNodes": "Импортиране на възли",
+  "discoveredContacts_importHint": "Чете връзки към контакти, публични ключове или списък с възли в JSON или CSV. Добавят се към този списък, не към радиото.",
+  "discoveredContacts_importFromFile": "От файл",
+  "discoveredContacts_importFromClipboard": "От клипборда",
+  "discoveredContacts_importFailed": "Не може да се прочете",
+  "discoveredContacts_importNone": "Не са намерени възли",
+  "discoveredContacts_importNotConnected": "Първо свържете радиото",
+  "discoveredContacts_importResult": "Нови: {added}, обновени: {updated}, пропуснати: {skipped}"
 }

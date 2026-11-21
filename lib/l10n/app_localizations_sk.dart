@@ -14131,4 +14131,31 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get sarneg_wordHidden => 'Kódové slovo skryté';
+
+  @override
+  String get discoveredContacts_importNodes => 'Importovať uzly';
+
+  @override
+  String get discoveredContacts_importHint =>
+      'Načíta odkazy na kontakty, verejné kľúče alebo zoznam uzlov v JSON či CSV. Pridajú sa do tohto zoznamu, nie do rádia.';
+
+  @override
+  String get discoveredContacts_importFromFile => 'Zo súboru';
+
+  @override
+  String get discoveredContacts_importFromClipboard => 'Zo schránky';
+
+  @override
+  String get discoveredContacts_importFailed => 'Nepodarilo sa načítať';
+
+  @override
+  String get discoveredContacts_importNone => 'Nenašli sa žiadne uzly';
+
+  @override
+  String get discoveredContacts_importNotConnected => 'Najprv pripoj rádio';
+
+  @override
+  String discoveredContacts_importResult(int added, int updated, int skipped) {
+    return 'Nové: $added, aktualizované: $updated, preskočené: $skipped';
+  }
 }

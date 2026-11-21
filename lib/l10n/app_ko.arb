@@ -5439,5 +5439,13 @@
   "sarneg_noWordSet": "SARNEG · 코드 단어 없음",
   "sarneg_decoded": "디코딩됨: {text}",
   "sarneg_decodeA11y": "SARNEG 숫자 디코딩",
-  "sarneg_wordHidden": "코드 단어 숨겨짐"
+  "sarneg_wordHidden": "코드 단어 숨겨짐",
+  "discoveredContacts_importNodes": "노드 가져오기",
+  "discoveredContacts_importHint": "연락처 링크, 공개 키 또는 JSON/CSV 노드 목록을 읽습니다. 무전기가 아니라 이 목록에 추가됩니다.",
+  "discoveredContacts_importFromFile": "파일에서",
+  "discoveredContacts_importFromClipboard": "클립보드에서",
+  "discoveredContacts_importFailed": "읽을 수 없습니다",
+  "discoveredContacts_importNone": "노드를 찾을 수 없습니다",
+  "discoveredContacts_importNotConnected": "먼저 무전기를 연결하세요",
+  "discoveredContacts_importResult": "새 노드 {added}, 업데이트 {updated}, 건너뜀 {skipped}"
 }

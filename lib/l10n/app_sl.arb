@@ -5305,5 +5305,13 @@
   "sarneg_noWordSet": "SARNEG · kodna beseda ni nastavljena",
   "sarneg_decoded": "Dekodirano: {text}",
   "sarneg_decodeA11y": "Dekodiraj števila SARNEG",
-  "sarneg_wordHidden": "Kodna beseda skrita"
+  "sarneg_wordHidden": "Kodna beseda skrita",
+  "discoveredContacts_importNodes": "Uvozi vozlišča",
+  "discoveredContacts_importHint": "Prebere povezave do stikov, javne ključe ali seznam vozlišč v JSON ali CSV. Dodajo se na ta seznam, ne v radio.",
+  "discoveredContacts_importFromFile": "Iz datoteke",
+  "discoveredContacts_importFromClipboard": "Iz odložišča",
+  "discoveredContacts_importFailed": "Branje ni uspelo",
+  "discoveredContacts_importNone": "Ni najdenih vozlišč",
+  "discoveredContacts_importNotConnected": "Najprej poveži radio",
+  "discoveredContacts_importResult": "Novih: {added}, posodobljenih: {updated}, preskočenih: {skipped}"
 }

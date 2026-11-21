@@ -5343,5 +5343,13 @@
   "sarneg_noWordSet": "SARNEG · brak słowa kodowego",
   "sarneg_decoded": "Odkodowano: {text}",
   "sarneg_decodeA11y": "Odkoduj liczby SARNEG",
-  "sarneg_wordHidden": "Słowo kodowe ukryte"
+  "sarneg_wordHidden": "Słowo kodowe ukryte",
+  "discoveredContacts_importNodes": "Importuj węzły",
+  "discoveredContacts_importHint": "Odczytuje linki kontaktów, klucze publiczne lub listę węzłów w JSON albo CSV. Trafiają na tę listę, nie do radia.",
+  "discoveredContacts_importFromFile": "Z pliku",
+  "discoveredContacts_importFromClipboard": "Ze schowka",
+  "discoveredContacts_importFailed": "Nie udało się odczytać",
+  "discoveredContacts_importNone": "Nie znaleziono węzłów",
+  "discoveredContacts_importNotConnected": "Najpierw połącz radio",
+  "discoveredContacts_importResult": "Nowe: {added}, zaktualizowane: {updated}, pominięte: {skipped}"
 }

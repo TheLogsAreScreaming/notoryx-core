@@ -7519,5 +7519,14 @@
     }
   },
   "sarneg_decodeA11y": "Decode SARNEG numbers",
-  "sarneg_wordHidden": "Code word hidden"
+  "sarneg_wordHidden": "Code word hidden",
+  "discoveredContacts_importNodes": "Import nodes",
+  "discoveredContacts_importHint": "Reads contact links, public keys, or a JSON or CSV list of nodes. They are added to this list, not to your radio.",
+  "discoveredContacts_importFromFile": "From a file",
+  "discoveredContacts_importFromClipboard": "From the clipboard",
+  "discoveredContacts_importFailed": "Couldn't read that",
+  "discoveredContacts_importNone": "No nodes found",
+  "discoveredContacts_importNotConnected": "Connect to your radio first",
+  "discoveredContacts_importResult": "{added} new, {updated} updated, {skipped} skipped",
+  "@discoveredContacts_importResult": {"placeholders": {"added": {"type": "int"}, "updated": {"type": "int"}, "skipped": {"type": "int"}}}
 }

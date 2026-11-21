@@ -5343,5 +5343,13 @@
   "sarneg_noWordSet": "SARNEG · nincs kódszó beállítva",
   "sarneg_decoded": "Dekódolva: {text}",
   "sarneg_decodeA11y": "SARNEG számok dekódolása",
-  "sarneg_wordHidden": "Kódszó elrejtve"
+  "sarneg_wordHidden": "Kódszó elrejtve",
+  "discoveredContacts_importNodes": "Csomópontok importálása",
+  "discoveredContacts_importHint": "Kapcsolat-linkeket, nyilvános kulcsokat vagy JSON/CSV csomópontlistát olvas be. Ehhez a listához adódnak, nem a rádióhoz.",
+  "discoveredContacts_importFromFile": "Fájlból",
+  "discoveredContacts_importFromClipboard": "A vágólapról",
+  "discoveredContacts_importFailed": "Nem sikerült beolvasni",
+  "discoveredContacts_importNone": "Nem található csomópont",
+  "discoveredContacts_importNotConnected": "Előbb csatlakoztasd a rádiót",
+  "discoveredContacts_importResult": "Új: {added}, frissítve: {updated}, kihagyva: {skipped}"
 }
