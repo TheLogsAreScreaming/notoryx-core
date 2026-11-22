@@ -14448,6 +14448,114 @@ class AppLocalizationsDe extends AppLocalizations {
       'Hier hat kein Repeater geantwortet.';
 
   @override
+  String get wardrive_noiseTitle => 'Rauschpegel';
+
+  @override
+  String get wardrive_noiseEmpty =>
+      'Keine Rauschwerte in dieser Fahrt. Schalte in den Wardrive-Einstellungen „Rauschpegel aufzeichnen“ ein.';
+
+  @override
+  String wardrive_noiseSummary(int low, int high, int avg) {
+    return '$low bis $high dBm, Mittel $avg dBm';
+  }
+
+  @override
+  String get wardrive_noiseHint =>
+      'Ruhig ist etwa −120 bis −100 dBm. Über −90 dBm ist das Band belegt oder etwas in der Nähe stört, und deine Reichweite sinkt. Grüne Markierungen wurden gehört, rote nicht; tippe eine an für ihre Repeater.';
+
+  @override
+  String get wardrive_export => 'Diese Fahrt exportieren';
+
+  @override
+  String get wardrive_exportHint => 'Teilt die Fahrt als Datei.';
+
+  @override
+  String get wardrive_formatGpx =>
+      'Wegpunkte und Strecke, für die meisten Karten-Apps';
+
+  @override
+  String get wardrive_formatKml => 'Farbige Pins, für Google Earth';
+
+  @override
+  String get wardrive_formatCsv => 'Eine Zeile pro Repeater, für Tabellen';
+
+  @override
+  String get wardrive_formatGeojson =>
+      'Alles, und lässt sich wieder in diese App importieren';
+
+  @override
+  String get wardrive_exportFailed =>
+      'Die Fahrt konnte nicht exportiert werden.';
+
+  @override
+  String get wardrive_import => 'Fahrt importieren';
+
+  @override
+  String get wardrive_importFailed =>
+      'Diese Datei ist keine aus dieser App als GeoJSON exportierte Fahrt.';
+
+  @override
+  String wardrive_imported(int pings) {
+    return 'Fahrt zum Verlauf hinzugefügt ($pings Pings).';
+  }
+
+  @override
+  String get wardrive_importDuplicate =>
+      'Diese Fahrt ist schon in deinem Verlauf.';
+
+  @override
+  String get wardriveGuide_title => 'Wardriving-Anleitung';
+
+  @override
+  String get wardriveGuide_startTitle => 'Erste Schritte';
+
+  @override
+  String get wardriveGuide_startBody =>
+      'Verbinde dein Funkgerät, wähle einen Modus und tippe auf Start. Der erste Ping geht sofort raus, danach einer pro Intervall, während du dich bewegst.\n\nMit Jetzt pingen pingst du sofort. Stopp speichert die Fahrt im Verlauf, wo du sie ansehen, exportieren oder löschen kannst.';
+
+  @override
+  String get wardriveGuide_modesTitle => 'Die Modi';
+
+  @override
+  String get wardriveGuide_modesBody =>
+      'Discovery bittet Repeater in direkter Reichweite um Antwort. Es ist Zero-Hop, nutzt also nur dort Sendezeit, wo du bist, und misst beide Richtungen.\n\nTrace pingt einen gewählten Repeater und misst die Verbindung in beide Richtungen. Damit kartierst du, wie weit ein Repeater reicht.\n\nKanal sendet eine kurze Nachricht an #wardriving. Repeater, die sie weitergeben, zeigen, dass du das weitere Mesh erreichst, aber jeder Ping flutet das ganze Mesh. Nutze ein langes Intervall.\n\nHybrid wechselt zwischen Discovery und Kanal. Mit „Gehörten Verkehr protokollieren“ werden Pakete, die dein Funkgerät ohnehin hört, ohne Sendezeit mitkartiert.';
+
+  @override
+  String get wardriveGuide_coloursTitle => 'Was die Farben bedeuten';
+
+  @override
+  String get wardriveGuide_coloursBody =>
+      'Die Karte ist in Felder von 100 oder 300 m eingeteilt.\n\nGrün: Ein Repeater hat dich gehört und du ihn. Türkis: Ein Repeater hat deinen Ping weitergegeben, aber nur eine Richtung ist bekannt. Blau: nur selbst gehörter Verkehr. Rot: Du hast gepingt und niemand hat geantwortet. Gelber Rand: Pings wurden übersprungen, weil das Feld schon abgedeckt war.\n\nTippe auf ein Feld für seine Repeater. Mit „Nur diesen“ oder über die Repeater-Statistik siehst du nur die Abdeckung eines Repeaters, nach Signal eingefärbt.';
+
+  @override
+  String get wardriveGuide_airtimeTitle => 'Rücksicht auf Sendezeit';
+
+  @override
+  String get wardriveGuide_airtimeBody =>
+      'Jeder Ping nutzt Sendezeit, die sich alle teilen. Discovery und Trace sind Zero-Hop, nur Repeater in deiner Nähe hören sie. Kanal-Pings gehen durchs ganze Mesh.\n\nLass die 25-m-Regel und das Überspringen abgedeckter Felder an: Zusammen verhindern sie, dass du denselben Ort immer wieder pingst. In einem belebten Mesh pinge alle 60 s oder seltener. Passives Protokollieren ist kostenlos: Es hört nur zu.';
+
+  @override
+  String get wardriveGuide_antennaTitle => 'Antennen und Auto-Repeater';
+
+  @override
+  String get wardriveGuide_antennaBody =>
+      'Die Ergebnisse hängen von deiner Antenne ab. Eine Antenne außen auf dem Dach hört viel mehr als eine im Auto. Nutze jedes Mal denselben Aufbau, damit Fahrten vergleichbar sind.\n\nEin Repeater im Auto würde jeden Ping beantworten und echte Abdeckung verdecken. Wähle ihn als „Mein Auto-Repeater“, dann wird er immer ignoriert. Alles ab −30 dBm ist direkt neben dir, keine Abdeckung, und wird ebenfalls ignoriert.';
+
+  @override
+  String get wardriveGuide_screenOffTitle => 'Bildschirm aus und Akku';
+
+  @override
+  String get wardriveGuide_screenOffBody =>
+      'Schalte „Bei ausgeschaltetem Bildschirm weiterlaufen“ ein, um das Telefon während der Fahrt zu sperren. Android zeigt eine Benachrichtigung, während GPS weiterläuft.\n\nDas braucht mehr Akku. Lade dein Telefon bei langen Fahrten.';
+
+  @override
+  String get wardriveGuide_shareTitle => 'Fahrten teilen';
+
+  @override
+  String get wardriveGuide_shareBody =>
+      'Exportiere eine Fahrt über das Menü als GPX oder KML für Karten-Apps, CSV für Tabellen oder GeoJSON. Nur GeoJSON enthält alles und lässt sich wieder importieren, auf diesem oder einem anderen Telefon.\n\nExportierte Dateien enthalten deine Positionen und Zeiten. Teile sie nur mit Menschen, denen du vertraust.';
+
+  @override
   String get sarneg_randomWord => 'Zufallswort';
 
   @override

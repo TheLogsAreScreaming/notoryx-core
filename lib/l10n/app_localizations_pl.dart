@@ -14463,6 +14463,112 @@ class AppLocalizationsPl extends AppLocalizations {
       'Żaden przekaźnik tu nie odpowiedział.';
 
   @override
+  String get wardrive_noiseTitle => 'Poziom szumu';
+
+  @override
+  String get wardrive_noiseEmpty =>
+      'Ta jazda nie ma odczytów szumu. Włącz Zapisuj poziom szumu w ustawieniach wardrive.';
+
+  @override
+  String wardrive_noiseSummary(int low, int high, int avg) {
+    return 'Od $low do $high dBm, średnio $avg dBm';
+  }
+
+  @override
+  String get wardrive_noiseHint =>
+      'Cicho to ok. −120 do −100 dBm. Powyżej −90 dBm pasmo jest zajęte lub coś w pobliżu szumi, a zasięg spada. Zielone znaczniki zostały usłyszane, czerwone nie; dotknij jednego, aby zobaczyć przekaźniki.';
+
+  @override
+  String get wardrive_export => 'Eksportuj tę jazdę';
+
+  @override
+  String get wardrive_exportHint => 'Udostępnia jazdę jako plik.';
+
+  @override
+  String get wardrive_formatGpx =>
+      'Punkty i trasa, dla większości aplikacji z mapami';
+
+  @override
+  String get wardrive_formatKml => 'Kolorowe pinezki, dla Google Earth';
+
+  @override
+  String get wardrive_formatCsv => 'Jeden wiersz na przekaźnik, dla arkuszy';
+
+  @override
+  String get wardrive_formatGeojson =>
+      'Wszystko, i da się z powrotem zaimportować do tej aplikacji';
+
+  @override
+  String get wardrive_exportFailed => 'Nie udało się wyeksportować jazdy.';
+
+  @override
+  String get wardrive_import => 'Importuj jazdę';
+
+  @override
+  String get wardrive_importFailed =>
+      'Ten plik nie jest jazdą wyeksportowaną z tej aplikacji jako GeoJSON.';
+
+  @override
+  String wardrive_imported(int pings) {
+    return 'Dodano jazdę do historii (pingi: $pings).';
+  }
+
+  @override
+  String get wardrive_importDuplicate => 'Ta jazda jest już w historii.';
+
+  @override
+  String get wardriveGuide_title => 'Poradnik wardrivingu';
+
+  @override
+  String get wardriveGuide_startTitle => 'Pierwsze kroki';
+
+  @override
+  String get wardriveGuide_startBody =>
+      'Połącz radio, wybierz tryb i dotknij Start. Pierwszy ping wychodzi od razu, potem kolejny co odstęp, gdy się poruszasz.\n\nDotknij Pinguj teraz, aby pingować na miejscu. Stop zapisuje jazdę w historii, gdzie możesz ją obejrzeć, wyeksportować lub usunąć.';
+
+  @override
+  String get wardriveGuide_modesTitle => 'Tryby';
+
+  @override
+  String get wardriveGuide_modesBody =>
+      'Odkrywanie prosi przekaźniki w bezpośrednim zasięgu o odpowiedź. Działa bez przeskoków, więc zużywa czas nadawania tylko tam, gdzie jesteś, i mierzy oba kierunki.\n\nTrasa pinguje wybrany przekaźnik i mierzy łącze w obie strony. Pozwala sprawdzić, jak daleko sięga jeden przekaźnik.\n\nKanał wysyła krótką wiadomość na #wardriving. Przekaźniki, które ją przekazują, pokazują, że docierasz do szerszej sieci, ale każdy ping zalewa całą sieć: używaj długiego odstępu.\n\nHybrydowy na zmianę używa Odkrywania i Kanału. Z włączonym Zapisuj słyszany ruch pakiety, które radio i tak słyszy, też trafiają na mapę bez czasu nadawania.';
+
+  @override
+  String get wardriveGuide_coloursTitle => 'Co znaczą kolory';
+
+  @override
+  String get wardriveGuide_coloursBody =>
+      'Mapa jest podzielona na kwadraty 100 lub 300 m.\n\nZielony: przekaźnik słyszał ciebie, a ty jego. Turkusowy: przekaźnik przekazał ping, ale znany jest tylko jeden kierunek. Niebieski: tylko ruch usłyszany samodzielnie. Czerwony: pingowałeś i nikt nie odpowiedział. Bursztynowa ramka: pingi pominięto, bo kwadrat był już pokryty.\n\nDotknij kwadratu, aby zobaczyć jego przekaźniki. Dotknij Tylko ten albo wybierz przekaźnik w statystykach, aby zobaczyć tylko jego pokrycie, zabarwione według sygnału.';
+
+  @override
+  String get wardriveGuide_airtimeTitle => 'Dobre obyczaje w eterze';
+
+  @override
+  String get wardriveGuide_airtimeBody =>
+      'Każdy ping zużywa wspólny czas nadawania. Odkrywanie i Trasa działają bez przeskoków: słyszą je tylko pobliskie przekaźniki. Pingi kanałowe przechodzą przez całą sieć.\n\nZostaw włączone zasady 25 m i pomijania pokrytych kwadratów: razem zapobiegają ciągłemu pingowaniu tego samego miejsca. W zatłoczonej sieci pinguj co 60 s lub rzadziej. Zapis pasywny jest darmowy: tylko słucha.';
+
+  @override
+  String get wardriveGuide_antennaTitle => 'Anteny i przekaźniki w aucie';
+
+  @override
+  String get wardriveGuide_antennaBody =>
+      'Wyniki zależą od anteny. Antena na dachu słyszy znacznie więcej niż w kabinie. Używaj za każdym razem tej samej konfiguracji, by jazdy dało się porównać.\n\nPrzekaźnik w aucie odpowiadałby na każdy ping i ukrywał prawdziwe pokrycie. Wybierz go jako Mój przekaźnik w aucie, a będzie zawsze ignorowany. Wszystko słyszane z mocą −30 dBm lub silniejszą jest tuż obok i też jest ignorowane.';
+
+  @override
+  String get wardriveGuide_screenOffTitle => 'Wyłączony ekran i bateria';
+
+  @override
+  String get wardriveGuide_screenOffBody =>
+      'Włącz Działaj przy wyłączonym ekranie, aby zablokować telefon w czasie jazdy. Android pokazuje powiadomienie, a GPS działa dalej.\n\nZużywa to więcej baterii: podłącz telefon na długich trasach.';
+
+  @override
+  String get wardriveGuide_shareTitle => 'Udostępnianie jazd';
+
+  @override
+  String get wardriveGuide_shareBody =>
+      'Wyeksportuj jazdę z menu jako GPX lub KML do aplikacji z mapami, CSV do arkuszy albo GeoJSON. Tylko GeoJSON zachowuje wszystko i da się go zaimportować z powrotem, na tym lub innym telefonie.\n\nWyeksportowane pliki zawierają twoje pozycje i godziny. Udostępniaj je tylko zaufanym osobom.';
+
+  @override
   String get sarneg_randomWord => 'Losowe słowo';
 
   @override

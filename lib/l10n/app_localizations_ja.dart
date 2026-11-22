@@ -13781,6 +13781,110 @@ class AppLocalizationsJa extends AppLocalizations {
   String get wardrive_squareNoRepeaters => 'ここで応答したリピーターはありません。';
 
   @override
+  String get wardrive_noiseTitle => 'ノイズフロア';
+
+  @override
+  String get wardrive_noiseEmpty =>
+      'この走行にはノイズの記録がありません。ウォードライブ設定で「ノイズフロアを記録」をオンにしてください。';
+
+  @override
+  String wardrive_noiseSummary(int low, int high, int avg) {
+    return '$low〜$high dBm、平均 $avg dBm';
+  }
+
+  @override
+  String get wardrive_noiseHint =>
+      '静かな状態は約 −120〜−100 dBm です。−90 dBm を超えると帯域が混んでいるか近くにノイズ源があり、届く距離が下がります。緑のマーカーは受信され、赤は受信されませんでした。タップでリピーターを表示します。';
+
+  @override
+  String get wardrive_export => 'この走行をエクスポート';
+
+  @override
+  String get wardrive_exportHint => '走行をファイルで共有します。';
+
+  @override
+  String get wardrive_formatGpx => 'ウェイポイントと軌跡、多くの地図アプリ向け';
+
+  @override
+  String get wardrive_formatKml => '色付きピン、Google Earth 向け';
+
+  @override
+  String get wardrive_formatCsv => 'リピーターごとに 1 行、表計算向け';
+
+  @override
+  String get wardrive_formatGeojson => 'すべての情報、このアプリに再インポート可能';
+
+  @override
+  String get wardrive_exportFailed => '走行をエクスポートできませんでした。';
+
+  @override
+  String get wardrive_import => '走行をインポート';
+
+  @override
+  String get wardrive_importFailed =>
+      'このファイルは、このアプリから GeoJSON でエクスポートした走行ではありません。';
+
+  @override
+  String wardrive_imported(int pings) {
+    return '走行を履歴に追加しました（ping $pings 回）。';
+  }
+
+  @override
+  String get wardrive_importDuplicate => 'その走行はすでに履歴にあります。';
+
+  @override
+  String get wardriveGuide_title => 'ウォードライブガイド';
+
+  @override
+  String get wardriveGuide_startTitle => 'はじめに';
+
+  @override
+  String get wardriveGuide_startBody =>
+      '無線機を接続し、モードを選んでスタートをタップします。最初の ping はすぐに送られ、その後は移動中に間隔ごとに 1 回送られます。\n\n「今すぐ ping」でその場で ping できます。停止すると走行が履歴に保存され、見直し・エクスポート・削除ができます。';
+
+  @override
+  String get wardriveGuide_modesTitle => 'モード';
+
+  @override
+  String get wardriveGuide_modesBody =>
+      '探索は直接届く範囲のリピーターに応答を求めます。ゼロホップなので電波時間を使うのは自分の周りだけで、双方向を測ります。\n\nトレースは選んだリピーター 1 台に ping し、双方向のリンクを測ります。1 台のリピーターがどこまで届くかを調べるのに使います。\n\nチャンネルは #wardriving に短いメッセージを送ります。中継したリピーターから広いメッシュに届くとわかりますが、毎回メッシュ全体に流れるので長い間隔にしてください。\n\nハイブリッドは探索とチャンネルを交互に行います。「受信したトラフィックを記録」をオンにすると、無線機がもともと受信するパケットも電波時間なしで地図に載ります。';
+
+  @override
+  String get wardriveGuide_coloursTitle => '色の意味';
+
+  @override
+  String get wardriveGuide_coloursBody =>
+      '地図は 100 m または 300 m のマスに分かれています。\n\n緑：リピーターがあなたを受信し、あなたもリピーターを受信。水色：リピーターが ping を中継したが、片方向しかわからない。青：自然に受信したトラフィックのみ。赤：ping したが応答なし。琥珀色の枠：すでにカバー済みのため ping をスキップ。\n\nマスをタップするとリピーターを表示します。「これだけ表示」やリピーター統計で選ぶと、そのリピーターのカバー範囲だけを信号の強さで色分けして表示します。';
+
+  @override
+  String get wardriveGuide_airtimeTitle => '電波時間のマナー';
+
+  @override
+  String get wardriveGuide_airtimeBody =>
+      'ping はみんなで共有する電波時間を使います。探索とトレースはゼロホップなので近くのリピーターにしか届きません。チャンネルの ping はメッシュ全体に流れます。\n\n25 m ルールとカバー済みスキップはオンのままにしてください。同じ場所で何度も ping するのを防ぎます。混雑したメッシュでは 60 秒以上の間隔にしましょう。パッシブ記録は聞くだけなので無料です。';
+
+  @override
+  String get wardriveGuide_antennaTitle => 'アンテナと車載リピーター';
+
+  @override
+  String get wardriveGuide_antennaBody =>
+      '結果はアンテナで大きく変わります。屋根の上のアンテナは車内よりはるかに多く受信します。走行を比べられるよう、毎回同じ構成にしてください。\n\n車に載せたリピーターはすべての ping に応答し、本当のカバレッジを隠してしまいます。「車載リピーター」に設定すると常に除外されます。−30 dBm 以上の強さで受信したものはすぐそばにあるため、これも除外されます。';
+
+  @override
+  String get wardriveGuide_screenOffTitle => '画面オフとバッテリー';
+
+  @override
+  String get wardriveGuide_screenOffBody =>
+      '「画面オフでも続行」をオンにすると、走行中にスマホをロックできます。Android が通知を表示し、GPS は動き続けます。\n\nバッテリーを多く使うので、長距離では充電しながら使ってください。';
+
+  @override
+  String get wardriveGuide_shareTitle => '走行の共有';
+
+  @override
+  String get wardriveGuide_shareBody =>
+      'メニューから走行をエクスポートできます。地図アプリ向けの GPX・KML、表計算向けの CSV、または GeoJSON です。すべての情報を保持し、このスマホや別のスマホに再インポートできるのは GeoJSON だけです。\n\nエクスポートしたファイルには位置と時刻が含まれます。信頼できる相手とだけ共有してください。';
+
+  @override
   String get sarneg_randomWord => 'ランダムな単語';
 
   @override

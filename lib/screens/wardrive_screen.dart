@@ -1,11 +1,16 @@
 import 'dart:async';
+import 'dart:io';
 
+import 'package:file_selector/file_selector.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../connector/meshcore_connector.dart';
+import '../helpers/snack_bar_builder.dart';
 import '../l10n/l10n.dart';
 import '../models/wardrive.dart';
 import '../models/wardrive_coverage.dart';
@@ -14,10 +19,13 @@ import '../services/map_tile_cache_service.dart';
 import '../services/phone_location.dart' show backgroundFixNotice;
 import '../services/wardrive_service.dart';
 import '../theme/mesh_theme.dart';
+import '../utils/wardrive_export.dart';
 import '../widgets/ember_backdrop.dart';
 import '../widgets/instrument.dart';
 import '../widgets/mesh_ui.dart';
 import '../widgets/tactical_glass_panel.dart';
+import 'wardrive_guide_screen.dart';
+import 'wardrive_noise_screen.dart';
 import 'wardrive_settings_sheet.dart';
 
 /// Wardrive: ping from where you are and map which repeaters hear you. The
@@ -243,6 +251,122 @@ class _WardriveScreenState extends State<WardriveScreen> {
     );
   }
 
+  void _openNoise(WardriveSession session) {
+    final c = context.read<MeshCoreConnector>();
+    Navigator.of(context).push(
+      MaterialPageRoute<void>(
+        builder: (_) => WardriveNoiseScreen(
+          session: session,
+          nameOf: (prefix) => _name(c, prefix),
+        ),
+      ),
+    );
+  }
+
+  /// Shares [session] as a file in a format picked from a sheet.
+  Future<void> _export(WardriveSession session) async {
+    final l10n = context.l10n;
+    final c = context.read<MeshCoreConnector>();
+    final format = await showMeshSheet<WardriveFormat>(
+      context,
+      builder: (sheet) => SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            BottomSheetHeader(
+              title: l10n.wardrive_export,
+              subtitle: l10n.wardrive_exportHint,
+            ),
+            for (final f in WardriveFormat.values)
+              ListTile(
+                key: ValueKey('wardrive-export-${f.name}'),
+                leading: const Icon(Icons.description_outlined),
+                title: Text(f.extension.toUpperCase()),
+                subtitle: Text(switch (f) {
+                  WardriveFormat.gpx => l10n.wardrive_formatGpx,
+                  WardriveFormat.kml => l10n.wardrive_formatKml,
+                  WardriveFormat.csv => l10n.wardrive_formatCsv,
+                  WardriveFormat.geojson => l10n.wardrive_formatGeojson,
+                }),
+                onTap: () => Navigator.of(sheet).pop(f),
+              ),
+            const SizedBox(height: 12),
+          ],
+        ),
+      ),
+    );
+    if (format == null || !mounted) return;
+    try {
+      final text = exportWardrive(
+        session,
+        format,
+        nameOf: (prefix) => _name(c, prefix),
+      );
+      final dir = await getTemporaryDirectory();
+      final stamp = session.startedAt.toUtc().toIso8601String().replaceAll(
+        RegExp(r'[:.]'),
+        '-',
+      );
+      final file = File(
+        '${dir.path}/notoryx-wardrive-$stamp.${format.extension}',
+      );
+      await file.writeAsString(text);
+      if (!mounted) return;
+      await SharePlus.instance.share(
+        ShareParams(
+          subject: l10n.wardrive_title,
+          files: [XFile(file.path, mimeType: format.mimeType)],
+        ),
+      );
+    } catch (_) {
+      if (!mounted) return;
+      showDismissibleSnackBar(
+        context,
+        content: Text(l10n.wardrive_exportFailed),
+      );
+    }
+  }
+
+  /// Reads a drive this app exported as GeoJSON back into the history.
+  Future<void> _import(WardriveService service) async {
+    final l10n = context.l10n;
+    String? text;
+    try {
+      final file = await openFile(
+        acceptedTypeGroups: const [
+          XTypeGroup(
+            label: 'GeoJSON',
+            extensions: ['geojson', 'json'],
+            uniformTypeIdentifiers: ['public.json'],
+          ),
+        ],
+      );
+      if (file == null) return;
+      text = await file.readAsString();
+    } catch (_) {
+      text = null;
+    }
+    if (!mounted) return;
+    final drive = text == null ? null : importWardrive(text);
+    if (drive == null) {
+      showDismissibleSnackBar(
+        context,
+        content: Text(l10n.wardrive_importFailed),
+      );
+      return;
+    }
+    final added = await service.importSession(drive);
+    if (!mounted) return;
+    showDismissibleSnackBar(
+      context,
+      content: Text(
+        added
+            ? l10n.wardrive_imported(drive.sentCount)
+            : l10n.wardrive_importDuplicate,
+      ),
+    );
+  }
+
   String _replyText(WardriveReply r) {
     final l10n = context.l10n;
     final there = r.snrThere, here = r.snrHere;
@@ -400,6 +524,41 @@ class _WardriveScreenState extends State<WardriveScreen> {
               tooltip: l10n.wardrive_history,
               icon: const Icon(Icons.history),
               onPressed: () => _showHistory(service),
+            ),
+            PopupMenuButton<String>(
+              key: const ValueKey('wardrive-menu'),
+              onSelected: (v) => switch (v) {
+                'noise' when session != null => _openNoise(session),
+                'export' when session != null => _export(session),
+                'import' => _import(service),
+                'guide' => Navigator.of(context).push(
+                  MaterialPageRoute<void>(
+                    builder: (_) => const WardriveGuideScreen(),
+                  ),
+                ),
+                _ => null,
+              },
+              itemBuilder: (_) => [
+                PopupMenuItem(
+                  value: 'noise',
+                  enabled: session != null,
+                  child: Text(l10n.wardrive_noiseTitle),
+                ),
+                PopupMenuItem(
+                  value: 'export',
+                  enabled: session != null && session.pings.isNotEmpty,
+                  child: Text(l10n.wardrive_export),
+                ),
+                PopupMenuItem(
+                  value: 'import',
+                  child: Text(l10n.wardrive_import),
+                ),
+                PopupMenuItem(
+                  key: const ValueKey('wardrive-menu-guide'),
+                  value: 'guide',
+                  child: Text(l10n.wardriveGuide_title),
+                ),
+              ],
             ),
           ],
         ),

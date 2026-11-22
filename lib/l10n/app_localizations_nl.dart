@@ -14381,6 +14381,111 @@ class AppLocalizationsNl extends AppLocalizations {
   String get wardrive_squareNoRepeaters => 'Hier antwoordde geen repeater.';
 
   @override
+  String get wardrive_noiseTitle => 'Ruisvloer';
+
+  @override
+  String get wardrive_noiseEmpty =>
+      'Geen ruismetingen in deze rit. Zet Ruisvloer opnemen aan in de wardrive-instellingen.';
+
+  @override
+  String wardrive_noiseSummary(int low, int high, int avg) {
+    return '$low tot $high dBm, gemiddeld $avg dBm';
+  }
+
+  @override
+  String get wardrive_noiseHint =>
+      'Rustig is ongeveer −120 tot −100 dBm. Boven −90 dBm is de band druk of stoort iets in de buurt, en je bereik daalt. Groene markeringen werden gehoord, rode niet; tik er een aan voor de repeaters.';
+
+  @override
+  String get wardrive_export => 'Deze rit exporteren';
+
+  @override
+  String get wardrive_exportHint => 'Deelt de rit als bestand.';
+
+  @override
+  String get wardrive_formatGpx => 'Punten en route, voor de meeste kaartapps';
+
+  @override
+  String get wardrive_formatKml => 'Gekleurde spelden, voor Google Earth';
+
+  @override
+  String get wardrive_formatCsv => 'Eén rij per repeater, voor spreadsheets';
+
+  @override
+  String get wardrive_formatGeojson =>
+      'Alles, en is weer in deze app te importeren';
+
+  @override
+  String get wardrive_exportFailed => 'De rit kon niet worden geëxporteerd.';
+
+  @override
+  String get wardrive_import => 'Rit importeren';
+
+  @override
+  String get wardrive_importFailed =>
+      'Dat bestand is geen rit die als GeoJSON uit deze app is geëxporteerd.';
+
+  @override
+  String wardrive_imported(int pings) {
+    return 'Rit toegevoegd aan geschiedenis ($pings pings).';
+  }
+
+  @override
+  String get wardrive_importDuplicate => 'Die rit staat al in je geschiedenis.';
+
+  @override
+  String get wardriveGuide_title => 'Wardriving-gids';
+
+  @override
+  String get wardriveGuide_startTitle => 'Aan de slag';
+
+  @override
+  String get wardriveGuide_startBody =>
+      'Verbind je radio, kies een modus en tik op Start. De eerste ping gaat meteen, daarna één per interval terwijl je beweegt.\n\nTik op Nu pingen om ter plekke te pingen. Stop bewaart de rit in de geschiedenis, waar je hem kunt terugzien, exporteren of verwijderen.';
+
+  @override
+  String get wardriveGuide_modesTitle => 'De modi';
+
+  @override
+  String get wardriveGuide_modesBody =>
+      'Ontdekken vraagt repeaters binnen direct bereik om te antwoorden. Het is zero-hop, dus het gebruikt alleen zendtijd waar jij bent en meet beide richtingen.\n\nTrace pingt één gekozen repeater en meet de verbinding in beide richtingen. Handig om te zien hoe ver één repeater reikt.\n\nKanaal stuurt een kort bericht naar #wardriving. Repeaters die het doorgeven tonen dat je het bredere mesh bereikt, maar elke ping gaat door het hele mesh: gebruik een lange interval.\n\nHybride wisselt Ontdekken en Kanaal af. Met Gehoord verkeer loggen worden pakketten die je radio toch al hoort ook in kaart gebracht, zonder zendtijd.';
+
+  @override
+  String get wardriveGuide_coloursTitle => 'Wat de kleuren betekenen';
+
+  @override
+  String get wardriveGuide_coloursBody =>
+      'De kaart is verdeeld in vakken van 100 of 300 m.\n\nGroen: een repeater hoorde jou en jij hem. Turquoise: een repeater gaf je ping door, maar maar één richting is bekend. Blauw: alleen zelf gehoord verkeer. Rood: je pingde en niemand antwoordde. Oranje rand: pings overgeslagen omdat het vak al gedekt was.\n\nTik op een vak voor de repeaters. Tik op Alleen deze, of kies een repeater in de statistieken, om alleen diens dekking te zien, gekleurd naar signaal.';
+
+  @override
+  String get wardriveGuide_airtimeTitle => 'Zendtijd-etiquette';
+
+  @override
+  String get wardriveGuide_airtimeBody =>
+      'Elke ping gebruikt gedeelde zendtijd. Ontdekken en Trace zijn zero-hop: alleen repeaters in de buurt horen ze. Kanaalpings gaan door het hele mesh.\n\nLaat de 25 m-regel en het overslaan van gedekte vakken aan: samen voorkomen ze dat je steeds dezelfde plek pingt. Ping op een druk mesh elke 60 s of minder vaak. Passief loggen is gratis: het luistert alleen.';
+
+  @override
+  String get wardriveGuide_antennaTitle => 'Antennes en auto-repeaters';
+
+  @override
+  String get wardriveGuide_antennaBody =>
+      'De resultaten hangen af van je antenne. Een antenne op het dak hoort veel meer dan een in de auto. Gebruik elke keer dezelfde opstelling, zodat ritten vergelijkbaar zijn.\n\nEen repeater in je auto zou elke ping beantwoorden en echte dekking verbergen. Kies hem als Mijn auto-repeater, dan wordt hij altijd genegeerd. Alles op −30 dBm of sterker staat naast je en wordt ook genegeerd.';
+
+  @override
+  String get wardriveGuide_screenOffTitle => 'Scherm uit en batterij';
+
+  @override
+  String get wardriveGuide_screenOffBody =>
+      'Zet Doorgaan met scherm uit aan om je telefoon tijdens een rit te vergrendelen. Android toont een melding terwijl gps blijft werken.\n\nDit kost meer batterij: laad je telefoon op lange ritten.';
+
+  @override
+  String get wardriveGuide_shareTitle => 'Ritten delen';
+
+  @override
+  String get wardriveGuide_shareBody =>
+      'Exporteer een rit via het menu als GPX of KML voor kaartapps, CSV voor spreadsheets, of GeoJSON. Alleen GeoJSON bewaart alles en is weer te importeren, op deze of een andere telefoon.\n\nGeëxporteerde bestanden bevatten je posities en tijden. Deel ze alleen met mensen die je vertrouwt.';
+
+  @override
   String get sarneg_randomWord => 'Willekeurig woord';
 
   @override

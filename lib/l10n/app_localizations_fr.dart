@@ -14487,6 +14487,112 @@ class AppLocalizationsFr extends AppLocalizations {
   String get wardrive_squareNoRepeaters => 'Aucun relais n\'a répondu ici.';
 
   @override
+  String get wardrive_noiseTitle => 'Bruit de fond';
+
+  @override
+  String get wardrive_noiseEmpty =>
+      'Aucune mesure de bruit dans ce trajet. Activez Enregistrer le bruit de fond dans les réglages du wardrive.';
+
+  @override
+  String wardrive_noiseSummary(int low, int high, int avg) {
+    return 'De $low à $high dBm, moyenne $avg dBm';
+  }
+
+  @override
+  String get wardrive_noiseHint =>
+      'Calme : environ −120 à −100 dBm. Au-delà de −90 dBm, la bande est chargée ou un appareil proche fait du bruit, et votre portée baisse. Les repères verts ont été entendus, les rouges non ; touchez-en un pour ses relais.';
+
+  @override
+  String get wardrive_export => 'Exporter ce trajet';
+
+  @override
+  String get wardrive_exportHint => 'Partage le trajet sous forme de fichier.';
+
+  @override
+  String get wardrive_formatGpx =>
+      'Points et trace, pour la plupart des applis de cartes';
+
+  @override
+  String get wardrive_formatKml => 'Épingles colorées, pour Google Earth';
+
+  @override
+  String get wardrive_formatCsv => 'Une ligne par relais, pour les tableurs';
+
+  @override
+  String get wardrive_formatGeojson => 'Tout, et se réimporte dans cette appli';
+
+  @override
+  String get wardrive_exportFailed => 'Impossible d\'exporter le trajet.';
+
+  @override
+  String get wardrive_import => 'Importer un trajet';
+
+  @override
+  String get wardrive_importFailed =>
+      'Ce fichier n\'est pas un trajet exporté depuis cette appli en GeoJSON.';
+
+  @override
+  String wardrive_imported(int pings) {
+    return 'Trajet ajouté à l\'historique ($pings pings).';
+  }
+
+  @override
+  String get wardrive_importDuplicate =>
+      'Ce trajet est déjà dans votre historique.';
+
+  @override
+  String get wardriveGuide_title => 'Guide du wardriving';
+
+  @override
+  String get wardriveGuide_startTitle => 'Bien démarrer';
+
+  @override
+  String get wardriveGuide_startBody =>
+      'Connectez votre radio, choisissez un mode et touchez Démarrer. Le premier ping part tout de suite, puis un par intervalle pendant que vous bougez.\n\nTouchez Pinger pour pinger sur place. Arrêter enregistre le trajet dans l\'historique, où vous pouvez le revoir, l\'exporter ou le supprimer.';
+
+  @override
+  String get wardriveGuide_modesTitle => 'Les modes';
+
+  @override
+  String get wardriveGuide_modesBody =>
+      'Découverte demande aux relais à portée directe de répondre. C\'est sans saut : il n\'utilise du temps d\'antenne que là où vous êtes et mesure les deux sens.\n\nTrace pinge un relais choisi et mesure la liaison dans les deux sens. Idéal pour voir jusqu\'où porte un relais.\n\nCanal envoie un court message sur #wardriving. Les relais qui le transmettent montrent que vous atteignez le maillage, mais chaque ping inonde tout le maillage : utilisez un intervalle long.\n\nHybride alterne Découverte et Canal. Avec Enregistrer le trafic entendu, les paquets que votre radio entend déjà sont aussi cartographiés, sans temps d\'antenne.';
+
+  @override
+  String get wardriveGuide_coloursTitle => 'Ce que signifient les couleurs';
+
+  @override
+  String get wardriveGuide_coloursBody =>
+      'La carte est découpée en carrés de 100 ou 300 m.\n\nVert : un relais vous a entendu et vous l\'avez entendu. Turquoise : un relais a transmis votre ping, mais un seul sens est connu. Bleu : seulement du trafic entendu seul. Rouge : vous avez pingé, personne n\'a répondu. Contour orange : pings ignorés car le carré était déjà couvert.\n\nTouchez un carré pour voir ses relais. Touchez Seulement lui, ou choisissez un relais dans les statistiques, pour ne voir que sa couverture, colorée selon le signal.';
+
+  @override
+  String get wardriveGuide_airtimeTitle => 'Bonnes manières sur les ondes';
+
+  @override
+  String get wardriveGuide_airtimeBody =>
+      'Chaque ping utilise un temps d\'antenne partagé. Découverte et Trace sont sans saut : seuls les relais proches les entendent. Les pings de canal traversent tout le maillage.\n\nGardez la règle des 25 m et celle des carrés couverts : ensemble, elles évitent de pinger le même endroit encore et encore. Sur un maillage chargé, pingez toutes les 60 s ou moins souvent. L\'enregistrement passif est gratuit : il écoute seulement.';
+
+  @override
+  String get wardriveGuide_antennaTitle => 'Antennes et relais de voiture';
+
+  @override
+  String get wardriveGuide_antennaBody =>
+      'Les résultats dépendent de votre antenne. Une antenne sur le toit entend bien plus qu\'une antenne dans l\'habitacle. Gardez le même montage pour comparer vos trajets.\n\nUn relais dans votre voiture répondrait à chaque ping et masquerait la vraie couverture. Choisissez-le comme Mon relais de voiture pour qu\'il soit toujours ignoré. Tout ce qui est entendu à −30 dBm ou plus est à côté de vous et est aussi ignoré.';
+
+  @override
+  String get wardriveGuide_screenOffTitle => 'Écran éteint et batterie';
+
+  @override
+  String get wardriveGuide_screenOffBody =>
+      'Activez Continuer écran éteint pour verrouiller le téléphone pendant un trajet. Android affiche une notification et le GPS continue.\n\nCela consomme plus de batterie : branchez le téléphone sur les longs trajets.';
+
+  @override
+  String get wardriveGuide_shareTitle => 'Partager des trajets';
+
+  @override
+  String get wardriveGuide_shareBody =>
+      'Exportez un trajet depuis le menu en GPX ou KML pour les applis de cartes, CSV pour les tableurs, ou GeoJSON. Seul GeoJSON garde tout et se réimporte, sur ce téléphone ou un autre.\n\nLes fichiers exportés contiennent vos positions et horaires. Ne les partagez qu\'avec des personnes de confiance.';
+
+  @override
   String get sarneg_randomWord => 'Mot aléatoire';
 
   @override

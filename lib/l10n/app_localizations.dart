@@ -23917,6 +23917,186 @@ abstract class AppLocalizations {
   /// **'No repeater answered here.'**
   String get wardrive_squareNoRepeaters;
 
+  /// No description provided for @wardrive_noiseTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Noise floor'**
+  String get wardrive_noiseTitle;
+
+  /// No description provided for @wardrive_noiseEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No noise floor readings in this drive. Turn on Record noise floor in wardrive settings.'**
+  String get wardrive_noiseEmpty;
+
+  /// No description provided for @wardrive_noiseSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'{low} to {high} dBm, average {avg} dBm'**
+  String wardrive_noiseSummary(int low, int high, int avg);
+
+  /// No description provided for @wardrive_noiseHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiet is about −120 to −100 dBm. Above −90 dBm the band is busy or something nearby is noisy, and your range drops. Green markers were heard, red ones weren\'t; tap one for its repeaters.'**
+  String get wardrive_noiseHint;
+
+  /// No description provided for @wardrive_export.
+  ///
+  /// In en, this message translates to:
+  /// **'Export this drive'**
+  String get wardrive_export;
+
+  /// No description provided for @wardrive_exportHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Shares the drive as a file.'**
+  String get wardrive_exportHint;
+
+  /// No description provided for @wardrive_formatGpx.
+  ///
+  /// In en, this message translates to:
+  /// **'Waypoints and track, for most map apps'**
+  String get wardrive_formatGpx;
+
+  /// No description provided for @wardrive_formatKml.
+  ///
+  /// In en, this message translates to:
+  /// **'Coloured pins, for Google Earth'**
+  String get wardrive_formatKml;
+
+  /// No description provided for @wardrive_formatCsv.
+  ///
+  /// In en, this message translates to:
+  /// **'One row per repeater, for spreadsheets'**
+  String get wardrive_formatCsv;
+
+  /// No description provided for @wardrive_formatGeojson.
+  ///
+  /// In en, this message translates to:
+  /// **'Everything, and imports back into this app'**
+  String get wardrive_formatGeojson;
+
+  /// No description provided for @wardrive_exportFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t export the drive.'**
+  String get wardrive_exportFailed;
+
+  /// No description provided for @wardrive_import.
+  ///
+  /// In en, this message translates to:
+  /// **'Import a drive'**
+  String get wardrive_import;
+
+  /// No description provided for @wardrive_importFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'That file isn\'t a drive exported from this app as GeoJSON.'**
+  String get wardrive_importFailed;
+
+  /// No description provided for @wardrive_imported.
+  ///
+  /// In en, this message translates to:
+  /// **'Drive added to history ({pings} pings).'**
+  String wardrive_imported(int pings);
+
+  /// No description provided for @wardrive_importDuplicate.
+  ///
+  /// In en, this message translates to:
+  /// **'That drive is already in your history.'**
+  String get wardrive_importDuplicate;
+
+  /// No description provided for @wardriveGuide_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Wardriving guide'**
+  String get wardriveGuide_title;
+
+  /// No description provided for @wardriveGuide_startTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Getting started'**
+  String get wardriveGuide_startTitle;
+
+  /// No description provided for @wardriveGuide_startBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect your radio, pick a mode and tap Start. The first ping goes out straight away, then one every interval while you move.\n\nTap Ping now to ping on the spot. Stop saves the drive to History, where you can look at it again, export it or delete it.'**
+  String get wardriveGuide_startBody;
+
+  /// No description provided for @wardriveGuide_modesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'The modes'**
+  String get wardriveGuide_modesTitle;
+
+  /// No description provided for @wardriveGuide_modesBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Discovery asks the repeaters in direct range to answer. It\'s zero-hop, so it only uses airtime where you are, and both directions are measured.\n\nTrace pings one repeater you pick and measures the link both ways. Use it to map how far one repeater reaches.\n\nChannel posts a short message to #wardriving. Repeaters that pass it on show you reach the wider mesh, but every ping floods the whole mesh, so use a long interval.\n\nHybrid alternates Discovery and Channel. With Log traffic you hear on, packets your radio hears anyway are mapped too, at no airtime cost.'**
+  String get wardriveGuide_modesBody;
+
+  /// No description provided for @wardriveGuide_coloursTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What the colours mean'**
+  String get wardriveGuide_coloursTitle;
+
+  /// No description provided for @wardriveGuide_coloursBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The map is split into squares of 100 or 300 m.\n\nGreen: a repeater heard you and you heard it. Teal: a repeater passed your ping on, but only one direction is known. Blue: only traffic heard on its own. Red: you pinged and nothing answered. Amber outline: pings were skipped because the square was already covered.\n\nTap a square to see its repeaters. Tap Show only, or pick a repeater in Repeater stats, to see just that repeater\'s coverage, shaded by signal.'**
+  String get wardriveGuide_coloursBody;
+
+  /// No description provided for @wardriveGuide_airtimeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Airtime manners'**
+  String get wardriveGuide_airtimeTitle;
+
+  /// No description provided for @wardriveGuide_airtimeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Every ping uses airtime that others share. Discovery and Trace are zero-hop, so only repeaters near you hear them. Channel pings travel the whole mesh.\n\nKeep the 25 m rule and the skip-covered rule on: together they stop you pinging the same ground over and over. On a busy mesh, ping every 60 s or slower. Passive logging is free: it only listens.'**
+  String get wardriveGuide_airtimeBody;
+
+  /// No description provided for @wardriveGuide_antennaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Antennas and car repeaters'**
+  String get wardriveGuide_antennaTitle;
+
+  /// No description provided for @wardriveGuide_antennaBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Results depend on your antenna. One outside the car, on the roof, hears far more than one inside. Use the same setup each time so drives compare.\n\nA repeater riding in your car would answer every ping and hide real coverage. Pick it as My car repeater so it\'s always left out. Anything heard at −30 dBm or stronger is beside you, not coverage, and is left out too.'**
+  String get wardriveGuide_antennaBody;
+
+  /// No description provided for @wardriveGuide_screenOffTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Screen off and battery'**
+  String get wardriveGuide_screenOffTitle;
+
+  /// No description provided for @wardriveGuide_screenOffBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Turn on Keep running with the screen off to lock your phone during a drive. Android shows a notification while GPS keeps working.\n\nThis uses more battery, so plug in your phone on long drives.'**
+  String get wardriveGuide_screenOffBody;
+
+  /// No description provided for @wardriveGuide_shareTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sharing drives'**
+  String get wardriveGuide_shareTitle;
+
+  /// No description provided for @wardriveGuide_shareBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Export a drive from the menu as GPX or KML for map apps, CSV for spreadsheets, or GeoJSON. Only GeoJSON keeps everything and can be imported back, on this phone or another.\n\nExported files contain your positions and times. Share them only with people you trust.'**
+  String get wardriveGuide_shareBody;
+
   /// No description provided for @sarneg_randomWord.
   ///
   /// In en, this message translates to:

@@ -14384,6 +14384,112 @@ class AppLocalizationsSk extends AppLocalizations {
   String get wardrive_squareNoRepeaters => 'Tu neodpovedal žiadny opakovač.';
 
   @override
+  String get wardrive_noiseTitle => 'Úroveň šumu';
+
+  @override
+  String get wardrive_noiseEmpty =>
+      'Táto jazda nemá merania šumu. Zapni Zaznamenávať úroveň šumu v nastaveniach wardrive.';
+
+  @override
+  String wardrive_noiseSummary(int low, int high, int avg) {
+    return 'Od $low do $high dBm, priemer $avg dBm';
+  }
+
+  @override
+  String get wardrive_noiseHint =>
+      'Ticho je asi −120 až −100 dBm. Nad −90 dBm je pásmo vyťažené alebo niečo blízko ruší a dosah klesá. Zelené značky boli počuté, červené nie; ťukni na jednu pre jej opakovače.';
+
+  @override
+  String get wardrive_export => 'Exportovať túto jazdu';
+
+  @override
+  String get wardrive_exportHint => 'Zdieľa jazdu ako súbor.';
+
+  @override
+  String get wardrive_formatGpx =>
+      'Body a trasa, pre väčšinu mapových aplikácií';
+
+  @override
+  String get wardrive_formatKml => 'Farebné špendlíky, pre Google Earth';
+
+  @override
+  String get wardrive_formatCsv => 'Jeden riadok na opakovač, pre tabuľky';
+
+  @override
+  String get wardrive_formatGeojson =>
+      'Všetko, a dá sa naspäť importovať do tejto aplikácie';
+
+  @override
+  String get wardrive_exportFailed => 'Jazdu sa nepodarilo exportovať.';
+
+  @override
+  String get wardrive_import => 'Importovať jazdu';
+
+  @override
+  String get wardrive_importFailed =>
+      'Tento súbor nie je jazda exportovaná z tejto aplikácie ako GeoJSON.';
+
+  @override
+  String wardrive_imported(int pings) {
+    return 'Jazda pridaná do histórie (pingy: $pings).';
+  }
+
+  @override
+  String get wardrive_importDuplicate => 'Táto jazda už je v histórii.';
+
+  @override
+  String get wardriveGuide_title => 'Sprievodca wardrivingom';
+
+  @override
+  String get wardriveGuide_startTitle => 'Začíname';
+
+  @override
+  String get wardriveGuide_startBody =>
+      'Pripoj rádio, vyber režim a ťukni na Štart. Prvý ping odíde hneď, potom jeden každý interval, kým sa pohybuješ.\n\nŤuknutím na Pingnúť teraz pingneš na mieste. Stop uloží jazdu do histórie, kde si ju môžeš znova pozrieť, exportovať alebo zmazať.';
+
+  @override
+  String get wardriveGuide_modesTitle => 'Režimy';
+
+  @override
+  String get wardriveGuide_modesBody =>
+      'Objavovanie žiada opakovače v priamom dosahu o odpoveď. Je bez skokov, takže využíva vysielací čas len tam, kde si, a meria oba smery.\n\nTrasovanie pingne zvolený opakovač a meria spojenie oboma smermi. Ukáže, kam až jeden opakovač dosiahne.\n\nKanál pošle krátku správu na #wardriving. Opakovače, ktoré ju posunú, ukazujú, že dosiahneš širšiu sieť, ale každý ping zaplaví celú sieť: použi dlhý interval.\n\nHybrid strieda Objavovanie a Kanál. So zapnutým Zaznamenávať počutú prevádzku sa na mapu dostanú aj pakety, ktoré rádio aj tak počuje, bez vysielacieho času.';
+
+  @override
+  String get wardriveGuide_coloursTitle => 'Čo znamenajú farby';
+
+  @override
+  String get wardriveGuide_coloursBody =>
+      'Mapa je rozdelená na štvorce 100 alebo 300 m.\n\nZelená: opakovač počul teba a ty jeho. Tyrkysová: opakovač posunul tvoj ping, ale známy je len jeden smer. Modrá: len prevádzka počutá samostatne. Červená: pingol si a nikto neodpovedal. Jantárový okraj: pingy boli preskočené, lebo štvorec už bol pokrytý.\n\nŤukni na štvorec pre jeho opakovače. Ťukni na Len tento alebo vyber opakovač v štatistikách a uvidíš len jeho pokrytie, zafarbené podľa signálu.';
+
+  @override
+  String get wardriveGuide_airtimeTitle => 'Ohľaduplnosť k vysielaciemu času';
+
+  @override
+  String get wardriveGuide_airtimeBody =>
+      'Každý ping využíva spoločný vysielací čas. Objavovanie a Trasovanie sú bez skokov: počujú ich len blízke opakovače. Kanálové pingy idú celou sieťou.\n\nNechaj zapnuté pravidlo 25 m a preskakovanie pokrytých štvorcov: spolu zabránia opakovanému pingovaniu toho istého miesta. V rušnej sieti pinguj každých 60 s alebo menej často. Pasívne zaznamenávanie je zadarmo: len počúva.';
+
+  @override
+  String get wardriveGuide_antennaTitle => 'Antény a opakovače v aute';
+
+  @override
+  String get wardriveGuide_antennaBody =>
+      'Výsledky závisia od antény. Anténa na streche počuje oveľa viac než anténa v aute. Používaj zakaždým rovnaké zapojenie, aby sa jazdy dali porovnať.\n\nOpakovač v aute by odpovedal na každý ping a zakryl skutočné pokrytie. Vyber ho ako Môj opakovač v aute a bude sa vždy ignorovať. Všetko počuté na −30 dBm a silnejšie je hneď vedľa teba a tiež sa ignoruje.';
+
+  @override
+  String get wardriveGuide_screenOffTitle => 'Vypnutá obrazovka a batéria';
+
+  @override
+  String get wardriveGuide_screenOffBody =>
+      'Zapni Bežať pri vypnutej obrazovke a môžeš počas jazdy zamknúť telefón. Android zobrazí upozornenie a GPS beží ďalej.\n\nSpotrebuje to viac batérie: na dlhých jazdách telefón nabíjaj.';
+
+  @override
+  String get wardriveGuide_shareTitle => 'Zdieľanie jázd';
+
+  @override
+  String get wardriveGuide_shareBody =>
+      'Exportuj jazdu z menu ako GPX alebo KML pre mapové aplikácie, CSV pre tabuľky alebo GeoJSON. Len GeoJSON uchová všetko a dá sa naspäť importovať, na tomto alebo inom telefóne.\n\nExportované súbory obsahujú tvoje polohy a časy. Zdieľaj ich len s ľuďmi, ktorým dôveruješ.';
+
+  @override
   String get sarneg_randomWord => 'Náhodné slovo';
 
   @override

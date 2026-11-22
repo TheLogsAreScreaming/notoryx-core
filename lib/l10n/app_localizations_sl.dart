@@ -14411,6 +14411,112 @@ class AppLocalizationsSl extends AppLocalizations {
   String get wardrive_squareNoRepeaters => 'Tu ni odgovoril noben repetitor.';
 
   @override
+  String get wardrive_noiseTitle => 'Nivo šuma';
+
+  @override
+  String get wardrive_noiseEmpty =>
+      'Ta vožnja nima meritev šuma. V nastavitvah wardrive vklopi Beleži nivo šuma.';
+
+  @override
+  String wardrive_noiseSummary(int low, int high, int avg) {
+    return 'Od $low do $high dBm, povprečje $avg dBm';
+  }
+
+  @override
+  String get wardrive_noiseHint =>
+      'Tiho je okoli −120 do −100 dBm. Nad −90 dBm je pas zaseden ali nekaj v bližini moti in doseg pade. Zelene oznake so bile slišane, rdeče ne; tapni eno za njene repetitorje.';
+
+  @override
+  String get wardrive_export => 'Izvozi to vožnjo';
+
+  @override
+  String get wardrive_exportHint => 'Deli vožnjo kot datoteko.';
+
+  @override
+  String get wardrive_formatGpx =>
+      'Točke in pot, za večino aplikacij z zemljevidi';
+
+  @override
+  String get wardrive_formatKml => 'Barvne bucike, za Google Earth';
+
+  @override
+  String get wardrive_formatCsv => 'Ena vrstica na repetitor, za preglednice';
+
+  @override
+  String get wardrive_formatGeojson =>
+      'Vse, in se da uvoziti nazaj v to aplikacijo';
+
+  @override
+  String get wardrive_exportFailed => 'Vožnje ni bilo mogoče izvoziti.';
+
+  @override
+  String get wardrive_import => 'Uvozi vožnjo';
+
+  @override
+  String get wardrive_importFailed =>
+      'Ta datoteka ni vožnja, izvožena iz te aplikacije kot GeoJSON.';
+
+  @override
+  String wardrive_imported(int pings) {
+    return 'Vožnja dodana v zgodovino (pingi: $pings).';
+  }
+
+  @override
+  String get wardrive_importDuplicate => 'Ta vožnja je že v zgodovini.';
+
+  @override
+  String get wardriveGuide_title => 'Vodnik za wardriving';
+
+  @override
+  String get wardriveGuide_startTitle => 'Začetek';
+
+  @override
+  String get wardriveGuide_startBody =>
+      'Poveži radio, izberi način in tapni Začni. Prvi ping gre takoj, nato eden na vsak interval, medtem ko se premikaš.\n\nZ Pingaj zdaj pingaš na mestu. Ustavi shrani vožnjo v zgodovino, kjer jo lahko znova pogledaš, izvoziš ali izbrišeš.';
+
+  @override
+  String get wardriveGuide_modesTitle => 'Načini';
+
+  @override
+  String get wardriveGuide_modesBody =>
+      'Odkrivanje prosi repetitorje v neposrednem dosegu za odgovor. Deluje brez skokov, zato porabi oddajni čas le tam, kjer si, in meri obe smeri.\n\nSledenje pinga izbrani repetitor in meri povezavo v obe smeri. Tako vidiš, kako daleč seže en repetitor.\n\nKanal pošlje kratko sporočilo na #wardriving. Repetitorji, ki ga posredujejo, kažejo, da dosežeš širše omrežje, a vsak ping preplavi celotno omrežje: uporabi dolg interval.\n\nHibridno izmenjuje Odkrivanje in Kanal. Z vklopljenim Beleži slišani promet se na zemljevid uvrstijo tudi paketi, ki jih radio sliši tako ali tako, brez oddajnega časa.';
+
+  @override
+  String get wardriveGuide_coloursTitle => 'Kaj pomenijo barve';
+
+  @override
+  String get wardriveGuide_coloursBody =>
+      'Zemljevid je razdeljen na kvadrate po 100 ali 300 m.\n\nZelena: repetitor je slišal tebe in ti njega. Turkizna: repetitor je posredoval ping, a znana je le ena smer. Modra: le promet, slišan sam od sebe. Rdeča: pingal si in nihče ni odgovoril. Jantarni rob: pingi so bili preskočeni, ker je bil kvadrat že pokrit.\n\nTapni kvadrat za njegove repetitorje. Tapni Samo ta ali izberi repetitor v statistiki in videl boš le njegovo pokritost, obarvano po signalu.';
+
+  @override
+  String get wardriveGuide_airtimeTitle => 'Bonton oddajnega časa';
+
+  @override
+  String get wardriveGuide_airtimeBody =>
+      'Vsak ping porabi skupni oddajni čas. Odkrivanje in Sledenje sta brez skokov: slišijo ju le bližnji repetitorji. Kanalski pingi gredo skozi celotno omrežje.\n\nPusti vklopljeno pravilo 25 m in preskakovanje pokritih kvadratov: skupaj preprečita, da bi vedno znova pingal isto mesto. V zasedenem omrežju pingaj na 60 s ali redkeje. Pasivno beleženje je brezplačno: samo posluša.';
+
+  @override
+  String get wardriveGuide_antennaTitle => 'Antene in repetitorji v avtu';
+
+  @override
+  String get wardriveGuide_antennaBody =>
+      'Rezultati so odvisni od antene. Antena na strehi sliši veliko več kot antena v avtu. Vsakič uporabi enako postavitev, da lahko vožnje primerjaš.\n\nRepetitor v avtu bi odgovoril na vsak ping in skril pravo pokritost. Izberi ga kot Moj repetitor v avtu, pa bo vedno prezrt. Vse, kar slišiš pri −30 dBm ali močneje, je tik ob tebi in je prav tako prezrto.';
+
+  @override
+  String get wardriveGuide_screenOffTitle => 'Ugasnjen zaslon in baterija';
+
+  @override
+  String get wardriveGuide_screenOffBody =>
+      'Vklopi Deluj z ugasnjenim zaslonom, da lahko med vožnjo zakleneš telefon. Android prikaže obvestilo, GPS pa deluje naprej.\n\nTo porabi več baterije: na dolgih vožnjah telefon polni.';
+
+  @override
+  String get wardriveGuide_shareTitle => 'Deljenje voženj';
+
+  @override
+  String get wardriveGuide_shareBody =>
+      'Vožnjo izvozi iz menija kot GPX ali KML za aplikacije z zemljevidi, CSV za preglednice ali GeoJSON. Le GeoJSON ohrani vse in ga lahko uvoziš nazaj, na tem ali drugem telefonu.\n\nIzvožene datoteke vsebujejo tvoje položaje in čase. Deli jih le z ljudmi, ki jim zaupaš.';
+
+  @override
   String get sarneg_randomWord => 'Naključna beseda';
 
   @override

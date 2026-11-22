@@ -379,6 +379,39 @@ class WardriveService extends ChangeNotifier {
     _notify();
   }
 
+  /// Adds a drive read from a file to the history, newest first. False when
+  /// the same drive is already there.
+  Future<bool> importSession(WardriveSession drive) async {
+    if (_sessions.any(
+      (x) => x.id == drive.id && x.startedAt == drive.startedAt,
+    )) {
+      return false;
+    }
+    final id = _sessions.any((x) => x.id == drive.id)
+        ? '${drive.id}-${_now().microsecondsSinceEpoch}'
+        : drive.id;
+    final pings = drive.pings.length > maxPings + maxPassive
+        ? drive.pings.sublist(drive.pings.length - maxPings - maxPassive)
+        : drive.pings;
+    _sessions =
+        ([
+              WardriveSession(
+                id: id,
+                startedAt: drive.startedAt,
+                endedAt: drive.endedAt,
+                pings: pings,
+                noise: drive.noise,
+              ),
+              ..._sessions,
+            ]..sort((a, b) => b.startedAt.compareTo(a.startedAt)))
+            .take(maxSessions)
+            .toList();
+    if (running) _covered = _coveredSquares();
+    await _save();
+    _notify();
+    return true;
+  }
+
   Future<void> deleteSession(String id) async {
     _sessions = _sessions.where((s) => s.id != id).toList();
     await _save();
