@@ -14250,4 +14250,73 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get wardrive_explainHybrid =>
       'Upptäckts- och kanalpingar turas om: närliggande repeatrar på den ena, det större nätet på nästa.';
+
+  @override
+  String get wardrive_legendBothWays => 'Båda hållen';
+
+  @override
+  String get wardrive_legendRepeaterOnly => 'Bara repeater';
+
+  @override
+  String get wardrive_legendPassive => 'Passiv';
+
+  @override
+  String get wardrive_legendNoAnswer => 'Inget svar';
+
+  @override
+  String get wardrive_legendSkipped => 'Hoppade över';
+
+  @override
+  String wardrive_squareSize(int metres) {
+    return 'Rutor på $metres m';
+  }
+
+  @override
+  String get wardrive_thisDrive => 'Den här körningen';
+
+  @override
+  String get wardrive_allDrives => 'Alla körningar';
+
+  @override
+  String get wardrive_squareTitle => 'Rutans detaljer';
+
+  @override
+  String wardrive_squareSummary(int pings, int heard, int passive) {
+    return '$pings pingar · $heard hörda · $passive passiva';
+  }
+
+  @override
+  String wardrive_squareLast(String time) {
+    return 'senast $time';
+  }
+
+  @override
+  String get wardrive_showOnly => 'Bara den';
+
+  @override
+  String wardrive_showingOnly(String name) {
+    return 'Bara $name';
+  }
+
+  @override
+  String get wardrive_clearFilter => 'Visa alla';
+
+  @override
+  String get wardrive_repeaterStats => 'Repeaterstatistik';
+
+  @override
+  String wardrive_statsLine(int squares, String best, String avg) {
+    return '$squares rutor · bäst $best dB · snitt $avg dB';
+  }
+
+  @override
+  String wardrive_farthest(String km) {
+    return 'längst $km km';
+  }
+
+  @override
+  String get wardrive_noRepeatersHeard => 'Inga repeatrar hörda än.';
+
+  @override
+  String get wardrive_squareNoRepeaters => 'Ingen repeater svarade här.';
 }

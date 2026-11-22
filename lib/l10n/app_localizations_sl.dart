@@ -14340,4 +14340,73 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String get wardrive_explainHybrid =>
       'Odkrivalni in kanalski pingi se izmenjujejo: bližnji repetitorji pri enem, širše omrežje pri naslednjem.';
+
+  @override
+  String get wardrive_legendBothWays => 'V obe smeri';
+
+  @override
+  String get wardrive_legendRepeaterOnly => 'Samo repetitor';
+
+  @override
+  String get wardrive_legendPassive => 'Pasivno';
+
+  @override
+  String get wardrive_legendNoAnswer => 'Brez odgovora';
+
+  @override
+  String get wardrive_legendSkipped => 'Preskočeno';
+
+  @override
+  String wardrive_squareSize(int metres) {
+    return 'Kvadrati po $metres m';
+  }
+
+  @override
+  String get wardrive_thisDrive => 'Ta vožnja';
+
+  @override
+  String get wardrive_allDrives => 'Vse vožnje';
+
+  @override
+  String get wardrive_squareTitle => 'Podrobnosti kvadrata';
+
+  @override
+  String wardrive_squareSummary(int pings, int heard, int passive) {
+    return 'Pingi: $pings · slišani: $heard · pasivni: $passive';
+  }
+
+  @override
+  String wardrive_squareLast(String time) {
+    return 'nazadnje $time';
+  }
+
+  @override
+  String get wardrive_showOnly => 'Samo ta';
+
+  @override
+  String wardrive_showingOnly(String name) {
+    return 'Samo $name';
+  }
+
+  @override
+  String get wardrive_clearFilter => 'Pokaži vse';
+
+  @override
+  String get wardrive_repeaterStats => 'Statistika repetitorjev';
+
+  @override
+  String wardrive_statsLine(int squares, String best, String avg) {
+    return 'Kvadrati: $squares · najboljši $best dB · povprečje $avg dB';
+  }
+
+  @override
+  String wardrive_farthest(String km) {
+    return 'najdlje $km km';
+  }
+
+  @override
+  String get wardrive_noRepeatersHeard => 'Še ni slišanih repetitorjev.';
+
+  @override
+  String get wardrive_squareNoRepeaters => 'Tu ni odgovoril noben repetitor.';
 }

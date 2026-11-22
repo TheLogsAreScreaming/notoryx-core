@@ -23802,6 +23802,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Discovery and channel pings take turns: nearby repeaters on one ping, the wider mesh on the next.'**
   String get wardrive_explainHybrid;
+
+  /// No description provided for @wardrive_legendBothWays.
+  ///
+  /// In en, this message translates to:
+  /// **'Both ways'**
+  String get wardrive_legendBothWays;
+
+  /// No description provided for @wardrive_legendRepeaterOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeater only'**
+  String get wardrive_legendRepeaterOnly;
+
+  /// No description provided for @wardrive_legendPassive.
+  ///
+  /// In en, this message translates to:
+  /// **'Passive'**
+  String get wardrive_legendPassive;
+
+  /// No description provided for @wardrive_legendNoAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'No answer'**
+  String get wardrive_legendNoAnswer;
+
+  /// No description provided for @wardrive_legendSkipped.
+  ///
+  /// In en, this message translates to:
+  /// **'Skipped'**
+  String get wardrive_legendSkipped;
+
+  /// No description provided for @wardrive_squareSize.
+  ///
+  /// In en, this message translates to:
+  /// **'{metres} m squares'**
+  String wardrive_squareSize(int metres);
+
+  /// No description provided for @wardrive_thisDrive.
+  ///
+  /// In en, this message translates to:
+  /// **'This drive'**
+  String get wardrive_thisDrive;
+
+  /// No description provided for @wardrive_allDrives.
+  ///
+  /// In en, this message translates to:
+  /// **'All drives'**
+  String get wardrive_allDrives;
+
+  /// No description provided for @wardrive_squareTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Square details'**
+  String get wardrive_squareTitle;
+
+  /// No description provided for @wardrive_squareSummary.
+  ///
+  /// In en, this message translates to:
+  /// **'{pings} pings · {heard} heard · {passive} passive'**
+  String wardrive_squareSummary(int pings, int heard, int passive);
+
+  /// No description provided for @wardrive_squareLast.
+  ///
+  /// In en, this message translates to:
+  /// **'last {time}'**
+  String wardrive_squareLast(String time);
+
+  /// No description provided for @wardrive_showOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Show only'**
+  String get wardrive_showOnly;
+
+  /// No description provided for @wardrive_showingOnly.
+  ///
+  /// In en, this message translates to:
+  /// **'Only {name}'**
+  String wardrive_showingOnly(String name);
+
+  /// No description provided for @wardrive_clearFilter.
+  ///
+  /// In en, this message translates to:
+  /// **'Show all'**
+  String get wardrive_clearFilter;
+
+  /// No description provided for @wardrive_repeaterStats.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeater stats'**
+  String get wardrive_repeaterStats;
+
+  /// No description provided for @wardrive_statsLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{squares} squares · best {best} dB · avg {avg} dB'**
+  String wardrive_statsLine(int squares, String best, String avg);
+
+  /// No description provided for @wardrive_farthest.
+  ///
+  /// In en, this message translates to:
+  /// **'farthest {km} km'**
+  String wardrive_farthest(String km);
+
+  /// No description provided for @wardrive_noRepeatersHeard.
+  ///
+  /// In en, this message translates to:
+  /// **'No repeaters heard yet.'**
+  String get wardrive_noRepeatersHeard;
+
+  /// No description provided for @wardrive_squareNoRepeaters.
+  ///
+  /// In en, this message translates to:
+  /// **'No repeater answered here.'**
+  String get wardrive_squareNoRepeaters;
 }
 
 class _AppLocalizationsDelegate
