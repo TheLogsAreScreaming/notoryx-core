@@ -5406,5 +5406,9 @@
   "wardriveGuide_screenOffTitle": "Skärm av och batteri",
   "wardriveGuide_screenOffBody": "Slå på Fortsätt med skärmen avstängd för att låsa telefonen under körningen. Android visar en avisering medan GPS fortsätter.\n\nDet drar mer batteri: ladda telefonen på långa körningar.",
   "wardriveGuide_shareTitle": "Dela körningar",
-  "wardriveGuide_shareBody": "Exportera en körning från menyn som GPX eller KML för kartappar, CSV för kalkylblad eller GeoJSON. Bara GeoJSON behåller allt och kan importeras igen, i den här eller en annan telefon.\n\nExporterade filer innehåller dina positioner och tider. Dela dem bara med personer du litar på."
+  "wardriveGuide_shareBody": "Exportera en körning från menyn som GPX eller KML för kartappar, CSV för kalkylblad eller GeoJSON. Bara GeoJSON behåller allt och kan importeras igen, i den här eller en annan telefon.\n\nExporterade filer innehåller dina positioner och tider. Dela dem bara med personer du litar på.",
+  "sarneg_randomWord": "Slumpat ord",
+  "sarneg_wellKnownWord": "Det här ordet finns i offentliga guider, så vem som helst kan prova det. Ett slumpat ord är säkrare.",
+  "sarneg_clipboardClears": "Urklippet töms om 1 minut.",
+  "sarneg_autoClear": "Rensas efter 1 minut utan inmatning."
 }

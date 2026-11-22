@@ -14425,4 +14425,17 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get wardriveGuide_shareBody =>
       'Exportera en körning från menyn som GPX eller KML för kartappar, CSV för kalkylblad eller GeoJSON. Bara GeoJSON behåller allt och kan importeras igen, i den här eller en annan telefon.\n\nExporterade filer innehåller dina positioner och tider. Dela dem bara med personer du litar på.';
+
+  @override
+  String get sarneg_randomWord => 'Slumpat ord';
+
+  @override
+  String get sarneg_wellKnownWord =>
+      'Det här ordet finns i offentliga guider, så vem som helst kan prova det. Ett slumpat ord är säkrare.';
+
+  @override
+  String get sarneg_clipboardClears => 'Urklippet töms om 1 minut.';
+
+  @override
+  String get sarneg_autoClear => 'Rensas efter 1 minut utan inmatning.';
 }

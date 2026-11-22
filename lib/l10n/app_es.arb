@@ -5540,5 +5540,9 @@
   "wardriveGuide_screenOffTitle": "Pantalla apagada y batería",
   "wardriveGuide_screenOffBody": "Activa Seguir con la pantalla apagada para bloquear el teléfono durante el recorrido. Android muestra una notificación mientras el GPS sigue funcionando.\n\nEsto gasta más batería: enchufa el teléfono en recorridos largos.",
   "wardriveGuide_shareTitle": "Compartir recorridos",
-  "wardriveGuide_shareBody": "Exporta un recorrido desde el menú como GPX o KML para apps de mapas, CSV para hojas de cálculo, o GeoJSON. Solo GeoJSON lo guarda todo y se puede volver a importar, en este teléfono u otro.\n\nLos archivos exportados contienen tus posiciones y horas. Compártelos solo con gente de confianza."
+  "wardriveGuide_shareBody": "Exporta un recorrido desde el menú como GPX o KML para apps de mapas, CSV para hojas de cálculo, o GeoJSON. Solo GeoJSON lo guarda todo y se puede volver a importar, en este teléfono u otro.\n\nLos archivos exportados contienen tus posiciones y horas. Compártelos solo con gente de confianza.",
+  "sarneg_randomWord": "Palabra aleatoria",
+  "sarneg_wellKnownWord": "Esta palabra aparece en guías públicas, así que cualquiera puede probarla. Una palabra aleatoria es más segura.",
+  "sarneg_clipboardClears": "El portapapeles se vacía en 1 minuto.",
+  "sarneg_autoClear": "Se borra tras 1 minuto sin escribir."
 }

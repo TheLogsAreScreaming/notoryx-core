@@ -14567,4 +14567,18 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get wardriveGuide_shareBody =>
       'Wyeksportuj jazdę z menu jako GPX lub KML do aplikacji z mapami, CSV do arkuszy albo GeoJSON. Tylko GeoJSON zachowuje wszystko i da się go zaimportować z powrotem, na tym lub innym telefonie.\n\nWyeksportowane pliki zawierają twoje pozycje i godziny. Udostępniaj je tylko zaufanym osobom.';
+
+  @override
+  String get sarneg_randomWord => 'Losowe słowo';
+
+  @override
+  String get sarneg_wellKnownWord =>
+      'To słowo jest w publicznych poradnikach, więc każdy może je wypróbować. Losowe słowo jest bezpieczniejsze.';
+
+  @override
+  String get sarneg_clipboardClears =>
+      'Schowek zostanie wyczyszczony za 1 minutę.';
+
+  @override
+  String get sarneg_autoClear => 'Czyści się po 1 minucie bez pisania.';
 }

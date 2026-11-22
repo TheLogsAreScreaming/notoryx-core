@@ -5411,5 +5411,9 @@
   "wardriveGuide_screenOffTitle": "熄屏与电量",
   "wardriveGuide_screenOffBody": "开启“熄屏后继续运行”后，扫街时可以锁屏。Android 会显示通知，GPS 继续工作。\n\n这会更耗电，长途扫街请给手机充电。",
   "wardriveGuide_shareTitle": "分享扫街",
-  "wardriveGuide_shareBody": "在菜单中可将扫街导出为适用于地图应用的 GPX 或 KML、适用于表格的 CSV，或 GeoJSON。只有 GeoJSON 保留全部信息，并可在本机或其他手机上重新导入。\n\n导出的文件包含你的位置和时间。只与你信任的人分享。"
+  "wardriveGuide_shareBody": "在菜单中可将扫街导出为适用于地图应用的 GPX 或 KML、适用于表格的 CSV，或 GeoJSON。只有 GeoJSON 保留全部信息，并可在本机或其他手机上重新导入。\n\n导出的文件包含你的位置和时间。只与你信任的人分享。",
+  "sarneg_randomWord": "随机词",
+  "sarneg_wellKnownWord": "这个词出现在公开指南中，任何人都可以试用。随机词更安全。",
+  "sarneg_clipboardClears": "剪贴板将在 1 分钟后清空。",
+  "sarneg_autoClear": "1 分钟无输入后清空。"
 }

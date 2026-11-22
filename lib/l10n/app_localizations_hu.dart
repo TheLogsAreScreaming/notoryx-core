@@ -14511,4 +14511,17 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get wardriveGuide_shareBody =>
       'Exportáld az utat a menüből GPX vagy KML formátumban térképappokhoz, CSV-ben táblázatokhoz, vagy GeoJSON-ként. Csak a GeoJSON őriz meg mindent, és csak az importálható vissza, ezen vagy másik telefonon.\n\nAz exportált fájlok tartalmazzák a pozícióidat és az időpontokat. Csak megbízható emberekkel oszd meg őket.';
+
+  @override
+  String get sarneg_randomWord => 'Véletlen szó';
+
+  @override
+  String get sarneg_wellKnownWord =>
+      'Ez a szó nyilvános útmutatókban szerepel, így bárki kipróbálhatja. Egy véletlen szó biztonságosabb.';
+
+  @override
+  String get sarneg_clipboardClears => 'A vágólap 1 perc múlva törlődik.';
+
+  @override
+  String get sarneg_autoClear => '1 perc gépelés nélkül törlődik.';
 }

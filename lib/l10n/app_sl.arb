@@ -5406,5 +5406,9 @@
   "wardriveGuide_screenOffTitle": "Ugasnjen zaslon in baterija",
   "wardriveGuide_screenOffBody": "Vklopi Deluj z ugasnjenim zaslonom, da lahko med vožnjo zakleneš telefon. Android prikaže obvestilo, GPS pa deluje naprej.\n\nTo porabi več baterije: na dolgih vožnjah telefon polni.",
   "wardriveGuide_shareTitle": "Deljenje voženj",
-  "wardriveGuide_shareBody": "Vožnjo izvozi iz menija kot GPX ali KML za aplikacije z zemljevidi, CSV za preglednice ali GeoJSON. Le GeoJSON ohrani vse in ga lahko uvoziš nazaj, na tem ali drugem telefonu.\n\nIzvožene datoteke vsebujejo tvoje položaje in čase. Deli jih le z ljudmi, ki jim zaupaš."
+  "wardriveGuide_shareBody": "Vožnjo izvozi iz menija kot GPX ali KML za aplikacije z zemljevidi, CSV za preglednice ali GeoJSON. Le GeoJSON ohrani vse in ga lahko uvoziš nazaj, na tem ali drugem telefonu.\n\nIzvožene datoteke vsebujejo tvoje položaje in čase. Deli jih le z ljudmi, ki jim zaupaš.",
+  "sarneg_randomWord": "Naključna beseda",
+  "sarneg_wellKnownWord": "Ta beseda je objavljena v javnih vodnikih, zato jo lahko poskusi kdorkoli. Naključna beseda je varnejša.",
+  "sarneg_clipboardClears": "Odložišče se izprazni čez 1 minuto.",
+  "sarneg_autoClear": "Izbriše se po 1 minuti brez tipkanja."
 }

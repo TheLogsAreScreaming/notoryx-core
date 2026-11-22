@@ -14515,4 +14515,17 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String get wardriveGuide_shareBody =>
       'Vožnjo izvozi iz menija kot GPX ali KML za aplikacije z zemljevidi, CSV za preglednice ali GeoJSON. Le GeoJSON ohrani vse in ga lahko uvoziš nazaj, na tem ali drugem telefonu.\n\nIzvožene datoteke vsebujejo tvoje položaje in čase. Deli jih le z ljudmi, ki jim zaupaš.';
+
+  @override
+  String get sarneg_randomWord => 'Naključna beseda';
+
+  @override
+  String get sarneg_wellKnownWord =>
+      'Ta beseda je objavljena v javnih vodnikih, zato jo lahko poskusi kdorkoli. Naključna beseda je varnejša.';
+
+  @override
+  String get sarneg_clipboardClears => 'Odložišče se izprazni čez 1 minuto.';
+
+  @override
+  String get sarneg_autoClear => 'Izbriše se po 1 minuti brez tipkanja.';
 }

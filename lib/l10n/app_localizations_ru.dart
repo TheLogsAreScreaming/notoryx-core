@@ -14568,4 +14568,17 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get wardriveGuide_shareBody =>
       'Экспортируйте поездку из меню в GPX или KML для картографических приложений, CSV для таблиц или GeoJSON. Только GeoJSON сохраняет всё и импортируется обратно, на этот или другой телефон.\n\nВ экспортированных файлах есть ваши координаты и время. Делитесь ими только с теми, кому доверяете.';
+
+  @override
+  String get sarneg_randomWord => 'Случайное слово';
+
+  @override
+  String get sarneg_wellKnownWord =>
+      'Это слово напечатано в открытых руководствах, поэтому его может попробовать любой. Случайное слово надёжнее.';
+
+  @override
+  String get sarneg_clipboardClears => 'Буфер обмена очистится через 1 минуту.';
+
+  @override
+  String get sarneg_autoClear => 'Очищается через 1 минуту без ввода.';
 }

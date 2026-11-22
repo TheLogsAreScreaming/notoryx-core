@@ -14517,4 +14517,17 @@ class AppLocalizationsBg extends AppLocalizations {
   @override
   String get wardriveGuide_shareBody =>
       'Експортирайте обиколка от менюто като GPX или KML за приложения с карти, CSV за таблици или GeoJSON. Само GeoJSON пази всичко и може да се импортира обратно, на този или друг телефон.\n\nЕкспортираните файлове съдържат позициите и часовете ви. Споделяйте ги само с хора, на които имате доверие.';
+
+  @override
+  String get sarneg_randomWord => 'Случайна дума';
+
+  @override
+  String get sarneg_wellKnownWord =>
+      'Тази дума е публикувана в публични ръководства, затова всеки може да я опита. Случайна дума е по-сигурна.';
+
+  @override
+  String get sarneg_clipboardClears => 'Клипбордът се изчиства след 1 минута.';
+
+  @override
+  String get sarneg_autoClear => 'Изчиства се след 1 минута без въвеждане.';
 }

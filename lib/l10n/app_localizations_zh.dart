@@ -13627,4 +13627,16 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String get wardriveGuide_shareBody =>
       '在菜单中可将扫街导出为适用于地图应用的 GPX 或 KML、适用于表格的 CSV，或 GeoJSON。只有 GeoJSON 保留全部信息，并可在本机或其他手机上重新导入。\n\n导出的文件包含你的位置和时间。只与你信任的人分享。';
+
+  @override
+  String get sarneg_randomWord => '随机词';
+
+  @override
+  String get sarneg_wellKnownWord => '这个词出现在公开指南中，任何人都可以试用。随机词更安全。';
+
+  @override
+  String get sarneg_clipboardClears => '剪贴板将在 1 分钟后清空。';
+
+  @override
+  String get sarneg_autoClear => '1 分钟无输入后清空。';
 }

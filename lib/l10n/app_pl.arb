@@ -5444,5 +5444,9 @@
   "wardriveGuide_screenOffTitle": "Wyłączony ekran i bateria",
   "wardriveGuide_screenOffBody": "Włącz Działaj przy wyłączonym ekranie, aby zablokować telefon w czasie jazdy. Android pokazuje powiadomienie, a GPS działa dalej.\n\nZużywa to więcej baterii: podłącz telefon na długich trasach.",
   "wardriveGuide_shareTitle": "Udostępnianie jazd",
-  "wardriveGuide_shareBody": "Wyeksportuj jazdę z menu jako GPX lub KML do aplikacji z mapami, CSV do arkuszy albo GeoJSON. Tylko GeoJSON zachowuje wszystko i da się go zaimportować z powrotem, na tym lub innym telefonie.\n\nWyeksportowane pliki zawierają twoje pozycje i godziny. Udostępniaj je tylko zaufanym osobom."
+  "wardriveGuide_shareBody": "Wyeksportuj jazdę z menu jako GPX lub KML do aplikacji z mapami, CSV do arkuszy albo GeoJSON. Tylko GeoJSON zachowuje wszystko i da się go zaimportować z powrotem, na tym lub innym telefonie.\n\nWyeksportowane pliki zawierają twoje pozycje i godziny. Udostępniaj je tylko zaufanym osobom.",
+  "sarneg_randomWord": "Losowe słowo",
+  "sarneg_wellKnownWord": "To słowo jest w publicznych poradnikach, więc każdy może je wypróbować. Losowe słowo jest bezpieczniejsze.",
+  "sarneg_clipboardClears": "Schowek zostanie wyczyszczony za 1 minutę.",
+  "sarneg_autoClear": "Czyści się po 1 minucie bez pisania."
 }

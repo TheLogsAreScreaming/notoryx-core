@@ -5444,5 +5444,9 @@
   "wardriveGuide_screenOffTitle": "Kikapcsolt képernyő és akku",
   "wardriveGuide_screenOffBody": "Kapcsold be a Futás kikapcsolt képernyővel opciót, hogy út közben lezárhasd a telefont. Az Android értesítést mutat, a GPS pedig tovább működik.\n\nEz több akkut fogyaszt: hosszú utakon tedd töltőre a telefont.",
   "wardriveGuide_shareTitle": "Utak megosztása",
-  "wardriveGuide_shareBody": "Exportáld az utat a menüből GPX vagy KML formátumban térképappokhoz, CSV-ben táblázatokhoz, vagy GeoJSON-ként. Csak a GeoJSON őriz meg mindent, és csak az importálható vissza, ezen vagy másik telefonon.\n\nAz exportált fájlok tartalmazzák a pozícióidat és az időpontokat. Csak megbízható emberekkel oszd meg őket."
+  "wardriveGuide_shareBody": "Exportáld az utat a menüből GPX vagy KML formátumban térképappokhoz, CSV-ben táblázatokhoz, vagy GeoJSON-ként. Csak a GeoJSON őriz meg mindent, és csak az importálható vissza, ezen vagy másik telefonon.\n\nAz exportált fájlok tartalmazzák a pozícióidat és az időpontokat. Csak megbízható emberekkel oszd meg őket.",
+  "sarneg_randomWord": "Véletlen szó",
+  "sarneg_wellKnownWord": "Ez a szó nyilvános útmutatókban szerepel, így bárki kipróbálhatja. Egy véletlen szó biztonságosabb.",
+  "sarneg_clipboardClears": "A vágólap 1 perc múlva törlődik.",
+  "sarneg_autoClear": "1 perc gépelés nélkül törlődik."
 }

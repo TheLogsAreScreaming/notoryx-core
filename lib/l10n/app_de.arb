@@ -5540,5 +5540,9 @@
   "wardriveGuide_screenOffTitle": "Bildschirm aus und Akku",
   "wardriveGuide_screenOffBody": "Schalte „Bei ausgeschaltetem Bildschirm weiterlaufen“ ein, um das Telefon während der Fahrt zu sperren. Android zeigt eine Benachrichtigung, während GPS weiterläuft.\n\nDas braucht mehr Akku. Lade dein Telefon bei langen Fahrten.",
   "wardriveGuide_shareTitle": "Fahrten teilen",
-  "wardriveGuide_shareBody": "Exportiere eine Fahrt über das Menü als GPX oder KML für Karten-Apps, CSV für Tabellen oder GeoJSON. Nur GeoJSON enthält alles und lässt sich wieder importieren, auf diesem oder einem anderen Telefon.\n\nExportierte Dateien enthalten deine Positionen und Zeiten. Teile sie nur mit Menschen, denen du vertraust."
+  "wardriveGuide_shareBody": "Exportiere eine Fahrt über das Menü als GPX oder KML für Karten-Apps, CSV für Tabellen oder GeoJSON. Nur GeoJSON enthält alles und lässt sich wieder importieren, auf diesem oder einem anderen Telefon.\n\nExportierte Dateien enthalten deine Positionen und Zeiten. Teile sie nur mit Menschen, denen du vertraust.",
+  "sarneg_randomWord": "Zufallswort",
+  "sarneg_wellKnownWord": "Dieses Wort steht in öffentlichen Anleitungen, also kann es jeder ausprobieren. Ein Zufallswort ist sicherer.",
+  "sarneg_clipboardClears": "Die Zwischenablage wird nach 1 Minute geleert.",
+  "sarneg_autoClear": "Wird nach 1 Minute ohne Eingabe geleert."
 }

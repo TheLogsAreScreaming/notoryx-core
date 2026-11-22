@@ -14488,4 +14488,17 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get wardriveGuide_shareBody =>
       'Exportuj jazdu z menu ako GPX alebo KML pre mapové aplikácie, CSV pre tabuľky alebo GeoJSON. Len GeoJSON uchová všetko a dá sa naspäť importovať, na tomto alebo inom telefóne.\n\nExportované súbory obsahujú tvoje polohy a časy. Zdieľaj ich len s ľuďmi, ktorým dôveruješ.';
+
+  @override
+  String get sarneg_randomWord => 'Náhodné slovo';
+
+  @override
+  String get sarneg_wellKnownWord =>
+      'Toto slovo je vo verejných príručkách, takže ho môže skúsiť ktokoľvek. Náhodné slovo je bezpečnejšie.';
+
+  @override
+  String get sarneg_clipboardClears => 'Schránka sa vymaže o 1 minútu.';
+
+  @override
+  String get sarneg_autoClear => 'Vymaže sa po 1 minúte bez písania.';
 }

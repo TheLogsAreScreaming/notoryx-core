@@ -24096,6 +24096,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Export a drive from the menu as GPX or KML for map apps, CSV for spreadsheets, or GeoJSON. Only GeoJSON keeps everything and can be imported back, on this phone or another.\n\nExported files contain your positions and times. Share them only with people you trust.'**
   String get wardriveGuide_shareBody;
+
+  /// No description provided for @sarneg_randomWord.
+  ///
+  /// In en, this message translates to:
+  /// **'Random word'**
+  String get sarneg_randomWord;
+
+  /// No description provided for @sarneg_wellKnownWord.
+  ///
+  /// In en, this message translates to:
+  /// **'This word is printed in public guides, so anyone can try it. A random word is safer.'**
+  String get sarneg_wellKnownWord;
+
+  /// No description provided for @sarneg_clipboardClears.
+  ///
+  /// In en, this message translates to:
+  /// **'The clipboard is cleared in 1 minute.'**
+  String get sarneg_clipboardClears;
+
+  /// No description provided for @sarneg_autoClear.
+  ///
+  /// In en, this message translates to:
+  /// **'Clears after 1 minute without typing.'**
+  String get sarneg_autoClear;
 }
 
 class _AppLocalizationsDelegate

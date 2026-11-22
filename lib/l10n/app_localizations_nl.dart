@@ -14484,4 +14484,18 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get wardriveGuide_shareBody =>
       'Exporteer een rit via het menu als GPX of KML voor kaartapps, CSV voor spreadsheets, of GeoJSON. Alleen GeoJSON bewaart alles en is weer te importeren, op deze of een andere telefoon.\n\nGeëxporteerde bestanden bevatten je posities en tijden. Deel ze alleen met mensen die je vertrouwt.';
+
+  @override
+  String get sarneg_randomWord => 'Willekeurig woord';
+
+  @override
+  String get sarneg_wellKnownWord =>
+      'Dit woord staat in openbare handleidingen, dus iedereen kan het proberen. Een willekeurig woord is veiliger.';
+
+  @override
+  String get sarneg_clipboardClears =>
+      'Het klembord wordt over 1 minuut gewist.';
+
+  @override
+  String get sarneg_autoClear => 'Wordt gewist na 1 minuut zonder typen.';
 }

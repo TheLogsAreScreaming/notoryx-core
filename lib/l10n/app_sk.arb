@@ -5406,5 +5406,9 @@
   "wardriveGuide_screenOffTitle": "Vypnutá obrazovka a batéria",
   "wardriveGuide_screenOffBody": "Zapni Bežať pri vypnutej obrazovke a môžeš počas jazdy zamknúť telefón. Android zobrazí upozornenie a GPS beží ďalej.\n\nSpotrebuje to viac batérie: na dlhých jazdách telefón nabíjaj.",
   "wardriveGuide_shareTitle": "Zdieľanie jázd",
-  "wardriveGuide_shareBody": "Exportuj jazdu z menu ako GPX alebo KML pre mapové aplikácie, CSV pre tabuľky alebo GeoJSON. Len GeoJSON uchová všetko a dá sa naspäť importovať, na tomto alebo inom telefóne.\n\nExportované súbory obsahujú tvoje polohy a časy. Zdieľaj ich len s ľuďmi, ktorým dôveruješ."
+  "wardriveGuide_shareBody": "Exportuj jazdu z menu ako GPX alebo KML pre mapové aplikácie, CSV pre tabuľky alebo GeoJSON. Len GeoJSON uchová všetko a dá sa naspäť importovať, na tomto alebo inom telefóne.\n\nExportované súbory obsahujú tvoje polohy a časy. Zdieľaj ich len s ľuďmi, ktorým dôveruješ.",
+  "sarneg_randomWord": "Náhodné slovo",
+  "sarneg_wellKnownWord": "Toto slovo je vo verejných príručkách, takže ho môže skúsiť ktokoľvek. Náhodné slovo je bezpečnejšie.",
+  "sarneg_clipboardClears": "Schránka sa vymaže o 1 minútu.",
+  "sarneg_autoClear": "Vymaže sa po 1 minúte bez písania."
 }

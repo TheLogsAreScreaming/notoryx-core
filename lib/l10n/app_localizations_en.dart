@@ -14373,4 +14373,17 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get wardriveGuide_shareBody =>
       'Export a drive from the menu as GPX or KML for map apps, CSV for spreadsheets, or GeoJSON. Only GeoJSON keeps everything and can be imported back, on this phone or another.\n\nExported files contain your positions and times. Share them only with people you trust.';
+
+  @override
+  String get sarneg_randomWord => 'Random word';
+
+  @override
+  String get sarneg_wellKnownWord =>
+      'This word is printed in public guides, so anyone can try it. A random word is safer.';
+
+  @override
+  String get sarneg_clipboardClears => 'The clipboard is cleared in 1 minute.';
+
+  @override
+  String get sarneg_autoClear => 'Clears after 1 minute without typing.';
 }

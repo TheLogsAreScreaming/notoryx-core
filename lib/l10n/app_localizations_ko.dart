@@ -13897,4 +13897,17 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get wardriveGuide_shareBody =>
       '메뉴에서 주행을 지도 앱용 GPX·KML, 스프레드시트용 CSV, 또는 GeoJSON으로 내보낼 수 있습니다. 모든 정보를 담고 이 휴대폰이나 다른 휴대폰으로 다시 가져올 수 있는 것은 GeoJSON뿐입니다.\n\n내보낸 파일에는 위치와 시간이 들어 있습니다. 믿을 수 있는 사람과만 공유하세요.';
+
+  @override
+  String get sarneg_randomWord => '무작위 단어';
+
+  @override
+  String get sarneg_wellKnownWord =>
+      '이 단어는 공개 안내서에 나와 있어 누구나 시도할 수 있습니다. 무작위 단어가 더 안전합니다.';
+
+  @override
+  String get sarneg_clipboardClears => '클립보드는 1분 후에 지워집니다.';
+
+  @override
+  String get sarneg_autoClear => '1분 동안 입력이 없으면 지워집니다.';
 }

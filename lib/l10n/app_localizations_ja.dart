@@ -13883,4 +13883,17 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get wardriveGuide_shareBody =>
       'メニューから走行をエクスポートできます。地図アプリ向けの GPX・KML、表計算向けの CSV、または GeoJSON です。すべての情報を保持し、このスマホや別のスマホに再インポートできるのは GeoJSON だけです。\n\nエクスポートしたファイルには位置と時刻が含まれます。信頼できる相手とだけ共有してください。';
+
+  @override
+  String get sarneg_randomWord => 'ランダムな単語';
+
+  @override
+  String get sarneg_wellKnownWord =>
+      'この単語は公開ガイドに載っているため、誰でも試せます。ランダムな単語のほうが安全です。';
+
+  @override
+  String get sarneg_clipboardClears => 'クリップボードは1分後に消去されます。';
+
+  @override
+  String get sarneg_autoClear => '1分間入力がないと消去されます。';
 }

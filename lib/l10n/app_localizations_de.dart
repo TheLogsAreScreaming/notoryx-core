@@ -14554,4 +14554,18 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get wardriveGuide_shareBody =>
       'Exportiere eine Fahrt über das Menü als GPX oder KML für Karten-Apps, CSV für Tabellen oder GeoJSON. Nur GeoJSON enthält alles und lässt sich wieder importieren, auf diesem oder einem anderen Telefon.\n\nExportierte Dateien enthalten deine Positionen und Zeiten. Teile sie nur mit Menschen, denen du vertraust.';
+
+  @override
+  String get sarneg_randomWord => 'Zufallswort';
+
+  @override
+  String get sarneg_wellKnownWord =>
+      'Dieses Wort steht in öffentlichen Anleitungen, also kann es jeder ausprobieren. Ein Zufallswort ist sicherer.';
+
+  @override
+  String get sarneg_clipboardClears =>
+      'Die Zwischenablage wird nach 1 Minute geleert.';
+
+  @override
+  String get sarneg_autoClear => 'Wird nach 1 Minute ohne Eingabe geleert.';
 }
