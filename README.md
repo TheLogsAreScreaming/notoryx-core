@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="branding/notoryx-icon.png" width="120" alt="NOTORYX app icon">
+  <img src="branding/blackout/notoryx-core-tile-1024.png" width="120" alt="NOTORYX app icon">
 </p>
 
 # NOTORYX Core
