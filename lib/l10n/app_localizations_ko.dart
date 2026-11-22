@@ -13794,4 +13794,107 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get wardrive_squareNoRepeaters => '여기서 응답한 리피터가 없습니다.';
+
+  @override
+  String get wardrive_noiseTitle => '노이즈 플로어';
+
+  @override
+  String get wardrive_noiseEmpty =>
+      '이 주행에는 노이즈 측정값이 없습니다. 워드라이브 설정에서 노이즈 플로어 기록을 켜세요.';
+
+  @override
+  String wardrive_noiseSummary(int low, int high, int avg) {
+    return '$low~$high dBm, 평균 $avg dBm';
+  }
+
+  @override
+  String get wardrive_noiseHint =>
+      '조용한 상태는 약 −120~−100 dBm입니다. −90 dBm을 넘으면 대역이 붐비거나 근처에 잡음원이 있어 도달 거리가 줄어듭니다. 초록 표시는 수신됐고 빨강은 아닙니다. 눌러서 리피터를 보세요.';
+
+  @override
+  String get wardrive_export => '이 주행 내보내기';
+
+  @override
+  String get wardrive_exportHint => '주행을 파일로 공유합니다.';
+
+  @override
+  String get wardrive_formatGpx => '웨이포인트와 경로, 대부분의 지도 앱용';
+
+  @override
+  String get wardrive_formatKml => '색깔 핀, Google Earth용';
+
+  @override
+  String get wardrive_formatCsv => '리피터마다 한 줄, 스프레드시트용';
+
+  @override
+  String get wardrive_formatGeojson => '모든 정보, 이 앱으로 다시 가져올 수 있음';
+
+  @override
+  String get wardrive_exportFailed => '주행을 내보내지 못했습니다.';
+
+  @override
+  String get wardrive_import => '주행 가져오기';
+
+  @override
+  String get wardrive_importFailed => '이 파일은 이 앱에서 GeoJSON으로 내보낸 주행이 아닙니다.';
+
+  @override
+  String wardrive_imported(int pings) {
+    return '주행을 기록에 추가했습니다(핑 $pings개).';
+  }
+
+  @override
+  String get wardrive_importDuplicate => '이미 기록에 있는 주행입니다.';
+
+  @override
+  String get wardriveGuide_title => '워드라이브 가이드';
+
+  @override
+  String get wardriveGuide_startTitle => '시작하기';
+
+  @override
+  String get wardriveGuide_startBody =>
+      '무전기를 연결하고 모드를 고른 뒤 시작을 누르세요. 첫 핑은 바로 나가고, 이후 이동하는 동안 간격마다 한 번씩 나갑니다.\n\n지금 핑을 누르면 그 자리에서 핑합니다. 중지하면 주행이 기록에 저장되어 다시 보거나 내보내거나 삭제할 수 있습니다.';
+
+  @override
+  String get wardriveGuide_modesTitle => '모드';
+
+  @override
+  String get wardriveGuide_modesBody =>
+      '탐색은 직접 닿는 범위의 리피터에게 응답을 요청합니다. 0홉이라 내 주변에서만 송신 시간을 쓰고 양방향을 측정합니다.\n\n추적은 고른 리피터 하나에 핑해 양방향 링크를 측정합니다. 리피터 하나가 어디까지 닿는지 확인할 때 쓰세요.\n\n채널은 #wardriving으로 짧은 메시지를 보냅니다. 중계한 리피터로 넓은 메시에 닿는지 알 수 있지만 매번 메시 전체에 퍼지므로 긴 간격을 쓰세요.\n\n하이브리드는 탐색과 채널을 번갈아 씁니다. 들리는 트래픽 기록을 켜면 무전기가 어차피 받는 패킷도 송신 시간 없이 지도에 표시됩니다.';
+
+  @override
+  String get wardriveGuide_coloursTitle => '색의 의미';
+
+  @override
+  String get wardriveGuide_coloursBody =>
+      '지도는 100 m 또는 300 m 칸으로 나뉩니다.\n\n초록: 리피터가 나를 받았고 나도 리피터를 받음. 청록: 리피터가 핑을 중계했지만 한 방향만 알 수 있음. 파랑: 스스로 들린 트래픽만 있음. 빨강: 핑했지만 응답 없음. 호박색 테두리: 이미 커버된 칸이라 핑을 건너뜀.\n\n칸을 누르면 리피터를 볼 수 있습니다. 이것만 보기를 누르거나 리피터 통계에서 고르면 그 리피터의 커버리지만 신호 세기별 색으로 보입니다.';
+
+  @override
+  String get wardriveGuide_airtimeTitle => '송신 시간 매너';
+
+  @override
+  String get wardriveGuide_airtimeBody =>
+      '핑은 모두가 함께 쓰는 송신 시간을 씁니다. 탐색과 추적은 0홉이라 가까운 리피터만 듣습니다. 채널 핑은 메시 전체를 돌아다닙니다.\n\n25 m 규칙과 커버된 칸 건너뛰기는 켜 두세요. 같은 곳에서 계속 핑하는 것을 막아 줍니다. 붐비는 메시에서는 60초 이상 간격으로 핑하세요. 패시브 기록은 듣기만 하므로 무료입니다.';
+
+  @override
+  String get wardriveGuide_antennaTitle => '안테나와 차량 리피터';
+
+  @override
+  String get wardriveGuide_antennaBody =>
+      '결과는 안테나에 따라 달라집니다. 지붕 위 안테나는 차 안 안테나보다 훨씬 많이 받습니다. 주행을 비교할 수 있도록 매번 같은 구성을 쓰세요.\n\n차에 실린 리피터는 모든 핑에 응답해 실제 커버리지를 가립니다. 차량 리피터로 지정하면 항상 제외됩니다. −30 dBm 이상으로 들리는 것은 바로 옆에 있는 것이므로 역시 제외됩니다.';
+
+  @override
+  String get wardriveGuide_screenOffTitle => '화면 꺼짐과 배터리';
+
+  @override
+  String get wardriveGuide_screenOffBody =>
+      '화면이 꺼져도 계속을 켜면 주행 중 휴대폰을 잠글 수 있습니다. Android가 알림을 띄우고 GPS는 계속 작동합니다.\n\n배터리를 더 쓰니 긴 주행에서는 충전하세요.';
+
+  @override
+  String get wardriveGuide_shareTitle => '주행 공유';
+
+  @override
+  String get wardriveGuide_shareBody =>
+      '메뉴에서 주행을 지도 앱용 GPX·KML, 스프레드시트용 CSV, 또는 GeoJSON으로 내보낼 수 있습니다. 모든 정보를 담고 이 휴대폰이나 다른 휴대폰으로 다시 가져올 수 있는 것은 GeoJSON뿐입니다.\n\n내보낸 파일에는 위치와 시간이 들어 있습니다. 믿을 수 있는 사람과만 공유하세요.';
 }

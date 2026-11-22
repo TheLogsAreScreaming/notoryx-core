@@ -14432,4 +14432,112 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get wardrive_squareNoRepeaters => 'Ningún repetidor respondió aquí.';
+
+  @override
+  String get wardrive_noiseTitle => 'Piso de ruido';
+
+  @override
+  String get wardrive_noiseEmpty =>
+      'Este recorrido no tiene lecturas de ruido. Activa Registrar el piso de ruido en los ajustes de wardrive.';
+
+  @override
+  String wardrive_noiseSummary(int low, int high, int avg) {
+    return 'De $low a $high dBm, media $avg dBm';
+  }
+
+  @override
+  String get wardrive_noiseHint =>
+      'Tranquilo es de −120 a −100 dBm aprox. Por encima de −90 dBm la banda está ocupada o algo cercano hace ruido, y tu alcance baja. Las marcas verdes fueron oídas, las rojas no; toca una para ver sus repetidores.';
+
+  @override
+  String get wardrive_export => 'Exportar este recorrido';
+
+  @override
+  String get wardrive_exportHint => 'Comparte el recorrido como archivo.';
+
+  @override
+  String get wardrive_formatGpx =>
+      'Puntos y ruta, para la mayoría de apps de mapas';
+
+  @override
+  String get wardrive_formatKml => 'Chinchetas de colores, para Google Earth';
+
+  @override
+  String get wardrive_formatCsv =>
+      'Una fila por repetidor, para hojas de cálculo';
+
+  @override
+  String get wardrive_formatGeojson =>
+      'Todo, y se puede volver a importar en esta app';
+
+  @override
+  String get wardrive_exportFailed => 'No se pudo exportar el recorrido.';
+
+  @override
+  String get wardrive_import => 'Importar un recorrido';
+
+  @override
+  String get wardrive_importFailed =>
+      'Ese archivo no es un recorrido exportado desde esta app como GeoJSON.';
+
+  @override
+  String wardrive_imported(int pings) {
+    return 'Recorrido añadido al historial ($pings pings).';
+  }
+
+  @override
+  String get wardrive_importDuplicate =>
+      'Ese recorrido ya está en tu historial.';
+
+  @override
+  String get wardriveGuide_title => 'Guía de wardriving';
+
+  @override
+  String get wardriveGuide_startTitle => 'Primeros pasos';
+
+  @override
+  String get wardriveGuide_startBody =>
+      'Conecta tu radio, elige un modo y toca Iniciar. El primer ping sale enseguida y luego uno por intervalo mientras te mueves.\n\nToca Hacer ping para hacerlo al momento. Detener guarda el recorrido en el historial, donde puedes verlo de nuevo, exportarlo o borrarlo.';
+
+  @override
+  String get wardriveGuide_modesTitle => 'Los modos';
+
+  @override
+  String get wardriveGuide_modesBody =>
+      'Descubrir pide a los repetidores en alcance directo que respondan. Es de cero saltos, así que solo usa tiempo de aire donde estás, y mide ambos sentidos.\n\nTraza hace ping a un repetidor que elijas y mide el enlace en ambos sentidos. Úsalo para ver hasta dónde llega un repetidor.\n\nCanal envía un mensaje corto a #wardriving. Los repetidores que lo retransmiten muestran que llegas a la malla más amplia, pero cada ping inunda toda la malla: usa un intervalo largo.\n\nHíbrido alterna Descubrir y Canal. Con Registrar el tráfico que oyes, los paquetes que tu radio oye de todos modos también se mapean, sin tiempo de aire.';
+
+  @override
+  String get wardriveGuide_coloursTitle => 'Qué significan los colores';
+
+  @override
+  String get wardriveGuide_coloursBody =>
+      'El mapa se divide en cuadros de 100 o 300 m.\n\nVerde: un repetidor te oyó y tú a él. Turquesa: un repetidor retransmitió tu ping, pero solo se conoce un sentido. Azul: solo tráfico oído por sí solo. Rojo: hiciste ping y nadie respondió. Borde ámbar: se omitieron pings porque el cuadro ya estaba cubierto.\n\nToca un cuadro para ver sus repetidores. Toca Solo este, o elige un repetidor en Estadísticas, para ver solo su cobertura, coloreada por señal.';
+
+  @override
+  String get wardriveGuide_airtimeTitle => 'Buenas prácticas de tiempo de aire';
+
+  @override
+  String get wardriveGuide_airtimeBody =>
+      'Cada ping usa tiempo de aire que todos comparten. Descubrir y Traza son de cero saltos: solo los oyen repetidores cercanos. Los pings de canal recorren toda la malla.\n\nDeja activadas la regla de 25 m y la de omitir lo cubierto: juntas evitan que hagas ping una y otra vez en el mismo sitio. En una malla ocupada, haz ping cada 60 s o más. El registro pasivo es gratis: solo escucha.';
+
+  @override
+  String get wardriveGuide_antennaTitle => 'Antenas y repetidores en el coche';
+
+  @override
+  String get wardriveGuide_antennaBody =>
+      'Los resultados dependen de tu antena. Una fuera del coche, en el techo, oye mucho más que una dentro. Usa siempre la misma configuración para poder comparar recorridos.\n\nUn repetidor en tu coche respondería a cada ping y ocultaría la cobertura real. Elígelo como Mi repetidor del coche para que se ignore siempre. Todo lo oído a −30 dBm o más está a tu lado, no es cobertura, y también se ignora.';
+
+  @override
+  String get wardriveGuide_screenOffTitle => 'Pantalla apagada y batería';
+
+  @override
+  String get wardriveGuide_screenOffBody =>
+      'Activa Seguir con la pantalla apagada para bloquear el teléfono durante el recorrido. Android muestra una notificación mientras el GPS sigue funcionando.\n\nEsto gasta más batería: enchufa el teléfono en recorridos largos.';
+
+  @override
+  String get wardriveGuide_shareTitle => 'Compartir recorridos';
+
+  @override
+  String get wardriveGuide_shareBody =>
+      'Exporta un recorrido desde el menú como GPX o KML para apps de mapas, CSV para hojas de cálculo, o GeoJSON. Solo GeoJSON lo guarda todo y se puede volver a importar, en este teléfono u otro.\n\nLos archivos exportados contienen tus posiciones y horas. Compártelos solo con gente de confianza.';
 }

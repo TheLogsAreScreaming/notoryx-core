@@ -14404,4 +14404,111 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get wardrive_squareNoRepeaters => 'Itt egy átjátszó sem válaszolt.';
+
+  @override
+  String get wardrive_noiseTitle => 'Zajszint';
+
+  @override
+  String get wardrive_noiseEmpty =>
+      'Ebben az útban nincs zajmérés. Kapcsold be a Zajszint rögzítését a wardrive-beállításokban.';
+
+  @override
+  String wardrive_noiseSummary(int low, int high, int avg) {
+    return '$low – $high dBm, átlag $avg dBm';
+  }
+
+  @override
+  String get wardrive_noiseHint =>
+      'Csendes kb. −120 és −100 dBm között. −90 dBm felett a sáv foglalt vagy valami a közelben zajos, és csökken a hatótávod. A zöld jelölőket hallották, a pirosakat nem; koppints egyre az átjátszóiért.';
+
+  @override
+  String get wardrive_export => 'Út exportálása';
+
+  @override
+  String get wardrive_exportHint => 'Fájlként megosztja az utat.';
+
+  @override
+  String get wardrive_formatGpx =>
+      'Pontok és nyomvonal, a legtöbb térképapphoz';
+
+  @override
+  String get wardrive_formatKml => 'Színes tűk, a Google Earthhöz';
+
+  @override
+  String get wardrive_formatCsv => 'Átjátszónként egy sor, táblázatkezelőhöz';
+
+  @override
+  String get wardrive_formatGeojson =>
+      'Minden, és visszaimportálható ebbe az appba';
+
+  @override
+  String get wardrive_exportFailed => 'Az utat nem sikerült exportálni.';
+
+  @override
+  String get wardrive_import => 'Út importálása';
+
+  @override
+  String get wardrive_importFailed =>
+      'Ez a fájl nem ebből az appból GeoJSON-ként exportált út.';
+
+  @override
+  String wardrive_imported(int pings) {
+    return 'Az út bekerült az előzményekbe ($pings ping).';
+  }
+
+  @override
+  String get wardrive_importDuplicate =>
+      'Ez az út már szerepel az előzményeidben.';
+
+  @override
+  String get wardriveGuide_title => 'Wardriving útmutató';
+
+  @override
+  String get wardriveGuide_startTitle => 'Első lépések';
+
+  @override
+  String get wardriveGuide_startBody =>
+      'Csatlakoztasd a rádiót, válassz módot, és koppints az Indításra. Az első ping azonnal megy, utána mozgás közben időközönként egy.\n\nA Ping most gombbal helyben pingelhetsz. A Leállítás az előzményekbe menti az utat, ahol újra megnézheted, exportálhatod vagy törölheted.';
+
+  @override
+  String get wardriveGuide_modesTitle => 'A módok';
+
+  @override
+  String get wardriveGuide_modesBody =>
+      'A Felderítés a közvetlen hatótávon belüli átjátszókat kéri válaszra. Ugrás nélküli, így csak ott használ adásidőt, ahol vagy, és mindkét irányt méri.\n\nA Nyomkövetés egy választott átjátszót pingel, és mindkét irányban méri a kapcsolatot. Így láthatod, meddig ér el egy átjátszó.\n\nA Csatorna rövid üzenetet küld a #wardriving csatornára. Az azt továbbító átjátszók mutatják, hogy eléred a tágabb hálót, de minden ping az egész hálót elárasztja: használj hosszú időközt.\n\nA Hibrid felváltva használja a Felderítést és a Csatornát. A Hallott forgalom naplózása bekapcsolásával a rádió által amúgy is hallott csomagok is felkerülnek a térképre, adásidő nélkül.';
+
+  @override
+  String get wardriveGuide_coloursTitle => 'Mit jelentenek a színek';
+
+  @override
+  String get wardriveGuide_coloursBody =>
+      'A térkép 100 vagy 300 m-es négyzetekre oszlik.\n\nZöld: egy átjátszó hallott téged, és te is őt. Türkiz: egy átjátszó továbbította a pinged, de csak egy irány ismert. Kék: csak magától hallott forgalom. Piros: pingeltél, és senki sem válaszolt. Borostyán keret: a pingek kimaradtak, mert a négyzet már le volt fedve.\n\nKoppints egy négyzetre az átjátszóiért. A Csak ez gombbal vagy a statisztikában választott átjátszóval csak annak lefedettségét látod, jelerősség szerint színezve.';
+
+  @override
+  String get wardriveGuide_airtimeTitle => 'Adásidő-illem';
+
+  @override
+  String get wardriveGuide_airtimeBody =>
+      'Minden ping közös adásidőt használ. A Felderítés és a Nyomkövetés ugrás nélküli: csak a közeli átjátszók hallják. A csatorna-pingek az egész hálón végigmennek.\n\nHagyd bekapcsolva a 25 m-es szabályt és a lefedett négyzetek kihagyását: együtt megakadályozzák, hogy ugyanott pingelj újra és újra. Forgalmas hálón 60 mp-enként vagy ritkábban pingelj. A passzív naplózás ingyenes: csak hallgat.';
+
+  @override
+  String get wardriveGuide_antennaTitle => 'Antennák és autós átjátszók';
+
+  @override
+  String get wardriveGuide_antennaBody =>
+      'Az eredmény az antennától függ. A tetőn lévő antenna sokkal többet hall, mint az autóban lévő. Mindig ugyanazt a felállást használd, hogy az utak összevethetők legyenek.\n\nAz autóban utazó átjátszó minden pingre válaszolna, és elfedné a valódi lefedettséget. Állítsd be Az autós átjátszóm opcióként, így mindig figyelmen kívül marad. Ami −30 dBm-nél erősebb, az melletted van, és szintén kimarad.';
+
+  @override
+  String get wardriveGuide_screenOffTitle => 'Kikapcsolt képernyő és akku';
+
+  @override
+  String get wardriveGuide_screenOffBody =>
+      'Kapcsold be a Futás kikapcsolt képernyővel opciót, hogy út közben lezárhasd a telefont. Az Android értesítést mutat, a GPS pedig tovább működik.\n\nEz több akkut fogyaszt: hosszú utakon tedd töltőre a telefont.';
+
+  @override
+  String get wardriveGuide_shareTitle => 'Utak megosztása';
+
+  @override
+  String get wardriveGuide_shareBody =>
+      'Exportáld az utat a menüből GPX vagy KML formátumban térképappokhoz, CSV-ben táblázatokhoz, vagy GeoJSON-ként. Csak a GeoJSON őriz meg mindent, és csak az importálható vissza, ezen vagy másik telefonon.\n\nAz exportált fájlok tartalmazzák a pozícióidat és az időpontokat. Csak megbízható emberekkel oszd meg őket.';
 }

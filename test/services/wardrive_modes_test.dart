@@ -416,4 +416,20 @@ void main() {
     expect(again.settings.background, isTrue);
     again.dispose();
   });
+
+  test('an imported drive joins the history once', () async {
+    final drive = WardriveSession(
+      id: 'x',
+      startedAt: DateTime.utc(2026, 11, 1),
+      pings: [
+        WardrivePing(at: DateTime.utc(2026, 11, 1), latitude: 1, longitude: 2),
+      ],
+    );
+    expect(await service.importSession(drive), isTrue);
+    expect(await service.importSession(drive), isFalse);
+    expect(service.sessions.single.id, 'x');
+    final again = WardriveService(radio)..load();
+    expect(again.sessions.single.id, 'x');
+    again.dispose();
+  });
 }
