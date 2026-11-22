@@ -63,14 +63,6 @@ class EmberBackdrop extends StatelessWidget {
                 second: second,
                 contour: MeshPalette.ink,
                 dark: dark,
-                // Pink Overload's glossy glints; no other theme has them.
-                sparkle:
-                    identical(
-                      MeshPalette.current,
-                      BastionTheme.pinkOverload.palette,
-                    )
-                    ? [MeshPalette.magenta, Colors.white, MeshPalette.tertiary]
-                    : null,
               ),
             ),
           ),

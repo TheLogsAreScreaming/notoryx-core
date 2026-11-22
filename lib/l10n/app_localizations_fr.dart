@@ -10777,21 +10777,10 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get theme_descBlaze =>
-      'Anthracite et ardoise avec orange haute visibilité';
-
-  @override
-  String get theme_descNeonAnarchy =>
-      'Vert toxique et violet électrique sur noir';
+  String get theme_descBlackout => 'Noir mat, acier et givre. Le style NOTORYX';
 
   @override
   String get theme_descTactical => 'Olive, gris canon et tons terre';
-
-  @override
-  String get theme_descPinkOverload => 'Rose vif, chewing-gum et lavande';
-
-  @override
-  String get theme_descBareBeauty => 'Nude chaud, vieux rose, cacao et sauge';
 
   @override
   String get theme_descOkabeIto => 'Adapté au daltonisme, très lisible';

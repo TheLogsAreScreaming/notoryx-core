@@ -143,13 +143,10 @@ class BastionPalette {
   Color get magentaLine => magenta.withAlpha(0x47);
 }
 
-/// The eight themes offered in Settings, in display order.
+/// The themes offered in Settings, in display order.
 enum BastionTheme {
-  blaze('blaze', 'Blaze'),
-  neonAnarchy('neon_anarchy', 'Neon Anarchy'),
+  blackout('blackout', 'BLACKOUT'),
   tactical('tactical', 'Tactical'),
-  pinkOverload('pink_overload', 'Pink Overload'),
-  bareBeauty('bare_beauty', 'Bare Beauty'),
   okabeIto('okabe_ito', 'Okabe-Ito'),
   nightOps('night_ops', 'Night Ops'),
   seasonal('seasonal', 'Seasonal');
@@ -162,32 +159,35 @@ enum BastionTheme {
   /// The theme's name, the same in every language.
   final String label;
 
-  static const fallback = BastionTheme.blaze;
+  static const fallback = BastionTheme.blackout;
 
   /// This theme's palette. For [seasonal] it is the autumn palette; use
   /// [resolveThemePalette] to get the one for today's date.
   BastionPalette get palette => switch (this) {
-    blaze => _blaze,
-    neonAnarchy => _neonAnarchy,
+    blackout => _blackout,
     tactical => _tactical,
-    pinkOverload => _pinkOverload,
-    bareBeauty => _bareBeauty,
     okabeIto => _okabeIto,
     nightOps => _nightOps,
     seasonal => Season.autumn.palette,
   };
 
   /// Saved ids from earlier versions and the theme each now opens as.
+  /// Themes that were removed open as [fallback] (BLACKOUT).
   static const Map<String, BastionTheme> legacyIds = {
     'autumn_frost': seasonal,
     'christmas': seasonal,
-    'bubble_gum': pinkOverload,
-    'topo_night': pinkOverload,
-    'bronzed_blush': bareBeauty,
     'red_light': nightOps,
     'okabe_ito_slate': okabeIto,
-    'alpine_day': blaze,
-    'halloween': blaze,
+    // Removed in the BLACKOUT rebrand.
+    'blaze': blackout,
+    'neon_anarchy': blackout,
+    'pink_overload': blackout,
+    'bare_beauty': blackout,
+    'bubble_gum': blackout,
+    'topo_night': blackout,
+    'bronzed_blush': blackout,
+    'alpine_day': blackout,
+    'halloween': blackout,
   };
 
   static BastionTheme fromId(String? id) {
@@ -295,53 +295,38 @@ BastionPalette resolveThemePalette(
 const _dark = Brightness.dark;
 const _light = Brightness.light;
 
-// 1. Blaze: charcoal and slate with high-visibility orange. The default.
-final _blaze = BastionPalette.derive(
+// 1. BLACKOUT: the NOTORYX brand look. Matte black, charcoal, gunmetal,
+// steel and frost; monochrome with no brand accent. Status colors (signal,
+// warning, SOS) keep their hues because they carry meaning. The default.
+final _blackout = BastionPalette.derive(
   brightness: _dark,
-  bg: const Color(0xFF111820),
-  surface: const Color(0xFF273443),
-  ink: const Color(0xFFF4F6F8),
-  muted: const Color(0xFFAAB5C3),
-  accent: const Color(0xFFFF8A00),
-  onAccent: const Color(0xFF2A1300),
-  secondary: const Color(0xFFF07A12),
-  tertiary: const Color(0xFF22D3E6),
-  magenta: const Color(0xFFA985FF),
+  // Matte.
+  bg: const Color(0xFF080808),
+  // Charcoal: cards and raised surfaces.
+  surface: const Color(0xFF242424),
+  // Frost: primary text and the accent.
+  ink: const Color(0xFFE8E8E8),
+  // Steel, a touch lighter than the brand #888888 so muted text keeps
+  // 4.5:1 on charcoal.
+  muted: const Color(0xFF8C8C8C),
+  accent: const Color(0xFFE8E8E8),
+  accentDim: const Color(0xFF8C8C8C),
+  onAccent: const Color(0xFF080808),
+  secondary: const Color(0xFFB4B4B4),
+  tertiary: const Color(0xFF9C9C9C),
   signal: const Color(0xFF5FD98A),
   warn: const Color(0xFFFFC83D),
   alert: const Color(0xFFFF5A4E),
-  me: const Color(0xFF3D2A18),
-  meInk: const Color(0xFFF4F6F8),
-  primaryContainer: const Color(0xFF4A2E10),
-  secondaryContainer: const Color(0xFF4A2A0C),
-  tertiaryContainer: const Color(0xFF12393F),
+  me: const Color(0xFF303030),
+  meInk: const Color(0xFFE8E8E8),
+  // Gunmetal.
+  meBorder: const Color(0xFF484848),
+  primaryContainer: const Color(0xFF363636),
+  secondaryContainer: const Color(0xFF2E2E2E),
+  tertiaryContainer: const Color(0xFF3A3A3A),
 );
 
-// 2. Neon Anarchy: toxic green and electric purple on near-black.
-final _neonAnarchy = BastionPalette.derive(
-  brightness: _dark,
-  bg: const Color(0xFF08060D),
-  surface: const Color(0xFF21112F),
-  ink: const Color(0xFFF1E9FF),
-  muted: const Color(0xFFBBA8D8),
-  accent: const Color(0xFFADFF2F),
-  onAccent: const Color(0xFF0B1400),
-  // Electric purple, lifted so it reads as text on black.
-  secondary: const Color(0xFFC766FF),
-  tertiary: const Color(0xFFFF4FD8),
-  magenta: const Color(0xFFB026FF),
-  signal: const Color(0xFF5CFF9A),
-  warn: const Color(0xFFFFD23F),
-  alert: const Color(0xFFFF4D6D),
-  me: const Color(0xFF3B1466),
-  meInk: const Color(0xFFF1E9FF),
-  meBorder: const Color(0xFFB026FF),
-  primaryContainer: const Color(0xFF2A3D0A),
-  secondaryContainer: const Color(0xFF7022C4),
-  tertiaryContainer: const Color(0xFF4A1660),
-);
-
-// 3. Tactical: olive, gunmetal, forest and earth.
+// 2. Tactical: olive, gunmetal, forest and earth.
 final _tactical = BastionPalette.derive(
   brightness: _dark,
   bg: const Color(0xFF171C19),
@@ -362,58 +347,7 @@ final _tactical = BastionPalette.derive(
   tertiaryContainer: const Color(0xFF4F4128),
 );
 
-// 4. Pink Overload: hot pink, bubblegum and lavender, unapologetically.
-final _pinkOverload = BastionPalette.derive(
-  brightness: _light,
-  bg: const Color(0xFFFFF0FA),
-  surface: const Color(0xFFFFC1E3),
-  ink: const Color(0xFF542044),
-  muted: const Color(0xFF7A2B62),
-  // Hot pink, deep enough for white button text and pink-page links.
-  accent: const Color(0xFFBD0065),
-  onAccent: const Color(0xFFFFFFFF),
-  secondary: const Color(0xFFA3127F),
-  tertiary: const Color(0xFF7A2FC9),
-  magenta: const Color(0xFFFF1493),
-  signal: const Color(0xFF1E6B3F),
-  warn: const Color(0xFF7A4A00),
-  alert: const Color(0xFFB00020),
-  me: const Color(0xFFC2127F),
-  meInk: const Color(0xFFFFFFFF),
-  meBorder: const Color(0xFFFF69B4),
-  primaryContainer: const Color(0xFFFFC1E3),
-  secondaryContainer: const Color(0xFFFFD6EC),
-  tertiaryContainer: const Color(0xFFEBD3FF),
-  faint: const Color(0xFF7A2B62),
-);
-
-// 5. Bare Beauty: warm nude, dusty rose, cocoa and hazel-sage.
-final _bareBeauty = BastionPalette.derive(
-  brightness: _light,
-  bg: const Color(0xFFFFF0E7),
-  surface: const Color(0xFFE8B69E),
-  ink: const Color(0xFF38232B),
-  muted: const Color(0xFF5E3D3F),
-  // Dusty rose, deepened for white text.
-  accent: const Color(0xFF84464F),
-  onAccent: const Color(0xFFFFFFFF),
-  // Cocoa and a hazel-sage.
-  secondary: const Color(0xFF754B43),
-  tertiary: const Color(0xFF44625A),
-  magenta: const Color(0xFFC77D87),
-  signal: const Color(0xFF2F6B45),
-  warn: const Color(0xFF7A4E00),
-  alert: const Color(0xFFA3122A),
-  me: const Color(0xFF8E4F58),
-  meInk: const Color(0xFFFFFFFF),
-  meBorder: const Color(0xFFC77D87),
-  primaryContainer: const Color(0xFFE8B69E),
-  secondaryContainer: const Color(0xFFF0C9C4),
-  tertiaryContainer: const Color(0xFFCFDDD5),
-  faint: const Color(0xFF5E3D3F),
-);
-
-// 6. Okabe-Ito: every accent and status color from the color-blind safe
+// 3. Okabe-Ito: every accent and status color from the color-blind safe
 // palette, on charcoal. Vermillion is lifted slightly so SOS reads on cards.
 final _okabeIto = BastionPalette.derive(
   brightness: _dark,
@@ -439,7 +373,7 @@ final _okabeIto = BastionPalette.derive(
   tertiaryContainer: const Color(0xFF0B4F3E),
 );
 
-// 7. Night Ops: near-black with restrained reds for low light.
+// 4. Night Ops: near-black with restrained reds for low light.
 final _nightOps = BastionPalette.derive(
   brightness: _dark,
   bg: const Color(0xFF080808),
@@ -462,7 +396,7 @@ final _nightOps = BastionPalette.derive(
   tertiaryContainer: const Color(0xFF3A1218),
 );
 
-// 8. Seasonal.
+// 5. Seasonal.
 final _spring = BastionPalette.derive(
   brightness: _light,
   bg: const Color(0xFFFAFBEA),

@@ -258,18 +258,19 @@ class MeshSpace {
 class MeshTheme {
   MeshTheme._();
 
-  /// The current theme if it's dark, otherwise Blaze.
+  /// The current theme if it's dark, otherwise BLACKOUT.
   static ThemeData dark() => forPalette(
     MeshPalette.current.brightness == Brightness.dark
         ? MeshPalette.current
-        : BastionTheme.blaze.palette,
+        : BastionTheme.blackout.palette,
   );
 
-  /// The current theme if it's light, otherwise Pink Overload (a light one).
+  /// The current theme if it's light, otherwise Seasonal's summer palette
+  /// (a light one).
   static ThemeData light() => forPalette(
     MeshPalette.current.brightness == Brightness.light
         ? MeshPalette.current
-        : BastionTheme.pinkOverload.palette,
+        : Season.summer.palette,
   );
 
   /// Material theme for one of the Bastion palettes.

@@ -10035,19 +10035,10 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
-  String get theme_descBlaze => '炭灰与石板蓝，配高可见度橙色';
-
-  @override
-  String get theme_descNeonAnarchy => '黑底配毒绿与电光紫';
+  String get theme_descBlackout => '哑光黑、钢灰与霜白。NOTORYX 风格';
 
   @override
   String get theme_descTactical => '橄榄绿、枪灰与大地色';
-
-  @override
-  String get theme_descPinkOverload => '亮粉、泡泡糖粉与薰衣草紫';
-
-  @override
-  String get theme_descBareBeauty => '温暖裸色、灰玫瑰、可可与鼠尾草';
 
   @override
   String get theme_descOkabeIto => '色盲友好，清晰度高';

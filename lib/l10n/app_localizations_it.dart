@@ -10755,21 +10755,11 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
-  String get theme_descBlaze =>
-      'Antracite e ardesia con arancione ad alta visibilità';
-
-  @override
-  String get theme_descNeonAnarchy => 'Verde tossico e viola elettrico su nero';
+  String get theme_descBlackout =>
+      'Nero opaco, acciaio e brina. Lo stile NOTORYX';
 
   @override
   String get theme_descTactical => 'Oliva, canna di fucile e toni della terra';
-
-  @override
-  String get theme_descPinkOverload =>
-      'Rosa shocking, gomma da masticare e lavanda';
-
-  @override
-  String get theme_descBareBeauty => 'Nude caldo, rosa antico, cacao e salvia';
 
   @override
   String get theme_descOkabeIto => 'Adatto al daltonismo, massima chiarezza';

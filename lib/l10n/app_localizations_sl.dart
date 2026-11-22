@@ -10740,21 +10740,10 @@ class AppLocalizationsSl extends AppLocalizations {
   }
 
   @override
-  String get theme_descBlaze => 'Antracit in skrilavec z izrazito oranžno';
-
-  @override
-  String get theme_descNeonAnarchy =>
-      'Strupeno zelena in električno vijolična na črni';
+  String get theme_descBlackout => 'Mat črna, jeklo in ivje. Videz NOTORYX';
 
   @override
   String get theme_descTactical => 'Olivna, kovinsko siva in zemeljski toni';
-
-  @override
-  String get theme_descPinkOverload => 'Živo roza, žvečilni gumi in sivka';
-
-  @override
-  String get theme_descBareBeauty =>
-      'Topel nude, starorožnata, kakav in žajbelj';
 
   @override
   String get theme_descOkabeIto => 'Varno za barvno slepe, zelo jasno';

@@ -10237,19 +10237,10 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
-  String get theme_descBlaze => 'チャコールとスレートに視認性の高いオレンジ';
-
-  @override
-  String get theme_descNeonAnarchy => '黒地にトキシックグリーンとエレクトリックパープル';
+  String get theme_descBlackout => 'マットブラック、スチール、フロスト。NOTORYXのスタイル';
 
   @override
   String get theme_descTactical => 'オリーブ、ガンメタル、アースカラー';
-
-  @override
-  String get theme_descPinkOverload => 'ホットピンク、バブルガム、ラベンダー';
-
-  @override
-  String get theme_descBareBeauty => '温かみのあるヌード、ダスティローズ、ココア、セージ';
 
   @override
   String get theme_descOkabeIto => '色覚の違いに配慮、高い明瞭さ';

@@ -63,7 +63,7 @@ void main() {
     expect(glints.shouldRepaint(painter(EmberScene.home)), isTrue);
   });
 
-  testWidgets('only Pink Overload gets sparkle', (tester) async {
+  testWidgets('no current theme gets sparkle', (tester) async {
     addTearDown(() => MeshPalette.current = BastionTheme.fallback.palette);
     List<Color>? sparkleFor(BastionTheme theme) {
       MeshPalette.current = theme.palette;
@@ -84,12 +84,8 @@ void main() {
       await tester.pumpWidget(
         _app(EmberBackdrop(key: UniqueKey(), child: const SizedBox())),
       );
-      final sparkle = sparkleFor(theme);
-      if (theme == BastionTheme.pinkOverload) {
-        expect(sparkle, isNotEmpty);
-      } else {
-        expect(sparkle, isNull, reason: theme.id);
-      }
+      // Sparkle glints belonged to Pink Overload, removed with BLACKOUT.
+      expect(sparkleFor(theme), isNull, reason: theme.id);
     }
   });
 

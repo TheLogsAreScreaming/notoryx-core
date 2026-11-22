@@ -10728,20 +10728,10 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
-  String get theme_descBlaze => 'Antracit és pala élénk narancssárgával';
-
-  @override
-  String get theme_descNeonAnarchy => 'Mérgező zöld és elektromos lila feketén';
+  String get theme_descBlackout => 'Matt fekete, acél és dér. A NOTORYX stílus';
 
   @override
   String get theme_descTactical => 'Olíva, fegyverszürke és földszínek';
-
-  @override
-  String get theme_descPinkOverload => 'Pink, rágógumi rózsaszín és levendula';
-
-  @override
-  String get theme_descBareBeauty =>
-      'Meleg nude, fáradt rózsa, kakaó és zsálya';
 
   @override
   String get theme_descOkabeIto =>

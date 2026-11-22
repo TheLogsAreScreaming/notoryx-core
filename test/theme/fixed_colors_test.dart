@@ -51,10 +51,10 @@ void main() {
       return tester.widget<Text>(find.text('TC')).style?.color;
     }
 
-    MeshPalette.current = BastionTheme.blaze.palette;
-    final blaze = await initialsColor();
-    MeshPalette.current = BastionTheme.pinkOverload.palette;
-    final pink = await initialsColor();
-    expect(pink, isNot(blaze));
+    MeshPalette.current = BastionTheme.blackout.palette;
+    final blackout = await initialsColor();
+    MeshPalette.current = BastionTheme.tactical.palette;
+    final tactical = await initialsColor();
+    expect(tactical, isNot(blackout));
   });
 }
