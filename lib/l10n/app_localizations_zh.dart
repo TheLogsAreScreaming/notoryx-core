@@ -13458,6 +13458,75 @@ class AppLocalizationsZh extends AppLocalizations {
   String get wardrive_explainHybrid => '发现 ping 与频道 ping 交替：一次看附近中继，下一次看更广的网络。';
 
   @override
+  String get wardrive_legendBothWays => '双向';
+
+  @override
+  String get wardrive_legendRepeaterOnly => '仅中继';
+
+  @override
+  String get wardrive_legendPassive => '被动';
+
+  @override
+  String get wardrive_legendNoAnswer => '无应答';
+
+  @override
+  String get wardrive_legendSkipped => '已跳过';
+
+  @override
+  String wardrive_squareSize(int metres) {
+    return '$metres 米方格';
+  }
+
+  @override
+  String get wardrive_thisDrive => '本次扫街';
+
+  @override
+  String get wardrive_allDrives => '全部扫街';
+
+  @override
+  String get wardrive_squareTitle => '方格详情';
+
+  @override
+  String wardrive_squareSummary(int pings, int heard, int passive) {
+    return 'ping $pings · 收到 $heard · 被动 $passive';
+  }
+
+  @override
+  String wardrive_squareLast(String time) {
+    return '最近 $time';
+  }
+
+  @override
+  String get wardrive_showOnly => '只看它';
+
+  @override
+  String wardrive_showingOnly(String name) {
+    return '只看 $name';
+  }
+
+  @override
+  String get wardrive_clearFilter => '显示全部';
+
+  @override
+  String get wardrive_repeaterStats => '中继统计';
+
+  @override
+  String wardrive_statsLine(int squares, String best, String avg) {
+    return '$squares 格 · 最佳 $best dB · 平均 $avg dB';
+  }
+
+  @override
+  String wardrive_farthest(String km) {
+    return '最远 $km 公里';
+  }
+
+  @override
+  String get wardrive_noRepeatersHeard => '还没有收到任何中继。';
+
+  @override
+  String get wardrive_squareNoRepeaters => '这里没有中继应答。';
+
+  @override
   String get sarneg_randomWord => '随机词';
 
   @override

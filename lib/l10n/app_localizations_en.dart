@@ -14200,6 +14200,75 @@ class AppLocalizationsEn extends AppLocalizations {
       'Discovery and channel pings take turns: nearby repeaters on one ping, the wider mesh on the next.';
 
   @override
+  String get wardrive_legendBothWays => 'Both ways';
+
+  @override
+  String get wardrive_legendRepeaterOnly => 'Repeater only';
+
+  @override
+  String get wardrive_legendPassive => 'Passive';
+
+  @override
+  String get wardrive_legendNoAnswer => 'No answer';
+
+  @override
+  String get wardrive_legendSkipped => 'Skipped';
+
+  @override
+  String wardrive_squareSize(int metres) {
+    return '$metres m squares';
+  }
+
+  @override
+  String get wardrive_thisDrive => 'This drive';
+
+  @override
+  String get wardrive_allDrives => 'All drives';
+
+  @override
+  String get wardrive_squareTitle => 'Square details';
+
+  @override
+  String wardrive_squareSummary(int pings, int heard, int passive) {
+    return '$pings pings · $heard heard · $passive passive';
+  }
+
+  @override
+  String wardrive_squareLast(String time) {
+    return 'last $time';
+  }
+
+  @override
+  String get wardrive_showOnly => 'Show only';
+
+  @override
+  String wardrive_showingOnly(String name) {
+    return 'Only $name';
+  }
+
+  @override
+  String get wardrive_clearFilter => 'Show all';
+
+  @override
+  String get wardrive_repeaterStats => 'Repeater stats';
+
+  @override
+  String wardrive_statsLine(int squares, String best, String avg) {
+    return '$squares squares · best $best dB · avg $avg dB';
+  }
+
+  @override
+  String wardrive_farthest(String km) {
+    return 'farthest $km km';
+  }
+
+  @override
+  String get wardrive_noRepeatersHeard => 'No repeaters heard yet.';
+
+  @override
+  String get wardrive_squareNoRepeaters => 'No repeater answered here.';
+
+  @override
   String get sarneg_randomWord => 'Random word';
 
   @override

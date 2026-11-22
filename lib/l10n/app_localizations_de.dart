@@ -14378,6 +14378,76 @@ class AppLocalizationsDe extends AppLocalizations {
       'Discovery- und Kanal-Pings wechseln sich ab: nahe Repeater beim einen Ping, das weitere Mesh beim nächsten.';
 
   @override
+  String get wardrive_legendBothWays => 'Beide Richtungen';
+
+  @override
+  String get wardrive_legendRepeaterOnly => 'Nur Repeater';
+
+  @override
+  String get wardrive_legendPassive => 'Passiv';
+
+  @override
+  String get wardrive_legendNoAnswer => 'Keine Antwort';
+
+  @override
+  String get wardrive_legendSkipped => 'Übersprungen';
+
+  @override
+  String wardrive_squareSize(int metres) {
+    return '$metres-m-Felder';
+  }
+
+  @override
+  String get wardrive_thisDrive => 'Diese Fahrt';
+
+  @override
+  String get wardrive_allDrives => 'Alle Fahrten';
+
+  @override
+  String get wardrive_squareTitle => 'Felddetails';
+
+  @override
+  String wardrive_squareSummary(int pings, int heard, int passive) {
+    return '$pings Pings · $heard gehört · $passive passiv';
+  }
+
+  @override
+  String wardrive_squareLast(String time) {
+    return 'zuletzt $time';
+  }
+
+  @override
+  String get wardrive_showOnly => 'Nur diesen';
+
+  @override
+  String wardrive_showingOnly(String name) {
+    return 'Nur $name';
+  }
+
+  @override
+  String get wardrive_clearFilter => 'Alle zeigen';
+
+  @override
+  String get wardrive_repeaterStats => 'Repeater-Statistik';
+
+  @override
+  String wardrive_statsLine(int squares, String best, String avg) {
+    return '$squares Felder · beste $best dB · Ø $avg dB';
+  }
+
+  @override
+  String wardrive_farthest(String km) {
+    return 'am weitesten $km km';
+  }
+
+  @override
+  String get wardrive_noRepeatersHeard => 'Noch keine Repeater gehört.';
+
+  @override
+  String get wardrive_squareNoRepeaters =>
+      'Hier hat kein Repeater geantwortet.';
+
+  @override
   String get sarneg_randomWord => 'Zufallswort';
 
   @override

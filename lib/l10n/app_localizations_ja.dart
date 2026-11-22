@@ -13712,6 +13712,75 @@ class AppLocalizationsJa extends AppLocalizations {
       '探索とチャンネルの ping を交互に送ります：近くのリピーターと広いメッシュを交互に確認します。';
 
   @override
+  String get wardrive_legendBothWays => '双方向';
+
+  @override
+  String get wardrive_legendRepeaterOnly => 'リピーターのみ';
+
+  @override
+  String get wardrive_legendPassive => 'パッシブ';
+
+  @override
+  String get wardrive_legendNoAnswer => '応答なし';
+
+  @override
+  String get wardrive_legendSkipped => 'スキップ';
+
+  @override
+  String wardrive_squareSize(int metres) {
+    return '$metres m のマス';
+  }
+
+  @override
+  String get wardrive_thisDrive => 'この走行';
+
+  @override
+  String get wardrive_allDrives => 'すべての走行';
+
+  @override
+  String get wardrive_squareTitle => 'マスの詳細';
+
+  @override
+  String wardrive_squareSummary(int pings, int heard, int passive) {
+    return 'ping $pings · 受信 $heard · パッシブ $passive';
+  }
+
+  @override
+  String wardrive_squareLast(String time) {
+    return '最終 $time';
+  }
+
+  @override
+  String get wardrive_showOnly => 'これだけ表示';
+
+  @override
+  String wardrive_showingOnly(String name) {
+    return '$name のみ';
+  }
+
+  @override
+  String get wardrive_clearFilter => 'すべて表示';
+
+  @override
+  String get wardrive_repeaterStats => 'リピーター統計';
+
+  @override
+  String wardrive_statsLine(int squares, String best, String avg) {
+    return '$squares マス · 最高 $best dB · 平均 $avg dB';
+  }
+
+  @override
+  String wardrive_farthest(String km) {
+    return '最遠 $km km';
+  }
+
+  @override
+  String get wardrive_noRepeatersHeard => 'まだリピーターを受信していません。';
+
+  @override
+  String get wardrive_squareNoRepeaters => 'ここで応答したリピーターはありません。';
+
+  @override
   String get sarneg_randomWord => 'ランダムな単語';
 
   @override

@@ -14396,6 +14396,76 @@ class AppLocalizationsUk extends AppLocalizations {
       'Пінги виявлення та пінги в канал чергуються: ближні ретранслятори в одному, вся мережа в наступному.';
 
   @override
+  String get wardrive_legendBothWays => 'В обидва боки';
+
+  @override
+  String get wardrive_legendRepeaterOnly => 'Лише ретранслятор';
+
+  @override
+  String get wardrive_legendPassive => 'Пасивно';
+
+  @override
+  String get wardrive_legendNoAnswer => 'Немає відповіді';
+
+  @override
+  String get wardrive_legendSkipped => 'Пропущено';
+
+  @override
+  String wardrive_squareSize(int metres) {
+    return 'Квадрати по $metres м';
+  }
+
+  @override
+  String get wardrive_thisDrive => 'Ця поїздка';
+
+  @override
+  String get wardrive_allDrives => 'Усі поїздки';
+
+  @override
+  String get wardrive_squareTitle => 'Подробиці квадрата';
+
+  @override
+  String wardrive_squareSummary(int pings, int heard, int passive) {
+    return 'Пінги: $pings · почуто: $heard · пасивно: $passive';
+  }
+
+  @override
+  String wardrive_squareLast(String time) {
+    return 'останній $time';
+  }
+
+  @override
+  String get wardrive_showOnly => 'Лише його';
+
+  @override
+  String wardrive_showingOnly(String name) {
+    return 'Лише $name';
+  }
+
+  @override
+  String get wardrive_clearFilter => 'Показати все';
+
+  @override
+  String get wardrive_repeaterStats => 'Статистика ретрансляторів';
+
+  @override
+  String wardrive_statsLine(int squares, String best, String avg) {
+    return 'Квадрати: $squares · найкращий $best дБ · середній $avg дБ';
+  }
+
+  @override
+  String wardrive_farthest(String km) {
+    return 'найдалі $km км';
+  }
+
+  @override
+  String get wardrive_noRepeatersHeard => 'Ретранслятори ще не чутно.';
+
+  @override
+  String get wardrive_squareNoRepeaters =>
+      'Тут не відповів жоден ретранслятор.';
+
+  @override
   String get sarneg_randomWord => 'Випадкове слово';
 
   @override
