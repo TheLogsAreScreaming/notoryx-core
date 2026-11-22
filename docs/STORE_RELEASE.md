@@ -14,7 +14,7 @@ These are the steps that need the maintainer's own accounts. Everything the repo
    - Feature graphic (1024 × 500): `fastlane/metadata/android/en-US/images/featureGraphic.png`.
    - At least 2 phone screenshots. `docs/screenshots/` has candidates.
 
-   Both graphics are rendered from `branding/notoryx-icon-source.png`. The other files in `branding/` are the outputs: the full-bleed icon, the Android adaptive foreground, the macOS tile and the feature graphic.
+   Both graphics come from the NOTORYX BLACKOUT brand kit. The launcher icon sources are in `branding/blackout/` (iOS/web square icon, Android tile, adaptive foreground/background/monochrome layers, macOS icon and PWA maskable icon); `dart run flutter_launcher_icons` regenerates every platform's icons from them. `branding/notoryx-feature-graphic.png` is the Play feature graphic. The older `branding/notoryx-icon*.png` files are the pre-BLACKOUT mark and are no longer used.
 5. Privacy policy URL: publish `docs/PRIVACY_POLICY.md` on a public page (for example GitHub Pages on the releases repo) and paste the link.
 6. **Data safety:**
    - Location is used on the device for maps and positions. It's shared over the mesh only when the user sends it, and with an MQTT broker only if observer sharing is on.

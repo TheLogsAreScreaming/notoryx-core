@@ -148,19 +148,27 @@ flutter:
           weight: 800
 
 flutter_launcher_icons:
+  # BLACKOUT icon set (2026-11). Sources are copied unchanged from the
+  # NOTORYX BLACKOUT brand kit into branding/blackout/.
   android: true
   ios: true
-  image_path: "branding/notoryx-icon.png"
+  image_path: "branding/blackout/notoryx-core-icon-1024.png"
+  image_path_android: "branding/blackout/notoryx-core-tile-1024.png"
+  image_path_ios: "branding/blackout/notoryx-core-icon-1024.png"
   remove_alpha_ios: true
-  adaptive_icon_background: "#150F0D"
-  adaptive_icon_foreground: "branding/notoryx-icon-foreground.png"
+  adaptive_icon_background: "branding/blackout/notoryx-core-adaptive-background.png"
+  adaptive_icon_foreground: "branding/blackout/notoryx-core-adaptive-foreground.png"
+  adaptive_icon_monochrome: "branding/blackout/notoryx-core-adaptive-monochrome.png"
+  # The BLACKOUT foreground and monochrome layers already keep the emblem
+  # inside the 72 dp safe zone, so they must not be shrunk again.
+  adaptive_icon_foreground_inset: 0
   macos:
     generate: true
-    image_path: "branding/notoryx-icon-macos.png"
+    image_path: "branding/blackout/notoryx-core-macos-1024.png"
   web:
     generate: true
-    image_path: "branding/notoryx-icon.png"
-    background_color: "#150F0D"
+    image_path: "branding/blackout/notoryx-core-icon-1024.png"
+    background_color: "#080808"
     theme_color: "#FF9A3C"
 
 build_pipe:
