@@ -8,6 +8,7 @@ import 'package:meshcore_open/connector/meshcore_protocol.dart';
 import 'package:meshcore_open/l10n/app_localizations.dart';
 import 'package:meshcore_open/models/contact.dart';
 import 'package:meshcore_open/models/wardrive.dart';
+import 'package:meshcore_open/models/wardrive_coverage.dart';
 import 'package:meshcore_open/screens/wardrive_noise_screen.dart';
 import 'package:meshcore_open/screens/wardrive_screen.dart';
 import 'package:meshcore_open/services/coverage_hex_service.dart';
@@ -213,5 +214,20 @@ void main() {
     await tester.pump(const Duration(seconds: 1));
     expect(find.text('Hilltop'), findsOneWidget);
     await tester.pumpWidget(const SizedBox());
+  });
+
+  test('the five square colours are told apart on every look', () {
+    final colours = [
+      for (final s in SquareStatus.values) wardriveStatusColor(s),
+    ];
+    expect(colours.toSet(), hasLength(SquareStatus.values.length));
+    // Far enough apart in hue to read as different colours, not shades.
+    final hues = [for (final c in colours) HSVColor.fromColor(c).hue];
+    for (var i = 0; i < hues.length; i++) {
+      for (var j = i + 1; j < hues.length; j++) {
+        final d = (hues[i] - hues[j]).abs();
+        expect(d > 180 ? 360 - d : d, greaterThan(15));
+      }
+    }
   });
 }
