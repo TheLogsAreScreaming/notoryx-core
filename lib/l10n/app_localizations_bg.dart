@@ -10724,21 +10724,11 @@ class AppLocalizationsBg extends AppLocalizations {
   }
 
   @override
-  String get theme_descBlaze => 'Въглен и шисти с ярко оранжево';
-
-  @override
-  String get theme_descNeonAnarchy =>
-      'Отровно зелено и електриково лилаво върху черно';
+  String get theme_descBlackout =>
+      'Матово черно, стомана и скреж. Стилът на NOTORYX';
 
   @override
   String get theme_descTactical => 'Маслинено, оръжейно сиво и земни тонове';
-
-  @override
-  String get theme_descPinkOverload => 'Ярко розово, дъвка и лавандула';
-
-  @override
-  String get theme_descBareBeauty =>
-      'Топъл нюд, пепелява роза, какао и градински чай';
 
   @override
   String get theme_descOkabeIto => 'Безопасна за далтонисти, висока яснота';

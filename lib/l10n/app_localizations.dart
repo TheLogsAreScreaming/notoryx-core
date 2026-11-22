@@ -17761,35 +17761,17 @@ abstract class AppLocalizations {
   /// **'up to {seconds} s'**
   String adminWait_upTo(int seconds);
 
-  /// No description provided for @theme_descBlaze.
+  /// No description provided for @theme_descBlackout.
   ///
   /// In en, this message translates to:
-  /// **'Charcoal and slate with high-visibility orange'**
-  String get theme_descBlaze;
-
-  /// No description provided for @theme_descNeonAnarchy.
-  ///
-  /// In en, this message translates to:
-  /// **'Toxic green and electric purple on black'**
-  String get theme_descNeonAnarchy;
+  /// **'Matte black, steel and frost. The NOTORYX look'**
+  String get theme_descBlackout;
 
   /// No description provided for @theme_descTactical.
   ///
   /// In en, this message translates to:
   /// **'Olive, gunmetal and earth tones'**
   String get theme_descTactical;
-
-  /// No description provided for @theme_descPinkOverload.
-  ///
-  /// In en, this message translates to:
-  /// **'Hot pink, bubblegum and lavender'**
-  String get theme_descPinkOverload;
-
-  /// No description provided for @theme_descBareBeauty.
-  ///
-  /// In en, this message translates to:
-  /// **'Warm nude, dusty rose, cocoa and sage'**
-  String get theme_descBareBeauty;
 
   /// No description provided for @theme_descOkabeIto.
   ///

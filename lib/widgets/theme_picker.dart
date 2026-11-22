@@ -67,11 +67,8 @@ class ThemePicker extends StatelessWidget {
 /// The short description of [theme], in the app's language.
 String themeDescription(AppLocalizations l10n, BastionTheme theme) =>
     switch (theme) {
-      BastionTheme.blaze => l10n.theme_descBlaze,
-      BastionTheme.neonAnarchy => l10n.theme_descNeonAnarchy,
+      BastionTheme.blackout => l10n.theme_descBlackout,
       BastionTheme.tactical => l10n.theme_descTactical,
-      BastionTheme.pinkOverload => l10n.theme_descPinkOverload,
-      BastionTheme.bareBeauty => l10n.theme_descBareBeauty,
       BastionTheme.okabeIto => l10n.theme_descOkabeIto,
       BastionTheme.nightOps => l10n.theme_descNightOps,
       BastionTheme.seasonal => l10n.theme_descSeasonal,
@@ -436,7 +433,7 @@ class _DarkModeControls extends StatelessWidget {
                   ? ''
                   // Start with a dark theme other than the day one.
                   : settings.appTheme == BastionTheme.nightOps.id
-                  ? BastionTheme.blaze.id
+                  ? BastionTheme.blackout.id
                   : BastionTheme.nightOps.id,
             ),
           ),

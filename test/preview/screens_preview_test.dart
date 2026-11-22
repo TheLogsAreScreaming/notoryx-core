@@ -584,7 +584,7 @@ void main() {
   };
 
   setUpAll(() async {
-    // PREVIEW_THEME=pink_overload (etc.) renders that theme; Blaze by
+    // PREVIEW_THEME=night_ops (etc.) renders that theme; BLACKOUT by
     // default. PREVIEW_SEASON=winter picks the Seasonal theme's season.
     MeshPalette.current = resolveThemePalette(
       Platform.environment['PREVIEW_THEME'],

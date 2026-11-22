@@ -10611,21 +10611,11 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get theme_descBlaze =>
-      'Charcoal and slate with high-visibility orange';
-
-  @override
-  String get theme_descNeonAnarchy =>
-      'Toxic green and electric purple on black';
+  String get theme_descBlackout =>
+      'Matte black, steel and frost. The NOTORYX look';
 
   @override
   String get theme_descTactical => 'Olive, gunmetal and earth tones';
-
-  @override
-  String get theme_descPinkOverload => 'Hot pink, bubblegum and lavender';
-
-  @override
-  String get theme_descBareBeauty => 'Warm nude, dusty rose, cocoa and sage';
 
   @override
   String get theme_descOkabeIto => 'Color-blind safe, high clarity';

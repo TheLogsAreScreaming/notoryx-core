@@ -10250,19 +10250,10 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get theme_descBlaze => '차콜과 슬레이트에 고시인성 오렌지';
-
-  @override
-  String get theme_descNeonAnarchy => '검정 위의 톡식 그린과 일렉트릭 퍼플';
+  String get theme_descBlackout => '매트 블랙, 스틸, 프로스트. NOTORYX 스타일';
 
   @override
   String get theme_descTactical => '올리브, 건메탈, 어스 톤';
-
-  @override
-  String get theme_descPinkOverload => '핫 핑크, 버블검, 라벤더';
-
-  @override
-  String get theme_descBareBeauty => '따뜻한 누드, 더스티 로즈, 코코아, 세이지';
 
   @override
   String get theme_descOkabeIto => '색각 이상에 안전, 높은 선명도';

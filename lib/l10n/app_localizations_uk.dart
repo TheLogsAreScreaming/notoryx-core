@@ -10783,21 +10783,11 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
-  String get theme_descBlaze => 'Графіт і сланець із сигнальним помаранчевим';
-
-  @override
-  String get theme_descNeonAnarchy =>
-      'Отруйно-зелений і електрик-фіолетовий на чорному';
+  String get theme_descBlackout =>
+      'Матовий чорний, сталь та іній. Стиль NOTORYX';
 
   @override
   String get theme_descTactical => 'Олива, збройовий метал і землисті тони';
-
-  @override
-  String get theme_descPinkOverload => 'Яскраво-рожевий, жуйка і лаванда';
-
-  @override
-  String get theme_descBareBeauty =>
-      'Теплий нюд, пильна троянда, какао і шавлія';
 
   @override
   String get theme_descOkabeIto => 'Безпечна при дальтонізмі, висока чіткість';

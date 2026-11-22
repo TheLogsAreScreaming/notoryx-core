@@ -17,7 +17,7 @@ double contrast(Color a, Color b) {
   return x > y ? (x + .05) / (y + .05) : (y + .05) / (x + .05);
 }
 
-/// Every palette the app can show: seven themes plus Seasonal's seven.
+/// Every palette the app can show: four themes plus Seasonal's seven.
 Map<String, BastionPalette> allPalettes() => {
   for (final t in BastionTheme.values)
     if (t != BastionTheme.seasonal) t.id: t.palette,
@@ -55,20 +55,17 @@ void main() {
   tearDown(() => MeshPalette.current = BastionTheme.fallback.palette);
 
   group('lineup', () {
-    test('exactly eight themes, in display order, Blaze the default', () {
+    test('exactly five themes, in display order, BLACKOUT the default', () {
       expect(BastionTheme.values.map((t) => t.id), [
-        'blaze',
-        'neon_anarchy',
+        'blackout',
         'tactical',
-        'pink_overload',
-        'bare_beauty',
         'okabe_ito',
         'night_ops',
         'seasonal',
       ]);
-      expect(AppSettings().appTheme, 'blaze');
-      expect(BastionTheme.fromId(null), BastionTheme.blaze);
-      expect(BastionTheme.fromId('nope'), BastionTheme.blaze);
+      expect(AppSettings().appTheme, 'blackout');
+      expect(BastionTheme.fromId(null), BastionTheme.blackout);
+      expect(BastionTheme.fromId('nope'), BastionTheme.blackout);
     });
 
     test('every palette is distinct', () {
@@ -77,40 +74,42 @@ void main() {
     });
 
     test('the spec colors are used', () {
-      final blaze = BastionTheme.blaze.palette;
-      expect(blaze.bg, const Color(0xFF111820));
-      expect(blaze.bg3, const Color(0xFF273443));
-      expect(blaze.accent, const Color(0xFFFF8A00));
-      expect(blaze.ink, const Color(0xFFF4F6F8));
-      expect(blaze.ink3, const Color(0xFFAAB5C3));
-      final neon = BastionTheme.neonAnarchy.palette;
-      expect(neon.bg, const Color(0xFF08060D));
-      expect(neon.accent, const Color(0xFFADFF2F));
-      expect(neon.magenta, const Color(0xFFB026FF));
-      expect(neon.secondaryContainer, const Color(0xFF7022C4));
+      final blackout = BastionTheme.blackout.palette;
+      expect(blackout.brightness, Brightness.dark);
+      // matte, charcoal, frost; steel nudged to #8C8C8C for 4.5:1.
+      expect(blackout.bg, const Color(0xFF080808));
+      expect(blackout.bg3, const Color(0xFF242424));
+      expect(blackout.ink, const Color(0xFFE8E8E8));
+      expect(blackout.accent, const Color(0xFFE8E8E8));
+      expect(blackout.ink3, const Color(0xFF8C8C8C));
+      expect(blackout.meBorder, const Color(0xFF484848));
       expect(BastionTheme.tactical.palette.accent, const Color(0xFFA8BA79));
-      final pink = BastionTheme.pinkOverload.palette;
-      expect(pink.bg, const Color(0xFFFFF0FA));
-      expect(pink.bg3, const Color(0xFFFFC1E3));
-      expect(pink.magenta, const Color(0xFFFF1493));
-      expect(pink.brightness, Brightness.light);
-      final bare = BastionTheme.bareBeauty.palette;
-      expect(bare.bg, const Color(0xFFFFF0E7));
-      expect(bare.bg3, const Color(0xFFE8B69E));
-      expect(bare.secondary, const Color(0xFF754B43));
-      expect(bare.brightness, Brightness.light);
       expect(BastionTheme.okabeIto.palette.bg, const Color(0xFF161A20));
       final night = BastionTheme.nightOps.palette;
       expect(night.bg, const Color(0xFF080808));
       expect(night.accentDim, const Color(0xFFC23A32));
     });
 
-    test('Pink Overload and Bare Beauty are clearly different', () {
-      final pink = BastionTheme.pinkOverload.palette;
-      final bare = BastionTheme.bareBeauty.palette;
-      expect(pink.accent == bare.accent, isFalse);
-      // Pink Overload's page is pinker (more red than green by far).
-      expect(pink.bg3.r - pink.bg3.g, greaterThan(bare.bg3.r - bare.bg3.g));
+    test('BLACKOUT is monochrome except for status colors', () {
+      final p = BastionTheme.blackout.palette;
+      for (final c in [
+        p.bg,
+        p.bg1,
+        p.bg2,
+        p.bg3,
+        p.ink,
+        p.ink3,
+        p.accent,
+        p.secondary,
+        p.tertiary,
+        p.me,
+      ]) {
+        expect(HSVColor.fromColor(c).saturation, 0, reason: '$c');
+      }
+      // Signal, warning and SOS keep their hues.
+      for (final c in [p.signal, p.warn, p.alert]) {
+        expect(HSVColor.fromColor(c).saturation, greaterThan(0.5));
+      }
     });
   });
 
@@ -236,17 +235,20 @@ void main() {
   group('migration', () {
     test('old theme ids open as their closest new theme', () {
       const expected = {
-        'blaze': BastionTheme.blaze,
+        'blaze': BastionTheme.blackout,
+        'neon_anarchy': BastionTheme.blackout,
+        'pink_overload': BastionTheme.blackout,
+        'bare_beauty': BastionTheme.blackout,
         'autumn_frost': BastionTheme.seasonal,
-        'bubble_gum': BastionTheme.pinkOverload,
-        'bronzed_blush': BastionTheme.bareBeauty,
+        'bubble_gum': BastionTheme.blackout,
+        'bronzed_blush': BastionTheme.blackout,
         'red_light': BastionTheme.nightOps,
         'okabe_ito': BastionTheme.okabeIto,
         'okabe_ito_slate': BastionTheme.okabeIto,
-        'topo_night': BastionTheme.pinkOverload,
+        'topo_night': BastionTheme.blackout,
         'christmas': BastionTheme.seasonal,
-        'alpine_day': BastionTheme.blaze,
-        'halloween': BastionTheme.blaze,
+        'alpine_day': BastionTheme.blackout,
+        'halloween': BastionTheme.blackout,
       };
       for (final e in expected.entries) {
         expect(BastionTheme.fromId(e.key), e.value, reason: e.key);
@@ -277,12 +279,40 @@ void main() {
       final settings = await freshSettings({
         'app_settings': '{"app_theme":"bubble_gum"}',
       });
-      expect(settings.settings.appTheme, 'pink_overload');
+      expect(settings.settings.appTheme, 'blackout');
       await settings.setAppTheme(settings.settings.appTheme);
       final again = AppSettingsService();
       await again.loadSettings();
-      expect(again.settings.appTheme, 'pink_overload');
+      expect(again.settings.appTheme, 'blackout');
     }, skip: false);
+
+    test(
+      'a removed theme falls back to BLACKOUT, also for dark mode',
+      () async {
+        for (final id in [
+          'blaze',
+          'neon_anarchy',
+          'pink_overload',
+          'bare_beauty',
+        ]) {
+          final settings = await freshSettings({
+            'app_settings': '{"app_theme":"$id","dark_mode_theme":"$id"}',
+          });
+          expect(settings.settings.appTheme, 'blackout', reason: id);
+          expect(settings.settings.darkModeTheme, 'blackout', reason: id);
+          expect(
+            identical(
+              resolveThemePalette(settings.settings.appTheme),
+              BastionTheme.blackout.palette,
+            ),
+            isTrue,
+            reason: id,
+          );
+          settings.dispose();
+        }
+      },
+      skip: false,
+    );
   });
 
   group('seasonal', () {
@@ -362,7 +392,7 @@ void main() {
 
   group('picker', () {
     for (final width in [320.0, 720.0]) {
-      testWidgets('shows eight cards and saves the choice at width $width', (
+      testWidgets('shows five cards and saves the choice at width $width', (
         tester,
       ) async {
         final settings = await freshSettings();
@@ -374,15 +404,15 @@ void main() {
           expect(find.text(t.label), findsOneWidget);
         }
         expect(find.text('Selected'), findsOneWidget);
-        final neon = find.byKey(const ValueKey('theme-neon_anarchy'));
-        await tester.ensureVisible(neon);
-        await tester.tap(neon);
+        final tactical = find.byKey(const ValueKey('theme-tactical'));
+        await tester.ensureVisible(tactical);
+        await tester.tap(tactical);
         await tester.pumpAndSettle();
         expect(tester.takeException(), isNull);
-        expect(settings.settings.appTheme, 'neon_anarchy');
+        expect(settings.settings.appTheme, 'tactical');
         final restored = AppSettingsService();
         await restored.loadSettings();
-        expect(restored.settings.appTheme, 'neon_anarchy');
+        expect(restored.settings.appTheme, 'tactical');
         await tester.pumpWidget(const SizedBox.shrink());
         restored.dispose();
         settings.dispose();
@@ -394,10 +424,8 @@ void main() {
       await tester.binding.setSurfaceSize(const Size(390, 2400));
       addTearDown(() => tester.binding.setSurfaceSize(null));
       await tester.pumpWidget(pickerApp(settings));
-      final a = tester.getTopLeft(find.byKey(const ValueKey('theme-blaze')));
-      final b = tester.getTopLeft(
-        find.byKey(const ValueKey('theme-neon_anarchy')),
-      );
+      final a = tester.getTopLeft(find.byKey(const ValueKey('theme-blackout')));
+      final b = tester.getTopLeft(find.byKey(const ValueKey('theme-tactical')));
       expect(a.dy, b.dy);
       expect(b.dx, greaterThan(a.dx));
     });
@@ -438,25 +466,25 @@ void main() {
       addTearDown(() => tester.binding.setSurfaceSize(null));
       await tester.pumpWidget(pickerApp(settings));
       final node = tester.getSemantics(
-        find.byKey(const ValueKey('theme-blaze')),
+        find.byKey(const ValueKey('theme-blackout')),
       );
-      expect(node.label, contains('Blaze'));
-      expect(node.label, contains('high-visibility orange'));
+      expect(node.label, contains('BLACKOUT'));
+      expect(node.label, contains('Matte black, steel and frost'));
       expect(node.flagsCollection.isSelected, Tristate.isTrue);
       // The card can be activated from a screen reader.
       expect(node.getSemanticsData().hasAction(SemanticsAction.tap), isTrue);
-      tester.semantics.tap(find.semantics.byLabel(RegExp('^Neon Anarchy')));
+      tester.semantics.tap(find.semantics.byLabel(RegExp('^Tactical')));
       await tester.pumpAndSettle();
-      expect(settings.settings.appTheme, 'neon_anarchy');
+      expect(settings.settings.appTheme, 'tactical');
       handle.dispose();
     });
   });
 
   test('the palette follows the chosen theme', () {
-    MeshPalette.current = BastionTheme.pinkOverload.palette;
-    expect(MeshPalette.accent, BastionTheme.pinkOverload.palette.accent);
-    MeshPalette.current = BastionTheme.blaze.palette;
-    expect(MeshPalette.accent, const Color(0xFFFF8A00));
+    MeshPalette.current = BastionTheme.tactical.palette;
+    expect(MeshPalette.accent, BastionTheme.tactical.palette.accent);
+    MeshPalette.current = BastionTheme.blackout.palette;
+    expect(MeshPalette.accent, const Color(0xFFE8E8E8));
     expect(MeshTheme.light().brightness, Brightness.light);
     expect(MeshTheme.dark().brightness, Brightness.dark);
   });
@@ -465,23 +493,23 @@ void main() {
     test('used only when set and the device is dark', () {
       expect(
         activeThemeId(
-          appTheme: 'pink_overload',
+          appTheme: 'seasonal',
           darkModeTheme: '',
           platformBrightness: Brightness.dark,
         ),
-        'pink_overload',
+        'seasonal',
       );
       expect(
         activeThemeId(
-          appTheme: 'pink_overload',
+          appTheme: 'seasonal',
           darkModeTheme: 'night_ops',
           platformBrightness: Brightness.light,
         ),
-        'pink_overload',
+        'seasonal',
       );
       expect(
         activeThemeId(
-          appTheme: 'pink_overload',
+          appTheme: 'seasonal',
           darkModeTheme: 'night_ops',
           platformBrightness: Brightness.dark,
         ),
@@ -514,9 +542,16 @@ void main() {
       await tester.tap(find.byKey(const ValueKey('dark-mode-switch')));
       await tester.pumpAndSettle();
       expect(settings.settings.darkModeTheme, BastionTheme.nightOps.id);
-      expect(settings.settings.appTheme, BastionTheme.blaze.id);
+      expect(settings.settings.appTheme, BastionTheme.blackout.id);
 
-      await tester.tap(find.byKey(const ValueKey('dark-mode-theme')));
+      // Open the dropdown itself; with shorter theme names it no longer
+      // reaches the middle of the row.
+      await tester.tap(
+        find.descendant(
+          of: find.byKey(const ValueKey('dark-mode-theme')),
+          matching: find.byType(DropdownButton<String>),
+        ),
+      );
       await tester.pumpAndSettle();
       await tester.tap(find.text('Tactical').last);
       await tester.pumpAndSettle();

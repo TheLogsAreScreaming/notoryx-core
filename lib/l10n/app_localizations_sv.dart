@@ -10661,19 +10661,10 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
-  String get theme_descBlaze => 'Kol och skiffer med signalorange';
-
-  @override
-  String get theme_descNeonAnarchy => 'Giftgrönt och elektriskt lila på svart';
+  String get theme_descBlackout => 'Mattsvart, stål och frost. NOTORYX-looken';
 
   @override
   String get theme_descTactical => 'Oliv, gunmetal och jordtoner';
-
-  @override
-  String get theme_descPinkOverload => 'Klarrosa, tuggummirosa och lavendel';
-
-  @override
-  String get theme_descBareBeauty => 'Varm nude, gammelrosa, kakao och salvia';
 
   @override
   String get theme_descOkabeIto => 'Säker vid färgblindhet, mycket tydlig';

@@ -193,7 +193,7 @@ class AppSettings {
   /// 863–870 MHz duty-cycle band), 'on' or 'off' (this device only).
   final String reactionsOverRadio;
 
-  /// The chosen color theme's id (see BastionTheme); Blaze by default.
+  /// The chosen color theme's id (see BastionTheme); BLACKOUT by default.
   final String appTheme;
 
   /// The Seasonal theme's season: 'auto' (by date) or a season id.
@@ -332,7 +332,7 @@ class AppSettings {
     this.mapShowRangeRings = false,
     this.signChannelPosts = false,
     this.reactionsOverRadio = 'auto',
-    this.appTheme = 'blaze',
+    this.appTheme = 'blackout',
     this.seasonalOverride = 'auto',
     this.seasonalHolidays = true,
     this.darkModeTheme = '',
@@ -874,4 +874,4 @@ const channelRetentionChoices = [0, 7, 30, 90, 365];
 
 /// A saved theme id from any version as one of today's eight theme ids, so
 /// an old choice opens as its closest new theme instead of resetting.
-String _migrateThemeId(String? id) => BastionTheme.fromId(id ?? 'blaze').id;
+String _migrateThemeId(String? id) => BastionTheme.fromId(id ?? 'blackout').id;

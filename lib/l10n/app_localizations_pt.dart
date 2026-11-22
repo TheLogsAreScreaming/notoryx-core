@@ -10725,21 +10725,10 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
-  String get theme_descBlaze =>
-      'Carvão e ardósia com laranja de alta visibilidade';
-
-  @override
-  String get theme_descNeonAnarchy =>
-      'Verde tóxico e roxo elétrico sobre preto';
+  String get theme_descBlackout => 'Preto fosco, aço e geada. O visual NOTORYX';
 
   @override
   String get theme_descTactical => 'Oliva, cinza-metal e tons terrosos';
-
-  @override
-  String get theme_descPinkOverload => 'Rosa-choque, chiclete e lavanda';
-
-  @override
-  String get theme_descBareBeauty => 'Nude quente, rosa antigo, cacau e sálvia';
 
   @override
   String get theme_descOkabeIto => 'Seguro para daltonismo, alta clareza';

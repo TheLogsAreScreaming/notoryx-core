@@ -10700,19 +10700,10 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
-  String get theme_descBlaze => 'Antraciet en leisteen met signaaloranje';
-
-  @override
-  String get theme_descNeonAnarchy => 'Gifgroen en elektrisch paars op zwart';
+  String get theme_descBlackout => 'Matzwart, staal en rijp. De NOTORYX-look';
 
   @override
   String get theme_descTactical => 'Olijf, gunmetal en aardetinten';
-
-  @override
-  String get theme_descPinkOverload => 'Felroze, kauwgomroze en lavendel';
-
-  @override
-  String get theme_descBareBeauty => 'Warm naturel, oudroze, cacao en salie';
 
   @override
   String get theme_descOkabeIto => 'Veilig bij kleurenblindheid, heel helder';

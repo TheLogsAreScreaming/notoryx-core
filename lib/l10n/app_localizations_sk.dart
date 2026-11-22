@@ -10719,20 +10719,10 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
-  String get theme_descBlaze => 'Antracit a bridlica so signálnou oranžovou';
-
-  @override
-  String get theme_descNeonAnarchy =>
-      'Toxická zelená a elektrická fialová na čiernej';
+  String get theme_descBlackout => 'Matná čierna, oceľ a inovať. Štýl NOTORYX';
 
   @override
   String get theme_descTactical => 'Olivová, oceľovo šedá a zemité tóny';
-
-  @override
-  String get theme_descPinkOverload => 'Sýto ružová, žuvačková a levanduľová';
-
-  @override
-  String get theme_descBareBeauty => 'Teplý nude, staroružová, kakao a šalvia';
 
   @override
   String get theme_descOkabeIto =>

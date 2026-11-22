@@ -67,7 +67,7 @@ Each release includes `SHA256SUMS-Android.txt` and `SHA256SUMS-macOS.txt` (and, 
 3. **Choose who gets your check-ins and SOS.** Tap **Check in: I'm OK** or hold **SOS**. The first time, NOTORYX Core asks who should get them. You can change this anytime in **Plan your trip**.
 4. **Add more radios (optional).** **Add a radio** on the **Connections** screen (from **Connect radio**) keeps a second radio, such as a handheld and a base station, connected at the same time. The app shows and sends through the radio in use; the radio switcher at the top of **Home** changes it. The others stay connected and save their messages for when you switch.
 5. **Set your radio for your area.** **Settings → Radio settings → Presets** lists MeshCore's community presets (USA, Canada, EU/UK, Australia and more) with the one for your country suggested first.
-6. **Pick a look.** **Settings → Theme** offers eight themes: Blaze (default), Neon Anarchy, Tactical, Pink Overload, Bare Beauty, Okabe-Ito (color-blind safe), Night Ops (low light) and Seasonal. You can set a second theme for when your phone is in dark mode, and **Theme → Background** puts a color, gradient or your own photo behind the glass panels.
+6. **Pick a look.** **Settings → Theme** offers five themes: BLACKOUT (default), Tactical, Okabe-Ito (color-blind safe), Night Ops (low light) and Seasonal. You can set a second theme for when your phone is in dark mode, and **Theme → Background** puts a color, gradient or your own photo behind the glass panels.
 
 The tabs at the bottom are **Home**, **Chats**, **Nodes**, **Map** and **More**. Home is where check-in, SOS and your radio's readings live; **More** holds every tool and setting, with a search box. Every coverage and map tool is in one place, **More → Map + coverage**.
 
@@ -172,7 +172,7 @@ The tabs at the bottom are **Home**, **Chats**, **Nodes**, **Map** and **More**.
 - **Your own background:** the theme's glow, a flat color, a gradient, a soft color blend or your own photo, with dim and blur controls so text stays readable.
 - **Node looks:** give any node a color or a photo. It shows in the Nodes list and on the map.
 - **Dark-mode theme:** an optional second theme for when your phone is in dark mode.
-- Eight themes: **Blaze** (charcoal and slate with high-visibility orange, the default), **Neon Anarchy** (toxic green and electric purple on black), **Tactical** (olive, gunmetal and earth tones), **Pink Overload** (hot pink, bubblegum and lavender), **Bare Beauty** (warm nude, dusty rose, cocoa and sage), **Okabe-Ito** (color-blind safe, on charcoal), **Night Ops** (dim reds on near-black for low light) and **Seasonal**, which follows the season by your device's date (spring, summer, autumn, winter, plus optional Halloween, Christmas and Valentine's Day colors) or a season you pick. Every theme meets WCAG AA contrast (4.5:1) for text, buttons, chat bubbles and SOS, and SOS stays red in all of them.
+- Five themes: **BLACKOUT** (matte black, steel and frost, the default; monochrome, with signal, warning and SOS colors kept), **Tactical** (olive, gunmetal and earth tones), **Okabe-Ito** (color-blind safe, on charcoal), **Night Ops** (dim reds on near-black for low light) and **Seasonal**, which follows the season by your device's date (spring, summer, autumn, winter, plus optional Halloween, Christmas and Valentine's Day colors) or a season you pick. Every theme meets WCAG AA contrast (4.5:1) for text, buttons, chat bubbles and SOS, and SOS stays red in all of them.
 - **Color-blind safe colors:** node types on the map and in lists (people, repeaters, rooms and sensors) use the [Okabe-Ito palette](https://jfly.uni-koeln.de/color/), whose colors stay distinct with the common forms of color blindness. The **Okabe-Ito** theme goes further: good, warning and bad signal are blue-green, yellow and vermillion instead of green and red, and every accent comes from the same palette.
 
   | Orange | Sky blue | Bluish green | Yellow | Blue | Vermillion | Reddish purple | Black |
@@ -188,11 +188,7 @@ The tabs at the bottom are **Home**, **Chats**, **Nodes**, **Map** and **More**.
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/home.png" width="160" alt="Blaze theme">
-  <img src="docs/screenshots/home_neon_anarchy.png" width="160" alt="Neon Anarchy theme">
   <img src="docs/screenshots/home_tactical.png" width="160" alt="Tactical theme">
-  <img src="docs/screenshots/home_pink_overload.png" width="160" alt="Pink Overload theme">
-  <img src="docs/screenshots/home_bare_beauty.png" width="160" alt="Bare Beauty theme">
   <img src="docs/screenshots/home_okabe_ito.png" width="160" alt="Okabe-Ito color-blind safe theme">
   <img src="docs/screenshots/home_night_ops.png" width="160" alt="Night Ops low-light theme">
   <img src="docs/screenshots/home_seasonal.png" width="160" alt="Seasonal theme in autumn">
