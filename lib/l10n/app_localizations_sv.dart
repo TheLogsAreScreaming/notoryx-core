@@ -14319,4 +14319,110 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get wardrive_squareNoRepeaters => 'Ingen repeater svarade här.';
+
+  @override
+  String get wardrive_noiseTitle => 'Brusgolv';
+
+  @override
+  String get wardrive_noiseEmpty =>
+      'Inga brusvärden i den här körningen. Slå på Spela in brusgolvet i wardrive-inställningarna.';
+
+  @override
+  String wardrive_noiseSummary(int low, int high, int avg) {
+    return '$low till $high dBm, snitt $avg dBm';
+  }
+
+  @override
+  String get wardrive_noiseHint =>
+      'Tyst är ungefär −120 till −100 dBm. Över −90 dBm är bandet upptaget eller något i närheten stör, och räckvidden minskar. Gröna markeringar hördes, röda inte; tryck på en för dess repeatrar.';
+
+  @override
+  String get wardrive_export => 'Exportera den här körningen';
+
+  @override
+  String get wardrive_exportHint => 'Delar körningen som en fil.';
+
+  @override
+  String get wardrive_formatGpx => 'Punkter och spår, för de flesta kartappar';
+
+  @override
+  String get wardrive_formatKml => 'Färgade nålar, för Google Earth';
+
+  @override
+  String get wardrive_formatCsv => 'En rad per repeater, för kalkylblad';
+
+  @override
+  String get wardrive_formatGeojson =>
+      'Allt, och kan importeras tillbaka i appen';
+
+  @override
+  String get wardrive_exportFailed => 'Det gick inte att exportera körningen.';
+
+  @override
+  String get wardrive_import => 'Importera en körning';
+
+  @override
+  String get wardrive_importFailed =>
+      'Filen är ingen körning exporterad från appen som GeoJSON.';
+
+  @override
+  String wardrive_imported(int pings) {
+    return 'Körningen har lagts till i historiken ($pings pingar).';
+  }
+
+  @override
+  String get wardrive_importDuplicate =>
+      'Den körningen finns redan i din historik.';
+
+  @override
+  String get wardriveGuide_title => 'Wardriving-guide';
+
+  @override
+  String get wardriveGuide_startTitle => 'Kom igång';
+
+  @override
+  String get wardriveGuide_startBody =>
+      'Anslut radion, välj ett läge och tryck på Starta. Första pingen går direkt, sedan en per intervall medan du rör dig.\n\nTryck på Pinga nu för att pinga på plats. Stoppa sparar körningen i historiken, där du kan se den igen, exportera eller radera den.';
+
+  @override
+  String get wardriveGuide_modesTitle => 'Lägena';
+
+  @override
+  String get wardriveGuide_modesBody =>
+      'Upptäck ber repeatrar inom direkt räckhåll att svara. Det är utan hopp, så det använder bara sändningstid där du är och mäter båda hållen.\n\nSpåra pingar en vald repeater och mäter länken åt båda hållen. Bra för att se hur långt en repeater når.\n\nKanal skickar ett kort meddelande till #wardriving. Repeatrar som skickar det vidare visar att du når det större nätet, men varje ping sprids över hela nätet: använd ett långt intervall.\n\nHybrid växlar mellan Upptäck och Kanal. Med Logga trafik du hör kartläggs även paket som radion ändå hör, utan sändningstid.';
+
+  @override
+  String get wardriveGuide_coloursTitle => 'Vad färgerna betyder';
+
+  @override
+  String get wardriveGuide_coloursBody =>
+      'Kartan delas in i rutor på 100 eller 300 m.\n\nGrön: en repeater hörde dig och du den. Turkos: en repeater skickade vidare pingen, men bara ena hållet är känt. Blå: bara trafik hörd på egen hand. Röd: du pingade och ingen svarade. Bärnstensfärgad kant: pingar hoppades över eftersom rutan redan var täckt.\n\nTryck på en ruta för dess repeatrar. Tryck på Bara den, eller välj en repeater i statistiken, för att se bara dess täckning, färgad efter signal.';
+
+  @override
+  String get wardriveGuide_airtimeTitle => 'Hänsyn till sändningstiden';
+
+  @override
+  String get wardriveGuide_airtimeBody =>
+      'Varje ping använder delad sändningstid. Upptäck och Spåra är utan hopp: bara repeatrar nära dig hör dem. Kanalpingar går genom hela nätet.\n\nHa kvar 25 m-regeln och att hoppa över täckta rutor: tillsammans hindrar de dig från att pinga samma plats om och om igen. På ett upptaget nät, pinga var 60:e sekund eller mer sällan. Passiv loggning är gratis: den lyssnar bara.';
+
+  @override
+  String get wardriveGuide_antennaTitle => 'Antenner och bil-repeatrar';
+
+  @override
+  String get wardriveGuide_antennaBody =>
+      'Resultaten beror på antennen. En antenn på taket hör mycket mer än en inne i bilen. Använd samma upplägg varje gång så att körningar går att jämföra.\n\nEn repeater i bilen skulle svara på varje ping och dölja verklig täckning. Välj den som Min bil-repeater så ignoreras den alltid. Allt som hörs på −30 dBm eller starkare sitter bredvid dig och ignoreras också.';
+
+  @override
+  String get wardriveGuide_screenOffTitle => 'Skärm av och batteri';
+
+  @override
+  String get wardriveGuide_screenOffBody =>
+      'Slå på Fortsätt med skärmen avstängd för att låsa telefonen under körningen. Android visar en avisering medan GPS fortsätter.\n\nDet drar mer batteri: ladda telefonen på långa körningar.';
+
+  @override
+  String get wardriveGuide_shareTitle => 'Dela körningar';
+
+  @override
+  String get wardriveGuide_shareBody =>
+      'Exportera en körning från menyn som GPX eller KML för kartappar, CSV för kalkylblad eller GeoJSON. Bara GeoJSON behåller allt och kan importeras igen, i den här eller en annan telefon.\n\nExporterade filer innehåller dina positioner och tider. Dela dem bara med personer du litar på.';
 }

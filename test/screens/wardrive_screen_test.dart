@@ -8,6 +8,7 @@ import 'package:meshcore_open/connector/meshcore_protocol.dart';
 import 'package:meshcore_open/l10n/app_localizations.dart';
 import 'package:meshcore_open/models/contact.dart';
 import 'package:meshcore_open/models/wardrive.dart';
+import 'package:meshcore_open/screens/wardrive_noise_screen.dart';
 import 'package:meshcore_open/screens/wardrive_screen.dart';
 import 'package:meshcore_open/services/coverage_hex_service.dart';
 import 'package:meshcore_open/services/wardrive_service.dart';
@@ -153,6 +154,64 @@ void main() {
     await tester.tap(find.byTooltip('Show all'));
     await tester.pump();
     expect(find.text('Only Hilltop'), findsNothing);
+    await tester.pumpWidget(const SizedBox());
+  });
+
+  testWidgets('the guide opens from the menu, with no links', (tester) async {
+    await open(tester);
+    await tester.tap(find.byKey(const ValueKey('wardrive-menu')));
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
+    await tester.tap(find.byKey(const ValueKey('wardrive-menu-guide')));
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
+    expect(find.text('Wardriving guide'), findsOneWidget);
+    expect(find.text('Getting started'), findsOneWidget);
+    expect(find.textContaining('http'), findsNothing);
+    await tester.tap(find.text('Airtime manners'));
+    await tester.pump(const Duration(seconds: 1));
+    expect(find.textContaining('25 m rule'), findsOneWidget);
+    await tester.pumpWidget(const SizedBox());
+  });
+
+  testWidgets('noise graph: summary and tapping a marker', (tester) async {
+    final t0 = DateTime.utc(2026, 11, 21, 12);
+    final drive = WardriveSession(
+      id: 'n',
+      startedAt: t0,
+      noise: [
+        for (var i = 0; i < 5; i++)
+          NoiseSample(t0.add(Duration(minutes: i)), -115 + i * 5),
+      ],
+      pings: [
+        WardrivePing(
+          at: t0.add(const Duration(minutes: 2)),
+          latitude: 1,
+          longitude: 2,
+          noiseFloor: -105,
+          replies: const [WardriveReply(prefix: 'a1b2', snrHere: 4)],
+        ),
+      ],
+    );
+    await tester.pumpWidget(
+      MaterialApp(
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        home: WardriveNoiseScreen(session: drive, nameOf: (_) => 'Hilltop'),
+      ),
+    );
+    await tester.pump();
+    expect(find.text('-115 to -95 dBm, average -105 dBm'), findsOneWidget);
+    // The marker sits mid-way along the chart, at -105 dBm.
+    final chart = tester.getRect(
+      find.byKey(const ValueKey('wardrive-noise-chart')),
+    );
+    final x = chart.left + 28 + (chart.width - 28 - 8) / 2;
+    final y = chart.top + 8 + (chart.height - 24) * (-90 - -105) / 30;
+    await tester.tapAt(Offset(x, y));
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
+    expect(find.text('Hilltop'), findsOneWidget);
     await tester.pumpWidget(const SizedBox());
   });
 }

@@ -13525,4 +13525,106 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get wardrive_squareNoRepeaters => '这里没有中继应答。';
+
+  @override
+  String get wardrive_noiseTitle => '噪声底';
+
+  @override
+  String get wardrive_noiseEmpty => '本次扫街没有噪声读数。请在扫街设置中开启“记录噪声底”。';
+
+  @override
+  String wardrive_noiseSummary(int low, int high, int avg) {
+    return '$low 至 $high dBm，平均 $avg dBm';
+  }
+
+  @override
+  String get wardrive_noiseHint =>
+      '安静约为 −120 至 −100 dBm。高于 −90 dBm 说明频段繁忙或附近有干扰源，通信距离会下降。绿色标记表示被收到，红色表示没有；点按查看其中继。';
+
+  @override
+  String get wardrive_export => '导出本次扫街';
+
+  @override
+  String get wardrive_exportHint => '将本次扫街作为文件分享。';
+
+  @override
+  String get wardrive_formatGpx => '航点和轨迹，适用于大多数地图应用';
+
+  @override
+  String get wardrive_formatKml => '彩色图钉，适用于 Google Earth';
+
+  @override
+  String get wardrive_formatCsv => '每个中继一行，适用于表格';
+
+  @override
+  String get wardrive_formatGeojson => '包含全部信息，可重新导入本应用';
+
+  @override
+  String get wardrive_exportFailed => '无法导出本次扫街。';
+
+  @override
+  String get wardrive_import => '导入扫街';
+
+  @override
+  String get wardrive_importFailed => '该文件不是本应用以 GeoJSON 导出的扫街记录。';
+
+  @override
+  String wardrive_imported(int pings) {
+    return '已将扫街加入历史（ping $pings 次）。';
+  }
+
+  @override
+  String get wardrive_importDuplicate => '该扫街已在你的历史中。';
+
+  @override
+  String get wardriveGuide_title => '扫街指南';
+
+  @override
+  String get wardriveGuide_startTitle => '开始使用';
+
+  @override
+  String get wardriveGuide_startBody =>
+      '连接电台，选择模式并点按开始。第一次 ping 会立即发出，之后在你移动时每个间隔发一次。\n\n点按“立即 ping”可在原地 ping。停止会把这次扫街存入历史，你可以重新查看、导出或删除。';
+
+  @override
+  String get wardriveGuide_modesTitle => '模式';
+
+  @override
+  String get wardriveGuide_modesBody =>
+      '发现会请直接范围内的中继应答。它是零跳的，只在你所在的地方占用空中时间，并测量双向。\n\n追踪会 ping 你选定的一个中继，并测量双向链路。可用来查看一个中继能覆盖多远。\n\n频道会向 #wardriving 发一条短消息。转发它的中继说明你能到达更广的网络，但每次 ping 都会泛洪整个网络，请使用较长间隔。\n\n混合会轮流使用发现和频道。开启“记录收到的流量”后，电台本来就会收到的数据包也会被画到地图上，不占空中时间。';
+
+  @override
+  String get wardriveGuide_coloursTitle => '颜色含义';
+
+  @override
+  String get wardriveGuide_coloursBody =>
+      '地图被分成 100 米或 300 米的方格。\n\n绿色：中继收到了你，你也收到了它。青色：中继转发了你的 ping，但只知道一个方向。蓝色：只有自行收到的流量。红色：你 ping 了但没有应答。琥珀色边框：该方格已覆盖，所以跳过了 ping。\n\n点按方格查看其中继。点按“只看它”或在中继统计中选择中继，即可只看该中继的覆盖，并按信号着色。';
+
+  @override
+  String get wardriveGuide_airtimeTitle => '空中时间礼仪';
+
+  @override
+  String get wardriveGuide_airtimeBody =>
+      '每次 ping 都占用大家共享的空中时间。发现和追踪是零跳的，只有附近的中继能收到。频道 ping 会传遍整个网络。\n\n请保持开启 25 米规则和跳过已覆盖方格：两者一起可避免在同一地点反复 ping。在繁忙的网络中，请每 60 秒或更久 ping 一次。被动记录是免费的：它只是在听。';
+
+  @override
+  String get wardriveGuide_antennaTitle => '天线与车载中继';
+
+  @override
+  String get wardriveGuide_antennaBody =>
+      '结果取决于天线。车顶上的天线比车内的天线能收到多得多。每次使用相同的配置，扫街结果才能比较。\n\n车里的中继会应答每一次 ping，掩盖真实覆盖。把它设为“我的车载中继”，它就会一直被忽略。以 −30 dBm 或更强收到的信号就在你身边，也会被忽略。';
+
+  @override
+  String get wardriveGuide_screenOffTitle => '熄屏与电量';
+
+  @override
+  String get wardriveGuide_screenOffBody =>
+      '开启“熄屏后继续运行”后，扫街时可以锁屏。Android 会显示通知，GPS 继续工作。\n\n这会更耗电，长途扫街请给手机充电。';
+
+  @override
+  String get wardriveGuide_shareTitle => '分享扫街';
+
+  @override
+  String get wardriveGuide_shareBody =>
+      '在菜单中可将扫街导出为适用于地图应用的 GPX 或 KML、适用于表格的 CSV，或 GeoJSON。只有 GeoJSON 保留全部信息，并可在本机或其他手机上重新导入。\n\n导出的文件包含你的位置和时间。只与你信任的人分享。';
 }
