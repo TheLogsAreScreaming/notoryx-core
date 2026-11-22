@@ -4491,6 +4491,8 @@
   "theme_descNightOps": "Rossi tenui su quasi nero per la luce scarsa",
   "theme_descSeasonal": "Cambia con le stagioni e le feste",
   "theme_selected": "Selezionato",
+  "theme_customBackdropNote": "Hai attivato uno sfondo personale, quindi lo sfondo di questo tema è nascosto.",
+  "theme_useThemeBackdrop": "Usa sfondo del tema",
   "seasonal_season": "Stagione",
   "seasonal_auto": "Automatica (ora {season})",
   "seasonal_autoHint": "Segue la data del dispositivo, con le stagioni dell'emisfero nord",

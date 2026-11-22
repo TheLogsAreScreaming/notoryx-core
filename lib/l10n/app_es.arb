@@ -4491,6 +4491,8 @@
   "theme_descNightOps": "Rojos tenues sobre casi negro para poca luz",
   "theme_descSeasonal": "Cambia con las estaciones y las fiestas",
   "theme_selected": "Seleccionado",
+  "theme_customBackdropNote": "Tienes un fondo propio activado, así que el fondo de este tema queda oculto.",
+  "theme_useThemeBackdrop": "Usar fondo del tema",
   "seasonal_season": "Estación",
   "seasonal_auto": "Automática (ahora {season})",
   "seasonal_autoHint": "Sigue la fecha del dispositivo, con estaciones del hemisferio norte",

@@ -10803,6 +10803,13 @@ class AppLocalizationsPl extends AppLocalizations {
   String get theme_selected => 'Wybrany';
 
   @override
+  String get theme_customBackdropNote =>
+      'Masz włączone własne tło, więc tło tego motywu jest ukryte.';
+
+  @override
+  String get theme_useThemeBackdrop => 'Tło motywu';
+
+  @override
   String get seasonal_season => 'Pora roku';
 
   @override

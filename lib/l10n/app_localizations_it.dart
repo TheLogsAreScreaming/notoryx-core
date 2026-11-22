@@ -10775,6 +10775,13 @@ class AppLocalizationsIt extends AppLocalizations {
   String get theme_selected => 'Selezionato';
 
   @override
+  String get theme_customBackdropNote =>
+      'Hai attivato uno sfondo personale, quindi lo sfondo di questo tema è nascosto.';
+
+  @override
+  String get theme_useThemeBackdrop => 'Usa sfondo del tema';
+
+  @override
   String get seasonal_season => 'Stagione';
 
   @override

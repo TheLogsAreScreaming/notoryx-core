@@ -10679,6 +10679,13 @@ class AppLocalizationsSv extends AppLocalizations {
   String get theme_selected => 'Vald';
 
   @override
+  String get theme_customBackdropNote =>
+      'Din egen bakgrund är på, så det här temats bakgrund döljs.';
+
+  @override
+  String get theme_useThemeBackdrop => 'Temats bakgrund';
+
+  @override
   String get seasonal_season => 'Årstid';
 
   @override

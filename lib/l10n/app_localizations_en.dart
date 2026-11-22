@@ -10630,6 +10630,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get theme_selected => 'Selected';
 
   @override
+  String get theme_customBackdropNote =>
+      'Your own background is on, so this theme\'s background is hidden.';
+
+  @override
+  String get theme_useThemeBackdrop => 'Use theme background';
+
+  @override
   String get seasonal_season => 'Season';
 
   @override

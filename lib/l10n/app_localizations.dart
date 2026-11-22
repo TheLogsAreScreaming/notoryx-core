@@ -17797,6 +17797,18 @@ abstract class AppLocalizations {
   /// **'Selected'**
   String get theme_selected;
 
+  /// No description provided for @theme_customBackdropNote.
+  ///
+  /// In en, this message translates to:
+  /// **'Your own background is on, so this theme\'s background is hidden.'**
+  String get theme_customBackdropNote;
+
+  /// No description provided for @theme_useThemeBackdrop.
+  ///
+  /// In en, this message translates to:
+  /// **'Use theme background'**
+  String get theme_useThemeBackdrop;
+
   /// No description provided for @seasonal_season.
   ///
   /// In en, this message translates to:

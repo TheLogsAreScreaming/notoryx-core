@@ -10255,6 +10255,12 @@ class AppLocalizationsJa extends AppLocalizations {
   String get theme_selected => '選択中';
 
   @override
+  String get theme_customBackdropNote => '独自の背景がオンのため、このテーマの背景は表示されません。';
+
+  @override
+  String get theme_useThemeBackdrop => 'テーマの背景を使う';
+
+  @override
   String get seasonal_season => '季節';
 
   @override

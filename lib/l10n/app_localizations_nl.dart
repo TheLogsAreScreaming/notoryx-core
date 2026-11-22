@@ -10719,6 +10719,13 @@ class AppLocalizationsNl extends AppLocalizations {
   String get theme_selected => 'Geselecteerd';
 
   @override
+  String get theme_customBackdropNote =>
+      'Je eigen achtergrond staat aan, dus de achtergrond van dit thema is verborgen.';
+
+  @override
+  String get theme_useThemeBackdrop => 'Thema-achtergrond';
+
+  @override
   String get seasonal_season => 'Seizoen';
 
   @override

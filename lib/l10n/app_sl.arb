@@ -4357,6 +4357,8 @@
   "theme_descNightOps": "Pridušene rdeče na skoraj črni za šibko svetlobo",
   "theme_descSeasonal": "Spreminja se z letnimi časi in prazniki",
   "theme_selected": "Izbrano",
+  "theme_customBackdropNote": "Vklopljeno imate lastno ozadje, zato je ozadje te teme skrito.",
+  "theme_useThemeBackdrop": "Ozadje teme",
   "seasonal_season": "Letni čas",
   "seasonal_auto": "Samodejno (zdaj {season})",
   "seasonal_autoHint": "Sledi datumu naprave, z letnimi časi severne poloble",

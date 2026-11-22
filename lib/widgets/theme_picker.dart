@@ -4,13 +4,50 @@ import 'package:provider/provider.dart';
 import '../l10n/app_localizations.dart';
 import '../l10n/l10n.dart';
 import '../services/app_settings_service.dart';
+import '../services/backdrop_store.dart';
 import '../theme/mesh_theme.dart';
 
 /// The eight themes as cards, each with a miniature of the app in that
 /// theme. A tap applies and saves the theme at once. When Seasonal is
 /// chosen, its season and holiday controls appear below.
+///
+/// A background the person picked (Settings → Background) is drawn over
+/// every theme's own, so a new theme can look unchanged. When one is on,
+/// choosing a theme offers to switch back to the theme's background.
 class ThemePicker extends StatelessWidget {
-  const ThemePicker({super.key});
+  const ThemePicker({super.key, this.backdropStore});
+
+  /// Defaults to [BackdropStore.instance].
+  final BackdropStore? backdropStore;
+
+  Future<void> _choose(
+    BuildContext context,
+    AppSettingsService service,
+    BastionTheme theme,
+  ) async {
+    final store = backdropStore ?? BackdropStore.instance;
+    final changed = BastionTheme.fromId(service.settings.appTheme) != theme;
+    final messenger = ScaffoldMessenger.maybeOf(context);
+    final l10n = context.l10n;
+    await service.setAppTheme(theme.id);
+    if (!changed || !store.style.isCustom || messenger == null) return;
+    messenger
+      ..hideCurrentSnackBar()
+      ..showSnackBar(
+        SnackBar(
+          key: const ValueKey('theme-backdrop-offer'),
+          content: Text(l10n.theme_customBackdropNote),
+          duration: const Duration(seconds: 8),
+          action: SnackBarAction(
+            label: l10n.theme_useThemeBackdrop,
+            // Keeps the colours and photo, so the background can be
+            // turned back on in Settings → Background.
+            onPressed: () =>
+                store.setStyle(store.style.copyWith(kind: BackdropKind.theme)),
+          ),
+        ),
+      );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +80,7 @@ class ThemePicker extends StatelessWidget {
                           ? season.palette
                           : t.palette,
                       selected: t == selected,
-                      onTap: () => service.setAppTheme(t.id),
+                      onTap: () => _choose(context, service, t),
                     ),
                   ),
               ],

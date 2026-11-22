@@ -4357,6 +4357,8 @@
   "theme_descNightOps": "Gedempt rood op bijna-zwart voor weinig licht",
   "theme_descSeasonal": "Verandert met de seizoenen en feestdagen",
   "theme_selected": "Geselecteerd",
+  "theme_customBackdropNote": "Je eigen achtergrond staat aan, dus de achtergrond van dit thema is verborgen.",
+  "theme_useThemeBackdrop": "Thema-achtergrond",
   "seasonal_season": "Seizoen",
   "seasonal_auto": "Automatisch (nu {season})",
   "seasonal_autoHint": "Volgt de datum van je apparaat, met seizoenen van het noordelijk halfrond",

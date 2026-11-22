@@ -10748,6 +10748,13 @@ class AppLocalizationsHu extends AppLocalizations {
   String get theme_selected => 'Kiválasztva';
 
   @override
+  String get theme_customBackdropNote =>
+      'Saját háttér van bekapcsolva, ezért a téma háttere rejtve marad.';
+
+  @override
+  String get theme_useThemeBackdrop => 'Téma háttere';
+
+  @override
   String get seasonal_season => 'Évszak';
 
   @override

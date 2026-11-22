@@ -4491,6 +4491,8 @@
   "theme_descNightOps": "暗所向けの黒に近い背景と控えめな赤",
   "theme_descSeasonal": "季節や行事に合わせて変化",
   "theme_selected": "選択中",
+  "theme_customBackdropNote": "独自の背景がオンのため、このテーマの背景は表示されません。",
+  "theme_useThemeBackdrop": "テーマの背景を使う",
   "seasonal_season": "季節",
   "seasonal_auto": "自動（現在: {season}）",
   "seasonal_autoHint": "端末の日付に従います（北半球の季節）",

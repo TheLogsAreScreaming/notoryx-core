@@ -4491,6 +4491,8 @@
   "theme_descNightOps": "Gedämpftes Rot auf Fast-Schwarz für wenig Licht",
   "theme_descSeasonal": "Wechselt mit Jahreszeiten und Feiertagen",
   "theme_selected": "Ausgewählt",
+  "theme_customBackdropNote": "Dein eigener Hintergrund ist aktiv, daher ist der Hintergrund dieses Designs verdeckt.",
+  "theme_useThemeBackdrop": "Design-Hintergrund",
   "seasonal_season": "Jahreszeit",
   "seasonal_auto": "Automatisch (jetzt {season})",
   "seasonal_autoHint": "Folgt dem Datum deines Geräts, mit Jahreszeiten der Nordhalbkugel",

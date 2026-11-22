@@ -3660,6 +3660,8 @@
   "theme_descNightOps": "Приглушённые красные на почти чёрном для темноты",
   "theme_descSeasonal": "Меняется с временами года и праздниками",
   "theme_selected": "Выбрана",
+  "theme_customBackdropNote": "Включён ваш собственный фон, поэтому фон этой темы скрыт.",
+  "theme_useThemeBackdrop": "Фон темы",
   "seasonal_season": "Время года",
   "seasonal_auto": "Автоматически (сейчас {season})",
   "seasonal_autoHint": "По дате устройства, сезоны северного полушария",

@@ -10053,6 +10053,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get theme_selected => '已选择';
 
   @override
+  String get theme_customBackdropNote => '已开启自定义背景，因此此主题的背景被隐藏。';
+
+  @override
+  String get theme_useThemeBackdrop => '使用主题背景';
+
+  @override
   String get seasonal_season => '季节';
 
   @override
