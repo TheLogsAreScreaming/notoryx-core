@@ -887,12 +887,16 @@ class _WardriveScreenState extends State<WardriveScreen> {
 }
 
 /// The colour a square of [status] is filled with.
-Color _statusColor(SquareStatus status) => switch (status) {
-  SquareStatus.bothWays => MeshPalette.signal,
-  SquareStatus.repeaterOnly => MeshPalette.tertiary,
-  SquareStatus.passive => MeshPalette.secondary,
-  SquareStatus.noAnswer => MeshPalette.alert,
-  SquareStatus.skipped => MeshPalette.warn,
+/// Fixed colours, not the app theme's: several looks give two of these the
+/// same hue (both ways and repeater only came out the same teal), and the
+/// legend must tell all five apart on any look.
+@visibleForTesting
+Color wardriveStatusColor(SquareStatus status) => switch (status) {
+  SquareStatus.bothWays => const Color(0xFF2E9E44), // green
+  SquareStatus.repeaterOnly => const Color(0xFF00A6C8), // cyan
+  SquareStatus.passive => const Color(0xFF3F6FE0), // blue
+  SquareStatus.noAnswer => const Color(0xFFD6322F), // red
+  SquareStatus.skipped => const Color(0xFFF2B01E), // amber
 };
 
 /// One coverage square. Normally coloured by [SquareStatus]; with [byLink]
@@ -908,7 +912,7 @@ Polygon _squarePolygon(
   final best = sq.best;
   final color = byLink && best != null
       ? MeshTheme.snrColor(best, blocked: false)
-      : _statusColor(status);
+      : wardriveStatusColor(status);
   final outlineOnly = status == SquareStatus.skipped;
   return Polygon(
     points: [
@@ -954,8 +958,11 @@ class _Legend extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: status == SquareStatus.skipped
                       ? null
-                      : _statusColor(status).withValues(alpha: 0.7),
-                  border: Border.all(color: _statusColor(status), width: 2),
+                      : wardriveStatusColor(status).withValues(alpha: 0.7),
+                  border: Border.all(
+                    color: wardriveStatusColor(status),
+                    width: 2,
+                  ),
                   borderRadius: BorderRadius.circular(2),
                 ),
               ),
