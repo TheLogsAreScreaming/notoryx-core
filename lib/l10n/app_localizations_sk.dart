@@ -14170,6 +14170,150 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
+  String get wardrive_modeDiscovery => 'Objavovanie';
+
+  @override
+  String get wardrive_modeTrace => 'Trasovanie';
+
+  @override
+  String get wardrive_modeChannel => 'Kanál';
+
+  @override
+  String get wardrive_modeHybrid => 'Hybrid';
+
+  @override
+  String get wardrive_repeaters => 'opakovače';
+
+  @override
+  String get wardrive_skipped => 'preskočené';
+
+  @override
+  String get wardrive_pingNow => 'Pingnúť teraz';
+
+  @override
+  String get wardrive_settings => 'Nastavenia wardrive';
+
+  @override
+  String wardrive_gpsAccuracy(int metres) {
+    return 'GPS ±$metres m';
+  }
+
+  @override
+  String get wardrive_noGps => 'Žiadne GPS telefónu';
+
+  @override
+  String wardrive_noise(int dbm) {
+    return 'Šum $dbm dBm';
+  }
+
+  @override
+  String get wardrive_passiveOn => 'Zaznamenáva sa počutá prevádzka';
+
+  @override
+  String get wardrive_waitChannel =>
+      'Pre kanálové pingy pridaj kanál #wardriving.';
+
+  @override
+  String get wardrive_waitTraceTarget =>
+      'Vyber opakovač na trasovanie v nastaveniach wardrive.';
+
+  @override
+  String get wardrive_waitMove => 'Čaká sa, kým sa posunieš o 25 m.';
+
+  @override
+  String get wardrive_waitCovered => 'Tu je už pokrytie, ping sa preskakuje.';
+
+  @override
+  String get wardrive_interval => 'Ping každých';
+
+  @override
+  String get wardrive_waitForMove => 'Až po posune o 25 m';
+
+  @override
+  String get wardrive_skipCovered => 'Preskakovať už pokryté štvorce';
+
+  @override
+  String wardrive_skipDays(int days) {
+    return 'Pokrytý: opakovač ťa tam počul za posledných $days dní';
+  }
+
+  @override
+  String get wardrive_passive => 'Zaznamenávať počutú prevádzku';
+
+  @override
+  String get wardrive_passiveHint =>
+      'Pokrytie zadarmo z paketov, ktoré rádio aj tak počuje. Bez vysielacieho času.';
+
+  @override
+  String get wardrive_traceTarget => 'Opakovač na trasovanie';
+
+  @override
+  String get wardrive_none => 'Žiadny';
+
+  @override
+  String get wardrive_carRepeater => 'Môj opakovač v aute';
+
+  @override
+  String get wardrive_carRepeaterHint => 'Vždy ignorovaný: je hneď vedľa teba';
+
+  @override
+  String get wardrive_ignoreStrong => 'Ignorovať signály −30 dBm a silnejšie';
+
+  @override
+  String get wardrive_background => 'Bežať pri vypnutej obrazovke';
+
+  @override
+  String get wardrive_backgroundHint =>
+      'Android počas jazdy zobrazuje upozornenie.';
+
+  @override
+  String get wardrive_recordNoise => 'Zaznamenávať úroveň šumu';
+
+  @override
+  String get wardrive_pickRepeater => 'Vyber opakovač';
+
+  @override
+  String get wardrive_noRepeaters =>
+      'Zatiaľ žiadne opakovače so známym kľúčom. Najprv jeden pridaj ako kontakt.';
+
+  @override
+  String get wardrive_kindPassive => 'Prevádzka počutá samostatne';
+
+  @override
+  String get wardrive_kindSkipped => 'Preskočené: už pokryté';
+
+  @override
+  String get wardrive_notifTitle => 'Wardrive beží';
+
+  @override
+  String get wardrive_notifText => 'Sleduje sa tvoja poloha pre mapu pokrytia';
+
+  @override
+  String wardrive_replyHere(String here) {
+    return 'Počul si ho na $here dB';
+  }
+
+  @override
+  String wardrive_replyThere(String there) {
+    return 'Počul ťa na $there dB';
+  }
+
+  @override
+  String get wardrive_replyRelayed => 'Posunul tvoj ping ďalej';
+
+  @override
+  String get wardrive_explainTrace =>
+      'Každý ping je trasovanie bez skokov k zvolenému opakovaču: meria, ako dobre sa počujete oboma smermi.';
+
+  @override
+  String get wardrive_explainChannel =>
+      'Každý ping je správa na #wardriving. Opakovače, ktoré ju posunú, ukazujú, že dosiahneš širšiu sieť, ale každý ping zaplaví celú sieť, preto použi dlhý interval.';
+
+  @override
+  String get wardrive_explainHybrid =>
+      'Objavovacie a kanálové pingy sa striedajú: blízke opakovače pri jednom, širšia sieť pri ďalšom.';
+
+  @override
   String get sarneg_randomWord => 'Náhodné slovo';
 
   @override

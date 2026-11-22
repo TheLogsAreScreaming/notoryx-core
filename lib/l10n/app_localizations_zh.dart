@@ -13321,6 +13321,143 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
+  String get wardrive_modeDiscovery => '发现';
+
+  @override
+  String get wardrive_modeTrace => '追踪';
+
+  @override
+  String get wardrive_modeChannel => '频道';
+
+  @override
+  String get wardrive_modeHybrid => '混合';
+
+  @override
+  String get wardrive_repeaters => '中继';
+
+  @override
+  String get wardrive_skipped => '已跳过';
+
+  @override
+  String get wardrive_pingNow => '立即 ping';
+
+  @override
+  String get wardrive_settings => '扫街设置';
+
+  @override
+  String wardrive_gpsAccuracy(int metres) {
+    return 'GPS ±$metres 米';
+  }
+
+  @override
+  String get wardrive_noGps => '没有手机 GPS';
+
+  @override
+  String wardrive_noise(int dbm) {
+    return '噪声 $dbm dBm';
+  }
+
+  @override
+  String get wardrive_passiveOn => '正在记录收到的流量';
+
+  @override
+  String get wardrive_waitChannel => '请添加 #wardriving 频道以使用频道 ping。';
+
+  @override
+  String get wardrive_waitTraceTarget => '请在扫街设置中选择要追踪的中继。';
+
+  @override
+  String get wardrive_waitMove => '等待你移动 25 米。';
+
+  @override
+  String get wardrive_waitCovered => '此处已覆盖，跳过本次 ping。';
+
+  @override
+  String get wardrive_interval => 'ping 间隔';
+
+  @override
+  String get wardrive_waitForMove => '移动 25 米后才 ping';
+
+  @override
+  String get wardrive_skipCovered => '跳过已覆盖的方格';
+
+  @override
+  String wardrive_skipDays(int days) {
+    return '已覆盖：过去 $days 天内有中继在那里收到过你';
+  }
+
+  @override
+  String get wardrive_passive => '记录收到的流量';
+
+  @override
+  String get wardrive_passiveHint => '利用电台本来就会收到的数据包，免费获得覆盖数据。不占用空中时间。';
+
+  @override
+  String get wardrive_traceTarget => '要追踪的中继';
+
+  @override
+  String get wardrive_none => '无';
+
+  @override
+  String get wardrive_carRepeater => '我的车载中继';
+
+  @override
+  String get wardrive_carRepeaterHint => '始终忽略：它就在你身边';
+
+  @override
+  String get wardrive_ignoreStrong => '忽略 −30 dBm 或更强的信号';
+
+  @override
+  String get wardrive_background => '熄屏后继续运行';
+
+  @override
+  String get wardrive_backgroundHint => '扫街期间 Android 会显示通知。';
+
+  @override
+  String get wardrive_recordNoise => '记录噪声底';
+
+  @override
+  String get wardrive_pickRepeater => '选择中继';
+
+  @override
+  String get wardrive_noRepeaters => '还没有已知密钥的中继。请先将其添加为联系人。';
+
+  @override
+  String get wardrive_kindPassive => '自行收到的流量';
+
+  @override
+  String get wardrive_kindSkipped => '已跳过：已覆盖';
+
+  @override
+  String get wardrive_notifTitle => '扫街进行中';
+
+  @override
+  String get wardrive_notifText => '正在为覆盖地图追踪你的位置';
+
+  @override
+  String wardrive_replyHere(String here) {
+    return '你以 $here dB 收到它';
+  }
+
+  @override
+  String wardrive_replyThere(String there) {
+    return '它以 $there dB 收到你';
+  }
+
+  @override
+  String get wardrive_replyRelayed => '转发了你的 ping';
+
+  @override
+  String get wardrive_explainTrace => '每次 ping 都是到所选中继的零跳追踪，测量双方双向的接收情况。';
+
+  @override
+  String get wardrive_explainChannel =>
+      '每次 ping 都是发往 #wardriving 的消息。转发它的中继说明你能到达更广的网络，但每次 ping 都会泛洪整个网络，请使用较长间隔。';
+
+  @override
+  String get wardrive_explainHybrid => '发现 ping 与频道 ping 交替：一次看附近中继，下一次看更广的网络。';
+
+  @override
   String get sarneg_randomWord => '随机词';
 
   @override

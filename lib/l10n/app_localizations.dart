@@ -23551,6 +23551,258 @@ abstract class AppLocalizations {
   /// **'Radio holds {count} of {max} contacts'**
   String home_radioHolds(int count, int max);
 
+  /// No description provided for @wardrive_modeDiscovery.
+  ///
+  /// In en, this message translates to:
+  /// **'Discovery'**
+  String get wardrive_modeDiscovery;
+
+  /// No description provided for @wardrive_modeTrace.
+  ///
+  /// In en, this message translates to:
+  /// **'Trace'**
+  String get wardrive_modeTrace;
+
+  /// No description provided for @wardrive_modeChannel.
+  ///
+  /// In en, this message translates to:
+  /// **'Channel'**
+  String get wardrive_modeChannel;
+
+  /// No description provided for @wardrive_modeHybrid.
+  ///
+  /// In en, this message translates to:
+  /// **'Hybrid'**
+  String get wardrive_modeHybrid;
+
+  /// No description provided for @wardrive_repeaters.
+  ///
+  /// In en, this message translates to:
+  /// **'repeaters'**
+  String get wardrive_repeaters;
+
+  /// No description provided for @wardrive_skipped.
+  ///
+  /// In en, this message translates to:
+  /// **'skipped'**
+  String get wardrive_skipped;
+
+  /// No description provided for @wardrive_pingNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Ping now'**
+  String get wardrive_pingNow;
+
+  /// No description provided for @wardrive_settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Wardrive settings'**
+  String get wardrive_settings;
+
+  /// No description provided for @wardrive_gpsAccuracy.
+  ///
+  /// In en, this message translates to:
+  /// **'GPS ±{metres} m'**
+  String wardrive_gpsAccuracy(int metres);
+
+  /// No description provided for @wardrive_noGps.
+  ///
+  /// In en, this message translates to:
+  /// **'No phone GPS'**
+  String get wardrive_noGps;
+
+  /// No description provided for @wardrive_noise.
+  ///
+  /// In en, this message translates to:
+  /// **'Noise {dbm} dBm'**
+  String wardrive_noise(int dbm);
+
+  /// No description provided for @wardrive_passiveOn.
+  ///
+  /// In en, this message translates to:
+  /// **'Logging heard traffic'**
+  String get wardrive_passiveOn;
+
+  /// No description provided for @wardrive_waitChannel.
+  ///
+  /// In en, this message translates to:
+  /// **'Add the #wardriving channel to use channel pings.'**
+  String get wardrive_waitChannel;
+
+  /// No description provided for @wardrive_waitTraceTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick a repeater to trace in wardrive settings.'**
+  String get wardrive_waitTraceTarget;
+
+  /// No description provided for @wardrive_waitMove.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting until you move 25 m.'**
+  String get wardrive_waitMove;
+
+  /// No description provided for @wardrive_waitCovered.
+  ///
+  /// In en, this message translates to:
+  /// **'Already covered here, skipping this ping.'**
+  String get wardrive_waitCovered;
+
+  /// No description provided for @wardrive_interval.
+  ///
+  /// In en, this message translates to:
+  /// **'Ping every'**
+  String get wardrive_interval;
+
+  /// No description provided for @wardrive_waitForMove.
+  ///
+  /// In en, this message translates to:
+  /// **'Only after moving 25 m'**
+  String get wardrive_waitForMove;
+
+  /// No description provided for @wardrive_skipCovered.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip squares already covered'**
+  String get wardrive_skipCovered;
+
+  /// No description provided for @wardrive_skipDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Covered means a repeater heard you there in the last {days} days'**
+  String wardrive_skipDays(int days);
+
+  /// No description provided for @wardrive_passive.
+  ///
+  /// In en, this message translates to:
+  /// **'Log traffic you hear'**
+  String get wardrive_passive;
+
+  /// No description provided for @wardrive_passiveHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Free coverage from packets your radio hears anyway. No airtime.'**
+  String get wardrive_passiveHint;
+
+  /// No description provided for @wardrive_traceTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeater to trace'**
+  String get wardrive_traceTarget;
+
+  /// No description provided for @wardrive_none.
+  ///
+  /// In en, this message translates to:
+  /// **'None'**
+  String get wardrive_none;
+
+  /// No description provided for @wardrive_carRepeater.
+  ///
+  /// In en, this message translates to:
+  /// **'My car repeater'**
+  String get wardrive_carRepeater;
+
+  /// No description provided for @wardrive_carRepeaterHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Always ignored: it\'s right beside you'**
+  String get wardrive_carRepeaterHint;
+
+  /// No description provided for @wardrive_ignoreStrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Ignore signals at −30 dBm or stronger'**
+  String get wardrive_ignoreStrong;
+
+  /// No description provided for @wardrive_background.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep running with the screen off'**
+  String get wardrive_background;
+
+  /// No description provided for @wardrive_backgroundHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Android shows a notification while a drive runs.'**
+  String get wardrive_backgroundHint;
+
+  /// No description provided for @wardrive_recordNoise.
+  ///
+  /// In en, this message translates to:
+  /// **'Record noise floor'**
+  String get wardrive_recordNoise;
+
+  /// No description provided for @wardrive_pickRepeater.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick a repeater'**
+  String get wardrive_pickRepeater;
+
+  /// No description provided for @wardrive_noRepeaters.
+  ///
+  /// In en, this message translates to:
+  /// **'No repeaters with a known key yet. Add one as a contact first.'**
+  String get wardrive_noRepeaters;
+
+  /// No description provided for @wardrive_kindPassive.
+  ///
+  /// In en, this message translates to:
+  /// **'Traffic heard on its own'**
+  String get wardrive_kindPassive;
+
+  /// No description provided for @wardrive_kindSkipped.
+  ///
+  /// In en, this message translates to:
+  /// **'Skipped: already covered'**
+  String get wardrive_kindSkipped;
+
+  /// No description provided for @wardrive_notifTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Wardrive running'**
+  String get wardrive_notifTitle;
+
+  /// No description provided for @wardrive_notifText.
+  ///
+  /// In en, this message translates to:
+  /// **'Tracking your position for the coverage map'**
+  String get wardrive_notifText;
+
+  /// No description provided for @wardrive_replyHere.
+  ///
+  /// In en, this message translates to:
+  /// **'You heard it at {here} dB'**
+  String wardrive_replyHere(String here);
+
+  /// No description provided for @wardrive_replyThere.
+  ///
+  /// In en, this message translates to:
+  /// **'Heard you at {there} dB'**
+  String wardrive_replyThere(String there);
+
+  /// No description provided for @wardrive_replyRelayed.
+  ///
+  /// In en, this message translates to:
+  /// **'Passed your ping on'**
+  String get wardrive_replyRelayed;
+
+  /// No description provided for @wardrive_explainTrace.
+  ///
+  /// In en, this message translates to:
+  /// **'Each ping is a zero-hop trace to the repeater you picked: it measures how well you and that one repeater hear each other, both ways.'**
+  String get wardrive_explainTrace;
+
+  /// No description provided for @wardrive_explainChannel.
+  ///
+  /// In en, this message translates to:
+  /// **'Each ping is a message to #wardriving. Repeaters that pass it on show you reach the wider mesh, but every ping is flooded across it, so use a slow interval.'**
+  String get wardrive_explainChannel;
+
+  /// No description provided for @wardrive_explainHybrid.
+  ///
+  /// In en, this message translates to:
+  /// **'Discovery and channel pings take turns: nearby repeaters on one ping, the wider mesh on the next.'**
+  String get wardrive_explainHybrid;
+
   /// No description provided for @sarneg_randomWord.
   ///
   /// In en, this message translates to:

@@ -14230,6 +14230,154 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
+  String get wardrive_modeDiscovery => 'Discovery';
+
+  @override
+  String get wardrive_modeTrace => 'Trace';
+
+  @override
+  String get wardrive_modeChannel => 'Kanal';
+
+  @override
+  String get wardrive_modeHybrid => 'Hybrid';
+
+  @override
+  String get wardrive_repeaters => 'Repeater';
+
+  @override
+  String get wardrive_skipped => 'übersprungen';
+
+  @override
+  String get wardrive_pingNow => 'Jetzt pingen';
+
+  @override
+  String get wardrive_settings => 'Wardrive-Einstellungen';
+
+  @override
+  String wardrive_gpsAccuracy(int metres) {
+    return 'GPS ±$metres m';
+  }
+
+  @override
+  String get wardrive_noGps => 'Kein Telefon-GPS';
+
+  @override
+  String wardrive_noise(int dbm) {
+    return 'Rauschen $dbm dBm';
+  }
+
+  @override
+  String get wardrive_passiveOn => 'Gehörter Verkehr wird protokolliert';
+
+  @override
+  String get wardrive_waitChannel =>
+      'Füge den Kanal #wardriving hinzu, um Kanal-Pings zu nutzen.';
+
+  @override
+  String get wardrive_waitTraceTarget =>
+      'Wähle in den Wardrive-Einstellungen einen Repeater für Trace.';
+
+  @override
+  String get wardrive_waitMove => 'Warte, bis du dich 25 m bewegt hast.';
+
+  @override
+  String get wardrive_waitCovered =>
+      'Hier schon abgedeckt, Ping wird übersprungen.';
+
+  @override
+  String get wardrive_interval => 'Ping alle';
+
+  @override
+  String get wardrive_waitForMove => 'Erst nach 25 m Bewegung';
+
+  @override
+  String get wardrive_skipCovered => 'Bereits abgedeckte Felder überspringen';
+
+  @override
+  String wardrive_skipDays(int days) {
+    return 'Abgedeckt heißt: Ein Repeater hat dich dort in den letzten $days Tagen gehört';
+  }
+
+  @override
+  String get wardrive_passive => 'Gehörten Verkehr protokollieren';
+
+  @override
+  String get wardrive_passiveHint =>
+      'Kostenlose Abdeckung aus Paketen, die dein Funkgerät ohnehin hört. Keine Sendezeit.';
+
+  @override
+  String get wardrive_traceTarget => 'Repeater für Trace';
+
+  @override
+  String get wardrive_none => 'Keiner';
+
+  @override
+  String get wardrive_carRepeater => 'Mein Auto-Repeater';
+
+  @override
+  String get wardrive_carRepeaterHint =>
+      'Wird immer ignoriert: Er ist direkt neben dir';
+
+  @override
+  String get wardrive_ignoreStrong => 'Signale ab −30 dBm ignorieren';
+
+  @override
+  String get wardrive_background =>
+      'Bei ausgeschaltetem Bildschirm weiterlaufen';
+
+  @override
+  String get wardrive_backgroundHint =>
+      'Android zeigt während einer Fahrt eine Benachrichtigung.';
+
+  @override
+  String get wardrive_recordNoise => 'Rauschpegel aufzeichnen';
+
+  @override
+  String get wardrive_pickRepeater => 'Repeater wählen';
+
+  @override
+  String get wardrive_noRepeaters =>
+      'Noch keine Repeater mit bekanntem Schlüssel. Füge zuerst einen als Kontakt hinzu.';
+
+  @override
+  String get wardrive_kindPassive => 'Selbst gehörter Verkehr';
+
+  @override
+  String get wardrive_kindSkipped => 'Übersprungen: bereits abgedeckt';
+
+  @override
+  String get wardrive_notifTitle => 'Wardrive läuft';
+
+  @override
+  String get wardrive_notifText =>
+      'Deine Position wird für die Abdeckungskarte verfolgt';
+
+  @override
+  String wardrive_replyHere(String here) {
+    return 'Du hast ihn mit $here dB gehört';
+  }
+
+  @override
+  String wardrive_replyThere(String there) {
+    return 'Hat dich mit $there dB gehört';
+  }
+
+  @override
+  String get wardrive_replyRelayed => 'Hat deinen Ping weitergegeben';
+
+  @override
+  String get wardrive_explainTrace =>
+      'Jeder Ping ist ein Zero-Hop-Trace zum gewählten Repeater: Er misst, wie gut ihr euch gegenseitig hört, in beide Richtungen.';
+
+  @override
+  String get wardrive_explainChannel =>
+      'Jeder Ping ist eine Nachricht an #wardriving. Repeater, die sie weitergeben, zeigen, dass du das weitere Mesh erreichst, aber jeder Ping wird durchs ganze Mesh geflutet. Nutze ein langes Intervall.';
+
+  @override
+  String get wardrive_explainHybrid =>
+      'Discovery- und Kanal-Pings wechseln sich ab: nahe Repeater beim einen Ping, das weitere Mesh beim nächsten.';
+
+  @override
   String get sarneg_randomWord => 'Zufallswort';
 
   @override

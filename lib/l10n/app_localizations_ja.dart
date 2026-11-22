@@ -13571,6 +13571,147 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
+  String get wardrive_modeDiscovery => '探索';
+
+  @override
+  String get wardrive_modeTrace => 'トレース';
+
+  @override
+  String get wardrive_modeChannel => 'チャンネル';
+
+  @override
+  String get wardrive_modeHybrid => 'ハイブリッド';
+
+  @override
+  String get wardrive_repeaters => 'リピーター';
+
+  @override
+  String get wardrive_skipped => 'スキップ';
+
+  @override
+  String get wardrive_pingNow => '今すぐ ping';
+
+  @override
+  String get wardrive_settings => 'ウォードライブ設定';
+
+  @override
+  String wardrive_gpsAccuracy(int metres) {
+    return 'GPS ±$metres m';
+  }
+
+  @override
+  String get wardrive_noGps => 'スマホの GPS なし';
+
+  @override
+  String wardrive_noise(int dbm) {
+    return 'ノイズ $dbm dBm';
+  }
+
+  @override
+  String get wardrive_passiveOn => '受信トラフィックを記録中';
+
+  @override
+  String get wardrive_waitChannel =>
+      'チャンネル ping には #wardriving チャンネルを追加してください。';
+
+  @override
+  String get wardrive_waitTraceTarget => 'ウォードライブ設定でトレースするリピーターを選んでください。';
+
+  @override
+  String get wardrive_waitMove => '25 m 移動するまで待機中。';
+
+  @override
+  String get wardrive_waitCovered => 'ここはカバー済みのため ping をスキップします。';
+
+  @override
+  String get wardrive_interval => 'ping 間隔';
+
+  @override
+  String get wardrive_waitForMove => '25 m 移動後のみ';
+
+  @override
+  String get wardrive_skipCovered => 'カバー済みのマスをスキップ';
+
+  @override
+  String wardrive_skipDays(int days) {
+    return 'カバー済み：過去 $days 日以内にリピーターがそこであなたを受信';
+  }
+
+  @override
+  String get wardrive_passive => '受信したトラフィックを記録';
+
+  @override
+  String get wardrive_passiveHint =>
+      '無線機がもともと受信するパケットから無料でカバレッジを取得。電波時間は使いません。';
+
+  @override
+  String get wardrive_traceTarget => 'トレースするリピーター';
+
+  @override
+  String get wardrive_none => 'なし';
+
+  @override
+  String get wardrive_carRepeater => '車載リピーター';
+
+  @override
+  String get wardrive_carRepeaterHint => '常に無視：すぐそばにあるため';
+
+  @override
+  String get wardrive_ignoreStrong => '−30 dBm 以上の強い信号を無視';
+
+  @override
+  String get wardrive_background => '画面オフでも続行';
+
+  @override
+  String get wardrive_backgroundHint => '走行中は Android が通知を表示します。';
+
+  @override
+  String get wardrive_recordNoise => 'ノイズフロアを記録';
+
+  @override
+  String get wardrive_pickRepeater => 'リピーターを選択';
+
+  @override
+  String get wardrive_noRepeaters => '鍵がわかっているリピーターがまだありません。先に連絡先に追加してください。';
+
+  @override
+  String get wardrive_kindPassive => '自然に受信したトラフィック';
+
+  @override
+  String get wardrive_kindSkipped => 'スキップ：カバー済み';
+
+  @override
+  String get wardrive_notifTitle => 'ウォードライブ実行中';
+
+  @override
+  String get wardrive_notifText => 'カバレッジマップ用に位置を追跡中';
+
+  @override
+  String wardrive_replyHere(String here) {
+    return 'あなたは $here dB で受信';
+  }
+
+  @override
+  String wardrive_replyThere(String there) {
+    return 'あなたを $there dB で受信';
+  }
+
+  @override
+  String get wardrive_replyRelayed => 'あなたの ping を中継';
+
+  @override
+  String get wardrive_explainTrace =>
+      '各 ping は選んだリピーターへのゼロホップのトレースで、双方向の受信状態を測ります。';
+
+  @override
+  String get wardrive_explainChannel =>
+      '各 ping は #wardriving へのメッセージです。中継したリピーターから広いメッシュに届いたとわかりますが、毎回メッシュ全体に流れるため長い間隔にしてください。';
+
+  @override
+  String get wardrive_explainHybrid =>
+      '探索とチャンネルの ping を交互に送ります：近くのリピーターと広いメッシュを交互に確認します。';
+
+  @override
   String get sarneg_randomWord => 'ランダムな単語';
 
   @override

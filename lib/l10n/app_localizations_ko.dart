@@ -13588,6 +13588,145 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String get wardrive_modeDiscovery => '탐색';
+
+  @override
+  String get wardrive_modeTrace => '추적';
+
+  @override
+  String get wardrive_modeChannel => '채널';
+
+  @override
+  String get wardrive_modeHybrid => '하이브리드';
+
+  @override
+  String get wardrive_repeaters => '리피터';
+
+  @override
+  String get wardrive_skipped => '건너뜀';
+
+  @override
+  String get wardrive_pingNow => '지금 핑';
+
+  @override
+  String get wardrive_settings => '워드라이브 설정';
+
+  @override
+  String wardrive_gpsAccuracy(int metres) {
+    return 'GPS ±$metres m';
+  }
+
+  @override
+  String get wardrive_noGps => '휴대폰 GPS 없음';
+
+  @override
+  String wardrive_noise(int dbm) {
+    return '노이즈 $dbm dBm';
+  }
+
+  @override
+  String get wardrive_passiveOn => '수신 트래픽 기록 중';
+
+  @override
+  String get wardrive_waitChannel => '채널 핑을 쓰려면 #wardriving 채널을 추가하세요.';
+
+  @override
+  String get wardrive_waitTraceTarget => '워드라이브 설정에서 추적할 리피터를 고르세요.';
+
+  @override
+  String get wardrive_waitMove => '25 m 이동할 때까지 기다리는 중.';
+
+  @override
+  String get wardrive_waitCovered => '이미 커버된 곳이라 핑을 건너뜁니다.';
+
+  @override
+  String get wardrive_interval => '핑 간격';
+
+  @override
+  String get wardrive_waitForMove => '25 m 이동한 뒤에만';
+
+  @override
+  String get wardrive_skipCovered => '이미 커버된 칸 건너뛰기';
+
+  @override
+  String wardrive_skipDays(int days) {
+    return '커버됨: 지난 $days일 안에 리피터가 거기서 내 신호를 받음';
+  }
+
+  @override
+  String get wardrive_passive => '들리는 트래픽 기록';
+
+  @override
+  String get wardrive_passiveHint => '무전기가 어차피 받는 패킷으로 무료 커버리지. 송신 시간 없음.';
+
+  @override
+  String get wardrive_traceTarget => '추적할 리피터';
+
+  @override
+  String get wardrive_none => '없음';
+
+  @override
+  String get wardrive_carRepeater => '차량 리피터';
+
+  @override
+  String get wardrive_carRepeaterHint => '항상 무시: 바로 옆에 있음';
+
+  @override
+  String get wardrive_ignoreStrong => '−30 dBm 이상 강한 신호 무시';
+
+  @override
+  String get wardrive_background => '화면이 꺼져도 계속';
+
+  @override
+  String get wardrive_backgroundHint => '주행 중에는 Android가 알림을 표시합니다.';
+
+  @override
+  String get wardrive_recordNoise => '노이즈 플로어 기록';
+
+  @override
+  String get wardrive_pickRepeater => '리피터 선택';
+
+  @override
+  String get wardrive_noRepeaters => '키를 아는 리피터가 아직 없습니다. 먼저 연락처로 추가하세요.';
+
+  @override
+  String get wardrive_kindPassive => '스스로 들린 트래픽';
+
+  @override
+  String get wardrive_kindSkipped => '건너뜀: 이미 커버됨';
+
+  @override
+  String get wardrive_notifTitle => '워드라이브 실행 중';
+
+  @override
+  String get wardrive_notifText => '커버리지 지도를 위해 위치 추적 중';
+
+  @override
+  String wardrive_replyHere(String here) {
+    return '내가 $here dB로 받음';
+  }
+
+  @override
+  String wardrive_replyThere(String there) {
+    return '나를 $there dB로 받음';
+  }
+
+  @override
+  String get wardrive_replyRelayed => '내 핑을 중계함';
+
+  @override
+  String get wardrive_explainTrace =>
+      '각 핑은 고른 리피터로 보내는 0홉 추적이며, 양방향으로 얼마나 잘 들리는지 측정합니다.';
+
+  @override
+  String get wardrive_explainChannel =>
+      '각 핑은 #wardriving으로 보내는 메시지입니다. 중계한 리피터로 넓은 메시에 닿는지 알 수 있지만 매번 메시 전체에 퍼지므로 긴 간격을 쓰세요.';
+
+  @override
+  String get wardrive_explainHybrid =>
+      '탐색 핑과 채널 핑을 번갈아 보냅니다: 한 번은 가까운 리피터, 다음엔 넓은 메시.';
+
+  @override
   String get sarneg_randomWord => '무작위 단어';
 
   @override

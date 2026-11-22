@@ -16,9 +16,9 @@ class NearbyRepeater {
 
   String get prefix => reply.prefix;
 
-  /// The weaker direction's SNR, in dB.
-  double get weakerSnr =>
-      reply.snrHere < reply.snrThere ? reply.snrHere : reply.snrThere;
+  /// The weaker direction's SNR, in dB. Discover replies measure both
+  /// directions; one that somehow lacks both counts as the weakest.
+  double get weakerSnr => reply.link ?? -30;
 
   NearbyLink get link => weakerSnr >= 5
       ? NearbyLink.strong

@@ -14191,6 +14191,152 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
+  String get wardrive_modeDiscovery => 'Felderítés';
+
+  @override
+  String get wardrive_modeTrace => 'Nyomkövetés';
+
+  @override
+  String get wardrive_modeChannel => 'Csatorna';
+
+  @override
+  String get wardrive_modeHybrid => 'Hibrid';
+
+  @override
+  String get wardrive_repeaters => 'átjátszó';
+
+  @override
+  String get wardrive_skipped => 'kihagyva';
+
+  @override
+  String get wardrive_pingNow => 'Ping most';
+
+  @override
+  String get wardrive_settings => 'Wardrive-beállítások';
+
+  @override
+  String wardrive_gpsAccuracy(int metres) {
+    return 'GPS ±$metres m';
+  }
+
+  @override
+  String get wardrive_noGps => 'Nincs telefonos GPS';
+
+  @override
+  String wardrive_noise(int dbm) {
+    return 'Zaj $dbm dBm';
+  }
+
+  @override
+  String get wardrive_passiveOn => 'Hallott forgalom naplózása';
+
+  @override
+  String get wardrive_waitChannel =>
+      'Csatorna-pinghez add hozzá a #wardriving csatornát.';
+
+  @override
+  String get wardrive_waitTraceTarget =>
+      'Válassz nyomkövetendő átjátszót a wardrive-beállításokban.';
+
+  @override
+  String get wardrive_waitMove => 'Várakozás, amíg 25 m-t mozogsz.';
+
+  @override
+  String get wardrive_waitCovered => 'Itt már van lefedettség, a ping kimarad.';
+
+  @override
+  String get wardrive_interval => 'Ping gyakorisága';
+
+  @override
+  String get wardrive_waitForMove => 'Csak 25 m mozgás után';
+
+  @override
+  String get wardrive_skipCovered => 'Már lefedett négyzetek kihagyása';
+
+  @override
+  String wardrive_skipDays(int days) {
+    return 'Lefedett: egy átjátszó hallott ott az elmúlt $days napban';
+  }
+
+  @override
+  String get wardrive_passive => 'Hallott forgalom naplózása';
+
+  @override
+  String get wardrive_passiveHint =>
+      'Ingyenes lefedettség a rádió által amúgy is hallott csomagokból. Nincs adásidő.';
+
+  @override
+  String get wardrive_traceTarget => 'Nyomkövetendő átjátszó';
+
+  @override
+  String get wardrive_none => 'Nincs';
+
+  @override
+  String get wardrive_carRepeater => 'Az autós átjátszóm';
+
+  @override
+  String get wardrive_carRepeaterHint =>
+      'Mindig figyelmen kívül: közvetlenül melletted van';
+
+  @override
+  String get wardrive_ignoreStrong =>
+      '−30 dBm vagy erősebb jelek figyelmen kívül hagyása';
+
+  @override
+  String get wardrive_background => 'Futás kikapcsolt képernyővel';
+
+  @override
+  String get wardrive_backgroundHint =>
+      'Az Android értesítést mutat út közben.';
+
+  @override
+  String get wardrive_recordNoise => 'Zajszint rögzítése';
+
+  @override
+  String get wardrive_pickRepeater => 'Válassz átjátszót';
+
+  @override
+  String get wardrive_noRepeaters =>
+      'Még nincs ismert kulcsú átjátszó. Előbb add hozzá kapcsolatként.';
+
+  @override
+  String get wardrive_kindPassive => 'Magától hallott forgalom';
+
+  @override
+  String get wardrive_kindSkipped => 'Kihagyva: már lefedett';
+
+  @override
+  String get wardrive_notifTitle => 'Wardrive fut';
+
+  @override
+  String get wardrive_notifText => 'Pozíciód követése a lefedettségi térképhez';
+
+  @override
+  String wardrive_replyHere(String here) {
+    return '$here dB-lel hallottad';
+  }
+
+  @override
+  String wardrive_replyThere(String there) {
+    return '$there dB-lel hallott';
+  }
+
+  @override
+  String get wardrive_replyRelayed => 'Továbbította a pinged';
+
+  @override
+  String get wardrive_explainTrace =>
+      'Minden ping ugrás nélküli nyomkövetés a választott átjátszóhoz: méri, mennyire halljátok egymást mindkét irányban.';
+
+  @override
+  String get wardrive_explainChannel =>
+      'Minden ping egy üzenet a #wardriving csatornára. Az azt továbbító átjátszók mutatják, hogy eléred a tágabb hálót, de minden ping az egész hálón szétterjed, ezért használj hosszú időközt.';
+
+  @override
+  String get wardrive_explainHybrid =>
+      'Felderítő és csatorna-pingek váltakoznak: közeli átjátszók az egyiknél, a tágabb háló a következőnél.';
+
+  @override
   String get sarneg_randomWord => 'Véletlen szó';
 
   @override

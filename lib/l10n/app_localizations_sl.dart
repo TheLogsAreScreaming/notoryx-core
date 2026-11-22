@@ -14199,6 +14199,149 @@ class AppLocalizationsSl extends AppLocalizations {
   }
 
   @override
+  String get wardrive_modeDiscovery => 'Odkrivanje';
+
+  @override
+  String get wardrive_modeTrace => 'Sledenje';
+
+  @override
+  String get wardrive_modeChannel => 'Kanal';
+
+  @override
+  String get wardrive_modeHybrid => 'Hibridno';
+
+  @override
+  String get wardrive_repeaters => 'repetitorji';
+
+  @override
+  String get wardrive_skipped => 'preskočeno';
+
+  @override
+  String get wardrive_pingNow => 'Pingaj zdaj';
+
+  @override
+  String get wardrive_settings => 'Nastavitve wardrive';
+
+  @override
+  String wardrive_gpsAccuracy(int metres) {
+    return 'GPS ±$metres m';
+  }
+
+  @override
+  String get wardrive_noGps => 'Ni GPS-a telefona';
+
+  @override
+  String wardrive_noise(int dbm) {
+    return 'Šum $dbm dBm';
+  }
+
+  @override
+  String get wardrive_passiveOn => 'Beleženje slišanega prometa';
+
+  @override
+  String get wardrive_waitChannel =>
+      'Za kanalske pinge dodaj kanal #wardriving.';
+
+  @override
+  String get wardrive_waitTraceTarget =>
+      'V nastavitvah wardrive izberi repetitor za sledenje.';
+
+  @override
+  String get wardrive_waitMove => 'Čakam, da se premakneš za 25 m.';
+
+  @override
+  String get wardrive_waitCovered => 'Tu je že pokrito, ping je preskočen.';
+
+  @override
+  String get wardrive_interval => 'Ping vsakih';
+
+  @override
+  String get wardrive_waitForMove => 'Šele po premiku 25 m';
+
+  @override
+  String get wardrive_skipCovered => 'Preskoči že pokrite kvadrate';
+
+  @override
+  String wardrive_skipDays(int days) {
+    return 'Pokrito: repetitor te je tam slišal v zadnjih $days dneh';
+  }
+
+  @override
+  String get wardrive_passive => 'Beleži slišani promet';
+
+  @override
+  String get wardrive_passiveHint =>
+      'Brezplačna pokritost iz paketov, ki jih radio sliši tako ali tako. Brez oddajnega časa.';
+
+  @override
+  String get wardrive_traceTarget => 'Repetitor za sledenje';
+
+  @override
+  String get wardrive_none => 'Brez';
+
+  @override
+  String get wardrive_carRepeater => 'Moj repetitor v avtu';
+
+  @override
+  String get wardrive_carRepeaterHint => 'Vedno prezrt: je tik ob tebi';
+
+  @override
+  String get wardrive_ignoreStrong => 'Prezri signale −30 dBm ali močnejše';
+
+  @override
+  String get wardrive_background => 'Deluj z ugasnjenim zaslonom';
+
+  @override
+  String get wardrive_backgroundHint => 'Android med vožnjo prikaže obvestilo.';
+
+  @override
+  String get wardrive_recordNoise => 'Beleži nivo šuma';
+
+  @override
+  String get wardrive_pickRepeater => 'Izberi repetitor';
+
+  @override
+  String get wardrive_noRepeaters =>
+      'Še ni repetitorjev z znanim ključem. Najprej enega dodaj kot stik.';
+
+  @override
+  String get wardrive_kindPassive => 'Promet slišan sam od sebe';
+
+  @override
+  String get wardrive_kindSkipped => 'Preskočeno: že pokrito';
+
+  @override
+  String get wardrive_notifTitle => 'Wardrive teče';
+
+  @override
+  String get wardrive_notifText => 'Sledenje položaju za zemljevid pokritosti';
+
+  @override
+  String wardrive_replyHere(String here) {
+    return 'Slišal si ga pri $here dB';
+  }
+
+  @override
+  String wardrive_replyThere(String there) {
+    return 'Slišal te je pri $there dB';
+  }
+
+  @override
+  String get wardrive_replyRelayed => 'Posredoval tvoj ping';
+
+  @override
+  String get wardrive_explainTrace =>
+      'Vsak ping je sledenje brez skokov do izbranega repetitorja: meri, kako dobro se slišita v obe smeri.';
+
+  @override
+  String get wardrive_explainChannel =>
+      'Vsak ping je sporočilo na #wardriving. Repetitorji, ki ga posredujejo, kažejo, da dosežeš širše omrežje, a vsak ping preplavi celotno omrežje, zato uporabi dolg interval.';
+
+  @override
+  String get wardrive_explainHybrid =>
+      'Odkrivalni in kanalski pingi se izmenjujejo: bližnji repetitorji pri enem, širše omrežje pri naslednjem.';
+
+  @override
   String get sarneg_randomWord => 'Naključna beseda';
 
   @override

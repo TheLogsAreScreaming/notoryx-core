@@ -14195,6 +14195,154 @@ class AppLocalizationsBg extends AppLocalizations {
   }
 
   @override
+  String get wardrive_modeDiscovery => 'Откриване';
+
+  @override
+  String get wardrive_modeTrace => 'Проследяване';
+
+  @override
+  String get wardrive_modeChannel => 'Канал';
+
+  @override
+  String get wardrive_modeHybrid => 'Хибриден';
+
+  @override
+  String get wardrive_repeaters => 'ретранслатора';
+
+  @override
+  String get wardrive_skipped => 'пропуснати';
+
+  @override
+  String get wardrive_pingNow => 'Пинг сега';
+
+  @override
+  String get wardrive_settings => 'Настройки за wardrive';
+
+  @override
+  String wardrive_gpsAccuracy(int metres) {
+    return 'GPS ±$metres м';
+  }
+
+  @override
+  String get wardrive_noGps => 'Няма GPS от телефона';
+
+  @override
+  String wardrive_noise(int dbm) {
+    return 'Шум $dbm dBm';
+  }
+
+  @override
+  String get wardrive_passiveOn => 'Записва се чут трафик';
+
+  @override
+  String get wardrive_waitChannel =>
+      'Добавете канала #wardriving за пингове по канал.';
+
+  @override
+  String get wardrive_waitTraceTarget =>
+      'Изберете ретранслатор за проследяване в настройките за wardrive.';
+
+  @override
+  String get wardrive_waitMove => 'Изчаква се да се преместите 25 м.';
+
+  @override
+  String get wardrive_waitCovered =>
+      'Тук вече има покритие, пингът се пропуска.';
+
+  @override
+  String get wardrive_interval => 'Пинг на всеки';
+
+  @override
+  String get wardrive_waitForMove => 'Само след 25 м движение';
+
+  @override
+  String get wardrive_skipCovered => 'Пропускай вече покрити квадрати';
+
+  @override
+  String wardrive_skipDays(int days) {
+    return 'Покрит: ретранслатор ви е чул там в последните $days дни';
+  }
+
+  @override
+  String get wardrive_passive => 'Записвай чутия трафик';
+
+  @override
+  String get wardrive_passiveHint =>
+      'Безплатно покритие от пакети, които радиото и без това чува. Без ефирно време.';
+
+  @override
+  String get wardrive_traceTarget => 'Ретранслатор за проследяване';
+
+  @override
+  String get wardrive_none => 'Няма';
+
+  @override
+  String get wardrive_carRepeater => 'Моят ретранслатор в колата';
+
+  @override
+  String get wardrive_carRepeaterHint =>
+      'Винаги се пренебрегва: точно до вас е';
+
+  @override
+  String get wardrive_ignoreStrong =>
+      'Пренебрегвай сигнали от −30 dBm и по-силни';
+
+  @override
+  String get wardrive_background => 'Продължавай с изключен екран';
+
+  @override
+  String get wardrive_backgroundHint =>
+      'Android показва известие по време на обиколка.';
+
+  @override
+  String get wardrive_recordNoise => 'Записвай нивото на шума';
+
+  @override
+  String get wardrive_pickRepeater => 'Изберете ретранслатор';
+
+  @override
+  String get wardrive_noRepeaters =>
+      'Още няма ретранслатори с известен ключ. Първо добавете един като контакт.';
+
+  @override
+  String get wardrive_kindPassive => 'Трафик, чут сам по себе си';
+
+  @override
+  String get wardrive_kindSkipped => 'Пропуснат: вече покрит';
+
+  @override
+  String get wardrive_notifTitle => 'Wardrive работи';
+
+  @override
+  String get wardrive_notifText =>
+      'Проследява се позицията ви за картата на покритието';
+
+  @override
+  String wardrive_replyHere(String here) {
+    return 'Чухте го при $here dB';
+  }
+
+  @override
+  String wardrive_replyThere(String there) {
+    return 'Чу ви при $there dB';
+  }
+
+  @override
+  String get wardrive_replyRelayed => 'Предаде пинга ви';
+
+  @override
+  String get wardrive_explainTrace =>
+      'Всеки пинг е проследяване без скокове до избрания ретранслатор: измерва колко добре се чувате в двете посоки.';
+
+  @override
+  String get wardrive_explainChannel =>
+      'Всеки пинг е съобщение до #wardriving. Ретранслаторите, които го предават, показват, че достигате по-широката мрежа, но всеки пинг залива цялата мрежа, затова ползвайте дълъг интервал.';
+
+  @override
+  String get wardrive_explainHybrid =>
+      'Пинговете за откриване и по канал се редуват: близки ретранслатори при единия, по-широката мрежа при следващия.';
+
+  @override
   String get sarneg_randomWord => 'Случайна дума';
 
   @override

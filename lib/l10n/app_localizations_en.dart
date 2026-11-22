@@ -14053,6 +14053,153 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get wardrive_modeDiscovery => 'Discovery';
+
+  @override
+  String get wardrive_modeTrace => 'Trace';
+
+  @override
+  String get wardrive_modeChannel => 'Channel';
+
+  @override
+  String get wardrive_modeHybrid => 'Hybrid';
+
+  @override
+  String get wardrive_repeaters => 'repeaters';
+
+  @override
+  String get wardrive_skipped => 'skipped';
+
+  @override
+  String get wardrive_pingNow => 'Ping now';
+
+  @override
+  String get wardrive_settings => 'Wardrive settings';
+
+  @override
+  String wardrive_gpsAccuracy(int metres) {
+    return 'GPS ±$metres m';
+  }
+
+  @override
+  String get wardrive_noGps => 'No phone GPS';
+
+  @override
+  String wardrive_noise(int dbm) {
+    return 'Noise $dbm dBm';
+  }
+
+  @override
+  String get wardrive_passiveOn => 'Logging heard traffic';
+
+  @override
+  String get wardrive_waitChannel =>
+      'Add the #wardriving channel to use channel pings.';
+
+  @override
+  String get wardrive_waitTraceTarget =>
+      'Pick a repeater to trace in wardrive settings.';
+
+  @override
+  String get wardrive_waitMove => 'Waiting until you move 25 m.';
+
+  @override
+  String get wardrive_waitCovered =>
+      'Already covered here, skipping this ping.';
+
+  @override
+  String get wardrive_interval => 'Ping every';
+
+  @override
+  String get wardrive_waitForMove => 'Only after moving 25 m';
+
+  @override
+  String get wardrive_skipCovered => 'Skip squares already covered';
+
+  @override
+  String wardrive_skipDays(int days) {
+    return 'Covered means a repeater heard you there in the last $days days';
+  }
+
+  @override
+  String get wardrive_passive => 'Log traffic you hear';
+
+  @override
+  String get wardrive_passiveHint =>
+      'Free coverage from packets your radio hears anyway. No airtime.';
+
+  @override
+  String get wardrive_traceTarget => 'Repeater to trace';
+
+  @override
+  String get wardrive_none => 'None';
+
+  @override
+  String get wardrive_carRepeater => 'My car repeater';
+
+  @override
+  String get wardrive_carRepeaterHint =>
+      'Always ignored: it\'s right beside you';
+
+  @override
+  String get wardrive_ignoreStrong => 'Ignore signals at −30 dBm or stronger';
+
+  @override
+  String get wardrive_background => 'Keep running with the screen off';
+
+  @override
+  String get wardrive_backgroundHint =>
+      'Android shows a notification while a drive runs.';
+
+  @override
+  String get wardrive_recordNoise => 'Record noise floor';
+
+  @override
+  String get wardrive_pickRepeater => 'Pick a repeater';
+
+  @override
+  String get wardrive_noRepeaters =>
+      'No repeaters with a known key yet. Add one as a contact first.';
+
+  @override
+  String get wardrive_kindPassive => 'Traffic heard on its own';
+
+  @override
+  String get wardrive_kindSkipped => 'Skipped: already covered';
+
+  @override
+  String get wardrive_notifTitle => 'Wardrive running';
+
+  @override
+  String get wardrive_notifText =>
+      'Tracking your position for the coverage map';
+
+  @override
+  String wardrive_replyHere(String here) {
+    return 'You heard it at $here dB';
+  }
+
+  @override
+  String wardrive_replyThere(String there) {
+    return 'Heard you at $there dB';
+  }
+
+  @override
+  String get wardrive_replyRelayed => 'Passed your ping on';
+
+  @override
+  String get wardrive_explainTrace =>
+      'Each ping is a zero-hop trace to the repeater you picked: it measures how well you and that one repeater hear each other, both ways.';
+
+  @override
+  String get wardrive_explainChannel =>
+      'Each ping is a message to #wardriving. Repeaters that pass it on show you reach the wider mesh, but every ping is flooded across it, so use a slow interval.';
+
+  @override
+  String get wardrive_explainHybrid =>
+      'Discovery and channel pings take turns: nearby repeaters on one ping, the wider mesh on the next.';
+
+  @override
   String get sarneg_randomWord => 'Random word';
 
   @override

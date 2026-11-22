@@ -14246,6 +14246,152 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
+  String get wardrive_modeDiscovery => 'Odkrywanie';
+
+  @override
+  String get wardrive_modeTrace => 'Trasa';
+
+  @override
+  String get wardrive_modeChannel => 'Kanał';
+
+  @override
+  String get wardrive_modeHybrid => 'Hybrydowy';
+
+  @override
+  String get wardrive_repeaters => 'przekaźniki';
+
+  @override
+  String get wardrive_skipped => 'pominięte';
+
+  @override
+  String get wardrive_pingNow => 'Pinguj teraz';
+
+  @override
+  String get wardrive_settings => 'Ustawienia wardrive';
+
+  @override
+  String wardrive_gpsAccuracy(int metres) {
+    return 'GPS ±$metres m';
+  }
+
+  @override
+  String get wardrive_noGps => 'Brak GPS telefonu';
+
+  @override
+  String wardrive_noise(int dbm) {
+    return 'Szum $dbm dBm';
+  }
+
+  @override
+  String get wardrive_passiveOn => 'Zapisywanie słyszanego ruchu';
+
+  @override
+  String get wardrive_waitChannel =>
+      'Dodaj kanał #wardriving, aby używać pingów kanałowych.';
+
+  @override
+  String get wardrive_waitTraceTarget =>
+      'Wybierz przekaźnik do śledzenia w ustawieniach wardrive.';
+
+  @override
+  String get wardrive_waitMove => 'Czekam, aż przesuniesz się o 25 m.';
+
+  @override
+  String get wardrive_waitCovered =>
+      'Ten obszar jest już pokryty, ping pominięty.';
+
+  @override
+  String get wardrive_interval => 'Ping co';
+
+  @override
+  String get wardrive_waitForMove => 'Dopiero po przejechaniu 25 m';
+
+  @override
+  String get wardrive_skipCovered => 'Pomijaj już pokryte kwadraty';
+
+  @override
+  String wardrive_skipDays(int days) {
+    return 'Pokryty: przekaźnik słyszał cię tam w ciągu ostatnich dni ($days)';
+  }
+
+  @override
+  String get wardrive_passive => 'Zapisuj słyszany ruch';
+
+  @override
+  String get wardrive_passiveHint =>
+      'Darmowe pokrycie z pakietów, które radio i tak słyszy. Bez czasu nadawania.';
+
+  @override
+  String get wardrive_traceTarget => 'Przekaźnik do śledzenia';
+
+  @override
+  String get wardrive_none => 'Brak';
+
+  @override
+  String get wardrive_carRepeater => 'Mój przekaźnik w aucie';
+
+  @override
+  String get wardrive_carRepeaterHint =>
+      'Zawsze ignorowany: jest tuż obok ciebie';
+
+  @override
+  String get wardrive_ignoreStrong => 'Ignoruj sygnały −30 dBm i silniejsze';
+
+  @override
+  String get wardrive_background => 'Działaj przy wyłączonym ekranie';
+
+  @override
+  String get wardrive_backgroundHint =>
+      'Android pokazuje powiadomienie podczas jazdy.';
+
+  @override
+  String get wardrive_recordNoise => 'Zapisuj poziom szumu';
+
+  @override
+  String get wardrive_pickRepeater => 'Wybierz przekaźnik';
+
+  @override
+  String get wardrive_noRepeaters =>
+      'Brak przekaźników ze znanym kluczem. Najpierw dodaj jeden jako kontakt.';
+
+  @override
+  String get wardrive_kindPassive => 'Ruch usłyszany samodzielnie';
+
+  @override
+  String get wardrive_kindSkipped => 'Pominięty: już pokryty';
+
+  @override
+  String get wardrive_notifTitle => 'Wardrive działa';
+
+  @override
+  String get wardrive_notifText => 'Śledzenie pozycji dla mapy pokrycia';
+
+  @override
+  String wardrive_replyHere(String here) {
+    return 'Słyszałeś go z $here dB';
+  }
+
+  @override
+  String wardrive_replyThere(String there) {
+    return 'Słyszał cię z $there dB';
+  }
+
+  @override
+  String get wardrive_replyRelayed => 'Przekazał twój ping';
+
+  @override
+  String get wardrive_explainTrace =>
+      'Każdy ping to śledzenie bez przeskoków do wybranego przekaźnika: mierzy, jak dobrze się słyszycie w obie strony.';
+
+  @override
+  String get wardrive_explainChannel =>
+      'Każdy ping to wiadomość na #wardriving. Przekaźniki, które ją przekazują, pokazują, że docierasz do szerszej sieci, ale każdy ping zalewa całą sieć, więc używaj długiego odstępu.';
+
+  @override
+  String get wardrive_explainHybrid =>
+      'Pingi odkrywania i kanałowe na zmianę: pobliskie przekaźniki w jednym, szersza sieć w następnym.';
+
+  @override
   String get sarneg_randomWord => 'Losowe słowo';
 
   @override
