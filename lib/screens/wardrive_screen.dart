@@ -9,15 +9,19 @@ import '../connector/meshcore_connector.dart';
 import '../l10n/l10n.dart';
 import '../models/wardrive.dart';
 import '../services/map_tile_cache_service.dart';
+import '../services/phone_location.dart' show backgroundFixNotice;
 import '../services/wardrive_service.dart';
 import '../theme/mesh_theme.dart';
 import '../widgets/ember_backdrop.dart';
 import '../widgets/instrument.dart';
 import '../widgets/mesh_ui.dart';
 import '../widgets/tactical_glass_panel.dart';
+import 'wardrive_settings_sheet.dart';
 
 /// Wardrive: ping from where you are and map which repeaters hear you. Green
-/// markers were heard (brighter for a better link), red ones weren't.
+/// markers were heard (brighter for a better link), red ones weren't, blue
+/// ones are traffic heard on its own, and amber rings are pings skipped
+/// because the spot was already covered.
 class WardriveScreen extends StatefulWidget {
   const WardriveScreen({super.key});
 
@@ -42,6 +46,17 @@ class _WardriveScreenState extends State<WardriveScreen> {
     super.initState();
     _service = context.read<WardriveService>();
     _service.addListener(_onService);
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // The screen-off GPS notification speaks the app's language.
+    final l10n = context.l10n;
+    backgroundFixNotice = (
+      title: l10n.wardrive_notifTitle,
+      text: l10n.wardrive_notifText,
+    );
   }
 
   @override
@@ -91,21 +106,26 @@ class _WardriveScreenState extends State<WardriveScreen> {
                   '${ping.latitude.toStringAsFixed(4)}, '
                   '${ping.longitude.toStringAsFixed(4)}',
             ),
-            if (!ping.heard)
+            if (ping.kind == WardriveKind.skipped)
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: Text(l10n.wardrive_kindSkipped),
+              )
+            else if (!ping.heard)
               Padding(
                 padding: const EdgeInsets.all(16),
                 child: Text(l10n.wardrive_noReplies),
               ),
+            if (ping.kind == WardriveKind.passive)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(16, 0, 16, 4),
+                child: Text(l10n.wardrive_kindPassive),
+              ),
             for (final r in ping.replies)
               InstrumentRow(
                 title: _name(c, r.prefix),
-                subtitle: l10n.wardrive_replyDetail(
-                  r.snrThere.toStringAsFixed(1),
-                  r.snrHere.toStringAsFixed(1),
-                ),
-                trailing: SignalReadout(
-                  r.snrThere < r.snrHere ? r.snrThere : r.snrHere,
-                ),
+                subtitle: _replyText(r),
+                trailing: r.link == null ? null : SignalReadout(r.link!),
                 divider: false,
               ),
             const SizedBox(height: 12),
@@ -113,6 +133,24 @@ class _WardriveScreenState extends State<WardriveScreen> {
         ),
       ),
     );
+  }
+
+  String _replyText(WardriveReply r) {
+    final l10n = context.l10n;
+    final there = r.snrThere, here = r.snrHere;
+    if (there != null && here != null) {
+      return l10n.wardrive_replyDetail(
+        there.toStringAsFixed(1),
+        here.toStringAsFixed(1),
+      );
+    }
+    if (there != null) {
+      return l10n.wardrive_replyThere(there.toStringAsFixed(1));
+    }
+    if (here != null) {
+      return l10n.wardrive_replyHere(here.toStringAsFixed(1));
+    }
+    return l10n.wardrive_replyRelayed;
   }
 
   void _showHistory(WardriveService service) {
@@ -139,7 +177,7 @@ class _WardriveScreenState extends State<WardriveScreen> {
                   ).formatMediumDate(s.startedAt.toLocal()),
                 ),
                 subtitle: Text(
-                  l10n.wardrive_sessionSummary(s.pings.length, s.heardCount),
+                  l10n.wardrive_sessionSummary(s.sentCount, s.heardCount),
                 ),
                 trailing: IconButton(
                   tooltip: l10n.wardrive_delete,
@@ -177,11 +215,6 @@ class _WardriveScreenState extends State<WardriveScreen> {
     final connector = context.watch<MeshCoreConnector>();
     final session = _viewing ?? service.active;
     final pings = session?.pings ?? const <WardrivePing>[];
-    double? best;
-    for (final p in pings) {
-      final s = p.bestSnr;
-      if (s != null && (best == null || s > best)) best = s;
-    }
     final here = _viewing == null ? service.position : null;
     final center = here != null
         ? LatLng(here.lat, here.lon)
@@ -195,8 +228,30 @@ class _WardriveScreenState extends State<WardriveScreen> {
         : switch (service.wait) {
             WardriveWait.noPosition => l10n.wardrive_waitPosition,
             WardriveWait.noRadio => l10n.wardrive_waitRadio,
+            WardriveWait.noChannel => l10n.wardrive_waitChannel,
+            WardriveWait.noTraceTarget => l10n.wardrive_waitTraceTarget,
+            WardriveWait.notMoved => l10n.wardrive_waitMove,
+            WardriveWait.covered => l10n.wardrive_waitCovered,
             WardriveWait.none => null,
           };
+    final settings = service.settings;
+    final accuracy = service.accuracy;
+    final noise = service.noiseFloor;
+    final liveLine = _viewing != null || !service.running
+        ? null
+        : [
+            accuracy == null
+                ? l10n.wardrive_noGps
+                : l10n.wardrive_gpsAccuracy(accuracy.round()),
+            if (noise != null) l10n.wardrive_noise(noise),
+            if (settings.passive) l10n.wardrive_passiveOn,
+          ].join(' · ');
+    final explainer = switch (settings.mode) {
+      WardriveMode.discovery => l10n.wardrive_explainer,
+      WardriveMode.trace => l10n.wardrive_explainTrace,
+      WardriveMode.channel => l10n.wardrive_explainChannel,
+      WardriveMode.hybrid => l10n.wardrive_explainHybrid,
+    };
 
     return EmberBackdrop(
       scene: EmberScene.more,
@@ -208,6 +263,12 @@ class _WardriveScreenState extends State<WardriveScreen> {
           scrolledUnderElevation: 0,
           title: Text(l10n.wardrive_title),
           actions: [
+            IconButton(
+              key: const ValueKey('wardrive-settings'),
+              tooltip: l10n.wardrive_settings,
+              icon: const Icon(Icons.tune),
+              onPressed: () => showWardriveSettings(context),
+            ),
             IconButton(
               key: const ValueKey('wardrive-history'),
               tooltip: l10n.wardrive_history,
@@ -223,18 +284,19 @@ class _WardriveScreenState extends State<WardriveScreen> {
               child: TacticalGlassPanel(
                 padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
                 child: ReadoutStrip([
-                  Readout('${pings.length}', l10n.wardrive_pings),
+                  Readout('${session?.sentCount ?? 0}', l10n.wardrive_pings),
                   Readout(
                     '${session?.heardCount ?? 0}',
                     l10n.wardrive_heard,
                     color: MeshPalette.signal,
                   ),
                   Readout(
-                    best == null ? '—' : best.toStringAsFixed(1),
-                    l10n.reach_bestSnr,
-                    color: best == null
-                        ? null
-                        : MeshTheme.snrColor(best, blocked: false),
+                    '${session?.repeaterCount ?? 0}',
+                    l10n.wardrive_repeaters,
+                  ),
+                  Readout(
+                    '${session?.skippedCount ?? 0}',
+                    l10n.wardrive_skipped,
                   ),
                 ]),
               ),
@@ -259,36 +321,91 @@ class _WardriveScreenState extends State<WardriveScreen> {
                   : Row(
                       children: [
                         Expanded(
-                          child: SegmentedButton<int>(
+                          child: SegmentedButton<WardriveMode>(
+                            key: const ValueKey('wardrive-mode'),
                             showSelectedIcon: false,
+                            style: const ButtonStyle(
+                              visualDensity: VisualDensity.compact,
+                            ),
                             segments: [
-                              for (final s in WardriveService.intervals)
-                                ButtonSegment(value: s, label: Text('${s}s')),
+                              ButtonSegment(
+                                value: WardriveMode.discovery,
+                                label: Text(l10n.wardrive_modeDiscovery),
+                              ),
+                              ButtonSegment(
+                                value: WardriveMode.trace,
+                                label: Text(l10n.wardrive_modeTrace),
+                              ),
+                              ButtonSegment(
+                                value: WardriveMode.channel,
+                                label: Text(l10n.wardrive_modeChannel),
+                              ),
+                              ButtonSegment(
+                                value: WardriveMode.hybrid,
+                                label: Text(l10n.wardrive_modeHybrid),
+                              ),
                             ],
-                            selected: {service.interval.inSeconds},
-                            onSelectionChanged: (v) =>
-                                service.setInterval(v.first),
+                            selected: {settings.mode},
+                            onSelectionChanged: (v) => service.update(
+                              settings.copyWith(mode: v.first),
+                            ),
                           ),
-                        ),
-                        const SizedBox(width: MeshSpace.sm),
-                        InstrumentButton(
-                          key: const ValueKey('wardrive-toggle'),
-                          label: service.running
-                              ? l10n.wardrive_stop
-                              : l10n.wardrive_start,
-                          icon: service.running
-                              ? Icons.stop_rounded
-                              : Icons.play_arrow_rounded,
-                          danger: service.running,
-                          onPressed: service.running
-                              ? () => unawaited(service.stop())
-                              : connector.isConnected
-                              ? () => unawaited(service.start())
-                              : null,
                         ),
                       ],
                     ),
             ),
+            if (_viewing == null)
+              Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  MeshSpace.lg,
+                  0,
+                  MeshSpace.lg,
+                  MeshSpace.sm,
+                ),
+                child: Row(
+                  children: [
+                    if (service.running) ...[
+                      Expanded(
+                        child: InstrumentButton(
+                          key: const ValueKey('wardrive-ping-now'),
+                          label: l10n.wardrive_pingNow,
+                          icon: Icons.podcasts,
+                          onPressed: service.pinging
+                              ? null
+                              : () => unawaited(service.pingNow()),
+                        ),
+                      ),
+                      const SizedBox(width: MeshSpace.sm),
+                    ],
+                    Expanded(
+                      child: InstrumentButton(
+                        key: const ValueKey('wardrive-toggle'),
+                        label: service.running
+                            ? l10n.wardrive_stop
+                            : l10n.wardrive_start,
+                        icon: service.running
+                            ? Icons.stop_rounded
+                            : Icons.play_arrow_rounded,
+                        danger: service.running,
+                        onPressed: service.running
+                            ? () => unawaited(service.stop())
+                            : connector.isConnected
+                            ? () => unawaited(service.start())
+                            : null,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            if (liveLine != null)
+              Padding(
+                padding: const EdgeInsets.only(bottom: 4),
+                child: Text(
+                  liveLine,
+                  key: const ValueKey('wardrive-live-line'),
+                  style: TextStyle(color: MeshPalette.ink3, fontSize: 12),
+                ),
+              ),
             if (status != null)
               Padding(
                 padding: const EdgeInsets.only(bottom: MeshSpace.sm),
@@ -382,7 +499,7 @@ class _WardriveScreenState extends State<WardriveScreen> {
                 MeshSpace.lg,
               ),
               child: Text(
-                l10n.wardrive_explainer,
+                explainer,
                 style: TextStyle(color: MeshPalette.ink3, fontSize: 12),
               ),
             ),
@@ -393,7 +510,9 @@ class _WardriveScreenState extends State<WardriveScreen> {
   }
 }
 
-/// A ping on the map: green when heard (shaded by the link), red when not.
+/// A point on the map: green when heard (shaded by the link), red when not,
+/// a smaller blue dot for traffic heard on its own, and a hollow amber ring
+/// for a ping skipped because the spot was already covered.
 class _PingDot extends StatelessWidget {
   const _PingDot({required this.ping});
 
@@ -401,20 +520,40 @@ class _PingDot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    if (ping.kind == WardriveKind.skipped) {
+      return Semantics(
+        label: l10n.wardrive_kindSkipped,
+        button: true,
+        child: Container(
+          margin: const EdgeInsets.all(3),
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(color: MeshPalette.warn, width: 3),
+          ),
+        ),
+      );
+    }
     final snr = ping.bestSnr;
-    final color = snr == null
+    final passive = ping.kind == WardriveKind.passive;
+    final color = passive
+        ? MeshPalette.secondary
+        : snr == null
         ? MeshPalette.alert
         : MeshTheme.snrColor(snr, blocked: false);
     return Semantics(
-      label: snr == null
-          ? context.l10n.wardrive_noReplies
+      label: passive
+          ? l10n.wardrive_kindPassive
+          : snr == null
+          ? l10n.wardrive_noReplies
           : 'SNR ${snr.toStringAsFixed(1)} dB',
       button: true,
       child: Container(
+        margin: EdgeInsets.all(passive ? 5 : 0),
         decoration: BoxDecoration(
           color: color.withValues(alpha: 0.85),
           shape: BoxShape.circle,
-          border: Border.all(color: Colors.white, width: 2),
+          border: Border.all(color: Colors.white, width: passive ? 1.5 : 2),
         ),
       ),
     );

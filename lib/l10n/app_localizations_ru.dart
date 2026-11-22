@@ -14246,4 +14246,150 @@ class AppLocalizationsRu extends AppLocalizations {
   String home_radioHolds(int count, int max) {
     return 'Радио хранит контакты: $count из $max';
   }
+
+  @override
+  String get wardrive_modeDiscovery => 'Обнаружение';
+
+  @override
+  String get wardrive_modeTrace => 'Трассировка';
+
+  @override
+  String get wardrive_modeChannel => 'Канал';
+
+  @override
+  String get wardrive_modeHybrid => 'Гибрид';
+
+  @override
+  String get wardrive_repeaters => 'ретрансляторы';
+
+  @override
+  String get wardrive_skipped => 'пропущено';
+
+  @override
+  String get wardrive_pingNow => 'Пинг сейчас';
+
+  @override
+  String get wardrive_settings => 'Настройки вардрайва';
+
+  @override
+  String wardrive_gpsAccuracy(int metres) {
+    return 'GPS ±$metres м';
+  }
+
+  @override
+  String get wardrive_noGps => 'Нет GPS телефона';
+
+  @override
+  String wardrive_noise(int dbm) {
+    return 'Шум $dbm дБм';
+  }
+
+  @override
+  String get wardrive_passiveOn => 'Записывается услышанный трафик';
+
+  @override
+  String get wardrive_waitChannel =>
+      'Добавьте канал #wardriving для пингов в канал.';
+
+  @override
+  String get wardrive_waitTraceTarget =>
+      'Выберите ретранслятор для трассировки в настройках вардрайва.';
+
+  @override
+  String get wardrive_waitMove => 'Ждём, пока вы переместитесь на 25 м.';
+
+  @override
+  String get wardrive_waitCovered => 'Здесь уже есть покрытие, пинг пропущен.';
+
+  @override
+  String get wardrive_interval => 'Пинг каждые';
+
+  @override
+  String get wardrive_waitForMove => 'Только после 25 м движения';
+
+  @override
+  String get wardrive_skipCovered => 'Пропускать уже покрытые квадраты';
+
+  @override
+  String wardrive_skipDays(int days) {
+    return 'Покрыт: ретранслятор слышал вас там за последние дни ($days)';
+  }
+
+  @override
+  String get wardrive_passive => 'Записывать услышанный трафик';
+
+  @override
+  String get wardrive_passiveHint =>
+      'Бесплатное покрытие из пакетов, которые радио и так слышит. Без эфирного времени.';
+
+  @override
+  String get wardrive_traceTarget => 'Ретранслятор для трассировки';
+
+  @override
+  String get wardrive_none => 'Нет';
+
+  @override
+  String get wardrive_carRepeater => 'Мой ретранслятор в машине';
+
+  @override
+  String get wardrive_carRepeaterHint =>
+      'Всегда игнорируется: он прямо рядом с вами';
+
+  @override
+  String get wardrive_ignoreStrong =>
+      'Игнорировать сигналы от −30 дБм и сильнее';
+
+  @override
+  String get wardrive_background => 'Работать при выключенном экране';
+
+  @override
+  String get wardrive_backgroundHint =>
+      'Android показывает уведомление во время поездки.';
+
+  @override
+  String get wardrive_recordNoise => 'Записывать уровень шума';
+
+  @override
+  String get wardrive_pickRepeater => 'Выберите ретранслятор';
+
+  @override
+  String get wardrive_noRepeaters =>
+      'Пока нет ретрансляторов с известным ключом. Сначала добавьте его в контакты.';
+
+  @override
+  String get wardrive_kindPassive => 'Трафик, услышанный сам по себе';
+
+  @override
+  String get wardrive_kindSkipped => 'Пропущено: уже покрыто';
+
+  @override
+  String get wardrive_notifTitle => 'Вардрайв идёт';
+
+  @override
+  String get wardrive_notifText => 'Отслеживание позиции для карты покрытия';
+
+  @override
+  String wardrive_replyHere(String here) {
+    return 'Вы слышали его при $here дБ';
+  }
+
+  @override
+  String wardrive_replyThere(String there) {
+    return 'Слышал вас при $there дБ';
+  }
+
+  @override
+  String get wardrive_replyRelayed => 'Передал ваш пинг дальше';
+
+  @override
+  String get wardrive_explainTrace =>
+      'Каждый пинг — трассировка без переходов к выбранному ретранслятору: она измеряет, насколько хорошо вы слышите друг друга в обе стороны.';
+
+  @override
+  String get wardrive_explainChannel =>
+      'Каждый пинг — сообщение в #wardriving. Ретрансляторы, которые его передают, показывают, что вы достаёте до всей сети, но каждый пинг расходится по всей сети, поэтому используйте большой интервал.';
+
+  @override
+  String get wardrive_explainHybrid =>
+      'Пинги обнаружения и пинги в канал чередуются: ближние ретрансляторы в одном, вся сеть в следующем.';
 }

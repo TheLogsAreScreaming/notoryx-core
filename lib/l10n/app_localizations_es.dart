@@ -14215,4 +14215,152 @@ class AppLocalizationsEs extends AppLocalizations {
   String home_radioHolds(int count, int max) {
     return 'La radio guarda $count de $max contactos';
   }
+
+  @override
+  String get wardrive_modeDiscovery => 'Descubrir';
+
+  @override
+  String get wardrive_modeTrace => 'Traza';
+
+  @override
+  String get wardrive_modeChannel => 'Canal';
+
+  @override
+  String get wardrive_modeHybrid => 'Híbrido';
+
+  @override
+  String get wardrive_repeaters => 'repetidores';
+
+  @override
+  String get wardrive_skipped => 'omitidos';
+
+  @override
+  String get wardrive_pingNow => 'Hacer ping';
+
+  @override
+  String get wardrive_settings => 'Ajustes de wardrive';
+
+  @override
+  String wardrive_gpsAccuracy(int metres) {
+    return 'GPS ±$metres m';
+  }
+
+  @override
+  String get wardrive_noGps => 'Sin GPS del teléfono';
+
+  @override
+  String wardrive_noise(int dbm) {
+    return 'Ruido $dbm dBm';
+  }
+
+  @override
+  String get wardrive_passiveOn => 'Registrando tráfico oído';
+
+  @override
+  String get wardrive_waitChannel =>
+      'Añade el canal #wardriving para usar pings de canal.';
+
+  @override
+  String get wardrive_waitTraceTarget =>
+      'Elige un repetidor para la traza en los ajustes de wardrive.';
+
+  @override
+  String get wardrive_waitMove => 'Esperando a que te muevas 25 m.';
+
+  @override
+  String get wardrive_waitCovered =>
+      'Esta zona ya está cubierta, se omite el ping.';
+
+  @override
+  String get wardrive_interval => 'Ping cada';
+
+  @override
+  String get wardrive_waitForMove => 'Solo tras moverte 25 m';
+
+  @override
+  String get wardrive_skipCovered => 'Omitir cuadros ya cubiertos';
+
+  @override
+  String wardrive_skipDays(int days) {
+    return 'Cubierto significa que un repetidor te oyó allí en los últimos $days días';
+  }
+
+  @override
+  String get wardrive_passive => 'Registrar el tráfico que oyes';
+
+  @override
+  String get wardrive_passiveHint =>
+      'Cobertura gratis con paquetes que tu radio oye de todos modos. Sin tiempo de aire.';
+
+  @override
+  String get wardrive_traceTarget => 'Repetidor para la traza';
+
+  @override
+  String get wardrive_none => 'Ninguno';
+
+  @override
+  String get wardrive_carRepeater => 'Mi repetidor del coche';
+
+  @override
+  String get wardrive_carRepeaterHint =>
+      'Siempre se ignora: está justo a tu lado';
+
+  @override
+  String get wardrive_ignoreStrong =>
+      'Ignorar señales de −30 dBm o más fuertes';
+
+  @override
+  String get wardrive_background => 'Seguir con la pantalla apagada';
+
+  @override
+  String get wardrive_backgroundHint =>
+      'Android muestra una notificación mientras dura el recorrido.';
+
+  @override
+  String get wardrive_recordNoise => 'Registrar el piso de ruido';
+
+  @override
+  String get wardrive_pickRepeater => 'Elige un repetidor';
+
+  @override
+  String get wardrive_noRepeaters =>
+      'Aún no hay repetidores con clave conocida. Añade uno como contacto primero.';
+
+  @override
+  String get wardrive_kindPassive => 'Tráfico oído por sí solo';
+
+  @override
+  String get wardrive_kindSkipped => 'Omitido: ya cubierto';
+
+  @override
+  String get wardrive_notifTitle => 'Wardrive en marcha';
+
+  @override
+  String get wardrive_notifText =>
+      'Siguiendo tu posición para el mapa de cobertura';
+
+  @override
+  String wardrive_replyHere(String here) {
+    return 'Lo oíste a $here dB';
+  }
+
+  @override
+  String wardrive_replyThere(String there) {
+    return 'Te oyó a $there dB';
+  }
+
+  @override
+  String get wardrive_replyRelayed => 'Retransmitió tu ping';
+
+  @override
+  String get wardrive_explainTrace =>
+      'Cada ping es una traza de cero saltos al repetidor elegido: mide lo bien que os oís, en ambos sentidos.';
+
+  @override
+  String get wardrive_explainChannel =>
+      'Cada ping es un mensaje a #wardriving. Los repetidores que lo retransmiten muestran que llegas a la malla más amplia, pero cada ping se inunda por toda ella, así que usa un intervalo lento.';
+
+  @override
+  String get wardrive_explainHybrid =>
+      'Los pings de descubrimiento y de canal se turnan: repetidores cercanos en uno, la malla más amplia en el siguiente.';
 }
