@@ -1,0 +1,4 @@
+• New BLACKOUT look: new app icon and BLACKOUT as the default theme
+• Themes kept: Tactical, Okabe-Ito, Night Ops, Seasonal
+• Repeater clock sync sends the phone's time
+• Removed contacts are no longer added back
