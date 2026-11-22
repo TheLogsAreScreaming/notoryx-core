@@ -14104,4 +14104,17 @@ class AppLocalizationsSv extends AppLocalizations {
   String home_radioHolds(int count, int max) {
     return 'Radion har $count av $max kontakter';
   }
+
+  @override
+  String get sarneg_randomWord => 'Slumpat ord';
+
+  @override
+  String get sarneg_wellKnownWord =>
+      'Det här ordet finns i offentliga guider, så vem som helst kan prova det. Ett slumpat ord är säkrare.';
+
+  @override
+  String get sarneg_clipboardClears => 'Urklippet töms om 1 minut.';
+
+  @override
+  String get sarneg_autoClear => 'Rensas efter 1 minut utan inmatning.';
 }

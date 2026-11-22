@@ -14228,4 +14228,18 @@ class AppLocalizationsDe extends AppLocalizations {
   String home_radioHolds(int count, int max) {
     return 'Funkgerät speichert $count von $max Kontakten';
   }
+
+  @override
+  String get sarneg_randomWord => 'Zufallswort';
+
+  @override
+  String get sarneg_wellKnownWord =>
+      'Dieses Wort steht in öffentlichen Anleitungen, also kann es jeder ausprobieren. Ein Zufallswort ist sicherer.';
+
+  @override
+  String get sarneg_clipboardClears =>
+      'Die Zwischenablage wird nach 1 Minute geleert.';
+
+  @override
+  String get sarneg_autoClear => 'Wird nach 1 Minute ohne Eingabe geleert.';
 }

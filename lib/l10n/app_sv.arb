@@ -5315,5 +5315,9 @@
   "discoveredContacts_importNotConnected": "Anslut din radio först",
   "discoveredContacts_importResult": "{added} nya, {updated} uppdaterade, {skipped} överhoppade",
   "home_knownNodes": "Chattar {chats} · Repeatrar {repeaters} · Rum {rooms}",
-  "home_radioHolds": "Radion har {count} av {max} kontakter"
+  "home_radioHolds": "Radion har {count} av {max} kontakter",
+  "sarneg_randomWord": "Slumpat ord",
+  "sarneg_wellKnownWord": "Det här ordet finns i offentliga guider, så vem som helst kan prova det. Ett slumpat ord är säkrare.",
+  "sarneg_clipboardClears": "Urklippet töms om 1 minut.",
+  "sarneg_autoClear": "Rensas efter 1 minut utan inmatning."
 }

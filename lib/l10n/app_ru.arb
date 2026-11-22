@@ -4618,5 +4618,9 @@
   "discoveredContacts_importNotConnected": "Сначала подключите радио",
   "discoveredContacts_importResult": "Новых: {added}, обновлено: {updated}, пропущено: {skipped}",
   "home_knownNodes": "Чаты {chats} · Ретрансляторы {repeaters} · Комнаты {rooms}",
-  "home_radioHolds": "Радио хранит контакты: {count} из {max}"
+  "home_radioHolds": "Радио хранит контакты: {count} из {max}",
+  "sarneg_randomWord": "Случайное слово",
+  "sarneg_wellKnownWord": "Это слово напечатано в открытых руководствах, поэтому его может попробовать любой. Случайное слово надёжнее.",
+  "sarneg_clipboardClears": "Буфер обмена очистится через 1 минуту.",
+  "sarneg_autoClear": "Очищается через 1 минуту без ввода."
 }

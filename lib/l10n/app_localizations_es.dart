@@ -14215,4 +14215,17 @@ class AppLocalizationsEs extends AppLocalizations {
   String home_radioHolds(int count, int max) {
     return 'La radio guarda $count de $max contactos';
   }
+
+  @override
+  String get sarneg_randomWord => 'Palabra aleatoria';
+
+  @override
+  String get sarneg_wellKnownWord =>
+      'Esta palabra aparece en guías públicas, así que cualquiera puede probarla. Una palabra aleatoria es más segura.';
+
+  @override
+  String get sarneg_clipboardClears => 'El portapapeles se vacía en 1 minuto.';
+
+  @override
+  String get sarneg_autoClear => 'Se borra tras 1 minuto sin escribir.';
 }

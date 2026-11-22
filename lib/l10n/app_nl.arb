@@ -5315,5 +5315,9 @@
   "discoveredContacts_importNotConnected": "Verbind eerst je radio",
   "discoveredContacts_importResult": "{added} nieuw, {updated} bijgewerkt, {skipped} overgeslagen",
   "home_knownNodes": "Chats {chats} · Repeaters {repeaters} · Ruimtes {rooms}",
-  "home_radioHolds": "Radio bewaart {count} van {max} contacten"
+  "home_radioHolds": "Radio bewaart {count} van {max} contacten",
+  "sarneg_randomWord": "Willekeurig woord",
+  "sarneg_wellKnownWord": "Dit woord staat in openbare handleidingen, dus iedereen kan het proberen. Een willekeurig woord is veiliger.",
+  "sarneg_clipboardClears": "Het klembord wordt over 1 minuut gewist.",
+  "sarneg_autoClear": "Wordt gewist na 1 minuut zonder typen."
 }

@@ -5315,5 +5315,9 @@
   "discoveredContacts_importNotConnected": "Първо свържете радиото",
   "discoveredContacts_importResult": "Нови: {added}, обновени: {updated}, пропуснати: {skipped}",
   "home_knownNodes": "Чатове {chats} · Ретранслатори {repeaters} · Стаи {rooms}",
-  "home_radioHolds": "Радиото пази контакти: {count} от {max}"
+  "home_radioHolds": "Радиото пази контакти: {count} от {max}",
+  "sarneg_randomWord": "Случайна дума",
+  "sarneg_wellKnownWord": "Тази дума е публикувана в публични ръководства, затова всеки може да я опита. Случайна дума е по-сигурна.",
+  "sarneg_clipboardClears": "Клипбордът се изчиства след 1 минута.",
+  "sarneg_autoClear": "Изчиства се след 1 минута без въвеждане."
 }

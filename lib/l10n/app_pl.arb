@@ -5353,5 +5353,9 @@
   "discoveredContacts_importNotConnected": "Najpierw połącz radio",
   "discoveredContacts_importResult": "Nowe: {added}, zaktualizowane: {updated}, pominięte: {skipped}",
   "home_knownNodes": "Czaty {chats} · Przekaźniki {repeaters} · Pokoje {rooms}",
-  "home_radioHolds": "Radio przechowuje kontakty: {count} z {max}"
+  "home_radioHolds": "Radio przechowuje kontakty: {count} z {max}",
+  "sarneg_randomWord": "Losowe słowo",
+  "sarneg_wellKnownWord": "To słowo jest w publicznych poradnikach, więc każdy może je wypróbować. Losowe słowo jest bezpieczniejsze.",
+  "sarneg_clipboardClears": "Schowek zostanie wyczyszczony za 1 minutę.",
+  "sarneg_autoClear": "Czyści się po 1 minucie bez pisania."
 }

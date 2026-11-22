@@ -5315,5 +5315,9 @@
   "discoveredContacts_importNotConnected": "Najprv pripoj rádio",
   "discoveredContacts_importResult": "Nové: {added}, aktualizované: {updated}, preskočené: {skipped}",
   "home_knownNodes": "Čety {chats} · Opakovače {repeaters} · Miestnosti {rooms}",
-  "home_radioHolds": "Rádio uchováva kontakty: {count} z {max}"
+  "home_radioHolds": "Rádio uchováva kontakty: {count} z {max}",
+  "sarneg_randomWord": "Náhodné slovo",
+  "sarneg_wellKnownWord": "Toto slovo je vo verejných príručkách, takže ho môže skúsiť ktokoľvek. Náhodné slovo je bezpečnejšie.",
+  "sarneg_clipboardClears": "Schránka sa vymaže o 1 minútu.",
+  "sarneg_autoClear": "Vymaže sa po 1 minúte bez písania."
 }

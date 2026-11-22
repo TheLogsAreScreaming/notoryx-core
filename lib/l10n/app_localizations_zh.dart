@@ -13319,4 +13319,16 @@ class AppLocalizationsZh extends AppLocalizations {
   String home_radioHolds(int count, int max) {
     return '电台已存 $count / $max 个联系人';
   }
+
+  @override
+  String get sarneg_randomWord => '随机词';
+
+  @override
+  String get sarneg_wellKnownWord => '这个词出现在公开指南中，任何人都可以试用。随机词更安全。';
+
+  @override
+  String get sarneg_clipboardClears => '剪贴板将在 1 分钟后清空。';
+
+  @override
+  String get sarneg_autoClear => '1 分钟无输入后清空。';
 }

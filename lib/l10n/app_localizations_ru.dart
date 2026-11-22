@@ -14246,4 +14246,17 @@ class AppLocalizationsRu extends AppLocalizations {
   String home_radioHolds(int count, int max) {
     return 'Радио хранит контакты: $count из $max';
   }
+
+  @override
+  String get sarneg_randomWord => 'Случайное слово';
+
+  @override
+  String get sarneg_wellKnownWord =>
+      'Это слово напечатано в открытых руководствах, поэтому его может попробовать любой. Случайное слово надёжнее.';
+
+  @override
+  String get sarneg_clipboardClears => 'Буфер обмена очистится через 1 минуту.';
+
+  @override
+  String get sarneg_autoClear => 'Очищается через 1 минуту без ввода.';
 }

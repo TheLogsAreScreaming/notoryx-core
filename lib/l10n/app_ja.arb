@@ -5449,5 +5449,9 @@
   "discoveredContacts_importNotConnected": "先に無線機を接続してください",
   "discoveredContacts_importResult": "新規 {added}、更新 {updated}、スキップ {skipped}",
   "home_knownNodes": "チャット {chats} · リピーター {repeaters} · ルーム {rooms}",
-  "home_radioHolds": "無線機の連絡先 {count} / {max}"
+  "home_radioHolds": "無線機の連絡先 {count} / {max}",
+  "sarneg_randomWord": "ランダムな単語",
+  "sarneg_wellKnownWord": "この単語は公開ガイドに載っているため、誰でも試せます。ランダムな単語のほうが安全です。",
+  "sarneg_clipboardClears": "クリップボードは1分後に消去されます。",
+  "sarneg_autoClear": "1分間入力がないと消去されます。"
 }

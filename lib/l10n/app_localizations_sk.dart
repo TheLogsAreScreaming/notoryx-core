@@ -14168,4 +14168,17 @@ class AppLocalizationsSk extends AppLocalizations {
   String home_radioHolds(int count, int max) {
     return 'Rádio uchováva kontakty: $count z $max';
   }
+
+  @override
+  String get sarneg_randomWord => 'Náhodné slovo';
+
+  @override
+  String get sarneg_wellKnownWord =>
+      'Toto slovo je vo verejných príručkách, takže ho môže skúsiť ktokoľvek. Náhodné slovo je bezpečnejšie.';
+
+  @override
+  String get sarneg_clipboardClears => 'Schránka sa vymaže o 1 minútu.';
+
+  @override
+  String get sarneg_autoClear => 'Vymaže sa po 1 minúte bez písania.';
 }

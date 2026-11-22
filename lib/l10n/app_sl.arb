@@ -5315,5 +5315,9 @@
   "discoveredContacts_importNotConnected": "Najprej poveži radio",
   "discoveredContacts_importResult": "Novih: {added}, posodobljenih: {updated}, preskočenih: {skipped}",
   "home_knownNodes": "Klepeti {chats} · Repetitorji {repeaters} · Sobe {rooms}",
-  "home_radioHolds": "Radio hrani stike: {count} od {max}"
+  "home_radioHolds": "Radio hrani stike: {count} od {max}",
+  "sarneg_randomWord": "Naključna beseda",
+  "sarneg_wellKnownWord": "Ta beseda je objavljena v javnih vodnikih, zato jo lahko poskusi kdorkoli. Naključna beseda je varnejša.",
+  "sarneg_clipboardClears": "Odložišče se izprazni čez 1 minuto.",
+  "sarneg_autoClear": "Izbriše se po 1 minuti brez tipkanja."
 }

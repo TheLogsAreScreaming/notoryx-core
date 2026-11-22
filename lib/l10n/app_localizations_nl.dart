@@ -14164,4 +14164,18 @@ class AppLocalizationsNl extends AppLocalizations {
   String home_radioHolds(int count, int max) {
     return 'Radio bewaart $count van $max contacten';
   }
+
+  @override
+  String get sarneg_randomWord => 'Willekeurig woord';
+
+  @override
+  String get sarneg_wellKnownWord =>
+      'Dit woord staat in openbare handleidingen, dus iedereen kan het proberen. Een willekeurig woord is veiliger.';
+
+  @override
+  String get sarneg_clipboardClears =>
+      'Het klembord wordt over 1 minuut gewist.';
+
+  @override
+  String get sarneg_autoClear => 'Wordt gewist na 1 minuut zonder typen.';
 }

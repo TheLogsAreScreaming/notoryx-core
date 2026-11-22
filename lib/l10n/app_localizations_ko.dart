@@ -13586,4 +13586,17 @@ class AppLocalizationsKo extends AppLocalizations {
   String home_radioHolds(int count, int max) {
     return '무전기 연락처 $count / $max';
   }
+
+  @override
+  String get sarneg_randomWord => '무작위 단어';
+
+  @override
+  String get sarneg_wellKnownWord =>
+      '이 단어는 공개 안내서에 나와 있어 누구나 시도할 수 있습니다. 무작위 단어가 더 안전합니다.';
+
+  @override
+  String get sarneg_clipboardClears => '클립보드는 1분 후에 지워집니다.';
+
+  @override
+  String get sarneg_autoClear => '1분 동안 입력이 없으면 지워집니다.';
 }

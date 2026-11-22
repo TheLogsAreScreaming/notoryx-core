@@ -5449,5 +5449,9 @@
   "discoveredContacts_importNotConnected": "Connectez d'abord votre radio",
   "discoveredContacts_importResult": "{added} nouveaux, {updated} mis à jour, {skipped} ignorés",
   "home_knownNodes": "Discussions {chats} · Relais {repeaters} · Salons {rooms}",
-  "home_radioHolds": "La radio contient {count} contacts sur {max}"
+  "home_radioHolds": "La radio contient {count} contacts sur {max}",
+  "sarneg_randomWord": "Mot aléatoire",
+  "sarneg_wellKnownWord": "Ce mot figure dans des guides publics : n’importe qui peut l’essayer. Un mot aléatoire est plus sûr.",
+  "sarneg_clipboardClears": "Le presse-papiers est vidé dans 1 minute.",
+  "sarneg_autoClear": "S’efface après 1 minute sans saisie."
 }

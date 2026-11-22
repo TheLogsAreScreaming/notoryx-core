@@ -13569,4 +13569,17 @@ class AppLocalizationsJa extends AppLocalizations {
   String home_radioHolds(int count, int max) {
     return '無線機の連絡先 $count / $max';
   }
+
+  @override
+  String get sarneg_randomWord => 'ランダムな単語';
+
+  @override
+  String get sarneg_wellKnownWord =>
+      'この単語は公開ガイドに載っているため、誰でも試せます。ランダムな単語のほうが安全です。';
+
+  @override
+  String get sarneg_clipboardClears => 'クリップボードは1分後に消去されます。';
+
+  @override
+  String get sarneg_autoClear => '1分間入力がないと消去されます。';
 }

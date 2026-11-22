@@ -5295,5 +5295,9 @@
   "discoveredContacts_importNotConnected": "Спочатку підключіть радіо",
   "discoveredContacts_importResult": "Нових: {added}, оновлено: {updated}, пропущено: {skipped}",
   "home_knownNodes": "Чати {chats} · Ретранслятори {repeaters} · Кімнати {rooms}",
-  "home_radioHolds": "Радіо зберігає контакти: {count} з {max}"
+  "home_radioHolds": "Радіо зберігає контакти: {count} з {max}",
+  "sarneg_randomWord": "Випадкове слово",
+  "sarneg_wellKnownWord": "Це слово надруковане у відкритих посібниках, тож будь-хто може його спробувати. Випадкове слово надійніше.",
+  "sarneg_clipboardClears": "Буфер обміну очиститься за 1 хвилину.",
+  "sarneg_autoClear": "Очищається через 1 хвилину без введення."
 }

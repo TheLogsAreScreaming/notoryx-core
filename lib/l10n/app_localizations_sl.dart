@@ -14197,4 +14197,17 @@ class AppLocalizationsSl extends AppLocalizations {
   String home_radioHolds(int count, int max) {
     return 'Radio hrani stike: $count od $max';
   }
+
+  @override
+  String get sarneg_randomWord => 'Naključna beseda';
+
+  @override
+  String get sarneg_wellKnownWord =>
+      'Ta beseda je objavljena v javnih vodnikih, zato jo lahko poskusi kdorkoli. Naključna beseda je varnejša.';
+
+  @override
+  String get sarneg_clipboardClears => 'Odložišče se izprazni čez 1 minuto.';
+
+  @override
+  String get sarneg_autoClear => 'Izbriše se po 1 minuti brez tipkanja.';
 }

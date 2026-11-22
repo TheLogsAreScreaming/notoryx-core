@@ -5449,5 +5449,9 @@
   "discoveredContacts_importNotConnected": "Prima collega la radio",
   "discoveredContacts_importResult": "{added} nuovi, {updated} aggiornati, {skipped} saltati",
   "home_knownNodes": "Chat {chats} · Ripetitori {repeaters} · Stanze {rooms}",
-  "home_radioHolds": "La radio contiene {count} contatti su {max}"
+  "home_radioHolds": "La radio contiene {count} contatti su {max}",
+  "sarneg_randomWord": "Parola casuale",
+  "sarneg_wellKnownWord": "Questa parola compare in guide pubbliche, quindi chiunque può provarla. Una parola casuale è più sicura.",
+  "sarneg_clipboardClears": "Gli appunti vengono svuotati tra 1 minuto.",
+  "sarneg_autoClear": "Si cancella dopo 1 minuto senza digitare."
 }

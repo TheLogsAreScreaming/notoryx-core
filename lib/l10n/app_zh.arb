@@ -5320,5 +5320,9 @@
   "discoveredContacts_importNotConnected": "请先连接电台",
   "discoveredContacts_importResult": "新增 {added}，更新 {updated}，跳过 {skipped}",
   "home_knownNodes": "聊天 {chats} · 中继 {repeaters} · 房间 {rooms}",
-  "home_radioHolds": "电台已存 {count} / {max} 个联系人"
+  "home_radioHolds": "电台已存 {count} / {max} 个联系人",
+  "sarneg_randomWord": "随机词",
+  "sarneg_wellKnownWord": "这个词出现在公开指南中，任何人都可以试用。随机词更安全。",
+  "sarneg_clipboardClears": "剪贴板将在 1 分钟后清空。",
+  "sarneg_autoClear": "1 分钟无输入后清空。"
 }

@@ -14189,4 +14189,17 @@ class AppLocalizationsHu extends AppLocalizations {
   String home_radioHolds(int count, int max) {
     return 'A rádió $count/$max kapcsolatot tárol';
   }
+
+  @override
+  String get sarneg_randomWord => 'Véletlen szó';
+
+  @override
+  String get sarneg_wellKnownWord =>
+      'Ez a szó nyilvános útmutatókban szerepel, így bárki kipróbálhatja. Egy véletlen szó biztonságosabb.';
+
+  @override
+  String get sarneg_clipboardClears => 'A vágólap 1 perc múlva törlődik.';
+
+  @override
+  String get sarneg_autoClear => '1 perc gépelés nélkül törlődik.';
 }
