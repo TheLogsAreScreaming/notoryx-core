@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="branding/blackout/notoryx-core-tile-1024.png" width="120" alt="NOTORYX app icon">
+  <img src="branding/blackout/notoryx-core-banner.png" width="100%" alt="NOTORYX Core: Engineered for independence.">
 </p>
 
 # NOTORYX Core
@@ -13,12 +13,13 @@ Part of the **NOTORYX** off-grid communications family. **No Towers. No Limits.*
 NOTORYX Core turns your phone or computer and a [MeshCore](https://meshcore.io/) radio into a field communicator that works without cell service, Wi-Fi or the internet. Messages hop from radio to radio across the mesh.
 
 <p align="center">
-  <img src="docs/screenshots/home.png" width="230" alt="Home: radio readouts, check-in, SOS and field tools on frosted glass">
-  <img src="docs/screenshots/chats.png" width="230" alt="Chats: channels and direct conversations">
-  <img src="docs/screenshots/nodes.png" width="230" alt="Nodes: repeaters, people, rooms and sensors heard on the mesh">
+  <img src="docs/screenshots/home.png" width="200" alt="Home: radio readouts, check-in, hold for SOS and field tools">
+  <img src="docs/screenshots/chats.png" width="200" alt="Chats: channels and direct conversations">
+  <img src="docs/screenshots/nodes.png" width="200" alt="Nodes: repeaters, people, rooms and sensors with hop counts">
+  <img src="docs/screenshots/traffic_map.png" width="200" alt="Live traffic map: a packet's route drawn hop by hop">
 </p>
 
-> **Latest stable: [10.0.0](https://github.com/TheLogsAreScreaming/notoryx-core-releases/releases/tag/v10.0.0)** (14 November 2026). **Latest pre-release: [10.1.0-rc.10](https://github.com/TheLogsAreScreaming/notoryx-core-releases/releases/tag/v10.1.0-rc.10)** (19 November 2026), with everything below except SARNEG code words (next build), including the live traffic map, stale-node badge, range rings and on-device spam filter.
+> **Latest stable: [10.0.0](https://github.com/TheLogsAreScreaming/notoryx-core-releases/releases/tag/v10.0.0)** (14 November 2026). **Latest pre-release: [10.1.0-rc.16](https://github.com/TheLogsAreScreaming/notoryx-core-releases/releases/tag/v10.1.0-rc.16)** (21 November 2026), with SARNEG code words, the rebuilt wardrive, up to 5,000 remembered nodes, the live traffic map, stale-node badges, range rings and the on-device spam filter. The new **BLACKOUT** look and app icon shown here are merged and arrive in the next build.
 >
 > NOTORYX Core is checked by automated tests and a mesh simulator but not yet on a wide range of phones and radios: see [Known limitations](docs/KNOWN_LIMITATIONS.md). It is not a replacement for an emergency service or a satellite messenger. Please [report problems in notoryx-core-releases](https://github.com/TheLogsAreScreaming/notoryx-core-releases/issues/new/choose) (issues are off in this source repository).
 
@@ -30,7 +31,7 @@ Get the latest build from **[NOTORYX Core releases](https://github.com/TheLogsAr
 |---|---|---|
 | Android (ARM64 phones) | `NOTORYX-Core-…-arm64-v8a.apk` | Signed with the existing release key |
 | Android, Lite | `NOTORYX-Core-Lite-…-arm64-v8a.apk` | Smaller, with no closed-source parts: no on-device translation, picture messages, camera QR scanner or phone GPS. Signed with the same key |
-| macOS (Intel and Apple silicon, macOS 14+) | `NOTORYX-Core-…-macOS-universal.zip` | Not notarized by Apple (see below) |
+| macOS (Intel and Apple silicon, macOS 14+) | `NOTORYX-Core-…-macOS-universal.zip` | Not notarized by Apple (see below). The newest Mac build is 10.1.0-rc.10: rc.11 to rc.16 are Android-only while a build dependency's download server is fixed |
 
 iOS, Windows, Linux and web builds compile in CI but aren't released yet.
 
@@ -101,10 +102,11 @@ The tabs at the bottom are **Home**, **Chats**, **Nodes**, **Map** and **More**.
 - **Airtime estimate** under the message box (for example `≈0.6 s on air`), worked out from your radio's settings.
 - **Per-channel notifications:** all messages, only when you're mentioned, or muted. A message that arrives twice alerts only once.
 - **Quick messages:** ready-made replies like "On my way" or "At camp" from the message box menu. Edit the list to make it yours.
-- **SARNEG code words** (Tools → SARNEG code word): send grid references, frequencies and times as letters instead of digits. Your team agrees on a 10-letter word with no repeated letter (with BLACKHORSE, `[SARNEG] LRs KSAC` reads as 17S 4823). A SARNEG button in the message box codes the numbers before you press Send, and a received `[SARNEG]` message gets a tap-to-decode line. Share the word by QR code or text, and set a different word for given days. The same format works in every NOTORYX app. It keeps numbers away from a casual listener; it is **not encryption**. Merged after the latest release, so it arrives in the next test build; not yet tried on a phone.
+- **SARNEG code words** (Tools → SARNEG code word): send grid references, frequencies and times as letters instead of digits. Your team agrees on a 10-letter word with no repeated letter (with BLACKHORSE, `[SARNEG] LRs KSAC` reads as 17S 4823). A SARNEG button in the message box codes the numbers before you press Send, and a received `[SARNEG]` message gets a tap-to-decode line. Share the word by QR code or text, and set a different word for given days. The same format works in every NOTORYX app. It keeps numbers away from a casual listener; it is **not encryption**. The SARNEG screen blocks screenshots, numbers you encode or decode by hand there clear after a minute without typing, and anything copied from it is wiped from the clipboard after a minute.
 - **Direct messages:** stop retrying a message that's still being sent, and a note in a new chat that the other person has to add you as a contact before they can read and answer.
 - **Share your position or a contact** from the message box. Received contacts can be added in one tap, and **Add contact from clipboard** accepts links, adverts (even wrapped across lines) and bare public keys.
 - **Discovered contacts:** add one with a tap, or long-press to pick several (or **Add all shown**) and add them together, up to the room left on your radio.
+- **Remembers up to 5,000 heard nodes**, including contacts your radio drops when its list is full, and **Import nodes** reads a JSON or CSV list, contact links, adverts or public keys from a file or the clipboard. **Nodes** on Home counts everything the app knows, with how full your radio's contact list is.
 - **Region tags:** a channel post scoped to a region shows it next to the time, for example **📍 ct**.
 - **Link previews** (off by default, since fetching one tells the site your IP address).
 - **Area-limited channel messages** that stay within a radius of you. These need radios running flood-corridor firmware.
@@ -119,7 +121,7 @@ The tabs at the bottom are **Home**, **Chats**, **Nodes**, **Map** and **More**.
 - **Compass to any node:** **Point me to it** on a node opens a compass with an arrow, distance and "Turn left 35°". It opens from the map, the Nodes list and the path tools.
 - **Coordinates** as decimal degrees, DMS, MGRS, UTM or Maidenhead locator.
 - **Map telemetry:** battery, temperature, humidity or pressure badges on the map. Readings dim after an hour and hide after a day, and the map remembers your choice.
-- **Wardrive:** ping as you drive or hike and map which repeaters heard you, and how well, both ways. Pings use your phone's GPS and the map follows you. Drives are saved.
+- **Wardrive:** ping as you drive or hike and map which repeaters heard you, and how well, both ways. Four modes: **Discovery** (zero-hop, the default), **Trace** (one repeater, measured both ways), **Channel** (a short post to #wardriving; it floods the mesh, so it's never the default and no position goes on air) and **Hybrid**. Packets your radio hears anyway are mapped too, at no airtime cost. Pings wait until you've moved and skip squares heard recently. The map is coloured in 100 m or 300 m squares (both ways, repeater only, passive, no answer, skipped), with per-repeater stats, a noise-floor graph, export to GPX, KML, CSV or GeoJSON, and an option to keep running with the screen off. Drives are saved.
 - **Network scan** (More → Networks): find MeshCore networks nearby. A radio only hears networks on its exact settings, so a scan switches yours to each network in turn and switches back. **Quick** (the default) sends one zero-hop discover ping on each and listens about 8 s, so a scan takes well under a minute; **Thorough** only listens, 30–90 s each, and also finds networks without a repeater in range. The first scan checks every preset in your band; after that, the networks you've found and saved plus your country's preset. Each network heard is logged with the time, place, signal and its nodes, so you can map it, export CSV or GPX, save it, or join it with one tap. You're off your own mesh while it scans, so it won't run during an SOS or a trip, and the radio's auto-add is paused so other networks' nodes don't fill your contacts.
 - **Path graph:** every path you've heard, drawn as flows from far repeaters to you, or as a **network** diagram with you in the middle. Short (1-byte) hops are matched to a specific repeater using longer paths, and the app remembers which repeater wins a shared short ID.
 - **Route Intelligence:** learned routes and the best repeaters your radio hears directly. **Route view** shows each link of a contact's route with the signal both ways, and lets you pick a different route.
@@ -168,7 +170,7 @@ The tabs at the bottom are **Home**, **Chats**, **Nodes**, **Map** and **More**.
 - **LetsMesh-style sign-in** with a token signed by your radio, so its private key never leaves it. LetsMesh (US and EU) and MeshRank presets are included; they're community services, not part of NOTORYX.
 
 ### Look and feel
-- **Frosted ember:** the main screens sit on a warm glow, with see-through glass panels and a floating tab bar. With reduce motion turned on, the blur is off.
+- **BLACKOUT look:** matte black, charcoal and steel with frost-white text and the steel eagle-N app icon. The main screens sit on a soft glow with see-through glass panels and a floating tab bar. With reduce motion turned on, the blur is off.
 - **Your own background:** the theme's glow, a flat color, a gradient, a soft color blend or your own photo, with dim and blur controls so text stays readable.
 - **Node looks:** give any node a color or a photo. It shows in the Nodes list and on the map.
 - **Dark-mode theme:** an optional second theme for when your phone is in dark mode.
@@ -181,38 +183,39 @@ The tabs at the bottom are **Home**, **Chats**, **Nodes**, **Map** and **More**.
 - Available in 18 languages.
 
 <p align="center">
-  <img src="docs/screenshots/more.png" width="200" alt="More: every tool and setting, searchable">
-  <img src="docs/screenshots/channel_directory.png" width="200" alt="Channel directory: local, emergency and active channels">
-  <img src="docs/screenshots/access_control.png" width="200" alt="Repeater access control">
-  <img src="docs/screenshots/networks.png" width="200" alt="Networks: scan for nearby networks and keep a log">
+  <img src="docs/screenshots/trip.png" width="200" alt="Trip and field operations: plan, start a trip and send check-ins">
+  <img src="docs/screenshots/sarneg.png" width="200" alt="SARNEG code word setup">
+  <img src="docs/screenshots/wardrive.png" width="200" alt="Wardrive: modes, coverage squares and legend">
+  <img src="docs/screenshots/map_coverage.png" width="200" alt="Map + coverage: every coverage and map tool in one place">
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/home_tactical.png" width="160" alt="Tactical theme">
-  <img src="docs/screenshots/home_okabe_ito.png" width="160" alt="Okabe-Ito color-blind safe theme">
-  <img src="docs/screenshots/home_night_ops.png" width="160" alt="Night Ops low-light theme">
-  <img src="docs/screenshots/home_seasonal.png" width="160" alt="Seasonal theme in autumn">
+  <img src="docs/screenshots/channel_chat.png" width="200" alt="A channel chat with repeats and delivery ticks">
+  <img src="docs/screenshots/dm_chat.png" width="200" alt="A direct chat with delivery status">
+  <img src="docs/screenshots/more.png" width="200" alt="More: every tool and setting, searchable">
+  <img src="docs/screenshots/settings.png" width="200" alt="Settings: radio card, battery saver and refresh rate">
 </p>
 
 <p align="center">
   <img src="docs/screenshots/routes.png" width="200" alt="Route Intelligence">
   <img src="docs/screenshots/path_graph.png" width="200" alt="Path graph showing how messages reach you">
-  <img src="docs/screenshots/settings.png" width="200" alt="Settings">
-</p>
-
-<p align="center">
-  <img src="docs/screenshots/dm_chat.png" width="200" alt="A direct chat with delivery status">
+  <img src="docs/screenshots/networks.png" width="200" alt="Networks: scan for nearby networks and keep a log">
   <img src="docs/screenshots/battery_watch.png" width="200" alt="Battery watch: repeater battery history and trend">
-  <img src="docs/screenshots/home_light.png" width="200" alt="Home in light mode">
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/background.png" width="200" alt="Background: theme glow, color, gradient, color blend or your own photo behind the glass">
-  <img src="docs/screenshots/theme_settings.png" width="200" alt="Theme settings with a different theme in dark mode">
-  <img src="docs/screenshots/checklist_run.png" width="200" alt="Before a trip checklist">
-  <img src="docs/screenshots/firmware_guide.png" width="200" alt="Guided firmware update">
+  <img src="docs/screenshots/channel_directory.png" width="200" alt="Channel directory: local, emergency and active channels">
+  <img src="docs/screenshots/access_control.png" width="200" alt="Repeater access control">
 </p>
-<p align="center"><em>Captured on a phone running 10.1.0-rc.5 with the Night Ops theme.</em></p>
+
+<p align="center">
+  <img src="docs/screenshots/home.png" width="150" alt="BLACKOUT theme (default)">
+  <img src="docs/screenshots/home_tactical.png" width="150" alt="Tactical theme">
+  <img src="docs/screenshots/home_okabe_ito.png" width="150" alt="Okabe-Ito color-blind safe theme">
+  <img src="docs/screenshots/home_night_ops.png" width="150" alt="Night Ops low-light theme">
+  <img src="docs/screenshots/home_seasonal.png" width="150" alt="Seasonal theme in autumn">
+</p>
+<p align="center"><em>BLACKOUT · Tactical · Okabe-Ito · Night Ops · Seasonal. Screenshots are rendered from the app with sample data (<code>test/preview/</code>), not captured on a phone.</em></p>
 
 ## Add your area's mesh settings
 
@@ -274,7 +277,7 @@ flutter test
 - `lib/services/`: field ops, coverage, routing, MQTT, notifications and other services
 - `lib/models/`, `lib/storage/`: data and persistence
 - `lib/theme/`: themes and colors
-- `test/`: unit and widget tests; `test/preview/` renders screenshots (`PREVIEW_OUT=dir flutter test test/preview`, with `PREVIEW_THEME=neon_anarchy`, `pink_overload`, `night_ops` and so on for other themes, and `PREVIEW_THEME=seasonal PREVIEW_SEASON=winter` for a season)
+- `test/`: unit and widget tests; `test/preview/` renders screenshots (`PREVIEW_OUT=dir flutter test test/preview`, with `PREVIEW_THEME=tactical`, `okabe_ito` or `night_ops` for other themes (BLACKOUT is the default), and `PREVIEW_THEME=seasonal PREVIEW_SEASON=winter` for a season)
 
 ## Contributing
 

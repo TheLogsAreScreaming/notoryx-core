@@ -79,10 +79,23 @@ import 'package:meshcore_open/services/channel_directory_service.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 import 'package:meshcore_open/screens/scanner_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:meshcore_open/screens/sarneg/sarneg_ui.dart';
+import 'package:meshcore_open/screens/bastion_map_hub_screen.dart';
+import 'package:meshcore_open/screens/wardrive_screen.dart';
+import 'package:meshcore_open/services/team_tracking_service.dart';
+import 'package:meshcore_open/services/waypoint_store.dart';
+import 'package:meshcore_open/services/wardrive_service.dart';
 
-// Anchored to today so time-filtered screens (path graph) have data in range.
+// Anchored to now so time-filtered screens (path graph) have data in range
+// and ages read as minutes, not hours.
 final _today = DateTime.now();
-final _now = DateTime(_today.year, _today.month, _today.day, 9, 30);
+final _now = DateTime(
+  _today.year,
+  _today.month,
+  _today.day,
+  _today.hour,
+  _today.minute,
+);
 
 Uint8List _key(int seed) =>
     Uint8List.fromList(List.generate(32, (i) => (seed * 37 + i * 11) & 0xFF));
@@ -107,8 +120,8 @@ Contact _contact(
 final _contacts = [
   _contact(1, 'Ridge Camp', advTypeChat, ago: 2),
   _contact(2, 'Sam (trail crew)', advTypeChat, hops: 2, ago: 14),
-  _contact(3, 'Hollyburn RPT', advTypeRepeater, hops: 0, ago: 1),
-  _contact(4, 'Cypress Bowl RPT', advTypeRepeater, hops: 1, ago: 40),
+  _contact(3, 'Summit RPT', advTypeRepeater, hops: 0, ago: 1),
+  _contact(4, 'Valley RPT', advTypeRepeater, hops: 1, ago: 40),
   _contact(5, 'Basecamp Room', advTypeRoom, hops: 2, ago: 90),
   _contact(6, 'Weather Stn 3', advTypeSensor, hops: 3, ago: 300),
 ];
@@ -130,7 +143,7 @@ List<ChannelMessage> _channelMessages(int index) => [
   ),
   ChannelMessage(
     senderName: 'Me',
-    text: 'Copy, 20 min out. Repeater at Hollyburn is solid.',
+    text: 'Copy, 20 min out. Repeater on the summit is solid.',
     timestamp: _now.subtract(const Duration(minutes: 18)),
     isOutgoing: true,
     status: ChannelMessageStatus.sent,
@@ -139,7 +152,7 @@ List<ChannelMessage> _channelMessages(int index) => [
   ),
   ChannelMessage(
     senderName: 'Sam (trail crew)',
-    text: 'Gate is open, road is icy past km 4 👍',
+    text: 'Gate is open, road is icy past km 4.',
     timestamp: _now.subtract(const Duration(minutes: 5)),
     isOutgoing: false,
     channelIndex: index,
@@ -394,6 +407,21 @@ Widget _app(Widget home, ThemeMode mode) {
       ChangeNotifierProvider<MeshCoreConnector>.value(value: connector),
       ChangeNotifierProvider(create: (_) => FieldOpsService(connector)..load()),
       ChangeNotifierProvider(
+        create: (context) {
+          final fieldOps = context.read<FieldOpsService>();
+          return TeamTrackingService(
+            connector: connector,
+            trip: fieldOps,
+            tripActive: () => fieldOps.trip.active,
+            prefs: PrefsManager.instance,
+          );
+        },
+      ),
+      ChangeNotifierProvider(
+        create: (_) => WaypointStore(PrefsManager.instance),
+      ),
+      ChangeNotifierProvider(create: (_) => WardriveService(connector)),
+      ChangeNotifierProvider(
         create: (_) => SosRelayService.forConnector(connector),
       ),
       ChangeNotifierProvider(
@@ -453,6 +481,12 @@ void main() {
   final out = Platform.environment['PREVIEW_OUT'];
   final screens = <String, Widget Function()>{
     'home': () => const BastionHomeScreen(),
+    'sarneg': () {
+      SarnegKeys.instance = SarnegKeys(storage: MemorySarnegStorage());
+      return const SarnegScreen();
+    },
+    'map_hub': () => const BastionMapHubScreen(),
+    'wardrive': () => const WardriveScreen(),
     'tools': () {
       // Hide the one-time "Some tools moved" note, as a returning user sees it.
       unawaited(
@@ -676,8 +710,8 @@ List<NetworkSighting> _sampleSightings() {
       bestSnr: 7.25,
       bestRssi: -92,
       nodes: const [
-        HeardNode(key: 'a1b2c3d4', name: 'Hollyburn RPT', type: 2),
-        HeardNode(key: 'e5f60718', name: 'Cypress Bowl RPT', type: 2),
+        HeardNode(key: 'a1b2c3d4', name: 'Summit RPT', type: 2),
+        HeardNode(key: 'e5f60718', name: 'Valley RPT', type: 2),
         HeardNode(key: '99aa0011', name: 'Ridge Camp', type: 1),
       ],
     ),
@@ -695,7 +729,7 @@ List<NetworkSighting> _sampleSightings() {
       packets: 3,
       bestSnr: -4.5,
       bestRssi: -118,
-      nodes: const [HeardNode(key: '0badf00d', name: 'Seymour RPT', type: 2)],
+      nodes: const [HeardNode(key: '0badf00d', name: 'Lakeside RPT', type: 2)],
     ),
   ];
 }
