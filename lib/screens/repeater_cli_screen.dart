@@ -144,7 +144,7 @@ class _RepeaterCliScreenState extends State<RepeaterCliScreen> {
     if (showDebug && mounted) {
       final frame = buildSendCliCommandFrame(
         widget.repeater.publicKey,
-        command,
+        normalizeRepeaterClockSyncCommand(command),
         txtType: widget.companion ? txtTypeCliCommand : txtTypeCliData,
       );
       DebugFrameViewer.showFrameDebug(
