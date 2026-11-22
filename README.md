@@ -19,7 +19,7 @@ NOTORYX Core turns your phone or computer and a [MeshCore](https://meshcore.io/)
   <img src="docs/screenshots/traffic_map.png" width="200" alt="Live traffic map: a packet's route drawn hop by hop">
 </p>
 
-> **Latest stable: [10.0.0](https://github.com/TheLogsAreScreaming/notoryx-core-releases/releases/tag/v10.0.0)** (14 November 2026). **Latest pre-release: [10.1.0-rc.16](https://github.com/TheLogsAreScreaming/notoryx-core-releases/releases/tag/v10.1.0-rc.16)** (21 November 2026), with SARNEG code words, the rebuilt wardrive, up to 5,000 remembered nodes, the live traffic map, stale-node badges, range rings and the on-device spam filter. The new **BLACKOUT** look and app icon shown here are merged and arrive in the next build.
+> **Latest stable: [10.0.0](https://github.com/TheLogsAreScreaming/notoryx-core-releases/releases/tag/v10.0.0)** (14 November 2026). **Latest pre-release: [10.1.0-rc.17](https://github.com/TheLogsAreScreaming/notoryx-core-releases/releases/tag/v10.1.0-rc.17)** (22 November 2026) with the new **BLACKOUT** look and app icon shown here, plus SARNEG code words, the rebuilt wardrive, up to 5,000 remembered nodes, the live traffic map, stale-node badges, range rings and the on-device spam filter.
 >
 > NOTORYX Core is checked by automated tests and a mesh simulator but not yet on a wide range of phones and radios: see [Known limitations](docs/KNOWN_LIMITATIONS.md). It is not a replacement for an emergency service or a satellite messenger. Please [report problems in notoryx-core-releases](https://github.com/TheLogsAreScreaming/notoryx-core-releases/issues/new/choose) (issues are off in this source repository).
 
@@ -31,7 +31,7 @@ Get the latest build from **[NOTORYX Core releases](https://github.com/TheLogsAr
 |---|---|---|
 | Android (ARM64 phones) | `NOTORYX-Core-…-arm64-v8a.apk` | Signed with the existing release key |
 | Android, Lite | `NOTORYX-Core-Lite-…-arm64-v8a.apk` | Smaller, with no closed-source parts: no on-device translation, picture messages, camera QR scanner or phone GPS. Signed with the same key |
-| macOS (Intel and Apple silicon, macOS 14+) | `NOTORYX-Core-…-macOS-universal.zip` | Not notarized by Apple (see below). The newest Mac build is 10.1.0-rc.10: rc.11 to rc.16 are Android-only while a build dependency's download server is fixed |
+| macOS (Intel and Apple silicon, macOS 14+) | `NOTORYX-Core-…-macOS-universal.zip` | Not notarized by Apple (see below). The newest Mac build is 10.1.0-rc.10: rc.11 to rc.17 are Android-only while a build dependency's download server is fixed |
 
 iOS, Windows, Linux and web builds compile in CI but aren't released yet.
 
