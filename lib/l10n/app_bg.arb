@@ -4357,6 +4357,8 @@
   "theme_descNightOps": "Приглушено червено върху почти черно за слаба светлина",
   "theme_descSeasonal": "Сменя се със сезоните и празниците",
   "theme_selected": "Избрана",
+  "theme_customBackdropNote": "Включен е ваш собствен фон, затова фонът на тази тема е скрит.",
+  "theme_useThemeBackdrop": "Фон на темата",
   "seasonal_season": "Сезон",
   "seasonal_auto": "Автоматично (сега: {season})",
   "seasonal_autoHint": "Следва датата на устройството, със сезони за северното полукълбо",

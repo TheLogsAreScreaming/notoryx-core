@@ -10806,6 +10806,13 @@ class AppLocalizationsRu extends AppLocalizations {
   String get theme_selected => 'Выбрана';
 
   @override
+  String get theme_customBackdropNote =>
+      'Включён ваш собственный фон, поэтому фон этой темы скрыт.';
+
+  @override
+  String get theme_useThemeBackdrop => 'Фон темы';
+
+  @override
   String get seasonal_season => 'Время года';
 
   @override

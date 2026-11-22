@@ -10796,6 +10796,13 @@ class AppLocalizationsFr extends AppLocalizations {
   String get theme_selected => 'Sélectionné';
 
   @override
+  String get theme_customBackdropNote =>
+      'Votre propre arrière-plan est activé, celui de ce thème est donc masqué.';
+
+  @override
+  String get theme_useThemeBackdrop => 'Fond du thème';
+
+  @override
   String get seasonal_season => 'Saison';
 
   @override

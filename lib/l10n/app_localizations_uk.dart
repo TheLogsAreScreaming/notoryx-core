@@ -10803,6 +10803,13 @@ class AppLocalizationsUk extends AppLocalizations {
   String get theme_selected => 'Вибрано';
 
   @override
+  String get theme_customBackdropNote =>
+      'Увімкнено ваш власний фон, тому фон цієї теми приховано.';
+
+  @override
+  String get theme_useThemeBackdrop => 'Фон теми';
+
+  @override
   String get seasonal_season => 'Пора року';
 
   @override

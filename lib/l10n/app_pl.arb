@@ -4395,6 +4395,8 @@
   "theme_descNightOps": "Przygaszone czerwienie na prawie czerni przy słabym świetle",
   "theme_descSeasonal": "Zmienia się z porami roku i świętami",
   "theme_selected": "Wybrany",
+  "theme_customBackdropNote": "Masz włączone własne tło, więc tło tego motywu jest ukryte.",
+  "theme_useThemeBackdrop": "Tło motywu",
   "seasonal_season": "Pora roku",
   "seasonal_auto": "Automatycznie (teraz {season})",
   "seasonal_autoHint": "Według daty urządzenia, z porami roku półkuli północnej",

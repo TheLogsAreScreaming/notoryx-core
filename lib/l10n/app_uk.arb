@@ -4337,6 +4337,8 @@
   "theme_descNightOps": "Приглушені червоні на майже чорному для темряви",
   "theme_descSeasonal": "Змінюється з порами року і святами",
   "theme_selected": "Вибрано",
+  "theme_customBackdropNote": "Увімкнено ваш власний фон, тому фон цієї теми приховано.",
+  "theme_useThemeBackdrop": "Фон теми",
   "seasonal_season": "Пора року",
   "seasonal_auto": "Автоматично (зараз {season})",
   "seasonal_autoHint": "За датою пристрою, сезони північної півкулі",

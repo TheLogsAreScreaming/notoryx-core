@@ -4357,6 +4357,8 @@
   "theme_descNightOps": "Tlmené červené na takmer čiernej pre slabé svetlo",
   "theme_descSeasonal": "Mení sa s ročnými obdobiami a sviatkami",
   "theme_selected": "Vybrané",
+  "theme_customBackdropNote": "Máte zapnuté vlastné pozadie, preto je pozadie tejto témy skryté.",
+  "theme_useThemeBackdrop": "Pozadie témy",
   "seasonal_season": "Ročné obdobie",
   "seasonal_auto": "Automaticky (teraz {season})",
   "seasonal_autoHint": "Podľa dátumu zariadenia, s ročnými obdobiami severnej pologule",

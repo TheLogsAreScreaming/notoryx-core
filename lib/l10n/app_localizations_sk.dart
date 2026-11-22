@@ -10739,6 +10739,13 @@ class AppLocalizationsSk extends AppLocalizations {
   String get theme_selected => 'Vybrané';
 
   @override
+  String get theme_customBackdropNote =>
+      'Máte zapnuté vlastné pozadie, preto je pozadie tejto témy skryté.';
+
+  @override
+  String get theme_useThemeBackdrop => 'Pozadie témy';
+
+  @override
   String get seasonal_season => 'Ročné obdobie';
 
   @override

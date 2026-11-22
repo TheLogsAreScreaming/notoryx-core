@@ -10759,6 +10759,13 @@ class AppLocalizationsSl extends AppLocalizations {
   String get theme_selected => 'Izbrano';
 
   @override
+  String get theme_customBackdropNote =>
+      'Vklopljeno imate lastno ozadje, zato je ozadje te teme skrito.';
+
+  @override
+  String get theme_useThemeBackdrop => 'Ozadje teme';
+
+  @override
   String get seasonal_season => 'Letni čas';
 
   @override

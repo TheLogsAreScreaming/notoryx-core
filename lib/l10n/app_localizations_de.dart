@@ -10775,6 +10775,13 @@ class AppLocalizationsDe extends AppLocalizations {
   String get theme_selected => 'Ausgewählt';
 
   @override
+  String get theme_customBackdropNote =>
+      'Dein eigener Hintergrund ist aktiv, daher ist der Hintergrund dieses Designs verdeckt.';
+
+  @override
+  String get theme_useThemeBackdrop => 'Design-Hintergrund';
+
+  @override
   String get seasonal_season => 'Jahreszeit';
 
   @override

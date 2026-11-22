@@ -6,6 +6,7 @@ import 'package:meshcore_open/connector/meshcore_protocol.dart';
 import 'package:meshcore_open/l10n/app_localizations.dart';
 import 'package:meshcore_open/models/app_settings.dart';
 import 'package:meshcore_open/services/app_settings_service.dart';
+import 'package:meshcore_open/services/backdrop_store.dart';
 import 'package:meshcore_open/storage/prefs_manager.dart';
 import 'package:meshcore_open/theme/mesh_theme.dart';
 import 'package:meshcore_open/widgets/theme_picker.dart';
@@ -35,21 +36,26 @@ Future<AppSettingsService> freshSettings([
   return settings;
 }
 
-Widget pickerApp(AppSettingsService settings, {double textScale = 1}) =>
-    ChangeNotifierProvider.value(
-      value: settings,
-      child: MaterialApp(
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
-        supportedLocales: AppLocalizations.supportedLocales,
-        builder: (context, child) => MediaQuery(
-          data: MediaQuery.of(
-            context,
-          ).copyWith(textScaler: TextScaler.linear(textScale)),
-          child: child!,
-        ),
-        home: const Scaffold(body: SingleChildScrollView(child: ThemePicker())),
-      ),
-    );
+Widget pickerApp(
+  AppSettingsService settings, {
+  double textScale = 1,
+  BackdropStore? backdrop,
+}) => ChangeNotifierProvider.value(
+  value: settings,
+  child: MaterialApp(
+    localizationsDelegates: AppLocalizations.localizationsDelegates,
+    supportedLocales: AppLocalizations.supportedLocales,
+    builder: (context, child) => MediaQuery(
+      data: MediaQuery.of(
+        context,
+      ).copyWith(textScaler: TextScaler.linear(textScale)),
+      child: child!,
+    ),
+    home: Scaffold(
+      body: SingleChildScrollView(child: ThemePicker(backdropStore: backdrop)),
+    ),
+  ),
+);
 
 void main() {
   tearDown(() => MeshPalette.current = BastionTheme.fallback.palette);
@@ -418,6 +424,47 @@ void main() {
         settings.dispose();
       });
     }
+
+    testWidgets('a custom background gets an offer to switch it back', (
+      tester,
+    ) async {
+      final settings = await freshSettings();
+      final prefs = await SharedPreferences.getInstance();
+      final backdrop = BackdropStore(prefs: prefs);
+      const mesh = BackdropStyle(kind: BackdropKind.mesh);
+      await backdrop.setStyle(mesh);
+      await tester.binding.setSurfaceSize(const Size(390, 2400));
+      addTearDown(() => tester.binding.setSurfaceSize(null));
+      await tester.pumpWidget(pickerApp(settings, backdrop: backdrop));
+      final offer = find.byKey(const ValueKey('theme-backdrop-offer'));
+
+      // Tapping the theme already chosen changes nothing, so no offer.
+      await tester.tap(find.byKey(const ValueKey('theme-blackout')));
+      await tester.pumpAndSettle();
+      expect(offer, findsNothing);
+
+      await tester.tap(find.byKey(const ValueKey('theme-tactical')));
+      await tester.pumpAndSettle();
+      expect(settings.settings.appTheme, 'tactical');
+      expect(offer, findsOneWidget);
+      expect(backdrop.style.kind, BackdropKind.mesh);
+
+      await tester.tap(find.text('Use theme background'));
+      await tester.pumpAndSettle();
+      expect(backdrop.style.kind, BackdropKind.theme);
+      // The colours stay, so the background can be turned back on.
+      expect(backdrop.style.color1, mesh.color1);
+      expect(backdrop.style.color2, mesh.color2);
+      final reloaded = BackdropStore(prefs: prefs);
+      expect(reloaded.style.kind, BackdropKind.theme);
+
+      // With the theme's own background there is nothing to offer.
+      await tester.tap(find.byKey(const ValueKey('theme-night_ops')));
+      await tester.pumpAndSettle();
+      expect(offer, findsNothing);
+      await tester.pumpWidget(const SizedBox.shrink());
+      settings.dispose();
+    });
 
     testWidgets('two columns on a phone', (tester) async {
       final settings = await freshSettings();

@@ -10744,6 +10744,13 @@ class AppLocalizationsBg extends AppLocalizations {
   String get theme_selected => 'Избрана';
 
   @override
+  String get theme_customBackdropNote =>
+      'Включен е ваш собствен фон, затова фонът на тази тема е скрит.';
+
+  @override
+  String get theme_useThemeBackdrop => 'Фон на темата';
+
+  @override
   String get seasonal_season => 'Сезон';
 
   @override

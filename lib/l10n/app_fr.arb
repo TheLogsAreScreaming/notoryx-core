@@ -4491,6 +4491,8 @@
   "theme_descNightOps": "Rouges atténués sur quasi-noir pour la faible lumière",
   "theme_descSeasonal": "Change avec les saisons et les fêtes",
   "theme_selected": "Sélectionné",
+  "theme_customBackdropNote": "Votre propre arrière-plan est activé, celui de ce thème est donc masqué.",
+  "theme_useThemeBackdrop": "Fond du thème",
   "seasonal_season": "Saison",
   "seasonal_auto": "Automatique ({season} en ce moment)",
   "seasonal_autoHint": "Suit la date de l'appareil, avec les saisons de l'hémisphère nord",

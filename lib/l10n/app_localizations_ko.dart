@@ -10268,6 +10268,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get theme_selected => '선택됨';
 
   @override
+  String get theme_customBackdropNote => '내 배경이 켜져 있어 이 테마의 배경이 가려집니다.';
+
+  @override
+  String get theme_useThemeBackdrop => '테마 배경 사용';
+
+  @override
   String get seasonal_season => '계절';
 
   @override

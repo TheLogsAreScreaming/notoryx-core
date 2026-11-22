@@ -4395,6 +4395,8 @@
   "theme_descNightOps": "Tompa vörösek majdnem feketén, gyenge fényhez",
   "theme_descSeasonal": "Az évszakokkal és ünnepekkel változik",
   "theme_selected": "Kiválasztva",
+  "theme_customBackdropNote": "Saját háttér van bekapcsolva, ezért a téma háttere rejtve marad.",
+  "theme_useThemeBackdrop": "Téma háttere",
   "seasonal_season": "Évszak",
   "seasonal_auto": "Automatikus (most: {season})",
   "seasonal_autoHint": "Az eszköz dátumát követi, északi féltekei évszakokkal",
