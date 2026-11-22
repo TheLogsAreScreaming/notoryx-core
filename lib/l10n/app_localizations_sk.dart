@@ -14312,4 +14312,74 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get wardrive_explainHybrid =>
       'Objavovacie a kanálové pingy sa striedajú: blízke opakovače pri jednom, širšia sieť pri ďalšom.';
+
+  @override
+  String get wardrive_legendBothWays => 'Oboma smermi';
+
+  @override
+  String get wardrive_legendRepeaterOnly => 'Len opakovač';
+
+  @override
+  String get wardrive_legendPassive => 'Pasívne';
+
+  @override
+  String get wardrive_legendNoAnswer => 'Bez odpovede';
+
+  @override
+  String get wardrive_legendSkipped => 'Preskočené';
+
+  @override
+  String wardrive_squareSize(int metres) {
+    return 'Štvorce $metres m';
+  }
+
+  @override
+  String get wardrive_thisDrive => 'Táto jazda';
+
+  @override
+  String get wardrive_allDrives => 'Všetky jazdy';
+
+  @override
+  String get wardrive_squareTitle => 'Detaily štvorca';
+
+  @override
+  String wardrive_squareSummary(int pings, int heard, int passive) {
+    return 'Pingy: $pings · počuté: $heard · pasívne: $passive';
+  }
+
+  @override
+  String wardrive_squareLast(String time) {
+    return 'naposledy $time';
+  }
+
+  @override
+  String get wardrive_showOnly => 'Len tento';
+
+  @override
+  String wardrive_showingOnly(String name) {
+    return 'Len $name';
+  }
+
+  @override
+  String get wardrive_clearFilter => 'Zobraziť všetko';
+
+  @override
+  String get wardrive_repeaterStats => 'Štatistiky opakovačov';
+
+  @override
+  String wardrive_statsLine(int squares, String best, String avg) {
+    return 'Štvorce: $squares · najlepší $best dB · priemer $avg dB';
+  }
+
+  @override
+  String wardrive_farthest(String km) {
+    return 'najďalej $km km';
+  }
+
+  @override
+  String get wardrive_noRepeatersHeard =>
+      'Zatiaľ nebol počutý žiadny opakovač.';
+
+  @override
+  String get wardrive_squareNoRepeaters => 'Tu neodpovedal žiadny opakovač.';
 }

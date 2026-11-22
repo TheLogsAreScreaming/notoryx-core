@@ -14335,4 +14335,73 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get wardrive_explainHybrid =>
       'Felderítő és csatorna-pingek váltakoznak: közeli átjátszók az egyiknél, a tágabb háló a következőnél.';
+
+  @override
+  String get wardrive_legendBothWays => 'Mindkét irányban';
+
+  @override
+  String get wardrive_legendRepeaterOnly => 'Csak átjátszó';
+
+  @override
+  String get wardrive_legendPassive => 'Passzív';
+
+  @override
+  String get wardrive_legendNoAnswer => 'Nincs válasz';
+
+  @override
+  String get wardrive_legendSkipped => 'Kihagyva';
+
+  @override
+  String wardrive_squareSize(int metres) {
+    return '$metres m-es négyzetek';
+  }
+
+  @override
+  String get wardrive_thisDrive => 'Ez az út';
+
+  @override
+  String get wardrive_allDrives => 'Összes út';
+
+  @override
+  String get wardrive_squareTitle => 'Négyzet részletei';
+
+  @override
+  String wardrive_squareSummary(int pings, int heard, int passive) {
+    return 'Pingek: $pings · hallott: $heard · passzív: $passive';
+  }
+
+  @override
+  String wardrive_squareLast(String time) {
+    return 'utoljára $time';
+  }
+
+  @override
+  String get wardrive_showOnly => 'Csak ez';
+
+  @override
+  String wardrive_showingOnly(String name) {
+    return 'Csak $name';
+  }
+
+  @override
+  String get wardrive_clearFilter => 'Összes mutatása';
+
+  @override
+  String get wardrive_repeaterStats => 'Átjátszó-statisztika';
+
+  @override
+  String wardrive_statsLine(int squares, String best, String avg) {
+    return 'Négyzetek: $squares · legjobb $best dB · átlag $avg dB';
+  }
+
+  @override
+  String wardrive_farthest(String km) {
+    return 'legtávolabb $km km';
+  }
+
+  @override
+  String get wardrive_noRepeatersHeard => 'Még nem hallottál átjátszót.';
+
+  @override
+  String get wardrive_squareNoRepeaters => 'Itt egy átjátszó sem válaszolt.';
 }

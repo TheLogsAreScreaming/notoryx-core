@@ -14392,4 +14392,74 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get wardrive_explainHybrid =>
       'Пинги обнаружения и пинги в канал чередуются: ближние ретрансляторы в одном, вся сеть в следующем.';
+
+  @override
+  String get wardrive_legendBothWays => 'В обе стороны';
+
+  @override
+  String get wardrive_legendRepeaterOnly => 'Только ретранслятор';
+
+  @override
+  String get wardrive_legendPassive => 'Пассивно';
+
+  @override
+  String get wardrive_legendNoAnswer => 'Нет ответа';
+
+  @override
+  String get wardrive_legendSkipped => 'Пропущено';
+
+  @override
+  String wardrive_squareSize(int metres) {
+    return 'Квадраты по $metres м';
+  }
+
+  @override
+  String get wardrive_thisDrive => 'Эта поездка';
+
+  @override
+  String get wardrive_allDrives => 'Все поездки';
+
+  @override
+  String get wardrive_squareTitle => 'Подробности квадрата';
+
+  @override
+  String wardrive_squareSummary(int pings, int heard, int passive) {
+    return 'Пинги: $pings · услышано: $heard · пассивно: $passive';
+  }
+
+  @override
+  String wardrive_squareLast(String time) {
+    return 'последний $time';
+  }
+
+  @override
+  String get wardrive_showOnly => 'Только его';
+
+  @override
+  String wardrive_showingOnly(String name) {
+    return 'Только $name';
+  }
+
+  @override
+  String get wardrive_clearFilter => 'Показать все';
+
+  @override
+  String get wardrive_repeaterStats => 'Статистика ретрансляторов';
+
+  @override
+  String wardrive_statsLine(int squares, String best, String avg) {
+    return 'Квадраты: $squares · лучший $best дБ · средний $avg дБ';
+  }
+
+  @override
+  String wardrive_farthest(String km) {
+    return 'дальше всего $km км';
+  }
+
+  @override
+  String get wardrive_noRepeatersHeard => 'Ретрансляторы пока не слышны.';
+
+  @override
+  String get wardrive_squareNoRepeaters =>
+      'Здесь не ответил ни один ретранслятор.';
 }

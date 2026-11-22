@@ -14310,4 +14310,73 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get wardrive_explainHybrid =>
       'Ontdek- en kanaalpings wisselen elkaar af: nabije repeaters bij de ene, het bredere mesh bij de volgende.';
+
+  @override
+  String get wardrive_legendBothWays => 'Beide richtingen';
+
+  @override
+  String get wardrive_legendRepeaterOnly => 'Alleen repeater';
+
+  @override
+  String get wardrive_legendPassive => 'Passief';
+
+  @override
+  String get wardrive_legendNoAnswer => 'Geen antwoord';
+
+  @override
+  String get wardrive_legendSkipped => 'Overgeslagen';
+
+  @override
+  String wardrive_squareSize(int metres) {
+    return 'Vakken van $metres m';
+  }
+
+  @override
+  String get wardrive_thisDrive => 'Deze rit';
+
+  @override
+  String get wardrive_allDrives => 'Alle ritten';
+
+  @override
+  String get wardrive_squareTitle => 'Vakdetails';
+
+  @override
+  String wardrive_squareSummary(int pings, int heard, int passive) {
+    return '$pings pings · $heard gehoord · $passive passief';
+  }
+
+  @override
+  String wardrive_squareLast(String time) {
+    return 'laatst $time';
+  }
+
+  @override
+  String get wardrive_showOnly => 'Alleen deze';
+
+  @override
+  String wardrive_showingOnly(String name) {
+    return 'Alleen $name';
+  }
+
+  @override
+  String get wardrive_clearFilter => 'Alles tonen';
+
+  @override
+  String get wardrive_repeaterStats => 'Repeaterstatistieken';
+
+  @override
+  String wardrive_statsLine(int squares, String best, String avg) {
+    return '$squares vakken · beste $best dB · gem. $avg dB';
+  }
+
+  @override
+  String wardrive_farthest(String km) {
+    return 'verst $km km';
+  }
+
+  @override
+  String get wardrive_noRepeatersHeard => 'Nog geen repeaters gehoord.';
+
+  @override
+  String get wardrive_squareNoRepeaters => 'Hier antwoordde geen repeater.';
 }

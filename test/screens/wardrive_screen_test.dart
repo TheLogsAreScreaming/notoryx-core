@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
@@ -6,6 +7,7 @@ import 'package:meshcore_open/connector/meshcore_connector.dart';
 import 'package:meshcore_open/connector/meshcore_protocol.dart';
 import 'package:meshcore_open/l10n/app_localizations.dart';
 import 'package:meshcore_open/models/contact.dart';
+import 'package:meshcore_open/models/wardrive.dart';
 import 'package:meshcore_open/screens/wardrive_screen.dart';
 import 'package:meshcore_open/services/coverage_hex_service.dart';
 import 'package:meshcore_open/services/wardrive_service.dart';
@@ -101,6 +103,56 @@ void main() {
     await tester.pump(const Duration(seconds: 1));
     expect(service.settings.traceTarget, 'a1b2070707070707');
     expect(find.text('Hilltop'), findsWidgets);
+    await tester.pumpWidget(const SizedBox());
+  });
+
+  testWidgets('map chips, repeater stats and showing one repeater', (
+    tester,
+  ) async {
+    tester.view.physicalSize = const Size(1080, 2400);
+    tester.view.devicePixelRatio = 2.5;
+    addTearDown(tester.view.reset);
+    final drive = WardriveSession(
+      id: '1',
+      startedAt: DateTime.utc(2026, 11, 20),
+      pings: [
+        WardrivePing(
+          at: DateTime.utc(2026, 11, 20, 1),
+          latitude: 41.328,
+          longitude: -73.094,
+          replies: const [
+            WardriveReply(prefix: 'a1b2', snrThere: 3, snrHere: 5),
+          ],
+        ),
+      ],
+    );
+    await PrefsManager.instance.setString(
+      'notoryx_wardrive_sessions_v1',
+      jsonEncode([drive.toJson()]),
+    );
+    service.load();
+    await open(tester);
+
+    await tester.tap(find.byKey(const ValueKey('wardrive-grid-size')));
+    await tester.pump();
+    expect(find.text('100 m squares'), findsOneWidget);
+
+    await tester.tap(find.byKey(const ValueKey('wardrive-all-drives')));
+    await tester.pump();
+    expect(find.text('All drives'), findsOneWidget);
+
+    await tester.tap(find.byKey(const ValueKey('wardrive-repeater-stats')));
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
+    expect(find.textContaining('1 squares · best 3.0 dB'), findsOneWidget);
+    await tester.tap(find.byKey(const ValueKey('wardrive-stats-a1b2')));
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
+    expect(find.text('Only Hilltop'), findsOneWidget);
+
+    await tester.tap(find.byTooltip('Show all'));
+    await tester.pump();
+    expect(find.text('Only Hilltop'), findsNothing);
     await tester.pumpWidget(const SizedBox());
   });
 }

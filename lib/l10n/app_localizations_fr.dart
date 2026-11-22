@@ -14415,4 +14415,74 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get wardrive_explainHybrid =>
       'Pings de découverte et de canal en alternance : relais proches à l\'un, maillage étendu au suivant.';
+
+  @override
+  String get wardrive_legendBothWays => 'Dans les deux sens';
+
+  @override
+  String get wardrive_legendRepeaterOnly => 'Relais seulement';
+
+  @override
+  String get wardrive_legendPassive => 'Passif';
+
+  @override
+  String get wardrive_legendNoAnswer => 'Pas de réponse';
+
+  @override
+  String get wardrive_legendSkipped => 'Ignoré';
+
+  @override
+  String wardrive_squareSize(int metres) {
+    return 'Carrés de $metres m';
+  }
+
+  @override
+  String get wardrive_thisDrive => 'Ce trajet';
+
+  @override
+  String get wardrive_allDrives => 'Tous les trajets';
+
+  @override
+  String get wardrive_squareTitle => 'Détails du carré';
+
+  @override
+  String wardrive_squareSummary(int pings, int heard, int passive) {
+    return '$pings pings · $heard entendus · $passive passifs';
+  }
+
+  @override
+  String wardrive_squareLast(String time) {
+    return 'dernier $time';
+  }
+
+  @override
+  String get wardrive_showOnly => 'Seulement lui';
+
+  @override
+  String wardrive_showingOnly(String name) {
+    return 'Seulement $name';
+  }
+
+  @override
+  String get wardrive_clearFilter => 'Tout afficher';
+
+  @override
+  String get wardrive_repeaterStats => 'Statistiques des relais';
+
+  @override
+  String wardrive_statsLine(int squares, String best, String avg) {
+    return '$squares carrés · meilleur $best dB · moy. $avg dB';
+  }
+
+  @override
+  String wardrive_farthest(String km) {
+    return 'le plus loin $km km';
+  }
+
+  @override
+  String get wardrive_noRepeatersHeard =>
+      'Aucun relais entendu pour l\'instant.';
+
+  @override
+  String get wardrive_squareNoRepeaters => 'Aucun relais n\'a répondu ici.';
 }

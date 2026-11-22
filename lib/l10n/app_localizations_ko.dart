@@ -13725,4 +13725,73 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get wardrive_explainHybrid =>
       '탐색 핑과 채널 핑을 번갈아 보냅니다: 한 번은 가까운 리피터, 다음엔 넓은 메시.';
+
+  @override
+  String get wardrive_legendBothWays => '양방향';
+
+  @override
+  String get wardrive_legendRepeaterOnly => '리피터만';
+
+  @override
+  String get wardrive_legendPassive => '패시브';
+
+  @override
+  String get wardrive_legendNoAnswer => '응답 없음';
+
+  @override
+  String get wardrive_legendSkipped => '건너뜀';
+
+  @override
+  String wardrive_squareSize(int metres) {
+    return '$metres m 칸';
+  }
+
+  @override
+  String get wardrive_thisDrive => '이번 주행';
+
+  @override
+  String get wardrive_allDrives => '모든 주행';
+
+  @override
+  String get wardrive_squareTitle => '칸 상세';
+
+  @override
+  String wardrive_squareSummary(int pings, int heard, int passive) {
+    return '핑 $pings · 수신 $heard · 패시브 $passive';
+  }
+
+  @override
+  String wardrive_squareLast(String time) {
+    return '마지막 $time';
+  }
+
+  @override
+  String get wardrive_showOnly => '이것만 보기';
+
+  @override
+  String wardrive_showingOnly(String name) {
+    return '$name만';
+  }
+
+  @override
+  String get wardrive_clearFilter => '모두 보기';
+
+  @override
+  String get wardrive_repeaterStats => '리피터 통계';
+
+  @override
+  String wardrive_statsLine(int squares, String best, String avg) {
+    return '$squares칸 · 최고 $best dB · 평균 $avg dB';
+  }
+
+  @override
+  String wardrive_farthest(String km) {
+    return '최장 $km km';
+  }
+
+  @override
+  String get wardrive_noRepeatersHeard => '아직 들린 리피터가 없습니다.';
+
+  @override
+  String get wardrive_squareNoRepeaters => '여기서 응답한 리피터가 없습니다.';
 }
