@@ -1,8 +1,5 @@
-• Fleet: health, trends and bulk settings for the repeaters you own
-• Quick Settings tile with radio status and unread count
-• Relayed signal is labelled "last hop"
-• Android Auto: hear messages, reply by voice, mark read
-• Reply and Mark as read from a notification
-• Reactions from another MeshCore app show as reactions
-• Editing a contact no longer makes the radio ignore its new adverts
+• Android Auto: hear messages in the car, reply by voice and mark them read
+• Reply and Mark as read work from a notification without opening the app
+• Reactions sent from another MeshCore app now show as reactions
+• Editing a contact no longer makes the radio ignore that node's new adverts
 • Desktop USB: closing a port frees its buffers

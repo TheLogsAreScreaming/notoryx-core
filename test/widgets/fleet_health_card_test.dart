@@ -66,4 +66,23 @@ void main() {
       findsOneWidget,
     );
   });
+
+  testWidgets('sync count reads naturally', (tester) async {
+    late AppLocalizations l10n;
+    await tester.pumpWidget(
+      MaterialApp(
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        home: Builder(
+          builder: (context) {
+            l10n = AppLocalizations.of(context);
+            return const SizedBox();
+          },
+        ),
+      ),
+    );
+    expect(l10n.fleet_syncDone(1), 'Synced: 1 new reading.');
+    expect(l10n.fleet_syncDone(0), 'Synced: no new readings.');
+    expect(l10n.fleet_syncDone(4), 'Synced: 4 new readings.');
+  });
 }

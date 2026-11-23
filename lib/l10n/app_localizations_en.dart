@@ -15333,7 +15333,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String fleet_syncDone(int count) {
-    return 'Synced: $count new readings.';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Synced: $count new readings.',
+      one: 'Synced: 1 new reading.',
+      zero: 'Synced: no new readings.',
+    );
+    return '$_temp0';
   }
 
   @override

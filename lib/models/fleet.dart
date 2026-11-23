@@ -1,5 +1,7 @@
 import 'package:flutter/foundation.dart';
 
+import '../connector/meshcore_protocol.dart';
+import 'contact.dart';
 import 'firmware_release.dart';
 
 /// A repeater the user owns and wants to watch in Fleet.
@@ -159,14 +161,14 @@ class FleetHealth {
   /// The newest poll, answered or not.
   final FleetSample? lastPoll;
 
-  /// Builds the health from [samples] (any order) and the time the radio
-  /// last heard the repeater's advert, if known.
-  factory FleetHealth.from(List<FleetSample> samples, {DateTime? advertAt}) {
+  /// Builds the health from [samples] (any order). Last heard counts only
+  /// answered polls: advert times come from the repeater's own clock.
+  factory FleetHealth.from(List<FleetSample> samples) {
     final sorted = [...samples]..sort((a, b) => b.at.compareTo(a.at));
     int? mv, nf, up, nb;
     double? snr;
     String? fw;
-    DateTime? heard = advertAt;
+    DateTime? heard;
     for (final s in sorted) {
       if (!s.ok) continue;
       if (heard == null || s.at.isAfter(heard)) heard = s.at;
@@ -312,4 +314,27 @@ parseRepeaterStatusFrame(Uint8List frame) {
     errors: d.getUint16(40, Endian.little),
     lastSnr: d.getInt16(42, Endian.little) / 4.0,
   );
+}
+
+/// Repeaters from [contacts] that can be added to Fleet: each key once (the
+/// first copy wins, so radio contacts beat heard nodes), none already
+/// [listed], matching [query] by name or key prefix, sorted by name. Not by
+/// advert time: that comes from each repeater's own clock.
+List<Contact> pickableRepeaters(
+  Iterable<Contact> contacts, {
+  required bool Function(String key) listed,
+  String query = '',
+}) {
+  final q = query.trim().toLowerCase();
+  final seen = <String>{};
+  return [
+    for (final c in contacts)
+      if (c.type == advTypeRepeater &&
+          seen.add(c.publicKeyHex) &&
+          !listed(c.publicKeyHex) &&
+          (q.isEmpty ||
+              c.name.toLowerCase().contains(q) ||
+              c.publicKeyHex.startsWith(q)))
+        c,
+  ]..sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()));
 }
