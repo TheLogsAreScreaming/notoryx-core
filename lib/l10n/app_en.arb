@@ -7639,5 +7639,56 @@
   "sarneg_randomWord": "Random word",
   "sarneg_wellKnownWord": "This word is printed in public guides, so anyone can try it. A random word is safer.",
   "sarneg_clipboardClears": "The clipboard is cleared in 1 minute.",
-  "sarneg_autoClear": "Clears after 1 minute without typing."
+  "sarneg_autoClear": "Clears after 1 minute without typing.",
+  "channelConflict_banner": "{count, plural, =1{1 channel on the radio differs from the app} other{{count} channels on the radio differ from the app}}",
+  "@channelConflict_banner": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "channelConflict_review": "Review",
+  "channelConflict_title": "Channel differences",
+  "channelConflict_hint": "The radio holds a different name or key in these slots than the app saved. Someone may have changed them with another app, or the app's copy is old. Choose which version to keep for each slot.",
+  "channelConflict_allResolved": "All slots match now.",
+  "channelConflict_slot": "Slot {index}",
+  "@channelConflict_slot": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "channelConflict_onRadio": "On the radio",
+  "channelConflict_inApp": "Saved in the app",
+  "channelConflict_empty": "Empty",
+  "channelConflict_key": "key {fingerprint}",
+  "@channelConflict_key": {
+    "placeholders": {
+      "fingerprint": {
+        "type": "String"
+      }
+    }
+  },
+  "channelConflict_nameDiffers": "Name differs",
+  "channelConflict_keyDiffers": "Key differs",
+  "channelConflict_keepRadio": "Keep radio's",
+  "channelConflict_useApp": "Write app's to radio",
+  "channelConflict_keptRadio": "Kept the radio's version of slot {index}",
+  "@channelConflict_keptRadio": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  },
+  "channelConflict_usedApp": "Wrote the app's version to slot {index}",
+  "@channelConflict_usedApp": {
+    "placeholders": {
+      "index": {
+        "type": "int"
+      }
+    }
+  }
 }

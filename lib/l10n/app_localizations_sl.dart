@@ -14524,4 +14524,69 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get sarneg_autoClear => 'Izbriše se po 1 minuti brez tipkanja.';
+
+  @override
+  String channelConflict_banner(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Kanali v radiu, ki se razlikujejo od aplikacije: $count',
+      one: '1 kanal v radiu se razlikuje od aplikacije',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get channelConflict_review => 'Preglej';
+
+  @override
+  String get channelConflict_title => 'Razlike kanalov';
+
+  @override
+  String get channelConflict_hint =>
+      'Radio ima v teh mestih drugačno ime ali ključ, kot ga je shranila aplikacija. Morda jih je nekdo spremenil z drugo aplikacijo ali pa je kopija v aplikaciji stara. Za vsako mesto izberite, katero različico obdržati.';
+
+  @override
+  String get channelConflict_allResolved => 'Vsa mesta se zdaj ujemajo.';
+
+  @override
+  String channelConflict_slot(int index) {
+    return 'Mesto $index';
+  }
+
+  @override
+  String get channelConflict_onRadio => 'V radiu';
+
+  @override
+  String get channelConflict_inApp => 'Shranjeno v aplikaciji';
+
+  @override
+  String get channelConflict_empty => 'Prazno';
+
+  @override
+  String channelConflict_key(String fingerprint) {
+    return 'ključ $fingerprint';
+  }
+
+  @override
+  String get channelConflict_nameDiffers => 'Ime se razlikuje';
+
+  @override
+  String get channelConflict_keyDiffers => 'Ključ se razlikuje';
+
+  @override
+  String get channelConflict_keepRadio => 'Obdrži iz radia';
+
+  @override
+  String get channelConflict_useApp => 'Zapiši iz aplikacije';
+
+  @override
+  String channelConflict_keptRadio(int index) {
+    return 'Obdržana različica iz radia na mestu $index';
+  }
+
+  @override
+  String channelConflict_usedApp(int index) {
+    return 'Različica iz aplikacije zapisana na mesto $index';
+  }
 }
