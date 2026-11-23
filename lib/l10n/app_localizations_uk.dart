@@ -9010,6 +9010,53 @@ class AppLocalizationsUk extends AppLocalizations {
   String get coverageHex_title => 'Шестикутники покриття';
 
   @override
+  String get gapFinder_title => 'Пошук прогалин';
+
+  @override
+  String get gapFinder_hint =>
+      'Кожне надіслане особисте повідомлення рахується як доставлене чи ні в шестикутнику, де ви були (близько 0,9 км). Будується зі звичайного використання за 30 днів; зберігаються лише шестикутник і день, нічого не залишає телефон.';
+
+  @override
+  String get gapFinder_empty =>
+      'Надсилань поки немає. Тут з\'являться особисті повідомлення, надіслані з відомою позицією.';
+
+  @override
+  String get gapFinder_clear => 'Очистити історію';
+
+  @override
+  String get gapFinder_clearBody =>
+      'Забути всі враховані надсилання на цьому телефоні?';
+
+  @override
+  String get gapFinder_legendGap => 'Прогалина: половина й більше не дійшли';
+
+  @override
+  String get gapFinder_legendPatchy => 'Нестабільно';
+
+  @override
+  String get gapFinder_legendGood => 'Доходить';
+
+  @override
+  String get gapFinder_legendFew => 'Замало надсилань';
+
+  @override
+  String get gapFinder_worst => 'Найгірші шестикутники';
+
+  @override
+  String get gapFinder_notEnough =>
+      'Поки немає шестикутника з двома надсиланнями.';
+
+  @override
+  String gapFinder_cellLine(int failed, int total, int percent) {
+    return 'не дійшло $failed з $total ($percent%)';
+  }
+
+  @override
+  String gapFinder_summary(int gaps, int cells) {
+    return 'прогалин: $gaps з $cells шестикутників';
+  }
+
+  @override
   String get coverageHex_toolSubtitle =>
       'Картуйте, де радіо чує мережу, і діліться цим';
 

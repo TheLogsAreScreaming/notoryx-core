@@ -8968,6 +8968,52 @@ class AppLocalizationsPt extends AppLocalizations {
   String get coverageHex_title => 'Hexágonos de cobertura';
 
   @override
+  String get gapFinder_title => 'Localizador de falhas';
+
+  @override
+  String get gapFinder_hint =>
+      'Cada mensagem direta enviada conta como entregue ou falhada no hexágono onde estava (cerca de 0,9 km). Baseado em 30 dias de uso normal; só se guardam o hexágono e o dia, e nada sai deste telefone.';
+
+  @override
+  String get gapFinder_empty =>
+      'Ainda sem envios contados. As mensagens diretas enviadas com posição conhecida aparecem aqui.';
+
+  @override
+  String get gapFinder_clear => 'Limpar histórico';
+
+  @override
+  String get gapFinder_clearBody =>
+      'Esquecer todos os envios contados neste telefone?';
+
+  @override
+  String get gapFinder_legendGap => 'Falha: metade ou mais falharam';
+
+  @override
+  String get gapFinder_legendPatchy => 'Irregular';
+
+  @override
+  String get gapFinder_legendGood => 'Chega';
+
+  @override
+  String get gapFinder_legendFew => 'Poucos envios';
+
+  @override
+  String get gapFinder_worst => 'Piores hexágonos';
+
+  @override
+  String get gapFinder_notEnough => 'Nenhum hexágono tem ainda dois envios.';
+
+  @override
+  String gapFinder_cellLine(int failed, int total, int percent) {
+    return '$failed de $total falharam ($percent%)';
+  }
+
+  @override
+  String gapFinder_summary(int gaps, int cells) {
+    return '$gaps falhas em $cells hexágonos';
+  }
+
+  @override
   String get coverageHex_toolSubtitle =>
       'Mapeie onde o rádio ouve a malha e partilhe';
 

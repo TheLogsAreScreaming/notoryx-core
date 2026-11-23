@@ -8995,6 +8995,52 @@ class AppLocalizationsDe extends AppLocalizations {
   String get coverageHex_title => 'Abdeckungs-Sechsecke';
 
   @override
+  String get gapFinder_title => 'Lückenfinder';
+
+  @override
+  String get gapFinder_hint =>
+      'Jede gesendete Direktnachricht zählt als zugestellt oder fehlgeschlagen im Sechseck, in dem du warst (etwa 0,9 km). Aus normaler Nutzung über 30 Tage; gespeichert werden nur Sechseck und Tag, und nichts verlässt dieses Telefon.';
+
+  @override
+  String get gapFinder_empty =>
+      'Noch keine Sendungen gezählt. Direktnachrichten mit bekannter Position erscheinen hier.';
+
+  @override
+  String get gapFinder_clear => 'Verlauf löschen';
+
+  @override
+  String get gapFinder_clearBody =>
+      'Alle gezählten Sendungen auf diesem Telefon vergessen?';
+
+  @override
+  String get gapFinder_legendGap => 'Lücke: Hälfte oder mehr fehlgeschlagen';
+
+  @override
+  String get gapFinder_legendPatchy => 'Lückenhaft';
+
+  @override
+  String get gapFinder_legendGood => 'Kommt durch';
+
+  @override
+  String get gapFinder_legendFew => 'Zu wenige Sendungen';
+
+  @override
+  String get gapFinder_worst => 'Schlechteste Sechsecke';
+
+  @override
+  String get gapFinder_notEnough => 'Noch kein Sechseck mit zwei Sendungen.';
+
+  @override
+  String gapFinder_cellLine(int failed, int total, int percent) {
+    return '$failed von $total fehlgeschlagen ($percent %)';
+  }
+
+  @override
+  String gapFinder_summary(int gaps, int cells) {
+    return '$gaps Lücken in $cells Sechsecken';
+  }
+
+  @override
   String get coverageHex_toolSubtitle =>
       'Kartiere, wo dein Funkgerät das Mesh hört, und teile es';
 

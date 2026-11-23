@@ -9016,6 +9016,52 @@ class AppLocalizationsFr extends AppLocalizations {
   String get coverageHex_title => 'Hexagones de couverture';
 
   @override
+  String get gapFinder_title => 'Zones blanches';
+
+  @override
+  String get gapFinder_hint =>
+      'Chaque message direct envoyé compte comme distribué ou échoué dans l\'hexagone où vous étiez (environ 0,9 km). Basé sur 30 jours d\'usage normal ; seuls l\'hexagone et le jour sont gardés, et rien ne quitte ce téléphone.';
+
+  @override
+  String get gapFinder_empty =>
+      'Aucun envoi compté pour l\'instant. Les messages directs envoyés avec une position connue apparaîtront ici.';
+
+  @override
+  String get gapFinder_clear => 'Effacer l\'historique';
+
+  @override
+  String get gapFinder_clearBody =>
+      'Oublier tous les envois comptés sur ce téléphone ?';
+
+  @override
+  String get gapFinder_legendGap => 'Zone blanche : moitié ou plus en échec';
+
+  @override
+  String get gapFinder_legendPatchy => 'Irrégulier';
+
+  @override
+  String get gapFinder_legendGood => 'Passe';
+
+  @override
+  String get gapFinder_legendFew => 'Trop peu d\'envois';
+
+  @override
+  String get gapFinder_worst => 'Pires hexagones';
+
+  @override
+  String get gapFinder_notEnough => 'Aucun hexagone n\'a encore deux envois.';
+
+  @override
+  String gapFinder_cellLine(int failed, int total, int percent) {
+    return '$failed sur $total en échec ($percent %)';
+  }
+
+  @override
+  String gapFinder_summary(int gaps, int cells) {
+    return '$gaps zones blanches sur $cells hexagones';
+  }
+
+  @override
   String get coverageHex_toolSubtitle =>
       'Cartographiez où votre radio entend le maillage et partagez-le';
 

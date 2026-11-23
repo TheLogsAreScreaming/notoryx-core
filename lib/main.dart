@@ -83,6 +83,8 @@ import 'services/direct_repeater_service.dart';
 import 'services/mqtt_uploaders_service.dart';
 import 'services/checklist_store.dart';
 import 'services/coverage_hex_service.dart';
+import 'services/phone_location.dart';
+import 'services/send_gap_log.dart';
 import 'services/channel_discovery_service.dart';
 import 'services/corescope.dart';
 import 'services/my_sensors_service.dart';
@@ -414,6 +416,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   late final SosRelayService _sosRelay;
   late final TeamTrackingService _teamTracking;
   late final CoverageHexService _coverageHex;
+  late final SendGapLog _sendGaps;
   late final ReadAloudService _readAloud;
   final _navigatorKey = GlobalKey<NavigatorState>();
   AppShortcuts? _shortcuts;
@@ -568,6 +571,13 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     );
     _coverageHex = CoverageHexService(widget.connector);
     unawaited(_coverageHex.load());
+    _sendGaps = SendGapLog(
+      outcomes: widget.connector.sendOutcomes,
+      indexer: _coverageHex.indexer,
+      prefs: PrefsManager.instance,
+      position: _gapPosition,
+    );
+    unawaited(_sendGaps.load());
     unawaited(_trackLog.load());
     _readAloud = ReadAloudService(widget.connector, widget.appSettingsService);
     _applyBatterySaver();
@@ -707,6 +717,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _sosRelay.dispose();
     _teamTracking.dispose();
     _coverageHex.dispose();
+    _sendGaps.dispose();
     _checklists.dispose();
     _readAloud.dispose();
     _sensorSubscriptions.dispose();
@@ -985,6 +996,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         ChangeNotifierProvider.value(value: _sosRelay),
         ChangeNotifierProvider.value(value: _teamTracking),
         ChangeNotifierProvider.value(value: _coverageHex),
+        ChangeNotifierProvider.value(value: _sendGaps),
         ChangeNotifierProvider<NodeJournalService?>.value(value: _nodeJournal),
         ChangeNotifierProvider<RegionalPresetService?>.value(
           value: _regionalPresets,
@@ -1062,6 +1074,28 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         debugPrint('App shortcuts not retitled: $e');
       }),
     );
+  }
+
+  /// Where the phone is for the send gap log: a recent phone fix, the
+  /// coverage mapper's fix, or the radio's own position.
+  Future<({double lat, double lon})?> _gapPosition() async {
+    const fresh = Duration(minutes: 10);
+    final now = DateTime.now();
+    try {
+      final phone = await lastKnownPhoneFix();
+      if (phone != null && now.difference(phone.time) < fresh) {
+        return (lat: phone.lat, lon: phone.lon);
+      }
+    } catch (_) {
+      // No phone GPS here; try the others.
+    }
+    final fix = _coverageHex.fix;
+    if (fix != null && now.difference(fix.time) < fresh) {
+      return (lat: fix.lat, lon: fix.lon);
+    }
+    final lat = widget.connector.selfLatitude;
+    final lon = widget.connector.selfLongitude;
+    return lat == null || lon == null ? null : (lat: lat, lon: lon);
   }
 
   void _applyBatterySaver() {

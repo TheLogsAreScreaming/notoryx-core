@@ -8961,6 +8961,53 @@ class AppLocalizationsSk extends AppLocalizations {
   String get coverageHex_title => 'Šesťuholníky pokrytia';
 
   @override
+  String get gapFinder_title => 'Hľadač medzier';
+
+  @override
+  String get gapFinder_hint =>
+      'Každá odoslaná priama správa sa započíta ako doručená alebo neúspešná v šesťuholníku, kde ste boli (asi 0,9 km). Z bežného používania za 30 dní; ukladá sa len šesťuholník a deň a nič neopúšťa telefón.';
+
+  @override
+  String get gapFinder_empty =>
+      'Zatiaľ žiadne započítané odoslania. Zobrazia sa tu priame správy odoslané so známou polohou.';
+
+  @override
+  String get gapFinder_clear => 'Vymazať históriu';
+
+  @override
+  String get gapFinder_clearBody =>
+      'Zabudnúť všetky započítané odoslania v tomto telefóne?';
+
+  @override
+  String get gapFinder_legendGap => 'Medzera: polovica a viac neúspešných';
+
+  @override
+  String get gapFinder_legendPatchy => 'Nestabilné';
+
+  @override
+  String get gapFinder_legendGood => 'Prechádza';
+
+  @override
+  String get gapFinder_legendFew => 'Príliš málo odoslaní';
+
+  @override
+  String get gapFinder_worst => 'Najhoršie šesťuholníky';
+
+  @override
+  String get gapFinder_notEnough =>
+      'Zatiaľ žiadny šesťuholník s dvoma odoslaniami.';
+
+  @override
+  String gapFinder_cellLine(int failed, int total, int percent) {
+    return 'neúspešné $failed z $total ($percent %)';
+  }
+
+  @override
+  String gapFinder_summary(int gaps, int cells) {
+    return 'medzery: $gaps z $cells šesťuholníkov';
+  }
+
+  @override
   String get coverageHex_toolSubtitle =>
       'Mapujte, kde rádio počuje sieť, a zdieľajte to';
 

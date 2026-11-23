@@ -8908,6 +8908,52 @@ class AppLocalizationsSv extends AppLocalizations {
   String get coverageHex_title => 'Täckningshexagoner';
 
   @override
+  String get gapFinder_title => 'Täckningsluckor';
+
+  @override
+  String get gapFinder_hint =>
+      'Varje direktmeddelande du skickar räknas som levererat eller misslyckat i hexagonen du var i (cirka 0,9 km). Byggs av normal användning under 30 dagar; bara hexagon och dag sparas, och inget lämnar telefonen.';
+
+  @override
+  String get gapFinder_empty =>
+      'Inga sändningar räknade än. Direktmeddelanden med känd position visas här.';
+
+  @override
+  String get gapFinder_clear => 'Rensa historik';
+
+  @override
+  String get gapFinder_clearBody =>
+      'Glöm alla räknade sändningar på den här telefonen?';
+
+  @override
+  String get gapFinder_legendGap => 'Lucka: hälften eller fler misslyckades';
+
+  @override
+  String get gapFinder_legendPatchy => 'Ojämn';
+
+  @override
+  String get gapFinder_legendGood => 'Går fram';
+
+  @override
+  String get gapFinder_legendFew => 'För få sändningar';
+
+  @override
+  String get gapFinder_worst => 'Sämsta hexagoner';
+
+  @override
+  String get gapFinder_notEnough => 'Ingen hexagon har två sändningar än.';
+
+  @override
+  String gapFinder_cellLine(int failed, int total, int percent) {
+    return '$failed av $total misslyckades ($percent %)';
+  }
+
+  @override
+  String gapFinder_summary(int gaps, int cells) {
+    return '$gaps luckor i $cells hexagoner';
+  }
+
+  @override
   String get coverageHex_toolSubtitle =>
       'Kartlägg var radion hör meshen och dela det';
 

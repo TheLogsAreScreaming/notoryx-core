@@ -146,6 +146,13 @@ class MeshCoreConnector extends ChangeNotifier {
   Future<void>? _discoveredCacheLoad;
 
   MeshCoreConnectionState _state = MeshCoreConnectionState.disconnected;
+
+  final StreamController<bool> _sendOutcomes =
+      StreamController<bool>.broadcast();
+
+  /// True when an own direct message is delivered, false when it fails.
+  /// Fires once per message, when its status settles.
+  Stream<bool> get sendOutcomes => _sendOutcomes.stream;
   BluetoothDevice? _device;
   BluetoothCharacteristic? _rxCharacteristic;
   BluetoothCharacteristic? _txCharacteristic;
@@ -4971,6 +4978,7 @@ class MeshCoreConnector extends ChangeNotifier {
 
   @override
   void dispose() {
+    unawaited(_sendOutcomes.close());
     _adapterStateSubscription?.cancel();
     _scanSubscription?.cancel();
     _scanNotifyTimer?.cancel();

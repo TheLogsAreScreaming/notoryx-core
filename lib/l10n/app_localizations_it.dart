@@ -8997,6 +8997,52 @@ class AppLocalizationsIt extends AppLocalizations {
   String get coverageHex_title => 'Esagoni di copertura';
 
   @override
+  String get gapFinder_title => 'Trova lacune';
+
+  @override
+  String get gapFinder_hint =>
+      'Ogni messaggio diretto inviato conta come consegnato o fallito nell\'esagono in cui eri (circa 0,9 km). Basato su 30 giorni di uso normale; si salvano solo esagono e giorno, e nulla lascia questo telefono.';
+
+  @override
+  String get gapFinder_empty =>
+      'Nessun invio conteggiato finora. Qui compariranno i messaggi diretti inviati con posizione nota.';
+
+  @override
+  String get gapFinder_clear => 'Cancella cronologia';
+
+  @override
+  String get gapFinder_clearBody =>
+      'Dimenticare tutti gli invii conteggiati su questo telefono?';
+
+  @override
+  String get gapFinder_legendGap => 'Lacuna: metà o più falliti';
+
+  @override
+  String get gapFinder_legendPatchy => 'Discontinuo';
+
+  @override
+  String get gapFinder_legendGood => 'Arriva';
+
+  @override
+  String get gapFinder_legendFew => 'Troppo pochi invii';
+
+  @override
+  String get gapFinder_worst => 'Esagoni peggiori';
+
+  @override
+  String get gapFinder_notEnough => 'Nessun esagono ha ancora due invii.';
+
+  @override
+  String gapFinder_cellLine(int failed, int total, int percent) {
+    return '$failed su $total falliti ($percent%)';
+  }
+
+  @override
+  String gapFinder_summary(int gaps, int cells) {
+    return '$gaps lacune in $cells esagoni';
+  }
+
+  @override
   String get coverageHex_toolSubtitle =>
       'Mappa dove la tua radio sente la rete e condividilo';
 

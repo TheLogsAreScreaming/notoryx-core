@@ -72,9 +72,17 @@ extension _ConnectorMessaging on MeshCoreConnector {
         (m) => m.messageId == message.messageId,
       );
       if (index != -1) {
+        final before = messages[index].status;
         messages[index] = message;
         _messageStore.saveMessages(contactKey, messages);
         _notifyFromPart();
+        // An own direct message just settled: tell the gap finder.
+        final settled =
+            message.status == MessageStatus.delivered ||
+            message.status == MessageStatus.failed;
+        if (message.isOutgoing && settled && before != message.status) {
+          _sendOutcomes.add(message.status == MessageStatus.delivered);
+        }
       }
     }
 

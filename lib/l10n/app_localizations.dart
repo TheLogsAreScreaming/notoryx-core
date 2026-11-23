@@ -14935,6 +14935,84 @@ abstract class AppLocalizations {
   /// **'Coverage hexagons'**
   String get coverageHex_title;
 
+  /// No description provided for @gapFinder_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Gap finder'**
+  String get gapFinder_title;
+
+  /// No description provided for @gapFinder_hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Each direct message you send is counted as delivered or failed in the hexagon you were in (about 0.9 km). Built from normal use over 30 days; only the hexagon and the day are kept, and nothing leaves this phone.'**
+  String get gapFinder_hint;
+
+  /// No description provided for @gapFinder_empty.
+  ///
+  /// In en, this message translates to:
+  /// **'No sends counted yet. Direct messages you send with a known position will show up here.'**
+  String get gapFinder_empty;
+
+  /// No description provided for @gapFinder_clear.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear history'**
+  String get gapFinder_clear;
+
+  /// No description provided for @gapFinder_clearBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Forget every counted send on this phone?'**
+  String get gapFinder_clearBody;
+
+  /// No description provided for @gapFinder_legendGap.
+  ///
+  /// In en, this message translates to:
+  /// **'Gap: half or more failed'**
+  String get gapFinder_legendGap;
+
+  /// No description provided for @gapFinder_legendPatchy.
+  ///
+  /// In en, this message translates to:
+  /// **'Patchy'**
+  String get gapFinder_legendPatchy;
+
+  /// No description provided for @gapFinder_legendGood.
+  ///
+  /// In en, this message translates to:
+  /// **'Gets through'**
+  String get gapFinder_legendGood;
+
+  /// No description provided for @gapFinder_legendFew.
+  ///
+  /// In en, this message translates to:
+  /// **'Too few sends'**
+  String get gapFinder_legendFew;
+
+  /// No description provided for @gapFinder_worst.
+  ///
+  /// In en, this message translates to:
+  /// **'Worst hexagons'**
+  String get gapFinder_worst;
+
+  /// No description provided for @gapFinder_notEnough.
+  ///
+  /// In en, this message translates to:
+  /// **'No hexagon has two sends yet.'**
+  String get gapFinder_notEnough;
+
+  /// No description provided for @gapFinder_cellLine.
+  ///
+  /// In en, this message translates to:
+  /// **'{failed} of {total} failed ({percent}%)'**
+  String gapFinder_cellLine(int failed, int total, int percent);
+
+  /// No description provided for @gapFinder_summary.
+  ///
+  /// In en, this message translates to:
+  /// **'{gaps} gaps in {cells} hexagons'**
+  String gapFinder_summary(int gaps, int cells);
+
   /// No description provided for @coverageHex_toolSubtitle.
   ///
   /// In en, this message translates to:
