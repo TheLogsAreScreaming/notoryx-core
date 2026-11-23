@@ -9279,6 +9279,10 @@ class AppLocalizationsUk extends AppLocalizations {
   String get ping_noReply => 'Немає відповіді';
 
   @override
+  String get ping_noReplyNote =>
+      'Відсутність відповіді не доводить, що ретранслятор не працює. Запит або відповідь можуть загубитися через шум чи колізію; спробуйте ще раз або перевірте з іншого місця.';
+
+  @override
   String ping_resultLine(String ms, String snr) {
     return '$ms мс · SNR там $snr';
   }
@@ -13678,6 +13682,11 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String traffic_heardDirect(String snr) {
     return 'Прийнято напряму · $snr дБ';
+  }
+
+  @override
+  String traffic_lastHop(String name, String snr) {
+    return 'Останній перехід $name · $snr дБ';
   }
 
   @override

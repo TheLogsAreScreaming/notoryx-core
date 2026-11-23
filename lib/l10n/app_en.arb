@@ -5463,6 +5463,7 @@
   },
   "ping_results": "Probes",
   "ping_noReply": "No reply",
+  "ping_noReplyNote": "No reply isn't proof the repeater is down. The probe or its answer can be lost to noise or a collision, so try again or test from another spot.",
   "ping_resultLine": "{ms} ms · SNR there {snr}",
   "@ping_resultLine": {
     "placeholders": {
@@ -7090,6 +7091,8 @@
       }
     }
   },
+  "traffic_lastHop": "Last hop {name} · {snr} dB",
+  "@traffic_lastHop": {"placeholders": {"name": {"type": "String"}, "snr": {"type": "String"}}},
   "traffic_flood": "Flood {hops}",
   "@traffic_flood": {
     "placeholders": {

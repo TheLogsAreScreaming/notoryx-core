@@ -111,7 +111,8 @@ void main() {
     );
     await tester.pumpWidget(_app(TrafficRouteCard(route: route, dark: true)));
     expect(find.text('1F → Alpha → Bravo'), findsOneWidget);
-    expect(find.text('Heard from Bravo · 12 dB'), findsOneWidget);
+    // Bravo relayed it, so its SNR is only the last leg.
+    expect(find.text('Last hop Bravo · 12 dB'), findsOneWidget);
     expect(
       find.textContaining('Flood 2 · -33 dBm · SNR 12 · 2 not on map'),
       findsOneWidget,
@@ -128,6 +129,27 @@ void main() {
     ]) {
       expect(find.text(label), findsOneWidget);
     }
+  });
+
+  testWidgets('route card says heard from when the sender was heard direct', (
+    tester,
+  ) async {
+    final route = TrafficRoute(
+      kind: TrafficKind.advert,
+      hops: const [
+        TrafficHop(id: '1F', name: 'Foxtrot', role: TrafficHopRole.origin),
+        TrafficHop(id: 'You', name: 'You', role: TrafficHopRole.self),
+      ],
+      snr: 7,
+      rssi: -80,
+      hopCount: 0,
+      isFlood: true,
+      receivedAt: DateTime.now(),
+      packetHash: 'y',
+    );
+    await tester.pumpWidget(_app(TrafficRouteCard(route: route, dark: false)));
+    expect(find.text('Heard from Foxtrot · 7 dB'), findsOneWidget);
+    expect(find.textContaining('Last hop'), findsNothing);
   });
 
   testWidgets('route card waits for the first packet', (tester) async {

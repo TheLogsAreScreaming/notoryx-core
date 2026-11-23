@@ -9127,6 +9127,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get ping_noReply => 'No reply';
 
   @override
+  String get ping_noReplyNote =>
+      'No reply isn\'t proof the repeater is down. The probe or its answer can be lost to noise or a collision, so try again or test from another spot.';
+
+  @override
   String ping_resultLine(String ms, String snr) {
     return '$ms ms · SNR there $snr';
   }
@@ -13500,6 +13504,11 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String traffic_heardDirect(String snr) {
     return 'Heard directly · $snr dB';
+  }
+
+  @override
+  String traffic_lastHop(String name, String snr) {
+    return 'Last hop $name · $snr dB';
   }
 
   @override

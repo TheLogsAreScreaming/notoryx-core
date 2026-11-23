@@ -9281,6 +9281,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get ping_noReply => 'Нет ответа';
 
   @override
+  String get ping_noReplyNote =>
+      'Отсутствие ответа не доказывает, что ретранслятор не работает. Запрос или ответ могут потеряться из-за шума или коллизии; повторите попытку или проверьте из другого места.';
+
+  @override
   String ping_resultLine(String ms, String snr) {
     return '$ms мс · SNR там $snr';
   }
@@ -13681,6 +13685,11 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String traffic_heardDirect(String snr) {
     return 'Принято напрямую · $snr дБ';
+  }
+
+  @override
+  String traffic_lastHop(String name, String snr) {
+    return 'Последний переход $name · $snr дБ';
   }
 
   @override

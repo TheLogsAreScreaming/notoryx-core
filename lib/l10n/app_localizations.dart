@@ -15391,6 +15391,12 @@ abstract class AppLocalizations {
   /// **'No reply'**
   String get ping_noReply;
 
+  /// No description provided for @ping_noReplyNote.
+  ///
+  /// In en, this message translates to:
+  /// **'No reply isn\'t proof the repeater is down. The probe or its answer can be lost to noise or a collision, so try again or test from another spot.'**
+  String get ping_noReplyNote;
+
   /// No description provided for @ping_resultLine.
   ///
   /// In en, this message translates to:
@@ -22668,6 +22674,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Heard directly · {snr} dB'**
   String traffic_heardDirect(String snr);
+
+  /// No description provided for @traffic_lastHop.
+  ///
+  /// In en, this message translates to:
+  /// **'Last hop {name} · {snr} dB'**
+  String traffic_lastHop(String name, String snr);
 
   /// No description provided for @traffic_flood.
   ///

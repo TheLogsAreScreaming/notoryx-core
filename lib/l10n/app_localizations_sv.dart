@@ -9176,6 +9176,10 @@ class AppLocalizationsSv extends AppLocalizations {
   String get ping_noReply => 'Inget svar';
 
   @override
+  String get ping_noReplyNote =>
+      'Inget svar bevisar inte att repeatern är nere. Förfrågan eller svaret kan försvinna i brus eller en kollision, så försök igen eller testa från en annan plats.';
+
+  @override
   String ping_resultLine(String ms, String snr) {
     return '$ms ms · SNR där $snr';
   }
@@ -13551,6 +13555,11 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String traffic_heardDirect(String snr) {
     return 'Hörd direkt · $snr dB';
+  }
+
+  @override
+  String traffic_lastHop(String name, String snr) {
+    return 'Sista hopp $name · $snr dB';
   }
 
   @override
