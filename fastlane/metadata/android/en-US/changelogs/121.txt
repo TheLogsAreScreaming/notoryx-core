@@ -1,0 +1,2 @@
+• Try a demo shows only its pretend mesh: none of your radio's position, repeaters or heard nodes
+• Try a demo is now on the first Connect your radio screen
