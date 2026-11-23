@@ -14574,4 +14574,70 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get sarneg_autoClear => 'Wird nach 1 Minute ohne Eingabe geleert.';
+
+  @override
+  String channelConflict_banner(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count Kanäle im Funkgerät weichen von der App ab',
+      one: '1 Kanal im Funkgerät weicht von der App ab',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get channelConflict_review => 'Prüfen';
+
+  @override
+  String get channelConflict_title => 'Kanalunterschiede';
+
+  @override
+  String get channelConflict_hint =>
+      'Das Funkgerät hat in diesen Plätzen einen anderen Namen oder Schlüssel als die App gespeichert hat. Vielleicht wurden sie mit einer anderen App geändert, oder die Kopie der App ist veraltet. Wähle für jeden Platz, welche Version bleibt.';
+
+  @override
+  String get channelConflict_allResolved =>
+      'Alle Plätze stimmen jetzt überein.';
+
+  @override
+  String channelConflict_slot(int index) {
+    return 'Platz $index';
+  }
+
+  @override
+  String get channelConflict_onRadio => 'Im Funkgerät';
+
+  @override
+  String get channelConflict_inApp => 'In der App gespeichert';
+
+  @override
+  String get channelConflict_empty => 'Leer';
+
+  @override
+  String channelConflict_key(String fingerprint) {
+    return 'Schlüssel $fingerprint';
+  }
+
+  @override
+  String get channelConflict_nameDiffers => 'Name weicht ab';
+
+  @override
+  String get channelConflict_keyDiffers => 'Schlüssel weicht ab';
+
+  @override
+  String get channelConflict_keepRadio => 'Funkgerät behalten';
+
+  @override
+  String get channelConflict_useApp => 'App-Version schreiben';
+
+  @override
+  String channelConflict_keptRadio(int index) {
+    return 'Version des Funkgeräts für Platz $index behalten';
+  }
+
+  @override
+  String channelConflict_usedApp(int index) {
+    return 'App-Version in Platz $index geschrieben';
+  }
 }

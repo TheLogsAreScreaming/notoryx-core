@@ -484,6 +484,17 @@ extension _ConnectorSync on MeshCoreConnector {
       '[ChannelSync] Sync complete: received ${_channels.length}/$_totalChannelsToRequest channels',
     );
 
+    // Compare before cleanup resets the slot count.
+    _channelConflicts = findChannelConflicts(
+      app: _cachedChannels,
+      radio: _channels,
+      slots: _totalChannelsToRequest,
+      skip: _appChannelEdits,
+      pending: _channelConflicts,
+    );
+    _appChannelEdits.clear();
+    unawaited(_channelStore.saveConflicts(_channelConflicts));
+
     _cleanupChannelSync(completed: true);
 
     // Cache channels for offline use
