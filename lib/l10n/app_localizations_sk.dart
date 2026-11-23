@@ -8349,6 +8349,13 @@ class AppLocalizationsSk extends AppLocalizations {
   String get scanner_tcpHint => 'Rádio s firmvérom Wi‑Fi vo vašej sieti.';
 
   @override
+  String get scanner_tryDemo => 'Vyskúšať demo';
+
+  @override
+  String get scanner_tryDemoHint =>
+      'Vymyslené rádio a sieť. Nič sa neodosiela.';
+
+  @override
   String get scanner_otherWays => 'Iné spôsoby pripojenia';
 
   @override
@@ -14498,6 +14505,71 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get sarneg_autoClear => 'Vymaže sa po 1 minúte bez písania.';
+
+  @override
+  String channelConflict_banner(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Kanály v rádiu, ktoré sa líšia od aplikácie: $count',
+      one: '1 kanál v rádiu sa líši od aplikácie',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get channelConflict_review => 'Skontrolovať';
+
+  @override
+  String get channelConflict_title => 'Rozdiely kanálov';
+
+  @override
+  String get channelConflict_hint =>
+      'Rádio má v týchto slotoch iný názov alebo kľúč, než aký uložila aplikácia. Niekto ich mohol zmeniť inou aplikáciou, alebo je kópia v aplikácii stará. Pre každý slot vyberte, ktorú verziu ponechať.';
+
+  @override
+  String get channelConflict_allResolved => 'Všetky sloty sa teraz zhodujú.';
+
+  @override
+  String channelConflict_slot(int index) {
+    return 'Slot $index';
+  }
+
+  @override
+  String get channelConflict_onRadio => 'V rádiu';
+
+  @override
+  String get channelConflict_inApp => 'Uložené v aplikácii';
+
+  @override
+  String get channelConflict_empty => 'Prázdny';
+
+  @override
+  String channelConflict_key(String fingerprint) {
+    return 'kľúč $fingerprint';
+  }
+
+  @override
+  String get channelConflict_nameDiffers => 'Iný názov';
+
+  @override
+  String get channelConflict_keyDiffers => 'Iný kľúč';
+
+  @override
+  String get channelConflict_keepRadio => 'Ponechať z rádia';
+
+  @override
+  String get channelConflict_useApp => 'Zapísať z aplikácie';
+
+  @override
+  String channelConflict_keptRadio(int index) {
+    return 'Ponechaná verzia z rádia v slote $index';
+  }
+
+  @override
+  String channelConflict_usedApp(int index) {
+    return 'Verzia z aplikácie zapísaná do slotu $index';
+  }
 
   @override
   String get history_window24h => '24 h';

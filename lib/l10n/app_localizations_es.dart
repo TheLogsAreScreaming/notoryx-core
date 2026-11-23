@@ -8369,6 +8369,13 @@ class AppLocalizationsEs extends AppLocalizations {
   String get scanner_tcpHint => 'Una radio con firmware Wi‑Fi en tu red.';
 
   @override
+  String get scanner_tryDemo => 'Probar una demo';
+
+  @override
+  String get scanner_tryDemoHint =>
+      'Una radio y una malla simuladas. No se envía nada.';
+
+  @override
   String get scanner_otherWays => 'Otras formas de conectar';
 
   @override
@@ -14550,6 +14557,71 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get sarneg_autoClear => 'Se borra tras 1 minuto sin escribir.';
+
+  @override
+  String channelConflict_banner(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count canales de la radio no coinciden con la app',
+      one: '1 canal de la radio no coincide con la app',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get channelConflict_review => 'Revisar';
+
+  @override
+  String get channelConflict_title => 'Diferencias de canales';
+
+  @override
+  String get channelConflict_hint =>
+      'La radio tiene un nombre o clave distinto en estas ranuras al que guardó la app. Puede que alguien los cambiara con otra app, o la copia de la app es antigua. Elige qué versión conservar en cada ranura.';
+
+  @override
+  String get channelConflict_allResolved => 'Ya coinciden todas las ranuras.';
+
+  @override
+  String channelConflict_slot(int index) {
+    return 'Ranura $index';
+  }
+
+  @override
+  String get channelConflict_onRadio => 'En la radio';
+
+  @override
+  String get channelConflict_inApp => 'Guardado en la app';
+
+  @override
+  String get channelConflict_empty => 'Vacía';
+
+  @override
+  String channelConflict_key(String fingerprint) {
+    return 'clave $fingerprint';
+  }
+
+  @override
+  String get channelConflict_nameDiffers => 'El nombre difiere';
+
+  @override
+  String get channelConflict_keyDiffers => 'La clave difiere';
+
+  @override
+  String get channelConflict_keepRadio => 'Mantener la de la radio';
+
+  @override
+  String get channelConflict_useApp => 'Escribir la de la app';
+
+  @override
+  String channelConflict_keptRadio(int index) {
+    return 'Se mantuvo la versión de la radio en la ranura $index';
+  }
+
+  @override
+  String channelConflict_usedApp(int index) {
+    return 'Se escribió la versión de la app en la ranura $index';
+  }
 
   @override
   String get history_window24h => '24 h';
