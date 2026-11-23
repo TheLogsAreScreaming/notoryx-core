@@ -18,6 +18,7 @@ import '../services/field_ops_service.dart';
 import '../models/field_ops.dart';
 import '../helpers/direct_heard_name.dart';
 import '../services/corescope.dart';
+import '../models/direct_repeaters.dart';
 import '../services/direct_repeater_service.dart';
 import '../widgets/instrument.dart';
 import '../widgets/regional_preset_banner.dart';
@@ -52,7 +53,11 @@ class BastionHomeScreen extends StatelessWidget {
     final known = c.knownNodeCounts;
     final stats = c.latestRadioStats;
     final ops = context.watch<FieldOpsService>();
-    final heard = context.watch<DirectRepeaterService?>()?.best() ?? const [];
+    final heardAll =
+        context.watch<DirectRepeaterService?>()?.best() ?? const [];
+    // The demo radio shows only its pretend mesh, never real readings.
+    final demo = c.isDemoRadio;
+    final heard = demo ? const <DirectHeard>[] : heardAll;
     final l10n = context.l10n;
     final online = c.isConnected;
     final checkInReason = checkInUnavailableReason(
@@ -206,7 +211,7 @@ class BastionHomeScreen extends StatelessWidget {
                       titleColor: MeshPalette.accent,
                       onTap: () => openConnectionSetup(context),
                     ),
-                  if (online) const MySensorsPanel(),
+                  if (online && !demo) const MySensorsPanel(),
                   InstrumentLabel(l10n.routes_nearbyTitle),
                   if (heard.isEmpty)
                     GlassActionRow(

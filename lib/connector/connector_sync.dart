@@ -208,6 +208,10 @@ extension _ConnectorSync on MeshCoreConnector {
       _discoveredCacheLoad = _readDiscoveredContactCache();
 
   Future<void> _readDiscoveredContactCache() async {
+    if (_demoSession) {
+      _discoveredContacts.clear();
+      return;
+    }
     final cached = await _discoveryContactStore.loadContacts();
     // Trim a previously-saved oversized list down to the freshest entries so a
     // device that grew unbounded before the cap existed recovers on load.
@@ -622,6 +626,7 @@ extension _ConnectorSync on MeshCoreConnector {
   /// Marks the heard-node list changed; one save follows a few seconds later
   /// (see [MeshCoreConnector.flushDiscoveredContacts]).
   Future<void> _persistDiscoveredContacts() async {
+    if (_demoSession) return;
     _discoveredDirty = true;
     _discoveredSaveTimer ??= Timer(
       MeshCoreConnector._discoveredSaveDelay,

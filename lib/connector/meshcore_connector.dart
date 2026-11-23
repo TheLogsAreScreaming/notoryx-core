@@ -69,6 +69,7 @@ import '../services/translation_service.dart';
 import '../services/notification_deduper.dart';
 import '../services/notification_service.dart';
 import 'meshcore_connector_usb.dart';
+import 'demo_companion.dart';
 import 'meshcore_connector_tcp.dart';
 import '../storage/channel_message_store.dart';
 import '../storage/channel_order_store.dart';
@@ -518,8 +519,12 @@ class MeshCoreConnector extends ChangeNotifier {
   String? get activeTcpEndpoint => _tcpConnector.activeEndpoint;
 
   /// Whether the pretend in-app radio is connected instead of a real one.
-  bool get isDemoRadio =>
-      _activeTransport == MeshCoreTransportType.tcp && _tcpConnector.isDemo;
+  bool get isDemoRadio => _demoSession && _tcpConnector.isDemo;
+
+  /// True from the start of a demo connection until its disconnect has
+  /// finished. While set, the heard-node list (shared by every real radio)
+  /// is neither loaded nor saved, so the demo can't show or overwrite it.
+  bool _demoSession = false;
   bool get isTcpTransportConnected =>
       _state == MeshCoreConnectionState.connected &&
       _activeTransport == MeshCoreTransportType.tcp;
@@ -2000,6 +2005,17 @@ class MeshCoreConnector extends ChangeNotifier {
     }
 
     _appDebugLogService?.info('connectTcp: endpoint=$host:$port', tag: 'TCP');
+
+    _demoSession = isDemoRadioHost(host);
+    if (_demoSession) {
+      // Nothing heard by a real radio belongs in the demo.
+      _discoveredContacts.clear();
+      _directRepeaters.clear();
+      _latestRadioStats = null;
+      _lastRxSnr = null;
+      _lastRxRssi = null;
+      _lastRxSignalAt = null;
+    }
 
     await stopScan();
     _beginWiredConnect(automaticReconnect);
@@ -5081,6 +5097,7 @@ class MeshCoreConnector extends ChangeNotifier {
     _discoveredSaveTimer = null;
     if (!_discoveredDirty) return;
     _discoveredDirty = false;
+    if (_demoSession) return;
     await _discoveryContactStore.saveContacts(List.of(_discoveredContacts));
   }
 
