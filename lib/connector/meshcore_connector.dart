@@ -510,6 +510,10 @@ class MeshCoreConnector extends ChangeNotifier {
   Future<void> Function(BluetoothDevice device)? debugBleUnlinkOverride;
 
   String? get activeTcpEndpoint => _tcpConnector.activeEndpoint;
+
+  /// Whether the pretend in-app radio is connected instead of a real one.
+  bool get isDemoRadio =>
+      _activeTransport == MeshCoreTransportType.tcp && _tcpConnector.isDemo;
   bool get isTcpTransportConnected =>
       _state == MeshCoreConnectionState.connected &&
       _activeTransport == MeshCoreTransportType.tcp;
@@ -2070,8 +2074,11 @@ class MeshCoreConnector extends ChangeNotifier {
       await syncTime();
       _lastConnectionError = null;
       _reconnectAttempts = 0;
-      _linkTarget = TcpLinkTarget(host, port);
-      unawaited(_rememberRadio(SavedRadioTransport.tcp, '$host:$port'));
+      // The demo radio is never saved or reconnected to on its own.
+      if (!_tcpConnector.isDemo) {
+        _linkTarget = TcpLinkTarget(host, port);
+        unawaited(_rememberRadio(SavedRadioTransport.tcp, '$host:$port'));
+      }
     } catch (error) {
       _appDebugLogService?.error('TCP connection error: $error', tag: 'TCP');
       final tcpConnectCancelledBeforeHandshake =
