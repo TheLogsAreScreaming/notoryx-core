@@ -120,6 +120,9 @@ class _TrafficRouteCardState extends State<TrafficRouteCard> {
                 child: Text(
                   heard == null
                       ? l10n.traffic_heardDirect(snr)
+                      // A relay's SNR is only the last leg, not the sender's.
+                      : heard.role == TrafficHopRole.relay
+                      ? l10n.traffic_lastHop(heard.label, snr)
                       : l10n.traffic_heardFrom(heard.label, snr),
                   maxLines: 1,
                   overflow: TextOverflow.fade,

@@ -2874,6 +2874,26 @@ class AppLocalizationsUk extends AppLocalizations {
       'Вхід не вдався. Або пароль неправильний, або ретранслятор недосяжний.';
 
   @override
+  String get login_failRadioOffline =>
+      'Радіо не підключено, тому вхід не надіслано. Підключіть радіо й спробуйте ще раз.';
+
+  @override
+  String get login_failSend =>
+      'Радіо не прийняло запит на вхід. Перепідключіть його й спробуйте ще раз.';
+
+  @override
+  String login_failNoAnswerPath(int hops, String option, String section) {
+    return 'Немає відповіді збереженим шляхом ($hops переходів). Можливо, він застарів: увімкніть $section → $option і повторіть. На неправильний пароль відповіді теж немає.';
+  }
+
+  @override
+  String get login_failRejected => 'Ретранслятор відповів і відхилив пароль.';
+
+  @override
+  String get login_failNoAnswerFlood =>
+      'Немає відповіді флудом. Ретранслятор може бути поза зоною, вимкнений чи зайнятий, або пароль неправильний (на нього ретранслятори не відповідають). Спробуйте ближче.';
+
+  @override
   String get common_reload => 'Перезавантажити';
 
   @override
@@ -3215,6 +3235,20 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get repeater_settingsSaved => 'Налаштування успішно збережено.';
+
+  @override
+  String get repeater_settingsConfirmed =>
+      'Налаштування збережено й підтверджено ретранслятором';
+
+  @override
+  String repeater_settingsUnconfirmed(int count) {
+    return 'Налаштування збережено, але $count не вдалося прочитати назад для перевірки';
+  }
+
+  @override
+  String repeater_readBackMismatch(String key, String value) {
+    return '$key читається як $value';
+  }
 
   @override
   String get repeater_rxGain => 'Підвищена ефективність RX';
@@ -7075,6 +7109,25 @@ class AppLocalizationsUk extends AppLocalizations {
   String get bastionDiag_export => 'Експортувати діагностику';
 
   @override
+  String get diagTimeline_title => 'Історія підключення';
+
+  @override
+  String get diagTimeline_empty =>
+      'Відколи застосунок запущено, підключення не змінювалося.';
+
+  @override
+  String get diagTimeline_causeUser => 'на ваш запит';
+
+  @override
+  String get diagTimeline_causeLinkLost => 'зв\'язок втрачено';
+
+  @override
+  String get diagTimeline_causeReconnect => 'автоматична повторна спроба';
+
+  @override
+  String get diagTimeline_causeApp => 'закрито застосунком';
+
+  @override
   String get bastionDiag_channels => 'Канали';
 
   @override
@@ -7690,6 +7743,11 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get shortcuts_checkIn => 'Позначитися';
+
+  @override
+  String qsTile_unread(String status, int count) {
+    return '$status · непрочитаних: $count';
+  }
 
   @override
   String get shortcuts_trip => 'Похід';
@@ -9324,6 +9382,10 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get ping_noReply => 'Немає відповіді';
+
+  @override
+  String get ping_noReplyNote =>
+      'Відсутність відповіді не доводить, що ретранслятор не працює. Запит або відповідь можуть загубитися через шум чи колізію; спробуйте ще раз або перевірте з іншого місця.';
 
   @override
   String ping_resultLine(String ms, String snr) {
@@ -13728,6 +13790,11 @@ class AppLocalizationsUk extends AppLocalizations {
   }
 
   @override
+  String traffic_lastHop(String name, String snr) {
+    return 'Останній перехід $name · $snr дБ';
+  }
+
+  @override
   String traffic_flood(int hops) {
     return 'Flood $hops';
   }
@@ -14719,6 +14786,66 @@ class AppLocalizationsUk extends AppLocalizations {
   String get statusHistory_title => 'Історія стану';
 
   @override
+  String get reportCard_title => 'Зведення';
+
+  @override
+  String get reportCard_hint =>
+      'Складено лише з ваших перевірок стану, збережених на цьому телефоні. Нічого додатково не надсилається.';
+
+  @override
+  String get reportCard_empty =>
+      'Перевірок поки немає. Кожна перевірка стану доповнює це зведення.';
+
+  @override
+  String get reportCard_checks => 'Перевірки';
+
+  @override
+  String get reportCard_restarts => 'Помічено перезапусків';
+
+  @override
+  String get reportCard_longestUptime => 'Найдовший час роботи';
+
+  @override
+  String get reportCard_battery => 'Батарея';
+
+  @override
+  String get reportCard_noise => 'Рівень шуму';
+
+  @override
+  String get reportCard_errors => 'Нові помилки';
+
+  @override
+  String get reportCard_neighbours => 'Сусіди';
+
+  @override
+  String get reportCard_exportCsv => 'Експорт CSV';
+
+  @override
+  String reportCard_checksValue(int count, int days) {
+    return '$count за $days дн.';
+  }
+
+  @override
+  String reportCard_batteryValue(String now, String low) {
+    return '$now зараз · мінімум $low';
+  }
+
+  @override
+  String reportCard_batteryTrend(String change) {
+    return '$change на тиждень';
+  }
+
+  @override
+  String reportCard_noiseValue(String avg, String worst) {
+    return 'середнє $avg дБм · найгірше $worst дБм';
+  }
+
+  @override
+  String reportCard_neighboursValue(int total, int fresh, int gone) {
+    return 'чутно: $total · нових за тиждень: $fresh · не чутно за тиждень: $gone';
+  }
+
+  @override
   String get statusHistory_battery => 'Батарея';
 
   @override
@@ -15041,4 +15168,279 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get coverageHex_trimDrivesHint =>
       'Перші й останні 2 шестикутники кожного сеансу залишаються на телефоні, тож карти не покажуть, де ви живете чи паркуєтеся.';
+
+  @override
+  String get fleet_title => 'Парк';
+
+  @override
+  String get fleet_toolSubtitle =>
+      'Стан, тренди та групові налаштування ваших ретрансляторів';
+
+  @override
+  String get fleet_addRepeater => 'Додати ретранслятор';
+
+  @override
+  String get fleet_agoNow => 'щойно';
+
+  @override
+  String fleet_agoMinutes(int count) {
+    return '$count хв тому';
+  }
+
+  @override
+  String fleet_agoHours(int count) {
+    return '$count год тому';
+  }
+
+  @override
+  String fleet_agoDays(int count) {
+    return '$count дн. тому';
+  }
+
+  @override
+  String get fleet_alreadyListed => 'Цей ретранслятор уже у вашому парку.';
+
+  @override
+  String fleet_asking(String name) {
+    return 'Опитування $name…';
+  }
+
+  @override
+  String get fleet_badAddress =>
+      'Введіть адресу, наприклад 192.168.1.20 або 192.168.1.20:8484.';
+
+  @override
+  String get fleet_badKey => 'Вставте повний 64-символьний відкритий ключ.';
+
+  @override
+  String get fleet_battery => 'Батарея';
+
+  @override
+  String get fleet_batteryTrend => 'Батарея (В)';
+
+  @override
+  String fleet_bulkApply(int count) {
+    return 'Надіслати на ретранслятори: $count';
+  }
+
+  @override
+  String get fleet_bulkBadValue =>
+      'Це значення не дозволене для цього налаштування.';
+
+  @override
+  String fleet_bulkChange(String current, String target) {
+    return '$current → $target';
+  }
+
+  @override
+  String fleet_bulkConfirmBody(String setting, String value, int count) {
+    return 'Встановити $setting = $value на ретрансляторах ($count)? Кожен змінюється через радіо, з інтервалом щонайменше 20 секунд.';
+  }
+
+  @override
+  String get fleet_bulkConfirmTitle => 'Змінити ретранслятори?';
+
+  @override
+  String get fleet_bulkIntro =>
+      'Виберіть налаштування і значення. Спершу зчитуються поточні значення; нічого не зміниться, доки ви не підтвердите.';
+
+  @override
+  String get fleet_bulkPreview => 'Що зміниться';
+
+  @override
+  String get fleet_bulkRead => 'Зчитати поточні значення';
+
+  @override
+  String get fleet_bulkRepeaters => 'Ретранслятори';
+
+  @override
+  String fleet_bulkSame(String target) {
+    return 'Уже $target';
+  }
+
+  @override
+  String get fleet_bulkSend => 'Надіслати';
+
+  @override
+  String get fleet_bulkSetting => 'Налаштування';
+
+  @override
+  String get fleet_bulkTitle => 'Групові налаштування';
+
+  @override
+  String get fleet_bulkValue => 'Нове значення';
+
+  @override
+  String fleet_days(int count) {
+    return '$count дн.';
+  }
+
+  @override
+  String fleet_db(String value) {
+    return '$value дБ';
+  }
+
+  @override
+  String fleet_dbm(int value) {
+    return '$value дБм';
+  }
+
+  @override
+  String get fleet_empty =>
+      'Ретрансляторів ще немає. Натисніть +, щоб додати свій.';
+
+  @override
+  String get fleet_errorLogin => 'Вхід відхилено';
+
+  @override
+  String get fleet_errorNoContact => 'Немає в контактах радіо';
+
+  @override
+  String get fleet_errorOther => 'Помилка';
+
+  @override
+  String get fleet_errorTimeout => 'Немає відповіді';
+
+  @override
+  String get fleet_firmware => 'Прошивка';
+
+  @override
+  String get fleet_heardRepeaters => 'Почуті ретранслятори';
+
+  @override
+  String get fleet_lastHeard => 'Востаннє почутий';
+
+  @override
+  String fleet_lastPollFailed(String reason, String when) {
+    return 'Останнє опитування: $reason, $when';
+  }
+
+  @override
+  String get fleet_lastSnr => 'Останній SNR';
+
+  @override
+  String get fleet_name => 'Назва';
+
+  @override
+  String get fleet_needsRadio => 'Підключіть радіо для опитування.';
+
+  @override
+  String get fleet_neighbours => 'Сусіди';
+
+  @override
+  String get fleet_noHeard => 'Немає почутих ретрансляторів поза вашим парком.';
+
+  @override
+  String get fleet_noHistory => 'За цей період немає даних.';
+
+  @override
+  String get fleet_noiseFloor => 'Рівень шуму';
+
+  @override
+  String get fleet_noiseTrend => 'Рівень шуму (дБм)';
+
+  @override
+  String get fleet_password => 'Пароль адміністратора';
+
+  @override
+  String get fleet_passwordHint =>
+      'Зберігається в захищеному сховищі телефона. Надсилається лише самому ретранслятору, через радіо.';
+
+  @override
+  String get fleet_passwordOptional => 'Пароль адміністратора (необов\'язково)';
+
+  @override
+  String get fleet_passwordSaved => 'Пароль оновлено';
+
+  @override
+  String get fleet_pasteKey => 'Або вставте ключ';
+
+  @override
+  String get fleet_pollAll => 'Опитати всі';
+
+  @override
+  String fleet_pollHint(int seconds) {
+    return 'По одному ретранслятору, з інтервалом $seconds с, щоб заощадити ефір.';
+  }
+
+  @override
+  String get fleet_pollNow => 'Опитати зараз';
+
+  @override
+  String fleet_progress(int done, int total) {
+    return '$done з $total';
+  }
+
+  @override
+  String get fleet_publicKey => 'Відкритий ключ';
+
+  @override
+  String get fleet_remove => 'Прибрати з парку';
+
+  @override
+  String fleet_removeBody(String name) {
+    return 'Видалити $name разом з історією та паролем із цього телефона?';
+  }
+
+  @override
+  String get fleet_removeTitle => 'Видалити ретранслятор?';
+
+  @override
+  String get fleet_stationAddress => 'Адреса станції';
+
+  @override
+  String get fleet_statusFirmwareBehind => 'Стара прошивка';
+
+  @override
+  String get fleet_statusHealthy => 'Справний';
+
+  @override
+  String get fleet_statusLowBattery => 'Низький заряд';
+
+  @override
+  String get fleet_statusQuiet => 'Мовчить';
+
+  @override
+  String get fleet_statusUnknown => 'Не опитано';
+
+  @override
+  String get fleet_stop => 'Зупинити';
+
+  @override
+  String get fleet_sync => 'Синхронізувати';
+
+  @override
+  String fleet_syncDone(int count) {
+    return 'Синхронізовано, нових записів: $count.';
+  }
+
+  @override
+  String get fleet_syncFailed => 'Не вдалося зв\'язатися зі станцією.';
+
+  @override
+  String get fleet_syncHint =>
+      'Копіює історію зі станції NOTORYX Ops у вашій мережі. Лише читає; паролі ніколи не залишають цей телефон.';
+
+  @override
+  String get fleet_syncSignIn =>
+      'Станція вимагає входу. Синхронізація працює зі станціями без облікових записів.';
+
+  @override
+  String get fleet_syncStation => 'Синхронізувати зі станції';
+
+  @override
+  String get fleet_uptime => 'Час роботи';
+
+  @override
+  String fleet_uptimeDays(int days, int hours) {
+    return '$days дн. $hours год';
+  }
+
+  @override
+  String fleet_uptimeHours(int hours, int minutes) {
+    return '$hours год $minutes хв';
+  }
+
+  @override
+  String get fleet_waiting => 'Очікування…';
 }

@@ -1622,6 +1622,12 @@
     }
   },
   "login_failedMessage": "Login failed. Either the password is incorrect or the repeater is unreachable.",
+  "login_failRadioOffline": "Your radio isn't connected, so the login wasn't sent. Connect your radio and try again.",
+  "login_failSend": "Your radio didn't accept the login request. Reconnect it and try again.",
+  "login_failNoAnswerPath": "No answer over the saved path ({hops} hops). The path may be out of date: turn on “{option}” under {section} and try again. A wrong password also gets no answer.",
+  "@login_failNoAnswerPath": {"placeholders": {"hops": {"type": "int"}, "option": {"type": "String"}, "section": {"type": "String"}}},
+  "login_failRejected": "The repeater answered and refused the password.",
+  "login_failNoAnswerFlood": "No answer by flood. The repeater may be out of range, off or busy, or the password may be wrong (repeaters don't answer a wrong one). Try again from closer.",
   "common_reload": "Reload",
   "common_clear": "Clear",
   "path_currentPathLabel": "Current path",
@@ -1820,6 +1826,11 @@
   },
   "repeater_confirm": "Confirm",
   "repeater_settingsSaved": "Settings saved successfully",
+  "repeater_settingsConfirmed": "Settings saved and confirmed by the repeater",
+  "repeater_settingsUnconfirmed": "Settings saved, but {count} could not be read back to confirm",
+  "@repeater_settingsUnconfirmed": {"placeholders": {"count": {"type": "int"}}},
+  "repeater_readBackMismatch": "{key} reads back as {value}",
+  "@repeater_readBackMismatch": {"placeholders": {"key": {"type": "String"}, "value": {"type": "String"}}},
   "repeater_rxGain": "Boosted RX gain",
   "repeater_rxGainHelper": "Higher sensitivity, more current draw (SX1262/SX1268 only)",
   "repeater_refreshRxGain": "Refresh boosted RX gain",
@@ -4077,6 +4088,12 @@
   "bastionSetup_tripTools": "Trip and readiness tools",
   "bastionDiag_title": "Diagnostics",
   "bastionDiag_export": "Export diagnostics",
+  "diagTimeline_title": "Connection timeline",
+  "diagTimeline_empty": "No connection changes since the app started.",
+  "diagTimeline_causeUser": "you asked",
+  "diagTimeline_causeLinkLost": "link dropped",
+  "diagTimeline_causeReconnect": "automatic retry",
+  "diagTimeline_causeApp": "closed by the app",
   "bastionDiag_channels": "Channels",
   "bastionDiag_radio": "Radio",
   "bastionDiag_frequency": "Frequency",
@@ -4492,6 +4509,8 @@
     }
   },
   "shortcuts_checkIn": "Check in",
+  "qsTile_unread": "{status} · {count} unread",
+  "@qsTile_unread": {"placeholders": {"status": {"type": "String"}, "count": {"type": "int"}}},
   "shortcuts_trip": "Trip",
   "shortcuts_chats": "Chats",
   "shortcuts_map": "Map",
@@ -5478,6 +5497,7 @@
   },
   "ping_results": "Probes",
   "ping_noReply": "No reply",
+  "ping_noReplyNote": "No reply isn't proof the repeater is down. The probe or its answer can be lost to noise or a collision, so try again or test from another spot.",
   "ping_resultLine": "{ms} ms · SNR there {snr}",
   "@ping_resultLine": {
     "placeholders": {
@@ -7105,6 +7125,8 @@
       }
     }
   },
+  "traffic_lastHop": "Last hop {name} · {snr} dB",
+  "@traffic_lastHop": {"placeholders": {"name": {"type": "String"}, "snr": {"type": "String"}}},
   "traffic_flood": "Flood {hops}",
   "@traffic_flood": {
     "placeholders": {
@@ -7714,6 +7736,27 @@
   "history_window7d": "7 days",
   "history_window30d": "30 days",
   "statusHistory_title": "Status history",
+  "reportCard_title": "Report card",
+  "reportCard_hint": "Built only from status checks you ran and kept on this phone. Nothing extra is sent.",
+  "reportCard_empty": "No status checks kept yet. Each Status check you run adds to this report.",
+  "reportCard_checks": "Checks",
+  "reportCard_restarts": "Restarts seen",
+  "reportCard_longestUptime": "Longest uptime",
+  "reportCard_battery": "Battery",
+  "reportCard_noise": "Noise floor",
+  "reportCard_errors": "New errors",
+  "reportCard_neighbours": "Neighbours",
+  "reportCard_exportCsv": "Export CSV",
+  "reportCard_checksValue": "{count} over {days} days",
+  "@reportCard_checksValue": {"placeholders": {"count": {"type": "int"}, "days": {"type": "int"}}},
+  "reportCard_batteryValue": "{now} now · lowest {low}",
+  "@reportCard_batteryValue": {"placeholders": {"now": {"type": "String"}, "low": {"type": "String"}}},
+  "reportCard_batteryTrend": "{change} per week",
+  "@reportCard_batteryTrend": {"placeholders": {"change": {"type": "String"}}},
+  "reportCard_noiseValue": "average {avg} dBm · worst {worst} dBm",
+  "@reportCard_noiseValue": {"placeholders": {"avg": {"type": "String"}, "worst": {"type": "String"}}},
+  "reportCard_neighboursValue": "{total} heard · {fresh} new this week · {gone} not heard this week",
+  "@reportCard_neighboursValue": {"placeholders": {"total": {"type": "int"}, "fresh": {"type": "int"}, "gone": {"type": "int"}}},
   "statusHistory_battery": "Battery",
   "statusHistory_rssi": "RSSI",
   "statusHistory_snr": "SNR",
@@ -7987,5 +8030,229 @@
   "coverageHex_eraseFailed": "Couldn't erase. Check your connection and try again.",
   "coverageHex_openMap": "Open the coverage map",
   "coverageHex_trimDrives": "Hide the start and end of each drive",
-  "coverageHex_trimDrivesHint": "The first and last 2 hexagons of every mapping session stay on this phone, so maps can't show where you live or park."
+  "coverageHex_trimDrivesHint": "The first and last 2 hexagons of every mapping session stay on this phone, so maps can't show where you live or park.",
+  "fleet_title": "Fleet",
+  "fleet_toolSubtitle": "Health, trends and bulk settings for the repeaters you own",
+  "fleet_addRepeater": "Add repeater",
+  "fleet_agoNow": "just now",
+  "fleet_agoMinutes": "{count} min ago",
+  "@fleet_agoMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_agoHours": "{count} h ago",
+  "@fleet_agoHours": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_agoDays": "{count} d ago",
+  "@fleet_agoDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_alreadyListed": "That repeater is already in your fleet.",
+  "fleet_asking": "Asking {name}…",
+  "@fleet_asking": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "fleet_badAddress": "Enter an address like 192.168.1.20 or 192.168.1.20:8484.",
+  "fleet_badKey": "Paste the full 64-character public key.",
+  "fleet_battery": "Battery",
+  "fleet_batteryTrend": "Battery (V)",
+  "fleet_bulkApply": "Send to {count} repeaters",
+  "@fleet_bulkApply": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_bulkBadValue": "That value isn't allowed for this setting.",
+  "fleet_bulkChange": "{current} → {target}",
+  "@fleet_bulkChange": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "fleet_bulkConfirmBody": "Set {setting} to {value} on {count} repeaters? Each one is sent over the air, at least 20 seconds apart.",
+  "@fleet_bulkConfirmBody": {
+    "placeholders": {
+      "setting": {
+        "type": "String"
+      },
+      "value": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_bulkConfirmTitle": "Change repeaters?",
+  "fleet_bulkIntro": "Pick a setting and a value. Current values are read first; nothing changes until you confirm.",
+  "fleet_bulkPreview": "What would change",
+  "fleet_bulkRead": "Read current values",
+  "fleet_bulkRepeaters": "Repeaters",
+  "fleet_bulkSame": "Already {target}",
+  "@fleet_bulkSame": {
+    "placeholders": {
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "fleet_bulkSend": "Send",
+  "fleet_bulkSetting": "Setting",
+  "fleet_bulkTitle": "Bulk settings",
+  "fleet_bulkValue": "New value",
+  "fleet_days": "{count} d",
+  "@fleet_days": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_db": "{value} dB",
+  "@fleet_db": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "fleet_dbm": "{value} dBm",
+  "@fleet_dbm": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_empty": "No repeaters yet. Tap + to add one you own.",
+  "fleet_errorLogin": "Login refused",
+  "fleet_errorNoContact": "Not in the radio's contacts",
+  "fleet_errorOther": "Failed",
+  "fleet_errorTimeout": "No answer",
+  "fleet_firmware": "Firmware",
+  "fleet_heardRepeaters": "Heard repeaters",
+  "fleet_lastHeard": "Last heard",
+  "fleet_lastPollFailed": "Last poll: {reason}, {when}",
+  "@fleet_lastPollFailed": {
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      },
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "fleet_lastSnr": "Last SNR",
+  "fleet_name": "Name",
+  "fleet_needsRadio": "Connect a radio to poll.",
+  "fleet_neighbours": "Neighbours",
+  "fleet_noHeard": "No repeaters heard that aren't in your fleet.",
+  "fleet_noHistory": "No readings in this period.",
+  "fleet_noiseFloor": "Noise floor",
+  "fleet_noiseTrend": "Noise floor (dBm)",
+  "fleet_password": "Admin password",
+  "fleet_passwordHint": "Kept in this phone's secure storage. It is only ever sent to the repeater, over the radio.",
+  "fleet_passwordOptional": "Admin password (optional)",
+  "fleet_passwordSaved": "Password updated",
+  "fleet_pasteKey": "Or paste a key",
+  "fleet_pollAll": "Poll all",
+  "fleet_pollHint": "One repeater at a time, {seconds} s apart, to save airtime.",
+  "@fleet_pollHint": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_pollNow": "Poll now",
+  "fleet_progress": "{done} of {total}",
+  "@fleet_progress": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_publicKey": "Public key",
+  "fleet_remove": "Remove from fleet",
+  "fleet_removeBody": "Remove {name} and its history and password from this phone?",
+  "@fleet_removeBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "fleet_removeTitle": "Remove repeater?",
+  "fleet_stationAddress": "Station address",
+  "fleet_statusFirmwareBehind": "Firmware behind",
+  "fleet_statusHealthy": "Healthy",
+  "fleet_statusLowBattery": "Low battery",
+  "fleet_statusQuiet": "Quiet",
+  "fleet_statusUnknown": "Not polled",
+  "fleet_stop": "Stop",
+  "fleet_sync": "Sync",
+  "fleet_syncDone": "Synced: {count} new readings.",
+  "@fleet_syncDone": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_syncFailed": "Couldn't reach the station.",
+  "fleet_syncHint": "Copies history from a NOTORYX Ops station on your network. It only reads; passwords never leave this phone.",
+  "fleet_syncSignIn": "The station needs a sign-in. Sync works with stations that have no accounts.",
+  "fleet_syncStation": "Sync from station",
+  "fleet_uptime": "Uptime",
+  "fleet_uptimeDays": "{days} d {hours} h",
+  "@fleet_uptimeDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_uptimeHours": "{hours} h {minutes} min",
+  "@fleet_uptimeHours": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_waiting": "Waiting…"
 }

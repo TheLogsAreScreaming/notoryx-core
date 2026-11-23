@@ -5097,6 +5097,36 @@ abstract class AppLocalizations {
   /// **'Login failed. Either the password is incorrect or the repeater is unreachable.'**
   String get login_failedMessage;
 
+  /// No description provided for @login_failRadioOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'Your radio isn\'t connected, so the login wasn\'t sent. Connect your radio and try again.'**
+  String get login_failRadioOffline;
+
+  /// No description provided for @login_failSend.
+  ///
+  /// In en, this message translates to:
+  /// **'Your radio didn\'t accept the login request. Reconnect it and try again.'**
+  String get login_failSend;
+
+  /// No description provided for @login_failNoAnswerPath.
+  ///
+  /// In en, this message translates to:
+  /// **'No answer over the saved path ({hops} hops). The path may be out of date: turn on “{option}” under {section} and try again. A wrong password also gets no answer.'**
+  String login_failNoAnswerPath(int hops, String option, String section);
+
+  /// No description provided for @login_failRejected.
+  ///
+  /// In en, this message translates to:
+  /// **'The repeater answered and refused the password.'**
+  String get login_failRejected;
+
+  /// No description provided for @login_failNoAnswerFlood.
+  ///
+  /// In en, this message translates to:
+  /// **'No answer by flood. The repeater may be out of range, off or busy, or the password may be wrong (repeaters don\'t answer a wrong one). Try again from closer.'**
+  String get login_failNoAnswerFlood;
+
   /// No description provided for @common_reload.
   ///
   /// In en, this message translates to:
@@ -5689,6 +5719,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Settings saved successfully'**
   String get repeater_settingsSaved;
+
+  /// No description provided for @repeater_settingsConfirmed.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings saved and confirmed by the repeater'**
+  String get repeater_settingsConfirmed;
+
+  /// No description provided for @repeater_settingsUnconfirmed.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings saved, but {count} could not be read back to confirm'**
+  String repeater_settingsUnconfirmed(int count);
+
+  /// No description provided for @repeater_readBackMismatch.
+  ///
+  /// In en, this message translates to:
+  /// **'{key} reads back as {value}'**
+  String repeater_readBackMismatch(String key, String value);
 
   /// No description provided for @repeater_rxGain.
   ///
@@ -11792,6 +11840,42 @@ abstract class AppLocalizations {
   /// **'Export diagnostics'**
   String get bastionDiag_export;
 
+  /// No description provided for @diagTimeline_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Connection timeline'**
+  String get diagTimeline_title;
+
+  /// No description provided for @diagTimeline_empty.
+  ///
+  /// In en, this message translates to:
+  /// **'No connection changes since the app started.'**
+  String get diagTimeline_empty;
+
+  /// No description provided for @diagTimeline_causeUser.
+  ///
+  /// In en, this message translates to:
+  /// **'you asked'**
+  String get diagTimeline_causeUser;
+
+  /// No description provided for @diagTimeline_causeLinkLost.
+  ///
+  /// In en, this message translates to:
+  /// **'link dropped'**
+  String get diagTimeline_causeLinkLost;
+
+  /// No description provided for @diagTimeline_causeReconnect.
+  ///
+  /// In en, this message translates to:
+  /// **'automatic retry'**
+  String get diagTimeline_causeReconnect;
+
+  /// No description provided for @diagTimeline_causeApp.
+  ///
+  /// In en, this message translates to:
+  /// **'closed by the app'**
+  String get diagTimeline_causeApp;
+
   /// No description provided for @bastionDiag_channels.
   ///
   /// In en, this message translates to:
@@ -12792,6 +12876,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Check in'**
   String get shortcuts_checkIn;
+
+  /// No description provided for @qsTile_unread.
+  ///
+  /// In en, this message translates to:
+  /// **'{status} · {count} unread'**
+  String qsTile_unread(String status, int count);
 
   /// No description provided for @shortcuts_trip.
   ///
@@ -15468,6 +15558,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'No reply'**
   String get ping_noReply;
+
+  /// No description provided for @ping_noReplyNote.
+  ///
+  /// In en, this message translates to:
+  /// **'No reply isn\'t proof the repeater is down. The probe or its answer can be lost to noise or a collision, so try again or test from another spot.'**
+  String get ping_noReplyNote;
 
   /// No description provided for @ping_resultLine.
   ///
@@ -22747,6 +22843,12 @@ abstract class AppLocalizations {
   /// **'Heard directly · {snr} dB'**
   String traffic_heardDirect(String snr);
 
+  /// No description provided for @traffic_lastHop.
+  ///
+  /// In en, this message translates to:
+  /// **'Last hop {name} · {snr} dB'**
+  String traffic_lastHop(String name, String snr);
+
   /// No description provided for @traffic_flood.
   ///
   /// In en, this message translates to:
@@ -24337,6 +24439,102 @@ abstract class AppLocalizations {
   /// **'Status history'**
   String get statusHistory_title;
 
+  /// No description provided for @reportCard_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Report card'**
+  String get reportCard_title;
+
+  /// No description provided for @reportCard_hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Built only from status checks you ran and kept on this phone. Nothing extra is sent.'**
+  String get reportCard_hint;
+
+  /// No description provided for @reportCard_empty.
+  ///
+  /// In en, this message translates to:
+  /// **'No status checks kept yet. Each Status check you run adds to this report.'**
+  String get reportCard_empty;
+
+  /// No description provided for @reportCard_checks.
+  ///
+  /// In en, this message translates to:
+  /// **'Checks'**
+  String get reportCard_checks;
+
+  /// No description provided for @reportCard_restarts.
+  ///
+  /// In en, this message translates to:
+  /// **'Restarts seen'**
+  String get reportCard_restarts;
+
+  /// No description provided for @reportCard_longestUptime.
+  ///
+  /// In en, this message translates to:
+  /// **'Longest uptime'**
+  String get reportCard_longestUptime;
+
+  /// No description provided for @reportCard_battery.
+  ///
+  /// In en, this message translates to:
+  /// **'Battery'**
+  String get reportCard_battery;
+
+  /// No description provided for @reportCard_noise.
+  ///
+  /// In en, this message translates to:
+  /// **'Noise floor'**
+  String get reportCard_noise;
+
+  /// No description provided for @reportCard_errors.
+  ///
+  /// In en, this message translates to:
+  /// **'New errors'**
+  String get reportCard_errors;
+
+  /// No description provided for @reportCard_neighbours.
+  ///
+  /// In en, this message translates to:
+  /// **'Neighbours'**
+  String get reportCard_neighbours;
+
+  /// No description provided for @reportCard_exportCsv.
+  ///
+  /// In en, this message translates to:
+  /// **'Export CSV'**
+  String get reportCard_exportCsv;
+
+  /// No description provided for @reportCard_checksValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} over {days} days'**
+  String reportCard_checksValue(int count, int days);
+
+  /// No description provided for @reportCard_batteryValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{now} now · lowest {low}'**
+  String reportCard_batteryValue(String now, String low);
+
+  /// No description provided for @reportCard_batteryTrend.
+  ///
+  /// In en, this message translates to:
+  /// **'{change} per week'**
+  String reportCard_batteryTrend(String change);
+
+  /// No description provided for @reportCard_noiseValue.
+  ///
+  /// In en, this message translates to:
+  /// **'average {avg} dBm · worst {worst} dBm'**
+  String reportCard_noiseValue(String avg, String worst);
+
+  /// No description provided for @reportCard_neighboursValue.
+  ///
+  /// In en, this message translates to:
+  /// **'{total} heard · {fresh} new this week · {gone} not heard this week'**
+  String reportCard_neighboursValue(int total, int fresh, int gone);
+
   /// No description provided for @statusHistory_battery.
   ///
   /// In en, this message translates to:
@@ -24812,6 +25010,468 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'The first and last 2 hexagons of every mapping session stay on this phone, so maps can\'t show where you live or park.'**
   String get coverageHex_trimDrivesHint;
+
+  /// No description provided for @fleet_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Fleet'**
+  String get fleet_title;
+
+  /// No description provided for @fleet_toolSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Health, trends and bulk settings for the repeaters you own'**
+  String get fleet_toolSubtitle;
+
+  /// No description provided for @fleet_addRepeater.
+  ///
+  /// In en, this message translates to:
+  /// **'Add repeater'**
+  String get fleet_addRepeater;
+
+  /// No description provided for @fleet_agoNow.
+  ///
+  /// In en, this message translates to:
+  /// **'just now'**
+  String get fleet_agoNow;
+
+  /// No description provided for @fleet_agoMinutes.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} min ago'**
+  String fleet_agoMinutes(int count);
+
+  /// No description provided for @fleet_agoHours.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} h ago'**
+  String fleet_agoHours(int count);
+
+  /// No description provided for @fleet_agoDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} d ago'**
+  String fleet_agoDays(int count);
+
+  /// No description provided for @fleet_alreadyListed.
+  ///
+  /// In en, this message translates to:
+  /// **'That repeater is already in your fleet.'**
+  String get fleet_alreadyListed;
+
+  /// No description provided for @fleet_asking.
+  ///
+  /// In en, this message translates to:
+  /// **'Asking {name}…'**
+  String fleet_asking(String name);
+
+  /// No description provided for @fleet_badAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter an address like 192.168.1.20 or 192.168.1.20:8484.'**
+  String get fleet_badAddress;
+
+  /// No description provided for @fleet_badKey.
+  ///
+  /// In en, this message translates to:
+  /// **'Paste the full 64-character public key.'**
+  String get fleet_badKey;
+
+  /// No description provided for @fleet_battery.
+  ///
+  /// In en, this message translates to:
+  /// **'Battery'**
+  String get fleet_battery;
+
+  /// No description provided for @fleet_batteryTrend.
+  ///
+  /// In en, this message translates to:
+  /// **'Battery (V)'**
+  String get fleet_batteryTrend;
+
+  /// No description provided for @fleet_bulkApply.
+  ///
+  /// In en, this message translates to:
+  /// **'Send to {count} repeaters'**
+  String fleet_bulkApply(int count);
+
+  /// No description provided for @fleet_bulkBadValue.
+  ///
+  /// In en, this message translates to:
+  /// **'That value isn\'t allowed for this setting.'**
+  String get fleet_bulkBadValue;
+
+  /// No description provided for @fleet_bulkChange.
+  ///
+  /// In en, this message translates to:
+  /// **'{current} → {target}'**
+  String fleet_bulkChange(String current, String target);
+
+  /// No description provided for @fleet_bulkConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Set {setting} to {value} on {count} repeaters? Each one is sent over the air, at least 20 seconds apart.'**
+  String fleet_bulkConfirmBody(String setting, String value, int count);
+
+  /// No description provided for @fleet_bulkConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Change repeaters?'**
+  String get fleet_bulkConfirmTitle;
+
+  /// No description provided for @fleet_bulkIntro.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick a setting and a value. Current values are read first; nothing changes until you confirm.'**
+  String get fleet_bulkIntro;
+
+  /// No description provided for @fleet_bulkPreview.
+  ///
+  /// In en, this message translates to:
+  /// **'What would change'**
+  String get fleet_bulkPreview;
+
+  /// No description provided for @fleet_bulkRead.
+  ///
+  /// In en, this message translates to:
+  /// **'Read current values'**
+  String get fleet_bulkRead;
+
+  /// No description provided for @fleet_bulkRepeaters.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeaters'**
+  String get fleet_bulkRepeaters;
+
+  /// No description provided for @fleet_bulkSame.
+  ///
+  /// In en, this message translates to:
+  /// **'Already {target}'**
+  String fleet_bulkSame(String target);
+
+  /// No description provided for @fleet_bulkSend.
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get fleet_bulkSend;
+
+  /// No description provided for @fleet_bulkSetting.
+  ///
+  /// In en, this message translates to:
+  /// **'Setting'**
+  String get fleet_bulkSetting;
+
+  /// No description provided for @fleet_bulkTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Bulk settings'**
+  String get fleet_bulkTitle;
+
+  /// No description provided for @fleet_bulkValue.
+  ///
+  /// In en, this message translates to:
+  /// **'New value'**
+  String get fleet_bulkValue;
+
+  /// No description provided for @fleet_days.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} d'**
+  String fleet_days(int count);
+
+  /// No description provided for @fleet_db.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} dB'**
+  String fleet_db(String value);
+
+  /// No description provided for @fleet_dbm.
+  ///
+  /// In en, this message translates to:
+  /// **'{value} dBm'**
+  String fleet_dbm(int value);
+
+  /// No description provided for @fleet_empty.
+  ///
+  /// In en, this message translates to:
+  /// **'No repeaters yet. Tap + to add one you own.'**
+  String get fleet_empty;
+
+  /// No description provided for @fleet_errorLogin.
+  ///
+  /// In en, this message translates to:
+  /// **'Login refused'**
+  String get fleet_errorLogin;
+
+  /// No description provided for @fleet_errorNoContact.
+  ///
+  /// In en, this message translates to:
+  /// **'Not in the radio\'s contacts'**
+  String get fleet_errorNoContact;
+
+  /// No description provided for @fleet_errorOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed'**
+  String get fleet_errorOther;
+
+  /// No description provided for @fleet_errorTimeout.
+  ///
+  /// In en, this message translates to:
+  /// **'No answer'**
+  String get fleet_errorTimeout;
+
+  /// No description provided for @fleet_firmware.
+  ///
+  /// In en, this message translates to:
+  /// **'Firmware'**
+  String get fleet_firmware;
+
+  /// No description provided for @fleet_heardRepeaters.
+  ///
+  /// In en, this message translates to:
+  /// **'Heard repeaters'**
+  String get fleet_heardRepeaters;
+
+  /// No description provided for @fleet_lastHeard.
+  ///
+  /// In en, this message translates to:
+  /// **'Last heard'**
+  String get fleet_lastHeard;
+
+  /// No description provided for @fleet_lastPollFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Last poll: {reason}, {when}'**
+  String fleet_lastPollFailed(String reason, String when);
+
+  /// No description provided for @fleet_lastSnr.
+  ///
+  /// In en, this message translates to:
+  /// **'Last SNR'**
+  String get fleet_lastSnr;
+
+  /// No description provided for @fleet_name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get fleet_name;
+
+  /// No description provided for @fleet_needsRadio.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect a radio to poll.'**
+  String get fleet_needsRadio;
+
+  /// No description provided for @fleet_neighbours.
+  ///
+  /// In en, this message translates to:
+  /// **'Neighbours'**
+  String get fleet_neighbours;
+
+  /// No description provided for @fleet_noHeard.
+  ///
+  /// In en, this message translates to:
+  /// **'No repeaters heard that aren\'t in your fleet.'**
+  String get fleet_noHeard;
+
+  /// No description provided for @fleet_noHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'No readings in this period.'**
+  String get fleet_noHistory;
+
+  /// No description provided for @fleet_noiseFloor.
+  ///
+  /// In en, this message translates to:
+  /// **'Noise floor'**
+  String get fleet_noiseFloor;
+
+  /// No description provided for @fleet_noiseTrend.
+  ///
+  /// In en, this message translates to:
+  /// **'Noise floor (dBm)'**
+  String get fleet_noiseTrend;
+
+  /// No description provided for @fleet_password.
+  ///
+  /// In en, this message translates to:
+  /// **'Admin password'**
+  String get fleet_password;
+
+  /// No description provided for @fleet_passwordHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Kept in this phone\'s secure storage. It is only ever sent to the repeater, over the radio.'**
+  String get fleet_passwordHint;
+
+  /// No description provided for @fleet_passwordOptional.
+  ///
+  /// In en, this message translates to:
+  /// **'Admin password (optional)'**
+  String get fleet_passwordOptional;
+
+  /// No description provided for @fleet_passwordSaved.
+  ///
+  /// In en, this message translates to:
+  /// **'Password updated'**
+  String get fleet_passwordSaved;
+
+  /// No description provided for @fleet_pasteKey.
+  ///
+  /// In en, this message translates to:
+  /// **'Or paste a key'**
+  String get fleet_pasteKey;
+
+  /// No description provided for @fleet_pollAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Poll all'**
+  String get fleet_pollAll;
+
+  /// No description provided for @fleet_pollHint.
+  ///
+  /// In en, this message translates to:
+  /// **'One repeater at a time, {seconds} s apart, to save airtime.'**
+  String fleet_pollHint(int seconds);
+
+  /// No description provided for @fleet_pollNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Poll now'**
+  String get fleet_pollNow;
+
+  /// No description provided for @fleet_progress.
+  ///
+  /// In en, this message translates to:
+  /// **'{done} of {total}'**
+  String fleet_progress(int done, int total);
+
+  /// No description provided for @fleet_publicKey.
+  ///
+  /// In en, this message translates to:
+  /// **'Public key'**
+  String get fleet_publicKey;
+
+  /// No description provided for @fleet_remove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove from fleet'**
+  String get fleet_remove;
+
+  /// No description provided for @fleet_removeBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove {name} and its history and password from this phone?'**
+  String fleet_removeBody(String name);
+
+  /// No description provided for @fleet_removeTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove repeater?'**
+  String get fleet_removeTitle;
+
+  /// No description provided for @fleet_stationAddress.
+  ///
+  /// In en, this message translates to:
+  /// **'Station address'**
+  String get fleet_stationAddress;
+
+  /// No description provided for @fleet_statusFirmwareBehind.
+  ///
+  /// In en, this message translates to:
+  /// **'Firmware behind'**
+  String get fleet_statusFirmwareBehind;
+
+  /// No description provided for @fleet_statusHealthy.
+  ///
+  /// In en, this message translates to:
+  /// **'Healthy'**
+  String get fleet_statusHealthy;
+
+  /// No description provided for @fleet_statusLowBattery.
+  ///
+  /// In en, this message translates to:
+  /// **'Low battery'**
+  String get fleet_statusLowBattery;
+
+  /// No description provided for @fleet_statusQuiet.
+  ///
+  /// In en, this message translates to:
+  /// **'Quiet'**
+  String get fleet_statusQuiet;
+
+  /// No description provided for @fleet_statusUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'Not polled'**
+  String get fleet_statusUnknown;
+
+  /// No description provided for @fleet_stop.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop'**
+  String get fleet_stop;
+
+  /// No description provided for @fleet_sync.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync'**
+  String get fleet_sync;
+
+  /// No description provided for @fleet_syncDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Synced: {count} new readings.'**
+  String fleet_syncDone(int count);
+
+  /// No description provided for @fleet_syncFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t reach the station.'**
+  String get fleet_syncFailed;
+
+  /// No description provided for @fleet_syncHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Copies history from a NOTORYX Ops station on your network. It only reads; passwords never leave this phone.'**
+  String get fleet_syncHint;
+
+  /// No description provided for @fleet_syncSignIn.
+  ///
+  /// In en, this message translates to:
+  /// **'The station needs a sign-in. Sync works with stations that have no accounts.'**
+  String get fleet_syncSignIn;
+
+  /// No description provided for @fleet_syncStation.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync from station'**
+  String get fleet_syncStation;
+
+  /// No description provided for @fleet_uptime.
+  ///
+  /// In en, this message translates to:
+  /// **'Uptime'**
+  String get fleet_uptime;
+
+  /// No description provided for @fleet_uptimeDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{days} d {hours} h'**
+  String fleet_uptimeDays(int days, int hours);
+
+  /// No description provided for @fleet_uptimeHours.
+  ///
+  /// In en, this message translates to:
+  /// **'{hours} h {minutes} min'**
+  String fleet_uptimeHours(int hours, int minutes);
+
+  /// No description provided for @fleet_waiting.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting…'**
+  String get fleet_waiting;
 }
 
 class _AppLocalizationsDelegate

@@ -2851,6 +2851,26 @@ class AppLocalizationsSv extends AppLocalizations {
       'Inloggning misslyckades. Antingen är lösenordet fel eller så går det inte att nå repeatern.';
 
   @override
+  String get login_failRadioOffline =>
+      'Din radio är inte ansluten, så inloggningen skickades inte. Anslut radion och försök igen.';
+
+  @override
+  String get login_failSend =>
+      'Din radio tog inte emot inloggningsbegäran. Anslut igen och försök på nytt.';
+
+  @override
+  String login_failNoAnswerPath(int hops, String option, String section) {
+    return 'Inget svar via den sparade vägen ($hops hopp). Vägen kan vara inaktuell: slå på “$option” under $section och försök igen. Fel lösenord får inte heller något svar.';
+  }
+
+  @override
+  String get login_failRejected => 'Repeatern svarade och nekade lösenordet.';
+
+  @override
+  String get login_failNoAnswerFlood =>
+      'Inget svar via flood. Repeatern kan vara utom räckhåll, avstängd eller upptagen, eller så är lösenordet fel (det svarar repeatrar inte på). Försök igen närmare.';
+
+  @override
   String get common_reload => 'Ladda om';
 
   @override
@@ -3186,6 +3206,20 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get repeater_settingsSaved =>
       'Inställningarna sparades framgångsrikt.';
+
+  @override
+  String get repeater_settingsConfirmed =>
+      'Inställningarna sparades och bekräftades av repeatern';
+
+  @override
+  String repeater_settingsUnconfirmed(int count) {
+    return 'Inställningarna sparades, men $count kunde inte läsas tillbaka för bekräftelse';
+  }
+
+  @override
+  String repeater_readBackMismatch(String key, String value) {
+    return '$key läses tillbaka som $value';
+  }
 
   @override
   String get repeater_rxGain => 'Ökad RX-vinst';
@@ -6986,6 +7020,25 @@ class AppLocalizationsSv extends AppLocalizations {
   String get bastionDiag_export => 'Exportera diagnostik';
 
   @override
+  String get diagTimeline_title => 'Anslutningshistorik';
+
+  @override
+  String get diagTimeline_empty =>
+      'Inga anslutningsändringar sedan appen startade.';
+
+  @override
+  String get diagTimeline_causeUser => 'du bad om det';
+
+  @override
+  String get diagTimeline_causeLinkLost => 'länken föll bort';
+
+  @override
+  String get diagTimeline_causeReconnect => 'automatiskt nytt försök';
+
+  @override
+  String get diagTimeline_causeApp => 'stängd av appen';
+
+  @override
   String get bastionDiag_channels => 'Kanaler';
 
   @override
@@ -7591,6 +7644,11 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get shortcuts_checkIn => 'Checka in';
+
+  @override
+  String qsTile_unread(String status, int count) {
+    return '$status · $count olästa';
+  }
 
   @override
   String get shortcuts_trip => 'Tur';
@@ -9220,6 +9278,10 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get ping_noReply => 'Inget svar';
+
+  @override
+  String get ping_noReplyNote =>
+      'Inget svar bevisar inte att repeatern är nere. Förfrågan eller svaret kan försvinna i brus eller en kollision, så försök igen eller testa från en annan plats.';
 
   @override
   String ping_resultLine(String ms, String snr) {
@@ -13600,6 +13662,11 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
+  String traffic_lastHop(String name, String snr) {
+    return 'Sista hopp $name · $snr dB';
+  }
+
+  @override
   String traffic_flood(int hops) {
     return 'Flood $hops';
   }
@@ -14574,6 +14641,66 @@ class AppLocalizationsSv extends AppLocalizations {
   String get statusHistory_title => 'Statushistorik';
 
   @override
+  String get reportCard_title => 'Rapport';
+
+  @override
+  String get reportCard_hint =>
+      'Byggs bara av statuskontroller du gjort, sparade på den här telefonen. Inget extra skickas.';
+
+  @override
+  String get reportCard_empty =>
+      'Inga statuskontroller sparade än. Varje statuskontroll fyller på rapporten.';
+
+  @override
+  String get reportCard_checks => 'Kontroller';
+
+  @override
+  String get reportCard_restarts => 'Omstarter sedda';
+
+  @override
+  String get reportCard_longestUptime => 'Längsta drifttid';
+
+  @override
+  String get reportCard_battery => 'Batteri';
+
+  @override
+  String get reportCard_noise => 'Brusgolv';
+
+  @override
+  String get reportCard_errors => 'Nya fel';
+
+  @override
+  String get reportCard_neighbours => 'Grannar';
+
+  @override
+  String get reportCard_exportCsv => 'Exportera CSV';
+
+  @override
+  String reportCard_checksValue(int count, int days) {
+    return '$count på $days dagar';
+  }
+
+  @override
+  String reportCard_batteryValue(String now, String low) {
+    return '$now nu · lägst $low';
+  }
+
+  @override
+  String reportCard_batteryTrend(String change) {
+    return '$change per vecka';
+  }
+
+  @override
+  String reportCard_noiseValue(String avg, String worst) {
+    return 'snitt $avg dBm · sämst $worst dBm';
+  }
+
+  @override
+  String reportCard_neighboursValue(int total, int fresh, int gone) {
+    return '$total hörda · $fresh nya i veckan · $gone ej hörda i veckan';
+  }
+
+  @override
   String get statusHistory_battery => 'Batteri';
 
   @override
@@ -14900,4 +15027,280 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get coverageHex_trimDrivesHint =>
       'De första och sista 2 hexagonerna i varje kartläggning stannar på telefonen, så kartor kan inte visa var du bor eller parkerar.';
+
+  @override
+  String get fleet_title => 'Flotta';
+
+  @override
+  String get fleet_toolSubtitle =>
+      'Hälsa, trender och massinställningar för dina egna repeatrar';
+
+  @override
+  String get fleet_addRepeater => 'Lägg till repeater';
+
+  @override
+  String get fleet_agoNow => 'nyss';
+
+  @override
+  String fleet_agoMinutes(int count) {
+    return 'för $count min sedan';
+  }
+
+  @override
+  String fleet_agoHours(int count) {
+    return 'för $count h sedan';
+  }
+
+  @override
+  String fleet_agoDays(int count) {
+    return 'för $count d sedan';
+  }
+
+  @override
+  String get fleet_alreadyListed => 'Den repeatern finns redan i din flotta.';
+
+  @override
+  String fleet_asking(String name) {
+    return 'Frågar $name…';
+  }
+
+  @override
+  String get fleet_badAddress =>
+      'Ange en adress som 192.168.1.20 eller 192.168.1.20:8484.';
+
+  @override
+  String get fleet_badKey =>
+      'Klistra in hela den publika nyckeln på 64 tecken.';
+
+  @override
+  String get fleet_battery => 'Batteri';
+
+  @override
+  String get fleet_batteryTrend => 'Batteri (V)';
+
+  @override
+  String fleet_bulkApply(int count) {
+    return 'Skicka till $count repeatrar';
+  }
+
+  @override
+  String get fleet_bulkBadValue =>
+      'Det värdet är inte tillåtet för den här inställningen.';
+
+  @override
+  String fleet_bulkChange(String current, String target) {
+    return '$current → $target';
+  }
+
+  @override
+  String fleet_bulkConfirmBody(String setting, String value, int count) {
+    return 'Sätta $setting till $value på $count repeatrar? Var och en skickas via radio, minst 20 sekunder isär.';
+  }
+
+  @override
+  String get fleet_bulkConfirmTitle => 'Ändra repeatrar?';
+
+  @override
+  String get fleet_bulkIntro =>
+      'Välj en inställning och ett värde. Nuvarande värden läses först; inget ändras förrän du bekräftar.';
+
+  @override
+  String get fleet_bulkPreview => 'Vad som skulle ändras';
+
+  @override
+  String get fleet_bulkRead => 'Läs nuvarande värden';
+
+  @override
+  String get fleet_bulkRepeaters => 'Repeatrar';
+
+  @override
+  String fleet_bulkSame(String target) {
+    return 'Redan $target';
+  }
+
+  @override
+  String get fleet_bulkSend => 'Skicka';
+
+  @override
+  String get fleet_bulkSetting => 'Inställning';
+
+  @override
+  String get fleet_bulkTitle => 'Massinställningar';
+
+  @override
+  String get fleet_bulkValue => 'Nytt värde';
+
+  @override
+  String fleet_days(int count) {
+    return '$count d';
+  }
+
+  @override
+  String fleet_db(String value) {
+    return '$value dB';
+  }
+
+  @override
+  String fleet_dbm(int value) {
+    return '$value dBm';
+  }
+
+  @override
+  String get fleet_empty =>
+      'Inga repeatrar än. Tryck på + för att lägga till en egen.';
+
+  @override
+  String get fleet_errorLogin => 'Inloggning nekad';
+
+  @override
+  String get fleet_errorNoContact => 'Finns inte bland radions kontakter';
+
+  @override
+  String get fleet_errorOther => 'Misslyckades';
+
+  @override
+  String get fleet_errorTimeout => 'Inget svar';
+
+  @override
+  String get fleet_firmware => 'Firmware';
+
+  @override
+  String get fleet_heardRepeaters => 'Hörda repeatrar';
+
+  @override
+  String get fleet_lastHeard => 'Senast hörd';
+
+  @override
+  String fleet_lastPollFailed(String reason, String when) {
+    return 'Senaste förfrågan: $reason, $when';
+  }
+
+  @override
+  String get fleet_lastSnr => 'Senaste SNR';
+
+  @override
+  String get fleet_name => 'Namn';
+
+  @override
+  String get fleet_needsRadio => 'Anslut en radio för att fråga.';
+
+  @override
+  String get fleet_neighbours => 'Grannar';
+
+  @override
+  String get fleet_noHeard => 'Inga hörda repeatrar utanför din flotta.';
+
+  @override
+  String get fleet_noHistory => 'Inga mätvärden under perioden.';
+
+  @override
+  String get fleet_noiseFloor => 'Brusgolv';
+
+  @override
+  String get fleet_noiseTrend => 'Brusgolv (dBm)';
+
+  @override
+  String get fleet_password => 'Adminlösenord';
+
+  @override
+  String get fleet_passwordHint =>
+      'Sparas i telefonens säkra lagring. Det skickas bara till repeatern, via radio.';
+
+  @override
+  String get fleet_passwordOptional => 'Adminlösenord (valfritt)';
+
+  @override
+  String get fleet_passwordSaved => 'Lösenord uppdaterat';
+
+  @override
+  String get fleet_pasteKey => 'Eller klistra in en nyckel';
+
+  @override
+  String get fleet_pollAll => 'Fråga alla';
+
+  @override
+  String fleet_pollHint(int seconds) {
+    return 'En repeater i taget, $seconds s isär, för att spara sändtid.';
+  }
+
+  @override
+  String get fleet_pollNow => 'Fråga nu';
+
+  @override
+  String fleet_progress(int done, int total) {
+    return '$done av $total';
+  }
+
+  @override
+  String get fleet_publicKey => 'Publik nyckel';
+
+  @override
+  String get fleet_remove => 'Ta bort från flottan';
+
+  @override
+  String fleet_removeBody(String name) {
+    return 'Ta bort $name med historik och lösenord från den här telefonen?';
+  }
+
+  @override
+  String get fleet_removeTitle => 'Ta bort repeater?';
+
+  @override
+  String get fleet_stationAddress => 'Stationsadress';
+
+  @override
+  String get fleet_statusFirmwareBehind => 'Gammal firmware';
+
+  @override
+  String get fleet_statusHealthy => 'Frisk';
+
+  @override
+  String get fleet_statusLowBattery => 'Lågt batteri';
+
+  @override
+  String get fleet_statusQuiet => 'Tyst';
+
+  @override
+  String get fleet_statusUnknown => 'Ej tillfrågad';
+
+  @override
+  String get fleet_stop => 'Stoppa';
+
+  @override
+  String get fleet_sync => 'Synka';
+
+  @override
+  String fleet_syncDone(int count) {
+    return 'Synkat: $count nya mätvärden.';
+  }
+
+  @override
+  String get fleet_syncFailed => 'Kunde inte nå stationen.';
+
+  @override
+  String get fleet_syncHint =>
+      'Kopierar historik från en NOTORYX Ops-station i ditt nätverk. Den läser bara; lösenord lämnar aldrig telefonen.';
+
+  @override
+  String get fleet_syncSignIn =>
+      'Stationen kräver inloggning. Synk fungerar med stationer utan konton.';
+
+  @override
+  String get fleet_syncStation => 'Synka från station';
+
+  @override
+  String get fleet_uptime => 'Drifttid';
+
+  @override
+  String fleet_uptimeDays(int days, int hours) {
+    return '$days d $hours h';
+  }
+
+  @override
+  String fleet_uptimeHours(int hours, int minutes) {
+    return '$hours h $minutes min';
+  }
+
+  @override
+  String get fleet_waiting => 'Väntar…';
 }

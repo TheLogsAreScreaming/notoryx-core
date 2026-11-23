@@ -42,6 +42,7 @@ const _bastionPrefixes = [
   'topology_',
   'traceCard_',
   'zones_',
+  'fleet_',
 ];
 
 Map<String, dynamic> _arb(String locale) =>

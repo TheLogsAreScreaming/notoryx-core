@@ -2863,6 +2863,27 @@ class AppLocalizationsNl extends AppLocalizations {
       'Inloggen mislukt. Het wachtwoord is onjuist of de repeater is niet bereikbaar.';
 
   @override
+  String get login_failRadioOffline =>
+      'Je radio is niet verbonden, dus de aanmelding is niet verstuurd. Verbind je radio en probeer het opnieuw.';
+
+  @override
+  String get login_failSend =>
+      'Je radio nam het aanmeldverzoek niet aan. Verbind opnieuw en probeer het nog eens.';
+
+  @override
+  String login_failNoAnswerPath(int hops, String option, String section) {
+    return 'Geen antwoord via het opgeslagen pad ($hops hops). Het pad is misschien verouderd: zet “$option” aan onder $section en probeer opnieuw. Op een fout wachtwoord komt ook geen antwoord.';
+  }
+
+  @override
+  String get login_failRejected =>
+      'De repeater antwoordde en weigerde het wachtwoord.';
+
+  @override
+  String get login_failNoAnswerFlood =>
+      'Geen antwoord via flood. De repeater is misschien buiten bereik, uit of bezet, of het wachtwoord klopt niet (daarop antwoorden repeaters niet). Probeer het dichterbij opnieuw.';
+
+  @override
   String get common_reload => 'Opnieuw laden';
 
   @override
@@ -3195,6 +3216,20 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get repeater_settingsSaved => 'Instellingen succesvol opgeslagen';
+
+  @override
+  String get repeater_settingsConfirmed =>
+      'Instellingen opgeslagen en door de repeater bevestigd';
+
+  @override
+  String repeater_settingsUnconfirmed(int count) {
+    return 'Instellingen opgeslagen, maar $count konden niet worden teruggelezen ter controle';
+  }
+
+  @override
+  String repeater_readBackMismatch(String key, String value) {
+    return '$key leest terug als $value';
+  }
 
   @override
   String get repeater_rxGain => 'Verhoogde RX-uitgang';
@@ -7016,6 +7051,25 @@ class AppLocalizationsNl extends AppLocalizations {
   String get bastionDiag_export => 'Diagnose exporteren';
 
   @override
+  String get diagTimeline_title => 'Verbindingstijdlijn';
+
+  @override
+  String get diagTimeline_empty =>
+      'Geen verbindingswijzigingen sinds de app is gestart.';
+
+  @override
+  String get diagTimeline_causeUser => 'op jouw verzoek';
+
+  @override
+  String get diagTimeline_causeLinkLost => 'verbinding weggevallen';
+
+  @override
+  String get diagTimeline_causeReconnect => 'automatische nieuwe poging';
+
+  @override
+  String get diagTimeline_causeApp => 'door de app gesloten';
+
+  @override
   String get bastionDiag_channels => 'Kanalen';
 
   @override
@@ -7622,6 +7676,11 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get shortcuts_checkIn => 'Inchecken';
+
+  @override
+  String qsTile_unread(String status, int count) {
+    return '$status · $count ongelezen';
+  }
 
   @override
   String get shortcuts_trip => 'Tocht';
@@ -9256,6 +9315,10 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get ping_noReply => 'Geen antwoord';
+
+  @override
+  String get ping_noReplyNote =>
+      'Geen antwoord bewijst niet dat de repeater uit is. De test of het antwoord kan verloren gaan door ruis of een botsing; probeer opnieuw of test vanaf een andere plek.';
 
   @override
   String ping_resultLine(String ms, String snr) {
@@ -13657,6 +13720,11 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
+  String traffic_lastHop(String name, String snr) {
+    return 'Laatste hop $name · $snr dB';
+  }
+
+  @override
   String traffic_flood(int hops) {
     return 'Flood $hops';
   }
@@ -14634,6 +14702,66 @@ class AppLocalizationsNl extends AppLocalizations {
   String get statusHistory_title => 'Statusgeschiedenis';
 
   @override
+  String get reportCard_title => 'Rapport';
+
+  @override
+  String get reportCard_hint =>
+      'Alleen gemaakt uit statuscontroles die jij deed, bewaard op deze telefoon. Er wordt niets extra verstuurd.';
+
+  @override
+  String get reportCard_empty =>
+      'Nog geen statuscontroles bewaard. Elke statuscontrole vult dit rapport aan.';
+
+  @override
+  String get reportCard_checks => 'Controles';
+
+  @override
+  String get reportCard_restarts => 'Herstarts gezien';
+
+  @override
+  String get reportCard_longestUptime => 'Langste uptime';
+
+  @override
+  String get reportCard_battery => 'Batterij';
+
+  @override
+  String get reportCard_noise => 'Ruisvloer';
+
+  @override
+  String get reportCard_errors => 'Nieuwe fouten';
+
+  @override
+  String get reportCard_neighbours => 'Buren';
+
+  @override
+  String get reportCard_exportCsv => 'CSV exporteren';
+
+  @override
+  String reportCard_checksValue(int count, int days) {
+    return '$count in $days dagen';
+  }
+
+  @override
+  String reportCard_batteryValue(String now, String low) {
+    return '$now nu · laagste $low';
+  }
+
+  @override
+  String reportCard_batteryTrend(String change) {
+    return '$change per week';
+  }
+
+  @override
+  String reportCard_noiseValue(String avg, String worst) {
+    return 'gemiddeld $avg dBm · slechtst $worst dBm';
+  }
+
+  @override
+  String reportCard_neighboursValue(int total, int fresh, int gone) {
+    return '$total gehoord · $fresh nieuw deze week · $gone deze week niet gehoord';
+  }
+
+  @override
   String get statusHistory_battery => 'Accu';
 
   @override
@@ -14960,4 +15088,280 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get coverageHex_trimDrivesHint =>
       'De eerste en laatste 2 zeshoeken van elke sessie blijven op deze telefoon, zodat kaarten niet tonen waar je woont of parkeert.';
+
+  @override
+  String get fleet_title => 'Vloot';
+
+  @override
+  String get fleet_toolSubtitle =>
+      'Status, trends en bulkinstellingen voor je eigen repeaters';
+
+  @override
+  String get fleet_addRepeater => 'Repeater toevoegen';
+
+  @override
+  String get fleet_agoNow => 'zojuist';
+
+  @override
+  String fleet_agoMinutes(int count) {
+    return '$count min geleden';
+  }
+
+  @override
+  String fleet_agoHours(int count) {
+    return '$count u geleden';
+  }
+
+  @override
+  String fleet_agoDays(int count) {
+    return '$count d geleden';
+  }
+
+  @override
+  String get fleet_alreadyListed => 'Die repeater staat al in je vloot.';
+
+  @override
+  String fleet_asking(String name) {
+    return '$name wordt bevraagd…';
+  }
+
+  @override
+  String get fleet_badAddress =>
+      'Voer een adres in zoals 192.168.1.20 of 192.168.1.20:8484.';
+
+  @override
+  String get fleet_badKey =>
+      'Plak de volledige publieke sleutel van 64 tekens.';
+
+  @override
+  String get fleet_battery => 'Batterij';
+
+  @override
+  String get fleet_batteryTrend => 'Batterij (V)';
+
+  @override
+  String fleet_bulkApply(int count) {
+    return 'Naar $count repeaters sturen';
+  }
+
+  @override
+  String get fleet_bulkBadValue =>
+      'Die waarde is niet toegestaan voor deze instelling.';
+
+  @override
+  String fleet_bulkChange(String current, String target) {
+    return '$current → $target';
+  }
+
+  @override
+  String fleet_bulkConfirmBody(String setting, String value, int count) {
+    return '$setting op $value zetten bij $count repeaters? Elke wordt via de radio verstuurd, minstens 20 seconden na elkaar.';
+  }
+
+  @override
+  String get fleet_bulkConfirmTitle => 'Repeaters wijzigen?';
+
+  @override
+  String get fleet_bulkIntro =>
+      'Kies een instelling en een waarde. Eerst worden de huidige waarden gelezen; er verandert niets tot je bevestigt.';
+
+  @override
+  String get fleet_bulkPreview => 'Wat er zou veranderen';
+
+  @override
+  String get fleet_bulkRead => 'Huidige waarden lezen';
+
+  @override
+  String get fleet_bulkRepeaters => 'Repeaters';
+
+  @override
+  String fleet_bulkSame(String target) {
+    return 'Al $target';
+  }
+
+  @override
+  String get fleet_bulkSend => 'Versturen';
+
+  @override
+  String get fleet_bulkSetting => 'Instelling';
+
+  @override
+  String get fleet_bulkTitle => 'Bulkinstellingen';
+
+  @override
+  String get fleet_bulkValue => 'Nieuwe waarde';
+
+  @override
+  String fleet_days(int count) {
+    return '$count d';
+  }
+
+  @override
+  String fleet_db(String value) {
+    return '$value dB';
+  }
+
+  @override
+  String fleet_dbm(int value) {
+    return '$value dBm';
+  }
+
+  @override
+  String get fleet_empty =>
+      'Nog geen repeaters. Tik op + om er een van jezelf toe te voegen.';
+
+  @override
+  String get fleet_errorLogin => 'Inloggen geweigerd';
+
+  @override
+  String get fleet_errorNoContact => 'Niet in de contacten van de radio';
+
+  @override
+  String get fleet_errorOther => 'Mislukt';
+
+  @override
+  String get fleet_errorTimeout => 'Geen antwoord';
+
+  @override
+  String get fleet_firmware => 'Firmware';
+
+  @override
+  String get fleet_heardRepeaters => 'Gehoorde repeaters';
+
+  @override
+  String get fleet_lastHeard => 'Laatst gehoord';
+
+  @override
+  String fleet_lastPollFailed(String reason, String when) {
+    return 'Laatste bevraging: $reason, $when';
+  }
+
+  @override
+  String get fleet_lastSnr => 'Laatste SNR';
+
+  @override
+  String get fleet_name => 'Naam';
+
+  @override
+  String get fleet_needsRadio => 'Verbind een radio om te bevragen.';
+
+  @override
+  String get fleet_neighbours => 'Buren';
+
+  @override
+  String get fleet_noHeard => 'Geen gehoorde repeaters buiten je vloot.';
+
+  @override
+  String get fleet_noHistory => 'Geen metingen in deze periode.';
+
+  @override
+  String get fleet_noiseFloor => 'Ruisvloer';
+
+  @override
+  String get fleet_noiseTrend => 'Ruisvloer (dBm)';
+
+  @override
+  String get fleet_password => 'Beheerderswachtwoord';
+
+  @override
+  String get fleet_passwordHint =>
+      'Bewaard in de beveiligde opslag van deze telefoon. Het gaat alleen naar de repeater, via de radio.';
+
+  @override
+  String get fleet_passwordOptional => 'Beheerderswachtwoord (optioneel)';
+
+  @override
+  String get fleet_passwordSaved => 'Wachtwoord bijgewerkt';
+
+  @override
+  String get fleet_pasteKey => 'Of plak een sleutel';
+
+  @override
+  String get fleet_pollAll => 'Alles bevragen';
+
+  @override
+  String fleet_pollHint(int seconds) {
+    return 'Eén repeater tegelijk, $seconds s ertussen, om zendtijd te sparen.';
+  }
+
+  @override
+  String get fleet_pollNow => 'Nu bevragen';
+
+  @override
+  String fleet_progress(int done, int total) {
+    return '$done van $total';
+  }
+
+  @override
+  String get fleet_publicKey => 'Publieke sleutel';
+
+  @override
+  String get fleet_remove => 'Uit vloot verwijderen';
+
+  @override
+  String fleet_removeBody(String name) {
+    return '$name met geschiedenis en wachtwoord van deze telefoon verwijderen?';
+  }
+
+  @override
+  String get fleet_removeTitle => 'Repeater verwijderen?';
+
+  @override
+  String get fleet_stationAddress => 'Stationsadres';
+
+  @override
+  String get fleet_statusFirmwareBehind => 'Firmware verouderd';
+
+  @override
+  String get fleet_statusHealthy => 'Gezond';
+
+  @override
+  String get fleet_statusLowBattery => 'Batterij laag';
+
+  @override
+  String get fleet_statusQuiet => 'Stil';
+
+  @override
+  String get fleet_statusUnknown => 'Niet bevraagd';
+
+  @override
+  String get fleet_stop => 'Stoppen';
+
+  @override
+  String get fleet_sync => 'Synchroniseren';
+
+  @override
+  String fleet_syncDone(int count) {
+    return 'Gesynchroniseerd: $count nieuwe metingen.';
+  }
+
+  @override
+  String get fleet_syncFailed => 'Kan het station niet bereiken.';
+
+  @override
+  String get fleet_syncHint =>
+      'Kopieert geschiedenis van een NOTORYX Ops-station op je netwerk. Alleen lezen; wachtwoorden verlaten deze telefoon nooit.';
+
+  @override
+  String get fleet_syncSignIn =>
+      'Het station vraagt om inloggen. Synchroniseren werkt met stations zonder accounts.';
+
+  @override
+  String get fleet_syncStation => 'Synchroniseren vanaf station';
+
+  @override
+  String get fleet_uptime => 'Uptime';
+
+  @override
+  String fleet_uptimeDays(int days, int hours) {
+    return '$days d $hours u';
+  }
+
+  @override
+  String fleet_uptimeHours(int hours, int minutes) {
+    return '$hours u $minutes min';
+  }
+
+  @override
+  String get fleet_waiting => 'Wachten…';
 }
