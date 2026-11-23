@@ -1,0 +1,1 @@
+New: Try a demo on the Connect Radio screen. A pretend radio with nodes, channels and messages, so you can explore the app without a radio. Nothing is sent.
