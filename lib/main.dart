@@ -88,6 +88,7 @@ import 'services/rx_log_service.dart';
 import 'services/wardrive_service.dart';
 import 'services/timeline_service.dart';
 import 'services/track_log_service.dart';
+import 'services/follow_service.dart';
 import 'services/encrypted_backup_service.dart';
 import 'services/position_watch_service.dart';
 import 'screens/zone_alerts_screen.dart';
@@ -391,6 +392,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   late final AppLockService _appLock;
   late final ChecklistStore _checklists;
   late final TrackLogService _trackLog;
+  late final FollowService _follow;
   late final ChannelDiscoveryService _channelDiscovery;
   late final AnalyzerService _analyzer;
   late final NodeTelemetryStore _telemetry;
@@ -448,6 +450,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _checklists = ChecklistStore(PrefsManager.instance);
     _outbox = widget.outbox;
     _trackLog = TrackLogService(widget.connector);
+    _follow = FollowService(widget.connector);
     _channelDiscovery = ChannelDiscoveryService(widget.connector);
     unawaited(_channelDiscovery.load());
     _analyzer = AnalyzerService()..load();
@@ -670,6 +673,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _timeline.dispose();
     _waypoints.dispose();
     _trackLog.dispose();
+    _follow.dispose();
     _channelDiscovery.dispose();
     _analyzer.dispose();
     _mySensors.dispose();
@@ -893,6 +897,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
           value: _directRepeaters,
         ),
         ChangeNotifierProvider.value(value: _trackLog),
+        ChangeNotifierProvider<FollowService?>.value(value: _follow),
         ChangeNotifierProvider<PositionWatchService?>.value(
           value: _positionWatch,
         ),
