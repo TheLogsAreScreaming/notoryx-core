@@ -1,6 +1,6 @@
-• Diagnostics: connection timeline with the reason for each drop
-• Export a support file with names, keys and positions removed
+• SARNEG: grid zone in clear, unmarked messages, SARDOT, expiry, number/letter of the day
+• Diagnostics: connection timeline and a redacted support file
 • Repeater login says which step failed
 • Repeater settings are read back to confirm they saved
-• Repeater report card: restarts, battery, noise, neighbours, CSV
-• Gap finder: where your direct messages failed, by map hexagon
+• Repeater report card with CSV
+• Gap finder: where your direct messages failed, by hexagon
