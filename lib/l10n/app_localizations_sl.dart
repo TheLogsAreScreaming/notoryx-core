@@ -7650,6 +7650,11 @@ class AppLocalizationsSl extends AppLocalizations {
   String get shortcuts_checkIn => 'Javi se';
 
   @override
+  String qsTile_unread(String status, int count) {
+    return '$status · neprebrano: $count';
+  }
+
+  @override
   String get shortcuts_trip => 'Tura';
 
   @override
