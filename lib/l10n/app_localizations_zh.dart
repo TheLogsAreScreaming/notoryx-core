@@ -7137,6 +7137,11 @@ class AppLocalizationsZh extends AppLocalizations {
   String get shortcuts_checkIn => '报到';
 
   @override
+  String qsTile_unread(String status, int count) {
+    return '$status · $count 条未读';
+  }
+
+  @override
   String get shortcuts_trip => '行程';
 
   @override

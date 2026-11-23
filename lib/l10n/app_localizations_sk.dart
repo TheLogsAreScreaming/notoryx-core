@@ -7644,6 +7644,11 @@ class AppLocalizationsSk extends AppLocalizations {
   String get shortcuts_checkIn => 'Nahlásiť sa';
 
   @override
+  String qsTile_unread(String status, int count) {
+    return '$status · neprečítané: $count';
+  }
+
+  @override
   String get shortcuts_trip => 'Túra';
 
   @override
