@@ -2795,6 +2795,8 @@ class MeshCoreConnector extends ChangeNotifier {
         0xFF, // OUT_PATH_UNKNOWN
         type: link.type,
         name: link.name,
+        // Never heard yet: 0 lets the node's first advert through.
+        lastAdvertTimestamp: 0,
       ),
       expectsGenericAck: true,
       waitForGenericAck: true,
@@ -2961,6 +2963,7 @@ class MeshCoreConnector extends ChangeNotifier {
           type: contact.type,
           flags: contact.flags,
           name: contact.name,
+          lastAdvertTimestamp: _knownAdvertSeconds(contact),
         ),
       );
       // USB writes return instantly (no BLE flow control), so give the firmware
@@ -2989,6 +2992,17 @@ class MeshCoreConnector extends ChangeNotifier {
   /// contact was deleted) would add it back on the radio.
   bool _isKnownContact(Contact contact) =>
       _contacts.any((c) => c.publicKeyHex == contact.publicKeyHex);
+
+  /// The advert time the radio holds for [contact], from our copy of its
+  /// contact list (a screen may pass an older copy of the contact).
+  int _knownAdvertSeconds(Contact contact) => advertSeconds(
+    _contacts
+        .firstWhere(
+          (c) => c.publicKeyHex == contact.publicKeyHex,
+          orElse: () => contact,
+        )
+        .lastSeen,
+  );
 
   Future<void> setContactFlags(
     Contact contact, {
@@ -3040,6 +3054,7 @@ class MeshCoreConnector extends ChangeNotifier {
         type: latestContact.type,
         flags: updatedFlags,
         name: latestContact.name,
+        lastAdvertTimestamp: advertSeconds(latestContact.lastSeen),
       ),
     );
 
@@ -3568,6 +3583,7 @@ class MeshCoreConnector extends ChangeNotifier {
         lat: contact.latitude,
         lon: contact.longitude,
         lastModified: contact.lastSeen,
+        lastAdvertTimestamp: advertSeconds(contact.lastSeen),
       ),
       waitForGenericAck: true,
     );
@@ -3590,7 +3606,7 @@ class MeshCoreConnector extends ChangeNotifier {
         path: contact.path,
         latitude: contact.latitude,
         longitude: contact.longitude,
-        lastSeen: DateTime.now(),
+        lastSeen: contact.lastSeen,
         flags: contact.flags,
       ),
     );
