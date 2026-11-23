@@ -9029,6 +9029,52 @@ class AppLocalizationsSl extends AppLocalizations {
   String get coverageHex_title => 'Šesterokotniki pokritosti';
 
   @override
+  String get gapFinder_title => 'Iskalnik vrzeli';
+
+  @override
+  String get gapFinder_hint =>
+      'Vsako poslano neposredno sporočilo se šteje kot dostavljeno ali neuspešno v šestkotniku, kjer ste bili (približno 0,9 km). Iz običajne uporabe v 30 dneh; shranita se le šestkotnik in dan, nič ne zapusti telefona.';
+
+  @override
+  String get gapFinder_empty =>
+      'Še ni štetih pošiljanj. Tu bodo prikazana neposredna sporočila, poslana z znano lokacijo.';
+
+  @override
+  String get gapFinder_clear => 'Počisti zgodovino';
+
+  @override
+  String get gapFinder_clearBody =>
+      'Pozabim vsa šteta pošiljanja na tem telefonu?';
+
+  @override
+  String get gapFinder_legendGap => 'Vrzel: polovica ali več neuspešnih';
+
+  @override
+  String get gapFinder_legendPatchy => 'Neenakomerno';
+
+  @override
+  String get gapFinder_legendGood => 'Pride skozi';
+
+  @override
+  String get gapFinder_legendFew => 'Premalo pošiljanj';
+
+  @override
+  String get gapFinder_worst => 'Najslabši šestkotniki';
+
+  @override
+  String get gapFinder_notEnough => 'Še noben šestkotnik nima dveh pošiljanj.';
+
+  @override
+  String gapFinder_cellLine(int failed, int total, int percent) {
+    return 'neuspešnih $failed od $total ($percent %)';
+  }
+
+  @override
+  String gapFinder_summary(int gaps, int cells) {
+    return 'vrzeli: $gaps od $cells šestkotnikov';
+  }
+
+  @override
   String get coverageHex_toolSubtitle =>
       'Kartirajte, kje radio sliši omrežje, in to delite';
 

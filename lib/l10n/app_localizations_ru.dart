@@ -9069,6 +9069,53 @@ class AppLocalizationsRu extends AppLocalizations {
   String get coverageHex_title => 'Шестиугольники покрытия';
 
   @override
+  String get gapFinder_title => 'Поиск пробелов';
+
+  @override
+  String get gapFinder_hint =>
+      'Каждое отправленное личное сообщение учитывается как доставленное или нет в шестиугольнике, где вы были (около 0,9 км). Строится по обычному использованию за 30 дней; хранятся только шестиугольник и день, ничего не покидает телефон.';
+
+  @override
+  String get gapFinder_empty =>
+      'Отправок пока нет. Здесь появятся личные сообщения, отправленные с известной позицией.';
+
+  @override
+  String get gapFinder_clear => 'Очистить историю';
+
+  @override
+  String get gapFinder_clearBody =>
+      'Забыть все учтённые отправки на этом телефоне?';
+
+  @override
+  String get gapFinder_legendGap => 'Пробел: половина и более не дошли';
+
+  @override
+  String get gapFinder_legendPatchy => 'Нестабильно';
+
+  @override
+  String get gapFinder_legendGood => 'Доходит';
+
+  @override
+  String get gapFinder_legendFew => 'Мало отправок';
+
+  @override
+  String get gapFinder_worst => 'Худшие шестиугольники';
+
+  @override
+  String get gapFinder_notEnough =>
+      'Пока нет шестиугольника с двумя отправками.';
+
+  @override
+  String gapFinder_cellLine(int failed, int total, int percent) {
+    return 'не дошло $failed из $total ($percent%)';
+  }
+
+  @override
+  String gapFinder_summary(int gaps, int cells) {
+    return 'пробелов: $gaps из $cells шестиугольников';
+  }
+
+  @override
   String get coverageHex_toolSubtitle =>
       'Картируйте, где радио слышит сеть, и делитесь этим';
 

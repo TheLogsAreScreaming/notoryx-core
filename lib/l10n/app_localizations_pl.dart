@@ -9074,6 +9074,53 @@ class AppLocalizationsPl extends AppLocalizations {
   String get coverageHex_title => 'Sześciokąty zasięgu';
 
   @override
+  String get gapFinder_title => 'Wyszukiwarka luk';
+
+  @override
+  String get gapFinder_hint =>
+      'Każda wysłana wiadomość prywatna liczy się jako dostarczona lub nieudana w sześciokącie, w którym byłeś (ok. 0,9 km). Na podstawie 30 dni zwykłego użycia; zapisywane są tylko sześciokąt i dzień, a nic nie opuszcza telefonu.';
+
+  @override
+  String get gapFinder_empty =>
+      'Brak policzonych wysyłek. Pojawią się tu wiadomości prywatne wysłane ze znaną pozycją.';
+
+  @override
+  String get gapFinder_clear => 'Wyczyść historię';
+
+  @override
+  String get gapFinder_clearBody =>
+      'Zapomnieć wszystkie policzone wysyłki na tym telefonie?';
+
+  @override
+  String get gapFinder_legendGap => 'Luka: połowa lub więcej nieudanych';
+
+  @override
+  String get gapFinder_legendPatchy => 'Niestabilnie';
+
+  @override
+  String get gapFinder_legendGood => 'Dociera';
+
+  @override
+  String get gapFinder_legendFew => 'Za mało wysyłek';
+
+  @override
+  String get gapFinder_worst => 'Najgorsze sześciokąty';
+
+  @override
+  String get gapFinder_notEnough =>
+      'Żaden sześciokąt nie ma jeszcze dwóch wysyłek.';
+
+  @override
+  String gapFinder_cellLine(int failed, int total, int percent) {
+    return 'nieudane: $failed z $total ($percent%)';
+  }
+
+  @override
+  String gapFinder_summary(int gaps, int cells) {
+    return 'luki: $gaps w $cells sześciokątach';
+  }
+
+  @override
   String get coverageHex_toolSubtitle =>
       'Mapuj, gdzie radio słyszy sieć, i udostępniaj to';
 

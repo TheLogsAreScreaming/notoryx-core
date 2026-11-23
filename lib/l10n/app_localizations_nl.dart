@@ -9002,6 +9002,52 @@ class AppLocalizationsNl extends AppLocalizations {
   String get coverageHex_title => 'Dekkingszeshoeken';
 
   @override
+  String get gapFinder_title => 'Gatenzoeker';
+
+  @override
+  String get gapFinder_hint =>
+      'Elk direct bericht dat je stuurt telt als afgeleverd of mislukt in de zeshoek waar je was (ongeveer 0,9 km). Gemaakt uit 30 dagen normaal gebruik; alleen de zeshoek en de dag worden bewaard en niets verlaat deze telefoon.';
+
+  @override
+  String get gapFinder_empty =>
+      'Nog geen verzendingen geteld. Directe berichten met een bekende positie verschijnen hier.';
+
+  @override
+  String get gapFinder_clear => 'Geschiedenis wissen';
+
+  @override
+  String get gapFinder_clearBody =>
+      'Alle getelde verzendingen op deze telefoon vergeten?';
+
+  @override
+  String get gapFinder_legendGap => 'Gat: helft of meer mislukt';
+
+  @override
+  String get gapFinder_legendPatchy => 'Wisselend';
+
+  @override
+  String get gapFinder_legendGood => 'Komt door';
+
+  @override
+  String get gapFinder_legendFew => 'Te weinig verzendingen';
+
+  @override
+  String get gapFinder_worst => 'Slechtste zeshoeken';
+
+  @override
+  String get gapFinder_notEnough => 'Nog geen zeshoek met twee verzendingen.';
+
+  @override
+  String gapFinder_cellLine(int failed, int total, int percent) {
+    return '$failed van $total mislukt ($percent%)';
+  }
+
+  @override
+  String gapFinder_summary(int gaps, int cells) {
+    return '$gaps gaten in $cells zeshoeken';
+  }
+
+  @override
   String get coverageHex_toolSubtitle =>
       'Breng in kaart waar je radio het mesh hoort en deel het';
 

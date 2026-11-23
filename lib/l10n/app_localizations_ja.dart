@@ -8607,6 +8607,51 @@ class AppLocalizationsJa extends AppLocalizations {
   String get coverageHex_title => 'カバレッジ六角形';
 
   @override
+  String get gapFinder_title => '圏外マップ';
+
+  @override
+  String get gapFinder_hint =>
+      '送信したダイレクトメッセージは、その時いた六角形（約0.9 km）で配信済みか失敗として数えます。30日間の通常利用から作成し、保存するのは六角形と日付だけで、端末の外には送りません。';
+
+  @override
+  String get gapFinder_empty =>
+      'まだ集計された送信はありません。位置がわかる状態で送ったダイレクトメッセージがここに表示されます。';
+
+  @override
+  String get gapFinder_clear => '履歴を消去';
+
+  @override
+  String get gapFinder_clearBody => 'この端末で集計したすべての送信を消去しますか？';
+
+  @override
+  String get gapFinder_legendGap => '圏外：半分以上が失敗';
+
+  @override
+  String get gapFinder_legendPatchy => '不安定';
+
+  @override
+  String get gapFinder_legendGood => '届く';
+
+  @override
+  String get gapFinder_legendFew => '送信が少なすぎる';
+
+  @override
+  String get gapFinder_worst => '失敗の多い六角形';
+
+  @override
+  String get gapFinder_notEnough => 'まだ送信が2回ある六角形はありません。';
+
+  @override
+  String gapFinder_cellLine(int failed, int total, int percent) {
+    return '$total 件中 $failed 件失敗（$percent%）';
+  }
+
+  @override
+  String gapFinder_summary(int gaps, int cells) {
+    return '$cells 個の六角形のうち圏外 $gaps';
+  }
+
+  @override
   String get coverageHex_toolSubtitle => '無線機がメッシュを受信できる場所を地図にして共有';
 
   @override

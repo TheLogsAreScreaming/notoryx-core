@@ -8619,6 +8619,51 @@ class AppLocalizationsKo extends AppLocalizations {
   String get coverageHex_title => '커버리지 육각형';
 
   @override
+  String get gapFinder_title => '음영 지역 찾기';
+
+  @override
+  String get gapFinder_hint =>
+      '보낸 개인 메시지는 그때 있던 육각형(약 0.9km)에서 전달됨 또는 실패로 집계됩니다. 30일 동안의 일반 사용으로 만들며, 육각형과 날짜만 저장하고 휴대폰 밖으로 보내지 않습니다.';
+
+  @override
+  String get gapFinder_empty =>
+      '아직 집계된 전송이 없습니다. 위치를 아는 상태에서 보낸 개인 메시지가 여기에 표시됩니다.';
+
+  @override
+  String get gapFinder_clear => '기록 지우기';
+
+  @override
+  String get gapFinder_clearBody => '이 휴대폰에서 집계한 모든 전송을 지울까요?';
+
+  @override
+  String get gapFinder_legendGap => '음영: 절반 이상 실패';
+
+  @override
+  String get gapFinder_legendPatchy => '불안정';
+
+  @override
+  String get gapFinder_legendGood => '잘 전달됨';
+
+  @override
+  String get gapFinder_legendFew => '전송이 너무 적음';
+
+  @override
+  String get gapFinder_worst => '가장 나쁜 육각형';
+
+  @override
+  String get gapFinder_notEnough => '아직 전송이 두 번인 육각형이 없습니다.';
+
+  @override
+  String gapFinder_cellLine(int failed, int total, int percent) {
+    return '$total건 중 $failed건 실패($percent%)';
+  }
+
+  @override
+  String gapFinder_summary(int gaps, int cells) {
+    return '$cells개 육각형 중 음영 $gaps개';
+  }
+
+  @override
   String get coverageHex_toolSubtitle => '무전기가 메시를 수신하는 곳을 지도로 만들고 공유';
 
   @override

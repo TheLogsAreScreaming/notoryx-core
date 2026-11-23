@@ -9029,6 +9029,52 @@ class AppLocalizationsHu extends AppLocalizations {
   String get coverageHex_title => 'Lefedettségi hatszögek';
 
   @override
+  String get gapFinder_title => 'Lefedetlen területek';
+
+  @override
+  String get gapFinder_hint =>
+      'Minden elküldött közvetlen üzenet kézbesítettként vagy sikertelenként számít abban a hatszögben, ahol volt (kb. 0,9 km). 30 nap normál használatából készül; csak a hatszög és a nap tárolódik, és semmi nem hagyja el a telefont.';
+
+  @override
+  String get gapFinder_empty =>
+      'Még nincs számolt küldés. Itt jelennek meg az ismert pozícióval küldött közvetlen üzenetek.';
+
+  @override
+  String get gapFinder_clear => 'Előzmények törlése';
+
+  @override
+  String get gapFinder_clearBody =>
+      'Elfelejti az összes számolt küldést ezen a telefonon?';
+
+  @override
+  String get gapFinder_legendGap => 'Rés: legalább a fele sikertelen';
+
+  @override
+  String get gapFinder_legendPatchy => 'Ingadozó';
+
+  @override
+  String get gapFinder_legendGood => 'Átmegy';
+
+  @override
+  String get gapFinder_legendFew => 'Túl kevés küldés';
+
+  @override
+  String get gapFinder_worst => 'Legrosszabb hatszögek';
+
+  @override
+  String get gapFinder_notEnough => 'Még egyik hatszögben sincs két küldés.';
+
+  @override
+  String gapFinder_cellLine(int failed, int total, int percent) {
+    return '$total-ből $failed sikertelen ($percent%)';
+  }
+
+  @override
+  String gapFinder_summary(int gaps, int cells) {
+    return '$gaps rés $cells hatszögben';
+  }
+
+  @override
   String get coverageHex_toolSubtitle =>
       'Térképezze fel, hol hallja a rádió a hálózatot, és ossza meg';
 

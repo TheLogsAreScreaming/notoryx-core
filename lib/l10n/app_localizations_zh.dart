@@ -8435,6 +8435,50 @@ class AppLocalizationsZh extends AppLocalizations {
   String get coverageHex_title => '覆盖六边形';
 
   @override
+  String get gapFinder_title => '盲区查找';
+
+  @override
+  String get gapFinder_hint =>
+      '你发送的每条私信都会在你当时所在的六边形（约 0.9 公里）中记为送达或失败。基于 30 天的日常使用；只保存六边形和日期，不会离开这部手机。';
+
+  @override
+  String get gapFinder_empty => '尚无统计的发送。在已知位置时发送的私信会显示在这里。';
+
+  @override
+  String get gapFinder_clear => '清除记录';
+
+  @override
+  String get gapFinder_clearBody => '要清除这部手机上统计的所有发送吗？';
+
+  @override
+  String get gapFinder_legendGap => '盲区：一半以上失败';
+
+  @override
+  String get gapFinder_legendPatchy => '不稳定';
+
+  @override
+  String get gapFinder_legendGood => '能送达';
+
+  @override
+  String get gapFinder_legendFew => '发送太少';
+
+  @override
+  String get gapFinder_worst => '最差的六边形';
+
+  @override
+  String get gapFinder_notEnough => '还没有发送达到两次的六边形。';
+
+  @override
+  String gapFinder_cellLine(int failed, int total, int percent) {
+    return '$total 次中 $failed 次失败（$percent%）';
+  }
+
+  @override
+  String gapFinder_summary(int gaps, int cells) {
+    return '$cells 个六边形中有 $gaps 个盲区';
+  }
+
+  @override
   String get coverageHex_toolSubtitle => '绘制电台能收到网状网络的位置并分享';
 
   @override

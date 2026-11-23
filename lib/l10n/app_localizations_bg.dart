@@ -9027,6 +9027,52 @@ class AppLocalizationsBg extends AppLocalizations {
   String get coverageHex_title => 'Шестоъгълници на покритието';
 
   @override
+  String get gapFinder_title => 'Търсене на пропуски';
+
+  @override
+  String get gapFinder_hint =>
+      'Всяко изпратено лично съобщение се отчита като доставено или неуспешно в шестоъгълника, където сте били (около 0,9 км). Събира се от обичайна употреба за 30 дни; пазят се само шестоъгълникът и денят и нищо не напуска телефона.';
+
+  @override
+  String get gapFinder_empty =>
+      'Все още няма отчетени изпращания. Тук ще се появят лични съобщения, изпратени с известна позиция.';
+
+  @override
+  String get gapFinder_clear => 'Изчистване на историята';
+
+  @override
+  String get gapFinder_clearBody =>
+      'Да се забравят ли всички отчетени изпращания на този телефон?';
+
+  @override
+  String get gapFinder_legendGap => 'Пропуск: половината или повече неуспешни';
+
+  @override
+  String get gapFinder_legendPatchy => 'Неравномерно';
+
+  @override
+  String get gapFinder_legendGood => 'Стига';
+
+  @override
+  String get gapFinder_legendFew => 'Твърде малко изпращания';
+
+  @override
+  String get gapFinder_worst => 'Най-лоши шестоъгълници';
+
+  @override
+  String get gapFinder_notEnough => 'Още няма шестоъгълник с две изпращания.';
+
+  @override
+  String gapFinder_cellLine(int failed, int total, int percent) {
+    return 'неуспешни $failed от $total ($percent%)';
+  }
+
+  @override
+  String gapFinder_summary(int gaps, int cells) {
+    return 'пропуски: $gaps от $cells шестоъгълника';
+  }
+
+  @override
   String get coverageHex_toolSubtitle =>
       'Картографирайте къде радиото чува мрежата и го споделете';
 

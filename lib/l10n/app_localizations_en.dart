@@ -8918,6 +8918,51 @@ class AppLocalizationsEn extends AppLocalizations {
   String get coverageHex_title => 'Coverage hexagons';
 
   @override
+  String get gapFinder_title => 'Gap finder';
+
+  @override
+  String get gapFinder_hint =>
+      'Each direct message you send is counted as delivered or failed in the hexagon you were in (about 0.9 km). Built from normal use over 30 days; only the hexagon and the day are kept, and nothing leaves this phone.';
+
+  @override
+  String get gapFinder_empty =>
+      'No sends counted yet. Direct messages you send with a known position will show up here.';
+
+  @override
+  String get gapFinder_clear => 'Clear history';
+
+  @override
+  String get gapFinder_clearBody => 'Forget every counted send on this phone?';
+
+  @override
+  String get gapFinder_legendGap => 'Gap: half or more failed';
+
+  @override
+  String get gapFinder_legendPatchy => 'Patchy';
+
+  @override
+  String get gapFinder_legendGood => 'Gets through';
+
+  @override
+  String get gapFinder_legendFew => 'Too few sends';
+
+  @override
+  String get gapFinder_worst => 'Worst hexagons';
+
+  @override
+  String get gapFinder_notEnough => 'No hexagon has two sends yet.';
+
+  @override
+  String gapFinder_cellLine(int failed, int total, int percent) {
+    return '$failed of $total failed ($percent%)';
+  }
+
+  @override
+  String gapFinder_summary(int gaps, int cells) {
+    return '$gaps gaps in $cells hexagons';
+  }
+
+  @override
   String get coverageHex_toolSubtitle =>
       'Map where your radio hears the mesh and share it';
 

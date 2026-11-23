@@ -17,6 +17,7 @@ import '../services/map_tile_cache_service.dart';
 import '../theme/mesh_theme.dart';
 import '../widgets/mesh_ui.dart';
 import '../widgets/ember_backdrop.dart';
+import 'coverage_gap_screen.dart';
 
 String _privacyLabel(AppLocalizations t, CoveragePrivacy p) => switch (p) {
   CoveragePrivacy.live => t.coverageHex_privacyLive,
@@ -80,6 +81,18 @@ class CoverageHexScreen extends StatelessWidget {
           surfaceTintColor: Colors.transparent,
           scrolledUnderElevation: 0,
           title: Text(t.coverageHex_title),
+          actions: [
+            IconButton(
+              key: const ValueKey('coverage-gap-finder'),
+              tooltip: t.gapFinder_title,
+              icon: const Icon(Icons.signal_cellular_off_rounded),
+              onPressed: () => Navigator.of(context).push(
+                MaterialPageRoute<void>(
+                  builder: (_) => const CoverageGapScreen(),
+                ),
+              ),
+            ),
+          ],
         ),
         body: ListView(
           padding: const EdgeInsets.fromLTRB(

@@ -148,6 +148,13 @@ class MeshCoreConnector extends ChangeNotifier {
 
   MeshCoreConnectionState _state = MeshCoreConnectionState.disconnected;
 
+  final StreamController<bool> _sendOutcomes =
+      StreamController<bool>.broadcast();
+
+  /// True when an own direct message is delivered, false when it fails.
+  /// Fires once per message, when its status settles.
+  Stream<bool> get sendOutcomes => _sendOutcomes.stream;
+
   /// Recent connection state changes with their cause, for diagnostics and
   /// the support bundle. Memory only.
   final ConnectionTimeline connectionTimeline = ConnectionTimeline();
@@ -4993,6 +5000,7 @@ class MeshCoreConnector extends ChangeNotifier {
 
   @override
   void dispose() {
+    unawaited(_sendOutcomes.close());
     _adapterStateSubscription?.cancel();
     _scanSubscription?.cancel();
     _scanNotifyTimer?.cancel();
