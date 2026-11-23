@@ -2757,6 +2757,25 @@ class AppLocalizationsKo extends AppLocalizations {
       '로그인에 실패했습니다. 비밀번호가 잘못되었거나, 연결이 되지 않는 것 같습니다.';
 
   @override
+  String get login_failRadioOffline =>
+      '무전기가 연결되지 않아 로그인을 보내지 못했습니다. 무전기를 연결한 뒤 다시 시도하세요.';
+
+  @override
+  String get login_failSend => '무전기가 로그인 요청을 받지 않았습니다. 다시 연결한 뒤 시도하세요.';
+
+  @override
+  String login_failNoAnswerPath(int hops, String option, String section) {
+    return '저장된 경로($hops홉)로 응답이 없습니다. 경로가 오래되었을 수 있으니 $section에서 “$option”를 켜고 다시 시도하세요. 비밀번호가 틀려도 응답이 없습니다.';
+  }
+
+  @override
+  String get login_failRejected => '리피터가 응답했지만 비밀번호를 거부했습니다.';
+
+  @override
+  String get login_failNoAnswerFlood =>
+      '플러드로 응답이 없습니다. 리피터가 범위 밖이거나 꺼져 있거나 바쁠 수 있고, 비밀번호가 틀렸을 수도 있습니다(틀리면 응답하지 않음). 더 가까이에서 다시 시도하세요.';
+
+  @override
   String get common_reload => '다시 불러오기';
 
   @override
@@ -3078,6 +3097,19 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get repeater_settingsSaved => '설정이 성공적으로 저장되었습니다.';
+
+  @override
+  String get repeater_settingsConfirmed => '설정을 저장했고 리피터가 확인했습니다';
+
+  @override
+  String repeater_settingsUnconfirmed(int count) {
+    return '설정을 저장했지만 $count개는 다시 읽어 확인하지 못했습니다';
+  }
+
+  @override
+  String repeater_readBackMismatch(String key, String value) {
+    return '$key 값을 다시 읽으니 $value';
+  }
 
   @override
   String get repeater_rxGain => '향상된 RX 성능';
@@ -6699,6 +6731,24 @@ class AppLocalizationsKo extends AppLocalizations {
   String get bastionDiag_export => '진단 내보내기';
 
   @override
+  String get diagTimeline_title => '연결 기록';
+
+  @override
+  String get diagTimeline_empty => '앱을 시작한 후 연결 변경이 없습니다.';
+
+  @override
+  String get diagTimeline_causeUser => '사용자 요청';
+
+  @override
+  String get diagTimeline_causeLinkLost => '연결 끊김';
+
+  @override
+  String get diagTimeline_causeReconnect => '자동 재시도';
+
+  @override
+  String get diagTimeline_causeApp => '앱이 닫음';
+
+  @override
   String get bastionDiag_channels => '채널';
 
   @override
@@ -7290,6 +7340,11 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get shortcuts_checkIn => '체크인';
+
+  @override
+  String qsTile_unread(String status, int count) {
+    return '$status · 읽지 않음 $count';
+  }
 
   @override
   String get shortcuts_trip => '여정';
@@ -8821,6 +8876,10 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get ping_noReply => '응답 없음';
+
+  @override
+  String get ping_noReplyNote =>
+      '응답이 없다고 해서 리피터가 꺼졌다는 증거는 아닙니다. 프로브나 응답이 잡음이나 충돌로 사라질 수 있으니 다시 시도하거나 다른 위치에서 테스트하세요.';
 
   @override
   String ping_resultLine(String ms, String snr) {
@@ -13057,6 +13116,11 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String traffic_lastHop(String name, String snr) {
+    return '마지막 홉 $name · $snr dB';
+  }
+
+  @override
   String traffic_flood(int hops) {
     return 'Flood $hops';
   }
@@ -14112,6 +14176,65 @@ class AppLocalizationsKo extends AppLocalizations {
   String get statusHistory_title => '상태 기록';
 
   @override
+  String get reportCard_title => '리포트';
+
+  @override
+  String get reportCard_hint =>
+      '직접 실행해 이 휴대폰에 저장된 상태 확인만으로 만듭니다. 추가로 전송하는 것은 없습니다.';
+
+  @override
+  String get reportCard_empty => '아직 저장된 상태 확인이 없습니다. 상태 확인을 할 때마다 리포트에 추가됩니다.';
+
+  @override
+  String get reportCard_checks => '확인 횟수';
+
+  @override
+  String get reportCard_restarts => '감지된 재시작';
+
+  @override
+  String get reportCard_longestUptime => '최장 가동 시간';
+
+  @override
+  String get reportCard_battery => '배터리';
+
+  @override
+  String get reportCard_noise => '잡음 기준';
+
+  @override
+  String get reportCard_errors => '새 오류';
+
+  @override
+  String get reportCard_neighbours => '이웃';
+
+  @override
+  String get reportCard_exportCsv => 'CSV 내보내기';
+
+  @override
+  String reportCard_checksValue(int count, int days) {
+    return '$days일 동안 $count회';
+  }
+
+  @override
+  String reportCard_batteryValue(String now, String low) {
+    return '현재 $now · 최저 $low';
+  }
+
+  @override
+  String reportCard_batteryTrend(String change) {
+    return '주당 $change';
+  }
+
+  @override
+  String reportCard_noiseValue(String avg, String worst) {
+    return '평균 $avg dBm · 최악 $worst dBm';
+  }
+
+  @override
+  String reportCard_neighboursValue(int total, int fresh, int gone) {
+    return '들림 $total · 이번 주 새로 $fresh · 이번 주 안 들림 $gone';
+  }
+
+  @override
   String get statusHistory_battery => '배터리';
 
   @override
@@ -14425,4 +14548,274 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get coverageHex_trimDrivesHint =>
       '매핑 세션마다 처음과 마지막 2개의 육각형은 이 휴대폰에만 남으므로 지도에 사는 곳이나 주차 위치가 나타나지 않습니다.';
+
+  @override
+  String get fleet_title => '플릿';
+
+  @override
+  String get fleet_toolSubtitle => '내 리피터의 상태, 추이, 일괄 설정';
+
+  @override
+  String get fleet_addRepeater => '리피터 추가';
+
+  @override
+  String get fleet_agoNow => '방금';
+
+  @override
+  String fleet_agoMinutes(int count) {
+    return '$count분 전';
+  }
+
+  @override
+  String fleet_agoHours(int count) {
+    return '$count시간 전';
+  }
+
+  @override
+  String fleet_agoDays(int count) {
+    return '$count일 전';
+  }
+
+  @override
+  String get fleet_alreadyListed => '이 리피터는 이미 플릿에 있습니다.';
+
+  @override
+  String fleet_asking(String name) {
+    return '$name에 요청 중…';
+  }
+
+  @override
+  String get fleet_badAddress =>
+      '192.168.1.20 또는 192.168.1.20:8484 같은 주소를 입력하세요.';
+
+  @override
+  String get fleet_badKey => '64자 공개 키 전체를 붙여 넣으세요.';
+
+  @override
+  String get fleet_battery => '배터리';
+
+  @override
+  String get fleet_batteryTrend => '배터리 (V)';
+
+  @override
+  String fleet_bulkApply(int count) {
+    return '리피터 $count대에 보내기';
+  }
+
+  @override
+  String get fleet_bulkBadValue => '이 설정에는 허용되지 않는 값입니다.';
+
+  @override
+  String fleet_bulkChange(String current, String target) {
+    return '$current → $target';
+  }
+
+  @override
+  String fleet_bulkConfirmBody(String setting, String value, int count) {
+    return '리피터 $count대의 $setting 값을 $value(으)로 바꿀까요? 각 리피터에 무선으로 최소 20초 간격을 두고 보냅니다.';
+  }
+
+  @override
+  String get fleet_bulkConfirmTitle => '리피터를 변경할까요?';
+
+  @override
+  String get fleet_bulkIntro =>
+      '설정과 값을 고르세요. 먼저 현재 값을 읽으며, 확인하기 전에는 아무것도 바뀌지 않습니다.';
+
+  @override
+  String get fleet_bulkPreview => '바뀔 내용';
+
+  @override
+  String get fleet_bulkRead => '현재 값 읽기';
+
+  @override
+  String get fleet_bulkRepeaters => '리피터';
+
+  @override
+  String fleet_bulkSame(String target) {
+    return '이미 $target';
+  }
+
+  @override
+  String get fleet_bulkSend => '보내기';
+
+  @override
+  String get fleet_bulkSetting => '설정';
+
+  @override
+  String get fleet_bulkTitle => '일괄 설정';
+
+  @override
+  String get fleet_bulkValue => '새 값';
+
+  @override
+  String fleet_days(int count) {
+    return '$count일';
+  }
+
+  @override
+  String fleet_db(String value) {
+    return '$value dB';
+  }
+
+  @override
+  String fleet_dbm(int value) {
+    return '$value dBm';
+  }
+
+  @override
+  String get fleet_empty => '아직 리피터가 없습니다. +를 눌러 내 리피터를 추가하세요.';
+
+  @override
+  String get fleet_errorLogin => '로그인 거부됨';
+
+  @override
+  String get fleet_errorNoContact => '무전기 연락처에 없음';
+
+  @override
+  String get fleet_errorOther => '실패';
+
+  @override
+  String get fleet_errorTimeout => '응답 없음';
+
+  @override
+  String get fleet_firmware => '펌웨어';
+
+  @override
+  String get fleet_heardRepeaters => '수신된 리피터';
+
+  @override
+  String get fleet_lastHeard => '마지막 수신';
+
+  @override
+  String fleet_lastPollFailed(String reason, String when) {
+    return '마지막 요청: $reason, $when';
+  }
+
+  @override
+  String get fleet_lastSnr => '최근 SNR';
+
+  @override
+  String get fleet_name => '이름';
+
+  @override
+  String get fleet_needsRadio => '요청하려면 무전기를 연결하세요.';
+
+  @override
+  String get fleet_neighbours => '이웃';
+
+  @override
+  String get fleet_noHeard => '플릿 밖에서 수신된 리피터가 없습니다.';
+
+  @override
+  String get fleet_noHistory => '이 기간에는 측정값이 없습니다.';
+
+  @override
+  String get fleet_noiseFloor => '노이즈 플로어';
+
+  @override
+  String get fleet_noiseTrend => '노이즈 플로어 (dBm)';
+
+  @override
+  String get fleet_password => '관리자 비밀번호';
+
+  @override
+  String get fleet_passwordHint => '이 휴대폰의 보안 저장소에 보관됩니다. 무선으로 리피터에만 전송됩니다.';
+
+  @override
+  String get fleet_passwordOptional => '관리자 비밀번호 (선택)';
+
+  @override
+  String get fleet_passwordSaved => '비밀번호를 업데이트했습니다';
+
+  @override
+  String get fleet_pasteKey => '또는 키 붙여 넣기';
+
+  @override
+  String get fleet_pollAll => '모두 요청';
+
+  @override
+  String fleet_pollHint(int seconds) {
+    return '전송 시간을 아끼려고 한 번에 한 대씩 $seconds초 간격으로 요청합니다.';
+  }
+
+  @override
+  String get fleet_pollNow => '지금 요청';
+
+  @override
+  String fleet_progress(int done, int total) {
+    return '$done / $total';
+  }
+
+  @override
+  String get fleet_publicKey => '공개 키';
+
+  @override
+  String get fleet_remove => '플릿에서 제거';
+
+  @override
+  String fleet_removeBody(String name) {
+    return '$name의 기록과 비밀번호를 이 휴대폰에서 제거할까요?';
+  }
+
+  @override
+  String get fleet_removeTitle => '리피터를 제거할까요?';
+
+  @override
+  String get fleet_stationAddress => '스테이션 주소';
+
+  @override
+  String get fleet_statusFirmwareBehind => '펌웨어 구버전';
+
+  @override
+  String get fleet_statusHealthy => '정상';
+
+  @override
+  String get fleet_statusLowBattery => '배터리 부족';
+
+  @override
+  String get fleet_statusQuiet => '무응답';
+
+  @override
+  String get fleet_statusUnknown => '미확인';
+
+  @override
+  String get fleet_stop => '중지';
+
+  @override
+  String get fleet_sync => '동기화';
+
+  @override
+  String fleet_syncDone(int count) {
+    return '동기화됨: 새 측정값 $count개.';
+  }
+
+  @override
+  String get fleet_syncFailed => '스테이션에 연결할 수 없습니다.';
+
+  @override
+  String get fleet_syncHint =>
+      '네트워크의 NOTORYX Ops 스테이션에서 기록을 복사합니다. 읽기만 하며, 비밀번호는 이 휴대폰을 떠나지 않습니다.';
+
+  @override
+  String get fleet_syncSignIn => '스테이션에 로그인이 필요합니다. 동기화는 계정이 없는 스테이션에서 작동합니다.';
+
+  @override
+  String get fleet_syncStation => '스테이션에서 동기화';
+
+  @override
+  String get fleet_uptime => '가동 시간';
+
+  @override
+  String fleet_uptimeDays(int days, int hours) {
+    return '$days일 $hours시간';
+  }
+
+  @override
+  String fleet_uptimeHours(int hours, int minutes) {
+    return '$hours시간 $minutes분';
+  }
+
+  @override
+  String get fleet_waiting => '대기 중…';
 }

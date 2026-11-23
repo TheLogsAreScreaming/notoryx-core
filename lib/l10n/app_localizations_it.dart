@@ -2882,6 +2882,27 @@ class AppLocalizationsIt extends AppLocalizations {
       'Accesso fallito. La password non è corretta oppure il ripetitore non è raggiungibile.';
 
   @override
+  String get login_failRadioOffline =>
+      'La tua radio non è collegata, quindi l\'accesso non è stato inviato. Collegala e riprova.';
+
+  @override
+  String get login_failSend =>
+      'La tua radio non ha accettato la richiesta di accesso. Ricollegala e riprova.';
+
+  @override
+  String login_failNoAnswerPath(int hops, String option, String section) {
+    return 'Nessuna risposta sul percorso salvato ($hops salti). Potrebbe essere superato: attiva “$option” in $section e riprova. Anche una password errata non riceve risposta.';
+  }
+
+  @override
+  String get login_failRejected =>
+      'Il ripetitore ha risposto e ha rifiutato la password.';
+
+  @override
+  String get login_failNoAnswerFlood =>
+      'Nessuna risposta via flood. Il ripetitore potrebbe essere fuori portata, spento o occupato, oppure la password è errata (i ripetitori non rispondono). Riprova più vicino.';
+
+  @override
   String get common_reload => 'Ricarica';
 
   @override
@@ -3219,6 +3240,20 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get repeater_settingsSaved => 'Impostazioni salvate con successo';
+
+  @override
+  String get repeater_settingsConfirmed =>
+      'Impostazioni salvate e confermate dal ripetitore';
+
+  @override
+  String repeater_settingsUnconfirmed(int count) {
+    return 'Impostazioni salvate, ma $count non sono state rilette per conferma';
+  }
+
+  @override
+  String repeater_readBackMismatch(String key, String value) {
+    return '$key risulta $value alla rilettura';
+  }
 
   @override
   String get repeater_rxGain => 'Aumento del guadagno RX';
@@ -7063,6 +7098,25 @@ class AppLocalizationsIt extends AppLocalizations {
   String get bastionDiag_export => 'Esporta diagnostica';
 
   @override
+  String get diagTimeline_title => 'Cronologia connessione';
+
+  @override
+  String get diagTimeline_empty =>
+      'Nessun cambio di connessione dall\'avvio dell\'app.';
+
+  @override
+  String get diagTimeline_causeUser => 'su tua richiesta';
+
+  @override
+  String get diagTimeline_causeLinkLost => 'collegamento perso';
+
+  @override
+  String get diagTimeline_causeReconnect => 'nuovo tentativo automatico';
+
+  @override
+  String get diagTimeline_causeApp => 'chiuso dall\'app';
+
+  @override
   String get bastionDiag_channels => 'Canali';
 
   @override
@@ -7674,6 +7728,11 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get shortcuts_checkIn => 'Check-in';
+
+  @override
+  String qsTile_unread(String status, int count) {
+    return '$status · $count non letti';
+  }
 
   @override
   String get shortcuts_trip => 'Uscita';
@@ -9264,6 +9323,10 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get ping_noReply => 'Nessuna risposta';
+
+  @override
+  String get ping_noReplyNote =>
+      'Nessuna risposta non dimostra che il ripetitore sia spento. La sonda o la sua risposta possono perdersi per rumore o collisione: riprova o prova da un altro punto.';
 
   @override
   String ping_resultLine(String ms, String snr) {
@@ -13670,6 +13733,11 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
+  String traffic_lastHop(String name, String snr) {
+    return 'Ultimo salto $name · $snr dB';
+  }
+
+  @override
   String traffic_flood(int hops) {
     return 'Flood $hops';
   }
@@ -14767,6 +14835,66 @@ class AppLocalizationsIt extends AppLocalizations {
   String get statusHistory_title => 'Cronologia stato';
 
   @override
+  String get reportCard_title => 'Pagella';
+
+  @override
+  String get reportCard_hint =>
+      'Creato solo dai controlli di stato che hai eseguito, salvati su questo telefono. Non viene inviato nulla in più.';
+
+  @override
+  String get reportCard_empty =>
+      'Nessun controllo salvato finora. Ogni controllo di stato si aggiunge a questa pagella.';
+
+  @override
+  String get reportCard_checks => 'Controlli';
+
+  @override
+  String get reportCard_restarts => 'Riavvii rilevati';
+
+  @override
+  String get reportCard_longestUptime => 'Uptime più lungo';
+
+  @override
+  String get reportCard_battery => 'Batteria';
+
+  @override
+  String get reportCard_noise => 'Rumore di fondo';
+
+  @override
+  String get reportCard_errors => 'Nuovi errori';
+
+  @override
+  String get reportCard_neighbours => 'Vicini';
+
+  @override
+  String get reportCard_exportCsv => 'Esporta CSV';
+
+  @override
+  String reportCard_checksValue(int count, int days) {
+    return '$count in $days giorni';
+  }
+
+  @override
+  String reportCard_batteryValue(String now, String low) {
+    return '$now ora · minimo $low';
+  }
+
+  @override
+  String reportCard_batteryTrend(String change) {
+    return '$change a settimana';
+  }
+
+  @override
+  String reportCard_noiseValue(String avg, String worst) {
+    return 'media $avg dBm · peggiore $worst dBm';
+  }
+
+  @override
+  String reportCard_neighboursValue(int total, int fresh, int gone) {
+    return '$total sentiti · $fresh nuovi questa settimana · $gone non sentiti questa settimana';
+  }
+
+  @override
   String get statusHistory_battery => 'Batteria';
 
   @override
@@ -15096,4 +15224,281 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get coverageHex_trimDrivesHint =>
       'I primi e gli ultimi 2 esagoni di ogni sessione restano su questo telefono, così le mappe non mostrano dove abiti o parcheggi.';
+
+  @override
+  String get fleet_title => 'Flotta';
+
+  @override
+  String get fleet_toolSubtitle =>
+      'Stato, andamenti e impostazioni di gruppo dei tuoi ripetitori';
+
+  @override
+  String get fleet_addRepeater => 'Aggiungi ripetitore';
+
+  @override
+  String get fleet_agoNow => 'adesso';
+
+  @override
+  String fleet_agoMinutes(int count) {
+    return '$count min fa';
+  }
+
+  @override
+  String fleet_agoHours(int count) {
+    return '$count h fa';
+  }
+
+  @override
+  String fleet_agoDays(int count) {
+    return '$count g fa';
+  }
+
+  @override
+  String get fleet_alreadyListed => 'Questo ripetitore è già nella tua flotta.';
+
+  @override
+  String fleet_asking(String name) {
+    return 'Interrogo $name…';
+  }
+
+  @override
+  String get fleet_badAddress =>
+      'Inserisci un indirizzo come 192.168.1.20 o 192.168.1.20:8484.';
+
+  @override
+  String get fleet_badKey =>
+      'Incolla la chiave pubblica completa di 64 caratteri.';
+
+  @override
+  String get fleet_battery => 'Batteria';
+
+  @override
+  String get fleet_batteryTrend => 'Batteria (V)';
+
+  @override
+  String fleet_bulkApply(int count) {
+    return 'Invia a $count ripetitori';
+  }
+
+  @override
+  String get fleet_bulkBadValue =>
+      'Questo valore non è consentito per questa impostazione.';
+
+  @override
+  String fleet_bulkChange(String current, String target) {
+    return '$current → $target';
+  }
+
+  @override
+  String fleet_bulkConfirmBody(String setting, String value, int count) {
+    return 'Impostare $setting a $value su $count ripetitori? Ognuno viene inviato via radio, ad almeno 20 secondi di distanza.';
+  }
+
+  @override
+  String get fleet_bulkConfirmTitle => 'Modificare i ripetitori?';
+
+  @override
+  String get fleet_bulkIntro =>
+      'Scegli un\'impostazione e un valore. Prima vengono letti i valori attuali; nulla cambia finché non confermi.';
+
+  @override
+  String get fleet_bulkPreview => 'Cosa cambierebbe';
+
+  @override
+  String get fleet_bulkRead => 'Leggi i valori attuali';
+
+  @override
+  String get fleet_bulkRepeaters => 'Ripetitori';
+
+  @override
+  String fleet_bulkSame(String target) {
+    return 'Già $target';
+  }
+
+  @override
+  String get fleet_bulkSend => 'Invia';
+
+  @override
+  String get fleet_bulkSetting => 'Impostazione';
+
+  @override
+  String get fleet_bulkTitle => 'Impostazioni di gruppo';
+
+  @override
+  String get fleet_bulkValue => 'Nuovo valore';
+
+  @override
+  String fleet_days(int count) {
+    return '$count g';
+  }
+
+  @override
+  String fleet_db(String value) {
+    return '$value dB';
+  }
+
+  @override
+  String fleet_dbm(int value) {
+    return '$value dBm';
+  }
+
+  @override
+  String get fleet_empty =>
+      'Nessun ripetitore. Tocca + per aggiungerne uno tuo.';
+
+  @override
+  String get fleet_errorLogin => 'Accesso rifiutato';
+
+  @override
+  String get fleet_errorNoContact => 'Non è nei contatti della radio';
+
+  @override
+  String get fleet_errorOther => 'Non riuscito';
+
+  @override
+  String get fleet_errorTimeout => 'Nessuna risposta';
+
+  @override
+  String get fleet_firmware => 'Firmware';
+
+  @override
+  String get fleet_heardRepeaters => 'Ripetitori ricevuti';
+
+  @override
+  String get fleet_lastHeard => 'Ultimo ascolto';
+
+  @override
+  String fleet_lastPollFailed(String reason, String when) {
+    return 'Ultima interrogazione: $reason, $when';
+  }
+
+  @override
+  String get fleet_lastSnr => 'Ultimo SNR';
+
+  @override
+  String get fleet_name => 'Nome';
+
+  @override
+  String get fleet_needsRadio => 'Collega una radio per interrogare.';
+
+  @override
+  String get fleet_neighbours => 'Vicini';
+
+  @override
+  String get fleet_noHeard =>
+      'Nessun ripetitore ricevuto fuori dalla tua flotta.';
+
+  @override
+  String get fleet_noHistory => 'Nessuna lettura in questo periodo.';
+
+  @override
+  String get fleet_noiseFloor => 'Rumore di fondo';
+
+  @override
+  String get fleet_noiseTrend => 'Rumore di fondo (dBm)';
+
+  @override
+  String get fleet_password => 'Password amministratore';
+
+  @override
+  String get fleet_passwordHint =>
+      'Salvata nell\'archivio sicuro di questo telefono. Viene inviata solo al ripetitore, via radio.';
+
+  @override
+  String get fleet_passwordOptional => 'Password amministratore (facoltativa)';
+
+  @override
+  String get fleet_passwordSaved => 'Password aggiornata';
+
+  @override
+  String get fleet_pasteKey => 'Oppure incolla una chiave';
+
+  @override
+  String get fleet_pollAll => 'Interroga tutti';
+
+  @override
+  String fleet_pollHint(int seconds) {
+    return 'Un ripetitore alla volta, a $seconds s di distanza, per risparmiare tempo di trasmissione.';
+  }
+
+  @override
+  String get fleet_pollNow => 'Interroga ora';
+
+  @override
+  String fleet_progress(int done, int total) {
+    return '$done di $total';
+  }
+
+  @override
+  String get fleet_publicKey => 'Chiave pubblica';
+
+  @override
+  String get fleet_remove => 'Rimuovi dalla flotta';
+
+  @override
+  String fleet_removeBody(String name) {
+    return 'Rimuovere $name con cronologia e password da questo telefono?';
+  }
+
+  @override
+  String get fleet_removeTitle => 'Rimuovere il ripetitore?';
+
+  @override
+  String get fleet_stationAddress => 'Indirizzo della stazione';
+
+  @override
+  String get fleet_statusFirmwareBehind => 'Firmware vecchio';
+
+  @override
+  String get fleet_statusHealthy => 'Ok';
+
+  @override
+  String get fleet_statusLowBattery => 'Batteria scarica';
+
+  @override
+  String get fleet_statusQuiet => 'Silenzioso';
+
+  @override
+  String get fleet_statusUnknown => 'Non interrogato';
+
+  @override
+  String get fleet_stop => 'Ferma';
+
+  @override
+  String get fleet_sync => 'Sincronizza';
+
+  @override
+  String fleet_syncDone(int count) {
+    return 'Sincronizzato: $count nuove letture.';
+  }
+
+  @override
+  String get fleet_syncFailed => 'Impossibile raggiungere la stazione.';
+
+  @override
+  String get fleet_syncHint =>
+      'Copia la cronologia da una stazione NOTORYX Ops sulla tua rete. Legge soltanto; le password non lasciano mai questo telefono.';
+
+  @override
+  String get fleet_syncSignIn =>
+      'La stazione richiede l\'accesso. La sincronizzazione funziona con stazioni senza account.';
+
+  @override
+  String get fleet_syncStation => 'Sincronizza da stazione';
+
+  @override
+  String get fleet_uptime => 'Tempo di attività';
+
+  @override
+  String fleet_uptimeDays(int days, int hours) {
+    return '$days g $hours h';
+  }
+
+  @override
+  String fleet_uptimeHours(int hours, int minutes) {
+    return '$hours h $minutes min';
+  }
+
+  @override
+  String get fleet_waiting => 'In attesa…';
 }

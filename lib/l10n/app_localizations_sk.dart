@@ -2865,6 +2865,26 @@ class AppLocalizationsSk extends AppLocalizations {
       'Prihlásenie zlyhalo. Heslo je nesprávne alebo je opakovač nedostupný.';
 
   @override
+  String get login_failRadioOffline =>
+      'Rádio nie je pripojené, preto sa prihlásenie neodoslalo. Pripojte rádio a skúste znova.';
+
+  @override
+  String get login_failSend =>
+      'Rádio neprijalo žiadosť o prihlásenie. Pripojte ho znova a skúste to ešte raz.';
+
+  @override
+  String login_failNoAnswerPath(int hops, String option, String section) {
+    return 'Žiadna odpoveď cez uloženú cestu ($hops skokov). Môže byť zastaraná: zapnite $section → $option a skúste znova. Na nesprávne heslo tiež nepríde odpoveď.';
+  }
+
+  @override
+  String get login_failRejected => 'Opakovač odpovedal a heslo odmietol.';
+
+  @override
+  String get login_failNoAnswerFlood =>
+      'Žiadna odpoveď cez flood. Opakovač môže byť mimo dosahu, vypnutý alebo zaneprázdnený, alebo je heslo nesprávne (naň neodpovedá). Skúste to bližšie.';
+
+  @override
   String get common_reload => 'Načítať';
 
   @override
@@ -3196,6 +3216,20 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get repeater_settingsSaved => 'Nastavenia boli uložené úspešne.';
+
+  @override
+  String get repeater_settingsConfirmed =>
+      'Nastavenia uložené a potvrdené opakovačom';
+
+  @override
+  String repeater_settingsUnconfirmed(int count) {
+    return 'Nastavenia uložené, ale $count sa nepodarilo spätne načítať na potvrdenie';
+  }
+
+  @override
+  String repeater_readBackMismatch(String key, String value) {
+    return '$key sa spätne číta ako $value';
+  }
 
   @override
   String get repeater_rxGain => 'Zvýšený zisk RX';
@@ -7028,6 +7062,25 @@ class AppLocalizationsSk extends AppLocalizations {
   String get bastionDiag_export => 'Exportovať diagnostiku';
 
   @override
+  String get diagTimeline_title => 'História pripojenia';
+
+  @override
+  String get diagTimeline_empty =>
+      'Od spustenia aplikácie sa pripojenie nezmenilo.';
+
+  @override
+  String get diagTimeline_causeUser => 'na vašu žiadosť';
+
+  @override
+  String get diagTimeline_causeLinkLost => 'spojenie prerušené';
+
+  @override
+  String get diagTimeline_causeReconnect => 'automatický nový pokus';
+
+  @override
+  String get diagTimeline_causeApp => 'zatvorené aplikáciou';
+
+  @override
   String get bastionDiag_channels => 'Kanály';
 
   @override
@@ -7642,6 +7695,11 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get shortcuts_checkIn => 'Nahlásiť sa';
+
+  @override
+  String qsTile_unread(String status, int count) {
+    return '$status · neprečítané: $count';
+  }
 
   @override
   String get shortcuts_trip => 'Túra';
@@ -9225,6 +9283,10 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get ping_noReply => 'Bez odpovede';
+
+  @override
+  String get ping_noReplyNote =>
+      'Žiadna odpoveď nedokazuje, že opakovač nefunguje. Sonda alebo odpoveď sa môžu stratiť pre šum alebo kolíziu; skúste znova alebo z iného miesta.';
 
   @override
   String ping_resultLine(String ms, String snr) {
@@ -13611,6 +13673,11 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
+  String traffic_lastHop(String name, String snr) {
+    return 'Posledný skok $name · $snr dB';
+  }
+
+  @override
   String traffic_flood(int hops) {
     return 'Flood $hops';
   }
@@ -14708,6 +14775,66 @@ class AppLocalizationsSk extends AppLocalizations {
   String get statusHistory_title => 'História stavu';
 
   @override
+  String get reportCard_title => 'Prehľad';
+
+  @override
+  String get reportCard_hint =>
+      'Zostavené iba z kontrol stavu, ktoré ste spustili, uložených v tomto telefóne. Nič navyše sa neodosiela.';
+
+  @override
+  String get reportCard_empty =>
+      'Zatiaľ žiadne uložené kontroly. Každá kontrola stavu dopĺňa tento prehľad.';
+
+  @override
+  String get reportCard_checks => 'Kontroly';
+
+  @override
+  String get reportCard_restarts => 'Zistené reštarty';
+
+  @override
+  String get reportCard_longestUptime => 'Najdlhšia doba behu';
+
+  @override
+  String get reportCard_battery => 'Batéria';
+
+  @override
+  String get reportCard_noise => 'Úroveň šumu';
+
+  @override
+  String get reportCard_errors => 'Nové chyby';
+
+  @override
+  String get reportCard_neighbours => 'Susedia';
+
+  @override
+  String get reportCard_exportCsv => 'Exportovať CSV';
+
+  @override
+  String reportCard_checksValue(int count, int days) {
+    return '$count za $days dní';
+  }
+
+  @override
+  String reportCard_batteryValue(String now, String low) {
+    return '$now teraz · najnižšie $low';
+  }
+
+  @override
+  String reportCard_batteryTrend(String change) {
+    return '$change za týždeň';
+  }
+
+  @override
+  String reportCard_noiseValue(String avg, String worst) {
+    return 'priemer $avg dBm · najhoršie $worst dBm';
+  }
+
+  @override
+  String reportCard_neighboursValue(int total, int fresh, int gone) {
+    return 'počutých: $total · nových tento týždeň: $fresh · nepočutých tento týždeň: $gone';
+  }
+
+  @override
   String get statusHistory_battery => 'Batéria';
 
   @override
@@ -15029,4 +15156,279 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get coverageHex_trimDrivesHint =>
       'Prvé a posledné 2 šesťuholníky každej relácie zostanú v tomto telefóne, takže mapy neukážu, kde bývate alebo parkujete.';
+
+  @override
+  String get fleet_title => 'Flotila';
+
+  @override
+  String get fleet_toolSubtitle =>
+      'Stav, trendy a hromadné nastavenia vašich opakovačov';
+
+  @override
+  String get fleet_addRepeater => 'Pridať opakovač';
+
+  @override
+  String get fleet_agoNow => 'práve teraz';
+
+  @override
+  String fleet_agoMinutes(int count) {
+    return 'pred $count min';
+  }
+
+  @override
+  String fleet_agoHours(int count) {
+    return 'pred $count h';
+  }
+
+  @override
+  String fleet_agoDays(int count) {
+    return 'pred $count d';
+  }
+
+  @override
+  String get fleet_alreadyListed => 'Tento opakovač už je vo vašej flotile.';
+
+  @override
+  String fleet_asking(String name) {
+    return 'Pýtam sa $name…';
+  }
+
+  @override
+  String get fleet_badAddress =>
+      'Zadajte adresu ako 192.168.1.20 alebo 192.168.1.20:8484.';
+
+  @override
+  String get fleet_badKey => 'Vložte celý 64-znakový verejný kľúč.';
+
+  @override
+  String get fleet_battery => 'Batéria';
+
+  @override
+  String get fleet_batteryTrend => 'Batéria (V)';
+
+  @override
+  String fleet_bulkApply(int count) {
+    return 'Odoslať na opakovače: $count';
+  }
+
+  @override
+  String get fleet_bulkBadValue =>
+      'Táto hodnota nie je pre toto nastavenie povolená.';
+
+  @override
+  String fleet_bulkChange(String current, String target) {
+    return '$current → $target';
+  }
+
+  @override
+  String fleet_bulkConfirmBody(String setting, String value, int count) {
+    return 'Nastaviť $setting na $value na opakovačoch ($count)? Každý sa mení rádiom, najmenej 20 sekúnd po sebe.';
+  }
+
+  @override
+  String get fleet_bulkConfirmTitle => 'Zmeniť opakovače?';
+
+  @override
+  String get fleet_bulkIntro =>
+      'Vyberte nastavenie a hodnotu. Najprv sa prečítajú aktuálne hodnoty; nič sa nezmení, kým nepotvrdíte.';
+
+  @override
+  String get fleet_bulkPreview => 'Čo by sa zmenilo';
+
+  @override
+  String get fleet_bulkRead => 'Prečítať aktuálne hodnoty';
+
+  @override
+  String get fleet_bulkRepeaters => 'Opakovače';
+
+  @override
+  String fleet_bulkSame(String target) {
+    return 'Už $target';
+  }
+
+  @override
+  String get fleet_bulkSend => 'Odoslať';
+
+  @override
+  String get fleet_bulkSetting => 'Nastavenie';
+
+  @override
+  String get fleet_bulkTitle => 'Hromadné nastavenia';
+
+  @override
+  String get fleet_bulkValue => 'Nová hodnota';
+
+  @override
+  String fleet_days(int count) {
+    return '$count d';
+  }
+
+  @override
+  String fleet_db(String value) {
+    return '$value dB';
+  }
+
+  @override
+  String fleet_dbm(int value) {
+    return '$value dBm';
+  }
+
+  @override
+  String get fleet_empty =>
+      'Zatiaľ žiadne opakovače. Ťuknite na + a pridajte vlastný.';
+
+  @override
+  String get fleet_errorLogin => 'Prihlásenie odmietnuté';
+
+  @override
+  String get fleet_errorNoContact => 'Nie je v kontaktoch rádia';
+
+  @override
+  String get fleet_errorOther => 'Zlyhalo';
+
+  @override
+  String get fleet_errorTimeout => 'Bez odpovede';
+
+  @override
+  String get fleet_firmware => 'Firmvér';
+
+  @override
+  String get fleet_heardRepeaters => 'Počuté opakovače';
+
+  @override
+  String get fleet_lastHeard => 'Naposledy počutý';
+
+  @override
+  String fleet_lastPollFailed(String reason, String when) {
+    return 'Posledný dopyt: $reason, $when';
+  }
+
+  @override
+  String get fleet_lastSnr => 'Posledné SNR';
+
+  @override
+  String get fleet_name => 'Názov';
+
+  @override
+  String get fleet_needsRadio => 'Na dopytovanie pripojte rádio.';
+
+  @override
+  String get fleet_neighbours => 'Susedia';
+
+  @override
+  String get fleet_noHeard => 'Žiadne počuté opakovače mimo vašej flotily.';
+
+  @override
+  String get fleet_noHistory => 'V tomto období žiadne údaje.';
+
+  @override
+  String get fleet_noiseFloor => 'Úroveň šumu';
+
+  @override
+  String get fleet_noiseTrend => 'Úroveň šumu (dBm)';
+
+  @override
+  String get fleet_password => 'Heslo správcu';
+
+  @override
+  String get fleet_passwordHint =>
+      'Uložené v zabezpečenom úložisku tohto telefónu. Posiela sa len opakovaču, rádiom.';
+
+  @override
+  String get fleet_passwordOptional => 'Heslo správcu (voliteľné)';
+
+  @override
+  String get fleet_passwordSaved => 'Heslo aktualizované';
+
+  @override
+  String get fleet_pasteKey => 'Alebo vložte kľúč';
+
+  @override
+  String get fleet_pollAll => 'Opýtať sa všetkých';
+
+  @override
+  String fleet_pollHint(int seconds) {
+    return 'Jeden opakovač naraz, s odstupom $seconds s, kvôli šetreniu vysielacieho času.';
+  }
+
+  @override
+  String get fleet_pollNow => 'Opýtať sa teraz';
+
+  @override
+  String fleet_progress(int done, int total) {
+    return '$done z $total';
+  }
+
+  @override
+  String get fleet_publicKey => 'Verejný kľúč';
+
+  @override
+  String get fleet_remove => 'Odstrániť z flotily';
+
+  @override
+  String fleet_removeBody(String name) {
+    return 'Odstrániť $name s históriou a heslom z tohto telefónu?';
+  }
+
+  @override
+  String get fleet_removeTitle => 'Odstrániť opakovač?';
+
+  @override
+  String get fleet_stationAddress => 'Adresa stanice';
+
+  @override
+  String get fleet_statusFirmwareBehind => 'Starý firmvér';
+
+  @override
+  String get fleet_statusHealthy => 'V poriadku';
+
+  @override
+  String get fleet_statusLowBattery => 'Slabá batéria';
+
+  @override
+  String get fleet_statusQuiet => 'Ticho';
+
+  @override
+  String get fleet_statusUnknown => 'Nedopytovaný';
+
+  @override
+  String get fleet_stop => 'Zastaviť';
+
+  @override
+  String get fleet_sync => 'Synchronizovať';
+
+  @override
+  String fleet_syncDone(int count) {
+    return 'Synchronizované: nové údaje: $count.';
+  }
+
+  @override
+  String get fleet_syncFailed => 'Stanica je nedostupná.';
+
+  @override
+  String get fleet_syncHint =>
+      'Kopíruje históriu zo stanice NOTORYX Ops vo vašej sieti. Len číta; heslá nikdy neopustia tento telefón.';
+
+  @override
+  String get fleet_syncSignIn =>
+      'Stanica vyžaduje prihlásenie. Synchronizácia funguje so stanicami bez účtov.';
+
+  @override
+  String get fleet_syncStation => 'Synchronizovať zo stanice';
+
+  @override
+  String get fleet_uptime => 'Doba behu';
+
+  @override
+  String fleet_uptimeDays(int days, int hours) {
+    return '$days d $hours h';
+  }
+
+  @override
+  String fleet_uptimeHours(int hours, int minutes) {
+    return '$hours h $minutes min';
+  }
+
+  @override
+  String get fleet_waiting => 'Čakám…';
 }

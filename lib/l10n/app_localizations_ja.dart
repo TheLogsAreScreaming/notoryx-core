@@ -2755,6 +2755,25 @@ class AppLocalizationsJa extends AppLocalizations {
       'ログインに失敗しました。パスワードが間違っているか、または接続が確立されていません。';
 
   @override
+  String get login_failRadioOffline =>
+      '無線機が接続されていないため、ログインは送信されませんでした。接続してからもう一度お試しください。';
+
+  @override
+  String get login_failSend => '無線機がログイン要求を受け付けませんでした。再接続してもう一度お試しください。';
+
+  @override
+  String login_failNoAnswerPath(int hops, String option, String section) {
+    return '保存済みの経路（$hops ホップ）で応答がありません。経路が古い可能性があります。$sectionで「$option」をオンにして再試行してください。パスワードが違う場合も応答はありません。';
+  }
+
+  @override
+  String get login_failRejected => 'リピーターが応答し、パスワードを拒否しました。';
+
+  @override
+  String get login_failNoAnswerFlood =>
+      'フラッドで応答がありません。リピーターが圏外・停止中・混雑中か、パスワードが違う可能性があります（違う場合は応答しません）。近くから再試行してください。';
+
+  @override
   String get common_reload => '再読み込み';
 
   @override
@@ -3074,6 +3093,19 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get repeater_settingsSaved => '設定が正常に保存されました';
+
+  @override
+  String get repeater_settingsConfirmed => '設定を保存し、リピーターで確認しました';
+
+  @override
+  String repeater_settingsUnconfirmed(int count) {
+    return '設定を保存しましたが、$count 件は確認のための読み戻しができませんでした';
+  }
+
+  @override
+  String repeater_readBackMismatch(String key, String value) {
+    return '$key の読み戻し値は $value';
+  }
 
   @override
   String get repeater_rxGain => 'RX ゲインの向上';
@@ -6689,6 +6721,24 @@ class AppLocalizationsJa extends AppLocalizations {
   String get bastionDiag_export => '診断をエクスポート';
 
   @override
+  String get diagTimeline_title => '接続の履歴';
+
+  @override
+  String get diagTimeline_empty => 'アプリ起動後、接続の変化はありません。';
+
+  @override
+  String get diagTimeline_causeUser => 'ユーザー操作';
+
+  @override
+  String get diagTimeline_causeLinkLost => 'リンク切断';
+
+  @override
+  String get diagTimeline_causeReconnect => '自動再試行';
+
+  @override
+  String get diagTimeline_causeApp => 'アプリが切断';
+
+  @override
   String get bastionDiag_channels => 'チャンネル';
 
   @override
@@ -7282,6 +7332,11 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get shortcuts_checkIn => 'チェックイン';
+
+  @override
+  String qsTile_unread(String status, int count) {
+    return '$status · 未読 $count';
+  }
 
   @override
   String get shortcuts_trip => '行程';
@@ -8809,6 +8864,10 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get ping_noReply => '応答なし';
+
+  @override
+  String get ping_noReplyNote =>
+      '応答がなくてもリピーターが停止しているとは限りません。プローブや応答はノイズや衝突で失われることがあります。もう一度試すか、別の場所からテストしてください。';
 
   @override
   String ping_resultLine(String ms, String snr) {
@@ -13040,6 +13099,11 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
+  String traffic_lastHop(String name, String snr) {
+    return '最終ホップ $name · $snr dB';
+  }
+
+  @override
   String traffic_flood(int hops) {
     return 'Flood $hops';
   }
@@ -14098,6 +14162,64 @@ class AppLocalizationsJa extends AppLocalizations {
   String get statusHistory_title => 'ステータス履歴';
 
   @override
+  String get reportCard_title => 'レポート';
+
+  @override
+  String get reportCard_hint => '実行したステータス確認（この端末に保存）だけから作成します。追加の送信はありません。';
+
+  @override
+  String get reportCard_empty => 'まだ確認結果がありません。ステータス確認を行うたびにこのレポートに追加されます。';
+
+  @override
+  String get reportCard_checks => '確認回数';
+
+  @override
+  String get reportCard_restarts => '検出した再起動';
+
+  @override
+  String get reportCard_longestUptime => '最長稼働時間';
+
+  @override
+  String get reportCard_battery => 'バッテリー';
+
+  @override
+  String get reportCard_noise => 'ノイズフロア';
+
+  @override
+  String get reportCard_errors => '新しいエラー';
+
+  @override
+  String get reportCard_neighbours => '近隣ノード';
+
+  @override
+  String get reportCard_exportCsv => 'CSV を書き出す';
+
+  @override
+  String reportCard_checksValue(int count, int days) {
+    return '$days 日間で $count 回';
+  }
+
+  @override
+  String reportCard_batteryValue(String now, String low) {
+    return '現在 $now · 最低 $low';
+  }
+
+  @override
+  String reportCard_batteryTrend(String change) {
+    return '週あたり $change';
+  }
+
+  @override
+  String reportCard_noiseValue(String avg, String worst) {
+    return '平均 $avg dBm · 最悪 $worst dBm';
+  }
+
+  @override
+  String reportCard_neighboursValue(int total, int fresh, int gone) {
+    return '受信 $total · 今週新規 $fresh · 今週未受信 $gone';
+  }
+
+  @override
   String get statusHistory_battery => 'バッテリー';
 
   @override
@@ -14411,4 +14533,273 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get coverageHex_trimDrivesHint =>
       '各マッピングの最初と最後の 2 つの六角形はこの電話に残るため、マップに自宅や駐車場所が表示されません。';
+
+  @override
+  String get fleet_title => 'フリート';
+
+  @override
+  String get fleet_toolSubtitle => '所有するリピーターの状態、推移、一括設定';
+
+  @override
+  String get fleet_addRepeater => 'リピーターを追加';
+
+  @override
+  String get fleet_agoNow => 'たった今';
+
+  @override
+  String fleet_agoMinutes(int count) {
+    return '$count分前';
+  }
+
+  @override
+  String fleet_agoHours(int count) {
+    return '$count時間前';
+  }
+
+  @override
+  String fleet_agoDays(int count) {
+    return '$count日前';
+  }
+
+  @override
+  String get fleet_alreadyListed => 'そのリピーターはすでにフリートにあります。';
+
+  @override
+  String fleet_asking(String name) {
+    return '$name に問い合わせ中…';
+  }
+
+  @override
+  String get fleet_badAddress =>
+      '192.168.1.20 や 192.168.1.20:8484 のようなアドレスを入力してください。';
+
+  @override
+  String get fleet_badKey => '64文字の公開鍵をすべて貼り付けてください。';
+
+  @override
+  String get fleet_battery => 'バッテリー';
+
+  @override
+  String get fleet_batteryTrend => 'バッテリー (V)';
+
+  @override
+  String fleet_bulkApply(int count) {
+    return '$count台のリピーターに送信';
+  }
+
+  @override
+  String get fleet_bulkBadValue => 'この設定ではその値は使えません。';
+
+  @override
+  String fleet_bulkChange(String current, String target) {
+    return '$current → $target';
+  }
+
+  @override
+  String fleet_bulkConfirmBody(String setting, String value, int count) {
+    return '$count台のリピーターで $setting を $value にしますか？ 各台へ無線で、20秒以上の間隔を空けて送信します。';
+  }
+
+  @override
+  String get fleet_bulkConfirmTitle => 'リピーターを変更しますか？';
+
+  @override
+  String get fleet_bulkIntro => '設定と値を選んでください。先に現在の値を読み取り、確認するまで何も変更しません。';
+
+  @override
+  String get fleet_bulkPreview => '変更される内容';
+
+  @override
+  String get fleet_bulkRead => '現在の値を読み取る';
+
+  @override
+  String get fleet_bulkRepeaters => 'リピーター';
+
+  @override
+  String fleet_bulkSame(String target) {
+    return 'すでに $target';
+  }
+
+  @override
+  String get fleet_bulkSend => '送信';
+
+  @override
+  String get fleet_bulkSetting => '設定';
+
+  @override
+  String get fleet_bulkTitle => '一括設定';
+
+  @override
+  String get fleet_bulkValue => '新しい値';
+
+  @override
+  String fleet_days(int count) {
+    return '$count日';
+  }
+
+  @override
+  String fleet_db(String value) {
+    return '$value dB';
+  }
+
+  @override
+  String fleet_dbm(int value) {
+    return '$value dBm';
+  }
+
+  @override
+  String get fleet_empty => 'リピーターはまだありません。＋をタップして自分のリピーターを追加してください。';
+
+  @override
+  String get fleet_errorLogin => 'ログインが拒否されました';
+
+  @override
+  String get fleet_errorNoContact => '無線機の連絡先にありません';
+
+  @override
+  String get fleet_errorOther => '失敗';
+
+  @override
+  String get fleet_errorTimeout => '応答なし';
+
+  @override
+  String get fleet_firmware => 'ファームウェア';
+
+  @override
+  String get fleet_heardRepeaters => '受信したリピーター';
+
+  @override
+  String get fleet_lastHeard => '最終受信';
+
+  @override
+  String fleet_lastPollFailed(String reason, String when) {
+    return '前回の問い合わせ: $reason、$when';
+  }
+
+  @override
+  String get fleet_lastSnr => '最新 SNR';
+
+  @override
+  String get fleet_name => '名前';
+
+  @override
+  String get fleet_needsRadio => '問い合わせるには無線機を接続してください。';
+
+  @override
+  String get fleet_neighbours => '隣接ノード';
+
+  @override
+  String get fleet_noHeard => 'フリート外で受信したリピーターはありません。';
+
+  @override
+  String get fleet_noHistory => 'この期間のデータはありません。';
+
+  @override
+  String get fleet_noiseFloor => 'ノイズフロア';
+
+  @override
+  String get fleet_noiseTrend => 'ノイズフロア (dBm)';
+
+  @override
+  String get fleet_password => '管理者パスワード';
+
+  @override
+  String get fleet_passwordHint => 'この電話の安全な保存領域に保管されます。送信先は無線経由のリピーター本体だけです。';
+
+  @override
+  String get fleet_passwordOptional => '管理者パスワード（任意）';
+
+  @override
+  String get fleet_passwordSaved => 'パスワードを更新しました';
+
+  @override
+  String get fleet_pasteKey => 'または鍵を貼り付け';
+
+  @override
+  String get fleet_pollAll => 'すべて問い合わせ';
+
+  @override
+  String fleet_pollHint(int seconds) {
+    return '通信時間を節約するため、1台ずつ$seconds秒間隔で問い合わせます。';
+  }
+
+  @override
+  String get fleet_pollNow => '今すぐ問い合わせ';
+
+  @override
+  String fleet_progress(int done, int total) {
+    return '$done / $total';
+  }
+
+  @override
+  String get fleet_publicKey => '公開鍵';
+
+  @override
+  String get fleet_remove => 'フリートから削除';
+
+  @override
+  String fleet_removeBody(String name) {
+    return '$name の履歴とパスワードをこの電話から削除しますか？';
+  }
+
+  @override
+  String get fleet_removeTitle => 'リピーターを削除しますか？';
+
+  @override
+  String get fleet_stationAddress => 'ステーションのアドレス';
+
+  @override
+  String get fleet_statusFirmwareBehind => 'ファームウェアが古い';
+
+  @override
+  String get fleet_statusHealthy => '正常';
+
+  @override
+  String get fleet_statusLowBattery => 'バッテリー低下';
+
+  @override
+  String get fleet_statusQuiet => '応答なし';
+
+  @override
+  String get fleet_statusUnknown => '未確認';
+
+  @override
+  String get fleet_stop => '停止';
+
+  @override
+  String get fleet_sync => '同期';
+
+  @override
+  String fleet_syncDone(int count) {
+    return '同期しました: 新しいデータ $count 件。';
+  }
+
+  @override
+  String get fleet_syncFailed => 'ステーションに接続できません。';
+
+  @override
+  String get fleet_syncHint =>
+      'ネットワーク上の NOTORYX Ops ステーションから履歴をコピーします。読み取りのみで、パスワードがこの電話から出ることはありません。';
+
+  @override
+  String get fleet_syncSignIn => 'ステーションはサインインが必要です。同期はアカウントのないステーションで使えます。';
+
+  @override
+  String get fleet_syncStation => 'ステーションから同期';
+
+  @override
+  String get fleet_uptime => '稼働時間';
+
+  @override
+  String fleet_uptimeDays(int days, int hours) {
+    return '$days日$hours時間';
+  }
+
+  @override
+  String fleet_uptimeHours(int hours, int minutes) {
+    return '$hours時間$minutes分';
+  }
+
+  @override
+  String get fleet_waiting => '待機中…';
 }

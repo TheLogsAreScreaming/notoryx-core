@@ -10,6 +10,7 @@ import '../models/contact.dart';
 import '../connector/meshcore_connector.dart';
 import '../connector/meshcore_protocol.dart';
 import '../services/repeater_command_service.dart';
+import '../services/repeater_login_doctor.dart';
 import '../services/storage_service.dart';
 import '../theme/mesh_theme.dart';
 import '../widgets/mesh_ui.dart';
@@ -728,6 +729,24 @@ class _RepeaterSettingsScreenState extends State<RepeaterSettingsScreen> {
     });
   }
 
+  /// Reads back what [setCommand] changed. Null when that setting isn't
+  /// checked; unreadable when the `get` gets no usable reply.
+  Future<ReadBack?> _readBack(Contact repeater, String setCommand) async {
+    final get = readBackCommand(setCommand);
+    if (get == null || _commandService == null) return null;
+    try {
+      await Future.delayed(const Duration(milliseconds: 200));
+      final reply = await _commandService!.sendCommand(
+        repeater,
+        get,
+        retries: 1,
+      );
+      return checkReadBack(setCommand, reply);
+    } catch (_) {
+      return const ReadBackUnreadable();
+    }
+  }
+
   Future<void> _saveSettings() async {
     if (_commandService == null) return;
     final connector = Provider.of<MeshCoreConnector>(context, listen: false);
@@ -925,6 +944,8 @@ class _RepeaterSettingsScreenState extends State<RepeaterSettingsScreen> {
       final retainDirty = <_SettingField>{};
       var passwordsFailed = false;
       var rebootNeeded = false;
+      var confirmed = 0;
+      var unconfirmed = 0;
       for (final entry in pending) {
         var failed = false;
         try {
@@ -941,6 +962,26 @@ class _RepeaterSettingsScreenState extends State<RepeaterSettingsScreen> {
             failed = true;
           } else if (outcome == _SaveOutcome.rebootNeeded) {
             rebootNeeded = true;
+          } else {
+            // "OK" only says the command parsed: read the value back.
+            switch (await _readBack(repeater, entry.command)) {
+              case null:
+                break;
+              case ReadBackMatch():
+                confirmed++;
+              case ReadBackMismatch(:final actual):
+                if (mounted) {
+                  failures.add(
+                    context.l10n.repeater_readBackMismatch(
+                      _shortCommandLabel(entry.command),
+                      actual,
+                    ),
+                  );
+                }
+                failed = true;
+              case ReadBackUnreadable():
+                unconfirmed++;
+            }
           }
         } catch (e) {
           failures.add('${_shortCommandLabel(entry.command)}: ${e.toString()}');
@@ -978,10 +1019,20 @@ class _RepeaterSettingsScreenState extends State<RepeaterSettingsScreen> {
             content: Text(l10n.repeater_settingsSavedRebootNeeded),
             backgroundColor: MeshPalette.warn,
           );
+        } else if (failures.isEmpty && unconfirmed > 0) {
+          showDismissibleSnackBar(
+            context,
+            content: Text(l10n.repeater_settingsUnconfirmed(unconfirmed)),
+            backgroundColor: MeshPalette.warn,
+          );
         } else if (failures.isEmpty) {
           showDismissibleSnackBar(
             context,
-            content: Text(l10n.repeater_settingsSaved),
+            content: Text(
+              confirmed > 0
+                  ? l10n.repeater_settingsConfirmed
+                  : l10n.repeater_settingsSaved,
+            ),
           );
         } else {
           showDismissibleSnackBar(
