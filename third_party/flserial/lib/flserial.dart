@@ -308,12 +308,17 @@ class FlSerial {
     _checkFLH(flh);
     bindings.fl_close(flh);
     onSerialData.close();
+    // Check the buffer addresses, not their first byte: a buffer whose first
+    // byte happened to be 0 was never freed, and a second close would read
+    // freed memory.
     Allocator allocator = calloc;
-    if (serialReadBuff.value != 0) {
+    if (serialReadBuff.address != 0) {
       allocator.free(serialReadBuff);
+      serialReadBuff = Pointer.fromAddress(0);
     }
-    if (serialWriteBuff.value != 0) {
+    if (serialWriteBuff.address != 0) {
       allocator.free(serialWriteBuff);
+      serialWriteBuff = Pointer.fromAddress(0);
     }
     flh = -1;
     return flh;
