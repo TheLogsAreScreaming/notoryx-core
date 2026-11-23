@@ -1,6 +1,8 @@
-• SARNEG: grid zone in clear, unmarked messages, SARDOT, expiry, number/letter of the day
-• Diagnostics: connection timeline and a redacted support file
-• Repeater login says which step failed
-• Repeater settings are read back to confirm they saved
+• Fleet: health, polls, trends and bulk settings for your repeaters
+• Quick Settings tile with radio status and unread count
+• Relayed signal is labelled "last hop"
+• SARNEG: grid zone in clear, unmarked messages, SARDOT, expiry
+• Connection timeline and a redacted support file
+• Repeater login says which step failed; settings read back
 • Repeater report card with CSV
-• Gap finder: where your direct messages failed, by hexagon
+• Gap finder: where your direct messages failed
