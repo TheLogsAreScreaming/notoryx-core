@@ -14656,6 +14656,124 @@ class AppLocalizationsBg extends AppLocalizations {
   String get sarneg_autoClear => 'Изчиства се след 1 минута без въвеждане.';
 
   @override
+  String get sarneg_optionsTitle => 'Настройки';
+
+  @override
+  String get sarneg_keepZone => 'Зоната на мрежата остава явна';
+
+  @override
+  String get sarneg_keepZoneHint =>
+      '17S 4823 се изпраща като 17s KSAC. Зоната рядко е тайна и други SARNEG инструменти я четат така.';
+
+  @override
+  String get sarneg_noMarker => 'Изпращане без маркера [SARNEG]';
+
+  @override
+  String get sarneg_noMarkerHint =>
+      'Слушателите не могат да разберат, че има скрити числа. Екипът ви трябва да включи „Декодиране на немаркирани съобщения“.';
+
+  @override
+  String get sarneg_readUnmarked => 'Декодиране на немаркирани съобщения';
+
+  @override
+  String get sarneg_readUnmarkedHint =>
+      'Съобщение без маркер получава ред за декодиране, когато всичките му главни букви са от думата за деня.';
+
+  @override
+  String get sarneg_wipeAfter => 'Изтриване на всички думи след дата';
+
+  @override
+  String get sarneg_wipeAfterOff =>
+      'Изключено. Думите с дата се изтриват, щом денят им мине.';
+
+  @override
+  String sarneg_wipeAfterSet(String day) {
+    return 'Всички думи се изтриват след $day.';
+  }
+
+  @override
+  String get sarneg_remove => 'Премахване';
+
+  @override
+  String get sarneg_sardotTitle => 'Отправна точка SARDOT';
+
+  @override
+  String get sarneg_sardotHint =>
+      'Изпращайте посока и разстояние от тайна точка вместо позиция. Уговорете точката лично: тя никога не се изпраща.';
+
+  @override
+  String get sarneg_sardotSet => 'Отправната точка е зададена';
+
+  @override
+  String get sarneg_sardotNone => 'Няма отправна точка';
+
+  @override
+  String get sarneg_useMyPosition => 'Моята позиция';
+
+  @override
+  String get sarneg_typePoint => 'Въвеждане на точка';
+
+  @override
+  String get sarneg_pointLabel => 'Ширина, дължина';
+
+  @override
+  String get sarneg_pointInvalid =>
+      'Въведете ширина, дължина, например 41.33, -73.09';
+
+  @override
+  String get sarneg_addSardot => 'Добавяне на SARDOT от моята позиция';
+
+  @override
+  String get sarneg_showOnMap => 'Показване на картата';
+
+  @override
+  String get sarneg_mapTitle => 'Декодирана позиция';
+
+  @override
+  String get sarneg_authTitle => 'Число и буква на деня';
+
+  @override
+  String get sarneg_authHint =>
+      'Проверка и отговор: казват число, вие отговаряте с числото, което допълва до числото на деня. Пази се само на този телефон.';
+
+  @override
+  String get sarneg_numberOfDay => 'Число на деня (0 до 99)';
+
+  @override
+  String get sarneg_letterOfDay => 'Буква на деня';
+
+  @override
+  String get sarneg_notSet => 'Не е зададено';
+
+  @override
+  String get sarneg_numberInvalid => 'Използвайте число от 0 до 99';
+
+  @override
+  String get sarneg_letterInvalid => 'Използвайте една буква от A до Z';
+
+  @override
+  String get sarneg_challenge => 'Числото, което казаха';
+
+  @override
+  String sarneg_reply(int number) {
+    return 'Отговор: $number';
+  }
+
+  @override
+  String get sarneg_noReply =>
+      'Няма валиден отговор: числото е по-голямо от числото на деня.';
+
+  @override
+  String get sarneg_maybeUnmarked => 'Може би SARNEG · докоснете за декодиране';
+
+  @override
+  String get sarneg_guideTitle => 'SARNEG или истинско шифриране?';
+
+  @override
+  String get sarneg_guideBody =>
+      'SARNEG заменя цифрите с букви чрез една обща дума. Всеки, който чуе няколко съобщения, може да разгадае думата, така че тя пази числата само от случаен слушател. Това не е шифриране.\n\nЗа истинска тайна използвайте частен канал със собствен ключ. Радиото шифрира всичко в него и само хората с ключа могат да го четат.\n\nSARNEG все пак помага допълнително: в общи или публични канали, през ретранслатори и мостове, в логове и екранни снимки, както и срещу някой, който има ключа на канала, но не и кодовата дума.';
+
+  @override
   String channelConflict_banner(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

@@ -14625,6 +14625,124 @@ class AppLocalizationsNl extends AppLocalizations {
   String get sarneg_autoClear => 'Wordt gewist na 1 minuut zonder typen.';
 
   @override
+  String get sarneg_optionsTitle => 'Opties';
+
+  @override
+  String get sarneg_keepZone => 'Gridzone niet coderen';
+
+  @override
+  String get sarneg_keepZoneHint =>
+      '17S 4823 gaat uit als 17s KSAC. De zone is zelden geheim en andere SARNEG-hulpmiddelen lezen het zo.';
+
+  @override
+  String get sarneg_noMarker => 'Versturen zonder de [SARNEG]-markering';
+
+  @override
+  String get sarneg_noMarkerHint =>
+      'Luisteraars zien niet dat er getallen verborgen zijn. Je team moet ‘Ongemarkeerde berichten decoderen’ aanzetten.';
+
+  @override
+  String get sarneg_readUnmarked => 'Ongemarkeerde berichten decoderen';
+
+  @override
+  String get sarneg_readUnmarkedHint =>
+      'Een bericht zonder markering krijgt een decodeerregel als alle hoofdletters bij het woord van de dag horen.';
+
+  @override
+  String get sarneg_wipeAfter => 'Alle woorden na een dag wissen';
+
+  @override
+  String get sarneg_wipeAfterOff =>
+      'Uit. Woorden met een datum worden gewist zodra hun dag voorbij is.';
+
+  @override
+  String sarneg_wipeAfterSet(String day) {
+    return 'Alle woorden worden na $day gewist.';
+  }
+
+  @override
+  String get sarneg_remove => 'Verwijderen';
+
+  @override
+  String get sarneg_sardotTitle => 'SARDOT-referentiepunt';
+
+  @override
+  String get sarneg_sardotHint =>
+      'Stuur een richting en afstand vanaf een geheim punt in plaats van een positie. Spreek het punt persoonlijk af: het wordt nooit verstuurd.';
+
+  @override
+  String get sarneg_sardotSet => 'Referentiepunt ingesteld';
+
+  @override
+  String get sarneg_sardotNone => 'Geen referentiepunt';
+
+  @override
+  String get sarneg_useMyPosition => 'Mijn positie gebruiken';
+
+  @override
+  String get sarneg_typePoint => 'Punt invoeren';
+
+  @override
+  String get sarneg_pointLabel => 'Breedtegraad, lengtegraad';
+
+  @override
+  String get sarneg_pointInvalid =>
+      'Voer breedtegraad, lengtegraad in, bijvoorbeeld 41.33, -73.09';
+
+  @override
+  String get sarneg_addSardot => 'SARDOT vanaf mijn positie toevoegen';
+
+  @override
+  String get sarneg_showOnMap => 'Op kaart tonen';
+
+  @override
+  String get sarneg_mapTitle => 'Gedecodeerde positie';
+
+  @override
+  String get sarneg_authTitle => 'Getal en letter van de dag';
+
+  @override
+  String get sarneg_authHint =>
+      'Uitdaging en antwoord: zij noemen een getal, jij antwoordt met het getal dat samen het getal van de dag geeft. Alleen op deze telefoon bewaard.';
+
+  @override
+  String get sarneg_numberOfDay => 'Getal van de dag (0 tot 99)';
+
+  @override
+  String get sarneg_letterOfDay => 'Letter van de dag';
+
+  @override
+  String get sarneg_notSet => 'Niet ingesteld';
+
+  @override
+  String get sarneg_numberInvalid => 'Gebruik een getal van 0 tot 99';
+
+  @override
+  String get sarneg_letterInvalid => 'Gebruik één letter, A tot Z';
+
+  @override
+  String get sarneg_challenge => 'Genoemd getal';
+
+  @override
+  String sarneg_reply(int number) {
+    return 'Antwoord: $number';
+  }
+
+  @override
+  String get sarneg_noReply =>
+      'Geen geldig antwoord: dat getal is groter dan het getal van de dag.';
+
+  @override
+  String get sarneg_maybeUnmarked => 'Misschien SARNEG · tik om te decoderen';
+
+  @override
+  String get sarneg_guideTitle => 'SARNEG of echte versleuteling?';
+
+  @override
+  String get sarneg_guideBody =>
+      'SARNEG vervangt cijfers door letters met één gedeeld woord. Wie een paar berichten hoort, kan het woord achterhalen, dus het verbergt getallen alleen voor een toevallige luisteraar. Het is geen versleuteling.\n\nGebruik voor echte geheimhouding een privékanaal met een eigen sleutel. De radio versleutelt alles daarop en alleen wie de sleutel heeft kan het lezen.\n\nSARNEG helpt daarbovenop toch: op gedeelde of openbare kanalen, via repeaters en bruggen, in logs en schermafbeeldingen, en tegen iemand die de kanaalsleutel heeft maar niet het codewoord.';
+
+  @override
   String channelConflict_banner(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

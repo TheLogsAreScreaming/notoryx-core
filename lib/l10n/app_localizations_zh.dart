@@ -13757,6 +13757,117 @@ class AppLocalizationsZh extends AppLocalizations {
   String get sarneg_autoClear => '1 分钟无输入后清空。';
 
   @override
+  String get sarneg_optionsTitle => '选项';
+
+  @override
+  String get sarneg_keepZone => '网格区号保持明文';
+
+  @override
+  String get sarneg_keepZoneHint =>
+      '17S 4823 将发送为 17s KSAC。区号很少需要保密，其他 SARNEG 工具也这样读取。';
+
+  @override
+  String get sarneg_noMarker => '发送时不带 [SARNEG] 标记';
+
+  @override
+  String get sarneg_noMarkerHint => '旁听者看不出其中藏有数字。你的队友需要打开“解码无标记的消息”。';
+
+  @override
+  String get sarneg_readUnmarked => '解码无标记的消息';
+
+  @override
+  String get sarneg_readUnmarkedHint => '无标记的消息若所有大写字母都属于当天的代码词，就会显示解码行。';
+
+  @override
+  String get sarneg_wipeAfter => '在某天之后删除所有代码词';
+
+  @override
+  String get sarneg_wipeAfterOff => '关闭。带日期的代码词在当天过后删除。';
+
+  @override
+  String sarneg_wipeAfterSet(String day) {
+    return '$day 之后所有代码词都会被删除。';
+  }
+
+  @override
+  String get sarneg_remove => '移除';
+
+  @override
+  String get sarneg_sardotTitle => 'SARDOT 参考点';
+
+  @override
+  String get sarneg_sardotHint => '发送相对秘密参考点的方位和距离，而不是位置。参考点请当面约定，它永远不会被发送。';
+
+  @override
+  String get sarneg_sardotSet => '已设置参考点';
+
+  @override
+  String get sarneg_sardotNone => '无参考点';
+
+  @override
+  String get sarneg_useMyPosition => '使用我的位置';
+
+  @override
+  String get sarneg_typePoint => '输入坐标';
+
+  @override
+  String get sarneg_pointLabel => '纬度, 经度';
+
+  @override
+  String get sarneg_pointInvalid => '请输入纬度, 经度，例如 41.33, -73.09';
+
+  @override
+  String get sarneg_addSardot => '从我的位置添加 SARDOT';
+
+  @override
+  String get sarneg_showOnMap => '在地图上显示';
+
+  @override
+  String get sarneg_mapTitle => '解码后的位置';
+
+  @override
+  String get sarneg_authTitle => '当日数字和字母';
+
+  @override
+  String get sarneg_authHint => '口令与回令：对方说一个数，你回答与之相加等于当日数字的数。只保存在这部手机上。';
+
+  @override
+  String get sarneg_numberOfDay => '当日数字（0 到 99）';
+
+  @override
+  String get sarneg_letterOfDay => '当日字母';
+
+  @override
+  String get sarneg_notSet => '未设置';
+
+  @override
+  String get sarneg_numberInvalid => '请使用 0 到 99 之间的数字';
+
+  @override
+  String get sarneg_letterInvalid => '请使用 A 到 Z 中的一个字母';
+
+  @override
+  String get sarneg_challenge => '对方说的数字';
+
+  @override
+  String sarneg_reply(int number) {
+    return '回令：$number';
+  }
+
+  @override
+  String get sarneg_noReply => '没有有效回令：这个数字大于当日数字。';
+
+  @override
+  String get sarneg_maybeUnmarked => '可能是 SARNEG · 点按解码';
+
+  @override
+  String get sarneg_guideTitle => 'SARNEG 还是真正的加密？';
+
+  @override
+  String get sarneg_guideBody =>
+      'SARNEG 用一个共享的词把数字换成字母。任何人只要听到几条消息就能推算出这个词，所以它只能对随意旁听的人隐藏数字。它不是加密。\n\n需要真正保密时，请使用有独立密钥的私有频道。电台会加密其中的所有内容，只有持有密钥的人才能读取。\n\nSARNEG 仍可额外提供帮助：在共享或公开频道、经过中继器和桥接、在日志和截图中，以及面对拥有频道密钥但不知道代码词的人时。';
+
+  @override
   String channelConflict_banner(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

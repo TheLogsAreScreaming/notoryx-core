@@ -14652,6 +14652,124 @@ class AppLocalizationsSl extends AppLocalizations {
   String get sarneg_autoClear => 'Izbriše se po 1 minuti brez tipkanja.';
 
   @override
+  String get sarneg_optionsTitle => 'Možnosti';
+
+  @override
+  String get sarneg_keepZone => 'Cono mreže pusti nekodirano';
+
+  @override
+  String get sarneg_keepZoneHint =>
+      '17S 4823 se pošlje kot 17s KSAC. Cona je redko skrivna in druga orodja SARNEG jo berejo tako.';
+
+  @override
+  String get sarneg_noMarker => 'Pošlji brez oznake [SARNEG]';
+
+  @override
+  String get sarneg_noMarkerHint =>
+      'Poslušalci ne vedo, da so številke skrite. Vaša ekipa mora vklopiti »Dekodiraj sporočila brez oznake«.';
+
+  @override
+  String get sarneg_readUnmarked => 'Dekodiraj sporočila brez oznake';
+
+  @override
+  String get sarneg_readUnmarkedHint =>
+      'Sporočilo brez oznake dobi vrstico za dekodiranje, če so vse njegove velike črke iz besede dneva.';
+
+  @override
+  String get sarneg_wipeAfter => 'Izbriši vse besede po dnevu';
+
+  @override
+  String get sarneg_wipeAfterOff =>
+      'Izklopljeno. Besede z datumom se izbrišejo, ko njihov dan mine.';
+
+  @override
+  String sarneg_wipeAfterSet(String day) {
+    return 'Vse besede se izbrišejo po $day.';
+  }
+
+  @override
+  String get sarneg_remove => 'Odstrani';
+
+  @override
+  String get sarneg_sardotTitle => 'Referenčna točka SARDOT';
+
+  @override
+  String get sarneg_sardotHint =>
+      'Namesto položaja pošljite smer in razdaljo od skrivne točke. Točko se dogovorite osebno: nikoli se ne pošlje.';
+
+  @override
+  String get sarneg_sardotSet => 'Referenčna točka nastavljena';
+
+  @override
+  String get sarneg_sardotNone => 'Ni referenčne točke';
+
+  @override
+  String get sarneg_useMyPosition => 'Uporabi moj položaj';
+
+  @override
+  String get sarneg_typePoint => 'Vnesi točko';
+
+  @override
+  String get sarneg_pointLabel => 'Zemljepisna širina, dolžina';
+
+  @override
+  String get sarneg_pointInvalid =>
+      'Vnesite širino, dolžino, na primer 41.33, -73.09';
+
+  @override
+  String get sarneg_addSardot => 'Dodaj SARDOT iz mojega položaja';
+
+  @override
+  String get sarneg_showOnMap => 'Pokaži na zemljevidu';
+
+  @override
+  String get sarneg_mapTitle => 'Dekodiran položaj';
+
+  @override
+  String get sarneg_authTitle => 'Številka in črka dneva';
+
+  @override
+  String get sarneg_authHint =>
+      'Poziv in odziv: povedo število, vi odgovorite s številom, ki skupaj da številko dneva. Shranjeno samo v tem telefonu.';
+
+  @override
+  String get sarneg_numberOfDay => 'Številka dneva (0 do 99)';
+
+  @override
+  String get sarneg_letterOfDay => 'Črka dneva';
+
+  @override
+  String get sarneg_notSet => 'Ni nastavljeno';
+
+  @override
+  String get sarneg_numberInvalid => 'Uporabite število od 0 do 99';
+
+  @override
+  String get sarneg_letterInvalid => 'Uporabite eno črko od A do Z';
+
+  @override
+  String get sarneg_challenge => 'Povedano število';
+
+  @override
+  String sarneg_reply(int number) {
+    return 'Odziv: $number';
+  }
+
+  @override
+  String get sarneg_noReply =>
+      'Ni veljavnega odziva: število je večje od številke dneva.';
+
+  @override
+  String get sarneg_maybeUnmarked => 'Morda SARNEG · tapnite za dekodiranje';
+
+  @override
+  String get sarneg_guideTitle => 'SARNEG ali pravo šifriranje?';
+
+  @override
+  String get sarneg_guideBody =>
+      'SARNEG zamenja števke s črkami s pomočjo ene skupne besede. Kdor sliši nekaj sporočil, lahko besedo ugane, zato skrije številke le pred naključnim poslušalcem. To ni šifriranje.\n\nZa pravo skrivnost uporabite zasebni kanal z lastnim ključem. Radio na njem vse šifrira in prebrati ga lahko le tisti s ključem.\n\nSARNEG vseeno dodatno pomaga: na skupnih ali javnih kanalih, prek repetitorjev in mostov, v dnevnikih in posnetkih zaslona ter proti nekomu, ki ima ključ kanala, ne pa kodne besede.';
+
+  @override
   String channelConflict_banner(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
