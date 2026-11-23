@@ -11358,6 +11358,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get notification_replyHint => '답장 입력';
 
   @override
+  String get notification_markRead => '읽음으로 표시';
+
+  @override
+  String get notification_you => '나';
+
+  @override
   String outbox_waiting(int count) {
     return '무전기 대기 중: $count';
   }

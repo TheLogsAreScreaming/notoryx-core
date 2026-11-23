@@ -11907,6 +11907,12 @@ class AppLocalizationsDe extends AppLocalizations {
   String get notification_replyHint => 'Antwort schreiben';
 
   @override
+  String get notification_markRead => 'Als gelesen markieren';
+
+  @override
+  String get notification_you => 'Sie';
+
+  @override
   String outbox_waiting(int count) {
     return 'Warten auf das Funkgerät: $count';
   }

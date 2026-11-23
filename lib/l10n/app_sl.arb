@@ -4671,6 +4671,8 @@
   "appLock_sosNoTarget": "Najprej odklenite in izberite, kdo prejme vaš SOS.",
   "notification_replyAction": "Odgovori",
   "notification_replyHint": "Napišite odgovor",
+  "notification_markRead": "Označi kot prebrano",
+  "notification_you": "Vi",
   "outbox_waiting": "Čaka na radio: {count}",
   "outbox_cantQueue": "Noben radio še ni bil povezan, zato tega ni mogoče shraniti za pozneje.",
   "chat_forward": "Posreduj",

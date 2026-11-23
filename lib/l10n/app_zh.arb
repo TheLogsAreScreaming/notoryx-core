@@ -4676,6 +4676,8 @@
   "appLock_sosNoTarget": "请先解锁并选择 SOS 的接收人。",
   "notification_replyAction": "回复",
   "notification_replyHint": "输入回复",
+  "notification_markRead": "标为已读",
+  "notification_you": "你",
   "outbox_waiting": "等待电台：{count}",
   "outbox_cantQueue": "尚未连接过电台，因此无法保存以便稍后发送。",
   "chat_forward": "转发",

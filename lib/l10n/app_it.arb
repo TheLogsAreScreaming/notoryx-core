@@ -4805,6 +4805,8 @@
   "appLock_sosNoTarget": "Prima sblocca e scegli chi riceve il tuo SOS.",
   "notification_replyAction": "Rispondi",
   "notification_replyHint": "Scrivi una risposta",
+  "notification_markRead": "Segna come letto",
+  "notification_you": "Tu",
   "outbox_waiting": "In attesa della radio: {count}",
   "outbox_cantQueue": "Nessuna radio è stata ancora collegata, quindi non si può salvare per dopo.",
   "chat_forward": "Inoltra",

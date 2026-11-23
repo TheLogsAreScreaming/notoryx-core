@@ -3974,6 +3974,8 @@
   "appLock_sosNoTarget": "Сначала разблокируйте и выберите, кто получит SOS.",
   "notification_replyAction": "Ответить",
   "notification_replyHint": "Напишите ответ",
+  "notification_markRead": "Отметить как прочитанное",
+  "notification_you": "Вы",
   "outbox_waiting": "Ожидают радио: {count}",
   "outbox_cantQueue": "Радио ещё не подключалось, поэтому сохранить это на потом нельзя.",
   "chat_forward": "Переслать",

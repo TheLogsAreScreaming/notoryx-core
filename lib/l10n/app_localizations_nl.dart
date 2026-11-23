@@ -11850,6 +11850,12 @@ class AppLocalizationsNl extends AppLocalizations {
   String get notification_replyHint => 'Schrijf een antwoord';
 
   @override
+  String get notification_markRead => 'Markeren als gelezen';
+
+  @override
+  String get notification_you => 'Jij';
+
+  @override
   String outbox_waiting(int count) {
     return 'Wacht op de radio: $count';
   }

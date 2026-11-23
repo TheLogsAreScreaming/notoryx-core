@@ -11880,6 +11880,12 @@ class AppLocalizationsBg extends AppLocalizations {
   String get notification_replyHint => 'Напишете отговор';
 
   @override
+  String get notification_markRead => 'Маркирай като прочетено';
+
+  @override
+  String get notification_you => 'Вие';
+
+  @override
   String outbox_waiting(int count) {
     return 'Чакат радиото: $count';
   }
