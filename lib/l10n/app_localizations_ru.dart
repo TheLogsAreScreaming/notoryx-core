@@ -14708,6 +14708,124 @@ class AppLocalizationsRu extends AppLocalizations {
   String get sarneg_autoClear => 'Очищается через 1 минуту без ввода.';
 
   @override
+  String get sarneg_optionsTitle => 'Параметры';
+
+  @override
+  String get sarneg_keepZone => 'Оставлять зону сетки открытой';
+
+  @override
+  String get sarneg_keepZoneHint =>
+      '17S 4823 уходит как 17s KSAC. Зона редко бывает секретной, и другие инструменты SARNEG читают её так.';
+
+  @override
+  String get sarneg_noMarker => 'Отправлять без метки [SARNEG]';
+
+  @override
+  String get sarneg_noMarkerHint =>
+      'Слушатели не поймут, что числа скрыты. Вашей команде нужно включить «Расшифровывать сообщения без метки».';
+
+  @override
+  String get sarneg_readUnmarked => 'Расшифровывать сообщения без метки';
+
+  @override
+  String get sarneg_readUnmarkedHint =>
+      'Под сообщением без метки появляется строка расшифровки, если все его заглавные буквы есть в слове дня.';
+
+  @override
+  String get sarneg_wipeAfter => 'Удалить все слова после даты';
+
+  @override
+  String get sarneg_wipeAfterOff =>
+      'Выкл. Слова с датой удаляются, когда их день прошёл.';
+
+  @override
+  String sarneg_wipeAfterSet(String day) {
+    return 'Все слова удаляются после $day.';
+  }
+
+  @override
+  String get sarneg_remove => 'Удалить';
+
+  @override
+  String get sarneg_sardotTitle => 'Опорная точка SARDOT';
+
+  @override
+  String get sarneg_sardotHint =>
+      'Отправляйте азимут и расстояние от секретной точки вместо координат. Договоритесь о точке лично: она никогда не передаётся.';
+
+  @override
+  String get sarneg_sardotSet => 'Опорная точка задана';
+
+  @override
+  String get sarneg_sardotNone => 'Нет опорной точки';
+
+  @override
+  String get sarneg_useMyPosition => 'Моё местоположение';
+
+  @override
+  String get sarneg_typePoint => 'Ввести точку';
+
+  @override
+  String get sarneg_pointLabel => 'Широта, долгота';
+
+  @override
+  String get sarneg_pointInvalid =>
+      'Введите широту, долготу, например 41.33, -73.09';
+
+  @override
+  String get sarneg_addSardot => 'Добавить SARDOT по моему местоположению';
+
+  @override
+  String get sarneg_showOnMap => 'Показать на карте';
+
+  @override
+  String get sarneg_mapTitle => 'Расшифрованная позиция';
+
+  @override
+  String get sarneg_authTitle => 'Число и буква дня';
+
+  @override
+  String get sarneg_authHint =>
+      'Пароль и отзыв: вам называют число, вы отвечаете числом, которое в сумме даёт число дня. Хранится только на этом телефоне.';
+
+  @override
+  String get sarneg_numberOfDay => 'Число дня (от 0 до 99)';
+
+  @override
+  String get sarneg_letterOfDay => 'Буква дня';
+
+  @override
+  String get sarneg_notSet => 'Не задано';
+
+  @override
+  String get sarneg_numberInvalid => 'Используйте число от 0 до 99';
+
+  @override
+  String get sarneg_letterInvalid => 'Используйте одну букву от A до Z';
+
+  @override
+  String get sarneg_challenge => 'Названное число';
+
+  @override
+  String sarneg_reply(int number) {
+    return 'Отзыв: $number';
+  }
+
+  @override
+  String get sarneg_noReply => 'Нет верного отзыва: число больше числа дня.';
+
+  @override
+  String get sarneg_maybeUnmarked =>
+      'Возможно, SARNEG · нажмите для расшифровки';
+
+  @override
+  String get sarneg_guideTitle => 'SARNEG или настоящее шифрование?';
+
+  @override
+  String get sarneg_guideBody =>
+      'SARNEG заменяет цифры буквами по одному общему слову. Любой, кто услышит несколько сообщений, может вычислить слово, поэтому числа скрыты только от случайного слушателя. Это не шифрование.\n\nДля настоящей секретности используйте приватный канал со своим ключом. Рация шифрует всё в нём, и прочитать могут только те, у кого есть ключ.\n\nSARNEG всё равно помогает дополнительно: в общих и публичных каналах, через ретрансляторы и мосты, в журналах и на снимках экрана, а также против того, у кого есть ключ канала, но нет кодового слова.';
+
+  @override
   String channelConflict_banner(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

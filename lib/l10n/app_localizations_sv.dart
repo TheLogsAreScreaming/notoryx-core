@@ -14564,6 +14564,124 @@ class AppLocalizationsSv extends AppLocalizations {
   String get sarneg_autoClear => 'Rensas efter 1 minut utan inmatning.';
 
   @override
+  String get sarneg_optionsTitle => 'Alternativ';
+
+  @override
+  String get sarneg_keepZone => 'Lämna rutnätszonen i klartext';
+
+  @override
+  String get sarneg_keepZoneHint =>
+      '17S 4823 skickas som 17s KSAC. Zonen är sällan hemlig, och andra SARNEG-verktyg läser den så.';
+
+  @override
+  String get sarneg_noMarker => 'Skicka utan märkningen [SARNEG]';
+
+  @override
+  String get sarneg_noMarkerHint =>
+      'Den som lyssnar ser inte att siffror är dolda. Ditt team måste slå på ”Avkoda omärkta meddelanden”.';
+
+  @override
+  String get sarneg_readUnmarked => 'Avkoda omärkta meddelanden';
+
+  @override
+  String get sarneg_readUnmarkedHint =>
+      'Ett meddelande utan märkning får en avkodningsrad när alla dess versaler hör till dagens ord.';
+
+  @override
+  String get sarneg_wipeAfter => 'Radera alla ord efter en dag';
+
+  @override
+  String get sarneg_wipeAfterOff =>
+      'Av. Daterade ord raderas när deras dag har passerat.';
+
+  @override
+  String sarneg_wipeAfterSet(String day) {
+    return 'Alla ord raderas efter $day.';
+  }
+
+  @override
+  String get sarneg_remove => 'Ta bort';
+
+  @override
+  String get sarneg_sardotTitle => 'SARDOT-referenspunkt';
+
+  @override
+  String get sarneg_sardotHint =>
+      'Skicka bäring och avstånd från en hemlig punkt i stället för en position. Kom överens om punkten personligen: den skickas aldrig.';
+
+  @override
+  String get sarneg_sardotSet => 'Referenspunkt satt';
+
+  @override
+  String get sarneg_sardotNone => 'Ingen referenspunkt';
+
+  @override
+  String get sarneg_useMyPosition => 'Använd min position';
+
+  @override
+  String get sarneg_typePoint => 'Skriv en punkt';
+
+  @override
+  String get sarneg_pointLabel => 'Latitud, longitud';
+
+  @override
+  String get sarneg_pointInvalid =>
+      'Skriv latitud, longitud, till exempel 41.33, -73.09';
+
+  @override
+  String get sarneg_addSardot => 'Lägg till SARDOT från min position';
+
+  @override
+  String get sarneg_showOnMap => 'Visa på kartan';
+
+  @override
+  String get sarneg_mapTitle => 'Avkodad position';
+
+  @override
+  String get sarneg_authTitle => 'Dagens siffra och bokstav';
+
+  @override
+  String get sarneg_authHint =>
+      'Lösen och svar: de säger en siffra, du svarar med den som tillsammans blir dagens siffra. Sparas bara i den här telefonen.';
+
+  @override
+  String get sarneg_numberOfDay => 'Dagens siffra (0 till 99)';
+
+  @override
+  String get sarneg_letterOfDay => 'Dagens bokstav';
+
+  @override
+  String get sarneg_notSet => 'Inte satt';
+
+  @override
+  String get sarneg_numberInvalid => 'Använd en siffra från 0 till 99';
+
+  @override
+  String get sarneg_letterInvalid => 'Använd en bokstav, A till Z';
+
+  @override
+  String get sarneg_challenge => 'Siffran de sa';
+
+  @override
+  String sarneg_reply(int number) {
+    return 'Svar: $number';
+  }
+
+  @override
+  String get sarneg_noReply =>
+      'Inget giltigt svar: siffran är större än dagens siffra.';
+
+  @override
+  String get sarneg_maybeUnmarked => 'Kanske SARNEG · tryck för att avkoda';
+
+  @override
+  String get sarneg_guideTitle => 'SARNEG eller riktig kryptering?';
+
+  @override
+  String get sarneg_guideBody =>
+      'SARNEG byter siffror mot bokstäver med ett gemensamt ord. Den som hör några meddelanden kan räkna ut ordet, så det döljer bara siffror för en tillfällig lyssnare. Det är inte kryptering.\n\nFör riktig sekretess, använd en privat kanal med en egen nyckel. Radion krypterar allt på den, och bara de som har nyckeln kan läsa det.\n\nSARNEG hjälper ändå utöver det: på delade eller öppna kanaler, via repeatrar och bryggor, i loggar och skärmbilder, och mot någon som har kanalnyckeln men inte kodordet.';
+
+  @override
   String channelConflict_banner(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
