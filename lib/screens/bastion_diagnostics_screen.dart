@@ -186,6 +186,7 @@ class BastionDiagnosticsScreen extends StatelessWidget {
         ConnectionCause.user => l10n.diagTimeline_causeUser,
         ConnectionCause.linkLost => l10n.diagTimeline_causeLinkLost,
         ConnectionCause.reconnect => l10n.diagTimeline_causeReconnect,
+        ConnectionCause.autoConnect => l10n.diagTimeline_causeAutoConnect,
         ConnectionCause.app => l10n.diagTimeline_causeApp,
         ConnectionCause.unknown => '',
       };
