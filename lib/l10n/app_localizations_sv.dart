@@ -8295,6 +8295,13 @@ class AppLocalizationsSv extends AppLocalizations {
   String get scanner_tcpHint => 'En radio med Wi‑Fi-firmware i ditt nätverk.';
 
   @override
+  String get scanner_tryDemo => 'Prova en demo';
+
+  @override
+  String get scanner_tryDemoHint =>
+      'En låtsasradio och ett låtsasnät. Inget skickas.';
+
+  @override
   String get scanner_otherWays => 'Andra sätt att ansluta';
 
   @override
