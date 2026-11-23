@@ -757,6 +757,7 @@ extension _ConnectorConnection on MeshCoreConnector {
     } else {
       _manualDisconnect = false;
     }
+    _nextCause = manual ? ConnectionCause.user : ConnectionCause.app;
     _setState(MeshCoreConnectionState.disconnecting);
     _stopBatteryPolling();
     _stopRadioStatsPolling();
@@ -899,6 +900,7 @@ extension _ConnectorConnection on MeshCoreConnector {
     _pendingGenericAckQueue.clear();
     _reactionSendQueueSequence = 0;
 
+    _nextCause = ConnectionCause.linkLost;
     _setState(MeshCoreConnectionState.disconnected);
     _scheduleReconnect();
   }
