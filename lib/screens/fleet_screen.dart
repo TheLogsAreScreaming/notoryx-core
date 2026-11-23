@@ -4,11 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../connector/meshcore_connector.dart';
-import '../connector/meshcore_protocol.dart';
 import '../helpers/snack_bar_builder.dart';
 import '../l10n/app_localizations.dart';
 import '../l10n/l10n.dart';
-import '../models/contact.dart';
 import '../models/firmware_release.dart';
 import '../models/fleet.dart';
 import '../services/fleet_controller.dart';
@@ -87,10 +85,7 @@ class FleetScreen extends StatelessWidget {
           for (final r in repeaters)
             FleetHealthCard(
               repeater: r,
-              health: store.healthFor(
-                r.publicKeyHex,
-                advertAt: _advertAt(connector, r.publicKeyHex),
-              ),
+              health: store.healthFor(r.publicKeyHex),
               newestFirmware: newest,
               now: now,
               onTap: () => Navigator.of(context).push(
@@ -103,15 +98,6 @@ class FleetScreen extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  static DateTime? _advertAt(MeshCoreConnector connector, String key) {
-    for (final c in connector.allContactsUnfiltered) {
-      if (c.publicKeyHex == key) {
-        return c.lastSeen.millisecondsSinceEpoch > 0 ? c.lastSeen : null;
-      }
-    }
-    return null;
   }
 
   static Future<void> _showAdd(BuildContext context) => showModalBottomSheet(
@@ -654,6 +640,7 @@ class _AddRepeaterSheet extends StatefulWidget {
 class _AddRepeaterSheetState extends State<_AddRepeaterSheet> {
   final _key = TextEditingController();
   final _name = TextEditingController();
+  final _search = TextEditingController();
   final _password = TextEditingController();
   String? _error;
 
@@ -661,6 +648,7 @@ class _AddRepeaterSheetState extends State<_AddRepeaterSheet> {
   void dispose() {
     _key.dispose();
     _name.dispose();
+    _search.dispose();
     _password.dispose();
     super.dispose();
   }
@@ -688,12 +676,16 @@ class _AddRepeaterSheetState extends State<_AddRepeaterSheet> {
     final l10n = context.l10n;
     final store = context.watch<FleetStore?>();
     final connector = context.watch<MeshCoreConnector>();
-    final heard = <Contact>[
-      for (final c in connector.allContactsUnfiltered)
-        if (c.type == advTypeRepeater &&
-            !(store?.contains(c.publicKeyHex) ?? false))
-          c,
-    ]..sort((a, b) => b.lastSeen.compareTo(a.lastSeen));
+    final listed = store?.contains ?? (_) => false;
+    final total = pickableRepeaters(
+      connector.allContactsUnfiltered,
+      listed: listed,
+    ).length;
+    final heard = pickableRepeaters(
+      connector.allContactsUnfiltered,
+      listed: listed,
+      query: _search.text,
+    );
     return Padding(
       padding: EdgeInsets.only(
         left: 16,
@@ -722,6 +714,14 @@ class _AddRepeaterSheetState extends State<_AddRepeaterSheet> {
             ),
             const SizedBox(height: 12),
             Text(l10n.fleet_heardRepeaters, style: MeshTheme.accentLabel()),
+            TextField(
+              controller: _search,
+              decoration: InputDecoration(
+                prefixIcon: const Icon(Icons.search),
+                hintText: l10n.contacts_searchRepeaters(total, ''),
+              ),
+              onChanged: (_) => setState(() {}),
+            ),
             Expanded(
               child: heard.isEmpty
                   ? Center(
