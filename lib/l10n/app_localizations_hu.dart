@@ -14936,4 +14936,280 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get coverageHex_trimDrivesHint =>
       'Minden térképezés első és utolsó 2 hatszöge ezen a telefonon marad, így a térképek nem mutatják, hol laksz vagy parkolsz.';
+
+  @override
+  String get fleet_title => 'Flotta';
+
+  @override
+  String get fleet_toolSubtitle =>
+      'Állapot, trendek és csoportos beállítások a saját átjátszóidhoz';
+
+  @override
+  String get fleet_addRepeater => 'Átjátszó hozzáadása';
+
+  @override
+  String get fleet_agoNow => 'épp most';
+
+  @override
+  String fleet_agoMinutes(int count) {
+    return '$count perce';
+  }
+
+  @override
+  String fleet_agoHours(int count) {
+    return '$count órája';
+  }
+
+  @override
+  String fleet_agoDays(int count) {
+    return '$count napja';
+  }
+
+  @override
+  String get fleet_alreadyListed => 'Ez az átjátszó már a flottádban van.';
+
+  @override
+  String fleet_asking(String name) {
+    return '$name lekérdezése…';
+  }
+
+  @override
+  String get fleet_badAddress =>
+      'Adj meg egy címet, pl. 192.168.1.20 vagy 192.168.1.20:8484.';
+
+  @override
+  String get fleet_badKey =>
+      'Illeszd be a teljes, 64 karakteres nyilvános kulcsot.';
+
+  @override
+  String get fleet_battery => 'Akkumulátor';
+
+  @override
+  String get fleet_batteryTrend => 'Akkumulátor (V)';
+
+  @override
+  String fleet_bulkApply(int count) {
+    return 'Küldés $count átjátszónak';
+  }
+
+  @override
+  String get fleet_bulkBadValue =>
+      'Ez az érték nem engedélyezett ehhez a beállításhoz.';
+
+  @override
+  String fleet_bulkChange(String current, String target) {
+    return '$current → $target';
+  }
+
+  @override
+  String fleet_bulkConfirmBody(String setting, String value, int count) {
+    return '$setting legyen $value $count átjátszón? Mindegyik rádión megy, legalább 20 másodperc különbséggel.';
+  }
+
+  @override
+  String get fleet_bulkConfirmTitle => 'Módosítod az átjátszókat?';
+
+  @override
+  String get fleet_bulkIntro =>
+      'Válassz beállítást és értéket. Előbb beolvassuk a jelenlegi értékeket; semmi sem változik, amíg nem erősíted meg.';
+
+  @override
+  String get fleet_bulkPreview => 'Mi változna';
+
+  @override
+  String get fleet_bulkRead => 'Jelenlegi értékek beolvasása';
+
+  @override
+  String get fleet_bulkRepeaters => 'Átjátszók';
+
+  @override
+  String fleet_bulkSame(String target) {
+    return 'Már $target';
+  }
+
+  @override
+  String get fleet_bulkSend => 'Küldés';
+
+  @override
+  String get fleet_bulkSetting => 'Beállítás';
+
+  @override
+  String get fleet_bulkTitle => 'Csoportos beállítások';
+
+  @override
+  String get fleet_bulkValue => 'Új érték';
+
+  @override
+  String fleet_days(int count) {
+    return '$count nap';
+  }
+
+  @override
+  String fleet_db(String value) {
+    return '$value dB';
+  }
+
+  @override
+  String fleet_dbm(int value) {
+    return '$value dBm';
+  }
+
+  @override
+  String get fleet_empty =>
+      'Még nincs átjátszó. Koppints a + gombra egy saját hozzáadásához.';
+
+  @override
+  String get fleet_errorLogin => 'Bejelentkezés elutasítva';
+
+  @override
+  String get fleet_errorNoContact => 'Nincs a rádió névjegyei között';
+
+  @override
+  String get fleet_errorOther => 'Sikertelen';
+
+  @override
+  String get fleet_errorTimeout => 'Nincs válasz';
+
+  @override
+  String get fleet_firmware => 'Firmware';
+
+  @override
+  String get fleet_heardRepeaters => 'Hallott átjátszók';
+
+  @override
+  String get fleet_lastHeard => 'Utoljára hallva';
+
+  @override
+  String fleet_lastPollFailed(String reason, String when) {
+    return 'Utolsó lekérdezés: $reason, $when';
+  }
+
+  @override
+  String get fleet_lastSnr => 'Utolsó SNR';
+
+  @override
+  String get fleet_name => 'Név';
+
+  @override
+  String get fleet_needsRadio => 'A lekérdezéshez csatlakoztass egy rádiót.';
+
+  @override
+  String get fleet_neighbours => 'Szomszédok';
+
+  @override
+  String get fleet_noHeard => 'Nincs hallott átjátszó a flottádon kívül.';
+
+  @override
+  String get fleet_noHistory => 'Ebben az időszakban nincs mérés.';
+
+  @override
+  String get fleet_noiseFloor => 'Zajszint';
+
+  @override
+  String get fleet_noiseTrend => 'Zajszint (dBm)';
+
+  @override
+  String get fleet_password => 'Adminjelszó';
+
+  @override
+  String get fleet_passwordHint =>
+      'A telefon biztonságos tárolójában marad. Csak az átjátszónak megy el, rádión.';
+
+  @override
+  String get fleet_passwordOptional => 'Adminjelszó (nem kötelező)';
+
+  @override
+  String get fleet_passwordSaved => 'Jelszó frissítve';
+
+  @override
+  String get fleet_pasteKey => 'Vagy illessz be egy kulcsot';
+
+  @override
+  String get fleet_pollAll => 'Összes lekérdezése';
+
+  @override
+  String fleet_pollHint(int seconds) {
+    return 'Egyszerre egy átjátszó, $seconds mp különbséggel, az adásidő kímélésére.';
+  }
+
+  @override
+  String get fleet_pollNow => 'Lekérdezés most';
+
+  @override
+  String fleet_progress(int done, int total) {
+    return '$done / $total';
+  }
+
+  @override
+  String get fleet_publicKey => 'Nyilvános kulcs';
+
+  @override
+  String get fleet_remove => 'Eltávolítás a flottából';
+
+  @override
+  String fleet_removeBody(String name) {
+    return 'Eltávolítod $name átjátszót az előzményeivel és jelszavával együtt erről a telefonról?';
+  }
+
+  @override
+  String get fleet_removeTitle => 'Eltávolítod az átjátszót?';
+
+  @override
+  String get fleet_stationAddress => 'Állomás címe';
+
+  @override
+  String get fleet_statusFirmwareBehind => 'Régi firmware';
+
+  @override
+  String get fleet_statusHealthy => 'Rendben';
+
+  @override
+  String get fleet_statusLowBattery => 'Gyenge akku';
+
+  @override
+  String get fleet_statusQuiet => 'Csendes';
+
+  @override
+  String get fleet_statusUnknown => 'Nincs lekérdezve';
+
+  @override
+  String get fleet_stop => 'Leállítás';
+
+  @override
+  String get fleet_sync => 'Szinkronizálás';
+
+  @override
+  String fleet_syncDone(int count) {
+    return 'Szinkronizálva: $count új mérés.';
+  }
+
+  @override
+  String get fleet_syncFailed => 'Az állomás nem érhető el.';
+
+  @override
+  String get fleet_syncHint =>
+      'Előzményeket másol egy NOTORYX Ops állomásról a hálózatodon. Csak olvas; a jelszavak sosem hagyják el a telefont.';
+
+  @override
+  String get fleet_syncSignIn =>
+      'Az állomás bejelentkezést kér. A szinkronizálás fiókok nélküli állomásokkal működik.';
+
+  @override
+  String get fleet_syncStation => 'Szinkronizálás állomásról';
+
+  @override
+  String get fleet_uptime => 'Üzemidő';
+
+  @override
+  String fleet_uptimeDays(int days, int hours) {
+    return '$days nap $hours óra';
+  }
+
+  @override
+  String fleet_uptimeHours(int hours, int minutes) {
+    return '$hours óra $minutes perc';
+  }
+
+  @override
+  String get fleet_waiting => 'Várakozás…';
 }

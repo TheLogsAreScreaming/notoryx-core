@@ -14970,4 +14970,280 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get coverageHex_trimDrivesHint =>
       'Los 2 primeros y 2 últimos hexágonos de cada sesión se quedan en este teléfono, para que los mapas no muestren dónde vives o aparcas.';
+
+  @override
+  String get fleet_title => 'Flota';
+
+  @override
+  String get fleet_toolSubtitle =>
+      'Estado, tendencias y ajustes en bloque de tus repetidores';
+
+  @override
+  String get fleet_addRepeater => 'Añadir repetidor';
+
+  @override
+  String get fleet_agoNow => 'ahora mismo';
+
+  @override
+  String fleet_agoMinutes(int count) {
+    return 'hace $count min';
+  }
+
+  @override
+  String fleet_agoHours(int count) {
+    return 'hace $count h';
+  }
+
+  @override
+  String fleet_agoDays(int count) {
+    return 'hace $count d';
+  }
+
+  @override
+  String get fleet_alreadyListed => 'Ese repetidor ya está en tu flota.';
+
+  @override
+  String fleet_asking(String name) {
+    return 'Consultando $name…';
+  }
+
+  @override
+  String get fleet_badAddress =>
+      'Escribe una dirección como 192.168.1.20 o 192.168.1.20:8484.';
+
+  @override
+  String get fleet_badKey => 'Pega la clave pública completa de 64 caracteres.';
+
+  @override
+  String get fleet_battery => 'Batería';
+
+  @override
+  String get fleet_batteryTrend => 'Batería (V)';
+
+  @override
+  String fleet_bulkApply(int count) {
+    return 'Enviar a $count repetidores';
+  }
+
+  @override
+  String get fleet_bulkBadValue =>
+      'Ese valor no está permitido para este ajuste.';
+
+  @override
+  String fleet_bulkChange(String current, String target) {
+    return '$current → $target';
+  }
+
+  @override
+  String fleet_bulkConfirmBody(String setting, String value, int count) {
+    return '¿Poner $setting en $value en $count repetidores? Cada uno se envía por radio, con al menos 20 segundos de separación.';
+  }
+
+  @override
+  String get fleet_bulkConfirmTitle => '¿Cambiar repetidores?';
+
+  @override
+  String get fleet_bulkIntro =>
+      'Elige un ajuste y un valor. Primero se leen los valores actuales; nada cambia hasta que confirmes.';
+
+  @override
+  String get fleet_bulkPreview => 'Lo que cambiaría';
+
+  @override
+  String get fleet_bulkRead => 'Leer valores actuales';
+
+  @override
+  String get fleet_bulkRepeaters => 'Repetidores';
+
+  @override
+  String fleet_bulkSame(String target) {
+    return 'Ya es $target';
+  }
+
+  @override
+  String get fleet_bulkSend => 'Enviar';
+
+  @override
+  String get fleet_bulkSetting => 'Ajuste';
+
+  @override
+  String get fleet_bulkTitle => 'Ajustes en bloque';
+
+  @override
+  String get fleet_bulkValue => 'Nuevo valor';
+
+  @override
+  String fleet_days(int count) {
+    return '$count d';
+  }
+
+  @override
+  String fleet_db(String value) {
+    return '$value dB';
+  }
+
+  @override
+  String fleet_dbm(int value) {
+    return '$value dBm';
+  }
+
+  @override
+  String get fleet_empty =>
+      'Aún no hay repetidores. Toca + para añadir uno tuyo.';
+
+  @override
+  String get fleet_errorLogin => 'Inicio de sesión rechazado';
+
+  @override
+  String get fleet_errorNoContact => 'No está en los contactos de la radio';
+
+  @override
+  String get fleet_errorOther => 'Error';
+
+  @override
+  String get fleet_errorTimeout => 'Sin respuesta';
+
+  @override
+  String get fleet_firmware => 'Firmware';
+
+  @override
+  String get fleet_heardRepeaters => 'Repetidores oídos';
+
+  @override
+  String get fleet_lastHeard => 'Oído por última vez';
+
+  @override
+  String fleet_lastPollFailed(String reason, String when) {
+    return 'Última consulta: $reason, $when';
+  }
+
+  @override
+  String get fleet_lastSnr => 'Último SNR';
+
+  @override
+  String get fleet_name => 'Nombre';
+
+  @override
+  String get fleet_needsRadio => 'Conecta una radio para consultar.';
+
+  @override
+  String get fleet_neighbours => 'Vecinos';
+
+  @override
+  String get fleet_noHeard =>
+      'No se oyen repetidores que no estén ya en tu flota.';
+
+  @override
+  String get fleet_noHistory => 'No hay lecturas en este periodo.';
+
+  @override
+  String get fleet_noiseFloor => 'Ruido de fondo';
+
+  @override
+  String get fleet_noiseTrend => 'Ruido de fondo (dBm)';
+
+  @override
+  String get fleet_password => 'Contraseña de administrador';
+
+  @override
+  String get fleet_passwordHint =>
+      'Se guarda en el almacenamiento seguro de este teléfono. Solo se envía al repetidor, por radio.';
+
+  @override
+  String get fleet_passwordOptional => 'Contraseña de administrador (opcional)';
+
+  @override
+  String get fleet_passwordSaved => 'Contraseña actualizada';
+
+  @override
+  String get fleet_pasteKey => 'O pega una clave';
+
+  @override
+  String get fleet_pollAll => 'Consultar todos';
+
+  @override
+  String fleet_pollHint(int seconds) {
+    return 'Un repetidor cada vez, con $seconds s de separación, para ahorrar tiempo de aire.';
+  }
+
+  @override
+  String get fleet_pollNow => 'Consultar ahora';
+
+  @override
+  String fleet_progress(int done, int total) {
+    return '$done de $total';
+  }
+
+  @override
+  String get fleet_publicKey => 'Clave pública';
+
+  @override
+  String get fleet_remove => 'Quitar de la flota';
+
+  @override
+  String fleet_removeBody(String name) {
+    return '¿Quitar $name con su historial y contraseña de este teléfono?';
+  }
+
+  @override
+  String get fleet_removeTitle => '¿Quitar repetidor?';
+
+  @override
+  String get fleet_stationAddress => 'Dirección de la estación';
+
+  @override
+  String get fleet_statusFirmwareBehind => 'Firmware atrasado';
+
+  @override
+  String get fleet_statusHealthy => 'Bien';
+
+  @override
+  String get fleet_statusLowBattery => 'Batería baja';
+
+  @override
+  String get fleet_statusQuiet => 'Silencioso';
+
+  @override
+  String get fleet_statusUnknown => 'Sin consultar';
+
+  @override
+  String get fleet_stop => 'Detener';
+
+  @override
+  String get fleet_sync => 'Sincronizar';
+
+  @override
+  String fleet_syncDone(int count) {
+    return 'Sincronizado: $count lecturas nuevas.';
+  }
+
+  @override
+  String get fleet_syncFailed => 'No se pudo conectar con la estación.';
+
+  @override
+  String get fleet_syncHint =>
+      'Copia el historial de una estación NOTORYX Ops de tu red. Solo lee; las contraseñas nunca salen de este teléfono.';
+
+  @override
+  String get fleet_syncSignIn =>
+      'La estación pide iniciar sesión. La sincronización funciona con estaciones sin cuentas.';
+
+  @override
+  String get fleet_syncStation => 'Sincronizar desde estación';
+
+  @override
+  String get fleet_uptime => 'Tiempo activo';
+
+  @override
+  String fleet_uptimeDays(int days, int hours) {
+    return '$days d $hours h';
+  }
+
+  @override
+  String fleet_uptimeHours(int hours, int minutes) {
+    return '$hours h $minutes min';
+  }
+
+  @override
+  String get fleet_waiting => 'Esperando…';
 }

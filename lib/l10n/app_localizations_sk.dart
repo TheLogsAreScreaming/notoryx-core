@@ -14911,4 +14911,279 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get coverageHex_trimDrivesHint =>
       'Prvé a posledné 2 šesťuholníky každej relácie zostanú v tomto telefóne, takže mapy neukážu, kde bývate alebo parkujete.';
+
+  @override
+  String get fleet_title => 'Flotila';
+
+  @override
+  String get fleet_toolSubtitle =>
+      'Stav, trendy a hromadné nastavenia vašich opakovačov';
+
+  @override
+  String get fleet_addRepeater => 'Pridať opakovač';
+
+  @override
+  String get fleet_agoNow => 'práve teraz';
+
+  @override
+  String fleet_agoMinutes(int count) {
+    return 'pred $count min';
+  }
+
+  @override
+  String fleet_agoHours(int count) {
+    return 'pred $count h';
+  }
+
+  @override
+  String fleet_agoDays(int count) {
+    return 'pred $count d';
+  }
+
+  @override
+  String get fleet_alreadyListed => 'Tento opakovač už je vo vašej flotile.';
+
+  @override
+  String fleet_asking(String name) {
+    return 'Pýtam sa $name…';
+  }
+
+  @override
+  String get fleet_badAddress =>
+      'Zadajte adresu ako 192.168.1.20 alebo 192.168.1.20:8484.';
+
+  @override
+  String get fleet_badKey => 'Vložte celý 64-znakový verejný kľúč.';
+
+  @override
+  String get fleet_battery => 'Batéria';
+
+  @override
+  String get fleet_batteryTrend => 'Batéria (V)';
+
+  @override
+  String fleet_bulkApply(int count) {
+    return 'Odoslať na opakovače: $count';
+  }
+
+  @override
+  String get fleet_bulkBadValue =>
+      'Táto hodnota nie je pre toto nastavenie povolená.';
+
+  @override
+  String fleet_bulkChange(String current, String target) {
+    return '$current → $target';
+  }
+
+  @override
+  String fleet_bulkConfirmBody(String setting, String value, int count) {
+    return 'Nastaviť $setting na $value na opakovačoch ($count)? Každý sa mení rádiom, najmenej 20 sekúnd po sebe.';
+  }
+
+  @override
+  String get fleet_bulkConfirmTitle => 'Zmeniť opakovače?';
+
+  @override
+  String get fleet_bulkIntro =>
+      'Vyberte nastavenie a hodnotu. Najprv sa prečítajú aktuálne hodnoty; nič sa nezmení, kým nepotvrdíte.';
+
+  @override
+  String get fleet_bulkPreview => 'Čo by sa zmenilo';
+
+  @override
+  String get fleet_bulkRead => 'Prečítať aktuálne hodnoty';
+
+  @override
+  String get fleet_bulkRepeaters => 'Opakovače';
+
+  @override
+  String fleet_bulkSame(String target) {
+    return 'Už $target';
+  }
+
+  @override
+  String get fleet_bulkSend => 'Odoslať';
+
+  @override
+  String get fleet_bulkSetting => 'Nastavenie';
+
+  @override
+  String get fleet_bulkTitle => 'Hromadné nastavenia';
+
+  @override
+  String get fleet_bulkValue => 'Nová hodnota';
+
+  @override
+  String fleet_days(int count) {
+    return '$count d';
+  }
+
+  @override
+  String fleet_db(String value) {
+    return '$value dB';
+  }
+
+  @override
+  String fleet_dbm(int value) {
+    return '$value dBm';
+  }
+
+  @override
+  String get fleet_empty =>
+      'Zatiaľ žiadne opakovače. Ťuknite na + a pridajte vlastný.';
+
+  @override
+  String get fleet_errorLogin => 'Prihlásenie odmietnuté';
+
+  @override
+  String get fleet_errorNoContact => 'Nie je v kontaktoch rádia';
+
+  @override
+  String get fleet_errorOther => 'Zlyhalo';
+
+  @override
+  String get fleet_errorTimeout => 'Bez odpovede';
+
+  @override
+  String get fleet_firmware => 'Firmvér';
+
+  @override
+  String get fleet_heardRepeaters => 'Počuté opakovače';
+
+  @override
+  String get fleet_lastHeard => 'Naposledy počutý';
+
+  @override
+  String fleet_lastPollFailed(String reason, String when) {
+    return 'Posledný dopyt: $reason, $when';
+  }
+
+  @override
+  String get fleet_lastSnr => 'Posledné SNR';
+
+  @override
+  String get fleet_name => 'Názov';
+
+  @override
+  String get fleet_needsRadio => 'Na dopytovanie pripojte rádio.';
+
+  @override
+  String get fleet_neighbours => 'Susedia';
+
+  @override
+  String get fleet_noHeard => 'Žiadne počuté opakovače mimo vašej flotily.';
+
+  @override
+  String get fleet_noHistory => 'V tomto období žiadne údaje.';
+
+  @override
+  String get fleet_noiseFloor => 'Úroveň šumu';
+
+  @override
+  String get fleet_noiseTrend => 'Úroveň šumu (dBm)';
+
+  @override
+  String get fleet_password => 'Heslo správcu';
+
+  @override
+  String get fleet_passwordHint =>
+      'Uložené v zabezpečenom úložisku tohto telefónu. Posiela sa len opakovaču, rádiom.';
+
+  @override
+  String get fleet_passwordOptional => 'Heslo správcu (voliteľné)';
+
+  @override
+  String get fleet_passwordSaved => 'Heslo aktualizované';
+
+  @override
+  String get fleet_pasteKey => 'Alebo vložte kľúč';
+
+  @override
+  String get fleet_pollAll => 'Opýtať sa všetkých';
+
+  @override
+  String fleet_pollHint(int seconds) {
+    return 'Jeden opakovač naraz, s odstupom $seconds s, kvôli šetreniu vysielacieho času.';
+  }
+
+  @override
+  String get fleet_pollNow => 'Opýtať sa teraz';
+
+  @override
+  String fleet_progress(int done, int total) {
+    return '$done z $total';
+  }
+
+  @override
+  String get fleet_publicKey => 'Verejný kľúč';
+
+  @override
+  String get fleet_remove => 'Odstrániť z flotily';
+
+  @override
+  String fleet_removeBody(String name) {
+    return 'Odstrániť $name s históriou a heslom z tohto telefónu?';
+  }
+
+  @override
+  String get fleet_removeTitle => 'Odstrániť opakovač?';
+
+  @override
+  String get fleet_stationAddress => 'Adresa stanice';
+
+  @override
+  String get fleet_statusFirmwareBehind => 'Starý firmvér';
+
+  @override
+  String get fleet_statusHealthy => 'V poriadku';
+
+  @override
+  String get fleet_statusLowBattery => 'Slabá batéria';
+
+  @override
+  String get fleet_statusQuiet => 'Ticho';
+
+  @override
+  String get fleet_statusUnknown => 'Nedopytovaný';
+
+  @override
+  String get fleet_stop => 'Zastaviť';
+
+  @override
+  String get fleet_sync => 'Synchronizovať';
+
+  @override
+  String fleet_syncDone(int count) {
+    return 'Synchronizované: nové údaje: $count.';
+  }
+
+  @override
+  String get fleet_syncFailed => 'Stanica je nedostupná.';
+
+  @override
+  String get fleet_syncHint =>
+      'Kopíruje históriu zo stanice NOTORYX Ops vo vašej sieti. Len číta; heslá nikdy neopustia tento telefón.';
+
+  @override
+  String get fleet_syncSignIn =>
+      'Stanica vyžaduje prihlásenie. Synchronizácia funguje so stanicami bez účtov.';
+
+  @override
+  String get fleet_syncStation => 'Synchronizovať zo stanice';
+
+  @override
+  String get fleet_uptime => 'Doba behu';
+
+  @override
+  String fleet_uptimeDays(int days, int hours) {
+    return '$days d $hours h';
+  }
+
+  @override
+  String fleet_uptimeHours(int hours, int minutes) {
+    return '$hours h $minutes min';
+  }
+
+  @override
+  String get fleet_waiting => 'Čakám…';
 }

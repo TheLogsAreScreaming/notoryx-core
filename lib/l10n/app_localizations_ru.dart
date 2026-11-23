@@ -14993,4 +14993,279 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get coverageHex_trimDrivesHint =>
       'Первые и последние 2 шестиугольника каждой сессии остаются на телефоне, поэтому карты не покажут, где вы живёте или паркуетесь.';
+
+  @override
+  String get fleet_title => 'Парк';
+
+  @override
+  String get fleet_toolSubtitle =>
+      'Состояние, тренды и групповые настройки ваших ретрансляторов';
+
+  @override
+  String get fleet_addRepeater => 'Добавить ретранслятор';
+
+  @override
+  String get fleet_agoNow => 'только что';
+
+  @override
+  String fleet_agoMinutes(int count) {
+    return '$count мин назад';
+  }
+
+  @override
+  String fleet_agoHours(int count) {
+    return '$count ч назад';
+  }
+
+  @override
+  String fleet_agoDays(int count) {
+    return '$count дн. назад';
+  }
+
+  @override
+  String get fleet_alreadyListed => 'Этот ретранслятор уже в вашем парке.';
+
+  @override
+  String fleet_asking(String name) {
+    return 'Опрос $name…';
+  }
+
+  @override
+  String get fleet_badAddress =>
+      'Введите адрес, например 192.168.1.20 или 192.168.1.20:8484.';
+
+  @override
+  String get fleet_badKey => 'Вставьте полный 64-символьный открытый ключ.';
+
+  @override
+  String get fleet_battery => 'Батарея';
+
+  @override
+  String get fleet_batteryTrend => 'Батарея (В)';
+
+  @override
+  String fleet_bulkApply(int count) {
+    return 'Отправить на ретрансляторы: $count';
+  }
+
+  @override
+  String get fleet_bulkBadValue =>
+      'Это значение недопустимо для этой настройки.';
+
+  @override
+  String fleet_bulkChange(String current, String target) {
+    return '$current → $target';
+  }
+
+  @override
+  String fleet_bulkConfirmBody(String setting, String value, int count) {
+    return 'Установить $setting = $value на ретрансляторах ($count)? Каждый меняется по радио, с интервалом не менее 20 секунд.';
+  }
+
+  @override
+  String get fleet_bulkConfirmTitle => 'Изменить ретрансляторы?';
+
+  @override
+  String get fleet_bulkIntro =>
+      'Выберите настройку и значение. Сначала считываются текущие значения; ничего не изменится, пока вы не подтвердите.';
+
+  @override
+  String get fleet_bulkPreview => 'Что изменится';
+
+  @override
+  String get fleet_bulkRead => 'Считать текущие значения';
+
+  @override
+  String get fleet_bulkRepeaters => 'Ретрансляторы';
+
+  @override
+  String fleet_bulkSame(String target) {
+    return 'Уже $target';
+  }
+
+  @override
+  String get fleet_bulkSend => 'Отправить';
+
+  @override
+  String get fleet_bulkSetting => 'Настройка';
+
+  @override
+  String get fleet_bulkTitle => 'Групповые настройки';
+
+  @override
+  String get fleet_bulkValue => 'Новое значение';
+
+  @override
+  String fleet_days(int count) {
+    return '$count дн.';
+  }
+
+  @override
+  String fleet_db(String value) {
+    return '$value дБ';
+  }
+
+  @override
+  String fleet_dbm(int value) {
+    return '$value дБм';
+  }
+
+  @override
+  String get fleet_empty =>
+      'Ретрансляторов пока нет. Нажмите +, чтобы добавить свой.';
+
+  @override
+  String get fleet_errorLogin => 'Вход отклонён';
+
+  @override
+  String get fleet_errorNoContact => 'Нет в контактах радио';
+
+  @override
+  String get fleet_errorOther => 'Ошибка';
+
+  @override
+  String get fleet_errorTimeout => 'Нет ответа';
+
+  @override
+  String get fleet_firmware => 'Прошивка';
+
+  @override
+  String get fleet_heardRepeaters => 'Слышимые ретрансляторы';
+
+  @override
+  String get fleet_lastHeard => 'Последний раз слышен';
+
+  @override
+  String fleet_lastPollFailed(String reason, String when) {
+    return 'Последний опрос: $reason, $when';
+  }
+
+  @override
+  String get fleet_lastSnr => 'Последний SNR';
+
+  @override
+  String get fleet_name => 'Имя';
+
+  @override
+  String get fleet_needsRadio => 'Подключите радио для опроса.';
+
+  @override
+  String get fleet_neighbours => 'Соседи';
+
+  @override
+  String get fleet_noHeard => 'Нет слышимых ретрансляторов вне вашего парка.';
+
+  @override
+  String get fleet_noHistory => 'За этот период нет данных.';
+
+  @override
+  String get fleet_noiseFloor => 'Уровень шума';
+
+  @override
+  String get fleet_noiseTrend => 'Уровень шума (дБм)';
+
+  @override
+  String get fleet_password => 'Пароль администратора';
+
+  @override
+  String get fleet_passwordHint =>
+      'Хранится в защищённом хранилище телефона. Отправляется только самому ретранслятору, по радио.';
+
+  @override
+  String get fleet_passwordOptional => 'Пароль администратора (необязательно)';
+
+  @override
+  String get fleet_passwordSaved => 'Пароль обновлён';
+
+  @override
+  String get fleet_pasteKey => 'Или вставьте ключ';
+
+  @override
+  String get fleet_pollAll => 'Опросить все';
+
+  @override
+  String fleet_pollHint(int seconds) {
+    return 'По одному ретранслятору, с интервалом $seconds с, чтобы экономить эфир.';
+  }
+
+  @override
+  String get fleet_pollNow => 'Опросить сейчас';
+
+  @override
+  String fleet_progress(int done, int total) {
+    return '$done из $total';
+  }
+
+  @override
+  String get fleet_publicKey => 'Открытый ключ';
+
+  @override
+  String get fleet_remove => 'Убрать из парка';
+
+  @override
+  String fleet_removeBody(String name) {
+    return 'Удалить $name вместе с историей и паролем с этого телефона?';
+  }
+
+  @override
+  String get fleet_removeTitle => 'Удалить ретранслятор?';
+
+  @override
+  String get fleet_stationAddress => 'Адрес станции';
+
+  @override
+  String get fleet_statusFirmwareBehind => 'Старая прошивка';
+
+  @override
+  String get fleet_statusHealthy => 'В норме';
+
+  @override
+  String get fleet_statusLowBattery => 'Низкий заряд';
+
+  @override
+  String get fleet_statusQuiet => 'Молчит';
+
+  @override
+  String get fleet_statusUnknown => 'Не опрошен';
+
+  @override
+  String get fleet_stop => 'Стоп';
+
+  @override
+  String get fleet_sync => 'Синхронизировать';
+
+  @override
+  String fleet_syncDone(int count) {
+    return 'Синхронизировано, новых записей: $count.';
+  }
+
+  @override
+  String get fleet_syncFailed => 'Не удалось связаться со станцией.';
+
+  @override
+  String get fleet_syncHint =>
+      'Копирует историю со станции NOTORYX Ops в вашей сети. Только чтение; пароли никогда не покидают этот телефон.';
+
+  @override
+  String get fleet_syncSignIn =>
+      'Станция требует входа. Синхронизация работает со станциями без учётных записей.';
+
+  @override
+  String get fleet_syncStation => 'Синхронизация со станции';
+
+  @override
+  String get fleet_uptime => 'Время работы';
+
+  @override
+  String fleet_uptimeDays(int days, int hours) {
+    return '$days дн. $hours ч';
+  }
+
+  @override
+  String fleet_uptimeHours(int hours, int minutes) {
+    return '$hours ч $minutes мин';
+  }
+
+  @override
+  String get fleet_waiting => 'Ожидание…';
 }

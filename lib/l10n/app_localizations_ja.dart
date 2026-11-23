@@ -14296,4 +14296,273 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get coverageHex_trimDrivesHint =>
       '各マッピングの最初と最後の 2 つの六角形はこの電話に残るため、マップに自宅や駐車場所が表示されません。';
+
+  @override
+  String get fleet_title => 'フリート';
+
+  @override
+  String get fleet_toolSubtitle => '所有するリピーターの状態、推移、一括設定';
+
+  @override
+  String get fleet_addRepeater => 'リピーターを追加';
+
+  @override
+  String get fleet_agoNow => 'たった今';
+
+  @override
+  String fleet_agoMinutes(int count) {
+    return '$count分前';
+  }
+
+  @override
+  String fleet_agoHours(int count) {
+    return '$count時間前';
+  }
+
+  @override
+  String fleet_agoDays(int count) {
+    return '$count日前';
+  }
+
+  @override
+  String get fleet_alreadyListed => 'そのリピーターはすでにフリートにあります。';
+
+  @override
+  String fleet_asking(String name) {
+    return '$name に問い合わせ中…';
+  }
+
+  @override
+  String get fleet_badAddress =>
+      '192.168.1.20 や 192.168.1.20:8484 のようなアドレスを入力してください。';
+
+  @override
+  String get fleet_badKey => '64文字の公開鍵をすべて貼り付けてください。';
+
+  @override
+  String get fleet_battery => 'バッテリー';
+
+  @override
+  String get fleet_batteryTrend => 'バッテリー (V)';
+
+  @override
+  String fleet_bulkApply(int count) {
+    return '$count台のリピーターに送信';
+  }
+
+  @override
+  String get fleet_bulkBadValue => 'この設定ではその値は使えません。';
+
+  @override
+  String fleet_bulkChange(String current, String target) {
+    return '$current → $target';
+  }
+
+  @override
+  String fleet_bulkConfirmBody(String setting, String value, int count) {
+    return '$count台のリピーターで $setting を $value にしますか？ 各台へ無線で、20秒以上の間隔を空けて送信します。';
+  }
+
+  @override
+  String get fleet_bulkConfirmTitle => 'リピーターを変更しますか？';
+
+  @override
+  String get fleet_bulkIntro => '設定と値を選んでください。先に現在の値を読み取り、確認するまで何も変更しません。';
+
+  @override
+  String get fleet_bulkPreview => '変更される内容';
+
+  @override
+  String get fleet_bulkRead => '現在の値を読み取る';
+
+  @override
+  String get fleet_bulkRepeaters => 'リピーター';
+
+  @override
+  String fleet_bulkSame(String target) {
+    return 'すでに $target';
+  }
+
+  @override
+  String get fleet_bulkSend => '送信';
+
+  @override
+  String get fleet_bulkSetting => '設定';
+
+  @override
+  String get fleet_bulkTitle => '一括設定';
+
+  @override
+  String get fleet_bulkValue => '新しい値';
+
+  @override
+  String fleet_days(int count) {
+    return '$count日';
+  }
+
+  @override
+  String fleet_db(String value) {
+    return '$value dB';
+  }
+
+  @override
+  String fleet_dbm(int value) {
+    return '$value dBm';
+  }
+
+  @override
+  String get fleet_empty => 'リピーターはまだありません。＋をタップして自分のリピーターを追加してください。';
+
+  @override
+  String get fleet_errorLogin => 'ログインが拒否されました';
+
+  @override
+  String get fleet_errorNoContact => '無線機の連絡先にありません';
+
+  @override
+  String get fleet_errorOther => '失敗';
+
+  @override
+  String get fleet_errorTimeout => '応答なし';
+
+  @override
+  String get fleet_firmware => 'ファームウェア';
+
+  @override
+  String get fleet_heardRepeaters => '受信したリピーター';
+
+  @override
+  String get fleet_lastHeard => '最終受信';
+
+  @override
+  String fleet_lastPollFailed(String reason, String when) {
+    return '前回の問い合わせ: $reason、$when';
+  }
+
+  @override
+  String get fleet_lastSnr => '最新 SNR';
+
+  @override
+  String get fleet_name => '名前';
+
+  @override
+  String get fleet_needsRadio => '問い合わせるには無線機を接続してください。';
+
+  @override
+  String get fleet_neighbours => '隣接ノード';
+
+  @override
+  String get fleet_noHeard => 'フリート外で受信したリピーターはありません。';
+
+  @override
+  String get fleet_noHistory => 'この期間のデータはありません。';
+
+  @override
+  String get fleet_noiseFloor => 'ノイズフロア';
+
+  @override
+  String get fleet_noiseTrend => 'ノイズフロア (dBm)';
+
+  @override
+  String get fleet_password => '管理者パスワード';
+
+  @override
+  String get fleet_passwordHint => 'この電話の安全な保存領域に保管されます。送信先は無線経由のリピーター本体だけです。';
+
+  @override
+  String get fleet_passwordOptional => '管理者パスワード（任意）';
+
+  @override
+  String get fleet_passwordSaved => 'パスワードを更新しました';
+
+  @override
+  String get fleet_pasteKey => 'または鍵を貼り付け';
+
+  @override
+  String get fleet_pollAll => 'すべて問い合わせ';
+
+  @override
+  String fleet_pollHint(int seconds) {
+    return '通信時間を節約するため、1台ずつ$seconds秒間隔で問い合わせます。';
+  }
+
+  @override
+  String get fleet_pollNow => '今すぐ問い合わせ';
+
+  @override
+  String fleet_progress(int done, int total) {
+    return '$done / $total';
+  }
+
+  @override
+  String get fleet_publicKey => '公開鍵';
+
+  @override
+  String get fleet_remove => 'フリートから削除';
+
+  @override
+  String fleet_removeBody(String name) {
+    return '$name の履歴とパスワードをこの電話から削除しますか？';
+  }
+
+  @override
+  String get fleet_removeTitle => 'リピーターを削除しますか？';
+
+  @override
+  String get fleet_stationAddress => 'ステーションのアドレス';
+
+  @override
+  String get fleet_statusFirmwareBehind => 'ファームウェアが古い';
+
+  @override
+  String get fleet_statusHealthy => '正常';
+
+  @override
+  String get fleet_statusLowBattery => 'バッテリー低下';
+
+  @override
+  String get fleet_statusQuiet => '応答なし';
+
+  @override
+  String get fleet_statusUnknown => '未確認';
+
+  @override
+  String get fleet_stop => '停止';
+
+  @override
+  String get fleet_sync => '同期';
+
+  @override
+  String fleet_syncDone(int count) {
+    return '同期しました: 新しいデータ $count 件。';
+  }
+
+  @override
+  String get fleet_syncFailed => 'ステーションに接続できません。';
+
+  @override
+  String get fleet_syncHint =>
+      'ネットワーク上の NOTORYX Ops ステーションから履歴をコピーします。読み取りのみで、パスワードがこの電話から出ることはありません。';
+
+  @override
+  String get fleet_syncSignIn => 'ステーションはサインインが必要です。同期はアカウントのないステーションで使えます。';
+
+  @override
+  String get fleet_syncStation => 'ステーションから同期';
+
+  @override
+  String get fleet_uptime => '稼働時間';
+
+  @override
+  String fleet_uptimeDays(int days, int hours) {
+    return '$days日$hours時間';
+  }
+
+  @override
+  String fleet_uptimeHours(int hours, int minutes) {
+    return '$hours時間$minutes分';
+  }
+
+  @override
+  String get fleet_waiting => '待機中…';
 }
