@@ -4805,6 +4805,8 @@
   "appLock_sosNoTarget": "先にロックを解除し、SOSの送信先を選んでください。",
   "notification_replyAction": "返信",
   "notification_replyHint": "返信を入力",
+  "notification_markRead": "既読にする",
+  "notification_you": "あなた",
   "outbox_waiting": "無線機を待機中: {count}",
   "outbox_cantQueue": "まだ無線機が接続されていないため、後で送信するよう保存できません。",
   "chat_forward": "転送",

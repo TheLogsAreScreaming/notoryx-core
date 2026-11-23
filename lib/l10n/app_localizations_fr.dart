@@ -11936,6 +11936,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get notification_replyHint => 'Écrire une réponse';
 
   @override
+  String get notification_markRead => 'Marquer comme lu';
+
+  @override
+  String get notification_you => 'Vous';
+
+  @override
   String outbox_waiting(int count) {
     return 'En attente de la radio : $count';
   }

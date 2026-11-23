@@ -423,6 +423,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   late final LinkRouter _linkRouter;
   StreamSubscription<String>? _notificationTaps;
   StreamSubscription<NotificationReply>? _notificationReplies;
+  StreamSubscription<String>? _notificationMarkReads;
   String? _shortcutLanguage;
   late final SensorSubscriptionService _sensorSubscriptions;
   late final MqttBrokerService _mqtt;
@@ -603,6 +604,9 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     final launchPayload = NotificationService().takeLaunchPayload();
     if (launchPayload != null) _openNotification(launchPayload);
     _notificationReplies = NotificationService().replies.listen(_sendReply);
+    _notificationMarkReads = NotificationService().markReads.listen(
+      _markNotificationRead,
+    );
     final launchReply = NotificationService().takeLaunchReply();
     if (launchReply != null) _sendReply(launchReply);
     // A notification from another radio switched to this one; finish it.
@@ -708,6 +712,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _sensorSubscriptions.dispose();
     unawaited(_notificationTaps?.cancel());
     unawaited(_notificationReplies?.cancel());
+    unawaited(_notificationMarkReads?.cancel());
     _appLock.removeListener(_syncQuickReply);
     unawaited(_mqttPackets?.cancel());
     unawaited(_radioRxPackets?.cancel());
@@ -802,6 +807,22 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
       return;
     }
     _notificationRouter.open(NotificationService.untag(payload).payload);
+  }
+
+  /// Mark as read from a notification (shade, watch or Android Auto).
+  void _markNotificationRead(String payload) {
+    final untagged = NotificationService.untag(payload);
+    final connector = _backgroundRadioFor(payload) ?? widget.connector;
+    final split = untagged.payload.indexOf(':');
+    if (split < 0) return;
+    final id = untagged.payload.substring(split + 1);
+    switch (untagged.payload.substring(0, split)) {
+      case 'message':
+        connector.markContactRead(id);
+      case 'channel':
+        final index = int.tryParse(id);
+        if (index != null) connector.markChannelRead(index);
+    }
   }
 
   void _sendReply(NotificationReply reply) {

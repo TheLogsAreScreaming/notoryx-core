@@ -4671,6 +4671,8 @@
   "appLock_sosNoTarget": "Desbloqueie primeiro e escolha quem recebe o seu SOS.",
   "notification_replyAction": "Responder",
   "notification_replyHint": "Escreve uma resposta",
+  "notification_markRead": "Marcar como lida",
+  "notification_you": "Você",
   "outbox_waiting": "À espera do rádio: {count}",
   "outbox_cantQueue": "Ainda não foi ligado nenhum rádio, por isso não é possível guardar para enviar depois.",
   "chat_forward": "Reencaminhar",

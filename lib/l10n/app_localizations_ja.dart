@@ -11343,6 +11343,12 @@ class AppLocalizationsJa extends AppLocalizations {
   String get notification_replyHint => '返信を入力';
 
   @override
+  String get notification_markRead => '既読にする';
+
+  @override
+  String get notification_you => 'あなた';
+
+  @override
   String outbox_waiting(int count) {
     return '無線機を待機中: $count';
   }

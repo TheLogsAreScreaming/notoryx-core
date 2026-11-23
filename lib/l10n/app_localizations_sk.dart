@@ -11866,6 +11866,12 @@ class AppLocalizationsSk extends AppLocalizations {
   String get notification_replyHint => 'Napíšte odpoveď';
 
   @override
+  String get notification_markRead => 'Označiť ako prečítané';
+
+  @override
+  String get notification_you => 'Vy';
+
+  @override
   String outbox_waiting(int count) {
     return 'Čaká na rádio: $count';
   }

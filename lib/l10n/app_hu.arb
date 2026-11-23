@@ -4709,6 +4709,8 @@
   "appLock_sosNoTarget": "Előbb oldd fel, és válaszd ki, ki kapja az SOS-t.",
   "notification_replyAction": "Válasz",
   "notification_replyHint": "Írj választ",
+  "notification_markRead": "Megjelölés olvasottként",
+  "notification_you": "Ön",
   "outbox_waiting": "Rádióra vár: {count}",
   "outbox_cantQueue": "Még nem csatlakozott rádió, ezért ezt nem lehet későbbre menteni.",
   "chat_forward": "Továbbítás",
