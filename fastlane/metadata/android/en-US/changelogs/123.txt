@@ -1,0 +1,6 @@
+• Diagnostics: connection timeline with the reason for each drop
+• Export a support file with names, keys and positions removed
+• Repeater login says which step failed
+• Repeater settings are read back to confirm they saved
+• Repeater report card: restarts, battery, noise, neighbours, CSV
+• Gap finder: where your direct messages failed, by map hexagon
