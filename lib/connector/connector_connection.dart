@@ -850,6 +850,7 @@ extension _ConnectorConnection on MeshCoreConnector {
     _reactionSendQueueSequence = 0;
 
     _activeTransport = MeshCoreTransportType.bluetooth;
+    _demoSession = false;
 
     _setState(MeshCoreConnectionState.disconnected);
     _appDebugLogService?.info(

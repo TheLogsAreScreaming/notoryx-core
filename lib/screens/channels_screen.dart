@@ -2239,8 +2239,11 @@ class _DiscoveredTray extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final discovery = context.watch<ChannelDiscoveryService?>();
+    final demo = context.watch<MeshCoreConnector>().isDemoRadio;
     final found = discovery?.discovered ?? const [];
-    if (discovery == null || found.isEmpty) return const SizedBox.shrink();
+    if (discovery == null || demo || found.isEmpty) {
+      return const SizedBox.shrink();
+    }
     final l10n = context.l10n;
     return InstrumentRow(
       key: const ValueKey('discovered-tray'),

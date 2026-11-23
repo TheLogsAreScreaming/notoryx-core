@@ -4,7 +4,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:meshcore_open/connector/demo_companion.dart';
 import 'package:meshcore_open/connector/meshcore_connector.dart';
+import 'package:meshcore_open/models/contact.dart';
 import 'package:meshcore_open/models/saved_radio.dart';
+import 'package:meshcore_open/storage/contact_discovery_store.dart';
 import 'package:meshcore_open/storage/prefs_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -80,6 +82,55 @@ void main() {
         reason: 'the demo is never saved as a radio',
       );
       expect(connector.reconnectTarget, isNull);
+    },
+    timeout: const Timeout(Duration(seconds: 60)),
+  );
+
+  test(
+    'a real heard-node list is never shown in the demo and is kept on disk',
+    () async {
+      Contact real(int i) => Contact(
+        publicKey: Uint8List(32)
+          ..[0] = 0xA0 + i
+          ..[1] = i,
+        name: 'Real node $i',
+        type: 2,
+        flags: 0,
+        pathLength: -1,
+        path: Uint8List(0),
+        lastSeen: DateTime.now().subtract(Duration(minutes: i)),
+        lastMessageAt: DateTime.now(),
+      );
+      final store = ContactDiscoveryStore();
+      await store.saveContacts([for (var i = 0; i < 3; i++) real(i)]);
+
+      final connector = MeshCoreConnector();
+      await connector.connectTcp(host: demoRadioHost, port: 1);
+      await _waitFor('demo contacts', () => connector.contacts.length >= 5);
+      await Future<void>.delayed(const Duration(milliseconds: 500));
+
+      expect(
+        connector.discoveredContacts.map((c) => c.name),
+        everyElement(isNot(startsWith('Real node'))),
+      );
+      expect(
+        connector.allContacts.map((c) => c.name),
+        isNot(contains(startsWith('Real node'))),
+      );
+      expect(connector.knownNodeCounts.total, 5);
+      expect(connector.directRepeaters, isEmpty);
+      expect(connector.latestRadioStats, isNull);
+
+      await connector.flushDiscoveredContacts();
+      await connector.disconnect();
+      expect(connector.isDemoRadio, isFalse);
+
+      final kept = await store.loadContacts();
+      expect(
+        kept.map((c) => c.name),
+        unorderedEquals(['Real node 0', 'Real node 1', 'Real node 2']),
+        reason: 'the demo must not overwrite the real list',
+      );
     },
     timeout: const Timeout(Duration(seconds: 60)),
   );
