@@ -9256,6 +9256,10 @@ class AppLocalizationsEs extends AppLocalizations {
   String get ping_noReply => 'Sin respuesta';
 
   @override
+  String get ping_noReplyNote =>
+      'Que no haya respuesta no prueba que el repetidor esté caído. La sonda o su respuesta pueden perderse por ruido o una colisión; inténtalo de nuevo o prueba desde otro lugar.';
+
+  @override
   String ping_resultLine(String ms, String snr) {
     return '$ms ms · SNR allí $snr';
   }
@@ -13660,6 +13664,11 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String traffic_heardDirect(String snr) {
     return 'Oído directamente · $snr dB';
+  }
+
+  @override
+  String traffic_lastHop(String name, String snr) {
+    return 'Último salto $name · $snr dB';
   }
 
   @override

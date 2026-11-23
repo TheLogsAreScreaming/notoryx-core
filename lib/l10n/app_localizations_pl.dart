@@ -9286,6 +9286,10 @@ class AppLocalizationsPl extends AppLocalizations {
   String get ping_noReply => 'Brak odpowiedzi';
 
   @override
+  String get ping_noReplyNote =>
+      'Brak odpowiedzi nie dowodzi, że przekaźnik nie działa. Sonda lub odpowiedź mogą zginąć przez szum lub kolizję; spróbuj ponownie albo z innego miejsca.';
+
+  @override
   String ping_resultLine(String ms, String snr) {
     return '$ms ms · SNR tam $snr';
   }
@@ -13678,6 +13682,11 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String traffic_heardDirect(String snr) {
     return 'Odebrano bezpośrednio · $snr dB';
+  }
+
+  @override
+  String traffic_lastHop(String name, String snr) {
+    return 'Ostatni skok $name · $snr dB';
   }
 
   @override

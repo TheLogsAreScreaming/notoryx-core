@@ -9239,6 +9239,10 @@ class AppLocalizationsHu extends AppLocalizations {
   String get ping_noReply => 'Nincs válasz';
 
   @override
+  String get ping_noReplyNote =>
+      'A válasz hiánya nem bizonyítja, hogy az átjátszó nem működik. A próba vagy a válasz elveszhet zaj vagy ütközés miatt; próbálja újra, vagy teszteljen máshonnan.';
+
+  @override
   String ping_resultLine(String ms, String snr) {
     return '$ms ms · SNR ott $snr';
   }
@@ -13637,6 +13641,11 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String traffic_heardDirect(String snr) {
     return 'Közvetlenül hallva · $snr dB';
+  }
+
+  @override
+  String traffic_lastHop(String name, String snr) {
+    return 'Utolsó ugrás $name · $snr dB';
   }
 
   @override

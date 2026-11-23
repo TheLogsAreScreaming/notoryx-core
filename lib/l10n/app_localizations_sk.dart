@@ -9227,6 +9227,10 @@ class AppLocalizationsSk extends AppLocalizations {
   String get ping_noReply => 'Bez odpovede';
 
   @override
+  String get ping_noReplyNote =>
+      'Žiadna odpoveď nedokazuje, že opakovač nefunguje. Sonda alebo odpoveď sa môžu stratiť pre šum alebo kolíziu; skúste znova alebo z iného miesta.';
+
+  @override
   String ping_resultLine(String ms, String snr) {
     return '$ms ms · SNR tam $snr';
   }
@@ -13608,6 +13612,11 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String traffic_heardDirect(String snr) {
     return 'Prijaté priamo · $snr dB';
+  }
+
+  @override
+  String traffic_lastHop(String name, String snr) {
+    return 'Posledný skok $name · $snr dB';
   }
 
   @override

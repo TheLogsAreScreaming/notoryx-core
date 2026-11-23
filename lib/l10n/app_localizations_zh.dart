@@ -8637,6 +8637,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get ping_noReply => '无响应';
 
   @override
+  String get ping_noReplyNote =>
+      '没有回复并不能证明中继器已离线。探测或其回复可能因噪声或冲突而丢失，请重试或换个位置测试。';
+
+  @override
   String ping_resultLine(String ms, String snr) {
     return '$ms 毫秒 · 对方 SNR $snr';
   }
@@ -12794,6 +12798,11 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String traffic_heardDirect(String snr) {
     return '直接收到 · $snr dB';
+  }
+
+  @override
+  String traffic_lastHop(String name, String snr) {
+    return '最后一跳 $name · $snr dB';
   }
 
   @override

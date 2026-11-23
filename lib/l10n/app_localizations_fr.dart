@@ -9288,6 +9288,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get ping_noReply => 'Pas de réponse';
 
   @override
+  String get ping_noReplyNote =>
+      'L\'absence de réponse ne prouve pas que le relais est hors service. La sonde ou sa réponse peut être perdue à cause du bruit ou d\'une collision : réessayez ou testez depuis un autre endroit.';
+
+  @override
   String ping_resultLine(String ms, String snr) {
     return '$ms ms · SNR là-bas $snr';
   }
@@ -13707,6 +13711,11 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String traffic_heardDirect(String snr) {
     return 'Entendu en direct · $snr dB';
+  }
+
+  @override
+  String traffic_lastHop(String name, String snr) {
+    return 'Dernier saut $name · $snr dB';
   }
 
   @override

@@ -8811,6 +8811,10 @@ class AppLocalizationsJa extends AppLocalizations {
   String get ping_noReply => '応答なし';
 
   @override
+  String get ping_noReplyNote =>
+      '応答がなくてもリピーターが停止しているとは限りません。プローブや応答はノイズや衝突で失われることがあります。もう一度試すか、別の場所からテストしてください。';
+
+  @override
   String ping_resultLine(String ms, String snr) {
     return '$ms ms · 先方 SNR $snr';
   }
@@ -13037,6 +13041,11 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String traffic_heardDirect(String snr) {
     return '直接受信 · $snr dB';
+  }
+
+  @override
+  String traffic_lastHop(String name, String snr) {
+    return '最終ホップ $name · $snr dB';
   }
 
   @override

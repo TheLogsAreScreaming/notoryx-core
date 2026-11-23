@@ -9266,6 +9266,10 @@ class AppLocalizationsDe extends AppLocalizations {
   String get ping_noReply => 'Keine Antwort';
 
   @override
+  String get ping_noReplyNote =>
+      'Keine Antwort beweist nicht, dass der Repeater ausgefallen ist. Die Anfrage oder ihre Antwort kann durch Rauschen oder eine Kollision verloren gehen. Versuche es erneut oder teste von einem anderen Ort.';
+
+  @override
   String ping_resultLine(String ms, String snr) {
     return '$ms ms · SNR dort $snr';
   }
@@ -13672,6 +13676,11 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String traffic_heardDirect(String snr) {
     return 'Direkt gehört · $snr dB';
+  }
+
+  @override
+  String traffic_lastHop(String name, String snr) {
+    return 'Letzter Hop $name · $snr dB';
   }
 
   @override

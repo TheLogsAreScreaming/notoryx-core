@@ -9239,6 +9239,10 @@ class AppLocalizationsSl extends AppLocalizations {
   String get ping_noReply => 'Ni odgovora';
 
   @override
+  String get ping_noReplyNote =>
+      'Brez odgovora še ne pomeni, da repetitor ne deluje. Poizvedba ali odgovor se lahko izgubita zaradi šuma ali trka; poskusite znova ali z drugega mesta.';
+
+  @override
   String ping_resultLine(String ms, String snr) {
     return '$ms ms · SNR tam $snr';
   }
@@ -13633,6 +13637,11 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String traffic_heardDirect(String snr) {
     return 'Slišano neposredno · $snr dB';
+  }
+
+  @override
+  String traffic_lastHop(String name, String snr) {
+    return 'Zadnji skok $name · $snr dB';
   }
 
   @override

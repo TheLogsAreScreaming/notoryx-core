@@ -8823,6 +8823,10 @@ class AppLocalizationsKo extends AppLocalizations {
   String get ping_noReply => '응답 없음';
 
   @override
+  String get ping_noReplyNote =>
+      '응답이 없다고 해서 리피터가 꺼졌다는 증거는 아닙니다. 프로브나 응답이 잡음이나 충돌로 사라질 수 있으니 다시 시도하거나 다른 위치에서 테스트하세요.';
+
+  @override
   String ping_resultLine(String ms, String snr) {
     return '$ms ms · 상대측 SNR $snr';
   }
@@ -13054,6 +13058,11 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String traffic_heardDirect(String snr) {
     return '직접 수신 · $snr dB';
+  }
+
+  @override
+  String traffic_lastHop(String name, String snr) {
+    return '마지막 홉 $name · $snr dB';
   }
 
   @override
