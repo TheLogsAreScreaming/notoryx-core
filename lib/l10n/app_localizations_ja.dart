@@ -13907,6 +13907,121 @@ class AppLocalizationsJa extends AppLocalizations {
   String get sarneg_autoClear => '1分間入力がないと消去されます。';
 
   @override
+  String get sarneg_optionsTitle => 'オプション';
+
+  @override
+  String get sarneg_keepZone => 'グリッドゾーンは平文のまま';
+
+  @override
+  String get sarneg_keepZoneHint =>
+      '17S 4823 は 17s KSAC として送信されます。ゾーンが秘密であることはまれで、他の SARNEG ツールもこの形式で読みます。';
+
+  @override
+  String get sarneg_noMarker => '[SARNEG] マーカーなしで送信';
+
+  @override
+  String get sarneg_noMarkerHint =>
+      '聞いている人には数字が隠されていると分かりません。チームは「マーカーなしのメッセージを解読」をオンにする必要があります。';
+
+  @override
+  String get sarneg_readUnmarked => 'マーカーなしのメッセージを解読';
+
+  @override
+  String get sarneg_readUnmarkedHint =>
+      'マーカーのないメッセージでも、大文字がすべてその日の語に含まれていれば解読行が表示されます。';
+
+  @override
+  String get sarneg_wipeAfter => '指定日の後にすべての語を削除';
+
+  @override
+  String get sarneg_wipeAfterOff => 'オフ。日付つきの語はその日が過ぎると削除されます。';
+
+  @override
+  String sarneg_wipeAfterSet(String day) {
+    return '$day の後にすべての語が削除されます。';
+  }
+
+  @override
+  String get sarneg_remove => '削除';
+
+  @override
+  String get sarneg_sardotTitle => 'SARDOT 基準点';
+
+  @override
+  String get sarneg_sardotHint =>
+      '位置の代わりに、秘密の地点からの方位と距離を送ります。地点は直接会って決めてください。送信されることはありません。';
+
+  @override
+  String get sarneg_sardotSet => '基準点を設定済み';
+
+  @override
+  String get sarneg_sardotNone => '基準点なし';
+
+  @override
+  String get sarneg_useMyPosition => '現在地を使う';
+
+  @override
+  String get sarneg_typePoint => '地点を入力';
+
+  @override
+  String get sarneg_pointLabel => '緯度, 経度';
+
+  @override
+  String get sarneg_pointInvalid => '緯度, 経度 を入力してください（例: 41.33, -73.09）';
+
+  @override
+  String get sarneg_addSardot => '現在地から SARDOT を追加';
+
+  @override
+  String get sarneg_showOnMap => '地図に表示';
+
+  @override
+  String get sarneg_mapTitle => '解読した位置';
+
+  @override
+  String get sarneg_authTitle => 'その日の数字と文字';
+
+  @override
+  String get sarneg_authHint =>
+      'チャレンジと応答：相手が数字を言ったら、足すとその日の数字になる数で答えます。この電話にのみ保存されます。';
+
+  @override
+  String get sarneg_numberOfDay => 'その日の数字（0〜99）';
+
+  @override
+  String get sarneg_letterOfDay => 'その日の文字';
+
+  @override
+  String get sarneg_notSet => '未設定';
+
+  @override
+  String get sarneg_numberInvalid => '0〜99 の数字を使ってください';
+
+  @override
+  String get sarneg_letterInvalid => 'A〜Z の 1 文字を使ってください';
+
+  @override
+  String get sarneg_challenge => '相手が言った数字';
+
+  @override
+  String sarneg_reply(int number) {
+    return '応答: $number';
+  }
+
+  @override
+  String get sarneg_noReply => '有効な応答はありません。その数字はその日の数字より大きいです。';
+
+  @override
+  String get sarneg_maybeUnmarked => 'SARNEG かもしれません · タップで解読';
+
+  @override
+  String get sarneg_guideTitle => 'SARNEG と本物の暗号化の違い';
+
+  @override
+  String get sarneg_guideBody =>
+      'SARNEG は共有した 1 つの語で数字を文字に置き換えます。いくつかのメッセージを聞けば誰でも語を割り出せるため、数字を隠せるのは何気なく聞いている人からだけです。暗号化ではありません。\n\n本当に秘密にしたいときは、専用の鍵を持つプライベートチャンネルを使ってください。無線機がその上のすべてを暗号化し、鍵を持つ人だけが読めます。\n\nそれでも SARNEG は追加の役に立ちます。共有チャンネルや公開チャンネル、中継器やブリッジの経由、ログやスクリーンショット、そしてチャンネルの鍵は持っていてもコードワードは知らない相手に対してです。';
+
+  @override
   String channelConflict_banner(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

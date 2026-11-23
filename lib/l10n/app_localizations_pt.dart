@@ -14539,6 +14539,124 @@ class AppLocalizationsPt extends AppLocalizations {
   String get sarneg_autoClear => 'Apaga-se após 1 minuto sem digitar.';
 
   @override
+  String get sarneg_optionsTitle => 'Opções';
+
+  @override
+  String get sarneg_keepZone => 'Manter a zona da grade em claro';
+
+  @override
+  String get sarneg_keepZoneHint =>
+      '17S 4823 sai como 17s KSAC. A zona raramente é secreta e outras ferramentas SARNEG leem-na assim.';
+
+  @override
+  String get sarneg_noMarker => 'Enviar sem o marcador [SARNEG]';
+
+  @override
+  String get sarneg_noMarkerHint =>
+      'Quem ouve não percebe que há números escondidos. A sua equipa tem de ativar «Descodificar mensagens sem marcador».';
+
+  @override
+  String get sarneg_readUnmarked => 'Descodificar mensagens sem marcador';
+
+  @override
+  String get sarneg_readUnmarkedHint =>
+      'Uma mensagem sem marcador recebe uma linha de descodificação quando todas as maiúsculas pertencem à palavra do dia.';
+
+  @override
+  String get sarneg_wipeAfter => 'Apagar todas as palavras após um dia';
+
+  @override
+  String get sarneg_wipeAfterOff =>
+      'Desligado. As palavras com data são apagadas quando o seu dia passa.';
+
+  @override
+  String sarneg_wipeAfterSet(String day) {
+    return 'Todas as palavras são apagadas após $day.';
+  }
+
+  @override
+  String get sarneg_remove => 'Remover';
+
+  @override
+  String get sarneg_sardotTitle => 'Ponto de referência SARDOT';
+
+  @override
+  String get sarneg_sardotHint =>
+      'Envie um rumo e uma distância a partir de um ponto secreto em vez de uma posição. Combinem o ponto pessoalmente: nunca é enviado.';
+
+  @override
+  String get sarneg_sardotSet => 'Ponto de referência definido';
+
+  @override
+  String get sarneg_sardotNone => 'Sem ponto de referência';
+
+  @override
+  String get sarneg_useMyPosition => 'Usar a minha posição';
+
+  @override
+  String get sarneg_typePoint => 'Escrever um ponto';
+
+  @override
+  String get sarneg_pointLabel => 'Latitude, longitude';
+
+  @override
+  String get sarneg_pointInvalid =>
+      'Escreva latitude, longitude, por exemplo 41.33, -73.09';
+
+  @override
+  String get sarneg_addSardot => 'Adicionar SARDOT a partir da minha posição';
+
+  @override
+  String get sarneg_showOnMap => 'Mostrar no mapa';
+
+  @override
+  String get sarneg_mapTitle => 'Posição descodificada';
+
+  @override
+  String get sarneg_authTitle => 'Número e letra do dia';
+
+  @override
+  String get sarneg_authHint =>
+      'Desafio e resposta: dizem um número e responde com o que, somado, dá o número do dia. Guardado apenas neste telefone.';
+
+  @override
+  String get sarneg_numberOfDay => 'Número do dia (0 a 99)';
+
+  @override
+  String get sarneg_letterOfDay => 'Letra do dia';
+
+  @override
+  String get sarneg_notSet => 'Não definido';
+
+  @override
+  String get sarneg_numberInvalid => 'Use um número de 0 a 99';
+
+  @override
+  String get sarneg_letterInvalid => 'Use uma letra de A a Z';
+
+  @override
+  String get sarneg_challenge => 'Número que disseram';
+
+  @override
+  String sarneg_reply(int number) {
+    return 'Resposta: $number';
+  }
+
+  @override
+  String get sarneg_noReply =>
+      'Sem resposta válida: esse número é maior do que o número do dia.';
+
+  @override
+  String get sarneg_maybeUnmarked => 'Talvez SARNEG · toque para descodificar';
+
+  @override
+  String get sarneg_guideTitle => 'SARNEG ou encriptação real?';
+
+  @override
+  String get sarneg_guideBody =>
+      'O SARNEG troca algarismos por letras com uma palavra partilhada. Quem ouvir algumas mensagens consegue descobrir a palavra, por isso só esconde os números de um ouvinte casual. Não é encriptação.\n\nPara segredo real, use um canal privado com chave própria. O rádio encripta tudo o que passa nele e só quem tem a chave o consegue ler.\n\nMesmo assim, o SARNEG ajuda por cima disso: em canais partilhados ou públicos, através de repetidores e pontes, em registos e capturas de ecrã, e contra quem tem a chave do canal mas não a palavra de código.';
+
+  @override
   String channelConflict_banner(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

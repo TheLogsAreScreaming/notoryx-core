@@ -14536,6 +14536,124 @@ class AppLocalizationsHu extends AppLocalizations {
   String get sarneg_autoClear => '1 perc gépelés nélkül törlődik.';
 
   @override
+  String get sarneg_optionsTitle => 'Beállítások';
+
+  @override
+  String get sarneg_keepZone => 'A rácszóna maradjon kódolatlan';
+
+  @override
+  String get sarneg_keepZoneHint =>
+      'A 17S 4823 így megy ki: 17s KSAC. A zóna ritkán titkos, és más SARNEG-eszközök így olvassák.';
+
+  @override
+  String get sarneg_noMarker => 'Küldés [SARNEG] jelölés nélkül';
+
+  @override
+  String get sarneg_noMarkerHint =>
+      'A hallgatók nem látják, hogy számok vannak elrejtve. A csapatodnak be kell kapcsolnia a „Jelöletlen üzenetek dekódolása” opciót.';
+
+  @override
+  String get sarneg_readUnmarked => 'Jelöletlen üzenetek dekódolása';
+
+  @override
+  String get sarneg_readUnmarkedHint =>
+      'A jelölés nélküli üzenet alatt dekódolási sor jelenik meg, ha minden nagybetűje a napi szóból való.';
+
+  @override
+  String get sarneg_wipeAfter => 'Minden szó törlése egy nap után';
+
+  @override
+  String get sarneg_wipeAfterOff =>
+      'Ki. A dátumos szavak a napjuk elmúltával törlődnek.';
+
+  @override
+  String sarneg_wipeAfterSet(String day) {
+    return 'Minden szó törlődik $day után.';
+  }
+
+  @override
+  String get sarneg_remove => 'Eltávolítás';
+
+  @override
+  String get sarneg_sardotTitle => 'SARDOT viszonyítási pont';
+
+  @override
+  String get sarneg_sardotHint =>
+      'Pozíció helyett irányt és távolságot küldj egy titkos ponttól. A pontot személyesen beszéljétek meg: soha nem kerül elküldésre.';
+
+  @override
+  String get sarneg_sardotSet => 'Viszonyítási pont beállítva';
+
+  @override
+  String get sarneg_sardotNone => 'Nincs viszonyítási pont';
+
+  @override
+  String get sarneg_useMyPosition => 'Saját pozícióm';
+
+  @override
+  String get sarneg_typePoint => 'Pont megadása';
+
+  @override
+  String get sarneg_pointLabel => 'Szélesség, hosszúság';
+
+  @override
+  String get sarneg_pointInvalid =>
+      'Adj meg szélességet, hosszúságot, például 41.33, -73.09';
+
+  @override
+  String get sarneg_addSardot => 'SARDOT hozzáadása a pozíciómból';
+
+  @override
+  String get sarneg_showOnMap => 'Megjelenítés a térképen';
+
+  @override
+  String get sarneg_mapTitle => 'Dekódolt pozíció';
+
+  @override
+  String get sarneg_authTitle => 'A nap száma és betűje';
+
+  @override
+  String get sarneg_authHint =>
+      'Kérdés és válasz: mondanak egy számot, te azt a számot válaszolod, amellyel együtt kiadja a nap számát. Csak ezen a telefonon tárolódik.';
+
+  @override
+  String get sarneg_numberOfDay => 'A nap száma (0–99)';
+
+  @override
+  String get sarneg_letterOfDay => 'A nap betűje';
+
+  @override
+  String get sarneg_notSet => 'Nincs beállítva';
+
+  @override
+  String get sarneg_numberInvalid => 'Használj 0 és 99 közötti számot';
+
+  @override
+  String get sarneg_letterInvalid => 'Használj egy betűt A és Z között';
+
+  @override
+  String get sarneg_challenge => 'A mondott szám';
+
+  @override
+  String sarneg_reply(int number) {
+    return 'Válasz: $number';
+  }
+
+  @override
+  String get sarneg_noReply =>
+      'Nincs érvényes válasz: a szám nagyobb a nap számánál.';
+
+  @override
+  String get sarneg_maybeUnmarked => 'Talán SARNEG · koppints a dekódoláshoz';
+
+  @override
+  String get sarneg_guideTitle => 'SARNEG vagy valódi titkosítás?';
+
+  @override
+  String get sarneg_guideBody =>
+      'A SARNEG egy közös szóval betűkre cseréli a számjegyeket. Aki hall néhány üzenetet, kitalálhatja a szót, így csak az alkalmi hallgató elől rejti el a számokat. Ez nem titkosítás.\n\nValódi titoktartáshoz használj saját kulccsal rendelkező privát csatornát. A rádió mindent titkosít rajta, és csak a kulcs birtokosai olvashatják.\n\nA SARNEG ezen felül is segít: közös vagy nyilvános csatornákon, átjátszókon és hidakon át, naplókban és képernyőképeken, valamint olyasvalaki ellen, akinek megvan a csatorna kulcsa, de a kódszó nem.';
+
+  @override
   String channelConflict_banner(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

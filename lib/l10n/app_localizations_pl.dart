@@ -14592,6 +14592,124 @@ class AppLocalizationsPl extends AppLocalizations {
   String get sarneg_autoClear => 'Czyści się po 1 minucie bez pisania.';
 
   @override
+  String get sarneg_optionsTitle => 'Opcje';
+
+  @override
+  String get sarneg_keepZone => 'Strefa siatki jawnym tekstem';
+
+  @override
+  String get sarneg_keepZoneHint =>
+      '17S 4823 zostanie wysłane jako 17s KSAC. Strefa rzadko jest tajna, a inne narzędzia SARNEG czytają ją w ten sposób.';
+
+  @override
+  String get sarneg_noMarker => 'Wysyłaj bez znacznika [SARNEG]';
+
+  @override
+  String get sarneg_noMarkerHint =>
+      'Słuchający nie zorientują się, że liczby są ukryte. Twój zespół musi włączyć „Dekoduj wiadomości bez znacznika”.';
+
+  @override
+  String get sarneg_readUnmarked => 'Dekoduj wiadomości bez znacznika';
+
+  @override
+  String get sarneg_readUnmarkedHint =>
+      'Wiadomość bez znacznika dostaje wiersz dekodowania, gdy wszystkie jej wielkie litery należą do słowa dnia.';
+
+  @override
+  String get sarneg_wipeAfter => 'Usuń wszystkie słowa po danym dniu';
+
+  @override
+  String get sarneg_wipeAfterOff =>
+      'Wyłączone. Słowa z datą są usuwane, gdy minie ich dzień.';
+
+  @override
+  String sarneg_wipeAfterSet(String day) {
+    return 'Wszystkie słowa zostaną usunięte po $day.';
+  }
+
+  @override
+  String get sarneg_remove => 'Usuń';
+
+  @override
+  String get sarneg_sardotTitle => 'Punkt odniesienia SARDOT';
+
+  @override
+  String get sarneg_sardotHint =>
+      'Wysyłaj kierunek i odległość od tajnego punktu zamiast pozycji. Ustalcie punkt osobiście: nigdy nie jest wysyłany.';
+
+  @override
+  String get sarneg_sardotSet => 'Punkt odniesienia ustawiony';
+
+  @override
+  String get sarneg_sardotNone => 'Brak punktu odniesienia';
+
+  @override
+  String get sarneg_useMyPosition => 'Użyj mojej pozycji';
+
+  @override
+  String get sarneg_typePoint => 'Wpisz punkt';
+
+  @override
+  String get sarneg_pointLabel => 'Szerokość, długość';
+
+  @override
+  String get sarneg_pointInvalid =>
+      'Wpisz szerokość, długość, na przykład 41.33, -73.09';
+
+  @override
+  String get sarneg_addSardot => 'Dodaj SARDOT z mojej pozycji';
+
+  @override
+  String get sarneg_showOnMap => 'Pokaż na mapie';
+
+  @override
+  String get sarneg_mapTitle => 'Zdekodowana pozycja';
+
+  @override
+  String get sarneg_authTitle => 'Liczba i litera dnia';
+
+  @override
+  String get sarneg_authHint =>
+      'Wezwanie i odzew: ktoś podaje liczbę, odpowiadasz liczbą, która w sumie daje liczbę dnia. Zapisane tylko na tym telefonie.';
+
+  @override
+  String get sarneg_numberOfDay => 'Liczba dnia (0 do 99)';
+
+  @override
+  String get sarneg_letterOfDay => 'Litera dnia';
+
+  @override
+  String get sarneg_notSet => 'Nie ustawiono';
+
+  @override
+  String get sarneg_numberInvalid => 'Użyj liczby od 0 do 99';
+
+  @override
+  String get sarneg_letterInvalid => 'Użyj jednej litery od A do Z';
+
+  @override
+  String get sarneg_challenge => 'Podana liczba';
+
+  @override
+  String sarneg_reply(int number) {
+    return 'Odzew: $number';
+  }
+
+  @override
+  String get sarneg_noReply =>
+      'Brak prawidłowego odzewu: ta liczba jest większa niż liczba dnia.';
+
+  @override
+  String get sarneg_maybeUnmarked => 'Może SARNEG · dotknij, aby zdekodować';
+
+  @override
+  String get sarneg_guideTitle => 'SARNEG czy prawdziwe szyfrowanie?';
+
+  @override
+  String get sarneg_guideBody =>
+      'SARNEG zamienia cyfry na litery za pomocą jednego wspólnego słowa. Każdy, kto usłyszy kilka wiadomości, może odgadnąć słowo, więc ukrywa liczby tylko przed przypadkowym słuchaczem. To nie jest szyfrowanie.\n\nDla prawdziwej tajności używaj prywatnego kanału z własnym kluczem. Radio szyfruje na nim wszystko i tylko osoby z kluczem mogą to odczytać.\n\nSARNEG i tak dodatkowo pomaga: na kanałach wspólnych lub publicznych, przez przekaźniki i mosty, w logach i zrzutach ekranu oraz wobec kogoś, kto ma klucz kanału, ale nie zna słowa kodowego.';
+
+  @override
   String channelConflict_banner(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

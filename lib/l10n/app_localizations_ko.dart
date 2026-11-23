@@ -13921,6 +13921,121 @@ class AppLocalizationsKo extends AppLocalizations {
   String get sarneg_autoClear => '1분 동안 입력이 없으면 지워집니다.';
 
   @override
+  String get sarneg_optionsTitle => '옵션';
+
+  @override
+  String get sarneg_keepZone => '그리드 존은 평문으로 유지';
+
+  @override
+  String get sarneg_keepZoneHint =>
+      '17S 4823은 17s KSAC로 전송됩니다. 존은 거의 비밀이 아니며 다른 SARNEG 도구도 이렇게 읽습니다.';
+
+  @override
+  String get sarneg_noMarker => '[SARNEG] 표시 없이 보내기';
+
+  @override
+  String get sarneg_noMarkerHint =>
+      '듣는 사람은 숫자가 숨겨져 있다는 것을 알 수 없습니다. 팀원은 \'표시 없는 메시지 해독\'을 켜야 합니다.';
+
+  @override
+  String get sarneg_readUnmarked => '표시 없는 메시지 해독';
+
+  @override
+  String get sarneg_readUnmarkedHint =>
+      '표시 없는 메시지라도 대문자가 모두 그날의 단어에 속하면 해독 줄이 표시됩니다.';
+
+  @override
+  String get sarneg_wipeAfter => '지정한 날 이후 모든 단어 삭제';
+
+  @override
+  String get sarneg_wipeAfterOff => '꺼짐. 날짜가 지정된 단어는 그날이 지나면 삭제됩니다.';
+
+  @override
+  String sarneg_wipeAfterSet(String day) {
+    return '$day 이후 모든 단어가 삭제됩니다.';
+  }
+
+  @override
+  String get sarneg_remove => '삭제';
+
+  @override
+  String get sarneg_sardotTitle => 'SARDOT 기준점';
+
+  @override
+  String get sarneg_sardotHint =>
+      '위치 대신 비밀 지점에서의 방위와 거리를 보냅니다. 지점은 직접 만나서 정하세요. 절대 전송되지 않습니다.';
+
+  @override
+  String get sarneg_sardotSet => '기준점이 설정됨';
+
+  @override
+  String get sarneg_sardotNone => '기준점 없음';
+
+  @override
+  String get sarneg_useMyPosition => '내 위치 사용';
+
+  @override
+  String get sarneg_typePoint => '지점 입력';
+
+  @override
+  String get sarneg_pointLabel => '위도, 경도';
+
+  @override
+  String get sarneg_pointInvalid => '위도, 경도를 입력하세요. 예: 41.33, -73.09';
+
+  @override
+  String get sarneg_addSardot => '내 위치로 SARDOT 추가';
+
+  @override
+  String get sarneg_showOnMap => '지도에 표시';
+
+  @override
+  String get sarneg_mapTitle => '해독된 위치';
+
+  @override
+  String get sarneg_authTitle => '오늘의 숫자와 문자';
+
+  @override
+  String get sarneg_authHint =>
+      '질문과 응답: 상대가 숫자를 말하면 더해서 오늘의 숫자가 되는 수로 답합니다. 이 휴대폰에만 저장됩니다.';
+
+  @override
+  String get sarneg_numberOfDay => '오늘의 숫자 (0~99)';
+
+  @override
+  String get sarneg_letterOfDay => '오늘의 문자';
+
+  @override
+  String get sarneg_notSet => '설정 안 됨';
+
+  @override
+  String get sarneg_numberInvalid => '0~99 사이의 숫자를 사용하세요';
+
+  @override
+  String get sarneg_letterInvalid => 'A~Z 중 한 글자를 사용하세요';
+
+  @override
+  String get sarneg_challenge => '상대가 말한 숫자';
+
+  @override
+  String sarneg_reply(int number) {
+    return '응답: $number';
+  }
+
+  @override
+  String get sarneg_noReply => '유효한 응답이 없습니다. 그 숫자가 오늘의 숫자보다 큽니다.';
+
+  @override
+  String get sarneg_maybeUnmarked => 'SARNEG일 수 있음 · 탭하여 해독';
+
+  @override
+  String get sarneg_guideTitle => 'SARNEG와 진짜 암호화의 차이';
+
+  @override
+  String get sarneg_guideBody =>
+      'SARNEG는 공유한 단어 하나로 숫자를 문자로 바꿉니다. 메시지 몇 개만 들어도 누구나 단어를 알아낼 수 있으므로, 숫자는 우연히 듣는 사람에게서만 숨겨집니다. 암호화가 아닙니다.\n\n진짜 비밀이 필요하면 자체 키가 있는 비공개 채널을 사용하세요. 무전기가 그 채널의 모든 내용을 암호화하고, 키가 있는 사람만 읽을 수 있습니다.\n\n그래도 SARNEG는 추가로 도움이 됩니다. 공유 또는 공개 채널, 중계기와 브리지를 거칠 때, 로그와 스크린샷, 그리고 채널 키는 있지만 코드 단어는 모르는 사람에 대해서입니다.';
+
+  @override
   String channelConflict_banner(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

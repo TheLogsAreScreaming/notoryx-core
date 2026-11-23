@@ -14572,6 +14572,124 @@ class AppLocalizationsIt extends AppLocalizations {
   String get sarneg_autoClear => 'Si cancella dopo 1 minuto senza digitare.';
 
   @override
+  String get sarneg_optionsTitle => 'Opzioni';
+
+  @override
+  String get sarneg_keepZone => 'Lascia in chiaro la zona del reticolo';
+
+  @override
+  String get sarneg_keepZoneHint =>
+      '17S 4823 viene inviato come 17s KSAC. La zona raramente è segreta e altri strumenti SARNEG la leggono così.';
+
+  @override
+  String get sarneg_noMarker => 'Invia senza il marcatore [SARNEG]';
+
+  @override
+  String get sarneg_noMarkerHint =>
+      'Chi ascolta non capisce che ci sono numeri nascosti. Il tuo team deve attivare «Decodifica i messaggi senza marcatore».';
+
+  @override
+  String get sarneg_readUnmarked => 'Decodifica i messaggi senza marcatore';
+
+  @override
+  String get sarneg_readUnmarkedHint =>
+      'Un messaggio senza marcatore riceve una riga di decodifica quando tutte le sue maiuscole fanno parte della parola del giorno.';
+
+  @override
+  String get sarneg_wipeAfter => 'Elimina tutte le parole dopo un giorno';
+
+  @override
+  String get sarneg_wipeAfterOff =>
+      'Disattivato. Le parole con data vengono eliminate quando il loro giorno è passato.';
+
+  @override
+  String sarneg_wipeAfterSet(String day) {
+    return 'Tutte le parole vengono eliminate dopo il $day.';
+  }
+
+  @override
+  String get sarneg_remove => 'Rimuovi';
+
+  @override
+  String get sarneg_sardotTitle => 'Punto di riferimento SARDOT';
+
+  @override
+  String get sarneg_sardotHint =>
+      'Invia una direzione e una distanza da un punto segreto invece di una posizione. Concordate il punto di persona: non viene mai inviato.';
+
+  @override
+  String get sarneg_sardotSet => 'Punto di riferimento impostato';
+
+  @override
+  String get sarneg_sardotNone => 'Nessun punto di riferimento';
+
+  @override
+  String get sarneg_useMyPosition => 'Usa la mia posizione';
+
+  @override
+  String get sarneg_typePoint => 'Digita un punto';
+
+  @override
+  String get sarneg_pointLabel => 'Latitudine, longitudine';
+
+  @override
+  String get sarneg_pointInvalid =>
+      'Digita latitudine, longitudine, ad esempio 41.33, -73.09';
+
+  @override
+  String get sarneg_addSardot => 'Aggiungi SARDOT dalla mia posizione';
+
+  @override
+  String get sarneg_showOnMap => 'Mostra sulla mappa';
+
+  @override
+  String get sarneg_mapTitle => 'Posizione decodificata';
+
+  @override
+  String get sarneg_authTitle => 'Numero e lettera del giorno';
+
+  @override
+  String get sarneg_authHint =>
+      'Sfida e risposta: ti dicono un numero, rispondi con quello che sommato dà il numero del giorno. Salvato solo su questo telefono.';
+
+  @override
+  String get sarneg_numberOfDay => 'Numero del giorno (da 0 a 99)';
+
+  @override
+  String get sarneg_letterOfDay => 'Lettera del giorno';
+
+  @override
+  String get sarneg_notSet => 'Non impostato';
+
+  @override
+  String get sarneg_numberInvalid => 'Usa un numero da 0 a 99';
+
+  @override
+  String get sarneg_letterInvalid => 'Usa una lettera dalla A alla Z';
+
+  @override
+  String get sarneg_challenge => 'Numero detto';
+
+  @override
+  String sarneg_reply(int number) {
+    return 'Risposta: $number';
+  }
+
+  @override
+  String get sarneg_noReply =>
+      'Nessuna risposta valida: il numero è maggiore del numero del giorno.';
+
+  @override
+  String get sarneg_maybeUnmarked => 'Forse SARNEG · tocca per decodificare';
+
+  @override
+  String get sarneg_guideTitle => 'SARNEG o vera crittografia?';
+
+  @override
+  String get sarneg_guideBody =>
+      'SARNEG sostituisce le cifre con lettere usando una parola condivisa. Chiunque ascolti qualche messaggio può ricavare la parola, quindi nasconde i numeri solo a un ascoltatore occasionale. Non è crittografia.\n\nPer una vera riservatezza usa un canale privato con la sua chiave. La radio cifra tutto ciò che vi passa e solo chi ha la chiave può leggerlo.\n\nSARNEG aiuta comunque in più: su canali condivisi o pubblici, attraverso ripetitori e bridge, nei log e negli screenshot, e contro chi ha la chiave del canale ma non la parola in codice.';
+
+  @override
   String channelConflict_banner(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,

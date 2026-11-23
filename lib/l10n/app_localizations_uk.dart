@@ -14595,6 +14595,125 @@ class AppLocalizationsUk extends AppLocalizations {
   String get sarneg_autoClear => 'Очищається через 1 хвилину без введення.';
 
   @override
+  String get sarneg_optionsTitle => 'Параметри';
+
+  @override
+  String get sarneg_keepZone => 'Залишати зону сітки відкритою';
+
+  @override
+  String get sarneg_keepZoneHint =>
+      '17S 4823 надсилається як 17s KSAC. Зона рідко буває таємною, і інші інструменти SARNEG читають її так.';
+
+  @override
+  String get sarneg_noMarker => 'Надсилати без мітки [SARNEG]';
+
+  @override
+  String get sarneg_noMarkerHint =>
+      'Слухачі не зрозуміють, що числа приховані. Вашій команді треба увімкнути «Розшифровувати повідомлення без мітки».';
+
+  @override
+  String get sarneg_readUnmarked => 'Розшифровувати повідомлення без мітки';
+
+  @override
+  String get sarneg_readUnmarkedHint =>
+      'Під повідомленням без мітки з\'являється рядок розшифрування, якщо всі його великі літери є в слові дня.';
+
+  @override
+  String get sarneg_wipeAfter => 'Видалити всі слова після дати';
+
+  @override
+  String get sarneg_wipeAfterOff =>
+      'Вимкнено. Слова з датою видаляються, коли їхній день минув.';
+
+  @override
+  String sarneg_wipeAfterSet(String day) {
+    return 'Усі слова видаляються після $day.';
+  }
+
+  @override
+  String get sarneg_remove => 'Видалити';
+
+  @override
+  String get sarneg_sardotTitle => 'Опорна точка SARDOT';
+
+  @override
+  String get sarneg_sardotHint =>
+      'Надсилайте азимут і відстань від таємної точки замість координат. Домовтеся про точку особисто: вона ніколи не надсилається.';
+
+  @override
+  String get sarneg_sardotSet => 'Опорну точку задано';
+
+  @override
+  String get sarneg_sardotNone => 'Немає опорної точки';
+
+  @override
+  String get sarneg_useMyPosition => 'Моє місцезнаходження';
+
+  @override
+  String get sarneg_typePoint => 'Ввести точку';
+
+  @override
+  String get sarneg_pointLabel => 'Широта, довгота';
+
+  @override
+  String get sarneg_pointInvalid =>
+      'Введіть широту, довготу, наприклад 41.33, -73.09';
+
+  @override
+  String get sarneg_addSardot => 'Додати SARDOT з мого місцезнаходження';
+
+  @override
+  String get sarneg_showOnMap => 'Показати на мапі';
+
+  @override
+  String get sarneg_mapTitle => 'Розшифрована позиція';
+
+  @override
+  String get sarneg_authTitle => 'Число і літера дня';
+
+  @override
+  String get sarneg_authHint =>
+      'Пароль і відгук: вам називають число, ви відповідаєте числом, яке разом дає число дня. Зберігається лише на цьому телефоні.';
+
+  @override
+  String get sarneg_numberOfDay => 'Число дня (від 0 до 99)';
+
+  @override
+  String get sarneg_letterOfDay => 'Літера дня';
+
+  @override
+  String get sarneg_notSet => 'Не задано';
+
+  @override
+  String get sarneg_numberInvalid => 'Використайте число від 0 до 99';
+
+  @override
+  String get sarneg_letterInvalid => 'Використайте одну літеру від A до Z';
+
+  @override
+  String get sarneg_challenge => 'Назване число';
+
+  @override
+  String sarneg_reply(int number) {
+    return 'Відгук: $number';
+  }
+
+  @override
+  String get sarneg_noReply =>
+      'Немає правильного відгуку: число більше за число дня.';
+
+  @override
+  String get sarneg_maybeUnmarked =>
+      'Можливо, SARNEG · торкніться, щоб розшифрувати';
+
+  @override
+  String get sarneg_guideTitle => 'SARNEG чи справжнє шифрування?';
+
+  @override
+  String get sarneg_guideBody =>
+      'SARNEG замінює цифри літерами за одним спільним словом. Будь-хто, хто почує кілька повідомлень, може вирахувати слово, тож числа приховані лише від випадкового слухача. Це не шифрування.\n\nДля справжньої таємності використовуйте приватний канал із власним ключем. Рація шифрує все в ньому, і прочитати можуть лише ті, хто має ключ.\n\nSARNEG однаково допомагає додатково: у спільних і публічних каналах, через ретранслятори й мости, у журналах і на знімках екрана, а також проти того, хто має ключ каналу, але не кодове слово.';
+
+  @override
   String channelConflict_banner(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
