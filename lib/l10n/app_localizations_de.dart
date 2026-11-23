@@ -15000,4 +15000,282 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get coverageHex_trimDrivesHint =>
       'Die ersten und letzten 2 Sechsecke jeder Kartierung bleiben auf diesem Telefon, damit Karten nicht zeigen, wo du wohnst oder parkst.';
+
+  @override
+  String get fleet_title => 'Flotte';
+
+  @override
+  String get fleet_toolSubtitle =>
+      'Zustand, Verläufe und Sammeleinstellungen für deine eigenen Repeater';
+
+  @override
+  String get fleet_addRepeater => 'Repeater hinzufügen';
+
+  @override
+  String get fleet_agoNow => 'gerade eben';
+
+  @override
+  String fleet_agoMinutes(int count) {
+    return 'vor $count Min.';
+  }
+
+  @override
+  String fleet_agoHours(int count) {
+    return 'vor $count Std.';
+  }
+
+  @override
+  String fleet_agoDays(int count) {
+    return 'vor $count T.';
+  }
+
+  @override
+  String get fleet_alreadyListed =>
+      'Dieser Repeater ist schon in deiner Flotte.';
+
+  @override
+  String fleet_asking(String name) {
+    return 'Frage $name ab…';
+  }
+
+  @override
+  String get fleet_badAddress =>
+      'Gib eine Adresse wie 192.168.1.20 oder 192.168.1.20:8484 ein.';
+
+  @override
+  String get fleet_badKey =>
+      'Füge den vollständigen öffentlichen Schlüssel mit 64 Zeichen ein.';
+
+  @override
+  String get fleet_battery => 'Akku';
+
+  @override
+  String get fleet_batteryTrend => 'Akku (V)';
+
+  @override
+  String fleet_bulkApply(int count) {
+    return 'An $count Repeater senden';
+  }
+
+  @override
+  String get fleet_bulkBadValue =>
+      'Dieser Wert ist für diese Einstellung nicht erlaubt.';
+
+  @override
+  String fleet_bulkChange(String current, String target) {
+    return '$current → $target';
+  }
+
+  @override
+  String fleet_bulkConfirmBody(String setting, String value, int count) {
+    return '$setting auf $value bei $count Repeatern setzen? Jeder wird per Funk geändert, mindestens 20 Sekunden nacheinander.';
+  }
+
+  @override
+  String get fleet_bulkConfirmTitle => 'Repeater ändern?';
+
+  @override
+  String get fleet_bulkIntro =>
+      'Wähle eine Einstellung und einen Wert. Zuerst werden die aktuellen Werte gelesen; nichts ändert sich, bevor du bestätigst.';
+
+  @override
+  String get fleet_bulkPreview => 'Was sich ändern würde';
+
+  @override
+  String get fleet_bulkRead => 'Aktuelle Werte lesen';
+
+  @override
+  String get fleet_bulkRepeaters => 'Repeater';
+
+  @override
+  String fleet_bulkSame(String target) {
+    return 'Bereits $target';
+  }
+
+  @override
+  String get fleet_bulkSend => 'Senden';
+
+  @override
+  String get fleet_bulkSetting => 'Einstellung';
+
+  @override
+  String get fleet_bulkTitle => 'Sammeleinstellungen';
+
+  @override
+  String get fleet_bulkValue => 'Neuer Wert';
+
+  @override
+  String fleet_days(int count) {
+    return '$count T.';
+  }
+
+  @override
+  String fleet_db(String value) {
+    return '$value dB';
+  }
+
+  @override
+  String fleet_dbm(int value) {
+    return '$value dBm';
+  }
+
+  @override
+  String get fleet_empty =>
+      'Noch keine Repeater. Tippe auf +, um einen eigenen hinzuzufügen.';
+
+  @override
+  String get fleet_errorLogin => 'Anmeldung abgelehnt';
+
+  @override
+  String get fleet_errorNoContact => 'Nicht in den Kontakten des Funkgeräts';
+
+  @override
+  String get fleet_errorOther => 'Fehlgeschlagen';
+
+  @override
+  String get fleet_errorTimeout => 'Keine Antwort';
+
+  @override
+  String get fleet_firmware => 'Firmware';
+
+  @override
+  String get fleet_heardRepeaters => 'Gehörte Repeater';
+
+  @override
+  String get fleet_lastHeard => 'Zuletzt gehört';
+
+  @override
+  String fleet_lastPollFailed(String reason, String when) {
+    return 'Letzte Abfrage: $reason, $when';
+  }
+
+  @override
+  String get fleet_lastSnr => 'Letzter SNR';
+
+  @override
+  String get fleet_name => 'Name';
+
+  @override
+  String get fleet_needsRadio => 'Verbinde ein Funkgerät, um abzufragen.';
+
+  @override
+  String get fleet_neighbours => 'Nachbarn';
+
+  @override
+  String get fleet_noHeard =>
+      'Keine gehörten Repeater, die nicht schon in deiner Flotte sind.';
+
+  @override
+  String get fleet_noHistory => 'Keine Messwerte in diesem Zeitraum.';
+
+  @override
+  String get fleet_noiseFloor => 'Grundrauschen';
+
+  @override
+  String get fleet_noiseTrend => 'Grundrauschen (dBm)';
+
+  @override
+  String get fleet_password => 'Admin-Passwort';
+
+  @override
+  String get fleet_passwordHint =>
+      'Wird im sicheren Speicher dieses Telefons abgelegt. Es geht nur per Funk an den Repeater selbst.';
+
+  @override
+  String get fleet_passwordOptional => 'Admin-Passwort (optional)';
+
+  @override
+  String get fleet_passwordSaved => 'Passwort aktualisiert';
+
+  @override
+  String get fleet_pasteKey => 'Oder einen Schlüssel einfügen';
+
+  @override
+  String get fleet_pollAll => 'Alle abfragen';
+
+  @override
+  String fleet_pollHint(int seconds) {
+    return 'Ein Repeater nach dem anderen, $seconds s Abstand, um Sendezeit zu sparen.';
+  }
+
+  @override
+  String get fleet_pollNow => 'Jetzt abfragen';
+
+  @override
+  String fleet_progress(int done, int total) {
+    return '$done von $total';
+  }
+
+  @override
+  String get fleet_publicKey => 'Öffentlicher Schlüssel';
+
+  @override
+  String get fleet_remove => 'Aus der Flotte entfernen';
+
+  @override
+  String fleet_removeBody(String name) {
+    return '$name mit Verlauf und Passwort von diesem Telefon entfernen?';
+  }
+
+  @override
+  String get fleet_removeTitle => 'Repeater entfernen?';
+
+  @override
+  String get fleet_stationAddress => 'Stationsadresse';
+
+  @override
+  String get fleet_statusFirmwareBehind => 'Firmware veraltet';
+
+  @override
+  String get fleet_statusHealthy => 'In Ordnung';
+
+  @override
+  String get fleet_statusLowBattery => 'Akku schwach';
+
+  @override
+  String get fleet_statusQuiet => 'Still';
+
+  @override
+  String get fleet_statusUnknown => 'Nicht abgefragt';
+
+  @override
+  String get fleet_stop => 'Stopp';
+
+  @override
+  String get fleet_sync => 'Synchronisieren';
+
+  @override
+  String fleet_syncDone(int count) {
+    return 'Synchronisiert: $count neue Messwerte.';
+  }
+
+  @override
+  String get fleet_syncFailed => 'Station nicht erreichbar.';
+
+  @override
+  String get fleet_syncHint =>
+      'Kopiert den Verlauf von einer NOTORYX Ops-Station in deinem Netzwerk. Es wird nur gelesen; Passwörter verlassen nie dieses Telefon.';
+
+  @override
+  String get fleet_syncSignIn =>
+      'Die Station verlangt eine Anmeldung. Die Synchronisierung funktioniert mit Stationen ohne Konten.';
+
+  @override
+  String get fleet_syncStation => 'Von Station synchronisieren';
+
+  @override
+  String get fleet_uptime => 'Laufzeit';
+
+  @override
+  String fleet_uptimeDays(int days, int hours) {
+    return '$days T. $hours Std.';
+  }
+
+  @override
+  String fleet_uptimeHours(int hours, int minutes) {
+    return '$hours Std. $minutes Min.';
+  }
+
+  @override
+  String get fleet_waiting => 'Warte…';
 }

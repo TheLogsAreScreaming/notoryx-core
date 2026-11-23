@@ -14048,4 +14048,271 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String get coverageHex_trimDrivesHint =>
       '每次测绘的前 2 个和最后 2 个六边形只保留在此手机上，因此地图不会显示你住在哪里或停车的位置。';
+
+  @override
+  String get fleet_title => '设备群';
+
+  @override
+  String get fleet_toolSubtitle => '你所拥有中继器的状态、趋势和批量设置';
+
+  @override
+  String get fleet_addRepeater => '添加中继器';
+
+  @override
+  String get fleet_agoNow => '刚刚';
+
+  @override
+  String fleet_agoMinutes(int count) {
+    return '$count 分钟前';
+  }
+
+  @override
+  String fleet_agoHours(int count) {
+    return '$count 小时前';
+  }
+
+  @override
+  String fleet_agoDays(int count) {
+    return '$count 天前';
+  }
+
+  @override
+  String get fleet_alreadyListed => '该中继器已在你的设备群中。';
+
+  @override
+  String fleet_asking(String name) {
+    return '正在询问 $name…';
+  }
+
+  @override
+  String get fleet_badAddress => '请输入类似 192.168.1.20 或 192.168.1.20:8484 的地址。';
+
+  @override
+  String get fleet_badKey => '请粘贴完整的 64 位公钥。';
+
+  @override
+  String get fleet_battery => '电池';
+
+  @override
+  String get fleet_batteryTrend => '电池 (V)';
+
+  @override
+  String fleet_bulkApply(int count) {
+    return '发送到 $count 个中继器';
+  }
+
+  @override
+  String get fleet_bulkBadValue => '此设置不允许该值。';
+
+  @override
+  String fleet_bulkChange(String current, String target) {
+    return '$current → $target';
+  }
+
+  @override
+  String fleet_bulkConfirmBody(String setting, String value, int count) {
+    return '要在 $count 个中继器上将 $setting 设为 $value 吗？每个都通过无线发送，间隔至少 20 秒。';
+  }
+
+  @override
+  String get fleet_bulkConfirmTitle => '更改中继器？';
+
+  @override
+  String get fleet_bulkIntro => '选择一个设置和值。会先读取当前值；在你确认之前不会更改任何内容。';
+
+  @override
+  String get fleet_bulkPreview => '将会更改的内容';
+
+  @override
+  String get fleet_bulkRead => '读取当前值';
+
+  @override
+  String get fleet_bulkRepeaters => '中继器';
+
+  @override
+  String fleet_bulkSame(String target) {
+    return '已是 $target';
+  }
+
+  @override
+  String get fleet_bulkSend => '发送';
+
+  @override
+  String get fleet_bulkSetting => '设置';
+
+  @override
+  String get fleet_bulkTitle => '批量设置';
+
+  @override
+  String get fleet_bulkValue => '新值';
+
+  @override
+  String fleet_days(int count) {
+    return '$count 天';
+  }
+
+  @override
+  String fleet_db(String value) {
+    return '$value dB';
+  }
+
+  @override
+  String fleet_dbm(int value) {
+    return '$value dBm';
+  }
+
+  @override
+  String get fleet_empty => '还没有中继器。点按 + 添加你自己的中继器。';
+
+  @override
+  String get fleet_errorLogin => '登录被拒绝';
+
+  @override
+  String get fleet_errorNoContact => '不在电台联系人中';
+
+  @override
+  String get fleet_errorOther => '失败';
+
+  @override
+  String get fleet_errorTimeout => '无应答';
+
+  @override
+  String get fleet_firmware => '固件';
+
+  @override
+  String get fleet_heardRepeaters => '收到的中继器';
+
+  @override
+  String get fleet_lastHeard => '最后收到';
+
+  @override
+  String fleet_lastPollFailed(String reason, String when) {
+    return '上次询问：$reason，$when';
+  }
+
+  @override
+  String get fleet_lastSnr => '最近 SNR';
+
+  @override
+  String get fleet_name => '名称';
+
+  @override
+  String get fleet_needsRadio => '连接电台后才能询问。';
+
+  @override
+  String get fleet_neighbours => '邻居';
+
+  @override
+  String get fleet_noHeard => '没有收到设备群以外的中继器。';
+
+  @override
+  String get fleet_noHistory => '此时段没有读数。';
+
+  @override
+  String get fleet_noiseFloor => '底噪';
+
+  @override
+  String get fleet_noiseTrend => '底噪 (dBm)';
+
+  @override
+  String get fleet_password => '管理员密码';
+
+  @override
+  String get fleet_passwordHint => '保存在本手机的安全存储中。只会通过无线发送给中继器本身。';
+
+  @override
+  String get fleet_passwordOptional => '管理员密码（可选）';
+
+  @override
+  String get fleet_passwordSaved => '密码已更新';
+
+  @override
+  String get fleet_pasteKey => '或粘贴公钥';
+
+  @override
+  String get fleet_pollAll => '全部询问';
+
+  @override
+  String fleet_pollHint(int seconds) {
+    return '为节省通话时间，每次一个，间隔 $seconds 秒。';
+  }
+
+  @override
+  String get fleet_pollNow => '立即询问';
+
+  @override
+  String fleet_progress(int done, int total) {
+    return '$done / $total';
+  }
+
+  @override
+  String get fleet_publicKey => '公钥';
+
+  @override
+  String get fleet_remove => '从设备群移除';
+
+  @override
+  String fleet_removeBody(String name) {
+    return '要从本手机移除 $name 及其历史和密码吗？';
+  }
+
+  @override
+  String get fleet_removeTitle => '移除中继器？';
+
+  @override
+  String get fleet_stationAddress => '站点地址';
+
+  @override
+  String get fleet_statusFirmwareBehind => '固件过旧';
+
+  @override
+  String get fleet_statusHealthy => '正常';
+
+  @override
+  String get fleet_statusLowBattery => '电量低';
+
+  @override
+  String get fleet_statusQuiet => '无声';
+
+  @override
+  String get fleet_statusUnknown => '未询问';
+
+  @override
+  String get fleet_stop => '停止';
+
+  @override
+  String get fleet_sync => '同步';
+
+  @override
+  String fleet_syncDone(int count) {
+    return '已同步：$count 条新读数。';
+  }
+
+  @override
+  String get fleet_syncFailed => '无法连接站点。';
+
+  @override
+  String get fleet_syncHint => '从你网络中的 NOTORYX Ops 站点复制历史。只读；密码绝不会离开本手机。';
+
+  @override
+  String get fleet_syncSignIn => '该站点需要登录。同步适用于没有账户的站点。';
+
+  @override
+  String get fleet_syncStation => '从站点同步';
+
+  @override
+  String get fleet_uptime => '运行时间';
+
+  @override
+  String fleet_uptimeDays(int days, int hours) {
+    return '$days 天 $hours 小时';
+  }
+
+  @override
+  String fleet_uptimeHours(int hours, int minutes) {
+    return '$hours 小时 $minutes 分钟';
+  }
+
+  @override
+  String get fleet_waiting => '等待中…';
 }

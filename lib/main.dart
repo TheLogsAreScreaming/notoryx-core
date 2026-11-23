@@ -61,6 +61,9 @@ import 'services/network_change_service.dart';
 import 'screens/network_changes_screen.dart' show networkChangeText;
 import 'services/battery_check_service.dart';
 import 'services/repeater_battery_history.dart';
+import 'services/fleet_controller.dart';
+import 'services/fleet_radio.dart';
+import 'services/fleet_store.dart';
 import 'services/repeater_status_history.dart';
 import 'services/automation_service.dart';
 import 'services/position_history_service.dart';
@@ -402,6 +405,8 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   late final SensorHistoryStore _sensorHistory;
   late final RepeaterBatteryHistory _batteryHistory;
   late final RepeaterStatusHistory _statusHistory;
+  late final FleetStore _fleetStore;
+  late final FleetController _fleet;
   late final BatteryCheckService _batteryChecks;
   late final MySensorsService _mySensors;
   late final WardriveService _wardrive;
@@ -469,6 +474,29 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     widget.connector.telemetryStore = _telemetry;
     _batteryHistory = RepeaterBatteryHistory(PrefsManager.instance);
     _statusHistory = RepeaterStatusHistory(PrefsManager.instance);
+    _fleetStore = FleetStore(PrefsManager.instance);
+    _fleet = FleetController(
+      store: _fleetStore,
+      passwords: FleetPasswordStore.platform(),
+      radio: ConnectorFleetRadio(widget.connector),
+      contactFor: (key) {
+        for (final c in widget.connector.allContactsUnfiltered) {
+          if (c.publicKeyHex == key) return c;
+        }
+        return null;
+      },
+      onStatus: (key, s) => _statusHistory.recordStatus(
+        key,
+        StatusSample(
+          at: s.at,
+          batteryMv: s.batteryMv,
+          rssi: s.lastRssi,
+          snr: s.lastSnr,
+          noiseFloor: s.noiseFloor,
+          uptimeSecs: s.uptimeSecs,
+        ),
+      ),
+    );
     widget.connector.batteryHistory = _batteryHistory;
     _batteryChecks = BatteryCheckService(
       connector: widget.connector,
@@ -701,6 +729,8 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     widget.connector.batteryHistory = null;
     _batteryHistory.dispose();
     _statusHistory.dispose();
+    _fleet.dispose();
+    _fleetStore.dispose();
     _wardrive.dispose();
     _linkRouter.dispose();
     _networkScan.dispose();
@@ -920,6 +950,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
       unawaited(_sensorHistory.flush());
       unawaited(_batteryHistory.flush());
       unawaited(_statusHistory.flush());
+      unawaited(_fleetStore.flush());
       unawaited(widget.connector.flushDiscoveredContacts());
       unawaited(widget.imageCodecService.handleMemoryPressure());
       unawaited(widget.receivedImageStore.handleMemoryPressure());
@@ -976,6 +1007,8 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         ChangeNotifierProvider<RepeaterStatusHistory?>.value(
           value: _statusHistory,
         ),
+        ChangeNotifierProvider<FleetStore?>.value(value: _fleetStore),
+        ChangeNotifierProvider<FleetController?>.value(value: _fleet),
         ChangeNotifierProvider<BatteryCheckService?>.value(
           value: _batteryChecks,
         ),

@@ -14953,4 +14953,277 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String get coverageHex_trimDrivesHint =>
       'Prva in zadnja 2 šestkotnika vsake seje ostaneta v tem telefonu, zato zemljevidi ne pokažejo, kje živite ali parkirate.';
+
+  @override
+  String get fleet_title => 'Flota';
+
+  @override
+  String get fleet_toolSubtitle =>
+      'Stanje, trendi in skupne nastavitve vaših repetitorjev';
+
+  @override
+  String get fleet_addRepeater => 'Dodaj repetitor';
+
+  @override
+  String get fleet_agoNow => 'pravkar';
+
+  @override
+  String fleet_agoMinutes(int count) {
+    return 'pred $count min';
+  }
+
+  @override
+  String fleet_agoHours(int count) {
+    return 'pred $count h';
+  }
+
+  @override
+  String fleet_agoDays(int count) {
+    return 'pred $count d';
+  }
+
+  @override
+  String get fleet_alreadyListed => 'Ta repetitor je že v vaši floti.';
+
+  @override
+  String fleet_asking(String name) {
+    return 'Sprašujem $name…';
+  }
+
+  @override
+  String get fleet_badAddress =>
+      'Vnesite naslov, kot je 192.168.1.20 ali 192.168.1.20:8484.';
+
+  @override
+  String get fleet_badKey => 'Prilepite celoten 64-mestni javni ključ.';
+
+  @override
+  String get fleet_battery => 'Baterija';
+
+  @override
+  String get fleet_batteryTrend => 'Baterija (V)';
+
+  @override
+  String fleet_bulkApply(int count) {
+    return 'Pošlji repetitorjem: $count';
+  }
+
+  @override
+  String get fleet_bulkBadValue => 'Ta vrednost za to nastavitev ni dovoljena.';
+
+  @override
+  String fleet_bulkChange(String current, String target) {
+    return '$current → $target';
+  }
+
+  @override
+  String fleet_bulkConfirmBody(String setting, String value, int count) {
+    return 'Nastavim $setting na $value na repetitorjih ($count)? Vsak se spremeni po radiu, vsaj 20 sekund narazen.';
+  }
+
+  @override
+  String get fleet_bulkConfirmTitle => 'Spremenim repetitorje?';
+
+  @override
+  String get fleet_bulkIntro =>
+      'Izberite nastavitev in vrednost. Najprej se preberejo trenutne vrednosti; nič se ne spremeni, dokler ne potrdite.';
+
+  @override
+  String get fleet_bulkPreview => 'Kaj bi se spremenilo';
+
+  @override
+  String get fleet_bulkRead => 'Preberi trenutne vrednosti';
+
+  @override
+  String get fleet_bulkRepeaters => 'Repetitorji';
+
+  @override
+  String fleet_bulkSame(String target) {
+    return 'Že $target';
+  }
+
+  @override
+  String get fleet_bulkSend => 'Pošlji';
+
+  @override
+  String get fleet_bulkSetting => 'Nastavitev';
+
+  @override
+  String get fleet_bulkTitle => 'Skupne nastavitve';
+
+  @override
+  String get fleet_bulkValue => 'Nova vrednost';
+
+  @override
+  String fleet_days(int count) {
+    return '$count d';
+  }
+
+  @override
+  String fleet_db(String value) {
+    return '$value dB';
+  }
+
+  @override
+  String fleet_dbm(int value) {
+    return '$value dBm';
+  }
+
+  @override
+  String get fleet_empty => 'Še ni repetitorjev. Tapnite + in dodajte svojega.';
+
+  @override
+  String get fleet_errorLogin => 'Prijava zavrnjena';
+
+  @override
+  String get fleet_errorNoContact => 'Ni med stiki radia';
+
+  @override
+  String get fleet_errorOther => 'Ni uspelo';
+
+  @override
+  String get fleet_errorTimeout => 'Ni odgovora';
+
+  @override
+  String get fleet_firmware => 'Strojna programska oprema';
+
+  @override
+  String get fleet_heardRepeaters => 'Slišani repetitorji';
+
+  @override
+  String get fleet_lastHeard => 'Nazadnje slišan';
+
+  @override
+  String fleet_lastPollFailed(String reason, String when) {
+    return 'Zadnja poizvedba: $reason, $when';
+  }
+
+  @override
+  String get fleet_lastSnr => 'Zadnji SNR';
+
+  @override
+  String get fleet_name => 'Ime';
+
+  @override
+  String get fleet_needsRadio => 'Za poizvedbo povežite radio.';
+
+  @override
+  String get fleet_neighbours => 'Sosedje';
+
+  @override
+  String get fleet_noHeard => 'Ni slišanih repetitorjev zunaj vaše flote.';
+
+  @override
+  String get fleet_noHistory => 'V tem obdobju ni meritev.';
+
+  @override
+  String get fleet_noiseFloor => 'Raven šuma';
+
+  @override
+  String get fleet_noiseTrend => 'Raven šuma (dBm)';
+
+  @override
+  String get fleet_password => 'Skrbniško geslo';
+
+  @override
+  String get fleet_passwordHint =>
+      'Shranjeno v varni shrambi tega telefona. Pošlje se le repetitorju, po radiu.';
+
+  @override
+  String get fleet_passwordOptional => 'Skrbniško geslo (neobvezno)';
+
+  @override
+  String get fleet_passwordSaved => 'Geslo posodobljeno';
+
+  @override
+  String get fleet_pasteKey => 'Ali prilepite ključ';
+
+  @override
+  String get fleet_pollAll => 'Vprašaj vse';
+
+  @override
+  String fleet_pollHint(int seconds) {
+    return 'En repetitor naenkrat, $seconds s narazen, za varčevanje z oddajnim časom.';
+  }
+
+  @override
+  String get fleet_pollNow => 'Vprašaj zdaj';
+
+  @override
+  String fleet_progress(int done, int total) {
+    return '$done od $total';
+  }
+
+  @override
+  String get fleet_publicKey => 'Javni ključ';
+
+  @override
+  String get fleet_remove => 'Odstrani iz flote';
+
+  @override
+  String fleet_removeBody(String name) {
+    return 'Odstranim $name z zgodovino in geslom s tega telefona?';
+  }
+
+  @override
+  String get fleet_removeTitle => 'Odstranim repetitor?';
+
+  @override
+  String get fleet_stationAddress => 'Naslov postaje';
+
+  @override
+  String get fleet_statusFirmwareBehind => 'Zastarela programska oprema';
+
+  @override
+  String get fleet_statusHealthy => 'V redu';
+
+  @override
+  String get fleet_statusLowBattery => 'Šibka baterija';
+
+  @override
+  String get fleet_statusQuiet => 'Tiho';
+
+  @override
+  String get fleet_statusUnknown => 'Ni preverjen';
+
+  @override
+  String get fleet_stop => 'Ustavi';
+
+  @override
+  String get fleet_sync => 'Sinhroniziraj';
+
+  @override
+  String fleet_syncDone(int count) {
+    return 'Sinhronizirano: novih meritev: $count.';
+  }
+
+  @override
+  String get fleet_syncFailed => 'Postaja ni dosegljiva.';
+
+  @override
+  String get fleet_syncHint =>
+      'Kopira zgodovino s postaje NOTORYX Ops v vašem omrežju. Samo bere; gesla nikoli ne zapustijo tega telefona.';
+
+  @override
+  String get fleet_syncSignIn =>
+      'Postaja zahteva prijavo. Sinhronizacija deluje s postajami brez računov.';
+
+  @override
+  String get fleet_syncStation => 'Sinhroniziraj s postaje';
+
+  @override
+  String get fleet_uptime => 'Čas delovanja';
+
+  @override
+  String fleet_uptimeDays(int days, int hours) {
+    return '$days d $hours h';
+  }
+
+  @override
+  String fleet_uptimeHours(int hours, int minutes) {
+    return '$hours h $minutes min';
+  }
+
+  @override
+  String get fleet_waiting => 'Čakam…';
 }

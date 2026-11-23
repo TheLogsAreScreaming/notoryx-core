@@ -7977,5 +7977,229 @@
   "coverageHex_eraseFailed": "Couldn't erase. Check your connection and try again.",
   "coverageHex_openMap": "Open the coverage map",
   "coverageHex_trimDrives": "Hide the start and end of each drive",
-  "coverageHex_trimDrivesHint": "The first and last 2 hexagons of every mapping session stay on this phone, so maps can't show where you live or park."
+  "coverageHex_trimDrivesHint": "The first and last 2 hexagons of every mapping session stay on this phone, so maps can't show where you live or park.",
+  "fleet_title": "Fleet",
+  "fleet_toolSubtitle": "Health, trends and bulk settings for the repeaters you own",
+  "fleet_addRepeater": "Add repeater",
+  "fleet_agoNow": "just now",
+  "fleet_agoMinutes": "{count} min ago",
+  "@fleet_agoMinutes": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_agoHours": "{count} h ago",
+  "@fleet_agoHours": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_agoDays": "{count} d ago",
+  "@fleet_agoDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_alreadyListed": "That repeater is already in your fleet.",
+  "fleet_asking": "Asking {name}…",
+  "@fleet_asking": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "fleet_badAddress": "Enter an address like 192.168.1.20 or 192.168.1.20:8484.",
+  "fleet_badKey": "Paste the full 64-character public key.",
+  "fleet_battery": "Battery",
+  "fleet_batteryTrend": "Battery (V)",
+  "fleet_bulkApply": "Send to {count} repeaters",
+  "@fleet_bulkApply": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_bulkBadValue": "That value isn't allowed for this setting.",
+  "fleet_bulkChange": "{current} → {target}",
+  "@fleet_bulkChange": {
+    "placeholders": {
+      "current": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "fleet_bulkConfirmBody": "Set {setting} to {value} on {count} repeaters? Each one is sent over the air, at least 20 seconds apart.",
+  "@fleet_bulkConfirmBody": {
+    "placeholders": {
+      "setting": {
+        "type": "String"
+      },
+      "value": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_bulkConfirmTitle": "Change repeaters?",
+  "fleet_bulkIntro": "Pick a setting and a value. Current values are read first; nothing changes until you confirm.",
+  "fleet_bulkPreview": "What would change",
+  "fleet_bulkRead": "Read current values",
+  "fleet_bulkRepeaters": "Repeaters",
+  "fleet_bulkSame": "Already {target}",
+  "@fleet_bulkSame": {
+    "placeholders": {
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "fleet_bulkSend": "Send",
+  "fleet_bulkSetting": "Setting",
+  "fleet_bulkTitle": "Bulk settings",
+  "fleet_bulkValue": "New value",
+  "fleet_days": "{count} d",
+  "@fleet_days": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_db": "{value} dB",
+  "@fleet_db": {
+    "placeholders": {
+      "value": {
+        "type": "String"
+      }
+    }
+  },
+  "fleet_dbm": "{value} dBm",
+  "@fleet_dbm": {
+    "placeholders": {
+      "value": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_empty": "No repeaters yet. Tap + to add one you own.",
+  "fleet_errorLogin": "Login refused",
+  "fleet_errorNoContact": "Not in the radio's contacts",
+  "fleet_errorOther": "Failed",
+  "fleet_errorTimeout": "No answer",
+  "fleet_firmware": "Firmware",
+  "fleet_heardRepeaters": "Heard repeaters",
+  "fleet_lastHeard": "Last heard",
+  "fleet_lastPollFailed": "Last poll: {reason}, {when}",
+  "@fleet_lastPollFailed": {
+    "placeholders": {
+      "reason": {
+        "type": "String"
+      },
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "fleet_lastSnr": "Last SNR",
+  "fleet_name": "Name",
+  "fleet_needsRadio": "Connect a radio to poll.",
+  "fleet_neighbours": "Neighbours",
+  "fleet_noHeard": "No repeaters heard that aren't in your fleet.",
+  "fleet_noHistory": "No readings in this period.",
+  "fleet_noiseFloor": "Noise floor",
+  "fleet_noiseTrend": "Noise floor (dBm)",
+  "fleet_password": "Admin password",
+  "fleet_passwordHint": "Kept in this phone's secure storage. It is only ever sent to the repeater, over the radio.",
+  "fleet_passwordOptional": "Admin password (optional)",
+  "fleet_passwordSaved": "Password updated",
+  "fleet_pasteKey": "Or paste a key",
+  "fleet_pollAll": "Poll all",
+  "fleet_pollHint": "One repeater at a time, {seconds} s apart, to save airtime.",
+  "@fleet_pollHint": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_pollNow": "Poll now",
+  "fleet_progress": "{done} of {total}",
+  "@fleet_progress": {
+    "placeholders": {
+      "done": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_publicKey": "Public key",
+  "fleet_remove": "Remove from fleet",
+  "fleet_removeBody": "Remove {name} and its history and password from this phone?",
+  "@fleet_removeBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "fleet_removeTitle": "Remove repeater?",
+  "fleet_stationAddress": "Station address",
+  "fleet_statusFirmwareBehind": "Firmware behind",
+  "fleet_statusHealthy": "Healthy",
+  "fleet_statusLowBattery": "Low battery",
+  "fleet_statusQuiet": "Quiet",
+  "fleet_statusUnknown": "Not polled",
+  "fleet_stop": "Stop",
+  "fleet_sync": "Sync",
+  "fleet_syncDone": "Synced: {count} new readings.",
+  "@fleet_syncDone": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_syncFailed": "Couldn't reach the station.",
+  "fleet_syncHint": "Copies history from a NOTORYX Ops station on your network. It only reads; passwords never leave this phone.",
+  "fleet_syncSignIn": "The station needs a sign-in. Sync works with stations that have no accounts.",
+  "fleet_syncStation": "Sync from station",
+  "fleet_uptime": "Uptime",
+  "fleet_uptimeDays": "{days} d {hours} h",
+  "@fleet_uptimeDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_uptimeHours": "{hours} h {minutes} min",
+  "@fleet_uptimeHours": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "fleet_waiting": "Waiting…"
 }
