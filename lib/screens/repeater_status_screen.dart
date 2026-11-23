@@ -12,11 +12,13 @@ import '../connector/meshcore_connector.dart';
 import '../connector/meshcore_protocol.dart';
 import '../services/app_settings_service.dart';
 import '../services/repeater_command_service.dart';
+import '../services/repeater_status_history.dart';
 import '../theme/mesh_theme.dart';
 import '../utils/battery_utils.dart';
 import '../widgets/admin_wait_banner.dart';
 import '../widgets/battery_watch_widgets.dart';
 import '../widgets/mesh_ui.dart';
+import '../widgets/repeater_history_widgets.dart';
 import '../widgets/routing_sheet.dart';
 import '../helpers/snack_bar_builder.dart';
 
@@ -194,6 +196,17 @@ class _RepeaterStatusScreenState extends State<RepeaterStatusScreen> {
       _dupFlood = floodDups;
       _chanUtil = ((txAirSecs + rxAirSecs) / uptimeSecs) * 100;
     });
+    _keepStatus(
+      StatusSample(
+        at: DateTime.now(),
+        batteryMv: batteryMv,
+        rssi: lastRssi,
+        snr: lastSnrRaw / 4.0,
+        noiseFloor: noiseFloor,
+        errors: errEvents,
+        uptimeSecs: uptimeSecs,
+      ),
+    );
     final connector = Provider.of<MeshCoreConnector>(context, listen: false);
     connector.updateRepeaterBatterySnapshot(
       widget.repeater.publicKeyHex,
@@ -201,6 +214,14 @@ class _RepeaterStatusScreenState extends State<RepeaterStatusScreen> {
       source: 'status_binary',
     );
     _recordStatusResult(true);
+  }
+
+  void _keepStatus(StatusSample sample) {
+    if (!mounted) return;
+    context.read<RepeaterStatusHistory?>()?.recordStatus(
+      widget.repeater.publicKeyHex,
+      sample,
+    );
   }
 
   bool _matchesRepeaterPrefix(Uint8List prefix) {
@@ -250,6 +271,17 @@ class _RepeaterStatusScreenState extends State<RepeaterStatusScreen> {
           _dupFlood = _asInt(data['dup_flood']);
           _dupDirect = _asInt(data['dup_direct']);
         }
+        _keepStatus(
+          StatusSample(
+            at: DateTime.now(),
+            batteryMv: _asInt(data['battery_mv']),
+            uptimeSecs: _asInt(data['uptime_secs']),
+            errors: _asInt(data['errors']),
+            noiseFloor: _asInt(data['noise_floor']),
+            rssi: _asInt(data['last_rssi']),
+            snr: _asDouble(data['last_snr']),
+          ),
+        );
       } catch (_) {}
     }
     if (mounted) setState(() {});
@@ -509,6 +541,7 @@ class _RepeaterStatusScreenState extends State<RepeaterStatusScreen> {
             padding: EdgeInsets.only(top: 48),
             child: Center(child: CircularProgressIndicator()),
           ),
+        RepeaterStatusHistoryCard(repeaterKey: widget.repeater.publicKeyHex),
       ],
     );
   }
@@ -642,6 +675,7 @@ class _RepeaterStatusScreenState extends State<RepeaterStatusScreen> {
           ]),
         ),
         const SizedBox(height: 8),
+        RepeaterStatusHistoryCard(repeaterKey: widget.repeater.publicKeyHex),
       ],
     );
   }
