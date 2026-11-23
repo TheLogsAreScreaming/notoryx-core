@@ -1,0 +1,5 @@
+• Android Auto: hear messages in the car, reply by voice and mark them read
+• Reply and Mark as read work from a notification without opening the app
+• Reactions sent from another MeshCore app now show as reactions
+• Editing a contact no longer makes the radio ignore that node's new adverts
+• Desktop USB: closing a port frees its buffers
