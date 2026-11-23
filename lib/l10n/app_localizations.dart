@@ -25632,7 +25632,7 @@ abstract class AppLocalizations {
   /// No description provided for @fleet_syncDone.
   ///
   /// In en, this message translates to:
-  /// **'Synced: {count} new readings.'**
+  /// **'{count, plural, =0{Synced: no new readings.} =1{Synced: 1 new reading.} other{Synced: {count} new readings.}}'**
   String fleet_syncDone(int count);
 
   /// No description provided for @fleet_syncFailed.

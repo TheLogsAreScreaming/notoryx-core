@@ -8268,7 +8268,7 @@
   "fleet_statusUnknown": "Not polled",
   "fleet_stop": "Stop",
   "fleet_sync": "Sync",
-  "fleet_syncDone": "Synced: {count} new readings.",
+  "fleet_syncDone": "{count, plural, =0{Synced: no new readings.} =1{Synced: 1 new reading.} other{Synced: {count} new readings.}}",
   "@fleet_syncDone": {
     "placeholders": {
       "count": {

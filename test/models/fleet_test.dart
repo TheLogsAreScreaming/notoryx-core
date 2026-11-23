@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:meshcore_open/models/contact.dart';
 import 'package:meshcore_open/models/firmware_release.dart';
 import 'package:meshcore_open/models/fleet.dart';
 import 'package:meshcore_open/services/fleet_station_client.dart';
@@ -223,5 +224,61 @@ void main() {
       expect(FleetStationClient.parseAddress('ftp://x'), isNull);
       expect(FleetStationClient.parseAddress(' '), isNull);
     });
+  });
+
+  group('pickableRepeaters', () {
+    Contact node(int b, String name, {int type = 2, int seenYear = 2026}) =>
+        Contact(
+          publicKey: Uint8List.fromList(List.filled(32, b)),
+          name: name,
+          type: type,
+          pathLength: -1,
+          path: Uint8List(0),
+          lastSeen: DateTime(seenYear),
+        );
+
+    test('lists each repeater once, by name, without listed ones', () {
+      final list = pickableRepeaters([
+        node(3, 'charlie'),
+        node(1, 'Alpha', seenYear: 2024),
+        node(3, 'charlie (heard copy)'),
+        node(2, 'Bravo'),
+        node(4, 'Chat', type: 1),
+        node(5, 'Echo'),
+      ], listed: (k) => k == '05' * 32);
+      expect(list.map((c) => c.name), ['Alpha', 'Bravo', 'charlie']);
+    });
+
+    test('filters by name or key prefix', () {
+      final all = [node(0xab, 'Hilltop'), node(0x12, 'Valley')];
+      expect(
+        pickableRepeaters(
+          all,
+          listed: (_) => false,
+          query: 'hill',
+        ).map((c) => c.name),
+        ['Hilltop'],
+      );
+      expect(
+        pickableRepeaters(
+          all,
+          listed: (_) => false,
+          query: '1212',
+        ).map((c) => c.name),
+        ['Valley'],
+      );
+    });
+  });
+
+  test('a repeater that never answered is never "heard"', () {
+    final h = FleetHealth.from([
+      FleetSample(at: now, ok: false, error: 'timeout'),
+    ]);
+    expect(h.lastHeard, isNull);
+    expect(fleetStatusFor(h, now: now), FleetStatus.quiet);
+    expect(
+      fleetStatusFor(FleetHealth.from(const []), now: now),
+      FleetStatus.unknown,
+    );
   });
 }

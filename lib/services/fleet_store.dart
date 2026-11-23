@@ -52,8 +52,7 @@ class FleetStore extends ChangeNotifier {
   List<FleetSample> historyFor(String key) =>
       List.unmodifiable(_history[key.toLowerCase()] ?? const []);
 
-  FleetHealth healthFor(String key, {DateTime? advertAt}) =>
-      FleetHealth.from(historyFor(key), advertAt: advertAt);
+  FleetHealth healthFor(String key) => FleetHealth.from(historyFor(key));
 
   void _load() {
     try {
