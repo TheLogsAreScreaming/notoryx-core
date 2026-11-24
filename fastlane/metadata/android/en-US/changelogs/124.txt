@@ -1,0 +1,1 @@
+• Diagnostics: an automatic connect at launch is labelled "connected automatically"
