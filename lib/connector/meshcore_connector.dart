@@ -161,6 +161,10 @@ class MeshCoreConnector extends ChangeNotifier {
 
   /// Cause stamped on the next recorded state change.
   ConnectionCause _nextCause = ConnectionCause.unknown;
+
+  /// Set while [reconnectSavedRadio] runs on its own, so the connect it
+  /// starts isn't recorded as the user's.
+  ConnectionCause? _connectCauseOverride;
   BluetoothDevice? _device;
   BluetoothCharacteristic? _rxCharacteristic;
   BluetoothCharacteristic? _txCharacteristic;
@@ -1915,9 +1919,9 @@ class MeshCoreConnector extends ChangeNotifier {
     _beginWiredConnect(automaticReconnect);
     _resetConnectionHandshakeState();
     _activeTransport = MeshCoreTransportType.usb;
-    _nextCause = automaticReconnect
-        ? ConnectionCause.reconnect
-        : ConnectionCause.user;
+    _nextCause =
+        _connectCauseOverride ??
+        (automaticReconnect ? ConnectionCause.reconnect : ConnectionCause.user);
     _setState(MeshCoreConnectionState.connecting);
 
     try {
@@ -2039,9 +2043,9 @@ class MeshCoreConnector extends ChangeNotifier {
     _beginWiredConnect(automaticReconnect);
     _resetConnectionHandshakeState();
     _activeTransport = MeshCoreTransportType.tcp;
-    _nextCause = automaticReconnect
-        ? ConnectionCause.reconnect
-        : ConnectionCause.user;
+    _nextCause =
+        _connectCauseOverride ??
+        (automaticReconnect ? ConnectionCause.reconnect : ConnectionCause.user);
     _setState(MeshCoreConnectionState.connecting);
 
     try {
@@ -2216,9 +2220,9 @@ class MeshCoreConnector extends ChangeNotifier {
     _activeTransport = MeshCoreTransportType.bluetooth;
 
     await stopScan();
-    _nextCause = automaticReconnect
-        ? ConnectionCause.reconnect
-        : ConnectionCause.user;
+    _nextCause =
+        _connectCauseOverride ??
+        (automaticReconnect ? ConnectionCause.reconnect : ConnectionCause.user);
     _setState(MeshCoreConnectionState.connecting);
     _device = device;
     _deviceId = targetId;
@@ -2515,9 +2519,20 @@ class MeshCoreConnector extends ChangeNotifier {
 
   /// Connects to the saved radio, and only that one. Does nothing when no
   /// radio is saved.
-  Future<void> reconnectSavedRadio() async {
+  /// Connects the saved radio. [automatic] marks a connect the app started
+  /// on its own ("Connect to my radio automatically"), not a tap.
+  Future<void> reconnectSavedRadio({bool automatic = false}) async {
     final saved = savedRadio;
     if (saved == null) return;
+    _connectCauseOverride = automatic ? ConnectionCause.autoConnect : null;
+    try {
+      await _connectSaved(saved);
+    } finally {
+      _connectCauseOverride = null;
+    }
+  }
+
+  Future<void> _connectSaved(SavedRadio saved) async {
     switch (saved.transport) {
       case SavedRadioTransport.bluetooth:
         await connect(

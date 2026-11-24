@@ -7123,6 +7123,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get diagTimeline_causeReconnect => 'nouvelle tentative auto';
 
   @override
+  String get diagTimeline_causeAutoConnect => 'connecté automatiquement';
+
+  @override
   String get diagTimeline_causeApp => 'fermé par l\'app';
 
   @override

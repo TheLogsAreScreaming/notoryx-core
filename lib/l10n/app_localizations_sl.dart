@@ -7084,6 +7084,9 @@ class AppLocalizationsSl extends AppLocalizations {
   String get diagTimeline_causeReconnect => 'samodejni ponovni poskus';
 
   @override
+  String get diagTimeline_causeAutoConnect => 'samodejno povezano';
+
+  @override
   String get diagTimeline_causeApp => 'zaprla aplikacija';
 
   @override

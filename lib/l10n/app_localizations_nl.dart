@@ -7067,6 +7067,9 @@ class AppLocalizationsNl extends AppLocalizations {
   String get diagTimeline_causeReconnect => 'automatische nieuwe poging';
 
   @override
+  String get diagTimeline_causeAutoConnect => 'automatisch verbonden';
+
+  @override
   String get diagTimeline_causeApp => 'door de app gesloten';
 
   @override
