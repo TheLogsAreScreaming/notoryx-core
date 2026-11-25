@@ -5668,5 +5668,6 @@
   "fleet_uptime": "Време на работа",
   "fleet_uptimeDays": "{days} дни {hours} ч",
   "fleet_uptimeHours": "{hours} ч {minutes} мин",
-  "fleet_waiting": "Изчакване…"
+  "fleet_waiting": "Изчакване…",
+  "contacts_fullWarning": "Списъкът с контакти на това радио е пълен и не може да добавя нови възли. Премахнете някои контакти, за да освободите място."
 }

@@ -5648,5 +5648,6 @@
   "fleet_uptime": "Час роботи",
   "fleet_uptimeDays": "{days} дн. {hours} год",
   "fleet_uptimeHours": "{hours} год {minutes} хв",
-  "fleet_waiting": "Очікування…"
+  "fleet_waiting": "Очікування…",
+  "contacts_fullWarning": "Список контактів цієї рації заповнений, тому вона не може додавати нові вузли. Видаліть кілька контактів, щоб звільнити місце."
 }

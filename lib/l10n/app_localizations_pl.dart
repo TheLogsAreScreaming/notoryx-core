@@ -15558,4 +15558,8 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get fleet_waiting => 'Czekam…';
+
+  @override
+  String get contacts_fullWarning =>
+      'Lista kontaktów tego radia jest pełna, więc nie może dodawać nowych węzłów. Usuń kilka kontaktów, aby zrobić miejsce.';
 }

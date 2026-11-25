@@ -5673,5 +5673,6 @@
   "fleet_uptime": "运行时间",
   "fleet_uptimeDays": "{days} 天 {hours} 小时",
   "fleet_uptimeHours": "{hours} 小时 {minutes} 分钟",
-  "fleet_waiting": "等待中…"
+  "fleet_waiting": "等待中…",
+  "contacts_fullWarning": "此电台的联系人列表已满，无法添加新节点。请删除一些联系人以腾出空间。"
 }

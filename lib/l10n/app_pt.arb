@@ -5668,5 +5668,6 @@
   "fleet_uptime": "Tempo ligado",
   "fleet_uptimeDays": "{days} d {hours} h",
   "fleet_uptimeHours": "{hours} h {minutes} min",
-  "fleet_waiting": "A aguardar…"
+  "fleet_waiting": "A aguardar…",
+  "contacts_fullWarning": "A lista de contatos deste rádio está cheia, então ele não pode adicionar novos nós. Remova alguns contatos para liberar espaço."
 }

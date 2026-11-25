@@ -15550,4 +15550,8 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get fleet_waiting => 'In attesa…';
+
+  @override
+  String get contacts_fullWarning =>
+      'L\'elenco contatti di questa radio è pieno, quindi non può aggiungere nuovi nodi. Rimuovi alcuni contatti per fare spazio.';
 }

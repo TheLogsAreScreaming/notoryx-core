@@ -15593,4 +15593,8 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get fleet_waiting => 'En attente…';
+
+  @override
+  String get contacts_fullWarning =>
+      'La liste de contacts de cette radio est pleine : elle ne peut plus ajouter de nouveaux nœuds. Supprimez des contacts pour faire de la place.';
 }

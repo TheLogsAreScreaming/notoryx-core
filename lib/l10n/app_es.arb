@@ -5802,5 +5802,6 @@
   "fleet_uptime": "Tiempo activo",
   "fleet_uptimeDays": "{days} d {hours} h",
   "fleet_uptimeHours": "{hours} h {minutes} min",
-  "fleet_waiting": "Esperando…"
+  "fleet_waiting": "Esperando…",
+  "contacts_fullWarning": "La lista de contactos de esta radio está llena, así que no puede añadir nodos nuevos. Elimina algunos contactos para hacer espacio."
 }

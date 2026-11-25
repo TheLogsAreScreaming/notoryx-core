@@ -5668,5 +5668,6 @@
   "fleet_uptime": "Uptime",
   "fleet_uptimeDays": "{days} d {hours} u",
   "fleet_uptimeHours": "{hours} u {minutes} min",
-  "fleet_waiting": "Wachten…"
+  "fleet_waiting": "Wachten…",
+  "contacts_fullWarning": "De contactenlijst van deze radio is vol, dus er kunnen geen nieuwe nodes bij. Verwijder enkele contacten om ruimte te maken."
 }

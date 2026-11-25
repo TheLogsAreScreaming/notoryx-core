@@ -15375,4 +15375,8 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get fleet_waiting => 'Waiting…';
+
+  @override
+  String get contacts_fullWarning =>
+      'This radio\'s contact list is full, so it can\'t add new nodes. Remove some contacts to make room.';
 }

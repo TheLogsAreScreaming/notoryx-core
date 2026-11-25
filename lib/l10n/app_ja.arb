@@ -5802,5 +5802,6 @@
   "fleet_uptime": "稼働時間",
   "fleet_uptimeDays": "{days}日{hours}時間",
   "fleet_uptimeHours": "{hours}時間{minutes}分",
-  "fleet_waiting": "待機中…"
+  "fleet_waiting": "待機中…",
+  "contacts_fullWarning": "この無線機の連絡先リストがいっぱいのため、新しいノードを追加できません。連絡先をいくつか削除して空きを作ってください。"
 }

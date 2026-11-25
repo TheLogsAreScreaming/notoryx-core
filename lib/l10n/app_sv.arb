@@ -5668,5 +5668,6 @@
   "fleet_uptime": "Drifttid",
   "fleet_uptimeDays": "{days} d {hours} h",
   "fleet_uptimeHours": "{hours} h {minutes} min",
-  "fleet_waiting": "Väntar…"
+  "fleet_waiting": "Väntar…",
+  "contacts_fullWarning": "Radions kontaktlista är full, så den kan inte lägga till nya noder. Ta bort några kontakter för att frigöra plats."
 }

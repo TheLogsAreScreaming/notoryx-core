@@ -5802,5 +5802,6 @@
   "fleet_uptime": "Laufzeit",
   "fleet_uptimeDays": "{days} T. {hours} Std.",
   "fleet_uptimeHours": "{hours} Std. {minutes} Min.",
-  "fleet_waiting": "Warte…"
+  "fleet_waiting": "Warte…",
+  "contacts_fullWarning": "Die Kontaktliste dieses Funkgeräts ist voll, daher kann es keine neuen Knoten hinzufügen. Entferne einige Kontakte, um Platz zu schaffen."
 }

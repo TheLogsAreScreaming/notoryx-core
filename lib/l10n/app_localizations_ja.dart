@@ -14850,4 +14850,8 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get fleet_waiting => '待機中…';
+
+  @override
+  String get contacts_fullWarning =>
+      'この無線機の連絡先リストがいっぱいのため、新しいノードを追加できません。連絡先をいくつか削除して空きを作ってください。';
 }

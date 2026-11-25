@@ -5668,5 +5668,6 @@
   "fleet_uptime": "Doba behu",
   "fleet_uptimeDays": "{days} d {hours} h",
   "fleet_uptimeHours": "{hours} h {minutes} min",
-  "fleet_waiting": "Čakám…"
+  "fleet_waiting": "Čakám…",
+  "contacts_fullWarning": "Zoznam kontaktov tohto rádia je plný, takže nemôže pridávať nové uzly. Odstráňte niekoľko kontaktov, aby ste uvoľnili miesto."
 }

@@ -15506,4 +15506,8 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get fleet_waiting => 'Čakam…';
+
+  @override
+  String get contacts_fullWarning =>
+      'Seznam stikov tega radia je poln, zato ne more dodajati novih vozlišč. Odstranite nekaj stikov, da sprostite prostor.';
 }

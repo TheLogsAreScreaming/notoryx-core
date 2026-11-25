@@ -8304,5 +8304,6 @@
       }
     }
   },
-  "fleet_waiting": "Waiting…"
+  "fleet_waiting": "Waiting…",
+  "contacts_fullWarning": "This radio's contact list is full, so it can't add new nodes. Remove some contacts to make room."
 }

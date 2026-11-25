@@ -15565,4 +15565,8 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get fleet_waiting => 'Очікування…';
+
+  @override
+  String get contacts_fullWarning =>
+      'Список контактів цієї рації заповнений, тому вона не може додавати нові вузли. Видаліть кілька контактів, щоб звільнити місце.';
 }
