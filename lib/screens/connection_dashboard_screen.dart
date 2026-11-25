@@ -211,7 +211,7 @@ class RadioConnectionCard extends StatelessWidget {
                 ),
               if (connected || state == MeshCoreConnectionState.connecting)
                 OutlinedButton.icon(
-                  onPressed: () => unawaited(connector.disconnect()),
+                  onPressed: () => unawaited(connector.disconnectByUser()),
                   icon: const Icon(Icons.link_off),
                   label: Text(
                     connected

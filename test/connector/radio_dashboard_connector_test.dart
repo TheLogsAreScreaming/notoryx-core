@@ -301,6 +301,26 @@ void main() {
       );
     });
 
+    test(
+      'a Disconnect tap pauses auto-connect until a manual connect',
+      () async {
+        await const SavedRadio(
+          transport: SavedRadioTransport.bluetooth,
+          address: _radioB,
+          name: 'Ridge',
+        ).save(PrefsManager.instance);
+        await connector.reconnectSavedRadio(automatic: true);
+        await connector.disconnectByUser();
+        expect(connector.autoConnectPaused, isTrue);
+        // An automatic connect leaves the pause alone; a tap clears it.
+        await connector.reconnectSavedRadio(automatic: true);
+        expect(connector.autoConnectPaused, isTrue);
+        await connector.disconnect();
+        await connector.reconnectSavedRadio();
+        expect(connector.autoConnectPaused, isFalse);
+      },
+    );
+
     test('reconnect with nothing saved does nothing', () async {
       await connector.reconnectSavedRadio();
       expect(ble.linked, isEmpty);

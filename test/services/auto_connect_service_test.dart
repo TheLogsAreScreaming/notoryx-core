@@ -67,6 +67,18 @@ void main() {
   Future<void> settle() =>
       Future<void>.delayed(const Duration(milliseconds: 60));
 
+  test('after a Disconnect tap it waits until the user connects', () async {
+    await settings.setAutoConnectRadio(true);
+    await PrefsManager.instance.setBool('auto_connect_paused', true);
+    expect(radio.autoConnectPaused, isTrue);
+    auto.start();
+    await settle();
+    expect(radio.attempts, 0);
+    await PrefsManager.instance.remove('auto_connect_paused');
+    await auto.run();
+    expect(radio.attempts, 1);
+  });
+
   test('off by default: nothing happens at start', () async {
     auto.start();
     await settle();

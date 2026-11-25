@@ -9,7 +9,8 @@ import 'app_settings_service.dart';
 /// "Connect to my radio automatically": when the app opens, or when the
 /// switch is turned on, reconnect to the last radio without a tap. The radio
 /// may still be waking up or out of range, so it tries a few times, then
-/// leaves it to the user. Starting any other connection stops it.
+/// leaves it to the user. Starting any other connection stops it, and so
+/// does a Disconnect tap, until the user connects again.
 class AutoConnectService {
   AutoConnectService(
     this.connector,
@@ -70,6 +71,7 @@ class AutoConnectService {
         if (_disposed ||
             !settings.settings.autoConnectRadio ||
             !_hasTarget ||
+            connector.autoConnectPaused ||
             !_idle) {
           return;
         }

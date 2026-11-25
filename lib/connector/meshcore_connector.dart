@@ -511,6 +511,29 @@ class MeshCoreConnector extends ChangeNotifier {
     return prefs == null ? null : SavedRadio.load(prefs, slot: slot);
   }
 
+  static const _autoConnectPausedKey = 'auto_connect_paused';
+
+  /// Whether the user disconnected this radio themselves. Automatic connects
+  /// (at launch, "Connect to my radio automatically") wait until the user
+  /// connects again, so another app can keep the radio meanwhile.
+  bool get autoConnectPaused =>
+      _prefsOrNull?.getBool(SavedRadio.keyFor(_autoConnectPausedKey, slot)) ??
+      false;
+
+  void _setAutoConnectPaused(bool paused) {
+    final prefs = _prefsOrNull;
+    if (prefs == null || autoConnectPaused == paused) return;
+    final key = SavedRadio.keyFor(_autoConnectPausedKey, slot);
+    unawaited(paused ? prefs.setBool(key, true) : prefs.remove(key));
+  }
+
+  /// Disconnect from a Disconnect button: also pauses automatic connects
+  /// until the user connects again.
+  Future<void> disconnectByUser() {
+    _setAutoConnectPaused(true);
+    return disconnect();
+  }
+
   /// Replaces the platform BLE link steps (connect, MTU, discovery, notify)
   /// in tests, so connection bookkeeping can run without a radio.
   @visibleForTesting
@@ -1922,6 +1945,7 @@ class MeshCoreConnector extends ChangeNotifier {
     _nextCause =
         _connectCauseOverride ??
         (automaticReconnect ? ConnectionCause.reconnect : ConnectionCause.user);
+    if (_nextCause == ConnectionCause.user) _setAutoConnectPaused(false);
     _setState(MeshCoreConnectionState.connecting);
 
     try {
@@ -2046,6 +2070,7 @@ class MeshCoreConnector extends ChangeNotifier {
     _nextCause =
         _connectCauseOverride ??
         (automaticReconnect ? ConnectionCause.reconnect : ConnectionCause.user);
+    if (_nextCause == ConnectionCause.user) _setAutoConnectPaused(false);
     _setState(MeshCoreConnectionState.connecting);
 
     try {
@@ -2223,6 +2248,7 @@ class MeshCoreConnector extends ChangeNotifier {
     _nextCause =
         _connectCauseOverride ??
         (automaticReconnect ? ConnectionCause.reconnect : ConnectionCause.user);
+    if (_nextCause == ConnectionCause.user) _setAutoConnectPaused(false);
     _setState(MeshCoreConnectionState.connecting);
     _device = device;
     _deviceId = targetId;
