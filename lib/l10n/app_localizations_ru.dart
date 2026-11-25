@@ -1128,6 +1128,18 @@ class AppLocalizationsRu extends AppLocalizations {
       'Показывать уведомление при получении сообщений в каналах';
 
   @override
+  String digest_body(int count) {
+    return 'Ещё сообщений в этом активном канале: $count';
+  }
+
+  @override
+  String get appSettings_channelDigest => 'Сводка по активным каналам';
+
+  @override
+  String get appSettings_channelDigestSubtitle =>
+      'После 5 оповещений за 10 минут канал присылает одну сводку каждые 15 минут. Упоминания, SOS, отметки и личные сообщения оповещают всегда.';
+
+  @override
   String get appSettings_advertisementNotifications =>
       'Уведомления об анонсированиях';
 

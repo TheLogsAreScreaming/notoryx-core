@@ -1122,6 +1122,24 @@ class AppLocalizationsNl extends AppLocalizations {
       'Toon notificatie bij het ontvangen van kanaalberichten';
 
   @override
+  String digest_body(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Nog $count berichten in dit drukke kanaal',
+      one: 'Nog 1 bericht in dit drukke kanaal',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get appSettings_channelDigest => 'Drukke kanalen samenvatten';
+
+  @override
+  String get appSettings_channelDigestSubtitle =>
+      'Na 5 meldingen in 10 minuten stuurt een kanaal elke 15 minuten één samenvatting. Vermeldingen, SOS, check-ins en directe berichten melden altijd.';
+
+  @override
   String get appSettings_advertisementNotifications => 'Advertentie-meldingen';
 
   @override

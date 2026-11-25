@@ -2134,6 +2134,24 @@ abstract class AppLocalizations {
   /// **'Show notification when receiving channel messages'**
   String get appSettings_channelMessageNotificationsSubtitle;
 
+  /// No description provided for @digest_body.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 more message on this busy channel} other{{count} more messages on this busy channel}}'**
+  String digest_body(int count);
+
+  /// No description provided for @appSettings_channelDigest.
+  ///
+  /// In en, this message translates to:
+  /// **'Summarise busy channels'**
+  String get appSettings_channelDigest;
+
+  /// No description provided for @appSettings_channelDigestSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'After 5 alerts in 10 minutes, a channel sends one summary every 15 minutes. Mentions, SOS, check-ins and direct messages always alert.'**
+  String get appSettings_channelDigestSubtitle;
+
   /// No description provided for @appSettings_advertisementNotifications.
   ///
   /// In en, this message translates to:

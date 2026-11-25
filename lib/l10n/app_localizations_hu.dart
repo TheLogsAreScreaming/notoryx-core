@@ -1123,6 +1123,18 @@ class AppLocalizationsHu extends AppLocalizations {
       'Értesítés megjelenítése csatornaüzenetek fogadásakor';
 
   @override
+  String digest_body(int count) {
+    return '$count további üzenet ezen a forgalmas csatornán';
+  }
+
+  @override
+  String get appSettings_channelDigest => 'Forgalmas csatornák összesítése';
+
+  @override
+  String get appSettings_channelDigestSubtitle =>
+      '10 percen belüli 5 értesítés után a csatorna 15 percenként egy összesítőt küld. Említések, SOS, bejelentkezések és közvetlen üzenetek mindig értesítenek.';
+
+  @override
   String get appSettings_advertisementNotifications => 'Reklám Értesítések';
 
   @override

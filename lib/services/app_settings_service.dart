@@ -164,6 +164,10 @@ class AppSettingsService extends ChangeNotifier {
     await updateSettings(_settings.copyWith(notifyOnNewChannelMessage: value));
   }
 
+  Future<void> setChannelDigest(bool value) async {
+    await updateSettings(_settings.copyWith(channelDigest: value));
+  }
+
   Future<void> setNotifyOnNewAdvert(bool value) async {
     await updateSettings(_settings.copyWith(notifyOnNewAdvert: value));
   }

@@ -43,6 +43,7 @@ import '../helpers/reaction_helper.dart';
 import '../helpers/cyr2lat.dart';
 import '../helpers/smaz.dart';
 import '../services/app_debug_log_service.dart';
+import '../services/channel_digest.dart';
 import '../services/connection_timeline.dart';
 import '../services/ble_debug_log_service.dart';
 import '../services/linux_ble_error_classifier.dart';
@@ -165,6 +166,11 @@ class MeshCoreConnector extends ChangeNotifier {
   /// Set while [reconnectSavedRadio] runs on its own, so the connect it
   /// starts isn't recorded as the user's.
   ConnectionCause? _connectCauseOverride;
+
+  /// Holds busy channels' alerts for a summary; see [ChannelDigest].
+  final ChannelDigest _channelDigest = ChannelDigest();
+  final Map<String, int> _digestChannelIndex = {};
+  Timer? _channelDigestTimer;
   BluetoothDevice? _device;
   BluetoothCharacteristic? _rxCharacteristic;
   BluetoothCharacteristic? _txCharacteristic;
@@ -5056,6 +5062,7 @@ class MeshCoreConnector extends ChangeNotifier {
 
   @override
   void dispose() {
+    _channelDigestTimer?.cancel();
     unawaited(_sendOutcomes.close());
     _adapterStateSubscription?.cancel();
     _scanSubscription?.cancel();

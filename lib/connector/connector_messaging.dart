@@ -583,6 +583,16 @@ extension _ConnectorMessaging on MeshCoreConnector {
     )) {
       return;
     }
+    if (settings.channelDigest) {
+      final urgent =
+          mentionsName(message.text, _selfName) ||
+          _ConnectorMessageFilter._isProtectedFromFilter(message.text);
+      if (!_channelDigest.offer(label, DateTime.now(), urgent: urgent)) {
+        _digestChannelIndex[label] = channelIndex;
+        _scheduleChannelDigest();
+        return;
+      }
+    }
 
     // Reuse translation result only if completed and non-empty; else use original text
     final resolvedText =
@@ -609,6 +619,28 @@ extension _ConnectorMessaging on MeshCoreConnector {
         ),
       );
     }());
+  }
+
+  /// Sends the busy channels' summaries when the next one is due.
+  void _scheduleChannelDigest() {
+    final due = _channelDigest.nextDue;
+    if (due == null || _channelDigestTimer?.isActive == true) return;
+    final wait = due.difference(DateTime.now());
+    _channelDigestTimer = Timer(wait.isNegative ? Duration.zero : wait, () {
+      _channelDigestTimer = null;
+      for (final e in _channelDigest.takeDue(DateTime.now()).entries) {
+        unawaited(
+          _notificationService.showChannelDigest(
+            radio: slot,
+            channelName: notificationTitle(e.key),
+            count: e.value,
+            channelIndex: _digestChannelIndex[e.key],
+            badgeCount: getTotalUnreadCount(),
+          ),
+        );
+      }
+      _scheduleChannelDigest();
+    });
   }
 
   /// Best-effort check for this radio's own traffic. Direct packets carry

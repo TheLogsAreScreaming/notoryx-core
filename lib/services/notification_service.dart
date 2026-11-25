@@ -1094,6 +1094,29 @@ class NotificationService {
     );
   }
 
+  /// One summary for a busy channel: "[count] new messages". Never shows
+  /// message text; tapping it opens the channel like any channel alert.
+  Future<void> showChannelDigest({
+    required String channelName,
+    required int count,
+    int? channelIndex,
+    int? badgeCount,
+    String radio = '',
+  }) async {
+    if (_suppressNotifications || count <= 0) return;
+    _queueNotification(
+      _PendingNotification(
+        type: _NotificationType.channelMessage,
+        title: channelName,
+        body: _l10n.digest_body(count),
+        urlImagesEnabled: false,
+        id: channelIndex?.toString(),
+        badgeCount: badgeCount,
+        radio: radio,
+      ),
+    );
+  }
+
   /// Whether the message [dedupeKey] names hasn't alerted yet. It's
   /// recorded even while notifications are suppressed, so a copy that
   /// arrives later doesn't alert either. A null key always alerts.

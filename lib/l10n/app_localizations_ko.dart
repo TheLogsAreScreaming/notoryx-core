@@ -1076,6 +1076,18 @@ class AppLocalizationsKo extends AppLocalizations {
       '채널 메시지를 수신할 때 알림 표시';
 
   @override
+  String digest_body(int count) {
+    return '이 바쁜 채널에 새 메시지 $count개';
+  }
+
+  @override
+  String get appSettings_channelDigest => '바쁜 채널 요약';
+
+  @override
+  String get appSettings_channelDigestSubtitle =>
+      '10분 동안 알림이 5개 오면 채널은 15분마다 요약 하나만 보냅니다. 멘션, SOS, 체크인, 개인 메시지는 항상 알립니다.';
+
+  @override
   String get appSettings_advertisementNotifications => '광고 알림';
 
   @override

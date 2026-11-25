@@ -1109,6 +1109,24 @@ class AppLocalizationsEn extends AppLocalizations {
       'Show notification when receiving channel messages';
 
   @override
+  String digest_body(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count more messages on this busy channel',
+      one: '1 more message on this busy channel',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get appSettings_channelDigest => 'Summarise busy channels';
+
+  @override
+  String get appSettings_channelDigestSubtitle =>
+      'After 5 alerts in 10 minutes, a channel sends one summary every 15 minutes. Mentions, SOS, check-ins and direct messages always alert.';
+
+  @override
   String get appSettings_advertisementNotifications =>
       'Advertisement Notifications';
 

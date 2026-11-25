@@ -1128,6 +1128,18 @@ class AppLocalizationsPl extends AppLocalizations {
       'Pokaż powiadomienie przy odbieraniu wiadomości z kanału';
 
   @override
+  String digest_body(int count) {
+    return 'Kolejne wiadomości na tym ruchliwym kanale: $count';
+  }
+
+  @override
+  String get appSettings_channelDigest => 'Podsumowuj ruchliwe kanały';
+
+  @override
+  String get appSettings_channelDigestSubtitle =>
+      'Po 5 powiadomieniach w 10 minut kanał wysyła jedno podsumowanie co 15 minut. Wzmianki, SOS, meldunki i wiadomości prywatne zawsze powiadamiają.';
+
+  @override
   String get appSettings_advertisementNotifications =>
       'Powiadomienia o rozgłoszeniach';
 

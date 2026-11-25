@@ -1061,6 +1061,18 @@ class AppLocalizationsZh extends AppLocalizations {
   String get appSettings_channelMessageNotificationsSubtitle => '收到频道消息时显示通知';
 
   @override
+  String digest_body(int count) {
+    return '此繁忙频道还有 $count 条消息';
+  }
+
+  @override
+  String get appSettings_channelDigest => '汇总繁忙频道';
+
+  @override
+  String get appSettings_channelDigestSubtitle =>
+      '10 分钟内提醒 5 次后，该频道每 15 分钟只发送一条汇总。提及、SOS、签到和私信始终提醒。';
+
+  @override
   String get appSettings_advertisementNotifications => '广播通知';
 
   @override

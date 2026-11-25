@@ -364,6 +364,22 @@ class AppSettingsScreen extends StatelessWidget {
         ),
         const Divider(height: 1, indent: 16),
         SwitchListTile(
+          key: const ValueKey('settings-channel-digest'),
+          contentPadding: const EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 4,
+          ),
+          secondary: const Icon(Icons.summarize_outlined),
+          title: Text(context.l10n.appSettings_channelDigest),
+          subtitle: Text(context.l10n.appSettings_channelDigestSubtitle),
+          value: settingsService.settings.channelDigest,
+          onChanged:
+              notifEnabled && settingsService.settings.notifyOnNewChannelMessage
+              ? (value) => settingsService.setChannelDigest(value)
+              : null,
+        ),
+        const Divider(height: 1, indent: 16),
+        SwitchListTile(
           contentPadding: const EdgeInsets.symmetric(
             horizontal: 16,
             vertical: 4,
