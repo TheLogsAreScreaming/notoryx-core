@@ -13,6 +13,7 @@ class MainActivity : FlutterFragmentActivity() {
         super.configureFlutterEngine(flutterEngine)
         usbFunctions.configureFlutterEngine(flutterEngine)
         compassFunctions.configureFlutterEngine(flutterEngine)
+        SecretClipboardChannel.register(this, flutterEngine.dartExecutor.binaryMessenger)
         // Back on the first screen sends the app to the background (like
         // Home) instead of closing it, which would drop the radio link.
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "notoryx/app_task")
