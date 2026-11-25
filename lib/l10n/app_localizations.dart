@@ -5097,6 +5097,18 @@ abstract class AppLocalizations {
   /// **'Login failed. Either the password is incorrect or the repeater is unreachable.'**
   String get login_failedMessage;
 
+  /// No description provided for @relogin_done.
+  ///
+  /// In en, this message translates to:
+  /// **'Radio reconnected: logged in to {name} again.'**
+  String relogin_done(String name);
+
+  /// No description provided for @relogin_failed.
+  ///
+  /// In en, this message translates to:
+  /// **'Radio reconnected, but {name} didn\'t answer a new login. Log in again before changing settings.'**
+  String relogin_failed(String name);
+
   /// No description provided for @login_failRadioOffline.
   ///
   /// In en, this message translates to:
@@ -5276,6 +5288,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Refresh'**
   String get repeater_refresh;
+
+  /// No description provided for @repeater_autoCheck.
+  ///
+  /// In en, this message translates to:
+  /// **'Check every 15 minutes while open'**
+  String get repeater_autoCheck;
+
+  /// No description provided for @repeater_autoCheckStarted.
+  ///
+  /// In en, this message translates to:
+  /// **'Checking status every 15 minutes while this screen stays open. Each check is one request over the air.'**
+  String get repeater_autoCheckStarted;
+
+  /// No description provided for @repeater_autoCheckStopped.
+  ///
+  /// In en, this message translates to:
+  /// **'Stopped checking automatically.'**
+  String get repeater_autoCheckStopped;
 
   /// No description provided for @repeater_statusRequestTimeout.
   ///

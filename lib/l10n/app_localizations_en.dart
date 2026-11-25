@@ -2836,6 +2836,16 @@ class AppLocalizationsEn extends AppLocalizations {
       'Login failed. Either the password is incorrect or the repeater is unreachable.';
 
   @override
+  String relogin_done(String name) {
+    return 'Radio reconnected: logged in to $name again.';
+  }
+
+  @override
+  String relogin_failed(String name) {
+    return 'Radio reconnected, but $name didn\'t answer a new login. Log in again before changing settings.';
+  }
+
+  @override
   String get login_failRadioOffline =>
       'Your radio isn\'t connected, so the login wasn\'t sent. Connect your radio and try again.';
 
@@ -2933,6 +2943,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get repeater_refresh => 'Refresh';
+
+  @override
+  String get repeater_autoCheck => 'Check every 15 minutes while open';
+
+  @override
+  String get repeater_autoCheckStarted =>
+      'Checking status every 15 minutes while this screen stays open. Each check is one request over the air.';
+
+  @override
+  String get repeater_autoCheckStopped => 'Stopped checking automatically.';
 
   @override
   String get repeater_statusRequestTimeout => 'Status request timed out.';

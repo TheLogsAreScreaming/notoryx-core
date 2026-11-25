@@ -1129,6 +1129,8 @@
     }
   },
   "login_failedMessage": "ログインに失敗しました。パスワードが間違っているか、または接続が確立されていません。",
+  "relogin_done": "無線機が再接続しました：{name} に再ログインしました。",
+  "relogin_failed": "無線機は再接続しましたが、{name} は再ログインに応答しませんでした。設定を変更する前にもう一度ログインしてください。",
   "login_failRadioOffline": "無線機が接続されていないため、ログインは送信されませんでした。接続してからもう一度お試しください。",
   "login_failSend": "無線機がログイン要求を受け付けませんでした。再接続してもう一度お試しください。",
   "login_failNoAnswerPath": "保存済みの経路（{hops} ホップ）で応答がありません。経路が古い可能性があります。{section}で「{option}」をオンにして再試行してください。パスワードが違う場合も応答はありません。",
@@ -1190,6 +1192,9 @@
   "repeater_forceFloodMode": "強制的にフラッドモードを起動",
   "repeater_pathManagement": "経路管理",
   "repeater_refresh": "リフレッシュ",
+  "repeater_autoCheck": "開いている間 15 分ごとに確認",
+  "repeater_autoCheckStarted": "この画面を開いている間、15 分ごとにステータスを確認します。確認ごとに 1 回無線で要求を送ります。",
+  "repeater_autoCheckStopped": "自動確認を停止しました。",
   "repeater_statusRequestTimeout": "ステータス情報の取得に失敗しました。",
   "repeater_errorLoadingStatus": "ステータス読み込みエラー: {error}",
   "@repeater_errorLoadingStatus": {

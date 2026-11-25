@@ -2874,6 +2874,16 @@ class AppLocalizationsUk extends AppLocalizations {
       'Вхід не вдався. Або пароль неправильний, або ретранслятор недосяжний.';
 
   @override
+  String relogin_done(String name) {
+    return 'Радіо знову підключено: вхід до $name виконано знову.';
+  }
+
+  @override
+  String relogin_failed(String name) {
+    return 'Радіо знову підключено, але $name не відповів на новий вхід. Увійдіть знову, перш ніж змінювати налаштування.';
+  }
+
+  @override
   String get login_failRadioOffline =>
       'Радіо не підключено, тому вхід не надіслано. Підключіть радіо й спробуйте ще раз.';
 
@@ -2972,6 +2982,16 @@ class AppLocalizationsUk extends AppLocalizations {
 
   @override
   String get repeater_refresh => 'Оновити';
+
+  @override
+  String get repeater_autoCheck => 'Перевіряти кожні 15 хвилин, поки відкрито';
+
+  @override
+  String get repeater_autoCheckStarted =>
+      'Стан перевіряється кожні 15 хвилин, поки відкрито цей екран. Кожна перевірка — один запит по радіо.';
+
+  @override
+  String get repeater_autoCheckStopped => 'Автоперевірку зупинено.';
 
   @override
   String get repeater_statusRequestTimeout =>

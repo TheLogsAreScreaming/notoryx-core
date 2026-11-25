@@ -2887,6 +2887,16 @@ class AppLocalizationsFr extends AppLocalizations {
       'Connexion échouée. Soit le mot de passe est incorrect, soit le relais est injoignable.';
 
   @override
+  String relogin_done(String name) {
+    return 'Radio reconnectée : reconnecté à $name.';
+  }
+
+  @override
+  String relogin_failed(String name) {
+    return 'Radio reconnectée, mais $name n\'a pas répondu à la nouvelle connexion. Reconnectez-vous avant de modifier les réglages.';
+  }
+
+  @override
   String get login_failRadioOffline =>
       'Votre radio n\'est pas connectée, la connexion n\'a donc pas été envoyée. Connectez-la et réessayez.';
 
@@ -2986,6 +2996,17 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get repeater_refresh => 'Rafraîchir';
+
+  @override
+  String get repeater_autoCheck =>
+      'Vérifier toutes les 15 minutes tant que c\'est ouvert';
+
+  @override
+  String get repeater_autoCheckStarted =>
+      'État vérifié toutes les 15 minutes tant que cet écran reste ouvert. Chaque vérification est une requête radio.';
+
+  @override
+  String get repeater_autoCheckStopped => 'Vérification automatique arrêtée.';
 
   @override
   String get repeater_statusRequestTimeout =>

@@ -2724,6 +2724,16 @@ class AppLocalizationsZh extends AppLocalizations {
   String get login_failedMessage => '登录失败。可能是密码错误或无法连接到服务器。';
 
   @override
+  String relogin_done(String name) {
+    return '电台已重新连接：已重新登录 $name。';
+  }
+
+  @override
+  String relogin_failed(String name) {
+    return '电台已重新连接，但 $name 未响应新的登录。更改设置前请重新登录。';
+  }
+
+  @override
   String get login_failRadioOffline => '电台未连接，登录未发送。请连接电台后重试。';
 
   @override
@@ -2815,6 +2825,16 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get repeater_refresh => '刷新';
+
+  @override
+  String get repeater_autoCheck => '打开时每 15 分钟检查一次';
+
+  @override
+  String get repeater_autoCheckStarted =>
+      '此屏幕打开期间每 15 分钟检查一次状态。每次检查会通过无线电发送一次请求。';
+
+  @override
+  String get repeater_autoCheckStopped => '已停止自动检查。';
 
   @override
   String get repeater_statusRequestTimeout => '状态请求超时';

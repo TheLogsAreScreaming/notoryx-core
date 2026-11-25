@@ -928,6 +928,8 @@
     }
   },
   "login_failedMessage": "Prijava je bila neuspešna. Geslo je napačno ali pa je repetitor nedosegljiv.",
+  "relogin_done": "Radio znova povezan: ponovno prijavljeni v {name}.",
+  "relogin_failed": "Radio znova povezan, a {name} ni odgovoril na novo prijavo. Pred spreminjanjem nastavitev se znova prijavite.",
   "login_failRadioOffline": "Radio ni povezan, zato prijava ni bila poslana. Povežite radio in poskusite znova.",
   "login_failSend": "Radio ni sprejel zahteve za prijavo. Ponovno ga povežite in poskusite znova.",
   "login_failNoAnswerPath": "Ni odgovora po shranjeni poti ({hops} skokov). Morda je zastarela: vklopite {section} → {option} in poskusite znova. Na napačno geslo tudi ni odgovora.",
@@ -986,6 +988,9 @@
   "repeater_forceFloodMode": "Nasilje obvezati v način",
   "repeater_pathManagement": "Upravljanje poti",
   "repeater_refresh": "Ponovno obnavljati",
+  "repeater_autoCheck": "Preveri vsakih 15 minut, dokler je odprto",
+  "repeater_autoCheckStarted": "Stanje se preverja vsakih 15 minut, dokler je ta zaslon odprt. Vsako preverjanje je ena zahteva po radiu.",
+  "repeater_autoCheckStopped": "Samodejno preverjanje ustavljeno.",
   "repeater_statusRequestTimeout": "Zahtev statusa je iztekla.",
   "repeater_errorLoadingStatus": "Napaka pri obnašanju: {error}",
   "@repeater_errorLoadingStatus": {

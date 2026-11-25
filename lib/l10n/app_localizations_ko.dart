@@ -2757,6 +2757,16 @@ class AppLocalizationsKo extends AppLocalizations {
       '로그인에 실패했습니다. 비밀번호가 잘못되었거나, 연결이 되지 않는 것 같습니다.';
 
   @override
+  String relogin_done(String name) {
+    return '무전기가 다시 연결됨: $name에 다시 로그인했습니다.';
+  }
+
+  @override
+  String relogin_failed(String name) {
+    return '무전기가 다시 연결됐지만 $name이(가) 새 로그인에 응답하지 않았습니다. 설정을 바꾸기 전에 다시 로그인하세요.';
+  }
+
+  @override
   String get login_failRadioOffline =>
       '무전기가 연결되지 않아 로그인을 보내지 못했습니다. 무전기를 연결한 뒤 다시 시도하세요.';
 
@@ -2850,6 +2860,16 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get repeater_refresh => '새롭게';
+
+  @override
+  String get repeater_autoCheck => '열려 있는 동안 15분마다 확인';
+
+  @override
+  String get repeater_autoCheckStarted =>
+      '이 화면이 열려 있는 동안 15분마다 상태를 확인합니다. 확인할 때마다 무선 요청이 1회 전송됩니다.';
+
+  @override
+  String get repeater_autoCheckStopped => '자동 확인을 중지했습니다.';
 
   @override
   String get repeater_statusRequestTimeout => '상태 확인 요청이 시간 초과되었습니다.';

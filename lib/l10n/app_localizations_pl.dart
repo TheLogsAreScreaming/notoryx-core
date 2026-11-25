@@ -2895,6 +2895,16 @@ class AppLocalizationsPl extends AppLocalizations {
       'Logowanie nie powiodło się. Hasło jest nieprawidłowe albo przekaźnik jest nieosiągalny.';
 
   @override
+  String relogin_done(String name) {
+    return 'Radio połączone ponownie: zalogowano znów do $name.';
+  }
+
+  @override
+  String relogin_failed(String name) {
+    return 'Radio połączone ponownie, ale $name nie odpowiedział na nowe logowanie. Zaloguj się ponownie przed zmianą ustawień.';
+  }
+
+  @override
   String get login_failRadioOffline =>
       'Radio nie jest połączone, więc logowanie nie zostało wysłane. Połącz radio i spróbuj ponownie.';
 
@@ -2993,6 +3003,17 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String get repeater_refresh => 'Odśwież';
+
+  @override
+  String get repeater_autoCheck => 'Sprawdzaj co 15 minut, gdy otwarte';
+
+  @override
+  String get repeater_autoCheckStarted =>
+      'Stan będzie sprawdzany co 15 minut, dopóki ten ekran jest otwarty. Każde sprawdzenie to jedno zapytanie przez radio.';
+
+  @override
+  String get repeater_autoCheckStopped =>
+      'Zatrzymano automatyczne sprawdzanie.';
 
   @override
   String get repeater_statusRequestTimeout =>

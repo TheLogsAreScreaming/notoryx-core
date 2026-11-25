@@ -950,6 +950,8 @@
     }
   },
   "login_failedMessage": "Connexion échouée. Soit le mot de passe est incorrect, soit le relais est injoignable.",
+  "relogin_done": "Radio reconnectée : reconnecté à {name}.",
+  "relogin_failed": "Radio reconnectée, mais {name} n'a pas répondu à la nouvelle connexion. Reconnectez-vous avant de modifier les réglages.",
   "login_failRadioOffline": "Votre radio n'est pas connectée, la connexion n'a donc pas été envoyée. Connectez-la et réessayez.",
   "login_failSend": "Votre radio n'a pas accepté la demande de connexion. Reconnectez-la et réessayez.",
   "login_failNoAnswerPath": "Aucune réponse par le chemin enregistré ({hops} sauts). Il est peut-être périmé : activez “{option}” dans {section} et réessayez. Un mauvais mot de passe ne reçoit pas de réponse non plus.",
@@ -1008,6 +1010,9 @@
   "repeater_forceFloodMode": "Mode tout le réseau forcé",
   "repeater_pathManagement": "Gestion des chemins",
   "repeater_refresh": "Rafraîchir",
+  "repeater_autoCheck": "Vérifier toutes les 15 minutes tant que c'est ouvert",
+  "repeater_autoCheckStarted": "État vérifié toutes les 15 minutes tant que cet écran reste ouvert. Chaque vérification est une requête radio.",
+  "repeater_autoCheckStopped": "Vérification automatique arrêtée.",
   "repeater_statusRequestTimeout": "Demande de statut délai dépassé.",
   "repeater_errorLoadingStatus": "Erreur lors du chargement du statut : {error}",
   "@repeater_errorLoadingStatus": {

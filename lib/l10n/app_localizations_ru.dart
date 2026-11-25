@@ -2887,6 +2887,16 @@ class AppLocalizationsRu extends AppLocalizations {
       'Не удалось войти. Либо пароль неверен, либо репитер недоступен.';
 
   @override
+  String relogin_done(String name) {
+    return 'Радио снова подключено: вход в $name выполнен заново.';
+  }
+
+  @override
+  String relogin_failed(String name) {
+    return 'Радио снова подключено, но $name не ответил на новый вход. Войдите заново, прежде чем менять настройки.';
+  }
+
+  @override
   String get login_failRadioOffline =>
       'Радио не подключено, поэтому вход не отправлен. Подключите радио и повторите попытку.';
 
@@ -2984,6 +2994,16 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get repeater_refresh => 'Обновить';
+
+  @override
+  String get repeater_autoCheck => 'Проверять каждые 15 минут, пока открыто';
+
+  @override
+  String get repeater_autoCheckStarted =>
+      'Статус проверяется каждые 15 минут, пока открыт этот экран. Каждая проверка — один запрос по радио.';
+
+  @override
+  String get repeater_autoCheckStopped => 'Автопроверка остановлена.';
 
   @override
   String get repeater_statusRequestTimeout => 'Время ожидания статуса истекло.';
