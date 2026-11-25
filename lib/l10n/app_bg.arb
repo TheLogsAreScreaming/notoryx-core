@@ -5014,6 +5014,8 @@
   "sentinel_appeal": "Обжалване",
   "sentinel_appealOther": "Обжалване по номер на случай",
   "sentinel_yourReports": "Последните ви сигнали",
+  "sentinel_stateReview": "Преглежда се от модераторите",
+  "sentinel_stateClosed": "Затворен от модераторите",
   "sentinel_report": "Докладване на модераторите",
   "sentinel_reportTitle": "Докладване на {name}",
   "sentinel_reasonSpam": "Спам или реклама",

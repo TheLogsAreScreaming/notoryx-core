@@ -4994,6 +4994,8 @@
   "sentinel_appeal": "Апеляція",
   "sentinel_appealOther": "Апеляція за номером справи",
   "sentinel_yourReports": "Ваші нещодавні скарги",
+  "sentinel_stateReview": "На розгляді в модераторів",
+  "sentinel_stateClosed": "Закрито модераторами",
   "sentinel_report": "Поскаржитися модераторам",
   "sentinel_reportTitle": "Поскаржитися на {name}",
   "sentinel_reasonSpam": "Спам або реклама",

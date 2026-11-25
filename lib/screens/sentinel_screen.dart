@@ -140,7 +140,15 @@ class SentinelScreen extends StatelessWidget {
                   dense: true,
                   leading: const Icon(Icons.flag_outlined),
                   title: Text(r.nodeName ?? r.caseRef),
-                  subtitle: Text('${r.caseRef} · ${when(r.at)}'),
+                  subtitle: Text(
+                    [
+                      '${r.caseRef} · ${when(r.at)}',
+                      if (r.state == SentinelReportState.underReview)
+                        l10n.sentinel_stateReview,
+                      if (r.state == SentinelReportState.closed)
+                        l10n.sentinel_stateClosed,
+                    ].join('\n'),
+                  ),
                 ),
             ],
           ],

@@ -5014,6 +5014,8 @@
   "sentinel_appeal": "Överklaga",
   "sentinel_appealOther": "Överklaga ett ärende via nummer",
   "sentinel_yourReports": "Dina senaste rapporter",
+  "sentinel_stateReview": "Granskas av moderatorer",
+  "sentinel_stateClosed": "Avslutad av moderatorer",
   "sentinel_report": "Rapportera till moderatorer",
   "sentinel_reportTitle": "Rapportera {name}",
   "sentinel_reasonSpam": "Spam eller reklam",

@@ -13148,6 +13148,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get sentinel_yourReports => 'Vos signalements récents';
 
   @override
+  String get sentinel_stateReview => 'En cours d\'examen par les modérateurs';
+
+  @override
+  String get sentinel_stateClosed => 'Clôturé par les modérateurs';
+
+  @override
   String get sentinel_report => 'Signaler aux modérateurs';
 
   @override

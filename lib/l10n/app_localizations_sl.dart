@@ -13082,6 +13082,12 @@ class AppLocalizationsSl extends AppLocalizations {
   String get sentinel_yourReports => 'Vaše nedavne prijave';
 
   @override
+  String get sentinel_stateReview => 'V pregledu pri moderatorjih';
+
+  @override
+  String get sentinel_stateClosed => 'Zaključeno pri moderatorjih';
+
+  @override
   String get sentinel_report => 'Prijavi moderatorjem';
 
   @override

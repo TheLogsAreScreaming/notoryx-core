@@ -13082,6 +13082,12 @@ class AppLocalizationsBg extends AppLocalizations {
   String get sentinel_yourReports => 'Последните ви сигнали';
 
   @override
+  String get sentinel_stateReview => 'Преглежда се от модераторите';
+
+  @override
+  String get sentinel_stateClosed => 'Затворен от модераторите';
+
+  @override
   String get sentinel_report => 'Докладване на модераторите';
 
   @override

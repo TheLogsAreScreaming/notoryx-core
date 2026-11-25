@@ -13130,6 +13130,12 @@ class AppLocalizationsUk extends AppLocalizations {
   String get sentinel_yourReports => 'Ваші нещодавні скарги';
 
   @override
+  String get sentinel_stateReview => 'На розгляді в модераторів';
+
+  @override
+  String get sentinel_stateClosed => 'Закрито модераторами';
+
+  @override
   String get sentinel_report => 'Поскаржитися модераторам';
 
   @override

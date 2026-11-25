@@ -13000,6 +13000,12 @@ class AppLocalizationsSv extends AppLocalizations {
   String get sentinel_yourReports => 'Dina senaste rapporter';
 
   @override
+  String get sentinel_stateReview => 'Granskas av moderatorer';
+
+  @override
+  String get sentinel_stateClosed => 'Avslutad av moderatorer';
+
+  @override
   String get sentinel_report => 'Rapportera till moderatorer';
 
   @override

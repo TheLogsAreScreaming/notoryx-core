@@ -5014,6 +5014,8 @@
   "sentinel_appeal": "Odvolať sa",
   "sentinel_appealOther": "Odvolanie podľa čísla prípadu",
   "sentinel_yourReports": "Vaše nedávne nahlásenia",
+  "sentinel_stateReview": "Moderátori to posudzujú",
+  "sentinel_stateClosed": "Uzavreté moderátormi",
   "sentinel_report": "Nahlásiť moderátorom",
   "sentinel_reportTitle": "Nahlásiť {name}",
   "sentinel_reasonSpam": "Spam alebo reklama",

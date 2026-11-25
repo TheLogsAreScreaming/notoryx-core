@@ -12270,6 +12270,12 @@ class AppLocalizationsZh extends AppLocalizations {
   String get sentinel_yourReports => '你最近的举报';
 
   @override
+  String get sentinel_stateReview => '版主审核中';
+
+  @override
+  String get sentinel_stateClosed => '版主已处理完毕';
+
+  @override
   String get sentinel_report => '向审核员举报';
 
   @override

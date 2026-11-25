@@ -13082,6 +13082,12 @@ class AppLocalizationsPt extends AppLocalizations {
   String get sentinel_yourReports => 'As suas denúncias recentes';
 
   @override
+  String get sentinel_stateReview => 'Em análise pelos moderadores';
+
+  @override
+  String get sentinel_stateClosed => 'Encerrada pelos moderadores';
+
+  @override
   String get sentinel_report => 'Denunciar aos moderadores';
 
   @override

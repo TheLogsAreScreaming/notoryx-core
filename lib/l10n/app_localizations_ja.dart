@@ -12505,6 +12505,12 @@ class AppLocalizationsJa extends AppLocalizations {
   String get sentinel_yourReports => '最近の報告';
 
   @override
+  String get sentinel_stateReview => 'モデレーターが確認中';
+
+  @override
+  String get sentinel_stateClosed => 'モデレーターが対応を完了';
+
+  @override
   String get sentinel_report => 'モデレーターに報告';
 
   @override

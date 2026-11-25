@@ -5052,6 +5052,8 @@
   "sentinel_appeal": "Odwołaj się",
   "sentinel_appealOther": "Odwołanie według numeru sprawy",
   "sentinel_yourReports": "Twoje ostatnie zgłoszenia",
+  "sentinel_stateReview": "W trakcie sprawdzania przez moderatorów",
+  "sentinel_stateClosed": "Zamknięte przez moderatorów",
   "sentinel_report": "Zgłoś moderatorom",
   "sentinel_reportTitle": "Zgłoś {name}",
   "sentinel_reasonSpam": "Spam lub reklama",

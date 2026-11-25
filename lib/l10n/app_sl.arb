@@ -5014,6 +5014,8 @@
   "sentinel_appeal": "Pritožba",
   "sentinel_appealOther": "Pritožba po številki primera",
   "sentinel_yourReports": "Vaše nedavne prijave",
+  "sentinel_stateReview": "V pregledu pri moderatorjih",
+  "sentinel_stateClosed": "Zaključeno pri moderatorjih",
   "sentinel_report": "Prijavi moderatorjem",
   "sentinel_reportTitle": "Prijavi {name}",
   "sentinel_reasonSpam": "Neželena pošta ali oglaševanje",

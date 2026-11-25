@@ -4317,6 +4317,8 @@
   "sentinel_appeal": "Апелляция",
   "sentinel_appealOther": "Апелляция по номеру дела",
   "sentinel_yourReports": "Ваши недавние жалобы",
+  "sentinel_stateReview": "На рассмотрении у модераторов",
+  "sentinel_stateClosed": "Закрыто модераторами",
   "sentinel_report": "Пожаловаться модераторам",
   "sentinel_reportTitle": "Пожаловаться на {name}",
   "sentinel_reasonSpam": "Спам или реклама",

@@ -5148,6 +5148,8 @@
   "sentinel_appeal": "異議申し立て",
   "sentinel_appealOther": "案件番号で異議を申し立てる",
   "sentinel_yourReports": "最近の報告",
+  "sentinel_stateReview": "モデレーターが確認中",
+  "sentinel_stateClosed": "モデレーターが対応を完了",
   "sentinel_report": "モデレーターに報告",
   "sentinel_reportTitle": "{name} を報告",
   "sentinel_reasonSpam": "スパム・広告",
