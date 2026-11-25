@@ -15507,4 +15507,8 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get fleet_waiting => 'Várakozás…';
+
+  @override
+  String get contacts_fullWarning =>
+      'A rádió névjegylistája megtelt, ezért nem tud új node-okat felvenni. Törölj néhány névjegyet, hogy legyen hely.';
 }

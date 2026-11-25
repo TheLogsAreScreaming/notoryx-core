@@ -5706,5 +5706,6 @@
   "fleet_uptime": "Üzemidő",
   "fleet_uptimeDays": "{days} nap {hours} óra",
   "fleet_uptimeHours": "{hours} óra {minutes} perc",
-  "fleet_waiting": "Várakozás…"
+  "fleet_waiting": "Várakozás…",
+  "contacts_fullWarning": "A rádió névjegylistája megtelt, ezért nem tud új node-okat felvenni. Törölj néhány névjegyet, hogy legyen hely."
 }

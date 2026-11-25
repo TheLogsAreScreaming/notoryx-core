@@ -15481,4 +15481,8 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get fleet_waiting => 'Čakám…';
+
+  @override
+  String get contacts_fullWarning =>
+      'Zoznam kontaktov tohto rádia je plný, takže nemôže pridávať nové uzly. Odstráňte niekoľko kontaktov, aby ste uvoľnili miesto.';
 }

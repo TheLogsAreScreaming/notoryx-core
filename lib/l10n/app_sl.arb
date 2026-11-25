@@ -5668,5 +5668,6 @@
   "fleet_uptime": "Čas delovanja",
   "fleet_uptimeDays": "{days} d {hours} h",
   "fleet_uptimeHours": "{hours} h {minutes} min",
-  "fleet_waiting": "Čakam…"
+  "fleet_waiting": "Čakam…",
+  "contacts_fullWarning": "Seznam stikov tega radia je poln, zato ne more dodajati novih vozlišč. Odstranite nekaj stikov, da sprostite prostor."
 }

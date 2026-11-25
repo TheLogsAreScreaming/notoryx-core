@@ -15514,4 +15514,8 @@ class AppLocalizationsPt extends AppLocalizations {
 
   @override
   String get fleet_waiting => 'A aguardar…';
+
+  @override
+  String get contacts_fullWarning =>
+      'A lista de contatos deste rádio está cheia, então ele não pode adicionar novos nós. Remova alguns contatos para liberar espaço.';
 }

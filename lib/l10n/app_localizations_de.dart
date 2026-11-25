@@ -15560,4 +15560,8 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get fleet_waiting => 'Warte…';
+
+  @override
+  String get contacts_fullWarning =>
+      'Die Kontaktliste dieses Funkgeräts ist voll, daher kann es keine neuen Knoten hinzufügen. Entferne einige Kontakte, um Platz zu schaffen.';
 }

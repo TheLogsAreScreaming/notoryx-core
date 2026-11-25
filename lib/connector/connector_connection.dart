@@ -630,6 +630,7 @@ extension _ConnectorConnection on MeshCoreConnector {
   }
 
   void _resetConnectionHandshakeState() {
+    _contactsFull = false;
     _selfPublicKey = null;
     // Partially received images belong to the previous session's sender prefix.
     _imageTransport?.reassembler.clear();

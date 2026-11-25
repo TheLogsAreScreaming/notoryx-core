@@ -25688,6 +25688,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Waiting…'**
   String get fleet_waiting;
+
+  /// No description provided for @contacts_fullWarning.
+  ///
+  /// In en, this message translates to:
+  /// **'This radio\'s contact list is full, so it can\'t add new nodes. Remove some contacts to make room.'**
+  String get contacts_fullWarning;
 }
 
 class _AppLocalizationsDelegate

@@ -5706,5 +5706,6 @@
   "fleet_uptime": "Czas pracy",
   "fleet_uptimeDays": "{days} dn. {hours} godz.",
   "fleet_uptimeHours": "{hours} godz. {minutes} min",
-  "fleet_waiting": "Czekam…"
+  "fleet_waiting": "Czekam…",
+  "contacts_fullWarning": "Lista kontaktów tego radia jest pełna, więc nie może dodawać nowych węzłów. Usuń kilka kontaktów, aby zrobić miejsce."
 }

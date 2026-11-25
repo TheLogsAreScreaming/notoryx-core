@@ -117,6 +117,18 @@ extension _ConnectorFrameHandlers on MeshCoreConnector {
       case pushCodePathUpdated:
         _handlePathUpdated(frame);
         break;
+      case pushCodeContactsFull:
+        if (!_contactsFull) {
+          _contactsFull = true;
+          _notifyFromPart();
+        }
+        break;
+      case pushCodeContactDeleted:
+        if (_contactsFull) {
+          _contactsFull = false;
+          _notifyFromPart();
+        }
+        break;
       case pushCodeControlData:
         // Optional feature-specific services listen to receivedFrames directly.
         break;

@@ -331,6 +331,7 @@ class MeshCoreConnector extends ChangeNotifier {
   bool _autoAddSensors = false;
   bool _overwriteOldest = false;
   bool _manualAddContacts = false;
+  bool _contactsFull = false;
   int _telemetryModeBase = 0;
   int _telemetryModeLoc = 0;
   int _telemetryModeEnv = 0;
@@ -630,6 +631,10 @@ class MeshCoreConnector extends ChangeNotifier {
   List<ChannelConflict> get channelConflicts =>
       List.unmodifiable(_channelConflicts);
   bool get isConnected => _state == MeshCoreConnectionState.connected;
+
+  /// The radio said its contact table is full, so it can't add the new
+  /// nodes it hears until a contact is removed.
+  bool get contactsFull => _contactsFull;
   bool get isLoadingContacts => _isLoadingContacts;
   bool get hasLoadedContacts => _hasLoadedContacts;
   bool get isLoadingChannels => _isLoadingChannels;
@@ -3562,6 +3567,7 @@ class MeshCoreConnector extends ChangeNotifier {
     );
 
     await sendFrame(buildRemoveContactFrame(contact.publicKey));
+    _contactsFull = false;
     _contacts.removeWhere((c) => c.publicKeyHex == contact.publicKeyHex);
     _knownContactKeys.remove(contact.publicKeyHex);
     unawaited(updateKnownDiscovered());
