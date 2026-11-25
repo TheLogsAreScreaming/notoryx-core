@@ -851,11 +851,11 @@ class AppLocalizationsPl extends AppLocalizations {
   String get settings_actions => 'Działania';
 
   @override
-  String get settings_deleteAllPaths => 'Delete All Paths';
+  String get settings_deleteAllPaths => 'Usuń wszystkie trasy';
 
   @override
   String get settings_deleteAllPathsSubtitle =>
-      'Clear all path data from contacts.';
+      'Wyczyść wszystkie dane tras kontaktów.';
 
   @override
   String get settings_sendAdvertisement => 'Wyślij rozgłoszenie';
@@ -2750,16 +2750,17 @@ class AppLocalizationsPl extends AppLocalizations {
   String get mapCache_cachedTilesLabel => 'Cached tiles';
 
   @override
-  String get mapCache_cachedTileSummaryLabel => 'Cached tile summary';
+  String get mapCache_cachedTileSummaryLabel =>
+      'Podsumowanie kafelków w pamięci';
 
   @override
   String mapCache_bulkDownloadDisabledForSource(String source) {
-    return 'Offline bulk downloads are disabled for $source.';
+    return 'Masowe pobieranie offline jest wyłączone dla $source.';
   }
 
   @override
   String mapCache_bulkDownloadDisabledInConfig(String source) {
-    return 'Offline bulk downloads are disabled for $source in this app configuration.';
+    return 'Masowe pobieranie offline jest wyłączone dla $source w tej konfiguracji aplikacji.';
   }
 
   @override
@@ -2769,17 +2770,17 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String mapCache_summaryCachedTilesForSource(int count) {
-    return 'Cached tiles for source: $count';
+    return 'Kafelki w pamięci dla źródła: $count';
   }
 
   @override
   String mapCache_summaryCachedInSelection(int count) {
-    return 'Cached in selected area/zoom: $count';
+    return 'W pamięci dla wybranego obszaru/powiększenia: $count';
   }
 
   @override
   String mapCache_summaryApproxCacheSize(String size) {
-    return 'Approx cache size: $size';
+    return 'Przybliżony rozmiar pamięci podręcznej: $size';
   }
 
   @override
@@ -5076,7 +5077,7 @@ class AppLocalizationsPl extends AppLocalizations {
     String distanceUnit,
     String distanceFromB,
   ) {
-    return 'Blocked by $obstruction $heightUnit, $distanceFromA from A and $distanceFromB from B ($distanceUnit).';
+    return 'Zasłonięte przez $obstruction $heightUnit, $distanceFromA od A i $distanceFromB od B ($distanceUnit).';
   }
 
   @override
@@ -5607,7 +5608,7 @@ class AppLocalizationsPl extends AppLocalizations {
   String get background_serviceTitle => 'MeshCore running';
 
   @override
-  String get background_serviceText => 'Keeping BLE connected';
+  String get background_serviceText => 'Utrzymuje połączenie Bluetooth';
 
   @override
   String appSettings_translationModelDeleted(String name) {
@@ -5621,7 +5622,7 @@ class AppLocalizationsPl extends AppLocalizations {
 
   @override
   String channels_channelUpdateFailed(String error) {
-    return 'Failed to update channel: $error';
+    return 'Nie udało się zaktualizować kanału: $error';
   }
 
   @override

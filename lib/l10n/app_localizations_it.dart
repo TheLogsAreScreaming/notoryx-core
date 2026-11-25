@@ -2743,16 +2743,17 @@ class AppLocalizationsIt extends AppLocalizations {
   String get mapCache_cachedTilesLabel => 'Cached tiles';
 
   @override
-  String get mapCache_cachedTileSummaryLabel => 'Cached tile summary';
+  String get mapCache_cachedTileSummaryLabel =>
+      'Riepilogo dei riquadri in cache';
 
   @override
   String mapCache_bulkDownloadDisabledForSource(String source) {
-    return 'Offline bulk downloads are disabled for $source.';
+    return 'I download offline in blocco sono disattivati per $source.';
   }
 
   @override
   String mapCache_bulkDownloadDisabledInConfig(String source) {
-    return 'Offline bulk downloads are disabled for $source in this app configuration.';
+    return 'I download offline in blocco sono disattivati per $source in questa configurazione dell\'app.';
   }
 
   @override
@@ -2762,17 +2763,17 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String mapCache_summaryCachedTilesForSource(int count) {
-    return 'Cached tiles for source: $count';
+    return 'Riquadri in cache per la fonte: $count';
   }
 
   @override
   String mapCache_summaryCachedInSelection(int count) {
-    return 'Cached in selected area/zoom: $count';
+    return 'In cache nell\'area/zoom selezionati: $count';
   }
 
   @override
   String mapCache_summaryApproxCacheSize(String size) {
-    return 'Approx cache size: $size';
+    return 'Dimensione approssimativa della cache: $size';
   }
 
   @override
@@ -5076,7 +5077,7 @@ class AppLocalizationsIt extends AppLocalizations {
     String distanceUnit,
     String distanceFromB,
   ) {
-    return 'Blocked by $obstruction $heightUnit, $distanceFromA from A and $distanceFromB from B ($distanceUnit).';
+    return 'Ostruito da $obstruction $heightUnit, a $distanceFromA da A e $distanceFromB da B ($distanceUnit).';
   }
 
   @override
@@ -5606,7 +5607,7 @@ class AppLocalizationsIt extends AppLocalizations {
   String get background_serviceTitle => 'MeshCore running';
 
   @override
-  String get background_serviceText => 'Keeping BLE connected';
+  String get background_serviceText => 'Mantiene attivo il Bluetooth';
 
   @override
   String appSettings_translationModelDeleted(String name) {

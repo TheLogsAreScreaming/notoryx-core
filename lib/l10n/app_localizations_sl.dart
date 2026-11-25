@@ -842,11 +842,11 @@ class AppLocalizationsSl extends AppLocalizations {
   String get settings_actions => 'Akcije';
 
   @override
-  String get settings_deleteAllPaths => 'Delete All Paths';
+  String get settings_deleteAllPaths => 'Izbriši vse poti';
 
   @override
   String get settings_deleteAllPathsSubtitle =>
-      'Clear all path data from contacts.';
+      'Počisti vse podatke o poteh iz stikov.';
 
   @override
   String get settings_sendAdvertisement => 'Pošlji Oglas';
@@ -2719,16 +2719,17 @@ class AppLocalizationsSl extends AppLocalizations {
   String get mapCache_cachedTilesLabel => 'Cached tiles';
 
   @override
-  String get mapCache_cachedTileSummaryLabel => 'Cached tile summary';
+  String get mapCache_cachedTileSummaryLabel =>
+      'Povzetek predpomnjenih ploščic';
 
   @override
   String mapCache_bulkDownloadDisabledForSource(String source) {
-    return 'Offline bulk downloads are disabled for $source.';
+    return 'Množični prenosi brez povezave so za $source izklopljeni.';
   }
 
   @override
   String mapCache_bulkDownloadDisabledInConfig(String source) {
-    return 'Offline bulk downloads are disabled for $source in this app configuration.';
+    return 'Množični prenosi brez povezave so za $source v tej nastavitvi aplikacije izklopljeni.';
   }
 
   @override
@@ -2738,17 +2739,17 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String mapCache_summaryCachedTilesForSource(int count) {
-    return 'Cached tiles for source: $count';
+    return 'Predpomnjene ploščice za vir: $count';
   }
 
   @override
   String mapCache_summaryCachedInSelection(int count) {
-    return 'Cached in selected area/zoom: $count';
+    return 'Predpomnjeno v izbranem območju/povečavi: $count';
   }
 
   @override
   String mapCache_summaryApproxCacheSize(String size) {
-    return 'Approx cache size: $size';
+    return 'Približna velikost predpomnilnika: $size';
   }
 
   @override
@@ -5038,7 +5039,7 @@ class AppLocalizationsSl extends AppLocalizations {
     String distanceUnit,
     String distanceFromB,
   ) {
-    return 'Blocked by $obstruction $heightUnit, $distanceFromA from A and $distanceFromB from B ($distanceUnit).';
+    return 'Ovira: $obstruction $heightUnit, $distanceFromA od A in $distanceFromB od B ($distanceUnit).';
   }
 
   @override
@@ -5564,7 +5565,7 @@ class AppLocalizationsSl extends AppLocalizations {
   String get background_serviceTitle => 'MeshCore running';
 
   @override
-  String get background_serviceText => 'Keeping BLE connected';
+  String get background_serviceText => 'Ohranja povezavo Bluetooth';
 
   @override
   String appSettings_translationModelDeleted(String name) {
@@ -5578,7 +5579,7 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String channels_channelUpdateFailed(String error) {
-    return 'Failed to update channel: $error';
+    return 'Kanala ni bilo mogoče posodobiti: $error';
   }
 
   @override

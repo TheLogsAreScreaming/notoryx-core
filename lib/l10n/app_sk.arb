@@ -108,8 +108,8 @@
   "settings_privacyModeEnabled": "Ochranný režim je povolený.",
   "settings_privacyModeDisabled": "Ochranný režim je vypnutý",
   "settings_actions": "Možné akcie",
-  "settings_deleteAllPaths": "Delete All Paths",
-  "settings_deleteAllPathsSubtitle": "Clear all path data from contacts.",
+  "settings_deleteAllPaths": "Odstrániť všetky cesty",
+  "settings_deleteAllPathsSubtitle": "Vymazať všetky údaje o cestách z kontaktov.",
   "settings_sendAdvertisement": "Odoslať reklamu",
   "settings_sendAdvertisementSubtitle": "Momentálne priezornejšie.",
   "settings_advertisementSent": "Reklama odeslaná",
@@ -794,8 +794,8 @@
     }
   },
   "mapCache_cachedTilesLabel": "Cached tiles",
-  "mapCache_cachedTileSummaryLabel": "Cached tile summary",
-  "mapCache_bulkDownloadDisabledForSource": "Offline bulk downloads are disabled for {source}.",
+  "mapCache_cachedTileSummaryLabel": "Prehľad dlaždíc vo vyrovnávacej pamäti",
+  "mapCache_bulkDownloadDisabledForSource": "Hromadné offline sťahovanie je pre {source} vypnuté.",
   "@mapCache_bulkDownloadDisabledForSource": {
     "placeholders": {
       "source": {
@@ -803,7 +803,7 @@
       }
     }
   },
-  "mapCache_bulkDownloadDisabledInConfig": "Offline bulk downloads are disabled for {source} in this app configuration.",
+  "mapCache_bulkDownloadDisabledInConfig": "Hromadné offline sťahovanie je pre {source} v tejto konfigurácii aplikácie vypnuté.",
   "@mapCache_bulkDownloadDisabledInConfig": {
     "placeholders": {
       "source": {
@@ -819,7 +819,7 @@
       }
     }
   },
-  "mapCache_summaryCachedTilesForSource": "Cached tiles for source: {count}",
+  "mapCache_summaryCachedTilesForSource": "Dlaždice vo vyrovnávacej pamäti pre zdroj: {count}",
   "@mapCache_summaryCachedTilesForSource": {
     "placeholders": {
       "count": {
@@ -827,7 +827,7 @@
       }
     }
   },
-  "mapCache_summaryCachedInSelection": "Cached in selected area/zoom: {count}",
+  "mapCache_summaryCachedInSelection": "Vo vyrovnávacej pamäti pre zvolenú oblasť/priblíženie: {count}",
   "@mapCache_summaryCachedInSelection": {
     "placeholders": {
       "count": {
@@ -835,7 +835,7 @@
       }
     }
   },
-  "mapCache_summaryApproxCacheSize": "Approx cache size: {size}",
+  "mapCache_summaryApproxCacheSize": "Približná veľkosť vyrovnávacej pamäte: {size}",
   "@mapCache_summaryApproxCacheSize": {
     "placeholders": {
       "size": {
@@ -2381,7 +2381,7 @@
   "repeater_cliHelpStatsCore": "(Len pre sériové modely) Zobrazuje základné štatistiky firmvéru.",
   "common_done": "Done",
   "background_serviceTitle": "MeshCore running",
-  "background_serviceText": "Keeping BLE connected",
+  "background_serviceText": "Udržiava pripojenie Bluetooth",
   "appSettings_translationModelDeleted": "Deleted {name}",
   "@appSettings_translationModelDeleted": {
     "placeholders": {
@@ -2398,7 +2398,7 @@
       }
     }
   },
-  "channels_channelUpdateFailed": "Failed to update channel: {error}",
+  "channels_channelUpdateFailed": "Kanál sa nepodarilo aktualizovať: {error}",
   "@channels_channelUpdateFailed": {
     "placeholders": {
       "error": {
@@ -2502,7 +2502,7 @@
   "losBlockedSpotsHint": "Kliknite na zablokované miesto, aby ste ho zvýraznili na mape.",
   "losSelectedObstructionTitle": "Vybraná prekážka",
   "losBlockedSpotChip": "{distance} {distanceUnit} • {obstruction} {heightUnit}",
-  "losSelectedObstructionDetails": "Blocked by {obstruction} {heightUnit}, {distanceFromA} from A and {distanceFromB} from B ({distanceUnit}).",
+  "losSelectedObstructionDetails": "Blokované: {obstruction} {heightUnit}, {distanceFromA} od A a {distanceFromB} od B ({distanceUnit}).",
   "chat_markAsUnread": "Označenie ako neprečítané",
   "settings_companionDebugLogSubtitle": "Príkazy, odpovede a surové dáta pre protokoly BLE/TCP/USB",
   "settings_companionDebugLog": "Logovanie pre ladenie (sprievodný log)",

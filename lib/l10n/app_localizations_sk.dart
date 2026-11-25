@@ -840,11 +840,11 @@ class AppLocalizationsSk extends AppLocalizations {
   String get settings_actions => 'Možné akcie';
 
   @override
-  String get settings_deleteAllPaths => 'Delete All Paths';
+  String get settings_deleteAllPaths => 'Odstrániť všetky cesty';
 
   @override
   String get settings_deleteAllPathsSubtitle =>
-      'Clear all path data from contacts.';
+      'Vymazať všetky údaje o cestách z kontaktov.';
 
   @override
   String get settings_sendAdvertisement => 'Odoslať reklamu';
@@ -2719,16 +2719,17 @@ class AppLocalizationsSk extends AppLocalizations {
   String get mapCache_cachedTilesLabel => 'Cached tiles';
 
   @override
-  String get mapCache_cachedTileSummaryLabel => 'Cached tile summary';
+  String get mapCache_cachedTileSummaryLabel =>
+      'Prehľad dlaždíc vo vyrovnávacej pamäti';
 
   @override
   String mapCache_bulkDownloadDisabledForSource(String source) {
-    return 'Offline bulk downloads are disabled for $source.';
+    return 'Hromadné offline sťahovanie je pre $source vypnuté.';
   }
 
   @override
   String mapCache_bulkDownloadDisabledInConfig(String source) {
-    return 'Offline bulk downloads are disabled for $source in this app configuration.';
+    return 'Hromadné offline sťahovanie je pre $source v tejto konfigurácii aplikácie vypnuté.';
   }
 
   @override
@@ -2738,17 +2739,17 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String mapCache_summaryCachedTilesForSource(int count) {
-    return 'Cached tiles for source: $count';
+    return 'Dlaždice vo vyrovnávacej pamäti pre zdroj: $count';
   }
 
   @override
   String mapCache_summaryCachedInSelection(int count) {
-    return 'Cached in selected area/zoom: $count';
+    return 'Vo vyrovnávacej pamäti pre zvolenú oblasť/priblíženie: $count';
   }
 
   @override
   String mapCache_summaryApproxCacheSize(String size) {
-    return 'Approx cache size: $size';
+    return 'Približná veľkosť vyrovnávacej pamäte: $size';
   }
 
   @override
@@ -5039,7 +5040,7 @@ class AppLocalizationsSk extends AppLocalizations {
     String distanceUnit,
     String distanceFromB,
   ) {
-    return 'Blocked by $obstruction $heightUnit, $distanceFromA from A and $distanceFromB from B ($distanceUnit).';
+    return 'Blokované: $obstruction $heightUnit, $distanceFromA od A a $distanceFromB od B ($distanceUnit).';
   }
 
   @override
@@ -5562,7 +5563,7 @@ class AppLocalizationsSk extends AppLocalizations {
   String get background_serviceTitle => 'MeshCore running';
 
   @override
-  String get background_serviceText => 'Keeping BLE connected';
+  String get background_serviceText => 'Udržiava pripojenie Bluetooth';
 
   @override
   String appSettings_translationModelDeleted(String name) {
@@ -5576,7 +5577,7 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String channels_channelUpdateFailed(String error) {
-    return 'Failed to update channel: $error';
+    return 'Kanál sa nepodarilo aktualizovať: $error';
   }
 
   @override

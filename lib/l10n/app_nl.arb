@@ -108,8 +108,8 @@
   "settings_privacyModeEnabled": "Privacy modus is ingeschakeld",
   "settings_privacyModeDisabled": "Privacy modus is uitgeschakeld",
   "settings_actions": "Acties",
-  "settings_deleteAllPaths": "Delete All Paths",
-  "settings_deleteAllPathsSubtitle": "Clear all path data from contacts.",
+  "settings_deleteAllPaths": "Alle paden verwijderen",
+  "settings_deleteAllPathsSubtitle": "Wis alle padgegevens van contacten.",
   "settings_sendAdvertisement": "Verzend Advertentie",
   "settings_sendAdvertisementSubtitle": "Nu aanwezigheid uitzenden",
   "settings_advertisementSent": "Advertentie verzonden",
@@ -510,7 +510,7 @@
   "gifPicker_failedSearch": "Zoeken mislukt",
   "gifPicker_noInternet": "Geen internetverbinding",
   "debugLog_appTitle": "Debuglog van de app",
-  "debugLog_bleTitle": "BLE Debug Log",
+  "debugLog_bleTitle": "BLE-foutopsporingslog",
   "debugLog_copyLog": "Kopieer log",
   "debugLog_clearLog": "Log wissen",
   "debugLog_copied": "Debuglog gekopieerd",
@@ -794,8 +794,8 @@
     }
   },
   "mapCache_cachedTilesLabel": "Cached tiles",
-  "mapCache_cachedTileSummaryLabel": "Cached tile summary",
-  "mapCache_bulkDownloadDisabledForSource": "Offline bulk downloads are disabled for {source}.",
+  "mapCache_cachedTileSummaryLabel": "Overzicht van gecachete tegels",
+  "mapCache_bulkDownloadDisabledForSource": "Offline bulkdownloads zijn uitgeschakeld voor {source}.",
   "@mapCache_bulkDownloadDisabledForSource": {
     "placeholders": {
       "source": {
@@ -803,7 +803,7 @@
       }
     }
   },
-  "mapCache_bulkDownloadDisabledInConfig": "Offline bulk downloads are disabled for {source} in this app configuration.",
+  "mapCache_bulkDownloadDisabledInConfig": "Offline bulkdownloads zijn uitgeschakeld voor {source} in deze appconfiguratie.",
   "@mapCache_bulkDownloadDisabledInConfig": {
     "placeholders": {
       "source": {
@@ -819,7 +819,7 @@
       }
     }
   },
-  "mapCache_summaryCachedTilesForSource": "Cached tiles for source: {count}",
+  "mapCache_summaryCachedTilesForSource": "Gecachete tegels voor bron: {count}",
   "@mapCache_summaryCachedTilesForSource": {
     "placeholders": {
       "count": {
@@ -827,7 +827,7 @@
       }
     }
   },
-  "mapCache_summaryCachedInSelection": "Cached in selected area/zoom: {count}",
+  "mapCache_summaryCachedInSelection": "Gecachet in gekozen gebied/zoom: {count}",
   "@mapCache_summaryCachedInSelection": {
     "placeholders": {
       "count": {
@@ -835,7 +835,7 @@
       }
     }
   },
-  "mapCache_summaryApproxCacheSize": "Approx cache size: {size}",
+  "mapCache_summaryApproxCacheSize": "Geschatte cachegrootte: {size}",
   "@mapCache_summaryApproxCacheSize": {
     "placeholders": {
       "size": {
@@ -2381,7 +2381,7 @@
   "repeater_cliHelpStatsCore": "(Alleen voor seriële communicatie) Toont de belangrijkste firmware-statistieken.",
   "common_done": "Done",
   "background_serviceTitle": "MeshCore running",
-  "background_serviceText": "Keeping BLE connected",
+  "background_serviceText": "Houdt Bluetooth verbonden",
   "appSettings_translationModelDeleted": "Deleted {name}",
   "@appSettings_translationModelDeleted": {
     "placeholders": {
@@ -2398,7 +2398,7 @@
       }
     }
   },
-  "channels_channelUpdateFailed": "Failed to update channel: {error}",
+  "channels_channelUpdateFailed": "Kanaal bijwerken mislukt: {error}",
   "@channels_channelUpdateFailed": {
     "placeholders": {
       "error": {
@@ -2502,7 +2502,7 @@
   "bg_photoFailed": "Die foto kon niet worden gebruikt. Probeer een andere.",
   "losBlockedSpotsTitle": "Geplande plaatsen",
   "losBlockedSpotChip": "{distance} {distanceUnit} • {obstruction} {heightUnit}",
-  "losSelectedObstructionDetails": "Blocked by {obstruction} {heightUnit}, {distanceFromA} from A and {distanceFromB} from B ({distanceUnit}).",
+  "losSelectedObstructionDetails": "Geblokkeerd door {obstruction} {heightUnit}, {distanceFromA} van A en {distanceFromB} van B ({distanceUnit}).",
   "settings_companionDebugLog": "Debuglog voor aanvullende informatie",
   "chat_newMessages": "Nieuwe berichten",
   "chat_markAsUnread": "Markeer als ongelezen",

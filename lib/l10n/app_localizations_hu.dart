@@ -893,7 +893,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get settings_debug => 'Hibakeresés';
 
   @override
-  String get settings_companionDebugLog => 'Companion Debug Log';
+  String get settings_companionDebugLog => 'Kísérő rádió hibanaplója';
 
   @override
   String get settings_companionDebugLogSubtitle =>
@@ -1161,7 +1161,7 @@ class AppLocalizationsHu extends AppLocalizations {
       'Az útvonalak nem törlődnek automatikusan';
 
   @override
-  String get appSettings_autoRouteRotation => 'Auto Route Rotation';
+  String get appSettings_autoRouteRotation => 'Automatikus útvonal-váltás';
 
   @override
   String get appSettings_autoRouteRotationSubtitle =>
@@ -2727,16 +2727,17 @@ class AppLocalizationsHu extends AppLocalizations {
   String get mapCache_cachedTilesLabel => 'Cached tiles';
 
   @override
-  String get mapCache_cachedTileSummaryLabel => 'Cached tile summary';
+  String get mapCache_cachedTileSummaryLabel =>
+      'Gyorsítótárazott csempék összegzése';
 
   @override
   String mapCache_bulkDownloadDisabledForSource(String source) {
-    return 'Offline bulk downloads are disabled for $source.';
+    return 'A tömeges offline letöltés ki van kapcsolva ennél: $source.';
   }
 
   @override
   String mapCache_bulkDownloadDisabledInConfig(String source) {
-    return 'Offline bulk downloads are disabled for $source in this app configuration.';
+    return 'A tömeges offline letöltés ki van kapcsolva ennél: $source ebben az alkalmazás-beállításban.';
   }
 
   @override
@@ -2746,17 +2747,17 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String mapCache_summaryCachedTilesForSource(int count) {
-    return 'Cached tiles for source: $count';
+    return 'Gyorsítótárazott csempék a forrásból: $count';
   }
 
   @override
   String mapCache_summaryCachedInSelection(int count) {
-    return 'Cached in selected area/zoom: $count';
+    return 'Gyorsítótárban a kijelölt területen/nagyításon: $count';
   }
 
   @override
   String mapCache_summaryApproxCacheSize(String size) {
-    return 'Approx cache size: $size';
+    return 'Becsült gyorsítótárméret: $size';
   }
 
   @override
@@ -3533,7 +3534,7 @@ class AppLocalizationsHu extends AppLocalizations {
   String get repeater_cliTitle => 'Repeater CLI';
 
   @override
-  String get repeater_debugNextCommand => 'Debug Next Command';
+  String get repeater_debugNextCommand => 'Következő parancs hibakeresése';
 
   @override
   String get repeater_commandHelp => 'Command Help';

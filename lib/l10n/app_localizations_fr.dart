@@ -2748,16 +2748,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String get mapCache_cachedTilesLabel => 'Cached tiles';
 
   @override
-  String get mapCache_cachedTileSummaryLabel => 'Cached tile summary';
+  String get mapCache_cachedTileSummaryLabel => 'Résumé des tuiles en cache';
 
   @override
   String mapCache_bulkDownloadDisabledForSource(String source) {
-    return 'Offline bulk downloads are disabled for $source.';
+    return 'Les téléchargements hors ligne en masse sont désactivés pour $source.';
   }
 
   @override
   String mapCache_bulkDownloadDisabledInConfig(String source) {
-    return 'Offline bulk downloads are disabled for $source in this app configuration.';
+    return 'Les téléchargements hors ligne en masse sont désactivés pour $source dans cette configuration de l\'app.';
   }
 
   @override
@@ -2767,17 +2767,17 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String mapCache_summaryCachedTilesForSource(int count) {
-    return 'Cached tiles for source: $count';
+    return 'Tuiles en cache pour la source : $count';
   }
 
   @override
   String mapCache_summaryCachedInSelection(int count) {
-    return 'Cached in selected area/zoom: $count';
+    return 'En cache dans la zone/le zoom choisis : $count';
   }
 
   @override
   String mapCache_summaryApproxCacheSize(String size) {
-    return 'Approx cache size: $size';
+    return 'Taille approximative du cache : $size';
   }
 
   @override

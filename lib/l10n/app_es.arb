@@ -816,8 +816,8 @@
     }
   },
   "mapCache_cachedTilesLabel": "Cached tiles",
-  "mapCache_cachedTileSummaryLabel": "Cached tile summary",
-  "mapCache_bulkDownloadDisabledForSource": "Offline bulk downloads are disabled for {source}.",
+  "mapCache_cachedTileSummaryLabel": "Resumen de teselas en caché",
+  "mapCache_bulkDownloadDisabledForSource": "Las descargas masivas sin conexión están desactivadas para {source}.",
   "@mapCache_bulkDownloadDisabledForSource": {
     "placeholders": {
       "source": {
@@ -825,7 +825,7 @@
       }
     }
   },
-  "mapCache_bulkDownloadDisabledInConfig": "Offline bulk downloads are disabled for {source} in this app configuration.",
+  "mapCache_bulkDownloadDisabledInConfig": "Las descargas masivas sin conexión están desactivadas para {source} en esta configuración de la app.",
   "@mapCache_bulkDownloadDisabledInConfig": {
     "placeholders": {
       "source": {
@@ -841,7 +841,7 @@
       }
     }
   },
-  "mapCache_summaryCachedTilesForSource": "Cached tiles for source: {count}",
+  "mapCache_summaryCachedTilesForSource": "Teselas en caché de la fuente: {count}",
   "@mapCache_summaryCachedTilesForSource": {
     "placeholders": {
       "count": {
@@ -849,7 +849,7 @@
       }
     }
   },
-  "mapCache_summaryCachedInSelection": "Cached in selected area/zoom: {count}",
+  "mapCache_summaryCachedInSelection": "En caché en el área/zoom seleccionados: {count}",
   "@mapCache_summaryCachedInSelection": {
     "placeholders": {
       "count": {
@@ -857,7 +857,7 @@
       }
     }
   },
-  "mapCache_summaryApproxCacheSize": "Approx cache size: {size}",
+  "mapCache_summaryApproxCacheSize": "Tamaño aproximado de la caché: {size}",
   "@mapCache_summaryApproxCacheSize": {
     "placeholders": {
       "size": {

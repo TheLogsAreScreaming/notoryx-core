@@ -995,8 +995,8 @@
     }
   },
   "mapCache_cachedTilesLabel": "Cached tiles",
-  "mapCache_cachedTileSummaryLabel": "Cached tile summary",
-  "mapCache_bulkDownloadDisabledForSource": "Offline bulk downloads are disabled for {source}.",
+  "mapCache_cachedTileSummaryLabel": "キャッシュ済みタイルの概要",
+  "mapCache_bulkDownloadDisabledForSource": "{source} ではオフライン一括ダウンロードが無効です。",
   "@mapCache_bulkDownloadDisabledForSource": {
     "placeholders": {
       "source": {
@@ -1004,7 +1004,7 @@
       }
     }
   },
-  "mapCache_bulkDownloadDisabledInConfig": "Offline bulk downloads are disabled for {source} in this app configuration.",
+  "mapCache_bulkDownloadDisabledInConfig": "このアプリ構成では {source} のオフライン一括ダウンロードが無効です。",
   "@mapCache_bulkDownloadDisabledInConfig": {
     "placeholders": {
       "source": {
@@ -1020,7 +1020,7 @@
       }
     }
   },
-  "mapCache_summaryCachedTilesForSource": "Cached tiles for source: {count}",
+  "mapCache_summaryCachedTilesForSource": "このソースのキャッシュ済みタイル：{count}",
   "@mapCache_summaryCachedTilesForSource": {
     "placeholders": {
       "count": {
@@ -1028,7 +1028,7 @@
       }
     }
   },
-  "mapCache_summaryCachedInSelection": "Cached in selected area/zoom: {count}",
+  "mapCache_summaryCachedInSelection": "選択した範囲・ズームでキャッシュ済み：{count}",
   "@mapCache_summaryCachedInSelection": {
     "placeholders": {
       "count": {
@@ -1036,7 +1036,7 @@
       }
     }
   },
-  "mapCache_summaryApproxCacheSize": "Approx cache size: {size}",
+  "mapCache_summaryApproxCacheSize": "おおよそのキャッシュサイズ：{size}",
   "@mapCache_summaryApproxCacheSize": {
     "placeholders": {
       "size": {
@@ -2089,7 +2089,7 @@
   },
   "losRun": "LOS（レーティングシステム）を使用する",
   "losNoElevationData": "標高データは含まれていません",
-  "losProfileClear": "{distance} {distanceUnit}, clear LOS, min clearance {clearance} {heightUnit}",
+  "losProfileClear": "{distance} {distanceUnit}、見通し良好、最小クリアランス {clearance} {heightUnit}",
   "@losProfileClear": {
     "placeholders": {
       "distance": {
@@ -2125,7 +2125,7 @@
   },
   "losStatusChecking": "LOS：確認中…",
   "losStatusNoData": "LOS: データの欠如",
-  "losStatusSummary": "LOS: {clear}/{total} clear, {blocked} blocked, {unknown} unknown",
+  "losStatusSummary": "見通し：{clear}/{total} 良好、{blocked} 遮断、{unknown} 不明",
   "@losStatusSummary": {
     "placeholders": {
       "clear": {

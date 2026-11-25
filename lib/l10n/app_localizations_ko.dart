@@ -2616,16 +2616,16 @@ class AppLocalizationsKo extends AppLocalizations {
   String get mapCache_cachedTilesLabel => 'Cached tiles';
 
   @override
-  String get mapCache_cachedTileSummaryLabel => 'Cached tile summary';
+  String get mapCache_cachedTileSummaryLabel => '캐시된 타일 요약';
 
   @override
   String mapCache_bulkDownloadDisabledForSource(String source) {
-    return 'Offline bulk downloads are disabled for $source.';
+    return '$source에서는 오프라인 일괄 다운로드가 꺼져 있습니다.';
   }
 
   @override
   String mapCache_bulkDownloadDisabledInConfig(String source) {
-    return 'Offline bulk downloads are disabled for $source in this app configuration.';
+    return '이 앱 구성에서는 $source의 오프라인 일괄 다운로드가 꺼져 있습니다.';
   }
 
   @override
@@ -2635,17 +2635,17 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String mapCache_summaryCachedTilesForSource(int count) {
-    return 'Cached tiles for source: $count';
+    return '이 소스의 캐시된 타일: $count';
   }
 
   @override
   String mapCache_summaryCachedInSelection(int count) {
-    return 'Cached in selected area/zoom: $count';
+    return '선택한 영역/줌에서 캐시됨: $count';
   }
 
   @override
   String mapCache_summaryApproxCacheSize(String size) {
-    return 'Approx cache size: $size';
+    return '대략적인 캐시 크기: $size';
   }
 
   @override

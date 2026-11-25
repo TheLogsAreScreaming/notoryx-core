@@ -274,7 +274,7 @@
   "appSettings_clearPathOnMaxRetrySubtitle": "Állítsa vissza a kapcsolati elérési utat 5 sikertelen küldési kísérlet után",
   "appSettings_pathsWillBeCleared": "Az elérési utak 5 sikertelen újrapróbálkozás után törlődnek",
   "appSettings_pathsWillNotBeCleared": "Az útvonalak nem törlődnek automatikusan",
-  "appSettings_autoRouteRotation": "Auto Route Rotation",
+  "appSettings_autoRouteRotation": "Automatikus útvonal-váltás",
   "appSettings_autoRouteRotationSubtitle": "Váltson a legjobb útvonalak és az elárasztási mód között",
   "appSettings_autoRouteRotationEnabled": "Az automatikus útvonalforgatás engedélyezve",
   "appSettings_autoRouteRotationDisabled": "Az automatikus útvonalforgatás letiltva",
@@ -977,8 +977,8 @@
     }
   },
   "mapCache_cachedTilesLabel": "Cached tiles",
-  "mapCache_cachedTileSummaryLabel": "Cached tile summary",
-  "mapCache_bulkDownloadDisabledForSource": "Offline bulk downloads are disabled for {source}.",
+  "mapCache_cachedTileSummaryLabel": "Gyorsítótárazott csempék összegzése",
+  "mapCache_bulkDownloadDisabledForSource": "A tömeges offline letöltés ki van kapcsolva ennél: {source}.",
   "@mapCache_bulkDownloadDisabledForSource": {
     "placeholders": {
       "source": {
@@ -986,7 +986,7 @@
       }
     }
   },
-  "mapCache_bulkDownloadDisabledInConfig": "Offline bulk downloads are disabled for {source} in this app configuration.",
+  "mapCache_bulkDownloadDisabledInConfig": "A tömeges offline letöltés ki van kapcsolva ennél: {source} ebben az alkalmazás-beállításban.",
   "@mapCache_bulkDownloadDisabledInConfig": {
     "placeholders": {
       "source": {
@@ -1002,7 +1002,7 @@
       }
     }
   },
-  "mapCache_summaryCachedTilesForSource": "Cached tiles for source: {count}",
+  "mapCache_summaryCachedTilesForSource": "Gyorsítótárazott csempék a forrásból: {count}",
   "@mapCache_summaryCachedTilesForSource": {
     "placeholders": {
       "count": {
@@ -1010,7 +1010,7 @@
       }
     }
   },
-  "mapCache_summaryCachedInSelection": "Cached in selected area/zoom: {count}",
+  "mapCache_summaryCachedInSelection": "Gyorsítótárban a kijelölt területen/nagyításon: {count}",
   "@mapCache_summaryCachedInSelection": {
     "placeholders": {
       "count": {
@@ -1018,7 +1018,7 @@
       }
     }
   },
-  "mapCache_summaryApproxCacheSize": "Approx cache size: {size}",
+  "mapCache_summaryApproxCacheSize": "Becsült gyorsítótárméret: {size}",
   "@mapCache_summaryApproxCacheSize": {
     "placeholders": {
       "size": {
@@ -1455,7 +1455,7 @@
     }
   },
   "repeater_cliTitle": "Repeater CLI",
-  "repeater_debugNextCommand": "Debug Next Command",
+  "repeater_debugNextCommand": "Következő parancs hibakeresése",
   "repeater_commandHelp": "Command Help",
   "repeater_clearHistory": "Törölje az előzményeket",
   "repeater_noCommandsSent": "Még nem küldtek parancsot",
@@ -2543,7 +2543,7 @@
   "losSelectedObstructionDetails": "Letiltja: {obstruction} {heightUnit}, {distanceFromA} A-tól és {distanceFromB} B-től ({distanceUnit}).",
   "chat_markAsUnread": "Megjelölés olvasatlanként",
   "chat_newMessages": "Új üzenetek",
-  "settings_companionDebugLog": "Companion Debug Log",
+  "settings_companionDebugLog": "Kísérő rádió hibanaplója",
   "settings_companionDebugLogSubtitle": "BLE/TCP/USB parancsok, válaszok és nyers adatok",
   "repeater_chanUtil": "Csatornahasználat",
   "@routing_lastWorked": {

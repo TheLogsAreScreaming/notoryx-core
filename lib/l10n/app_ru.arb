@@ -85,8 +85,8 @@
   "settings_privacyModeEnabled": "Режим конфиденциальности включен",
   "settings_privacyModeDisabled": "Режим конфиденциальности выключен",
   "settings_actions": "Действия",
-  "settings_deleteAllPaths": "Delete All Paths",
-  "settings_deleteAllPathsSubtitle": "Clear all path data from contacts.",
+  "settings_deleteAllPaths": "Удалить все пути",
+  "settings_deleteAllPathsSubtitle": "Очистить все данные путей у контактов.",
   "settings_sendAdvertisement": "Отправить анонсирование",
   "settings_sendAdvertisementSubtitle": "Отправить анонсирование о присутствии сейчас",
   "settings_advertisementSent": "Анонсирование отправлено",
@@ -463,8 +463,8 @@
   "mapCache_clearCacheButton": "Очистить кэш",
   "mapCache_failedDownloads": "Неудачных загрузок: {count}",
   "mapCache_cachedTilesLabel": "Cached tiles",
-  "mapCache_cachedTileSummaryLabel": "Cached tile summary",
-  "mapCache_bulkDownloadDisabledForSource": "Offline bulk downloads are disabled for {source}.",
+  "mapCache_cachedTileSummaryLabel": "Сводка по кэшированным плиткам",
+  "mapCache_bulkDownloadDisabledForSource": "Массовая офлайн-загрузка отключена для {source}.",
   "@mapCache_bulkDownloadDisabledForSource": {
     "placeholders": {
       "source": {
@@ -472,7 +472,7 @@
       }
     }
   },
-  "mapCache_bulkDownloadDisabledInConfig": "Offline bulk downloads are disabled for {source} in this app configuration.",
+  "mapCache_bulkDownloadDisabledInConfig": "Массовая офлайн-загрузка отключена для {source} в этой конфигурации приложения.",
   "@mapCache_bulkDownloadDisabledInConfig": {
     "placeholders": {
       "source": {
@@ -488,7 +488,7 @@
       }
     }
   },
-  "mapCache_summaryCachedTilesForSource": "Cached tiles for source: {count}",
+  "mapCache_summaryCachedTilesForSource": "Кэшированные плитки источника: {count}",
   "@mapCache_summaryCachedTilesForSource": {
     "placeholders": {
       "count": {
@@ -496,7 +496,7 @@
       }
     }
   },
-  "mapCache_summaryCachedInSelection": "Cached in selected area/zoom: {count}",
+  "mapCache_summaryCachedInSelection": "Кэшировано в выбранной области/масштабе: {count}",
   "@mapCache_summaryCachedInSelection": {
     "placeholders": {
       "count": {
@@ -504,7 +504,7 @@
       }
     }
   },
-  "mapCache_summaryApproxCacheSize": "Approx cache size: {size}",
+  "mapCache_summaryApproxCacheSize": "Примерный размер кэша: {size}",
   "@mapCache_summaryApproxCacheSize": {
     "placeholders": {
       "size": {
@@ -1600,7 +1600,7 @@
   "losBlockedSpotsTitle": "Зарезервированные места",
   "losSelectedObstructionTitle": "Выбранный объект, препятствующий движению",
   "losBlockedSpotChip": "{distance} {distanceUnit} • {obstruction} {heightUnit}",
-  "losSelectedObstructionDetails": "Blocked by {obstruction} {heightUnit}, {distanceFromA} from A and {distanceFromB} from B ({distanceUnit}).",
+  "losSelectedObstructionDetails": "Перекрыто: {obstruction} {heightUnit}, {distanceFromA} от A и {distanceFromB} от B ({distanceUnit}).",
   "repeater_rxGain": "Увеличенная эффективность RX",
   "repeater_rxGainHelper": "Более высокая чувствительность, больший ток потребления (только для SX1262/SX1268)",
   "repeater_refreshRxGain": "Обновите усиление RX",
