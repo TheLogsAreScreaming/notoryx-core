@@ -11,7 +11,7 @@ Other NOTORYX apps can reuse this method: run the scanner, review its list by ha
 | Layer | How | Done? |
 |---|---|---|
 | 1. Pattern scan | `python3 tool/a11y_scan.py` from the repository root | Yes |
-| 2. Automated tests | Flutter accessibility guideline checks in widget tests | Partly: 5 test files |
+| 2. Automated tests | Flutter accessibility guideline checks in widget tests | Partly: 7 test files |
 | 3. Review of scan results | Reading each flagged place in context | Yes, once |
 | 4. Screen reader | TalkBack on Android, VoiceOver on iOS and macOS | **Not yet** |
 | 5. Large text and display | Largest system text, bold text, reduce motion, each theme | **Not yet** |
@@ -57,6 +57,13 @@ Each flagged place was read in context.
 **Left as they are, pending the device walk-through:** the remaining flagged tap areas wrap visible text, or sit under a tooltip or labelled parent. Those should already be readable, but only testing with a screen reader can confirm it.
 
 **Still open:** received pictures are labelled only as a picture, because nothing describes their contents, and map screens still need a non-visual way to explore.
+
+**2026-11-25 pass:**
+- **Contacts list:** each row had a second, unlabelled tap target. It came from the desktop right-click handler, which is now kept out of the semantics tree; the row's own button still reads the contact's name.
+- **Routes hub:** the Failed count is now announced as a filter switch, with its on/off state.
+- **Traffic card:** read as one tappable item.
+- **Images:** the custom background picture is decorative and hidden from screen readers. GIF picker results are labelled "Send GIF".
+- **Guideline tests added:** tap-target size and labelled tap targets for the contacts list and the Gap finder.
 
 ## What's in place
 

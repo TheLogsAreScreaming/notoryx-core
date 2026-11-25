@@ -122,4 +122,14 @@ void main() {
     await pumpList(tester);
     expect(staleIcon, findsNWidgets(2));
   });
+
+  testWidgets('the list meets the tap-target and label guidelines', (
+    tester,
+  ) async {
+    final handle = tester.ensureSemantics();
+    await pumpList(tester);
+    await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+    await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+    handle.dispose();
+  });
 }

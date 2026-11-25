@@ -60,8 +60,10 @@ class CustomBackdrop extends StatelessWidget {
   Widget _photo(Color fallback) {
     final bytes = photo;
     if (bytes == null || bytes.isEmpty) return ColoredBox(color: fallback);
+    // The user's own background picture: decoration, not content.
     final image = Image.memory(
       bytes,
+      excludeFromSemantics: true,
       fit: BoxFit.cover,
       gaplessPlayback: true,
       errorBuilder: (_, _, _) => ColoredBox(color: fallback),

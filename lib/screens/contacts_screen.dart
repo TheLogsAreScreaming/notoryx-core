@@ -1763,6 +1763,9 @@ class _ContactTile extends StatelessWidget {
 
     return GestureDetector(
       onSecondaryTapUp: PlatformInfo.isDesktop ? (_) => onLongPress() : null,
+      // Right-click only repeats the InkWell's long press; keeping it out of
+      // the semantics tree avoids an extra, unlabelled tap target.
+      excludeFromSemantics: true,
       child: InkWell(
         onTap: onTap,
         onLongPress: onLongPress,

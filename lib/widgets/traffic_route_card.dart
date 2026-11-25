@@ -170,22 +170,27 @@ class _TrafficRouteCardState extends State<TrafficRouteCard> {
           filter: ui.ImageFilter.blur(sigmaX: 14, sigmaY: 14),
           child: Material(
             color: panel,
-            child: InkWell(
-              onTap: widget.onTap,
-              child: Container(
-                padding: const EdgeInsets.all(MeshSpace.md),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(MeshRadii.lg),
-                  border: Border.all(color: MapPalette.border),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    ...lines,
-                    const SizedBox(height: MeshSpace.sm),
-                    _Legend(color: secondary, style: body),
-                  ],
+            // Read the card as one tappable item, not loose lines.
+            child: Semantics(
+              container: true,
+              button: widget.onTap != null,
+              child: InkWell(
+                onTap: widget.onTap,
+                child: Container(
+                  padding: const EdgeInsets.all(MeshSpace.md),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(MeshRadii.lg),
+                    border: Border.all(color: MapPalette.border),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      ...lines,
+                      const SizedBox(height: MeshSpace.sm),
+                      _Legend(color: secondary, style: body),
+                    ],
+                  ),
                 ),
               ),
             ),
