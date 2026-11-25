@@ -13666,6 +13666,28 @@ class AppLocalizationsSv extends AppLocalizations {
   String get mapHub_coverageSection => 'Täckning';
 
   @override
+  String get coverageModes_capture => 'Fånga';
+
+  @override
+  String get coverageModes_wardrive => 'Wardrive';
+
+  @override
+  String get coverageModes_hexagons => 'Hexagoner';
+
+  @override
+  String get coverageModes_gaps => 'Luckor';
+
+  @override
+  String get coverageModes_antenna => 'Antenn';
+
+  @override
+  String get coverageModes_hunt => 'Sök';
+
+  @override
+  String get coverageModes_entryHint =>
+      'Fånga, wardrive, hexagoner, täckningsluckor och antennverktyg på ett ställe';
+
+  @override
   String get mapHub_mapsSection => 'Kartor';
 
   @override

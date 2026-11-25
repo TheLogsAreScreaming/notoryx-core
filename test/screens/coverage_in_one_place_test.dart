@@ -147,19 +147,27 @@ void main() {
     );
   });
 
-  testWidgets('Map + coverage holds every coverage tool and the map tools', (
+  testWidgets('Map + coverage has one Coverage entry and the map tools', (
     tester,
   ) async {
     await _pump(tester, const BastionMapHubScreen());
     expect(find.text('COVERAGE'), findsOneWidget);
     expect(find.text('MAPS'), findsOneWidget);
+    // The coverage tools are modes of one entry now, not rows here.
+    expect(find.byKey(const ValueKey('map-hub-coverage')), findsOneWidget);
     for (final title in ['Coverage capture', ..._moved]) {
-      expect(_row(title), findsOneWidget, reason: title);
+      expect(_row(title), findsNothing, reason: title);
     }
-    expect(_row('Live mesh map'), findsOneWidget);
+    for (final title in [
+      'Live mesh map',
+      'Offline map packs',
+      'Region profiles',
+    ]) {
+      expect(find.textContaining(title), findsWidgets, reason: title);
+    }
     // Coverage comes before the maps.
     expect(
-      tester.getTopLeft(_row('Antenna hunt')).dy,
+      tester.getTopLeft(find.byKey(const ValueKey('map-hub-coverage'))).dy,
       lessThan(tester.getTopLeft(find.text('MAPS')).dy),
     );
   });

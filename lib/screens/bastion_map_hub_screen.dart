@@ -3,16 +3,11 @@ import '../widgets/ember_backdrop.dart';
 import '../widgets/tactical_glass_panel.dart';
 import 'package:flutter/material.dart';
 import '../l10n/l10n.dart';
+import 'coverage_modes_screen.dart';
 import 'day_replay_screen.dart';
 import 'map_screen.dart';
 import 'map_cache_screen.dart';
 import 'region_management_screen.dart';
-import 'bastion_coverage_capture_screen.dart';
-import 'antenna_coverage_screen.dart';
-import 'antenna_hunt_screen.dart';
-import 'coverage_hex_screen.dart';
-import 'wardrive_screen.dart';
-import '../utils/platform_info.dart';
 
 /// Every coverage tool and map tool in one place.
 class BastionMapHubScreen extends StatelessWidget {
@@ -68,54 +63,18 @@ class BastionMapHubScreen extends StatelessWidget {
               ),
             ),
             _SectionLabel(context.l10n.mapHub_coverageSection),
+            // Every coverage tool is a mode of this one entry.
             _MapAction(
+              key: const ValueKey('map-hub-coverage'),
               icon: Icons.radio_button_checked,
-              title: context.l10n.bastion_coverageCapture,
-              subtitle: context.l10n.mapHub_captureHint,
-              badge: context.l10n.mapHub_badgeNew,
+              title: context.l10n.mapHub_coverageSection,
+              subtitle: context.l10n.coverageModes_entryHint,
               onTap: () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => const BastionCoverageCaptureScreen(),
+                MaterialPageRoute<void>(
+                  builder: (_) => const CoverageModesScreen(),
                 ),
               ),
             ),
-            for (final (icon, title, subtitle, page) in [
-              (
-                Icons.route_outlined,
-                context.l10n.wardrive_title,
-                context.l10n.wardrive_hint,
-                const WardriveScreen() as Widget,
-              ),
-              if (!PlatformInfo.isWeb)
-                (
-                  Icons.hexagon_outlined,
-                  context.l10n.coverageHex_title,
-                  context.l10n.coverageHex_toolSubtitle,
-                  const CoverageHexScreen(),
-                ),
-              (
-                Icons.cell_tower,
-                context.l10n.tools_antenna,
-                context.l10n.tools_antennaHint,
-                const AntennaCoverageScreen(),
-              ),
-              (
-                Icons.track_changes,
-                context.l10n.hunt_title,
-                context.l10n.hunt_toolSubtitle,
-                const AntennaHuntScreen(),
-              ),
-            ]) ...[
-              const SizedBox(height: 12),
-              _MapAction(
-                icon: icon,
-                title: title,
-                subtitle: subtitle,
-                onTap: () => Navigator.of(
-                  context,
-                ).push(MaterialPageRoute<void>(builder: (_) => page)),
-              ),
-            ],
             _SectionLabel(context.l10n.mapHub_mapsSection),
             _MapAction(
               icon: Icons.public_rounded,
@@ -194,6 +153,7 @@ class _MapAction extends StatelessWidget {
   final String? badge;
   final VoidCallback onTap;
   const _MapAction({
+    super.key,
     required this.icon,
     required this.title,
     required this.subtitle,

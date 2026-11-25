@@ -13787,6 +13787,28 @@ class AppLocalizationsUk extends AppLocalizations {
   String get mapHub_coverageSection => 'Покриття';
 
   @override
+  String get coverageModes_capture => 'Запис';
+
+  @override
+  String get coverageModes_wardrive => 'Вардрайв';
+
+  @override
+  String get coverageModes_hexagons => 'Шестикутники';
+
+  @override
+  String get coverageModes_gaps => 'Прогалини';
+
+  @override
+  String get coverageModes_antenna => 'Антена';
+
+  @override
+  String get coverageModes_hunt => 'Пошук';
+
+  @override
+  String get coverageModes_entryHint =>
+      'Запис, вардрайв, шестикутники, пошук прогалин та інструменти антени в одному місці';
+
+  @override
   String get mapHub_mapsSection => 'Карти';
 
   @override

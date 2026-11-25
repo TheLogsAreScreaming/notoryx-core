@@ -13719,6 +13719,28 @@ class AppLocalizationsSk extends AppLocalizations {
   String get mapHub_coverageSection => 'Pokrytie';
 
   @override
+  String get coverageModes_capture => 'Záznam';
+
+  @override
+  String get coverageModes_wardrive => 'Wardrive';
+
+  @override
+  String get coverageModes_hexagons => 'Šesťuholníky';
+
+  @override
+  String get coverageModes_gaps => 'Medzery';
+
+  @override
+  String get coverageModes_antenna => 'Anténa';
+
+  @override
+  String get coverageModes_hunt => 'Hľadanie';
+
+  @override
+  String get coverageModes_entryHint =>
+      'Záznam, wardrive, šesťuholníky, hľadač medzier a nástroje antény na jednom mieste';
+
+  @override
   String get mapHub_mapsSection => 'Mapy';
 
   @override

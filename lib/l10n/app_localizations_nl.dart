@@ -13724,6 +13724,28 @@ class AppLocalizationsNl extends AppLocalizations {
   String get mapHub_coverageSection => 'Dekking';
 
   @override
+  String get coverageModes_capture => 'Vastleggen';
+
+  @override
+  String get coverageModes_wardrive => 'Wardrive';
+
+  @override
+  String get coverageModes_hexagons => 'Zeshoeken';
+
+  @override
+  String get coverageModes_gaps => 'Gaten';
+
+  @override
+  String get coverageModes_antenna => 'Antenne';
+
+  @override
+  String get coverageModes_hunt => 'Zoeken';
+
+  @override
+  String get coverageModes_entryHint =>
+      'Vastleggen, wardrive, zeshoeken, gatenzoeker en antennetools op één plek';
+
+  @override
   String get mapHub_mapsSection => 'Kaarten';
 
   @override

@@ -13823,6 +13823,28 @@ class AppLocalizationsFr extends AppLocalizations {
   String get mapHub_coverageSection => 'Couverture';
 
   @override
+  String get coverageModes_capture => 'Capture';
+
+  @override
+  String get coverageModes_wardrive => 'Wardrive';
+
+  @override
+  String get coverageModes_hexagons => 'Hexagones';
+
+  @override
+  String get coverageModes_gaps => 'Zones blanches';
+
+  @override
+  String get coverageModes_antenna => 'Antenne';
+
+  @override
+  String get coverageModes_hunt => 'Recherche';
+
+  @override
+  String get coverageModes_entryHint =>
+      'Capture, wardrive, hexagones, zones blanches et outils d\'antenne au même endroit';
+
+  @override
   String get mapHub_mapsSection => 'Cartes';
 
   @override

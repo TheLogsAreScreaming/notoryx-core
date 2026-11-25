@@ -22813,6 +22813,48 @@ abstract class AppLocalizations {
   /// **'Coverage'**
   String get mapHub_coverageSection;
 
+  /// No description provided for @coverageModes_capture.
+  ///
+  /// In en, this message translates to:
+  /// **'Capture'**
+  String get coverageModes_capture;
+
+  /// No description provided for @coverageModes_wardrive.
+  ///
+  /// In en, this message translates to:
+  /// **'Wardrive'**
+  String get coverageModes_wardrive;
+
+  /// No description provided for @coverageModes_hexagons.
+  ///
+  /// In en, this message translates to:
+  /// **'Hexagons'**
+  String get coverageModes_hexagons;
+
+  /// No description provided for @coverageModes_gaps.
+  ///
+  /// In en, this message translates to:
+  /// **'Gaps'**
+  String get coverageModes_gaps;
+
+  /// No description provided for @coverageModes_antenna.
+  ///
+  /// In en, this message translates to:
+  /// **'Antenna'**
+  String get coverageModes_antenna;
+
+  /// No description provided for @coverageModes_hunt.
+  ///
+  /// In en, this message translates to:
+  /// **'Hunt'**
+  String get coverageModes_hunt;
+
+  /// No description provided for @coverageModes_entryHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Capture, wardrive, hexagons, gap finder and antenna tools in one place'**
+  String get coverageModes_entryHint;
+
   /// No description provided for @mapHub_mapsSection.
   ///
   /// In en, this message translates to:
