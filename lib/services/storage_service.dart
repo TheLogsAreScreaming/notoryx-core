@@ -29,7 +29,9 @@ class StorageService {
     String repeaterPubKeyHex,
   ) async {
     final settings = await _loadRepeaterAutoClockSyncAfterLogin();
-    return settings[repeaterPubKeyHex] ?? false;
+    // On unless turned off: a repeater with a wrong clock looks long gone
+    // and logs the wrong times.
+    return settings[repeaterPubKeyHex] ?? true;
   }
 
   Future<void> setRepeaterAutoClockSyncAfterLoginEnabled(

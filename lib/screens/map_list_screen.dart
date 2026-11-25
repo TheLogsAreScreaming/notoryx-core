@@ -76,7 +76,7 @@ class MapListScreen extends StatelessWidget {
 
     String nodeLine(Contact c, double? km, double? bearing) => [
       mapListWhere(l10n, km, bearing, imperial: imperial),
-      l10n.ml_heard(midSentence(agoLabel(l10n, c.lastSeen))),
+      l10n.ml_heard(midSentence(agoLabel(l10n, c.lastHeard))),
       hopLabel(l10n, hopBand(c)),
     ].join(' • ');
 
