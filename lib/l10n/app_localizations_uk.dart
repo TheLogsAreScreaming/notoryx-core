@@ -1120,6 +1120,18 @@ class AppLocalizationsUk extends AppLocalizations {
       'Показувати сповіщення при отриманні повідомлень каналу';
 
   @override
+  String digest_body(int count) {
+    return 'Ще повідомлень у цьому активному каналі: $count';
+  }
+
+  @override
+  String get appSettings_channelDigest => 'Зведення для активних каналів';
+
+  @override
+  String get appSettings_channelDigestSubtitle =>
+      'Після 5 сповіщень за 10 хвилин канал надсилає одне зведення кожні 15 хвилин. Згадки, SOS, відмітки й особисті повідомлення сповіщають завжди.';
+
+  @override
   String get appSettings_advertisementNotifications =>
       'Сповіщення про оголошення';
 

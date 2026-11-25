@@ -1131,6 +1131,24 @@ class AppLocalizationsDe extends AppLocalizations {
       'Benachrichtigung anzeigen, wenn neue Kanalnachrichten eingehen';
 
   @override
+  String digest_body(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count weitere Nachrichten in diesem belebten Kanal',
+      one: '1 weitere Nachricht in diesem belebten Kanal',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get appSettings_channelDigest => 'Belebte Kanäle zusammenfassen';
+
+  @override
+  String get appSettings_channelDigestSubtitle =>
+      'Nach 5 Meldungen in 10 Minuten sendet ein Kanal alle 15 Minuten eine Zusammenfassung. Erwähnungen, SOS, Check-ins und Direktnachrichten melden sich immer.';
+
+  @override
   String get appSettings_advertisementNotifications =>
       'Ankündigungsbenachrichtigungen';
 

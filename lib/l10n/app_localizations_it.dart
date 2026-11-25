@@ -1130,6 +1130,24 @@ class AppLocalizationsIt extends AppLocalizations {
       'Mostra notifica all\'arrivo di messaggi nel canale';
 
   @override
+  String digest_body(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'altri $count messaggi su questo canale affollato',
+      one: '1 altro messaggio su questo canale affollato',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get appSettings_channelDigest => 'Riassumi i canali affollati';
+
+  @override
+  String get appSettings_channelDigestSubtitle =>
+      'Dopo 5 avvisi in 10 minuti, un canale invia un riepilogo ogni 15 minuti. Menzioni, SOS, check-in e messaggi diretti avvisano sempre.';
+
+  @override
   String get appSettings_advertisementNotifications =>
       'Notifiche Pubblicitarie';
 

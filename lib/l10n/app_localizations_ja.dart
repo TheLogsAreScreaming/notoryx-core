@@ -1077,6 +1077,18 @@ class AppLocalizationsJa extends AppLocalizations {
       'チャンネルからのメッセージを受信した際に、通知を表示する';
 
   @override
+  String digest_body(int count) {
+    return 'この混雑したチャンネルの新着メッセージ $count 件';
+  }
+
+  @override
+  String get appSettings_channelDigest => '混雑したチャンネルをまとめる';
+
+  @override
+  String get appSettings_channelDigestSubtitle =>
+      '10 分間に 5 件通知があったチャンネルは、15 分ごとにまとめて 1 件通知します。メンション、SOS、チェックイン、ダイレクトメッセージは常に通知します。';
+
+  @override
   String get appSettings_advertisementNotifications => '広告通知';
 
   @override

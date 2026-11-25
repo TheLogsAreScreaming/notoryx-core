@@ -1116,6 +1116,18 @@ class AppLocalizationsSl extends AppLocalizations {
       'Pokaži obvestilo ob prejemanju sporočil kanala';
 
   @override
+  String digest_body(int count) {
+    return 'Dodatna sporočila na tem zasedenem kanalu: $count';
+  }
+
+  @override
+  String get appSettings_channelDigest => 'Povzemi zasedene kanale';
+
+  @override
+  String get appSettings_channelDigestSubtitle =>
+      'Po 5 obvestilih v 10 minutah kanal pošlje en povzetek vsakih 15 minut. Omembe, SOS, javljanja in neposredna sporočila vedno obvestijo.';
+
+  @override
   String get appSettings_advertisementNotifications => 'Opozorila o oglasih';
 
   @override

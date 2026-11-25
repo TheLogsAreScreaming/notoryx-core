@@ -1115,6 +1115,18 @@ class AppLocalizationsSk extends AppLocalizations {
       'Zobraziť upozornenie pri prijímaní správ z kanálu';
 
   @override
+  String digest_body(int count) {
+    return 'Ďalšie správy v tomto rušnom kanáli: $count';
+  }
+
+  @override
+  String get appSettings_channelDigest => 'Zhrnúť rušné kanály';
+
+  @override
+  String get appSettings_channelDigestSubtitle =>
+      'Po 5 upozorneniach za 10 minút kanál pošle jedno zhrnutie každých 15 minút. Zmienky, SOS, hlásenia a priame správy upozornia vždy.';
+
+  @override
   String get appSettings_advertisementNotifications => 'Upozornenia na reklamy';
 
   @override

@@ -1110,6 +1110,24 @@ class AppLocalizationsSv extends AppLocalizations {
       'Visa en notifiering när kanalmeddelanden tas emot';
 
   @override
+  String digest_body(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count meddelanden till i den livliga kanalen',
+      one: '1 meddelande till i den livliga kanalen',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get appSettings_channelDigest => 'Sammanfatta livliga kanaler';
+
+  @override
+  String get appSettings_channelDigestSubtitle =>
+      'Efter 5 aviseringar på 10 minuter skickar en kanal en sammanfattning var 15:e minut. Omnämnanden, SOS, incheckningar och direktmeddelanden aviserar alltid.';
+
+  @override
   String get appSettings_advertisementNotifications => 'Annonsnotifieringar';
 
   @override

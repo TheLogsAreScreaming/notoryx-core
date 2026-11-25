@@ -1130,6 +1130,18 @@ class AppLocalizationsBg extends AppLocalizations {
       'Показвай известие при получаване на съобщения от канали';
 
   @override
+  String digest_body(int count) {
+    return 'Още съобщения в този натоварен канал: $count';
+  }
+
+  @override
+  String get appSettings_channelDigest => 'Обобщение за натоварени канали';
+
+  @override
+  String get appSettings_channelDigestSubtitle =>
+      'След 5 известия за 10 минути каналът изпраща едно обобщение на всеки 15 минути. Споменавания, SOS, отметки и лични съобщения известяват винаги.';
+
+  @override
   String get appSettings_advertisementNotifications => 'Уведомления за реклами';
 
   @override

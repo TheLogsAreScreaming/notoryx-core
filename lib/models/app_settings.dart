@@ -114,6 +114,10 @@ class AppSettings {
   final bool notificationsEnabled;
   final bool notifyOnNewMessage;
   final bool notifyOnNewChannelMessage;
+
+  /// Group a busy channel's alerts into one summary every 15 minutes.
+  /// Mentions, SOS, check-ins and emergencies always alert.
+  final bool channelDigest;
   final bool notifyOnNewAdvert;
   final bool autoSendZeroHopAdvertOnGpsUpdate;
   final int gpsIntervalSeconds;
@@ -295,6 +299,7 @@ class AppSettings {
     this.notificationsEnabled = true,
     this.notifyOnNewMessage = true,
     this.notifyOnNewChannelMessage = true,
+    this.channelDigest = true,
     this.notifyOnNewAdvert = true,
     this.autoSendZeroHopAdvertOnGpsUpdate = false,
     this.gpsIntervalSeconds = 900,
@@ -396,6 +401,7 @@ class AppSettings {
       'notifications_enabled': notificationsEnabled,
       'notify_on_new_message': notifyOnNewMessage,
       'notify_on_new_channel_message': notifyOnNewChannelMessage,
+      'channel_digest': channelDigest,
       'notify_on_new_advert': notifyOnNewAdvert,
       'auto_send_zero_hop_advert_on_gps_update':
           autoSendZeroHopAdvertOnGpsUpdate,
@@ -504,6 +510,7 @@ class AppSettings {
       notifyOnNewMessage: json['notify_on_new_message'] as bool? ?? true,
       notifyOnNewChannelMessage:
           json['notify_on_new_channel_message'] as bool? ?? true,
+      channelDigest: json['channel_digest'] as bool? ?? true,
       notifyOnNewAdvert: json['notify_on_new_advert'] as bool? ?? true,
       autoSendZeroHopAdvertOnGpsUpdate:
           json['auto_send_zero_hop_advert_on_gps_update'] as bool? ?? false,
@@ -690,6 +697,7 @@ class AppSettings {
     bool? notificationsEnabled,
     bool? notifyOnNewMessage,
     bool? notifyOnNewChannelMessage,
+    bool? channelDigest,
     bool? notifyOnNewAdvert,
     bool? autoSendZeroHopAdvertOnGpsUpdate,
     int? gpsIntervalSeconds,
@@ -779,6 +787,7 @@ class AppSettings {
       notifyOnNewMessage: notifyOnNewMessage ?? this.notifyOnNewMessage,
       notifyOnNewChannelMessage:
           notifyOnNewChannelMessage ?? this.notifyOnNewChannelMessage,
+      channelDigest: channelDigest ?? this.channelDigest,
       notifyOnNewAdvert: notifyOnNewAdvert ?? this.notifyOnNewAdvert,
       autoSendZeroHopAdvertOnGpsUpdate:
           autoSendZeroHopAdvertOnGpsUpdate ??
