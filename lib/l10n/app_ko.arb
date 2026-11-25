@@ -5148,6 +5148,8 @@
   "sentinel_appeal": "이의 제기",
   "sentinel_appealOther": "사건 번호로 이의 제기",
   "sentinel_yourReports": "최근 신고",
+  "sentinel_stateReview": "운영진이 검토 중",
+  "sentinel_stateClosed": "운영진이 처리 완료",
   "sentinel_report": "관리자에게 신고",
   "sentinel_reportTitle": "{name} 신고",
   "sentinel_reasonSpam": "스팸 또는 광고",

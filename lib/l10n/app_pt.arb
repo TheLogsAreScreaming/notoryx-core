@@ -5014,6 +5014,8 @@
   "sentinel_appeal": "Recorrer",
   "sentinel_appealOther": "Recorrer de um caso pelo número",
   "sentinel_yourReports": "As suas denúncias recentes",
+  "sentinel_stateReview": "Em análise pelos moderadores",
+  "sentinel_stateClosed": "Encerrada pelos moderadores",
   "sentinel_report": "Denunciar aos moderadores",
   "sentinel_reportTitle": "Denunciar {name}",
   "sentinel_reasonSpam": "Spam ou publicidade",

@@ -5148,6 +5148,8 @@
   "sentinel_appeal": "Apelar",
   "sentinel_appealOther": "Apelar un caso por número",
   "sentinel_yourReports": "Tus denuncias recientes",
+  "sentinel_stateReview": "En revisión por los moderadores",
+  "sentinel_stateClosed": "Cerrada por los moderadores",
   "sentinel_report": "Denunciar a los moderadores",
   "sentinel_reportTitle": "Denunciar a {name}",
   "sentinel_reasonSpam": "Spam o publicidad",

@@ -5148,6 +5148,8 @@
   "sentinel_appeal": "Einspruch",
   "sentinel_appealOther": "Einspruch zu einer Fallnummer",
   "sentinel_yourReports": "Deine letzten Meldungen",
+  "sentinel_stateReview": "Wird von Moderatoren geprüft",
+  "sentinel_stateClosed": "Von Moderatoren abgeschlossen",
   "sentinel_report": "An Moderation melden",
   "sentinel_reportTitle": "{name} melden",
   "sentinel_reasonSpam": "Spam oder Werbung",

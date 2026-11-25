@@ -5148,6 +5148,8 @@
   "sentinel_appeal": "Faire appel",
   "sentinel_appealOther": "Faire appel d'un dossier par numéro",
   "sentinel_yourReports": "Vos signalements récents",
+  "sentinel_stateReview": "En cours d'examen par les modérateurs",
+  "sentinel_stateClosed": "Clôturé par les modérateurs",
   "sentinel_report": "Signaler aux modérateurs",
   "sentinel_reportTitle": "Signaler {name}",
   "sentinel_reasonSpam": "Spam ou publicité",

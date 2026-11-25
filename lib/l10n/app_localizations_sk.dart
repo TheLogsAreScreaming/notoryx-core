@@ -13059,6 +13059,12 @@ class AppLocalizationsSk extends AppLocalizations {
   String get sentinel_yourReports => 'Vaše nedávne nahlásenia';
 
   @override
+  String get sentinel_stateReview => 'Moderátori to posudzujú';
+
+  @override
+  String get sentinel_stateClosed => 'Uzavreté moderátormi';
+
+  @override
   String get sentinel_report => 'Nahlásiť moderátorom';
 
   @override

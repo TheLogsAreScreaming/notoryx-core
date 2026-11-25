@@ -13054,6 +13054,12 @@ class AppLocalizationsNl extends AppLocalizations {
   String get sentinel_yourReports => 'Je recente meldingen';
 
   @override
+  String get sentinel_stateReview => 'Wordt beoordeeld door moderators';
+
+  @override
+  String get sentinel_stateClosed => 'Afgesloten door moderators';
+
+  @override
   String get sentinel_report => 'Melden bij moderators';
 
   @override

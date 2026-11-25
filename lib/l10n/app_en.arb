@@ -6795,6 +6795,8 @@
   "sentinel_appeal": "Appeal",
   "sentinel_appealOther": "Appeal a case by number",
   "sentinel_yourReports": "Your recent reports",
+  "sentinel_stateReview": "Under review by moderators",
+  "sentinel_stateClosed": "Closed by moderators",
   "sentinel_report": "Report to moderators",
   "sentinel_reportTitle": "Report {name}",
   "@sentinel_reportTitle": {"placeholders": {"name": {"type": "String"}}},

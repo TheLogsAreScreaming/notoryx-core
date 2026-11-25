@@ -13083,6 +13083,12 @@ class AppLocalizationsHu extends AppLocalizations {
   String get sentinel_yourReports => 'Legutóbbi jelentéseid';
 
   @override
+  String get sentinel_stateReview => 'A moderátorok vizsgálják';
+
+  @override
+  String get sentinel_stateClosed => 'A moderátorok lezárták';
+
+  @override
   String get sentinel_report => 'Jelentés a moderátoroknak';
 
   @override

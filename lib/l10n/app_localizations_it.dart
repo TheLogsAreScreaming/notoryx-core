@@ -13113,6 +13113,12 @@ class AppLocalizationsIt extends AppLocalizations {
   String get sentinel_yourReports => 'Le tue segnalazioni recenti';
 
   @override
+  String get sentinel_stateReview => 'In revisione dai moderatori';
+
+  @override
+  String get sentinel_stateClosed => 'Chiusa dai moderatori';
+
+  @override
   String get sentinel_report => 'Segnala ai moderatori';
 
   @override

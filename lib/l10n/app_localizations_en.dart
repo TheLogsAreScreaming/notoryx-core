@@ -12950,6 +12950,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get sentinel_yourReports => 'Your recent reports';
 
   @override
+  String get sentinel_stateReview => 'Under review by moderators';
+
+  @override
+  String get sentinel_stateClosed => 'Closed by moderators';
+
+  @override
   String get sentinel_report => 'Report to moderators';
 
   @override

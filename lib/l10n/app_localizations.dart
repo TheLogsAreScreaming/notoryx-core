@@ -21739,6 +21739,18 @@ abstract class AppLocalizations {
   /// **'Your recent reports'**
   String get sentinel_yourReports;
 
+  /// No description provided for @sentinel_stateReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Under review by moderators'**
+  String get sentinel_stateReview;
+
+  /// No description provided for @sentinel_stateClosed.
+  ///
+  /// In en, this message translates to:
+  /// **'Closed by moderators'**
+  String get sentinel_stateClosed;
+
   /// No description provided for @sentinel_report.
   ///
   /// In en, this message translates to:

@@ -13133,6 +13133,12 @@ class AppLocalizationsRu extends AppLocalizations {
   String get sentinel_yourReports => 'Ваши недавние жалобы';
 
   @override
+  String get sentinel_stateReview => 'На рассмотрении у модераторов';
+
+  @override
+  String get sentinel_stateClosed => 'Закрыто модераторами';
+
+  @override
   String get sentinel_report => 'Пожаловаться модераторам';
 
   @override

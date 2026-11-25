@@ -5052,6 +5052,8 @@
   "sentinel_appeal": "Fellebbezés",
   "sentinel_appealOther": "Fellebbezés ügyszám alapján",
   "sentinel_yourReports": "Legutóbbi jelentéseid",
+  "sentinel_stateReview": "A moderátorok vizsgálják",
+  "sentinel_stateClosed": "A moderátorok lezárták",
   "sentinel_report": "Jelentés a moderátoroknak",
   "sentinel_reportTitle": "{name} jelentése",
   "sentinel_reasonSpam": "Spam vagy reklám",

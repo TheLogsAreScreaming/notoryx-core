@@ -12521,6 +12521,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get sentinel_yourReports => '최근 신고';
 
   @override
+  String get sentinel_stateReview => '운영진이 검토 중';
+
+  @override
+  String get sentinel_stateClosed => '운영진이 처리 완료';
+
+  @override
   String get sentinel_report => '관리자에게 신고';
 
   @override

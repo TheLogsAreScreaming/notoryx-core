@@ -5014,6 +5014,8 @@
   "sentinel_appeal": "Bezwaar",
   "sentinel_appealOther": "Bezwaar maken op zaaknummer",
   "sentinel_yourReports": "Je recente meldingen",
+  "sentinel_stateReview": "Wordt beoordeeld door moderators",
+  "sentinel_stateClosed": "Afgesloten door moderators",
   "sentinel_report": "Melden bij moderators",
   "sentinel_reportTitle": "{name} melden",
   "sentinel_reasonSpam": "Spam of reclame",
