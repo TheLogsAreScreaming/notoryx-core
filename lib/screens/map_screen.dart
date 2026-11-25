@@ -3269,7 +3269,7 @@ class _MapScreenState extends State<MapScreen> {
     );
 
     if (confirmed == true) {
-      await connector.disconnect();
+      await connector.disconnectByUser();
     }
   }
 

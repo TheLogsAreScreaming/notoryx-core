@@ -30,7 +30,7 @@ Future<bool> showDisconnectDialog(
 
   if (confirmed == true) {
     appLogger.info('Disconnect confirmed from popup', tag: 'Connection');
-    await connector.disconnect();
+    await connector.disconnectByUser();
     return true;
   }
   return false;
