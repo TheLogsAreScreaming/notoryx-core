@@ -622,6 +622,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
       final homeWidget = _homeWidget = HomeWidgetSync(
         widget.connector,
         _navigatorKey,
+        onStatus: BackgroundService.showStatus,
       );
       unawaited(
         homeWidget.start().catchError((Object e) {

@@ -84,8 +84,13 @@ class HomeWidgetSync {
     this.navigator, {
     HomeWidgetBridge? bridge,
     Widget Function(AppShortcut)? screenFor,
+    this.onStatus,
   }) : _bridge = bridge ?? PluginHomeWidgetBridge(),
        _screenFor = screenFor ?? shortcutScreen;
+
+  /// Also gets the radio name and status line whenever they change, for the
+  /// ongoing notification.
+  final Future<void> Function(String title, String text)? onStatus;
 
   final MeshCoreConnector connector;
   final GlobalKey<NavigatorState> navigator;
@@ -127,6 +132,10 @@ class HomeWidgetSync {
     );
     if (_mapEquals(values, _last)) return;
     _last = values;
+    final status = onStatus;
+    if (status != null) {
+      unawaited(status(values['radio']!, values['tile_subtitle']!));
+    }
     try {
       for (final e in values.entries) {
         await _bridge.save(e.key, e.value);
