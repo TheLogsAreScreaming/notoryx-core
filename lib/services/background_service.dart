@@ -5,6 +5,26 @@ import '../l10n/app_localizations.dart';
 import '../utils/platform_info.dart';
 
 class BackgroundService {
+  /// The latest radio status for the ongoing notification: radio name and
+  /// "Connected · 3 unread". Counts only, never message text.
+  static ({String title, String text})? _status;
+
+  /// Shows [title] and [text] in the ongoing notification now (if it's up)
+  /// and whenever it starts. Android only.
+  static Future<void> showStatus(String title, String text) async {
+    _status = (title: title, text: text);
+    if (!PlatformInfo.isAndroid) return;
+    try {
+      if (!await FlutterForegroundTask.isRunningService) return;
+      await FlutterForegroundTask.updateService(
+        notificationTitle: title,
+        notificationText: text,
+      );
+    } catch (e) {
+      debugPrint('Status notification not updated: $e');
+    }
+  }
+
   bool _initialized = false;
   final Set<Object> _holders = {};
 
@@ -56,9 +76,10 @@ class BackgroundService {
     final running = await FlutterForegroundTask.isRunningService;
     if (running) return;
     final l10n = await _loadLocalizations();
+    final status = _status;
     await FlutterForegroundTask.startService(
-      notificationTitle: l10n.background_serviceTitle,
-      notificationText: l10n.background_serviceText,
+      notificationTitle: status?.title ?? l10n.background_serviceTitle,
+      notificationText: status?.text ?? l10n.background_serviceText,
       callback: startCallback,
     );
   }

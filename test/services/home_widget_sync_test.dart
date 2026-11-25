@@ -70,6 +70,22 @@ void main() {
     expect(homeWidgetActionFor(null), isNull);
   });
 
+  test('the status line goes to the ongoing notification once', () async {
+    final statuses = <(String, String)>[];
+    final bridge = _Bridge();
+    final sync = HomeWidgetSync(
+      MeshCoreConnector(),
+      GlobalKey<NavigatorState>(),
+      bridge: bridge,
+      onStatus: (title, text) async => statuses.add((title, text)),
+    );
+    await sync.push();
+    await sync.push();
+    expect(statuses, [('NOTORYX Core', en.connections_statusNotConnected)]);
+    sync.dispose();
+    await bridge.clicked.close();
+  });
+
   testWidgets('taps open check-in review or home, never sending', (
     tester,
   ) async {
