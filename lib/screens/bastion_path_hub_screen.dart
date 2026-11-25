@@ -151,17 +151,23 @@ class _BastionPathHubScreenState extends State<BastionPathHubScreen> {
                           ),
                         ),
                         Expanded(
-                          child: InkWell(
-                            key: const ValueKey('routes-failed'),
-                            borderRadius: BorderRadius.circular(8),
-                            onTap: failed == 0
-                                ? null
-                                : () => setState(
-                                    () => _failingOnly = !_failingOnly,
-                                  ),
-                            child: MeshStat(
-                              value: '$failed',
-                              label: l10n.routes_failed,
+                          // A filter switch: say so, and whether it's on.
+                          child: Semantics(
+                            button: true,
+                            toggled: _failingOnly,
+                            enabled: failed > 0,
+                            child: InkWell(
+                              key: const ValueKey('routes-failed'),
+                              borderRadius: BorderRadius.circular(8),
+                              onTap: failed == 0
+                                  ? null
+                                  : () => setState(
+                                      () => _failingOnly = !_failingOnly,
+                                    ),
+                              child: MeshStat(
+                                value: '$failed',
+                                label: l10n.routes_failed,
+                              ),
                             ),
                           ),
                         ),

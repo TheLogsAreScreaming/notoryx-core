@@ -286,6 +286,7 @@ class _GifPickerState extends State<GifPicker> {
                 child: previewUrl != null
                     ? Image.network(
                         previewUrl,
+                        semanticLabel: context.l10n.chat_sendGif,
                         fit: BoxFit.cover,
                         loadingBuilder: (context, child, loadingProgress) {
                           if (loadingProgress == null) return child;

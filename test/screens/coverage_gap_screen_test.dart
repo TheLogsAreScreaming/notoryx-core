@@ -46,4 +46,32 @@ void main() {
     expect(find.byKey(const ValueKey('gap-empty')), findsOneWidget);
     expect(find.byTooltip('Clear history'), findsNothing);
   });
+
+  testWidgets('meets the tap-target and label guidelines', (tester) async {
+    final handle = tester.ensureSemantics();
+    final outcomes = StreamController<bool>.broadcast();
+    final log = SendGapLog(
+      outcomes: outcomes.stream,
+      indexer: _NoCells(),
+      position: () async => null,
+    );
+    addTearDown(() {
+      log.dispose();
+      unawaited(outcomes.close());
+    });
+    await tester.pumpWidget(
+      ChangeNotifierProvider<SendGapLog?>.value(
+        value: log,
+        child: const MaterialApp(
+          localizationsDelegates: AppLocalizations.localizationsDelegates,
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: CoverageGapScreen(),
+        ),
+      ),
+    );
+    await tester.pump();
+    await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
+    await expectLater(tester, meetsGuideline(labeledTapTargetGuideline));
+    handle.dispose();
+  });
 }
