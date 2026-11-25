@@ -2894,6 +2894,16 @@ class AppLocalizationsBg extends AppLocalizations {
       'Входът не беше успешен. Или паролата е грешна, или повторителят е недостъпен.';
 
   @override
+  String relogin_done(String name) {
+    return 'Радиото е свързано отново: влязохте отново в $name.';
+  }
+
+  @override
+  String relogin_failed(String name) {
+    return 'Радиото е свързано отново, но $name не отговори на новия вход. Влезте отново, преди да променяте настройки.';
+  }
+
+  @override
   String get login_failRadioOffline =>
       'Радиото не е свързано, затова входът не беше изпратен. Свържете го и опитайте отново.';
 
@@ -3023,6 +3033,17 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get repeater_refresh => 'Презареди';
+
+  @override
+  String get repeater_autoCheck =>
+      'Проверка на всеки 15 минути, докато е отворено';
+
+  @override
+  String get repeater_autoCheckStarted =>
+      'Състоянието се проверява на всеки 15 минути, докато този екран е отворен. Всяка проверка е една заявка по радиото.';
+
+  @override
+  String get repeater_autoCheckStopped => 'Автоматичната проверка е спряна.';
 
   @override
   String get repeater_statusRequestTimeout =>

@@ -931,6 +931,8 @@
     }
   },
   "login_failedMessage": "Falha no login. A senha está incorreta ou o repetidor está inacessível.",
+  "relogin_done": "Rádio religado: sessão iniciada de novo em {name}.",
+  "relogin_failed": "Rádio religado, mas {name} não respondeu ao novo início de sessão. Inicie sessão de novo antes de mudar definições.",
   "login_failRadioOffline": "O seu rádio não está ligado, por isso o início de sessão não foi enviado. Ligue-o e tente novamente.",
   "login_failSend": "O seu rádio não aceitou o pedido de início de sessão. Volte a ligá-lo e tente novamente.",
   "login_failNoAnswerPath": "Sem resposta pelo caminho guardado ({hops} saltos). Pode estar desatualizado: ative “{option}” em {section} e tente novamente. Uma palavra-passe errada também não recebe resposta.",
@@ -989,6 +991,9 @@
   "repeater_forceFloodMode": "Modo de Inundação Forçado",
   "repeater_pathManagement": "Gerenciamento de caminhos",
   "repeater_refresh": "Atualizar",
+  "repeater_autoCheck": "Verificar a cada 15 minutos enquanto aberto",
+  "repeater_autoCheckStarted": "O estado é verificado a cada 15 minutos enquanto este ecrã estiver aberto. Cada verificação é um pedido por rádio.",
+  "repeater_autoCheckStopped": "Verificação automática parada.",
   "repeater_statusRequestTimeout": "Solicitação de status expirou.",
   "repeater_errorLoadingStatus": "Erro ao carregar o status: {error}",
   "@repeater_errorLoadingStatus": {

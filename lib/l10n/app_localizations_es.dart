@@ -2895,6 +2895,16 @@ class AppLocalizationsEs extends AppLocalizations {
       'El inicio de sesión ha fallado. La contraseña es incorrecta o el repetidor no está disponible.';
 
   @override
+  String relogin_done(String name) {
+    return 'Radio reconectada: sesión iniciada de nuevo en $name.';
+  }
+
+  @override
+  String relogin_failed(String name) {
+    return 'Radio reconectada, pero $name no respondió al nuevo inicio de sesión. Vuelve a iniciar sesión antes de cambiar ajustes.';
+  }
+
+  @override
   String get login_failRadioOffline =>
       'Tu radio no está conectada, así que el inicio de sesión no se envió. Conéctala e inténtalo de nuevo.';
 
@@ -3022,6 +3032,18 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get repeater_refresh => 'Actualizar';
+
+  @override
+  String get repeater_autoCheck =>
+      'Comprobar cada 15 minutos mientras esté abierto';
+
+  @override
+  String get repeater_autoCheckStarted =>
+      'Se comprobará el estado cada 15 minutos mientras esta pantalla siga abierta. Cada comprobación es una petición por radio.';
+
+  @override
+  String get repeater_autoCheckStopped =>
+      'Se dejó de comprobar automáticamente.';
 
   @override
   String get repeater_statusRequestTimeout =>

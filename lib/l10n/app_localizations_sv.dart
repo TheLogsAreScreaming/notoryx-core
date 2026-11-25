@@ -2869,6 +2869,16 @@ class AppLocalizationsSv extends AppLocalizations {
       'Inloggning misslyckades. Antingen är lösenordet fel eller så går det inte att nå repeatern.';
 
   @override
+  String relogin_done(String name) {
+    return 'Radion återansluten: inloggad på $name igen.';
+  }
+
+  @override
+  String relogin_failed(String name) {
+    return 'Radion återansluten, men $name svarade inte på den nya inloggningen. Logga in igen innan du ändrar inställningar.';
+  }
+
+  @override
   String get login_failRadioOffline =>
       'Din radio är inte ansluten, så inloggningen skickades inte. Anslut radion och försök igen.';
 
@@ -2995,6 +3005,17 @@ class AppLocalizationsSv extends AppLocalizations {
 
   @override
   String get repeater_refresh => 'Uppdatera';
+
+  @override
+  String get repeater_autoCheck =>
+      'Kontrollera var 15:e minut medan den är öppen';
+
+  @override
+  String get repeater_autoCheckStarted =>
+      'Status kontrolleras var 15:e minut medan skärmen är öppen. Varje kontroll är en förfrågan via radio.';
+
+  @override
+  String get repeater_autoCheckStopped => 'Automatisk kontroll stoppad.';
 
   @override
   String get repeater_statusRequestTimeout =>

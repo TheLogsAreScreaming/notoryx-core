@@ -932,6 +932,8 @@
     }
   },
   "login_failedMessage": "Inloggning misslyckades. Antingen är lösenordet fel eller så går det inte att nå repeatern.",
+  "relogin_done": "Radion återansluten: inloggad på {name} igen.",
+  "relogin_failed": "Radion återansluten, men {name} svarade inte på den nya inloggningen. Logga in igen innan du ändrar inställningar.",
   "login_failRadioOffline": "Din radio är inte ansluten, så inloggningen skickades inte. Anslut radion och försök igen.",
   "login_failSend": "Din radio tog inte emot inloggningsbegäran. Anslut igen och försök på nytt.",
   "login_failNoAnswerPath": "Inget svar via den sparade vägen ({hops} hopp). Vägen kan vara inaktuell: slå på “{option}” under {section} och försök igen. Fel lösenord får inte heller något svar.",
@@ -990,6 +992,9 @@
   "repeater_forceFloodMode": "Tvinga flood-läge",
   "repeater_pathManagement": "Rutthantering",
   "repeater_refresh": "Uppdatera",
+  "repeater_autoCheck": "Kontrollera var 15:e minut medan den är öppen",
+  "repeater_autoCheckStarted": "Status kontrolleras var 15:e minut medan skärmen är öppen. Varje kontroll är en förfrågan via radio.",
+  "repeater_autoCheckStopped": "Automatisk kontroll stoppad.",
   "repeater_statusRequestTimeout": "Statusförfrågan gick inte att hämta.",
   "repeater_errorLoadingStatus": "Fel vid inläsning av status: {error}",
   "@repeater_errorLoadingStatus": {

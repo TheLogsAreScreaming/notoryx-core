@@ -2904,6 +2904,16 @@ class AppLocalizationsDe extends AppLocalizations {
       'Anmeldung fehlgeschlagen. Entweder ist das Passwort falsch oder der Repeater ist nicht erreichbar.';
 
   @override
+  String relogin_done(String name) {
+    return 'Funkgerät wieder verbunden: erneut bei $name angemeldet.';
+  }
+
+  @override
+  String relogin_failed(String name) {
+    return 'Funkgerät wieder verbunden, aber $name hat auf die neue Anmeldung nicht geantwortet. Melde dich erneut an, bevor du Einstellungen änderst.';
+  }
+
+  @override
   String get login_failRadioOffline =>
       'Dein Funkgerät ist nicht verbunden, daher wurde die Anmeldung nicht gesendet. Verbinde es und versuche es erneut.';
 
@@ -3031,6 +3041,16 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String get repeater_refresh => 'Aktualisieren';
+
+  @override
+  String get repeater_autoCheck => 'Alle 15 Minuten prüfen, solange geöffnet';
+
+  @override
+  String get repeater_autoCheckStarted =>
+      'Status wird alle 15 Minuten geprüft, solange dieser Bildschirm offen bleibt. Jede Prüfung ist eine Anfrage über Funk.';
+
+  @override
+  String get repeater_autoCheckStopped => 'Automatische Prüfung beendet.';
 
   @override
   String get repeater_statusRequestTimeout => 'Statusanfrage abgelaufen.';

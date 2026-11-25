@@ -48,6 +48,11 @@ class _RepeaterStatusScreenState extends State<RepeaterStatusScreen> {
   StreamSubscription<Uint8List>? _frameSubscription;
   RepeaterCommandService? _commandService;
   Timer? _statusTimeout;
+
+  /// Opt-in repeat check while this screen is open; each one is a request
+  /// over the air, so it's off by default and capped at four an hour.
+  static const autoCheckEvery = Duration(minutes: 15);
+  Timer? _autoCheck;
   int? _batteryMv;
   int? _uptimeSecs;
   int? _queueLen;
@@ -84,7 +89,35 @@ class _RepeaterStatusScreenState extends State<RepeaterStatusScreen> {
     _frameSubscription?.cancel();
     _commandService?.dispose();
     _statusTimeout?.cancel();
+    _autoCheck?.cancel();
     super.dispose();
+  }
+
+  void _toggleAutoCheck() {
+    final l10n = context.l10n;
+    final on = _autoCheck == null;
+    setState(() {
+      _autoCheck?.cancel();
+      _autoCheck = on
+          ? Timer.periodic(autoCheckEvery, (_) {
+              final connector = context.read<MeshCoreConnector>();
+              if (mounted && !_isLoading && connector.isConnected) {
+                unawaited(_loadStatus());
+              }
+            })
+          : null;
+    });
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(
+        SnackBar(
+          content: Text(
+            on
+                ? l10n.repeater_autoCheckStarted
+                : l10n.repeater_autoCheckStopped,
+          ),
+        ),
+      );
   }
 
   void _setupMessageListener() {
@@ -504,6 +537,13 @@ class _RepeaterStatusScreenState extends State<RepeaterStatusScreen> {
             tooltip: l10n.repeater_routingMode,
             onPressed: () =>
                 ContactRoutingSheet.show(context, contact: repeater),
+          ),
+          IconButton(
+            key: const ValueKey('repeater-auto-check'),
+            icon: Icon(_autoCheck == null ? Icons.timer_outlined : Icons.timer),
+            isSelected: _autoCheck != null,
+            tooltip: l10n.repeater_autoCheck,
+            onPressed: _toggleAutoCheck,
           ),
           IconButton(
             icon: _isLoading

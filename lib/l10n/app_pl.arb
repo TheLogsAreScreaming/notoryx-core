@@ -941,6 +941,8 @@
     }
   },
   "login_failedMessage": "Logowanie nie powiodło się. Hasło jest nieprawidłowe albo przekaźnik jest nieosiągalny.",
+  "relogin_done": "Radio połączone ponownie: zalogowano znów do {name}.",
+  "relogin_failed": "Radio połączone ponownie, ale {name} nie odpowiedział na nowe logowanie. Zaloguj się ponownie przed zmianą ustawień.",
   "login_failRadioOffline": "Radio nie jest połączone, więc logowanie nie zostało wysłane. Połącz radio i spróbuj ponownie.",
   "login_failSend": "Radio nie przyjęło żądania logowania. Połącz je ponownie i spróbuj jeszcze raz.",
   "login_failNoAnswerPath": "Brak odpowiedzi przez zapisaną trasę ({hops} skoków). Może być nieaktualna: włącz {section} → {option} i spróbuj ponownie. Na błędne hasło też nie ma odpowiedzi.",
@@ -999,6 +1001,9 @@
   "repeater_forceFloodMode": "Wymuś tryb zalewowy",
   "repeater_pathManagement": "Zarządzanie ścieżkami",
   "repeater_refresh": "Odśwież",
+  "repeater_autoCheck": "Sprawdzaj co 15 minut, gdy otwarte",
+  "repeater_autoCheckStarted": "Stan będzie sprawdzany co 15 minut, dopóki ten ekran jest otwarty. Każde sprawdzenie to jedno zapytanie przez radio.",
+  "repeater_autoCheckStopped": "Zatrzymano automatyczne sprawdzanie.",
   "repeater_statusRequestTimeout": "Przekroczono czas oczekiwania na status.",
   "repeater_errorLoadingStatus": "Błąd podczas ładowania statusu: {error}",
   "@repeater_errorLoadingStatus": {

@@ -1114,6 +1114,8 @@
     }
   },
   "login_failedMessage": "Sikertelen bejelentkezés. Vagy hibás a jelszó, vagy az átjátszó nem érhető el.",
+  "relogin_done": "A rádió újra csatlakozott: ismét bejelentkezve ide: {name}.",
+  "relogin_failed": "A rádió újra csatlakozott, de {name} nem válaszolt az új bejelentkezésre. Jelentkezzen be újra, mielőtt beállításokat módosít.",
   "login_failRadioOffline": "A rádió nincs csatlakoztatva, ezért a bejelentkezés nem ment el. Csatlakoztassa, és próbálja újra.",
   "login_failSend": "A rádió nem fogadta a bejelentkezési kérést. Csatlakoztassa újra, és próbálja meg ismét.",
   "login_failNoAnswerPath": "Nincs válasz a mentett útvonalon ({hops} ugrás). Lehet, hogy elavult: kapcsolja be ezt: {section} → {option}, és próbálja újra. Hibás jelszóra sem jön válasz.",
@@ -1175,6 +1177,9 @@
   "repeater_forceFloodMode": "Erőforrás-alapú áramlás mód",
   "repeater_pathManagement": "Útvonal-kezelés",
   "repeater_refresh": "Frissítés",
+  "repeater_autoCheck": "Ellenőrzés 15 percenként, amíg nyitva van",
+  "repeater_autoCheckStarted": "Az állapot 15 percenként frissül, amíg ez a képernyő nyitva van. Minden ellenőrzés egy rádiós kérés.",
+  "repeater_autoCheckStopped": "Az automatikus ellenőrzés leállt.",
   "repeater_statusRequestTimeout": "Az állapotkérelem időtúllépése lejárt.",
   "repeater_errorLoadingStatus": "Hiba az állapot betöltésekor: {error}",
   "@repeater_errorLoadingStatus": {

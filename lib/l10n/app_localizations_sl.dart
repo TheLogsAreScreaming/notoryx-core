@@ -2876,6 +2876,16 @@ class AppLocalizationsSl extends AppLocalizations {
       'Prijava je bila neuspešna. Geslo je napačno ali pa je repetitor nedosegljiv.';
 
   @override
+  String relogin_done(String name) {
+    return 'Radio znova povezan: ponovno prijavljeni v $name.';
+  }
+
+  @override
+  String relogin_failed(String name) {
+    return 'Radio znova povezan, a $name ni odgovoril na novo prijavo. Pred spreminjanjem nastavitev se znova prijavite.';
+  }
+
+  @override
   String get login_failRadioOffline =>
       'Radio ni povezan, zato prijava ni bila poslana. Povežite radio in poskusite znova.';
 
@@ -3003,6 +3013,16 @@ class AppLocalizationsSl extends AppLocalizations {
 
   @override
   String get repeater_refresh => 'Ponovno obnavljati';
+
+  @override
+  String get repeater_autoCheck => 'Preveri vsakih 15 minut, dokler je odprto';
+
+  @override
+  String get repeater_autoCheckStarted =>
+      'Stanje se preverja vsakih 15 minut, dokler je ta zaslon odprt. Vsako preverjanje je ena zahteva po radiu.';
+
+  @override
+  String get repeater_autoCheckStopped => 'Samodejno preverjanje ustavljeno.';
 
   @override
   String get repeater_statusRequestTimeout => 'Zahtev statusa je iztekla.';

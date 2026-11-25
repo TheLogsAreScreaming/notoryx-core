@@ -2881,6 +2881,16 @@ class AppLocalizationsNl extends AppLocalizations {
       'Inloggen mislukt. Het wachtwoord is onjuist of de repeater is niet bereikbaar.';
 
   @override
+  String relogin_done(String name) {
+    return 'Radio opnieuw verbonden: weer aangemeld bij $name.';
+  }
+
+  @override
+  String relogin_failed(String name) {
+    return 'Radio opnieuw verbonden, maar $name antwoordde niet op de nieuwe aanmelding. Meld je opnieuw aan voordat je instellingen wijzigt.';
+  }
+
+  @override
   String get login_failRadioOffline =>
       'Je radio is niet verbonden, dus de aanmelding is niet verstuurd. Verbind je radio en probeer het opnieuw.';
 
@@ -3007,6 +3017,16 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get repeater_refresh => 'Vernieuwen';
+
+  @override
+  String get repeater_autoCheck => 'Elke 15 minuten controleren zolang geopend';
+
+  @override
+  String get repeater_autoCheckStarted =>
+      'Status wordt elke 15 minuten gecontroleerd zolang dit scherm open blijft. Elke controle is één verzoek via de radio.';
+
+  @override
+  String get repeater_autoCheckStopped => 'Automatisch controleren gestopt.';
 
   @override
   String get repeater_statusRequestTimeout => 'Statusverzoek is uitgevallen.';

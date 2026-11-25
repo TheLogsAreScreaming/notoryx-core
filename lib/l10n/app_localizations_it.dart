@@ -2900,6 +2900,16 @@ class AppLocalizationsIt extends AppLocalizations {
       'Accesso fallito. La password non è corretta oppure il ripetitore non è raggiungibile.';
 
   @override
+  String relogin_done(String name) {
+    return 'Radio ricollegata: accesso a $name ripetuto.';
+  }
+
+  @override
+  String relogin_failed(String name) {
+    return 'Radio ricollegata, ma $name non ha risposto al nuovo accesso. Accedi di nuovo prima di cambiare le impostazioni.';
+  }
+
+  @override
   String get login_failRadioOffline =>
       'La tua radio non è collegata, quindi l\'accesso non è stato inviato. Collegala e riprova.';
 
@@ -3028,6 +3038,16 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get repeater_refresh => 'Aggiorna';
+
+  @override
+  String get repeater_autoCheck => 'Controlla ogni 15 minuti finché è aperto';
+
+  @override
+  String get repeater_autoCheckStarted =>
+      'Lo stato viene controllato ogni 15 minuti finché questa schermata resta aperta. Ogni controllo è una richiesta via radio.';
+
+  @override
+  String get repeater_autoCheckStopped => 'Controllo automatico interrotto.';
 
   @override
   String get repeater_statusRequestTimeout => 'Richiesta stato scaduta.';

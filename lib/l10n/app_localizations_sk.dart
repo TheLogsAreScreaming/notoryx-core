@@ -2877,6 +2877,16 @@ class AppLocalizationsSk extends AppLocalizations {
       'Prihlásenie zlyhalo. Heslo je nesprávne alebo je opakovač nedostupný.';
 
   @override
+  String relogin_done(String name) {
+    return 'Rádio znova pripojené: opäť prihlásené do $name.';
+  }
+
+  @override
+  String relogin_failed(String name) {
+    return 'Rádio znova pripojené, ale $name neodpovedal na nové prihlásenie. Prihláste sa znova pred zmenou nastavení.';
+  }
+
+  @override
   String get login_failRadioOffline =>
       'Rádio nie je pripojené, preto sa prihlásenie neodoslalo. Pripojte rádio a skúste znova.';
 
@@ -3003,6 +3013,17 @@ class AppLocalizationsSk extends AppLocalizations {
 
   @override
   String get repeater_refresh => 'Obnoviť';
+
+  @override
+  String get repeater_autoCheck =>
+      'Kontrolovať každých 15 minút, kým je otvorené';
+
+  @override
+  String get repeater_autoCheckStarted =>
+      'Stav sa kontroluje každých 15 minút, kým je táto obrazovka otvorená. Každá kontrola je jedna požiadavka cez rádio.';
+
+  @override
+  String get repeater_autoCheckStopped => 'Automatická kontrola zastavená.';
 
   @override
   String get repeater_statusRequestTimeout => 'Požiadavka stavu zlyhala.';

@@ -953,6 +953,8 @@
     }
   },
   "login_failedMessage": "El inicio de sesión ha fallado. La contraseña es incorrecta o el repetidor no está disponible.",
+  "relogin_done": "Radio reconectada: sesión iniciada de nuevo en {name}.",
+  "relogin_failed": "Radio reconectada, pero {name} no respondió al nuevo inicio de sesión. Vuelve a iniciar sesión antes de cambiar ajustes.",
   "login_failRadioOffline": "Tu radio no está conectada, así que el inicio de sesión no se envió. Conéctala e inténtalo de nuevo.",
   "login_failSend": "Tu radio no aceptó la solicitud de inicio de sesión. Vuelve a conectarla e inténtalo de nuevo.",
   "login_failNoAnswerPath": "Sin respuesta por la ruta guardada ({hops} saltos). Puede estar desactualizada: activa “{option}” en {section} e inténtalo de nuevo. Una contraseña incorrecta tampoco recibe respuesta.",
@@ -1011,6 +1013,9 @@
   "repeater_forceFloodMode": "Modo inundación forzado",
   "repeater_pathManagement": "Gestión de rutas",
   "repeater_refresh": "Actualizar",
+  "repeater_autoCheck": "Comprobar cada 15 minutos mientras esté abierto",
+  "repeater_autoCheckStarted": "Se comprobará el estado cada 15 minutos mientras esta pantalla siga abierta. Cada comprobación es una petición por radio.",
+  "repeater_autoCheckStopped": "Se dejó de comprobar automáticamente.",
   "repeater_statusRequestTimeout": "Se agotó el tiempo de espera de la solicitud de estado.",
   "repeater_errorLoadingStatus": "Error al cargar el estado: {error}",
   "@repeater_errorLoadingStatus": {

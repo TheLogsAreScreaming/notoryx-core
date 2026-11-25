@@ -931,6 +931,8 @@
     }
   },
   "login_failedMessage": "Prihlásenie zlyhalo. Heslo je nesprávne alebo je opakovač nedostupný.",
+  "relogin_done": "Rádio znova pripojené: opäť prihlásené do {name}.",
+  "relogin_failed": "Rádio znova pripojené, ale {name} neodpovedal na nové prihlásenie. Prihláste sa znova pred zmenou nastavení.",
   "login_failRadioOffline": "Rádio nie je pripojené, preto sa prihlásenie neodoslalo. Pripojte rádio a skúste znova.",
   "login_failSend": "Rádio neprijalo žiadosť o prihlásenie. Pripojte ho znova a skúste to ešte raz.",
   "login_failNoAnswerPath": "Žiadna odpoveď cez uloženú cestu ({hops} skokov). Môže byť zastaraná: zapnite {section} → {option} a skúste znova. Na nesprávne heslo tiež nepríde odpoveď.",
@@ -989,6 +991,9 @@
   "repeater_forceFloodMode": "Zavrieť režim núdzového povodňového režimu",
   "repeater_pathManagement": "Správa trás",
   "repeater_refresh": "Obnoviť",
+  "repeater_autoCheck": "Kontrolovať každých 15 minút, kým je otvorené",
+  "repeater_autoCheckStarted": "Stav sa kontroluje každých 15 minút, kým je táto obrazovka otvorená. Každá kontrola je jedna požiadavka cez rádio.",
+  "repeater_autoCheckStopped": "Automatická kontrola zastavená.",
   "repeater_statusRequestTimeout": "Požiadavka stavu zlyhala.",
   "repeater_errorLoadingStatus": "Chyba pri načítaní stavu: {error}",
   "@repeater_errorLoadingStatus": {

@@ -2885,6 +2885,16 @@ class AppLocalizationsHu extends AppLocalizations {
       'Sikertelen bejelentkezés. Vagy hibás a jelszó, vagy az átjátszó nem érhető el.';
 
   @override
+  String relogin_done(String name) {
+    return 'A rádió újra csatlakozott: ismét bejelentkezve ide: $name.';
+  }
+
+  @override
+  String relogin_failed(String name) {
+    return 'A rádió újra csatlakozott, de $name nem válaszolt az új bejelentkezésre. Jelentkezzen be újra, mielőtt beállításokat módosít.';
+  }
+
+  @override
   String get login_failRadioOffline =>
       'A rádió nincs csatlakoztatva, ezért a bejelentkezés nem ment el. Csatlakoztassa, és próbálja újra.';
 
@@ -3013,6 +3023,16 @@ class AppLocalizationsHu extends AppLocalizations {
 
   @override
   String get repeater_refresh => 'Frissítés';
+
+  @override
+  String get repeater_autoCheck => 'Ellenőrzés 15 percenként, amíg nyitva van';
+
+  @override
+  String get repeater_autoCheckStarted =>
+      'Az állapot 15 percenként frissül, amíg ez a képernyő nyitva van. Minden ellenőrzés egy rádiós kérés.';
+
+  @override
+  String get repeater_autoCheckStopped => 'Az automatikus ellenőrzés leállt.';
 
   @override
   String get repeater_statusRequestTimeout =>

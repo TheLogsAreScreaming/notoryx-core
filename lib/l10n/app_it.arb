@@ -997,6 +997,8 @@
     }
   },
   "login_failedMessage": "Accesso fallito. La password non è corretta oppure il ripetitore non è raggiungibile.",
+  "relogin_done": "Radio ricollegata: accesso a {name} ripetuto.",
+  "relogin_failed": "Radio ricollegata, ma {name} non ha risposto al nuovo accesso. Accedi di nuovo prima di cambiare le impostazioni.",
   "login_failRadioOffline": "La tua radio non è collegata, quindi l'accesso non è stato inviato. Collegala e riprova.",
   "login_failSend": "La tua radio non ha accettato la richiesta di accesso. Ricollegala e riprova.",
   "login_failNoAnswerPath": "Nessuna risposta sul percorso salvato ({hops} salti). Potrebbe essere superato: attiva “{option}” in {section} e riprova. Anche una password errata non riceve risposta.",
@@ -1055,6 +1057,9 @@
   "repeater_forceFloodMode": "Modalità flood forzata",
   "repeater_pathManagement": "Gestione percorsi",
   "repeater_refresh": "Aggiorna",
+  "repeater_autoCheck": "Controlla ogni 15 minuti finché è aperto",
+  "repeater_autoCheckStarted": "Lo stato viene controllato ogni 15 minuti finché questa schermata resta aperta. Ogni controllo è una richiesta via radio.",
+  "repeater_autoCheckStopped": "Controllo automatico interrotto.",
   "repeater_statusRequestTimeout": "Richiesta stato scaduta.",
   "repeater_errorLoadingStatus": "Errore nel caricamento dello stato: {error}",
   "@repeater_errorLoadingStatus": {

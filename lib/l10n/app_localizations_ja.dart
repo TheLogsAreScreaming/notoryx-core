@@ -2767,6 +2767,16 @@ class AppLocalizationsJa extends AppLocalizations {
       'ログインに失敗しました。パスワードが間違っているか、または接続が確立されていません。';
 
   @override
+  String relogin_done(String name) {
+    return '無線機が再接続しました：$name に再ログインしました。';
+  }
+
+  @override
+  String relogin_failed(String name) {
+    return '無線機は再接続しましたが、$name は再ログインに応答しませんでした。設定を変更する前にもう一度ログインしてください。';
+  }
+
+  @override
   String get login_failRadioOffline =>
       '無線機が接続されていないため、ログインは送信されませんでした。接続してからもう一度お試しください。';
 
@@ -2887,6 +2897,16 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get repeater_refresh => 'リフレッシュ';
+
+  @override
+  String get repeater_autoCheck => '開いている間 15 分ごとに確認';
+
+  @override
+  String get repeater_autoCheckStarted =>
+      'この画面を開いている間、15 分ごとにステータスを確認します。確認ごとに 1 回無線で要求を送ります。';
+
+  @override
+  String get repeater_autoCheckStopped => '自動確認を停止しました。';
 
   @override
   String get repeater_statusRequestTimeout => 'ステータス情報の取得に失敗しました。';

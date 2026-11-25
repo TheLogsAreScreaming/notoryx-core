@@ -1626,6 +1626,10 @@
     }
   },
   "login_failedMessage": "Login failed. Either the password is incorrect or the repeater is unreachable.",
+  "relogin_done": "Radio reconnected: logged in to {name} again.",
+  "@relogin_done": {"placeholders": {"name": {"type": "String"}}},
+  "relogin_failed": "Radio reconnected, but {name} didn't answer a new login. Log in again before changing settings.",
+  "@relogin_failed": {"placeholders": {"name": {"type": "String"}}},
   "login_failRadioOffline": "Your radio isn't connected, so the login wasn't sent. Connect your radio and try again.",
   "login_failSend": "Your radio didn't accept the login request. Reconnect it and try again.",
   "login_failNoAnswerPath": "No answer over the saved path ({hops} hops). The path may be out of date: turn on “{option}” under {section} and try again. A wrong password also gets no answer.",
@@ -1707,6 +1711,9 @@
   "repeater_statusTitle": "Repeater Status",
   "repeater_routingMode": "Routing mode",
   "repeater_refresh": "Refresh",
+  "repeater_autoCheck": "Check every 15 minutes while open",
+  "repeater_autoCheckStarted": "Checking status every 15 minutes while this screen stays open. Each check is one request over the air.",
+  "repeater_autoCheckStopped": "Stopped checking automatically.",
   "repeater_statusRequestTimeout": "Status request timed out.",
   "repeater_errorLoadingStatus": "Error loading status: {error}",
   "@repeater_errorLoadingStatus": {

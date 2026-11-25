@@ -953,6 +953,8 @@
     }
   },
   "login_failedMessage": "Anmeldung fehlgeschlagen. Entweder ist das Passwort falsch oder der Repeater ist nicht erreichbar.",
+  "relogin_done": "Funkgerät wieder verbunden: erneut bei {name} angemeldet.",
+  "relogin_failed": "Funkgerät wieder verbunden, aber {name} hat auf die neue Anmeldung nicht geantwortet. Melde dich erneut an, bevor du Einstellungen änderst.",
   "login_failRadioOffline": "Dein Funkgerät ist nicht verbunden, daher wurde die Anmeldung nicht gesendet. Verbinde es und versuche es erneut.",
   "login_failSend": "Dein Funkgerät hat die Anmeldeanfrage nicht angenommen. Verbinde es neu und versuche es erneut.",
   "login_failNoAnswerPath": "Keine Antwort über den gespeicherten Pfad ({hops} Hops). Der Pfad ist vielleicht veraltet: Schalte unter {section} „{option}“ ein und versuche es erneut. Auch ein falsches Passwort bleibt unbeantwortet.",
@@ -1011,6 +1013,9 @@
   "repeater_forceFloodMode": "Flut-Modus erzwingen",
   "repeater_pathManagement": "Pfadverwaltung",
   "repeater_refresh": "Aktualisieren",
+  "repeater_autoCheck": "Alle 15 Minuten prüfen, solange geöffnet",
+  "repeater_autoCheckStarted": "Status wird alle 15 Minuten geprüft, solange dieser Bildschirm offen bleibt. Jede Prüfung ist eine Anfrage über Funk.",
+  "repeater_autoCheckStopped": "Automatische Prüfung beendet.",
   "repeater_statusRequestTimeout": "Statusanfrage abgelaufen.",
   "repeater_errorLoadingStatus": "Fehler beim Laden des Status: {error}",
   "@repeater_errorLoadingStatus": {
