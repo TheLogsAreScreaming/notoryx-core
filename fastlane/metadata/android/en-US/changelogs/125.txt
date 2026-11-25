@@ -1,0 +1,8 @@
+• Repeater clocks are set after login, and you're told if one is wrong
+• "Last heard" uses when your radio heard a node, not the node's clock
+• Repeater commands wait longer and show late replies
+• Busy channels send one summary instead of an alert per message
+• Live radio status in the ongoing notification
+• Warning when the radio's contact list is full
+• Disconnect now stops auto-connect until you connect again
+• Fixes: SARNEG clipboard clear, accessibility, translations
