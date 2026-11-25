@@ -1775,6 +1775,21 @@ class AppLocalizationsHu extends AppLocalizations {
   }
 
   @override
+  String get channels_scopeWholeMesh => 'Teljes háló';
+
+  @override
+  String get channels_scopeExplainer =>
+      'Csak a csatorna régiójára állított átjátszók továbbítják az üzeneteit. A Teljes háló beállítással minden átjátszó, amely hallja őket.';
+
+  @override
+  String get channels_noRegionsYet =>
+      'Még nincs régió. Adjon hozzá egyet a régióbeállításokban, majd válassza ki itt.';
+
+  @override
+  String get channels_regionSaveFailed =>
+      'Nem sikerült menteni a csatorna régióját. Próbálja újra.';
+
+  @override
   String get channels_regionNotSet => 'Tájékoztetés: nem';
 
   @override

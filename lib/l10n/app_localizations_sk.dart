@@ -1765,6 +1765,21 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
+  String get channels_scopeWholeMesh => 'Celá sieť';
+
+  @override
+  String get channels_scopeExplainer =>
+      'Správy kanála preposielajú iba opakovače nastavené na jeho región. Pri voľbe Celá sieť to robí každý opakovač, ktorý ich počuje.';
+
+  @override
+  String get channels_noRegionsYet =>
+      'Zatiaľ žiadne regióny. Pridajte región v nastaveniach regiónov a vyberte ho tu.';
+
+  @override
+  String get channels_regionSaveFailed =>
+      'Región kanála sa nepodarilo uložiť. Skúste to znova.';
+
+  @override
   String get channels_regionNotSet => 'Region: žiadné';
 
   @override

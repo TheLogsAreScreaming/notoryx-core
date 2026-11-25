@@ -1792,6 +1792,21 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
+  String get channels_scopeWholeMesh => 'Tout le maillage';
+
+  @override
+  String get channels_scopeExplainer =>
+      'Seuls les relais réglés sur la région d\'un canal relaient ses messages. Avec Tout le maillage, tout relais qui les entend le fait.';
+
+  @override
+  String get channels_noRegionsYet =>
+      'Pas encore de régions. Ajoutez-en une dans les réglages de région, puis choisissez-la ici.';
+
+  @override
+  String get channels_regionSaveFailed =>
+      'Impossible d\'enregistrer la région du canal. Réessayez.';
+
+  @override
   String get channels_regionNotSet => 'Région : aucune';
 
   @override

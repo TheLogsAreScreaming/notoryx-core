@@ -404,7 +404,7 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
                           );
                           final regionText = region.isNotEmpty
                               ? ' • ${context.l10n.channels_regionSetTo(region)}'
-                              : '';
+                              : ' • ${context.l10n.channels_scopeWholeMesh}';
                           return Text(
                             '$privacy$regionText',
                             overflow: TextOverflow.ellipsis,
@@ -3016,6 +3016,20 @@ class _RegionSelectDialogState extends State<_RegionSelectDialog> {
     loadRegions();
   }
 
+  /// Sets [region] ('' for the whole mesh) and closes, or says it failed.
+  Future<void> _choose(String region) async {
+    final connector = context.read<MeshCoreConnector>();
+    final messenger = ScaffoldMessenger.maybeOf(context);
+    final failed = context.l10n.channels_regionSaveFailed;
+    Navigator.pop(context);
+    try {
+      await connector.setChannelRegion(widget.channel.index, region);
+    } catch (e) {
+      debugPrint('Channel region not saved: $e');
+      messenger?.showSnackBar(SnackBar(content: Text(failed)));
+    }
+  }
+
   void loadRegions() {
     setState(() {
       regions = regionStore.loadRegions();
@@ -3043,13 +3057,7 @@ class _RegionSelectDialogState extends State<_RegionSelectDialog> {
                 IconButton(
                   tooltip: context.l10n.channels_clearRegion,
                   icon: const Icon(Icons.backspace_outlined),
-                  onPressed: () {
-                    context.read<MeshCoreConnector>().setChannelRegion(
-                      widget.channel.index,
-                      '',
-                    );
-                    Navigator.pop(context);
-                  },
+                  onPressed: () => unawaited(_choose('')),
                 ),
                 IconButton(
                   tooltip: context.l10n.settings_regionSettingsSubtitle,
@@ -3062,9 +3070,39 @@ class _RegionSelectDialogState extends State<_RegionSelectDialog> {
                 ),
               ],
             ),
-            const SizedBox(height: 15),
-            Expanded(
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Text(
+                context.l10n.channels_scopeExplainer,
+                key: const ValueKey('region-scope-explainer'),
+                style: TextStyle(color: MeshPalette.ink3, fontSize: 12.5),
+              ),
+            ),
+            const SizedBox(height: 8),
+            ListTile(
+              key: const ValueKey('region-whole-mesh'),
+              leading: Icon(
+                Icons.public,
+                color: selectedIndex < 0 ? MeshPalette.accent : null,
+              ),
+              title: Text(context.l10n.channels_scopeWholeMesh),
+              trailing: selectedIndex < 0
+                  ? Icon(Icons.check, color: MeshPalette.accent)
+                  : null,
+              tileColor: selectedIndex < 0 ? MeshPalette.accentBg : null,
+              onTap: () => unawaited(_choose('')),
+            ),
+            if (regions.isEmpty)
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: Text(
+                  context.l10n.channels_noRegionsYet,
+                  key: const ValueKey('region-none-yet'),
+                ),
+              ),
+            Flexible(
               child: ListView.builder(
+                shrinkWrap: true,
                 itemCount: regions.length,
                 itemBuilder: (context, index) {
                   final selected = selectedIndex == index;
@@ -3078,14 +3116,9 @@ class _RegionSelectDialogState extends State<_RegionSelectDialog> {
                         ? Icon(Icons.check, color: MeshPalette.accent)
                         : null,
                     tileColor: selected ? MeshPalette.accentBg : null,
-                    onTap: () {
-                      // Tapping the already-selected region clears it.
-                      context.read<MeshCoreConnector>().setChannelRegion(
-                        widget.channel.index,
-                        selected ? '' : regions[index],
-                      );
-                      Navigator.pop(context);
-                    },
+                    // Tapping the already-selected region clears it.
+                    onTap: () =>
+                        unawaited(_choose(selected ? '' : regions[index])),
                   );
                 },
               ),

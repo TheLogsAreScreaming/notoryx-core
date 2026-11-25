@@ -1790,6 +1790,21 @@ class AppLocalizationsIt extends AppLocalizations {
   }
 
   @override
+  String get channels_scopeWholeMesh => 'Tutta la mesh';
+
+  @override
+  String get channels_scopeExplainer =>
+      'Solo i ripetitori impostati sulla regione del canale inoltrano i suoi messaggi. Con Tutta la mesh lo fa ogni ripetitore che li sente.';
+
+  @override
+  String get channels_noRegionsYet =>
+      'Ancora nessuna regione. Aggiungine una nelle impostazioni delle regioni, poi sceglila qui.';
+
+  @override
+  String get channels_regionSaveFailed =>
+      'Impossibile salvare la regione del canale. Riprova.';
+
+  @override
   String get channels_regionNotSet => 'Regione: nessuna';
 
   @override

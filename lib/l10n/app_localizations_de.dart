@@ -1792,6 +1792,21 @@ class AppLocalizationsDe extends AppLocalizations {
   }
 
   @override
+  String get channels_scopeWholeMesh => 'Ganzes Mesh';
+
+  @override
+  String get channels_scopeExplainer =>
+      'Nur Repeater, die auf die Region eines Kanals eingestellt sind, leiten seine Nachrichten weiter. Bei „Ganzes Mesh“ tut das jeder Repeater, der sie hört.';
+
+  @override
+  String get channels_noRegionsYet =>
+      'Noch keine Regionen. Füge in den Regionseinstellungen eine hinzu und wähle sie dann hier.';
+
+  @override
+  String get channels_regionSaveFailed =>
+      'Die Region des Kanals konnte nicht gespeichert werden. Versuche es erneut.';
+
+  @override
   String get channels_regionNotSet => 'Region: keine';
 
   @override

@@ -2675,6 +2675,10 @@
   "settings_deleteRegionConfirm": "Region \"{region}\" aus der Liste entfernen?",
   "channels_regionNotSet": "Region: keine",
   "channels_regionSetTo": "Region: {region}",
+  "channels_scopeWholeMesh": "Ganzes Mesh",
+  "channels_scopeExplainer": "Nur Repeater, die auf die Region eines Kanals eingestellt sind, leiten seine Nachrichten weiter. Bei „Ganzes Mesh“ tut das jeder Repeater, der sie hört.",
+  "channels_noRegionsYet": "Noch keine Regionen. Füge in den Regionseinstellungen eine hinzu und wähle sie dann hier.",
+  "channels_regionSaveFailed": "Die Region des Kanals konnte nicht gespeichert werden. Versuche es erneut.",
   "channels_regionSelect_Title": "Region auswählen",
   "channels_clearRegion": "Region zurücksetzen",
   "@routing_deliveryCounts": {

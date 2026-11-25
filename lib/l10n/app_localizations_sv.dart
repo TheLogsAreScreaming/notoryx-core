@@ -1761,6 +1761,21 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
+  String get channels_scopeWholeMesh => 'Hela meshen';
+
+  @override
+  String get channels_scopeExplainer =>
+      'Bara repeatrar inställda på kanalens region skickar vidare dess meddelanden. Med Hela meshen gör varje repeater som hör dem det.';
+
+  @override
+  String get channels_noRegionsYet =>
+      'Inga regioner än. Lägg till en i regioninställningarna och välj den här.';
+
+  @override
+  String get channels_regionSaveFailed =>
+      'Kanalens region kunde inte sparas. Försök igen.';
+
+  @override
   String get channels_regionNotSet => 'Region: ingen';
 
   @override

@@ -1673,6 +1673,19 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
+  String get channels_scopeWholeMesh => '整个网状网';
+
+  @override
+  String get channels_scopeExplainer =>
+      '只有设置为该频道区域的中继器才会转发其消息。选择“整个网状网”时，听到消息的每个中继器都会转发。';
+
+  @override
+  String get channels_noRegionsYet => '还没有区域。请在区域设置中添加，然后在这里选择。';
+
+  @override
+  String get channels_regionSaveFailed => '无法保存频道区域。请重试。';
+
+  @override
   String get channels_regionNotSet => '地区：无';
 
   @override

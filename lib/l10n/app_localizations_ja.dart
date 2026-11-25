@@ -1693,6 +1693,20 @@ class AppLocalizationsJa extends AppLocalizations {
   }
 
   @override
+  String get channels_scopeWholeMesh => 'メッシュ全体';
+
+  @override
+  String get channels_scopeExplainer =>
+      'チャンネルのメッセージは、そのリージョンに設定されたリピーターだけが中継します。「メッシュ全体」では、受信したすべてのリピーターが中継します。';
+
+  @override
+  String get channels_noRegionsYet =>
+      'まだリージョンがありません。リージョン設定で追加してから、ここで選んでください。';
+
+  @override
+  String get channels_regionSaveFailed => 'チャンネルのリージョンを保存できませんでした。もう一度お試しください。';
+
+  @override
   String get channels_regionNotSet => '地域：なし';
 
   @override
