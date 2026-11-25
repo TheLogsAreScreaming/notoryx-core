@@ -2728,16 +2728,17 @@ class AppLocalizationsDe extends AppLocalizations {
   String get mapCache_cachedTilesLabel => 'Cached tiles';
 
   @override
-  String get mapCache_cachedTileSummaryLabel => 'Cached tile summary';
+  String get mapCache_cachedTileSummaryLabel =>
+      'Übersicht der zwischengespeicherten Kacheln';
 
   @override
   String mapCache_bulkDownloadDisabledForSource(String source) {
-    return 'Offline bulk downloads are disabled for $source.';
+    return 'Offline-Massendownloads sind für $source deaktiviert.';
   }
 
   @override
   String mapCache_bulkDownloadDisabledInConfig(String source) {
-    return 'Offline bulk downloads are disabled for $source in this app configuration.';
+    return 'Offline-Massendownloads sind für $source in dieser App-Konfiguration deaktiviert.';
   }
 
   @override
@@ -2747,17 +2748,17 @@ class AppLocalizationsDe extends AppLocalizations {
 
   @override
   String mapCache_summaryCachedTilesForSource(int count) {
-    return 'Cached tiles for source: $count';
+    return 'Zwischengespeicherte Kacheln für die Quelle: $count';
   }
 
   @override
   String mapCache_summaryCachedInSelection(int count) {
-    return 'Cached in selected area/zoom: $count';
+    return 'Im gewählten Bereich/Zoom zwischengespeichert: $count';
   }
 
   @override
   String mapCache_summaryApproxCacheSize(String size) {
-    return 'Approx cache size: $size';
+    return 'Ungefähre Cachegröße: $size';
   }
 
   @override

@@ -113,8 +113,8 @@
   "settings_privacyModeEnabled": "隐私模式已启用",
   "settings_privacyModeDisabled": "隐私模式已关闭",
   "settings_actions": "操作",
-  "settings_deleteAllPaths": "Delete All Paths",
-  "settings_deleteAllPathsSubtitle": "Clear all path data from contacts.",
+  "settings_deleteAllPaths": "删除所有路径",
+  "settings_deleteAllPathsSubtitle": "清除联系人的所有路径数据。",
   "settings_sendAdvertisement": "发送广播",
   "settings_sendAdvertisementSubtitle": "立即发送广播",
   "settings_advertisementSent": "已发送广播",
@@ -818,8 +818,8 @@
     }
   },
   "mapCache_cachedTilesLabel": "Cached tiles",
-  "mapCache_cachedTileSummaryLabel": "Cached tile summary",
-  "mapCache_bulkDownloadDisabledForSource": "Offline bulk downloads are disabled for {source}.",
+  "mapCache_cachedTileSummaryLabel": "已缓存图块摘要",
+  "mapCache_bulkDownloadDisabledForSource": "{source} 已禁用离线批量下载。",
   "@mapCache_bulkDownloadDisabledForSource": {
     "placeholders": {
       "source": {
@@ -827,7 +827,7 @@
       }
     }
   },
-  "mapCache_bulkDownloadDisabledInConfig": "Offline bulk downloads are disabled for {source} in this app configuration.",
+  "mapCache_bulkDownloadDisabledInConfig": "此应用配置中已禁用 {source} 的离线批量下载。",
   "@mapCache_bulkDownloadDisabledInConfig": {
     "placeholders": {
       "source": {
@@ -843,7 +843,7 @@
       }
     }
   },
-  "mapCache_summaryCachedTilesForSource": "Cached tiles for source: {count}",
+  "mapCache_summaryCachedTilesForSource": "该来源已缓存图块：{count}",
   "@mapCache_summaryCachedTilesForSource": {
     "placeholders": {
       "count": {
@@ -851,7 +851,7 @@
       }
     }
   },
-  "mapCache_summaryCachedInSelection": "Cached in selected area/zoom: {count}",
+  "mapCache_summaryCachedInSelection": "所选区域/缩放级别已缓存：{count}",
   "@mapCache_summaryCachedInSelection": {
     "placeholders": {
       "count": {
@@ -859,7 +859,7 @@
       }
     }
   },
-  "mapCache_summaryApproxCacheSize": "Approx cache size: {size}",
+  "mapCache_summaryApproxCacheSize": "缓存大小约：{size}",
   "@mapCache_summaryApproxCacheSize": {
     "placeholders": {
       "size": {
@@ -2372,7 +2372,7 @@
   "repeater_cliHelpStatsCore": "（仅显示序列号）显示核心固件统计信息。",
   "common_done": "Done",
   "background_serviceTitle": "MeshCore running",
-  "background_serviceText": "Keeping BLE connected",
+  "background_serviceText": "保持蓝牙连接",
   "appSettings_translationModelDeleted": "Deleted {name}",
   "@appSettings_translationModelDeleted": {
     "placeholders": {
@@ -2389,7 +2389,7 @@
       }
     }
   },
-  "channels_channelUpdateFailed": "Failed to update channel: {error}",
+  "channels_channelUpdateFailed": "更新频道失败：{error}",
   "@channels_channelUpdateFailed": {
     "placeholders": {
       "error": {
@@ -2493,7 +2493,7 @@
   "losBlockedSpotsHint": "点击地图上的某个被遮盖的区域，以突出显示该区域。",
   "losSelectedObstructionTitle": "选择性阻碍",
   "losBlockedSpotChip": "{distance} {distanceUnit} • {obstruction} {heightUnit}",
-  "losSelectedObstructionDetails": "Blocked by {obstruction} {heightUnit}, {distanceFromA} from A and {distanceFromB} from B ({distanceUnit}).",
+  "losSelectedObstructionDetails": "被 {obstruction} {heightUnit} 阻挡，距 A {distanceFromA}，距 B {distanceFromB}（{distanceUnit}）。",
   "chat_markAsUnread": "标记为未读",
   "settings_companionDebugLog": "调试日志",
   "chat_newMessages": "新的消息",

@@ -108,8 +108,8 @@
   "settings_privacyModeEnabled": "Tryb prywatności włączony",
   "settings_privacyModeDisabled": "Tryb prywatności wyłączony",
   "settings_actions": "Działania",
-  "settings_deleteAllPaths": "Delete All Paths",
-  "settings_deleteAllPathsSubtitle": "Clear all path data from contacts.",
+  "settings_deleteAllPaths": "Usuń wszystkie trasy",
+  "settings_deleteAllPathsSubtitle": "Wyczyść wszystkie dane tras kontaktów.",
   "settings_sendAdvertisement": "Wyślij rozgłoszenie",
   "settings_sendAdvertisementSubtitle": "Nadaj obecność teraz",
   "settings_advertisementSent": "Rozgłoszenie wysłane",
@@ -801,8 +801,8 @@
     }
   },
   "mapCache_cachedTilesLabel": "Cached tiles",
-  "mapCache_cachedTileSummaryLabel": "Cached tile summary",
-  "mapCache_bulkDownloadDisabledForSource": "Offline bulk downloads are disabled for {source}.",
+  "mapCache_cachedTileSummaryLabel": "Podsumowanie kafelków w pamięci",
+  "mapCache_bulkDownloadDisabledForSource": "Masowe pobieranie offline jest wyłączone dla {source}.",
   "@mapCache_bulkDownloadDisabledForSource": {
     "placeholders": {
       "source": {
@@ -810,7 +810,7 @@
       }
     }
   },
-  "mapCache_bulkDownloadDisabledInConfig": "Offline bulk downloads are disabled for {source} in this app configuration.",
+  "mapCache_bulkDownloadDisabledInConfig": "Masowe pobieranie offline jest wyłączone dla {source} w tej konfiguracji aplikacji.",
   "@mapCache_bulkDownloadDisabledInConfig": {
     "placeholders": {
       "source": {
@@ -826,7 +826,7 @@
       }
     }
   },
-  "mapCache_summaryCachedTilesForSource": "Cached tiles for source: {count}",
+  "mapCache_summaryCachedTilesForSource": "Kafelki w pamięci dla źródła: {count}",
   "@mapCache_summaryCachedTilesForSource": {
     "placeholders": {
       "count": {
@@ -834,7 +834,7 @@
       }
     }
   },
-  "mapCache_summaryCachedInSelection": "Cached in selected area/zoom: {count}",
+  "mapCache_summaryCachedInSelection": "W pamięci dla wybranego obszaru/powiększenia: {count}",
   "@mapCache_summaryCachedInSelection": {
     "placeholders": {
       "count": {
@@ -842,7 +842,7 @@
       }
     }
   },
-  "mapCache_summaryApproxCacheSize": "Approx cache size: {size}",
+  "mapCache_summaryApproxCacheSize": "Przybliżony rozmiar pamięci podręcznej: {size}",
   "@mapCache_summaryApproxCacheSize": {
     "placeholders": {
       "size": {
@@ -2404,7 +2404,7 @@
   "repeater_cliHelpStatsCore": "(Tylko wersja serialowa) Wyświetla podstawowe statystyki o oprogramowaniu.",
   "common_done": "Done",
   "background_serviceTitle": "MeshCore running",
-  "background_serviceText": "Keeping BLE connected",
+  "background_serviceText": "Utrzymuje połączenie Bluetooth",
   "appSettings_translationModelDeleted": "Deleted {name}",
   "@appSettings_translationModelDeleted": {
     "placeholders": {
@@ -2421,7 +2421,7 @@
       }
     }
   },
-  "channels_channelUpdateFailed": "Failed to update channel: {error}",
+  "channels_channelUpdateFailed": "Nie udało się zaktualizować kanału: {error}",
   "@channels_channelUpdateFailed": {
     "placeholders": {
       "error": {
@@ -2526,7 +2526,7 @@
   "losBlockedSpotsTitle": "Zablokowane miejsca",
   "losBlockedSpotsHint": "Kliknij zablokowane miejsce, aby je zaznaczyć na mapie.",
   "losBlockedSpotChip": "{distance} {distanceUnit} • {obstruction} {heightUnit}",
-  "losSelectedObstructionDetails": "Blocked by {obstruction} {heightUnit}, {distanceFromA} from A and {distanceFromB} from B ({distanceUnit}).",
+  "losSelectedObstructionDetails": "Zasłonięte przez {obstruction} {heightUnit}, {distanceFromA} od A i {distanceFromB} od B ({distanceUnit}).",
   "chat_newMessages": "Nowe wiadomości",
   "settings_companionDebugLogSubtitle": "Polecenia, odpowiedzi i surowe dane związane z protokołami BLE/TCP/USB",
   "chat_markAsUnread": "Oznacz jako nieprzeczytane",

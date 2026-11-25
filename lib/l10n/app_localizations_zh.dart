@@ -798,11 +798,10 @@ class AppLocalizationsZh extends AppLocalizations {
   String get settings_actions => '操作';
 
   @override
-  String get settings_deleteAllPaths => 'Delete All Paths';
+  String get settings_deleteAllPaths => '删除所有路径';
 
   @override
-  String get settings_deleteAllPathsSubtitle =>
-      'Clear all path data from contacts.';
+  String get settings_deleteAllPathsSubtitle => '清除联系人的所有路径数据。';
 
   @override
   String get settings_sendAdvertisement => '发送广播';
@@ -2572,16 +2571,16 @@ class AppLocalizationsZh extends AppLocalizations {
   String get mapCache_cachedTilesLabel => 'Cached tiles';
 
   @override
-  String get mapCache_cachedTileSummaryLabel => 'Cached tile summary';
+  String get mapCache_cachedTileSummaryLabel => '已缓存图块摘要';
 
   @override
   String mapCache_bulkDownloadDisabledForSource(String source) {
-    return 'Offline bulk downloads are disabled for $source.';
+    return '$source 已禁用离线批量下载。';
   }
 
   @override
   String mapCache_bulkDownloadDisabledInConfig(String source) {
-    return 'Offline bulk downloads are disabled for $source in this app configuration.';
+    return '此应用配置中已禁用 $source 的离线批量下载。';
   }
 
   @override
@@ -2591,17 +2590,17 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String mapCache_summaryCachedTilesForSource(int count) {
-    return 'Cached tiles for source: $count';
+    return '该来源已缓存图块：$count';
   }
 
   @override
   String mapCache_summaryCachedInSelection(int count) {
-    return 'Cached in selected area/zoom: $count';
+    return '所选区域/缩放级别已缓存：$count';
   }
 
   @override
   String mapCache_summaryApproxCacheSize(String size) {
-    return 'Approx cache size: $size';
+    return '缓存大小约：$size';
   }
 
   @override
@@ -4663,7 +4662,7 @@ class AppLocalizationsZh extends AppLocalizations {
     String distanceUnit,
     String distanceFromB,
   ) {
-    return 'Blocked by $obstruction $heightUnit, $distanceFromA from A and $distanceFromB from B ($distanceUnit).';
+    return '被 $obstruction $heightUnit 阻挡，距 A $distanceFromA，距 B $distanceFromB（$distanceUnit）。';
   }
 
   @override
@@ -5126,7 +5125,7 @@ class AppLocalizationsZh extends AppLocalizations {
   String get background_serviceTitle => 'MeshCore running';
 
   @override
-  String get background_serviceText => 'Keeping BLE connected';
+  String get background_serviceText => '保持蓝牙连接';
 
   @override
   String appSettings_translationModelDeleted(String name) {
@@ -5140,7 +5139,7 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String channels_channelUpdateFailed(String error) {
-    return 'Failed to update channel: $error';
+    return '更新频道失败：$error';
   }
 
   @override

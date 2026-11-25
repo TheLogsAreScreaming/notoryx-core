@@ -108,8 +108,8 @@
   "settings_privacyModeEnabled": "Privatni način je omogočen.",
   "settings_privacyModeDisabled": "Privatni način je onemogočen.",
   "settings_actions": "Akcije",
-  "settings_deleteAllPaths": "Delete All Paths",
-  "settings_deleteAllPathsSubtitle": "Clear all path data from contacts.",
+  "settings_deleteAllPaths": "Izbriši vse poti",
+  "settings_deleteAllPathsSubtitle": "Počisti vse podatke o poteh iz stikov.",
   "settings_sendAdvertisement": "Pošlji Oglas",
   "settings_sendAdvertisementSubtitle": "Trenutna prisotnost v oddajah",
   "settings_advertisementSent": "Oglas poslan",
@@ -791,8 +791,8 @@
     }
   },
   "mapCache_cachedTilesLabel": "Cached tiles",
-  "mapCache_cachedTileSummaryLabel": "Cached tile summary",
-  "mapCache_bulkDownloadDisabledForSource": "Offline bulk downloads are disabled for {source}.",
+  "mapCache_cachedTileSummaryLabel": "Povzetek predpomnjenih ploščic",
+  "mapCache_bulkDownloadDisabledForSource": "Množični prenosi brez povezave so za {source} izklopljeni.",
   "@mapCache_bulkDownloadDisabledForSource": {
     "placeholders": {
       "source": {
@@ -800,7 +800,7 @@
       }
     }
   },
-  "mapCache_bulkDownloadDisabledInConfig": "Offline bulk downloads are disabled for {source} in this app configuration.",
+  "mapCache_bulkDownloadDisabledInConfig": "Množični prenosi brez povezave so za {source} v tej nastavitvi aplikacije izklopljeni.",
   "@mapCache_bulkDownloadDisabledInConfig": {
     "placeholders": {
       "source": {
@@ -816,7 +816,7 @@
       }
     }
   },
-  "mapCache_summaryCachedTilesForSource": "Cached tiles for source: {count}",
+  "mapCache_summaryCachedTilesForSource": "Predpomnjene ploščice za vir: {count}",
   "@mapCache_summaryCachedTilesForSource": {
     "placeholders": {
       "count": {
@@ -824,7 +824,7 @@
       }
     }
   },
-  "mapCache_summaryCachedInSelection": "Cached in selected area/zoom: {count}",
+  "mapCache_summaryCachedInSelection": "Predpomnjeno v izbranem območju/povečavi: {count}",
   "@mapCache_summaryCachedInSelection": {
     "placeholders": {
       "count": {
@@ -832,7 +832,7 @@
       }
     }
   },
-  "mapCache_summaryApproxCacheSize": "Approx cache size: {size}",
+  "mapCache_summaryApproxCacheSize": "Približna velikost predpomnilnika: {size}",
   "@mapCache_summaryApproxCacheSize": {
     "placeholders": {
       "size": {
@@ -2366,7 +2366,7 @@
   "repeater_cliHelpStatsCore": "(Samo za serijske naprave) Prikazuje osnovne statistične podatke.",
   "common_done": "Done",
   "background_serviceTitle": "MeshCore running",
-  "background_serviceText": "Keeping BLE connected",
+  "background_serviceText": "Ohranja povezavo Bluetooth",
   "appSettings_translationModelDeleted": "Deleted {name}",
   "@appSettings_translationModelDeleted": {
     "placeholders": {
@@ -2383,7 +2383,7 @@
       }
     }
   },
-  "channels_channelUpdateFailed": "Failed to update channel: {error}",
+  "channels_channelUpdateFailed": "Kanala ni bilo mogoče posodobiti: {error}",
   "@channels_channelUpdateFailed": {
     "placeholders": {
       "error": {
@@ -2488,7 +2488,7 @@
   "bg_photoFailed": "Te fotografije ni bilo mogoče uporabiti. Poskusite drugo.",
   "losBlockedSpotsTitle": "Zasedena parkirišča",
   "losBlockedSpotChip": "{distance} {distanceUnit} • {obstruction} {heightUnit}",
-  "losSelectedObstructionDetails": "Blocked by {obstruction} {heightUnit}, {distanceFromA} from A and {distanceFromB} from B ({distanceUnit}).",
+  "losSelectedObstructionDetails": "Ovira: {obstruction} {heightUnit}, {distanceFromA} od A in {distanceFromB} od B ({distanceUnit}).",
   "settings_companionDebugLog": "Log zapis za odpravljanje napak",
   "chat_markAsUnread": "Označiti kot neneobdelano",
   "chat_newMessages": "Nove novice",

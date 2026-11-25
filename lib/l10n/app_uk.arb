@@ -801,8 +801,8 @@
     }
   },
   "mapCache_cachedTilesLabel": "Cached tiles",
-  "mapCache_cachedTileSummaryLabel": "Cached tile summary",
-  "mapCache_bulkDownloadDisabledForSource": "Offline bulk downloads are disabled for {source}.",
+  "mapCache_cachedTileSummaryLabel": "Зведення кешованих плиток",
+  "mapCache_bulkDownloadDisabledForSource": "Масове офлайн-завантаження вимкнено для {source}.",
   "@mapCache_bulkDownloadDisabledForSource": {
     "placeholders": {
       "source": {
@@ -810,7 +810,7 @@
       }
     }
   },
-  "mapCache_bulkDownloadDisabledInConfig": "Offline bulk downloads are disabled for {source} in this app configuration.",
+  "mapCache_bulkDownloadDisabledInConfig": "Масове офлайн-завантаження вимкнено для {source} у цій конфігурації застосунку.",
   "@mapCache_bulkDownloadDisabledInConfig": {
     "placeholders": {
       "source": {
@@ -826,7 +826,7 @@
       }
     }
   },
-  "mapCache_summaryCachedTilesForSource": "Cached tiles for source: {count}",
+  "mapCache_summaryCachedTilesForSource": "Кешовані плитки для джерела: {count}",
   "@mapCache_summaryCachedTilesForSource": {
     "placeholders": {
       "count": {
@@ -834,7 +834,7 @@
       }
     }
   },
-  "mapCache_summaryCachedInSelection": "Cached in selected area/zoom: {count}",
+  "mapCache_summaryCachedInSelection": "Кешовано у вибраній області/масштабі: {count}",
   "@mapCache_summaryCachedInSelection": {
     "placeholders": {
       "count": {
@@ -842,7 +842,7 @@
       }
     }
   },
-  "mapCache_summaryApproxCacheSize": "Approx cache size: {size}",
+  "mapCache_summaryApproxCacheSize": "Приблизний розмір кешу: {size}",
   "@mapCache_summaryApproxCacheSize": {
     "placeholders": {
       "size": {
@@ -2468,7 +2468,7 @@
   "losBlockedSpotsTitle": "Заблоковані місця",
   "losSelectedObstructionTitle": "Вибраний об'єкт перешкоди",
   "losBlockedSpotChip": "{distance} {distanceUnit} • {obstruction} {heightUnit}",
-  "losSelectedObstructionDetails": "Blocked by {obstruction} {heightUnit}, {distanceFromA} from A and {distanceFromB} from B ({distanceUnit}).",
+  "losSelectedObstructionDetails": "Перекрито: {obstruction} {heightUnit}, {distanceFromA} від A і {distanceFromB} від B ({distanceUnit}).",
   "settings_companionDebugLog": "Журнал відлачування (для супутника)",
   "settings_companionDebugLogSubtitle": "Команди, відповіді та необроблена інформація для протоколів BLE/TCP/USB",
   "chat_newMessages": "Нові повідомлення",

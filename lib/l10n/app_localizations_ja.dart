@@ -2601,16 +2601,16 @@ class AppLocalizationsJa extends AppLocalizations {
   String get mapCache_cachedTilesLabel => 'Cached tiles';
 
   @override
-  String get mapCache_cachedTileSummaryLabel => 'Cached tile summary';
+  String get mapCache_cachedTileSummaryLabel => 'キャッシュ済みタイルの概要';
 
   @override
   String mapCache_bulkDownloadDisabledForSource(String source) {
-    return 'Offline bulk downloads are disabled for $source.';
+    return '$source ではオフライン一括ダウンロードが無効です。';
   }
 
   @override
   String mapCache_bulkDownloadDisabledInConfig(String source) {
-    return 'Offline bulk downloads are disabled for $source in this app configuration.';
+    return 'このアプリ構成では $source のオフライン一括ダウンロードが無効です。';
   }
 
   @override
@@ -2620,17 +2620,17 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String mapCache_summaryCachedTilesForSource(int count) {
-    return 'Cached tiles for source: $count';
+    return 'このソースのキャッシュ済みタイル：$count';
   }
 
   @override
   String mapCache_summaryCachedInSelection(int count) {
-    return 'Cached in selected area/zoom: $count';
+    return '選択した範囲・ズームでキャッシュ済み：$count';
   }
 
   @override
   String mapCache_summaryApproxCacheSize(String size) {
-    return 'Approx cache size: $size';
+    return 'おおよそのキャッシュサイズ：$size';
   }
 
   @override
@@ -4521,7 +4521,7 @@ class AppLocalizationsJa extends AppLocalizations {
     String clearance,
     String heightUnit,
   ) {
-    return '$distance $distanceUnit, clear LOS, min clearance $clearance $heightUnit';
+    return '$distance $distanceUnit、見通し良好、最小クリアランス $clearance $heightUnit';
   }
 
   @override
@@ -4542,7 +4542,7 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String losStatusSummary(int clear, int total, int blocked, int unknown) {
-    return 'LOS: $clear/$total clear, $blocked blocked, $unknown unknown';
+    return '見通し：$clear/$total 良好、$blocked 遮断、$unknown 不明';
   }
 
   @override
