@@ -1737,6 +1737,21 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get channels_scopeWholeMesh => 'Whole mesh';
+
+  @override
+  String get channels_scopeExplainer =>
+      'Only repeaters set to a channel\'s region pass its messages on. With Whole mesh, every repeater that hears them does.';
+
+  @override
+  String get channels_noRegionsYet =>
+      'No regions yet. Add one in Region settings, then pick it here.';
+
+  @override
+  String get channels_regionSaveFailed =>
+      'Couldn\'t save the channel\'s region. Try again.';
+
+  @override
   String get channels_regionNotSet => 'Region: none';
 
   @override

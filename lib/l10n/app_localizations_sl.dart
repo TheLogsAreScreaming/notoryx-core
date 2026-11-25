@@ -1753,6 +1753,21 @@ class AppLocalizationsSl extends AppLocalizations {
   }
 
   @override
+  String get channels_scopeWholeMesh => 'Celotno omrežje';
+
+  @override
+  String get channels_scopeExplainer =>
+      'Sporočila kanala posredujejo le repetitorji, nastavljeni na njegovo regijo. Pri možnosti Celotno omrežje to stori vsak repetitor, ki jih sliši.';
+
+  @override
+  String get channels_noRegionsYet =>
+      'Regij še ni. Dodajte regijo v nastavitvah regij in jo izberite tukaj.';
+
+  @override
+  String get channels_regionSaveFailed =>
+      'Regije kanala ni bilo mogoče shraniti. Poskusite znova.';
+
+  @override
   String get channels_regionNotSet => 'Region: brak';
 
   @override

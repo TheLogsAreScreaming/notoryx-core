@@ -1769,6 +1769,21 @@ class AppLocalizationsRu extends AppLocalizations {
   }
 
   @override
+  String get channels_scopeWholeMesh => 'Вся сеть';
+
+  @override
+  String get channels_scopeExplainer =>
+      'Сообщения канала пересылают только ретрансляторы, настроенные на его регион. С вариантом «Вся сеть» это делает любой ретранслятор, который их слышит.';
+
+  @override
+  String get channels_noRegionsYet =>
+      'Регионов пока нет. Добавьте регион в настройках регионов и выберите его здесь.';
+
+  @override
+  String get channels_regionSaveFailed =>
+      'Не удалось сохранить регион канала. Повторите попытку.';
+
+  @override
   String get channels_regionNotSet => 'Регион: отсутствует';
 
   @override

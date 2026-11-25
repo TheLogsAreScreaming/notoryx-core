@@ -1683,6 +1683,19 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String get channels_scopeWholeMesh => '전체 메시';
+
+  @override
+  String get channels_scopeExplainer =>
+      '채널 메시지는 해당 지역으로 설정된 리피터만 전달합니다. 전체 메시를 고르면 메시지를 들은 모든 리피터가 전달합니다.';
+
+  @override
+  String get channels_noRegionsYet => '아직 지역이 없습니다. 지역 설정에서 추가한 뒤 여기서 고르세요.';
+
+  @override
+  String get channels_regionSaveFailed => '채널 지역을 저장하지 못했습니다. 다시 시도하세요.';
+
+  @override
   String get channels_regionNotSet => '지역: 없음';
 
   @override

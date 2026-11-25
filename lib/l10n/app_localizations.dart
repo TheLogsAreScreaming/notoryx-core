@@ -3226,6 +3226,30 @@ abstract class AppLocalizations {
   /// **'Region: {region}'**
   String channels_regionSetTo(String region);
 
+  /// No description provided for @channels_scopeWholeMesh.
+  ///
+  /// In en, this message translates to:
+  /// **'Whole mesh'**
+  String get channels_scopeWholeMesh;
+
+  /// No description provided for @channels_scopeExplainer.
+  ///
+  /// In en, this message translates to:
+  /// **'Only repeaters set to a channel\'s region pass its messages on. With Whole mesh, every repeater that hears them does.'**
+  String get channels_scopeExplainer;
+
+  /// No description provided for @channels_noRegionsYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No regions yet. Add one in Region settings, then pick it here.'**
+  String get channels_noRegionsYet;
+
+  /// No description provided for @channels_regionSaveFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t save the channel\'s region. Try again.'**
+  String get channels_regionSaveFailed;
+
   /// No description provided for @channels_regionNotSet.
   ///
   /// In en, this message translates to:

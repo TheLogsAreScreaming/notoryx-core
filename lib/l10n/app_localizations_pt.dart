@@ -1763,6 +1763,21 @@ class AppLocalizationsPt extends AppLocalizations {
   }
 
   @override
+  String get channels_scopeWholeMesh => 'Toda a malha';
+
+  @override
+  String get channels_scopeExplainer =>
+      'Só os repetidores definidos para a região do canal reencaminham as mensagens. Com Toda a malha, qualquer repetidor que as ouça o faz.';
+
+  @override
+  String get channels_noRegionsYet =>
+      'Ainda sem regiões. Adicione uma nas definições de região e escolha-a aqui.';
+
+  @override
+  String get channels_regionSaveFailed =>
+      'Não foi possível guardar a região do canal. Tente novamente.';
+
+  @override
   String get channels_regionNotSet => 'Região: nenhuma';
 
   @override

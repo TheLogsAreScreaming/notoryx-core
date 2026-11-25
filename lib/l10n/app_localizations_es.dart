@@ -1769,6 +1769,21 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
+  String get channels_scopeWholeMesh => 'Toda la malla';
+
+  @override
+  String get channels_scopeExplainer =>
+      'Solo los repetidores configurados con la región del canal reenvían sus mensajes. Con Toda la malla, lo hace cualquier repetidor que los oiga.';
+
+  @override
+  String get channels_noRegionsYet =>
+      'Aún no hay regiones. Añade una en Ajustes de región y elígela aquí.';
+
+  @override
+  String get channels_regionSaveFailed =>
+      'No se pudo guardar la región del canal. Inténtalo de nuevo.';
+
+  @override
   String get channels_regionNotSet => 'Región: ninguna';
 
   @override

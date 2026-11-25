@@ -1772,6 +1772,21 @@ class AppLocalizationsBg extends AppLocalizations {
   }
 
   @override
+  String get channels_scopeWholeMesh => 'Цялата мрежа';
+
+  @override
+  String get channels_scopeExplainer =>
+      'Само ретранслатори, настроени на региона на канала, препредават съобщенията му. С „Цялата мрежа“ го прави всеки ретранслатор, който ги чуе.';
+
+  @override
+  String get channels_noRegionsYet =>
+      'Все още няма региони. Добавете регион в настройките за региони и го изберете тук.';
+
+  @override
+  String get channels_regionSaveFailed =>
+      'Регионът на канала не можа да се запази. Опитайте отново.';
+
+  @override
   String get channels_regionNotSet => 'Регион: ние';
 
   @override

@@ -864,6 +864,10 @@
       }
     }
   },
+  "channels_scopeWholeMesh": "Whole mesh",
+  "channels_scopeExplainer": "Only repeaters set to a channel's region pass its messages on. With Whole mesh, every repeater that hears them does.",
+  "channels_noRegionsYet": "No regions yet. Add one in Region settings, then pick it here.",
+  "channels_regionSaveFailed": "Couldn't save the channel's region. Try again.",
   "channels_regionNotSet": "Region: none",
   "channels_regionSelect_Title": "Select a region",
   "channels_clearRegion": "Clear region",

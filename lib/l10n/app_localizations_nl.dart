@@ -1757,6 +1757,21 @@ class AppLocalizationsNl extends AppLocalizations {
   }
 
   @override
+  String get channels_scopeWholeMesh => 'Hele mesh';
+
+  @override
+  String get channels_scopeExplainer =>
+      'Alleen repeaters die op de regio van een kanaal zijn ingesteld sturen de berichten door. Met Hele mesh doet elke repeater die ze hoort dat.';
+
+  @override
+  String get channels_noRegionsYet =>
+      'Nog geen regio\'s. Voeg er een toe in Regio-instellingen en kies hem dan hier.';
+
+  @override
+  String get channels_regionSaveFailed =>
+      'De regio van het kanaal kon niet worden opgeslagen. Probeer het opnieuw.';
+
+  @override
   String get channels_regionNotSet => 'Regio: geen';
 
   @override

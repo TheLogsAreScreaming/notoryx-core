@@ -1777,6 +1777,21 @@ class AppLocalizationsPl extends AppLocalizations {
   }
 
   @override
+  String get channels_scopeWholeMesh => 'Cała sieć';
+
+  @override
+  String get channels_scopeExplainer =>
+      'Tylko przekaźniki ustawione na region kanału przekazują jego wiadomości. Przy opcji Cała sieć robi to każdy przekaźnik, który je usłyszy.';
+
+  @override
+  String get channels_noRegionsYet =>
+      'Brak regionów. Dodaj region w ustawieniach regionów, a potem wybierz go tutaj.';
+
+  @override
+  String get channels_regionSaveFailed =>
+      'Nie udało się zapisać regionu kanału. Spróbuj ponownie.';
+
+  @override
   String get channels_regionNotSet => 'Region: brak';
 
   @override
