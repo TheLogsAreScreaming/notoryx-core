@@ -13,7 +13,7 @@ class MainActivity : FlutterFragmentActivity() {
         super.configureFlutterEngine(flutterEngine)
         usbFunctions.configureFlutterEngine(flutterEngine)
         compassFunctions.configureFlutterEngine(flutterEngine)
-        SecretClipboardChannel.register(this, flutterEngine.dartExecutor.binaryMessenger)
+        SecretClipboard.register(this, flutterEngine.dartExecutor.binaryMessenger)
         // Back on the first screen sends the app to the background (like
         // Home) instead of closing it, which would drop the radio link.
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, "notoryx/app_task")
@@ -45,5 +45,11 @@ class MainActivity : FlutterFragmentActivity() {
         usbFunctions.dispose()
         compassFunctions.dispose()
         super.onDestroy()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Backstop for the scheduled clipboard clear (see SecretClipboard).
+        SecretClipboard.clearIfDue(this)
     }
 }
