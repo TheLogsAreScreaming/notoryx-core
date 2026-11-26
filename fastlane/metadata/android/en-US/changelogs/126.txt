@@ -1,0 +1,3 @@
+• Coverage tools are one entry with a mode bar
+• SARNEG: copied text is cleared even if the app was closed
+• SARNEG: cleared right on the minute when alarms are allowed
