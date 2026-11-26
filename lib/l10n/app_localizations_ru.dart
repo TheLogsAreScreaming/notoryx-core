@@ -14818,6 +14818,18 @@ class AppLocalizationsRu extends AppLocalizations {
   String get sarneg_optionsTitle => 'Параметры';
 
   @override
+  String get sarneg_exactClear =>
+      'Очищать скопированный текст точно через минуту';
+
+  @override
+  String get sarneg_exactClearOn =>
+      'Вкл. Скопированный текст SARNEG очищается через минуту.';
+
+  @override
+  String get sarneg_exactClearOff =>
+      'Выкл. Android может очистить его до минуты позже. Нажмите, чтобы разрешить будильники для этого приложения.';
+
+  @override
   String get sarneg_keepZone => 'Оставлять зону сетки открытой';
 
   @override

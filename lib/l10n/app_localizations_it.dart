@@ -14802,6 +14802,17 @@ class AppLocalizationsIt extends AppLocalizations {
   String get sarneg_optionsTitle => 'Opzioni';
 
   @override
+  String get sarneg_exactClear => 'Cancella il testo copiato al minuto';
+
+  @override
+  String get sarneg_exactClearOn =>
+      'Attivo. Il testo SARNEG copiato viene cancellato dopo un minuto.';
+
+  @override
+  String get sarneg_exactClearOff =>
+      'Disattivo. Android potrebbe cancellarlo fino a un minuto dopo. Tocca per consentire le sveglie a questa app.';
+
+  @override
   String get sarneg_keepZone => 'Lascia in chiaro la zona del reticolo';
 
   @override

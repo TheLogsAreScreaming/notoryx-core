@@ -14760,6 +14760,17 @@ class AppLocalizationsHu extends AppLocalizations {
   String get sarneg_optionsTitle => 'Beállítások';
 
   @override
+  String get sarneg_exactClear => 'Másolt szöveg törlése percre pontosan';
+
+  @override
+  String get sarneg_exactClearOn =>
+      'Be. A másolt SARNEG-szöveg egy perc után törlődik.';
+
+  @override
+  String get sarneg_exactClearOff =>
+      'Ki. Az Android akár egy perccel később is törölheti. Koppints, hogy engedélyezd az ébresztőket ennek az alkalmazásnak.';
+
+  @override
   String get sarneg_keepZone => 'A rácszóna maradjon kódolatlan';
 
   @override

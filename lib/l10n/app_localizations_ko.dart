@@ -14136,6 +14136,16 @@ class AppLocalizationsKo extends AppLocalizations {
   String get sarneg_optionsTitle => '옵션';
 
   @override
+  String get sarneg_exactClear => '복사한 텍스트를 1분에 맞춰 지우기';
+
+  @override
+  String get sarneg_exactClearOn => '켜짐. 복사한 SARNEG 텍스트는 1분 후에 지워집니다.';
+
+  @override
+  String get sarneg_exactClearOff =>
+      '꺼짐. Android가 최대 1분 늦게 지울 수 있습니다. 탭하여 이 앱의 알람을 허용하세요.';
+
+  @override
   String get sarneg_keepZone => '그리드 존은 평문으로 유지';
 
   @override

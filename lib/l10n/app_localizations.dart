@@ -24493,6 +24493,24 @@ abstract class AppLocalizations {
   /// **'Options'**
   String get sarneg_optionsTitle;
 
+  /// No description provided for @sarneg_exactClear.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear copied text on the minute'**
+  String get sarneg_exactClear;
+
+  /// No description provided for @sarneg_exactClearOn.
+  ///
+  /// In en, this message translates to:
+  /// **'On. Copied SARNEG text is cleared after one minute.'**
+  String get sarneg_exactClearOn;
+
+  /// No description provided for @sarneg_exactClearOff.
+  ///
+  /// In en, this message translates to:
+  /// **'Off. Android may clear it up to a minute late. Tap to allow alarms for this app.'**
+  String get sarneg_exactClearOff;
+
   /// No description provided for @sarneg_keepZone.
   ///
   /// In en, this message translates to:

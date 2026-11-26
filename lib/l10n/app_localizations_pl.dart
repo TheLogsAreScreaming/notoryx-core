@@ -14817,6 +14817,17 @@ class AppLocalizationsPl extends AppLocalizations {
   String get sarneg_optionsTitle => 'Opcje';
 
   @override
+  String get sarneg_exactClear => 'Czyść skopiowany tekst co do minuty';
+
+  @override
+  String get sarneg_exactClearOn =>
+      'Włączone. Skopiowany tekst SARNEG jest czyszczony po minucie.';
+
+  @override
+  String get sarneg_exactClearOff =>
+      'Wyłączone. Android może go wyczyścić nawet minutę później. Dotknij, aby zezwolić tej aplikacji na alarmy.';
+
+  @override
   String get sarneg_keepZone => 'Strefa siatki jawnym tekstem';
 
   @override

@@ -13862,6 +13862,15 @@ class AppLocalizationsZh extends AppLocalizations {
   String get sarneg_optionsTitle => '选项';
 
   @override
+  String get sarneg_exactClear => '准时清除复制的文本';
+
+  @override
+  String get sarneg_exactClearOn => '开。复制的 SARNEG 文本会在一分钟后清除。';
+
+  @override
+  String get sarneg_exactClearOff => '关。Android 可能最多晚一分钟才清除。点按以允许此应用使用闹钟。';
+
+  @override
   String get sarneg_keepZone => '网格区号保持明文';
 
   @override

@@ -14738,6 +14738,17 @@ class AppLocalizationsSk extends AppLocalizations {
   String get sarneg_optionsTitle => 'Možnosti';
 
   @override
+  String get sarneg_exactClear => 'Mazať skopírovaný text načas';
+
+  @override
+  String get sarneg_exactClearOn =>
+      'Zapnuté. Skopírovaný text SARNEG sa vymaže po minúte.';
+
+  @override
+  String get sarneg_exactClearOff =>
+      'Vypnuté. Android ho môže vymazať až o minútu neskôr. Ťuknutím povolíte budíky pre túto aplikáciu.';
+
+  @override
   String get sarneg_keepZone => 'Zónu siete nechať nekódovanú';
 
   @override
