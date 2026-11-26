@@ -13783,6 +13783,28 @@ class AppLocalizationsIt extends AppLocalizations {
   String get mapHub_coverageSection => 'Copertura';
 
   @override
+  String get coverageModes_capture => 'Rileva';
+
+  @override
+  String get coverageModes_wardrive => 'Wardrive';
+
+  @override
+  String get coverageModes_hexagons => 'Esagoni';
+
+  @override
+  String get coverageModes_gaps => 'Lacune';
+
+  @override
+  String get coverageModes_antenna => 'Antenna';
+
+  @override
+  String get coverageModes_hunt => 'Caccia';
+
+  @override
+  String get coverageModes_entryHint =>
+      'Rilevamento, wardrive, esagoni, trova lacune e strumenti antenna in un unico posto';
+
+  @override
   String get mapHub_mapsSection => 'Mappe';
 
   @override

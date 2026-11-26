@@ -13742,6 +13742,28 @@ class AppLocalizationsSl extends AppLocalizations {
   String get mapHub_coverageSection => 'Pokritost';
 
   @override
+  String get coverageModes_capture => 'Zajem';
+
+  @override
+  String get coverageModes_wardrive => 'Wardrive';
+
+  @override
+  String get coverageModes_hexagons => 'Šestkotniki';
+
+  @override
+  String get coverageModes_gaps => 'Vrzeli';
+
+  @override
+  String get coverageModes_antenna => 'Antena';
+
+  @override
+  String get coverageModes_hunt => 'Iskanje';
+
+  @override
+  String get coverageModes_entryHint =>
+      'Zajem, wardrive, šestkotniki, iskalnik vrzeli in orodja za anteno na enem mestu';
+
+  @override
   String get mapHub_mapsSection => 'Zemljevidi';
 
   @override

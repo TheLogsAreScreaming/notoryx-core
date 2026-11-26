@@ -13744,6 +13744,28 @@ class AppLocalizationsBg extends AppLocalizations {
   String get mapHub_coverageSection => 'Покритие';
 
   @override
+  String get coverageModes_capture => 'Запис';
+
+  @override
+  String get coverageModes_wardrive => 'Уордрайв';
+
+  @override
+  String get coverageModes_hexagons => 'Шестоъгълници';
+
+  @override
+  String get coverageModes_gaps => 'Пропуски';
+
+  @override
+  String get coverageModes_antenna => 'Антена';
+
+  @override
+  String get coverageModes_hunt => 'Търсене';
+
+  @override
+  String get coverageModes_entryHint =>
+      'Запис, уордрайв, шестоъгълници, търсене на пропуски и инструменти за антени на едно място';
+
+  @override
   String get mapHub_mapsSection => 'Карти';
 
   @override

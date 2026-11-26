@@ -13156,6 +13156,27 @@ class AppLocalizationsKo extends AppLocalizations {
   String get mapHub_coverageSection => '커버리지';
 
   @override
+  String get coverageModes_capture => '기록';
+
+  @override
+  String get coverageModes_wardrive => '워드라이브';
+
+  @override
+  String get coverageModes_hexagons => '육각형';
+
+  @override
+  String get coverageModes_gaps => '음영';
+
+  @override
+  String get coverageModes_antenna => '안테나';
+
+  @override
+  String get coverageModes_hunt => '찾기';
+
+  @override
+  String get coverageModes_entryHint => '기록, 워드라이브, 육각형, 음영 지역 찾기, 안테나 도구를 한곳에';
+
+  @override
   String get mapHub_mapsSection => '지도';
 
   @override

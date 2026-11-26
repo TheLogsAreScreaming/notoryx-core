@@ -13140,6 +13140,27 @@ class AppLocalizationsJa extends AppLocalizations {
   String get mapHub_coverageSection => 'カバレッジ';
 
   @override
+  String get coverageModes_capture => '記録';
+
+  @override
+  String get coverageModes_wardrive => 'ウォードライブ';
+
+  @override
+  String get coverageModes_hexagons => '六角形';
+
+  @override
+  String get coverageModes_gaps => '圏外';
+
+  @override
+  String get coverageModes_antenna => 'アンテナ';
+
+  @override
+  String get coverageModes_hunt => '探索';
+
+  @override
+  String get coverageModes_entryHint => '記録、ウォードライブ、六角形、圏外マップ、アンテナツールをまとめて';
+
+  @override
   String get mapHub_mapsSection => '地図';
 
   @override

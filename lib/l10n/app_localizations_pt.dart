@@ -13750,6 +13750,28 @@ class AppLocalizationsPt extends AppLocalizations {
   String get mapHub_coverageSection => 'Cobertura';
 
   @override
+  String get coverageModes_capture => 'Captura';
+
+  @override
+  String get coverageModes_wardrive => 'Wardrive';
+
+  @override
+  String get coverageModes_hexagons => 'Hexágonos';
+
+  @override
+  String get coverageModes_gaps => 'Falhas';
+
+  @override
+  String get coverageModes_antenna => 'Antena';
+
+  @override
+  String get coverageModes_hunt => 'Procura';
+
+  @override
+  String get coverageModes_entryHint =>
+      'Captura, wardrive, hexágonos, localizador de falhas e ferramentas de antena num só lugar';
+
+  @override
   String get mapHub_mapsSection => 'Mapas';
 
   @override

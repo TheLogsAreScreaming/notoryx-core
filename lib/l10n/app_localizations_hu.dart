@@ -13747,6 +13747,28 @@ class AppLocalizationsHu extends AppLocalizations {
   String get mapHub_coverageSection => 'Lefedettség';
 
   @override
+  String get coverageModes_capture => 'Rögzítés';
+
+  @override
+  String get coverageModes_wardrive => 'Wardrive';
+
+  @override
+  String get coverageModes_hexagons => 'Hatszögek';
+
+  @override
+  String get coverageModes_gaps => 'Rések';
+
+  @override
+  String get coverageModes_antenna => 'Antenna';
+
+  @override
+  String get coverageModes_hunt => 'Keresés';
+
+  @override
+  String get coverageModes_entryHint =>
+      'Rögzítés, wardrive, hatszögek, réskereső és antennaeszközök egy helyen';
+
+  @override
   String get mapHub_mapsSection => 'Térképek';
 
   @override

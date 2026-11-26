@@ -12894,6 +12894,27 @@ class AppLocalizationsZh extends AppLocalizations {
   String get mapHub_coverageSection => '覆盖';
 
   @override
+  String get coverageModes_capture => '采集';
+
+  @override
+  String get coverageModes_wardrive => '驾车测绘';
+
+  @override
+  String get coverageModes_hexagons => '六边形';
+
+  @override
+  String get coverageModes_gaps => '盲区';
+
+  @override
+  String get coverageModes_antenna => '天线';
+
+  @override
+  String get coverageModes_hunt => '寻找';
+
+  @override
+  String get coverageModes_entryHint => '采集、驾车测绘、六边形、盲区查找和天线工具集中在一处';
+
+  @override
   String get mapHub_mapsSection => '地图';
 
   @override
