@@ -14762,6 +14762,17 @@ class AppLocalizationsSl extends AppLocalizations {
   String get sarneg_optionsTitle => 'Možnosti';
 
   @override
+  String get sarneg_exactClear => 'Pravočasno počisti kopirano besedilo';
+
+  @override
+  String get sarneg_exactClearOn =>
+      'Vklopljeno. Kopirano besedilo SARNEG se počisti po eni minuti.';
+
+  @override
+  String get sarneg_exactClearOff =>
+      'Izklopljeno. Android ga lahko počisti do minute pozneje. Tapni, da tej aplikaciji dovoliš alarme.';
+
+  @override
   String get sarneg_keepZone => 'Cono mreže pusti nekodirano';
 
   @override

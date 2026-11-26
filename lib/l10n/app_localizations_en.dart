@@ -14626,6 +14626,17 @@ class AppLocalizationsEn extends AppLocalizations {
   String get sarneg_optionsTitle => 'Options';
 
   @override
+  String get sarneg_exactClear => 'Clear copied text on the minute';
+
+  @override
+  String get sarneg_exactClearOn =>
+      'On. Copied SARNEG text is cleared after one minute.';
+
+  @override
+  String get sarneg_exactClearOff =>
+      'Off. Android may clear it up to a minute late. Tap to allow alarms for this app.';
+
+  @override
   String get sarneg_keepZone => 'Keep grid zone in clear';
 
   @override

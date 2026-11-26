@@ -14680,6 +14680,17 @@ class AppLocalizationsSv extends AppLocalizations {
   String get sarneg_optionsTitle => 'Alternativ';
 
   @override
+  String get sarneg_exactClear => 'Rensa kopierad text på minuten';
+
+  @override
+  String get sarneg_exactClearOn =>
+      'På. Kopierad SARNEG-text rensas efter en minut.';
+
+  @override
+  String get sarneg_exactClearOff =>
+      'Av. Android kan rensa den upp till en minut för sent. Tryck för att tillåta alarm för appen.';
+
+  @override
   String get sarneg_keepZone => 'Lämna rutnätszonen i klartext';
 
   @override

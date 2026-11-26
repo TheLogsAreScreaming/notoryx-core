@@ -14741,6 +14741,17 @@ class AppLocalizationsNl extends AppLocalizations {
   String get sarneg_optionsTitle => 'Opties';
 
   @override
+  String get sarneg_exactClear => 'Gekopieerde tekst op de minuut wissen';
+
+  @override
+  String get sarneg_exactClearOn =>
+      'Aan. Gekopieerde SARNEG-tekst wordt na een minuut gewist.';
+
+  @override
+  String get sarneg_exactClearOff =>
+      'Uit. Android wist hem mogelijk tot een minuut later. Tik om wekkers voor deze app toe te staan.';
+
+  @override
   String get sarneg_keepZone => 'Gridzone niet coderen';
 
   @override

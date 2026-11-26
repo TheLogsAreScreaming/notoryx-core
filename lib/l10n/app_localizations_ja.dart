@@ -14123,6 +14123,16 @@ class AppLocalizationsJa extends AppLocalizations {
   String get sarneg_optionsTitle => 'オプション';
 
   @override
+  String get sarneg_exactClear => 'コピーしたテキストを1分ちょうどで消去';
+
+  @override
+  String get sarneg_exactClearOn => 'オン。コピーしたSARNEGテキストは1分後に消去されます。';
+
+  @override
+  String get sarneg_exactClearOff =>
+      'オフ。Androidの消去が最大1分遅れることがあります。タップしてこのアプリのアラームを許可してください。';
+
+  @override
   String get sarneg_keepZone => 'グリッドゾーンは平文のまま';
 
   @override
