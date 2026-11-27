@@ -15538,4 +15538,17 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'This message came from a CoreScope analyzer. Your radio has not heard it, so there is no RF path from your radio.';
+
+  @override
+  String get tcpFound_title => 'ON THIS NETWORK';
+
+  @override
+  String get tcpFound_searching => 'Looking for radios on this Wi-Fi…';
+
+  @override
+  String get tcpFound_failed => 'Can\'t search this network';
+
+  @override
+  String get tcpFound_hint =>
+      'Radios with Wi-Fi companion firmware that announce themselves appear here. Otherwise type the address below.';
 }

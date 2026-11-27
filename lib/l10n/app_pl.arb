@@ -5748,5 +5748,9 @@
   "channels_viaCoreScope": "przez CoreScope",
   "channels_viaCoreScopeSemantics": "Odebrano przez CoreScope, nie odebrane przez Twoje radio",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Ta wiadomość przyszła z analizatora CoreScope. Twoje radio jej nie odebrało, więc nie ma ścieżki radiowej od Twojego radia."
+  "channelPath_viaCoreScopeNoRfPath": "Ta wiadomość przyszła z analizatora CoreScope. Twoje radio jej nie odebrało, więc nie ma ścieżki radiowej od Twojego radia.",
+  "tcpFound_title": "W TEJ SIECI",
+  "tcpFound_searching": "Szukanie radiostacji w tej sieci Wi-Fi…",
+  "tcpFound_failed": "Nie można przeszukać tej sieci",
+  "tcpFound_hint": "Tu pojawiają się radiostacje z oprogramowaniem towarzyszącym Wi-Fi, które się ogłaszają. W przeciwnym razie wpisz adres poniżej."
 }

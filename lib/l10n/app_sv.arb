@@ -5710,5 +5710,9 @@
   "channels_viaCoreScope": "via CoreScope",
   "channels_viaCoreScopeSemantics": "Mottaget via CoreScope, inte hört av din radio",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Meddelandet kom från en CoreScope analysator. Din radio har inte hört det, så det finns ingen radioväg från din radio."
+  "channelPath_viaCoreScopeNoRfPath": "Meddelandet kom från en CoreScope analysator. Din radio har inte hört det, så det finns ingen radioväg från din radio.",
+  "tcpFound_title": "PÅ DETTA NÄTVERK",
+  "tcpFound_searching": "Letar efter radioapparater på detta Wi-Fi…",
+  "tcpFound_failed": "Kan inte söka i detta nätverk",
+  "tcpFound_hint": "Radioapparater med Wi-Fi-companion-firmware som annonserar sig visas här. Annars skriver du adressen nedan."
 }

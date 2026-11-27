@@ -5690,5 +5690,9 @@
   "channels_viaCoreScope": "через CoreScope",
   "channels_viaCoreScopeSemantics": "Отримано через CoreScope, ваше радіо його не чуло",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Це повідомлення надійшло з аналізатора CoreScope. Ваше радіо його не чуло, тому радіомаршруту від вашого радіо немає."
+  "channelPath_viaCoreScopeNoRfPath": "Це повідомлення надійшло з аналізатора CoreScope. Ваше радіо його не чуло, тому радіомаршруту від вашого радіо немає.",
+  "tcpFound_title": "У ЦІЙ МЕРЕЖІ",
+  "tcpFound_searching": "Пошук радіостанцій у цій мережі Wi-Fi…",
+  "tcpFound_failed": "Не вдається шукати в цій мережі",
+  "tcpFound_hint": "Тут з’являються радіостанції з прошивкою Wi-Fi-компаньйона, які повідомляють про себе. Інакше введіть адресу нижче."
 }

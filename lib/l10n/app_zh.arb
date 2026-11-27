@@ -5715,5 +5715,9 @@
   "channels_viaCoreScope": "来自 CoreScope",
   "channels_viaCoreScopeSemantics": "通过 CoreScope 收到，你的电台未接收到",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "此消息来自 CoreScope 分析服务器。你的电台没有收到它，因此没有来自你电台的无线路径。"
+  "channelPath_viaCoreScopeNoRfPath": "此消息来自 CoreScope 分析服务器。你的电台没有收到它，因此没有来自你电台的无线路径。",
+  "tcpFound_title": "此网络上",
+  "tcpFound_searching": "正在此 Wi-Fi 上查找无线电…",
+  "tcpFound_failed": "无法搜索此网络",
+  "tcpFound_hint": "自动通告的 Wi-Fi 配套固件无线电会显示在这里。否则请在下方输入地址。"
 }

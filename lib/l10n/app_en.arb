@@ -8387,5 +8387,9 @@
   "channels_viaCoreScope": "via CoreScope",
   "channels_viaCoreScopeSemantics": "Received via CoreScope, not heard by your radio",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "This message came from a CoreScope analyzer. Your radio has not heard it, so there is no RF path from your radio."
+  "channelPath_viaCoreScopeNoRfPath": "This message came from a CoreScope analyzer. Your radio has not heard it, so there is no RF path from your radio.",
+  "tcpFound_title": "ON THIS NETWORK",
+  "tcpFound_searching": "Looking for radios on this Wi-Fi…",
+  "tcpFound_failed": "Can't search this network",
+  "tcpFound_hint": "Radios with Wi-Fi companion firmware that announce themselves appear here. Otherwise type the address below."
 }

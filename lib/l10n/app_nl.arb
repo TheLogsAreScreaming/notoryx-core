@@ -5710,5 +5710,9 @@
   "channels_viaCoreScope": "via CoreScope",
   "channels_viaCoreScopeSemantics": "Ontvangen via CoreScope, niet gehoord door je radio",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Dit bericht kwam van een CoreScope analyzer. Je radio heeft het niet gehoord, dus er is geen radiopad vanaf je radio."
+  "channelPath_viaCoreScopeNoRfPath": "Dit bericht kwam van een CoreScope analyzer. Je radio heeft het niet gehoord, dus er is geen radiopad vanaf je radio.",
+  "tcpFound_title": "OP DIT NETWERK",
+  "tcpFound_searching": "Zoeken naar radio's op deze wifi…",
+  "tcpFound_failed": "Kan dit netwerk niet doorzoeken",
+  "tcpFound_hint": "Radio's met wifi-companionfirmware die zich aankondigen verschijnen hier. Typ anders hieronder het adres."
 }

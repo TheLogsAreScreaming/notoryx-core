@@ -15663,4 +15663,18 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'To sporočilo je prišlo z analizatorja CoreScope. Vaš radio ga ni slišal, zato ni radijske poti od vašega radia.';
+
+  @override
+  String get tcpFound_title => 'V TEM OMREŽJU';
+
+  @override
+  String get tcpFound_searching =>
+      'Iskanje radijskih postaj v tem omrežju Wi-Fi…';
+
+  @override
+  String get tcpFound_failed => 'Tega omrežja ni mogoče preiskati';
+
+  @override
+  String get tcpFound_hint =>
+      'Tukaj se prikažejo radijske postaje s spremljevalno programsko opremo Wi-Fi, ki se oglašajo. Sicer spodaj vnesite naslov.';
 }

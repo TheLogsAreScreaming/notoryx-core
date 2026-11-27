@@ -5748,5 +5748,9 @@
   "channels_viaCoreScope": "CoreScope-on át",
   "channels_viaCoreScopeSemantics": "CoreScope-on keresztül érkezett, a rádiója nem hallotta",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Ez az üzenet egy CoreScope elemzőtől érkezett. A rádiója nem hallotta, így nincs rádiós útvonal a rádiójától."
+  "channelPath_viaCoreScopeNoRfPath": "Ez az üzenet egy CoreScope elemzőtől érkezett. A rádiója nem hallotta, így nincs rádiós útvonal a rádiójától.",
+  "tcpFound_title": "EZEN A HÁLÓZATON",
+  "tcpFound_searching": "Rádiók keresése ezen a Wi-Fi-hálózaton…",
+  "tcpFound_failed": "Ezen a hálózaton nem lehet keresni",
+  "tcpFound_hint": "Itt jelennek meg a magukat bejelentő, Wi-Fi társ-firmware-rel rendelkező rádiók. Egyébként írja be lent a címet."
 }

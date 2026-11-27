@@ -15722,4 +15722,17 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Це повідомлення надійшло з аналізатора CoreScope. Ваше радіо його не чуло, тому радіомаршруту від вашого радіо немає.';
+
+  @override
+  String get tcpFound_title => 'У ЦІЙ МЕРЕЖІ';
+
+  @override
+  String get tcpFound_searching => 'Пошук радіостанцій у цій мережі Wi-Fi…';
+
+  @override
+  String get tcpFound_failed => 'Не вдається шукати в цій мережі';
+
+  @override
+  String get tcpFound_hint =>
+      'Тут з’являються радіостанції з прошивкою Wi-Fi-компаньйона, які повідомляють про себе. Інакше введіть адресу нижче.';
 }

@@ -15677,4 +15677,18 @@ class AppLocalizationsBg extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Това съобщение дойде от анализатор CoreScope. Вашето радио не го е чуло, затова няма радиомаршрут от вашето радио.';
+
+  @override
+  String get tcpFound_title => 'В ТАЗИ МРЕЖА';
+
+  @override
+  String get tcpFound_searching =>
+      'Търсене на радиостанции в тази Wi-Fi мрежа…';
+
+  @override
+  String get tcpFound_failed => 'Тази мрежа не може да бъде претърсена';
+
+  @override
+  String get tcpFound_hint =>
+      'Тук се показват радиостанции с Wi-Fi фърмуер за компаньон, които се обявяват. Иначе въведете адреса по-долу.';
 }

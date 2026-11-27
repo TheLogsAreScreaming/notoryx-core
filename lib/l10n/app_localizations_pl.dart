@@ -15717,4 +15717,17 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Ta wiadomość przyszła z analizatora CoreScope. Twoje radio jej nie odebrało, więc nie ma ścieżki radiowej od Twojego radia.';
+
+  @override
+  String get tcpFound_title => 'W TEJ SIECI';
+
+  @override
+  String get tcpFound_searching => 'Szukanie radiostacji w tej sieci Wi-Fi…';
+
+  @override
+  String get tcpFound_failed => 'Nie można przeszukać tej sieci';
+
+  @override
+  String get tcpFound_hint =>
+      'Tu pojawiają się radiostacje z oprogramowaniem towarzyszącym Wi-Fi, które się ogłaszają. W przeciwnym razie wpisz adres poniżej.';
 }

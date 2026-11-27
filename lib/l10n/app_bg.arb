@@ -5710,5 +5710,9 @@
   "channels_viaCoreScope": "чрез CoreScope",
   "channels_viaCoreScopeSemantics": "Получено чрез CoreScope, не е чуто от вашето радио",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Това съобщение дойде от анализатор CoreScope. Вашето радио не го е чуло, затова няма радиомаршрут от вашето радио."
+  "channelPath_viaCoreScopeNoRfPath": "Това съобщение дойде от анализатор CoreScope. Вашето радио не го е чуло, затова няма радиомаршрут от вашето радио.",
+  "tcpFound_title": "В ТАЗИ МРЕЖА",
+  "tcpFound_searching": "Търсене на радиостанции в тази Wi-Fi мрежа…",
+  "tcpFound_failed": "Тази мрежа не може да бъде претърсена",
+  "tcpFound_hint": "Тук се показват радиостанции с Wi-Fi фърмуер за компаньон, които се обявяват. Иначе въведете адреса по-долу."
 }

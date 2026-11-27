@@ -5844,5 +5844,9 @@
   "channels_viaCoreScope": "über CoreScope",
   "channels_viaCoreScopeSemantics": "Über CoreScope empfangen, nicht von deinem Funkgerät gehört",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Diese Nachricht kam von einem CoreScope Analyzer. Dein Funkgerät hat sie nicht empfangen, daher gibt es keinen Funkpfad von deinem Funkgerät."
+  "channelPath_viaCoreScopeNoRfPath": "Diese Nachricht kam von einem CoreScope Analyzer. Dein Funkgerät hat sie nicht empfangen, daher gibt es keinen Funkpfad von deinem Funkgerät.",
+  "tcpFound_title": "IN DIESEM NETZWERK",
+  "tcpFound_searching": "Suche nach Funkgeräten in diesem WLAN…",
+  "tcpFound_failed": "Dieses Netzwerk kann nicht durchsucht werden",
+  "tcpFound_hint": "Funkgeräte mit WLAN-Companion-Firmware, die sich ankündigen, erscheinen hier. Sonst unten die Adresse eingeben."
 }

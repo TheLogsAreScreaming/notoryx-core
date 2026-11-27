@@ -5844,5 +5844,9 @@
   "channels_viaCoreScope": "via CoreScope",
   "channels_viaCoreScopeSemantics": "Reçu via CoreScope, non entendu par votre radio",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Ce message vient d'un analyseur CoreScope. Votre radio ne l'a pas entendu, il n'y a donc pas de chemin radio depuis votre radio."
+  "channelPath_viaCoreScopeNoRfPath": "Ce message vient d'un analyseur CoreScope. Votre radio ne l'a pas entendu, il n'y a donc pas de chemin radio depuis votre radio.",
+  "tcpFound_title": "SUR CE RÉSEAU",
+  "tcpFound_searching": "Recherche de radios sur ce Wi-Fi…",
+  "tcpFound_failed": "Impossible de rechercher sur ce réseau",
+  "tcpFound_hint": "Les radios avec un firmware compagnon Wi-Fi qui s'annoncent apparaissent ici. Sinon, saisissez l'adresse ci-dessous."
 }

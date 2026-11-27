@@ -15757,4 +15757,17 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Ce message vient d\'un analyseur CoreScope. Votre radio ne l\'a pas entendu, il n\'y a donc pas de chemin radio depuis votre radio.';
+
+  @override
+  String get tcpFound_title => 'SUR CE RÉSEAU';
+
+  @override
+  String get tcpFound_searching => 'Recherche de radios sur ce Wi-Fi…';
+
+  @override
+  String get tcpFound_failed => 'Impossible de rechercher sur ce réseau';
+
+  @override
+  String get tcpFound_hint =>
+      'Les radios avec un firmware compagnon Wi-Fi qui s\'annoncent apparaissent ici. Sinon, saisissez l\'adresse ci-dessous.';
 }

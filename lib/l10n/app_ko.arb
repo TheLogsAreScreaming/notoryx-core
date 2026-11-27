@@ -5844,5 +5844,9 @@
   "channels_viaCoreScope": "CoreScope 경유",
   "channels_viaCoreScopeSemantics": "CoreScope로 수신됨, 내 무전기는 듣지 못함",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "이 메시지는 CoreScope 분석 서버에서 왔습니다. 내 무전기가 수신하지 않았으므로 내 무전기로부터의 무선 경로가 없습니다."
+  "channelPath_viaCoreScopeNoRfPath": "이 메시지는 CoreScope 분석 서버에서 왔습니다. 내 무전기가 수신하지 않았으므로 내 무전기로부터의 무선 경로가 없습니다.",
+  "tcpFound_title": "이 네트워크에서",
+  "tcpFound_searching": "이 Wi-Fi에서 무전기를 찾는 중…",
+  "tcpFound_failed": "이 네트워크를 검색할 수 없습니다",
+  "tcpFound_hint": "자신을 알리는 Wi-Fi 컴패니언 펌웨어 무전기가 여기에 표시됩니다. 없으면 아래에 주소를 입력하세요."
 }

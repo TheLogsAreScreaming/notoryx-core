@@ -15001,4 +15001,17 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'このメッセージは CoreScope 解析サーバーから届きました。あなたの無線機は受信していないため、無線機からの電波経路はありません。';
+
+  @override
+  String get tcpFound_title => 'このネットワーク上';
+
+  @override
+  String get tcpFound_searching => 'このWi-Fi上の無線機を探しています…';
+
+  @override
+  String get tcpFound_failed => 'このネットワークは検索できません';
+
+  @override
+  String get tcpFound_hint =>
+      '自身を通知するWi-Fiコンパニオンファームウェアの無線機がここに表示されます。表示されない場合は下にアドレスを入力してください。';
 }

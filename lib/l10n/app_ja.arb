@@ -5844,5 +5844,9 @@
   "channels_viaCoreScope": "CoreScope経由",
   "channels_viaCoreScopeSemantics": "CoreScope経由で受信、無線機では受信していません",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "このメッセージは CoreScope 解析サーバーから届きました。あなたの無線機は受信していないため、無線機からの電波経路はありません。"
+  "channelPath_viaCoreScopeNoRfPath": "このメッセージは CoreScope 解析サーバーから届きました。あなたの無線機は受信していないため、無線機からの電波経路はありません。",
+  "tcpFound_title": "このネットワーク上",
+  "tcpFound_searching": "このWi-Fi上の無線機を探しています…",
+  "tcpFound_failed": "このネットワークは検索できません",
+  "tcpFound_hint": "自身を通知するWi-Fiコンパニオンファームウェアの無線機がここに表示されます。表示されない場合は下にアドレスを入力してください。"
 }

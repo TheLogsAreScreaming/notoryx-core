@@ -14727,4 +14727,16 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       '此消息来自 CoreScope 分析服务器。你的电台没有收到它，因此没有来自你电台的无线路径。';
+
+  @override
+  String get tcpFound_title => '此网络上';
+
+  @override
+  String get tcpFound_searching => '正在此 Wi-Fi 上查找无线电…';
+
+  @override
+  String get tcpFound_failed => '无法搜索此网络';
+
+  @override
+  String get tcpFound_hint => '自动通告的 Wi-Fi 配套固件无线电会显示在这里。否则请在下方输入地址。';
 }

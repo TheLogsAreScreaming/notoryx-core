@@ -5710,5 +5710,9 @@
   "channels_viaCoreScope": "cez CoreScope",
   "channels_viaCoreScopeSemantics": "Prijaté cez CoreScope, vaše rádio to nepočulo",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Táto správa prišla z analyzátora CoreScope. Vaše rádio ju nepočulo, takže neexistuje rádiová trasa z vášho rádia."
+  "channelPath_viaCoreScopeNoRfPath": "Táto správa prišla z analyzátora CoreScope. Vaše rádio ju nepočulo, takže neexistuje rádiová trasa z vášho rádia.",
+  "tcpFound_title": "V TEJTO SIETI",
+  "tcpFound_searching": "Hľadajú sa rádiá v tejto sieti Wi-Fi…",
+  "tcpFound_failed": "V tejto sieti nemožno hľadať",
+  "tcpFound_hint": "Tu sa zobrazia rádiá s firmvérom Wi-Fi spoločníka, ktoré sa ohlasujú. Inak zadajte adresu nižšie."
 }

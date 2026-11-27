@@ -15648,4 +15648,17 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Dit bericht kwam van een CoreScope analyzer. Je radio heeft het niet gehoord, dus er is geen radiopad vanaf je radio.';
+
+  @override
+  String get tcpFound_title => 'OP DIT NETWERK';
+
+  @override
+  String get tcpFound_searching => 'Zoeken naar radio\'s op deze wifi…';
+
+  @override
+  String get tcpFound_failed => 'Kan dit netwerk niet doorzoeken';
+
+  @override
+  String get tcpFound_hint =>
+      'Radio\'s met wifi-companionfirmware die zich aankondigen verschijnen hier. Typ anders hieronder het adres.';
 }

@@ -85,6 +85,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_meshcore._tcp</string>
+	</array>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>NOTORYX Core connects to MeshCore radios on your local network if you choose a network connection.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
