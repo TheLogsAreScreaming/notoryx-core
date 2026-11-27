@@ -1,0 +1,2 @@
+• Map traffic: packets run as streaks, with a branch for each route heard
+• Missed chat from CoreScope (opt in, read only), labelled via CoreScope
