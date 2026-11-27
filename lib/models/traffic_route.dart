@@ -139,18 +139,20 @@ class TrafficRoute {
 /// direct packet, or the sender key of an anonymous request. Relays come
 /// from the flood path (or a trace's route), matched to repeaters by key
 /// prefix and distance. Channel messages and acks carry no sender, so their
-/// route starts at the first relay.
+/// route starts at the first relay, unless [sender] names where it started
+/// (for a channel message, a located contact with the sender's name).
 TrafficRoute buildTrafficRoute(
   RxLogEntry entry, {
   required List<Contact> contacts,
   LatLng? selfPosition,
   String selfLabel = '',
+  TrafficHop? sender,
 }) {
   final info = entry.info;
   final payload = info.payload;
   final kind = trafficKindFor(entry.kind);
 
-  final origin = _origin(info.payloadType, payload, contacts);
+  final origin = _origin(info.payloadType, payload, contacts) ?? sender;
 
   // Relays the packet has passed, in travel order.
   var relayBytes = const <int>[];
@@ -207,6 +209,29 @@ TrafficRoute buildTrafficRoute(
     isFlood: !info.isDirect,
     receivedAt: entry.receivedAt,
     packetHash: info.hash,
+  );
+}
+
+/// The start of a channel message's route: the one located companion
+/// contact named [senderName]. Null when no contact, or more than one, has
+/// that name, so a shared name never puts the streak in the wrong place.
+TrafficHop? channelSenderHop(String senderName, List<Contact> contacts) {
+  final name = senderName.trim();
+  if (name.isEmpty) return null;
+  Contact? match;
+  for (final c in contacts) {
+    if (c.type != advTypeChat || c.name.trim() != name) continue;
+    if (match != null) return null;
+    match = c;
+  }
+  if (match == null) return null;
+  final point = _pos(match);
+  if (point == null) return null;
+  return TrafficHop(
+    id: _hex(match.publicKey.take(3).toList()),
+    name: match.name,
+    point: point,
+    role: TrafficHopRole.origin,
   );
 }
 
@@ -317,6 +342,13 @@ class ActiveTrafficRoute {
   /// The whole time on screen: travel, then the fade.
   Duration get lifetime => travel + TrafficQueue.fade;
 
+  /// 0..1: how much of the travel time has passed at [now].
+  double travelFraction(DateTime now) {
+    if (travel == Duration.zero) return 1;
+    final t = now.difference(startedAt).inMicroseconds / travel.inMicroseconds;
+    return t.clamp(0.0, 1.0);
+  }
+
   /// 0..legs: how far along the route the dot is at [now].
   double legProgress(DateTime now) {
     final legs = route.mapPoints.length - 1;
@@ -337,20 +369,32 @@ class ActiveTrafficRoute {
   bool isDone(DateTime now) => now.difference(startedAt) >= lifetime;
 }
 
-/// Keeps at most [maxActive] routes animating at once and queues the rest,
+/// Keeps at most [maxActive] packets animating at once and queues the rest,
 /// dropping the oldest waiting ones when the queue is full.
+///
+/// A flood is heard once per repeater in range. A copy of a packet that
+/// came by a different route within [branchWindow] of the first is drawn
+/// as another branch of the same packet (up to [maxBranches]); an
+/// identical or later copy is dropped.
 class TrafficQueue {
-  TrafficQueue({this.maxActive = 3, this.maxPending = 12});
+  TrafficQueue({
+    this.maxActive = 8,
+    this.maxPending = 16,
+    this.maxBranches = 4,
+  });
 
   static const fade = Duration(milliseconds: 3500);
   static const perLeg = Duration(milliseconds: 550);
   static const maxTravel = Duration(seconds: 4);
+  static const branchWindow = Duration(seconds: 8);
 
   final int maxActive;
   final int maxPending;
+  final int maxBranches;
   final List<ActiveTrafficRoute> _active = [];
   final List<TrafficRoute> _pending = [];
   final List<String> _recentHashes = [];
+  final Map<String, ({DateTime at, List<List<LatLng>> paths})> _seen = {};
 
   List<ActiveTrafficRoute> get active => List.unmodifiable(_active);
   int get pendingCount => _pending.length;
@@ -363,14 +407,27 @@ class TrafficQueue {
     return t > maxTravel ? maxTravel : t;
   }
 
-  /// Adds [route] unless it can't be drawn or the same packet was just
-  /// shown (a flood is heard once per repeater in range).
+  /// Packets animating now, counting each packet once however many
+  /// branches it has.
+  int get activePackets => {for (final r in _active) r.route.packetHash}.length;
+
+  /// Adds [route] as a new packet, or as a new branch of one just shown.
   /// Returns whether it was taken.
   bool add(TrafficRoute route, DateTime now, {bool reduceMotion = false}) {
     if (!route.isDrawable) return false;
-    if (_recentHashes.contains(route.packetHash)) return false;
-    _recentHashes.add(route.packetHash);
-    if (_recentHashes.length > 64) _recentHashes.removeAt(0);
+    final hash = route.packetHash;
+    final points = route.mapPoints;
+    final seen = _seen[hash];
+    if (seen != null) {
+      final tooLate = now.difference(seen.at) > branchWindow;
+      final same = seen.paths.any((p) => listEquals(p, points));
+      if (tooLate || same || seen.paths.length >= maxBranches) return false;
+      seen.paths.add(points);
+    } else {
+      _seen[hash] = (at: now, paths: [points]);
+      _recentHashes.add(hash);
+      if (_recentHashes.length > 64) _seen.remove(_recentHashes.removeAt(0));
+    }
     _pending.add(route);
     while (_pending.length > maxPending) {
       _pending.removeAt(0);
@@ -379,11 +436,20 @@ class TrafficQueue {
     return true;
   }
 
-  /// Drops finished routes and starts waiting ones in their place.
+  /// Drops finished routes and starts waiting ones in their place. A branch
+  /// of a packet already on screen starts at once.
   void tick(DateTime now, {bool reduceMotion = false}) {
     _active.removeWhere((r) => r.isDone(now));
-    while (_active.length < maxActive && _pending.isNotEmpty) {
-      final next = _pending.removeAt(0);
+    final onScreen = {for (final r in _active) r.route.packetHash};
+    for (var i = 0; i < _pending.length;) {
+      final next = _pending[i];
+      final branch = onScreen.contains(next.packetHash);
+      if (!branch && onScreen.length >= maxActive) {
+        i++;
+        continue;
+      }
+      _pending.removeAt(i);
+      onScreen.add(next.packetHash);
       _active.add(
         ActiveTrafficRoute(
           next,

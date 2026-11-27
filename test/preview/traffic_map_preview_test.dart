@@ -113,6 +113,25 @@ void main() {
         receivedAt: t0,
       ),
     );
+    // The same packet heard again by a shorter route: a second branch.
+    traffic.add(
+      RadioRxPacket(
+        raw: Uint8List.fromList([
+          (payloadTypePATH << 2) | 1,
+          3,
+          0x1F,
+          0xF5,
+          0xBF,
+          0x01,
+          0xA0,
+          5,
+          6,
+        ]),
+        snr: 4,
+        rssi: -98,
+        receivedAt: t0,
+      ),
+    );
     // Part way along the third mapped leg.
     now = t0.add(const Duration(milliseconds: 1400));
 

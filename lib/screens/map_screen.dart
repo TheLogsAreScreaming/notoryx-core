@@ -386,8 +386,31 @@ class _MapScreenState extends State<MapScreen> {
             ? null
             : LatLng(connector.selfLatitude!, connector.selfLongitude!),
         selfLabel: () => you,
+        channelSender: (hash) => _channelSender(connector, hash),
       )..reduceMotion = MediaQuery.disableAnimationsOf(context);
     });
+  }
+
+  /// The sender of the recent channel message with [hash], placed on the
+  /// map when exactly one located contact has its name.
+  TrafficHop? _channelSender(MeshCoreConnector connector, String hash) {
+    for (final channel in connector.channels) {
+      if (channel.isEmpty) continue;
+      final messages = connector.getChannelMessages(channel);
+      for (
+        var i = messages.length - 1;
+        i >= 0 && i >= messages.length - 30;
+        i--
+      ) {
+        if (messages[i].packetHash == hash) {
+          return channelSenderHop(
+            messages[i].senderName,
+            connector.allContacts,
+          );
+        }
+      }
+    }
+    return null;
   }
 
   void _fitAll(List<LatLng> points, LatLng center, double zoom) {

@@ -304,6 +304,40 @@ void main() {
     });
   });
 
+  group('channelSenderHop', () {
+    Contact chat(int first, String name, {double? lat}) => _repeater(
+      first,
+      name,
+      lat: lat,
+      lon: lat == null ? null : -75.4,
+      type: advTypeChat,
+    );
+
+    test('places the one located companion with that name', () {
+      final hop = channelSenderHop(' Walker ', [
+        chat(0x11, 'Walker', lat: 40.4),
+        _repeater(0x22, 'Walker', lat: 40.6, lon: -75),
+      ])!;
+      expect(hop.role, TrafficHopRole.origin);
+      expect(hop.point, const LatLng(40.4, -75.4));
+      expect(hop.id, startsWith('11'));
+      expect(hop.name, 'Walker');
+    });
+
+    test('shared, unknown or unplaced names give no start', () {
+      expect(
+        channelSenderHop('Walker', [
+          chat(0x11, 'Walker', lat: 40.4),
+          chat(0x12, 'Walker', lat: 40.5),
+        ]),
+        isNull,
+      );
+      expect(channelSenderHop('Walker', [chat(0x11, 'Walker')]), isNull);
+      expect(channelSenderHop('Nobody', contacts), isNull);
+      expect(channelSenderHop('', contacts), isNull);
+    });
+  });
+
   group('TrafficQueue', () {
     TrafficRoute route(String hash, {int legs = 2}) => TrafficRoute(
       kind: TrafficKind.channel,
@@ -318,6 +352,55 @@ void main() {
       receivedAt: _t0,
       packetHash: hash,
     );
+
+    TrafficRoute via(String hash, List<double> lats) => TrafficRoute(
+      kind: TrafficKind.channel,
+      hops: [
+        for (final lat in lats) TrafficHop(id: '$lat', point: LatLng(lat, -75)),
+      ],
+      snr: 0,
+      rssi: 0,
+      hopCount: lats.length - 1,
+      isFlood: true,
+      receivedAt: _t0,
+      packetHash: hash,
+    );
+
+    test('a copy by another route becomes a branch of the same packet', () {
+      final q = TrafficQueue(maxActive: 1);
+      expect(q.add(via('p', [40.3, 40.2, 40]), _t0), isTrue);
+      expect(q.add(via('p', [40.3, 40.1, 40]), _t0), isTrue);
+      expect(q.add(via('p', [40.3, 40.1, 40]), _t0), isFalse);
+      // Branches don't count against the packet cap.
+      expect(q.active, hasLength(2));
+      expect(q.activePackets, 1);
+      // A new packet waits for a free slot.
+      expect(q.add(via('q', [40.4, 40]), _t0), isTrue);
+      expect(q.pendingCount, 1);
+    });
+
+    test('late copies and copies past the branch cap are dropped', () {
+      final q = TrafficQueue(maxBranches: 2);
+      q.add(via('p', [40.3, 40]), _t0);
+      q.add(via('p', [40.2, 40]), _t0);
+      expect(q.add(via('p', [40.1, 40]), _t0), isFalse);
+      final r = TrafficQueue();
+      r.add(via('p', [40.3, 40]), _t0);
+      final later = _t0.add(
+        TrafficQueue.branchWindow + const Duration(seconds: 1),
+      );
+      expect(r.add(via('p', [40.2, 40]), later), isFalse);
+    });
+
+    test('travel fraction runs 0 to 1, and is 1 with reduce motion', () {
+      final q = TrafficQueue()..add(route('a', legs: 2), _t0);
+      final r = q.active.single;
+      expect(r.travelFraction(_t0), 0);
+      expect(r.travelFraction(_t0.add(r.travel ~/ 2)), closeTo(0.5, 1e-6));
+      expect(r.travelFraction(_t0.add(r.travel * 3)), 1);
+      final still = TrafficQueue()..add(route('b'), _t0, reduceMotion: true);
+      expect(still.active.single.travelFraction(_t0), 1);
+    });
 
     test('caps concurrent routes and queues the rest', () {
       final q = TrafficQueue(maxActive: 3);

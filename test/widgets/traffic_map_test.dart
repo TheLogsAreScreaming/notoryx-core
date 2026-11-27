@@ -74,9 +74,17 @@ void main() {
     expect(c.queue.active, hasLength(1));
     expect(c.latestEntry!.info.hash, c.latest!.packetHash);
 
-    // The same flood heard again through another repeater.
+    // The same flood heard again through another repeater is drawn as a
+    // branch of the same packet; the card keeps the first copy.
+    final first = c.latest;
+    c.add(_channelPacket([0xD4]));
+    expect(c.queue.active, hasLength(2));
+    expect(c.queue.activePackets, 1);
+    expect(c.latest, same(first));
+    // A copy that draws the same line adds nothing.
+    c.add(_channelPacket([0xD4]));
     c.add(_channelPacket([0xA1, 0xD4]));
-    expect(c.queue.active, hasLength(1));
+    expect(c.queue.active, hasLength(2));
 
     c.shown = {TrafficKind.advert};
     expect(c.latest, isNull);
@@ -276,5 +284,32 @@ void main() {
     // Seven 44 px buttons plus padding fit in 330 px without scrolling.
     expect(tester.getSize(find.byType(MapToolbar)).height, lessThan(330));
     expect(find.bySemanticsLabel('Tool 6'), findsOneWidget);
+  });
+
+  test('a channel streak starts at the sender when the app knows where', () {
+    final packets = StreamController<RadioRxPacket>();
+    final asked = <String>[];
+    final c = TrafficController(
+      packets: packets.stream,
+      contacts: () => contacts,
+      selfPosition: () => const LatLng(40, -75),
+      selfLabel: () => 'You',
+      clock: () => _t0,
+      channelSender: (hash) {
+        asked.add(hash);
+        return const TrafficHop(
+          id: 'AB',
+          name: 'Sender',
+          point: LatLng(40.5, -75.5),
+          role: TrafficHopRole.origin,
+        );
+      },
+    );
+    addTearDown(c.dispose);
+    c.add(_channelPacket([0xA1]));
+    expect(asked, [c.latest!.packetHash]);
+    expect(c.latest!.hops.first.label, 'Sender');
+    expect(c.latest!.mapPoints.first, const LatLng(40.5, -75.5));
+    unawaited(packets.close());
   });
 }
