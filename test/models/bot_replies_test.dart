@@ -65,4 +65,18 @@ void main() {
     expect(sunReply(69.65, 18.96, DateTime(2026, 12, 21)), contains('down'));
     expect(isValidBotResponse(moonReply(DateTime(2026, 10, 28))), isTrue);
   });
+
+  test('ping reply shows the hop count with an emoji', () {
+    expect(pingReply(null), '🎯 Direct.');
+    expect(pingReply(0), '🎯 Direct.');
+    expect(pingReply(-1), '🎯 Direct.');
+    expect(pingReply(0xFF), '🎯 Direct.');
+    expect(pingReply(1), '1⃣ 1 hop.');
+    expect(pingReply(3), '3⃣ 3 hops.');
+    expect(pingReply(10), '🔟 10 hops.');
+    expect(pingReply(11), '🦘 11 hops.');
+    // Top bits carry the hash size, not hops: 2 byte hashes, 3 hops.
+    expect(pingReply(0x43), '3⃣ 3 hops.');
+    expect(isValidBotResponse(pingReply(11)), isTrue);
+  });
 }
