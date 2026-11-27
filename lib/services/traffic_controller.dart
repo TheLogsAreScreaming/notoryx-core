@@ -16,6 +16,7 @@ class TrafficController extends ChangeNotifier {
     required this.contacts,
     required this.selfPosition,
     required this.selfLabel,
+    this.channelSender,
     DateTime Function()? clock,
   }) : _clock = clock ?? DateTime.now {
     _subscription = packets.listen(add);
@@ -24,6 +25,10 @@ class TrafficController extends ChangeNotifier {
   final List<Contact> Function() contacts;
   final LatLng? Function() selfPosition;
   final String Function() selfLabel;
+
+  /// Where a channel message with this packet hash started, when the app
+  /// can tell from the decoded message's sender.
+  final TrafficHop? Function(String packetHash)? channelSender;
   final DateTime Function() _clock;
   late final StreamSubscription<RadioRxPacket> _subscription;
 
@@ -62,18 +67,24 @@ class TrafficController extends ChangeNotifier {
     final entry = RxLogEntry.from(packet);
     if (entry == null) return;
     if (!_shown.contains(trafficKindFor(entry.kind))) return;
-    // A flood is heard once per repeater in range; keep the first copy.
-    if (entry.info.hash == _latest?.packetHash) return;
+    // A flood is heard once per repeater in range. Later copies can add a
+    // branch to the map, but the card keeps the first one.
+    final repeat = entry.info.hash == _latest?.packetHash;
     final route = buildTrafficRoute(
       entry,
       contacts: contacts(),
       selfPosition: selfPosition(),
       selfLabel: selfLabel(),
+      sender: entry.kind == RxKind.channel
+          ? channelSender?.call(entry.info.hash)
+          : null,
     );
-    _latest = route;
-    _latestEntry = entry;
-    queue.add(route, _clock(), reduceMotion: reduceMotion);
-    notifyListeners();
+    if (!repeat) {
+      _latest = route;
+      _latestEntry = entry;
+    }
+    final taken = queue.add(route, _clock(), reduceMotion: reduceMotion);
+    if (taken || !repeat) notifyListeners();
   }
 
   @override

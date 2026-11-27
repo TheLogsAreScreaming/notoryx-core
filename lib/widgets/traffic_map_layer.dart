@@ -6,13 +6,16 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:latlong2/latlong.dart';
 
+import '../helpers/streak_geometry.dart';
 import '../models/traffic_route.dart';
 import '../services/traffic_controller.dart';
 import '../theme/mesh_theme.dart';
 
-/// A map layer that animates packets hop by hop: a glowing dot travels each
-/// leg, passed legs stay as a fading line, legs ahead are dotted, and rings
-/// pulse at the origin and when the packet reaches us.
+/// A map layer that draws each packet as a streak: a bright head with a
+/// fading tail runs from the sender through each repeater to the receiver,
+/// the line it passed stays faintly behind it, the line ahead is dotted, and
+/// rings pulse at the origin and when the packet reaches us. Copies of one
+/// packet that came by other routes are drawn as branches.
 class TrafficMapLayer extends StatefulWidget {
   const TrafficMapLayer({super.key, required this.controller});
 
@@ -103,10 +106,14 @@ class _TrafficPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
+    _labelled.clear();
     for (final r in routes) {
       _paintRoute(canvas, r);
     }
   }
+
+  /// Labels already drawn this frame: branches of one packet share hops.
+  final Set<Offset> _labelled = {};
 
   void _paintRoute(Canvas canvas, ActiveTrafficRoute r) {
     final hops = r.route.mappedHops;
@@ -115,41 +122,57 @@ class _TrafficPainter extends CustomPainter {
     final color = trafficKindColor(r.route.kind);
     final alpha = r.opacity(now);
     if (alpha <= 0) return;
-    final p = r.legProgress(now);
-    final legs = points.length - 1;
+    final line = StreakLine(points);
+    final total = line.length;
+    final head = total * r.travelFraction(now);
+    final travelling = head < total && r.travel > Duration.zero;
+    final tail = streakTailLength(total);
 
-    final solid = Paint()
-      ..color = color.withValues(alpha: 0.85 * alpha)
-      ..strokeWidth = 2.6
+    Paint stroke(double a, double width) => Paint()
+      ..color = color.withValues(alpha: a * alpha)
+      ..strokeWidth = width
       ..strokeCap = StrokeCap.round
-      ..style = PaintingStyle.stroke;
-    final passed = Paint()
-      ..color = color.withValues(alpha: 0.5 * alpha)
-      ..strokeWidth = 2.2
-      ..strokeCap = StrokeCap.round
-      ..style = PaintingStyle.stroke;
-    final ahead = Paint()
-      ..color = color.withValues(alpha: 0.45 * alpha)
-      ..strokeWidth = 1.6
-      ..strokeCap = StrokeCap.round
+      ..strokeJoin = StrokeJoin.round
       ..style = PaintingStyle.stroke;
 
-    Offset? dot;
-    for (var i = 0; i < legs; i++) {
-      final a = points[i];
-      final b = points[i + 1];
-      if (p >= i + 1) {
-        canvas.drawLine(a, b, p >= legs ? solid : passed);
-      } else if (p > i) {
-        final at = Offset.lerp(a, b, p - i)!;
-        canvas.drawLine(a, at, solid);
-        _dotted(canvas, at, b, ahead);
-        dot = at;
-      } else {
-        _dotted(canvas, a, b, ahead);
+    // The line already passed, faint once the streak has gone by, and
+    // solid when the whole route is shown (arrived, or reduce motion).
+    final behind = line.slice(0, travelling ? head - tail : total);
+    _polyline(canvas, behind, travelling ? stroke(0.4, 2) : stroke(0.8, 2.6));
+
+    // The line still ahead, dotted.
+    if (travelling) {
+      final ahead = line.slice(head, total);
+      for (var i = 0; i + 1 < ahead.length; i++) {
+        _dotted(canvas, ahead[i], ahead[i + 1], stroke(0.4, 1.6));
       }
+      // The tail brightens and thickens towards the head.
+      const steps = 10;
+      for (var k = 0; k < steps; k++) {
+        final f = (k + 1) / steps;
+        final a = head - tail + tail * k / steps;
+        final b = head - tail + tail * f;
+        _polyline(
+          canvas,
+          line.slice(a, b),
+          stroke(0.15 + 0.85 * f, 1.5 + 2.5 * f),
+        );
+      }
+      final at = line.pointAt(head);
+      canvas.drawCircle(
+        at,
+        10,
+        Paint()
+          ..color = color.withValues(alpha: 0.55 * alpha)
+          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 7),
+      );
+      canvas.drawCircle(at, 4.5, Paint()..color = color);
+      canvas.drawCircle(
+        at,
+        2,
+        Paint()..color = Colors.white.withValues(alpha: alpha),
+      );
     }
-    if (p <= 0 && r.travel > Duration.zero) dot = points.first;
 
     final elapsed = now.difference(r.startedAt);
     _ring(canvas, points.first, color, elapsed, alpha);
@@ -158,26 +181,20 @@ class _TrafficPainter extends CustomPainter {
       _ring(canvas, points.last, color, arrived, alpha);
     }
 
-    if (dot != null) {
-      canvas.drawCircle(
-        dot,
-        10,
-        Paint()
-          ..color = color.withValues(alpha: 0.55 * alpha)
-          ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 7),
-      );
-      canvas.drawCircle(dot, 4.5, Paint()..color = color);
-      canvas.drawCircle(
-        dot,
-        2,
-        Paint()..color = Colors.white.withValues(alpha: alpha),
-      );
-    }
-
     for (var i = 0; i < hops.length; i++) {
       if (hops[i].role == TrafficHopRole.self) continue;
+      if (!_labelled.add(points[i])) continue;
       _label(canvas, points[i], hops[i], alpha);
     }
+  }
+
+  void _polyline(Canvas canvas, List<Offset> pts, Paint paint) {
+    if (pts.length < 2) return;
+    final path = ui.Path()..moveTo(pts.first.dx, pts.first.dy);
+    for (final p in pts.skip(1)) {
+      path.lineTo(p.dx, p.dy);
+    }
+    canvas.drawPath(path, paint);
   }
 
   void _dotted(Canvas canvas, Offset a, Offset b, Paint paint) {
