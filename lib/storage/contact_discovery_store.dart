@@ -12,13 +12,25 @@ import 'prefs_manager.dart';
 /// preferences, which are read whole at every start. A list saved in
 /// preferences by an older version moves to the file on first load. The web
 /// build, and tests without a file system, keep using preferences.
+///
+/// Files and prefs keys are scoped by the first 10 hex chars of the connected
+/// radio's public key (set via [setPublicKeyHex]) so switching between radios
+/// without closing the app never lets one radio's heard nodes bleed into
+/// another's list.
 class ContactDiscoveryStore {
   ContactDiscoveryStore({Future<String?> Function()? directory})
     : _directory = directory ?? discoveryDirectory;
 
   static const String _keyPrefix = 'discovered_contacts';
 
+  String publicKeyHex = '';
+  set setPublicKeyHex(String value) =>
+      publicKeyHex = value.length > 10 ? value.substring(0, 10) : '';
+
   final Future<String?> Function() _directory;
+
+  String get _scopedPrefsKey =>
+      publicKeyHex.isEmpty ? _keyPrefix : '${_keyPrefix}_$publicKeyHex';
 
   Future<List<Contact>> loadContacts() async {
     final prefs = PrefsManager.instance;
@@ -26,18 +38,18 @@ class ContactDiscoveryStore {
     String? jsonStr;
     if (dir != null) {
       try {
-        jsonStr = await readDiscoveryFile(dir);
+        jsonStr = await readDiscoveryFile(dir, key: publicKeyHex);
       } on Object {
         jsonStr = null;
       }
     }
     if (jsonStr == null) {
-      jsonStr = prefs.getString(_keyPrefix);
+      jsonStr = prefs.getString(_scopedPrefsKey);
       if (jsonStr != null && dir != null) {
-        // Move the old preferences copy to the file, then drop it.
+        // Move the preferences copy to the file, then drop it.
         try {
-          await writeDiscoveryFile(dir, jsonStr);
-          await prefs.remove(_keyPrefix);
+          await writeDiscoveryFile(dir, jsonStr, key: publicKeyHex);
+          await prefs.remove(_scopedPrefsKey);
         } on Object {
           // Keep the preferences copy; the next save tries the file again.
         }
@@ -62,13 +74,13 @@ class ContactDiscoveryStore {
     final dir = await _directory();
     if (dir != null) {
       try {
-        await writeDiscoveryFile(dir, json);
+        await writeDiscoveryFile(dir, json, key: publicKeyHex);
         return;
       } on Object {
         // Fall through to preferences rather than lose the list.
       }
     }
-    await PrefsManager.instance.setString(_keyPrefix, json);
+    await PrefsManager.instance.setString(_scopedPrefsKey, json);
   }
 
   Map<String, dynamic> _toJson(Contact contact) {

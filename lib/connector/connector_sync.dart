@@ -59,6 +59,10 @@ extension _ConnectorSync on MeshCoreConnector {
         ..clear()
         ..addAll(_contacts.map((c) => c.publicKeyHex));
     }
+    // Capture before clearing: a stalled sync should still persist if at least
+    // some contacts arrived — better to save a partial list than lose everything
+    // on a mid-sync disconnect (flaky first link).
+    final receivedAnything = _contactSyncSeen.isNotEmpty;
     _contactSyncSeen.clear();
     _contactSyncStalled = stalled;
     _isLoadingContacts = false;
@@ -67,7 +71,7 @@ extension _ConnectorSync on MeshCoreConnector {
     _contactSyncUsesSinceFilter = false;
     unawaited(updateKnownDiscovered());
     _notifyFromPart();
-    if (!stalled) unawaited(_persistContacts());
+    if (!stalled || receivedAnything) unawaited(_persistContacts());
     if (PlatformInfo.isWeb &&
         _activeTransport == MeshCoreTransportType.bluetooth &&
         _isSyncingChannels &&
