@@ -40,9 +40,10 @@ void main() {
     final now = DateTime(2026, 10, 28, 9);
     final weather = WeatherNow.fromOpenMeteo(
       jsonDecode(
-        '{"current":{"temperature_2m":8.4,"weather_code":61,'
-        '"wind_speed_10m":12.2,"relative_humidity_2m":87}}',
-      ) as Map<String, dynamic>,
+            '{"current":{"temperature_2m":8.4,"weather_code":61,'
+            '"wind_speed_10m":12.2,"relative_humidity_2m":87}}',
+          )
+          as Map<String, dynamic>,
       now,
     )!;
     final reply = weather.reply(now);
