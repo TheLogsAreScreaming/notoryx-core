@@ -15757,4 +15757,73 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Ce message vient d\'un analyseur CoreScope. Votre radio ne l\'a pas entendu, il n\'y a donc pas de chemin radio depuis votre radio.';
+
+  @override
+  String get manualTrace_menuItem => 'Traçage de chemin par hachages';
+
+  @override
+  String get manualTrace_inputLabel => 'Hachages des répéteurs';
+
+  @override
+  String manualTrace_helper(String example) {
+    return 'Exemple : $example. Séparez par des virgules ou des espaces.';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return 'Sauts ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => 'Nœud inconnu';
+
+  @override
+  String get manualTrace_run => 'Lancer le traçage de chemin';
+
+  @override
+  String get manualTrace_notConnected =>
+      'Connectez-vous à une radio pour lancer une trace';
+
+  @override
+  String get manualTrace_errorInvalidHex =>
+      'Seuls les caractères hexadécimaux (0-9, A-F) sont autorisés';
+
+  @override
+  String get manualTrace_errorOddLength =>
+      'Chaque hachage doit avoir un nombre pair de caractères hexadécimaux, correspondant à la taille du saut';
+
+  @override
+  String get manualTrace_errorMixedWidths =>
+      'Tous les hachages doivent avoir la même longueur';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      'Les hachages doivent faire 1, 2 ou 3 octets (2, 4 ou 6 caractères hexadécimaux)';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return 'Le chemin est trop long (maximum $max octets)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      'Trop de sauts à tracer en une seule requête. Retirez des sauts ou choisissez « Tel que saisi ».';
+
+  @override
+  String get manualTrace_roundTrip => 'Aller-retour';
+
+  @override
+  String get manualTrace_asEntered => 'Tel que saisi';
+
+  @override
+  String get manualTrace_roundTripHint =>
+      'La trace passe par ces sauts et revient par le même chemin.';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      'La trace suit exactement ces sauts. Ajoutez vous-même les sauts du retour.';
+
+  @override
+  String get manualTrace_menuHint =>
+      'Saisissez les hachages des relais et tracez ce chemin, sans GPS';
 }

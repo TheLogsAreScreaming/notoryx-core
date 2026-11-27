@@ -15724,4 +15724,73 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Diese Nachricht kam von einem CoreScope Analyzer. Dein Funkgerät hat sie nicht empfangen, daher gibt es keinen Funkpfad von deinem Funkgerät.';
+
+  @override
+  String get manualTrace_menuItem => 'Pfadverfolgung per Hash';
+
+  @override
+  String get manualTrace_inputLabel => 'Repeater-Hashes';
+
+  @override
+  String manualTrace_helper(String example) {
+    return 'Beispiel: $example. Mit Kommas oder Leerzeichen trennen.';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return 'Hops ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => 'Unbekannter Knoten';
+
+  @override
+  String get manualTrace_run => 'Pfadverfolgung starten';
+
+  @override
+  String get manualTrace_notConnected =>
+      'Verbinden Sie sich mit einem Funkgerät, um eine Verfolgung zu starten';
+
+  @override
+  String get manualTrace_errorInvalidHex =>
+      'Nur Hex-Zeichen (0-9, A-F) sind erlaubt';
+
+  @override
+  String get manualTrace_errorOddLength =>
+      'Jeder Hash benötigt eine gerade Anzahl von Hex-Zeichen, passend zur Hop-Größe';
+
+  @override
+  String get manualTrace_errorMixedWidths =>
+      'Alle Hashes müssen die gleiche Länge haben';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      'Hashes müssen 1, 2 oder 3 Bytes lang sein (2, 4 oder 6 Hex-Zeichen)';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return 'Pfad ist zu lang (maximal $max Bytes)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      'Zu viele Hops für eine einzelne Verfolgung. Entfernen Sie einige Hops oder wählen Sie „Wie eingegeben“.';
+
+  @override
+  String get manualTrace_roundTrip => 'Hin und zurück';
+
+  @override
+  String get manualTrace_asEntered => 'Wie eingegeben';
+
+  @override
+  String get manualTrace_roundTripHint =>
+      'Die Verfolgung geht über diese Hops hinaus und kommt auf demselben Weg zurück.';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      'Die Verfolgung folgt genau diesen Hops. Fügen Sie die Hops zurück zu Ihnen selbst hinzu.';
+
+  @override
+  String get manualTrace_menuHint =>
+      'Repeater-Hashes eingeben und diesen Pfad verfolgen, ohne GPS';
 }

@@ -15721,4 +15721,72 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Это сообщение пришло из анализатора CoreScope. Ваше радио его не слышало, поэтому радиомаршрута от вашего радио нет.';
+
+  @override
+  String get manualTrace_menuItem => 'Трассировка пути по хэшам';
+
+  @override
+  String get manualTrace_inputLabel => 'Хэши репитеров';
+
+  @override
+  String manualTrace_helper(String example) {
+    return 'Пример: $example. Разделяйте запятыми или пробелами.';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return 'Хопы ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => 'Неизвестная нода';
+
+  @override
+  String get manualTrace_run => 'Запустить трассировку пути';
+
+  @override
+  String get manualTrace_notConnected =>
+      'Подключитесь к радио, чтобы запустить трассировку';
+
+  @override
+  String get manualTrace_errorInvalidHex =>
+      'Допустимы только шестнадцатеричные символы (0-9, A-F)';
+
+  @override
+  String get manualTrace_errorOddLength =>
+      'Каждый хэш должен состоять из чётного числа шестнадцатеричных символов, соответствующего размеру хопа';
+
+  @override
+  String get manualTrace_errorMixedWidths => 'Все хэши должны быть одной длины';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      'Хэши должны быть длиной 1, 2 или 3 байта (2, 4 или 6 шестнадцатеричных символов)';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return 'Путь слишком длинный (максимум $max байт)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      'Слишком много хопов для трассировки за один запрос. Удалите часть хопов или выберите «Как введено».';
+
+  @override
+  String get manualTrace_roundTrip => 'Туда и обратно';
+
+  @override
+  String get manualTrace_asEntered => 'Как введено';
+
+  @override
+  String get manualTrace_roundTripHint =>
+      'Трассировка проходит через эти хопы и возвращается тем же путём.';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      'Трассировка проходит строго через эти хопы. Хопы обратно к себе добавьте сами.';
+
+  @override
+  String get manualTrace_menuHint =>
+      'Введите хеши ретрансляторов и отследите путь без GPS';
 }

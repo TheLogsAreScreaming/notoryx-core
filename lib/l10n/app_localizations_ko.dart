@@ -15016,4 +15016,67 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       '이 메시지는 CoreScope 분석 서버에서 왔습니다. 내 무전기가 수신하지 않았으므로 내 무전기로부터의 무선 경로가 없습니다.';
+
+  @override
+  String get manualTrace_menuItem => '해시로 경로 추적';
+
+  @override
+  String get manualTrace_inputLabel => '리피터 해시';
+
+  @override
+  String manualTrace_helper(String example) {
+    return '예: $example. 쉼표 또는 공백으로 구분하세요.';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return '홉 ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => '알 수 없는 노드';
+
+  @override
+  String get manualTrace_run => '경로 추적 실행';
+
+  @override
+  String get manualTrace_notConnected => '추적을 실행하려면 무선 장치에 연결하세요';
+
+  @override
+  String get manualTrace_errorInvalidHex => '16진수 문자(0-9, A-F)만 사용할 수 있습니다';
+
+  @override
+  String get manualTrace_errorOddLength => '각 해시는 홉 크기에 맞게 16진수 문자 수가 짝수여야 합니다';
+
+  @override
+  String get manualTrace_errorMixedWidths => '모든 해시의 길이가 같아야 합니다';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      '해시는 1, 2 또는 3바이트(16진수 2, 4 또는 6자)여야 합니다';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return '경로가 너무 깁니다(최대 $max바이트)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      '한 번의 요청으로 추적하기에는 홉이 너무 많습니다. 홉을 줄이거나 “입력한 대로”를 선택하세요.';
+
+  @override
+  String get manualTrace_roundTrip => '왕복';
+
+  @override
+  String get manualTrace_asEntered => '입력한 대로';
+
+  @override
+  String get manualTrace_roundTripHint => '추적이 이 홉들을 거쳐 나갔다가 같은 경로로 돌아옵니다.';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      '추적이 이 홉들을 그대로 따라갑니다. 나에게 돌아오는 홉은 직접 추가하세요.';
+
+  @override
+  String get manualTrace_menuHint => '리피터 해시를 입력해 경로를 추적합니다. GPS가 필요 없습니다';
 }

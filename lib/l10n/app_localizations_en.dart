@@ -15538,4 +15538,72 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'This message came from a CoreScope analyzer. Your radio has not heard it, so there is no RF path from your radio.';
+
+  @override
+  String get manualTrace_menuItem => 'Path trace by hashes';
+
+  @override
+  String get manualTrace_inputLabel => 'Repeater hashes';
+
+  @override
+  String manualTrace_helper(String example) {
+    return 'Example: $example. Separate with commas or spaces.';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return 'Hops ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => 'Unknown node';
+
+  @override
+  String get manualTrace_run => 'Run path trace';
+
+  @override
+  String get manualTrace_notConnected => 'Connect to a radio to run a trace';
+
+  @override
+  String get manualTrace_errorInvalidHex =>
+      'Only hex characters (0-9, A-F) are allowed';
+
+  @override
+  String get manualTrace_errorOddLength =>
+      'Each hash needs an even number of hex characters, matching the hop size';
+
+  @override
+  String get manualTrace_errorMixedWidths =>
+      'All hashes must be the same length';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      'Hashes must be 1, 2 or 3 bytes (2, 4 or 6 hex characters)';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return 'Path is too long (maximum $max bytes)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      'Too many hops to trace in one request. Remove some hops or choose As entered.';
+
+  @override
+  String get manualTrace_roundTrip => 'Round trip';
+
+  @override
+  String get manualTrace_asEntered => 'As entered';
+
+  @override
+  String get manualTrace_roundTripHint =>
+      'The trace goes out through these hops and comes back the same way.';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      'The trace follows these hops exactly. Add the hops back to you yourself.';
+
+  @override
+  String get manualTrace_menuHint =>
+      'Type repeater hashes and trace that path, no GPS needed';
 }
