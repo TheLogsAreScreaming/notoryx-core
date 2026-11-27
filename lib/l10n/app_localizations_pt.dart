@@ -15639,4 +15639,43 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get contacts_fullWarning =>
       'A lista de contatos deste rádio está cheia, então ele não pode adicionar novos nós. Remova alguns contatos para liberar espaço.';
+
+  @override
+  String get analyzer_missedChat => 'Chat perdido do CoreScope';
+
+  @override
+  String get analyzer_missedChatHint =>
+      'Mostra mensagens de canal da sua área que o seu rádio não ouviu, lidas deste analisador. Só aparecem os canais em que entrou. Nada do seu rádio é enviado.';
+
+  @override
+  String get analyzer_area => 'Área';
+
+  @override
+  String get analyzer_areaAll => 'Servidor inteiro';
+
+  @override
+  String get analyzer_areaHint =>
+      'Códigos de região separados por vírgulas, por exemplo ORD ou ORD,MDW. Deixe vazio para tudo o que este servidor ouve.';
+
+  @override
+  String get analyzer_areaInvalid =>
+      'Use códigos de 3 ou 4 letras separados por vírgulas';
+
+  @override
+  String get analyzer_missedChatOffline =>
+      'Não é possível contactar o analisador agora';
+
+  @override
+  String get channels_viaCoreScope => 'via CoreScope';
+
+  @override
+  String get channels_viaCoreScopeSemantics =>
+      'Recebida via CoreScope, não ouvida pelo seu rádio';
+
+  @override
+  String get channelPath_sourceCoreScope => 'CoreScope';
+
+  @override
+  String get channelPath_viaCoreScopeNoRfPath =>
+      'Esta mensagem chegou de um analisador CoreScope. O seu rádio não a ouviu, por isso não há caminho de rádio a partir do seu rádio.';
 }

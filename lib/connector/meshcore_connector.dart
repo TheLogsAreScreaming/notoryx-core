@@ -4630,9 +4630,21 @@ class MeshCoreConnector extends ChangeNotifier {
   /// Unlike radio RX, a message the app already has is left alone instead of
   /// counted as a repeat, so internet copies don't inflate RF repeat counts.
   void ingestMqttRawPacket(Uint8List raw) =>
-      _handleRawRxPacket(raw, viaMqtt: true);
+      _handleRawRxPacket(raw, source: MessageSource.mqtt);
 
-  void _handleRawRxPacket(Uint8List raw, {bool viaMqtt = false}) {
+  /// Adds a channel message from a raw packet a CoreScope analyzer's
+  /// observers heard. Decrypted here with this app's own channel keys, so
+  /// only channels the user has joined show up. Like MQTT copies, a message
+  /// the app already has is left alone, and these never notify: they are
+  /// catch-up reading, not live traffic.
+  void ingestCoreScopeRawPacket(Uint8List raw) =>
+      _handleRawRxPacket(raw, source: MessageSource.coreScope);
+
+  void _handleRawRxPacket(
+    Uint8List raw, {
+    MessageSource source = MessageSource.radio,
+  }) {
+    final offRadio = source != MessageSource.radio;
     try {
       final packet = _parseRawPacket(raw);
       if (packet == null || packet.payloadType != _payloadTypeGroupText) return;
@@ -4688,7 +4700,7 @@ class MeshCoreConnector extends ChangeNotifier {
             pathBytes: packet.pathBytes,
             channelIndex: channel.index,
             packetHash: pktHash,
-            viaMqtt: viaMqtt,
+            source: source,
             region: matchRegion(
               packet.transportCode,
               packet.payloadType,
@@ -4696,7 +4708,7 @@ class MeshCoreConnector extends ChangeNotifier {
               _knownRegionNames(),
             ),
           );
-          if (viaMqtt &&
+          if (offRadio &&
               _findChannelRepeatIndex(
                     _channelMessages[channel.index] ?? const [],
                     message,
@@ -4721,6 +4733,8 @@ class MeshCoreConnector extends ChangeNotifier {
                 channel.index,
                 message,
               );
+              // CoreScope copies are catch-up reading: they never notify.
+              if (source == MessageSource.coreScope) return;
               final label = channel.name.isEmpty
                   ? 'Channel ${channel.index}'
                   : channel.name;

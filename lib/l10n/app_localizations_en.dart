@@ -15499,4 +15499,43 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get contacts_fullWarning =>
       'This radio\'s contact list is full, so it can\'t add new nodes. Remove some contacts to make room.';
+
+  @override
+  String get analyzer_missedChat => 'Missed chat from CoreScope';
+
+  @override
+  String get analyzer_missedChatHint =>
+      'Shows area channel messages your radio didn\'t hear, read from this analyzer. Only channels you joined appear. Nothing from your radio is sent.';
+
+  @override
+  String get analyzer_area => 'Area';
+
+  @override
+  String get analyzer_areaAll => 'Whole server';
+
+  @override
+  String get analyzer_areaHint =>
+      'Region codes separated by commas, for example ORD or ORD,MDW. Leave empty for everything this server hears.';
+
+  @override
+  String get analyzer_areaInvalid =>
+      'Use 3 or 4 letter codes separated by commas';
+
+  @override
+  String get analyzer_missedChatOffline =>
+      'Can\'t reach the analyzer right now';
+
+  @override
+  String get channels_viaCoreScope => 'via CoreScope';
+
+  @override
+  String get channels_viaCoreScopeSemantics =>
+      'Received via CoreScope, not heard by your radio';
+
+  @override
+  String get channelPath_sourceCoreScope => 'CoreScope';
+
+  @override
+  String get channelPath_viaCoreScopeNoRfPath =>
+      'This message came from a CoreScope analyzer. Your radio has not heard it, so there is no RF path from your radio.';
 }

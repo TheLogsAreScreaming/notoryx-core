@@ -15626,4 +15626,42 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get contacts_fullWarning =>
       'A rádió névjegylistája megtelt, ezért nem tud új node-okat felvenni. Törölj néhány névjegyet, hogy legyen hely.';
+
+  @override
+  String get analyzer_missedChat => 'Lemaradt csevegés a CoreScope-ból';
+
+  @override
+  String get analyzer_missedChatHint =>
+      'Megmutatja a környék csatornaüzeneteit, amelyeket a rádiója nem hallott, ebből az elemzőből. Csak a csatlakozott csatornák jelennek meg. A rádiójáról semmi nem kerül elküldésre.';
+
+  @override
+  String get analyzer_area => 'Terület';
+
+  @override
+  String get analyzer_areaAll => 'Teljes szerver';
+
+  @override
+  String get analyzer_areaHint =>
+      'Régiókódok vesszővel elválasztva, például ORD vagy ORD,MDW. Hagyja üresen mindenhez, amit ez a szerver hall.';
+
+  @override
+  String get analyzer_areaInvalid =>
+      '3 vagy 4 betűs kódokat használjon vesszővel elválasztva';
+
+  @override
+  String get analyzer_missedChatOffline => 'Az elemző most nem érhető el';
+
+  @override
+  String get channels_viaCoreScope => 'CoreScope-on át';
+
+  @override
+  String get channels_viaCoreScopeSemantics =>
+      'CoreScope-on keresztül érkezett, a rádiója nem hallotta';
+
+  @override
+  String get channelPath_sourceCoreScope => 'CoreScope';
+
+  @override
+  String get channelPath_viaCoreScopeNoRfPath =>
+      'Ez az üzenet egy CoreScope elemzőtől érkezett. A rádiója nem hallotta, így nincs rádiós útvonal a rádiójától.';
 }

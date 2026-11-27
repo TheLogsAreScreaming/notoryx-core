@@ -225,7 +225,7 @@ class BotService extends ChangeNotifier {
   Future<void> _receiveChannel(ChannelMessage message) async {
     if (_disposed || !_ready || !connector.isConnected) return;
     if (!_settings.enabled || _settings.channels.isEmpty) return;
-    if (message.isOutgoing || message.viaMqtt) return;
+    if (message.isOutgoing || message.offRadio) return;
     final index = message.channelIndex;
     Channel? channel;
     for (final c in connector.channels) {

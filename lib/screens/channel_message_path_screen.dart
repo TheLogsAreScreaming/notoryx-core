@@ -60,9 +60,9 @@ class ChannelMessagePathScreen extends StatelessWidget {
           hashByteWidth,
           resolveFromEnd: !message.isOutgoing,
         );
-        // A via-MQTT message carries the observer's path, not one from this
-        // radio, so its hops are not shown.
-        final viaMqtt = message.viaMqtt;
+        // An MQTT or CoreScope copy carries an observer's path, not one from
+        // this radio, so its hops are not shown.
+        final viaMqtt = message.offRadio;
         final hasHopDetails = !viaMqtt && primaryPath.isNotEmpty;
 
         // Convert observed path byte length to hop count using the packet width.
@@ -144,7 +144,7 @@ class ChannelMessagePathScreen extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
                 ),
                 if (viaMqtt)
-                  _buildViaMqttCard(context, l10n)
+                  _buildViaMqttCard(context, l10n, message)
                 else if (!hasHopDetails)
                   _buildNoHopCard(context, l10n)
                 else ...[
@@ -175,7 +175,7 @@ class ChannelMessagePathScreen extends StatelessWidget {
   }) {
     final l10n = context.l10n;
     final scheme = Theme.of(context).colorScheme;
-    final routeChip = effectiveHopCount == null || message.viaMqtt
+    final routeChip = effectiveHopCount == null || message.offRadio
         ? null
         : effectiveHopCount < 0
         ? const RouteChip(isDirect: false)
@@ -218,11 +218,13 @@ class ChannelMessagePathScreen extends StatelessWidget {
               message.repeatCount.toString(),
               scheme: scheme,
             ),
-          if (message.viaMqtt)
+          if (message.offRadio)
             _buildDetailRow(
               context,
               l10n.channelPath_sourceLabel,
-              l10n.channelPath_sourceMqtt,
+              message.viaCoreScope
+                  ? l10n.channelPath_sourceCoreScope
+                  : l10n.channelPath_sourceMqtt,
               scheme: scheme,
             )
           else
@@ -232,7 +234,7 @@ class ChannelMessagePathScreen extends StatelessWidget {
               _formatPathLabel(effectiveHopCount, l10n),
               scheme: scheme,
             ),
-          if (observedLabel != null && !message.viaMqtt)
+          if (observedLabel != null && !message.offRadio)
             _buildDetailRow(
               context,
               l10n.channelPath_observedLabel,
@@ -325,7 +327,11 @@ class ChannelMessagePathScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildViaMqttCard(BuildContext context, AppLocalizations l10n) {
+  Widget _buildViaMqttCard(
+    BuildContext context,
+    AppLocalizations l10n,
+    ChannelMessage message,
+  ) {
     final scheme = Theme.of(context).colorScheme;
     return MeshCard(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
@@ -336,7 +342,9 @@ class ChannelMessagePathScreen extends StatelessWidget {
           const SizedBox(width: 10),
           Expanded(
             child: Text(
-              l10n.channelPath_viaMqttNoRfPath,
+              message.viaCoreScope
+                  ? l10n.channelPath_viaCoreScopeNoRfPath
+                  : l10n.channelPath_viaMqttNoRfPath,
               style: TextStyle(color: scheme.onSurfaceVariant),
             ),
           ),

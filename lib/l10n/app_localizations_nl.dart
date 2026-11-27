@@ -15610,4 +15610,42 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get contacts_fullWarning =>
       'De contactenlijst van deze radio is vol, dus er kunnen geen nieuwe nodes bij. Verwijder enkele contacten om ruimte te maken.';
+
+  @override
+  String get analyzer_missedChat => 'Gemiste chat via CoreScope';
+
+  @override
+  String get analyzer_missedChatHint =>
+      'Toont kanaalberichten uit je omgeving die je radio niet hoorde, gelezen van deze analyzer. Alleen kanalen waar je lid van bent. Er wordt niets van je radio verstuurd.';
+
+  @override
+  String get analyzer_area => 'Gebied';
+
+  @override
+  String get analyzer_areaAll => 'Hele server';
+
+  @override
+  String get analyzer_areaHint =>
+      'Regiocodes gescheiden door komma\'s, bijvoorbeeld ORD of ORD,MDW. Laat leeg voor alles wat deze server hoort.';
+
+  @override
+  String get analyzer_areaInvalid =>
+      'Gebruik codes van 3 of 4 letters gescheiden door komma\'s';
+
+  @override
+  String get analyzer_missedChatOffline => 'De analyzer is nu niet bereikbaar';
+
+  @override
+  String get channels_viaCoreScope => 'via CoreScope';
+
+  @override
+  String get channels_viaCoreScopeSemantics =>
+      'Ontvangen via CoreScope, niet gehoord door je radio';
+
+  @override
+  String get channelPath_sourceCoreScope => 'CoreScope';
+
+  @override
+  String get channelPath_viaCoreScopeNoRfPath =>
+      'Dit bericht kwam van een CoreScope analyzer. Je radio heeft het niet gehoord, dus er is geen radiopad vanaf je radio.';
 }

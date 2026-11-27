@@ -25874,6 +25874,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This radio\'s contact list is full, so it can\'t add new nodes. Remove some contacts to make room.'**
   String get contacts_fullWarning;
+
+  /// No description provided for @analyzer_missedChat.
+  ///
+  /// In en, this message translates to:
+  /// **'Missed chat from CoreScope'**
+  String get analyzer_missedChat;
+
+  /// No description provided for @analyzer_missedChatHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Shows area channel messages your radio didn\'t hear, read from this analyzer. Only channels you joined appear. Nothing from your radio is sent.'**
+  String get analyzer_missedChatHint;
+
+  /// No description provided for @analyzer_area.
+  ///
+  /// In en, this message translates to:
+  /// **'Area'**
+  String get analyzer_area;
+
+  /// No description provided for @analyzer_areaAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Whole server'**
+  String get analyzer_areaAll;
+
+  /// No description provided for @analyzer_areaHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Region codes separated by commas, for example ORD or ORD,MDW. Leave empty for everything this server hears.'**
+  String get analyzer_areaHint;
+
+  /// No description provided for @analyzer_areaInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Use 3 or 4 letter codes separated by commas'**
+  String get analyzer_areaInvalid;
+
+  /// No description provided for @analyzer_missedChatOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'Can\'t reach the analyzer right now'**
+  String get analyzer_missedChatOffline;
+
+  /// No description provided for @channels_viaCoreScope.
+  ///
+  /// In en, this message translates to:
+  /// **'via CoreScope'**
+  String get channels_viaCoreScope;
+
+  /// No description provided for @channels_viaCoreScopeSemantics.
+  ///
+  /// In en, this message translates to:
+  /// **'Received via CoreScope, not heard by your radio'**
+  String get channels_viaCoreScopeSemantics;
+
+  /// No description provided for @channelPath_sourceCoreScope.
+  ///
+  /// In en, this message translates to:
+  /// **'CoreScope'**
+  String get channelPath_sourceCoreScope;
+
+  /// No description provided for @channelPath_viaCoreScopeNoRfPath.
+  ///
+  /// In en, this message translates to:
+  /// **'This message came from a CoreScope analyzer. Your radio has not heard it, so there is no RF path from your radio.'**
+  String get channelPath_viaCoreScopeNoRfPath;
 }
 
 class _AppLocalizationsDelegate

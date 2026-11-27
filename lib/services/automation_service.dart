@@ -160,7 +160,7 @@ class AutomationService extends ChangeNotifier {
   }
 
   void _onChannel(ChannelMessage m) {
-    if (m.isOutgoing || m.viaMqtt || !_fresh(m.timestamp)) return;
+    if (m.isOutgoing || m.offRadio || !_fresh(m.timestamp)) return;
     if (!_countable(m.text)) return;
     String? key;
     for (final c in connector.contacts) {

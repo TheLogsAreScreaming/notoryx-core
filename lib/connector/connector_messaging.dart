@@ -1131,7 +1131,7 @@ extension _ConnectorMessaging on MeshCoreConnector {
           replyToMessageId: originalMessage.messageId,
           replyToSenderName: originalMessage.senderName,
           replyToText: originalMessage.text,
-          viaMqtt: message.viaMqtt,
+          source: message.source,
           filterReason: message.filterReason,
           filterDetail: message.filterDetail,
         );
@@ -1143,12 +1143,13 @@ extension _ConnectorMessaging on MeshCoreConnector {
     if (existingIndex >= 0) {
       isNew = false;
       final existing = messages[existingIndex];
-      if (existing.viaMqtt && !processedMessage.viaMqtt) {
-        // First RF copy of a message only seen via MQTT: the radio has now
+      if (existing.offRadio && !processedMessage.offRadio) {
+        // First RF copy of a message only seen off radio (MQTT or
+        // CoreScope): the radio has now
         // heard it, so drop the flag and take the radio's own path. This is
         // the first reception over RF, not a repeat.
         messages[existingIndex] = existing.copyWith(
-          viaMqtt: false,
+          source: MessageSource.radio,
           pathLength: processedMessage.pathLength,
           pathHashWidth: processedMessage.pathHashWidth,
           pathBytes: processedMessage.pathBytes,

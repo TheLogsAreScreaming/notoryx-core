@@ -15625,4 +15625,42 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String get contacts_fullWarning =>
       'Seznam stikov tega radia je poln, zato ne more dodajati novih vozlišč. Odstranite nekaj stikov, da sprostite prostor.';
+
+  @override
+  String get analyzer_missedChat => 'Zamujeni klepet iz CoreScope';
+
+  @override
+  String get analyzer_missedChatHint =>
+      'Prikaže sporočila kanalov iz okolice, ki jih vaš radio ni slišal, prebrana s tega analizatorja. Samo kanali, ki ste se jim pridružili. Z vašega radia se nič ne pošlje.';
+
+  @override
+  String get analyzer_area => 'Območje';
+
+  @override
+  String get analyzer_areaAll => 'Cel strežnik';
+
+  @override
+  String get analyzer_areaHint =>
+      'Kode regij, ločene z vejicami, na primer ORD ali ORD,MDW. Pustite prazno za vse, kar sliši ta strežnik.';
+
+  @override
+  String get analyzer_areaInvalid =>
+      'Uporabite kode s 3 ali 4 črkami, ločene z vejicami';
+
+  @override
+  String get analyzer_missedChatOffline => 'Analizator trenutno ni dosegljiv';
+
+  @override
+  String get channels_viaCoreScope => 'prek CoreScope';
+
+  @override
+  String get channels_viaCoreScopeSemantics =>
+      'Prejeto prek CoreScope, vaš radio ga ni slišal';
+
+  @override
+  String get channelPath_sourceCoreScope => 'CoreScope';
+
+  @override
+  String get channelPath_viaCoreScopeNoRfPath =>
+      'To sporočilo je prišlo z analizatorja CoreScope. Vaš radio ga ni slišal, zato ni radijske poti od vašega radia.';
 }

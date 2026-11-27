@@ -169,4 +169,41 @@ void main() {
     // The observer's hops are not presented as this radio's path.
     expect(find.textContaining('hops matched'), findsNothing);
   });
+
+  testWidgets('a CoreScope label says where it came from', (tester) async {
+    final handle = tester.ensureSemantics();
+    await tester.pumpWidget(
+      const MaterialApp(
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        home: Scaffold(body: ViaMqttLabel(color: Colors.grey, coreScope: true)),
+      ),
+    );
+    expect(find.text('via CoreScope'), findsOneWidget);
+    expect(find.text('via MQTT'), findsNothing);
+    expect(
+      find.bySemanticsLabel('Received via CoreScope, not heard by your radio'),
+      findsOneWidget,
+    );
+    handle.dispose();
+  });
+
+  testWidgets('packet path says a CoreScope message has no RF path', (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      _app(
+        _FakeConnector(const []),
+        MeshTheme.forPalette(BastionTheme.fallback.palette),
+        ChannelMessagePathScreen(
+          message: _message('missed').copyWith(source: MessageSource.coreScope),
+          channelMessage: true,
+        ),
+      ),
+    );
+    await tester.pump();
+    expect(find.textContaining('came from a CoreScope'), findsOneWidget);
+    expect(find.text('CoreScope'), findsOneWidget);
+    expect(find.textContaining('hops matched'), findsNothing);
+  });
 }

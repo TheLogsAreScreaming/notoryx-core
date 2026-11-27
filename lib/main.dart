@@ -90,6 +90,7 @@ import 'services/phone_location.dart';
 import 'services/send_gap_log.dart';
 import 'services/channel_discovery_service.dart';
 import 'services/corescope.dart';
+import 'services/corescope_chat_feed.dart';
 import 'services/my_sensors_service.dart';
 import 'services/network_scan_service.dart';
 import 'services/rx_log_service.dart';
@@ -403,6 +404,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   late final FollowService _follow;
   late final ChannelDiscoveryService _channelDiscovery;
   late final AnalyzerService _analyzer;
+  late final CoreScopeChatFeed _coreScopeChat;
   late final NodeTelemetryStore _telemetry;
   late final SensorHistoryStore _sensorHistory;
   late final RepeaterBatteryHistory _batteryHistory;
@@ -468,6 +470,10 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _channelDiscovery = ChannelDiscoveryService(widget.connector);
     unawaited(_channelDiscovery.load());
     _analyzer = AnalyzerService()..load();
+    _coreScopeChat = CoreScopeChatFeed(
+      analyzer: _analyzer,
+      onPacket: widget.connector.ingestCoreScopeRawPacket,
+    )..load();
     _telemetry = NodeTelemetryStore(PrefsManager.instance);
     _sensorHistory = SensorHistoryStore(
       PrefsManager.instance,
@@ -729,6 +735,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     _trackLog.dispose();
     _follow.dispose();
     _channelDiscovery.dispose();
+    _coreScopeChat.dispose();
     _analyzer.dispose();
     _mySensors.dispose();
     widget.connector.removeListener(_syncTelemetryScope);
@@ -955,6 +962,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
     }
     _fieldOps.setForeground(state == AppLifecycleState.resumed);
     _readAloud.foreground = state == AppLifecycleState.resumed;
+    _coreScopeChat.foreground = state == AppLifecycleState.resumed;
     widget.receivedImageStore.setForeground(state == AppLifecycleState.resumed);
     if (state == AppLifecycleState.paused ||
         state == AppLifecycleState.hidden) {
@@ -1008,6 +1016,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
           value: _channelDiscovery,
         ),
         ChangeNotifierProvider<AnalyzerService?>.value(value: _analyzer),
+        ChangeNotifierProvider<CoreScopeChatFeed?>.value(value: _coreScopeChat),
         ChangeNotifierProvider<MySensorsService?>.value(value: _mySensors),
         ChangeNotifierProvider<NodeTelemetryStore?>.value(value: _telemetry),
         ChangeNotifierProvider<SensorHistoryStore?>.value(

@@ -165,6 +165,7 @@ class ChannelMessageStore {
       'replyToText': msg.replyToText,
       'reactions': msg.reactions,
       'viaMqtt': msg.viaMqtt,
+      if (msg.viaCoreScope) 'source': msg.source.name,
       if (msg.signature != ChannelSignature.none)
         'signature': msg.signature.name,
       if (msg.signerKey != null) 'signerKey': base64Encode(msg.signerKey!),
@@ -255,6 +256,9 @@ class ChannelMessageStore {
           ) ??
           {},
       viaMqtt: (json['viaMqtt'] as bool?) ?? false,
+      source: MessageSource.values
+          .where((v) => v.name == json['source'])
+          .firstOrNull,
       signature: ChannelSignature.values.firstWhere(
         (v) => v.name == json['signature'],
         orElse: () => ChannelSignature.none,

@@ -997,7 +997,7 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
                           ),
                         if (enableTracing &&
                             displayPath.isNotEmpty &&
-                            !message.viaMqtt) ...[
+                            !message.offRadio) ...[
                           const SizedBox(height: 3),
                           Padding(
                             padding: gifId != null
@@ -1087,9 +1087,10 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
                                   textScale: textScale,
                                 ),
                               ],
-                              if (message.viaMqtt) ...[
+                              if (message.offRadio) ...[
                                 const SizedBox(width: 6),
                                 ViaMqttLabel(
+                                  coreScope: message.viaCoreScope,
                                   // onSurfaceVariant keeps 4.5:1 on incoming
                                   // bubbles in every theme.
                                   color: isOutgoing

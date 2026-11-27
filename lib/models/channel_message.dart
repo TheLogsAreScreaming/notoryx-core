@@ -24,6 +24,10 @@ class Repeat {
       repeaterKey != null ? pubKeyToHex(repeaterKey!) : null;
 }
 
+/// Where the app got a channel message from: the companion radio, an MQTT
+/// observer, or a CoreScope analyzer's feed of what its observers heard.
+enum MessageSource { radio, mqtt, coreScope }
+
 /// Whether a channel post came with a NOTORYX signature, and whether it
 /// checked out. Most posts are [none]: signing is optional and other apps
 /// never sign.
@@ -57,11 +61,21 @@ class ChannelMessage {
   final String? replyToText;
   final Map<String, List<String?>> reactions;
 
-  /// Whether this message reached the app only through an MQTT observer.
+  /// Where this message reached the app from.
   ///
-  /// Cleared once the companion radio hears the same packet over RF, so a
-  /// flagged message has no RF path from the user's own radio.
-  final bool viaMqtt;
+  /// Anything but [MessageSource.radio] is reset to radio once the companion
+  /// radio hears the same packet over RF, so an off-radio message has no RF
+  /// path from the user's own radio.
+  final MessageSource source;
+
+  /// Whether this message reached the app only through an MQTT observer.
+  bool get viaMqtt => source == MessageSource.mqtt;
+
+  /// Whether this message reached the app only through CoreScope.
+  bool get viaCoreScope => source == MessageSource.coreScope;
+
+  /// Whether the user's own radio has not heard this message.
+  bool get offRadio => source != MessageSource.radio;
 
   /// The signature check for this post, and the key that signed it when
   /// one did. Whether that key belongs to a contact is decided when shown,
@@ -108,7 +122,8 @@ class ChannelMessage {
     this.replyToSenderName,
     this.replyToText,
     Map<String, List<String?>>? reactions,
-    this.viaMqtt = false,
+    bool viaMqtt = false,
+    MessageSource? source,
     this.signature = ChannelSignature.none,
     this.signerKey,
     this.region,
@@ -118,6 +133,7 @@ class ChannelMessage {
            messageId ??
            '${timestamp.millisecondsSinceEpoch}_${senderName.hashCode}_${text.hashCode}',
        reactions = reactions ?? {},
+       source = source ?? (viaMqtt ? MessageSource.mqtt : MessageSource.radio),
        pathBytes = pathBytes ?? Uint8List(0),
        pathVariants = _mergePathVariants(
          pathBytes ?? Uint8List(0),
@@ -146,6 +162,7 @@ class ChannelMessage {
     Object? translationModelId = _unset,
     Map<String, List<String?>>? reactions,
     bool? viaMqtt,
+    MessageSource? source,
     ChannelSignature? signature,
     Uint8List? signerKey,
     String? region,
@@ -186,7 +203,11 @@ class ChannelMessage {
       replyToSenderName: replyToSenderName ?? this.replyToSenderName,
       replyToText: replyToText ?? this.replyToText,
       reactions: reactions ?? this.reactions,
-      viaMqtt: viaMqtt ?? this.viaMqtt,
+      source:
+          source ??
+          (viaMqtt == null
+              ? this.source
+              : (viaMqtt ? MessageSource.mqtt : MessageSource.radio)),
       signature: signature ?? this.signature,
       signerKey: signerKey ?? this.signerKey,
       region: region ?? this.region,

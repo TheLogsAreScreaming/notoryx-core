@@ -17,6 +17,7 @@ import '../widgets/theme_picker.dart';
 import 'backdrop_settings_screen.dart';
 import '../widgets/us_bandwidth_notice.dart';
 import '../services/corescope.dart';
+import '../services/corescope_chat_feed.dart';
 import '../services/app_settings_service.dart';
 import '../services/app_debug_log_service.dart';
 import '../theme/mesh_theme.dart';
@@ -2438,8 +2439,88 @@ class AnalyzerCard extends StatelessWidget {
             value: analyzer.hopLookup,
             onChanged: analyzer.setHopLookup,
           ),
+          const _CoreScopeChatTiles(),
         ],
       ),
+    );
+  }
+}
+
+/// The opt-in missed chat feed: a switch, and the area it reads.
+class _CoreScopeChatTiles extends StatelessWidget {
+  const _CoreScopeChatTiles();
+
+  Future<void> _editArea(BuildContext context, CoreScopeChatFeed feed) async {
+    final t = context.l10n;
+    final controller = TextEditingController(text: feed.region);
+    final area = await showDialog<String>(
+      context: context,
+      builder: (dialog) => StatefulBuilder(
+        builder: (dialog, setState) => AlertDialog(
+          title: Text(t.analyzer_area),
+          content: TextField(
+            controller: controller,
+            textCapitalization: TextCapitalization.characters,
+            decoration: InputDecoration(
+              labelText: t.analyzer_area,
+              helperText: t.analyzer_areaHint,
+              helperMaxLines: 3,
+              errorText: isValidCoreScopeRegion(controller.text)
+                  ? null
+                  : t.analyzer_areaInvalid,
+            ),
+            onChanged: (_) => setState(() {}),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(dialog),
+              child: Text(t.common_cancel),
+            ),
+            FilledButton(
+              onPressed: isValidCoreScopeRegion(controller.text)
+                  ? () => Navigator.pop(dialog, controller.text)
+                  : null,
+              child: Text(t.common_save),
+            ),
+          ],
+        ),
+      ),
+    );
+    controller.dispose();
+    if (area != null) await feed.setRegion(area);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final feed = context.watch<CoreScopeChatFeed?>();
+    if (feed == null) return const SizedBox.shrink();
+    final t = context.l10n;
+    return Column(
+      children: [
+        SwitchListTile(
+          key: const ValueKey('corescope-missed-chat'),
+          secondary: const Icon(Icons.forum_outlined),
+          title: Text(t.analyzer_missedChat),
+          subtitle: Text(
+            feed.enabled && feed.lastFailed
+                ? '${t.analyzer_missedChatHint}\n${t.analyzer_missedChatOffline}'
+                : t.analyzer_missedChatHint,
+          ),
+          isThreeLine: true,
+          value: feed.enabled,
+          onChanged: feed.setEnabled,
+        ),
+        if (feed.enabled)
+          ListTile(
+            key: const ValueKey('corescope-missed-chat-area'),
+            leading: const Icon(Icons.place_outlined),
+            title: Text(t.analyzer_area),
+            subtitle: Text(
+              feed.region.isEmpty ? t.analyzer_areaAll : feed.region,
+            ),
+            onTap: () => _editArea(context, feed),
+          ),
+      ],
     );
   }
 }

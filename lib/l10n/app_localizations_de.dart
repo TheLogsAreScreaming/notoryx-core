@@ -15685,4 +15685,43 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get contacts_fullWarning =>
       'Die Kontaktliste dieses Funkgeräts ist voll, daher kann es keine neuen Knoten hinzufügen. Entferne einige Kontakte, um Platz zu schaffen.';
+
+  @override
+  String get analyzer_missedChat => 'Verpasster Chat von CoreScope';
+
+  @override
+  String get analyzer_missedChatHint =>
+      'Zeigt Kanalnachrichten aus deiner Gegend, die dein Funkgerät nicht gehört hat, gelesen von diesem Analyzer. Nur Kanäle, denen du beigetreten bist. Von deinem Funkgerät wird nichts gesendet.';
+
+  @override
+  String get analyzer_area => 'Gebiet';
+
+  @override
+  String get analyzer_areaAll => 'Ganzer Server';
+
+  @override
+  String get analyzer_areaHint =>
+      'Regionscodes durch Kommas getrennt, zum Beispiel ORD oder ORD,MDW. Leer lassen für alles, was dieser Server hört.';
+
+  @override
+  String get analyzer_areaInvalid =>
+      'Verwende Codes mit 3 oder 4 Buchstaben, durch Kommas getrennt';
+
+  @override
+  String get analyzer_missedChatOffline =>
+      'Der Analyzer ist gerade nicht erreichbar';
+
+  @override
+  String get channels_viaCoreScope => 'über CoreScope';
+
+  @override
+  String get channels_viaCoreScopeSemantics =>
+      'Über CoreScope empfangen, nicht von deinem Funkgerät gehört';
+
+  @override
+  String get channelPath_sourceCoreScope => 'CoreScope';
+
+  @override
+  String get channelPath_viaCoreScopeNoRfPath =>
+      'Diese Nachricht kam von einem CoreScope Analyzer. Dein Funkgerät hat sie nicht empfangen, daher gibt es keinen Funkpfad von deinem Funkgerät.';
 }
