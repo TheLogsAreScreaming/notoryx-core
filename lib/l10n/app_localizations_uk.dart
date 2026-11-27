@@ -15722,4 +15722,51 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Це повідомлення надійшло з аналізатора CoreScope. Ваше радіо його не чуло, тому радіомаршруту від вашого радіо немає.';
+
+  @override
+  String get imageSend_viewOriginal => 'Оригінал';
+
+  @override
+  String get imageSend_viewReconstruction => 'Що побачать одержувачі';
+
+  @override
+  String get imageSend_preparingPreview => 'Підготовка попереднього перегляду…';
+
+  @override
+  String get imageSend_tryAnother => 'Інший варіант';
+
+  @override
+  String get imageSend_versionsHint =>
+      'Кожен варіант відновлюється трохи по-різному. Виберіть той, що найбільше схожий на ваше фото.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return 'Варіант $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count пакета',
+      many: '$count пакетів',
+      few: '$count пакети',
+      one: '$count пакет',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ретранслятора передали кожну частину',
+      many: '$count ретрансляторів передали кожну частину',
+      few: '$count ретранслятори передали кожну частину',
+      one: '1 ретранслятор передав кожну частину',
+    );
+    return '$_temp0';
+  }
 }

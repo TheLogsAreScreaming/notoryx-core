@@ -5715,5 +5715,13 @@
   "channels_viaCoreScope": "来自 CoreScope",
   "channels_viaCoreScopeSemantics": "通过 CoreScope 收到，你的电台未接收到",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "此消息来自 CoreScope 分析服务器。你的电台没有收到它，因此没有来自你电台的无线路径。"
+  "channelPath_viaCoreScopeNoRfPath": "此消息来自 CoreScope 分析服务器。你的电台没有收到它，因此没有来自你电台的无线路径。",
+  "imageSend_viewOriginal": "原图",
+  "imageSend_viewReconstruction": "收件人看到的",
+  "imageSend_preparingPreview": "正在准备预览…",
+  "imageSend_tryAnother": "试试其他版本",
+  "imageSend_versionsHint": "每个版本的还原方式略有不同。请选择最接近原照片的一个。",
+  "imageSend_versionLabel": "版本 {number}",
+  "imageSend_versionPackets": "{count, plural, =1{1 个数据包} other{{count} 个数据包}}",
+  "imageSend_echoes": "{count, plural, other{{count} 个中继器转发了每个部分}}"
 }

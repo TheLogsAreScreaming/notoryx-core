@@ -25940,6 +25940,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This message came from a CoreScope analyzer. Your radio has not heard it, so there is no RF path from your radio.'**
   String get channelPath_viaCoreScopeNoRfPath;
+
+  /// No description provided for @imageSend_viewOriginal.
+  ///
+  /// In en, this message translates to:
+  /// **'Original'**
+  String get imageSend_viewOriginal;
+
+  /// No description provided for @imageSend_viewReconstruction.
+  ///
+  /// In en, this message translates to:
+  /// **'What recipients see'**
+  String get imageSend_viewReconstruction;
+
+  /// No description provided for @imageSend_preparingPreview.
+  ///
+  /// In en, this message translates to:
+  /// **'Preparing preview…'**
+  String get imageSend_preparingPreview;
+
+  /// No description provided for @imageSend_tryAnother.
+  ///
+  /// In en, this message translates to:
+  /// **'Try another version'**
+  String get imageSend_tryAnother;
+
+  /// No description provided for @imageSend_versionsHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Each version is reconstructed a little differently. Pick the one that looks most like your photo.'**
+  String get imageSend_versionsHint;
+
+  /// No description provided for @imageSend_versionLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Version {number}'**
+  String imageSend_versionLabel(int number);
+
+  /// No description provided for @imageSend_versionPackets.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 packet} other{{count} packets}}'**
+  String imageSend_versionPackets(int count);
+
+  /// Screen-reader label for the repeat count under a sent image.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 repeater passed on every part} other{{count} repeaters passed on every part}}'**
+  String imageSend_echoes(int count);
 }
 
 class _AppLocalizationsDelegate

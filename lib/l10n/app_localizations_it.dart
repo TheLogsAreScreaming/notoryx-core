@@ -15714,4 +15714,47 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Questo messaggio è arrivato da un analizzatore CoreScope. La tua radio non l\'ha ricevuto, quindi non c\'è un percorso radio dalla tua radio.';
+
+  @override
+  String get imageSend_viewOriginal => 'Originale';
+
+  @override
+  String get imageSend_viewReconstruction => 'Cosa vedono i destinatari';
+
+  @override
+  String get imageSend_preparingPreview => 'Preparazione anteprima…';
+
+  @override
+  String get imageSend_tryAnother => 'Prova un\'altra versione';
+
+  @override
+  String get imageSend_versionsHint =>
+      'Ogni versione è ricostruita in modo leggermente diverso. Scegli quella che somiglia di più alla tua foto.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return 'Versione $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pacchetti',
+      one: '1 pacchetto',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ripetitori hanno inoltrato ogni parte',
+      one: '1 ripetitore ha inoltrato ogni parte',
+    );
+    return '$_temp0';
+  }
 }

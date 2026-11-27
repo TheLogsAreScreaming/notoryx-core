@@ -15001,4 +15001,46 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'このメッセージは CoreScope 解析サーバーから届きました。あなたの無線機は受信していないため、無線機からの電波経路はありません。';
+
+  @override
+  String get imageSend_viewOriginal => 'オリジナル';
+
+  @override
+  String get imageSend_viewReconstruction => '受信者の表示';
+
+  @override
+  String get imageSend_preparingPreview => 'プレビューを準備中…';
+
+  @override
+  String get imageSend_tryAnother => '別のバージョンを試す';
+
+  @override
+  String get imageSend_versionsHint =>
+      '各バージョンは少しずつ異なる方法で復元されます。写真に最も近いものを選んでください。';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return 'バージョン$number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countパケット',
+      one: '1パケット',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 台のリピーターがすべての部分を中継',
+    );
+    return '$_temp0';
+  }
 }

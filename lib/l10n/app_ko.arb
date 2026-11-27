@@ -5844,5 +5844,13 @@
   "channels_viaCoreScope": "CoreScope 경유",
   "channels_viaCoreScopeSemantics": "CoreScope로 수신됨, 내 무전기는 듣지 못함",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "이 메시지는 CoreScope 분석 서버에서 왔습니다. 내 무전기가 수신하지 않았으므로 내 무전기로부터의 무선 경로가 없습니다."
+  "channelPath_viaCoreScopeNoRfPath": "이 메시지는 CoreScope 분석 서버에서 왔습니다. 내 무전기가 수신하지 않았으므로 내 무전기로부터의 무선 경로가 없습니다.",
+  "imageSend_viewOriginal": "원본",
+  "imageSend_viewReconstruction": "수신자가 보는 화면",
+  "imageSend_preparingPreview": "미리보기 준비 중…",
+  "imageSend_tryAnother": "다른 버전 시도",
+  "imageSend_versionsHint": "각 버전은 조금씩 다르게 복원됩니다. 사진과 가장 비슷한 것을 선택하세요.",
+  "imageSend_versionLabel": "버전 {number}",
+  "imageSend_versionPackets": "{count, plural, =1{패킷 1개} other{패킷 {count}개}}",
+  "imageSend_echoes": "{count, plural, other{리피터 {count}대가 모든 부분을 전달함}}"
 }

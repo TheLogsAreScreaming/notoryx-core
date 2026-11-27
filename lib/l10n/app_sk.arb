@@ -5710,5 +5710,13 @@
   "channels_viaCoreScope": "cez CoreScope",
   "channels_viaCoreScopeSemantics": "Prijaté cez CoreScope, vaše rádio to nepočulo",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Táto správa prišla z analyzátora CoreScope. Vaše rádio ju nepočulo, takže neexistuje rádiová trasa z vášho rádia."
+  "channelPath_viaCoreScopeNoRfPath": "Táto správa prišla z analyzátora CoreScope. Vaše rádio ju nepočulo, takže neexistuje rádiová trasa z vášho rádia.",
+  "imageSend_viewOriginal": "Originál",
+  "imageSend_viewReconstruction": "Čo vidia príjemcovia",
+  "imageSend_preparingPreview": "Pripravuje sa náhľad…",
+  "imageSend_tryAnother": "Skúsiť inú verziu",
+  "imageSend_versionsHint": "Každá verzia je zrekonštruovaná trochu inak. Vyberte tú, ktorá sa najviac podobá na vašu fotku.",
+  "imageSend_versionLabel": "Verzia {number}",
+  "imageSend_versionPackets": "{count, plural, =1{1 paket} few{{count} pakety} other{{count} paketov}}",
+  "imageSend_echoes": "{count, plural, =1{1 opakovač preposlal každú časť} few{{count} opakovače preposlali každú časť} other{{count} opakovačov preposlalo každú časť}}"
 }

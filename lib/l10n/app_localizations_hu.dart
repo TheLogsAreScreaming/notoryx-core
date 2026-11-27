@@ -15664,4 +15664,47 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Ez az üzenet egy CoreScope elemzőtől érkezett. A rádiója nem hallotta, így nincs rádiós útvonal a rádiójától.';
+
+  @override
+  String get imageSend_viewOriginal => 'Eredeti';
+
+  @override
+  String get imageSend_viewReconstruction => 'Amit a címzettek látnak';
+
+  @override
+  String get imageSend_preparingPreview => 'Előnézet előkészítése…';
+
+  @override
+  String get imageSend_tryAnother => 'Másik változat kipróbálása';
+
+  @override
+  String get imageSend_versionsHint =>
+      'Minden változat kissé másként van rekonstruálva. Válassza azt, amelyik leginkább hasonlít a fényképére.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return '$number. változat';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count csomag',
+      one: '1 csomag',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count jelismétlő továbbította az összes részt',
+      one: '1 jelismétlő továbbította az összes részt',
+    );
+    return '$_temp0';
+  }
 }

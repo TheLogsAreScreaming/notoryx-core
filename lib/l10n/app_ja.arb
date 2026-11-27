@@ -5844,5 +5844,13 @@
   "channels_viaCoreScope": "CoreScope経由",
   "channels_viaCoreScopeSemantics": "CoreScope経由で受信、無線機では受信していません",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "このメッセージは CoreScope 解析サーバーから届きました。あなたの無線機は受信していないため、無線機からの電波経路はありません。"
+  "channelPath_viaCoreScopeNoRfPath": "このメッセージは CoreScope 解析サーバーから届きました。あなたの無線機は受信していないため、無線機からの電波経路はありません。",
+  "imageSend_viewOriginal": "オリジナル",
+  "imageSend_viewReconstruction": "受信者の表示",
+  "imageSend_preparingPreview": "プレビューを準備中…",
+  "imageSend_tryAnother": "別のバージョンを試す",
+  "imageSend_versionsHint": "各バージョンは少しずつ異なる方法で復元されます。写真に最も近いものを選んでください。",
+  "imageSend_versionLabel": "バージョン{number}",
+  "imageSend_versionPackets": "{count, plural, =1{1パケット} other{{count}パケット}}",
+  "imageSend_echoes": "{count, plural, other{{count} 台のリピーターがすべての部分を中継}}"
 }

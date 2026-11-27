@@ -5748,5 +5748,13 @@
   "channels_viaCoreScope": "CoreScope-on át",
   "channels_viaCoreScopeSemantics": "CoreScope-on keresztül érkezett, a rádiója nem hallotta",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Ez az üzenet egy CoreScope elemzőtől érkezett. A rádiója nem hallotta, így nincs rádiós útvonal a rádiójától."
+  "channelPath_viaCoreScopeNoRfPath": "Ez az üzenet egy CoreScope elemzőtől érkezett. A rádiója nem hallotta, így nincs rádiós útvonal a rádiójától.",
+  "imageSend_viewOriginal": "Eredeti",
+  "imageSend_viewReconstruction": "Amit a címzettek látnak",
+  "imageSend_preparingPreview": "Előnézet előkészítése…",
+  "imageSend_tryAnother": "Másik változat kipróbálása",
+  "imageSend_versionsHint": "Minden változat kissé másként van rekonstruálva. Válassza azt, amelyik leginkább hasonlít a fényképére.",
+  "imageSend_versionLabel": "{number}. változat",
+  "imageSend_versionPackets": "{count, plural, =1{1 csomag} other{{count} csomag}}",
+  "imageSend_echoes": "{count, plural, =1{1 jelismétlő továbbította az összes részt} other{{count} jelismétlő továbbította az összes részt}}"
 }

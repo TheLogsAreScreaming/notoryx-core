@@ -15721,4 +15721,51 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Это сообщение пришло из анализатора CoreScope. Ваше радио его не слышало, поэтому радиомаршрута от вашего радио нет.';
+
+  @override
+  String get imageSend_viewOriginal => 'Оригинал';
+
+  @override
+  String get imageSend_viewReconstruction => 'Что увидят получатели';
+
+  @override
+  String get imageSend_preparingPreview => 'Подготовка предпросмотра…';
+
+  @override
+  String get imageSend_tryAnother => 'Другой вариант';
+
+  @override
+  String get imageSend_versionsHint =>
+      'Каждый вариант восстанавливается немного по-разному. Выберите тот, что больше похож на ваше фото.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return 'Вариант $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count пакета',
+      many: '$count пакетов',
+      few: '$count пакета',
+      one: '$count пакет',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ретранслятора передали каждую часть',
+      many: '$count ретрансляторов передали каждую часть',
+      few: '$count ретранслятора передали каждую часть',
+      one: '1 ретранслятор передал каждую часть',
+    );
+    return '$_temp0';
+  }
 }

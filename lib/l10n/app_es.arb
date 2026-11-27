@@ -5844,5 +5844,13 @@
   "channels_viaCoreScope": "por CoreScope",
   "channels_viaCoreScopeSemantics": "Recibido por CoreScope, no oído por tu radio",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Este mensaje llegó de un analizador CoreScope. Tu radio no lo ha oído, así que no hay ruta de radio desde tu radio."
+  "channelPath_viaCoreScopeNoRfPath": "Este mensaje llegó de un analizador CoreScope. Tu radio no lo ha oído, así que no hay ruta de radio desde tu radio.",
+  "imageSend_viewOriginal": "Original",
+  "imageSend_viewReconstruction": "Lo que ven los destinatarios",
+  "imageSend_preparingPreview": "Preparando vista previa…",
+  "imageSend_tryAnother": "Probar otra versión",
+  "imageSend_versionsHint": "Cada versión se reconstruye de forma ligeramente distinta. Elige la que más se parezca a tu foto.",
+  "imageSend_versionLabel": "Versión {number}",
+  "imageSend_versionPackets": "{count, plural, =1{1 paquete} other{{count} paquetes}}",
+  "imageSend_echoes": "{count, plural, =1{1 repetidor reenvió cada parte} other{{count} repetidores reenviaron cada parte}}"
 }

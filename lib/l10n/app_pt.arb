@@ -5710,5 +5710,13 @@
   "channels_viaCoreScope": "via CoreScope",
   "channels_viaCoreScopeSemantics": "Recebida via CoreScope, não ouvida pelo seu rádio",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Esta mensagem chegou de um analisador CoreScope. O seu rádio não a ouviu, por isso não há caminho de rádio a partir do seu rádio."
+  "channelPath_viaCoreScopeNoRfPath": "Esta mensagem chegou de um analisador CoreScope. O seu rádio não a ouviu, por isso não há caminho de rádio a partir do seu rádio.",
+  "imageSend_viewOriginal": "Original",
+  "imageSend_viewReconstruction": "O que os destinatários veem",
+  "imageSend_preparingPreview": "Preparando a prévia…",
+  "imageSend_tryAnother": "Tentar outra versão",
+  "imageSend_versionsHint": "Cada versão é reconstruída de forma um pouco diferente. Escolha a que mais se parece com a sua foto.",
+  "imageSend_versionLabel": "Versão {number}",
+  "imageSend_versionPackets": "{count, plural, =1{1 pacote} other{{count} pacotes}}",
+  "imageSend_echoes": "{count, plural, =1{1 repetidor reencaminhou todas as partes} other{{count} repetidores reencaminharam todas as partes}}"
 }

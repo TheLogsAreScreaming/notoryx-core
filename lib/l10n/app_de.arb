@@ -5844,5 +5844,13 @@
   "channels_viaCoreScope": "über CoreScope",
   "channels_viaCoreScopeSemantics": "Über CoreScope empfangen, nicht von deinem Funkgerät gehört",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Diese Nachricht kam von einem CoreScope Analyzer. Dein Funkgerät hat sie nicht empfangen, daher gibt es keinen Funkpfad von deinem Funkgerät."
+  "channelPath_viaCoreScopeNoRfPath": "Diese Nachricht kam von einem CoreScope Analyzer. Dein Funkgerät hat sie nicht empfangen, daher gibt es keinen Funkpfad von deinem Funkgerät.",
+  "imageSend_viewOriginal": "Original",
+  "imageSend_viewReconstruction": "Was die Empfänger sehen",
+  "imageSend_preparingPreview": "Vorschau wird vorbereitet…",
+  "imageSend_tryAnother": "Andere Version versuchen",
+  "imageSend_versionsHint": "Jede Version wird etwas anders rekonstruiert. Wählen Sie die, die Ihrem Foto am ähnlichsten sieht.",
+  "imageSend_versionLabel": "Version {number}",
+  "imageSend_versionPackets": "{count, plural, =1{1 Paket} other{{count} Pakete}}",
+  "imageSend_echoes": "{count, plural, =1{1 Repeater hat jeden Teil weitergegeben} other{{count} Repeater haben jeden Teil weitergegeben}}"
 }

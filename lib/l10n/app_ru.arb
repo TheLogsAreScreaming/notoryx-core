@@ -5013,5 +5013,13 @@
   "channels_viaCoreScope": "через CoreScope",
   "channels_viaCoreScopeSemantics": "Получено через CoreScope, ваше радио его не слышало",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Это сообщение пришло из анализатора CoreScope. Ваше радио его не слышало, поэтому радиомаршрута от вашего радио нет."
+  "channelPath_viaCoreScopeNoRfPath": "Это сообщение пришло из анализатора CoreScope. Ваше радио его не слышало, поэтому радиомаршрута от вашего радио нет.",
+  "imageSend_viewOriginal": "Оригинал",
+  "imageSend_viewReconstruction": "Что увидят получатели",
+  "imageSend_preparingPreview": "Подготовка предпросмотра…",
+  "imageSend_tryAnother": "Другой вариант",
+  "imageSend_versionsHint": "Каждый вариант восстанавливается немного по-разному. Выберите тот, что больше похож на ваше фото.",
+  "imageSend_versionLabel": "Вариант {number}",
+  "imageSend_versionPackets": "{count, plural, one{{count} пакет} few{{count} пакета} many{{count} пакетов} other{{count} пакета}}",
+  "imageSend_echoes": "{count, plural, =1{1 ретранслятор передал каждую часть} few{{count} ретранслятора передали каждую часть} many{{count} ретрансляторов передали каждую часть} other{{count} ретранслятора передали каждую часть}}"
 }

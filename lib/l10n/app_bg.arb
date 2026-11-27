@@ -5710,5 +5710,13 @@
   "channels_viaCoreScope": "чрез CoreScope",
   "channels_viaCoreScopeSemantics": "Получено чрез CoreScope, не е чуто от вашето радио",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Това съобщение дойде от анализатор CoreScope. Вашето радио не го е чуло, затова няма радиомаршрут от вашето радио."
+  "channelPath_viaCoreScopeNoRfPath": "Това съобщение дойде от анализатор CoreScope. Вашето радио не го е чуло, затова няма радиомаршрут от вашето радио.",
+  "imageSend_viewOriginal": "Оригинал",
+  "imageSend_viewReconstruction": "Какво виждат получателите",
+  "imageSend_preparingPreview": "Подготовка на прегледа…",
+  "imageSend_tryAnother": "Опитай друга версия",
+  "imageSend_versionsHint": "Всяка версия се възстановява малко по-различно. Изберете тази, която най-много прилича на вашата снимка.",
+  "imageSend_versionLabel": "Версия {number}",
+  "imageSend_versionPackets": "{count, plural, =1{1 пакет} other{{count} пакета}}",
+  "imageSend_echoes": "{count, plural, =1{1 ретранслатор предаде всяка част} other{{count} ретранслатора предадоха всяка част}}"
 }

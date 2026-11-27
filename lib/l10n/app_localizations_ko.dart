@@ -15016,4 +15016,46 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       '이 메시지는 CoreScope 분석 서버에서 왔습니다. 내 무전기가 수신하지 않았으므로 내 무전기로부터의 무선 경로가 없습니다.';
+
+  @override
+  String get imageSend_viewOriginal => '원본';
+
+  @override
+  String get imageSend_viewReconstruction => '수신자가 보는 화면';
+
+  @override
+  String get imageSend_preparingPreview => '미리보기 준비 중…';
+
+  @override
+  String get imageSend_tryAnother => '다른 버전 시도';
+
+  @override
+  String get imageSend_versionsHint =>
+      '각 버전은 조금씩 다르게 복원됩니다. 사진과 가장 비슷한 것을 선택하세요.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return '버전 $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '패킷 $count개',
+      one: '패킷 1개',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '리피터 $count대가 모든 부분을 전달함',
+    );
+    return '$_temp0';
+  }
 }

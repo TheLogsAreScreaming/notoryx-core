@@ -8387,5 +8387,35 @@
   "channels_viaCoreScope": "via CoreScope",
   "channels_viaCoreScopeSemantics": "Received via CoreScope, not heard by your radio",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "This message came from a CoreScope analyzer. Your radio has not heard it, so there is no RF path from your radio."
+  "channelPath_viaCoreScopeNoRfPath": "This message came from a CoreScope analyzer. Your radio has not heard it, so there is no RF path from your radio.",
+  "imageSend_viewOriginal": "Original",
+  "imageSend_viewReconstruction": "What recipients see",
+  "imageSend_preparingPreview": "Preparing preview…",
+  "imageSend_tryAnother": "Try another version",
+  "imageSend_versionsHint": "Each version is reconstructed a little differently. Pick the one that looks most like your photo.",
+  "imageSend_versionLabel": "Version {number}",
+  "@imageSend_versionLabel": {
+    "placeholders": {
+      "number": {
+        "type": "int"
+      }
+    }
+  },
+  "imageSend_versionPackets": "{count, plural, =1{1 packet} other{{count} packets}}",
+  "@imageSend_versionPackets": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "imageSend_echoes": "{count, plural, =1{1 repeater passed on every part} other{{count} repeaters passed on every part}}",
+  "@imageSend_echoes": {
+    "description": "Screen-reader label for the repeat count under a sent image.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }
