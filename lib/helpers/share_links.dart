@@ -33,8 +33,30 @@ String contactLinkFor(Contact contact) => Uri(
   },
 ).toString();
 
-/// Reads a message that is (or contains) a contact link; null otherwise.
+/// The short form the official MeshCore app sends in chats:
+/// `<PUBKEYHEX:TYPE:NAME>`, 64 hex characters and a type from 1 to 4.
+final _shareToken = RegExp(r'<([0-9a-fA-F]{64}):([1-4]):([^<>\r\n]*)>');
+
+/// [contact] as the official app's chat token, `<PUBKEYHEX:TYPE:NAME>`.
+/// It is about half the length of a contact link, so it fits a channel post
+/// with room to spare, and both apps turn it into an Add contact card.
+String contactShareTokenFor(Contact contact) {
+  final name = contact.name.replaceAll(RegExp(r'[<>\r\n]'), '').trim();
+  return '<${contact.publicKeyHex.toLowerCase()}:${contact.type}:$name>';
+}
+
+/// Reads a message that is (or contains) a contact link, or the official
+/// app's `<PUBKEYHEX:TYPE:NAME>` token; null otherwise.
 ContactLink? parseContactLink(String text) {
+  final token = _shareToken.firstMatch(text);
+  if (token != null) {
+    final name = token.group(3)!.trim();
+    return ContactLink(
+      name.isEmpty ? 'Unnamed contact' : name,
+      hex2Uint8List(token.group(1)!.toLowerCase()),
+      int.parse(token.group(2)!),
+    );
+  }
   final match = RegExp(r'meshcore://contact/add\?\S+').firstMatch(text);
   if (match == null) return null;
   final candidate = match.group(0)!;
