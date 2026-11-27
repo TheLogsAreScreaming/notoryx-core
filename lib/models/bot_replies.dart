@@ -60,21 +60,27 @@ String sunReply(double lat, double lon, DateTime now) {
   };
 }
 
+/// Hops a message took, from its path length. Null, negative (-1) and
+/// 0xFF all mean no path was recorded, so they count as direct. The top two
+/// bits of a raw path length byte carry the hash size, not hops.
+int pingHops(int? pathLength) {
+  if (pathLength == null || pathLength < 0 || pathLength == 0xFF) return 0;
+  return pathLength & 0x3F;
+}
+
 /// 🎯 direct, 1⃣–9⃣, 🔟 ten, 🦘 for eleven or more hops.
 String hopEmoji(int? pathLength) {
-  if (pathLength == null) return '🎯';
-  final hops = pathLength & 0x3F;
+  final hops = pingHops(pathLength);
   if (hops == 0) return '🎯';
   if (hops > 10) return '🦘';
   const digits = ['1⃣', '2⃣', '3⃣', '4⃣', '5⃣', '6⃣', '7⃣', '8⃣', '9⃣', '🔟'];
   return digits[hops - 1];
 }
 
-/// `!ping` reply: hop-count emoji + hop count.
+/// `!ping` reply: hop count emoji and the hop count.
 String pingReply(int? pathLength) {
   final emoji = hopEmoji(pathLength);
-  if (pathLength == null) return '$emoji Direct.';
-  final hops = pathLength & 0x3F;
+  final hops = pingHops(pathLength);
   if (hops == 0) return '$emoji Direct.';
   return '$emoji $hops hop${hops == 1 ? '' : 's'}.';
 }
