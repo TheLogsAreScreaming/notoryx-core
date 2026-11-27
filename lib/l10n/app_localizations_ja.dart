@@ -14965,4 +14965,40 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get contacts_fullWarning =>
       'この無線機の連絡先リストがいっぱいのため、新しいノードを追加できません。連絡先をいくつか削除して空きを作ってください。';
+
+  @override
+  String get analyzer_missedChat => 'CoreScope の見逃したチャット';
+
+  @override
+  String get analyzer_missedChatHint =>
+      'この解析サーバーから、無線機が受信できなかった地域のチャンネルメッセージを表示します。参加しているチャンネルのみです。無線機からは何も送信しません。';
+
+  @override
+  String get analyzer_area => '地域';
+
+  @override
+  String get analyzer_areaAll => 'サーバー全体';
+
+  @override
+  String get analyzer_areaHint =>
+      '地域コードをカンマ区切りで入力（例: ORD または ORD,MDW）。空欄ならこのサーバーが受信するすべてです。';
+
+  @override
+  String get analyzer_areaInvalid => '3 文字または 4 文字のコードをカンマで区切って入力してください';
+
+  @override
+  String get analyzer_missedChatOffline => '現在、解析サーバーに接続できません';
+
+  @override
+  String get channels_viaCoreScope => 'CoreScope経由';
+
+  @override
+  String get channels_viaCoreScopeSemantics => 'CoreScope経由で受信、無線機では受信していません';
+
+  @override
+  String get channelPath_sourceCoreScope => 'CoreScope';
+
+  @override
+  String get channelPath_viaCoreScopeNoRfPath =>
+      'このメッセージは CoreScope 解析サーバーから届きました。あなたの無線機は受信していないため、無線機からの電波経路はありません。';
 }

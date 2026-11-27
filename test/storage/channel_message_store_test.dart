@@ -54,6 +54,26 @@ void main() {
     expect(loaded.single.viaMqtt, isFalse);
   });
 
+  test('a CoreScope copy survives a save and load', () async {
+    await store.saveChannelMessages(1, [
+      ChannelMessage(
+        senderName: 'Alice',
+        text: 'scope',
+        timestamp: DateTime.fromMillisecondsSinceEpoch(1760000000000),
+        isOutgoing: false,
+        status: ChannelMessageStatus.sent,
+        channelIndex: 1,
+        source: MessageSource.coreScope,
+      ),
+      message('cloud', viaMqtt: true),
+    ]);
+    final loaded = await store.loadChannelMessages(1);
+    expect(loaded.map((m) => m.source), [
+      MessageSource.coreScope,
+      MessageSource.mqtt,
+    ]);
+  });
+
   test('copyWith keeps or changes viaMqtt', () {
     final flagged = message('cloud', viaMqtt: true);
     expect(flagged.copyWith(repeatCount: 2).viaMqtt, isTrue);

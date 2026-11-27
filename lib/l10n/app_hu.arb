@@ -5737,5 +5737,16 @@
   "fleet_uptimeDays": "{days} nap {hours} óra",
   "fleet_uptimeHours": "{hours} óra {minutes} perc",
   "fleet_waiting": "Várakozás…",
-  "contacts_fullWarning": "A rádió névjegylistája megtelt, ezért nem tud új node-okat felvenni. Törölj néhány névjegyet, hogy legyen hely."
+  "contacts_fullWarning": "A rádió névjegylistája megtelt, ezért nem tud új node-okat felvenni. Törölj néhány névjegyet, hogy legyen hely.",
+  "analyzer_missedChat": "Lemaradt csevegés a CoreScope-ból",
+  "analyzer_missedChatHint": "Megmutatja a környék csatornaüzeneteit, amelyeket a rádiója nem hallott, ebből az elemzőből. Csak a csatlakozott csatornák jelennek meg. A rádiójáról semmi nem kerül elküldésre.",
+  "analyzer_area": "Terület",
+  "analyzer_areaAll": "Teljes szerver",
+  "analyzer_areaHint": "Régiókódok vesszővel elválasztva, például ORD vagy ORD,MDW. Hagyja üresen mindenhez, amit ez a szerver hall.",
+  "analyzer_areaInvalid": "3 vagy 4 betűs kódokat használjon vesszővel elválasztva",
+  "analyzer_missedChatOffline": "Az elemző most nem érhető el",
+  "channels_viaCoreScope": "CoreScope-on át",
+  "channels_viaCoreScopeSemantics": "CoreScope-on keresztül érkezett, a rádiója nem hallotta",
+  "channelPath_sourceCoreScope": "CoreScope",
+  "channelPath_viaCoreScopeNoRfPath": "Ez az üzenet egy CoreScope elemzőtől érkezett. A rádiója nem hallotta, így nincs rádiós útvonal a rádiójától."
 }

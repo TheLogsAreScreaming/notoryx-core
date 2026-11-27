@@ -8376,5 +8376,16 @@
     }
   },
   "fleet_waiting": "Waiting…",
-  "contacts_fullWarning": "This radio's contact list is full, so it can't add new nodes. Remove some contacts to make room."
+  "contacts_fullWarning": "This radio's contact list is full, so it can't add new nodes. Remove some contacts to make room.",
+  "analyzer_missedChat": "Missed chat from CoreScope",
+  "analyzer_missedChatHint": "Shows area channel messages your radio didn't hear, read from this analyzer. Only channels you joined appear. Nothing from your radio is sent.",
+  "analyzer_area": "Area",
+  "analyzer_areaAll": "Whole server",
+  "analyzer_areaHint": "Region codes separated by commas, for example ORD or ORD,MDW. Leave empty for everything this server hears.",
+  "analyzer_areaInvalid": "Use 3 or 4 letter codes separated by commas",
+  "analyzer_missedChatOffline": "Can't reach the analyzer right now",
+  "channels_viaCoreScope": "via CoreScope",
+  "channels_viaCoreScopeSemantics": "Received via CoreScope, not heard by your radio",
+  "channelPath_sourceCoreScope": "CoreScope",
+  "channelPath_viaCoreScopeNoRfPath": "This message came from a CoreScope analyzer. Your radio has not heard it, so there is no RF path from your radio."
 }

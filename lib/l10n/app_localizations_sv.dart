@@ -15549,4 +15549,43 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get contacts_fullWarning =>
       'Radions kontaktlista är full, så den kan inte lägga till nya noder. Ta bort några kontakter för att frigöra plats.';
+
+  @override
+  String get analyzer_missedChat => 'Missad chatt från CoreScope';
+
+  @override
+  String get analyzer_missedChatHint =>
+      'Visar kanalmeddelanden från ditt område som din radio inte hörde, lästa från den här analysatorn. Bara kanaler du gått med i visas. Inget från din radio skickas.';
+
+  @override
+  String get analyzer_area => 'Område';
+
+  @override
+  String get analyzer_areaAll => 'Hela servern';
+
+  @override
+  String get analyzer_areaHint =>
+      'Regionkoder separerade med komma, till exempel ORD eller ORD,MDW. Lämna tomt för allt servern hör.';
+
+  @override
+  String get analyzer_areaInvalid =>
+      'Använd koder med 3 eller 4 bokstäver separerade med komma';
+
+  @override
+  String get analyzer_missedChatOffline =>
+      'Analysatorn går inte att nå just nu';
+
+  @override
+  String get channels_viaCoreScope => 'via CoreScope';
+
+  @override
+  String get channels_viaCoreScopeSemantics =>
+      'Mottaget via CoreScope, inte hört av din radio';
+
+  @override
+  String get channelPath_sourceCoreScope => 'CoreScope';
+
+  @override
+  String get channelPath_viaCoreScopeNoRfPath =>
+      'Meddelandet kom från en CoreScope analysator. Din radio har inte hört det, så det finns ingen radioväg från din radio.';
 }

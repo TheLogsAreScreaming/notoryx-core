@@ -5833,5 +5833,16 @@
   "fleet_uptimeDays": "{days} g {hours} h",
   "fleet_uptimeHours": "{hours} h {minutes} min",
   "fleet_waiting": "In attesa…",
-  "contacts_fullWarning": "L'elenco contatti di questa radio è pieno, quindi non può aggiungere nuovi nodi. Rimuovi alcuni contatti per fare spazio."
+  "contacts_fullWarning": "L'elenco contatti di questa radio è pieno, quindi non può aggiungere nuovi nodi. Rimuovi alcuni contatti per fare spazio.",
+  "analyzer_missedChat": "Chat persa da CoreScope",
+  "analyzer_missedChatHint": "Mostra i messaggi dei canali della tua zona che la tua radio non ha sentito, letti da questo analizzatore. Compaiono solo i canali a cui sei iscritto. Nulla della tua radio viene inviato.",
+  "analyzer_area": "Zona",
+  "analyzer_areaAll": "Tutto il server",
+  "analyzer_areaHint": "Codici regione separati da virgole, ad esempio ORD o ORD,MDW. Lascia vuoto per tutto ciò che sente questo server.",
+  "analyzer_areaInvalid": "Usa codici di 3 o 4 lettere separati da virgole",
+  "analyzer_missedChatOffline": "Impossibile raggiungere l'analizzatore ora",
+  "channels_viaCoreScope": "via CoreScope",
+  "channels_viaCoreScopeSemantics": "Ricevuto via CoreScope, non sentito dalla tua radio",
+  "channelPath_sourceCoreScope": "CoreScope",
+  "channelPath_viaCoreScopeNoRfPath": "Questo messaggio è arrivato da un analizzatore CoreScope. La tua radio non l'ha ricevuto, quindi non c'è un percorso radio dalla tua radio."
 }

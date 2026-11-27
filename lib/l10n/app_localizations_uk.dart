@@ -15684,4 +15684,42 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get contacts_fullWarning =>
       'Список контактів цієї рації заповнений, тому вона не може додавати нові вузли. Видаліть кілька контактів, щоб звільнити місце.';
+
+  @override
+  String get analyzer_missedChat => 'Пропущений чат із CoreScope';
+
+  @override
+  String get analyzer_missedChatHint =>
+      'Показує повідомлення каналів вашого району, які не почуло ваше радіо, з цього аналізатора. Лише канали, до яких ви приєдналися. З вашого радіо нічого не надсилається.';
+
+  @override
+  String get analyzer_area => 'Район';
+
+  @override
+  String get analyzer_areaAll => 'Увесь сервер';
+
+  @override
+  String get analyzer_areaHint =>
+      'Коди регіонів через кому, наприклад ORD або ORD,MDW. Залиште порожнім, щоб бачити все, що чує цей сервер.';
+
+  @override
+  String get analyzer_areaInvalid =>
+      'Використовуйте коди з 3 або 4 літер через кому';
+
+  @override
+  String get analyzer_missedChatOffline => 'Аналізатор зараз недоступний';
+
+  @override
+  String get channels_viaCoreScope => 'через CoreScope';
+
+  @override
+  String get channels_viaCoreScopeSemantics =>
+      'Отримано через CoreScope, ваше радіо його не чуло';
+
+  @override
+  String get channelPath_sourceCoreScope => 'CoreScope';
+
+  @override
+  String get channelPath_viaCoreScopeNoRfPath =>
+      'Це повідомлення надійшло з аналізатора CoreScope. Ваше радіо його не чуло, тому радіомаршруту від вашого радіо немає.';
 }

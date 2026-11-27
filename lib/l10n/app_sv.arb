@@ -5699,5 +5699,16 @@
   "fleet_uptimeDays": "{days} d {hours} h",
   "fleet_uptimeHours": "{hours} h {minutes} min",
   "fleet_waiting": "Väntar…",
-  "contacts_fullWarning": "Radions kontaktlista är full, så den kan inte lägga till nya noder. Ta bort några kontakter för att frigöra plats."
+  "contacts_fullWarning": "Radions kontaktlista är full, så den kan inte lägga till nya noder. Ta bort några kontakter för att frigöra plats.",
+  "analyzer_missedChat": "Missad chatt från CoreScope",
+  "analyzer_missedChatHint": "Visar kanalmeddelanden från ditt område som din radio inte hörde, lästa från den här analysatorn. Bara kanaler du gått med i visas. Inget från din radio skickas.",
+  "analyzer_area": "Område",
+  "analyzer_areaAll": "Hela servern",
+  "analyzer_areaHint": "Regionkoder separerade med komma, till exempel ORD eller ORD,MDW. Lämna tomt för allt servern hör.",
+  "analyzer_areaInvalid": "Använd koder med 3 eller 4 bokstäver separerade med komma",
+  "analyzer_missedChatOffline": "Analysatorn går inte att nå just nu",
+  "channels_viaCoreScope": "via CoreScope",
+  "channels_viaCoreScopeSemantics": "Mottaget via CoreScope, inte hört av din radio",
+  "channelPath_sourceCoreScope": "CoreScope",
+  "channelPath_viaCoreScopeNoRfPath": "Meddelandet kom från en CoreScope analysator. Din radio har inte hört det, så det finns ingen radioväg från din radio."
 }

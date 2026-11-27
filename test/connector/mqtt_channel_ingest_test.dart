@@ -107,6 +107,56 @@ void main() {
     expect(connector.getChannelMessages(channel).single.viaMqtt, isFalse);
   });
 
+  group('CoreScope copies', () {
+    test('are added and labelled as CoreScope, not MQTT', () {
+      connector.ingestCoreScopeRawPacket(
+        groupTextPacket(psk: psk, text: 'Alice: missed this', path: [3]),
+      );
+      final message = connector.getChannelMessages(channel).single;
+      expect(message.text, 'missed this');
+      expect(message.viaCoreScope, isTrue);
+      expect(message.viaMqtt, isFalse);
+      expect(message.offRadio, isTrue);
+      expect(message.repeatCount, 0);
+    });
+
+    test('only for channels the user has joined', () {
+      connector.ingestCoreScopeRawPacket(
+        groupTextPacket(psk: Uint8List(16), text: 'Bob: elsewhere'),
+      );
+      expect(connector.getChannelMessages(channel), isEmpty);
+    });
+
+    test('a radio copy afterwards turns it into a radio message', () {
+      connector.ingestCoreScopeRawPacket(
+        groupTextPacket(psk: psk, text: 'Alice: summit', path: [3, 4]),
+      );
+      radioRx(groupTextPacket(psk: psk, text: 'Alice: summit', path: [7]));
+      final message = connector.getChannelMessages(channel).single;
+      expect(message.offRadio, isFalse);
+      expect(message.repeatCount, 0);
+      expect(message.pathBytes, [7]);
+    });
+
+    test('never relabel or repeat a message the app already has', () {
+      final raw = groupTextPacket(psk: psk, text: 'Alice: summit');
+      connector.ingestMqttRawPacket(raw);
+      connector.ingestCoreScopeRawPacket(raw);
+      radioRx(
+        groupTextPacket(psk: psk, text: 'Bob: hi', timestamp: 1760000009),
+      );
+      connector.ingestCoreScopeRawPacket(
+        groupTextPacket(psk: psk, text: 'Bob: hi', timestamp: 1760000009),
+      );
+      final messages = connector.getChannelMessages(channel);
+      expect(messages, hasLength(2));
+      expect(messages.firstWhere((m) => m.text == 'summit').viaMqtt, isTrue);
+      final hi = messages.firstWhere((m) => m.text == 'hi');
+      expect(hi.offRadio, isFalse);
+      expect(hi.repeatCount, 0);
+    });
+  });
+
   test('ignores garbage without throwing', () {
     connector.ingestMqttRawPacket(Uint8List.fromList([0x15]));
     connector.ingestMqttRawPacket(Uint8List.fromList([0x15, 0x3F, 1]));

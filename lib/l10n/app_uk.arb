@@ -5679,5 +5679,16 @@
   "fleet_uptimeDays": "{days} дн. {hours} год",
   "fleet_uptimeHours": "{hours} год {minutes} хв",
   "fleet_waiting": "Очікування…",
-  "contacts_fullWarning": "Список контактів цієї рації заповнений, тому вона не може додавати нові вузли. Видаліть кілька контактів, щоб звільнити місце."
+  "contacts_fullWarning": "Список контактів цієї рації заповнений, тому вона не може додавати нові вузли. Видаліть кілька контактів, щоб звільнити місце.",
+  "analyzer_missedChat": "Пропущений чат із CoreScope",
+  "analyzer_missedChatHint": "Показує повідомлення каналів вашого району, які не почуло ваше радіо, з цього аналізатора. Лише канали, до яких ви приєдналися. З вашого радіо нічого не надсилається.",
+  "analyzer_area": "Район",
+  "analyzer_areaAll": "Увесь сервер",
+  "analyzer_areaHint": "Коди регіонів через кому, наприклад ORD або ORD,MDW. Залиште порожнім, щоб бачити все, що чує цей сервер.",
+  "analyzer_areaInvalid": "Використовуйте коди з 3 або 4 літер через кому",
+  "analyzer_missedChatOffline": "Аналізатор зараз недоступний",
+  "channels_viaCoreScope": "через CoreScope",
+  "channels_viaCoreScopeSemantics": "Отримано через CoreScope, ваше радіо його не чуло",
+  "channelPath_sourceCoreScope": "CoreScope",
+  "channelPath_viaCoreScopeNoRfPath": "Це повідомлення надійшло з аналізатора CoreScope. Ваше радіо його не чуло, тому радіомаршруту від вашого радіо немає."
 }

@@ -5833,5 +5833,16 @@
   "fleet_uptimeDays": "{days}日{hours}時間",
   "fleet_uptimeHours": "{hours}時間{minutes}分",
   "fleet_waiting": "待機中…",
-  "contacts_fullWarning": "この無線機の連絡先リストがいっぱいのため、新しいノードを追加できません。連絡先をいくつか削除して空きを作ってください。"
+  "contacts_fullWarning": "この無線機の連絡先リストがいっぱいのため、新しいノードを追加できません。連絡先をいくつか削除して空きを作ってください。",
+  "analyzer_missedChat": "CoreScope の見逃したチャット",
+  "analyzer_missedChatHint": "この解析サーバーから、無線機が受信できなかった地域のチャンネルメッセージを表示します。参加しているチャンネルのみです。無線機からは何も送信しません。",
+  "analyzer_area": "地域",
+  "analyzer_areaAll": "サーバー全体",
+  "analyzer_areaHint": "地域コードをカンマ区切りで入力（例: ORD または ORD,MDW）。空欄ならこのサーバーが受信するすべてです。",
+  "analyzer_areaInvalid": "3 文字または 4 文字のコードをカンマで区切って入力してください",
+  "analyzer_missedChatOffline": "現在、解析サーバーに接続できません",
+  "channels_viaCoreScope": "CoreScope経由",
+  "channels_viaCoreScopeSemantics": "CoreScope経由で受信、無線機では受信していません",
+  "channelPath_sourceCoreScope": "CoreScope",
+  "channelPath_viaCoreScopeNoRfPath": "このメッセージは CoreScope 解析サーバーから届きました。あなたの無線機は受信していないため、無線機からの電波経路はありません。"
 }

@@ -5737,5 +5737,16 @@
   "fleet_uptimeDays": "{days} dn. {hours} godz.",
   "fleet_uptimeHours": "{hours} godz. {minutes} min",
   "fleet_waiting": "Czekam…",
-  "contacts_fullWarning": "Lista kontaktów tego radia jest pełna, więc nie może dodawać nowych węzłów. Usuń kilka kontaktów, aby zrobić miejsce."
+  "contacts_fullWarning": "Lista kontaktów tego radia jest pełna, więc nie może dodawać nowych węzłów. Usuń kilka kontaktów, aby zrobić miejsce.",
+  "analyzer_missedChat": "Przegapiony czat z CoreScope",
+  "analyzer_missedChatHint": "Pokazuje wiadomości kanałów z okolicy, których Twoje radio nie odebrało, odczytane z tego analizatora. Tylko kanały, do których należysz. Nic z Twojego radia nie jest wysyłane.",
+  "analyzer_area": "Obszar",
+  "analyzer_areaAll": "Cały serwer",
+  "analyzer_areaHint": "Kody regionów oddzielone przecinkami, na przykład ORD lub ORD,MDW. Zostaw puste, aby widzieć wszystko, co słyszy ten serwer.",
+  "analyzer_areaInvalid": "Użyj kodów 3 lub 4 literowych oddzielonych przecinkami",
+  "analyzer_missedChatOffline": "Nie można teraz połączyć się z analizatorem",
+  "channels_viaCoreScope": "przez CoreScope",
+  "channels_viaCoreScopeSemantics": "Odebrano przez CoreScope, nie odebrane przez Twoje radio",
+  "channelPath_sourceCoreScope": "CoreScope",
+  "channelPath_viaCoreScopeNoRfPath": "Ta wiadomość przyszła z analizatora CoreScope. Twoje radio jej nie odebrało, więc nie ma ścieżki radiowej od Twojego radia."
 }

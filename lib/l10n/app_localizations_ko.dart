@@ -14980,4 +14980,40 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get contacts_fullWarning =>
       '이 무전기의 연락처 목록이 가득 차서 새 노드를 추가할 수 없습니다. 연락처를 일부 삭제해 공간을 확보하세요.';
+
+  @override
+  String get analyzer_missedChat => 'CoreScope에서 놓친 채팅';
+
+  @override
+  String get analyzer_missedChatHint =>
+      '이 분석 서버에서 내 무전기가 듣지 못한 지역 채널 메시지를 보여줍니다. 가입한 채널만 표시됩니다. 내 무전기의 데이터는 전송되지 않습니다.';
+
+  @override
+  String get analyzer_area => '지역';
+
+  @override
+  String get analyzer_areaAll => '서버 전체';
+
+  @override
+  String get analyzer_areaHint =>
+      '쉼표로 구분한 지역 코드, 예: ORD 또는 ORD,MDW. 비워 두면 이 서버가 듣는 모든 메시지를 표시합니다.';
+
+  @override
+  String get analyzer_areaInvalid => '쉼표로 구분한 3자 또는 4자 코드를 사용하세요';
+
+  @override
+  String get analyzer_missedChatOffline => '지금은 분석 서버에 연결할 수 없습니다';
+
+  @override
+  String get channels_viaCoreScope => 'CoreScope 경유';
+
+  @override
+  String get channels_viaCoreScopeSemantics => 'CoreScope로 수신됨, 내 무전기는 듣지 못함';
+
+  @override
+  String get channelPath_sourceCoreScope => 'CoreScope';
+
+  @override
+  String get channelPath_viaCoreScopeNoRfPath =>
+      '이 메시지는 CoreScope 분석 서버에서 왔습니다. 내 무전기가 수신하지 않았으므로 내 무전기로부터의 무선 경로가 없습니다.';
 }

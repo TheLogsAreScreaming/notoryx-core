@@ -15601,4 +15601,42 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get contacts_fullWarning =>
       'Zoznam kontaktov tohto rádia je plný, takže nemôže pridávať nové uzly. Odstráňte niekoľko kontaktov, aby ste uvoľnili miesto.';
+
+  @override
+  String get analyzer_missedChat => 'Zmeškaný chat z CoreScope';
+
+  @override
+  String get analyzer_missedChatHint =>
+      'Zobrazuje správy kanálov z okolia, ktoré vaše rádio nepočulo, načítané z tohto analyzátora. Len kanály, ku ktorým ste sa pripojili. Z vášho rádia sa nič neodosiela.';
+
+  @override
+  String get analyzer_area => 'Oblasť';
+
+  @override
+  String get analyzer_areaAll => 'Celý server';
+
+  @override
+  String get analyzer_areaHint =>
+      'Kódy regiónov oddelené čiarkami, napríklad ORD alebo ORD,MDW. Nechajte prázdne pre všetko, čo tento server počuje.';
+
+  @override
+  String get analyzer_areaInvalid =>
+      'Použite kódy s 3 alebo 4 písmenami oddelené čiarkami';
+
+  @override
+  String get analyzer_missedChatOffline => 'Analyzátor je teraz nedostupný';
+
+  @override
+  String get channels_viaCoreScope => 'cez CoreScope';
+
+  @override
+  String get channels_viaCoreScopeSemantics =>
+      'Prijaté cez CoreScope, vaše rádio to nepočulo';
+
+  @override
+  String get channelPath_sourceCoreScope => 'CoreScope';
+
+  @override
+  String get channelPath_viaCoreScopeNoRfPath =>
+      'Táto správa prišla z analyzátora CoreScope. Vaše rádio ju nepočulo, takže neexistuje rádiová trasa z vášho rádia.';
 }

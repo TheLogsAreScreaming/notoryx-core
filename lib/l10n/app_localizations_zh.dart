@@ -14691,4 +14691,40 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get contacts_fullWarning => '此电台的联系人列表已满，无法添加新节点。请删除一些联系人以腾出空间。';
+
+  @override
+  String get analyzer_missedChat => 'CoreScope 漏听的聊天';
+
+  @override
+  String get analyzer_missedChatHint =>
+      '从此分析服务器显示你所在地区电台未收到的频道消息。只显示你已加入的频道。不会发送你电台的任何数据。';
+
+  @override
+  String get analyzer_area => '地区';
+
+  @override
+  String get analyzer_areaAll => '整个服务器';
+
+  @override
+  String get analyzer_areaHint =>
+      '用逗号分隔的地区代码，例如 ORD 或 ORD,MDW。留空则显示此服务器收到的全部内容。';
+
+  @override
+  String get analyzer_areaInvalid => '请使用逗号分隔的 3 或 4 个字母的代码';
+
+  @override
+  String get analyzer_missedChatOffline => '暂时无法连接分析服务器';
+
+  @override
+  String get channels_viaCoreScope => '来自 CoreScope';
+
+  @override
+  String get channels_viaCoreScopeSemantics => '通过 CoreScope 收到，你的电台未接收到';
+
+  @override
+  String get channelPath_sourceCoreScope => 'CoreScope';
+
+  @override
+  String get channelPath_viaCoreScopeNoRfPath =>
+      '此消息来自 CoreScope 分析服务器。你的电台没有收到它，因此没有来自你电台的无线路径。';
 }

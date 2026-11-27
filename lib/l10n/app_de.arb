@@ -5833,5 +5833,16 @@
   "fleet_uptimeDays": "{days} T. {hours} Std.",
   "fleet_uptimeHours": "{hours} Std. {minutes} Min.",
   "fleet_waiting": "Warte…",
-  "contacts_fullWarning": "Die Kontaktliste dieses Funkgeräts ist voll, daher kann es keine neuen Knoten hinzufügen. Entferne einige Kontakte, um Platz zu schaffen."
+  "contacts_fullWarning": "Die Kontaktliste dieses Funkgeräts ist voll, daher kann es keine neuen Knoten hinzufügen. Entferne einige Kontakte, um Platz zu schaffen.",
+  "analyzer_missedChat": "Verpasster Chat von CoreScope",
+  "analyzer_missedChatHint": "Zeigt Kanalnachrichten aus deiner Gegend, die dein Funkgerät nicht gehört hat, gelesen von diesem Analyzer. Nur Kanäle, denen du beigetreten bist. Von deinem Funkgerät wird nichts gesendet.",
+  "analyzer_area": "Gebiet",
+  "analyzer_areaAll": "Ganzer Server",
+  "analyzer_areaHint": "Regionscodes durch Kommas getrennt, zum Beispiel ORD oder ORD,MDW. Leer lassen für alles, was dieser Server hört.",
+  "analyzer_areaInvalid": "Verwende Codes mit 3 oder 4 Buchstaben, durch Kommas getrennt",
+  "analyzer_missedChatOffline": "Der Analyzer ist gerade nicht erreichbar",
+  "channels_viaCoreScope": "über CoreScope",
+  "channels_viaCoreScopeSemantics": "Über CoreScope empfangen, nicht von deinem Funkgerät gehört",
+  "channelPath_sourceCoreScope": "CoreScope",
+  "channelPath_viaCoreScopeNoRfPath": "Diese Nachricht kam von einem CoreScope Analyzer. Dein Funkgerät hat sie nicht empfangen, daher gibt es keinen Funkpfad von deinem Funkgerät."
 }

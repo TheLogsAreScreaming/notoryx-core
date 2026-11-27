@@ -5699,5 +5699,16 @@
   "fleet_uptimeDays": "{days} дни {hours} ч",
   "fleet_uptimeHours": "{hours} ч {minutes} мин",
   "fleet_waiting": "Изчакване…",
-  "contacts_fullWarning": "Списъкът с контакти на това радио е пълен и не може да добавя нови възли. Премахнете някои контакти, за да освободите място."
+  "contacts_fullWarning": "Списъкът с контакти на това радио е пълен и не може да добавя нови възли. Премахнете някои контакти, за да освободите място.",
+  "analyzer_missedChat": "Пропуснат чат от CoreScope",
+  "analyzer_missedChatHint": "Показва съобщения в канали от района, които радиото ви не е чуло, прочетени от този анализатор. Само каналите, към които сте се присъединили. Нищо от радиото ви не се изпраща.",
+  "analyzer_area": "Район",
+  "analyzer_areaAll": "Целият сървър",
+  "analyzer_areaHint": "Кодове на региони, разделени със запетаи, например ORD или ORD,MDW. Оставете празно за всичко, което чува този сървър.",
+  "analyzer_areaInvalid": "Използвайте кодове от 3 или 4 букви, разделени със запетаи",
+  "analyzer_missedChatOffline": "Анализаторът не е достъпен в момента",
+  "channels_viaCoreScope": "чрез CoreScope",
+  "channels_viaCoreScopeSemantics": "Получено чрез CoreScope, не е чуто от вашето радио",
+  "channelPath_sourceCoreScope": "CoreScope",
+  "channelPath_viaCoreScopeNoRfPath": "Това съобщение дойде от анализатор CoreScope. Вашето радио не го е чуло, затова няма радиомаршрут от вашето радио."
 }
