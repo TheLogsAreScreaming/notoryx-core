@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -15001,4 +15002,38 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'このメッセージは CoreScope 解析サーバーから届きました。あなたの無線機は受信していないため、無線機からの電波経路はありません。';
+
+  @override
+  String get bookmarks_title => 'ブックマーク';
+
+  @override
+  String get bookmarks_add => 'ブックマーク';
+
+  @override
+  String get bookmarks_remove => 'ブックマークを解除';
+
+  @override
+  String get bookmarks_added => 'ブックマークしました';
+
+  @override
+  String get bookmarks_removed => 'ブックマークを解除しました';
+
+  @override
+  String get bookmarks_share => 'ブックマークを共有';
+
+  @override
+  String get bookmarks_filterAll => 'すべて';
+
+  @override
+  String get bookmarks_filterDirect => 'ダイレクト';
+
+  @override
+  String get bookmarks_filterChannels => 'チャンネル';
+
+  @override
+  String get bookmarks_empty => 'ブックマークはまだありません';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'メッセージを長押しして「ブックマーク」を選ぶと、チャットを消去してもここに残ります。';
 }

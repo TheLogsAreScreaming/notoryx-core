@@ -5710,5 +5710,16 @@
   "channels_viaCoreScope": "чрез CoreScope",
   "channels_viaCoreScopeSemantics": "Получено чрез CoreScope, не е чуто от вашето радио",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Това съобщение дойде от анализатор CoreScope. Вашето радио не го е чуло, затова няма радиомаршрут от вашето радио."
+  "channelPath_viaCoreScopeNoRfPath": "Това съобщение дойде от анализатор CoreScope. Вашето радио не го е чуло, затова няма радиомаршрут от вашето радио.",
+  "bookmarks_title": "Отметки",
+  "bookmarks_add": "Добави отметка",
+  "bookmarks_remove": "Премахни отметката",
+  "bookmarks_added": "Отметката е добавена",
+  "bookmarks_removed": "Отметката е премахната",
+  "bookmarks_share": "Сподели отметките",
+  "bookmarks_filterAll": "Всички",
+  "bookmarks_filterDirect": "Лични",
+  "bookmarks_filterChannels": "Канали",
+  "bookmarks_empty": "Все още няма отметки",
+  "bookmarks_emptyHint": "Задръжте съобщение и изберете „Добави отметка“, за да го запазите тук дори след изчистване на чата."
 }

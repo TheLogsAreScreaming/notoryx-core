@@ -5710,5 +5710,16 @@
   "channels_viaCoreScope": "via CoreScope",
   "channels_viaCoreScopeSemantics": "Ontvangen via CoreScope, niet gehoord door je radio",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Dit bericht kwam van een CoreScope analyzer. Je radio heeft het niet gehoord, dus er is geen radiopad vanaf je radio."
+  "channelPath_viaCoreScopeNoRfPath": "Dit bericht kwam van een CoreScope analyzer. Je radio heeft het niet gehoord, dus er is geen radiopad vanaf je radio.",
+  "bookmarks_title": "Bladwijzers",
+  "bookmarks_add": "Bladwijzer toevoegen",
+  "bookmarks_remove": "Bladwijzer verwijderen",
+  "bookmarks_added": "Bladwijzer toegevoegd",
+  "bookmarks_removed": "Bladwijzer verwijderd",
+  "bookmarks_share": "Bladwijzers delen",
+  "bookmarks_filterAll": "Alle",
+  "bookmarks_filterDirect": "Direct",
+  "bookmarks_filterChannels": "Kanalen",
+  "bookmarks_empty": "Nog geen bladwijzers",
+  "bookmarks_emptyHint": "Houd een bericht ingedrukt en kies Bladwijzer toevoegen om het hier te bewaren, ook als de chat wordt gewist."
 }

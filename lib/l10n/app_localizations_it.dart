@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -15714,4 +15715,38 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Questo messaggio è arrivato da un analizzatore CoreScope. La tua radio non l\'ha ricevuto, quindi non c\'è un percorso radio dalla tua radio.';
+
+  @override
+  String get bookmarks_title => 'Segnalibri';
+
+  @override
+  String get bookmarks_add => 'Aggiungi segnalibro';
+
+  @override
+  String get bookmarks_remove => 'Rimuovi segnalibro';
+
+  @override
+  String get bookmarks_added => 'Segnalibro aggiunto';
+
+  @override
+  String get bookmarks_removed => 'Segnalibro rimosso';
+
+  @override
+  String get bookmarks_share => 'Condividi segnalibri';
+
+  @override
+  String get bookmarks_filterAll => 'Tutti';
+
+  @override
+  String get bookmarks_filterDirect => 'Diretti';
+
+  @override
+  String get bookmarks_filterChannels => 'Canali';
+
+  @override
+  String get bookmarks_empty => 'Ancora nessun segnalibro';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Tieni premuto un messaggio e scegli «Aggiungi segnalibro» per conservarlo qui, anche dopo aver svuotato la chat.';
 }

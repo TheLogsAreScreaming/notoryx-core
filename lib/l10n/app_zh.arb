@@ -5715,5 +5715,16 @@
   "channels_viaCoreScope": "来自 CoreScope",
   "channels_viaCoreScopeSemantics": "通过 CoreScope 收到，你的电台未接收到",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "此消息来自 CoreScope 分析服务器。你的电台没有收到它，因此没有来自你电台的无线路径。"
+  "channelPath_viaCoreScopeNoRfPath": "此消息来自 CoreScope 分析服务器。你的电台没有收到它，因此没有来自你电台的无线路径。",
+  "bookmarks_title": "书签",
+  "bookmarks_add": "添加书签",
+  "bookmarks_remove": "移除书签",
+  "bookmarks_added": "已添加书签",
+  "bookmarks_removed": "已移除书签",
+  "bookmarks_share": "分享书签",
+  "bookmarks_filterAll": "全部",
+  "bookmarks_filterDirect": "私信",
+  "bookmarks_filterChannels": "频道",
+  "bookmarks_empty": "还没有书签",
+  "bookmarks_emptyHint": "长按消息并选择“添加书签”，即使清空聊天也会保留在这里。"
 }

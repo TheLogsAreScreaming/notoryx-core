@@ -5710,5 +5710,16 @@
   "channels_viaCoreScope": "prek CoreScope",
   "channels_viaCoreScopeSemantics": "Prejeto prek CoreScope, vaš radio ga ni slišal",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "To sporočilo je prišlo z analizatorja CoreScope. Vaš radio ga ni slišal, zato ni radijske poti od vašega radia."
+  "channelPath_viaCoreScopeNoRfPath": "To sporočilo je prišlo z analizatorja CoreScope. Vaš radio ga ni slišal, zato ni radijske poti od vašega radia.",
+  "bookmarks_title": "Zaznamki",
+  "bookmarks_add": "Dodaj zaznamek",
+  "bookmarks_remove": "Odstrani zaznamek",
+  "bookmarks_added": "Zaznamek dodan",
+  "bookmarks_removed": "Zaznamek odstranjen",
+  "bookmarks_share": "Deli zaznamke",
+  "bookmarks_filterAll": "Vse",
+  "bookmarks_filterDirect": "Neposredni",
+  "bookmarks_filterChannels": "Kanali",
+  "bookmarks_empty": "Še ni zaznamkov",
+  "bookmarks_emptyHint": "Pridržite sporočilo in izberite Dodaj zaznamek, da ostane tukaj tudi po brisanju klepeta."
 }

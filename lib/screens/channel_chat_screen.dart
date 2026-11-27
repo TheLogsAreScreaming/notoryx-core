@@ -10,6 +10,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart' hide TextDirection;
 import 'package:provider/provider.dart';
 
+import '../services/bookmark_service.dart';
+import '../widgets/bookmark_tile.dart';
 import '../models/message_filter.dart';
 import '../services/message_filter/message_filter_service.dart';
 import '../widgets/filtered_message_ghost.dart';
@@ -2701,6 +2703,20 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
                 Navigator.pop(sheetContext);
                 unawaited(showForwardSheet(context, message.text));
               },
+            ),
+            bookmarkSheetTile(
+              context,
+              sheetContext,
+              source: BookmarkSource.channel,
+              sourceId: widget.channel.pskHex,
+              sourceName: widget.channel.name.isEmpty
+                  ? context.l10n.channels_channelIndex(widget.channel.index)
+                  : widget.channel.name,
+              messageId: message.messageId,
+              senderName: message.senderName,
+              text: message.text,
+              timestamp: message.timestamp,
+              isOutgoing: message.isOutgoing,
             ),
             ListTile(
               leading: const Icon(Icons.copy),

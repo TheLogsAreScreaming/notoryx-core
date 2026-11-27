@@ -5844,5 +5844,16 @@
   "channels_viaCoreScope": "CoreScope経由",
   "channels_viaCoreScopeSemantics": "CoreScope経由で受信、無線機では受信していません",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "このメッセージは CoreScope 解析サーバーから届きました。あなたの無線機は受信していないため、無線機からの電波経路はありません。"
+  "channelPath_viaCoreScopeNoRfPath": "このメッセージは CoreScope 解析サーバーから届きました。あなたの無線機は受信していないため、無線機からの電波経路はありません。",
+  "bookmarks_title": "ブックマーク",
+  "bookmarks_add": "ブックマーク",
+  "bookmarks_remove": "ブックマークを解除",
+  "bookmarks_added": "ブックマークしました",
+  "bookmarks_removed": "ブックマークを解除しました",
+  "bookmarks_share": "ブックマークを共有",
+  "bookmarks_filterAll": "すべて",
+  "bookmarks_filterDirect": "ダイレクト",
+  "bookmarks_filterChannels": "チャンネル",
+  "bookmarks_empty": "ブックマークはまだありません",
+  "bookmarks_emptyHint": "メッセージを長押しして「ブックマーク」を選ぶと、チャットを消去してもここに残ります。"
 }

@@ -5748,5 +5748,16 @@
   "channels_viaCoreScope": "CoreScope-on át",
   "channels_viaCoreScopeSemantics": "CoreScope-on keresztül érkezett, a rádiója nem hallotta",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Ez az üzenet egy CoreScope elemzőtől érkezett. A rádiója nem hallotta, így nincs rádiós útvonal a rádiójától."
+  "channelPath_viaCoreScopeNoRfPath": "Ez az üzenet egy CoreScope elemzőtől érkezett. A rádiója nem hallotta, így nincs rádiós útvonal a rádiójától.",
+  "bookmarks_title": "Könyvjelzők",
+  "bookmarks_add": "Könyvjelzőzés",
+  "bookmarks_remove": "Könyvjelző törlése",
+  "bookmarks_added": "Könyvjelző hozzáadva",
+  "bookmarks_removed": "Könyvjelző törölve",
+  "bookmarks_share": "Könyvjelzők megosztása",
+  "bookmarks_filterAll": "Mind",
+  "bookmarks_filterDirect": "Közvetlen",
+  "bookmarks_filterChannels": "Csatornák",
+  "bookmarks_empty": "Még nincsenek könyvjelzők",
+  "bookmarks_emptyHint": "Tartson lenyomva egy üzenetet, és válassza a Könyvjelzőzés lehetőséget, hogy itt maradjon a csevegés törlése után is."
 }

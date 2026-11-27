@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -15717,4 +15718,38 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Ta wiadomość przyszła z analizatora CoreScope. Twoje radio jej nie odebrało, więc nie ma ścieżki radiowej od Twojego radia.';
+
+  @override
+  String get bookmarks_title => 'Zakładki';
+
+  @override
+  String get bookmarks_add => 'Dodaj zakładkę';
+
+  @override
+  String get bookmarks_remove => 'Usuń zakładkę';
+
+  @override
+  String get bookmarks_added => 'Dodano zakładkę';
+
+  @override
+  String get bookmarks_removed => 'Usunięto zakładkę';
+
+  @override
+  String get bookmarks_share => 'Udostępnij zakładki';
+
+  @override
+  String get bookmarks_filterAll => 'Wszystkie';
+
+  @override
+  String get bookmarks_filterDirect => 'Prywatne';
+
+  @override
+  String get bookmarks_filterChannels => 'Kanały';
+
+  @override
+  String get bookmarks_empty => 'Brak zakładek';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Przytrzymaj wiadomość i wybierz „Dodaj zakładkę”, aby zachować ją tutaj nawet po wyczyszczeniu czatu.';
 }

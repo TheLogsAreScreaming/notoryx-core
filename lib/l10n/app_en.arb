@@ -8387,5 +8387,16 @@
   "channels_viaCoreScope": "via CoreScope",
   "channels_viaCoreScopeSemantics": "Received via CoreScope, not heard by your radio",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "This message came from a CoreScope analyzer. Your radio has not heard it, so there is no RF path from your radio."
+  "channelPath_viaCoreScopeNoRfPath": "This message came from a CoreScope analyzer. Your radio has not heard it, so there is no RF path from your radio.",
+  "bookmarks_title": "Bookmarks",
+  "bookmarks_add": "Bookmark",
+  "bookmarks_remove": "Remove bookmark",
+  "bookmarks_added": "Bookmarked",
+  "bookmarks_removed": "Bookmark removed",
+  "bookmarks_share": "Share bookmarks",
+  "bookmarks_filterAll": "All",
+  "bookmarks_filterDirect": "Direct",
+  "bookmarks_filterChannels": "Channels",
+  "bookmarks_empty": "No bookmarks yet",
+  "bookmarks_emptyHint": "Long-press a message and choose Bookmark to keep it here, even after the chat is cleared."
 }
