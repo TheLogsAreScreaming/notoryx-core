@@ -15719,6 +15719,40 @@ class AppLocalizationsPl extends AppLocalizations {
       'Ta wiadomość przyszła z analizatora CoreScope. Twoje radio jej nie odebrało, więc nie ma ścieżki radiowej od Twojego radia.';
 
   @override
+  String get bookmarks_title => 'Zakładki';
+
+  @override
+  String get bookmarks_add => 'Dodaj zakładkę';
+
+  @override
+  String get bookmarks_remove => 'Usuń zakładkę';
+
+  @override
+  String get bookmarks_added => 'Dodano zakładkę';
+
+  @override
+  String get bookmarks_removed => 'Usunięto zakładkę';
+
+  @override
+  String get bookmarks_share => 'Udostępnij zakładki';
+
+  @override
+  String get bookmarks_filterAll => 'Wszystkie';
+
+  @override
+  String get bookmarks_filterDirect => 'Prywatne';
+
+  @override
+  String get bookmarks_filterChannels => 'Kanały';
+
+  @override
+  String get bookmarks_empty => 'Brak zakładek';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Przytrzymaj wiadomość i wybierz „Dodaj zakładkę”, aby zachować ją tutaj nawet po wyczyszczeniu czatu.';
+
+  @override
   String get manualTrace_menuItem => 'Śledzenie ścieżki po hashach';
 
   @override

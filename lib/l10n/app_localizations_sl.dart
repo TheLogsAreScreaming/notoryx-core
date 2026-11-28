@@ -15665,6 +15665,40 @@ class AppLocalizationsSl extends AppLocalizations {
       'To sporočilo je prišlo z analizatorja CoreScope. Vaš radio ga ni slišal, zato ni radijske poti od vašega radia.';
 
   @override
+  String get bookmarks_title => 'Zaznamki';
+
+  @override
+  String get bookmarks_add => 'Dodaj zaznamek';
+
+  @override
+  String get bookmarks_remove => 'Odstrani zaznamek';
+
+  @override
+  String get bookmarks_added => 'Zaznamek dodan';
+
+  @override
+  String get bookmarks_removed => 'Zaznamek odstranjen';
+
+  @override
+  String get bookmarks_share => 'Deli zaznamke';
+
+  @override
+  String get bookmarks_filterAll => 'Vse';
+
+  @override
+  String get bookmarks_filterDirect => 'Neposredni';
+
+  @override
+  String get bookmarks_filterChannels => 'Kanali';
+
+  @override
+  String get bookmarks_empty => 'Še ni zaznamkov';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Pridržite sporočilo in izberite Dodaj zaznamek, da ostane tukaj tudi po brisanju klepeta.';
+
+  @override
   String get manualTrace_menuItem => 'Sledenje poti po zgoščenih vrednostih';
 
   @override

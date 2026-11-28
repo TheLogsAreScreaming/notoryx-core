@@ -15723,6 +15723,40 @@ class AppLocalizationsRu extends AppLocalizations {
       'Это сообщение пришло из анализатора CoreScope. Ваше радио его не слышало, поэтому радиомаршрута от вашего радио нет.';
 
   @override
+  String get bookmarks_title => 'Закладки';
+
+  @override
+  String get bookmarks_add => 'В закладки';
+
+  @override
+  String get bookmarks_remove => 'Удалить закладку';
+
+  @override
+  String get bookmarks_added => 'Добавлено в закладки';
+
+  @override
+  String get bookmarks_removed => 'Закладка удалена';
+
+  @override
+  String get bookmarks_share => 'Поделиться закладками';
+
+  @override
+  String get bookmarks_filterAll => 'Все';
+
+  @override
+  String get bookmarks_filterDirect => 'Личные';
+
+  @override
+  String get bookmarks_filterChannels => 'Каналы';
+
+  @override
+  String get bookmarks_empty => 'Закладок пока нет';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Удерживайте сообщение и выберите «В закладки», чтобы сохранить его здесь даже после очистки чата.';
+
+  @override
   String get manualTrace_menuItem => 'Трассировка пути по хэшам';
 
   @override

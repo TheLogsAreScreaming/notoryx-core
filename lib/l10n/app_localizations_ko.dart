@@ -15018,6 +15018,39 @@ class AppLocalizationsKo extends AppLocalizations {
       '이 메시지는 CoreScope 분석 서버에서 왔습니다. 내 무전기가 수신하지 않았으므로 내 무전기로부터의 무선 경로가 없습니다.';
 
   @override
+  String get bookmarks_title => '북마크';
+
+  @override
+  String get bookmarks_add => '북마크';
+
+  @override
+  String get bookmarks_remove => '북마크 해제';
+
+  @override
+  String get bookmarks_added => '북마크했습니다';
+
+  @override
+  String get bookmarks_removed => '북마크를 해제했습니다';
+
+  @override
+  String get bookmarks_share => '북마크 공유';
+
+  @override
+  String get bookmarks_filterAll => '전체';
+
+  @override
+  String get bookmarks_filterDirect => '개인';
+
+  @override
+  String get bookmarks_filterChannels => '채널';
+
+  @override
+  String get bookmarks_empty => '아직 북마크가 없습니다';
+
+  @override
+  String get bookmarks_emptyHint => '메시지를 길게 누르고 북마크를 선택하면 채팅을 지워도 여기에 남습니다.';
+
+  @override
   String get manualTrace_menuItem => '해시로 경로 추적';
 
   @override

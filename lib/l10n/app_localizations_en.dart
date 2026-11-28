@@ -15540,6 +15540,40 @@ class AppLocalizationsEn extends AppLocalizations {
       'This message came from a CoreScope analyzer. Your radio has not heard it, so there is no RF path from your radio.';
 
   @override
+  String get bookmarks_title => 'Bookmarks';
+
+  @override
+  String get bookmarks_add => 'Bookmark';
+
+  @override
+  String get bookmarks_remove => 'Remove bookmark';
+
+  @override
+  String get bookmarks_added => 'Bookmarked';
+
+  @override
+  String get bookmarks_removed => 'Bookmark removed';
+
+  @override
+  String get bookmarks_share => 'Share bookmarks';
+
+  @override
+  String get bookmarks_filterAll => 'All';
+
+  @override
+  String get bookmarks_filterDirect => 'Direct';
+
+  @override
+  String get bookmarks_filterChannels => 'Channels';
+
+  @override
+  String get bookmarks_empty => 'No bookmarks yet';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Long-press a message and choose Bookmark to keep it here, even after the chat is cleared.';
+
+  @override
   String get manualTrace_menuItem => 'Path trace by hashes';
 
   @override

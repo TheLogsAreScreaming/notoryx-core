@@ -15641,6 +15641,40 @@ class AppLocalizationsSk extends AppLocalizations {
       'Táto správa prišla z analyzátora CoreScope. Vaše rádio ju nepočulo, takže neexistuje rádiová trasa z vášho rádia.';
 
   @override
+  String get bookmarks_title => 'Záložky';
+
+  @override
+  String get bookmarks_add => 'Pridať záložku';
+
+  @override
+  String get bookmarks_remove => 'Odstrániť záložku';
+
+  @override
+  String get bookmarks_added => 'Záložka pridaná';
+
+  @override
+  String get bookmarks_removed => 'Záložka odstránená';
+
+  @override
+  String get bookmarks_share => 'Zdieľať záložky';
+
+  @override
+  String get bookmarks_filterAll => 'Všetky';
+
+  @override
+  String get bookmarks_filterDirect => 'Priame';
+
+  @override
+  String get bookmarks_filterChannels => 'Kanály';
+
+  @override
+  String get bookmarks_empty => 'Zatiaľ žiadne záložky';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Podržte správu a zvoľte Pridať záložku, aby zostala tu aj po vymazaní chatu.';
+
+  @override
   String get manualTrace_menuItem => 'Sledovanie cesty podľa hashov';
 
   @override

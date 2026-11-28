@@ -15679,6 +15679,40 @@ class AppLocalizationsBg extends AppLocalizations {
       'Това съобщение дойде от анализатор CoreScope. Вашето радио не го е чуло, затова няма радиомаршрут от вашето радио.';
 
   @override
+  String get bookmarks_title => 'Отметки';
+
+  @override
+  String get bookmarks_add => 'Добави отметка';
+
+  @override
+  String get bookmarks_remove => 'Премахни отметката';
+
+  @override
+  String get bookmarks_added => 'Отметката е добавена';
+
+  @override
+  String get bookmarks_removed => 'Отметката е премахната';
+
+  @override
+  String get bookmarks_share => 'Сподели отметките';
+
+  @override
+  String get bookmarks_filterAll => 'Всички';
+
+  @override
+  String get bookmarks_filterDirect => 'Лични';
+
+  @override
+  String get bookmarks_filterChannels => 'Канали';
+
+  @override
+  String get bookmarks_empty => 'Все още няма отметки';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Задръжте съобщение и изберете „Добави отметка“, за да го запазите тук дори след изчистване на чата.';
+
+  @override
   String get manualTrace_menuItem => 'Трасиране на пътя по хешове';
 
   @override

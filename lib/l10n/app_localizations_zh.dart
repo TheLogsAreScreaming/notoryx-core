@@ -14729,6 +14729,39 @@ class AppLocalizationsZh extends AppLocalizations {
       '此消息来自 CoreScope 分析服务器。你的电台没有收到它，因此没有来自你电台的无线路径。';
 
   @override
+  String get bookmarks_title => '书签';
+
+  @override
+  String get bookmarks_add => '添加书签';
+
+  @override
+  String get bookmarks_remove => '移除书签';
+
+  @override
+  String get bookmarks_added => '已添加书签';
+
+  @override
+  String get bookmarks_removed => '已移除书签';
+
+  @override
+  String get bookmarks_share => '分享书签';
+
+  @override
+  String get bookmarks_filterAll => '全部';
+
+  @override
+  String get bookmarks_filterDirect => '私信';
+
+  @override
+  String get bookmarks_filterChannels => '频道';
+
+  @override
+  String get bookmarks_empty => '还没有书签';
+
+  @override
+  String get bookmarks_emptyHint => '长按消息并选择“添加书签”，即使清空聊天也会保留在这里。';
+
+  @override
   String get manualTrace_menuItem => '按哈希进行路径追踪';
 
   @override

@@ -25941,6 +25941,72 @@ abstract class AppLocalizations {
   /// **'This message came from a CoreScope analyzer. Your radio has not heard it, so there is no RF path from your radio.'**
   String get channelPath_viaCoreScopeNoRfPath;
 
+  /// No description provided for @bookmarks_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Bookmarks'**
+  String get bookmarks_title;
+
+  /// No description provided for @bookmarks_add.
+  ///
+  /// In en, this message translates to:
+  /// **'Bookmark'**
+  String get bookmarks_add;
+
+  /// No description provided for @bookmarks_remove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove bookmark'**
+  String get bookmarks_remove;
+
+  /// No description provided for @bookmarks_added.
+  ///
+  /// In en, this message translates to:
+  /// **'Bookmarked'**
+  String get bookmarks_added;
+
+  /// No description provided for @bookmarks_removed.
+  ///
+  /// In en, this message translates to:
+  /// **'Bookmark removed'**
+  String get bookmarks_removed;
+
+  /// No description provided for @bookmarks_share.
+  ///
+  /// In en, this message translates to:
+  /// **'Share bookmarks'**
+  String get bookmarks_share;
+
+  /// No description provided for @bookmarks_filterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get bookmarks_filterAll;
+
+  /// No description provided for @bookmarks_filterDirect.
+  ///
+  /// In en, this message translates to:
+  /// **'Direct'**
+  String get bookmarks_filterDirect;
+
+  /// No description provided for @bookmarks_filterChannels.
+  ///
+  /// In en, this message translates to:
+  /// **'Channels'**
+  String get bookmarks_filterChannels;
+
+  /// No description provided for @bookmarks_empty.
+  ///
+  /// In en, this message translates to:
+  /// **'No bookmarks yet'**
+  String get bookmarks_empty;
+
+  /// No description provided for @bookmarks_emptyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Long-press a message and choose Bookmark to keep it here, even after the chat is cleared.'**
+  String get bookmarks_emptyHint;
+
   /// No description provided for @manualTrace_menuItem.
   ///
   /// In en, this message translates to:

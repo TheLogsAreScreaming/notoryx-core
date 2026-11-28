@@ -15680,6 +15680,40 @@ class AppLocalizationsPt extends AppLocalizations {
       'Esta mensagem chegou de um analisador CoreScope. O seu rádio não a ouviu, por isso não há caminho de rádio a partir do seu rádio.';
 
   @override
+  String get bookmarks_title => 'Favoritos';
+
+  @override
+  String get bookmarks_add => 'Adicionar aos favoritos';
+
+  @override
+  String get bookmarks_remove => 'Remover dos favoritos';
+
+  @override
+  String get bookmarks_added => 'Adicionado aos favoritos';
+
+  @override
+  String get bookmarks_removed => 'Removido dos favoritos';
+
+  @override
+  String get bookmarks_share => 'Partilhar favoritos';
+
+  @override
+  String get bookmarks_filterAll => 'Todos';
+
+  @override
+  String get bookmarks_filterDirect => 'Diretas';
+
+  @override
+  String get bookmarks_filterChannels => 'Canais';
+
+  @override
+  String get bookmarks_empty => 'Ainda sem favoritos';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Mantenha premida uma mensagem e escolha Adicionar aos favoritos para a guardar aqui, mesmo depois de limpar a conversa.';
+
+  @override
   String get manualTrace_menuItem => 'Rastreamento de caminho por hashes';
 
   @override

@@ -15666,6 +15666,40 @@ class AppLocalizationsHu extends AppLocalizations {
       'Ez az üzenet egy CoreScope elemzőtől érkezett. A rádiója nem hallotta, így nincs rádiós útvonal a rádiójától.';
 
   @override
+  String get bookmarks_title => 'Könyvjelzők';
+
+  @override
+  String get bookmarks_add => 'Könyvjelzőzés';
+
+  @override
+  String get bookmarks_remove => 'Könyvjelző törlése';
+
+  @override
+  String get bookmarks_added => 'Könyvjelző hozzáadva';
+
+  @override
+  String get bookmarks_removed => 'Könyvjelző törölve';
+
+  @override
+  String get bookmarks_share => 'Könyvjelzők megosztása';
+
+  @override
+  String get bookmarks_filterAll => 'Mind';
+
+  @override
+  String get bookmarks_filterDirect => 'Közvetlen';
+
+  @override
+  String get bookmarks_filterChannels => 'Csatornák';
+
+  @override
+  String get bookmarks_empty => 'Még nincsenek könyvjelzők';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Tartson lenyomva egy üzenetet, és válassza a Könyvjelzőzés lehetőséget, hogy itt maradjon a csevegés törlése után is.';
+
+  @override
   String get manualTrace_menuItem => 'Útvonal-nyomkövetés hashek alapján';
 
   @override

@@ -15650,6 +15650,40 @@ class AppLocalizationsNl extends AppLocalizations {
       'Dit bericht kwam van een CoreScope analyzer. Je radio heeft het niet gehoord, dus er is geen radiopad vanaf je radio.';
 
   @override
+  String get bookmarks_title => 'Bladwijzers';
+
+  @override
+  String get bookmarks_add => 'Bladwijzer toevoegen';
+
+  @override
+  String get bookmarks_remove => 'Bladwijzer verwijderen';
+
+  @override
+  String get bookmarks_added => 'Bladwijzer toegevoegd';
+
+  @override
+  String get bookmarks_removed => 'Bladwijzer verwijderd';
+
+  @override
+  String get bookmarks_share => 'Bladwijzers delen';
+
+  @override
+  String get bookmarks_filterAll => 'Alle';
+
+  @override
+  String get bookmarks_filterDirect => 'Direct';
+
+  @override
+  String get bookmarks_filterChannels => 'Kanalen';
+
+  @override
+  String get bookmarks_empty => 'Nog geen bladwijzers';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Houd een bericht ingedrukt en kies Bladwijzer toevoegen om het hier te bewaren, ook als de chat wordt gewist.';
+
+  @override
   String get manualTrace_menuItem => 'Padtrace via hashes';
 
   @override

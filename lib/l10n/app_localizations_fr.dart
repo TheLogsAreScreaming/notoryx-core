@@ -15759,6 +15759,40 @@ class AppLocalizationsFr extends AppLocalizations {
       'Ce message vient d\'un analyseur CoreScope. Votre radio ne l\'a pas entendu, il n\'y a donc pas de chemin radio depuis votre radio.';
 
   @override
+  String get bookmarks_title => 'Favoris';
+
+  @override
+  String get bookmarks_add => 'Ajouter aux favoris';
+
+  @override
+  String get bookmarks_remove => 'Retirer des favoris';
+
+  @override
+  String get bookmarks_added => 'Ajouté aux favoris';
+
+  @override
+  String get bookmarks_removed => 'Retiré des favoris';
+
+  @override
+  String get bookmarks_share => 'Partager les favoris';
+
+  @override
+  String get bookmarks_filterAll => 'Tous';
+
+  @override
+  String get bookmarks_filterDirect => 'Directs';
+
+  @override
+  String get bookmarks_filterChannels => 'Canaux';
+
+  @override
+  String get bookmarks_empty => 'Aucun favori pour l\'instant';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Appuyez longuement sur un message et choisissez « Ajouter aux favoris » pour le garder ici, même après avoir vidé la discussion.';
+
+  @override
   String get manualTrace_menuItem => 'Traçage de chemin par hachages';
 
   @override
