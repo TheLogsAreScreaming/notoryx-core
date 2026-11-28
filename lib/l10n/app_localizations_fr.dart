@@ -15759,6 +15759,165 @@ class AppLocalizationsFr extends AppLocalizations {
       'Ce message vient d\'un analyseur CoreScope. Votre radio ne l\'a pas entendu, il n\'y a donc pas de chemin radio depuis votre radio.';
 
   @override
+  String get bookmarks_title => 'Favoris';
+
+  @override
+  String get bookmarks_add => 'Ajouter aux favoris';
+
+  @override
+  String get bookmarks_remove => 'Retirer des favoris';
+
+  @override
+  String get bookmarks_added => 'Ajouté aux favoris';
+
+  @override
+  String get bookmarks_removed => 'Retiré des favoris';
+
+  @override
+  String get bookmarks_share => 'Partager les favoris';
+
+  @override
+  String get bookmarks_filterAll => 'Tous';
+
+  @override
+  String get bookmarks_filterDirect => 'Directs';
+
+  @override
+  String get bookmarks_filterChannels => 'Canaux';
+
+  @override
+  String get bookmarks_empty => 'Aucun favori pour l\'instant';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Appuyez longuement sur un message et choisissez « Ajouter aux favoris » pour le garder ici, même après avoir vidé la discussion.';
+
+  @override
+  String get manualTrace_menuItem => 'Traçage de chemin par hachages';
+
+  @override
+  String get manualTrace_inputLabel => 'Hachages des répéteurs';
+
+  @override
+  String manualTrace_helper(String example) {
+    return 'Exemple : $example. Séparez par des virgules ou des espaces.';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return 'Sauts ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => 'Nœud inconnu';
+
+  @override
+  String get manualTrace_run => 'Lancer le traçage de chemin';
+
+  @override
+  String get manualTrace_notConnected =>
+      'Connectez-vous à une radio pour lancer une trace';
+
+  @override
+  String get manualTrace_errorInvalidHex =>
+      'Seuls les caractères hexadécimaux (0-9, A-F) sont autorisés';
+
+  @override
+  String get manualTrace_errorOddLength =>
+      'Chaque hachage doit avoir un nombre pair de caractères hexadécimaux, correspondant à la taille du saut';
+
+  @override
+  String get manualTrace_errorMixedWidths =>
+      'Tous les hachages doivent avoir la même longueur';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      'Les hachages doivent faire 1, 2 ou 3 octets (2, 4 ou 6 caractères hexadécimaux)';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return 'Le chemin est trop long (maximum $max octets)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      'Trop de sauts à tracer en une seule requête. Retirez des sauts ou choisissez « Tel que saisi ».';
+
+  @override
+  String get manualTrace_roundTrip => 'Aller-retour';
+
+  @override
+  String get manualTrace_asEntered => 'Tel que saisi';
+
+  @override
+  String get manualTrace_roundTripHint =>
+      'La trace passe par ces sauts et revient par le même chemin.';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      'La trace suit exactement ces sauts. Ajoutez vous-même les sauts du retour.';
+
+  @override
+  String get manualTrace_menuHint =>
+      'Saisissez les hachages des relais et tracez ce chemin, sans GPS';
+
+  @override
+  String get imageSend_viewOriginal => 'Original';
+
+  @override
+  String get imageSend_viewReconstruction => 'Ce que voient les destinataires';
+
+  @override
+  String get imageSend_preparingPreview => 'Préparation de l\'aperçu…';
+
+  @override
+  String get imageSend_tryAnother => 'Essayer une autre version';
+
+  @override
+  String get imageSend_versionsHint =>
+      'Chaque version est reconstruite un peu différemment. Choisissez celle qui ressemble le plus à votre photo.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return 'Version $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count paquets',
+      one: '1 paquet',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count relais ont transmis chaque partie',
+      one: '1 relais a transmis chaque partie',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get tcpFound_title => 'SUR CE RÉSEAU';
+
+  @override
+  String get tcpFound_searching => 'Recherche de radios sur ce Wi-Fi…';
+
+  @override
+  String get tcpFound_failed => 'Impossible de rechercher sur ce réseau';
+
+  @override
+  String get tcpFound_hint =>
+      'Les radios avec un firmware compagnon Wi-Fi qui s\'annoncent apparaissent ici. Sinon, saisissez l\'adresse ci-dessous.';
+
+  @override
   String get tak_title => 'Partager avec TAK';
 
   @override

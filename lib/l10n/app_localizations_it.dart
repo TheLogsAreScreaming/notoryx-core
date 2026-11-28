@@ -15716,6 +15716,165 @@ class AppLocalizationsIt extends AppLocalizations {
       'Questo messaggio è arrivato da un analizzatore CoreScope. La tua radio non l\'ha ricevuto, quindi non c\'è un percorso radio dalla tua radio.';
 
   @override
+  String get bookmarks_title => 'Segnalibri';
+
+  @override
+  String get bookmarks_add => 'Aggiungi segnalibro';
+
+  @override
+  String get bookmarks_remove => 'Rimuovi segnalibro';
+
+  @override
+  String get bookmarks_added => 'Segnalibro aggiunto';
+
+  @override
+  String get bookmarks_removed => 'Segnalibro rimosso';
+
+  @override
+  String get bookmarks_share => 'Condividi segnalibri';
+
+  @override
+  String get bookmarks_filterAll => 'Tutti';
+
+  @override
+  String get bookmarks_filterDirect => 'Diretti';
+
+  @override
+  String get bookmarks_filterChannels => 'Canali';
+
+  @override
+  String get bookmarks_empty => 'Ancora nessun segnalibro';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Tieni premuto un messaggio e scegli «Aggiungi segnalibro» per conservarlo qui, anche dopo aver svuotato la chat.';
+
+  @override
+  String get manualTrace_menuItem => 'Tracciamento del percorso per hash';
+
+  @override
+  String get manualTrace_inputLabel => 'Hash dei ripetitori';
+
+  @override
+  String manualTrace_helper(String example) {
+    return 'Esempio: $example. Separa con virgole o spazi.';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return 'Salti ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => 'Nodo sconosciuto';
+
+  @override
+  String get manualTrace_run => 'Avvia tracciamento del percorso';
+
+  @override
+  String get manualTrace_notConnected =>
+      'Connettiti a una radio per eseguire una traccia';
+
+  @override
+  String get manualTrace_errorInvalidHex =>
+      'Sono ammessi solo caratteri esadecimali (0-9, A-F)';
+
+  @override
+  String get manualTrace_errorOddLength =>
+      'Ogni hash richiede un numero pari di caratteri esadecimali, corrispondente alla dimensione del salto';
+
+  @override
+  String get manualTrace_errorMixedWidths =>
+      'Tutti gli hash devono avere la stessa lunghezza';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      'Gli hash devono essere di 1, 2 o 3 byte (2, 4 o 6 caratteri esadecimali)';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return 'Il percorso è troppo lungo (massimo $max byte)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      'Troppi salti da tracciare in una sola richiesta. Rimuovi alcuni salti o scegli «Come inserito».';
+
+  @override
+  String get manualTrace_roundTrip => 'Andata e ritorno';
+
+  @override
+  String get manualTrace_asEntered => 'Come inserito';
+
+  @override
+  String get manualTrace_roundTripHint =>
+      'La traccia passa per questi salti e torna indietro nello stesso modo.';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      'La traccia segue esattamente questi salti. Aggiungi tu i salti del ritorno.';
+
+  @override
+  String get manualTrace_menuHint =>
+      'Digita gli hash dei ripetitori e traccia quel percorso, senza GPS';
+
+  @override
+  String get imageSend_viewOriginal => 'Originale';
+
+  @override
+  String get imageSend_viewReconstruction => 'Cosa vedono i destinatari';
+
+  @override
+  String get imageSend_preparingPreview => 'Preparazione anteprima…';
+
+  @override
+  String get imageSend_tryAnother => 'Prova un\'altra versione';
+
+  @override
+  String get imageSend_versionsHint =>
+      'Ogni versione è ricostruita in modo leggermente diverso. Scegli quella che somiglia di più alla tua foto.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return 'Versione $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pacchetti',
+      one: '1 pacchetto',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ripetitori hanno inoltrato ogni parte',
+      one: '1 ripetitore ha inoltrato ogni parte',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get tcpFound_title => 'SU QUESTA RETE';
+
+  @override
+  String get tcpFound_searching => 'Ricerca di radio su questa rete Wi-Fi…';
+
+  @override
+  String get tcpFound_failed => 'Impossibile cercare su questa rete';
+
+  @override
+  String get tcpFound_hint =>
+      'Qui compaiono le radio con firmware companion Wi-Fi che si annunciano. Altrimenti digita l\'indirizzo qui sotto.';
+
+  @override
   String get tak_title => 'Condividi con TAK';
 
   @override

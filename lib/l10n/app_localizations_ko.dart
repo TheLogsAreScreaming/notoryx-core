@@ -15018,6 +15018,157 @@ class AppLocalizationsKo extends AppLocalizations {
       '이 메시지는 CoreScope 분석 서버에서 왔습니다. 내 무전기가 수신하지 않았으므로 내 무전기로부터의 무선 경로가 없습니다.';
 
   @override
+  String get bookmarks_title => '북마크';
+
+  @override
+  String get bookmarks_add => '북마크';
+
+  @override
+  String get bookmarks_remove => '북마크 해제';
+
+  @override
+  String get bookmarks_added => '북마크했습니다';
+
+  @override
+  String get bookmarks_removed => '북마크를 해제했습니다';
+
+  @override
+  String get bookmarks_share => '북마크 공유';
+
+  @override
+  String get bookmarks_filterAll => '전체';
+
+  @override
+  String get bookmarks_filterDirect => '개인';
+
+  @override
+  String get bookmarks_filterChannels => '채널';
+
+  @override
+  String get bookmarks_empty => '아직 북마크가 없습니다';
+
+  @override
+  String get bookmarks_emptyHint => '메시지를 길게 누르고 북마크를 선택하면 채팅을 지워도 여기에 남습니다.';
+
+  @override
+  String get manualTrace_menuItem => '해시로 경로 추적';
+
+  @override
+  String get manualTrace_inputLabel => '리피터 해시';
+
+  @override
+  String manualTrace_helper(String example) {
+    return '예: $example. 쉼표 또는 공백으로 구분하세요.';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return '홉 ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => '알 수 없는 노드';
+
+  @override
+  String get manualTrace_run => '경로 추적 실행';
+
+  @override
+  String get manualTrace_notConnected => '추적을 실행하려면 무선 장치에 연결하세요';
+
+  @override
+  String get manualTrace_errorInvalidHex => '16진수 문자(0-9, A-F)만 사용할 수 있습니다';
+
+  @override
+  String get manualTrace_errorOddLength => '각 해시는 홉 크기에 맞게 16진수 문자 수가 짝수여야 합니다';
+
+  @override
+  String get manualTrace_errorMixedWidths => '모든 해시의 길이가 같아야 합니다';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      '해시는 1, 2 또는 3바이트(16진수 2, 4 또는 6자)여야 합니다';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return '경로가 너무 깁니다(최대 $max바이트)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      '한 번의 요청으로 추적하기에는 홉이 너무 많습니다. 홉을 줄이거나 “입력한 대로”를 선택하세요.';
+
+  @override
+  String get manualTrace_roundTrip => '왕복';
+
+  @override
+  String get manualTrace_asEntered => '입력한 대로';
+
+  @override
+  String get manualTrace_roundTripHint => '추적이 이 홉들을 거쳐 나갔다가 같은 경로로 돌아옵니다.';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      '추적이 이 홉들을 그대로 따라갑니다. 나에게 돌아오는 홉은 직접 추가하세요.';
+
+  @override
+  String get manualTrace_menuHint => '리피터 해시를 입력해 경로를 추적합니다. GPS가 필요 없습니다';
+
+  @override
+  String get imageSend_viewOriginal => '원본';
+
+  @override
+  String get imageSend_viewReconstruction => '수신자가 보는 화면';
+
+  @override
+  String get imageSend_preparingPreview => '미리보기 준비 중…';
+
+  @override
+  String get imageSend_tryAnother => '다른 버전 시도';
+
+  @override
+  String get imageSend_versionsHint =>
+      '각 버전은 조금씩 다르게 복원됩니다. 사진과 가장 비슷한 것을 선택하세요.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return '버전 $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '패킷 $count개',
+      one: '패킷 1개',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '리피터 $count대가 모든 부분을 전달함',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get tcpFound_title => '이 네트워크에서';
+
+  @override
+  String get tcpFound_searching => '이 Wi-Fi에서 무전기를 찾는 중…';
+
+  @override
+  String get tcpFound_failed => '이 네트워크를 검색할 수 없습니다';
+
+  @override
+  String get tcpFound_hint =>
+      '자신을 알리는 Wi-Fi 컴패니언 펌웨어 무전기가 여기에 표시됩니다. 없으면 아래에 주소를 입력하세요.';
+
+  @override
   String get tak_title => 'TAK와 공유';
 
   @override

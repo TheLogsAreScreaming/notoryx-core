@@ -15540,6 +15540,164 @@ class AppLocalizationsEn extends AppLocalizations {
       'This message came from a CoreScope analyzer. Your radio has not heard it, so there is no RF path from your radio.';
 
   @override
+  String get bookmarks_title => 'Bookmarks';
+
+  @override
+  String get bookmarks_add => 'Bookmark';
+
+  @override
+  String get bookmarks_remove => 'Remove bookmark';
+
+  @override
+  String get bookmarks_added => 'Bookmarked';
+
+  @override
+  String get bookmarks_removed => 'Bookmark removed';
+
+  @override
+  String get bookmarks_share => 'Share bookmarks';
+
+  @override
+  String get bookmarks_filterAll => 'All';
+
+  @override
+  String get bookmarks_filterDirect => 'Direct';
+
+  @override
+  String get bookmarks_filterChannels => 'Channels';
+
+  @override
+  String get bookmarks_empty => 'No bookmarks yet';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Long-press a message and choose Bookmark to keep it here, even after the chat is cleared.';
+
+  @override
+  String get manualTrace_menuItem => 'Path trace by hashes';
+
+  @override
+  String get manualTrace_inputLabel => 'Repeater hashes';
+
+  @override
+  String manualTrace_helper(String example) {
+    return 'Example: $example. Separate with commas or spaces.';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return 'Hops ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => 'Unknown node';
+
+  @override
+  String get manualTrace_run => 'Run path trace';
+
+  @override
+  String get manualTrace_notConnected => 'Connect to a radio to run a trace';
+
+  @override
+  String get manualTrace_errorInvalidHex =>
+      'Only hex characters (0-9, A-F) are allowed';
+
+  @override
+  String get manualTrace_errorOddLength =>
+      'Each hash needs an even number of hex characters, matching the hop size';
+
+  @override
+  String get manualTrace_errorMixedWidths =>
+      'All hashes must be the same length';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      'Hashes must be 1, 2 or 3 bytes (2, 4 or 6 hex characters)';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return 'Path is too long (maximum $max bytes)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      'Too many hops to trace in one request. Remove some hops or choose As entered.';
+
+  @override
+  String get manualTrace_roundTrip => 'Round trip';
+
+  @override
+  String get manualTrace_asEntered => 'As entered';
+
+  @override
+  String get manualTrace_roundTripHint =>
+      'The trace goes out through these hops and comes back the same way.';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      'The trace follows these hops exactly. Add the hops back to you yourself.';
+
+  @override
+  String get manualTrace_menuHint =>
+      'Type repeater hashes and trace that path, no GPS needed';
+
+  @override
+  String get imageSend_viewOriginal => 'Original';
+
+  @override
+  String get imageSend_viewReconstruction => 'What recipients see';
+
+  @override
+  String get imageSend_preparingPreview => 'Preparing preview…';
+
+  @override
+  String get imageSend_tryAnother => 'Try another version';
+
+  @override
+  String get imageSend_versionsHint =>
+      'Each version is reconstructed a little differently. Pick the one that looks most like your photo.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return 'Version $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count packets',
+      one: '1 packet',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count repeaters passed on every part',
+      one: '1 repeater passed on every part',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get tcpFound_title => 'ON THIS NETWORK';
+
+  @override
+  String get tcpFound_searching => 'Looking for radios on this Wi-Fi…';
+
+  @override
+  String get tcpFound_failed => 'Can\'t search this network';
+
+  @override
+  String get tcpFound_hint =>
+      'Radios with Wi-Fi companion firmware that announce themselves appear here. Otherwise type the address below.';
+
+  @override
   String get tak_title => 'Share with TAK';
 
   @override

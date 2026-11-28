@@ -15590,6 +15590,164 @@ class AppLocalizationsSv extends AppLocalizations {
       'Meddelandet kom från en CoreScope analysator. Din radio har inte hört det, så det finns ingen radioväg från din radio.';
 
   @override
+  String get bookmarks_title => 'Bokmärken';
+
+  @override
+  String get bookmarks_add => 'Bokmärk';
+
+  @override
+  String get bookmarks_remove => 'Ta bort bokmärke';
+
+  @override
+  String get bookmarks_added => 'Bokmärkt';
+
+  @override
+  String get bookmarks_removed => 'Bokmärket togs bort';
+
+  @override
+  String get bookmarks_share => 'Dela bokmärken';
+
+  @override
+  String get bookmarks_filterAll => 'Alla';
+
+  @override
+  String get bookmarks_filterDirect => 'Direkt';
+
+  @override
+  String get bookmarks_filterChannels => 'Kanaler';
+
+  @override
+  String get bookmarks_empty => 'Inga bokmärken än';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Tryck länge på ett meddelande och välj Bokmärk för att spara det här, även när chatten rensas.';
+
+  @override
+  String get manualTrace_menuItem => 'Ruttspårning via hashar';
+
+  @override
+  String get manualTrace_inputLabel => 'Repeater-hashar';
+
+  @override
+  String manualTrace_helper(String example) {
+    return 'Exempel: $example. Separera med kommatecken eller mellanslag.';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return 'Hopp ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => 'Okänd nod';
+
+  @override
+  String get manualTrace_run => 'Kör ruttspårning';
+
+  @override
+  String get manualTrace_notConnected =>
+      'Anslut till en radio för att köra en spårning';
+
+  @override
+  String get manualTrace_errorInvalidHex =>
+      'Endast hex-tecken (0-9, A-F) är tillåtna';
+
+  @override
+  String get manualTrace_errorOddLength =>
+      'Varje hash måste ha ett jämnt antal hex-tecken, som matchar hoppstorleken';
+
+  @override
+  String get manualTrace_errorMixedWidths => 'Alla hashar måste ha samma längd';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      'Hashar måste vara 1, 2 eller 3 byte (2, 4 eller 6 hex-tecken)';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return 'Rutten är för lång (högst $max byte)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      'För många hopp för att spåra i en enda förfrågan. Ta bort några hopp eller välj ”Som inmatat”.';
+
+  @override
+  String get manualTrace_roundTrip => 'Tur och retur';
+
+  @override
+  String get manualTrace_asEntered => 'Som inmatat';
+
+  @override
+  String get manualTrace_roundTripHint =>
+      'Spårningen går ut via dessa hopp och kommer tillbaka samma väg.';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      'Spårningen följer exakt dessa hopp. Lägg själv till hoppen tillbaka till dig.';
+
+  @override
+  String get manualTrace_menuHint =>
+      'Skriv repeaterhashar och spåra den vägen, utan GPS';
+
+  @override
+  String get imageSend_viewOriginal => 'Original';
+
+  @override
+  String get imageSend_viewReconstruction => 'Vad mottagarna ser';
+
+  @override
+  String get imageSend_preparingPreview => 'Förbereder förhandsvisning…';
+
+  @override
+  String get imageSend_tryAnother => 'Prova en annan version';
+
+  @override
+  String get imageSend_versionsHint =>
+      'Varje version rekonstrueras lite olika. Välj den som liknar ditt foto mest.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return 'Version $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count paket',
+      one: '1 paket',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count repeatrar skickade vidare varje del',
+      one: '1 repeater skickade vidare varje del',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get tcpFound_title => 'PÅ DETTA NÄTVERK';
+
+  @override
+  String get tcpFound_searching => 'Letar efter radioapparater på detta Wi-Fi…';
+
+  @override
+  String get tcpFound_failed => 'Kan inte söka i detta nätverk';
+
+  @override
+  String get tcpFound_hint =>
+      'Radioapparater med Wi-Fi-companion-firmware som annonserar sig visas här. Annars skriver du adressen nedan.';
+
+  @override
   String get tak_title => 'Dela med TAK';
 
   @override

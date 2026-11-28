@@ -15650,6 +15650,165 @@ class AppLocalizationsNl extends AppLocalizations {
       'Dit bericht kwam van een CoreScope analyzer. Je radio heeft het niet gehoord, dus er is geen radiopad vanaf je radio.';
 
   @override
+  String get bookmarks_title => 'Bladwijzers';
+
+  @override
+  String get bookmarks_add => 'Bladwijzer toevoegen';
+
+  @override
+  String get bookmarks_remove => 'Bladwijzer verwijderen';
+
+  @override
+  String get bookmarks_added => 'Bladwijzer toegevoegd';
+
+  @override
+  String get bookmarks_removed => 'Bladwijzer verwijderd';
+
+  @override
+  String get bookmarks_share => 'Bladwijzers delen';
+
+  @override
+  String get bookmarks_filterAll => 'Alle';
+
+  @override
+  String get bookmarks_filterDirect => 'Direct';
+
+  @override
+  String get bookmarks_filterChannels => 'Kanalen';
+
+  @override
+  String get bookmarks_empty => 'Nog geen bladwijzers';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Houd een bericht ingedrukt en kies Bladwijzer toevoegen om het hier te bewaren, ook als de chat wordt gewist.';
+
+  @override
+  String get manualTrace_menuItem => 'Padtrace via hashes';
+
+  @override
+  String get manualTrace_inputLabel => 'Repeater-hashes';
+
+  @override
+  String manualTrace_helper(String example) {
+    return 'Voorbeeld: $example. Scheid met komma\'s of spaties.';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return 'Hops ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => 'Onbekende node';
+
+  @override
+  String get manualTrace_run => 'Padtrace uitvoeren';
+
+  @override
+  String get manualTrace_notConnected =>
+      'Maak verbinding met een radio om een trace uit te voeren';
+
+  @override
+  String get manualTrace_errorInvalidHex =>
+      'Alleen hex-tekens (0-9, A-F) zijn toegestaan';
+
+  @override
+  String get manualTrace_errorOddLength =>
+      'Elke hash heeft een even aantal hex-tekens nodig, passend bij de hopgrootte';
+
+  @override
+  String get manualTrace_errorMixedWidths =>
+      'Alle hashes moeten even lang zijn';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      'Hashes moeten 1, 2 of 3 bytes zijn (2, 4 of 6 hex-tekens)';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return 'Pad is te lang (maximaal $max bytes)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      'Te veel hops om in één verzoek te tracen. Verwijder enkele hops of kies „Zoals ingevoerd”.';
+
+  @override
+  String get manualTrace_roundTrip => 'Heen en terug';
+
+  @override
+  String get manualTrace_asEntered => 'Zoals ingevoerd';
+
+  @override
+  String get manualTrace_roundTripHint =>
+      'De trace gaat via deze hops heen en komt op dezelfde weg terug.';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      'De trace volgt precies deze hops. Voeg zelf de hops terug naar jou toe.';
+
+  @override
+  String get manualTrace_menuHint =>
+      'Typ repeater-hashes en volg dat pad, zonder gps';
+
+  @override
+  String get imageSend_viewOriginal => 'Origineel';
+
+  @override
+  String get imageSend_viewReconstruction => 'Wat ontvangers zien';
+
+  @override
+  String get imageSend_preparingPreview => 'Voorbeeld voorbereiden…';
+
+  @override
+  String get imageSend_tryAnother => 'Probeer een andere versie';
+
+  @override
+  String get imageSend_versionsHint =>
+      'Elke versie wordt iets anders gereconstrueerd. Kies de versie die het meest op je foto lijkt.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return 'Versie $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pakketten',
+      one: '1 pakket',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count repeaters gaven elk deel door',
+      one: '1 repeater gaf elk deel door',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get tcpFound_title => 'OP DIT NETWERK';
+
+  @override
+  String get tcpFound_searching => 'Zoeken naar radio\'s op deze wifi…';
+
+  @override
+  String get tcpFound_failed => 'Kan dit netwerk niet doorzoeken';
+
+  @override
+  String get tcpFound_hint =>
+      'Radio\'s met wifi-companionfirmware die zich aankondigen verschijnen hier. Typ anders hieronder het adres.';
+
+  @override
   String get tak_title => 'Delen met TAK';
 
   @override

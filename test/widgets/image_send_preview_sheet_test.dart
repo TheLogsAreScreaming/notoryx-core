@@ -336,4 +336,113 @@ void main() {
     final l10n = await AppLocalizations.delegate.load(const Locale('en'));
     expect(_texts(tester), contains(l10n.imageSend_codecUnavailable));
   });
+
+  testWidgets('shows what recipients see, and Original on request', (
+    tester,
+  ) async {
+    await _openSheet(
+      tester,
+      radio: _knownRadio,
+      codec: FakeImageSendCodec(
+        latency: Duration.zero,
+        previewPng: _onePixelPng,
+      ),
+    );
+    expect(find.text('What recipients see'), findsOneWidget);
+    expect(find.text('Original'), findsOneWidget);
+    expect(
+      find.byKey(const ValueKey('image-send-try-another')),
+      findsOneWidget,
+    );
+    await tester.tap(find.text('Original'));
+    await tester.pumpAndSettle();
+  });
+
+  testWidgets('a device that cannot decode shows no preview toggle', (
+    tester,
+  ) async {
+    await _openSheet(tester, radio: _knownRadio);
+    expect(find.text('What recipients see'), findsNothing);
+    expect(find.byKey(const ValueKey('image-send-try-another')), findsNothing);
+  });
+
+  testWidgets('Try another version adds versions up to the limit and sends '
+      'the chosen one', (tester) async {
+    ImageSendPreviewResult? result;
+    await tester.pumpWidget(
+      MaterialApp(
+        localizationsDelegates: AppLocalizations.localizationsDelegates,
+        supportedLocales: AppLocalizations.supportedLocales,
+        home: Builder(
+          builder: (context) => Scaffold(
+            body: Center(
+              child: ElevatedButton(
+                onPressed: () async {
+                  result = await showImageSendPreviewSheet(
+                    context: context,
+                    imageBytes: _onePixelPng,
+                    originalFileBytes: 1024,
+                    codec: FakeImageSendCodec(
+                      latency: Duration.zero,
+                      previewPng: _onePixelPng,
+                    ),
+                    radio: _knownRadio,
+                  );
+                },
+                child: const Text('open'),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+    await tester.tap(find.text('open'));
+    await tester.pumpAndSettle();
+
+    final tryAnother = find.byKey(const ValueKey('image-send-try-another'));
+    for (var i = 1; i < kImageSendMaxVersions; i++) {
+      await tester.ensureVisible(tryAnother);
+      await tester.tap(tryAnother);
+      await tester.pumpAndSettle();
+    }
+    expect(
+      find.byKey(ValueKey('image-send-version-${kImageSendMaxVersions - 1}')),
+      findsOneWidget,
+    );
+    await tester.ensureVisible(tryAnother);
+    expect(tester.widget<TextButton>(tryAnother).onPressed, isNull);
+
+    // Pick version 2 and send it. (Its chip can sit under the sheet's
+    // bottom bar at test size, so select it the way a tap would.)
+    tester
+        .widget<ChoiceChip>(find.byKey(const ValueKey('image-send-version-1')))
+        .onSelected!(true);
+    await tester.pumpAndSettle();
+    await tester.tap(find.byType(FilledButton));
+    await tester.pumpAndSettle();
+    expect(
+      result!.payload.length,
+      FakeImageSendCodec.payloadBytesFor(kImageSendRatePoint, 1),
+    );
+  });
+
+  test('re-roll frames keep the shape and stay inside the photo', () {
+    for (var v = 0; v < kImageSendMaxVersions; v++) {
+      final r = rerollSourceRect(4000, 3000, v);
+      expect(r.left, greaterThanOrEqualTo(0));
+      expect(r.top, greaterThanOrEqualTo(0));
+      expect(r.left + r.width, lessThanOrEqualTo(4000.0001));
+      expect(r.top + r.height, lessThanOrEqualTo(3000.0001));
+      expect(r.width / r.height, closeTo(4 / 3, 1e-9));
+    }
+    final whole = rerollSourceRect(4000, 3000, 0);
+    expect(
+      (whole.left, whole.top, whole.width, whole.height),
+      (0, 0, 4000, 3000),
+    );
+    expect(
+      () => rerollSourceRect(10, 10, kImageSendMaxVersions),
+      throwsRangeError,
+    );
+  });
 }
