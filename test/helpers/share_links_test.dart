@@ -63,6 +63,31 @@ void main() {
     expect(text.length, lessThanOrEqualTo(maxTextPayloadBytes - 20));
   });
 
+  test('reads the official app token and writes it back the same way', () {
+    final c = _contact('Ridge <Repeater> 2', 0xCD, type: advTypeRepeater);
+    final token = contactShareTokenFor(c);
+    expect(token, '<${c.publicKeyHex.toLowerCase()}:2:Ridge Repeater 2>');
+    final back = parseContactLink('Alice: $token')!;
+    expect(back.name, 'Ridge Repeater 2');
+    expect(back.publicKey, c.publicKey);
+    expect(back.type, advTypeRepeater);
+    // Upper-case hex from other apps reads the same.
+    final upper = parseContactLink(
+      '<${c.publicKeyHex.toUpperCase()}:1:Field Phone>',
+    )!;
+    expect(upper.publicKey, c.publicKey);
+    expect(upper.type, advTypeChat);
+    // Shorter than a link, so it leaves room in a channel post.
+    expect(token.length, lessThan(contactLinkFor(c).length));
+  });
+
+  test('ignores tokens with a bad key or type', () {
+    expect(parseContactLink('<${'a' * 63}:1:x>'), isNull);
+    expect(parseContactLink('<${'a' * 64}:5:x>'), isNull);
+    expect(parseContactLink('<${'g' * 64}:1:x>'), isNull);
+    expect(parseContactLink('<${'a' * 64}:1:>')!.name, 'Unnamed contact');
+  });
+
   test('rejects malformed links', () {
     expect(parseContactLink('hello'), isNull);
     expect(
