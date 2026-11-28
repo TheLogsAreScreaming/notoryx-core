@@ -25940,6 +25940,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'This message came from a CoreScope analyzer. Your radio has not heard it, so there is no RF path from your radio.'**
   String get channelPath_viaCoreScopeNoRfPath;
+
+  /// No description provided for @tak_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Share with TAK'**
+  String get tak_title;
+
+  /// No description provided for @tak_toolHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Show mesh nodes on the ATAK, iTAK or WinTAK map'**
+  String get tak_toolHint;
+
+  /// No description provided for @tak_intro.
+  ///
+  /// In en, this message translates to:
+  /// **'Sends the positions of this radio and the nodes it has heard in the last day to a TAK app every 30 seconds, so they show on its map. Nothing comes back from TAK.'**
+  String get tak_intro;
+
+  /// No description provided for @tak_enable.
+  ///
+  /// In en, this message translates to:
+  /// **'Send to TAK'**
+  String get tak_enable;
+
+  /// No description provided for @tak_off.
+  ///
+  /// In en, this message translates to:
+  /// **'Off'**
+  String get tak_off;
+
+  /// No description provided for @tak_lastSent.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Sent 1 point at {time}} other{Sent {count} points at {time}}}'**
+  String tak_lastSent(int count, String time);
+
+  /// No description provided for @tak_error.
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t send: {error}'**
+  String tak_error(String error);
+
+  /// No description provided for @tak_unsupported.
+  ///
+  /// In en, this message translates to:
+  /// **'Not available in the web version'**
+  String get tak_unsupported;
+
+  /// No description provided for @tak_target.
+  ///
+  /// In en, this message translates to:
+  /// **'SEND TO'**
+  String get tak_target;
+
+  /// No description provided for @tak_host.
+  ///
+  /// In en, this message translates to:
+  /// **'Address'**
+  String get tak_host;
+
+  /// No description provided for @tak_port.
+  ///
+  /// In en, this message translates to:
+  /// **'UDP port'**
+  String get tak_port;
+
+  /// No description provided for @tak_targetHint.
+  ///
+  /// In en, this message translates to:
+  /// **'127.0.0.1 port 4242 is ATAK on this phone. For another device, use its address and its UDP input port. Turn sending off to change these.'**
+  String get tak_targetHint;
+
+  /// No description provided for @tak_badTarget.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter an address and a port from 1 to 65535'**
+  String get tak_badTarget;
+
+  /// No description provided for @tak_consentTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Send node positions?'**
+  String get tak_consentTitle;
+
+  /// No description provided for @tak_consentBody.
+  ///
+  /// In en, this message translates to:
+  /// **'The names and positions of this radio and the nodes it has heard will be sent, unencrypted, to {target} every 30 seconds until you turn this off. Only send them to a TAK app you trust.'**
+  String tak_consentBody(String target);
+
+  /// No description provided for @tak_consentAgree.
+  ///
+  /// In en, this message translates to:
+  /// **'Send'**
+  String get tak_consentAgree;
 }
 
 class _AppLocalizationsDelegate

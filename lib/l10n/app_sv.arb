@@ -5710,5 +5710,21 @@
   "channels_viaCoreScope": "via CoreScope",
   "channels_viaCoreScopeSemantics": "Mottaget via CoreScope, inte hört av din radio",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Meddelandet kom från en CoreScope analysator. Din radio har inte hört det, så det finns ingen radioväg från din radio."
+  "channelPath_viaCoreScopeNoRfPath": "Meddelandet kom från en CoreScope analysator. Din radio har inte hört det, så det finns ingen radioväg från din radio.",
+  "tak_title": "Dela med TAK",
+  "tak_toolHint": "Visa meshnoder på kartan i ATAK, iTAK eller WinTAK",
+  "tak_intro": "Skickar var 30:e sekund positionerna för den här radion och de noder som hörts det senaste dygnet till en TAK-app så att de syns på dess karta. Inget kommer tillbaka från TAK.",
+  "tak_enable": "Skicka till TAK",
+  "tak_off": "Av",
+  "tak_lastSent": "{count, plural, =1{Skickade 1 punkt kl. {time}} other{Skickade {count} punkter kl. {time}}}",
+  "tak_error": "Kunde inte skicka: {error}",
+  "tak_unsupported": "Inte tillgängligt i webbversionen",
+  "tak_target": "SKICKA TILL",
+  "tak_host": "Adress",
+  "tak_port": "UDP-port",
+  "tak_targetHint": "127.0.0.1 port 4242 är ATAK på den här telefonen. För en annan enhet anger du dess adress och UDP-inport. Stäng av sändningen för att ändra.",
+  "tak_badTarget": "Ange en adress och en port från 1 till 65535",
+  "tak_consentTitle": "Skicka nodpositioner?",
+  "tak_consentBody": "Namn och positioner för den här radion och de hörda noderna skickas okrypterat till {target} var 30:e sekund tills du stänger av. Skicka dem bara till en TAK-app du litar på.",
+  "tak_consentAgree": "Skicka"
 }

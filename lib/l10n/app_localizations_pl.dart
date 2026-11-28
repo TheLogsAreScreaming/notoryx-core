@@ -15717,4 +15717,68 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Ta wiadomość przyszła z analizatora CoreScope. Twoje radio jej nie odebrało, więc nie ma ścieżki radiowej od Twojego radia.';
+
+  @override
+  String get tak_title => 'Udostępnij do TAK';
+
+  @override
+  String get tak_toolHint => 'Pokaż węzły sieci na mapie ATAK, iTAK lub WinTAK';
+
+  @override
+  String get tak_intro =>
+      'Co 30 sekund wysyła do aplikacji TAK pozycje tej radiostacji i węzłów usłyszanych w ostatniej dobie, aby pojawiły się na jej mapie. Z TAK nic nie wraca.';
+
+  @override
+  String get tak_enable => 'Wysyłaj do TAK';
+
+  @override
+  String get tak_off => 'Wyłączone';
+
+  @override
+  String tak_lastSent(int count, String time) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Wysłano $count punktu o $time',
+      many: 'Wysłano $count punktów o $time',
+      few: 'Wysłano $count punkty o $time',
+      one: 'Wysłano 1 punkt o $time',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String tak_error(String error) {
+    return 'Nie udało się wysłać: $error';
+  }
+
+  @override
+  String get tak_unsupported => 'Niedostępne w wersji przeglądarkowej';
+
+  @override
+  String get tak_target => 'WYSYŁAJ DO';
+
+  @override
+  String get tak_host => 'Adres';
+
+  @override
+  String get tak_port => 'Port UDP';
+
+  @override
+  String get tak_targetHint =>
+      '127.0.0.1 port 4242 to ATAK na tym telefonie. Dla innego urządzenia podaj jego adres i port wejściowy UDP. Aby je zmienić, wyłącz wysyłanie.';
+
+  @override
+  String get tak_badTarget => 'Wpisz adres i port od 1 do 65535';
+
+  @override
+  String get tak_consentTitle => 'Wysyłać pozycje węzłów?';
+
+  @override
+  String tak_consentBody(String target) {
+    return 'Nazwy i pozycje tej radiostacji oraz usłyszanych węzłów będą wysyłane bez szyfrowania do $target co 30 sekund, dopóki tego nie wyłączysz. Wysyłaj je tylko do zaufanej aplikacji TAK.';
+  }
+
+  @override
+  String get tak_consentAgree => 'Wysyłaj';
 }

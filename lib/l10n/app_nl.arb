@@ -5710,5 +5710,21 @@
   "channels_viaCoreScope": "via CoreScope",
   "channels_viaCoreScopeSemantics": "Ontvangen via CoreScope, niet gehoord door je radio",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Dit bericht kwam van een CoreScope analyzer. Je radio heeft het niet gehoord, dus er is geen radiopad vanaf je radio."
+  "channelPath_viaCoreScopeNoRfPath": "Dit bericht kwam van een CoreScope analyzer. Je radio heeft het niet gehoord, dus er is geen radiopad vanaf je radio.",
+  "tak_title": "Delen met TAK",
+  "tak_toolHint": "Meshknooppunten tonen op de kaart van ATAK, iTAK of WinTAK",
+  "tak_intro": "Stuurt elke 30 seconden de posities van deze radio en de knooppunten die het afgelopen etmaal gehoord zijn naar een TAK-app, zodat ze op de kaart verschijnen. Er komt niets terug van TAK.",
+  "tak_enable": "Naar TAK sturen",
+  "tak_off": "Uit",
+  "tak_lastSent": "{count, plural, =1{1 punt verstuurd om {time}} other{{count} punten verstuurd om {time}}}",
+  "tak_error": "Kon niet versturen: {error}",
+  "tak_unsupported": "Niet beschikbaar in de webversie",
+  "tak_target": "STUREN NAAR",
+  "tak_host": "Adres",
+  "tak_port": "UDP-poort",
+  "tak_targetHint": "127.0.0.1 poort 4242 is ATAK op deze telefoon. Gebruik voor een ander apparaat diens adres en UDP-invoerpoort. Zet versturen uit om dit te wijzigen.",
+  "tak_badTarget": "Voer een adres en een poort van 1 tot 65535 in",
+  "tak_consentTitle": "Posities van knooppunten versturen?",
+  "tak_consentBody": "De namen en posities van deze radio en de gehoorde knooppunten worden onversleuteld elke 30 seconden naar {target} gestuurd tot je dit uitzet. Stuur ze alleen naar een TAK-app die je vertrouwt.",
+  "tak_consentAgree": "Versturen"
 }

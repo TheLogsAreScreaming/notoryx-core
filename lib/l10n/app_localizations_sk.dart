@@ -15639,4 +15639,68 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Táto správa prišla z analyzátora CoreScope. Vaše rádio ju nepočulo, takže neexistuje rádiová trasa z vášho rádia.';
+
+  @override
+  String get tak_title => 'Zdieľať s TAK';
+
+  @override
+  String get tak_toolHint =>
+      'Zobraziť uzly siete na mape ATAK, iTAK alebo WinTAK';
+
+  @override
+  String get tak_intro =>
+      'Každých 30 sekúnd posiela do aplikácie TAK polohy tohto rádia a uzlov počutých za posledný deň, aby sa zobrazili na jej mape. Z TAK sa nič nevracia.';
+
+  @override
+  String get tak_enable => 'Posielať do TAK';
+
+  @override
+  String get tak_off => 'Vypnuté';
+
+  @override
+  String tak_lastSent(int count, String time) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Odoslaných $count bodov o $time',
+      few: 'Odoslané $count body o $time',
+      one: 'Odoslaný 1 bod o $time',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String tak_error(String error) {
+    return 'Nepodarilo sa odoslať: $error';
+  }
+
+  @override
+  String get tak_unsupported => 'Nie je k dispozícii vo webovej verzii';
+
+  @override
+  String get tak_target => 'POSIELAŤ NA';
+
+  @override
+  String get tak_host => 'Adresa';
+
+  @override
+  String get tak_port => 'Port UDP';
+
+  @override
+  String get tak_targetHint =>
+      '127.0.0.1 port 4242 je ATAK v tomto telefóne. Pre iné zariadenie zadajte jeho adresu a vstupný port UDP. Na zmenu vypnite posielanie.';
+
+  @override
+  String get tak_badTarget => 'Zadajte adresu a port od 1 do 65535';
+
+  @override
+  String get tak_consentTitle => 'Posielať polohy uzlov?';
+
+  @override
+  String tak_consentBody(String target) {
+    return 'Názvy a polohy tohto rádia a počutých uzlov sa budú každých 30 sekúnd nešifrovane posielať na $target, kým to nevypnete. Posielajte ich len do aplikácie TAK, ktorej dôverujete.';
+  }
+
+  @override
+  String get tak_consentAgree => 'Posielať';
 }

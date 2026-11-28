@@ -15663,4 +15663,69 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'To sporočilo je prišlo z analizatorja CoreScope. Vaš radio ga ni slišal, zato ni radijske poti od vašega radia.';
+
+  @override
+  String get tak_title => 'Deli s TAK';
+
+  @override
+  String get tak_toolHint =>
+      'Prikaži vozlišča omrežja na zemljevidu ATAK, iTAK ali WinTAK';
+
+  @override
+  String get tak_intro =>
+      'Vsakih 30 sekund pošlje aplikaciji TAK položaje tega radia in vozlišč, slišanih v zadnjem dnevu, da se prikažejo na njenem zemljevidu. Iz TAK se nič ne vrne.';
+
+  @override
+  String get tak_enable => 'Pošiljaj v TAK';
+
+  @override
+  String get tak_off => 'Izklopljeno';
+
+  @override
+  String tak_lastSent(int count, String time) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Poslanih $count točk ob $time',
+      few: 'Poslane $count točke ob $time',
+      two: 'Poslani 2 točki ob $time',
+      one: 'Poslana 1 točka ob $time',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String tak_error(String error) {
+    return 'Pošiljanje ni uspelo: $error';
+  }
+
+  @override
+  String get tak_unsupported => 'Ni na voljo v spletni različici';
+
+  @override
+  String get tak_target => 'POŠILJAJ NA';
+
+  @override
+  String get tak_host => 'Naslov';
+
+  @override
+  String get tak_port => 'Vrata UDP';
+
+  @override
+  String get tak_targetHint =>
+      '127.0.0.1 vrata 4242 so ATAK v tem telefonu. Za drugo napravo uporabite njen naslov in vhodna vrata UDP. Za spremembo izklopite pošiljanje.';
+
+  @override
+  String get tak_badTarget => 'Vnesite naslov in vrata od 1 do 65535';
+
+  @override
+  String get tak_consentTitle => 'Želite pošiljati položaje vozlišč?';
+
+  @override
+  String tak_consentBody(String target) {
+    return 'Imena in položaji tega radia in slišanih vozlišč bodo vsakih 30 sekund nešifrirano poslani na $target, dokler tega ne izklopite. Pošiljajte jih le aplikaciji TAK, ki ji zaupate.';
+  }
+
+  @override
+  String get tak_consentAgree => 'Pošiljaj';
 }

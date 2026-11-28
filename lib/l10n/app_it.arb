@@ -5844,5 +5844,21 @@
   "channels_viaCoreScope": "via CoreScope",
   "channels_viaCoreScopeSemantics": "Ricevuto via CoreScope, non sentito dalla tua radio",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Questo messaggio è arrivato da un analizzatore CoreScope. La tua radio non l'ha ricevuto, quindi non c'è un percorso radio dalla tua radio."
+  "channelPath_viaCoreScopeNoRfPath": "Questo messaggio è arrivato da un analizzatore CoreScope. La tua radio non l'ha ricevuto, quindi non c'è un percorso radio dalla tua radio.",
+  "tak_title": "Condividi con TAK",
+  "tak_toolHint": "Mostra i nodi della mesh sulla mappa di ATAK, iTAK o WinTAK",
+  "tak_intro": "Invia ogni 30 secondi a un'app TAK le posizioni di questa radio e dei nodi sentiti nell'ultimo giorno, così compaiono sulla sua mappa. Da TAK non torna nulla.",
+  "tak_enable": "Invia a TAK",
+  "tak_off": "Disattivato",
+  "tak_lastSent": "{count, plural, =1{1 punto inviato alle {time}} other{{count} punti inviati alle {time}}}",
+  "tak_error": "Invio non riuscito: {error}",
+  "tak_unsupported": "Non disponibile nella versione web",
+  "tak_target": "INVIA A",
+  "tak_host": "Indirizzo",
+  "tak_port": "Porta UDP",
+  "tak_targetHint": "127.0.0.1 porta 4242 è ATAK su questo telefono. Per un altro dispositivo, usa il suo indirizzo e la sua porta UDP di ingresso. Disattiva l'invio per modificarli.",
+  "tak_badTarget": "Inserisci un indirizzo e una porta da 1 a 65535",
+  "tak_consentTitle": "Inviare le posizioni dei nodi?",
+  "tak_consentBody": "Nomi e posizioni di questa radio e dei nodi sentiti verranno inviati, non cifrati, a {target} ogni 30 secondi finché non disattivi. Inviali solo a un'app TAK di cui ti fidi.",
+  "tak_consentAgree": "Invia"
 }

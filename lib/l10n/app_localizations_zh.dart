@@ -14727,4 +14727,65 @@ class AppLocalizationsZh extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       '此消息来自 CoreScope 分析服务器。你的电台没有收到它，因此没有来自你电台的无线路径。';
+
+  @override
+  String get tak_title => '共享到 TAK';
+
+  @override
+  String get tak_toolHint => '在 ATAK、iTAK 或 WinTAK 地图上显示网格节点';
+
+  @override
+  String get tak_intro =>
+      '每 30 秒把本无线电和过去一天收到的节点位置发送到 TAK 应用，让它们显示在其地图上。不会从 TAK 接收任何内容。';
+
+  @override
+  String get tak_enable => '发送到 TAK';
+
+  @override
+  String get tak_off => '关闭';
+
+  @override
+  String tak_lastSent(int count, String time) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$time 发送了 $count 个点',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String tak_error(String error) {
+    return '无法发送：$error';
+  }
+
+  @override
+  String get tak_unsupported => '网页版不可用';
+
+  @override
+  String get tak_target => '发送到';
+
+  @override
+  String get tak_host => '地址';
+
+  @override
+  String get tak_port => 'UDP 端口';
+
+  @override
+  String get tak_targetHint =>
+      '127.0.0.1 端口 4242 是本手机上的 ATAK。其他设备请填写其地址和 UDP 输入端口。关闭发送后才能修改。';
+
+  @override
+  String get tak_badTarget => '请输入地址和 1 到 65535 之间的端口';
+
+  @override
+  String get tak_consentTitle => '发送节点位置？';
+
+  @override
+  String tak_consentBody(String target) {
+    return '本无线电和已收到节点的名称与位置将以未加密方式每 30 秒发送到 $target，直到你关闭此功能。只发送给你信任的 TAK 应用。';
+  }
+
+  @override
+  String get tak_consentAgree => '发送';
 }

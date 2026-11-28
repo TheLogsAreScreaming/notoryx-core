@@ -5710,5 +5710,21 @@
   "channels_viaCoreScope": "prek CoreScope",
   "channels_viaCoreScopeSemantics": "Prejeto prek CoreScope, vaš radio ga ni slišal",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "To sporočilo je prišlo z analizatorja CoreScope. Vaš radio ga ni slišal, zato ni radijske poti od vašega radia."
+  "channelPath_viaCoreScopeNoRfPath": "To sporočilo je prišlo z analizatorja CoreScope. Vaš radio ga ni slišal, zato ni radijske poti od vašega radia.",
+  "tak_title": "Deli s TAK",
+  "tak_toolHint": "Prikaži vozlišča omrežja na zemljevidu ATAK, iTAK ali WinTAK",
+  "tak_intro": "Vsakih 30 sekund pošlje aplikaciji TAK položaje tega radia in vozlišč, slišanih v zadnjem dnevu, da se prikažejo na njenem zemljevidu. Iz TAK se nič ne vrne.",
+  "tak_enable": "Pošiljaj v TAK",
+  "tak_off": "Izklopljeno",
+  "tak_lastSent": "{count, plural, =1{Poslana 1 točka ob {time}} =2{Poslani 2 točki ob {time}} few{Poslane {count} točke ob {time}} other{Poslanih {count} točk ob {time}}}",
+  "tak_error": "Pošiljanje ni uspelo: {error}",
+  "tak_unsupported": "Ni na voljo v spletni različici",
+  "tak_target": "POŠILJAJ NA",
+  "tak_host": "Naslov",
+  "tak_port": "Vrata UDP",
+  "tak_targetHint": "127.0.0.1 vrata 4242 so ATAK v tem telefonu. Za drugo napravo uporabite njen naslov in vhodna vrata UDP. Za spremembo izklopite pošiljanje.",
+  "tak_badTarget": "Vnesite naslov in vrata od 1 do 65535",
+  "tak_consentTitle": "Želite pošiljati položaje vozlišč?",
+  "tak_consentBody": "Imena in položaji tega radia in slišanih vozlišč bodo vsakih 30 sekund nešifrirano poslani na {target}, dokler tega ne izklopite. Pošiljajte jih le aplikaciji TAK, ki ji zaupate.",
+  "tak_consentAgree": "Pošiljaj"
 }

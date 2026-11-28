@@ -15724,4 +15724,67 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Diese Nachricht kam von einem CoreScope Analyzer. Dein Funkgerät hat sie nicht empfangen, daher gibt es keinen Funkpfad von deinem Funkgerät.';
+
+  @override
+  String get tak_title => 'Mit TAK teilen';
+
+  @override
+  String get tak_toolHint =>
+      'Mesh-Knoten auf der Karte von ATAK, iTAK oder WinTAK zeigen';
+
+  @override
+  String get tak_intro =>
+      'Sendet alle 30 Sekunden die Positionen dieses Funkgeräts und der am letzten Tag gehörten Knoten an eine TAK-App, damit sie auf deren Karte erscheinen. Von TAK kommt nichts zurück.';
+
+  @override
+  String get tak_enable => 'An TAK senden';
+
+  @override
+  String get tak_off => 'Aus';
+
+  @override
+  String tak_lastSent(int count, String time) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count Punkte um $time gesendet',
+      one: '1 Punkt um $time gesendet',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String tak_error(String error) {
+    return 'Senden fehlgeschlagen: $error';
+  }
+
+  @override
+  String get tak_unsupported => 'In der Webversion nicht verfügbar';
+
+  @override
+  String get tak_target => 'SENDEN AN';
+
+  @override
+  String get tak_host => 'Adresse';
+
+  @override
+  String get tak_port => 'UDP-Port';
+
+  @override
+  String get tak_targetHint =>
+      '127.0.0.1 Port 4242 ist ATAK auf diesem Telefon. Für ein anderes Gerät dessen Adresse und UDP-Eingangsport angeben. Zum Ändern das Senden ausschalten.';
+
+  @override
+  String get tak_badTarget => 'Adresse und einen Port von 1 bis 65535 eingeben';
+
+  @override
+  String get tak_consentTitle => 'Knotenpositionen senden?';
+
+  @override
+  String tak_consentBody(String target) {
+    return 'Namen und Positionen dieses Funkgeräts und der gehörten Knoten werden unverschlüsselt alle 30 Sekunden an $target gesendet, bis du das ausschaltest. Nur an eine TAK-App senden, der du vertraust.';
+  }
+
+  @override
+  String get tak_consentAgree => 'Senden';
 }

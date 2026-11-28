@@ -15706,4 +15706,67 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Este mensaje llegó de un analizador CoreScope. Tu radio no lo ha oído, así que no hay ruta de radio desde tu radio.';
+
+  @override
+  String get tak_title => 'Compartir con TAK';
+
+  @override
+  String get tak_toolHint =>
+      'Muestra los nodos de la malla en el mapa de ATAK, iTAK o WinTAK';
+
+  @override
+  String get tak_intro =>
+      'Envía cada 30 segundos las posiciones de esta radio y de los nodos oídos en el último día a una app TAK, para que aparezcan en su mapa. No se recibe nada de TAK.';
+
+  @override
+  String get tak_enable => 'Enviar a TAK';
+
+  @override
+  String get tak_off => 'Desactivado';
+
+  @override
+  String tak_lastSent(int count, String time) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count puntos enviados a las $time',
+      one: '1 punto enviado a las $time',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String tak_error(String error) {
+    return 'No se pudo enviar: $error';
+  }
+
+  @override
+  String get tak_unsupported => 'No disponible en la versión web';
+
+  @override
+  String get tak_target => 'ENVIAR A';
+
+  @override
+  String get tak_host => 'Dirección';
+
+  @override
+  String get tak_port => 'Puerto UDP';
+
+  @override
+  String get tak_targetHint =>
+      '127.0.0.1 puerto 4242 es ATAK en este teléfono. Para otro dispositivo, usa su dirección y su puerto UDP de entrada. Desactiva el envío para cambiarlos.';
+
+  @override
+  String get tak_badTarget => 'Escribe una dirección y un puerto de 1 a 65535';
+
+  @override
+  String get tak_consentTitle => '¿Enviar las posiciones de los nodos?';
+
+  @override
+  String tak_consentBody(String target) {
+    return 'Los nombres y posiciones de esta radio y de los nodos oídos se enviarán sin cifrar a $target cada 30 segundos hasta que lo desactives. Envíalos solo a una app TAK de confianza.';
+  }
+
+  @override
+  String get tak_consentAgree => 'Enviar';
 }

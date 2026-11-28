@@ -15722,4 +15722,69 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Це повідомлення надійшло з аналізатора CoreScope. Ваше радіо його не чуло, тому радіомаршруту від вашого радіо немає.';
+
+  @override
+  String get tak_title => 'Передавати в TAK';
+
+  @override
+  String get tak_toolHint =>
+      'Показувати вузли мережі на мапі ATAK, iTAK або WinTAK';
+
+  @override
+  String get tak_intro =>
+      'Кожні 30 секунд надсилає в застосунок TAK позиції цієї радіостанції та вузлів, почутих за останню добу, щоб вони з’явилися на його мапі. З TAK нічого не надходить.';
+
+  @override
+  String get tak_enable => 'Надсилати в TAK';
+
+  @override
+  String get tak_off => 'Вимкнено';
+
+  @override
+  String tak_lastSent(int count, String time) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Надіслано $count точки о $time',
+      many: 'Надіслано $count точок о $time',
+      few: 'Надіслано $count точки о $time',
+      one: 'Надіслано 1 точку о $time',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String tak_error(String error) {
+    return 'Не вдалося надіслати: $error';
+  }
+
+  @override
+  String get tak_unsupported => 'Недоступно у вебверсії';
+
+  @override
+  String get tak_target => 'КУДИ НАДСИЛАТИ';
+
+  @override
+  String get tak_host => 'Адреса';
+
+  @override
+  String get tak_port => 'UDP-порт';
+
+  @override
+  String get tak_targetHint =>
+      '127.0.0.1, порт 4242 — це ATAK на цьому телефоні. Для іншого пристрою вкажіть його адресу та вхідний UDP-порт. Щоб змінити, вимкніть надсилання.';
+
+  @override
+  String get tak_badTarget => 'Вкажіть адресу й порт від 1 до 65535';
+
+  @override
+  String get tak_consentTitle => 'Надсилати позиції вузлів?';
+
+  @override
+  String tak_consentBody(String target) {
+    return 'Назви та позиції цієї радіостанції й почутих вузлів кожні 30 секунд без шифрування надсилатимуться на $target, доки ви це не вимкнете. Надсилайте їх лише в довірений застосунок TAK.';
+  }
+
+  @override
+  String get tak_consentAgree => 'Надсилати';
 }

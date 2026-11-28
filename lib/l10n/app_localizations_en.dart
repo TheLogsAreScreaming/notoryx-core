@@ -15538,4 +15538,66 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'This message came from a CoreScope analyzer. Your radio has not heard it, so there is no RF path from your radio.';
+
+  @override
+  String get tak_title => 'Share with TAK';
+
+  @override
+  String get tak_toolHint => 'Show mesh nodes on the ATAK, iTAK or WinTAK map';
+
+  @override
+  String get tak_intro =>
+      'Sends the positions of this radio and the nodes it has heard in the last day to a TAK app every 30 seconds, so they show on its map. Nothing comes back from TAK.';
+
+  @override
+  String get tak_enable => 'Send to TAK';
+
+  @override
+  String get tak_off => 'Off';
+
+  @override
+  String tak_lastSent(int count, String time) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Sent $count points at $time',
+      one: 'Sent 1 point at $time',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String tak_error(String error) {
+    return 'Couldn\'t send: $error';
+  }
+
+  @override
+  String get tak_unsupported => 'Not available in the web version';
+
+  @override
+  String get tak_target => 'SEND TO';
+
+  @override
+  String get tak_host => 'Address';
+
+  @override
+  String get tak_port => 'UDP port';
+
+  @override
+  String get tak_targetHint =>
+      '127.0.0.1 port 4242 is ATAK on this phone. For another device, use its address and its UDP input port. Turn sending off to change these.';
+
+  @override
+  String get tak_badTarget => 'Enter an address and a port from 1 to 65535';
+
+  @override
+  String get tak_consentTitle => 'Send node positions?';
+
+  @override
+  String tak_consentBody(String target) {
+    return 'The names and positions of this radio and the nodes it has heard will be sent, unencrypted, to $target every 30 seconds until you turn this off. Only send them to a TAK app you trust.';
+  }
+
+  @override
+  String get tak_consentAgree => 'Send';
 }

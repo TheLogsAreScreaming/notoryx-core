@@ -5844,5 +5844,21 @@
   "channels_viaCoreScope": "por CoreScope",
   "channels_viaCoreScopeSemantics": "Recibido por CoreScope, no oído por tu radio",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Este mensaje llegó de un analizador CoreScope. Tu radio no lo ha oído, así que no hay ruta de radio desde tu radio."
+  "channelPath_viaCoreScopeNoRfPath": "Este mensaje llegó de un analizador CoreScope. Tu radio no lo ha oído, así que no hay ruta de radio desde tu radio.",
+  "tak_title": "Compartir con TAK",
+  "tak_toolHint": "Muestra los nodos de la malla en el mapa de ATAK, iTAK o WinTAK",
+  "tak_intro": "Envía cada 30 segundos las posiciones de esta radio y de los nodos oídos en el último día a una app TAK, para que aparezcan en su mapa. No se recibe nada de TAK.",
+  "tak_enable": "Enviar a TAK",
+  "tak_off": "Desactivado",
+  "tak_lastSent": "{count, plural, =1{1 punto enviado a las {time}} other{{count} puntos enviados a las {time}}}",
+  "tak_error": "No se pudo enviar: {error}",
+  "tak_unsupported": "No disponible en la versión web",
+  "tak_target": "ENVIAR A",
+  "tak_host": "Dirección",
+  "tak_port": "Puerto UDP",
+  "tak_targetHint": "127.0.0.1 puerto 4242 es ATAK en este teléfono. Para otro dispositivo, usa su dirección y su puerto UDP de entrada. Desactiva el envío para cambiarlos.",
+  "tak_badTarget": "Escribe una dirección y un puerto de 1 a 65535",
+  "tak_consentTitle": "¿Enviar las posiciones de los nodos?",
+  "tak_consentBody": "Los nombres y posiciones de esta radio y de los nodos oídos se enviarán sin cifrar a {target} cada 30 segundos hasta que lo desactives. Envíalos solo a una app TAK de confianza.",
+  "tak_consentAgree": "Enviar"
 }

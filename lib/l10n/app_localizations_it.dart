@@ -15714,4 +15714,67 @@ class AppLocalizationsIt extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Questo messaggio è arrivato da un analizzatore CoreScope. La tua radio non l\'ha ricevuto, quindi non c\'è un percorso radio dalla tua radio.';
+
+  @override
+  String get tak_title => 'Condividi con TAK';
+
+  @override
+  String get tak_toolHint =>
+      'Mostra i nodi della mesh sulla mappa di ATAK, iTAK o WinTAK';
+
+  @override
+  String get tak_intro =>
+      'Invia ogni 30 secondi a un\'app TAK le posizioni di questa radio e dei nodi sentiti nell\'ultimo giorno, così compaiono sulla sua mappa. Da TAK non torna nulla.';
+
+  @override
+  String get tak_enable => 'Invia a TAK';
+
+  @override
+  String get tak_off => 'Disattivato';
+
+  @override
+  String tak_lastSent(int count, String time) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count punti inviati alle $time',
+      one: '1 punto inviato alle $time',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String tak_error(String error) {
+    return 'Invio non riuscito: $error';
+  }
+
+  @override
+  String get tak_unsupported => 'Non disponibile nella versione web';
+
+  @override
+  String get tak_target => 'INVIA A';
+
+  @override
+  String get tak_host => 'Indirizzo';
+
+  @override
+  String get tak_port => 'Porta UDP';
+
+  @override
+  String get tak_targetHint =>
+      '127.0.0.1 porta 4242 è ATAK su questo telefono. Per un altro dispositivo, usa il suo indirizzo e la sua porta UDP di ingresso. Disattiva l\'invio per modificarli.';
+
+  @override
+  String get tak_badTarget => 'Inserisci un indirizzo e una porta da 1 a 65535';
+
+  @override
+  String get tak_consentTitle => 'Inviare le posizioni dei nodi?';
+
+  @override
+  String tak_consentBody(String target) {
+    return 'Nomi e posizioni di questa radio e dei nodi sentiti verranno inviati, non cifrati, a $target ogni 30 secondi finché non disattivi. Inviali solo a un\'app TAK di cui ti fidi.';
+  }
+
+  @override
+  String get tak_consentAgree => 'Invia';
 }

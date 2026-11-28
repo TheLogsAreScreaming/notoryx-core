@@ -5748,5 +5748,21 @@
   "channels_viaCoreScope": "CoreScope-on át",
   "channels_viaCoreScopeSemantics": "CoreScope-on keresztül érkezett, a rádiója nem hallotta",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Ez az üzenet egy CoreScope elemzőtől érkezett. A rádiója nem hallotta, így nincs rádiós útvonal a rádiójától."
+  "channelPath_viaCoreScopeNoRfPath": "Ez az üzenet egy CoreScope elemzőtől érkezett. A rádiója nem hallotta, így nincs rádiós útvonal a rádiójától.",
+  "tak_title": "Megosztás TAK-kal",
+  "tak_toolHint": "Mesh-csomópontok megjelenítése az ATAK, iTAK vagy WinTAK térképén",
+  "tak_intro": "30 másodpercenként elküldi ennek a rádiónak és az elmúlt napban hallott csomópontoknak a helyzetét egy TAK-alkalmazásnak, hogy megjelenjenek a térképén. A TAK-tól semmi nem érkezik vissza.",
+  "tak_enable": "Küldés a TAK-nak",
+  "tak_off": "Ki",
+  "tak_lastSent": "{count, plural, other{{count} pont elküldve ekkor: {time}}}",
+  "tak_error": "Nem sikerült elküldeni: {error}",
+  "tak_unsupported": "A webes változatban nem érhető el",
+  "tak_target": "CÍMZETT",
+  "tak_host": "Cím",
+  "tak_port": "UDP-port",
+  "tak_targetHint": "A 127.0.0.1 4242-es port az ATAK ezen a telefonon. Más eszközhöz adja meg annak címét és UDP bemeneti portját. A módosításhoz kapcsolja ki a küldést.",
+  "tak_badTarget": "Adjon meg egy címet és egy 1 és 65535 közötti portot",
+  "tak_consentTitle": "Elküldi a csomópontok helyzetét?",
+  "tak_consentBody": "Ennek a rádiónak és a hallott csomópontoknak a neve és helyzete titkosítás nélkül 30 másodpercenként elküldésre kerül ide: {target}, amíg ki nem kapcsolja. Csak megbízható TAK-alkalmazásnak küldje.",
+  "tak_consentAgree": "Küldés"
 }

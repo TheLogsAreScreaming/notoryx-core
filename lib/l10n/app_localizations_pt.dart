@@ -15678,4 +15678,67 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Esta mensagem chegou de um analisador CoreScope. O seu rádio não a ouviu, por isso não há caminho de rádio a partir do seu rádio.';
+
+  @override
+  String get tak_title => 'Partilhar com o TAK';
+
+  @override
+  String get tak_toolHint =>
+      'Mostrar os nós da malha no mapa do ATAK, iTAK ou WinTAK';
+
+  @override
+  String get tak_intro =>
+      'Envia a cada 30 segundos as posições deste rádio e dos nós ouvidos no último dia para uma app TAK, para aparecerem no mapa. Nada volta do TAK.';
+
+  @override
+  String get tak_enable => 'Enviar para o TAK';
+
+  @override
+  String get tak_off => 'Desligado';
+
+  @override
+  String tak_lastSent(int count, String time) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pontos enviados às $time',
+      one: '1 ponto enviado às $time',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String tak_error(String error) {
+    return 'Não foi possível enviar: $error';
+  }
+
+  @override
+  String get tak_unsupported => 'Não disponível na versão web';
+
+  @override
+  String get tak_target => 'ENVIAR PARA';
+
+  @override
+  String get tak_host => 'Endereço';
+
+  @override
+  String get tak_port => 'Porta UDP';
+
+  @override
+  String get tak_targetHint =>
+      '127.0.0.1 porta 4242 é o ATAK neste telemóvel. Para outro dispositivo, use o endereço e a porta UDP de entrada dele. Desligue o envio para os alterar.';
+
+  @override
+  String get tak_badTarget => 'Introduza um endereço e uma porta de 1 a 65535';
+
+  @override
+  String get tak_consentTitle => 'Enviar as posições dos nós?';
+
+  @override
+  String tak_consentBody(String target) {
+    return 'Os nomes e posições deste rádio e dos nós ouvidos serão enviados, sem cifra, para $target a cada 30 segundos até desligar. Envie-os só para uma app TAK de confiança.';
+  }
+
+  @override
+  String get tak_consentAgree => 'Enviar';
 }

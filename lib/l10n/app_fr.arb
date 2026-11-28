@@ -5844,5 +5844,21 @@
   "channels_viaCoreScope": "via CoreScope",
   "channels_viaCoreScopeSemantics": "Reçu via CoreScope, non entendu par votre radio",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Ce message vient d'un analyseur CoreScope. Votre radio ne l'a pas entendu, il n'y a donc pas de chemin radio depuis votre radio."
+  "channelPath_viaCoreScopeNoRfPath": "Ce message vient d'un analyseur CoreScope. Votre radio ne l'a pas entendu, il n'y a donc pas de chemin radio depuis votre radio.",
+  "tak_title": "Partager avec TAK",
+  "tak_toolHint": "Afficher les nœuds du maillage sur la carte d'ATAK, iTAK ou WinTAK",
+  "tak_intro": "Envoie toutes les 30 secondes les positions de cette radio et des nœuds entendus le dernier jour à une application TAK, pour qu'ils apparaissent sur sa carte. Rien ne revient de TAK.",
+  "tak_enable": "Envoyer à TAK",
+  "tak_off": "Désactivé",
+  "tak_lastSent": "{count, plural, =1{1 point envoyé à {time}} other{{count} points envoyés à {time}}}",
+  "tak_error": "Envoi impossible : {error}",
+  "tak_unsupported": "Indisponible dans la version web",
+  "tak_target": "ENVOYER À",
+  "tak_host": "Adresse",
+  "tak_port": "Port UDP",
+  "tak_targetHint": "127.0.0.1 port 4242 correspond à ATAK sur ce téléphone. Pour un autre appareil, utilisez son adresse et son port d'entrée UDP. Désactivez l'envoi pour les modifier.",
+  "tak_badTarget": "Saisissez une adresse et un port de 1 à 65535",
+  "tak_consentTitle": "Envoyer les positions des nœuds ?",
+  "tak_consentBody": "Les noms et positions de cette radio et des nœuds entendus seront envoyés, non chiffrés, à {target} toutes les 30 secondes jusqu'à désactivation. Envoyez-les uniquement à une application TAK de confiance.",
+  "tak_consentAgree": "Envoyer"
 }
