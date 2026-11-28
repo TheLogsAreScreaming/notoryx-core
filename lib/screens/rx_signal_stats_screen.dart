@@ -13,10 +13,7 @@ class RxSignalStatsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.rxSignalStats_title),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: Text(l10n.rxSignalStats_title), centerTitle: true),
       body: Consumer<RxSignalStatsService>(
         builder: (context, stats, _) {
           if (stats.count == 0) {
@@ -61,10 +58,7 @@ class RxSignalStatsScreen extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(16, 12, 16, 4),
                 child: Text(
                   l10n.rxSignalStats_packets(stats.count),
-                  style: TextStyle(
-                    color: MeshPalette.ink3,
-                    fontSize: 12,
-                  ),
+                  style: TextStyle(color: MeshPalette.ink3, fontSize: 12),
                 ),
               ),
               MeshCard(
