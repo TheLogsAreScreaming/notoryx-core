@@ -5739,5 +5739,13 @@
   "manualTrace_asEntered": "Zoals ingevoerd",
   "manualTrace_roundTripHint": "De trace gaat via deze hops heen en komt op dezelfde weg terug.",
   "manualTrace_asEnteredHint": "De trace volgt precies deze hops. Voeg zelf de hops terug naar jou toe.",
-  "manualTrace_menuHint": "Typ repeater-hashes en volg dat pad, zonder gps"
+  "manualTrace_menuHint": "Typ repeater-hashes en volg dat pad, zonder gps",
+  "imageSend_viewOriginal": "Origineel",
+  "imageSend_viewReconstruction": "Wat ontvangers zien",
+  "imageSend_preparingPreview": "Voorbeeld voorbereiden…",
+  "imageSend_tryAnother": "Probeer een andere versie",
+  "imageSend_versionsHint": "Elke versie wordt iets anders gereconstrueerd. Kies de versie die het meest op je foto lijkt.",
+  "imageSend_versionLabel": "Versie {number}",
+  "imageSend_versionPackets": "{count, plural, =1{1 pakket} other{{count} pakketten}}",
+  "imageSend_echoes": "{count, plural, =1{1 repeater gaf elk deel door} other{{count} repeaters gaven elk deel door}}"
 }

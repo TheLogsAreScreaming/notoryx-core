@@ -5873,5 +5873,13 @@
   "manualTrace_asEntered": "Come inserito",
   "manualTrace_roundTripHint": "La traccia passa per questi salti e torna indietro nello stesso modo.",
   "manualTrace_asEnteredHint": "La traccia segue esattamente questi salti. Aggiungi tu i salti del ritorno.",
-  "manualTrace_menuHint": "Digita gli hash dei ripetitori e traccia quel percorso, senza GPS"
+  "manualTrace_menuHint": "Digita gli hash dei ripetitori e traccia quel percorso, senza GPS",
+  "imageSend_viewOriginal": "Originale",
+  "imageSend_viewReconstruction": "Cosa vedono i destinatari",
+  "imageSend_preparingPreview": "Preparazione anteprima…",
+  "imageSend_tryAnother": "Prova un'altra versione",
+  "imageSend_versionsHint": "Ogni versione è ricostruita in modo leggermente diverso. Scegli quella che somiglia di più alla tua foto.",
+  "imageSend_versionLabel": "Versione {number}",
+  "imageSend_versionPackets": "{count, plural, =1{1 pacchetto} other{{count} pacchetti}}",
+  "imageSend_echoes": "{count, plural, =1{1 ripetitore ha inoltrato ogni parte} other{{count} ripetitori hanno inoltrato ogni parte}}"
 }

@@ -5739,5 +5739,13 @@
   "manualTrace_asEntered": "Kot vneseno",
   "manualTrace_roundTripHint": "Sledenje gre skozi te skoke in se vrne po isti poti.",
   "manualTrace_asEnteredHint": "Sledenje sledi tem skokom natančno. Skoke nazaj k sebi dodajte sami.",
-  "manualTrace_menuHint": "Vnesite zgoščene vrednosti repetitorjev in sledite poti, brez GPS"
+  "manualTrace_menuHint": "Vnesite zgoščene vrednosti repetitorjev in sledite poti, brez GPS",
+  "imageSend_viewOriginal": "Izvirnik",
+  "imageSend_viewReconstruction": "Kaj vidijo prejemniki",
+  "imageSend_preparingPreview": "Priprava predogleda…",
+  "imageSend_tryAnother": "Poskusi drugo različico",
+  "imageSend_versionsHint": "Vsaka različica je rekonstruirana nekoliko drugače. Izberite tisto, ki je najbolj podobna vaši fotografiji.",
+  "imageSend_versionLabel": "Različica {number}",
+  "imageSend_versionPackets": "{count, plural, =1{1 paket} two{{count} paketa} few{{count} paketi} other{{count} paketov}}",
+  "imageSend_echoes": "{count, plural, =1{1 repetitor je posredoval vsak del} =2{2 repetitorja sta posredovala vsak del} few{{count} repetitorji so posredovali vsak del} other{{count} repetitorjev je posredovalo vsak del}}"
 }

@@ -5777,5 +5777,13 @@
   "manualTrace_asEntered": "Jak wprowadzono",
   "manualTrace_roundTripHint": "Śledzenie idzie przez te skoki i wraca tą samą drogą.",
   "manualTrace_asEnteredHint": "Śledzenie przechodzi dokładnie przez te skoki. Skoki powrotne do siebie dodaj samodzielnie.",
-  "manualTrace_menuHint": "Wpisz hashe przekaźników i prześledź tę ścieżkę, bez GPS"
+  "manualTrace_menuHint": "Wpisz hashe przekaźników i prześledź tę ścieżkę, bez GPS",
+  "imageSend_viewOriginal": "Oryginał",
+  "imageSend_viewReconstruction": "Co widzą odbiorcy",
+  "imageSend_preparingPreview": "Przygotowywanie podglądu…",
+  "imageSend_tryAnother": "Spróbuj innej wersji",
+  "imageSend_versionsHint": "Każda wersja jest odtwarzana nieco inaczej. Wybierz tę, która najbardziej przypomina Twoje zdjęcie.",
+  "imageSend_versionLabel": "Wersja {number}",
+  "imageSend_versionPackets": "{count, plural, one{1 pakiet} few{{count} pakiety} many{{count} pakietów} other{{count} pakietu}}",
+  "imageSend_echoes": "{count, plural, =1{1 przekaźnik przekazał każdą część} few{{count} przekaźniki przekazały każdą część} many{{count} przekaźników przekazało każdą część} other{{count} przekaźnika przekazało każdą część}}"
 }

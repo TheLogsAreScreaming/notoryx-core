@@ -52,6 +52,7 @@ import '../services/linux_ble_pairing_service_stub.dart'
 import '../services/image_chunk_transport.dart'
     show
         ImageChunkOutcome,
+        parseImageChunkHeader,
         ImageChunkTransport,
         ParsedChannelData,
         buildSendChannelDataFrame,
@@ -4163,6 +4164,10 @@ class MeshCoreConnector extends ChangeNotifier {
     ..clear()
     ..addAll(contacts);
 
+  /// Sets this radio's public key, as SELF_INFO would.
+  @visibleForTesting
+  void debugSetSelfPublicKey(Uint8List key) => _selfPublicKey = key;
+
   /// Feeds a CHANNEL_MSG_RECV frame in as if the radio sent it.
   @visibleForTesting
   void debugHandleIncomingChannelFrame(Uint8List frame) =>
@@ -4637,6 +4642,71 @@ class MeshCoreConnector extends ChangeNotifier {
   /// only channels the user has joined show up. Like MQTT copies, a message
   /// the app already has is left alone, and these never notify: they are
   /// catch-up reading, not live traffic.
+  /// Repeaters heard re-flooding chunks of images this radio sent:
+  /// "channel:imgId" -> chunk index -> the paths each copy came by.
+  final Map<String, Map<int, Set<String>>> _imageEchoes = {};
+  final Map<String, int> _imageEchoTotals = {};
+
+  /// How many repeaters were heard passing on the least-heard data chunk of
+  /// image [imgId] that this radio sent on [channelIndex]: the image's reach,
+  /// like the repeat count under a channel text. 0 until every data chunk
+  /// has been heard at least once.
+  int imageEchoCount(int channelIndex, int imgId) {
+    final key = '$channelIndex:$imgId';
+    final chunks = _imageEchoes[key];
+    final total = _imageEchoTotals[key];
+    if (chunks == null || total == null || total == 0) return 0;
+    var least = 1 << 30;
+    for (var i = 0; i < total; i++) {
+      final heard = chunks[i]?.length ?? 0;
+      if (heard < least) least = heard;
+    }
+    return least;
+  }
+
+  /// Counts a heard GRP_DATA flood that is a re-broadcast of one of this
+  /// radio's own image chunks. The radio never hears its own transmission,
+  /// so every copy here came back through a repeater.
+  void _countImageChunkEcho(_RawPacket packet) {
+    if (!packet.isFlood || packet.hopCount == 0 || packet.payload.isEmpty) {
+      return;
+    }
+    final self = senderPrefixFromKey(_selfPublicKey);
+    if (self == null) return;
+    final channelHash = packet.payload[0];
+    final encrypted = Uint8List.sublistView(packet.payload, 1);
+    final channels = _channels.isNotEmpty ? _channels : _cachedChannels;
+    for (final channel in channels) {
+      if (channel.isEmpty || _computeChannelHash(channel.psk) != channelHash) {
+        continue;
+      }
+      final decrypted = _decryptPayload(channel.psk, encrypted);
+      if (decrypted == null || decrypted.length < 4) continue;
+      final dataType = decrypted[0] | (decrypted[1] << 8);
+      if (dataType != dataTypeAeicImage) return;
+      final length = decrypted[2];
+      if (decrypted.length < 3 + length) return;
+      final blob = Uint8List.sublistView(decrypted, 3, 3 + length);
+      final header = parseImageChunkHeader(blob);
+      if (header == null || header.senderPrefix != self || header.isParity) {
+        return;
+      }
+      final key = '${channel.index}:${header.imgId}';
+      _imageEchoTotals[key] = header.total;
+      final paths = _imageEchoes
+          .putIfAbsent(key, () => {})
+          .putIfAbsent(header.index, () => {});
+      final before = imageEchoCount(channel.index, header.imgId);
+      paths.add(
+        packet.pathBytes.map((b) => b.toRadixString(16).padLeft(2, '0')).join(),
+      );
+      if (imageEchoCount(channel.index, header.imgId) != before) {
+        notifyListeners();
+      }
+      return;
+    }
+  }
+
   void ingestCoreScopeRawPacket(Uint8List raw) =>
       _handleRawRxPacket(raw, source: MessageSource.coreScope);
 
@@ -4647,6 +4717,12 @@ class MeshCoreConnector extends ChangeNotifier {
     final offRadio = source != MessageSource.radio;
     try {
       final packet = _parseRawPacket(raw);
+      if (packet != null &&
+          !offRadio &&
+          packet.payloadType == payloadTypeGRPDATA) {
+        _countImageChunkEcho(packet);
+        return;
+      }
       if (packet == null || packet.payloadType != _payloadTypeGroupText) return;
 
       final payload = BufferReader(packet.payload);

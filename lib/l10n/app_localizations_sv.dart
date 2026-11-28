@@ -15690,4 +15690,47 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get manualTrace_menuHint =>
       'Skriv repeaterhashar och spåra den vägen, utan GPS';
+
+  @override
+  String get imageSend_viewOriginal => 'Original';
+
+  @override
+  String get imageSend_viewReconstruction => 'Vad mottagarna ser';
+
+  @override
+  String get imageSend_preparingPreview => 'Förbereder förhandsvisning…';
+
+  @override
+  String get imageSend_tryAnother => 'Prova en annan version';
+
+  @override
+  String get imageSend_versionsHint =>
+      'Varje version rekonstrueras lite olika. Välj den som liknar ditt foto mest.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return 'Version $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count paket',
+      one: '1 paket',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count repeatrar skickade vidare varje del',
+      one: '1 repeater skickade vidare varje del',
+    );
+    return '$_temp0';
+  }
 }

@@ -15820,4 +15820,51 @@ class AppLocalizationsPl extends AppLocalizations {
   @override
   String get manualTrace_menuHint =>
       'Wpisz hashe przekaźników i prześledź tę ścieżkę, bez GPS';
+
+  @override
+  String get imageSend_viewOriginal => 'Oryginał';
+
+  @override
+  String get imageSend_viewReconstruction => 'Co widzą odbiorcy';
+
+  @override
+  String get imageSend_preparingPreview => 'Przygotowywanie podglądu…';
+
+  @override
+  String get imageSend_tryAnother => 'Spróbuj innej wersji';
+
+  @override
+  String get imageSend_versionsHint =>
+      'Każda wersja jest odtwarzana nieco inaczej. Wybierz tę, która najbardziej przypomina Twoje zdjęcie.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return 'Wersja $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pakietu',
+      many: '$count pakietów',
+      few: '$count pakiety',
+      one: '1 pakiet',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count przekaźnika przekazało każdą część',
+      many: '$count przekaźników przekazało każdą część',
+      few: '$count przekaźniki przekazały każdą część',
+      one: '1 przekaźnik przekazał każdą część',
+    );
+    return '$_temp0';
+  }
 }

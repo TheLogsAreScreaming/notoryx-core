@@ -5744,5 +5744,13 @@
   "manualTrace_asEntered": "按输入顺序",
   "manualTrace_roundTripHint": "追踪经由这些跳发出，并沿原路返回。",
   "manualTrace_asEnteredHint": "追踪严格按这些跳进行。请自行添加返回你的跳。",
-  "manualTrace_menuHint": "输入中继器哈希并追踪该路径，无需 GPS"
+  "manualTrace_menuHint": "输入中继器哈希并追踪该路径，无需 GPS",
+  "imageSend_viewOriginal": "原图",
+  "imageSend_viewReconstruction": "收件人看到的",
+  "imageSend_preparingPreview": "正在准备预览…",
+  "imageSend_tryAnother": "试试其他版本",
+  "imageSend_versionsHint": "每个版本的还原方式略有不同。请选择最接近原照片的一个。",
+  "imageSend_versionLabel": "版本 {number}",
+  "imageSend_versionPackets": "{count, plural, =1{1 个数据包} other{{count} 个数据包}}",
+  "imageSend_echoes": "{count, plural, other{{count} 个中继器转发了每个部分}}"
 }

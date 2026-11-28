@@ -15112,4 +15112,46 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get manualTrace_menuHint => '리피터 해시를 입력해 경로를 추적합니다. GPS가 필요 없습니다';
+
+  @override
+  String get imageSend_viewOriginal => '원본';
+
+  @override
+  String get imageSend_viewReconstruction => '수신자가 보는 화면';
+
+  @override
+  String get imageSend_preparingPreview => '미리보기 준비 중…';
+
+  @override
+  String get imageSend_tryAnother => '다른 버전 시도';
+
+  @override
+  String get imageSend_versionsHint =>
+      '각 버전은 조금씩 다르게 복원됩니다. 사진과 가장 비슷한 것을 선택하세요.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return '버전 $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '패킷 $count개',
+      one: '패킷 1개',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '리피터 $count대가 모든 부분을 전달함',
+    );
+    return '$_temp0';
+  }
 }

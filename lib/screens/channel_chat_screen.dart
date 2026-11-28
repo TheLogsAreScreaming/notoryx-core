@@ -1859,12 +1859,46 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
                       right: 8,
                       bottom: 4,
                     ),
-                    child: Text(
-                      _formatTime(context, entry.firstSeen),
-                      style: MeshTheme.mono(
-                        fontSize: 10 * textScale,
-                        color: metaColor,
-                      ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          _formatTime(context, entry.firstSeen),
+                          style: MeshTheme.mono(
+                            fontSize: 10 * textScale,
+                            color: metaColor,
+                          ),
+                        ),
+                        // Repeaters heard passing on every chunk of an
+                        // image this radio sent, like a text's repeats.
+                        if (isOutgoing)
+                          if (context.select<MeshCoreConnector, int>(
+                                (c) => c.imageEchoCount(
+                                  entry.channelIndex,
+                                  entry.imgId,
+                                ),
+                              )
+                              case final echoes when echoes > 0) ...[
+                            const SizedBox(width: 6),
+                            Icon(
+                              Icons.repeat,
+                              size: 10 * textScale,
+                              color: metaColor,
+                              semanticLabel: context.l10n.imageSend_echoes(
+                                echoes,
+                              ),
+                            ),
+                            const SizedBox(width: 2),
+                            Text(
+                              '$echoes',
+                              key: const ValueKey('image-echo-count'),
+                              style: MeshTheme.mono(
+                                fontSize: 10 * textScale,
+                                color: metaColor,
+                              ),
+                            ),
+                          ],
+                      ],
                     ),
                   ),
                 ],

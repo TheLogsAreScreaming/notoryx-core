@@ -5873,5 +5873,13 @@
   "manualTrace_asEntered": "Tel que saisi",
   "manualTrace_roundTripHint": "La trace passe par ces sauts et revient par le même chemin.",
   "manualTrace_asEnteredHint": "La trace suit exactement ces sauts. Ajoutez vous-même les sauts du retour.",
-  "manualTrace_menuHint": "Saisissez les hachages des relais et tracez ce chemin, sans GPS"
+  "manualTrace_menuHint": "Saisissez les hachages des relais et tracez ce chemin, sans GPS",
+  "imageSend_viewOriginal": "Original",
+  "imageSend_viewReconstruction": "Ce que voient les destinataires",
+  "imageSend_preparingPreview": "Préparation de l'aperçu…",
+  "imageSend_tryAnother": "Essayer une autre version",
+  "imageSend_versionsHint": "Chaque version est reconstruite un peu différemment. Choisissez celle qui ressemble le plus à votre photo.",
+  "imageSend_versionLabel": "Version {number}",
+  "imageSend_versionPackets": "{count, plural, =1{1 paquet} other{{count} paquets}}",
+  "imageSend_echoes": "{count, plural, =1{1 relais a transmis chaque partie} other{{count} relais ont transmis chaque partie}}"
 }

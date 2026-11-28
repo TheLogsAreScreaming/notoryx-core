@@ -15766,4 +15766,51 @@ class AppLocalizationsSl extends AppLocalizations {
   @override
   String get manualTrace_menuHint =>
       'Vnesite zgoščene vrednosti repetitorjev in sledite poti, brez GPS';
+
+  @override
+  String get imageSend_viewOriginal => 'Izvirnik';
+
+  @override
+  String get imageSend_viewReconstruction => 'Kaj vidijo prejemniki';
+
+  @override
+  String get imageSend_preparingPreview => 'Priprava predogleda…';
+
+  @override
+  String get imageSend_tryAnother => 'Poskusi drugo različico';
+
+  @override
+  String get imageSend_versionsHint =>
+      'Vsaka različica je rekonstruirana nekoliko drugače. Izberite tisto, ki je najbolj podobna vaši fotografiji.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return 'Različica $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count paketov',
+      few: '$count paketi',
+      two: '$count paketa',
+      one: '1 paket',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count repetitorjev je posredovalo vsak del',
+      few: '$count repetitorji so posredovali vsak del',
+      two: '2 repetitorja sta posredovala vsak del',
+      one: '1 repetitor je posredoval vsak del',
+    );
+    return '$_temp0';
+  }
 }

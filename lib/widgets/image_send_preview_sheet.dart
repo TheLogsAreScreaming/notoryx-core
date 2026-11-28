@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
@@ -139,8 +140,19 @@ class _RateEstimate {
 }
 
 class _ImageSendPreviewSheetState extends State<ImageSendPreviewSheet> {
-  /// The encoded ft32 bitstream, once the encode finishes.
-  Uint8List? _encoded;
+  /// Encoded versions, in the order made (index = variant). Version 1 is
+  /// the plain encode; "Try another version" adds the rest.
+  final List<Uint8List> _versions = [];
+
+  /// Each version decoded on this device: what recipients will see. Null
+  /// while decoding or when this device can't decode.
+  final Map<int, Uint8List?> _previews = {};
+  int _selected = 0;
+  bool _showOriginal = false;
+  bool _decoding = false;
+
+  /// The version that will be sent.
+  Uint8List? get _encoded => _versions.isEmpty ? null : _versions[_selected];
 
   late bool _parity;
   bool _encoding = false;
@@ -174,9 +186,11 @@ class _ImageSendPreviewSheetState extends State<ImageSendPreviewSheet> {
       );
       if (!mounted) return bytes;
       setState(() {
-        _encoded = bytes;
+        _versions.add(bytes);
+        _selected = 0;
         _encoding = false;
       });
+      unawaited(_decodePreview(0));
       return bytes;
     } catch (_) {
       if (!mounted) return null;
@@ -186,6 +200,53 @@ class _ImageSendPreviewSheetState extends State<ImageSendPreviewSheet> {
       });
       return null;
     }
+  }
+
+  /// Encodes the next frame tweak as another version and selects it.
+  Future<void> _tryAnother() async {
+    final variant = _versions.length;
+    if (variant >= kImageSendMaxVersions || _encoding) return;
+    setState(() {
+      _encoding = true;
+      _failed = false;
+    });
+    try {
+      final bytes = await widget.codec.encode(
+        widget.imageBytes,
+        kImageSendRatePoint,
+        variant: variant,
+      );
+      if (!mounted) return;
+      setState(() {
+        _versions.add(bytes);
+        _selected = variant;
+        _showOriginal = false;
+        _encoding = false;
+      });
+      await _decodePreview(variant);
+    } catch (_) {
+      if (!mounted) return;
+      setState(() {
+        _encoding = false;
+        _failed = true;
+      });
+    }
+  }
+
+  Future<void> _decodePreview(int index) async {
+    if (_previews.containsKey(index)) return;
+    setState(() => _decoding = true);
+    Uint8List? png;
+    try {
+      png = await widget.codec.decodePreview(_versions[index]);
+    } catch (_) {
+      png = null;
+    }
+    if (!mounted) return;
+    setState(() {
+      _previews[index] = png;
+      _decoding = false;
+    });
   }
 
   ImageSendRadio _radioParams(BuildContext context) {
@@ -350,6 +411,96 @@ class _ImageSendPreviewSheetState extends State<ImageSendPreviewSheet> {
   /// The preview is deliberately capped in height: the packet count and airtime
   /// below it are the reason this screen exists and must not be pushed off the
   /// first screenful by a full-width square.
+  /// The decoded version, once ready and unless Original is chosen.
+  Uint8List? get _selectedPreview => _previews[_selected];
+
+  bool get _showingReconstruction => !_showOriginal && _selectedPreview != null;
+
+  Uint8List get _shownImage =>
+      _showingReconstruction ? _selectedPreview! : widget.imageBytes;
+
+  /// Original / What recipients see, the version chips with their packet
+  /// counts, and Try another version.
+  List<Widget> _versionControls(ThemeData theme, ColorScheme colors) {
+    final l10n = context.l10n;
+    if (_versions.isEmpty) return const [];
+    final canPreview = _selectedPreview != null;
+    final radio = _radio ?? const ImageSendRadio();
+    return [
+      const SizedBox(height: 8),
+      if (canPreview)
+        SegmentedButton<bool>(
+          key: const ValueKey('image-send-view'),
+          segments: [
+            ButtonSegment(
+              value: false,
+              label: Text(l10n.imageSend_viewReconstruction),
+            ),
+            ButtonSegment(
+              value: true,
+              label: Text(l10n.imageSend_viewOriginal),
+            ),
+          ],
+          selected: {_showOriginal},
+          onSelectionChanged: (s) => setState(() => _showOriginal = s.first),
+        )
+      else if (_decoding)
+        Text(
+          l10n.imageSend_preparingPreview,
+          style: theme.textTheme.bodySmall?.copyWith(
+            color: colors.onSurfaceVariant,
+          ),
+        ),
+      if (_versions.length > 1) ...[
+        const SizedBox(height: 8),
+        Wrap(
+          spacing: 8,
+          runSpacing: 4,
+          alignment: WrapAlignment.center,
+          children: [
+            for (var i = 0; i < _versions.length; i++)
+              ChoiceChip(
+                key: ValueKey('image-send-version-$i'),
+                label: Text(
+                  '${l10n.imageSend_versionLabel(i + 1)} · '
+                  '${l10n.imageSend_versionPackets(_estimate(_versions[i].length, radio).chunkCount)}',
+                ),
+                selected: _selected == i,
+                onSelected: _sending
+                    ? null
+                    : (_) {
+                        setState(() {
+                          _selected = i;
+                          _showOriginal = false;
+                        });
+                        unawaited(_decodePreview(i));
+                      },
+              ),
+          ],
+        ),
+      ],
+      if (canPreview || _versions.length > 1) ...[
+        const SizedBox(height: 4),
+        TextButton.icon(
+          key: const ValueKey('image-send-try-another'),
+          onPressed:
+              _encoding || _sending || _versions.length >= kImageSendMaxVersions
+              ? null
+              : _tryAnother,
+          icon: const Icon(Icons.casino_outlined),
+          label: Text(l10n.imageSend_tryAnother),
+        ),
+        Text(
+          l10n.imageSend_versionsHint,
+          textAlign: TextAlign.center,
+          style: theme.textTheme.bodySmall?.copyWith(
+            color: colors.onSurfaceVariant,
+          ),
+        ),
+      ],
+    ];
+  }
+
   Widget _preview(ThemeData theme, ColorScheme colors) {
     final maxSide = MediaQuery.sizeOf(context).height * 0.28;
     return Column(
@@ -363,7 +514,8 @@ class _ImageSendPreviewSheetState extends State<ImageSendPreviewSheet> {
               child: Container(
                 color: colors.surfaceContainerHighest,
                 child: Image.memory(
-                  widget.imageBytes,
+                  _shownImage,
+                  key: ValueKey(_showingReconstruction ? _selected : -1),
                   semanticLabel: context.l10n.a11y_imagePreview,
                   fit: BoxFit.fill,
                   alignment: Alignment.center,
@@ -380,6 +532,7 @@ class _ImageSendPreviewSheetState extends State<ImageSendPreviewSheet> {
             ),
           ),
         ),
+        ..._versionControls(theme, colors),
         const SizedBox(height: 8),
         Text(
           context.l10n.imageSend_cropNote,

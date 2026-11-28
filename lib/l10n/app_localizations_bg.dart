@@ -15780,4 +15780,47 @@ class AppLocalizationsBg extends AppLocalizations {
   @override
   String get manualTrace_menuHint =>
       'Въведете хешовете на ретранслаторите и проследете пътя, без GPS';
+
+  @override
+  String get imageSend_viewOriginal => 'Оригинал';
+
+  @override
+  String get imageSend_viewReconstruction => 'Какво виждат получателите';
+
+  @override
+  String get imageSend_preparingPreview => 'Подготовка на прегледа…';
+
+  @override
+  String get imageSend_tryAnother => 'Опитай друга версия';
+
+  @override
+  String get imageSend_versionsHint =>
+      'Всяка версия се възстановява малко по-различно. Изберете тази, която най-много прилича на вашата снимка.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return 'Версия $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count пакета',
+      one: '1 пакет',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ретранслатора предадоха всяка част',
+      one: '1 ретранслатор предаде всяка част',
+    );
+    return '$_temp0';
+  }
 }

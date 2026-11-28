@@ -15860,4 +15860,47 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get manualTrace_menuHint =>
       'Saisissez les hachages des relais et tracez ce chemin, sans GPS';
+
+  @override
+  String get imageSend_viewOriginal => 'Original';
+
+  @override
+  String get imageSend_viewReconstruction => 'Ce que voient les destinataires';
+
+  @override
+  String get imageSend_preparingPreview => 'Préparation de l\'aperçu…';
+
+  @override
+  String get imageSend_tryAnother => 'Essayer une autre version';
+
+  @override
+  String get imageSend_versionsHint =>
+      'Chaque version est reconstruite un peu différemment. Choisissez celle qui ressemble le plus à votre photo.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return 'Version $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count paquets',
+      one: '1 paquet',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count relais ont transmis chaque partie',
+      one: '1 relais a transmis chaque partie',
+    );
+    return '$_temp0';
+  }
 }

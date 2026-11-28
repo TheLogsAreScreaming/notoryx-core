@@ -5042,5 +5042,13 @@
   "manualTrace_asEntered": "Как введено",
   "manualTrace_roundTripHint": "Трассировка проходит через эти хопы и возвращается тем же путём.",
   "manualTrace_asEnteredHint": "Трассировка проходит строго через эти хопы. Хопы обратно к себе добавьте сами.",
-  "manualTrace_menuHint": "Введите хеши ретрансляторов и отследите путь без GPS"
+  "manualTrace_menuHint": "Введите хеши ретрансляторов и отследите путь без GPS",
+  "imageSend_viewOriginal": "Оригинал",
+  "imageSend_viewReconstruction": "Что увидят получатели",
+  "imageSend_preparingPreview": "Подготовка предпросмотра…",
+  "imageSend_tryAnother": "Другой вариант",
+  "imageSend_versionsHint": "Каждый вариант восстанавливается немного по-разному. Выберите тот, что больше похож на ваше фото.",
+  "imageSend_versionLabel": "Вариант {number}",
+  "imageSend_versionPackets": "{count, plural, one{{count} пакет} few{{count} пакета} many{{count} пакетов} other{{count} пакета}}",
+  "imageSend_echoes": "{count, plural, =1{1 ретранслятор передал каждую часть} few{{count} ретранслятора передали каждую часть} many{{count} ретрансляторов передали каждую часть} other{{count} ретранслятора передали каждую часть}}"
 }

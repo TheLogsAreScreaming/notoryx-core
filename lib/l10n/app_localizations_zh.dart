@@ -14822,4 +14822,45 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get manualTrace_menuHint => '输入中继器哈希并追踪该路径，无需 GPS';
+
+  @override
+  String get imageSend_viewOriginal => '原图';
+
+  @override
+  String get imageSend_viewReconstruction => '收件人看到的';
+
+  @override
+  String get imageSend_preparingPreview => '正在准备预览…';
+
+  @override
+  String get imageSend_tryAnother => '试试其他版本';
+
+  @override
+  String get imageSend_versionsHint => '每个版本的还原方式略有不同。请选择最接近原照片的一个。';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return '版本 $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 个数据包',
+      one: '1 个数据包',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 个中继器转发了每个部分',
+    );
+    return '$_temp0';
+  }
 }

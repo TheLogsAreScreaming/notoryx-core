@@ -5739,5 +5739,13 @@
   "manualTrace_asEntered": "Som inmatat",
   "manualTrace_roundTripHint": "Spårningen går ut via dessa hopp och kommer tillbaka samma väg.",
   "manualTrace_asEnteredHint": "Spårningen följer exakt dessa hopp. Lägg själv till hoppen tillbaka till dig.",
-  "manualTrace_menuHint": "Skriv repeaterhashar och spåra den vägen, utan GPS"
+  "manualTrace_menuHint": "Skriv repeaterhashar och spåra den vägen, utan GPS",
+  "imageSend_viewOriginal": "Original",
+  "imageSend_viewReconstruction": "Vad mottagarna ser",
+  "imageSend_preparingPreview": "Förbereder förhandsvisning…",
+  "imageSend_tryAnother": "Prova en annan version",
+  "imageSend_versionsHint": "Varje version rekonstrueras lite olika. Välj den som liknar ditt foto mest.",
+  "imageSend_versionLabel": "Version {number}",
+  "imageSend_versionPackets": "{count, plural, =1{1 paket} other{{count} paket}}",
+  "imageSend_echoes": "{count, plural, =1{1 repeater skickade vidare varje del} other{{count} repeatrar skickade vidare varje del}}"
 }

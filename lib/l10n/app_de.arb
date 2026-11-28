@@ -5873,5 +5873,13 @@
   "manualTrace_asEntered": "Wie eingegeben",
   "manualTrace_roundTripHint": "Die Verfolgung geht über diese Hops hinaus und kommt auf demselben Weg zurück.",
   "manualTrace_asEnteredHint": "Die Verfolgung folgt genau diesen Hops. Fügen Sie die Hops zurück zu Ihnen selbst hinzu.",
-  "manualTrace_menuHint": "Repeater-Hashes eingeben und diesen Pfad verfolgen, ohne GPS"
+  "manualTrace_menuHint": "Repeater-Hashes eingeben und diesen Pfad verfolgen, ohne GPS",
+  "imageSend_viewOriginal": "Original",
+  "imageSend_viewReconstruction": "Was die Empfänger sehen",
+  "imageSend_preparingPreview": "Vorschau wird vorbereitet…",
+  "imageSend_tryAnother": "Andere Version versuchen",
+  "imageSend_versionsHint": "Jede Version wird etwas anders rekonstruiert. Wählen Sie die, die Ihrem Foto am ähnlichsten sieht.",
+  "imageSend_versionLabel": "Version {number}",
+  "imageSend_versionPackets": "{count, plural, =1{1 Paket} other{{count} Pakete}}",
+  "imageSend_echoes": "{count, plural, =1{1 Repeater hat jeden Teil weitergegeben} other{{count} Repeater haben jeden Teil weitergegeben}}"
 }

@@ -15742,4 +15742,49 @@ class AppLocalizationsSk extends AppLocalizations {
   @override
   String get manualTrace_menuHint =>
       'Zadajte hashe opakovačov a sledujte túto cestu, bez GPS';
+
+  @override
+  String get imageSend_viewOriginal => 'Originál';
+
+  @override
+  String get imageSend_viewReconstruction => 'Čo vidia príjemcovia';
+
+  @override
+  String get imageSend_preparingPreview => 'Pripravuje sa náhľad…';
+
+  @override
+  String get imageSend_tryAnother => 'Skúsiť inú verziu';
+
+  @override
+  String get imageSend_versionsHint =>
+      'Každá verzia je zrekonštruovaná trochu inak. Vyberte tú, ktorá sa najviac podobá na vašu fotku.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return 'Verzia $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count paketov',
+      few: '$count pakety',
+      one: '1 paket',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count opakovačov preposlalo každú časť',
+      few: '$count opakovače preposlali každú časť',
+      one: '1 opakovač preposlal každú časť',
+    );
+    return '$_temp0';
+  }
 }

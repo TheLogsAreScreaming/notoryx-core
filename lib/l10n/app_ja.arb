@@ -5873,5 +5873,13 @@
   "manualTrace_asEntered": "入力どおり",
   "manualTrace_roundTripHint": "トレースはこれらのホップを経由して送信され、同じ経路で戻ってきます。",
   "manualTrace_asEnteredHint": "トレースはこれらのホップをそのとおりにたどります。自分へ戻るホップは自分で追加してください。",
-  "manualTrace_menuHint": "リピーターのハッシュを入力して経路をトレース（GPS不要）"
+  "manualTrace_menuHint": "リピーターのハッシュを入力して経路をトレース（GPS不要）",
+  "imageSend_viewOriginal": "オリジナル",
+  "imageSend_viewReconstruction": "受信者の表示",
+  "imageSend_preparingPreview": "プレビューを準備中…",
+  "imageSend_tryAnother": "別のバージョンを試す",
+  "imageSend_versionsHint": "各バージョンは少しずつ異なる方法で復元されます。写真に最も近いものを選んでください。",
+  "imageSend_versionLabel": "バージョン{number}",
+  "imageSend_versionPackets": "{count, plural, =1{1パケット} other{{count}パケット}}",
+  "imageSend_echoes": "{count, plural, other{{count} 台のリピーターがすべての部分を中継}}"
 }

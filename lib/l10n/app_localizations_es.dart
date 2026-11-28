@@ -15809,4 +15809,47 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get manualTrace_menuHint =>
       'Escribe los hashes de los repetidores y traza esa ruta, sin GPS';
+
+  @override
+  String get imageSend_viewOriginal => 'Original';
+
+  @override
+  String get imageSend_viewReconstruction => 'Lo que ven los destinatarios';
+
+  @override
+  String get imageSend_preparingPreview => 'Preparando vista previa…';
+
+  @override
+  String get imageSend_tryAnother => 'Probar otra versión';
+
+  @override
+  String get imageSend_versionsHint =>
+      'Cada versión se reconstruye de forma ligeramente distinta. Elige la que más se parezca a tu foto.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return 'Versión $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count paquetes',
+      one: '1 paquete',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count repetidores reenviaron cada parte',
+      one: '1 repetidor reenvió cada parte',
+    );
+    return '$_temp0';
+  }
 }

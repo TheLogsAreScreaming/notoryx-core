@@ -5739,5 +5739,13 @@
   "manualTrace_asEntered": "Como inserido",
   "manualTrace_roundTripHint": "O rastreamento sai por estes saltos e volta pelo mesmo caminho.",
   "manualTrace_asEnteredHint": "O rastreamento segue exatamente estes saltos. Adicione você mesmo os saltos de volta até si.",
-  "manualTrace_menuHint": "Escreva os hashes dos repetidores e trace esse caminho, sem GPS"
+  "manualTrace_menuHint": "Escreva os hashes dos repetidores e trace esse caminho, sem GPS",
+  "imageSend_viewOriginal": "Original",
+  "imageSend_viewReconstruction": "O que os destinatários veem",
+  "imageSend_preparingPreview": "Preparando a prévia…",
+  "imageSend_tryAnother": "Tentar outra versão",
+  "imageSend_versionsHint": "Cada versão é reconstruída de forma um pouco diferente. Escolha a que mais se parece com a sua foto.",
+  "imageSend_versionLabel": "Versão {number}",
+  "imageSend_versionPackets": "{count, plural, =1{1 pacote} other{{count} pacotes}}",
+  "imageSend_echoes": "{count, plural, =1{1 repetidor reencaminhou todas as partes} other{{count} repetidores reencaminharam todas as partes}}"
 }

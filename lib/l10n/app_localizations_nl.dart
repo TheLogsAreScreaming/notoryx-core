@@ -15751,4 +15751,47 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get manualTrace_menuHint =>
       'Typ repeater-hashes en volg dat pad, zonder gps';
+
+  @override
+  String get imageSend_viewOriginal => 'Origineel';
+
+  @override
+  String get imageSend_viewReconstruction => 'Wat ontvangers zien';
+
+  @override
+  String get imageSend_preparingPreview => 'Voorbeeld voorbereiden…';
+
+  @override
+  String get imageSend_tryAnother => 'Probeer een andere versie';
+
+  @override
+  String get imageSend_versionsHint =>
+      'Elke versie wordt iets anders gereconstrueerd. Kies de versie die het meest op je foto lijkt.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return 'Versie $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pakketten',
+      one: '1 pakket',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count repeaters gaven elk deel door',
+      one: '1 repeater gaf elk deel door',
+    );
+    return '$_temp0';
+  }
 }

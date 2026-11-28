@@ -5777,5 +5777,13 @@
   "manualTrace_asEntered": "Megadott sorrendben",
   "manualTrace_roundTripHint": "A nyomkövetés ezeken az ugrásokon át megy ki, és ugyanazon az úton jön vissza.",
   "manualTrace_asEnteredHint": "A nyomkövetés pontosan ezeket az ugrásokat követi. A hozzád visszavezető ugrásokat magadnak kell hozzáadnod.",
-  "manualTrace_menuHint": "Írja be a jelismétlők hash-eit, és kövesse az útvonalat, GPS nélkül"
+  "manualTrace_menuHint": "Írja be a jelismétlők hash-eit, és kövesse az útvonalat, GPS nélkül",
+  "imageSend_viewOriginal": "Eredeti",
+  "imageSend_viewReconstruction": "Amit a címzettek látnak",
+  "imageSend_preparingPreview": "Előnézet előkészítése…",
+  "imageSend_tryAnother": "Másik változat kipróbálása",
+  "imageSend_versionsHint": "Minden változat kissé másként van rekonstruálva. Válassza azt, amelyik leginkább hasonlít a fényképére.",
+  "imageSend_versionLabel": "{number}. változat",
+  "imageSend_versionPackets": "{count, plural, =1{1 csomag} other{{count} csomag}}",
+  "imageSend_echoes": "{count, plural, =1{1 jelismétlő továbbította az összes részt} other{{count} jelismétlő továbbította az összes részt}}"
 }
