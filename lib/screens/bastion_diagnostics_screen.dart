@@ -28,6 +28,7 @@ import 'app_debug_log_screen.dart';
 import 'ble_debug_log_screen.dart';
 import 'channel_chat_screen.dart';
 import 'companion_radio_stats_screen.dart';
+import 'rx_signal_stats_screen.dart';
 import 'map_screen.dart';
 import 'troubleshooting_screen.dart';
 
@@ -506,6 +507,12 @@ class BastionDiagnosticsScreen extends StatelessWidget {
                     l10n.bastionDiag_liveStats,
                     l10n.bastionDiag_liveStatsHint,
                     const CompanionRadioStatsScreen() as Widget,
+                  ),
+                  (
+                    Icons.bar_chart_rounded,
+                    l10n.rxSignalStats_title,
+                    l10n.rxSignalStats_subtitle,
+                    const RxSignalStatsScreen(),
                   ),
                   (
                     Icons.data_object_rounded,

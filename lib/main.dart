@@ -101,6 +101,7 @@ import 'services/corescope_chat_feed.dart';
 import 'services/my_sensors_service.dart';
 import 'services/network_scan_service.dart';
 import 'services/rx_log_service.dart';
+import 'services/rx_signal_stats_service.dart';
 import 'services/wardrive_service.dart';
 import 'services/timeline_service.dart';
 import 'services/track_log_service.dart';
@@ -431,6 +432,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   late final WardriveService _wardrive;
   late final NetworkScanService _networkScan;
   late final RxLogService _rxLog;
+  late final RxSignalStatsService _rxSignalStats;
   late final FavoriteReturnService _favoriteReturn;
   late final PositionWatchService _positionWatch;
   late final NetworkChangeService _networkChanges;
@@ -546,6 +548,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
       prefs: PrefsManager.instance,
     );
     _rxLog = RxLogService(widget.connector.rxPackets);
+    _rxSignalStats = RxSignalStatsService(widget.connector.rxPackets);
     _favoriteReturn = FavoriteReturnService(
       widget.connector,
       quietHours: () => widget.appSettingsService.settings.favoriteReturnHours,
@@ -732,6 +735,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
   @override
   void dispose() {
     _rxLog.dispose();
+    _rxSignalStats.dispose();
     _favoriteReturn.dispose();
     _positionWatch.dispose();
     _networkChanges.dispose();
@@ -1051,6 +1055,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         ChangeNotifierProvider.value(value: _wardrive),
         ChangeNotifierProvider.value(value: _networkScan),
         ChangeNotifierProvider.value(value: _rxLog),
+        ChangeNotifierProvider.value(value: _rxSignalStats),
         ChangeNotifierProvider.value(value: _sosRelay),
         ChangeNotifierProvider.value(value: _teamTracking),
         ChangeNotifierProvider.value(value: _coverageHex),

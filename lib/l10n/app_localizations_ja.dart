@@ -6879,6 +6879,22 @@ class AppLocalizationsJa extends AppLocalizations {
   String get bastionDiag_appLogHint => 'アプリの診断イベントを確認します';
 
   @override
+  String get rxSignalStats_title => 'Signal stats since boot';
+
+  @override
+  String get rxSignalStats_subtitle => 'RSSI and SNR from all received packets';
+
+  @override
+  String rxSignalStats_packets(int count) => '$count packets';
+
+  @override
+  String get rxSignalStats_empty => 'No packets received yet';
+
+  @override
+  String get rxSignalStats_emptyHint =>
+      'Keep the app open and the radio on to collect stats.';
+
+  @override
   String get bastionDiag_online => '無線機オンライン';
 
   @override

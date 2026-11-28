@@ -12116,6 +12116,36 @@ abstract class AppLocalizations {
   /// **'Review application diagnostic events'**
   String get bastionDiag_appLogHint;
 
+  /// No description provided for @rxSignalStats_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Signal stats since boot'**
+  String get rxSignalStats_title;
+
+  /// No description provided for @rxSignalStats_subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'RSSI and SNR from all received packets'**
+  String get rxSignalStats_subtitle;
+
+  /// No description provided for @rxSignalStats_packets.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} packets'**
+  String rxSignalStats_packets(int count);
+
+  /// No description provided for @rxSignalStats_empty.
+  ///
+  /// In en, this message translates to:
+  /// **'No packets received yet'**
+  String get rxSignalStats_empty;
+
+  /// No description provided for @rxSignalStats_emptyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Keep the app open and the radio on to collect stats.'**
+  String get rxSignalStats_emptyHint;
+
   /// No description provided for @bastionDiag_online.
   ///
   /// In en, this message translates to:

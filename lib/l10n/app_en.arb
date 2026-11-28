@@ -4175,6 +4175,18 @@
   "bastionDiag_frameDebugHint": "Inspect decoded and raw received frames",
   "bastionDiag_appLog": "App debug log",
   "bastionDiag_appLogHint": "Review application diagnostic events",
+  "rxSignalStats_title": "Signal stats since boot",
+  "rxSignalStats_subtitle": "RSSI and SNR from all received packets",
+  "rxSignalStats_packets": "{count} packets",
+  "@rxSignalStats_packets": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "rxSignalStats_empty": "No packets received yet",
+  "rxSignalStats_emptyHint": "Keep the app open and the radio on to collect stats.",
   "bastionDiag_online": "Radio online",
   "bastionDiag_offline": "Radio offline",
   "bastionDiag_offlineHint": "Connect a MeshCore companion to populate live diagnostics.",
