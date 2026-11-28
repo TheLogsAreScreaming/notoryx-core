@@ -91,6 +91,9 @@ class AppLocalizationsSk extends AppLocalizations {
   }
 
   @override
+  String get chats_jumpToUnread => 'Jump to unread';
+
+  @override
   String radioStatus_connectedVia(String transport) {
     return 'Pripojené cez $transport';
   }

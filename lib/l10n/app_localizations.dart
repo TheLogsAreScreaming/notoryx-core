@@ -280,6 +280,12 @@ abstract class AppLocalizations {
   /// **'{count} unread'**
   String messages_unreadCount(int count);
 
+  /// No description provided for @chats_jumpToUnread.
+  ///
+  /// In en, this message translates to:
+  /// **'Jump to unread'**
+  String get chats_jumpToUnread;
+
   /// No description provided for @radioStatus_connectedVia.
   ///
   /// In en, this message translates to:

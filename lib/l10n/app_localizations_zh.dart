@@ -90,6 +90,9 @@ class AppLocalizationsZh extends AppLocalizations {
   }
 
   @override
+  String get chats_jumpToUnread => 'Jump to unread';
+
+  @override
   String radioStatus_connectedVia(String transport) {
     return '通过 $transport 连接';
   }
