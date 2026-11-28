@@ -16,6 +16,7 @@ import 'nearby_repeater_test_screen.dart';
 import 'prefix_tool_screen.dart';
 import 'region_setup_screen.dart';
 import 'repeater_ping_screen.dart';
+import 'who_repeats_me_screen.dart';
 
 enum _Filter { all, recent, direct, lowBattery }
 
@@ -171,6 +172,12 @@ class _BastionRepeaterToolsScreenState
                 l10n.rptTest_title,
                 l10n.rptTest_subtitle,
                 const NearbyRepeaterTestScreen() as Widget,
+              ),
+              (
+                Icons.wifi_tethering_rounded,
+                l10n.whoRepeat_title,
+                l10n.whoRepeat_subtitle,
+                const WhoRepeatsMeScreen(),
               ),
               (
                 Icons.network_ping,

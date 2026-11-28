@@ -9017,6 +9017,21 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get hunt_toolSubtitle => '신호가 강할수록 빠르게 딸깍이는 큰 실시간 신호 계기';
 
+
+  @override
+  String get whoRepeat_title => 'RF neighbours';
+
+  @override
+  String get whoRepeat_subtitle =>
+      'Every node your radio hears directly, strongest first';
+
+  @override
+  String get whoRepeat_emptyTitle => 'No RF neighbours yet';
+
+  @override
+  String get whoRepeat_empty =>
+      'Nodes your radio hears directly show up here as it receives traffic. Keep the app open while the radio is on and the list fills in.';
+
   @override
   String get hunt_noSignal => '아직 신호 없음';
 
