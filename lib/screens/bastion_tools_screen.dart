@@ -163,12 +163,6 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
             searchOnly: true,
           ),
           _ToolAction(
-            icon: Icons.share_location,
-            title: l10n.tak_title,
-            subtitle: l10n.tak_toolHint,
-            builder: (_) => const TakFeedScreen(),
-          ),
-          _ToolAction(
             icon: Icons.radar,
             title: l10n.networks_title,
             subtitle: l10n.networks_hint,
@@ -295,6 +289,12 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
             title: l10n.fleet_title,
             subtitle: l10n.fleet_toolSubtitle,
             builder: (_) => const FleetScreen(),
+          ),
+          _ToolAction(
+            icon: Icons.share_location,
+            title: l10n.tak_title,
+            subtitle: l10n.tak_toolHint,
+            builder: (_) => const TakFeedScreen(),
           ),
           _ToolAction(
             icon: Icons.auto_stories_outlined,
