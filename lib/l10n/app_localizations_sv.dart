@@ -91,6 +91,13 @@ class AppLocalizationsSv extends AppLocalizations {
   }
 
   @override
+  String get reachability_twoWay => 'Two-way';
+
+  @override
+  String get reachability_theyHeardYou => "They've heard you";
+
+  @override
+  String get reachability_noAnswerYet => 'No answer yet';
   String get chats_jumpToUnread => 'Jump to unread';
 
   @override

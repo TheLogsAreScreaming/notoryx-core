@@ -274,6 +274,24 @@ abstract class AppLocalizations {
   /// **'Yesterday'**
   String get messages_yesterday;
 
+  /// No description provided for @reachability_twoWay.
+  ///
+  /// In en, this message translates to:
+  /// **'Two-way'**
+  String get reachability_twoWay;
+
+  /// No description provided for @reachability_theyHeardYou.
+  ///
+  /// In en, this message translates to:
+  /// **"They've heard you"**
+  String get reachability_theyHeardYou;
+
+  /// No description provided for @reachability_noAnswerYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No answer yet'**
+  String get reachability_noAnswerYet;
+
   /// No description provided for @messages_unreadCount.
   ///
   /// In en, this message translates to:
