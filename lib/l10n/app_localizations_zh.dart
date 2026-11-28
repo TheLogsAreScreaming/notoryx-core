@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -14761,4 +14760,66 @@ class AppLocalizationsZh extends AppLocalizations {
 
   @override
   String get bookmarks_emptyHint => '长按消息并选择“添加书签”，即使清空聊天也会保留在这里。';
+
+  @override
+  String get manualTrace_menuItem => '按哈希进行路径追踪';
+
+  @override
+  String get manualTrace_inputLabel => '中继器哈希';
+
+  @override
+  String manualTrace_helper(String example) {
+    return '示例：$example。用逗号或空格分隔。';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return '跳数（$count）';
+  }
+
+  @override
+  String get manualTrace_unknownNode => '未知节点';
+
+  @override
+  String get manualTrace_run => '运行路径追踪';
+
+  @override
+  String get manualTrace_notConnected => '请连接电台以运行追踪';
+
+  @override
+  String get manualTrace_errorInvalidHex => '仅允许十六进制字符（0-9、A-F）';
+
+  @override
+  String get manualTrace_errorOddLength => '每个哈希的十六进制字符数必须为偶数，与跳大小一致';
+
+  @override
+  String get manualTrace_errorMixedWidths => '所有哈希长度必须相同';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      '哈希必须为 1、2 或 3 字节（2、4 或 6 个十六进制字符）';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return '路径过长（最多 $max 字节）';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      '跳数过多，无法在一次请求中追踪。请减少一些跳，或选择“按输入顺序”。';
+
+  @override
+  String get manualTrace_roundTrip => '往返';
+
+  @override
+  String get manualTrace_asEntered => '按输入顺序';
+
+  @override
+  String get manualTrace_roundTripHint => '追踪经由这些跳发出，并沿原路返回。';
+
+  @override
+  String get manualTrace_asEnteredHint => '追踪严格按这些跳进行。请自行添加返回你的跳。';
+
+  @override
+  String get manualTrace_menuHint => '输入中继器哈希并追踪该路径，无需 GPS';
 }

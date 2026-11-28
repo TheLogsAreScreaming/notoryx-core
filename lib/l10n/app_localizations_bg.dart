@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -15712,4 +15711,73 @@ class AppLocalizationsBg extends AppLocalizations {
   @override
   String get bookmarks_emptyHint =>
       'Задръжте съобщение и изберете „Добави отметка“, за да го запазите тук дори след изчистване на чата.';
+
+  @override
+  String get manualTrace_menuItem => 'Трасиране на пътя по хешове';
+
+  @override
+  String get manualTrace_inputLabel => 'Хешове на репитери';
+
+  @override
+  String manualTrace_helper(String example) {
+    return 'Пример: $example. Разделяйте със запетаи или интервали.';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return 'Хопове ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => 'Непознат възел';
+
+  @override
+  String get manualTrace_run => 'Пусни трасиране на пътя';
+
+  @override
+  String get manualTrace_notConnected =>
+      'Свържете се с радио, за да пуснете трасиране';
+
+  @override
+  String get manualTrace_errorInvalidHex =>
+      'Позволени са само шестнадесетични знаци (0-9, A-F)';
+
+  @override
+  String get manualTrace_errorOddLength =>
+      'Всеки хеш трябва да има четен брой шестнадесетични знаци, съответстващ на размера на хопа';
+
+  @override
+  String get manualTrace_errorMixedWidths =>
+      'Всички хешове трябва да са с еднаква дължина';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      'Хешовете трябва да са 1, 2 или 3 байта (2, 4 или 6 шестнадесетични знаци)';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return 'Пътят е твърде дълъг (максимум $max байта)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      'Твърде много хопове за трасиране в една заявка. Премахнете няколко хопа или изберете „Както е въведено“.';
+
+  @override
+  String get manualTrace_roundTrip => 'Отиване и връщане';
+
+  @override
+  String get manualTrace_asEntered => 'Както е въведено';
+
+  @override
+  String get manualTrace_roundTripHint =>
+      'Трасето минава през тези хопове и се връща по същия път.';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      'Трасето следва точно тези хопове. Добавете сами хоповете обратно към вас.';
+
+  @override
+  String get manualTrace_menuHint =>
+      'Въведете хешовете на ретранслаторите и проследете пътя, без GPS';
 }

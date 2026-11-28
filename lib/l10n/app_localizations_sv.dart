@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -15623,4 +15622,72 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get bookmarks_emptyHint =>
       'Tryck länge på ett meddelande och välj Bokmärk för att spara det här, även när chatten rensas.';
+
+  @override
+  String get manualTrace_menuItem => 'Ruttspårning via hashar';
+
+  @override
+  String get manualTrace_inputLabel => 'Repeater-hashar';
+
+  @override
+  String manualTrace_helper(String example) {
+    return 'Exempel: $example. Separera med kommatecken eller mellanslag.';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return 'Hopp ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => 'Okänd nod';
+
+  @override
+  String get manualTrace_run => 'Kör ruttspårning';
+
+  @override
+  String get manualTrace_notConnected =>
+      'Anslut till en radio för att köra en spårning';
+
+  @override
+  String get manualTrace_errorInvalidHex =>
+      'Endast hex-tecken (0-9, A-F) är tillåtna';
+
+  @override
+  String get manualTrace_errorOddLength =>
+      'Varje hash måste ha ett jämnt antal hex-tecken, som matchar hoppstorleken';
+
+  @override
+  String get manualTrace_errorMixedWidths => 'Alla hashar måste ha samma längd';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      'Hashar måste vara 1, 2 eller 3 byte (2, 4 eller 6 hex-tecken)';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return 'Rutten är för lång (högst $max byte)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      'För många hopp för att spåra i en enda förfrågan. Ta bort några hopp eller välj ”Som inmatat”.';
+
+  @override
+  String get manualTrace_roundTrip => 'Tur och retur';
+
+  @override
+  String get manualTrace_asEntered => 'Som inmatat';
+
+  @override
+  String get manualTrace_roundTripHint =>
+      'Spårningen går ut via dessa hopp och kommer tillbaka samma väg.';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      'Spårningen följer exakt dessa hopp. Lägg själv till hoppen tillbaka till dig.';
+
+  @override
+  String get manualTrace_menuHint =>
+      'Skriv repeaterhashar och spåra den vägen, utan GPS';
 }

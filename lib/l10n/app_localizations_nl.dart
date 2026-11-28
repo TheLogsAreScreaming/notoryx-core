@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -15683,4 +15682,73 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get bookmarks_emptyHint =>
       'Houd een bericht ingedrukt en kies Bladwijzer toevoegen om het hier te bewaren, ook als de chat wordt gewist.';
+
+  @override
+  String get manualTrace_menuItem => 'Padtrace via hashes';
+
+  @override
+  String get manualTrace_inputLabel => 'Repeater-hashes';
+
+  @override
+  String manualTrace_helper(String example) {
+    return 'Voorbeeld: $example. Scheid met komma\'s of spaties.';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return 'Hops ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => 'Onbekende node';
+
+  @override
+  String get manualTrace_run => 'Padtrace uitvoeren';
+
+  @override
+  String get manualTrace_notConnected =>
+      'Maak verbinding met een radio om een trace uit te voeren';
+
+  @override
+  String get manualTrace_errorInvalidHex =>
+      'Alleen hex-tekens (0-9, A-F) zijn toegestaan';
+
+  @override
+  String get manualTrace_errorOddLength =>
+      'Elke hash heeft een even aantal hex-tekens nodig, passend bij de hopgrootte';
+
+  @override
+  String get manualTrace_errorMixedWidths =>
+      'Alle hashes moeten even lang zijn';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      'Hashes moeten 1, 2 of 3 bytes zijn (2, 4 of 6 hex-tekens)';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return 'Pad is te lang (maximaal $max bytes)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      'Te veel hops om in één verzoek te tracen. Verwijder enkele hops of kies „Zoals ingevoerd”.';
+
+  @override
+  String get manualTrace_roundTrip => 'Heen en terug';
+
+  @override
+  String get manualTrace_asEntered => 'Zoals ingevoerd';
+
+  @override
+  String get manualTrace_roundTripHint =>
+      'De trace gaat via deze hops heen en komt op dezelfde weg terug.';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      'De trace volgt precies deze hops. Voeg zelf de hops terug naar jou toe.';
+
+  @override
+  String get manualTrace_menuHint =>
+      'Typ repeater-hashes en volg dat pad, zonder gps';
 }

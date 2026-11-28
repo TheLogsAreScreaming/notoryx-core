@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -15713,4 +15712,73 @@ class AppLocalizationsPt extends AppLocalizations {
   @override
   String get bookmarks_emptyHint =>
       'Mantenha premida uma mensagem e escolha Adicionar aos favoritos para a guardar aqui, mesmo depois de limpar a conversa.';
+
+  @override
+  String get manualTrace_menuItem => 'Rastreamento de caminho por hashes';
+
+  @override
+  String get manualTrace_inputLabel => 'Hashes de repetidores';
+
+  @override
+  String manualTrace_helper(String example) {
+    return 'Exemplo: $example. Separe com vírgulas ou espaços.';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return 'Saltos ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => 'Nó desconhecido';
+
+  @override
+  String get manualTrace_run => 'Executar rastreamento de caminho';
+
+  @override
+  String get manualTrace_notConnected =>
+      'Conecte-se a um rádio para executar um rastreamento';
+
+  @override
+  String get manualTrace_errorInvalidHex =>
+      'Somente caracteres hexadecimais (0-9, A-F) são permitidos';
+
+  @override
+  String get manualTrace_errorOddLength =>
+      'Cada hash precisa de um número par de caracteres hexadecimais, de acordo com o tamanho do salto';
+
+  @override
+  String get manualTrace_errorMixedWidths =>
+      'Todos os hashes devem ter o mesmo comprimento';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      'Os hashes devem ter 1, 2 ou 3 bytes (2, 4 ou 6 caracteres hexadecimais)';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return 'O caminho é muito longo (máximo de $max bytes)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      'Saltos demais para rastrear em uma única solicitação. Remova alguns saltos ou escolha “Como inserido”.';
+
+  @override
+  String get manualTrace_roundTrip => 'Ida e volta';
+
+  @override
+  String get manualTrace_asEntered => 'Como inserido';
+
+  @override
+  String get manualTrace_roundTripHint =>
+      'O rastreamento sai por estes saltos e volta pelo mesmo caminho.';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      'O rastreamento segue exatamente estes saltos. Adicione você mesmo os saltos de volta até si.';
+
+  @override
+  String get manualTrace_menuHint =>
+      'Escreva os hashes dos repetidores e trace esse caminho, sem GPS';
 }

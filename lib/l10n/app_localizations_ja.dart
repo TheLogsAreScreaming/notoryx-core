@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -15036,4 +15035,68 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get bookmarks_emptyHint =>
       'メッセージを長押しして「ブックマーク」を選ぶと、チャットを消去してもここに残ります。';
+
+  @override
+  String get manualTrace_menuItem => 'ハッシュで経路追跡';
+
+  @override
+  String get manualTrace_inputLabel => 'リピーターのハッシュ';
+
+  @override
+  String manualTrace_helper(String example) {
+    return '例: $example。カンマまたはスペースで区切ってください。';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return 'ホップ ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => '不明なノード';
+
+  @override
+  String get manualTrace_run => '経路トレースを実行';
+
+  @override
+  String get manualTrace_notConnected => 'トレースを実行するには無線機に接続してください';
+
+  @override
+  String get manualTrace_errorInvalidHex => '16進数の文字(0-9、A-F)のみ使用できます';
+
+  @override
+  String get manualTrace_errorOddLength =>
+      '各ハッシュはホップのサイズに合わせて、16進数の文字数が偶数である必要があります';
+
+  @override
+  String get manualTrace_errorMixedWidths => 'すべてのハッシュは同じ長さにしてください';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      'ハッシュは1、2、3バイト(16進数で2、4、6文字)にしてください';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return '経路が長すぎます(最大 $max バイト)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      '1回のリクエストでトレースできるホップ数を超えています。ホップを減らすか、「入力どおり」を選んでください。';
+
+  @override
+  String get manualTrace_roundTrip => '往復';
+
+  @override
+  String get manualTrace_asEntered => '入力どおり';
+
+  @override
+  String get manualTrace_roundTripHint => 'トレースはこれらのホップを経由して送信され、同じ経路で戻ってきます。';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      'トレースはこれらのホップをそのとおりにたどります。自分へ戻るホップは自分で追加してください。';
+
+  @override
+  String get manualTrace_menuHint => 'リピーターのハッシュを入力して経路をトレース（GPS不要）';
 }
