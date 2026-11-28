@@ -9476,6 +9476,21 @@ class AppLocalizationsEs extends AppLocalizations {
   String get hunt_toolSubtitle =>
       'Medidor de señal grande que hace clic más rápido cuanto más fuerte';
 
+
+  @override
+  String get whoRepeat_title => 'RF neighbours';
+
+  @override
+  String get whoRepeat_subtitle =>
+      'Every node your radio hears directly, strongest first';
+
+  @override
+  String get whoRepeat_emptyTitle => 'No RF neighbours yet';
+
+  @override
+  String get whoRepeat_empty =>
+      'Nodes your radio hears directly show up here as it receives traffic. Keep the app open while the radio is on and the list fills in.';
+
   @override
   String get hunt_noSignal => 'Aún sin señal';
 

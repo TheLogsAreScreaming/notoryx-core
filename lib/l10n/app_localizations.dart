@@ -15727,6 +15727,11 @@ abstract class AppLocalizations {
   /// **'A big live signal meter that clicks faster as it gets stronger'**
   String get hunt_toolSubtitle;
 
+  String get whoRepeat_title;
+  String get whoRepeat_subtitle;
+  String get whoRepeat_emptyTitle;
+  String get whoRepeat_empty;
+
   /// No description provided for @hunt_noSignal.
   ///
   /// In en, this message translates to:
