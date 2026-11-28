@@ -990,7 +990,8 @@ class _ContactsScreenState extends State<ContactsScreen>
                       final ReachabilityVerdict? verdict;
                       if (contact.type == advTypeChat) {
                         final messages = connector.getMessages(contact);
-                        final heardDirectly = directRepeaters?.heard.any(
+                        final heardDirectly =
+                            directRepeaters?.heard.any(
                               (h) =>
                                   h.id.toUpperCase() ==
                                   contact.publicKeyHex.toUpperCase(),
@@ -2005,7 +2006,10 @@ class _ReachabilityLabel extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final (String label, Color color) = switch (verdict) {
-      ReachabilityVerdict.twoWay => (l10n.reachability_twoWay, MeshPalette.signal),
+      ReachabilityVerdict.twoWay => (
+        l10n.reachability_twoWay,
+        MeshPalette.signal,
+      ),
       ReachabilityVerdict.theyHeardYou => (
         l10n.reachability_theyHeardYou,
         MeshPalette.warn,
@@ -2017,11 +2021,7 @@ class _ReachabilityLabel extends StatelessWidget {
     };
     return Text(
       label,
-      style: TextStyle(
-        fontSize: 11,
-        color: color,
-        fontWeight: FontWeight.w500,
-      ),
+      style: TextStyle(fontSize: 11, color: color, fontWeight: FontWeight.w500),
     );
   }
 }
