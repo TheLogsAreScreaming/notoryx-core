@@ -24,14 +24,8 @@ class WhoRepeatsMeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(l10n.whoRepeat_title),
-        centerTitle: true,
-      ),
-      body: const EmberBackdrop(
-        scene: EmberScene.nodes,
-        child: _Body(),
-      ),
+      appBar: AppBar(title: Text(l10n.whoRepeat_title), centerTitle: true),
+      body: const EmberBackdrop(scene: EmberScene.nodes, child: _Body()),
     );
   }
 }
@@ -67,11 +61,8 @@ class _Body extends StatelessWidget {
     return ListView.separated(
       padding: const EdgeInsets.only(top: 8, bottom: 24),
       itemCount: all.length,
-      separatorBuilder: (_, _) => const Divider(
-        height: 1,
-        indent: 56,
-        endIndent: 16,
-      ),
+      separatorBuilder: (_, _) =>
+          const Divider(height: 1, indent: 56, endIndent: 16),
       itemBuilder: (context, i) {
         final heard = all[i];
         final name = heardNameWithOnline(connector, analyzer, heard.id);
@@ -110,11 +101,7 @@ class _EmptyState extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
-              Icons.cell_tower_rounded,
-              size: 48,
-              color: MeshPalette.ink3,
-            ),
+            Icon(Icons.cell_tower_rounded, size: 48, color: MeshPalette.ink3),
             const SizedBox(height: 16),
             Text(
               title,
@@ -179,9 +166,7 @@ class _HeardRow extends StatelessWidget {
         style: TextStyle(color: MeshPalette.ink3, fontSize: 13),
       ),
       trailing: SignalReadout(heard.lastSnr),
-      onTap: contact == null
-          ? null
-          : () => showNodeSheet(context, contact!),
+      onTap: contact == null ? null : () => showNodeSheet(context, contact!),
     );
   }
 
