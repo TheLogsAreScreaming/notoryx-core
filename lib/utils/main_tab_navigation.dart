@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../screens/bastion_home_screen.dart';
 import '../screens/bastion_tools_screen.dart';
-import '../screens/channels_screen.dart';
 import '../screens/contacts_screen.dart';
+import '../screens/conversations_tab_screen.dart';
 import '../screens/map_screen.dart';
 import 'route_transitions.dart';
 
@@ -28,7 +28,7 @@ Widget mainTabScreen(MainTab tab) {
     case MainTab.nodes:
       return const ContactsScreen(hideBackButton: true);
     case MainTab.chats:
-      return const ChannelsScreen(hideBackButton: true);
+      return const ConversationsTabScreen(hideBackButton: true);
     case MainTab.map:
       return const MapScreen(hideBackButton: true);
     case MainTab.more:

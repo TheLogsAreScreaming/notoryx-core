@@ -2169,6 +2169,17 @@ class _MessageBubble extends StatelessWidget {
                                     ),
                                   ),
                                 ],
+                                if (message.pathLength != null &&
+                                    message.pathLength! > 0) ...[
+                                  const SizedBox(width: 2),
+                                  Text(
+                                    '↻ ${message.pathLength}',
+                                    style: MeshTheme.mono(
+                                      fontSize: 9 * textScale,
+                                      color: metaColor,
+                                    ),
+                                  ),
+                                ],
                               ],
                             ),
                           ),

@@ -98,6 +98,7 @@ class AppLocalizationsBg extends AppLocalizations {
 
   @override
   String get reachability_noAnswerYet => 'No answer yet';
+  String get chats_jumpToUnread => 'Jump to unread';
 
   @override
   String radioStatus_connectedVia(String transport) {
