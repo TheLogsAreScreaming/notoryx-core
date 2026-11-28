@@ -15813,4 +15813,18 @@ class AppLocalizationsSl extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get tcpFound_title => 'V TEM OMREŽJU';
+
+  @override
+  String get tcpFound_searching =>
+      'Iskanje radijskih postaj v tem omrežju Wi-Fi…';
+
+  @override
+  String get tcpFound_failed => 'Tega omrežja ni mogoče preiskati';
+
+  @override
+  String get tcpFound_hint =>
+      'Tukaj se prikažejo radijske postaje s spremljevalno programsko opremo Wi-Fi, ki se oglašajo. Sicer spodaj vnesite naslov.';
 }

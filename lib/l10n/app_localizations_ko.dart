@@ -15154,4 +15154,17 @@ class AppLocalizationsKo extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get tcpFound_title => '이 네트워크에서';
+
+  @override
+  String get tcpFound_searching => '이 Wi-Fi에서 무전기를 찾는 중…';
+
+  @override
+  String get tcpFound_failed => '이 네트워크를 검색할 수 없습니다';
+
+  @override
+  String get tcpFound_hint =>
+      '자신을 알리는 Wi-Fi 컴패니언 펌웨어 무전기가 여기에 표시됩니다. 없으면 아래에 주소를 입력하세요.';
 }

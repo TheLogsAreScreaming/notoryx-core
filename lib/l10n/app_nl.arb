@@ -5747,5 +5747,9 @@
   "imageSend_versionsHint": "Elke versie wordt iets anders gereconstrueerd. Kies de versie die het meest op je foto lijkt.",
   "imageSend_versionLabel": "Versie {number}",
   "imageSend_versionPackets": "{count, plural, =1{1 pakket} other{{count} pakketten}}",
-  "imageSend_echoes": "{count, plural, =1{1 repeater gaf elk deel door} other{{count} repeaters gaven elk deel door}}"
+  "imageSend_echoes": "{count, plural, =1{1 repeater gaf elk deel door} other{{count} repeaters gaven elk deel door}}",
+  "tcpFound_title": "OP DIT NETWERK",
+  "tcpFound_searching": "Zoeken naar radio's op deze wifi…",
+  "tcpFound_failed": "Kan dit netwerk niet doorzoeken",
+  "tcpFound_hint": "Radio's met wifi-companionfirmware die zich aankondigen verschijnen hier. Typ anders hieronder het adres."
 }

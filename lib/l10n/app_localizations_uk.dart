@@ -15872,4 +15872,17 @@ class AppLocalizationsUk extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get tcpFound_title => 'У ЦІЙ МЕРЕЖІ';
+
+  @override
+  String get tcpFound_searching => 'Пошук радіостанцій у цій мережі Wi-Fi…';
+
+  @override
+  String get tcpFound_failed => 'Не вдається шукати в цій мережі';
+
+  @override
+  String get tcpFound_hint =>
+      'Тут з’являються радіостанції з прошивкою Wi-Fi-компаньйона, які повідомляють про себе. Інакше введіть адресу нижче.';
 }

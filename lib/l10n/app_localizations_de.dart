@@ -15870,4 +15870,17 @@ class AppLocalizationsDe extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get tcpFound_title => 'IN DIESEM NETZWERK';
+
+  @override
+  String get tcpFound_searching => 'Suche nach Funkgeräten in diesem WLAN…';
+
+  @override
+  String get tcpFound_failed => 'Dieses Netzwerk kann nicht durchsucht werden';
+
+  @override
+  String get tcpFound_hint =>
+      'Funkgeräte mit WLAN-Companion-Firmware, die sich ankündigen, erscheinen hier. Sonst unten die Adresse eingeben.';
 }

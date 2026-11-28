@@ -15867,4 +15867,17 @@ class AppLocalizationsPl extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get tcpFound_title => 'W TEJ SIECI';
+
+  @override
+  String get tcpFound_searching => 'Szukanie radiostacji w tej sieci Wi-Fi…';
+
+  @override
+  String get tcpFound_failed => 'Nie można przeszukać tej sieci';
+
+  @override
+  String get tcpFound_hint =>
+      'Tu pojawiają się radiostacje z oprogramowaniem towarzyszącym Wi-Fi, które się ogłaszają. W przeciwnym razie wpisz adres poniżej.';
 }

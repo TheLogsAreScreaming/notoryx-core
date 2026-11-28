@@ -5785,5 +5785,9 @@
   "imageSend_versionsHint": "Każda wersja jest odtwarzana nieco inaczej. Wybierz tę, która najbardziej przypomina Twoje zdjęcie.",
   "imageSend_versionLabel": "Wersja {number}",
   "imageSend_versionPackets": "{count, plural, one{1 pakiet} few{{count} pakiety} many{{count} pakietów} other{{count} pakietu}}",
-  "imageSend_echoes": "{count, plural, =1{1 przekaźnik przekazał każdą część} few{{count} przekaźniki przekazały każdą część} many{{count} przekaźników przekazało każdą część} other{{count} przekaźnika przekazało każdą część}}"
+  "imageSend_echoes": "{count, plural, =1{1 przekaźnik przekazał każdą część} few{{count} przekaźniki przekazały każdą część} many{{count} przekaźników przekazało każdą część} other{{count} przekaźnika przekazało każdą część}}",
+  "tcpFound_title": "W TEJ SIECI",
+  "tcpFound_searching": "Szukanie radiostacji w tej sieci Wi-Fi…",
+  "tcpFound_failed": "Nie można przeszukać tej sieci",
+  "tcpFound_hint": "Tu pojawiają się radiostacje z oprogramowaniem towarzyszącym Wi-Fi, które się ogłaszają. W przeciwnym razie wpisz adres poniżej."
 }

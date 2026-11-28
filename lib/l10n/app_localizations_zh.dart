@@ -14863,4 +14863,16 @@ class AppLocalizationsZh extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get tcpFound_title => '此网络上';
+
+  @override
+  String get tcpFound_searching => '正在此 Wi-Fi 上查找无线电…';
+
+  @override
+  String get tcpFound_failed => '无法搜索此网络';
+
+  @override
+  String get tcpFound_hint => '自动通告的 Wi-Fi 配套固件无线电会显示在这里。否则请在下方输入地址。';
 }

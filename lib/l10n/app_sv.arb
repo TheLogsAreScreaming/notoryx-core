@@ -5747,5 +5747,9 @@
   "imageSend_versionsHint": "Varje version rekonstrueras lite olika. Välj den som liknar ditt foto mest.",
   "imageSend_versionLabel": "Version {number}",
   "imageSend_versionPackets": "{count, plural, =1{1 paket} other{{count} paket}}",
-  "imageSend_echoes": "{count, plural, =1{1 repeater skickade vidare varje del} other{{count} repeatrar skickade vidare varje del}}"
+  "imageSend_echoes": "{count, plural, =1{1 repeater skickade vidare varje del} other{{count} repeatrar skickade vidare varje del}}",
+  "tcpFound_title": "PÅ DETTA NÄTVERK",
+  "tcpFound_searching": "Letar efter radioapparater på detta Wi-Fi…",
+  "tcpFound_failed": "Kan inte söka i detta nätverk",
+  "tcpFound_hint": "Radioapparater med Wi-Fi-companion-firmware som annonserar sig visas här. Annars skriver du adressen nedan."
 }

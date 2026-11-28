@@ -5881,5 +5881,9 @@
   "imageSend_versionsHint": "Jede Version wird etwas anders rekonstruiert. Wählen Sie die, die Ihrem Foto am ähnlichsten sieht.",
   "imageSend_versionLabel": "Version {number}",
   "imageSend_versionPackets": "{count, plural, =1{1 Paket} other{{count} Pakete}}",
-  "imageSend_echoes": "{count, plural, =1{1 Repeater hat jeden Teil weitergegeben} other{{count} Repeater haben jeden Teil weitergegeben}}"
+  "imageSend_echoes": "{count, plural, =1{1 Repeater hat jeden Teil weitergegeben} other{{count} Repeater haben jeden Teil weitergegeben}}",
+  "tcpFound_title": "IN DIESEM NETZWERK",
+  "tcpFound_searching": "Suche nach Funkgeräten in diesem WLAN…",
+  "tcpFound_failed": "Dieses Netzwerk kann nicht durchsucht werden",
+  "tcpFound_hint": "Funkgeräte mit WLAN-Companion-Firmware, die sich ankündigen, erscheinen hier. Sonst unten die Adresse eingeben."
 }

@@ -26162,6 +26162,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{count, plural, =1{1 repeater passed on every part} other{{count} repeaters passed on every part}}'**
   String imageSend_echoes(int count);
+
+  /// No description provided for @tcpFound_title.
+  ///
+  /// In en, this message translates to:
+  /// **'ON THIS NETWORK'**
+  String get tcpFound_title;
+
+  /// No description provided for @tcpFound_searching.
+  ///
+  /// In en, this message translates to:
+  /// **'Looking for radios on this Wi-Fi…'**
+  String get tcpFound_searching;
+
+  /// No description provided for @tcpFound_failed.
+  ///
+  /// In en, this message translates to:
+  /// **'Can\'t search this network'**
+  String get tcpFound_failed;
+
+  /// No description provided for @tcpFound_hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Radios with Wi-Fi companion firmware that announce themselves appear here. Otherwise type the address below.'**
+  String get tcpFound_hint;
 }
 
 class _AppLocalizationsDelegate

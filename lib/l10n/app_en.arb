@@ -8467,5 +8467,9 @@
         "type": "int"
       }
     }
-  }
+  },
+  "tcpFound_title": "ON THIS NETWORK",
+  "tcpFound_searching": "Looking for radios on this Wi-Fi…",
+  "tcpFound_failed": "Can't search this network",
+  "tcpFound_hint": "Radios with Wi-Fi companion firmware that announce themselves appear here. Otherwise type the address below."
 }

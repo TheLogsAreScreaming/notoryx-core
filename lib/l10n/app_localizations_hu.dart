@@ -15810,4 +15810,17 @@ class AppLocalizationsHu extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get tcpFound_title => 'EZEN A HÁLÓZATON';
+
+  @override
+  String get tcpFound_searching => 'Rádiók keresése ezen a Wi-Fi-hálózaton…';
+
+  @override
+  String get tcpFound_failed => 'Ezen a hálózaton nem lehet keresni';
+
+  @override
+  String get tcpFound_hint =>
+      'Itt jelennek meg a magukat bejelentő, Wi-Fi társ-firmware-rel rendelkező rádiók. Egyébként írja be lent a címet.';
 }

@@ -5881,5 +5881,9 @@
   "imageSend_versionsHint": "各バージョンは少しずつ異なる方法で復元されます。写真に最も近いものを選んでください。",
   "imageSend_versionLabel": "バージョン{number}",
   "imageSend_versionPackets": "{count, plural, =1{1パケット} other{{count}パケット}}",
-  "imageSend_echoes": "{count, plural, other{{count} 台のリピーターがすべての部分を中継}}"
+  "imageSend_echoes": "{count, plural, other{{count} 台のリピーターがすべての部分を中継}}",
+  "tcpFound_title": "このネットワーク上",
+  "tcpFound_searching": "このWi-Fi上の無線機を探しています…",
+  "tcpFound_failed": "このネットワークは検索できません",
+  "tcpFound_hint": "自身を通知するWi-Fiコンパニオンファームウェアの無線機がここに表示されます。表示されない場合は下にアドレスを入力してください。"
 }

@@ -15903,4 +15903,17 @@ class AppLocalizationsFr extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get tcpFound_title => 'SUR CE RÉSEAU';
+
+  @override
+  String get tcpFound_searching => 'Recherche de radios sur ce Wi-Fi…';
+
+  @override
+  String get tcpFound_failed => 'Impossible de rechercher sur ce réseau';
+
+  @override
+  String get tcpFound_hint =>
+      'Les radios avec un firmware compagnon Wi-Fi qui s\'annoncent apparaissent ici. Sinon, saisissez l\'adresse ci-dessous.';
 }

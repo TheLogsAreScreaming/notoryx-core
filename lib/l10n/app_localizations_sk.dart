@@ -15787,4 +15787,17 @@ class AppLocalizationsSk extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get tcpFound_title => 'V TEJTO SIETI';
+
+  @override
+  String get tcpFound_searching => 'Hľadajú sa rádiá v tejto sieti Wi-Fi…';
+
+  @override
+  String get tcpFound_failed => 'V tejto sieti nemožno hľadať';
+
+  @override
+  String get tcpFound_hint =>
+      'Tu sa zobrazia rádiá s firmvérom Wi-Fi spoločníka, ktoré sa ohlasujú. Inak zadajte adresu nižšie.';
 }

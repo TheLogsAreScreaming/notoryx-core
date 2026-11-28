@@ -15823,4 +15823,18 @@ class AppLocalizationsBg extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get tcpFound_title => 'В ТАЗИ МРЕЖА';
+
+  @override
+  String get tcpFound_searching =>
+      'Търсене на радиостанции в тази Wi-Fi мрежа…';
+
+  @override
+  String get tcpFound_failed => 'Тази мрежа не може да бъде претърсена';
+
+  @override
+  String get tcpFound_hint =>
+      'Тук се показват радиостанции с Wi-Fi фърмуер за компаньон, които се обявяват. Иначе въведете адреса по-долу.';
 }

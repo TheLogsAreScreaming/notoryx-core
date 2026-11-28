@@ -5747,5 +5747,9 @@
   "imageSend_versionsHint": "Každá verzia je zrekonštruovaná trochu inak. Vyberte tú, ktorá sa najviac podobá na vašu fotku.",
   "imageSend_versionLabel": "Verzia {number}",
   "imageSend_versionPackets": "{count, plural, =1{1 paket} few{{count} pakety} other{{count} paketov}}",
-  "imageSend_echoes": "{count, plural, =1{1 opakovač preposlal každú časť} few{{count} opakovače preposlali každú časť} other{{count} opakovačov preposlalo každú časť}}"
+  "imageSend_echoes": "{count, plural, =1{1 opakovač preposlal každú časť} few{{count} opakovače preposlali každú časť} other{{count} opakovačov preposlalo každú časť}}",
+  "tcpFound_title": "V TEJTO SIETI",
+  "tcpFound_searching": "Hľadajú sa rádiá v tejto sieti Wi-Fi…",
+  "tcpFound_failed": "V tejto sieti nemožno hľadať",
+  "tcpFound_hint": "Tu sa zobrazia rádiá s firmvérom Wi-Fi spoločníka, ktoré sa ohlasujú. Inak zadajte adresu nižšie."
 }

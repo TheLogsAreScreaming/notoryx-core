@@ -15794,4 +15794,17 @@ class AppLocalizationsNl extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get tcpFound_title => 'OP DIT NETWERK';
+
+  @override
+  String get tcpFound_searching => 'Zoeken naar radio\'s op deze wifi…';
+
+  @override
+  String get tcpFound_failed => 'Kan dit netwerk niet doorzoeken';
+
+  @override
+  String get tcpFound_hint =>
+      'Radio\'s met wifi-companionfirmware die zich aankondigen verschijnen hier. Typ anders hieronder het adres.';
 }

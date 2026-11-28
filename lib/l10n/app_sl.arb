@@ -5747,5 +5747,9 @@
   "imageSend_versionsHint": "Vsaka različica je rekonstruirana nekoliko drugače. Izberite tisto, ki je najbolj podobna vaši fotografiji.",
   "imageSend_versionLabel": "Različica {number}",
   "imageSend_versionPackets": "{count, plural, =1{1 paket} two{{count} paketa} few{{count} paketi} other{{count} paketov}}",
-  "imageSend_echoes": "{count, plural, =1{1 repetitor je posredoval vsak del} =2{2 repetitorja sta posredovala vsak del} few{{count} repetitorji so posredovali vsak del} other{{count} repetitorjev je posredovalo vsak del}}"
+  "imageSend_echoes": "{count, plural, =1{1 repetitor je posredoval vsak del} =2{2 repetitorja sta posredovala vsak del} few{{count} repetitorji so posredovali vsak del} other{{count} repetitorjev je posredovalo vsak del}}",
+  "tcpFound_title": "V TEM OMREŽJU",
+  "tcpFound_searching": "Iskanje radijskih postaj v tem omrežju Wi-Fi…",
+  "tcpFound_failed": "Tega omrežja ni mogoče preiskati",
+  "tcpFound_hint": "Tukaj se prikažejo radijske postaje s spremljevalno programsko opremo Wi-Fi, ki se oglašajo. Sicer spodaj vnesite naslov."
 }

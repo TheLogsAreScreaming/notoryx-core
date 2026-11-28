@@ -5752,5 +5752,9 @@
   "imageSend_versionsHint": "每个版本的还原方式略有不同。请选择最接近原照片的一个。",
   "imageSend_versionLabel": "版本 {number}",
   "imageSend_versionPackets": "{count, plural, =1{1 个数据包} other{{count} 个数据包}}",
-  "imageSend_echoes": "{count, plural, other{{count} 个中继器转发了每个部分}}"
+  "imageSend_echoes": "{count, plural, other{{count} 个中继器转发了每个部分}}",
+  "tcpFound_title": "此网络上",
+  "tcpFound_searching": "正在此 Wi-Fi 上查找无线电…",
+  "tcpFound_failed": "无法搜索此网络",
+  "tcpFound_hint": "自动通告的 Wi-Fi 配套固件无线电会显示在这里。否则请在下方输入地址。"
 }

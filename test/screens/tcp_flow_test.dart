@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 
+import 'package:meshcore_open/services/companion_finder.dart';
 import 'package:meshcore_open/connector/meshcore_connector.dart';
 import 'package:meshcore_open/l10n/app_localizations.dart';
 import 'package:meshcore_open/screens/scanner_screen.dart';
@@ -65,7 +66,63 @@ Widget _buildTestApp({
   );
 }
 
+class _FakeFinder implements CompanionFinder {
+  _FakeFinder(this.companions);
+  final List<FoundCompanion> companions;
+
+  @override
+  bool get supported => true;
+
+  @override
+  Stream<List<FoundCompanion>> watch() => Stream.value(companions);
+}
+
 void main() {
+  testWidgets('a radio found on the network connects with one tap', (
+    tester,
+  ) async {
+    final connector = _FakeMeshCoreConnector();
+    await tester.pumpWidget(
+      _buildTestApp(
+        connector: connector,
+        locale: const Locale('en'),
+        child: TcpScreen(
+          finder: _FakeFinder(const [
+            FoundCompanion(
+              name: 'Base Camp',
+              host: '192.168.4.20',
+              port: 5000,
+              firmwareVersion: 'v1.19.0',
+            ),
+          ]),
+        ),
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(find.text('Base Camp'), findsOneWidget);
+    expect(find.text('192.168.4.20:5000 · v1.19.0'), findsOneWidget);
+    await tester.tap(find.text('Base Camp'));
+    await tester.pumpAndSettle();
+    expect(connector.connectTcpCalls, 1);
+    expect(connector.lastHost, '192.168.4.20');
+    expect(connector.lastPort, 5000);
+  });
+
+  testWidgets('with nothing found it says how to connect by hand', (
+    tester,
+  ) async {
+    await tester.pumpWidget(
+      _buildTestApp(
+        connector: _FakeMeshCoreConnector(),
+        locale: const Locale('en'),
+        child: TcpScreen(finder: _FakeFinder(const [])),
+      ),
+    );
+    await tester.pump(const Duration(milliseconds: 100));
+    expect(find.byKey(const ValueKey('tcp-found-empty')), findsOneWidget);
+  });
+
   testWidgets('TcpScreen uses localized TCP copy', (tester) async {
     final connector = _FakeMeshCoreConnector();
 

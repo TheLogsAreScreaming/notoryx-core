@@ -5785,5 +5785,9 @@
   "imageSend_versionsHint": "Minden változat kissé másként van rekonstruálva. Válassza azt, amelyik leginkább hasonlít a fényképére.",
   "imageSend_versionLabel": "{number}. változat",
   "imageSend_versionPackets": "{count, plural, =1{1 csomag} other{{count} csomag}}",
-  "imageSend_echoes": "{count, plural, =1{1 jelismétlő továbbította az összes részt} other{{count} jelismétlő továbbította az összes részt}}"
+  "imageSend_echoes": "{count, plural, =1{1 jelismétlő továbbította az összes részt} other{{count} jelismétlő továbbította az összes részt}}",
+  "tcpFound_title": "EZEN A HÁLÓZATON",
+  "tcpFound_searching": "Rádiók keresése ezen a Wi-Fi-hálózaton…",
+  "tcpFound_failed": "Ezen a hálózaton nem lehet keresni",
+  "tcpFound_hint": "Itt jelennek meg a magukat bejelentő, Wi-Fi társ-firmware-rel rendelkező rádiók. Egyébként írja be lent a címet."
 }

@@ -15733,4 +15733,17 @@ class AppLocalizationsSv extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get tcpFound_title => 'PÅ DETTA NÄTVERK';
+
+  @override
+  String get tcpFound_searching => 'Letar efter radioapparater på detta Wi-Fi…';
+
+  @override
+  String get tcpFound_failed => 'Kan inte söka i detta nätverk';
+
+  @override
+  String get tcpFound_hint =>
+      'Radioapparater med Wi-Fi-companion-firmware som annonserar sig visas här. Annars skriver du adressen nedan.';
 }

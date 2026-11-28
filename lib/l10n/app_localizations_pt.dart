@@ -15824,4 +15824,17 @@ class AppLocalizationsPt extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get tcpFound_title => 'NESTA REDE';
+
+  @override
+  String get tcpFound_searching => 'A procurar rádios nesta rede Wi-Fi…';
+
+  @override
+  String get tcpFound_failed => 'Não é possível procurar nesta rede';
+
+  @override
+  String get tcpFound_hint =>
+      'Aqui aparecem os rádios com firmware companheiro Wi-Fi que se anunciam. Caso contrário, escreva o endereço abaixo.';
 }

@@ -15852,4 +15852,17 @@ class AppLocalizationsEs extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get tcpFound_title => 'EN ESTA RED';
+
+  @override
+  String get tcpFound_searching => 'Buscando radios en esta red Wi-Fi…';
+
+  @override
+  String get tcpFound_failed => 'No se puede buscar en esta red';
+
+  @override
+  String get tcpFound_hint =>
+      'Aquí aparecen las radios con firmware de compañero Wi-Fi que se anuncian. Si no, escribe la dirección abajo.';
 }

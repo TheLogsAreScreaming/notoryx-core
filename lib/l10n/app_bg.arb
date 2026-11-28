@@ -5747,5 +5747,9 @@
   "imageSend_versionsHint": "Всяка версия се възстановява малко по-различно. Изберете тази, която най-много прилича на вашата снимка.",
   "imageSend_versionLabel": "Версия {number}",
   "imageSend_versionPackets": "{count, plural, =1{1 пакет} other{{count} пакета}}",
-  "imageSend_echoes": "{count, plural, =1{1 ретранслатор предаде всяка част} other{{count} ретранслатора предадоха всяка част}}"
+  "imageSend_echoes": "{count, plural, =1{1 ретранслатор предаде всяка част} other{{count} ретранслатора предадоха всяка част}}",
+  "tcpFound_title": "В ТАЗИ МРЕЖА",
+  "tcpFound_searching": "Търсене на радиостанции в тази Wi-Fi мрежа…",
+  "tcpFound_failed": "Тази мрежа не може да бъде претърсена",
+  "tcpFound_hint": "Тук се показват радиостанции с Wi-Fi фърмуер за компаньон, които се обявяват. Иначе въведете адреса по-долу."
 }

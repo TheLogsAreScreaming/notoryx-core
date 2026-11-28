@@ -15870,4 +15870,17 @@ class AppLocalizationsRu extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get tcpFound_title => 'В ЭТОЙ СЕТИ';
+
+  @override
+  String get tcpFound_searching => 'Поиск радиостанций в этой сети Wi-Fi…';
+
+  @override
+  String get tcpFound_failed => 'Не удаётся выполнить поиск в этой сети';
+
+  @override
+  String get tcpFound_hint =>
+      'Здесь появляются радиостанции с прошивкой Wi-Fi-компаньона, которые сообщают о себе. Иначе введите адрес ниже.';
 }

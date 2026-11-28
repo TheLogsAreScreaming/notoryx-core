@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import '../connector/meshcore_connector.dart';
 import '../l10n/l10n.dart';
 import '../services/app_settings_service.dart';
+import '../services/companion_finder.dart';
 import '../theme/mesh_theme.dart';
 import '../utils/platform_info.dart';
 import '../widgets/adaptive_app_bar_title.dart';
@@ -16,7 +17,11 @@ import 'channels_screen.dart';
 import 'usb_screen.dart';
 
 class TcpScreen extends StatefulWidget {
-  const TcpScreen({super.key});
+  const TcpScreen({super.key, this.finder});
+
+  /// Looks for companions on the local network; the platform finder when
+  /// null. Tests pass a fake.
+  final CompanionFinder? finder;
 
   @override
   State<TcpScreen> createState() => _TcpScreenState();
@@ -28,6 +33,11 @@ class _TcpScreenState extends State<TcpScreen> {
   late final MeshCoreConnector _connector;
   late final VoidCallback _connectionListener;
   bool _navigatedToChannels = false;
+
+  late final CompanionFinder _finder = widget.finder ?? CompanionFinder();
+  StreamSubscription<List<FoundCompanion>>? _finding;
+  List<FoundCompanion> _found = const [];
+  bool _findFailed = false;
 
   @override
   void initState() {
@@ -41,6 +51,16 @@ class _TcpScreenState extends State<TcpScreen> {
           : '',
     );
     _connector = context.read<MeshCoreConnector>();
+    if (_finder.supported) {
+      _finding = _finder.watch().listen(
+        (list) {
+          if (mounted) setState(() => _found = list);
+        },
+        onError: (Object _) {
+          if (mounted) setState(() => _findFailed = true);
+        },
+      );
+    }
 
     _connectionListener = () {
       if (!mounted) return;
@@ -69,6 +89,7 @@ class _TcpScreenState extends State<TcpScreen> {
 
   @override
   void dispose() {
+    unawaited(_finding?.cancel());
     _hostController.dispose();
     _portController.dispose();
     _connector.removeListener(_connectionListener);
@@ -177,6 +198,54 @@ class _TcpScreenState extends State<TcpScreen> {
                     ],
                   ),
                 ),
+
+                if (_finder.supported) ...[
+                  SectionHeader(context.l10n.tcpFound_title),
+                  MeshCard(
+                    padding: const EdgeInsets.symmetric(vertical: 4),
+                    child: _found.isEmpty
+                        ? ListTile(
+                            key: const ValueKey('tcp-found-empty'),
+                            // A still icon, not a spinner: the search
+                            // never "finishes", so a spinner would turn
+                            // forever.
+                            leading: Icon(
+                              _findFailed ? Icons.wifi_off : Icons.wifi_find,
+                            ),
+                            title: Text(
+                              _findFailed
+                                  ? context.l10n.tcpFound_failed
+                                  : context.l10n.tcpFound_searching,
+                            ),
+                            subtitle: Text(context.l10n.tcpFound_hint),
+                          )
+                        : Column(
+                            children: [
+                              for (final c in _found)
+                                ListTile(
+                                  key: ValueKey('tcp-found-${c.endpoint}'),
+                                  leading: const Icon(Icons.router_outlined),
+                                  title: Text(c.name),
+                                  subtitle: Text(
+                                    [
+                                      c.endpoint,
+                                      if (c.firmwareVersion != null)
+                                        c.firmwareVersion!,
+                                    ].join(' · '),
+                                  ),
+                                  trailing: const Icon(Icons.chevron_right),
+                                  enabled: !isButtonDisabled,
+                                  onTap: () {
+                                    _hostController.text = c.host;
+                                    _portController.text = '${c.port}';
+                                    HapticFeedback.lightImpact();
+                                    _connectTcp();
+                                  },
+                                ),
+                            ],
+                          ),
+                  ),
+                ],
 
                 // Last used endpoint
                 if (connector.activeTcpEndpoint != null &&

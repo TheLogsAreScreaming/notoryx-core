@@ -5881,5 +5881,9 @@
   "imageSend_versionsHint": "Ogni versione è ricostruita in modo leggermente diverso. Scegli quella che somiglia di più alla tua foto.",
   "imageSend_versionLabel": "Versione {number}",
   "imageSend_versionPackets": "{count, plural, =1{1 pacchetto} other{{count} pacchetti}}",
-  "imageSend_echoes": "{count, plural, =1{1 ripetitore ha inoltrato ogni parte} other{{count} ripetitori hanno inoltrato ogni parte}}"
+  "imageSend_echoes": "{count, plural, =1{1 ripetitore ha inoltrato ogni parte} other{{count} ripetitori hanno inoltrato ogni parte}}",
+  "tcpFound_title": "SU QUESTA RETE",
+  "tcpFound_searching": "Ricerca di radio su questa rete Wi-Fi…",
+  "tcpFound_failed": "Impossibile cercare su questa rete",
+  "tcpFound_hint": "Qui compaiono le radio con firmware companion Wi-Fi che si annunciano. Altrimenti digita l'indirizzo qui sotto."
 }
