@@ -15003,6 +15003,146 @@ class AppLocalizationsJa extends AppLocalizations {
       'このメッセージは CoreScope 解析サーバーから届きました。あなたの無線機は受信していないため、無線機からの電波経路はありません。';
 
   @override
+  String get bookmarks_title => 'ブックマーク';
+
+  @override
+  String get bookmarks_add => 'ブックマーク';
+
+  @override
+  String get bookmarks_remove => 'ブックマークを解除';
+
+  @override
+  String get bookmarks_added => 'ブックマークしました';
+
+  @override
+  String get bookmarks_removed => 'ブックマークを解除しました';
+
+  @override
+  String get bookmarks_share => 'ブックマークを共有';
+
+  @override
+  String get bookmarks_filterAll => 'すべて';
+
+  @override
+  String get bookmarks_filterDirect => 'ダイレクト';
+
+  @override
+  String get bookmarks_filterChannels => 'チャンネル';
+
+  @override
+  String get bookmarks_empty => 'ブックマークはまだありません';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'メッセージを長押しして「ブックマーク」を選ぶと、チャットを消去してもここに残ります。';
+
+  @override
+  String get manualTrace_menuItem => 'ハッシュで経路追跡';
+
+  @override
+  String get manualTrace_inputLabel => 'リピーターのハッシュ';
+
+  @override
+  String manualTrace_helper(String example) {
+    return '例: $example。カンマまたはスペースで区切ってください。';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return 'ホップ ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => '不明なノード';
+
+  @override
+  String get manualTrace_run => '経路トレースを実行';
+
+  @override
+  String get manualTrace_notConnected => 'トレースを実行するには無線機に接続してください';
+
+  @override
+  String get manualTrace_errorInvalidHex => '16進数の文字(0-9、A-F)のみ使用できます';
+
+  @override
+  String get manualTrace_errorOddLength =>
+      '各ハッシュはホップのサイズに合わせて、16進数の文字数が偶数である必要があります';
+
+  @override
+  String get manualTrace_errorMixedWidths => 'すべてのハッシュは同じ長さにしてください';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      'ハッシュは1、2、3バイト(16進数で2、4、6文字)にしてください';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return '経路が長すぎます(最大 $max バイト)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      '1回のリクエストでトレースできるホップ数を超えています。ホップを減らすか、「入力どおり」を選んでください。';
+
+  @override
+  String get manualTrace_roundTrip => '往復';
+
+  @override
+  String get manualTrace_asEntered => '入力どおり';
+
+  @override
+  String get manualTrace_roundTripHint => 'トレースはこれらのホップを経由して送信され、同じ経路で戻ってきます。';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      'トレースはこれらのホップをそのとおりにたどります。自分へ戻るホップは自分で追加してください。';
+
+  @override
+  String get manualTrace_menuHint => 'リピーターのハッシュを入力して経路をトレース（GPS不要）';
+
+  @override
+  String get imageSend_viewOriginal => 'オリジナル';
+
+  @override
+  String get imageSend_viewReconstruction => '受信者の表示';
+
+  @override
+  String get imageSend_preparingPreview => 'プレビューを準備中…';
+
+  @override
+  String get imageSend_tryAnother => '別のバージョンを試す';
+
+  @override
+  String get imageSend_versionsHint =>
+      '各バージョンは少しずつ異なる方法で復元されます。写真に最も近いものを選んでください。';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return 'バージョン$number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countパケット',
+      one: '1パケット',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 台のリピーターがすべての部分を中継',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String get tcpFound_title => 'このネットワーク上';
 
   @override

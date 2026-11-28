@@ -14729,6 +14729,142 @@ class AppLocalizationsZh extends AppLocalizations {
       '此消息来自 CoreScope 分析服务器。你的电台没有收到它，因此没有来自你电台的无线路径。';
 
   @override
+  String get bookmarks_title => '书签';
+
+  @override
+  String get bookmarks_add => '添加书签';
+
+  @override
+  String get bookmarks_remove => '移除书签';
+
+  @override
+  String get bookmarks_added => '已添加书签';
+
+  @override
+  String get bookmarks_removed => '已移除书签';
+
+  @override
+  String get bookmarks_share => '分享书签';
+
+  @override
+  String get bookmarks_filterAll => '全部';
+
+  @override
+  String get bookmarks_filterDirect => '私信';
+
+  @override
+  String get bookmarks_filterChannels => '频道';
+
+  @override
+  String get bookmarks_empty => '还没有书签';
+
+  @override
+  String get bookmarks_emptyHint => '长按消息并选择“添加书签”，即使清空聊天也会保留在这里。';
+
+  @override
+  String get manualTrace_menuItem => '按哈希进行路径追踪';
+
+  @override
+  String get manualTrace_inputLabel => '中继器哈希';
+
+  @override
+  String manualTrace_helper(String example) {
+    return '示例：$example。用逗号或空格分隔。';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return '跳数（$count）';
+  }
+
+  @override
+  String get manualTrace_unknownNode => '未知节点';
+
+  @override
+  String get manualTrace_run => '运行路径追踪';
+
+  @override
+  String get manualTrace_notConnected => '请连接电台以运行追踪';
+
+  @override
+  String get manualTrace_errorInvalidHex => '仅允许十六进制字符（0-9、A-F）';
+
+  @override
+  String get manualTrace_errorOddLength => '每个哈希的十六进制字符数必须为偶数，与跳大小一致';
+
+  @override
+  String get manualTrace_errorMixedWidths => '所有哈希长度必须相同';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      '哈希必须为 1、2 或 3 字节（2、4 或 6 个十六进制字符）';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return '路径过长（最多 $max 字节）';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      '跳数过多，无法在一次请求中追踪。请减少一些跳，或选择“按输入顺序”。';
+
+  @override
+  String get manualTrace_roundTrip => '往返';
+
+  @override
+  String get manualTrace_asEntered => '按输入顺序';
+
+  @override
+  String get manualTrace_roundTripHint => '追踪经由这些跳发出，并沿原路返回。';
+
+  @override
+  String get manualTrace_asEnteredHint => '追踪严格按这些跳进行。请自行添加返回你的跳。';
+
+  @override
+  String get manualTrace_menuHint => '输入中继器哈希并追踪该路径，无需 GPS';
+
+  @override
+  String get imageSend_viewOriginal => '原图';
+
+  @override
+  String get imageSend_viewReconstruction => '收件人看到的';
+
+  @override
+  String get imageSend_preparingPreview => '正在准备预览…';
+
+  @override
+  String get imageSend_tryAnother => '试试其他版本';
+
+  @override
+  String get imageSend_versionsHint => '每个版本的还原方式略有不同。请选择最接近原照片的一个。';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return '版本 $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 个数据包',
+      one: '1 个数据包',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count 个中继器转发了每个部分',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String get tcpFound_title => '此网络上';
 
   @override

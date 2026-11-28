@@ -70,7 +70,7 @@ Future<String?> pickContactToShare(BuildContext context) async {
       ),
     ),
   );
-  return picked == null ? null : contactLinkFor(picked);
+  return picked == null ? null : contactShareTokenFor(picked);
 }
 
 IconData _typeIcon(int type) => switch (type) {

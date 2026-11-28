@@ -15719,6 +15719,156 @@ class AppLocalizationsPl extends AppLocalizations {
       'Ta wiadomość przyszła z analizatora CoreScope. Twoje radio jej nie odebrało, więc nie ma ścieżki radiowej od Twojego radia.';
 
   @override
+  String get bookmarks_title => 'Zakładki';
+
+  @override
+  String get bookmarks_add => 'Dodaj zakładkę';
+
+  @override
+  String get bookmarks_remove => 'Usuń zakładkę';
+
+  @override
+  String get bookmarks_added => 'Dodano zakładkę';
+
+  @override
+  String get bookmarks_removed => 'Usunięto zakładkę';
+
+  @override
+  String get bookmarks_share => 'Udostępnij zakładki';
+
+  @override
+  String get bookmarks_filterAll => 'Wszystkie';
+
+  @override
+  String get bookmarks_filterDirect => 'Prywatne';
+
+  @override
+  String get bookmarks_filterChannels => 'Kanały';
+
+  @override
+  String get bookmarks_empty => 'Brak zakładek';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Przytrzymaj wiadomość i wybierz „Dodaj zakładkę”, aby zachować ją tutaj nawet po wyczyszczeniu czatu.';
+
+  @override
+  String get manualTrace_menuItem => 'Śledzenie ścieżki po hashach';
+
+  @override
+  String get manualTrace_inputLabel => 'Hasze przekaźników';
+
+  @override
+  String manualTrace_helper(String example) {
+    return 'Przykład: $example. Oddziel przecinkami lub spacjami.';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return 'Skoki ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => 'Nieznany węzeł';
+
+  @override
+  String get manualTrace_run => 'Uruchom śledzenie ścieżki';
+
+  @override
+  String get manualTrace_notConnected =>
+      'Połącz się z radiem, aby uruchomić śledzenie';
+
+  @override
+  String get manualTrace_errorInvalidHex =>
+      'Dozwolone są tylko znaki szesnastkowe (0-9, A-F)';
+
+  @override
+  String get manualTrace_errorOddLength =>
+      'Każdy hasz musi mieć parzystą liczbę znaków szesnastkowych, zgodną z rozmiarem skoku';
+
+  @override
+  String get manualTrace_errorMixedWidths =>
+      'Wszystkie hasze muszą mieć tę samą długość';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      'Hasze muszą mieć 1, 2 lub 3 bajty (2, 4 lub 6 znaków szesnastkowych)';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return 'Ścieżka jest zbyt długa (maksymalnie $max bajtów)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      'Zbyt wiele skoków do prześledzenia w jednym żądaniu. Usuń część skoków lub wybierz „Jak wprowadzono”.';
+
+  @override
+  String get manualTrace_roundTrip => 'Tam i z powrotem';
+
+  @override
+  String get manualTrace_asEntered => 'Jak wprowadzono';
+
+  @override
+  String get manualTrace_roundTripHint =>
+      'Śledzenie idzie przez te skoki i wraca tą samą drogą.';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      'Śledzenie przechodzi dokładnie przez te skoki. Skoki powrotne do siebie dodaj samodzielnie.';
+
+  @override
+  String get manualTrace_menuHint =>
+      'Wpisz hashe przekaźników i prześledź tę ścieżkę, bez GPS';
+
+  @override
+  String get imageSend_viewOriginal => 'Oryginał';
+
+  @override
+  String get imageSend_viewReconstruction => 'Co widzą odbiorcy';
+
+  @override
+  String get imageSend_preparingPreview => 'Przygotowywanie podglądu…';
+
+  @override
+  String get imageSend_tryAnother => 'Spróbuj innej wersji';
+
+  @override
+  String get imageSend_versionsHint =>
+      'Każda wersja jest odtwarzana nieco inaczej. Wybierz tę, która najbardziej przypomina Twoje zdjęcie.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return 'Wersja $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pakietu',
+      many: '$count pakietów',
+      few: '$count pakiety',
+      one: '1 pakiet',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count przekaźnika przekazało każdą część',
+      many: '$count przekaźników przekazało każdą część',
+      few: '$count przekaźniki przekazały każdą część',
+      one: '1 przekaźnik przekazał każdą część',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String get tcpFound_title => 'W TEJ SIECI';
 
   @override

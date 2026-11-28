@@ -15666,6 +15666,152 @@ class AppLocalizationsHu extends AppLocalizations {
       'Ez az üzenet egy CoreScope elemzőtől érkezett. A rádiója nem hallotta, így nincs rádiós útvonal a rádiójától.';
 
   @override
+  String get bookmarks_title => 'Könyvjelzők';
+
+  @override
+  String get bookmarks_add => 'Könyvjelzőzés';
+
+  @override
+  String get bookmarks_remove => 'Könyvjelző törlése';
+
+  @override
+  String get bookmarks_added => 'Könyvjelző hozzáadva';
+
+  @override
+  String get bookmarks_removed => 'Könyvjelző törölve';
+
+  @override
+  String get bookmarks_share => 'Könyvjelzők megosztása';
+
+  @override
+  String get bookmarks_filterAll => 'Mind';
+
+  @override
+  String get bookmarks_filterDirect => 'Közvetlen';
+
+  @override
+  String get bookmarks_filterChannels => 'Csatornák';
+
+  @override
+  String get bookmarks_empty => 'Még nincsenek könyvjelzők';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Tartson lenyomva egy üzenetet, és válassza a Könyvjelzőzés lehetőséget, hogy itt maradjon a csevegés törlése után is.';
+
+  @override
+  String get manualTrace_menuItem => 'Útvonal-nyomkövetés hashek alapján';
+
+  @override
+  String get manualTrace_inputLabel => 'Átjátszó hashek';
+
+  @override
+  String manualTrace_helper(String example) {
+    return 'Példa: $example. Vesszővel vagy szóközzel válaszd el.';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return 'Ugrások ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => 'Ismeretlen csomópont';
+
+  @override
+  String get manualTrace_run => 'Útvonal-nyomkövetés indítása';
+
+  @override
+  String get manualTrace_notConnected =>
+      'Csatlakozz egy rádióhoz a nyomkövetés indításához';
+
+  @override
+  String get manualTrace_errorInvalidHex =>
+      'Csak hexadecimális karakterek (0-9, A-F) engedélyezettek';
+
+  @override
+  String get manualTrace_errorOddLength =>
+      'Minden hashnek páros számú hexadecimális karakterből kell állnia, az ugrásmérettel egyezően';
+
+  @override
+  String get manualTrace_errorMixedWidths =>
+      'Minden hashnek azonos hosszúságúnak kell lennie';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      'A hasheknek 1, 2 vagy 3 bájtosnak kell lenniük (2, 4 vagy 6 hexadecimális karakter)';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return 'Az útvonal túl hosszú (legfeljebb $max bájt)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      'Túl sok ugrás egyetlen nyomkövetési kéréshez. Távolíts el néhány ugrást, vagy válaszd a „Megadott sorrendben” lehetőséget.';
+
+  @override
+  String get manualTrace_roundTrip => 'Oda-vissza';
+
+  @override
+  String get manualTrace_asEntered => 'Megadott sorrendben';
+
+  @override
+  String get manualTrace_roundTripHint =>
+      'A nyomkövetés ezeken az ugrásokon át megy ki, és ugyanazon az úton jön vissza.';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      'A nyomkövetés pontosan ezeket az ugrásokat követi. A hozzád visszavezető ugrásokat magadnak kell hozzáadnod.';
+
+  @override
+  String get manualTrace_menuHint =>
+      'Írja be a jelismétlők hash-eit, és kövesse az útvonalat, GPS nélkül';
+
+  @override
+  String get imageSend_viewOriginal => 'Eredeti';
+
+  @override
+  String get imageSend_viewReconstruction => 'Amit a címzettek látnak';
+
+  @override
+  String get imageSend_preparingPreview => 'Előnézet előkészítése…';
+
+  @override
+  String get imageSend_tryAnother => 'Másik változat kipróbálása';
+
+  @override
+  String get imageSend_versionsHint =>
+      'Minden változat kissé másként van rekonstruálva. Válassza azt, amelyik leginkább hasonlít a fényképére.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return '$number. változat';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count csomag',
+      one: '1 csomag',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count jelismétlő továbbította az összes részt',
+      one: '1 jelismétlő továbbította az összes részt',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String get tcpFound_title => 'EZEN A HÁLÓZATON';
 
   @override

@@ -15665,6 +15665,156 @@ class AppLocalizationsSl extends AppLocalizations {
       'To sporočilo je prišlo z analizatorja CoreScope. Vaš radio ga ni slišal, zato ni radijske poti od vašega radia.';
 
   @override
+  String get bookmarks_title => 'Zaznamki';
+
+  @override
+  String get bookmarks_add => 'Dodaj zaznamek';
+
+  @override
+  String get bookmarks_remove => 'Odstrani zaznamek';
+
+  @override
+  String get bookmarks_added => 'Zaznamek dodan';
+
+  @override
+  String get bookmarks_removed => 'Zaznamek odstranjen';
+
+  @override
+  String get bookmarks_share => 'Deli zaznamke';
+
+  @override
+  String get bookmarks_filterAll => 'Vse';
+
+  @override
+  String get bookmarks_filterDirect => 'Neposredni';
+
+  @override
+  String get bookmarks_filterChannels => 'Kanali';
+
+  @override
+  String get bookmarks_empty => 'Še ni zaznamkov';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Pridržite sporočilo in izberite Dodaj zaznamek, da ostane tukaj tudi po brisanju klepeta.';
+
+  @override
+  String get manualTrace_menuItem => 'Sledenje poti po zgoščenih vrednostih';
+
+  @override
+  String get manualTrace_inputLabel => 'Zgoščene vrednosti repetitorjev';
+
+  @override
+  String manualTrace_helper(String example) {
+    return 'Primer: $example. Ločite z vejicami ali presledki.';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return 'Skoki ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => 'Neznano vozlišče';
+
+  @override
+  String get manualTrace_run => 'Zaženi sledenje poti';
+
+  @override
+  String get manualTrace_notConnected =>
+      'Za izvedbo sledenja se povežite z radiem';
+
+  @override
+  String get manualTrace_errorInvalidHex =>
+      'Dovoljeni so samo šestnajstiški znaki (0-9, A-F)';
+
+  @override
+  String get manualTrace_errorOddLength =>
+      'Vsaka zgoščena vrednost mora imeti sodo število šestnajstiških znakov, skladno z velikostjo skoka';
+
+  @override
+  String get manualTrace_errorMixedWidths =>
+      'Vse zgoščene vrednosti morajo biti enake dolžine';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      'Zgoščene vrednosti morajo imeti 1, 2 ali 3 bajte (2, 4 ali 6 šestnajstiških znakov)';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return 'Pot je predolga (največ $max bajtov)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      'Preveč skokov za sledenje v eni zahtevi. Odstranite nekaj skokov ali izberite »Kot vneseno«.';
+
+  @override
+  String get manualTrace_roundTrip => 'Povratna pot';
+
+  @override
+  String get manualTrace_asEntered => 'Kot vneseno';
+
+  @override
+  String get manualTrace_roundTripHint =>
+      'Sledenje gre skozi te skoke in se vrne po isti poti.';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      'Sledenje sledi tem skokom natančno. Skoke nazaj k sebi dodajte sami.';
+
+  @override
+  String get manualTrace_menuHint =>
+      'Vnesite zgoščene vrednosti repetitorjev in sledite poti, brez GPS';
+
+  @override
+  String get imageSend_viewOriginal => 'Izvirnik';
+
+  @override
+  String get imageSend_viewReconstruction => 'Kaj vidijo prejemniki';
+
+  @override
+  String get imageSend_preparingPreview => 'Priprava predogleda…';
+
+  @override
+  String get imageSend_tryAnother => 'Poskusi drugo različico';
+
+  @override
+  String get imageSend_versionsHint =>
+      'Vsaka različica je rekonstruirana nekoliko drugače. Izberite tisto, ki je najbolj podobna vaši fotografiji.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return 'Različica $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count paketov',
+      few: '$count paketi',
+      two: '$count paketa',
+      one: '1 paket',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count repetitorjev je posredovalo vsak del',
+      few: '$count repetitorji so posredovali vsak del',
+      two: '2 repetitorja sta posredovala vsak del',
+      one: '1 repetitor je posredoval vsak del',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String get tcpFound_title => 'V TEM OMREŽJU';
 
   @override

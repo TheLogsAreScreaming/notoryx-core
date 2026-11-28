@@ -963,8 +963,9 @@ class ImageCodecService extends ChangeNotifier implements ImageSendCodec {
   @override
   Future<Uint8List> encode(
     Uint8List imageBytes,
-    ImageCodecRatePoint rate,
-  ) async {
+    ImageCodecRatePoint rate, {
+    int variant = 0,
+  }) async {
     if (!kImageCodecBitstreamPathAvailable) {
       // Fail here rather than after a 512x512 raster and a session load, and
       // fail with the specific exception so the sheet can say why.
@@ -976,7 +977,7 @@ class ImageCodecService extends ChangeNotifier implements ImageSendCodec {
       throw const ImageCodecBundleIncomplete();
     }
     final result = await encodeImage(
-      rgbBytes: await _toSquareRgb(imageBytes),
+      rgbBytes: await _toSquareRgb(imageBytes, variant: variant),
       ratePoint: aeicRatePointForUi(rate),
     );
     final bitstream = result?.bitstream;
@@ -984,6 +985,18 @@ class ImageCodecService extends ChangeNotifier implements ImageSendCodec {
       throw StateError(_lastError ?? 'Image codec is not available.');
     }
     return bitstream;
+  }
+
+  /// [ImageSendCodec] preview: decodes [payload] the way a recipient will.
+  @override
+  Future<Uint8List?> decodePreview(Uint8List payload) async {
+    if (!canDecode) return null;
+    final result = await decodeBitstream(
+      bitstream: payload,
+      ratePoint: aeicRatePointForUi(kImageSendRatePoint),
+      resolution: kImageCodecSquareSize,
+    );
+    return result?.pngBytes;
   }
 
   /// Encodes an already-decoded RGB image.
@@ -1282,7 +1295,10 @@ class ImageCodecService extends ChangeNotifier implements ImageSendCodec {
   /// It runs on the root isolate, which is acceptable: it is a single 512x512
   /// raster, three orders of magnitude cheaper than the 1385 GFLOP inference
   /// that follows in the worker.
-  Future<Uint8List> _toSquareRgb(Uint8List imageBytes) async {
+  Future<Uint8List> _toSquareRgb(
+    Uint8List imageBytes, {
+    int variant = 0,
+  }) async {
     final codec = await ui.instantiateImageCodec(imageBytes);
     final frame = await codec.getNextFrame();
     final source = frame.image;
@@ -1296,12 +1312,10 @@ class ImageCodecService extends ChangeNotifier implements ImageSendCodec {
       // NOTE: the aspect ratio is NOT transmitted, so the receiver cannot undo
       // the stretch — see the note in image_chunk_transport.dart on the
       // metadata byte.
-      final src = ui.Rect.fromLTWH(
-        0,
-        0,
-        source.width.toDouble(),
-        source.height.toDouble(),
-      );
+      // Variant 0 is the whole frame; others trim at most ~2% at an edge
+      // (see rerollSourceRect) for "Try another version".
+      final r = rerollSourceRect(source.width, source.height, variant);
+      final src = ui.Rect.fromLTWH(r.left, r.top, r.width, r.height);
       final dstSize = kImageCodecSquareSize.toDouble();
       final recorder = ui.PictureRecorder();
       ui.Canvas(recorder).drawImageRect(

@@ -3,6 +3,7 @@ import 'widgets/app_lock_gate.dart';
 import 'services/node_telemetry_store.dart';
 import 'services/sensor_history_store.dart';
 import 'helpers/sensor_labels.dart';
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -10,7 +11,9 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+
 import 'l10n/app_localizations.dart';
+
 import 'package:provider/provider.dart';
 
 import 'screens/chrome_required_screen.dart';
@@ -19,8 +22,10 @@ import 'utils/platform_info.dart';
 import 'connector/meshcore_connector.dart';
 import 'connector/meshcore_protocol.dart';
 import 'connector/radio_manager.dart';
+
 import 'package:intl/intl.dart';
 import 'package:latlong2/latlong.dart';
+
 import 'models/app_settings.dart';
 import 'models/image_codec_support.dart';
 import 'models/mqtt_mesh_packet.dart';
@@ -53,6 +58,7 @@ import 'services/favorite_return_service.dart';
 import 'services/field_ops_service.dart';
 import 'services/path_history_service.dart';
 import 'services/app_settings_service.dart';
+import 'services/bookmark_service.dart';
 import 'services/message_filter/message_filter_service.dart';
 import 'services/team_tracking_service.dart';
 import 'services/waypoint_store.dart';
@@ -175,6 +181,7 @@ void main() async {
   // second radio is recognised as the same message, not a repeat.
   final messageFilterService = MessageFilterService();
   await messageFilterService.load();
+  final bookmarkService = BookmarkService()..load();
   // Each radio gets its own retry service, since it calls back into one
   // connection, and its own hold on the shared background service.
   MeshCoreConnector setUpRadio(
@@ -268,6 +275,7 @@ void main() async {
         receivedImageStore: receivedImageStore,
         imageReassembler: imageReassembler,
         messageFilterService: messageFilterService,
+        bookmarkService: bookmarkService,
       ),
     ),
   );
@@ -357,6 +365,7 @@ class MeshCoreApp extends StatefulWidget {
   final ReceivedImageStore receivedImageStore;
   final ImageStreamReassembler imageReassembler;
   final MessageFilterService messageFilterService;
+  final BookmarkService bookmarkService;
   const MeshCoreApp({
     super.key,
     required this.connector,
@@ -378,6 +387,7 @@ class MeshCoreApp extends StatefulWidget {
     required this.receivedImageStore,
     required this.imageReassembler,
     required this.messageFilterService,
+    required this.bookmarkService,
   });
   @override
   State<MeshCoreApp> createState() => _MeshCoreAppState();
@@ -1054,6 +1064,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         ChangeNotifierProvider.value(value: widget.pathHistoryService),
         ChangeNotifierProvider.value(value: widget.appSettingsService),
         ChangeNotifierProvider.value(value: widget.messageFilterService),
+        ChangeNotifierProvider.value(value: widget.bookmarkService),
         ChangeNotifierProvider.value(value: widget.bleDebugLogService),
         ChangeNotifierProvider.value(value: widget.appDebugLogService),
         ChangeNotifierProvider.value(value: widget.chatTextScaleService),

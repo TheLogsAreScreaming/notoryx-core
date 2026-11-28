@@ -10,6 +10,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart' hide TextDirection;
 import 'package:provider/provider.dart';
 
+import '../services/bookmark_service.dart';
+import '../widgets/bookmark_tile.dart';
 import '../models/message_filter.dart';
 import '../services/message_filter/message_filter_service.dart';
 import '../widgets/filtered_message_ghost.dart';
@@ -1857,12 +1859,46 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
                       right: 8,
                       bottom: 4,
                     ),
-                    child: Text(
-                      _formatTime(context, entry.firstSeen),
-                      style: MeshTheme.mono(
-                        fontSize: 10 * textScale,
-                        color: metaColor,
-                      ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          _formatTime(context, entry.firstSeen),
+                          style: MeshTheme.mono(
+                            fontSize: 10 * textScale,
+                            color: metaColor,
+                          ),
+                        ),
+                        // Repeaters heard passing on every chunk of an
+                        // image this radio sent, like a text's repeats.
+                        if (isOutgoing)
+                          if (context.select<MeshCoreConnector, int>(
+                                (c) => c.imageEchoCount(
+                                  entry.channelIndex,
+                                  entry.imgId,
+                                ),
+                              )
+                              case final echoes when echoes > 0) ...[
+                            const SizedBox(width: 6),
+                            Icon(
+                              Icons.repeat,
+                              size: 10 * textScale,
+                              color: metaColor,
+                              semanticLabel: context.l10n.imageSend_echoes(
+                                echoes,
+                              ),
+                            ),
+                            const SizedBox(width: 2),
+                            Text(
+                              '$echoes',
+                              key: const ValueKey('image-echo-count'),
+                              style: MeshTheme.mono(
+                                fontSize: 10 * textScale,
+                                color: metaColor,
+                              ),
+                            ),
+                          ],
+                      ],
                     ),
                   ),
                 ],
@@ -2701,6 +2737,20 @@ class _ChannelChatScreenState extends State<ChannelChatScreen> {
                 Navigator.pop(sheetContext);
                 unawaited(showForwardSheet(context, message.text));
               },
+            ),
+            bookmarkSheetTile(
+              context,
+              sheetContext,
+              source: BookmarkSource.channel,
+              sourceId: widget.channel.pskHex,
+              sourceName: widget.channel.name.isEmpty
+                  ? context.l10n.channels_channelIndex(widget.channel.index)
+                  : widget.channel.name,
+              messageId: message.messageId,
+              senderName: message.senderName,
+              text: message.text,
+              timestamp: message.timestamp,
+              isOutgoing: message.isOutgoing,
             ),
             ListTile(
               leading: const Icon(Icons.copy),

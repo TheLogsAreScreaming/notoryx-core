@@ -15724,6 +15724,156 @@ class AppLocalizationsUk extends AppLocalizations {
       'Це повідомлення надійшло з аналізатора CoreScope. Ваше радіо його не чуло, тому радіомаршруту від вашого радіо немає.';
 
   @override
+  String get bookmarks_title => 'Закладки';
+
+  @override
+  String get bookmarks_add => 'Додати закладку';
+
+  @override
+  String get bookmarks_remove => 'Видалити закладку';
+
+  @override
+  String get bookmarks_added => 'Закладку додано';
+
+  @override
+  String get bookmarks_removed => 'Закладку видалено';
+
+  @override
+  String get bookmarks_share => 'Поділитися закладками';
+
+  @override
+  String get bookmarks_filterAll => 'Усі';
+
+  @override
+  String get bookmarks_filterDirect => 'Особисті';
+
+  @override
+  String get bookmarks_filterChannels => 'Канали';
+
+  @override
+  String get bookmarks_empty => 'Закладок ще немає';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Утримуйте повідомлення й виберіть «Додати закладку», щоб зберегти його тут навіть після очищення чату.';
+
+  @override
+  String get manualTrace_menuItem => 'Трасування шляху за хешами';
+
+  @override
+  String get manualTrace_inputLabel => 'Хеші репітерів';
+
+  @override
+  String manualTrace_helper(String example) {
+    return 'Приклад: $example. Розділяйте комами або пробілами.';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return 'Хопи ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => 'Невідомий вузол';
+
+  @override
+  String get manualTrace_run => 'Запустити трасування шляху';
+
+  @override
+  String get manualTrace_notConnected =>
+      'Підключіться до радіо, щоб запустити трасування';
+
+  @override
+  String get manualTrace_errorInvalidHex =>
+      'Дозволені лише шістнадцяткові символи (0-9, A-F)';
+
+  @override
+  String get manualTrace_errorOddLength =>
+      'Кожен хеш має складатися з парної кількості шістнадцяткових символів, що відповідає розміру хопа';
+
+  @override
+  String get manualTrace_errorMixedWidths =>
+      'Усі хеші мають бути однакової довжини';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      'Хеші мають бути завдовжки 1, 2 або 3 байти (2, 4 або 6 шістнадцяткових символів)';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return 'Шлях задовгий (максимум $max байт)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      'Забагато хопів для трасування в одному запиті. Видаліть кілька хопів або виберіть «Як введено».';
+
+  @override
+  String get manualTrace_roundTrip => 'Туди й назад';
+
+  @override
+  String get manualTrace_asEntered => 'Як введено';
+
+  @override
+  String get manualTrace_roundTripHint =>
+      'Трасування проходить через ці хопи й повертається тим самим шляхом.';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      'Трасування точно йде цими хопами. Додайте хопи назад до себе самостійно.';
+
+  @override
+  String get manualTrace_menuHint =>
+      'Введіть хеші ретрансляторів і відстежте шлях без GPS';
+
+  @override
+  String get imageSend_viewOriginal => 'Оригінал';
+
+  @override
+  String get imageSend_viewReconstruction => 'Що побачать одержувачі';
+
+  @override
+  String get imageSend_preparingPreview => 'Підготовка попереднього перегляду…';
+
+  @override
+  String get imageSend_tryAnother => 'Інший варіант';
+
+  @override
+  String get imageSend_versionsHint =>
+      'Кожен варіант відновлюється трохи по-різному. Виберіть той, що найбільше схожий на ваше фото.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return 'Варіант $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count пакета',
+      many: '$count пакетів',
+      few: '$count пакети',
+      one: '$count пакет',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ретранслятора передали кожну частину',
+      many: '$count ретрансляторів передали кожну частину',
+      few: '$count ретранслятори передали кожну частину',
+      one: '1 ретранслятор передав кожну частину',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String get tcpFound_title => 'У ЦІЙ МЕРЕЖІ';
 
   @override

@@ -1,0 +1,1 @@
+• Bot Mode: !ping replies show the hop count with an emoji (🎯 direct, 1⃣ to 🔟, 🦘 for 11 or more)

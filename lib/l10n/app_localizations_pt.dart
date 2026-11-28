@@ -15680,6 +15680,152 @@ class AppLocalizationsPt extends AppLocalizations {
       'Esta mensagem chegou de um analisador CoreScope. O seu rádio não a ouviu, por isso não há caminho de rádio a partir do seu rádio.';
 
   @override
+  String get bookmarks_title => 'Favoritos';
+
+  @override
+  String get bookmarks_add => 'Adicionar aos favoritos';
+
+  @override
+  String get bookmarks_remove => 'Remover dos favoritos';
+
+  @override
+  String get bookmarks_added => 'Adicionado aos favoritos';
+
+  @override
+  String get bookmarks_removed => 'Removido dos favoritos';
+
+  @override
+  String get bookmarks_share => 'Partilhar favoritos';
+
+  @override
+  String get bookmarks_filterAll => 'Todos';
+
+  @override
+  String get bookmarks_filterDirect => 'Diretas';
+
+  @override
+  String get bookmarks_filterChannels => 'Canais';
+
+  @override
+  String get bookmarks_empty => 'Ainda sem favoritos';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Mantenha premida uma mensagem e escolha Adicionar aos favoritos para a guardar aqui, mesmo depois de limpar a conversa.';
+
+  @override
+  String get manualTrace_menuItem => 'Rastreamento de caminho por hashes';
+
+  @override
+  String get manualTrace_inputLabel => 'Hashes de repetidores';
+
+  @override
+  String manualTrace_helper(String example) {
+    return 'Exemplo: $example. Separe com vírgulas ou espaços.';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return 'Saltos ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => 'Nó desconhecido';
+
+  @override
+  String get manualTrace_run => 'Executar rastreamento de caminho';
+
+  @override
+  String get manualTrace_notConnected =>
+      'Conecte-se a um rádio para executar um rastreamento';
+
+  @override
+  String get manualTrace_errorInvalidHex =>
+      'Somente caracteres hexadecimais (0-9, A-F) são permitidos';
+
+  @override
+  String get manualTrace_errorOddLength =>
+      'Cada hash precisa de um número par de caracteres hexadecimais, de acordo com o tamanho do salto';
+
+  @override
+  String get manualTrace_errorMixedWidths =>
+      'Todos os hashes devem ter o mesmo comprimento';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      'Os hashes devem ter 1, 2 ou 3 bytes (2, 4 ou 6 caracteres hexadecimais)';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return 'O caminho é muito longo (máximo de $max bytes)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      'Saltos demais para rastrear em uma única solicitação. Remova alguns saltos ou escolha “Como inserido”.';
+
+  @override
+  String get manualTrace_roundTrip => 'Ida e volta';
+
+  @override
+  String get manualTrace_asEntered => 'Como inserido';
+
+  @override
+  String get manualTrace_roundTripHint =>
+      'O rastreamento sai por estes saltos e volta pelo mesmo caminho.';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      'O rastreamento segue exatamente estes saltos. Adicione você mesmo os saltos de volta até si.';
+
+  @override
+  String get manualTrace_menuHint =>
+      'Escreva os hashes dos repetidores e trace esse caminho, sem GPS';
+
+  @override
+  String get imageSend_viewOriginal => 'Original';
+
+  @override
+  String get imageSend_viewReconstruction => 'O que os destinatários veem';
+
+  @override
+  String get imageSend_preparingPreview => 'Preparando a prévia…';
+
+  @override
+  String get imageSend_tryAnother => 'Tentar outra versão';
+
+  @override
+  String get imageSend_versionsHint =>
+      'Cada versão é reconstruída de forma um pouco diferente. Escolha a que mais se parece com a sua foto.';
+
+  @override
+  String imageSend_versionLabel(int number) {
+    return 'Versão $number';
+  }
+
+  @override
+  String imageSend_versionPackets(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pacotes',
+      one: '1 pacote',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String imageSend_echoes(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count repetidores reencaminharam todas as partes',
+      one: '1 repetidor reencaminhou todas as partes',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String get tcpFound_title => 'NESTA REDE';
 
   @override

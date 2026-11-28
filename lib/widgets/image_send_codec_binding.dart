@@ -98,6 +98,47 @@ class ImageCodecRateStats {
   }
 }
 
+/// Small zoom/shift tweaks behind "Try another version": (zoom, dx, dy).
+/// The decoder is generative, so a near-identical input can reconstruct with
+/// different invented detail; re-encoding a slightly moved frame gives the
+/// sender other outcomes to choose from. Version 1 (index 0) is the whole
+/// photo, byte-identical to a plain encode, so the wire format is unchanged.
+/// Adapted from meshcore-open (MIT).
+const List<(double, double, double)> kImageSendRerollTweaks = [
+  (1.0, 0.0, 0.0),
+  (1.02, 0.005, 0.0),
+  (1.02, -0.005, 0.005),
+  (1.04, 0.0, -0.005),
+  (1.03, 0.01, 0.01),
+  (1.03, -0.01, -0.01),
+];
+
+/// How many versions the sheet offers.
+final int kImageSendMaxVersions = kImageSendRerollTweaks.length;
+
+/// The part of a [width] x [height] photo that [variant] encodes: at most
+/// about 2% trimmed at an edge, so the shape (and its aspect code) is kept.
+({double left, double top, double width, double height}) rerollSourceRect(
+  int width,
+  int height,
+  int variant,
+) {
+  if (variant < 0 || variant >= kImageSendRerollTweaks.length) {
+    throw RangeError.range(
+      variant,
+      0,
+      kImageSendRerollTweaks.length - 1,
+      'variant',
+    );
+  }
+  final (zoom, dx, dy) = kImageSendRerollTweaks[variant];
+  final w = width / zoom;
+  final h = height / zoom;
+  final left = ((width - w) / 2 + dx * width).clamp(0.0, width - w);
+  final top = ((height - h) / 2 + dy * height).clamp(0.0, height - h);
+  return (left: left, top: top, width: w, height: h);
+}
+
 /// The encode interface the preview sheet consumes.
 abstract class ImageSendCodec {
   /// Current availability. The sheet renders a non-interactive explanation for
@@ -119,8 +160,17 @@ abstract class ImageSendCodec {
   /// compressed bitstream that will be chunked onto the air.
   ///
   /// Implementations are expected to centre-crop to
-  /// [kImageCodecSquareSize] square first.
-  Future<Uint8List> encode(Uint8List imageBytes, ImageCodecRatePoint rate);
+  /// [kImageCodecSquareSize] square first. [variant] picks the frame tweak
+  /// (see [rerollSourceRect]); 0 is the whole photo.
+  Future<Uint8List> encode(
+    Uint8List imageBytes,
+    ImageCodecRatePoint rate, {
+    int variant = 0,
+  });
+
+  /// Decodes [payload] on this device into the picture recipients will
+  /// reconstruct (PNG), or null when this device can't decode.
+  Future<Uint8List?> decodePreview(Uint8List payload);
 }
 
 /// A deterministic stand-in used for widget previews and tests.
@@ -138,23 +188,44 @@ class FakeImageSendCodec implements ImageSendCodec {
 
   final Duration latency;
 
+  /// What [decodePreview] returns; null mimics a device that can't decode.
+  final Uint8List? previewPng;
+
   const FakeImageSendCodec({
     this.availability = ImageCodecAvailability.ready,
     this.unavailableReason,
     this.latency = const Duration(milliseconds: 250),
+    this.previewPng,
   });
+
+  /// The fake's payload size for [variant]: each version a little larger, so
+  /// tests can tell them apart.
+  static int payloadBytesFor(ImageCodecRatePoint rate, int variant) =>
+      ImageCodecRateStats.forRate(rate).meanBytes + variant * 3;
 
   @override
   Future<Uint8List> encode(
     Uint8List imageBytes,
-    ImageCodecRatePoint rate,
-  ) async {
+    ImageCodecRatePoint rate, {
+    int variant = 0,
+  }) async {
     if (latency > Duration.zero) {
       await Future<void>.delayed(latency);
     }
-    final size = ImageCodecRateStats.forRate(rate).meanBytes;
+    final size = payloadBytesFor(rate, variant);
     return Uint8List.fromList(
-      List<int>.generate(size, (i) => (i * 31 + rate.index) & 0xFF),
+      List<int>.generate(
+        size,
+        (i) => (i * 31 + rate.index + variant * 7) & 0xFF,
+      ),
     );
+  }
+
+  @override
+  Future<Uint8List?> decodePreview(Uint8List payload) async {
+    if (latency > Duration.zero) {
+      await Future<void>.delayed(latency);
+    }
+    return previewPng;
   }
 }
