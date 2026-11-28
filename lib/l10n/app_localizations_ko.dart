@@ -90,6 +90,9 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String get chats_jumpToUnread => 'Jump to unread';
+
+  @override
   String radioStatus_connectedVia(String transport) {
     return '$transport(으)로 연결됨';
   }

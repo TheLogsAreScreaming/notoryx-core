@@ -42,6 +42,7 @@
   },
   "messages_yesterday": "Yesterday",
   "messages_unreadCount": "{count} unread",
+  "chats_jumpToUnread": "Jump to unread",
   "@messages_unreadCount": {
     "placeholders": {
       "count": {
