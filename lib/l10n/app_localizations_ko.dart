@@ -15167,4 +15167,65 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get tcpFound_hint =>
       '자신을 알리는 Wi-Fi 컴패니언 펌웨어 무전기가 여기에 표시됩니다. 없으면 아래에 주소를 입력하세요.';
+
+  @override
+  String get tak_title => 'TAK와 공유';
+
+  @override
+  String get tak_toolHint => '메시 노드를 ATAK, iTAK 또는 WinTAK 지도에 표시';
+
+  @override
+  String get tak_intro =>
+      '이 무전기와 지난 하루 동안 수신한 노드의 위치를 30초마다 TAK 앱으로 보내 지도에 표시합니다. TAK에서는 아무것도 돌아오지 않습니다.';
+
+  @override
+  String get tak_enable => 'TAK로 보내기';
+
+  @override
+  String get tak_off => '꺼짐';
+
+  @override
+  String tak_lastSent(int count, String time) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$time에 지점 $count개 전송',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String tak_error(String error) {
+    return '보내지 못했습니다: $error';
+  }
+
+  @override
+  String get tak_unsupported => '웹 버전에서는 사용할 수 없습니다';
+
+  @override
+  String get tak_target => '보낼 곳';
+
+  @override
+  String get tak_host => '주소';
+
+  @override
+  String get tak_port => 'UDP 포트';
+
+  @override
+  String get tak_targetHint =>
+      '127.0.0.1 포트 4242는 이 휴대폰의 ATAK입니다. 다른 기기는 해당 주소와 UDP 입력 포트를 사용하세요. 변경하려면 보내기를 끄세요.';
+
+  @override
+  String get tak_badTarget => '주소와 1~65535 사이의 포트를 입력하세요';
+
+  @override
+  String get tak_consentTitle => '노드 위치를 보낼까요?';
+
+  @override
+  String tak_consentBody(String target) {
+    return '이 무전기와 수신한 노드의 이름과 위치가 끌 때까지 30초마다 암호화되지 않은 채 $target(으)로 전송됩니다. 신뢰하는 TAK 앱에만 보내세요.';
+  }
+
+  @override
+  String get tak_consentAgree => '보내기';
 }

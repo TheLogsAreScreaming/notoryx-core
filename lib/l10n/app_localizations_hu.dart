@@ -15823,4 +15823,67 @@ class AppLocalizationsHu extends AppLocalizations {
   @override
   String get tcpFound_hint =>
       'Itt jelennek meg a magukat bejelentő, Wi-Fi társ-firmware-rel rendelkező rádiók. Egyébként írja be lent a címet.';
+
+  @override
+  String get tak_title => 'Megosztás TAK-kal';
+
+  @override
+  String get tak_toolHint =>
+      'Mesh-csomópontok megjelenítése az ATAK, iTAK vagy WinTAK térképén';
+
+  @override
+  String get tak_intro =>
+      '30 másodpercenként elküldi ennek a rádiónak és az elmúlt napban hallott csomópontoknak a helyzetét egy TAK-alkalmazásnak, hogy megjelenjenek a térképén. A TAK-tól semmi nem érkezik vissza.';
+
+  @override
+  String get tak_enable => 'Küldés a TAK-nak';
+
+  @override
+  String get tak_off => 'Ki';
+
+  @override
+  String tak_lastSent(int count, String time) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count pont elküldve ekkor: $time',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String tak_error(String error) {
+    return 'Nem sikerült elküldeni: $error';
+  }
+
+  @override
+  String get tak_unsupported => 'A webes változatban nem érhető el';
+
+  @override
+  String get tak_target => 'CÍMZETT';
+
+  @override
+  String get tak_host => 'Cím';
+
+  @override
+  String get tak_port => 'UDP-port';
+
+  @override
+  String get tak_targetHint =>
+      'A 127.0.0.1 4242-es port az ATAK ezen a telefonon. Más eszközhöz adja meg annak címét és UDP bemeneti portját. A módosításhoz kapcsolja ki a küldést.';
+
+  @override
+  String get tak_badTarget =>
+      'Adjon meg egy címet és egy 1 és 65535 közötti portot';
+
+  @override
+  String get tak_consentTitle => 'Elküldi a csomópontok helyzetét?';
+
+  @override
+  String tak_consentBody(String target) {
+    return 'Ennek a rádiónak és a hallott csomópontoknak a neve és helyzete titkosítás nélkül 30 másodpercenként elküldésre kerül ide: $target, amíg ki nem kapcsolja. Csak megbízható TAK-alkalmazásnak küldje.';
+  }
+
+  @override
+  String get tak_consentAgree => 'Küldés';
 }

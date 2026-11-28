@@ -5885,5 +5885,21 @@
   "tcpFound_title": "このネットワーク上",
   "tcpFound_searching": "このWi-Fi上の無線機を探しています…",
   "tcpFound_failed": "このネットワークは検索できません",
-  "tcpFound_hint": "自身を通知するWi-Fiコンパニオンファームウェアの無線機がここに表示されます。表示されない場合は下にアドレスを入力してください。"
+  "tcpFound_hint": "自身を通知するWi-Fiコンパニオンファームウェアの無線機がここに表示されます。表示されない場合は下にアドレスを入力してください。",
+  "tak_title": "TAKと共有",
+  "tak_toolHint": "メッシュのノードをATAK、iTAK、WinTAKの地図に表示",
+  "tak_intro": "この無線機と過去1日に受信したノードの位置を30秒ごとにTAKアプリへ送り、その地図に表示します。TAKからは何も戻りません。",
+  "tak_enable": "TAKへ送信",
+  "tak_off": "オフ",
+  "tak_lastSent": "{count, plural, other{{time}に{count}地点を送信}}",
+  "tak_error": "送信できませんでした: {error}",
+  "tak_unsupported": "Web版では利用できません",
+  "tak_target": "送信先",
+  "tak_host": "アドレス",
+  "tak_port": "UDPポート",
+  "tak_targetHint": "127.0.0.1 ポート4242はこのスマホのATAKです。別の端末の場合はそのアドレスとUDP入力ポートを使ってください。変更するには送信をオフにします。",
+  "tak_badTarget": "アドレスと1〜65535のポートを入力してください",
+  "tak_consentTitle": "ノードの位置を送信しますか？",
+  "tak_consentBody": "この無線機と受信したノードの名前と位置が、オフにするまで30秒ごとに暗号化なしで{target}へ送信されます。信頼できるTAKアプリにのみ送信してください。",
+  "tak_consentAgree": "送信"
 }

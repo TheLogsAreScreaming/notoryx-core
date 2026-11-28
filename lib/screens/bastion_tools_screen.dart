@@ -1,3 +1,4 @@
+import 'tak_feed_screen.dart';
 import 'zone_alerts_screen.dart';
 import '../theme/mesh_theme.dart';
 import 'dart:async';
@@ -288,6 +289,12 @@ class _BastionToolsScreenState extends State<BastionToolsScreen> {
             title: l10n.fleet_title,
             subtitle: l10n.fleet_toolSubtitle,
             builder: (_) => const FleetScreen(),
+          ),
+          _ToolAction(
+            icon: Icons.share_location,
+            title: l10n.tak_title,
+            subtitle: l10n.tak_toolHint,
+            builder: (_) => const TakFeedScreen(),
           ),
           _ToolAction(
             icon: Icons.auto_stories_outlined,

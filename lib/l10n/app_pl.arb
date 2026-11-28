@@ -5789,5 +5789,21 @@
   "tcpFound_title": "W TEJ SIECI",
   "tcpFound_searching": "Szukanie radiostacji w tej sieci Wi-Fi…",
   "tcpFound_failed": "Nie można przeszukać tej sieci",
-  "tcpFound_hint": "Tu pojawiają się radiostacje z oprogramowaniem towarzyszącym Wi-Fi, które się ogłaszają. W przeciwnym razie wpisz adres poniżej."
+  "tcpFound_hint": "Tu pojawiają się radiostacje z oprogramowaniem towarzyszącym Wi-Fi, które się ogłaszają. W przeciwnym razie wpisz adres poniżej.",
+  "tak_title": "Udostępnij do TAK",
+  "tak_toolHint": "Pokaż węzły sieci na mapie ATAK, iTAK lub WinTAK",
+  "tak_intro": "Co 30 sekund wysyła do aplikacji TAK pozycje tej radiostacji i węzłów usłyszanych w ostatniej dobie, aby pojawiły się na jej mapie. Z TAK nic nie wraca.",
+  "tak_enable": "Wysyłaj do TAK",
+  "tak_off": "Wyłączone",
+  "tak_lastSent": "{count, plural, =1{Wysłano 1 punkt o {time}} few{Wysłano {count} punkty o {time}} many{Wysłano {count} punktów o {time}} other{Wysłano {count} punktu o {time}}}",
+  "tak_error": "Nie udało się wysłać: {error}",
+  "tak_unsupported": "Niedostępne w wersji przeglądarkowej",
+  "tak_target": "WYSYŁAJ DO",
+  "tak_host": "Adres",
+  "tak_port": "Port UDP",
+  "tak_targetHint": "127.0.0.1 port 4242 to ATAK na tym telefonie. Dla innego urządzenia podaj jego adres i port wejściowy UDP. Aby je zmienić, wyłącz wysyłanie.",
+  "tak_badTarget": "Wpisz adres i port od 1 do 65535",
+  "tak_consentTitle": "Wysyłać pozycje węzłów?",
+  "tak_consentBody": "Nazwy i pozycje tej radiostacji oraz usłyszanych węzłów będą wysyłane bez szyfrowania do {target} co 30 sekund, dopóki tego nie wyłączysz. Wysyłaj je tylko do zaufanej aplikacji TAK.",
+  "tak_consentAgree": "Wysyłaj"
 }

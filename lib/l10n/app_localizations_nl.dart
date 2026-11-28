@@ -15807,4 +15807,67 @@ class AppLocalizationsNl extends AppLocalizations {
   @override
   String get tcpFound_hint =>
       'Radio\'s met wifi-companionfirmware die zich aankondigen verschijnen hier. Typ anders hieronder het adres.';
+
+  @override
+  String get tak_title => 'Delen met TAK';
+
+  @override
+  String get tak_toolHint =>
+      'Meshknooppunten tonen op de kaart van ATAK, iTAK of WinTAK';
+
+  @override
+  String get tak_intro =>
+      'Stuurt elke 30 seconden de posities van deze radio en de knooppunten die het afgelopen etmaal gehoord zijn naar een TAK-app, zodat ze op de kaart verschijnen. Er komt niets terug van TAK.';
+
+  @override
+  String get tak_enable => 'Naar TAK sturen';
+
+  @override
+  String get tak_off => 'Uit';
+
+  @override
+  String tak_lastSent(int count, String time) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count punten verstuurd om $time',
+      one: '1 punt verstuurd om $time',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String tak_error(String error) {
+    return 'Kon niet versturen: $error';
+  }
+
+  @override
+  String get tak_unsupported => 'Niet beschikbaar in de webversie';
+
+  @override
+  String get tak_target => 'STUREN NAAR';
+
+  @override
+  String get tak_host => 'Adres';
+
+  @override
+  String get tak_port => 'UDP-poort';
+
+  @override
+  String get tak_targetHint =>
+      '127.0.0.1 poort 4242 is ATAK op deze telefoon. Gebruik voor een ander apparaat diens adres en UDP-invoerpoort. Zet versturen uit om dit te wijzigen.';
+
+  @override
+  String get tak_badTarget => 'Voer een adres en een poort van 1 tot 65535 in';
+
+  @override
+  String get tak_consentTitle => 'Posities van knooppunten versturen?';
+
+  @override
+  String tak_consentBody(String target) {
+    return 'De namen en posities van deze radio en de gehoorde knooppunten worden onversleuteld elke 30 seconden naar $target gestuurd tot je dit uitzet. Stuur ze alleen naar een TAK-app die je vertrouwt.';
+  }
+
+  @override
+  String get tak_consentAgree => 'Versturen';
 }

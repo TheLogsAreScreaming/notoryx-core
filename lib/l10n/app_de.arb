@@ -5885,5 +5885,21 @@
   "tcpFound_title": "IN DIESEM NETZWERK",
   "tcpFound_searching": "Suche nach Funkgeräten in diesem WLAN…",
   "tcpFound_failed": "Dieses Netzwerk kann nicht durchsucht werden",
-  "tcpFound_hint": "Funkgeräte mit WLAN-Companion-Firmware, die sich ankündigen, erscheinen hier. Sonst unten die Adresse eingeben."
+  "tcpFound_hint": "Funkgeräte mit WLAN-Companion-Firmware, die sich ankündigen, erscheinen hier. Sonst unten die Adresse eingeben.",
+  "tak_title": "Mit TAK teilen",
+  "tak_toolHint": "Mesh-Knoten auf der Karte von ATAK, iTAK oder WinTAK zeigen",
+  "tak_intro": "Sendet alle 30 Sekunden die Positionen dieses Funkgeräts und der am letzten Tag gehörten Knoten an eine TAK-App, damit sie auf deren Karte erscheinen. Von TAK kommt nichts zurück.",
+  "tak_enable": "An TAK senden",
+  "tak_off": "Aus",
+  "tak_lastSent": "{count, plural, =1{1 Punkt um {time} gesendet} other{{count} Punkte um {time} gesendet}}",
+  "tak_error": "Senden fehlgeschlagen: {error}",
+  "tak_unsupported": "In der Webversion nicht verfügbar",
+  "tak_target": "SENDEN AN",
+  "tak_host": "Adresse",
+  "tak_port": "UDP-Port",
+  "tak_targetHint": "127.0.0.1 Port 4242 ist ATAK auf diesem Telefon. Für ein anderes Gerät dessen Adresse und UDP-Eingangsport angeben. Zum Ändern das Senden ausschalten.",
+  "tak_badTarget": "Adresse und einen Port von 1 bis 65535 eingeben",
+  "tak_consentTitle": "Knotenpositionen senden?",
+  "tak_consentBody": "Namen und Positionen dieses Funkgeräts und der gehörten Knoten werden unverschlüsselt alle 30 Sekunden an {target} gesendet, bis du das ausschaltest. Nur an eine TAK-App senden, der du vertraust.",
+  "tak_consentAgree": "Senden"
 }

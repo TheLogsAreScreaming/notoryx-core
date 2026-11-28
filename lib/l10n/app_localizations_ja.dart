@@ -15154,4 +15154,65 @@ class AppLocalizationsJa extends AppLocalizations {
   @override
   String get tcpFound_hint =>
       '自身を通知するWi-Fiコンパニオンファームウェアの無線機がここに表示されます。表示されない場合は下にアドレスを入力してください。';
+
+  @override
+  String get tak_title => 'TAKと共有';
+
+  @override
+  String get tak_toolHint => 'メッシュのノードをATAK、iTAK、WinTAKの地図に表示';
+
+  @override
+  String get tak_intro =>
+      'この無線機と過去1日に受信したノードの位置を30秒ごとにTAKアプリへ送り、その地図に表示します。TAKからは何も戻りません。';
+
+  @override
+  String get tak_enable => 'TAKへ送信';
+
+  @override
+  String get tak_off => 'オフ';
+
+  @override
+  String tak_lastSent(int count, String time) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$timeに$count地点を送信',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String tak_error(String error) {
+    return '送信できませんでした: $error';
+  }
+
+  @override
+  String get tak_unsupported => 'Web版では利用できません';
+
+  @override
+  String get tak_target => '送信先';
+
+  @override
+  String get tak_host => 'アドレス';
+
+  @override
+  String get tak_port => 'UDPポート';
+
+  @override
+  String get tak_targetHint =>
+      '127.0.0.1 ポート4242はこのスマホのATAKです。別の端末の場合はそのアドレスとUDP入力ポートを使ってください。変更するには送信をオフにします。';
+
+  @override
+  String get tak_badTarget => 'アドレスと1〜65535のポートを入力してください';
+
+  @override
+  String get tak_consentTitle => 'ノードの位置を送信しますか？';
+
+  @override
+  String tak_consentBody(String target) {
+    return 'この無線機と受信したノードの名前と位置が、オフにするまで30秒ごとに暗号化なしで$targetへ送信されます。信頼できるTAKアプリにのみ送信してください。';
+  }
+
+  @override
+  String get tak_consentAgree => '送信';
 }

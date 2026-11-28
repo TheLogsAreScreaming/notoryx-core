@@ -59,6 +59,7 @@ import 'services/field_ops_service.dart';
 import 'services/path_history_service.dart';
 import 'services/app_settings_service.dart';
 import 'services/bookmark_service.dart';
+import 'services/tak_feed_service.dart';
 import 'services/message_filter/message_filter_service.dart';
 import 'services/team_tracking_service.dart';
 import 'services/waypoint_store.dart';
@@ -213,6 +214,7 @@ void main() async {
     prefs: PrefsManager.instance,
   );
   final appLock = AppLockService(PrefsManager.instance);
+  final takFeed = TakFeedService(connector: () => radios.active)..load();
   // One outbox per radio for the app's whole life, so messages queued on a
   // radio still go out while another radio is in use.
   final outboxes = <MeshCoreConnector, OfflineOutbox>{};
@@ -276,6 +278,7 @@ void main() async {
         imageReassembler: imageReassembler,
         messageFilterService: messageFilterService,
         bookmarkService: bookmarkService,
+        takFeed: takFeed,
       ),
     ),
   );
@@ -364,6 +367,7 @@ class MeshCoreApp extends StatefulWidget {
   final ImageCodecService imageCodecService;
   final ReceivedImageStore receivedImageStore;
   final ImageStreamReassembler imageReassembler;
+  final TakFeedService takFeed;
   final MessageFilterService messageFilterService;
   final BookmarkService bookmarkService;
   const MeshCoreApp({
@@ -386,6 +390,7 @@ class MeshCoreApp extends StatefulWidget {
     required this.imageCodecService,
     required this.receivedImageStore,
     required this.imageReassembler,
+    required this.takFeed,
     required this.messageFilterService,
     required this.bookmarkService,
   });
@@ -1063,6 +1068,7 @@ class _MeshCoreAppState extends State<MeshCoreApp> with WidgetsBindingObserver {
         ChangeNotifierProvider.value(value: widget.retryService),
         ChangeNotifierProvider.value(value: widget.pathHistoryService),
         ChangeNotifierProvider.value(value: widget.appSettingsService),
+        ChangeNotifierProvider.value(value: widget.takFeed),
         ChangeNotifierProvider.value(value: widget.messageFilterService),
         ChangeNotifierProvider.value(value: widget.bookmarkService),
         ChangeNotifierProvider.value(value: widget.bleDebugLogService),

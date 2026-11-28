@@ -5751,5 +5751,21 @@
   "tcpFound_title": "V TEJTO SIETI",
   "tcpFound_searching": "Hľadajú sa rádiá v tejto sieti Wi-Fi…",
   "tcpFound_failed": "V tejto sieti nemožno hľadať",
-  "tcpFound_hint": "Tu sa zobrazia rádiá s firmvérom Wi-Fi spoločníka, ktoré sa ohlasujú. Inak zadajte adresu nižšie."
+  "tcpFound_hint": "Tu sa zobrazia rádiá s firmvérom Wi-Fi spoločníka, ktoré sa ohlasujú. Inak zadajte adresu nižšie.",
+  "tak_title": "Zdieľať s TAK",
+  "tak_toolHint": "Zobraziť uzly siete na mape ATAK, iTAK alebo WinTAK",
+  "tak_intro": "Každých 30 sekúnd posiela do aplikácie TAK polohy tohto rádia a uzlov počutých za posledný deň, aby sa zobrazili na jej mape. Z TAK sa nič nevracia.",
+  "tak_enable": "Posielať do TAK",
+  "tak_off": "Vypnuté",
+  "tak_lastSent": "{count, plural, =1{Odoslaný 1 bod o {time}} few{Odoslané {count} body o {time}} other{Odoslaných {count} bodov o {time}}}",
+  "tak_error": "Nepodarilo sa odoslať: {error}",
+  "tak_unsupported": "Nie je k dispozícii vo webovej verzii",
+  "tak_target": "POSIELAŤ NA",
+  "tak_host": "Adresa",
+  "tak_port": "Port UDP",
+  "tak_targetHint": "127.0.0.1 port 4242 je ATAK v tomto telefóne. Pre iné zariadenie zadajte jeho adresu a vstupný port UDP. Na zmenu vypnite posielanie.",
+  "tak_badTarget": "Zadajte adresu a port od 1 do 65535",
+  "tak_consentTitle": "Posielať polohy uzlov?",
+  "tak_consentBody": "Názvy a polohy tohto rádia a počutých uzlov sa budú každých 30 sekúnd nešifrovane posielať na {target}, kým to nevypnete. Posielajte ich len do aplikácie TAK, ktorej dôverujete.",
+  "tak_consentAgree": "Posielať"
 }

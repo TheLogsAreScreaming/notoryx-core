@@ -15837,4 +15837,68 @@ class AppLocalizationsBg extends AppLocalizations {
   @override
   String get tcpFound_hint =>
       'Тук се показват радиостанции с Wi-Fi фърмуер за компаньон, които се обявяват. Иначе въведете адреса по-долу.';
+
+  @override
+  String get tak_title => 'Споделяне с TAK';
+
+  @override
+  String get tak_toolHint =>
+      'Показване на възлите от мрежата на картата в ATAK, iTAK или WinTAK';
+
+  @override
+  String get tak_intro =>
+      'Изпраща местоположенията на това радио и на възлите, чути през последния ден, към TAK приложение на всеки 30 секунди, за да се виждат на картата му. От TAK не се получава нищо.';
+
+  @override
+  String get tak_enable => 'Изпращане към TAK';
+
+  @override
+  String get tak_off => 'Изключено';
+
+  @override
+  String tak_lastSent(int count, String time) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Изпратени $count точки в $time',
+      one: 'Изпратена 1 точка в $time',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String tak_error(String error) {
+    return 'Неуспешно изпращане: $error';
+  }
+
+  @override
+  String get tak_unsupported => 'Не е налично в уеб версията';
+
+  @override
+  String get tak_target => 'ИЗПРАЩАНЕ ДО';
+
+  @override
+  String get tak_host => 'Адрес';
+
+  @override
+  String get tak_port => 'UDP порт';
+
+  @override
+  String get tak_targetHint =>
+      '127.0.0.1 порт 4242 е ATAK на този телефон. За друго устройство въведете неговия адрес и UDP входен порт. Изключете изпращането, за да ги промените.';
+
+  @override
+  String get tak_badTarget => 'Въведете адрес и порт от 1 до 65535';
+
+  @override
+  String get tak_consentTitle =>
+      'Да се изпращат ли местоположенията на възлите?';
+
+  @override
+  String tak_consentBody(String target) {
+    return 'Имената и местоположенията на това радио и на чутите възли ще се изпращат некриптирани до $target на всеки 30 секунди, докато не изключите това. Изпращайте ги само към TAK приложение, на което имате доверие.';
+  }
+
+  @override
+  String get tak_consentAgree => 'Изпращане';
 }

@@ -15916,4 +15916,67 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get tcpFound_hint =>
       'Les radios avec un firmware compagnon Wi-Fi qui s\'annoncent apparaissent ici. Sinon, saisissez l\'adresse ci-dessous.';
+
+  @override
+  String get tak_title => 'Partager avec TAK';
+
+  @override
+  String get tak_toolHint =>
+      'Afficher les nœuds du maillage sur la carte d\'ATAK, iTAK ou WinTAK';
+
+  @override
+  String get tak_intro =>
+      'Envoie toutes les 30 secondes les positions de cette radio et des nœuds entendus le dernier jour à une application TAK, pour qu\'ils apparaissent sur sa carte. Rien ne revient de TAK.';
+
+  @override
+  String get tak_enable => 'Envoyer à TAK';
+
+  @override
+  String get tak_off => 'Désactivé';
+
+  @override
+  String tak_lastSent(int count, String time) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count points envoyés à $time',
+      one: '1 point envoyé à $time',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String tak_error(String error) {
+    return 'Envoi impossible : $error';
+  }
+
+  @override
+  String get tak_unsupported => 'Indisponible dans la version web';
+
+  @override
+  String get tak_target => 'ENVOYER À';
+
+  @override
+  String get tak_host => 'Adresse';
+
+  @override
+  String get tak_port => 'Port UDP';
+
+  @override
+  String get tak_targetHint =>
+      '127.0.0.1 port 4242 correspond à ATAK sur ce téléphone. Pour un autre appareil, utilisez son adresse et son port d\'entrée UDP. Désactivez l\'envoi pour les modifier.';
+
+  @override
+  String get tak_badTarget => 'Saisissez une adresse et un port de 1 à 65535';
+
+  @override
+  String get tak_consentTitle => 'Envoyer les positions des nœuds ?';
+
+  @override
+  String tak_consentBody(String target) {
+    return 'Les noms et positions de cette radio et des nœuds entendus seront envoyés, non chiffrés, à $target toutes les 30 secondes jusqu\'à désactivation. Envoyez-les uniquement à une application TAK de confiance.';
+  }
+
+  @override
+  String get tak_consentAgree => 'Envoyer';
 }

@@ -15883,4 +15883,69 @@ class AppLocalizationsRu extends AppLocalizations {
   @override
   String get tcpFound_hint =>
       'Здесь появляются радиостанции с прошивкой Wi-Fi-компаньона, которые сообщают о себе. Иначе введите адрес ниже.';
+
+  @override
+  String get tak_title => 'Передача в TAK';
+
+  @override
+  String get tak_toolHint =>
+      'Показывать узлы сети на карте ATAK, iTAK или WinTAK';
+
+  @override
+  String get tak_intro =>
+      'Каждые 30 секунд отправляет в приложение TAK позиции этой радиостанции и узлов, услышанных за последние сутки, чтобы они появились на его карте. Из TAK ничего не приходит.';
+
+  @override
+  String get tak_enable => 'Отправлять в TAK';
+
+  @override
+  String get tak_off => 'Выключено';
+
+  @override
+  String tak_lastSent(int count, String time) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Отправлено $count точки в $time',
+      many: 'Отправлено $count точек в $time',
+      few: 'Отправлены $count точки в $time',
+      one: 'Отправлена 1 точка в $time',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String tak_error(String error) {
+    return 'Не удалось отправить: $error';
+  }
+
+  @override
+  String get tak_unsupported => 'Недоступно в веб-версии';
+
+  @override
+  String get tak_target => 'КУДА ОТПРАВЛЯТЬ';
+
+  @override
+  String get tak_host => 'Адрес';
+
+  @override
+  String get tak_port => 'UDP-порт';
+
+  @override
+  String get tak_targetHint =>
+      '127.0.0.1, порт 4242 — это ATAK на этом телефоне. Для другого устройства укажите его адрес и входной UDP-порт. Чтобы изменить их, выключите отправку.';
+
+  @override
+  String get tak_badTarget => 'Укажите адрес и порт от 1 до 65535';
+
+  @override
+  String get tak_consentTitle => 'Отправлять позиции узлов?';
+
+  @override
+  String tak_consentBody(String target) {
+    return 'Имена и позиции этой радиостанции и услышанных узлов будут каждые 30 секунд без шифрования отправляться на $target, пока вы это не выключите. Отправляйте их только в доверенное приложение TAK.';
+  }
+
+  @override
+  String get tak_consentAgree => 'Отправлять';
 }

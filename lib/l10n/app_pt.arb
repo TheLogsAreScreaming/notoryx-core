@@ -5751,5 +5751,21 @@
   "tcpFound_title": "NESTA REDE",
   "tcpFound_searching": "A procurar rádios nesta rede Wi-Fi…",
   "tcpFound_failed": "Não é possível procurar nesta rede",
-  "tcpFound_hint": "Aqui aparecem os rádios com firmware companheiro Wi-Fi que se anunciam. Caso contrário, escreva o endereço abaixo."
+  "tcpFound_hint": "Aqui aparecem os rádios com firmware companheiro Wi-Fi que se anunciam. Caso contrário, escreva o endereço abaixo.",
+  "tak_title": "Partilhar com o TAK",
+  "tak_toolHint": "Mostrar os nós da malha no mapa do ATAK, iTAK ou WinTAK",
+  "tak_intro": "Envia a cada 30 segundos as posições deste rádio e dos nós ouvidos no último dia para uma app TAK, para aparecerem no mapa. Nada volta do TAK.",
+  "tak_enable": "Enviar para o TAK",
+  "tak_off": "Desligado",
+  "tak_lastSent": "{count, plural, =1{1 ponto enviado às {time}} other{{count} pontos enviados às {time}}}",
+  "tak_error": "Não foi possível enviar: {error}",
+  "tak_unsupported": "Não disponível na versão web",
+  "tak_target": "ENVIAR PARA",
+  "tak_host": "Endereço",
+  "tak_port": "Porta UDP",
+  "tak_targetHint": "127.0.0.1 porta 4242 é o ATAK neste telemóvel. Para outro dispositivo, use o endereço e a porta UDP de entrada dele. Desligue o envio para os alterar.",
+  "tak_badTarget": "Introduza um endereço e uma porta de 1 a 65535",
+  "tak_consentTitle": "Enviar as posições dos nós?",
+  "tak_consentBody": "Os nomes e posições deste rádio e dos nós ouvidos serão enviados, sem cifra, para {target} a cada 30 segundos até desligar. Envie-os só para uma app TAK de confiança.",
+  "tak_consentAgree": "Enviar"
 }

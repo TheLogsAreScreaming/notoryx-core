@@ -15746,4 +15746,67 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get tcpFound_hint =>
       'Radioapparater med Wi-Fi-companion-firmware som annonserar sig visas här. Annars skriver du adressen nedan.';
+
+  @override
+  String get tak_title => 'Dela med TAK';
+
+  @override
+  String get tak_toolHint =>
+      'Visa meshnoder på kartan i ATAK, iTAK eller WinTAK';
+
+  @override
+  String get tak_intro =>
+      'Skickar var 30:e sekund positionerna för den här radion och de noder som hörts det senaste dygnet till en TAK-app så att de syns på dess karta. Inget kommer tillbaka från TAK.';
+
+  @override
+  String get tak_enable => 'Skicka till TAK';
+
+  @override
+  String get tak_off => 'Av';
+
+  @override
+  String tak_lastSent(int count, String time) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Skickade $count punkter kl. $time',
+      one: 'Skickade 1 punkt kl. $time',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String tak_error(String error) {
+    return 'Kunde inte skicka: $error';
+  }
+
+  @override
+  String get tak_unsupported => 'Inte tillgängligt i webbversionen';
+
+  @override
+  String get tak_target => 'SKICKA TILL';
+
+  @override
+  String get tak_host => 'Adress';
+
+  @override
+  String get tak_port => 'UDP-port';
+
+  @override
+  String get tak_targetHint =>
+      '127.0.0.1 port 4242 är ATAK på den här telefonen. För en annan enhet anger du dess adress och UDP-inport. Stäng av sändningen för att ändra.';
+
+  @override
+  String get tak_badTarget => 'Ange en adress och en port från 1 till 65535';
+
+  @override
+  String get tak_consentTitle => 'Skicka nodpositioner?';
+
+  @override
+  String tak_consentBody(String target) {
+    return 'Namn och positioner för den här radion och de hörda noderna skickas okrypterat till $target var 30:e sekund tills du stänger av. Skicka dem bara till en TAK-app du litar på.';
+  }
+
+  @override
+  String get tak_consentAgree => 'Skicka';
 }
