@@ -5844,5 +5844,16 @@
   "channels_viaCoreScope": "por CoreScope",
   "channels_viaCoreScopeSemantics": "Recibido por CoreScope, no oído por tu radio",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Este mensaje llegó de un analizador CoreScope. Tu radio no lo ha oído, así que no hay ruta de radio desde tu radio."
+  "channelPath_viaCoreScopeNoRfPath": "Este mensaje llegó de un analizador CoreScope. Tu radio no lo ha oído, así que no hay ruta de radio desde tu radio.",
+  "bookmarks_title": "Marcadores",
+  "bookmarks_add": "Añadir marcador",
+  "bookmarks_remove": "Quitar marcador",
+  "bookmarks_added": "Marcador añadido",
+  "bookmarks_removed": "Marcador quitado",
+  "bookmarks_share": "Compartir marcadores",
+  "bookmarks_filterAll": "Todos",
+  "bookmarks_filterDirect": "Directos",
+  "bookmarks_filterChannels": "Canales",
+  "bookmarks_empty": "Aún no hay marcadores",
+  "bookmarks_emptyHint": "Mantén pulsado un mensaje y elige «Añadir marcador» para guardarlo aquí, aunque se borre el chat."
 }

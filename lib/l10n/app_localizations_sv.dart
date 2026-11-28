@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -15588,4 +15589,38 @@ class AppLocalizationsSv extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Meddelandet kom från en CoreScope analysator. Din radio har inte hört det, så det finns ingen radioväg från din radio.';
+
+  @override
+  String get bookmarks_title => 'Bokmärken';
+
+  @override
+  String get bookmarks_add => 'Bokmärk';
+
+  @override
+  String get bookmarks_remove => 'Ta bort bokmärke';
+
+  @override
+  String get bookmarks_added => 'Bokmärkt';
+
+  @override
+  String get bookmarks_removed => 'Bokmärket togs bort';
+
+  @override
+  String get bookmarks_share => 'Dela bokmärken';
+
+  @override
+  String get bookmarks_filterAll => 'Alla';
+
+  @override
+  String get bookmarks_filterDirect => 'Direkt';
+
+  @override
+  String get bookmarks_filterChannels => 'Kanaler';
+
+  @override
+  String get bookmarks_empty => 'Inga bokmärken än';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Tryck länge på ett meddelande och välj Bokmärk för att spara det här, även när chatten rensas.';
 }

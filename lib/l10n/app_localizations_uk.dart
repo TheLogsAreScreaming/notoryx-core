@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -15722,4 +15723,38 @@ class AppLocalizationsUk extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Це повідомлення надійшло з аналізатора CoreScope. Ваше радіо його не чуло, тому радіомаршруту від вашого радіо немає.';
+
+  @override
+  String get bookmarks_title => 'Закладки';
+
+  @override
+  String get bookmarks_add => 'Додати закладку';
+
+  @override
+  String get bookmarks_remove => 'Видалити закладку';
+
+  @override
+  String get bookmarks_added => 'Закладку додано';
+
+  @override
+  String get bookmarks_removed => 'Закладку видалено';
+
+  @override
+  String get bookmarks_share => 'Поділитися закладками';
+
+  @override
+  String get bookmarks_filterAll => 'Усі';
+
+  @override
+  String get bookmarks_filterDirect => 'Особисті';
+
+  @override
+  String get bookmarks_filterChannels => 'Канали';
+
+  @override
+  String get bookmarks_empty => 'Закладок ще немає';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Утримуйте повідомлення й виберіть «Додати закладку», щоб зберегти його тут навіть після очищення чату.';
 }

@@ -7,6 +7,8 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
+import '../services/bookmark_service.dart';
+import '../widgets/bookmark_tile.dart';
 import '../storage/draft_store.dart';
 import '../utils/app_logger.dart';
 import '../utils/platform_info.dart';
@@ -1564,6 +1566,21 @@ class _ChatScreenState extends State<ChatScreen> {
                   unawaited(showForwardSheet(context, message.text));
                 },
               ),
+            bookmarkSheetTile(
+              context,
+              sheetContext,
+              source: BookmarkSource.contact,
+              sourceId: contact.publicKeyHex,
+              sourceName: contact.name,
+              messageId: message.messageId,
+              senderName: message.isOutgoing
+                  ? (context.read<MeshCoreConnector>().selfName ??
+                        context.l10n.chat_me)
+                  : contact.name,
+              text: message.text,
+              timestamp: message.timestamp,
+              isOutgoing: message.isOutgoing,
+            ),
             ListTile(
               leading: const Icon(Icons.copy),
               title: Text(context.l10n.common_copy),

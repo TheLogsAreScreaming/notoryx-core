@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -15706,4 +15707,38 @@ class AppLocalizationsEs extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Este mensaje llegó de un analizador CoreScope. Tu radio no lo ha oído, así que no hay ruta de radio desde tu radio.';
+
+  @override
+  String get bookmarks_title => 'Marcadores';
+
+  @override
+  String get bookmarks_add => 'Añadir marcador';
+
+  @override
+  String get bookmarks_remove => 'Quitar marcador';
+
+  @override
+  String get bookmarks_added => 'Marcador añadido';
+
+  @override
+  String get bookmarks_removed => 'Marcador quitado';
+
+  @override
+  String get bookmarks_share => 'Compartir marcadores';
+
+  @override
+  String get bookmarks_filterAll => 'Todos';
+
+  @override
+  String get bookmarks_filterDirect => 'Directos';
+
+  @override
+  String get bookmarks_filterChannels => 'Canales';
+
+  @override
+  String get bookmarks_empty => 'Aún no hay marcadores';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Mantén pulsado un mensaje y elige «Añadir marcador» para guardarlo aquí, aunque se borre el chat.';
 }

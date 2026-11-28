@@ -5844,5 +5844,16 @@
   "channels_viaCoreScope": "via CoreScope",
   "channels_viaCoreScopeSemantics": "Ricevuto via CoreScope, non sentito dalla tua radio",
   "channelPath_sourceCoreScope": "CoreScope",
-  "channelPath_viaCoreScopeNoRfPath": "Questo messaggio è arrivato da un analizzatore CoreScope. La tua radio non l'ha ricevuto, quindi non c'è un percorso radio dalla tua radio."
+  "channelPath_viaCoreScopeNoRfPath": "Questo messaggio è arrivato da un analizzatore CoreScope. La tua radio non l'ha ricevuto, quindi non c'è un percorso radio dalla tua radio.",
+  "bookmarks_title": "Segnalibri",
+  "bookmarks_add": "Aggiungi segnalibro",
+  "bookmarks_remove": "Rimuovi segnalibro",
+  "bookmarks_added": "Segnalibro aggiunto",
+  "bookmarks_removed": "Segnalibro rimosso",
+  "bookmarks_share": "Condividi segnalibri",
+  "bookmarks_filterAll": "Tutti",
+  "bookmarks_filterDirect": "Diretti",
+  "bookmarks_filterChannels": "Canali",
+  "bookmarks_empty": "Ancora nessun segnalibro",
+  "bookmarks_emptyHint": "Tieni premuto un messaggio e scegli «Aggiungi segnalibro» per conservarlo qui, anche dopo aver svuotato la chat."
 }

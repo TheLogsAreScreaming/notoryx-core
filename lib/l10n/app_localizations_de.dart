@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -15724,4 +15725,38 @@ class AppLocalizationsDe extends AppLocalizations {
   @override
   String get channelPath_viaCoreScopeNoRfPath =>
       'Diese Nachricht kam von einem CoreScope Analyzer. Dein Funkgerät hat sie nicht empfangen, daher gibt es keinen Funkpfad von deinem Funkgerät.';
+
+  @override
+  String get bookmarks_title => 'Lesezeichen';
+
+  @override
+  String get bookmarks_add => 'Lesezeichen setzen';
+
+  @override
+  String get bookmarks_remove => 'Lesezeichen entfernen';
+
+  @override
+  String get bookmarks_added => 'Lesezeichen gesetzt';
+
+  @override
+  String get bookmarks_removed => 'Lesezeichen entfernt';
+
+  @override
+  String get bookmarks_share => 'Lesezeichen teilen';
+
+  @override
+  String get bookmarks_filterAll => 'Alle';
+
+  @override
+  String get bookmarks_filterDirect => 'Direkt';
+
+  @override
+  String get bookmarks_filterChannels => 'Kanäle';
+
+  @override
+  String get bookmarks_empty => 'Noch keine Lesezeichen';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Halte eine Nachricht gedrückt und wähle „Lesezeichen setzen“, um sie hier zu behalten, auch wenn der Chat geleert wird.';
 }
