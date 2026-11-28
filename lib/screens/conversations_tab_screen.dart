@@ -25,8 +25,7 @@ class ConversationsTabScreen extends StatefulWidget {
   const ConversationsTabScreen({super.key, this.hideBackButton = false});
 
   @override
-  State<ConversationsTabScreen> createState() =>
-      _ConversationsTabScreenState();
+  State<ConversationsTabScreen> createState() => _ConversationsTabScreenState();
 }
 
 class _ConversationsTabScreenState extends State<ConversationsTabScreen>
@@ -52,16 +51,12 @@ class _ConversationsTabScreenState extends State<ConversationsTabScreen>
         }
 
         final contacts = List<Contact>.from(connector.contacts)
-          ..sort(
-            (a, b) => b.lastMessageAt.compareTo(a.lastMessageAt),
-          );
+          ..sort((a, b) => b.lastMessageAt.compareTo(a.lastMessageAt));
 
         final filtered = _searchText.isEmpty
             ? contacts
             : contacts.where((c) {
-                return c.name.toLowerCase().contains(
-                  _searchText.toLowerCase(),
-                );
+                return c.name.toLowerCase().contains(_searchText.toLowerCase());
               }).toList();
 
         final firstUnreadIndex = filtered.indexWhere(
@@ -145,17 +140,15 @@ class _ConversationsTabScreenState extends State<ConversationsTabScreen>
                                 contact,
                               );
                               final messages = connector.getMessages(contact);
-                              final lastMsg =
-                                  messages.isNotEmpty ? messages.last : null;
+                              final lastMsg = messages.isNotEmpty
+                                  ? messages.last
+                                  : null;
                               return _ConversationTile(
                                 contact: contact,
                                 unreadCount: unread,
                                 lastMessage: lastMsg,
-                                onTap: () => _openChat(
-                                  context,
-                                  connector,
-                                  contact,
-                                ),
+                                onTap: () =>
+                                    _openChat(context, connector, contact),
                               );
                             },
                           ),
@@ -193,9 +186,7 @@ class _ConversationsTabScreenState extends State<ConversationsTabScreen>
     MeshCoreConnector connector,
     Contact contact,
   ) {
-    final unread = connector.getUnreadCountForContactKey(
-      contact.publicKeyHex,
-    );
+    final unread = connector.getUnreadCountForContactKey(contact.publicKeyHex);
     connector.markContactRead(contact.publicKeyHex);
     Navigator.push(
       context,
@@ -282,8 +273,9 @@ class _ConversationTile extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
     final hasUnread = unreadCount > 0;
 
-    final timeLabel =
-        lastMessage != null ? _formatTime(context, lastMessage!.timestamp) : '';
+    final timeLabel = lastMessage != null
+        ? _formatTime(context, lastMessage!.timestamp)
+        : '';
 
     final String previewText;
     if (lastMessage == null) {
@@ -334,8 +326,9 @@ class _ConversationTile extends StatelessWidget {
                         maxLines: 1,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
-                          fontWeight:
-                              hasUnread ? FontWeight.w700 : FontWeight.w500,
+                          fontWeight: hasUnread
+                              ? FontWeight.w700
+                              : FontWeight.w500,
                           fontSize: 15,
                           color: scheme.onSurface,
                         ),
