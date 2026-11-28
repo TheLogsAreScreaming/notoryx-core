@@ -20,10 +20,12 @@ import '../models/node_staleness.dart';
 import '../services/app_settings_service.dart';
 import '../services/ui_view_state_service.dart';
 import '../theme/mesh_theme.dart';
+import '../utils/contact_reachability.dart';
 import '../utils/contact_search.dart';
 import '../storage/contact_group_store.dart';
 import '../utils/dialog_utils.dart';
 import '../utils/disconnect_navigation_mixin.dart';
+import '../services/direct_repeater_service.dart';
 import '../utils/emoji_utils.dart';
 import '../utils/main_tab_navigation.dart';
 import '../widgets/path_hash_badge.dart';
@@ -754,6 +756,7 @@ class _ContactsScreenState extends State<ContactsScreen>
 
   Widget _buildContactsBody(BuildContext context, MeshCoreConnector connector) {
     final viewState = context.watch<UiViewStateService>();
+    final directRepeaters = context.watch<DirectRepeaterService?>();
     final staleAfter = staleAfterFromHours(
       context.select<AppSettingsService?, int>(
         (s) => s?.settings.staleAfterHours ?? 24,
@@ -984,6 +987,22 @@ class _ContactsScreenState extends State<ContactsScreen>
                       final unreadCount = connector.getUnreadCountForContact(
                         contact,
                       );
+                      final ReachabilityVerdict? verdict;
+                      if (contact.type == advTypeChat) {
+                        final messages = connector.getMessages(contact);
+                        final heardDirectly = directRepeaters?.heard.any(
+                              (h) =>
+                                  h.id.toUpperCase() ==
+                                  contact.publicKeyHex.toUpperCase(),
+                            ) ??
+                            false;
+                        verdict = contactReachability(
+                          messages,
+                          heardDirectly: heardDirectly,
+                        );
+                      } else {
+                        verdict = null;
+                      }
                       return Padding(
                         padding: const EdgeInsets.symmetric(
                           horizontal: 12,
@@ -1003,6 +1022,7 @@ class _ContactsScreenState extends State<ContactsScreen>
                             unreadCount: unreadCount,
                             failedMessage: connector.lastFailedMessage(contact),
                             isFavorite: contact.isFavorite,
+                            reachabilityVerdict: verdict,
                             onTap: () => _openChat(context, contact),
                             onLongPress: () => _showContactOptions(
                               context,
@@ -1701,6 +1721,7 @@ class _ContactTile extends StatelessWidget {
   /// The last message sent to this contact, when it failed.
   final Message? failedMessage;
   final bool isFavorite;
+  final ReachabilityVerdict? reachabilityVerdict;
   final VoidCallback onTap;
   final VoidCallback onLongPress;
 
@@ -1712,6 +1733,7 @@ class _ContactTile extends StatelessWidget {
     required this.unreadCount,
     this.failedMessage,
     required this.isFavorite,
+    this.reachabilityVerdict,
     required this.onTap,
     required this.onLongPress,
   });
@@ -1887,6 +1909,8 @@ class _ContactTile extends StatelessWidget {
                             color: MeshPalette.accent,
                           ),
                         ),
+                      if (reachabilityVerdict != null)
+                        _ReachabilityLabel(verdict: reachabilityVerdict!),
                     ],
                   ),
                 ],
@@ -1972,6 +1996,36 @@ class _FailedSendMarker extends StatelessWidget {
   }
 }
 
+class _ReachabilityLabel extends StatelessWidget {
+  const _ReachabilityLabel({required this.verdict});
+
+  final ReachabilityVerdict verdict;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = context.l10n;
+    final (String label, Color color) = switch (verdict) {
+      ReachabilityVerdict.twoWay => (l10n.reachability_twoWay, MeshPalette.signal),
+      ReachabilityVerdict.theyHeardYou => (
+        l10n.reachability_theyHeardYou,
+        MeshPalette.warn,
+      ),
+      ReachabilityVerdict.noAnswerYet => (
+        l10n.reachability_noAnswerYet,
+        MeshPalette.ink3,
+      ),
+    };
+    return Text(
+      label,
+      style: TextStyle(
+        fontSize: 11,
+        color: color,
+        fontWeight: FontWeight.w500,
+      ),
+    );
+  }
+}
+
 // Wrap each contact tile with staggered entrance.
 class _ContactTileEntrance extends StatelessWidget {
   final int index;
@@ -1986,6 +2040,7 @@ class _ContactTileEntrance extends StatelessWidget {
   /// The last message sent to this contact, when it failed.
   final Message? failedMessage;
   final bool isFavorite;
+  final ReachabilityVerdict? reachabilityVerdict;
   final VoidCallback onTap;
   final VoidCallback onLongPress;
 
@@ -1998,6 +2053,7 @@ class _ContactTileEntrance extends StatelessWidget {
     required this.unreadCount,
     this.failedMessage,
     required this.isFavorite,
+    this.reachabilityVerdict,
     required this.onTap,
     required this.onLongPress,
   });
@@ -2014,6 +2070,7 @@ class _ContactTileEntrance extends StatelessWidget {
         unreadCount: unreadCount,
         failedMessage: failedMessage,
         isFavorite: isFavorite,
+        reachabilityVerdict: reachabilityVerdict,
         onTap: onTap,
         onLongPress: onLongPress,
       ),

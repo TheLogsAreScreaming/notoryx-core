@@ -42,6 +42,9 @@
   },
   "messages_yesterday": "Yesterday",
   "messages_unreadCount": "{count} unread",
+  "reachability_twoWay": "Two-way",
+  "reachability_theyHeardYou": "They've heard you",
+  "reachability_noAnswerYet": "No answer yet",
   "@messages_unreadCount": {
     "placeholders": {
       "count": {
