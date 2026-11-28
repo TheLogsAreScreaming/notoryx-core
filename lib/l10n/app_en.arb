@@ -8388,6 +8388,56 @@
   "channels_viaCoreScopeSemantics": "Received via CoreScope, not heard by your radio",
   "channelPath_sourceCoreScope": "CoreScope",
   "channelPath_viaCoreScopeNoRfPath": "This message came from a CoreScope analyzer. Your radio has not heard it, so there is no RF path from your radio.",
+  "bookmarks_title": "Bookmarks",
+  "bookmarks_add": "Bookmark",
+  "bookmarks_remove": "Remove bookmark",
+  "bookmarks_added": "Bookmarked",
+  "bookmarks_removed": "Bookmark removed",
+  "bookmarks_share": "Share bookmarks",
+  "bookmarks_filterAll": "All",
+  "bookmarks_filterDirect": "Direct",
+  "bookmarks_filterChannels": "Channels",
+  "bookmarks_empty": "No bookmarks yet",
+  "bookmarks_emptyHint": "Long-press a message and choose Bookmark to keep it here, even after the chat is cleared.",
+  "manualTrace_menuItem": "Path trace by hashes",
+  "manualTrace_inputLabel": "Repeater hashes",
+  "manualTrace_helper": "Example: {example}. Separate with commas or spaces.",
+  "@manualTrace_helper": {
+    "placeholders": {
+      "example": {
+        "type": "String"
+      }
+    }
+  },
+  "manualTrace_previewTitle": "Hops ({count})",
+  "@manualTrace_previewTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "manualTrace_unknownNode": "Unknown node",
+  "manualTrace_run": "Run path trace",
+  "manualTrace_notConnected": "Connect to a radio to run a trace",
+  "manualTrace_errorInvalidHex": "Only hex characters (0-9, A-F) are allowed",
+  "manualTrace_errorOddLength": "Each hash needs an even number of hex characters, matching the hop size",
+  "manualTrace_errorMixedWidths": "All hashes must be the same length",
+  "manualTrace_errorUnsupportedWidth": "Hashes must be 1, 2 or 3 bytes (2, 4 or 6 hex characters)",
+  "manualTrace_errorTooManyHops": "Path is too long (maximum {max} bytes)",
+  "@manualTrace_errorTooManyHops": {
+    "placeholders": {
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "manualTrace_errorTraceTooLong": "Too many hops to trace in one request. Remove some hops or choose As entered.",
+  "manualTrace_roundTrip": "Round trip",
+  "manualTrace_asEntered": "As entered",
+  "manualTrace_roundTripHint": "The trace goes out through these hops and comes back the same way.",
+  "manualTrace_asEnteredHint": "The trace follows these hops exactly. Add the hops back to you yourself.",
+  "manualTrace_menuHint": "Type repeater hashes and trace that path, no GPS needed",
   "imageSend_viewOriginal": "Original",
   "imageSend_viewReconstruction": "What recipients see",
   "imageSend_preparingPreview": "Preparing preview…",

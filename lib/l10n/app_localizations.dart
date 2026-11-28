@@ -25941,6 +25941,180 @@ abstract class AppLocalizations {
   /// **'This message came from a CoreScope analyzer. Your radio has not heard it, so there is no RF path from your radio.'**
   String get channelPath_viaCoreScopeNoRfPath;
 
+  /// No description provided for @bookmarks_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Bookmarks'**
+  String get bookmarks_title;
+
+  /// No description provided for @bookmarks_add.
+  ///
+  /// In en, this message translates to:
+  /// **'Bookmark'**
+  String get bookmarks_add;
+
+  /// No description provided for @bookmarks_remove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove bookmark'**
+  String get bookmarks_remove;
+
+  /// No description provided for @bookmarks_added.
+  ///
+  /// In en, this message translates to:
+  /// **'Bookmarked'**
+  String get bookmarks_added;
+
+  /// No description provided for @bookmarks_removed.
+  ///
+  /// In en, this message translates to:
+  /// **'Bookmark removed'**
+  String get bookmarks_removed;
+
+  /// No description provided for @bookmarks_share.
+  ///
+  /// In en, this message translates to:
+  /// **'Share bookmarks'**
+  String get bookmarks_share;
+
+  /// No description provided for @bookmarks_filterAll.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get bookmarks_filterAll;
+
+  /// No description provided for @bookmarks_filterDirect.
+  ///
+  /// In en, this message translates to:
+  /// **'Direct'**
+  String get bookmarks_filterDirect;
+
+  /// No description provided for @bookmarks_filterChannels.
+  ///
+  /// In en, this message translates to:
+  /// **'Channels'**
+  String get bookmarks_filterChannels;
+
+  /// No description provided for @bookmarks_empty.
+  ///
+  /// In en, this message translates to:
+  /// **'No bookmarks yet'**
+  String get bookmarks_empty;
+
+  /// No description provided for @bookmarks_emptyHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Long-press a message and choose Bookmark to keep it here, even after the chat is cleared.'**
+  String get bookmarks_emptyHint;
+
+  /// No description provided for @manualTrace_menuItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Path trace by hashes'**
+  String get manualTrace_menuItem;
+
+  /// No description provided for @manualTrace_inputLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeater hashes'**
+  String get manualTrace_inputLabel;
+
+  /// No description provided for @manualTrace_helper.
+  ///
+  /// In en, this message translates to:
+  /// **'Example: {example}. Separate with commas or spaces.'**
+  String manualTrace_helper(String example);
+
+  /// No description provided for @manualTrace_previewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Hops ({count})'**
+  String manualTrace_previewTitle(int count);
+
+  /// No description provided for @manualTrace_unknownNode.
+  ///
+  /// In en, this message translates to:
+  /// **'Unknown node'**
+  String get manualTrace_unknownNode;
+
+  /// No description provided for @manualTrace_run.
+  ///
+  /// In en, this message translates to:
+  /// **'Run path trace'**
+  String get manualTrace_run;
+
+  /// No description provided for @manualTrace_notConnected.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect to a radio to run a trace'**
+  String get manualTrace_notConnected;
+
+  /// No description provided for @manualTrace_errorInvalidHex.
+  ///
+  /// In en, this message translates to:
+  /// **'Only hex characters (0-9, A-F) are allowed'**
+  String get manualTrace_errorInvalidHex;
+
+  /// No description provided for @manualTrace_errorOddLength.
+  ///
+  /// In en, this message translates to:
+  /// **'Each hash needs an even number of hex characters, matching the hop size'**
+  String get manualTrace_errorOddLength;
+
+  /// No description provided for @manualTrace_errorMixedWidths.
+  ///
+  /// In en, this message translates to:
+  /// **'All hashes must be the same length'**
+  String get manualTrace_errorMixedWidths;
+
+  /// No description provided for @manualTrace_errorUnsupportedWidth.
+  ///
+  /// In en, this message translates to:
+  /// **'Hashes must be 1, 2 or 3 bytes (2, 4 or 6 hex characters)'**
+  String get manualTrace_errorUnsupportedWidth;
+
+  /// No description provided for @manualTrace_errorTooManyHops.
+  ///
+  /// In en, this message translates to:
+  /// **'Path is too long (maximum {max} bytes)'**
+  String manualTrace_errorTooManyHops(int max);
+
+  /// No description provided for @manualTrace_errorTraceTooLong.
+  ///
+  /// In en, this message translates to:
+  /// **'Too many hops to trace in one request. Remove some hops or choose As entered.'**
+  String get manualTrace_errorTraceTooLong;
+
+  /// No description provided for @manualTrace_roundTrip.
+  ///
+  /// In en, this message translates to:
+  /// **'Round trip'**
+  String get manualTrace_roundTrip;
+
+  /// No description provided for @manualTrace_asEntered.
+  ///
+  /// In en, this message translates to:
+  /// **'As entered'**
+  String get manualTrace_asEntered;
+
+  /// No description provided for @manualTrace_roundTripHint.
+  ///
+  /// In en, this message translates to:
+  /// **'The trace goes out through these hops and comes back the same way.'**
+  String get manualTrace_roundTripHint;
+
+  /// No description provided for @manualTrace_asEnteredHint.
+  ///
+  /// In en, this message translates to:
+  /// **'The trace follows these hops exactly. Add the hops back to you yourself.'**
+  String get manualTrace_asEnteredHint;
+
+  /// No description provided for @manualTrace_menuHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Type repeater hashes and trace that path, no GPS needed'**
+  String get manualTrace_menuHint;
+
   /// No description provided for @imageSend_viewOriginal.
   ///
   /// In en, this message translates to:

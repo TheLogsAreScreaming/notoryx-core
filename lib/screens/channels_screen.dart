@@ -38,6 +38,7 @@ import '../helpers/join_channel.dart';
 import '../services/channel_discovery_service.dart';
 import 'chat_screen.dart';
 import 'channel_directory_screen.dart';
+import 'bookmarks_screen.dart';
 import 'message_search_screen.dart';
 import 'community_qr_scanner_screen.dart';
 import 'settings_screen.dart';
@@ -161,6 +162,22 @@ class _ChannelsScreenState extends State<ChannelsScreen>
                       ],
                     ),
                     onTap: () => _disconnect(context),
+                  ),
+                  PopupMenuItem(
+                    key: const ValueKey('open-bookmarks'),
+                    child: Row(
+                      children: [
+                        const Icon(Icons.bookmarks_outlined),
+                        const SizedBox(width: 8),
+                        Text(menuContext.l10n.bookmarks_title),
+                      ],
+                    ),
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute<void>(
+                        builder: (_) => const BookmarksScreen(),
+                      ),
+                    ),
                   ),
                   PopupMenuItem(
                     child: Row(

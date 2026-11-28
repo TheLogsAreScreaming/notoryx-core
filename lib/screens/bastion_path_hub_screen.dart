@@ -1,3 +1,4 @@
+import 'manual_path_trace_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:provider/provider.dart';
@@ -195,6 +196,13 @@ class _BastionPathHubScreenState extends State<BastionPathHubScreen> {
                   onTap: () => Navigator.of(context).push(
                     MaterialPageRoute(builder: (_) => const DiscoveryScreen()),
                   ),
+                ),
+                MeshNavRow(
+                  key: const ValueKey('open-manual-path-trace'),
+                  icon: Icons.tag,
+                  title: l10n.manualTrace_menuItem,
+                  subtitle: l10n.manualTrace_menuHint,
+                  onTap: () => ManualPathTraceScreen.open(context),
                 ),
               ],
             ),

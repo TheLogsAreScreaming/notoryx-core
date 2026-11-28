@@ -15641,6 +15641,109 @@ class AppLocalizationsSk extends AppLocalizations {
       'Táto správa prišla z analyzátora CoreScope. Vaše rádio ju nepočulo, takže neexistuje rádiová trasa z vášho rádia.';
 
   @override
+  String get bookmarks_title => 'Záložky';
+
+  @override
+  String get bookmarks_add => 'Pridať záložku';
+
+  @override
+  String get bookmarks_remove => 'Odstrániť záložku';
+
+  @override
+  String get bookmarks_added => 'Záložka pridaná';
+
+  @override
+  String get bookmarks_removed => 'Záložka odstránená';
+
+  @override
+  String get bookmarks_share => 'Zdieľať záložky';
+
+  @override
+  String get bookmarks_filterAll => 'Všetky';
+
+  @override
+  String get bookmarks_filterDirect => 'Priame';
+
+  @override
+  String get bookmarks_filterChannels => 'Kanály';
+
+  @override
+  String get bookmarks_empty => 'Zatiaľ žiadne záložky';
+
+  @override
+  String get bookmarks_emptyHint =>
+      'Podržte správu a zvoľte Pridať záložku, aby zostala tu aj po vymazaní chatu.';
+
+  @override
+  String get manualTrace_menuItem => 'Sledovanie cesty podľa hashov';
+
+  @override
+  String get manualTrace_inputLabel => 'Hashe opakovačov';
+
+  @override
+  String manualTrace_helper(String example) {
+    return 'Príklad: $example. Oddeľte čiarkami alebo medzerami.';
+  }
+
+  @override
+  String manualTrace_previewTitle(int count) {
+    return 'Skoky ($count)';
+  }
+
+  @override
+  String get manualTrace_unknownNode => 'Neznámy uzol';
+
+  @override
+  String get manualTrace_run => 'Spustiť sledovanie cesty';
+
+  @override
+  String get manualTrace_notConnected =>
+      'Na spustenie sledovania sa pripojte k rádiu';
+
+  @override
+  String get manualTrace_errorInvalidHex =>
+      'Povolené sú iba hexadecimálne znaky (0-9, A-F)';
+
+  @override
+  String get manualTrace_errorOddLength =>
+      'Každý hash potrebuje párny počet hexadecimálnych znakov zodpovedajúci veľkosti skoku';
+
+  @override
+  String get manualTrace_errorMixedWidths =>
+      'Všetky hashe musia mať rovnakú dĺžku';
+
+  @override
+  String get manualTrace_errorUnsupportedWidth =>
+      'Hashe musia mať 1, 2 alebo 3 bajty (2, 4 alebo 6 hexadecimálnych znakov)';
+
+  @override
+  String manualTrace_errorTooManyHops(int max) {
+    return 'Cesta je príliš dlhá (maximum $max bajtov)';
+  }
+
+  @override
+  String get manualTrace_errorTraceTooLong =>
+      'Príliš veľa skokov na sledovanie v jednej požiadavke. Odstráňte niektoré skoky alebo zvoľte „Podľa zadania“.';
+
+  @override
+  String get manualTrace_roundTrip => 'Tam a späť';
+
+  @override
+  String get manualTrace_asEntered => 'Podľa zadania';
+
+  @override
+  String get manualTrace_roundTripHint =>
+      'Sledovanie prejde cez tieto skoky a vráti sa rovnakou cestou.';
+
+  @override
+  String get manualTrace_asEnteredHint =>
+      'Sledovanie presne prejde cez tieto skoky. Skoky späť k sebe pridajte sami.';
+
+  @override
+  String get manualTrace_menuHint =>
+      'Zadajte hashe opakovačov a sledujte túto cestu, bez GPS';
+
+  @override
   String get imageSend_viewOriginal => 'Originál';
 
   @override
